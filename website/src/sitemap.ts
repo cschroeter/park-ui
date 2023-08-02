@@ -144,6 +144,12 @@ export const sitemap = [
         },
       },
       {
+        title: 'Drawer',
+        description: 'A panel that slides in from the edge of the screen.',
+        href: '/docs/components/drawer',
+        defaultProps: {},
+      },
+      {
         title: 'Editable',
         description: 'A component that allows users to edit text in place.',
         href: '/docs/components/editable',

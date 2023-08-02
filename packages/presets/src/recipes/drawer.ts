@@ -8,36 +8,48 @@ export const drawer = defineRecipe({
   description: 'A drawer style',
   base: parts({
     backdrop: {
-      background: 'neutral.950',
-      opacity: '0.7',
+      background: {
+        // TODO: replace when supported: bg.canvas/80
+        base: 'rgba(250, 250, 250, 0.8)',
+        _dark: 'rgba(10, 10, 10, 0.8)',
+      },
+      backdropFilter: 'blur(4px)',
       inset: '0',
       position: 'fixed',
       zIndex: 'overlay',
       _open: {
-        animation: 'backdropIn 0.25s ease-out',
+        animation: 'backdropIn 150ms cubic-bezier(0, 0, 0, 1)',
       },
       _closed: {
-        animation: 'backdropOut 0.2s ease-in',
+        animation: 'backdropOut 150ms cubic-bezier(0.3, 0, 1, 1)',
       },
     },
     container: {
-      alignItems: 'flex-start',
+      alignItems: 'center',
       display: 'flex',
-      inset: '0',
-      justifyContent: 'flex-start',
+      left: 0,
+      top: 0,
+      bottom: 0,
+      justifyContent: 'center',
       position: 'fixed',
       zIndex: 'modal',
     },
     content: {
       background: 'bg.default',
+      borderRightWidth: '1px',
       boxShadow: 'lg',
-      position: 'relative',
       height: 'full',
       minW: 'xs',
-      py: '5',
-      px: '4',
       overflowY: 'auto',
-      borderRightWidth: '1px',
+      position: 'relative',
+      px: '4',
+      py: '5',
+      _open: {
+        animation: 'drawerIn 500ms cubic-bezier(0.05, 0.7, 0.1, 1.0)',
+      },
+      _closed: {
+        animation: 'drawerOut 200ms cubic-bezier(0.3, 0.0, 0.8, 0.15)',
+      },
     },
     title: {
       fontWeight: 'semibold',

@@ -19,10 +19,10 @@ export const keyframes = defineKeyframes({
   },
   backdropIn: {
     '0%': { opacity: '0' },
-    '100%': { opacity: '0.7' },
+    '100%': { opacity: '1' },
   },
   backdropOut: {
-    '0%': { opacity: '0.7' },
+    '0%': { opacity: '1' },
     '100%': { opacity: '0' },
   },
   slideIn: {
@@ -32,5 +32,14 @@ export const keyframes = defineKeyframes({
   slideOut: {
     '0%': { opacity: '1', transform: 'translateY(0)' },
     '100%': { opacity: '0', transform: 'translateY(64px)' },
+  },
+
+  drawerIn: {
+    '0%': { transform: 'translateX(-100%)' },
+    '100%': { transform: 'translateX(0%)' },
+  },
+  drawerOut: {
+    '0%': { transform: 'translateX(0%)' },
+    '100%': { transform: 'translateX(-100%)' },
   },
 })

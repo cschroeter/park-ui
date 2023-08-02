@@ -19,6 +19,7 @@ import { CheckboxDemo } from './demo/checkbox-demo'
 import { ColorPickerDemo } from './demo/color-picker-demo'
 import { ComboboxDemo } from './demo/combobox-demo'
 import { DialogDemo } from './demo/dialog-demo'
+import { DrawerDemo } from './demo/drawer-demo'
 import { EditableDemo } from './demo/editable-demo'
 import { HoverCardDemo } from './demo/hover-card-demo'
 import { IconButtonDemo } from './demo/icon-button-demo'
@@ -71,6 +72,7 @@ export const Playground = (props: Props) => {
     .with('Color Picker', () => ColorPickerDemo)
     .with('Combobox', () => ComboboxDemo)
     .with('Dialog', () => DialogDemo)
+    .with('Drawer', () => DrawerDemo)
     .with('Editable', () => EditableDemo)
     .with('Hover Card', () => HoverCardDemo)
     .with('Icon Button', () => IconButtonDemo)
