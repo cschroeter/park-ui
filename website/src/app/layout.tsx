@@ -44,11 +44,19 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://panda-ui.com',
     description: 'Beautifully designed components built with Ark UI and Panda CSS.',
-    images: '/og-image.png',
+    images: {
+      url: 'https://park-ui.com/og-image.png',
+      width: 2400,
+      height: 1350,
+    },
   },
   twitter: {
     creator: '@grizzly_codes',
-    images: '/og-image.png',
+    images: {
+      url: 'https://park-ui.com/og-image.png',
+      width: 2400,
+      height: 1350,
+    },
   },
 }
 
