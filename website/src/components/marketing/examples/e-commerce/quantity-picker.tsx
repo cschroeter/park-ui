@@ -1,0 +1,41 @@
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
+import { Divider, Stack } from 'styled-system/jsx'
+import { IconButton } from '~/components/icon-button'
+import { Label } from '~/components/label'
+import {
+  NumberInput,
+  NumberInputControl,
+  NumberInputDecrementTrigger,
+  NumberInputField,
+  NumberInputIncrementTrigger,
+} from '~/components/number-input'
+
+export const QuantityPicker = () => {
+  return (
+    <Stack gap="1.5">
+      <Label htmlFor="quantity">Quantity</Label>
+      <NumberInput min={1} max={5} defaultValue="1" size="xl">
+        <NumberInputField id="quantity" />
+        <NumberInputControl>
+          <NumberInputIncrementTrigger asChild>
+            <IconButton
+              size="xs"
+              variant="tertiary"
+              icon={<FiChevronUp />}
+              aria-label="Increment"
+            />
+          </NumberInputIncrementTrigger>
+          <Divider />
+          <NumberInputDecrementTrigger asChild>
+            <IconButton
+              size="xs"
+              variant="tertiary"
+              icon={<FiChevronDown />}
+              aria-label="Decrement"
+            />
+          </NumberInputDecrementTrigger>
+        </NumberInputControl>
+      </NumberInput>
+    </Stack>
+  )
+}

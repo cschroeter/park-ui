@@ -1,0 +1,20 @@
+{
+  "name": "@park-ui/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "keywords": [],
+  "author": "",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@clack/core": "0.3.2",
+    "@clack/prompts": "0.6.3"
+  },
+  "devDependencies": {
+    "tsx": "3.12.7",
+    "typescript": "5.1.6"
+  }
+}
