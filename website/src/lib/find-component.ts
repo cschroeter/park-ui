@@ -33,10 +33,7 @@ export const findComponent = async (name: string): Promise<Component | undefined
 
   if (entry) {
     const snippet = readFileSync(`./src/components/${name}.tsx`, 'utf8')
-    const code = readFileSync(
-      `./src/components/docs/components/demo/${recipeName}-demo.tsx`,
-      'utf8',
-    )
+    const code = readFileSync(`./src/components/docs/components/demo/${name}-demo.tsx`, 'utf8')
     const recipe = readFileSync(`../packages/presets/src/recipes/${recipeName}.ts`, 'utf8')
 
     return {
