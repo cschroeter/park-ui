@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { Stack } from 'styled-system/jsx'
 import { Code } from '~/components/docs/code'
 import { ArkDocumentationLinks } from '~/components/docs/components/ark-documentation-links'
+import { EarlyAccesWarning } from '~/components/docs/components/early-access-warning'
 import { Playground } from '~/components/docs/components/playground'
 import { DocsFooter } from '~/components/layout/docs-footer'
 import { PageHeader } from '~/components/layout/page-header'
@@ -21,6 +22,7 @@ const Page = async (props: any) => {
   return (
     <>
       <Stack gap="12" width={{ base: 'full', xl: '2xl' }}>
+        <EarlyAccesWarning />
         <PageHeader
           subHeading="Component"
           heading={component.title}
