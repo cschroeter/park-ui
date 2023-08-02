@@ -6,7 +6,7 @@ import { Heading, Typography } from '../typography'
 
 export const Hero = () => {
   return (
-    <Container py="16">
+    <Container py={{ base: '16', md: '24' }}>
       <Stack gap={{ base: '8', md: '12' }}>
         <Stack gap={{ base: '4', md: '6' }} maxW={{ lg: 'xl' }}>
           <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }}>

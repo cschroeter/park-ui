@@ -1,8 +1,10 @@
 'use client'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
+import { AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
+import { css, cx } from 'styled-system/css'
 import { Box, Container, HStack, styled } from 'styled-system/jsx'
-import { link } from 'styled-system/recipes'
+import { button, link } from 'styled-system/recipes'
 import { ColorModeButton } from '../color-mode-button'
 import { Logo } from '../icons/logo'
 import { FeedbackPopover } from '../marketing/feedback-popover'
@@ -47,7 +49,33 @@ export const Navbar = () => {
                 closeOnInteractOutside={false}
                 positioning={{ placement: 'bottom-end', gutter: 4 }}
               />
-              <ColorModeButton />
+              <HStack gap="0.5">
+                <NextLink
+                  href="https://twitter.com/grizzly_codes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter profile"
+                  className={cx(
+                    button({ variant: 'tertiary', size: 'sm' }),
+                    css({ px: '0', color: 'fg.mtued' }),
+                  )}
+                >
+                  <AiOutlineTwitter />
+                </NextLink>
+                <NextLink
+                  href="https://github.com/cschroeter/park-ui"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub repository"
+                  className={cx(
+                    button({ variant: 'tertiary', size: 'sm' }),
+                    css({ px: '0', color: 'fg.mtued' }),
+                  )}
+                >
+                  <AiOutlineGithub />
+                </NextLink>
+                <ColorModeButton />
+              </HStack>
             </HStack>
           </HStack>
         </Container>
