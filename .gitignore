@@ -41,3 +41,5 @@ styled-system
 public/sitemap*.xml
 
 .env
+dist
+*.tgz

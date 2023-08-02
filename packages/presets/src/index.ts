@@ -1,4 +1,5 @@
 import { definePreset } from '@pandacss/dev'
+import type { Preset } from '@pandacss/types'
 import { conditions } from './conditions'
 import { globalCss } from './global-css'
 import { keyframes } from './keyframes'
@@ -7,7 +8,7 @@ import { semanticTokens } from './semantic-tokens'
 import { textStyles } from './text-styles'
 import { tokens } from './tokens'
 
-export default definePreset({
+const preset: Preset = definePreset({
   theme: {
     extend: {
       recipes,
@@ -20,3 +21,5 @@ export default definePreset({
   conditions,
   globalCss,
 })
+
+export default preset
