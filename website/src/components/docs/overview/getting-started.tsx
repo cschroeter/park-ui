@@ -5,7 +5,7 @@ import { link } from 'styled-system/recipes'
 import { Heading, Typography } from '~/components/typography'
 import { Code } from '../code'
 import { Command } from '../command'
-import { appFolder, copyButton, pandaConfig, useButton } from './code-examples'
+import { copyButton, pandaConfig, rootLayout, useButton } from './code-examples'
 import { article } from './introduction'
 
 export const GettingStarted = async () => {
@@ -44,9 +44,13 @@ export const GettingStarted = async () => {
         <Command command="npm install @park-ui/presets" />
         <Typography color="fg.muted">
           After you've installed the presets, you'll need to add it to your Panda configuration file
-          like shown below:
+          along with your preferred <pre>jsxFramework</pre> like shown below:
         </Typography>
         <Code code={pandaConfig}></Code>
+        <Typography color="fg.muted">
+          Make sure to run <pre>panda codegen</pre> after you've added the presets to your Panda
+          configuration file.
+        </Typography>
         <Typography color="fg.muted">
           <em>Please note:</em> You also have the option to manually copy the recipes for specific
           components, which are provided alongside the code examples. This approach gives you more
@@ -54,11 +58,14 @@ export const GettingStarted = async () => {
           more effort on your part.
         </Typography>
       </Step>
-      <Step number="4" title="Project Structure">
+      <Step number="4" title="Setup Your Font Family">
         <Typography color="fg.muted">
-          A typical Next.js project structure using this setup would look something like this:
+          By default, Park UI usees Plus Jakarta Sans. However, you are free to use any font family
+          that aligns with your needs, as long as it is mapped to the <pre>--font-body</pre>{' '}
+          variable. The example below illustrates how to add a font family to the body element
+          within the Next.js framework.
         </Typography>
-        <Code code={appFolder} lang="zsh" />
+        <Code code={rootLayout} lang="zsh" />
       </Step>
       <Step number="5" title="Add Your First Component">
         <Typography color="fg.muted">
