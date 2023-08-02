@@ -1,5 +1,4 @@
-export const rootLayout = `.
-import type { Metadata } from "next";
+export const rootLayout = `import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
 import "./global.css";
