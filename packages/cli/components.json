@@ -1,0 +1,380 @@
+[
+  {
+    "accordion": {
+      "compoents": {
+        "Accordion": "root",
+        "AccordionContent": "content",
+        "AccordionItem": "item",
+        "AccordionTrigger": "trigger"
+      }
+    }
+  },
+  {
+    "avatar": {
+      "compoents": { "Avatar": "root", "AvatarFallback": "fallback", "AvatarImage": "image" }
+    }
+  },
+  {
+    "carousel": {
+      "compoents": {
+        "Carousel": "root",
+        "CarouselControl": "control",
+        "CarouselIndicator": "indicator",
+        "CarouselIndicatorGroup": "indicatorGroup",
+        "CarouselNextSlideTrigger": "",
+        "CarouselPrevSlideTrigger": "",
+        "CarouselSlide": "slide",
+        "CarouselSlideGroup": "slideGroup",
+        "CarouselViewport": "viewport"
+      },
+      "unmappedParts": ["previousTrigger", "nextTrigger"]
+    }
+  },
+  {
+    "checkbox": {
+      "compoents": {
+        "Checkbox": "root",
+        "CheckboxControl": "control",
+        "CheckboxInput": "input",
+        "CheckboxLabel": "label"
+      }
+    }
+  },
+  {
+    "color-picker": {
+      "compoents": {
+        "ColorPicker": "",
+        "ColorPickerArea": "area",
+        "ColorPickerAreaGradient": "areaGradient",
+        "ColorPickerAreaThumb": "areaThumb",
+        "ColorPickerChannelInput": "channelInput",
+        "ColorPickerChannelSliderBackground": "",
+        "ColorPickerChannelSliderThumb": "channelSliderThumb",
+        "ColorPickerChannelSliderTrack": "channelSliderTrack",
+        "ColorPickerContent": "content",
+        "ColorPickerEyeDropperTrigger": "",
+        "ColorPickerSwatch": "swatch",
+        "ColorPickerSwatchBackground": "",
+        "ColorPickerSwatchGroup": "swatchGroup"
+      },
+      "unmappedParts": ["channelSliderTrackBg", "eyeDropTrigger", "swatchBg", "label"]
+    }
+  },
+  {
+    "combobox": {
+      "compoents": {
+        "Combobox": "root",
+        "ComboboxContent": "content",
+        "ComboboxControl": "control",
+        "ComboboxInput": "input",
+        "ComboboxLabel": "label",
+        "ComboboxOption": "option",
+        "ComboboxPositioner": "positioner",
+        "ComboboxTrigger": "trigger"
+      },
+      "unmappedParts": ["clearTrigger", "optionGroup"]
+    }
+  },
+  {
+    "date-picker": {
+      "compoents": {
+        "DatePicker": "",
+        "DatePickerClearTrigger": "clearTrigger",
+        "DatePickerColumnHeader": "columnHeader",
+        "DatePickerContent": "content",
+        "DatePickerControl": "control",
+        "DatePickerDayCell": "",
+        "DatePickerDayCellTrigger": "cellTrigger",
+        "DatePickerGrid": "grid",
+        "DatePickerInput": "input",
+        "DatePickerMonthCell": "",
+        "DatePickerMonthCellTrigger": "cellTrigger",
+        "DatePickerMonthSelect": "monthSelect",
+        "DatePickerNextTrigger": "nextTrigger",
+        "DatePickerPrevTrigger": "prevTrigger",
+        "DatePickerRow": "row",
+        "DatePickerRowGroup": "rowGroup",
+        "DatePickerRowHeader": "header",
+        "DatePickerTrigger": "trigger",
+        "DatePickerViewTrigger": "viewTrigger",
+        "DatePickerYearCell": "",
+        "DatePickerYearCellTrigger": "cellTrigger",
+        "DatePickerYearSelect": "yearSelect"
+      },
+      "unmappedParts": ["label"]
+    }
+  },
+  {
+    "dialog": {
+      "compoents": {
+        "Dialog": "",
+        "DialogBackdrop": "backdrop",
+        "DialogCloseTrigger": "closeTrigger",
+        "DialogContainer": "container",
+        "DialogContent": "content",
+        "DialogDescription": "description",
+        "DialogTitle": "title",
+        "DialogTrigger": "trigger"
+      }
+    }
+  },
+  {
+    "editable": {
+      "compoents": {
+        "Editable": "root",
+        "EditableArea": "area",
+        "EditableCancelTrigger": "cancelTrigger",
+        "EditableControl": "control",
+        "EditableEditTrigger": "editTrigger",
+        "EditableInput": "input",
+        "EditableLabel": "label",
+        "EditablePreview": "preview",
+        "EditableSubmitTrigger": "submitTrigger"
+      }
+    }
+  },
+  {
+    "hover-card": {
+      "compoents": {
+        "HoverCard": "",
+        "HoverCardArrow": "arrow",
+        "HoverCardArrowTip": "arrowTip",
+        "HoverCardContent": "content",
+        "HoverCardPositioner": "positioner",
+        "HoverCardTrigger": "trigger"
+      }
+    }
+  },
+  {
+    "menu": {
+      "compoents": {
+        "Menu": "",
+        "MenuArrow": "arrow",
+        "MenuArrowTip": "arrowTip",
+        "MenuContent": "content",
+        "MenuContextTrigger": "contextTrigger",
+        "MenuItem": "item",
+        "MenuItemGroup": "itemGroup",
+        "MenuItemGroupLabel": "itemGroupLabel",
+        "MenuOptionItem": "optionItem",
+        "MenuPositioner": "positioner",
+        "MenuSeparator": "separator",
+        "MenuTrigger": "trigger",
+        "MenuTriggerItem": "triggerItem"
+      }
+    }
+  },
+  {
+    "number-input": {
+      "compoents": {
+        "NumberInput": "input",
+        "NumberInputControl": "control",
+        "NumberInputDecrementTrigger": "decrementTrigger",
+        "NumberInputField": "",
+        "NumberInputIncrementTrigger": "incrementTrigger",
+        "NumberInputLabel": "label",
+        "NumberInputScrubber": "scrubber"
+      },
+      "unmappedParts": ["root"]
+    }
+  },
+  {
+    "pagination": {
+      "compoents": {
+        "Pagination": "root",
+        "PaginationEllipsis": "ellipsis",
+        "PaginationList": "list",
+        "PaginationListItem": "listItem",
+        "PaginationNextPageTrigger": "nextPageTrigger",
+        "PaginationPageTrigger": "pageTrigger",
+        "PaginationPrevPageTrigger": "prevPageTrigger"
+      }
+    }
+  },
+  {
+    "pin-input": {
+      "compoents": {
+        "PinInput": "input",
+        "PinInputControl": "control",
+        "PinInputField": "",
+        "PinInputLabel": "label"
+      },
+      "unmappedParts": ["hiddenInput", "root"]
+    }
+  },
+  {
+    "popover": {
+      "compoents": {
+        "Popover": "",
+        "PopoverAnchor": "anchor",
+        "PopoverArrow": "arrow",
+        "PopoverArrowTip": "arrowTip",
+        "PopoverCloseTrigger": "closeTrigger",
+        "PopoverContent": "content",
+        "PopoverDescription": "description",
+        "PopoverPositioner": "positioner",
+        "PopoverTitle": "title",
+        "PopoverTrigger": "trigger"
+      }
+    }
+  },
+  {
+    "radio-group": {
+      "compoents": {
+        "Radio": "radio",
+        "RadioControl": "radioControl",
+        "RadioGroup": "",
+        "RadioGroupLabel": "label",
+        "RadioInput": "radioInput",
+        "RadioLabel": "radioLabel"
+      },
+      "unmappedParts": ["indicator", "root"]
+    }
+  },
+  {
+    "range-slider": {
+      "compoents": {
+        "RangeSlider": "",
+        "RangeSliderControl": "control",
+        "RangeSliderLabel": "label",
+        "RangeSliderMarker": "marker",
+        "RangeSliderMarkerGroup": "markerGroup",
+        "RangeSliderOutput": "output",
+        "RangeSliderRange": "range",
+        "RangeSliderThumb": "thumb",
+        "RangeSliderTrack": "track"
+      },
+      "unmappedParts": ["hiddenInput", "root"]
+    }
+  },
+  {
+    "rating-group": {
+      "compoents": {
+        "Rating": "rating",
+        "RatingGroup": "",
+        "RatingGroupControl": "control",
+        "RatingGroupLabel": "label"
+      },
+      "unmappedParts": ["hiddenInput", "root"]
+    }
+  },
+  {
+    "segment-group": {
+      "compoents": {
+        "Segment": "root",
+        "SegmentControl": "",
+        "SegmentGroup": "",
+        "SegmentGroupLabel": "label",
+        "SegmentIndicator": "indicator",
+        "SegmentInput": "",
+        "SegmentLabel": "label"
+      },
+      "unmappedParts": ["radioControl", "radioLabel", "radioInput", "radio"]
+    }
+  },
+  {
+    "select": {
+      "compoents": {
+        "Select": "",
+        "SelectContent": "content",
+        "SelectLabel": "label",
+        "SelectOption": "option",
+        "SelectOptionGroup": "optionGroup",
+        "SelectOptionGroupLabel": "optionGroupLabel",
+        "SelectPositioner": "positioner",
+        "SelectTrigger": "trigger"
+      },
+      "unmappedParts": ["hiddenSelect"]
+    }
+  },
+  {
+    "slider": {
+      "compoents": {
+        "Slider": "root",
+        "SliderControl": "control",
+        "SliderLabel": "label",
+        "SliderMarker": "marker",
+        "SliderMarkerGroup": "markerGroup",
+        "SliderOutput": "output",
+        "SliderRange": "range",
+        "SliderThumb": "thumb",
+        "SliderTrack": "track"
+      },
+      "unmappedParts": ["hiddenInput"]
+    }
+  },
+  {
+    "splitter": {
+      "compoents": {
+        "Splitter": "root",
+        "SplitterPanel": "panel",
+        "SplitterResizeTrigger": "resizeTrigger"
+      },
+      "unmappedParts": ["toggleTrigger"]
+    }
+  },
+  {
+    "switch": {
+      "compoents": {
+        "Switch": "root",
+        "SwitchControl": "control",
+        "SwitchInput": "input",
+        "SwitchLabel": "label",
+        "SwitchThumb": "thumb"
+      }
+    }
+  },
+  {
+    "tabs": {
+      "compoents": {
+        "TabContent": "content",
+        "TabIndicator": "indicator",
+        "TabList": "tablist",
+        "TabTrigger": "trigger",
+        "Tabs": "root"
+      },
+      "unmappedParts": ["contentGroup"]
+    }
+  },
+  {
+    "tags-input": {
+      "compoents": {
+        "Tag": "tag",
+        "TagDeleteTrigger": "tagDeleteTrigger",
+        "TagInput": "tagInput",
+        "TagsInput": "input",
+        "TagsInputClearTrigger": "clearTrigger",
+        "TagsInputControl": "control",
+        "TagsInputField": "",
+        "TagsInputLabel": "label"
+      },
+      "unmappedParts": ["hiddenInput", "root"]
+    }
+  },
+  {
+    "tooltip": {
+      "compoents": {
+        "Tooltip": "",
+        "TooltipArrow": "arrow",
+        "TooltipArrowTip": "arrowTip",
+        "TooltipContent": "content",
+        "TooltipPositioner": "positioner",
+        "TooltipTrigger": "trigger"
+      },
+      "unmappedParts": ["label"]
+    }
+  },
+  {
+    "toast": {
+      "compoents": {
+        "Toast": "root",
+        "ToastCloseTrigger": "closeTrigger",
+        "ToastDescription": "description",
+        "ToastGroup": "group",
+        "ToastPlacements": "",
+        "ToastProvider": "",
+        "ToastTitle": "title"
+      }
+    }
+  }
+]
