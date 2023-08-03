@@ -54,7 +54,7 @@ export const GettingStarted = async () => {
         <Step number="2" title="Install Ark UI">
           <Typography color="fg.muted">
             The first step is to install{' '}
-            <Link href="https:/ark-ui.com" target="_blank" className={link()}>
+            <Link href="https://ark-ui.com" target="_blank" className={link()}>
               Ark UI
             </Link>
             . Ark UI is a headless component library that forms the foundation for most components.
