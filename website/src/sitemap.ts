@@ -25,7 +25,7 @@ export const sitemap = [
       },
       {
         title: 'About',
-        description: 'Driven by phenomenal open source initiatives.',
+        description: 'Driven by amazing open source projects.',
         href: '/docs/overview/about',
       },
     ],
