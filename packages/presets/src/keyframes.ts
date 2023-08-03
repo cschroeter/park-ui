@@ -9,6 +9,14 @@ export const keyframes = defineKeyframes({
     from: { opacity: '1' },
     to: { opacity: '0' },
   },
+  'slide-in': {
+    '0%': { opacity: '0', transform: 'translateY(64px)' },
+    '100%': { opacity: '1', transform: 'translateY(0)' },
+  },
+  'slide-out': {
+    '0%': { opacity: '1', transform: 'translateY(0)' },
+    '100%': { opacity: '0', transform: 'translateY(64px)' },
+  },
 
   fadeIn: {
     '0%': { opacity: '0', transform: 'translateY(-4px)' },
@@ -25,13 +33,5 @@ export const keyframes = defineKeyframes({
   slideOutToBottom: {
     '0%': { opacity: '1', transform: 'translateY(0)' },
     '100%': { opacity: '0', transform: 'translateY(4px)' },
-  },
-  slideIn: {
-    '0%': { opacity: '0', transform: 'translateY(64px)' },
-    '100%': { opacity: '1', transform: 'translateY(0)' },
-  },
-  slideOut: {
-    '0%': { opacity: '1', transform: 'translateY(0)' },
-    '100%': { opacity: '0', transform: 'translateY(64px)' },
   },
 })

@@ -40,10 +40,10 @@ export const dialog = defineRecipe({
       minW: 'sm',
       position: 'relative',
       _open: {
-        animation: 'slideIn 0.25s ease-out',
+        animation: 'dialog-in',
       },
       _closed: {
-        animation: 'slideOut 0.2s ease-in',
+        animation: 'dialog-out',
       },
     },
     title: {
