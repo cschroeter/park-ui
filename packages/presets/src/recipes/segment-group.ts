@@ -41,9 +41,9 @@ export const segmentGroup = defineRecipe({
       color: 'fg.subtle',
       cursor: 'pointer',
       fontWeight: 'medium',
-      transitionDuration: 'fast',
+      transitionDuration: 'normal',
       transitionProperty: 'color',
-      transitionTimingFunction: 'ease-in-out',
+      transitionTimingFunction: 'default',
       _hover: {
         color: 'fg.muted',
       },

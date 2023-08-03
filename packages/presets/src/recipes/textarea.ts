@@ -12,7 +12,7 @@ export const textarea = defineRecipe({
     minWidth: 0,
     outline: 0,
     position: 'relative',
-    transitionDuration: 'fast',
+    transitionDuration: 'normal',
     transitionProperty: 'border-color, box-shadow, outline',
     resize: 'none',
     width: 'full',

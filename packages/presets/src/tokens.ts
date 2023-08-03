@@ -24,6 +24,9 @@ export const tokens = defineTokens({
       950: { value: '#0a0a0a' },
     },
   },
+  easings: {
+    default: { value: 'cubic-bezier(0.2, 0.0, 0, 1.0)' },
+  },
   zIndex: {
     hide: {
       value: -1,

@@ -25,7 +25,7 @@ export const accordion = defineRecipe({
       gridTemplateRows: '0fr',
       transitionProperty: 'grid-template-rows, padding-bottom',
       transitionDuration: 'normal',
-      transitionTimingFunction: 'ease-in-out',
+      transitionTimingFunction: 'default',
       _open: {
         gridTemplateRows: '1fr',
       },

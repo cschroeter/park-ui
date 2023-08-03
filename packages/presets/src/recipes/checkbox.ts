@@ -23,8 +23,9 @@ export const checkbox = defineRecipe({
       cursor: 'pointer',
       display: 'flex',
       justifyContent: 'center',
-      transitionDuration: 'fast',
-      transitionProperty: 'border-color, background-color',
+      transitionDuration: 'normal',
+      transitionProperty: 'border-color, background',
+      transitionTimingFunction: 'default',
       _hover: {
         background: 'bg.subtle',
       },

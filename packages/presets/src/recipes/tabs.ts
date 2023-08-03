@@ -27,9 +27,9 @@ export const tabs = defineRecipe({
       position: 'relative',
     },
     trigger: {
-      transitionDuration: 'fast',
+      transitionDuration: 'normal',
       transitionProperty: 'color',
-      transitionTimingFunction: 'ease-in-out',
+      transitionTimingFunction: 'default',
       cursor: 'pointer',
       color: 'fg.subtle',
       fontWeight: 'semibold',

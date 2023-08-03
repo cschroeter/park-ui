@@ -19,8 +19,9 @@ export const radioGroup = defineRecipe({
       borderColor: 'border.emphasized',
       borderRadius: 'full',
       borderWidth: '1px',
-      transitionDuration: 'fast',
-      transitionProperty: 'border-color, background-color',
+      transitionDuration: 'normal',
+      transitionProperty: 'background',
+      transitionTimingFunction: 'default',
       _hover: {
         background: 'bg.subtle',
       },

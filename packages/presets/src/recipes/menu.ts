@@ -12,8 +12,8 @@ const itemStyle = {
   fontWeight: 'medium',
   textStyle: 'sm',
   transitionDuration: 'fast',
-  transitionProperty: 'background-color, color',
-  transitionTimingFunction: 'ease-out',
+  transitionProperty: 'background, color',
+  transitionTimingFunction: 'default',
   _hover: {
     color: 'fg.default',
     background: 'bg.subtle',

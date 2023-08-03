@@ -12,9 +12,9 @@ export const ratingGroup = defineRecipe({
     },
     rating: {
       cursor: 'pointer',
-      transitionDuration: 'faster',
+      transitionDuration: 'normal',
       transitionProperty: 'color, fill',
-      transitionTimingFunction: 'ease-out',
+      transitionTimingFunction: 'default',
       _readOnly: {
         cursor: 'default',
       },
