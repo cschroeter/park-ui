@@ -35,9 +35,6 @@ importers:
       '@clack/prompts':
         specifier: 0.6.3
         version: 0.6.3
-      '@types/fs-extra':
-        specifier: 11.0.1
-        version: 11.0.1
       fs-extra:
         specifier: 11.1.1
         version: 11.1.1
@@ -45,6 +42,9 @@ importers:
       '@ark-ui/react':
         specifier: 0.10.0
         version: 0.10.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+      '@types/fs-extra':
+        specifier: 11.0.1
+        version: 11.0.1
       tsx:
         specifier: 3.12.7
         version: 3.12.7
@@ -1885,7 +1885,7 @@ packages:
     dependencies:
       '@types/jsonfile': 6.1.1
       '@types/node': 18.16.19
-    dev: false
+    dev: true
 
   /@types/hast@2.3.5:
     resolution: {integrity: sha512-SvQi0L/lNpThgPoleH53cdjB3y9zpLlVjRbqB3rH8hx1jiRSBGAhyjV3H+URFjNVRqt2EdYNrbZE5IsGlNfpRg==}
@@ -1911,7 +1911,7 @@ packages:
     resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
     dependencies:
       '@types/node': 18.16.19
-    dev: false
+    dev: true
 
   /@types/mdast@3.0.12:
     resolution: {integrity: sha512-DT+iNIRNX884cx0/Q1ja7NyUPpZuv0KPyL5rGNxm1WC1OtHstl7n4Jb7nk+xacNShQMbczJjt8uFzznpp6kYBg==}
