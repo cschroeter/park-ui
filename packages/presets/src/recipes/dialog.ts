@@ -8,16 +8,20 @@ export const dialog = defineRecipe({
   description: 'A dialog style',
   base: parts({
     backdrop: {
-      background: 'neutral.950',
-      opacity: '0.7',
+      backdropFilter: 'blur(4px)',
+      background: {
+        // TODO: replace when supported in Panda: bg.canvas/80
+        base: 'rgba(250, 250, 250, 0.8)',
+        _dark: 'rgba(10, 10, 10, 0.8)',
+      },
       inset: '0',
       position: 'fixed',
       zIndex: 'overlay',
       _open: {
-        animation: 'backdropIn 0.25s ease-out',
+        animation: 'backdrop-in',
       },
       _closed: {
-        animation: 'backdropOut 0.2s ease-in',
+        animation: 'backdrop-out',
       },
     },
     container: {
@@ -32,6 +36,7 @@ export const dialog = defineRecipe({
       background: 'bg.default',
       borderRadius: 'lg',
       borderWidth: '1px',
+      boxShadow: 'lg',
       minW: 'sm',
       position: 'relative',
       _open: {

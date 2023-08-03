@@ -27,6 +27,14 @@ export const tokens = defineTokens({
   easings: {
     default: { value: 'cubic-bezier(0.2, 0.0, 0, 1.0)' },
   },
+  animations: {
+    'backdrop-in': {
+      value: 'fade-in 250ms var(--easings-default)',
+    },
+    'backdrop-out': {
+      value: 'fade-out 200ms var(--easings-default)',
+    },
+  },
   zIndex: {
     hide: {
       value: -1,

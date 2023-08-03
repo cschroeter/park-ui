@@ -1,6 +1,15 @@
 import { defineKeyframes } from '@pandacss/dev'
 
 export const keyframes = defineKeyframes({
+  'fade-in': {
+    from: { opacity: '0' },
+    to: { opacity: '1' },
+  },
+  'fade-out': {
+    from: { opacity: '1' },
+    to: { opacity: '0' },
+  },
+
   fadeIn: {
     '0%': { opacity: '0', transform: 'translateY(-4px)' },
     '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -16,14 +25,6 @@ export const keyframes = defineKeyframes({
   slideOutToBottom: {
     '0%': { opacity: '1', transform: 'translateY(0)' },
     '100%': { opacity: '0', transform: 'translateY(4px)' },
-  },
-  backdropIn: {
-    '0%': { opacity: '0' },
-    '100%': { opacity: '0.7' },
-  },
-  backdropOut: {
-    '0%': { opacity: '0.7' },
-    '100%': { opacity: '0' },
   },
   slideIn: {
     '0%': { opacity: '0', transform: 'translateY(64px)' },
