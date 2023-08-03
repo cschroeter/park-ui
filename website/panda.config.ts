@@ -16,6 +16,7 @@ export default defineConfig({
       button: [{ variant: ['*'], size: ['*'] }],
       carousel: [{ size: ['*'] }],
       checkbox: [{ size: ['*'] }],
+      drawer: [{ placement: ['*'] }],
       input: [{ size: ['*'] }],
       label: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],

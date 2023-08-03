@@ -137,17 +137,18 @@ export const sitemap = [
         title: 'Dialog',
         description: 'A modal window that appears on top of the main content.',
         href: '/docs/components/dialog',
-        defaultProps: {
-          // closeOnEsc: true,
-          // closeOnOutsideClick: true,
-          // preventScroll: true,
-        },
+        defaultProps: {},
       },
       {
         title: 'Drawer',
         description: 'A panel that slides in from the edge of the screen.',
         href: '/docs/components/drawer',
-        defaultProps: {},
+        defaultProps: {
+          placement: {
+            options: ['right', 'left'],
+            defaultValue: 'right',
+          },
+        },
       },
       {
         title: 'Editable',

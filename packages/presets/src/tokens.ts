@@ -42,11 +42,17 @@ export const tokens = defineTokens({
     'dialog-out': {
       value: 'slide-out 200ms var(--easings-emphasized-out)',
     },
-    'drawer-in': {
+    'drawer-in-left': {
       value: 'slide-in-left 400ms var(--easings-emphasized-in)',
     },
-    'drawer-out': {
+    'drawer-out-left': {
       value: 'slide-out-left 200ms var(--easings-emphasized-out)',
+    },
+    'drawer-in-right': {
+      value: 'slide-in-right 400ms var(--easings-emphasized-in)',
+    },
+    'drawer-out-right': {
+      value: 'slide-out-right 200ms var(--easings-emphasized-out)',
     },
   },
   zIndex: {

@@ -17,7 +17,6 @@ export const keyframes = defineKeyframes({
     '0%': { opacity: '1', transform: 'translateY(0)' },
     '100%': { opacity: '0', transform: 'translateY(64px)' },
   },
-
   'slide-in-left': {
     '0%': { transform: 'translateX(-100%)' },
     '100%': { transform: 'translateX(0%)' },
@@ -25,6 +24,14 @@ export const keyframes = defineKeyframes({
   'slide-out-left': {
     '0%': { transform: 'translateX(0%)' },
     '100%': { transform: 'translateX(-100%)' },
+  },
+  'slide-in-right': {
+    '0%': { transform: 'translateX(100%)' },
+    '100%': { transform: 'translateX(0%)' },
+  },
+  'slide-out-right': {
+    '0%': { transform: 'translateX(0%)' },
+    '100%': { transform: 'translateX(100%)' },
   },
 
   fadeIn: {

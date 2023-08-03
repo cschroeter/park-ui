@@ -164,28 +164,11 @@ export const Playground = (props: Props) => {
         <Stack gap="6" py="5" px="4">
           {Object.entries(defaultProps || {}).map(([key, value]) =>
             match(value)
-              .with(Pattern.string, () => <span />)
-              .with(Pattern.number, () => <span />)
-              .with(Pattern.boolean, (x) => (
-                <span />
-                // <Switch
-                //   key={key}
-                //   checked={x}
-                //   onChange={(e) => {
-                //     console.log('call onchagne', state)
-                //     setState({ ...state, [key]: e.checked })
-                //   }}
-                //   size="sm"
-                // >
-                //   <SwitchControl>
-                //     <SwitchInput />
-                //     <SwitchThumb />
-                //   </SwitchControl>
-                //   <SwitchLabel>{key}</SwitchLabel>
-                // </Switch>
-              ))
+              .with(Pattern.string, () => <span key={key} />)
+              .with(Pattern.number, () => <span key={key} />)
+              .with(Pattern.boolean, (x) => <span key={key} />)
               .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
-                <Stack gap="3">
+                <Stack gap="3" key={key}>
                   <Typography textStyle="sm" fontWeight="medium" textTransform="capitalize">
                     {key}
                   </Typography>

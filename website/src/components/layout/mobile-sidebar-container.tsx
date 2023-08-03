@@ -1,52 +1,50 @@
 'use client'
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContainer,
-  DialogContent,
-  DialogTrigger,
-  Portal,
-} from '@ark-ui/react'
+
+import { Portal } from '@ark-ui/react'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, type PropsWithChildren } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
-import { Box, Stack } from 'styled-system/jsx'
-import { drawer } from 'styled-system/recipes'
+import { Stack } from 'styled-system/jsx'
+import {
+  Drawer,
+  DrawerBackdrop,
+  DrawerCloseTrigger,
+  DrawerContainer,
+  DrawerContent,
+  DrawerTrigger,
+} from '../drawer'
 import { IconButton } from '../icon-button'
 import { Logo } from '../icons/logo'
 
 export const MobileSidebarContainer = (props: PropsWithChildren) => {
   return (
-    <Dialog>
+    <Drawer>
       {({ close }) => (
         <>
-          <DialogTrigger asChild>
+          <DrawerTrigger asChild>
             <IconButton icon={<FiMenu />} aria-label="Open Menu" variant="tertiary" size="sm" />
-          </DialogTrigger>
+          </DrawerTrigger>
           <RouteChangeHandler close={close} />
           <Portal>
-            <DialogBackdrop className={drawer()} />
-            <DialogContainer className={drawer()}>
-              <DialogContent>
-                <Box position="absolute" top="3.5" right="3.5">
-                  <DialogCloseTrigger asChild>
-                    <IconButton icon={<FiX />} aria-label="Close Menu" variant="tertiary" />
-                  </DialogCloseTrigger>
-                </Box>
-                <Stack gap="8" mt="-2px">
+            <DrawerBackdrop />
+            <DrawerContainer placement="left">
+              <DrawerContent>
+                <Stack gap="8" mt="-0.5" align="start">
                   <NextLink href="/">
                     <Logo />
                   </NextLink>
                   {props.children}
                 </Stack>
-              </DialogContent>
-            </DialogContainer>
+                <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
+                  <IconButton icon={<FiX />} aria-label="Close Sidebar" variant="tertiary" />
+                </DrawerCloseTrigger>
+              </DrawerContent>
+            </DrawerContainer>
           </Portal>
         </>
       )}
-    </Dialog>
+    </Drawer>
   )
 }
 

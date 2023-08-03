@@ -1,34 +1,62 @@
 import { Portal } from '@ark-ui/react'
+import { FiArrowRight, FiX } from 'react-icons/fi'
+import { Stack } from 'styled-system/jsx'
+import type { DrawerVariantProps } from 'styled-system/recipes'
 import { Button } from '~/components/button'
 import {
-  Dialog,
-  DialogBackdrop,
-  DialogContainer,
-  DialogContent,
-  DialogTrigger,
+  Drawer,
+  DrawerBackdrop,
+  DrawerCloseTrigger,
+  DrawerContainer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerTitle,
+  DrawerTrigger,
 } from '~/components/drawer'
+import { IconButton } from '~/components/icon-button'
+import { Input } from '~/components/input'
+import { Label } from '~/components/label'
 
-export const DrawerDemo = () => {
+export const DrawerDemo = (props: DrawerVariantProps) => {
   return (
-    <Dialog>
-      {({ close }) => (
-        <>
-          <DialogTrigger asChild>
-            <Button variant="secondary">Open Drawer</Button>
-          </DialogTrigger>
-          <Portal>
-            <DialogBackdrop />
-            <DialogContainer>
-              <DialogContent>
-                <h1>Drawer Content</h1>
-                <Button variant="secondary" onClick={close}>
-                  Close Drawer
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button variant="secondary">Open Drawer</Button>
+      </DrawerTrigger>
+      <Portal>
+        <DrawerBackdrop />
+        <DrawerContainer {...props}>
+          <DrawerContent>
+            <Stack gap="6">
+              <Stack gap="1">
+                <DrawerTitle mb="1">Drawer Heading</DrawerTitle>
+                <DrawerDescription>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                </DrawerDescription>
+              </Stack>
+              <Stack gap="4">
+                <Stack gap="1.5">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" placeholder="Your name" />
+                </Stack>
+                <Stack gap="1.5">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" placeholder="Your e-mail" />
+                </Stack>
+              </Stack>
+              <DrawerCloseTrigger asChild>
+                <Button>
+                  Continue <FiArrowRight />
                 </Button>
-              </DialogContent>
-            </DialogContainer>
-          </Portal>
-        </>
-      )}
-    </Dialog>
+              </DrawerCloseTrigger>
+            </Stack>
+
+            <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
+              <IconButton icon={<FiX />} aria-label="Close Drawer" variant="tertiary" />
+            </DrawerCloseTrigger>
+          </DrawerContent>
+        </DrawerContainer>
+      </Portal>
+    </Drawer>
   )
 }

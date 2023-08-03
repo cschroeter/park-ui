@@ -1,6 +1,6 @@
 import { Portal } from '@ark-ui/react'
 import { FiX } from 'react-icons/fi'
-import { Box, Stack } from 'styled-system/jsx'
+import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/button'
 import {
   Dialog,
@@ -31,20 +31,16 @@ export const DialogDemo = () => {
               </Stack>
               <Stack gap="3" direction="row" width="full">
                 <DialogCloseTrigger asChild>
-                  <Button variant="secondary" size="md" width="full">
+                  <Button variant="secondary" width="full">
                     Cancel
                   </Button>
                 </DialogCloseTrigger>
-                <Button variant="primary" size="md" width="full">
-                  Confirm
-                </Button>
+                <Button width="full">Confirm</Button>
               </Stack>
             </Stack>
-            <Box position="absolute" top="2" right="2">
-              <DialogCloseTrigger asChild>
-                <IconButton icon={<FiX />} aria-label="Close Dialog" variant="tertiary" size="sm" />
-              </DialogCloseTrigger>
-            </Box>
+            <DialogCloseTrigger asChild position="absolute" top="2" right="2">
+              <IconButton icon={<FiX />} aria-label="Close Dialog" variant="tertiary" size="sm" />
+            </DialogCloseTrigger>
           </DialogContent>
         </DialogContainer>
       </Portal>
