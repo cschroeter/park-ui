@@ -50,7 +50,7 @@ export const generateComponent = async (moduleName: string) => {
 
   return {
     [moduleName]: {
-      compoents: map,
+      components: map,
       // parts,
       ...(unmappedParts.length > 0 && { unmappedParts }),
     },

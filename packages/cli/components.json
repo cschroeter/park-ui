@@ -1,7 +1,7 @@
 [
   {
     "accordion": {
-      "compoents": {
+      "components": {
         "Accordion": "root",
         "AccordionContent": "content",
         "AccordionItem": "item",
@@ -11,12 +11,12 @@
   },
   {
     "avatar": {
-      "compoents": { "Avatar": "root", "AvatarFallback": "fallback", "AvatarImage": "image" }
+      "components": { "Avatar": "root", "AvatarFallback": "fallback", "AvatarImage": "image" }
     }
   },
   {
     "carousel": {
-      "compoents": {
+      "components": {
         "Carousel": "root",
         "CarouselControl": "control",
         "CarouselIndicator": "indicator",
@@ -32,7 +32,7 @@
   },
   {
     "checkbox": {
-      "compoents": {
+      "components": {
         "Checkbox": "root",
         "CheckboxControl": "control",
         "CheckboxInput": "input",
@@ -42,7 +42,7 @@
   },
   {
     "color-picker": {
-      "compoents": {
+      "components": {
         "ColorPicker": "",
         "ColorPickerArea": "area",
         "ColorPickerAreaGradient": "areaGradient",
@@ -62,7 +62,7 @@
   },
   {
     "combobox": {
-      "compoents": {
+      "components": {
         "Combobox": "root",
         "ComboboxContent": "content",
         "ComboboxControl": "control",
@@ -77,7 +77,7 @@
   },
   {
     "date-picker": {
-      "compoents": {
+      "components": {
         "DatePicker": "",
         "DatePickerClearTrigger": "clearTrigger",
         "DatePickerColumnHeader": "columnHeader",
@@ -106,7 +106,7 @@
   },
   {
     "dialog": {
-      "compoents": {
+      "components": {
         "Dialog": "",
         "DialogBackdrop": "backdrop",
         "DialogCloseTrigger": "closeTrigger",
@@ -120,7 +120,7 @@
   },
   {
     "editable": {
-      "compoents": {
+      "components": {
         "Editable": "root",
         "EditableArea": "area",
         "EditableCancelTrigger": "cancelTrigger",
@@ -135,7 +135,7 @@
   },
   {
     "hover-card": {
-      "compoents": {
+      "components": {
         "HoverCard": "",
         "HoverCardArrow": "arrow",
         "HoverCardArrowTip": "arrowTip",
@@ -147,7 +147,7 @@
   },
   {
     "menu": {
-      "compoents": {
+      "components": {
         "Menu": "",
         "MenuArrow": "arrow",
         "MenuArrowTip": "arrowTip",
@@ -166,7 +166,7 @@
   },
   {
     "number-input": {
-      "compoents": {
+      "components": {
         "NumberInput": "input",
         "NumberInputControl": "control",
         "NumberInputDecrementTrigger": "decrementTrigger",
@@ -180,7 +180,7 @@
   },
   {
     "pagination": {
-      "compoents": {
+      "components": {
         "Pagination": "root",
         "PaginationEllipsis": "ellipsis",
         "PaginationList": "list",
@@ -193,7 +193,7 @@
   },
   {
     "pin-input": {
-      "compoents": {
+      "components": {
         "PinInput": "input",
         "PinInputControl": "control",
         "PinInputField": "",
@@ -204,7 +204,7 @@
   },
   {
     "popover": {
-      "compoents": {
+      "components": {
         "Popover": "",
         "PopoverAnchor": "anchor",
         "PopoverArrow": "arrow",
@@ -220,7 +220,7 @@
   },
   {
     "radio-group": {
-      "compoents": {
+      "components": {
         "Radio": "radio",
         "RadioControl": "radioControl",
         "RadioGroup": "",
@@ -233,7 +233,7 @@
   },
   {
     "range-slider": {
-      "compoents": {
+      "components": {
         "RangeSlider": "",
         "RangeSliderControl": "control",
         "RangeSliderLabel": "label",
@@ -249,7 +249,7 @@
   },
   {
     "rating-group": {
-      "compoents": {
+      "components": {
         "Rating": "rating",
         "RatingGroup": "",
         "RatingGroupControl": "control",
@@ -260,7 +260,7 @@
   },
   {
     "segment-group": {
-      "compoents": {
+      "components": {
         "Segment": "root",
         "SegmentControl": "",
         "SegmentGroup": "",
@@ -274,7 +274,7 @@
   },
   {
     "select": {
-      "compoents": {
+      "components": {
         "Select": "",
         "SelectContent": "content",
         "SelectLabel": "label",
@@ -289,7 +289,7 @@
   },
   {
     "slider": {
-      "compoents": {
+      "components": {
         "Slider": "root",
         "SliderControl": "control",
         "SliderLabel": "label",
@@ -305,7 +305,7 @@
   },
   {
     "splitter": {
-      "compoents": {
+      "components": {
         "Splitter": "root",
         "SplitterPanel": "panel",
         "SplitterResizeTrigger": "resizeTrigger"
@@ -315,7 +315,7 @@
   },
   {
     "switch": {
-      "compoents": {
+      "components": {
         "Switch": "root",
         "SwitchControl": "control",
         "SwitchInput": "input",
@@ -326,7 +326,7 @@
   },
   {
     "tabs": {
-      "compoents": {
+      "components": {
         "TabContent": "content",
         "TabIndicator": "indicator",
         "TabList": "tablist",
@@ -338,7 +338,7 @@
   },
   {
     "tags-input": {
-      "compoents": {
+      "components": {
         "Tag": "tag",
         "TagDeleteTrigger": "tagDeleteTrigger",
         "TagInput": "tagInput",
@@ -353,7 +353,7 @@
   },
   {
     "tooltip": {
-      "compoents": {
+      "components": {
         "Tooltip": "",
         "TooltipArrow": "arrow",
         "TooltipArrowTip": "arrowTip",
@@ -366,7 +366,7 @@
   },
   {
     "toast": {
-      "compoents": {
+      "components": {
         "Toast": "root",
         "ToastCloseTrigger": "closeTrigger",
         "ToastDescription": "description",
