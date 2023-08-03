@@ -11,9 +11,9 @@ export const input = defineRecipe({
     borderWidth: '1px',
     outline: 0,
     position: 'relative',
-    transitionDuration: 'fast',
-    transitionProperty: 'border-color, outline',
-    transitionTimingFunction: 'ease-in-out',
+    transitionDuration: 'normal',
+    transitionProperty: 'border-color, outline-color',
+    transitionTimingFunction: 'default',
     width: 'full',
     _disabled: {
       opacity: 0.4,

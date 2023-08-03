@@ -22,9 +22,9 @@ export const splitter = defineRecipe({
     },
     resizeTrigger: {
       borderRadius: 'full',
-      transitionDuration: 'fast',
+      transitionDuration: 'normal',
       transitionProperty: 'background-color',
-      transitionTimingFunction: 'ease-out',
+      transitionTimingFunction: 'default',
       outline: '0',
       background: 'bg.muted',
       _hover: {

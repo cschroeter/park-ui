@@ -20,9 +20,9 @@ export const tagsInput = defineRecipe({
       display: 'flex',
       flexWrap: 'wrap',
       outline: 0,
-      transitionDuration: 'fast',
+      transitionDuration: 'normal',
       transitionProperty: 'border-color, outline',
-      transitionTimingFunction: 'ease-out',
+      transitionTimingFunction: 'default',
       _focusWithin: {
         borderColor: {
           base: 'neutral.700',
@@ -45,7 +45,7 @@ export const tagsInput = defineRecipe({
       borderRadius: 'xs',
       borderWidth: '1px',
       color: 'fg.emphasized',
-      background: 'neutral.100',
+      background: 'bg.subtle',
       display: 'inline-flex',
       fontWeight: 'medium',
       _highlighted: {

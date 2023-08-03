@@ -8,20 +8,20 @@ export const dialog = defineRecipe({
   description: 'A dialog style',
   base: parts({
     backdrop: {
+      backdropFilter: 'blur(4px)',
       background: {
-        // TODO: replace when supported: bg.canvas/80
+        // TODO: replace when supported in Panda: bg.canvas/80
         base: 'rgba(250, 250, 250, 0.8)',
         _dark: 'rgba(10, 10, 10, 0.8)',
       },
-      backdropFilter: 'blur(4px)',
       inset: '0',
       position: 'fixed',
       zIndex: 'overlay',
       _open: {
-        animation: 'backdropIn 150ms cubic-bezier(0, 0, 0, 1)',
+        animation: 'backdrop-in',
       },
       _closed: {
-        animation: 'backdropOut 150ms cubic-bezier(0.3, 0, 1, 1)',
+        animation: 'backdrop-out',
       },
     },
     container: {
@@ -40,17 +40,11 @@ export const dialog = defineRecipe({
       minW: 'sm',
       position: 'relative',
       _open: {
-        animation: 'slideIn 500ms cubic-bezier(0.05, 0.7, 0.1, 1.0)',
+        animation: 'dialog-in',
       },
       _closed: {
-        animation: 'slideOut 200ms cubic-bezier(0.3, 0.0, 0.8, 0.15)',
+        animation: 'dialog-out',
       },
-      // _open: {
-      //   animation: 'slideIn 0.25s ease-out',
-      // },
-      // _closed: {
-      //   animation: 'slideOut 0.2s ease-in',
-      // },
     },
     title: {
       fontWeight: 'semibold',

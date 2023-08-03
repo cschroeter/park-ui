@@ -45,11 +45,14 @@ export const combobox = defineRecipe({
       },
     },
     option: {
-      display: 'flex',
       alignItems: 'center',
       borderRadius: 'xs',
       cursor: 'pointer',
+      display: 'flex',
       fontWeight: 'medium',
+      transitionDuration: 'fast',
+      transitionProperty: 'background, color',
+      transitionTimingFunction: 'default',
       _hover: {
         background: 'bg.subtle',
       },

@@ -5,9 +5,9 @@ export const link = defineRecipe({
   description: 'A link style',
   base: {
     color: 'fg.subtle',
-    transitionDuration: 'fast',
+    transitionDuration: 'normal',
     transitionProperty: 'color, font-weight',
-    transitionTimingFunction: 'ease-out',
+    transitionTimingFunction: 'default',
   },
   defaultVariants: {
     variant: 'text',

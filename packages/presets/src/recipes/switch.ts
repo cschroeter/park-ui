@@ -21,7 +21,7 @@ export const switchRecipe = defineRecipe({
       flexShrink: '0',
       transitionDuration: 'normal',
       transitionProperty: 'background-color',
-      transitionTimingFunction: 'ease-out',
+      transitionTimingFunction: 'default',
       _checked: {
         background: 'bg.accent',
       },
@@ -37,7 +37,7 @@ export const switchRecipe = defineRecipe({
       boxShadow: 'xs',
       transitionDuration: 'normal',
       transitionProperty: 'transform, background-color',
-      transitionTimingFunction: 'ease-out',
+      transitionTimingFunction: 'default',
       zIndex: '1',
       _checked: {
         transform: 'translateX(100%)',
