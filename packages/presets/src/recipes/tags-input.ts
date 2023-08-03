@@ -45,7 +45,7 @@ export const tagsInput = defineRecipe({
       borderRadius: 'xs',
       borderWidth: '1px',
       color: 'fg.emphasized',
-      background: 'neutral.100',
+      background: 'bg.subtle',
       display: 'inline-flex',
       fontWeight: 'medium',
       _highlighted: {
