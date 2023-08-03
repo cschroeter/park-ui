@@ -19,6 +19,7 @@ import { CheckboxDemo } from './demo/checkbox-demo'
 import { ColorPickerDemo } from './demo/color-picker-demo'
 import { ComboboxDemo } from './demo/combobox-demo'
 import { DialogDemo } from './demo/dialog-demo'
+import { DrawerDemo } from './demo/drawer-demo'
 import { EditableDemo } from './demo/editable-demo'
 import { HoverCardDemo } from './demo/hover-card-demo'
 import { IconButtonDemo } from './demo/icon-button-demo'
@@ -71,6 +72,7 @@ export const Playground = (props: Props) => {
     .with('Color Picker', () => ColorPickerDemo)
     .with('Combobox', () => ComboboxDemo)
     .with('Dialog', () => DialogDemo)
+    .with('Drawer', () => DrawerDemo)
     .with('Editable', () => EditableDemo)
     .with('Hover Card', () => HoverCardDemo)
     .with('Icon Button', () => IconButtonDemo)
@@ -162,28 +164,11 @@ export const Playground = (props: Props) => {
         <Stack gap="6" py="5" px="4">
           {Object.entries(defaultProps || {}).map(([key, value]) =>
             match(value)
-              .with(Pattern.string, () => <span />)
-              .with(Pattern.number, () => <span />)
-              .with(Pattern.boolean, (x) => (
-                <span />
-                // <Switch
-                //   key={key}
-                //   checked={x}
-                //   onChange={(e) => {
-                //     console.log('call onchagne', state)
-                //     setState({ ...state, [key]: e.checked })
-                //   }}
-                //   size="sm"
-                // >
-                //   <SwitchControl>
-                //     <SwitchInput />
-                //     <SwitchThumb />
-                //   </SwitchControl>
-                //   <SwitchLabel>{key}</SwitchLabel>
-                // </Switch>
-              ))
+              .with(Pattern.string, () => <span key={key} />)
+              .with(Pattern.number, () => <span key={key} />)
+              .with(Pattern.boolean, (x) => <span key={key} />)
               .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
-                <Stack gap="3">
+                <Stack gap="3" key={key}>
                   <Typography textStyle="sm" fontWeight="medium" textTransform="capitalize">
                     {key}
                   </Typography>

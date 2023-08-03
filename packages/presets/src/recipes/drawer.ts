@@ -25,31 +25,69 @@ export const drawer = defineRecipe({
       },
     },
     container: {
-      alignItems: 'flex-start',
+      alignItems: 'center',
       display: 'flex',
-      inset: '0',
-      justifyContent: 'flex-start',
+      top: 0,
+      bottom: 0,
+      justifyContent: 'center',
       position: 'fixed',
       zIndex: 'modal',
     },
     content: {
       background: 'bg.default',
       boxShadow: 'lg',
-      position: 'relative',
       height: 'full',
-      minW: 'xs',
-      py: '5',
-      px: '4',
+      width: 'sm',
       overflowY: 'auto',
-      borderRightWidth: '1px',
+      position: 'relative',
+      px: {
+        base: '4',
+        md: '6',
+      },
+      py: '6',
     },
     title: {
-      fontWeight: 'semibold',
-      textStyle: 'lg',
+      fontWeight: 'bold',
+      textStyle: 'xl',
     },
     description: {
       color: 'fg.muted',
       textStyle: 'sm',
     },
   }),
+  defaultVariants: {
+    placement: 'right',
+  },
+  variants: {
+    placement: {
+      left: parts({
+        container: {
+          left: 0,
+        },
+        content: {
+          borderRightWidth: '1px',
+          _open: {
+            animation: 'drawer-in-left',
+          },
+          _closed: {
+            animation: 'drawer-out-left',
+          },
+        },
+      }),
+      right: parts({
+        container: {
+          right: 0,
+        },
+        content: {
+          borderLeftWidth: '1px',
+          _open: {
+            animation: 'drawer-in-right',
+          },
+          _closed: {
+            animation: 'drawer-out-right',
+          },
+        },
+      }),
+    },
+  },
 })

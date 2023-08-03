@@ -51,6 +51,7 @@ export const button = defineRecipe({
       secondary: {
         borderWidth: '1px',
         borderColor: 'border.emphasized',
+        background: 'bg.default',
         color: 'fg.emphasized',
         _hover: {
           color: 'fg.default',
