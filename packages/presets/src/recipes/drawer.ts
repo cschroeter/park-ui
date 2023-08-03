@@ -45,10 +45,10 @@ export const drawer = defineRecipe({
       px: '4',
       py: '5',
       _open: {
-        animation: 'drawerIn 500ms cubic-bezier(0.05, 0.7, 0.1, 1.0)',
+        animation: 'drawer-in',
       },
       _closed: {
-        animation: 'drawerOut 200ms cubic-bezier(0.3, 0.0, 0.8, 0.15)',
+        animation: 'drawer-out',
       },
     },
     title: {

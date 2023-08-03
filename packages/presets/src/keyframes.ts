@@ -18,14 +18,15 @@ export const keyframes = defineKeyframes({
     '100%': { opacity: '0', transform: 'translateY(64px)' },
   },
 
-  drawerIn: {
+  'slide-in-left': {
     '0%': { transform: 'translateX(-100%)' },
     '100%': { transform: 'translateX(0%)' },
   },
-  drawerOut: {
+  'slide-out-left': {
     '0%': { transform: 'translateX(0%)' },
     '100%': { transform: 'translateX(-100%)' },
   },
+
   fadeIn: {
     '0%': { opacity: '0', transform: 'translateY(-4px)' },
     '100%': { opacity: '1', transform: 'translateY(0)' },

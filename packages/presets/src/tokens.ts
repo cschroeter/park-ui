@@ -42,6 +42,12 @@ export const tokens = defineTokens({
     'dialog-out': {
       value: 'slide-out 200ms var(--easings-emphasized-out)',
     },
+    'drawer-in': {
+      value: 'slide-in-left 400ms var(--easings-emphasized-in)',
+    },
+    'drawer-out': {
+      value: 'slide-out-left 200ms var(--easings-emphasized-out)',
+    },
   },
   zIndex: {
     hide: {
