@@ -167,7 +167,7 @@
   {
     "number-input": {
       "components": {
-        "NumberInput": "input",
+        "NumberInput": "root",
         "NumberInputControl": "control",
         "NumberInputDecrementTrigger": "decrementTrigger",
         "NumberInputField": "",
@@ -175,7 +175,7 @@
         "NumberInputLabel": "label",
         "NumberInputScrubber": "scrubber"
       },
-      "unmappedParts": ["root"]
+      "unmappedParts": ["input"]
     }
   },
   {
@@ -194,12 +194,12 @@
   {
     "pin-input": {
       "components": {
-        "PinInput": "input",
+        "PinInput": "root",
         "PinInputControl": "control",
         "PinInputField": "",
         "PinInputLabel": "label"
       },
-      "unmappedParts": ["hiddenInput", "root"]
+      "unmappedParts": ["hiddenInput", "input"]
     }
   },
   {
@@ -223,18 +223,18 @@
       "components": {
         "Radio": "radio",
         "RadioControl": "radioControl",
-        "RadioGroup": "",
+        "RadioGroup": "root",
         "RadioGroupLabel": "label",
         "RadioInput": "radioInput",
         "RadioLabel": "radioLabel"
       },
-      "unmappedParts": ["indicator", "root"]
+      "unmappedParts": ["indicator"]
     }
   },
   {
     "range-slider": {
       "components": {
-        "RangeSlider": "",
+        "RangeSlider": "root",
         "RangeSliderControl": "control",
         "RangeSliderLabel": "label",
         "RangeSliderMarker": "marker",
@@ -244,26 +244,26 @@
         "RangeSliderThumb": "thumb",
         "RangeSliderTrack": "track"
       },
-      "unmappedParts": ["hiddenInput", "root"]
+      "unmappedParts": ["hiddenInput"]
     }
   },
   {
     "rating-group": {
       "components": {
         "Rating": "rating",
-        "RatingGroup": "",
+        "RatingGroup": "root",
         "RatingGroupControl": "control",
         "RatingGroupLabel": "label"
       },
-      "unmappedParts": ["hiddenInput", "root"]
+      "unmappedParts": ["hiddenInput"]
     }
   },
   {
     "segment-group": {
       "components": {
-        "Segment": "root",
+        "Segment": "",
         "SegmentControl": "",
-        "SegmentGroup": "",
+        "SegmentGroup": "root",
         "SegmentGroupLabel": "label",
         "SegmentIndicator": "indicator",
         "SegmentInput": "",
@@ -342,13 +342,13 @@
         "Tag": "tag",
         "TagDeleteTrigger": "tagDeleteTrigger",
         "TagInput": "tagInput",
-        "TagsInput": "input",
+        "TagsInput": "root",
         "TagsInputClearTrigger": "clearTrigger",
         "TagsInputControl": "control",
         "TagsInputField": "",
         "TagsInputLabel": "label"
       },
-      "unmappedParts": ["hiddenInput", "root"]
+      "unmappedParts": ["hiddenInput", "input"]
     }
   },
   {

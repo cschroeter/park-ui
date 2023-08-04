@@ -5,6 +5,10 @@ function convertToCamelCase(word: string) {
     return letter.toUpperCase()
   })
 }
+function convertToPascalCase(word: string) {
+  const camelCase = convertToCamelCase(word)
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1)
+}
 
 const filterStartsWithUpperCase = (s: string) => {
   return !/^[a-z]/.test(s)
@@ -28,22 +32,15 @@ const getParts = async (moduleName: string) => {
 
 export const generateComponent = async (moduleName: string) => {
   const components = await getComponents(moduleName)
+  const baseName = convertToPascalCase(moduleName)
   const parts = await getParts(moduleName)
 
   const map = components.reduce<ComponentParts>((acc, componentName: string) => {
     const partName = parts.find((partName) =>
-      componentName.toLowerCase().endsWith(partName.toLowerCase()),
+      componentName.replace(baseName, 'Root').toLowerCase().endsWith(partName.toLowerCase()),
     )
 
-    if (partName) {
-      return { ...acc, [componentName]: partName }
-    }
-
-    if (componentName.match(/[A-Z][a-z]+/g)?.length === 1 && parts.includes('root')) {
-      return { ...acc, [componentName]: 'root' }
-    }
-
-    return { ...acc, [componentName]: '' }
+    return { ...acc, [componentName]: partName ?? '' }
   }, {})
 
   const unmappedParts = listUnmappedParts(map, parts)
