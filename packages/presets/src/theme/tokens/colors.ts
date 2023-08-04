@@ -2,7 +2,7 @@ import { defineTokens } from '@pandacss/dev'
 
 export const colors = defineTokens.colors({
   neutral: {
-    25: { value: '#fefefe' },
+    25: { value: '#fdfdfd' },
     50: { value: '#fafafa' },
     100: { value: '#f5f5f5' },
     200: { value: '#e5e5e5' },
