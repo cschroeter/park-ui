@@ -53,7 +53,7 @@ export const FeedbackPopover = (props: PopoverProps) => {
               <PopoverArrowTip />
             </PopoverArrow>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Stack gap="4">
+              <Stack gap="4" minW="64">
                 <Textarea rows={4} placeholder="Your feedback" required {...register('message')} />
                 <Stack gap="3" direction="row">
                   <PopoverCloseTrigger asChild>
