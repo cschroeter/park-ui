@@ -37,7 +37,7 @@ export const drawer = defineRecipe({
       background: 'bg.default',
       boxShadow: 'lg',
       height: 'full',
-      width: 'sm',
+      width: { base: 'xs', sm: 'sm' },
       overflowY: 'auto',
       position: 'relative',
       px: {
