@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2023-08-06
+
 ### Added
 
 - Added `Drawer` component.
@@ -24,5 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial Release of https://park-ui.com 🎉
 
-[unreleased]: https://github.com/cschroeter/park-ui/compare/@ark-ui/react@0.10.0...HEAD
+[unreleased]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.2.0...HEAD
+[0.2.0]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.1.0...@park-ui/presets@0.2.0
 [0.1.0]: https://github.com/cschroeter/park-ui/releases/tag/@ark-ui/react@0.1.0
