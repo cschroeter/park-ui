@@ -31,7 +31,7 @@ export const segmentGroup = defineRecipe({
       borderLeftWidth: {
         _vertical: '2px',
       },
-      borderColor: 'fg.default',
+      borderColor: 'bg.accent',
       transform: {
         _horizontal: 'translateY(1px)',
         _vertical: 'translateX(-1px)',

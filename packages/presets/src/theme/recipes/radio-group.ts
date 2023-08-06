@@ -28,15 +28,11 @@ export const radioGroup = defineRecipe({
       _checked: {
         background: 'bg.accent',
         borderColor: 'border.accent',
-        '--outline-color': {
-          base: 'colors.white',
-          _dark: 'colors.neutral.950',
-        },
+        outlineColor: 'bg.default',
+        outlineStyle: 'solid',
         _hover: {
           background: 'bg.accent',
         },
-        outlineColor: 'var(--outline-color)',
-        outlineStyle: 'solid',
       },
     },
     radio: {

@@ -14,7 +14,7 @@ export const IconButton = (props: IconButtonProps) => {
       })
     : null
   return (
-    <Button className={cx(css({ px: '0', color: 'fg.mtued' }), className)} {...rest}>
+    <Button className={cx(css({ px: '0', color: 'fg.muted' }), className)} {...rest}>
       {_children}
     </Button>
   )

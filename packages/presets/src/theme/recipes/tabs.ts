@@ -54,7 +54,7 @@ export const tabs = defineRecipe({
       },
     },
     indicator: {
-      background: 'fg.default',
+      background: 'bg.accent',
       height: {
         _horizontal: '2px',
       },

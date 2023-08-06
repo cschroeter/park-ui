@@ -58,18 +58,13 @@ export const button = defineRecipe({
           background: 'bg.subtle',
         },
         _selected: {
-          color: 'bg.default',
-          borderColor: 'neutral.900',
-          background: {
-            base: 'neutral.900',
-            _dark: 'white',
-          },
+          background: 'bg.accent',
+          borderColor: 'border.accent',
+          color: 'fg.accent',
           _hover: {
             color: 'fg.accent',
-            background: {
-              base: 'neutral.800',
-              _dark: 'neutral.200',
-            },
+            background: 'bg.accent',
+            borderColor: 'border.accent',
           },
         },
         _disabled: {

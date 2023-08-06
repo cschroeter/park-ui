@@ -8,10 +8,10 @@ export const tooltip = defineRecipe({
   description: 'A tooltip style',
   base: parts({
     content: {
-      background: 'bg.accent',
+      background: 'fg.default',
       borderRadius: 'sm',
       boxShadow: 'lg',
-      color: 'fg.accent',
+      color: 'bg.default',
       fontWeight: 'semibold',
       px: '3',
       py: '2',
