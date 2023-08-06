@@ -28,7 +28,7 @@ export const SemanticTokensShowcase = () => {
               {data[group.key].description}
             </Typography>
           </Stack>
-          <Grid gap="6" columns={{ base: 2, sm: 4 }}>
+          <Grid gap={{ base: '4', md: '6' }} columns={{ base: 2, sm: 4 }}>
             {group.tokens.map((token, id) => (
               <ColorTokenSwatch key={id} {...token} />
             ))}
