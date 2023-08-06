@@ -1,12 +1,26 @@
-import { Examples } from '~/components/marketing/examples'
-import { Hero } from '~/components/marketing/hero'
+import { Container } from 'styled-system/jsx'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '~/components/playground'
 
 const Page = () => {
   return (
-    <>
-      <Hero />
-      <Examples />
-    </>
+    <Container>
+      <Accordion defaultValue={['React']} multiple>
+        <AccordionItem value="react">
+          <AccordionTrigger>Open</AccordionTrigger>
+          <AccordionContent>
+            <div>
+              Pudding donut gummies chupa chups oat cake marzipan biscuit tart. Dessert macaroon ice
+              cream bonbon jelly. Jelly topping tiramisu halvah lollipop.
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </Container>
   )
 }
 
