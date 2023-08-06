@@ -30,7 +30,7 @@ const Page = async (props: any) => {
         >
           {!component.isPrimitive && <ArkDocumentationLinks name={component.title} />}
         </PageHeader>
-        <Tabs defaultValue="preview" size="sm">
+        <Tabs defaultValue="preview">
           <TabList>
             <TabTrigger value="preview">Preview</TabTrigger>
             <TabTrigger value="code">Code</TabTrigger>

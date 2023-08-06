@@ -27,7 +27,7 @@ const Page = async (props: any) => {
           heading={foundation.title}
           supportingText={foundation.description}
         />
-        <Tabs defaultValue="preview" size={{ base: 'md', sm: 'sm' }}>
+        <Tabs defaultValue="preview">
           <TabList>
             <TabTrigger value="preview">Preview</TabTrigger>
             <TabTrigger value="config">Config</TabTrigger>

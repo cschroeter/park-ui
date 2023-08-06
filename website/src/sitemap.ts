@@ -35,7 +35,8 @@ export const sitemap = [
     entries: [
       {
         title: 'Semantic Tokens',
-        description: 'Understand the use of symbols representing component properties.',
+        description:
+          'These tokens give elements a specific meaning, making it easier for users to understand what each part of the interface does.',
         href: '/docs/foundations/semantic-tokens',
       },
       {
