@@ -4,6 +4,7 @@ import { conditions } from './conditions'
 import { globalCss } from './global-css'
 import { keyframes } from './theme/keyframes'
 import { recipes } from './theme/recipes'
+import { accordion } from './theme/recipes/accordion'
 import { semanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
 import { tokens } from './theme/tokens'
@@ -16,6 +17,9 @@ const preset: Preset = definePreset({
       semanticTokens,
       textStyles,
       tokens,
+      slotRecipes: {
+        accordion,
+      },
     },
   },
   conditions,

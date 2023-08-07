@@ -28,11 +28,11 @@
     "postpack": "clean-package restore"
   },
   "dependencies": {
-    "@pandacss/dev": "0.9.0"
+    "@pandacss/dev": "0.0.0-dev-20230806134213"
   },
   "devDependencies": {
     "@ark-ui/react": "0.10.0",
-    "@pandacss/types": "0.9.0",
+    "@pandacss/types": "0.0.0-dev-20230806134213",
     "@release-it/keep-a-changelog": "4.0.0",
     "clean-package": "2.2.0",
     "release-it": "16.1.3",

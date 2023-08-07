@@ -1,4 +1,3 @@
-import { accordion } from './accordion'
 import { alert } from './alert'
 import { avatar } from './avatar'
 import { badge } from './badge'
@@ -34,7 +33,7 @@ import { toast } from './toast'
 import { tooltip } from './tooltip'
 
 export const recipes = {
-  accordion,
+  // accordion,
   alert,
   avatar,
   badge,

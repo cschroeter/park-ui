@@ -1,12 +1,11 @@
-import { accordionAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { accordionAnatomy } from '@ark-ui/react/accordion'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(accordionAnatomy.build())
-
-export const accordion = defineRecipe({
+export const accordion = defineSlotRecipe({
   className: 'accordion',
   description: 'An accordion style',
-  base: parts({
+  slots: accordionAnatomy.keys(),
+  base: {
     root: {
       divideY: '1px',
       width: 'full',
@@ -33,13 +32,13 @@ export const accordion = defineRecipe({
         overflow: 'hidden',
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      md: parts({
+      md: {
         trigger: {
           py: '4',
         },
@@ -50,7 +49,7 @@ export const accordion = defineRecipe({
             pb: '0',
           },
         },
-      }),
+      },
     },
   },
 })
