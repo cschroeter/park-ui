@@ -26,7 +26,7 @@ export const semanticTokens = defineSemanticTokens({
     border: {
       default: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
       emphasized: { value: { base: '{colors.neutral.300}', _dark: '{colors.neutral.700}' } },
-      outline: { value: { base: '{colors.neutral.500}', _dark: '{colors.neutral.500}' } },
+      outline: { value: { base: '{colors.neutral.700}', _dark: '{colors.neutral.300}' } },
       accent: { value: { base: '{colors.neutral.950}', _dark: '{colors.white}' } },
       disabled: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
     },

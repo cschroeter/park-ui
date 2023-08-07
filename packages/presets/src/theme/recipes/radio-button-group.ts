@@ -25,7 +25,7 @@ export const radioButtonGroup = defineRecipe({
       outline: 'none',
       position: 'relative',
       transitionDuration: 'normal',
-      transitionProperty: 'background-color, border-color, color',
+      transitionProperty: 'background, border-color, color',
       transitionTimingFunction: 'default',
       userSelect: 'none',
       verticalAlign: 'middle',

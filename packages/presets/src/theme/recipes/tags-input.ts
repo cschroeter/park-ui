@@ -21,12 +21,11 @@ export const tagsInput = defineRecipe({
       flexWrap: 'wrap',
       outline: 0,
       transitionDuration: 'normal',
-      transitionProperty: 'border-color, outline',
+      transitionProperty: 'border-color, box-shadow',
       transitionTimingFunction: 'default',
       _focusWithin: {
         borderColor: 'border.outline',
-        outline: '1px solid',
-        outlineColor: 'border.outline',
+        boxShadow: 'outline',
       },
     },
     input: {
