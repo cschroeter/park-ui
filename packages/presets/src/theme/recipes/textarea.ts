@@ -13,7 +13,7 @@ export const textarea = defineRecipe({
     outline: 0,
     position: 'relative',
     transitionDuration: 'normal',
-    transitionProperty: 'border-color, box-shadow, outline',
+    transitionProperty: 'border-color, box-shadow',
     resize: 'none',
     width: 'full',
     _disabled: {
@@ -22,8 +22,7 @@ export const textarea = defineRecipe({
     },
     _focus: {
       borderColor: 'border.outline',
-      outline: '1px solid',
-      outlineColor: 'border.outline',
+      boxShadow: 'outline',
     },
   },
   defaultVariants: {

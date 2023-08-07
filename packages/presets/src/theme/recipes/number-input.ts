@@ -15,12 +15,11 @@ export const numberInput = defineRecipe({
       overflow: 'hidden',
       width: 'full',
       transitionDuration: 'normal',
-      transitionProperty: 'border-color, outline-color',
+      transitionProperty: 'border-color, box-shadow',
       transitionTimingFunction: 'default',
       _focusWithin: {
         borderColor: 'border.outline',
-        outline: '1px solid',
-        outlineColor: 'border.outline',
+        boxShadow: 'outline',
       },
     },
     control: {

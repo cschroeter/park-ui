@@ -20,7 +20,7 @@ export const switchRecipe = defineRecipe({
       display: 'inline-flex',
       flexShrink: '0',
       transitionDuration: 'normal',
-      transitionProperty: 'background-color',
+      transitionProperty: 'background',
       transitionTimingFunction: 'default',
       _checked: {
         background: 'accent.default',
@@ -36,7 +36,7 @@ export const switchRecipe = defineRecipe({
       borderRadius: 'full',
       boxShadow: 'xs',
       transitionDuration: 'normal',
-      transitionProperty: 'transform, background-color',
+      transitionProperty: 'transform, background',
       transitionTimingFunction: 'default',
       zIndex: '1',
       _checked: {

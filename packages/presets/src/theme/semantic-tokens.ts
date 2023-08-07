@@ -26,12 +26,18 @@ export const semanticTokens = defineSemanticTokens({
     border: {
       default: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
       emphasized: { value: { base: '{colors.neutral.300}', _dark: '{colors.neutral.700}' } },
-      outline: { value: { base: '{colors.neutral.500}', _dark: '{colors.neutral.500}' } },
+      outline: { value: { base: '{colors.neutral.700}', _dark: '{colors.neutral.300}' } },
       accent: { value: { base: '{colors.neutral.950}', _dark: '{colors.white}' } },
       disabled: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
     },
   },
   shadows: {
+    outline: {
+      value: {
+        base: '0 0 0 1px {colors.border.outline}',
+        _dark: '0 0 0 1px {colors.border.outline}',
+      },
+    },
     xs: {
       value: {
         base: '0px 1px 2px rgba(23, 23, 23,  0.1)',
