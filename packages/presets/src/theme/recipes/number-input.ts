@@ -18,15 +18,9 @@ export const numberInput = defineRecipe({
       transitionProperty: 'border-color, outline-color',
       transitionTimingFunction: 'default',
       _focusWithin: {
-        borderColor: {
-          base: 'neutral.700',
-          _dark: 'neutral.200',
-        },
+        borderColor: 'border.outline',
         outline: '1px solid',
-        outlineColor: {
-          base: 'neutral.700',
-          _dark: 'neutral.200',
-        },
+        outlineColor: 'border.outline',
       },
     },
     control: {

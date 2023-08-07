@@ -23,7 +23,7 @@ export const switchRecipe = defineRecipe({
       transitionProperty: 'background-color',
       transitionTimingFunction: 'default',
       _checked: {
-        background: 'bg.accent',
+        background: 'accent.default',
       },
     },
     label: {

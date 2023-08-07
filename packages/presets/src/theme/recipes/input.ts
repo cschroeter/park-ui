@@ -20,15 +20,9 @@ export const input = defineRecipe({
       cursor: 'not-allowed',
     },
     _focus: {
-      borderColor: {
-        base: 'neutral.700',
-        _dark: 'neutral.500',
-      },
+      borderColor: 'border.outline',
       outline: '1px solid',
-      outlineColor: {
-        base: 'neutral.700',
-        _dark: 'neutral.500',
-      },
+      outlineColor: 'border.outline',
     },
   },
   defaultVariants: {

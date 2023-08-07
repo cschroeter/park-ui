@@ -40,16 +40,8 @@ export const colorPicker = defineRecipe({
       height: '6',
       width: '6',
       borderRadius: 'full',
-
-      '--shadow-outline': {
-        base: 'colors.neutral.200',
-        _dark: 'colors.neutral.700',
-      },
-      '--shadow-inset': {
-        base: 'colors.white',
-        _dark: 'colors.neutral.950',
-      },
-      boxShadow: '0 0 0 1px var(--shadow-outline), 0 0 0 2px var(--shadow-inset) inset',
+      boxShadow:
+        '0 0 0 1px var(--colors-border-emphasized), 0 0 0 2px var(--colors-bg-default) inset',
     },
     areaThumb: {
       borderRadius: 'full',

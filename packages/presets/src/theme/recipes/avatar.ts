@@ -14,8 +14,8 @@ export const avatar = defineRecipe({
     },
     fallback: {
       alignItems: 'center',
-      background: 'neutral.900',
-      color: 'white',
+      background: 'bg.subtle',
+      borderWidth: '1px',
       display: 'flex',
       fontWeight: 'semibold',
       height: 'inherit',

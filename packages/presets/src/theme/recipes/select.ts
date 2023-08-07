@@ -26,7 +26,7 @@ export const select = defineRecipe({
       _focusVisible: {
         outlineOffset: '2px',
         outline: '2px solid',
-        outlineColor: 'neutral.500',
+        outlineColor: 'border.outline',
       },
     },
     option: {

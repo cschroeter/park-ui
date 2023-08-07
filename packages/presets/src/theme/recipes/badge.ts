@@ -18,8 +18,8 @@ export const badge = defineRecipe({
   variants: {
     variant: {
       solid: {
-        background: 'bg.accent',
-        color: 'fg.accent',
+        background: 'accent.default',
+        color: 'accent.fg',
       },
       subtle: {
         background: 'bg.subtle',

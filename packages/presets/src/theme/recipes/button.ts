@@ -27,18 +27,15 @@ export const button = defineRecipe({
   variants: {
     variant: {
       primary: {
-        background: 'bg.accent',
-        color: 'fg.accent',
+        background: 'accent.default',
+        color: 'accent.fg',
         _hover: {
-          background: {
-            base: 'neutral.800',
-            _dark: 'neutral.200',
-          },
+          background: 'accent.emphasized',
         },
         _focusVisible: {
           outlineOffset: '2px',
           outline: '2px solid',
-          outlineColor: 'neutral.500',
+          outlineColor: 'border.outline',
         },
         _disabled: {
           background: 'bg.disabled',
@@ -58,12 +55,12 @@ export const button = defineRecipe({
           background: 'bg.subtle',
         },
         _selected: {
-          background: 'bg.accent',
+          background: 'accent.default',
           borderColor: 'border.accent',
-          color: 'fg.accent',
+          color: 'accent.fg',
           _hover: {
-            color: 'fg.accent',
-            background: 'bg.accent',
+            color: 'accent.fg',
+            background: 'accent.default',
             borderColor: 'border.accent',
           },
         },
@@ -80,7 +77,7 @@ export const button = defineRecipe({
         _focusVisible: {
           outlineOffset: '2px',
           outline: '2px solid',
-          outlineColor: 'neutral.500',
+          outlineColor: 'border.outline',
         },
       },
       tertiary: {
@@ -99,7 +96,7 @@ export const button = defineRecipe({
         },
         _focusVisible: {
           outline: '2px solid',
-          outlineColor: 'neutral.500',
+          outlineColor: 'border.outline',
         },
       },
       link: {

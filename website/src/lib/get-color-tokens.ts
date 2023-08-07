@@ -18,7 +18,7 @@ export type ColorTokenGroup = {
 
 export const getColorTokens = () =>
   Object.entries(semanticTokens.colors)
-    .filter(([key]) => ['bg', 'fg'].includes(key))
+    .filter(([key]) => ['bg', 'fg', 'accent'].includes(key))
     .map(([key, value]) => {
       return {
         key,

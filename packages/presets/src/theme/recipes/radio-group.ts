@@ -26,12 +26,12 @@ export const radioGroup = defineRecipe({
         background: 'bg.subtle',
       },
       _checked: {
-        background: 'bg.accent',
+        background: 'accent.default',
         borderColor: 'border.accent',
         outlineColor: 'bg.default',
         outlineStyle: 'solid',
         _hover: {
-          background: 'bg.accent',
+          background: 'accent.default',
         },
       },
     },

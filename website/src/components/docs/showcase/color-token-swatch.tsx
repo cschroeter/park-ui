@@ -10,10 +10,10 @@ export const ColorTokenSwatch = (props: ColorToken) => {
   const { colorMode } = useColorMode()
   return (
     <Flex
-      aspectRatio={4 / 3}
+      aspectRatio={5 / 3}
       borderRadius="lg"
       boxShadow="sm"
-      p="3"
+      p="4"
       style={{
         color: token.var(color),
         background: token.var(background),
