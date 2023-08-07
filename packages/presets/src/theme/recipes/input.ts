@@ -12,7 +12,7 @@ export const input = defineRecipe({
     outline: 0,
     position: 'relative',
     transitionDuration: 'normal',
-    transitionProperty: 'border-color, outline-color',
+    transitionProperty: 'box-shadow, border-color',
     transitionTimingFunction: 'default',
     width: 'full',
     _disabled: {
@@ -21,8 +21,7 @@ export const input = defineRecipe({
     },
     _focus: {
       borderColor: 'border.outline',
-      outline: '1px solid',
-      outlineColor: 'border.outline',
+      boxShadow: 'outline',
     },
   },
   defaultVariants: {
