@@ -9,7 +9,7 @@ import {
 const Page = () => {
   return (
     <Container>
-      <Accordion defaultValue={['React']} multiple>
+      <Accordion defaultValue={['React']} size="md" multiple mt="2" background="teal.800">
         <AccordionItem value="react">
           <AccordionTrigger>Open</AccordionTrigger>
           <AccordionContent>
