@@ -26,7 +26,7 @@ export const colorPicker = defineRecipe({
       height: '2',
       borderRadius: 'full',
     },
-    channelSliderTrackBg: {
+    channelSliderTrackBackground: {
       overflow: 'hidden',
       borderRadius: 'full',
     },
