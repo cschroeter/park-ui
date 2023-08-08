@@ -1,368 +1,426 @@
 [
   {
     "accordion": {
-      "components": {
-        "Accordion": "root",
-        "AccordionContent": "content",
-        "AccordionItem": "item",
-        "AccordionTrigger": "trigger"
-      }
+      "components": [
+        { "name": "Accordion", "partName": "root" },
+        { "name": "AccordionItem", "partName": "item" },
+        { "name": "AccordionContent", "partName": "content" },
+        { "name": "AccordionTrigger", "partName": "trigger" }
+      ],
+      "isArkComponent": true,
+      "root": "Accordion"
     }
   },
   {
     "avatar": {
-      "components": { "Avatar": "root", "AvatarFallback": "fallback", "AvatarImage": "image" }
+      "components": [
+        { "name": "Avatar", "partName": "root" },
+        { "name": "AvatarImage", "partName": "image" },
+        { "name": "AvatarFallback", "partName": "fallback" }
+      ],
+      "isArkComponent": true,
+      "root": "Avatar"
     }
   },
   {
     "carousel": {
-      "components": {
-        "Carousel": "root",
-        "CarouselControl": "control",
-        "CarouselIndicator": "indicator",
-        "CarouselIndicatorGroup": "indicatorGroup",
-        "CarouselNextSlideTrigger": "nextSlideTrigger",
-        "CarouselPrevSlideTrigger": "prevSlideTrigger",
-        "CarouselSlide": "slide",
-        "CarouselSlideGroup": "slideGroup",
-        "CarouselViewport": "viewport"
-      }
+      "components": [
+        { "name": "Carousel", "partName": "root" },
+        { "name": "CarouselSlide", "partName": "slide" },
+        { "name": "CarouselControl", "partName": "control" },
+        { "name": "CarouselViewport", "partName": "viewport" },
+        { "name": "CarouselIndicator", "partName": "indicator" },
+        { "name": "CarouselSlideGroup", "partName": "slideGroup" },
+        { "name": "CarouselIndicatorGroup", "partName": "indicatorGroup" },
+        { "name": "CarouselNextSlideTrigger", "partName": "nextSlideTrigger" },
+        { "name": "CarouselPrevSlideTrigger", "partName": "prevSlideTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "Carousel"
     }
   },
   {
     "checkbox": {
-      "components": { "Checkbox": "root", "CheckboxControl": "control", "CheckboxLabel": "label" }
+      "components": [
+        { "name": "Checkbox", "partName": "root" },
+        { "name": "CheckboxLabel", "partName": "label" },
+        { "name": "CheckboxControl", "partName": "control" }
+      ],
+      "isArkComponent": true,
+      "root": "Checkbox"
     }
   },
   {
     "color-picker": {
-      "components": {
-        "ColorPicker": "",
-        "ColorPickerArea": "area",
-        "ColorPickerAreaGradient": "areaGradient",
-        "ColorPickerAreaThumb": "areaThumb",
-        "ColorPickerChannelInput": "channelInput",
-        "ColorPickerChannelSliderBackground": "",
-        "ColorPickerChannelSliderThumb": "channelSliderThumb",
-        "ColorPickerChannelSliderTrack": "channelSliderTrack",
-        "ColorPickerContent": "content",
-        "ColorPickerEyeDropperTrigger": "eyeDropperTrigger",
-        "ColorPickerSwatch": "swatch",
-        "ColorPickerSwatchBackground": "swatchBackground",
-        "ColorPickerSwatchGroup": "swatchGroup"
-      },
-      "unmappedParts": ["channelSliderTrackBackground", "label"]
+      "components": [
+        { "name": "ColorPicker" },
+        { "name": "ColorPickerArea", "partName": "area" },
+        { "name": "ColorPickerSwatch", "partName": "swatch" },
+        { "name": "ColorPickerContent", "partName": "content" },
+        { "name": "ColorPickerAreaThumb", "partName": "areaThumb" },
+        { "name": "ColorPickerSwatchGroup", "partName": "swatchGroup" },
+        { "name": "ColorPickerAreaGradient", "partName": "areaGradient" },
+        { "name": "ColorPickerChannelInput", "partName": "channelInput" },
+        { "name": "ColorPickerSwatchBackground", "partName": "swatchBackground" },
+        { "name": "ColorPickerEyeDropperTrigger", "partName": "eyeDropperTrigger" },
+        { "name": "ColorPickerChannelSliderThumb", "partName": "channelSliderThumb" },
+        { "name": "ColorPickerChannelSliderTrack", "partName": "channelSliderTrack" },
+        { "name": "ColorPickerChannelSliderBackground" }
+      ],
+      "isArkComponent": true,
+      "root": "ColorPicker"
     }
   },
   {
     "combobox": {
-      "components": {
-        "Combobox": "root",
-        "ComboboxClearTrigger": "clearTrigger",
-        "ComboboxContent": "content",
-        "ComboboxControl": "control",
-        "ComboboxInput": "input",
-        "ComboboxLabel": "label",
-        "ComboboxOption": "option",
-        "ComboboxOptionGroup": "optionGroup",
-        "ComboboxOptionGroupLabel": "optionGroupLabel",
-        "ComboboxPositioner": "positioner",
-        "ComboboxTrigger": "trigger"
-      }
+      "components": [
+        { "name": "Combobox", "partName": "root" },
+        { "name": "ComboboxInput", "partName": "input" },
+        { "name": "ComboboxLabel", "partName": "label" },
+        { "name": "ComboboxOption", "partName": "option" },
+        { "name": "ComboboxContent", "partName": "content" },
+        { "name": "ComboboxControl", "partName": "control" },
+        { "name": "ComboboxTrigger", "partName": "trigger" },
+        { "name": "ComboboxPositioner", "partName": "positioner" },
+        { "name": "ComboboxOptionGroup", "partName": "optionGroup" },
+        { "name": "ComboboxClearTrigger", "partName": "clearTrigger" },
+        { "name": "ComboboxOptionGroupLabel", "partName": "optionGroupLabel" }
+      ],
+      "isArkComponent": true,
+      "root": "Combobox"
     }
   },
   {
     "date-picker": {
-      "components": {
-        "DatePicker": "",
-        "DatePickerClearTrigger": "clearTrigger",
-        "DatePickerColumnHeader": "columnHeader",
-        "DatePickerContent": "content",
-        "DatePickerControl": "control",
-        "DatePickerDayCell": "",
-        "DatePickerDayCellTrigger": "cellTrigger",
-        "DatePickerGrid": "grid",
-        "DatePickerInput": "input",
-        "DatePickerMonthCell": "",
-        "DatePickerMonthCellTrigger": "cellTrigger",
-        "DatePickerMonthSelect": "monthSelect",
-        "DatePickerNextTrigger": "nextTrigger",
-        "DatePickerPositioner": "positioner",
-        "DatePickerPrevTrigger": "prevTrigger",
-        "DatePickerRow": "row",
-        "DatePickerRowGroup": "rowGroup",
-        "DatePickerRowHeader": "rowHeader",
-        "DatePickerTrigger": "trigger",
-        "DatePickerViewTrigger": "viewTrigger",
-        "DatePickerYearCell": "",
-        "DatePickerYearCellTrigger": "cellTrigger",
-        "DatePickerYearSelect": "yearSelect"
-      }
+      "components": [
+        { "name": "DatePicker" },
+        { "name": "DatePickerRow", "partName": "row" },
+        { "name": "DatePickerGrid", "partName": "grid" },
+        { "name": "DatePickerInput", "partName": "input" },
+        { "name": "DatePickerContent", "partName": "content" },
+        { "name": "DatePickerControl", "partName": "control" },
+        { "name": "DatePickerDayCell" },
+        { "name": "DatePickerTrigger", "partName": "trigger" },
+        { "name": "DatePickerRowGroup", "partName": "rowGroup" },
+        { "name": "DatePickerYearCell" },
+        { "name": "DatePickerMonthCell" },
+        { "name": "DatePickerRowHeader", "partName": "rowHeader" },
+        { "name": "DatePickerPositioner", "partName": "positioner" },
+        { "name": "DatePickerYearSelect", "partName": "yearSelect" },
+        { "name": "DatePickerMonthSelect", "partName": "monthSelect" },
+        { "name": "DatePickerNextTrigger", "partName": "nextTrigger" },
+        { "name": "DatePickerPrevTrigger", "partName": "prevTrigger" },
+        { "name": "DatePickerViewTrigger", "partName": "viewTrigger" },
+        { "name": "DatePickerClearTrigger", "partName": "clearTrigger" },
+        { "name": "DatePickerColumnHeader", "partName": "columnHeader" },
+        { "name": "DatePickerDayCellTrigger", "partName": "cellTrigger" },
+        { "name": "DatePickerYearCellTrigger", "partName": "cellTrigger" },
+        { "name": "DatePickerMonthCellTrigger", "partName": "cellTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "DatePicker"
     }
   },
   {
     "dialog": {
-      "components": {
-        "Dialog": "",
-        "DialogBackdrop": "backdrop",
-        "DialogCloseTrigger": "closeTrigger",
-        "DialogContainer": "container",
-        "DialogContent": "content",
-        "DialogDescription": "description",
-        "DialogTitle": "title",
-        "DialogTrigger": "trigger"
-      }
+      "components": [
+        { "name": "Dialog" },
+        { "name": "DialogTitle", "partName": "title" },
+        { "name": "DialogContent", "partName": "content" },
+        { "name": "DialogTrigger", "partName": "trigger" },
+        { "name": "DialogBackdrop", "partName": "backdrop" },
+        { "name": "DialogContainer", "partName": "container" },
+        { "name": "DialogDescription", "partName": "description" },
+        { "name": "DialogCloseTrigger", "partName": "closeTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "Dialog"
     }
   },
   {
     "editable": {
-      "components": {
-        "Editable": "root",
-        "EditableArea": "area",
-        "EditableCancelTrigger": "cancelTrigger",
-        "EditableControl": "control",
-        "EditableEditTrigger": "editTrigger",
-        "EditableInput": "input",
-        "EditableLabel": "label",
-        "EditablePreview": "preview",
-        "EditableSubmitTrigger": "submitTrigger"
-      }
+      "components": [
+        { "name": "Editable", "partName": "root" },
+        { "name": "EditableArea", "partName": "area" },
+        { "name": "EditableInput", "partName": "input" },
+        { "name": "EditableLabel", "partName": "label" },
+        { "name": "EditableControl", "partName": "control" },
+        { "name": "EditablePreview", "partName": "preview" },
+        { "name": "EditableEditTrigger", "partName": "editTrigger" },
+        { "name": "EditableCancelTrigger", "partName": "cancelTrigger" },
+        { "name": "EditableSubmitTrigger", "partName": "submitTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "Editable"
     }
   },
   {
     "hover-card": {
-      "components": {
-        "HoverCard": "",
-        "HoverCardArrow": "arrow",
-        "HoverCardArrowTip": "arrowTip",
-        "HoverCardContent": "content",
-        "HoverCardPositioner": "positioner",
-        "HoverCardTrigger": "trigger"
-      }
+      "components": [
+        { "name": "HoverCard" },
+        { "name": "HoverCardArrow", "partName": "arrow" },
+        { "name": "HoverCardContent", "partName": "content" },
+        { "name": "HoverCardTrigger", "partName": "trigger" },
+        { "name": "HoverCardArrowTip", "partName": "arrowTip" },
+        { "name": "HoverCardPositioner", "partName": "positioner" }
+      ],
+      "isArkComponent": true,
+      "root": "HoverCard"
     }
   },
   {
     "menu": {
-      "components": {
-        "Menu": "",
-        "MenuArrow": "arrow",
-        "MenuArrowTip": "arrowTip",
-        "MenuContent": "content",
-        "MenuContextTrigger": "contextTrigger",
-        "MenuItem": "item",
-        "MenuItemGroup": "itemGroup",
-        "MenuItemGroupLabel": "itemGroupLabel",
-        "MenuOptionItem": "optionItem",
-        "MenuPositioner": "positioner",
-        "MenuSeparator": "separator",
-        "MenuTrigger": "trigger",
-        "MenuTriggerItem": "triggerItem"
-      }
+      "components": [
+        { "name": "Menu" },
+        { "name": "MenuItem", "partName": "item" },
+        { "name": "MenuArrow", "partName": "arrow" },
+        { "name": "MenuContent", "partName": "content" },
+        { "name": "MenuTrigger", "partName": "trigger" },
+        { "name": "MenuArrowTip", "partName": "arrowTip" },
+        { "name": "MenuItemGroup", "partName": "itemGroup" },
+        { "name": "MenuSeparator", "partName": "separator" },
+        { "name": "MenuOptionItem", "partName": "optionItem" },
+        { "name": "MenuPositioner", "partName": "positioner" },
+        { "name": "MenuTriggerItem", "partName": "triggerItem" },
+        { "name": "MenuContextTrigger", "partName": "contextTrigger" },
+        { "name": "MenuItemGroupLabel", "partName": "itemGroupLabel" }
+      ],
+      "isArkComponent": true,
+      "root": "Menu"
     }
   },
   {
     "number-input": {
-      "components": {
-        "NumberInput": "root",
-        "NumberInputControl": "control",
-        "NumberInputDecrementTrigger": "decrementTrigger",
-        "NumberInputIncrementTrigger": "incrementTrigger",
-        "NumberInputInput": "input",
-        "NumberInputLabel": "label",
-        "NumberInputScrubber": "scrubber"
-      }
+      "components": [
+        { "name": "NumberInput", "partName": "root" },
+        { "name": "NumberInputInput", "partName": "input" },
+        { "name": "NumberInputLabel", "partName": "label" },
+        { "name": "NumberInputControl", "partName": "control" },
+        { "name": "NumberInputScrubber", "partName": "scrubber" },
+        { "name": "NumberInputDecrementTrigger", "partName": "decrementTrigger" },
+        { "name": "NumberInputIncrementTrigger", "partName": "incrementTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "NumberInput"
     }
   },
   {
     "pagination": {
-      "components": {
-        "Pagination": "root",
-        "PaginationEllipsis": "ellipsis",
-        "PaginationList": "list",
-        "PaginationListItem": "listItem",
-        "PaginationNextPageTrigger": "nextPageTrigger",
-        "PaginationPageTrigger": "pageTrigger",
-        "PaginationPrevPageTrigger": "prevPageTrigger"
-      }
+      "components": [
+        { "name": "Pagination", "partName": "root" },
+        { "name": "PaginationList", "partName": "list" },
+        { "name": "PaginationEllipsis", "partName": "ellipsis" },
+        { "name": "PaginationListItem", "partName": "listItem" },
+        { "name": "PaginationPageTrigger", "partName": "pageTrigger" },
+        { "name": "PaginationNextPageTrigger", "partName": "nextPageTrigger" },
+        { "name": "PaginationPrevPageTrigger", "partName": "prevPageTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "Pagination"
     }
   },
   {
     "pin-input": {
-      "components": {
-        "PinInput": "root",
-        "PinInputControl": "control",
-        "PinInputInput": "input",
-        "PinInputLabel": "label"
-      }
+      "components": [
+        { "name": "PinInput", "partName": "root" },
+        { "name": "PinInputInput", "partName": "input" },
+        { "name": "PinInputLabel", "partName": "label" },
+        { "name": "PinInputControl", "partName": "control" }
+      ],
+      "isArkComponent": true,
+      "root": "PinInput"
     }
   },
   {
     "popover": {
-      "components": {
-        "Popover": "",
-        "PopoverAnchor": "anchor",
-        "PopoverArrow": "arrow",
-        "PopoverArrowTip": "arrowTip",
-        "PopoverCloseTrigger": "closeTrigger",
-        "PopoverContent": "content",
-        "PopoverDescription": "description",
-        "PopoverPositioner": "positioner",
-        "PopoverTitle": "title",
-        "PopoverTrigger": "trigger"
-      }
+      "components": [
+        { "name": "Popover" },
+        { "name": "PopoverArrow", "partName": "arrow" },
+        { "name": "PopoverTitle", "partName": "title" },
+        { "name": "PopoverAnchor", "partName": "anchor" },
+        { "name": "PopoverContent", "partName": "content" },
+        { "name": "PopoverTrigger", "partName": "trigger" },
+        { "name": "PopoverArrowTip", "partName": "arrowTip" },
+        { "name": "PopoverPositioner", "partName": "positioner" },
+        { "name": "PopoverDescription", "partName": "description" },
+        { "name": "PopoverCloseTrigger", "partName": "closeTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "Popover"
     }
   },
   {
     "radio-group": {
-      "components": {
-        "Radio": "radio",
-        "RadioControl": "radioControl",
-        "RadioGroup": "root",
-        "RadioGroupLabel": "label",
-        "RadioInput": "radioInput",
-        "RadioLabel": "radioLabel"
-      },
-      "unmappedParts": ["indicator"]
+      "components": [
+        { "name": "Radio", "partName": "radio" },
+        { "name": "RadioGroup", "partName": "root" },
+        { "name": "RadioInput", "partName": "radioInput" },
+        { "name": "RadioLabel", "partName": "radioLabel" },
+        { "name": "RadioControl", "partName": "radioControl" },
+        { "name": "RadioGroupLabel", "partName": "label" }
+      ],
+      "isArkComponent": true,
+      "root": "RadioGroup"
     }
   },
   {
     "range-slider": {
-      "components": {
-        "RangeSlider": "root",
-        "RangeSliderControl": "control",
-        "RangeSliderLabel": "label",
-        "RangeSliderMarker": "marker",
-        "RangeSliderMarkerGroup": "markerGroup",
-        "RangeSliderOutput": "output",
-        "RangeSliderRange": "range",
-        "RangeSliderThumb": "thumb",
-        "RangeSliderTrack": "track"
-      }
+      "components": [
+        { "name": "RangeSlider", "partName": "root" },
+        { "name": "RangeSliderLabel", "partName": "label" },
+        { "name": "RangeSliderRange", "partName": "range" },
+        { "name": "RangeSliderThumb", "partName": "thumb" },
+        { "name": "RangeSliderTrack", "partName": "track" },
+        { "name": "RangeSliderMarker", "partName": "marker" },
+        { "name": "RangeSliderOutput", "partName": "output" },
+        { "name": "RangeSliderControl", "partName": "control" },
+        { "name": "RangeSliderMarkerGroup", "partName": "markerGroup" }
+      ],
+      "isArkComponent": true,
+      "root": "RangeSlider"
     }
   },
   {
     "rating-group": {
-      "components": {
-        "Rating": "rating",
-        "RatingGroup": "root",
-        "RatingGroupControl": "control",
-        "RatingGroupLabel": "label"
-      }
+      "components": [
+        { "name": "Rating", "partName": "rating" },
+        { "name": "RatingGroup", "partName": "root" },
+        { "name": "RatingGroupLabel", "partName": "label" },
+        { "name": "RatingGroupControl", "partName": "control" }
+      ],
+      "isArkComponent": true,
+      "root": "RatingGroup"
     }
   },
   {
     "segment-group": {
-      "components": {
-        "Segment": "",
-        "SegmentControl": "",
-        "SegmentGroup": "root",
-        "SegmentGroupLabel": "label",
-        "SegmentIndicator": "indicator",
-        "SegmentInput": "",
-        "SegmentLabel": "label"
-      },
-      "unmappedParts": ["radioControl", "radioLabel", "radioInput", "radio"]
+      "components": [
+        { "name": "Segment" },
+        { "name": "SegmentGroup", "partName": "root" },
+        { "name": "SegmentInput" },
+        { "name": "SegmentLabel", "partName": "label" },
+        { "name": "SegmentControl" },
+        { "name": "SegmentIndicator", "partName": "indicator" },
+        { "name": "SegmentGroupLabel", "partName": "label" }
+      ],
+      "isArkComponent": true,
+      "root": "SegmentGroup"
     }
   },
   {
     "select": {
-      "components": {
-        "Select": "",
-        "SelectContent": "content",
-        "SelectLabel": "label",
-        "SelectOption": "option",
-        "SelectOptionGroup": "optionGroup",
-        "SelectOptionGroupLabel": "optionGroupLabel",
-        "SelectPositioner": "positioner",
-        "SelectTrigger": "trigger"
-      }
+      "components": [
+        { "name": "Select" },
+        { "name": "SelectLabel", "partName": "label" },
+        { "name": "SelectOption", "partName": "option" },
+        { "name": "SelectContent", "partName": "content" },
+        { "name": "SelectTrigger", "partName": "trigger" },
+        { "name": "SelectPositioner", "partName": "positioner" },
+        { "name": "SelectOptionGroup", "partName": "optionGroup" },
+        { "name": "SelectOptionGroupLabel", "partName": "optionGroupLabel" }
+      ],
+      "isArkComponent": true,
+      "root": "Select"
     }
   },
   {
     "slider": {
-      "components": {
-        "Slider": "root",
-        "SliderControl": "control",
-        "SliderLabel": "label",
-        "SliderMarker": "marker",
-        "SliderMarkerGroup": "markerGroup",
-        "SliderOutput": "output",
-        "SliderRange": "range",
-        "SliderThumb": "thumb",
-        "SliderTrack": "track"
-      }
+      "components": [
+        { "name": "Slider", "partName": "root" },
+        { "name": "SliderLabel", "partName": "label" },
+        { "name": "SliderRange", "partName": "range" },
+        { "name": "SliderThumb", "partName": "thumb" },
+        { "name": "SliderTrack", "partName": "track" },
+        { "name": "SliderMarker", "partName": "marker" },
+        { "name": "SliderOutput", "partName": "output" },
+        { "name": "SliderControl", "partName": "control" },
+        { "name": "SliderMarkerGroup", "partName": "markerGroup" }
+      ],
+      "isArkComponent": true,
+      "root": "Slider"
     }
   },
   {
     "splitter": {
-      "components": {
-        "Splitter": "root",
-        "SplitterPanel": "panel",
-        "SplitterResizeTrigger": "resizeTrigger"
-      }
+      "components": [
+        { "name": "Splitter", "partName": "root" },
+        { "name": "SplitterPanel", "partName": "panel" },
+        { "name": "SplitterResizeTrigger", "partName": "resizeTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "Splitter"
     }
   },
   {
     "switch": {
-      "components": {
-        "Switch": "root",
-        "SwitchControl": "control",
-        "SwitchInput": "input",
-        "SwitchLabel": "label",
-        "SwitchThumb": "thumb"
-      }
+      "components": [
+        { "name": "Switch", "partName": "root" },
+        { "name": "SwitchInput", "partName": "input" },
+        { "name": "SwitchLabel", "partName": "label" },
+        { "name": "SwitchThumb", "partName": "thumb" },
+        { "name": "SwitchControl", "partName": "control" }
+      ],
+      "isArkComponent": true,
+      "root": "Switch"
     }
   },
   {
     "tabs": {
-      "components": {
-        "TabContent": "content",
-        "TabIndicator": "indicator",
-        "TabList": "tablist",
-        "TabTrigger": "trigger",
-        "Tabs": "root"
-      }
+      "components": [
+        { "name": "Tabs", "partName": "root" },
+        { "name": "TabList", "partName": "tablist" },
+        { "name": "TabContent", "partName": "content" },
+        { "name": "TabTrigger", "partName": "trigger" },
+        { "name": "TabIndicator", "partName": "indicator" }
+      ],
+      "isArkComponent": true,
+      "root": "Tabs"
     }
   },
   {
     "tags-input": {
-      "components": {
-        "Tag": "tag",
-        "TagDeleteTrigger": "tagDeleteTrigger",
-        "TagInput": "tagInput",
-        "TagsInput": "root",
-        "TagsInputClearTrigger": "clearTrigger",
-        "TagsInputControl": "control",
-        "TagsInputField": "",
-        "TagsInputLabel": "label"
-      },
-      "unmappedParts": ["input"]
+      "components": [
+        { "name": "Tag", "partName": "tag" },
+        { "name": "TagInput", "partName": "tagInput" },
+        { "name": "TagsInput", "partName": "root" },
+        { "name": "TagsInputInput", "partName": "input" },
+        { "name": "TagsInputLabel", "partName": "label" },
+        { "name": "TagDeleteTrigger", "partName": "tagDeleteTrigger" },
+        { "name": "TagsInputControl", "partName": "control" },
+        { "name": "TagsInputClearTrigger", "partName": "clearTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "TagsInput"
     }
   },
   {
     "tooltip": {
-      "components": {
-        "Tooltip": "",
-        "TooltipArrow": "arrow",
-        "TooltipArrowTip": "arrowTip",
-        "TooltipContent": "content",
-        "TooltipPositioner": "positioner",
-        "TooltipTrigger": "trigger"
-      }
+      "components": [
+        { "name": "Tooltip" },
+        { "name": "TooltipArrow", "partName": "arrow" },
+        { "name": "TooltipContent", "partName": "content" },
+        { "name": "TooltipTrigger", "partName": "trigger" },
+        { "name": "TooltipArrowTip", "partName": "arrowTip" },
+        { "name": "TooltipPositioner", "partName": "positioner" }
+      ],
+      "isArkComponent": true,
+      "root": "Tooltip"
     }
   },
   {
     "toast": {
-      "components": {
-        "Toast": "root",
-        "ToastCloseTrigger": "closeTrigger",
-        "ToastDescription": "description",
-        "ToastGroup": "group",
-        "ToastPlacements": "",
-        "ToastProvider": "",
-        "ToastRoot": "root",
-        "ToastTitle": "title"
-      }
+      "components": [
+        { "name": "Toast", "partName": "root" },
+        { "name": "ToastRoot", "partName": "root" },
+        { "name": "ToastGroup", "partName": "group" },
+        { "name": "ToastTitle", "partName": "title" },
+        { "name": "ToastProvider" },
+        { "name": "ToastPlacements" },
+        { "name": "ToastDescription", "partName": "description" },
+        { "name": "ToastCloseTrigger", "partName": "closeTrigger" }
+      ],
+      "isArkComponent": true,
+      "root": "ToastRoot"
     }
   }
 ]
