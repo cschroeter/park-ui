@@ -21,23 +21,17 @@
         "CarouselControl": "control",
         "CarouselIndicator": "indicator",
         "CarouselIndicatorGroup": "indicatorGroup",
-        "CarouselNextSlideTrigger": "",
-        "CarouselPrevSlideTrigger": "",
+        "CarouselNextSlideTrigger": "nextSlideTrigger",
+        "CarouselPrevSlideTrigger": "prevSlideTrigger",
         "CarouselSlide": "slide",
         "CarouselSlideGroup": "slideGroup",
         "CarouselViewport": "viewport"
-      },
-      "unmappedParts": ["previousTrigger", "nextTrigger"]
+      }
     }
   },
   {
     "checkbox": {
-      "components": {
-        "Checkbox": "root",
-        "CheckboxControl": "control",
-        "CheckboxInput": "input",
-        "CheckboxLabel": "label"
-      }
+      "components": { "Checkbox": "root", "CheckboxControl": "control", "CheckboxLabel": "label" }
     }
   },
   {
@@ -52,27 +46,29 @@
         "ColorPickerChannelSliderThumb": "channelSliderThumb",
         "ColorPickerChannelSliderTrack": "channelSliderTrack",
         "ColorPickerContent": "content",
-        "ColorPickerEyeDropperTrigger": "",
+        "ColorPickerEyeDropperTrigger": "eyeDropperTrigger",
         "ColorPickerSwatch": "swatch",
-        "ColorPickerSwatchBackground": "",
+        "ColorPickerSwatchBackground": "swatchBackground",
         "ColorPickerSwatchGroup": "swatchGroup"
       },
-      "unmappedParts": ["channelSliderTrackBg", "eyeDropTrigger", "swatchBg", "label"]
+      "unmappedParts": ["channelSliderTrackBackground", "label"]
     }
   },
   {
     "combobox": {
       "components": {
         "Combobox": "root",
+        "ComboboxClearTrigger": "clearTrigger",
         "ComboboxContent": "content",
         "ComboboxControl": "control",
         "ComboboxInput": "input",
         "ComboboxLabel": "label",
         "ComboboxOption": "option",
+        "ComboboxOptionGroup": "optionGroup",
+        "ComboboxOptionGroupLabel": "optionGroupLabel",
         "ComboboxPositioner": "positioner",
         "ComboboxTrigger": "trigger"
-      },
-      "unmappedParts": ["clearTrigger", "optionGroup"]
+      }
     }
   },
   {
@@ -91,17 +87,17 @@
         "DatePickerMonthCellTrigger": "cellTrigger",
         "DatePickerMonthSelect": "monthSelect",
         "DatePickerNextTrigger": "nextTrigger",
+        "DatePickerPositioner": "positioner",
         "DatePickerPrevTrigger": "prevTrigger",
         "DatePickerRow": "row",
         "DatePickerRowGroup": "rowGroup",
-        "DatePickerRowHeader": "header",
+        "DatePickerRowHeader": "rowHeader",
         "DatePickerTrigger": "trigger",
         "DatePickerViewTrigger": "viewTrigger",
         "DatePickerYearCell": "",
         "DatePickerYearCellTrigger": "cellTrigger",
         "DatePickerYearSelect": "yearSelect"
-      },
-      "unmappedParts": ["label"]
+      }
     }
   },
   {
@@ -170,12 +166,11 @@
         "NumberInput": "root",
         "NumberInputControl": "control",
         "NumberInputDecrementTrigger": "decrementTrigger",
-        "NumberInputField": "",
         "NumberInputIncrementTrigger": "incrementTrigger",
+        "NumberInputInput": "input",
         "NumberInputLabel": "label",
         "NumberInputScrubber": "scrubber"
-      },
-      "unmappedParts": ["input"]
+      }
     }
   },
   {
@@ -196,10 +191,9 @@
       "components": {
         "PinInput": "root",
         "PinInputControl": "control",
-        "PinInputField": "",
+        "PinInputInput": "input",
         "PinInputLabel": "label"
-      },
-      "unmappedParts": ["hiddenInput", "input"]
+      }
     }
   },
   {
@@ -243,8 +237,7 @@
         "RangeSliderRange": "range",
         "RangeSliderThumb": "thumb",
         "RangeSliderTrack": "track"
-      },
-      "unmappedParts": ["hiddenInput"]
+      }
     }
   },
   {
@@ -254,8 +247,7 @@
         "RatingGroup": "root",
         "RatingGroupControl": "control",
         "RatingGroupLabel": "label"
-      },
-      "unmappedParts": ["hiddenInput"]
+      }
     }
   },
   {
@@ -283,8 +275,7 @@
         "SelectOptionGroupLabel": "optionGroupLabel",
         "SelectPositioner": "positioner",
         "SelectTrigger": "trigger"
-      },
-      "unmappedParts": ["hiddenSelect"]
+      }
     }
   },
   {
@@ -299,8 +290,7 @@
         "SliderRange": "range",
         "SliderThumb": "thumb",
         "SliderTrack": "track"
-      },
-      "unmappedParts": ["hiddenInput"]
+      }
     }
   },
   {
@@ -309,8 +299,7 @@
         "Splitter": "root",
         "SplitterPanel": "panel",
         "SplitterResizeTrigger": "resizeTrigger"
-      },
-      "unmappedParts": ["toggleTrigger"]
+      }
     }
   },
   {
@@ -332,8 +321,7 @@
         "TabList": "tablist",
         "TabTrigger": "trigger",
         "Tabs": "root"
-      },
-      "unmappedParts": ["contentGroup"]
+      }
     }
   },
   {
@@ -348,7 +336,7 @@
         "TagsInputField": "",
         "TagsInputLabel": "label"
       },
-      "unmappedParts": ["hiddenInput", "input"]
+      "unmappedParts": ["input"]
     }
   },
   {
@@ -360,8 +348,7 @@
         "TooltipContent": "content",
         "TooltipPositioner": "positioner",
         "TooltipTrigger": "trigger"
-      },
-      "unmappedParts": ["label"]
+      }
     }
   },
   {
@@ -373,6 +360,7 @@
         "ToastGroup": "group",
         "ToastPlacements": "",
         "ToastProvider": "",
+        "ToastRoot": "root",
         "ToastTitle": "title"
       }
     }

@@ -6,8 +6,8 @@ import {
   NumberInput,
   NumberInputControl,
   NumberInputDecrementTrigger,
-  NumberInputField,
   NumberInputIncrementTrigger,
+  NumberInputInput,
 } from '~/components/number-input'
 
 export const QuantityPicker = () => {
@@ -15,7 +15,7 @@ export const QuantityPicker = () => {
     <Stack gap="1.5">
       <Label htmlFor="quantity">Quantity</Label>
       <NumberInput min={1} max={5} defaultValue="1" size="xl">
-        <NumberInputField id="quantity" />
+        <NumberInputInput id="quantity" />
         <NumberInputControl>
           <NumberInputIncrementTrigger asChild>
             <IconButton
