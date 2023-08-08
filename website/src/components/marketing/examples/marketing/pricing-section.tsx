@@ -36,7 +36,7 @@ export const PricingSection = () => {
                 {plan.features.map((feature) => (
                   <styled.li key={feature} color="fg.muted">
                     <HStack gap="4">
-                      <Box fontSize="xl" color="fg.emphasized">
+                      <Box fontSize="xl" color="accent.default">
                         <FiCheckCircle />
                       </Box>
                       <Typography>{feature}</Typography>
@@ -52,5 +52,3 @@ export const PricingSection = () => {
     </Grid>
   )
 }
-
-// {/* <Icon as={FiCheck} color="accent" boxSize="6" /> */

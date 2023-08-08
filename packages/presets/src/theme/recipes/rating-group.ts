@@ -15,29 +15,16 @@ export const ratingGroup = defineRecipe({
       transitionDuration: 'normal',
       transitionProperty: 'color, fill',
       transitionTimingFunction: 'default',
-      _readOnly: {
-        cursor: 'default',
-      },
 
-      '--color-active': {
-        base: 'colors.gray.950',
-        _dark: 'colors.white',
-      },
-      '--color-inactive': {
-        base: 'colors.neutral.300',
-        _dark: 'colors.neutral.700',
-      },
-
-      color: 'var(--color-inactive)',
-      fill: 'var(--color-inactive)',
-
+      color: 'var(--colors-bg-emphasized)',
+      fill: 'var(--colors-bg-emphasized)',
       _highlighted: {
-        color: 'var(--color-active)',
-        fill: 'var(--color-active)',
+        color: 'var(--colors-accent-default)',
+        fill: 'var(--colors-accent-default)',
       },
       _focusVisible: {
         outline: '2px solid',
-        outlineColor: 'neutral.500',
+        outlineColor: 'border.outline',
       },
     },
   }),

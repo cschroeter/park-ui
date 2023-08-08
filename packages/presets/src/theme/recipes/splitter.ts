@@ -23,7 +23,7 @@ export const splitter = defineRecipe({
     resizeTrigger: {
       borderRadius: 'full',
       transitionDuration: 'normal',
-      transitionProperty: 'background-color',
+      transitionProperty: 'background',
       transitionTimingFunction: 'default',
       outline: '0',
       background: 'bg.muted',

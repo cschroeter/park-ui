@@ -21,7 +21,11 @@ export const FaqSection = () => {
         textAlign={{ base: 'center', lg: 'start' }}
       >
         <Stack gap="3">
-          <Typography color="bg.accent" textStyle={{ base: 'sm', md: 'md' }} fontWeight="semibold">
+          <Typography
+            color="accent.default"
+            textStyle={{ base: 'sm', md: 'md' }}
+            fontWeight="semibold"
+          >
             Support
           </Typography>
           <Heading textStyle={{ base: '3xl', md: '4xl' }}>FAQs</Heading>

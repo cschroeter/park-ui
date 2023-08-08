@@ -17,6 +17,7 @@ export const popover = defineRecipe({
       borderWidth: '1px',
       boxShadow: 'lg',
       maxWidth: 'sm',
+      zIndex: '1',
       p: '4',
       _open: {
         animation: 'fadeIn 0.25s ease-out',
@@ -37,11 +38,8 @@ export const popover = defineRecipe({
       color: 'fg.muted',
     },
     arrow: {
-      '--arrow-size': '12px',
-      '--arrow-background': {
-        base: 'white',
-        _dark: 'colors.neutral.950',
-      },
+      '--arrow-size': 'var(--sizes-3)',
+      '--arrow-background': 'var(--colors-bg-default)',
     },
     arrowTip: {
       borderTopWidth: '1px',

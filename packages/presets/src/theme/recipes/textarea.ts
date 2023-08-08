@@ -13,7 +13,7 @@ export const textarea = defineRecipe({
     outline: 0,
     position: 'relative',
     transitionDuration: 'normal',
-    transitionProperty: 'border-color, box-shadow, outline',
+    transitionProperty: 'border-color, box-shadow',
     resize: 'none',
     width: 'full',
     _disabled: {
@@ -21,15 +21,8 @@ export const textarea = defineRecipe({
       cursor: 'not-allowed',
     },
     _focus: {
-      borderColor: {
-        base: 'neutral.700',
-        _dark: 'neutral.500',
-      },
-      outline: '1px solid',
-      outlineColor: {
-        base: 'neutral.700',
-        _dark: 'neutral.500',
-      },
+      borderColor: 'border.outline',
+      boxShadow: 'outline',
     },
   },
   defaultVariants: {

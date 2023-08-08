@@ -3,7 +3,7 @@ import { BsGoogle } from 'react-icons/bs'
 import { FiCheck } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/button'
-import { Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel } from '~/components/checkbox'
+import { Checkbox, CheckboxControl, CheckboxLabel } from '~/components/checkbox'
 import { Input } from '~/components/input'
 import { Label } from '~/components/label'
 import { Heading, Typography } from '~/components/typography'
@@ -36,7 +36,6 @@ export const SignInForm = () => {
           <Checkbox size="sm">
             {(state) => (
               <>
-                <CheckboxInput data-peer />
                 <CheckboxControl>{state.isChecked && <FiCheck />}</CheckboxControl>
                 <CheckboxLabel>Remember me</CheckboxLabel>
               </>

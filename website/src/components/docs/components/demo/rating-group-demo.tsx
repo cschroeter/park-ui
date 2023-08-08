@@ -35,8 +35,8 @@ const Icon = (props: IconProps) => (
   >
     <defs>
       <linearGradient id="half">
-        <stop offset="50%" stopColor="var(--color-active)" />
-        <stop offset="50%" stopColor="var(--color-inactive)" />
+        <stop offset="50%" stopColor="var(--color-accent-default)" />
+        <stop offset="50%" stopColor="var(--color-bg-emphasized)" />
       </linearGradient>
     </defs>
     <polygon

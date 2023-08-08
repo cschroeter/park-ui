@@ -19,7 +19,7 @@ export const checkbox = defineRecipe({
       alignItems: 'center',
       borderColor: 'border.emphasized',
       borderWidth: '1px',
-      color: 'fg.accent',
+      color: 'accent.fg',
       cursor: 'pointer',
       display: 'flex',
       justifyContent: 'center',
@@ -30,10 +30,10 @@ export const checkbox = defineRecipe({
         background: 'bg.subtle',
       },
       _checked: {
-        background: 'bg.accent',
+        background: 'accent.default',
         borderColor: 'border.accent',
         _hover: {
-          background: 'bg.accent',
+          background: 'accent.default',
         },
       },
     },

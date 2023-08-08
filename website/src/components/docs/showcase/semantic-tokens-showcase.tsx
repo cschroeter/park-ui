@@ -12,7 +12,12 @@ const data = {
   bg: {
     title: 'Background',
     description:
-      'These colors are applied to the background elements of a user interface, such as containers, sections, or entire screens,',
+      'These colors are applied to the background elements of a user interface, such as containers, sections, or entire screens.',
+  },
+  accent: {
+    title: 'Accent',
+    description:
+      "These colors play a crucial role in guiding users' attention to specific actions, content, or interactive elements.",
   },
 }
 
@@ -28,7 +33,7 @@ export const SemanticTokensShowcase = () => {
               {data[group.key].description}
             </Typography>
           </Stack>
-          <Grid gap={{ base: '4', md: '6' }} columns={{ base: 2, sm: 4 }}>
+          <Grid gap={{ base: '4', md: '6' }} columns={{ base: 2, sm: 3 }}>
             {group.tokens.map((token, id) => (
               <ColorTokenSwatch key={id} {...token} />
             ))}

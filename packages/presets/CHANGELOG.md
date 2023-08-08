@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens. Interative elements like buttons and links will use these colors for their background and foreground colors.
+
+### Changed
+
+- All recipes now use semantic tokens for their colors.
+- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to `neutral.300` in dark mode to improve contrast.
+
+### Removed
+
+- Removed `bg.accent` and `fg.accent` from the list of semantic tokens.
+
 ## [0.2.0] - 2023-08-06
 
 ### Added

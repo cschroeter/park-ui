@@ -25,7 +25,7 @@ export const radioButtonGroup = defineRecipe({
       outline: 'none',
       position: 'relative',
       transitionDuration: 'normal',
-      transitionProperty: 'background-color, border-color, color',
+      transitionProperty: 'background, border-color, color',
       transitionTimingFunction: 'default',
       userSelect: 'none',
       verticalAlign: 'middle',
@@ -36,12 +36,12 @@ export const radioButtonGroup = defineRecipe({
       },
       _checked: {
         cursor: 'default',
-        color: 'fg.accent',
+        color: 'accent.fg',
         borderColor: 'border.accent',
-        background: 'bg.accent',
+        background: 'accent.default',
         _hover: {
-          color: 'fg.accent',
-          background: 'bg.accent',
+          color: 'accent.fg',
+          background: 'accent.default',
         },
       },
       _disabled: {

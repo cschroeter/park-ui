@@ -21,7 +21,7 @@ export const slider = defineRecipe({
       flex: '1',
     },
     range: {
-      background: 'bg.accent',
+      background: 'accent.default',
       borderRadius: 'sm',
     },
     thumb: {
