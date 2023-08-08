@@ -1,10 +1,6 @@
 'use client'
-import * as Ark from '@ark-ui/react/accordion'
 import { createContext, forwardRef, useContext, type ComponentType } from 'react'
 import { styled } from 'styled-system/jsx'
-import { accordion } from 'styled-system/recipes'
-
-// (props?: AccordionVariantProps): Pretty<Record<"root" | "item" | "trigger" | "content", string>>
 
 type AnyRecipe = (args?: Record<string, unknown>) => Record<string, string>
 
@@ -44,12 +40,24 @@ export const createStyleContext = <R extends AnyRecipe>(createStyles: R) => {
   }
 }
 
+import * as Ark from '@ark-ui/react/accordion'
+import { accordion } from 'styled-system/recipes'
+
 const { withProvider, withContext } = createStyleContext(accordion)
 
-export const Accordion = withProvider(styled(Ark.Accordion), 'root')
-export const AccordionItem = withContext(styled(Ark.AccordionItem), 'item')
-export const AccordionContent = withContext(styled(Ark.AccordionContent), 'content')
-export const AccordionTrigger = withContext(styled(Ark.AccordionTrigger), 'trigger')
+const AccordionRoot = withProvider(styled(Ark.Accordion.Root), 'root')
+const AccordionItem = withContext(styled(Ark.Accordion.Item), 'item')
+const AccordionContent = withContext(styled(Ark.Accordion.Content), 'content')
+const AccordionTrigger = withContext(styled(Ark.Accordion.Trigger), 'trigger')
+
+const Accordion = Object.assign(AccordionRoot, {
+  Root: AccordionRoot,
+  Item: AccordionItem,
+  Content: AccordionContent,
+  Trigger: AccordionTrigger,
+})
+
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger }
 
 // const withProvider = <V, T = React.ElementType>(
 //   Component: React.ElementType,

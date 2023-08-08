@@ -1,25 +1,21 @@
+'use client'
 import { Container } from 'styled-system/jsx'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '~/components/playground'
+import { Accordion } from '~/components/playground'
 
 const Page = () => {
   return (
     <Container>
-      <Accordion defaultValue={['React']} size="md" multiple mt="2" background="teal.800">
-        <AccordionItem value="react">
-          <AccordionTrigger>Open</AccordionTrigger>
-          <AccordionContent>
+      <Accordion.Root defaultValue={['React']} multiple>
+        <Accordion.Item value="react">
+          <Accordion.Trigger>Open</Accordion.Trigger>
+          <Accordion.Content>
             <div>
               Pudding donut gummies chupa chups oat cake marzipan biscuit tart. Dessert macaroon ice
               cream bonbon jelly. Jelly topping tiramisu halvah lollipop.
             </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+          </Accordion.Content>
+        </Accordion.Item>
+      </Accordion.Root>
     </Container>
   )
 }
