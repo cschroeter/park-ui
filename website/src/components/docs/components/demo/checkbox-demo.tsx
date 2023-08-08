@@ -1,17 +1,10 @@
-import {
-  Checkbox,
-  CheckboxControl,
-  CheckboxInput,
-  CheckboxLabel,
-  type CheckboxProps,
-} from '~/components/checkbox'
+import { Checkbox, CheckboxControl, CheckboxLabel, type CheckboxProps } from '~/components/checkbox'
 
 export const CheckboxDemo = (props: CheckboxProps) => {
   return (
     <Checkbox {...props}>
       {(state) => (
         <>
-          <CheckboxInput data-peer />
           <CheckboxControl>
             {state.isChecked && <CheckIcon />}
             {state.isIndeterminate && <MinusIcon />}

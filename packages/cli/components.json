@@ -166,12 +166,11 @@
         "NumberInput": "root",
         "NumberInputControl": "control",
         "NumberInputDecrementTrigger": "decrementTrigger",
-        "NumberInputField": "",
         "NumberInputIncrementTrigger": "incrementTrigger",
+        "NumberInputInput": "input",
         "NumberInputLabel": "label",
         "NumberInputScrubber": "scrubber"
-      },
-      "unmappedParts": ["input"]
+      }
     }
   },
   {
@@ -192,10 +191,9 @@
       "components": {
         "PinInput": "root",
         "PinInputControl": "control",
-        "PinInputField": "",
+        "PinInputInput": "input",
         "PinInputLabel": "label"
-      },
-      "unmappedParts": ["input"]
+      }
     }
   },
   {
@@ -323,8 +321,7 @@
         "TabList": "tablist",
         "TabTrigger": "trigger",
         "Tabs": "root"
-      },
-      "unmappedParts": ["contentGroup"]
+      }
     }
   },
   {
@@ -363,6 +360,7 @@
         "ToastGroup": "group",
         "ToastPlacements": "",
         "ToastProvider": "",
+        "ToastRoot": "root",
         "ToastTitle": "title"
       }
     }

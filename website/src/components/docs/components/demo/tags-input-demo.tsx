@@ -8,7 +8,7 @@ import {
   TagInput,
   TagsInput,
   TagsInputControl,
-  TagsInputField,
+  TagsInputInput,
   TagsInputLabel,
 } from '~/components/tags-input'
 
@@ -32,7 +32,7 @@ export const TagsInputDemo = () => {
                 <TagInput index={index} value={value} />
               </Fragment>
             ))}
-            <TagsInputField placeholder="Add tag" />
+            <TagsInputInput placeholder="Add tag" />
           </TagsInputControl>
         </>
       )}
