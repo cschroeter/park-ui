@@ -1,14 +1,14 @@
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import { Divider, Stack } from 'styled-system/jsx'
-import { IconButton } from '~/components/icon-button'
-import { Label } from '~/components/label'
+import { IconButton } from '~/components/ui/icon-button'
+import { Label } from '~/components/ui/label'
 import {
   NumberInput,
   NumberInputControl,
   NumberInputDecrementTrigger,
   NumberInputIncrementTrigger,
   NumberInputInput,
-} from '~/components/number-input'
+} from '~/components/ui/number-input'
 
 export const QuantityPicker = () => {
   return (

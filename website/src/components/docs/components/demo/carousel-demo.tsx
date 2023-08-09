@@ -10,8 +10,8 @@ import {
   CarouselSlideGroup,
   CarouselViewport,
   type CarouselProps,
-} from '~/components/carousel'
-import { IconButton } from '~/components/icon-button'
+} from '~/components/ui/carousel'
+import { IconButton } from '~/components/ui/icon-button'
 
 export const CarouselDemo = (props: CarouselProps) => {
   const images = [

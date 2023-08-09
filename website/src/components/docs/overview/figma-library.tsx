@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Box, Flex } from 'styled-system/jsx'
 import { link } from 'styled-system/recipes'
-import { Heading, Typography } from '~/components/typography'
+import { Heading, Typography } from '~/components/ui/typography'
 import { article } from './introduction'
 
 export const FigmaLibrary = () => {

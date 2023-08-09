@@ -3,8 +3,6 @@ import { Portal } from '@ark-ui/react'
 import { useEffect, useState } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useCopyToClipboard } from 'usehooks-ts'
-import { convertCommand, type PackageManager } from '~/lib/convert-command'
-import { IconButton, type IconButtonProps } from '../icon-button'
 import {
   Menu,
   MenuContent,
@@ -12,7 +10,9 @@ import {
   MenuOptionItem,
   MenuPositioner,
   MenuTrigger,
-} from '../menu'
+} from '~/components/ui/menu'
+import { convertCommand, type PackageManager } from '~/lib/convert-command'
+import { IconButton, type IconButtonProps } from '../ui/icon-button'
 
 type Props = { content: string } & Omit<IconButtonProps, 'aria-label' | 'icon'>
 
@@ -32,6 +32,7 @@ export const CopyCommandButton = (props: Props) => {
 
   return (
     <Menu
+      size="xs"
       positioning={{ placement: 'bottom-end', gutter: -2 }}
       value={value}
       onValueChange={(data) => {
@@ -53,7 +54,7 @@ export const CopyCommandButton = (props: Props) => {
         />
       </MenuTrigger>
       <Portal>
-        <MenuPositioner size="xs">
+        <MenuPositioner>
           <MenuContent>
             <MenuItemGroup id="manager">
               <MenuOptionItem name="manager" type="radio" value="npm">

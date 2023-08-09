@@ -1,5 +1,5 @@
 import { type RatingGroupVariantProps } from 'styled-system/recipes'
-import { Rating, RatingGroup, RatingGroupControl } from '~/components/rating-group'
+import { Rating, RatingGroup, RatingGroupControl } from '~/components/ui/rating-group'
 
 export const RatingGroupDemo = (props: RatingGroupVariantProps) => {
   return (

@@ -1,5 +1,11 @@
 import type { SwitchProps } from '@ark-ui/react'
-import { Switch, SwitchControl, SwitchInput, SwitchLabel, SwitchThumb } from '~/components/switch'
+import {
+  Switch,
+  SwitchControl,
+  SwitchInput,
+  SwitchLabel,
+  SwitchThumb,
+} from '~/components/ui/switch'
 
 export const SwitchDemo = (props: SwitchProps) => (
   <Switch {...props}>

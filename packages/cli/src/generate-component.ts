@@ -1,42 +1,35 @@
+import { match } from 'ts-pattern'
 import { camelCase, chain } from 'voca'
 
-const filterStartsWithUpperCase = (s: string) => {
-  return !/^[a-z]/.test(s)
-}
-
+export const startsWithUpperCase = (str: string) => chain(str).first().isUpperCase().value()
 const pascalCase = (s: string) => chain(s).camelCase().capitalize().value()
 
-const getComponents = async (moduleName: string) => {
-  const Ark = await import(`@ark-ui/react/${moduleName}`)
-  const result = Object.keys(Ark).filter(String).filter(filterStartsWithUpperCase)
-
-  return result
-}
-
-const getParts = async (moduleName: string) => {
-  const anatomyName = `${camelCase(moduleName)}Anatomy`
-  const anatomy = await import(`@ark-ui/react/${moduleName}`).then((m) => m[anatomyName])
-  return (anatomy.keys() as string[]).sort((a, b) => b.length - a.length)
-}
+const getComponent = async (moduleName: string) =>
+  import(`@ark-ui/react/${moduleName}`).then((m) => m[pascalCase(moduleName)])
 
 export const generateComponent = async (moduleName: string) => {
-  const components = await getComponents(moduleName)
-  const baseName = camelCase(moduleName)
-  const parts = await getParts(moduleName)
+  const component = await getComponent(moduleName)
 
   return {
     [moduleName]: {
-      components: components.map((componentName) => {
-        const partName = parts.find((partName) =>
-          componentName.replace(baseName, 'Root').toLowerCase().endsWith(partName.toLowerCase()),
-        )
-        return {
-          name: componentName,
-          partName,
-        }
-      }),
+      components: Object.entries(component)
+        .filter(([key]) => startsWithUpperCase(key))
+        .reduce((acc, [key, value]) => {
+          return {
+            ...acc,
+            [key]: {
+              // @ts-expect-error
+              name: value.displayName ?? pascalCase(moduleName).concat(key === 'Root' ? '' : key),
+              partName: camelCase(key),
+            },
+          }
+        }, {}),
       isArkComponent: true,
       rootComponent: pascalCase(moduleName),
+      className: match(moduleName)
+        .with('switch', () => 'switchRecipe') // resvered word
+        .with('range-slider', () => 'slider') // same recipe
+        .otherwise(() => camelCase(moduleName)),
     },
   }
 }

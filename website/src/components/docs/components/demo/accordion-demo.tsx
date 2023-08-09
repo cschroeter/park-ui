@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   type AccordionProps,
-} from '~/components/accordion'
+} from '~/components/ui/accordion'
 
 export const AccordionDemo = (props: AccordionProps) => {
   const items = ['React', 'Solid', 'Vue']

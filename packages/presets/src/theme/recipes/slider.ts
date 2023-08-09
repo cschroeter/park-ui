@@ -1,12 +1,11 @@
 import { sliderAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(sliderAnatomy.build())
-
-export const slider = defineRecipe({
+export const slider = defineSlotRecipe({
   className: 'slider',
   description: 'A slider style',
-  base: parts({
+  slots: sliderAnatomy.keys(),
+  base: {
     root: {
       width: 'full',
     },
@@ -32,13 +31,13 @@ export const slider = defineRecipe({
       boxShadow: 'sm',
       outline: 'none',
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      md: parts({
+      md: {
         control: {
           py: '2',
         },
@@ -56,7 +55,7 @@ export const slider = defineRecipe({
           mt: '2',
           textStyle: 'md',
         },
-      }),
+      },
     },
   },
 })

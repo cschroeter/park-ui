@@ -1,12 +1,11 @@
 import { carouselAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(carouselAnatomy.build())
-
-export const carousel = defineRecipe({
+export const carousel = defineSlotRecipe({
   className: 'carousel',
   description: 'A carousel style',
-  base: parts({
+  slots: carouselAnatomy.keys(),
+  base: {
     viewport: {
       overflowX: 'hidden',
       position: 'relative',
@@ -40,13 +39,13 @@ export const carousel = defineRecipe({
         outlineColor: 'border.outline',
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         control: {
           gap: '1',
           p: '1',
@@ -58,8 +57,8 @@ export const carousel = defineRecipe({
           width: '2',
           height: '2',
         },
-      }),
-      md: parts({
+      },
+      md: {
         control: {
           gap: '2',
           p: '2.5',
@@ -71,7 +70,7 @@ export const carousel = defineRecipe({
           width: '2.5',
           height: '2.5',
         },
-      }),
+      },
     },
   },
 })

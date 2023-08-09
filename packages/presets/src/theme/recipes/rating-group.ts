@@ -1,12 +1,11 @@
 import { ratingGroupAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(ratingGroupAnatomy.build())
-
-export const ratingGroup = defineRecipe({
+export const ratingGroup = defineSlotRecipe({
   className: 'ratingGroup',
   description: 'A rating group style',
-  base: parts({
+  slots: ratingGroupAnatomy.keys(),
+  base: {
     control: {
       display: 'flex',
     },
@@ -27,13 +26,13 @@ export const ratingGroup = defineRecipe({
         outlineColor: 'border.outline',
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         control: {
           gap: '0',
         },
@@ -43,8 +42,8 @@ export const ratingGroup = defineRecipe({
             height: '4',
           },
         },
-      }),
-      md: parts({
+      },
+      md: {
         control: {
           gap: '0.5',
         },
@@ -54,8 +53,8 @@ export const ratingGroup = defineRecipe({
             height: '5',
           },
         },
-      }),
-      lg: parts({
+      },
+      lg: {
         control: {
           gap: '0.5',
         },
@@ -65,7 +64,7 @@ export const ratingGroup = defineRecipe({
             height: '6',
           },
         },
-      }),
+      },
     },
   },
 })

@@ -1,7 +1,7 @@
 import { Portal } from '@ark-ui/react'
 import { FiChevronDown } from 'react-icons/fi'
 import { HStack } from 'styled-system/jsx'
-import { Button } from '~/components/button'
+import { Button } from '~/components/ui/button'
 import {
   Select,
   SelectContent,
@@ -9,7 +9,7 @@ import {
   SelectPositioner,
   SelectTrigger,
   type SelectProps,
-} from '~/components/select'
+} from '~/components/ui/select'
 
 export const SelectDemo = (props: SelectProps) => {
   return (

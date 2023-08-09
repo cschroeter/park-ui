@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useCopyToClipboard } from 'usehooks-ts'
-import { IconButton, type IconButtonProps } from '../icon-button'
+import { IconButton, type IconButtonProps } from '../ui/icon-button'
 
 type Props = { content: string } & Omit<IconButtonProps, 'aria-label' | 'icon'>
 

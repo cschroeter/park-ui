@@ -1,4 +1,4 @@
-import { TabIndicator, TabList, TabTrigger, Tabs, type TabsProps } from '~/components/tabs'
+import { TabIndicator, TabList, TabTrigger, Tabs, type TabsProps } from '~/components/ui/tabs'
 
 export const TabsDemo = (props: TabsProps) => (
   <Tabs defaultValue="react" {...props}>

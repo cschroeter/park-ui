@@ -3,7 +3,7 @@ import { PopoverAnchor, Portal } from '@ark-ui/react'
 import { useForm } from 'react-hook-form'
 import { Stack } from 'styled-system/jsx'
 import { useBoolean } from 'usehooks-ts'
-import { Button } from '~/components/button'
+import { Button } from '~/components/ui/button'
 import {
   Popover,
   PopoverArrow,
@@ -12,8 +12,8 @@ import {
   PopoverContent,
   PopoverPositioner,
   type PopoverProps,
-} from '~/components/popover'
-import { Textarea } from '../textarea'
+} from '~/components/ui/popover'
+import { Textarea } from '../ui/textarea'
 
 type Fields = {
   message: string

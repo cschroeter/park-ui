@@ -1,7 +1,7 @@
 import { Portal } from '@ark-ui/react'
 import { FiX } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
-import { Button } from '~/components/button'
+import { Button } from '~/components/ui/button'
 import {
   Dialog,
   DialogBackdrop,
@@ -11,8 +11,8 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from '~/components/dialog'
-import { IconButton } from '~/components/icon-button'
+} from '~/components/ui/dialog'
+import { IconButton } from '~/components/ui/icon-button'
 
 export const DialogDemo = () => {
   return (

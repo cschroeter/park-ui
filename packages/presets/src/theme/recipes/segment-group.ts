@@ -1,12 +1,11 @@
 import { segmentGroupAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(segmentGroupAnatomy.build())
-
-export const segmentGroup = defineRecipe({
+export const segmentGroup = defineSlotRecipe({
   className: 'segmentGroup',
   description: 'A segment group style',
-  base: parts({
+  slots: segmentGroupAnatomy.keys(),
+  base: {
     root: {
       display: 'flex',
       flexDirection: {
@@ -65,22 +64,22 @@ export const segmentGroup = defineRecipe({
         _vertical: '1.5',
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         radio: {
           textStyle: 'sm',
         },
-      }),
-      md: parts({
+      },
+      md: {
         radio: {
           textStyle: 'md',
         },
-      }),
+      },
     },
   },
 })

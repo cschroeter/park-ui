@@ -3,7 +3,7 @@ import {
   SplitterPanel,
   SplitterResizeTrigger,
   type SplitterProps,
-} from '~/components/splitter'
+} from '~/components/ui/splitter'
 
 export const SplitterDemo = (props: SplitterProps) => {
   return (

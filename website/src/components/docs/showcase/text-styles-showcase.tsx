@@ -1,5 +1,5 @@
 import { Box, Flex } from 'styled-system/jsx'
-import { Typography } from '~/components/typography'
+import { Typography } from '~/components/ui/typography'
 
 export const TextStylesShowcase = () => {
   return (

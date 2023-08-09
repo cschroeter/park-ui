@@ -1,5 +1,5 @@
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
-import { IconButton } from '~/components/icon-button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   NumberInput,
   NumberInputControl,
@@ -7,7 +7,7 @@ import {
   NumberInputIncrementTrigger,
   NumberInputInput,
   NumberInputScrubber,
-} from '~/components/number-input'
+} from '~/components/ui/number-input'
 
 export const NumberInputDemo = () => {
   return (

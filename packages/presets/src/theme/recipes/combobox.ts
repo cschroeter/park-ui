@@ -1,12 +1,11 @@
 import { comboboxAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(comboboxAnatomy.build())
-
-export const combobox = defineRecipe({
+export const combobox = defineSlotRecipe({
   className: 'combobox',
   description: 'A combobox style',
-  base: parts({
+  slots: comboboxAnatomy.keys(),
+  base: {
     root: {
       display: 'flex',
       flexDirection: 'column',
@@ -15,9 +14,8 @@ export const combobox = defineRecipe({
     control: {
       position: 'relative',
     },
-
     trigger: {
-      position: 'absolute',
+      position: 'absolute!',
       right: '0',
       bottom: '0',
       top: '0',
@@ -60,25 +58,25 @@ export const combobox = defineRecipe({
         background: 'bg.subtle',
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         content: { p: '0.5', gap: '1' },
         option: { textStyle: 'sm', px: '2', height: '9' },
-      }),
-      md: parts({
+      },
+      md: {
         content: { p: '1', gap: '1' },
         option: { textStyle: 'sm', px: '2', height: '10' },
         trigger: { right: '4' },
-      }),
-      lg: parts({
+      },
+      lg: {
         content: { p: '1.5', gap: '1' },
         option: { textStyle: 'md', px: '2', height: '11' },
-      }),
+      },
     },
   },
 })

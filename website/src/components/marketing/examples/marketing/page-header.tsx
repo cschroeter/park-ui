@@ -1,5 +1,5 @@
 import { Stack } from 'styled-system/jsx'
-import { Heading, Typography } from '~/components/typography'
+import { Heading, Typography } from '~/components/ui/typography'
 
 export const PageHeader = () => {
   return (

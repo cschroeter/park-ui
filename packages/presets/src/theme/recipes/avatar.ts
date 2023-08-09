@@ -1,12 +1,11 @@
 import { avatarAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(avatarAnatomy.build())
-
-export const avatar = defineRecipe({
+export const avatar = defineSlotRecipe({
   className: 'avatar',
   description: 'An avatar style',
-  base: parts({
+  slots: avatarAnatomy.keys(),
+  base: {
     root: {
       borderRadius: 'full',
       borderWidth: '1px',
@@ -24,13 +23,13 @@ export const avatar = defineRecipe({
     image: {
       objectFit: 'cover',
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      xs: parts({
+      xs: {
         root: {
           height: '8',
           width: '8',
@@ -38,8 +37,8 @@ export const avatar = defineRecipe({
         fallback: {
           textStyle: 'xs',
         },
-      }),
-      sm: parts({
+      },
+      sm: {
         root: {
           height: '9',
           width: '9',
@@ -47,8 +46,8 @@ export const avatar = defineRecipe({
         fallback: {
           textStyle: 'sm',
         },
-      }),
-      md: parts({
+      },
+      md: {
         root: {
           height: '10',
           width: '10',
@@ -56,8 +55,8 @@ export const avatar = defineRecipe({
         fallback: {
           textStyle: 'md',
         },
-      }),
-      lg: parts({
+      },
+      lg: {
         root: {
           height: '11',
           width: '11',
@@ -65,8 +64,8 @@ export const avatar = defineRecipe({
         fallback: {
           textStyle: 'lg',
         },
-      }),
-      xl: parts({
+      },
+      xl: {
         root: {
           height: '12',
           width: '12',
@@ -74,8 +73,8 @@ export const avatar = defineRecipe({
         fallback: {
           textStyle: 'xl',
         },
-      }),
-      '2xl': parts({
+      },
+      '2xl': {
         root: {
           height: '16',
           width: '16',
@@ -83,7 +82,7 @@ export const avatar = defineRecipe({
         fallback: {
           textStyle: '2xl',
         },
-      }),
+      },
     },
   },
 })

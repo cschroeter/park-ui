@@ -3,7 +3,6 @@ import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Stack } from 'styled-system/jsx'
-import { sitemap } from '../../sitemap'
 import {
   Segment,
   SegmentControl,
@@ -11,8 +10,9 @@ import {
   SegmentIndicator,
   SegmentInput,
   SegmentLabel,
-} from '../segment-group'
-import { Typography } from '../typography'
+} from '~/components/ui/segment-group'
+import { sitemap } from '../../sitemap'
+import { Typography } from '../ui/typography'
 
 export const Sidebar = () => {
   const pathname = usePathname()

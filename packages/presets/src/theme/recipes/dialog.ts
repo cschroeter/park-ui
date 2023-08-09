@@ -1,12 +1,11 @@
 import { dialogAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(dialogAnatomy.build())
-
-export const dialog = defineRecipe({
+export const dialog = defineSlotRecipe({
   className: 'dialog',
   description: 'A dialog style',
-  base: parts({
+  slots: dialogAnatomy.keys(),
+  base: {
     backdrop: {
       backdropFilter: 'blur(4px)',
       background: {
@@ -54,5 +53,5 @@ export const dialog = defineRecipe({
       color: 'fg.muted',
       textStyle: 'sm',
     },
-  }),
+  },
 })

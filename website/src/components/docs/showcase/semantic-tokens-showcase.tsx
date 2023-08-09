@@ -1,5 +1,5 @@
 import { Grid, Stack } from 'styled-system/jsx'
-import { Heading, Typography } from '~/components/typography'
+import { Heading, Typography } from '~/components/ui/typography'
 import { getColorTokens } from '~/lib/get-color-tokens'
 import { ColorTokenSwatch } from './color-token-swatch'
 

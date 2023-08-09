@@ -14,10 +14,10 @@ import {
   ColorPickerSwatch,
   ColorPickerSwatchBackground,
   ColorPickerSwatchGroup,
-} from '~/components/color-picker'
-import { IconButton } from '~/components/icon-button'
-import { Input } from '~/components/input'
-import { Typography } from '~/components/typography'
+} from '~/components/ui/color-picker'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
+import { Typography } from '~/components/ui/typography'
 
 const presets = [
   'hsl(10, 81%, 59%)',

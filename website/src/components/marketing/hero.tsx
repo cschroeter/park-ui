@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import { TbBrandReact, TbBrandSolidjs, TbBrandVue } from 'react-icons/tb'
 import { Box, Container, HStack, Stack } from '../../../styled-system/jsx'
 import { button } from '../../../styled-system/recipes'
-import { Heading, Typography } from '../typography'
+import { Heading, Typography } from '../ui/typography'
 
 export const Hero = () => {
   return (

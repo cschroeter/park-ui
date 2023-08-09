@@ -1,13 +1,11 @@
 import { hoverCardAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(hoverCardAnatomy.build())
-
-export const hoverCard = defineRecipe({
+export const hoverCard = defineSlotRecipe({
   className: 'hoverCard',
   description: 'A hover card style',
-  base: parts({
-    positioner: {},
+  slots: hoverCardAnatomy.keys(),
+  base: {
     content: {
       '--hover-card-background': 'colors.bg.default',
       background: 'var(--hover-card-background)',
@@ -32,5 +30,5 @@ export const hoverCard = defineRecipe({
       borderTopWidth: '1px',
       borderLeftWidth: '1px',
     },
-  }),
+  },
 })

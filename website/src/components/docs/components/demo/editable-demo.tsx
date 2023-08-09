@@ -1,5 +1,5 @@
 import type { EditableProps } from '@ark-ui/react'
-import { Button } from '~/components/button'
+import { Button } from '~/components/ui/button'
 import {
   Editable,
   EditableArea,
@@ -10,8 +10,8 @@ import {
   EditableLabel,
   EditablePreview,
   EditableSubmitTrigger,
-} from '~/components/editable'
-import { Label } from '~/components/label'
+} from '~/components/ui/editable'
+import { Label } from '~/components/ui/label'
 
 export const EditableDemo = (props: EditableProps) => {
   return (

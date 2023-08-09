@@ -7,7 +7,7 @@ import { TextStylesShowcase } from '~/components/docs/showcase/text-styles-showc
 import { DocsFooter } from '~/components/layout/docs-footer'
 import { PageHeader } from '~/components/layout/page-header'
 import { TableOfContent } from '~/components/layout/table-of-content'
-import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/tabs'
+import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui/tabs'
 import { findFoundation } from '~/lib/find-foundation'
 import { slugify } from '~/lib/slugify'
 import { sitemap } from '~/sitemap'

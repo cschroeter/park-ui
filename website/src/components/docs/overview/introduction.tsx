@@ -1,6 +1,6 @@
 import { cva } from 'styled-system/css'
 import { Box } from 'styled-system/jsx'
-import { Heading, Typography } from '~/components/typography'
+import { Heading, Typography } from '~/components/ui/typography'
 
 export const article = cva({
   base: {

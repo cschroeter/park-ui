@@ -1,12 +1,11 @@
 import { tagsInputAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(tagsInputAnatomy.build())
-
-export const tagsInput = defineRecipe({
+export const tagsInput = defineSlotRecipe({
   className: 'tagsInput',
   description: 'A tags input style',
-  base: parts({
+  slots: tagsInputAnatomy.keys(),
+  base: {
     root: {
       width: 'full',
       display: 'flex',
@@ -52,13 +51,13 @@ export const tagsInput = defineRecipe({
       background: 'transparent',
       outline: 'none',
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      md: parts({
+      md: {
         root: {
           gap: '1.5',
         },
@@ -76,7 +75,7 @@ export const tagsInput = defineRecipe({
           ps: '2',
           textStyle: 'sm',
         },
-      }),
+      },
     },
   },
 })

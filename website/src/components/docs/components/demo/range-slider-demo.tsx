@@ -1,4 +1,3 @@
-import { slider } from 'styled-system/recipes'
 import {
   RangeSlider,
   RangeSliderControl,
@@ -8,10 +7,10 @@ import {
   RangeSliderThumb,
   RangeSliderTrack,
   type RangeSliderProps,
-} from '~/components/range-slider'
+} from '~/components/ui/range-slider'
 
 export const RangeSliderDemo = (props: RangeSliderProps) => (
-  <RangeSlider min={0} max={100} defaultValue={[33, 66]} className={slider()} {...props}>
+  <RangeSlider min={0} max={100} defaultValue={[33, 66]} {...props}>
     <RangeSliderControl>
       <RangeSliderTrack>
         <RangeSliderRange />

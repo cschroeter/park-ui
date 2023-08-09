@@ -2,7 +2,7 @@ import { Portal } from '@ark-ui/react'
 import { FiArrowRight, FiX } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
 import type { DrawerVariantProps } from 'styled-system/recipes'
-import { Button } from '~/components/button'
+import { Button } from '~/components/ui/button'
 import {
   Drawer,
   DrawerBackdrop,
@@ -12,10 +12,10 @@ import {
   DrawerDescription,
   DrawerTitle,
   DrawerTrigger,
-} from '~/components/drawer'
-import { IconButton } from '~/components/icon-button'
-import { Input } from '~/components/input'
-import { Label } from '~/components/label'
+} from '~/components/ui/drawer'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
+import { Label } from '~/components/ui/label'
 
 export const DrawerDemo = (props: DrawerVariantProps) => {
   return (

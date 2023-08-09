@@ -34,11 +34,18 @@ import { toast } from './toast'
 import { tooltip } from './tooltip'
 
 export const recipes = {
-  accordion,
   alert,
-  avatar,
   badge,
   button,
+  input,
+  label,
+  link,
+  textarea,
+}
+
+export const slotRecipes = {
+  accordion,
+  avatar,
   carousel,
   checkbox,
   colorPicker,
@@ -47,9 +54,6 @@ export const recipes = {
   drawer,
   editable,
   hoverCard,
-  input,
-  label,
-  link,
   menu,
   numberInput,
   pagination,
@@ -65,7 +69,6 @@ export const recipes = {
   switchRecipe,
   tabs,
   tagsInput,
-  textarea,
   toast,
   tooltip,
 }

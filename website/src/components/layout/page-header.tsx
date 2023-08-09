@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import { Stack } from 'styled-system/jsx'
-import { Heading, Typography } from '../typography'
+import { Heading, Typography } from '../ui/typography'
 import { Breadcrumbs } from './breadcrumbs'
 
 type PageHeaderProps = {

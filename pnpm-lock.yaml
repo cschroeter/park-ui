@@ -41,6 +41,9 @@ importers:
       handlebars:
         specifier: 4.7.8
         version: 4.7.8
+      ts-pattern:
+        specifier: 5.0.5
+        version: 5.0.5
       voca:
         specifier: 1.4.1
         version: 1.4.1

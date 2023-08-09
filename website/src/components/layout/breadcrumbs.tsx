@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 import { Fragment } from 'react'
 import { FiChevronRight } from 'react-icons/fi'
 import { Box, HStack, type HstackProps } from 'styled-system/jsx'
-import { Typography } from '../typography'
+import { Typography } from '../ui/typography'
 
 export const Breadcrumbs = (props: HstackProps) => {
   const pathName = usePathname()

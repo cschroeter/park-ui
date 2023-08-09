@@ -6,9 +6,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '~/components/accordion'
-import { Button } from '~/components/button'
-import { Heading, Typography } from '~/components/typography'
+} from '~/components/ui/accordion'
+import { Button } from '~/components/ui/button'
+import { Heading, Typography } from '~/components/ui/typography'
 import { questions } from './data'
 
 export const FaqSection = () => {

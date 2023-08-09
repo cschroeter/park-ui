@@ -1,7 +1,7 @@
 'use client'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { Typography } from '~/components/typography'
+import { Typography } from '~/components/ui/typography'
 import type { ColorToken } from '~/lib/get-color-tokens'
 import { useColorMode } from '~/lib/use-color-mode'
 

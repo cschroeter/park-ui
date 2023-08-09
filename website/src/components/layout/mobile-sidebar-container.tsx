@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, type PropsWithChildren } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
+import { Logo } from '../icons/logo'
 import {
   Drawer,
   DrawerBackdrop,
@@ -13,9 +14,8 @@ import {
   DrawerContainer,
   DrawerContent,
   DrawerTrigger,
-} from '../drawer'
-import { IconButton } from '../icon-button'
-import { Logo } from '../icons/logo'
+} from '../ui/drawer'
+import { IconButton } from '../ui/icon-button'
 
 export const MobileSidebarContainer = (props: PropsWithChildren) => {
   return (
