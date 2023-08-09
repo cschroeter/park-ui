@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage, type AvatarProps } from '~/components/avatar'
+import { Avatar, AvatarFallback, AvatarImage, type AvatarProps } from '~/components/ui/avatar'
 
 export const AvatarDemo = (props: AvatarProps) => {
   return (

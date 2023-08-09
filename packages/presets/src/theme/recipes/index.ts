@@ -1,5 +1,4 @@
 import { alert } from './alert'
-import { avatar } from './avatar'
 import { badge } from './badge'
 import { button } from './button'
 import { carousel } from './carousel'
@@ -35,7 +34,7 @@ import { tooltip } from './tooltip'
 export const recipes = {
   // accordion,
   alert,
-  avatar,
+  // avatar,
   badge,
   button,
   carousel,
