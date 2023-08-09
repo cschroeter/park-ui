@@ -1,3 +1,4 @@
+import { match } from 'ts-pattern'
 import { camelCase, chain } from 'voca'
 
 export const startsWithUpperCase = (str: string) => chain(str).first().isUpperCase().value()
@@ -25,8 +26,10 @@ export const generateComponent = async (moduleName: string) => {
         }, {}),
       isArkComponent: true,
       rootComponent: pascalCase(moduleName),
-      // Switch is a reserved word
-      className: moduleName === 'switch' ? 'switchRecipe' : camelCase(moduleName),
+      className: match(moduleName)
+        .with('switch', () => 'switchRecipe') // resvered word
+        .with('range-slider', () => 'slider') // same recipe
+        .otherwise(() => camelCase(moduleName)),
     },
   }
 }

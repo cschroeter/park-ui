@@ -14,9 +14,8 @@ export const combobox = defineSlotRecipe({
     control: {
       position: 'relative',
     },
-
     trigger: {
-      position: 'absolute',
+      position: 'absolute!',
       right: '0',
       bottom: '0',
       top: '0',

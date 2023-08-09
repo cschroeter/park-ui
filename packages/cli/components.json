@@ -273,7 +273,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "RangeSlider",
-    "className": "rangeSlider"
+    "className": "slider"
   },
   "rating-group": {
     "components": {
