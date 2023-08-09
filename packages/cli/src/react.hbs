@@ -1,8 +1,8 @@
 import * as Ark from '@ark-ui/react/{{key}}'
-import { {{key}}, type {{rootComponent}}VariantProps } from 'styled-system/recipes'
+import { {{camelCase key}}, type {{rootComponent}}VariantProps } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withProvider, withContext } = createStyleContext({{key}})
+const { withProvider, withContext } = createStyleContext({{camelCase key}})
 
 {{#each components}}
 {{#if (eq @key "Root")}}
