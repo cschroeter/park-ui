@@ -19,13 +19,13 @@ import { Label } from '~/components/ui/label'
 
 export const DrawerDemo = (props: DrawerVariantProps) => {
   return (
-    <Drawer>
+    <Drawer {...props}>
       <DrawerTrigger asChild>
         <Button variant="secondary">Open Drawer</Button>
       </DrawerTrigger>
       <Portal>
         <DrawerBackdrop />
-        <DrawerContainer {...props}>
+        <DrawerContainer>
           <DrawerContent>
             <Stack gap="6">
               <Stack gap="1">

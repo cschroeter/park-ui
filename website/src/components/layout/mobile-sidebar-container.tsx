@@ -19,7 +19,7 @@ import { IconButton } from '../ui/icon-button'
 
 export const MobileSidebarContainer = (props: PropsWithChildren) => {
   return (
-    <Drawer>
+    <Drawer placement="left">
       {({ close }) => (
         <>
           <DrawerTrigger asChild>
@@ -28,7 +28,7 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => {
           <RouteChangeHandler close={close} />
           <Portal>
             <DrawerBackdrop />
-            <DrawerContainer placement="left">
+            <DrawerContainer>
               <DrawerContent>
                 <Stack gap="8" mt="-0.5" align="start">
                   <NextLink href="/">
