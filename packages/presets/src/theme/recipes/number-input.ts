@@ -1,12 +1,11 @@
 import { numberInputAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(numberInputAnatomy.build())
-
-export const numberInput = defineRecipe({
+export const numberInput = defineSlotRecipe({
   className: 'numberInput',
   description: 'A number input style',
-  base: parts({
+  slots: numberInputAnatomy.keys(),
+  base: {
     root: {
       borderColor: 'border.emphasized',
       borderRadius: 'sm',
@@ -39,36 +38,36 @@ export const numberInput = defineRecipe({
     incrementTrigger: {
       borderRadius: 'unset',
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      md: parts({
+      md: {
         root: {
           ps: '3',
           h: '10',
           minW: '10',
           fontSize: 'md',
         },
-      }),
-      lg: parts({
+      },
+      lg: {
         root: {
           ps: '3.5',
           h: '11',
           minW: '11',
           fontSize: 'md',
         },
-      }),
-      xl: parts({
+      },
+      xl: {
         root: {
           ps: '4',
           h: '12',
           minW: '12',
           fontSize: 'lg',
         },
-      }),
+      },
     },
   },
 })

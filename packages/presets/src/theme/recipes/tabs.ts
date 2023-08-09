@@ -1,12 +1,11 @@
 import { tabsAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(tabsAnatomy.build())
-
-export const tabs = defineRecipe({
+export const tabs = defineSlotRecipe({
   className: 'tabs',
   description: 'A tabs style',
-  base: parts({
+  slots: tabsAnatomy.keys(),
+  base: {
     root: {},
     tablist: {
       display: 'flex',
@@ -71,22 +70,22 @@ export const tabs = defineRecipe({
     content: {
       mt: '5',
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         trigger: {
           textStyle: 'sm',
         },
-      }),
-      md: parts({
+      },
+      md: {
         trigger: {
           textStyle: 'md',
         },
-      }),
+      },
     },
   },
 })

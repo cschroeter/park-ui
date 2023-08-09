@@ -1,12 +1,11 @@
 import { switchAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(switchAnatomy.build())
-
-export const switchRecipe = defineRecipe({
+export const switchRecipe = defineSlotRecipe({
   className: 'switchRecipe',
   description: 'A switch style',
-  base: parts({
+  slots: switchAnatomy.keys(),
+  base: {
     root: {
       alignItems: 'center',
       display: 'flex',
@@ -44,13 +43,13 @@ export const switchRecipe = defineRecipe({
         background: 'bg.default',
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         root: {
           gap: '2',
         },
@@ -65,8 +64,8 @@ export const switchRecipe = defineRecipe({
         label: {
           textStyle: 'sm',
         },
-      }),
-      md: parts({
+      },
+      md: {
         root: {
           gap: '3',
         },
@@ -81,8 +80,8 @@ export const switchRecipe = defineRecipe({
         label: {
           textStyle: 'md',
         },
-      }),
-      lg: parts({
+      },
+      lg: {
         root: {
           gap: '4',
         },
@@ -97,7 +96,7 @@ export const switchRecipe = defineRecipe({
         label: {
           textStyle: 'lg',
         },
-      }),
+      },
     },
   },
 })

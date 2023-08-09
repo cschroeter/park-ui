@@ -1,4 +1,6 @@
+import { accordion } from './accordion'
 import { alert } from './alert'
+import { avatar } from './avatar'
 import { badge } from './badge'
 import { button } from './button'
 import { carousel } from './carousel'
@@ -32,11 +34,19 @@ import { toast } from './toast'
 import { tooltip } from './tooltip'
 
 export const recipes = {
-  // accordion,
   alert,
-  // avatar,
   badge,
   button,
+  iconButton: button,
+  input,
+  label,
+  link,
+  textarea,
+}
+
+export const slotRecipes = {
+  accordion,
+  avatar,
   carousel,
   checkbox,
   colorPicker,
@@ -45,9 +55,6 @@ export const recipes = {
   drawer,
   editable,
   hoverCard,
-  input,
-  label,
-  link,
   menu,
   numberInput,
   pagination,
@@ -55,6 +62,7 @@ export const recipes = {
   popover,
   radioGroup,
   radioButtonGroup,
+  rangeSlider: slider,
   ratingGroup,
   segmentGroup,
   select,
@@ -63,7 +71,6 @@ export const recipes = {
   switchRecipe,
   tabs,
   tagsInput,
-  textarea,
   toast,
   tooltip,
 }

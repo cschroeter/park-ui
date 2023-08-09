@@ -1,12 +1,11 @@
 import { toastAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(toastAnatomy.build())
-
-export const toast = defineRecipe({
+export const toast = defineSlotRecipe({
   className: 'toast',
   description: 'A toast style',
-  base: parts({
+  slots: toastAnatomy.keys(),
+  base: {
     root: {
       background: 'bg.default',
       borderRadius: 'lg',
@@ -32,5 +31,5 @@ export const toast = defineRecipe({
       color: 'fg.muted',
       textStyle: 'sm',
     },
-  }),
+  },
 })

@@ -1,12 +1,11 @@
 import { radioGroupAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(radioGroupAnatomy.build())
-
-export const radioButtonGroup = defineRecipe({
+export const radioButtonGroup = defineSlotRecipe({
   className: 'radioButtonGroup',
   description: 'A radio button group style',
-  base: parts({
+  slots: radioGroupAnatomy.keys(),
+  base: {
     root: {
       display: 'flex',
       flexWrap: 'wrap',
@@ -59,13 +58,13 @@ export const radioButtonGroup = defineRecipe({
         },
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         root: {
           gap: '2',
         },
@@ -77,8 +76,8 @@ export const radioButtonGroup = defineRecipe({
             fontSize: 'xl',
           },
         },
-      }),
-      md: parts({
+      },
+      md: {
         root: {
           gap: '3',
         },
@@ -90,8 +89,8 @@ export const radioButtonGroup = defineRecipe({
             fontSize: 'xl',
           },
         },
-      }),
-      lg: parts({
+      },
+      lg: {
         root: {
           gap: '3',
         },
@@ -103,8 +102,8 @@ export const radioButtonGroup = defineRecipe({
             fontSize: 'xl',
           },
         },
-      }),
-      xl: parts({
+      },
+      xl: {
         root: {
           gap: '3',
         },
@@ -116,7 +115,7 @@ export const radioButtonGroup = defineRecipe({
             fontSize: 'xl',
           },
         },
-      }),
+      },
     },
   },
 })

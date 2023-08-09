@@ -1,12 +1,11 @@
 import { selectAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(selectAnatomy.build())
-
-export const select = defineRecipe({
+export const select = defineSlotRecipe({
   className: 'select',
   description: 'A select style',
-  base: parts({
+  slots: selectAnatomy.keys(),
+  base: {
     content: {
       background: 'bg.default',
       borderRadius: 'sm',
@@ -45,24 +44,24 @@ export const select = defineRecipe({
         background: 'bg.subtle',
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         content: { p: '0.5', gap: '1' },
         option: { textStyle: 'sm', px: '2', height: '9' },
-      }),
-      md: parts({
+      },
+      md: {
         content: { p: '1', gap: '1' },
         option: { textStyle: 'sm', px: '2', height: '10' },
-      }),
-      lg: parts({
+      },
+      lg: {
         content: { p: '1.5', gap: '1' },
         option: { textStyle: 'md', px: '2', height: '11' },
-      }),
+      },
     },
   },
 })

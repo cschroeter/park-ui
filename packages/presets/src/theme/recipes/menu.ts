@@ -1,7 +1,5 @@
 import { menuAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
-
-const parts = defineParts(menuAnatomy.build())
+import { defineSlotRecipe } from '@pandacss/dev'
 
 const itemStyle = {
   alignItems: 'center',
@@ -24,10 +22,11 @@ const itemStyle = {
   },
 } as const
 
-export const menu = defineRecipe({
+export const menu = defineSlotRecipe({
   className: 'menu',
   description: 'A menu style',
-  base: parts({
+  slots: menuAnatomy.keys(),
+  base: {
     itemGroupLabel: {
       fontWeight: 'semibold',
       textStyle: 'sm',
@@ -51,13 +50,13 @@ export const menu = defineRecipe({
     item: itemStyle,
     optionItem: itemStyle,
     triggerItem: itemStyle,
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      xs: parts({
+      xs: {
         itemGroup: {
           gap: '1',
         },
@@ -86,8 +85,8 @@ export const menu = defineRecipe({
           px: '1.5',
           mx: '1.5',
         },
-      }),
-      sm: parts({
+      },
+      sm: {
         itemGroup: {
           gap: '1',
         },
@@ -116,8 +115,8 @@ export const menu = defineRecipe({
           px: '2',
           mx: '1.5',
         },
-      }),
-      md: parts({
+      },
+      md: {
         itemGroup: {
           gap: '1',
         },
@@ -146,7 +145,7 @@ export const menu = defineRecipe({
           px: '2.5',
           mx: '1.5',
         },
-      }),
+      },
     },
   },
 })

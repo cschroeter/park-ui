@@ -1,12 +1,11 @@
 import { checkboxAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(checkboxAnatomy.build())
-
-export const checkbox = defineRecipe({
+export const checkbox = defineSlotRecipe({
   className: 'checkbox',
   description: 'A checkbox style',
-  base: parts({
+  slots: checkboxAnatomy.keys(),
+  base: {
     root: {
       alignItems: 'center',
       display: 'flex',
@@ -37,13 +36,13 @@ export const checkbox = defineRecipe({
         },
       },
     },
-  }),
+  },
   defaultVariants: {
     size: 'md',
   },
   variants: {
     size: {
-      sm: parts({
+      sm: {
         root: {
           gap: '2',
         },
@@ -59,8 +58,8 @@ export const checkbox = defineRecipe({
         label: {
           textStyle: 'sm',
         },
-      }),
-      md: parts({
+      },
+      md: {
         root: {
           gap: '3',
         },
@@ -76,8 +75,8 @@ export const checkbox = defineRecipe({
         label: {
           textStyle: 'md',
         },
-      }),
-      lg: parts({
+      },
+      lg: {
         root: {
           gap: '4',
         },
@@ -93,7 +92,7 @@ export const checkbox = defineRecipe({
         label: {
           textStyle: 'lg',
         },
-      }),
+      },
     },
   },
 })

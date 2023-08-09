@@ -1,15 +1,14 @@
 import { pinInputAnatomy } from '@ark-ui/react'
-import { defineParts, defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-const parts = defineParts(pinInputAnatomy.build())
-
-export const pinInput = defineRecipe({
+export const pinInput = defineSlotRecipe({
   className: 'pinInput',
   description: 'An pin input style',
-  base: parts({
+  slots: pinInputAnatomy.keys(),
+  base: {
     control: {
       display: 'flex',
       gap: '2',
     },
-  }),
+  },
 })
