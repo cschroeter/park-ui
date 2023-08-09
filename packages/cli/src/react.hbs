@@ -1,0 +1,8 @@
+import * as Ark from '@ark-ui/react/{{key}}'
+import { {{key}} } from 'styled-system/recipes'
+
+const { withProvider, withContext } = createStyleContext({{key}})
+
+{{#components}}
+export const {{name}} = withContext(styled(Ark.Accordion.Trigger), '{{partName}}')
+{{/components}}

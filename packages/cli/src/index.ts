@@ -4,24 +4,11 @@ import { supportedComponents } from './supported-components'
 
 const main = async () => {
   const x = await Promise.all(supportedComponents.map((component) => generateComponent(component)))
+  const y = x.reduce((acc, curr) => {
+    return { ...acc, ...curr }
+  }, {})
 
   const file = './components.json'
-  fs.outputJsonSync(file, x)
-
-  // intro(`Park UI`)
-  // await select({
-  //   message: 'Which component would you like to generate?',
-  //   options: [
-  //     { value: 'accordion', label: 'Accordion' },
-  //     { value: 'badge', label: 'Badge' },
-  //     { value: 'carousel', label: 'Carousel' },
-  //   ],
-  // })
-  // await confirm({
-  //   message: 'Ready to install components and dependencies?',
-  // })
-  // // Do stuff
-  // outro(`You're all set!`)
+  fs.outputJsonSync(file, y)
 }
-
 main()
