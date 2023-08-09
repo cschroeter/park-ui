@@ -35,9 +35,22 @@ export const accordion = defineSlotRecipe({
   },
   defaultVariants: {
     size: 'md',
+    variant: 'primary',
   },
   variants: {
     size: {
+      lg: {
+        trigger: {
+          py: '8',
+        },
+        content: {
+          pb: '12',
+          pr: '8',
+          _closed: {
+            pb: '0',
+          },
+        },
+      },
       md: {
         trigger: {
           py: '4',
@@ -48,6 +61,18 @@ export const accordion = defineSlotRecipe({
           _closed: {
             pb: '0',
           },
+        },
+      },
+    },
+    variant: {
+      primary: {
+        trigger: {
+          bg: 'teal.300',
+        },
+      },
+      secondary: {
+        trigger: {
+          bg: 'orange.200',
         },
       },
     },
