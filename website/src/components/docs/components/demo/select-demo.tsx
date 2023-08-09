@@ -9,7 +9,7 @@ import {
   SelectPositioner,
   SelectTrigger,
   type SelectProps,
-} from '~/components/select'
+} from '~/components/ui/select'
 
 export const SelectDemo = (props: SelectProps) => {
   return (

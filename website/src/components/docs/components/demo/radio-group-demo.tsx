@@ -5,7 +5,7 @@ import {
   RadioInput,
   RadioLabel,
   type RadioGroupProps,
-} from '~/components/radio-group'
+} from '~/components/ui/radio-group'
 
 export const RadioGroupDemo = (props: RadioGroupProps) => {
   const options = [

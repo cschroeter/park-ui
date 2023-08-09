@@ -1,5 +1,4 @@
 import { readFileSync } from 'fs'
-import { match } from 'ts-pattern'
 import { sitemap } from '~/sitemap'
 
 export type DefaultProps = Record<
@@ -26,15 +25,10 @@ export const findComponent = async (name: string): Promise<Component | undefined
     .flatMap((section) => section.entries)
     .find((entry) => entry.href === `/docs/components/${name}`)
 
-  const recipeName = match(name)
-    .with('icon-button', () => 'button')
-    .with('range-slider', () => 'slider')
-    .otherwise(() => name)
-
   if (entry) {
-    const snippet = readFileSync(`./src/components/${name}.tsx`, 'utf8')
+    const snippet = readFileSync(`./src/components/ui/${name}.tsx`, 'utf8')
     const code = readFileSync(`./src/components/docs/components/demo/${name}-demo.tsx`, 'utf8')
-    const recipe = readFileSync(`../packages/presets/src/theme/recipes/${recipeName}.ts`, 'utf8')
+    const recipe = readFileSync(`../packages/presets/src/theme/recipes/${name}.ts`, 'utf8')
 
     return {
       ...entry,

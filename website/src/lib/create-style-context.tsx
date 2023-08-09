@@ -1,3 +1,4 @@
+'use client'
 import { createContext, forwardRef, useContext, type ComponentType } from 'react'
 
 type AnyProps = Record<string, unknown>
@@ -9,10 +10,7 @@ type AnyRecipe = {
 export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null)
 
-  const withProvider = <T extends JSX.IntrinsicAttributes>(
-    Component: ComponentType<T>,
-    part?: string,
-  ) => {
+  const withProvider = <T extends {}>(Component: ComponentType<T>, part?: string) => {
     const Comp = forwardRef((props: T & Parameters<R>[0], ref) => {
       const [variantProps, rest] = recipe.splitVariantProps(props)
       const styles = recipe(variantProps)
@@ -26,10 +24,9 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
     return Comp
   }
 
-  const withContext = <T extends JSX.IntrinsicAttributes>(
-    Component: ComponentType<T>,
-    part?: string,
-  ) => {
+  const withContext = <T extends {}>(Component: ComponentType<T>, part?: string) => {
+    if (!part) return Component
+
     const Comp = forwardRef((props: T, ref) => {
       const styles = useContext(StyleContext)
       return <Component ref={ref} className={styles?.[part ?? '']} {...props} />

@@ -1,7 +1,7 @@
 import { HStack, Stack } from 'styled-system/jsx'
-import { Avatar, AvatarFallback, AvatarImage } from '~/components/avatar'
 import { Button } from '~/components/button'
 import { Heading, Typography } from '~/components/typography'
+import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar'
 
 export const ContactCard = () => {
   return (

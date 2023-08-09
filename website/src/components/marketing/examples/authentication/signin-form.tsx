@@ -3,10 +3,10 @@ import { BsGoogle } from 'react-icons/bs'
 import { FiCheck } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/button'
-import { Checkbox, CheckboxControl, CheckboxLabel } from '~/components/checkbox'
 import { Input } from '~/components/input'
 import { Label } from '~/components/label'
 import { Heading, Typography } from '~/components/typography'
+import { Checkbox, CheckboxControl, CheckboxLabel } from '~/components/ui/checkbox'
 import { LogoIcon } from './logo'
 
 export const SignInForm = () => {

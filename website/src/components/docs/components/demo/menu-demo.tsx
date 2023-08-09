@@ -18,8 +18,8 @@ import {
 } from 'react-icons/fi'
 import { HStack } from 'styled-system/jsx'
 import { Button } from '~/components/button'
-import { Menu, MenuContent, MenuItem, MenuPositioner, MenuTrigger } from '~/components/menu'
 import { Typography } from '~/components/typography'
+import { Menu, MenuContent, MenuItem, MenuPositioner, MenuTrigger } from '~/components/ui/menu'
 
 export const MenuDemo = () => {
   return (

@@ -7,7 +7,7 @@ import {
   NumberInputIncrementTrigger,
   NumberInputInput,
   NumberInputScrubber,
-} from '~/components/number-input'
+} from '~/components/ui/number-input'
 
 export const NumberInputDemo = () => {
   return (

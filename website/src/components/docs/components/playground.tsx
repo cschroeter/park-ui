@@ -6,9 +6,15 @@ import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
 import { Typography } from '~/components/typography'
+import {
+  Radio,
+  RadioControl,
+  RadioGroup,
+  RadioInput,
+  RadioLabel,
+} from '~/components/ui/radio-group'
 import type { DefaultProps } from '~/lib/find-component'
 import { IconButton } from '../../icon-button'
-import { Radio, RadioControl, RadioGroup, RadioInput, RadioLabel } from '../../radio-group'
 import { AccordionDemo } from './demo/accordion-demo'
 import { AlertDemo } from './demo/alert-demo'
 import { AvatarDemo } from './demo/avatar-demo'

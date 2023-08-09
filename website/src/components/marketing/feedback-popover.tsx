@@ -12,7 +12,7 @@ import {
   PopoverContent,
   PopoverPositioner,
   type PopoverProps,
-} from '~/components/popover'
+} from '~/components/ui/popover'
 import { Textarea } from '../textarea'
 
 type Fields = {

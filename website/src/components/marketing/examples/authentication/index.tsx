@@ -1,6 +1,6 @@
 import { Box, Center, Flex, HStack, Stack } from 'styled-system/jsx'
-import { Avatar, AvatarFallback, AvatarImage } from '~/components/avatar'
 import { Heading, Typography } from '~/components/typography'
+import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar'
 import { Logo } from './logo'
 import { SignInForm } from './signin-form'
 

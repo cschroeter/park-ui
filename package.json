@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
+    "cli": "pnpm --filter=@park-ui/cli",
     "website": "pnpm --filter=@park-ui/website"
   },
   "devDependencies": {

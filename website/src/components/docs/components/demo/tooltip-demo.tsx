@@ -6,7 +6,7 @@ import {
   TooltipContent,
   TooltipPositioner,
   TooltipTrigger,
-} from '~/components/tooltip'
+} from '~/components/ui/tooltip'
 
 export const TooltipDemo = () => (
   <Tooltip>

@@ -8,7 +8,7 @@ import {
   NumberInputDecrementTrigger,
   NumberInputIncrementTrigger,
   NumberInputInput,
-} from '~/components/number-input'
+} from '~/components/ui/number-input'
 
 export const QuantityPicker = () => {
   return (

@@ -1,5 +1,8 @@
 import { IoMdColorFilter } from 'react-icons/io'
 import { HStack, Stack } from 'styled-system/jsx'
+import { IconButton } from '~/components/icon-button'
+import { Input } from '~/components/input'
+import { Typography } from '~/components/typography'
 import {
   ColorPicker,
   ColorPickerArea,
@@ -14,10 +17,7 @@ import {
   ColorPickerSwatch,
   ColorPickerSwatchBackground,
   ColorPickerSwatchGroup,
-} from '~/components/color-picker'
-import { IconButton } from '~/components/icon-button'
-import { Input } from '~/components/input'
-import { Typography } from '~/components/typography'
+} from '~/components/ui/color-picker'
 
 const presets = [
   'hsl(10, 81%, 59%)',

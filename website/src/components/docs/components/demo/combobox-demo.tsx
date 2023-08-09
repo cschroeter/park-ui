@@ -1,6 +1,9 @@
 import { ComboboxLabel, Portal } from '@ark-ui/react'
 import { useState } from 'react'
 import { BiExpandVertical } from 'react-icons/bi'
+import { IconButton } from '~/components/icon-button'
+import { Input } from '~/components/input'
+import { Label } from '~/components/label'
 import {
   Combobox,
   ComboboxContent,
@@ -10,10 +13,7 @@ import {
   ComboboxPositioner,
   ComboboxTrigger,
   type ComboboxProps,
-} from '~/components/combobox'
-import { IconButton } from '~/components/icon-button'
-import { Input } from '~/components/input'
-import { Label } from '~/components/label'
+} from '~/components/ui/combobox'
 
 const data = [
   { label: 'React', value: 'react' },

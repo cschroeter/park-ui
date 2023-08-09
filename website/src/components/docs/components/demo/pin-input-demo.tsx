@@ -4,7 +4,7 @@ import {
   PinInputControl,
   PinInputInput,
   type PinInputProps,
-} from '~/components/pin-input'
+} from '~/components/ui/pin-input'
 
 export const PinInputDemo = (props: PinInputProps) => (
   <PinInput placeholder="0" onComplete={(e) => alert(e.valueAsString)}>

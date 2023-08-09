@@ -1,4 +1,5 @@
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { IconButton } from '~/components/icon-button'
 import {
   Carousel,
   CarouselControl,
@@ -10,8 +11,7 @@ import {
   CarouselSlideGroup,
   CarouselViewport,
   type CarouselProps,
-} from '~/components/carousel'
-import { IconButton } from '~/components/icon-button'
+} from '~/components/ui/carousel'
 
 export const CarouselDemo = (props: CarouselProps) => {
   const images = [

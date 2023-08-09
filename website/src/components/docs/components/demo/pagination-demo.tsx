@@ -9,7 +9,7 @@ import {
   PaginationNextPageTrigger,
   PaginationPageTrigger,
   PaginationPrevPageTrigger,
-} from '~/components/pagination'
+} from '~/components/ui/pagination'
 
 export const PaginationDemo = (props: any) => {
   const matches = useMediaQuery('(max-width: 600px)')

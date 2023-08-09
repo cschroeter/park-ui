@@ -12,7 +12,7 @@ import {
   ToastProvider,
   ToastTitle,
   useToast,
-} from '~/components/toast'
+} from '~/components/ui/toast'
 
 export const ToastDemo = () => {
   return (

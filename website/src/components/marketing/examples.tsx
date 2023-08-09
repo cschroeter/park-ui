@@ -1,6 +1,6 @@
 'use client'
 import { Container } from 'styled-system/jsx'
-import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '../tabs'
+import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui/tabs'
 import { Authentication } from './examples/authentication'
 import { ECommerce } from './examples/e-commerce'
 import { Marketing } from './examples/marketing'

@@ -10,7 +10,7 @@ import {
   TagsInputControl,
   TagsInputInput,
   TagsInputLabel,
-} from '~/components/tags-input'
+} from '~/components/ui/tags-input'
 
 export const TagsInputDemo = () => {
   return (

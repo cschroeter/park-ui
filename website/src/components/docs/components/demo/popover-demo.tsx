@@ -14,7 +14,7 @@ import {
   PopoverTitle,
   PopoverTrigger,
   type PopoverProps,
-} from '~/components/popover'
+} from '~/components/ui/popover'
 
 export const PopoverDemo = (props: PopoverProps) => (
   <Popover portalled {...props}>
