@@ -3,23 +3,25 @@ import { styled } from 'styled-system/jsx'
 import { editable, type EditableVariantProps } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
-export * from '@ark-ui/react/editable'
-
 const { withProvider, withContext } = createStyleContext(editable)
 
+export * from '@ark-ui/react/editable'
 export type EditableProps = Ark.EditableProps & EditableVariantProps
 
 const EditableRoot = withProvider(styled(Ark.Editable.Root), 'root')
-const EditableArea = withContext(styled(Ark.Editable.Area), 'area')
-const EditableCancelTrigger = withContext(styled(Ark.Editable.CancelTrigger), 'cancelTrigger')
-const EditableControl = withContext(styled(Ark.Editable.Control), 'control')
-const EditableEditTrigger = withContext(styled(Ark.Editable.EditTrigger), 'editTrigger')
-const EditableInput = withContext(styled(Ark.Editable.Input), 'input')
-const EditableLabel = withContext(styled(Ark.Editable.Label), 'label')
-const EditablePreview = withContext(styled(Ark.Editable.Preview), 'preview')
-const EditableSubmitTrigger = withContext(styled(Ark.Editable.SubmitTrigger), 'submitTrigger')
+export const EditableArea = withContext(styled(Ark.Editable.Area), 'area')
+export const EditabCancelTrigger = withContext(styled(Ark.Editable.CancelTrigger), 'cancelTrigger')
+export const EditableControl = withContext(styled(Ark.Editable.Control), 'control')
+export const EditableEditTrigger = withContext(styled(Ark.Editable.EditTrigger), 'editTrigger')
+export const EditableInput = withContext(styled(Ark.Editable.Input), 'input')
+export const EditableLabel = withContext(styled(Ark.Editable.Label), 'label')
+export const EditablePreview = withContext(styled(Ark.Editable.Preview), 'preview')
+export const EditableSubmitTrigger = withContext(
+  styled(Ark.Editable.SubmitTrigger),
+  'submitTrigger',
+)
 
-const Editable = Object.assign(EditableRoot, {
+export const Editable = Object.assign(EditableRoot, {
   Root: EditableRoot,
   Area: EditableArea,
   CancelTrigger: EditableArea,
@@ -30,15 +32,3 @@ const Editable = Object.assign(EditableRoot, {
   Preview: EditablePreview,
   SubmitTrigger: EditableSubmitTrigger,
 })
-
-export {
-  Editable,
-  EditableArea,
-  EditableCancelTrigger,
-  EditableControl,
-  EditableEditTrigger,
-  EditableInput,
-  EditableLabel,
-  EditablePreview,
-  EditableSubmitTrigger,
-}

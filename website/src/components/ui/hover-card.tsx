@@ -3,20 +3,19 @@ import { styled } from 'styled-system/jsx'
 import { hoverCard, type HoverCardVariantProps } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
-export * from '@ark-ui/react/hover-card'
-
 const { withProvider, withContext } = createStyleContext(hoverCard)
 
+export * from '@ark-ui/react/hover-card'
 export type HoverCardProps = Ark.HoverCardProps & HoverCardVariantProps
 
 const HoverCardRoot = withProvider(styled(Ark.HoverCard.Root), 'root')
-const HoverCardArrow = withContext(styled(Ark.HoverCard.Arrow), 'arrow')
-const HoverCardArrowTip = withContext(styled(Ark.HoverCard.ArrowTip), 'arrowTip')
-const HoverCardContent = withContext(styled(Ark.HoverCard.Content), 'content')
-const HoverCardPositioner = withContext(styled(Ark.HoverCard.Positioner), 'positioner')
-const HoverCardTrigger = withContext(styled(Ark.HoverCard.Trigger), 'trigger')
+export const HoverCardArrow = withContext(styled(Ark.HoverCard.Arrow), 'arrow')
+export const HoverCardArrowTip = withContext(styled(Ark.HoverCard.ArrowTip), 'arrowTip')
+export const HoverCardContent = withContext(styled(Ark.HoverCard.Content), 'content')
+export const HoverCardPositioner = withContext(styled(Ark.HoverCard.Positioner), 'positioner')
+export const HoverCardTrigger = withContext(styled(Ark.HoverCard.Trigger), 'trigger')
 
-const HoverCard = Object.assign(HoverCardRoot, {
+export const HoverCard = Object.assign(HoverCardRoot, {
   Root: HoverCardRoot,
   Arrow: HoverCardArrow,
   ArrowTip: HoverCardArrowTip,
@@ -24,12 +23,3 @@ const HoverCard = Object.assign(HoverCardRoot, {
   Positioner: HoverCardPositioner,
   Trigger: HoverCardTrigger,
 })
-
-export {
-  HoverCard,
-  HoverCardArrow,
-  HoverCardArrowTip,
-  HoverCardContent,
-  HoverCardPositioner,
-  HoverCardTrigger,
-}

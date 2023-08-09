@@ -5,7 +5,7 @@ export const supportedComponents = [
   'checkbox',
   'color-picker',
   'combobox',
-  'date-picker',
+  // 'date-picker',
   'dialog',
   'editable',
   'hover-card',

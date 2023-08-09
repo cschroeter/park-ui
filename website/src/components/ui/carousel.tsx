@@ -3,29 +3,31 @@ import { styled } from 'styled-system/jsx'
 import { carousel, type CarouselVariantProps } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
-export * from '@ark-ui/react/carousel'
-
 const { withProvider, withContext } = createStyleContext(carousel)
 
+export * from '@ark-ui/react/carousel'
 export type CarouselProps = Ark.CarouselProps & CarouselVariantProps
 
 const CarouselRoot = withProvider(styled(Ark.Carousel.Root), 'root')
-const CarouselControl = withContext(styled(Ark.Carousel.Control), 'control')
-const CarouselIndicator = withContext(styled(Ark.Carousel.Indicator), 'indicator')
-const CarouselIndicatorGroup = withContext(styled(Ark.Carousel.IndicatorGroup), 'indicatorGroup')
-const CarouselNextSlideTrigger = withContext(
+export const CarouselControl = withContext(styled(Ark.Carousel.Control), 'control')
+export const CarouselIndicator = withContext(styled(Ark.Carousel.Indicator), 'indicator')
+export const CarouselIndicatorGroup = withContext(
+  styled(Ark.Carousel.IndicatorGroup),
+  'indicatorGroup',
+)
+export const CarouselNextSlideTrigger = withContext(
   styled(Ark.Carousel.NextSlideTrigger),
   'nextSlideTrigger',
 )
-const CarouselPrevSlideTrigger = withContext(
+export const CarouselPrevSlideTrigger = withContext(
   styled(Ark.Carousel.PrevSlideTrigger),
   'prevSlideTrigger',
 )
-const CarouselSlide = withContext(styled(Ark.Carousel.Slide), 'slide')
-const CarouselSlideGroup = withContext(styled(Ark.Carousel.SlideGroup), 'slideGroup')
-const CarouselViewport = withContext(styled(Ark.Carousel.Viewport), 'viewport')
+export const CarouselSlide = withContext(styled(Ark.Carousel.Slide), 'slide')
+export const CarouselSlideGroup = withContext(styled(Ark.Carousel.SlideGroup), 'slideGroup')
+export const CarouselViewport = withContext(styled(Ark.Carousel.Viewport), 'viewport')
 
-const Carousel = Object.assign(CarouselRoot, {
+export const Carousel = Object.assign(CarouselRoot, {
   Root: CarouselRoot,
   Control: CarouselControl,
   Indicator: CarouselIndicator,
@@ -36,15 +38,3 @@ const Carousel = Object.assign(CarouselRoot, {
   SlideGroup: CarouselSlideGroup,
   Viewport: CarouselViewport,
 })
-
-export {
-  Carousel,
-  CarouselControl,
-  CarouselIndicator,
-  CarouselIndicatorGroup,
-  CarouselNextSlideTrigger,
-  CarouselPrevSlideTrigger,
-  CarouselSlide,
-  CarouselSlideGroup,
-  CarouselViewport,
-}

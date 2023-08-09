@@ -17,14 +17,14 @@ const {{this.name}}Root = withProvider(Ark.{{../rootComponent}}.{{@key}})
 {{/if}} 
 {{else}}
 {{#if this.partName}}
-const {{this.name}} = withContext(styled(Ark.{{../rootComponent}}.{{@key}}), '{{this.partName}}')
+export const {{this.name}} = withContext(styled(Ark.{{../rootComponent}}.{{@key}}), '{{this.partName}}')
 {{else}}
-const {{this.name}} = withContext(Ark.{{../rootComponent}}.{{@key}})
+export const {{this.name}} = withContext(Ark.{{../rootComponent}}.{{@key}})
 {{/if}}
 {{/if}}
 {{/each}}
 
-const {{rootComponent}} = Object.assign({{rootComponent}}Root, {
+export const {{rootComponent}} = Object.assign({{rootComponent}}Root, {
 {{#each components}}
  {{#if (eq @key "Root")}}
   {{@key}}: {{this.name}}Root,
@@ -33,13 +33,3 @@ const {{rootComponent}} = Object.assign({{rootComponent}}Root, {
   {{/if}}
 {{/each}}
 })
-
-export {
-  {{rootComponent}},
-  {{#each components}}
-  {{#if (eq @key "Root")}}
-  {{else}}
-  {{this.name}},
-  {{/if}}
-  {{/each}}
-}
