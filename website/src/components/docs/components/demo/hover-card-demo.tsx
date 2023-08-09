@@ -1,7 +1,6 @@
 import { Portal } from '@ark-ui/react'
 import { FiMapPin } from 'react-icons/fi'
 import { HStack, Stack, styled } from 'styled-system/jsx'
-import { Typography } from '~/components/typography'
 import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar'
 import {
   HoverCard,
@@ -11,6 +10,7 @@ import {
   HoverCardPositioner,
   HoverCardTrigger,
 } from '~/components/ui/hover-card'
+import { Typography } from '~/components/ui/typography'
 
 export const HoverCardDemo = () => (
   <HoverCard>

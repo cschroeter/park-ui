@@ -12,7 +12,7 @@ import {
   MenuTrigger,
 } from '~/components/ui/menu'
 import { convertCommand, type PackageManager } from '~/lib/convert-command'
-import { IconButton, type IconButtonProps } from '../icon-button'
+import { IconButton, type IconButtonProps } from '../ui/icon-button'
 
 type Props = { content: string } & Omit<IconButtonProps, 'aria-label' | 'icon'>
 

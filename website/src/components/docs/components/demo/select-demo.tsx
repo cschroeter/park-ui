@@ -1,7 +1,7 @@
 import { Portal } from '@ark-ui/react'
 import { FiChevronDown } from 'react-icons/fi'
 import { HStack } from 'styled-system/jsx'
-import { Button } from '~/components/button'
+import { Button } from '~/components/ui/button'
 import {
   Select,
   SelectContent,

@@ -1,5 +1,5 @@
 import { Box } from 'styled-system/jsx'
-import { Heading, Typography } from '~/components/typography'
+import { Heading, Typography } from '~/components/ui/typography'
 import { article } from './introduction'
 
 export const Changelog = () => {

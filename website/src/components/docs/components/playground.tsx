@@ -5,7 +5,6 @@ import { FiSliders, FiX } from 'react-icons/fi'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
-import { Typography } from '~/components/typography'
 import {
   Radio,
   RadioControl,
@@ -13,8 +12,9 @@ import {
   RadioInput,
   RadioLabel,
 } from '~/components/ui/radio-group'
+import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
-import { IconButton } from '../../icon-button'
+import { IconButton } from '../../ui/icon-button'
 import { AccordionDemo } from './demo/accordion-demo'
 import { AlertDemo } from './demo/alert-demo'
 import { AvatarDemo } from './demo/avatar-demo'

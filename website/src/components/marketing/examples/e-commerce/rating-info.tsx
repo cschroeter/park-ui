@@ -1,6 +1,6 @@
 import { HStack } from 'styled-system/jsx'
-import { Typography } from '~/components/typography'
 import { Rating, RatingGroup, RatingGroupControl } from '~/components/ui/rating-group'
+import { Typography } from '~/components/ui/typography'
 
 export const RatingInfo = () => {
   return (

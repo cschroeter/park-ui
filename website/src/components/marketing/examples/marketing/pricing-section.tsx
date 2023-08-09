@@ -1,8 +1,8 @@
 import { FiCheckCircle } from 'react-icons/fi'
 import { Box, Flex, Grid, HStack, Stack, styled } from 'styled-system/jsx'
 import { stack } from 'styled-system/patterns/stack'
-import { Button } from '~/components/button'
-import { Heading, Typography } from '~/components/typography'
+import { Button } from '~/components/ui/button'
+import { Heading, Typography } from '~/components/ui/typography'
 import { plans } from './data'
 
 export const PricingSection = () => {

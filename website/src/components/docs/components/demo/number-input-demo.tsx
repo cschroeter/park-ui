@@ -1,5 +1,5 @@
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
-import { IconButton } from '~/components/icon-button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   NumberInput,
   NumberInputControl,

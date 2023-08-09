@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { FiX } from 'react-icons/fi'
-import { IconButton } from '~/components/icon-button'
-import { Label } from '~/components/label'
+import { IconButton } from '~/components/ui/icon-button'
+import { Label } from '~/components/ui/label'
 import {
   Tag,
   TagDeleteTrigger,

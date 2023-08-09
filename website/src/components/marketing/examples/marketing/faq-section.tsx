@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
-import { Button } from '~/components/button'
-import { Heading, Typography } from '~/components/typography'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '~/components/ui/accordion'
+import { Button } from '~/components/ui/button'
+import { Heading, Typography } from '~/components/ui/typography'
 import { questions } from './data'
 
 export const FaqSection = () => {

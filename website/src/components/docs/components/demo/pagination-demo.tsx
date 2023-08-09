@@ -1,7 +1,7 @@
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { useMediaQuery } from 'usehooks-ts'
-import { Button } from '~/components/button'
-import { IconButton } from '~/components/icon-button'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   Pagination,
   PaginationEllipsis,
