@@ -35,9 +35,6 @@ importers:
       '@clack/prompts':
         specifier: 0.6.3
         version: 0.6.3
-      '@types/voca':
-        specifier: 1.4.2
-        version: 1.4.2
       fs-extra:
         specifier: 11.1.1
         version: 11.1.1
@@ -57,6 +54,9 @@ importers:
       '@types/handlebars':
         specifier: 4.1.0
         version: 4.1.0
+      '@types/voca':
+        specifier: 1.4.2
+        version: 1.4.2
       tsx:
         specifier: 3.12.7
         version: 3.12.7
@@ -1984,7 +1984,7 @@ packages:
 
   /@types/voca@1.4.2:
     resolution: {integrity: sha512-Vmw8euGSdVlcDV69LoixtuervYUim5u6Vgp41PNxrHVGIo4vxSKMhW0I9MmBKbk3gtveNFzdHIVzyW1DpECzYw==}
-    dev: false
+    dev: true
 
   /@types/yargs-parser@21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
