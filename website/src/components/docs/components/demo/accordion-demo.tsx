@@ -5,12 +5,12 @@ import {
   AccordionItem,
   AccordionTrigger,
   type AccordionProps,
-} from '~/components/playground'
+} from '~/components/ui/accordion'
 
 export const AccordionDemo = (props: AccordionProps) => {
   const items = ['React', 'Solid', 'Vue']
   return (
-    <Accordion defaultValue={['React']} size="lg" variant="primary" multiple {...props}>
+    <Accordion defaultValue={['React']} multiple {...props}>
       {items.map((item, id) => (
         <AccordionItem key={id} value={item}>
           {({ isOpen }) => (
