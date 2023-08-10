@@ -12,5 +12,8 @@
         "repositoryUrl": "https://github.com/cschroeter/park-ui"
       }
     }
+  },
+  "hooks": {
+    "before:init": ["pnpm build"]
   }
 }
