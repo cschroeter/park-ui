@@ -1,6 +1,7 @@
 import NextLink from 'next/link'
 import { Flex, Grid, Stack } from 'styled-system/jsx'
 import { Heading, Typography } from '~/components/ui/typography'
+import { Gatsby } from './gatsby'
 import { Nextjs } from './next-js'
 
 export const QuickStart = () => {
@@ -30,6 +31,26 @@ export const QuickStart = () => {
               <Nextjs />
               <Typography textStyle="sm" textAlign="center">
                 Next.js
+              </Typography>
+            </Stack>
+          </Flex>
+        </NextLink>
+        <NextLink
+          href="https://stackblitz.com/github/cschroeter/park-ui/tree/main/examples/react/gatsby"
+          target="_blank"
+        >
+          <Flex
+            borderRadius="lg"
+            borderWidth="1px"
+            p="4"
+            bg="bg.default"
+            align="center"
+            justify="center"
+          >
+            <Stack gap="2.5">
+              <Gatsby />
+              <Typography textStyle="sm" textAlign="center">
+                Gatsby
               </Typography>
             </Stack>
           </Flex>

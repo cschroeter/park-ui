@@ -1,0 +1,32 @@
+{
+  "name": "@park-ui/examples-react-gatsby",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gatsby": "5.11.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@ark-ui/react": "0.11.0",
+    "@pandacss/dev": "0.10.0",
+    "@park-ui/presets": "0.5.0",
+    "@types/node": "20.3.3",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "eslint-plugin-flowtype": "8.0.3",
+    "gatsby-plugin-alias-imports": "1.0.5",
+    "gatsby-plugin-postcss": "6.11.0",
+    "postcss": "8.4.27",
+    "typescript": "5.1.6"
+  }
+}
