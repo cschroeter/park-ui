@@ -141,6 +141,12 @@ export const sitemap = [
         defaultProps: {},
       },
       {
+        title: 'Date Picker',
+        description: 'A component that allows users to select a date from a calendar.',
+        href: '/docs/components/date-picker',
+        defaultProps: {},
+      },
+      {
         title: 'Drawer',
         description: 'A panel that slides in from the edge of the screen.',
         href: '/docs/components/drawer',

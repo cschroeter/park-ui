@@ -7,5 +7,6 @@ export const conditions = {
     open: '&:is([open], [data-state=open])',
     hidden: '&:is([hidden])',
     current: '&:is([data-current])',
+    today: '&:is([data-today])',
   },
 }

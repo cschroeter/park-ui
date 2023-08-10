@@ -96,6 +96,36 @@
     "rootComponent": "Combobox",
     "className": "combobox"
   },
+  "date-picker": {
+    "components": {
+      "Root": { "name": "DatePicker", "partName": "root" },
+      "ClearTrigger": { "name": "DatePickerClearTrigger", "partName": "clearTrigger" },
+      "ColumnHeader": { "name": "DatePickerColumnHeader", "partName": "columnHeader" },
+      "Content": { "name": "DatePickerContent", "partName": "content" },
+      "Control": { "name": "DatePickerControl", "partName": "control" },
+      "DayCell": { "name": "DatePickerDayCell", "partName": "dayCell" },
+      "DayCellTrigger": { "name": "DatePickerDayCellTrigger", "partName": "dayCellTrigger" },
+      "Grid": { "name": "DatePickerGrid", "partName": "grid" },
+      "Input": { "name": "DatePickerInput", "partName": "input" },
+      "MonthCell": { "name": "DatePickerMonthCell", "partName": "monthCell" },
+      "MonthCellTrigger": { "name": "DatePickerMonthCellTrigger", "partName": "monthCellTrigger" },
+      "MonthSelect": { "name": "DatePickerMonthSelect", "partName": "monthSelect" },
+      "NextTrigger": { "name": "DatePickerNextTrigger", "partName": "nextTrigger" },
+      "Positioner": { "name": "DatePickerPositioner", "partName": "positioner" },
+      "PrevTrigger": { "name": "DatePickerPrevTrigger", "partName": "prevTrigger" },
+      "Row": { "name": "DatePickerRow", "partName": "row" },
+      "RowGroup": { "name": "DatePickerRowGroup", "partName": "rowGroup" },
+      "RowHeader": { "name": "DatePickerRowHeader", "partName": "rowHeader" },
+      "Trigger": { "name": "DatePickerTrigger", "partName": "trigger" },
+      "ViewTrigger": { "name": "DatePickerViewTrigger", "partName": "viewTrigger" },
+      "YearCell": { "name": "DatePickerYearCell", "partName": "yearCell" },
+      "YearCellTrigger": { "name": "DatePickerYearCellTrigger", "partName": "yearCellTrigger" },
+      "YearSelect": { "name": "DatePickerYearSelect", "partName": "yearSelect" }
+    },
+    "isArkComponent": true,
+    "rootComponent": "DatePicker",
+    "className": "datePicker"
+  },
   "dialog": {
     "components": {
       "Root": { "name": "Dialog", "partName": "root" },

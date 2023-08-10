@@ -98,6 +98,14 @@ export const button = defineRecipe({
           outline: '2px solid',
           outlineColor: 'border.outline',
         },
+        _selected: {
+          background: 'accent.default',
+          color: 'accent.fg',
+          _hover: {
+            color: 'accent.fg',
+            background: 'accent.default',
+          },
+        },
       },
       link: {
         color: 'fg.muted',

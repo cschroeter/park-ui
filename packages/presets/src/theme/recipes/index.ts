@@ -7,6 +7,7 @@ import { carousel } from './carousel'
 import { checkbox } from './checkbox'
 import { colorPicker } from './color-picker'
 import { combobox } from './combobox'
+import { datePicker } from './date-picker'
 import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
@@ -50,6 +51,7 @@ export const slotRecipes = {
   checkbox,
   colorPicker,
   combobox,
+  datePicker,
   dialog,
   drawer,
   editable,
