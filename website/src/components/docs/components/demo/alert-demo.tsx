@@ -1,7 +1,7 @@
 import { FiInfo } from 'react-icons/fi'
 import { Box, Stack } from 'styled-system/jsx'
-import { Alert, type AlertProps } from '~/components/alert'
-import { Heading, Typography } from '~/components/typography'
+import { Alert, type AlertProps } from '~/components/ui/alert'
+import { Heading, Typography } from '~/components/ui/typography'
 
 export const AlertDemo = (props: AlertProps) => {
   return (

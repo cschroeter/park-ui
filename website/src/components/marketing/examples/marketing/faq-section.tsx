@@ -6,9 +6,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '~/components/accordion'
-import { Button } from '~/components/button'
-import { Heading, Typography } from '~/components/typography'
+} from '~/components/ui/accordion'
+import { Button } from '~/components/ui/button'
+import { Heading, Typography } from '~/components/ui/typography'
 import { questions } from './data'
 
 export const FaqSection = () => {
@@ -21,7 +21,11 @@ export const FaqSection = () => {
         textAlign={{ base: 'center', lg: 'start' }}
       >
         <Stack gap="3">
-          <Typography color="bg.accent" textStyle={{ base: 'sm', md: 'md' }} fontWeight="semibold">
+          <Typography
+            color="accent.default"
+            textStyle={{ base: 'sm', md: 'md' }}
+            fontWeight="semibold"
+          >
             Support
           </Typography>
           <Heading textStyle={{ base: '3xl', md: '4xl' }}>FAQs</Heading>

@@ -17,7 +17,7 @@ export const findFoundation = async (name: string): Promise<Foundation | undefin
   if (entry) {
     return {
       ...entry,
-      files: { config: readFileSync(`../packages/presets/src/${name}.ts`, 'utf-8') },
+      files: { config: readFileSync(`../packages/presets/src/theme/${name}.ts`, 'utf-8') },
     }
   }
 }

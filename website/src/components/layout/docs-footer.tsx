@@ -3,7 +3,7 @@ import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { getNextPage, getPrevPage } from '~/lib/page-control'
-import { Typography } from '../typography'
+import { Typography } from '../ui/typography'
 
 type FooterProps = {
   currentPageTitle: string

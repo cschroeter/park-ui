@@ -6,7 +6,7 @@ import {
   SegmentInput,
   SegmentLabel,
   type SegmentGroupProps,
-} from '~/components/segment-group'
+} from '~/components/ui/segment-group'
 
 export const SegmentGroupDemo = (props: SegmentGroupProps) => {
   // TODO bug in Ark UI

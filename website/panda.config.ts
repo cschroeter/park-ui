@@ -16,6 +16,7 @@ export default defineConfig({
       button: [{ variant: ['*'], size: ['*'] }],
       carousel: [{ size: ['*'] }],
       checkbox: [{ size: ['*'] }],
+      drawer: [{ placement: ['*'] }],
       input: [{ size: ['*'] }],
       label: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],
@@ -74,7 +75,7 @@ export default defineConfig({
             width: '100%',
             maxWidth: '7xl',
             mx: 'auto',
-            paddingX: { base: '4', md: '6' },
+            px: { base: '4', md: '6' },
             ...props,
           }
         },

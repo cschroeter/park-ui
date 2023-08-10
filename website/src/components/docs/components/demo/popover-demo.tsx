@@ -1,8 +1,8 @@
 import { Portal } from '@ark-ui/react'
 import { FiX } from 'react-icons/fi'
 import { Box, Stack } from 'styled-system/jsx'
-import { Button } from '~/components/button'
-import { IconButton } from '~/components/icon-button'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   Popover,
   PopoverArrow,
@@ -14,7 +14,7 @@ import {
   PopoverTitle,
   PopoverTrigger,
   type PopoverProps,
-} from '~/components/popover'
+} from '~/components/ui/popover'
 
 export const PopoverDemo = (props: PopoverProps) => (
   <Popover portalled {...props}>

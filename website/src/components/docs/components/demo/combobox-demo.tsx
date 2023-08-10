@@ -10,10 +10,10 @@ import {
   ComboboxPositioner,
   ComboboxTrigger,
   type ComboboxProps,
-} from '~/components/combobox'
-import { IconButton } from '~/components/icon-button'
-import { Input } from '~/components/input'
-import { Label } from '~/components/label'
+} from '~/components/ui/combobox'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
+import { Label } from '~/components/ui/label'
 
 const data = [
   { label: 'React', value: 'react' },

@@ -6,8 +6,8 @@ import {
   RadioControl,
   RadioInput,
   RadioLabel,
-} from '~/components/radio-button-group'
-import { Typography } from '~/components/typography'
+} from '~/components/ui/radio-button-group'
+import { Typography } from '~/components/ui/typography'
 import { product } from './data'
 
 export const SizePicker = () => {

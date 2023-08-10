@@ -2,11 +2,11 @@ import Link from 'next/link'
 import { BsGoogle } from 'react-icons/bs'
 import { FiCheck } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
-import { Button } from '~/components/button'
-import { Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel } from '~/components/checkbox'
-import { Input } from '~/components/input'
-import { Label } from '~/components/label'
-import { Heading, Typography } from '~/components/typography'
+import { Button } from '~/components/ui/button'
+import { Checkbox, CheckboxControl, CheckboxLabel } from '~/components/ui/checkbox'
+import { Input } from '~/components/ui/input'
+import { Label } from '~/components/ui/label'
+import { Heading, Typography } from '~/components/ui/typography'
 import { LogoIcon } from './logo'
 
 export const SignInForm = () => {
@@ -36,7 +36,6 @@ export const SignInForm = () => {
           <Checkbox size="sm">
             {(state) => (
               <>
-                <CheckboxInput data-peer />
                 <CheckboxControl>{state.isChecked && <FiCheck />}</CheckboxControl>
                 <CheckboxLabel>Remember me</CheckboxLabel>
               </>

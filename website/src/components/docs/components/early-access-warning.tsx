@@ -2,9 +2,9 @@
 import { FiInfo, FiX } from 'react-icons/fi'
 import { Box, Stack } from 'styled-system/jsx'
 import { useLocalStorage } from 'usehooks-ts'
-import { Alert } from '~/components/alert'
-import { IconButton } from '~/components/icon-button'
-import { Heading, Typography } from '~/components/typography'
+import { Alert } from '~/components/ui/alert'
+import { IconButton } from '~/components/ui/icon-button'
+import { Heading, Typography } from '~/components/ui/typography'
 
 export const EarlyAccesWarning = () => {
   const [isVisible, setIsVisible] = useLocalStorage('earlyAccess', true)

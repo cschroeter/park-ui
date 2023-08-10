@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { Box } from 'styled-system/jsx'
+import { Box, Flex } from 'styled-system/jsx'
 import { link } from 'styled-system/recipes'
-import { Heading, Typography } from '~/components/typography'
+import { Heading, Typography } from '~/components/ui/typography'
 import { article } from './introduction'
 
 export const FigmaLibrary = () => {
@@ -13,13 +13,21 @@ export const FigmaLibrary = () => {
           Philipp Körner
         </Link>
       </Typography>
-      <Box bg="bg.subtle" p={4} my="4" minH="64" borderRadius="lg">
-        <Typography textStyle="sm">Coming soon...</Typography>
-      </Box>
+      <Flex bg="bg.subtle" borderRadius="lg" borderWidth="1px" overflow="hidden">
+        <iframe
+          width="100%"
+          height="352px"
+          src="https://embed.figma.com/file/1268615283036362769/hf_embed?community_viewer=true&embed_host=parkui"
+        />
+      </Flex>
       <Heading>Download</Heading>
       <Typography>
         The Park UI Kit is available for download on{' '}
-        <Link className={link()} href="https://www.figma.com/">
+        <Link
+          className={link()}
+          href="https://www.figma.com/community/file/1268615283036362769"
+          target="_blank"
+        >
           Figma Community
         </Link>
         .

@@ -7,7 +7,7 @@ import {
   SliderThumb,
   SliderTrack,
   type SliderProps,
-} from '~/components/slider'
+} from '~/components/ui/slider'
 
 export const SliderDemo = (props: SliderProps) => {
   return (

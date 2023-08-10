@@ -1,18 +1,18 @@
-import { Input } from '~/components/input'
+import { Input } from '~/components/ui/input'
 import {
   PinInput,
   PinInputControl,
-  PinInputField,
+  PinInputInput,
   type PinInputProps,
-} from '~/components/pin-input'
+} from '~/components/ui/pin-input'
 
 export const PinInputDemo = (props: PinInputProps) => (
   <PinInput placeholder="0" onComplete={(e) => alert(e.valueAsString)}>
     <PinInputControl>
       {[0, 1, 2, 3].map((id, index) => (
-        <PinInputField key={id} index={index} asChild>
+        <PinInputInput key={id} index={index} asChild>
           <Input size="xl" width="0" textAlign="center" />
-        </PinInputField>
+        </PinInputInput>
       ))}
     </PinInputControl>
   </PinInput>

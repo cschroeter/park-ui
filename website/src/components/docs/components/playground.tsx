@@ -1,14 +1,23 @@
 'use client'
 
+import { Portal } from '@ark-ui/react'
 import { useState } from 'react'
-import { FiSliders, FiX } from 'react-icons/fi'
-import { Box, Flex, Stack } from 'styled-system/jsx'
+import { FiChevronDown, FiSliders, FiX } from 'react-icons/fi'
+import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
-import { Typography } from '~/components/typography'
+import { Button } from '~/components/ui/button'
+import {
+  Select,
+  SelectContent,
+  SelectLabel,
+  SelectOption,
+  SelectPositioner,
+  SelectTrigger,
+} from '~/components/ui/select'
+import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
-import { IconButton } from '../../icon-button'
-import { Radio, RadioControl, RadioGroup, RadioInput, RadioLabel } from '../../radio-group'
+import { IconButton } from '../../ui/icon-button'
 import { AccordionDemo } from './demo/accordion-demo'
 import { AlertDemo } from './demo/alert-demo'
 import { AvatarDemo } from './demo/avatar-demo'
@@ -18,7 +27,9 @@ import { CarouselDemo } from './demo/carousel-demo'
 import { CheckboxDemo } from './demo/checkbox-demo'
 import { ColorPickerDemo } from './demo/color-picker-demo'
 import { ComboboxDemo } from './demo/combobox-demo'
+import { DatePickerDemo } from './demo/date-picker-demo'
 import { DialogDemo } from './demo/dialog-demo'
+import { DrawerDemo } from './demo/drawer-demo'
 import { EditableDemo } from './demo/editable-demo'
 import { HoverCardDemo } from './demo/hover-card-demo'
 import { IconButtonDemo } from './demo/icon-button-demo'
@@ -70,7 +81,9 @@ export const Playground = (props: Props) => {
     .with('Checkbox', () => CheckboxDemo)
     .with('Color Picker', () => ColorPickerDemo)
     .with('Combobox', () => ComboboxDemo)
+    .with('Date Picker', () => DatePickerDemo)
     .with('Dialog', () => DialogDemo)
+    .with('Drawer', () => DrawerDemo)
     .with('Editable', () => EditableDemo)
     .with('Hover Card', () => HoverCardDemo)
     .with('Icon Button', () => IconButtonDemo)
@@ -106,7 +119,7 @@ export const Playground = (props: Props) => {
         <Box position="absolute" top="2" right="2" zIndex={1}>
           <IconButton
             onClick={() => setTrue()}
-            variant="tertiary"
+            variant="secondary"
             size="sm"
             aria-label="Open settings"
             icon={<FiSliders />}
@@ -162,46 +175,40 @@ export const Playground = (props: Props) => {
         <Stack gap="6" py="5" px="4">
           {Object.entries(defaultProps || {}).map(([key, value]) =>
             match(value)
-              .with(Pattern.string, () => <span />)
-              .with(Pattern.number, () => <span />)
-              .with(Pattern.boolean, (x) => (
-                <span />
-                // <Switch
-                //   key={key}
-                //   checked={x}
-                //   onChange={(e) => {
-                //     console.log('call onchagne', state)
-                //     setState({ ...state, [key]: e.checked })
-                //   }}
-                //   size="sm"
-                // >
-                //   <SwitchControl>
-                //     <SwitchInput />
-                //     <SwitchThumb />
-                //   </SwitchControl>
-                //   <SwitchLabel>{key}</SwitchLabel>
-                // </Switch>
-              ))
+              .with(Pattern.string, () => <span key={key} />)
+              .with(Pattern.number, () => <span key={key} />)
+              .with(Pattern.boolean, (x) => <span key={key} />)
               .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
-                <Stack gap="3">
-                  <Typography textStyle="sm" fontWeight="medium" textTransform="capitalize">
-                    {key}
-                  </Typography>
-                  <RadioGroup
-                    size="sm"
-                    defaultValue={defaultValue}
-                    orientation="vertical"
-                    onChange={(e) => setState({ ...state, [key]: e.value })}
-                  >
-                    {options.map((option, id) => (
-                      <Radio key={id} value={option}>
-                        <RadioInput data-peer />
-                        <RadioControl />
-                        <RadioLabel>{option}</RadioLabel>
-                      </Radio>
-                    ))}
-                  </RadioGroup>
-                </Stack>
+                <Select
+                  key={key}
+                  positioning={{ sameWidth: true }}
+                  closeOnSelect={false}
+                  size="sm"
+                  onChange={(e) => setState({ ...state, [key]: e?.value ?? '' })}
+                >
+                  {({ isOpen, selectedOption }) => (
+                    <Stack gap="1.5">
+                      <SelectLabel textTransform="capitalize">{key}</SelectLabel>
+                      <SelectTrigger asChild>
+                        <Button variant="secondary" size="sm">
+                          <HStack justify="space-between" flex="1" fontWeight="medium">
+                            {selectedOption?.label ?? defaultValue}
+                            <SelectIcon isOpen={isOpen} />
+                          </HStack>
+                        </Button>
+                      </SelectTrigger>
+                      <Portal>
+                        <SelectPositioner zIndex="docked">
+                          <SelectContent>
+                            {options.map((option, id) => (
+                              <SelectOption key={id} value={option} label={option} />
+                            ))}
+                          </SelectContent>
+                        </SelectPositioner>
+                      </Portal>
+                    </Stack>
+                  )}
+                </Select>
               ))
               .exhaustive(),
           )}
@@ -209,4 +216,14 @@ export const Playground = (props: Props) => {
       </Box>
     </Flex>
   )
+}
+
+const SelectIcon = (props: { isOpen: boolean }) => {
+  const iconStyles = {
+    transform: props.isOpen ? 'rotate(-180deg)' : undefined,
+    transition: 'transform 0.2s',
+    transformOrigin: 'center',
+    fontSize: '18px',
+  }
+  return <FiChevronDown style={iconStyles} />
 }

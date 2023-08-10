@@ -25,7 +25,7 @@ export const sitemap = [
       },
       {
         title: 'About',
-        description: 'Driven by phenomenal open source initiatives.',
+        description: 'Driven by amazing open source projects.',
         href: '/docs/overview/about',
       },
     ],
@@ -35,7 +35,8 @@ export const sitemap = [
     entries: [
       {
         title: 'Semantic Tokens',
-        description: 'Understand the use of symbols representing component properties.',
+        description:
+          'These tokens give elements a specific meaning, making it easier for users to understand what each part of the interface does.',
         href: '/docs/foundations/semantic-tokens',
       },
       {
@@ -137,10 +138,23 @@ export const sitemap = [
         title: 'Dialog',
         description: 'A modal window that appears on top of the main content.',
         href: '/docs/components/dialog',
+        defaultProps: {},
+      },
+      {
+        title: 'Date Picker',
+        description: 'A component that allows users to select a date from a calendar.',
+        href: '/docs/components/date-picker',
+        defaultProps: {},
+      },
+      {
+        title: 'Drawer',
+        description: 'A panel that slides in from the edge of the screen.',
+        href: '/docs/components/drawer',
         defaultProps: {
-          // closeOnEsc: true,
-          // closeOnOutsideClick: true,
-          // preventScroll: true,
+          placement: {
+            options: ['right', 'left'],
+            defaultValue: 'right',
+          },
         },
       },
       {

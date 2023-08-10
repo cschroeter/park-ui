@@ -7,7 +7,7 @@ import { Playground } from '~/components/docs/components/playground'
 import { DocsFooter } from '~/components/layout/docs-footer'
 import { PageHeader } from '~/components/layout/page-header'
 import { TableOfContent } from '~/components/layout/table-of-content'
-import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/tabs'
+import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui/tabs'
 import { findComponent } from '~/lib/find-component'
 import { slugify } from '~/lib/slugify'
 import { sitemap } from '~/sitemap'
@@ -30,7 +30,7 @@ const Page = async (props: any) => {
         >
           {!component.isPrimitive && <ArkDocumentationLinks name={component.title} />}
         </PageHeader>
-        <Tabs defaultValue="preview" size="sm">
+        <Tabs defaultValue="preview">
           <TabList>
             <TabTrigger value="preview">Preview</TabTrigger>
             <TabTrigger value="code">Code</TabTrigger>

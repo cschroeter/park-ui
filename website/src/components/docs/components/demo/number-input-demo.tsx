@@ -1,19 +1,19 @@
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
-import { IconButton } from '~/components/icon-button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   NumberInput,
   NumberInputControl,
   NumberInputDecrementTrigger,
-  NumberInputField,
   NumberInputIncrementTrigger,
+  NumberInputInput,
   NumberInputScrubber,
-} from '~/components/number-input'
+} from '~/components/ui/number-input'
 
 export const NumberInputDemo = () => {
   return (
     <NumberInput min={-50} max={50} defaultValue="42">
       <NumberInputScrubber />
-      <NumberInputField />
+      <NumberInputInput />
       <NumberInputControl>
         <NumberInputIncrementTrigger asChild>
           <IconButton size="xs" variant="tertiary" icon={<FiChevronUp />} aria-label="Increment" />

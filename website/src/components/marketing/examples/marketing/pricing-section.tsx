@@ -1,8 +1,8 @@
 import { FiCheckCircle } from 'react-icons/fi'
 import { Box, Flex, Grid, HStack, Stack, styled } from 'styled-system/jsx'
 import { stack } from 'styled-system/patterns/stack'
-import { Button } from '~/components/button'
-import { Heading, Typography } from '~/components/typography'
+import { Button } from '~/components/ui/button'
+import { Heading, Typography } from '~/components/ui/typography'
 import { plans } from './data'
 
 export const PricingSection = () => {
@@ -36,7 +36,7 @@ export const PricingSection = () => {
                 {plan.features.map((feature) => (
                   <styled.li key={feature} color="fg.muted">
                     <HStack gap="4">
-                      <Box fontSize="xl" color="fg.emphasized">
+                      <Box fontSize="xl" color="accent.default">
                         <FiCheckCircle />
                       </Box>
                       <Typography>{feature}</Typography>
@@ -52,5 +52,3 @@ export const PricingSection = () => {
     </Grid>
   )
 }
-
-// {/* <Icon as={FiCheck} color="accent" boxSize="6" /> */

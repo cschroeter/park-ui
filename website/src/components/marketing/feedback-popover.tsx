@@ -3,7 +3,7 @@ import { PopoverAnchor, Portal } from '@ark-ui/react'
 import { useForm } from 'react-hook-form'
 import { Stack } from 'styled-system/jsx'
 import { useBoolean } from 'usehooks-ts'
-import { Button } from '~/components/button'
+import { Button } from '~/components/ui/button'
 import {
   Popover,
   PopoverArrow,
@@ -12,8 +12,8 @@ import {
   PopoverContent,
   PopoverPositioner,
   type PopoverProps,
-} from '~/components/popover'
-import { Textarea } from '../textarea'
+} from '~/components/ui/popover'
+import { Textarea } from '../ui/textarea'
 
 type Fields = {
   message: string
@@ -42,7 +42,12 @@ export const FeedbackPopover = (props: PopoverProps) => {
   return (
     <Popover portalled {...props} open={value} onClose={setFalse}>
       <PopoverAnchor asChild>
-        <Button variant="secondary" size="sm" onClick={() => toggle()}>
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={() => toggle()}
+          display={{ base: 'none', sm: 'inline-flex' }}
+        >
           Feedback
         </Button>
       </PopoverAnchor>
@@ -53,7 +58,7 @@ export const FeedbackPopover = (props: PopoverProps) => {
               <PopoverArrowTip />
             </PopoverArrow>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Stack gap="4">
+              <Stack gap="4" minW="64">
                 <Textarea rows={4} placeholder="Your feedback" required {...register('message')} />
                 <Stack gap="3" direction="row">
                   <PopoverCloseTrigger asChild>

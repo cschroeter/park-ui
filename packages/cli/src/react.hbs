@@ -1,0 +1,35 @@
+import * as Ark from '@ark-ui/react/{{key}}'
+import { {{className}}, type {{titleCase className}}VariantProps } from 'styled-system/recipes'
+import { styled } from 'styled-system/jsx'
+import { createStyleContext } from '~/lib/create-style-context'
+
+const { withProvider, withContext } = createStyleContext({{className}})
+
+export * from '@ark-ui/react/{{key}}'
+{{#each components}}
+{{#if (eq @key "Root")}}
+export type {{../rootComponent}}Props = Ark.{{../rootComponent}}Props & {{titleCase ../className}}VariantProps
+
+{{#if this.partName}}
+const {{this.name}}Root = withProvider(styled(Ark.{{../rootComponent}}.{{@key}}), '{{this.partName}}')
+{{else}}
+const {{this.name}}Root = withProvider(Ark.{{../rootComponent}}.{{@key}})
+{{/if}} 
+{{else}}
+{{#if this.partName}}
+export const {{this.name}} = withContext(styled(Ark.{{../rootComponent}}.{{@key}}), '{{this.partName}}')
+{{else}}
+export const {{this.name}} = withContext(Ark.{{../rootComponent}}.{{@key}})
+{{/if}}
+{{/if}}
+{{/each}}
+
+export const {{rootComponent}} = Object.assign({{rootComponent}}Root, {
+{{#each components}}
+ {{#if (eq @key "Root")}}
+  {{@key}}: {{this.name}}Root,
+  {{else}}
+  {{@key}}: {{this.name}},
+  {{/if}}
+{{/each}}
+})

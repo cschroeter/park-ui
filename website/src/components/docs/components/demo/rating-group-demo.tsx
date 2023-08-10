@@ -1,5 +1,5 @@
 import { type RatingGroupVariantProps } from 'styled-system/recipes'
-import { Rating, RatingGroup, RatingGroupControl } from '~/components/rating-group'
+import { Rating, RatingGroup, RatingGroupControl } from '~/components/ui/rating-group'
 
 export const RatingGroupDemo = (props: RatingGroupVariantProps) => {
   return (
@@ -35,8 +35,8 @@ const Icon = (props: IconProps) => (
   >
     <defs>
       <linearGradient id="half">
-        <stop offset="50%" stopColor="var(--color-active)" />
-        <stop offset="50%" stopColor="var(--color-inactive)" />
+        <stop offset="50%" stopColor="var(--color-accent-default)" />
+        <stop offset="50%" stopColor="var(--color-bg-emphasized)" />
       </linearGradient>
     </defs>
     <polygon

@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "website": "pnpm --filter=@park-ui/website"
+    "cli": "pnpm --filter=@park-ui/cli",
+    "presets": "pnpm --filter=@park-ui/presets",
+    "web": "pnpm --filter=@park-ui/website"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.7",
     "@commitlint/config-conventional": "17.6.7",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "prettier": "3.0.0",
+    "prettier": "3.0.01",
     "prettier-plugin-organize-imports": "3.2.3"
   },
   "commitlint": {

@@ -34,12 +34,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
+# Panda
 styled-system
 
 # Sitemap
-public/sitemap*.xml
+sitemap*.xml
 
 .env
 dist
 *.tgz
+
