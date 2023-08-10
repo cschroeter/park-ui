@@ -1,43 +1,27 @@
 import Link from 'next/link'
 import type { PropsWithChildren } from 'react'
-import { FiInfo } from 'react-icons/fi'
 import { Box, Circle, Stack } from 'styled-system/jsx'
 import { link } from 'styled-system/recipes'
-import { Alert } from '~/components/ui/alert'
 import { Heading, Typography } from '~/components/ui/typography'
-import { Code } from '../code'
-import { Command } from '../command'
-import { copyButton, pandaConfig, rootLayout, useButton } from './code-examples'
-import { article } from './introduction'
+import { Code } from '../../code'
+import { Command } from '../../command'
+import { copyButton, pandaConfig, rootLayout, useButton } from '../code-examples'
+import { article } from '../introduction'
+import { QuickStart } from './quickstart'
 
 export const GettingStarted = async () => {
   return (
-    <Stack gap={{ base: '8', md: '12' }}>
-      <Alert>
-        <Stack gap="4" direction={{ base: 'column', sm: 'row' }}>
-          <Box fontSize="1.25rem" color="fg.emphasized">
-            <FiInfo />
-          </Box>
-          <Stack gap="1" alignItems="start">
-            <Heading as="h5" fontWeight="semibold">
-              Running tight on schedule?
-            </Heading>
-            <Typography color="fg.muted">
-              No worries! Explore our{' '}
-              <Link
-                href="https://stackblitz.com/edit/vitejs-vite-tvukh1"
-                target="_blank"
-                className={link()}
-              >
-                Online Playground
-              </Link>{' '}
-              and experience the ease of using Park UI.
-            </Typography>
-          </Stack>
-        </Stack>
-      </Alert>
+    <Stack gap={{ base: '8', md: '8' }}>
+      <QuickStart />
+      <Stack gap={{ base: '3', md: '4' }}>
+        <Heading textStyle={{ base: 'xl', md: '2xl' }}>Setup Guide</Heading>
+        <Typography color="fg.muted" lineHeight="relaxed">
+          The following guide will walk you through the process of setting up Park UI in your
+          project.
+        </Typography>
+      </Stack>
       <Steps>
-        <Step number="1" title="Setup Project">
+        <Step number="1" title="Prerequisite">
           <Typography color="fg.muted">
             Before you start, ensure that your Panda project is set up and ready to go. If not,
             please refer to the{' '}
@@ -142,7 +126,9 @@ const Step = (props: PropsWithChildren<StepProps>) => {
         >
           {number}
         </Circle>
-        <Heading textStyle={{ base: 'lg', md: 'xl' }}>{title}</Heading>
+        <Heading textStyle={{ base: 'lg', md: 'xl' }} as="h3">
+          {title}
+        </Heading>
       </Stack>
       <Stack ps="12" pt={{ base: '3', md: '4' }} className={article()}>
         {children}
