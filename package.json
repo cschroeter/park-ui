@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "cli": "pnpm --filter=@park-ui/cli",
+    "presets": "pnpm --filter=@park-ui/presets",
     "web": "pnpm --filter=@park-ui/website"
   },
   "devDependencies": {
