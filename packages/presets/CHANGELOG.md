@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-08-10
+
 ### Added
 
 - Added `DatePicker` component.
@@ -61,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial Release of https://park-ui.com 🎉
 
-[unreleased]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.4.0...HEAD
+[unreleased]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.5.0...HEAD
+[0.5.0]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.4.0...@park-ui/presets@0.5.0
 [0.4.0]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.3.1...@park-ui/presets@0.4.0
 [0.3.1]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.3.0...@park-ui/presets@0.3.1
 [0.3.0]: https://github.com/cschroeter/park-ui/compare/@park-ui/presets@0.2.0...@park-ui/presets@0.3.0
