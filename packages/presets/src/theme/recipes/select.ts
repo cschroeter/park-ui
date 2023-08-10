@@ -43,6 +43,10 @@ export const select = defineSlotRecipe({
       _highlighted: {
         background: 'bg.subtle',
       },
+      label: {
+        color: 'fg.emphasized',
+        fontWeight: 'medium',
+      },
     },
   },
   defaultVariants: {
@@ -53,14 +57,17 @@ export const select = defineSlotRecipe({
       sm: {
         content: { p: '0.5', gap: '1' },
         option: { textStyle: 'sm', px: '2', height: '9' },
+        label: { textStyle: 'sm' },
       },
       md: {
         content: { p: '1', gap: '1' },
         option: { textStyle: 'sm', px: '2', height: '10' },
+        label: { textStyle: 'sm' },
       },
       lg: {
         content: { p: '1.5', gap: '1' },
         option: { textStyle: 'md', px: '2', height: '11' },
+        label: { textStyle: 'md' },
       },
     },
   },

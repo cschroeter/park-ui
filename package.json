@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "cli": "pnpm --filter=@park-ui/cli",
-    "website": "pnpm --filter=@park-ui/website"
+    "web": "pnpm --filter=@park-ui/website"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.7",

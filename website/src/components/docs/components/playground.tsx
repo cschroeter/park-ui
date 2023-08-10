@@ -1,17 +1,20 @@
 'use client'
 
+import { Portal } from '@ark-ui/react'
 import { useState } from 'react'
-import { FiSliders, FiX } from 'react-icons/fi'
-import { Box, Flex, Stack } from 'styled-system/jsx'
+import { FiChevronDown, FiSliders, FiX } from 'react-icons/fi'
+import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
+import { Button } from '~/components/ui/button'
 import {
-  Radio,
-  RadioControl,
-  RadioGroup,
-  RadioInput,
-  RadioLabel,
-} from '~/components/ui/radio-group'
+  Select,
+  SelectContent,
+  SelectLabel,
+  SelectOption,
+  SelectPositioner,
+  SelectTrigger,
+} from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
 import { IconButton } from '../../ui/icon-button'
@@ -114,7 +117,7 @@ export const Playground = (props: Props) => {
         <Box position="absolute" top="2" right="2" zIndex={1}>
           <IconButton
             onClick={() => setTrue()}
-            variant="tertiary"
+            variant="secondary"
             size="sm"
             aria-label="Open settings"
             icon={<FiSliders />}
@@ -174,25 +177,36 @@ export const Playground = (props: Props) => {
               .with(Pattern.number, () => <span key={key} />)
               .with(Pattern.boolean, (x) => <span key={key} />)
               .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
-                <Stack gap="3" key={key}>
-                  <Typography textStyle="sm" fontWeight="medium" textTransform="capitalize">
-                    {key}
-                  </Typography>
-                  <RadioGroup
-                    size="sm"
-                    defaultValue={defaultValue}
-                    orientation="vertical"
-                    onChange={(e) => setState({ ...state, [key]: e.value })}
-                  >
-                    {options.map((option, id) => (
-                      <Radio key={id} value={option}>
-                        <RadioInput data-peer />
-                        <RadioControl />
-                        <RadioLabel>{option}</RadioLabel>
-                      </Radio>
-                    ))}
-                  </RadioGroup>
-                </Stack>
+                <Select
+                  key={key}
+                  positioning={{ sameWidth: true }}
+                  closeOnSelect={false}
+                  size="sm"
+                  onChange={(e) => setState({ ...state, [key]: e?.value ?? '' })}
+                >
+                  {({ isOpen, selectedOption }) => (
+                    <Stack gap="1.5">
+                      <SelectLabel textTransform="capitalize">{key}</SelectLabel>
+                      <SelectTrigger asChild>
+                        <Button variant="secondary" size="sm">
+                          <HStack justify="space-between" flex="1" fontWeight="medium">
+                            {selectedOption?.label ?? defaultValue}
+                            <SelectIcon isOpen={isOpen} />
+                          </HStack>
+                        </Button>
+                      </SelectTrigger>
+                      <Portal>
+                        <SelectPositioner zIndex="docked">
+                          <SelectContent>
+                            {options.map((option, id) => (
+                              <SelectOption key={id} value={option} label={option} />
+                            ))}
+                          </SelectContent>
+                        </SelectPositioner>
+                      </Portal>
+                    </Stack>
+                  )}
+                </Select>
               ))
               .exhaustive(),
           )}
@@ -200,4 +214,14 @@ export const Playground = (props: Props) => {
       </Box>
     </Flex>
   )
+}
+
+const SelectIcon = (props: { isOpen: boolean }) => {
+  const iconStyles = {
+    transform: props.isOpen ? 'rotate(-180deg)' : undefined,
+    transition: 'transform 0.2s',
+    transformOrigin: 'center',
+    fontSize: '18px',
+  }
+  return <FiChevronDown style={iconStyles} />
 }
