@@ -17,10 +17,6 @@ import {
 export const FontFamilySelect = () => {
   const [option, setOption] = useLocalStorage('park-ui-font-family', fonts[0])
 
-  const handeChange = (fontFamily: any) => {
-    setOption(fontFamily)
-  }
-
   useLayoutEffect(() => {
     const root = document.querySelector<HTMLBodyElement>('body')
     if (root && option) {
@@ -31,7 +27,7 @@ export const FontFamilySelect = () => {
   return (
     <Select
       selectedOption={option}
-      onChange={handeChange}
+      onChange={(e) => setOption(e ?? fonts[0])}
       positioning={{ sameWidth: true }}
       size="sm"
     >
