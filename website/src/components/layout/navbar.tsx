@@ -42,6 +42,7 @@ export const Navbar = () => {
                 <NextLink href="/#examples" className={link({ variant: 'navbar' })}>
                   Examples
                 </NextLink>
+                {/* <ThemePopover /> */}
               </HStack>
             </HStack>
             <HStack gap={{ base: '2', md: '6' }}>

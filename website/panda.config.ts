@@ -82,4 +82,20 @@ export default defineConfig({
       },
     },
   },
+  // theme: {
+  //   extend: {
+  //     semanticTokens: {
+  //       colors: {
+  //         accent: {
+  //           default: { value: { base: '{colors.purple.500}', _dark: '{colors.purple.200}' } },
+  //           emphasized: { value: { base: '{colors.purple.600}', _dark: '{colors.purple.300}' } },
+  //           fg: { value: { base: '{colors.white}', _dark: '{colors.black}' } },
+  //         },
+  //         border: {
+  //           accent: { value: { base: '{colors.purple.500}', _dark: '{colors.purple.200}' } },
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 })

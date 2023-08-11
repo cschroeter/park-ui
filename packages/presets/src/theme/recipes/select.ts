@@ -43,10 +43,10 @@ export const select = defineSlotRecipe({
       _highlighted: {
         background: 'bg.subtle',
       },
-      label: {
-        color: 'fg.emphasized',
-        fontWeight: 'medium',
-      },
+    },
+    label: {
+      color: 'fg.emphasized',
+      fontWeight: 'semibold',
     },
   },
   defaultVariants: {

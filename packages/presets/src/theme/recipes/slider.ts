@@ -31,6 +31,10 @@ export const slider = defineSlotRecipe({
       boxShadow: 'sm',
       outline: 'none',
     },
+    label: {
+      color: 'fg.emphasized',
+      fontWeight: 'semibold',
+    },
   },
   defaultVariants: {
     size: 'md',
@@ -53,7 +57,10 @@ export const slider = defineSlotRecipe({
         },
         marker: {
           mt: '2',
-          textStyle: 'md',
+          textStyle: 'sm',
+        },
+        label: {
+          textStyle: 'sm',
         },
       },
     },
