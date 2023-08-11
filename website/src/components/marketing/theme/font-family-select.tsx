@@ -1,7 +1,9 @@
 import { Portal } from '@ark-ui/react'
-import { useState } from 'react'
+import { useLayoutEffect } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
+import { useLocalStorage } from 'usehooks-ts'
+import { fonts } from '~/app/fonts'
 import { Button } from '~/components/ui/button'
 import {
   Select,
@@ -13,34 +15,18 @@ import {
 } from '~/components/ui/select'
 
 export const FontFamilySelect = () => {
-  const options = [
-    {
-      label: 'Jakarta',
-      value: '--font-body',
-    },
-    {
-      label: 'Inter',
-      value: '--font-inter',
-    },
-    {
-      label: 'Outfit',
-      value: '--font-outfit',
-    },
-    {
-      label: 'Work Sans',
-      value: '--font-work-sans',
-    },
-  ]
+  const [option, setOption] = useLocalStorage('park-ui-font-family', fonts[0])
 
-  const handeChange = (details: any) => {
-    setOption(details)
-    const root = document.querySelector<HTMLBodyElement>('body')
-    if (root) {
-      root.style.fontFamily = `var(${details.value})`
-    }
+  const handeChange = (fontFamily: any) => {
+    setOption(fontFamily)
   }
 
-  const [option, setOption] = useState(options[0])
+  useLayoutEffect(() => {
+    const root = document.querySelector<HTMLBodyElement>('body')
+    if (root && option) {
+      root.style.fontFamily = option.value
+    }
+  }, [option])
 
   return (
     <Select
@@ -63,8 +49,8 @@ export const FontFamilySelect = () => {
           <Portal>
             <SelectPositioner>
               <SelectContent>
-                {options.map((option) => (
-                  <SelectOption key={option.value} value={option.value} label={option.label} />
+                {fonts.map((font) => (
+                  <SelectOption key={font.value} value={font.value} label={font.label} />
                 ))}
               </SelectContent>
             </SelectPositioner>
