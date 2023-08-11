@@ -35,9 +35,9 @@ export const link = defineRecipe({
       },
       navbar: {
         fontWeight: 'semibold',
-        textStyle: 'sm',
+        textStyle: 'md',
         _hover: {
-          color: 'fg.muted',
+          color: 'fg.emphasized',
         },
         _currentPage: {
           color: 'fg.emphasized',

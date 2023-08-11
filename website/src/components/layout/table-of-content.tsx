@@ -29,8 +29,8 @@ export const TableOfContent = () => {
       display={{ base: 'none', xl: 'flex' }}
       position="fixed"
       width="48"
-      top="24"
-      mt="2"
+      top="28"
+      mt="1"
       bottom="0"
       right="max(0px, calc(100vw / 2 - 616px))"
     >

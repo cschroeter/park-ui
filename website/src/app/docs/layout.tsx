@@ -10,9 +10,9 @@ const DocsLayout = (props: PropsWithChildren) => {
         display={{ base: 'none', lg: 'flex' }}
         position="fixed"
         width="60"
-        top="16"
+        top="20"
         bottom="0"
-        pt="10"
+        pt="9"
         overflowY="auto"
       >
         <Sidebar />

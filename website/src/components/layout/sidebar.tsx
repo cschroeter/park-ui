@@ -26,7 +26,7 @@ export const Sidebar = () => {
     <Stack gap="8" alignItems="stretch">
       {sitemap.map((group) => (
         <Stack gap="3" key={group.name}>
-          <Typography textStyle={{ base: 'md', md: 'sm' }} fontWeight="bold">
+          <Typography textStyle={{ base: 'md', md: 'sm' }} fontWeight="semibold">
             {group.name}
           </Typography>
           <SegmentGroup value={currentPath} orientation="vertical" size={{ base: 'md', md: 'sm' }}>
