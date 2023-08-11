@@ -53,7 +53,7 @@ export const Hero = () => {
             ))}
           </HStack>
         </Stack>
-        <Flex align="center" justify="center" flex="1" ps="24">
+        <Flex align="center" justify="center" flex="1" ps="0">
           <Box bg="bg.default" borderRadius="lg" borderWidth="1px" p="6" boxShadow="sm" width="sm">
             <Stack gap="5">
               <Stack gap="1">
