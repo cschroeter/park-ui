@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <styled.nav role="navigation" position="sticky" top="0" zIndex="sticky" bg="bg.default">
       <Box borderBottomWidth="1px" position="relative">
-        <Container py="4">
+        <Container py={{ base: '3', md: '4' }}>
           <HStack justify="space-between" gap="8">
             <HStack gap="10">
               <NextLink href="/">
@@ -44,7 +44,7 @@ export const Navbar = () => {
                 </NextLink>
               </HStack>
             </HStack>
-            <HStack gap={{ base: '2', md: '6' }}>
+            <HStack gap={{ base: '2', md: '4' }}>
               <FeedbackPopover
                 closeOnInteractOutside={false}
                 positioning={{ placement: 'bottom-end', gutter: 4 }}
@@ -56,7 +56,7 @@ export const Navbar = () => {
                   rel="noopener noreferrer"
                   aria-label="Twitter profile"
                   className={cx(
-                    button({ variant: 'tertiary', size: 'sm' }),
+                    button({ variant: 'tertiary' }),
                     css({ px: '0', color: 'fg.mtued' }),
                   )}
                 >
@@ -68,7 +68,7 @@ export const Navbar = () => {
                   rel="noopener noreferrer"
                   aria-label="GitHub repository"
                   className={cx(
-                    button({ variant: 'tertiary', size: 'sm' }),
+                    button({ variant: 'tertiary' }),
                     css({ px: '0', color: 'fg.mtued' }),
                   )}
                 >

@@ -46,7 +46,7 @@ export const drawer = defineSlotRecipe({
       py: '6',
     },
     title: {
-      fontWeight: 'bold',
+      fontWeight: 'semibold',
       textStyle: 'xl',
     },
     description: {

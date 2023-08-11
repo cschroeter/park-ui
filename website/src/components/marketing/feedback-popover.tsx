@@ -44,7 +44,6 @@ export const FeedbackPopover = (props: PopoverProps) => {
       <PopoverAnchor asChild>
         <Button
           variant="secondary"
-          size="sm"
           onClick={() => toggle()}
           display={{ base: 'none', sm: 'inline-flex' }}
         >
