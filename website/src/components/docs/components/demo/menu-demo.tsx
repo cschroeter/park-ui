@@ -1,10 +1,4 @@
-import {
-  MenuItemGroup,
-  MenuItemGroupLabel,
-  MenuSeparator,
-  MenuTriggerItem,
-  Portal,
-} from '@ark-ui/react'
+import { Portal } from '@ark-ui/react'
 import {
   FiChevronRight,
   FiCreditCard,
@@ -18,7 +12,17 @@ import {
 } from 'react-icons/fi'
 import { HStack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import { Menu, MenuContent, MenuItem, MenuPositioner, MenuTrigger } from '~/components/ui/menu'
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemGroupLabel,
+  MenuPositioner,
+  MenuSeparator,
+  MenuTrigger,
+  MenuTriggerItem,
+} from '~/components/ui/menu'
 import { Typography } from '~/components/ui/typography'
 
 export const MenuDemo = () => {

@@ -1,4 +1,3 @@
-import type { EditableProps } from '@ark-ui/react'
 import { Button } from '~/components/ui/button'
 import {
   Editable,
@@ -10,6 +9,7 @@ import {
   EditableLabel,
   EditablePreview,
   EditableSubmitTrigger,
+  type EditableProps,
 } from '~/components/ui/editable'
 import { Label } from '~/components/ui/label'
 

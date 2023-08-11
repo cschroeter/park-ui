@@ -1,4 +1,4 @@
-import { ComboboxLabel, Portal } from '@ark-ui/react'
+import { Portal } from '@ark-ui/react'
 import { useState } from 'react'
 import { BiExpandVertical } from 'react-icons/bi'
 import {
@@ -6,6 +6,7 @@ import {
   ComboboxContent,
   ComboboxControl,
   ComboboxInput,
+  ComboboxLabel,
   ComboboxOption,
   ComboboxPositioner,
   ComboboxTrigger,
