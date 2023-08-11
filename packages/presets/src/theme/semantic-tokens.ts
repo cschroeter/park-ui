@@ -32,11 +32,8 @@ export const semanticTokens = defineSemanticTokens({
     },
   },
   shadows: {
-    outline: {
-      value: {
-        base: '0 0 0 1px {colors.border.outline}',
-        _dark: '0 0 0 1px {colors.border.outline}',
-      },
+    accent: {
+      value: '0 0 0 1px {colors.border.accent}',
     },
     xs: {
       value: {

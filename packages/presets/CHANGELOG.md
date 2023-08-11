@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Input elements like `Input`, `Textarea`, `NumberInput` etc. use `accent` color when focused.
+
+### Changed
+
+- Renamed box shadow token `outline` to `accent`.
+
 ## [0.5.0] - 2023-08-10
 
 ### Added

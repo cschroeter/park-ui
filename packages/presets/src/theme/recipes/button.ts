@@ -35,7 +35,7 @@ export const button = defineRecipe({
         _focusVisible: {
           outlineOffset: '2px',
           outline: '2px solid',
-          outlineColor: 'border.outline',
+          outlineColor: 'border.accent',
         },
         _disabled: {
           background: 'bg.disabled',

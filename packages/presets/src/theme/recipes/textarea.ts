@@ -21,8 +21,8 @@ export const textarea = defineRecipe({
       cursor: 'not-allowed',
     },
     _focus: {
-      borderColor: 'border.outline',
-      boxShadow: 'outline',
+      borderColor: 'border.accent',
+      boxShadow: 'accent',
     },
   },
   defaultVariants: {
