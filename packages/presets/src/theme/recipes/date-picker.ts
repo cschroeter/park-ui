@@ -59,7 +59,7 @@ export const datePicker = defineSlotRecipe({
     columnHeader: {
       alignItems: 'center',
       display: 'inline-flex',
-      fontWeight: 'bold',
+      fontWeight: 'semibold',
       height: '10',
       justifyContent: 'center',
       textStyle: 'sm',

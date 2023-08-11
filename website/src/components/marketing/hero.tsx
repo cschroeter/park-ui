@@ -54,7 +54,7 @@ export const Hero = () => {
           </HStack>
         </Stack>
         <Flex align="center" justify="center" flex="1" ps="24">
-          <Box bg="bg.default" borderRadius="lg" borderWidth="1px" p="6" boxShadow="sm">
+          <Box bg="bg.default" borderRadius="lg" borderWidth="1px" p="6" boxShadow="sm" width="sm">
             <Stack gap="5">
               <Stack gap="1">
                 <Heading as="h3">Make it yours</Heading>

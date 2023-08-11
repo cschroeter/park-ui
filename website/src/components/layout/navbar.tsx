@@ -45,7 +45,7 @@ export const Navbar = () => {
                 {/* <ThemePopover /> */}
               </HStack>
             </HStack>
-            <HStack gap={{ base: '2', md: '6' }}>
+            <HStack gap={{ base: '2', md: '4' }}>
               <FeedbackPopover
                 closeOnInteractOutside={false}
                 positioning={{ placement: 'bottom-end', gutter: 4 }}
@@ -57,7 +57,7 @@ export const Navbar = () => {
                   rel="noopener noreferrer"
                   aria-label="Twitter profile"
                   className={cx(
-                    button({ variant: 'tertiary', size: 'sm' }),
+                    button({ variant: 'tertiary' }),
                     css({ px: '0', color: 'fg.mtued' }),
                   )}
                 >
@@ -69,7 +69,7 @@ export const Navbar = () => {
                   rel="noopener noreferrer"
                   aria-label="GitHub repository"
                   className={cx(
-                    button({ variant: 'tertiary', size: 'sm' }),
+                    button({ variant: 'tertiary' }),
                     css({ px: '0', color: 'fg.mtued' }),
                   )}
                 >
