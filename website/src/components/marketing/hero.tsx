@@ -4,9 +4,7 @@ import { TbBrandReact, TbBrandSolidjs, TbBrandVue } from 'react-icons/tb'
 import { Box, Container, Flex, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Heading, Typography } from '../ui/typography'
-import { ColorPalettePicker } from './theme/color-palette-picker'
-import { FontFamilySelect } from './theme/font-family-select'
-import { GrayPalettePicker } from './theme/gray-palette-picker'
+import { ThemeGenerator } from './theme-generator'
 
 export const Hero = () => {
   return (
@@ -53,28 +51,8 @@ export const Hero = () => {
             ))}
           </HStack>
         </Stack>
-        <Flex align="center" justify="center" flex="1" ps="0">
-          <Box
-            bg="bg.default"
-            borderRadius="default"
-            borderWidth="1px"
-            p="6"
-            boxShadow="sm"
-            width="sm"
-          >
-            <Stack gap="5">
-              <Stack gap="1">
-                <Heading as="h3">Make it yours</Heading>
-                <Typography color="fg.muted" textStyle="sm">
-                  Pick a style and color for your components.
-                </Typography>
-              </Stack>
-              <FontFamilySelect />
-              <GrayPalettePicker />
-              <ColorPalettePicker />
-              {/* <BorderRadiusSlider /> */}
-            </Stack>
-          </Box>
+        <Flex align="center" justify="center" flex="1">
+          <ThemeGenerator />
         </Flex>
       </Stack>
     </Container>

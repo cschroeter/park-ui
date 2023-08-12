@@ -13,6 +13,7 @@ export const useThemeGenerator = () => {
   const updateColorPalette = useThemeStore((state) => state.setColorPalette)
   const updateGrayPalette = useThemeStore((state) => state.setGrayPalette)
   const updateFontFamily = useThemeStore((state) => state.setFontFamily)
+  const reset = useThemeStore((state) => state.reset)
 
   useLayoutEffect(() => {
     syncColorPalette(currentColorPalete, colorMode)
@@ -36,6 +37,7 @@ export const useThemeGenerator = () => {
     updateColorPalette,
     updateGrayPalette,
     updateFontFamily,
+    reset,
   }
 }
 export type GrayPalette = ElementType<typeof grayPalettes>
