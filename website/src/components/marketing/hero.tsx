@@ -4,9 +4,10 @@ import { TbBrandReact, TbBrandSolidjs, TbBrandVue } from 'react-icons/tb'
 import { Box, Container, Flex, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Heading, Typography } from '../ui/typography'
+import { AccentColorPicker } from './theme/accent-color-picker'
 import { BorderRadiusSlider } from './theme/border-radius-slider'
-import { ColorPicker } from './theme/color-picker'
 import { FontFamilySelect } from './theme/font-family-select'
+import { GrayPalettePicker } from './theme/gray-palette-picker'
 
 export const Hero = () => {
   return (
@@ -63,7 +64,8 @@ export const Hero = () => {
                 </Typography>
               </Stack>
               <FontFamilySelect />
-              <ColorPicker />
+              <GrayPalettePicker />
+              <AccentColorPicker />
               <BorderRadiusSlider />
             </Stack>
           </Box>

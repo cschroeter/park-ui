@@ -7,7 +7,7 @@ import { Typography } from '~/components/ui/typography'
 import { accentColors, updateAccentColor, type AccentColor } from '~/lib/update-accent-color'
 import { useColorMode } from '~/lib/use-color-mode'
 
-export const ColorPicker = () => {
+export const AccentColorPicker = () => {
   const { colorMode } = useColorMode()
   const [option, setOption] = useLocalStorage<AccentColor>('park-ui-color', accentColors[0])
 
@@ -32,6 +32,13 @@ export const ColorPicker = () => {
             size="sm"
             justifyContent="start"
             onClick={() => handleOnClick(accentColor)}
+            {...(option.value === accentColor.value ? { 'data-selected': 'true' } : {})}
+            _selected={{
+              background: 'initial',
+              color: 'fg.default',
+              borderColor: 'border.accent',
+              boxShadow: 'accent',
+            }}
           >
             <Circle
               width="3.5"
