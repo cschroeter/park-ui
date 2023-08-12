@@ -39,9 +39,9 @@ export const TableOfContent = () => {
           On This Page
         </Typography>
         <Stack>
-          {headings.map((heading) => (
+          {headings.map((heading, id) => (
             <styled.a
-              key={heading.id}
+              key={id}
               href={`#${heading.id}`}
               aria-current={activeId === heading.id ? 'page' : undefined}
               className={link({ variant: 'toc' })}

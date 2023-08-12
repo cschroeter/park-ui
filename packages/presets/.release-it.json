@@ -6,11 +6,7 @@
   "plugins": {
     "@release-it/keep-a-changelog": {
       "addUnreleased": true,
-      "addVersionUrl": true,
-      "filename": "CHANGELOG.md",
-      "versionUrlFormats": {
-        "repositoryUrl": "https://github.com/cschroeter/park-ui"
-      }
+      "filename": "CHANGELOG.md"
     }
   },
   "hooks": {
