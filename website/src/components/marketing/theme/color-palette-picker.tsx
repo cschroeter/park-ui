@@ -1,23 +1,13 @@
-import { useEffect } from 'react'
 import { Circle, Grid, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { useLocalStorage } from 'usehooks-ts'
 import { Button } from '~/components/ui/button'
 import { Typography } from '~/components/ui/typography'
-import { accentColors, updateAccentColor, type AccentColor } from '~/lib/update-accent-color'
 import { useColorMode } from '~/lib/use-color-mode'
+import { useThemeGenerator } from '~/lib/use-theme-generator'
 
-export const AccentColorPicker = () => {
+export const ColorPalettePicker = () => {
   const { colorMode } = useColorMode()
-  const [option, setOption] = useLocalStorage<AccentColor>('park-ui-color', accentColors[0])
-
-  const handleOnClick = (option: AccentColor) => {
-    setOption(option)
-  }
-
-  useEffect(() => {
-    updateAccentColor(option, colorMode)
-  }, [option, colorMode])
+  const { currentColorPalete, colorPlaettes, updateColorPalette } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -25,14 +15,16 @@ export const AccentColorPicker = () => {
         Color
       </Typography>
       <Grid columns={3}>
-        {accentColors.map((accentColor, id) => (
+        {colorPlaettes.map((colorPalette, id) => (
           <Button
             key={id}
             variant="secondary"
             size="sm"
             justifyContent="start"
-            onClick={() => handleOnClick(accentColor)}
-            {...(option.value === accentColor.value ? { 'data-selected': 'true' } : {})}
+            onClick={() => updateColorPalette(colorPalette)}
+            {...(currentColorPalete.value === colorPalette.value
+              ? { 'data-selected': 'true' }
+              : {})}
             _selected={{
               background: 'initial',
               color: 'fg.default',
@@ -45,11 +37,11 @@ export const AccentColorPicker = () => {
               height="3.5"
               style={{
                 background: token.var(
-                  `colors.${accentColor.value}.${colorMode === 'light' ? '600' : '300'}`,
+                  `colors.${colorPalette.value}.${colorMode === 'light' ? '600' : '300'}`,
                 ),
               }}
             />
-            {accentColor.label}
+            {colorPalette.label}
           </Button>
         ))}
       </Grid>
