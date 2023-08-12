@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <styled.nav role="navigation" position="sticky" top="0" zIndex="sticky" bg="bg.default">
       <Box borderBottomWidth="1px" position="relative">
-        <Container py="4">
+        <Container py={{ base: '3', md: '4' }}>
           <HStack justify="space-between" gap="8">
             <HStack gap="10">
               <NextLink href="/">
