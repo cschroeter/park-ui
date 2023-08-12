@@ -5,6 +5,8 @@ import { Box, Container, Flex, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Heading, Typography } from '../ui/typography'
 import { ColorPalettePicker } from './theme/color-palette-picker'
+import { FontFamilySelect } from './theme/font-family-select'
+import { GrayPalettePicker } from './theme/gray-palette-picker'
 
 export const Hero = () => {
   return (
@@ -67,8 +69,8 @@ export const Hero = () => {
                   Pick a style and color for your components.
                 </Typography>
               </Stack>
-              {/* <FontFamilySelect /> */}
-              {/* <GrayPalettePicker /> */}
+              <FontFamilySelect />
+              <GrayPalettePicker />
               <ColorPalettePicker />
               {/* <BorderRadiusSlider /> */}
             </Stack>

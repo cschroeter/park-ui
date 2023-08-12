@@ -5,26 +5,62 @@ import { useThemeStore } from './use-theme-store'
 
 export const useThemeGenerator = () => {
   const { colorMode } = useColorMode()
+
   const currentColorPalete = useThemeStore((state) => state.colorPalette)
+  const currentGrayPalette = useThemeStore((state) => state.grayPalette)
+  const currentFontFamily = useThemeStore((state) => state.fontFamily)
+
   const updateColorPalette = useThemeStore((state) => state.setColorPalette)
+  const updateGrayPalette = useThemeStore((state) => state.setGrayPalette)
+  const updateFontFamily = useThemeStore((state) => state.setFontFamily)
 
   useLayoutEffect(() => {
     syncColorPalette(currentColorPalete, colorMode)
   }, [currentColorPalete, colorMode])
 
+  useLayoutEffect(() => {
+    syncGrayPalette(currentGrayPalette)
+  }, [currentGrayPalette])
+
+  useLayoutEffect(() => {
+    syncFontFamily(currentFontFamily)
+  }, [currentFontFamily])
+
   return {
     colorPlaettes,
+    grayPalettes,
+    fontFamilies,
     currentColorPalete,
+    currentGrayPalette,
+    currentFontFamily,
     updateColorPalette,
+    updateGrayPalette,
+    updateFontFamily,
+  }
+}
+export type GrayPalette = ElementType<typeof grayPalettes>
+export const grayPalettes = [
+  { label: 'Neutral', value: 'neutral' },
+  { label: 'Stone', value: 'stone' },
+  { label: 'Zinc', value: 'zinc' },
+  { label: 'Gray', value: 'gray' },
+  { label: 'Slate', value: 'slate' },
+] as const
+
+export const syncGrayPalette = (color: GrayPalette) => {
+  const root = document.querySelector<HTMLHtmlElement>(':root')
+  const hues = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
+  if (root) {
+    hues.map((value) => {
+      root.style.setProperty(
+        `--colors-gray-palette-${value}`,
+        token.var(`colors.${color.value}.${value}`),
+      )
+    })
   }
 }
 
-type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<infer ElementType>
-  ? ElementType
-  : never
-
 export type ColorPalette = ElementType<typeof colorPlaettes>
-
 export const colorPlaettes = [
   { label: 'Neutral', value: 'neutral' },
   { label: 'Rose', value: 'rose' },
@@ -80,3 +116,38 @@ const syncColorPalette = (color: ColorPalette, colorMode: 'light' | 'dark') => {
     }
   }
 }
+
+export type FontFamily = ElementType<typeof fontFamilies>
+export const fontFamilies = [
+  {
+    label: 'Jakarta',
+    value: 'var(--font-body)',
+  },
+  {
+    label: 'Inter',
+    value: 'var(--font-inter)',
+  },
+  {
+    label: 'Outfit',
+    value: 'var(--font-outfit)',
+  },
+  {
+    label: 'Raleway',
+    value: 'var(--font-raleway)',
+  },
+  {
+    label: 'Fira Code',
+    value: 'var(--font-code)',
+  },
+] as const
+
+const syncFontFamily = (fontFamily: FontFamily) => {
+  const root = document.querySelector<HTMLBodyElement>('body')
+  if (root) {
+    root.style.fontFamily = fontFamily.value
+  }
+}
+
+type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<infer ElementType>
+  ? ElementType
+  : never

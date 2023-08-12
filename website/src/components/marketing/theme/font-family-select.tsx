@@ -1,9 +1,6 @@
 import { Portal } from '@ark-ui/react'
-import { useLayoutEffect } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
-import { useLocalStorage } from 'usehooks-ts'
-import { fonts } from '~/app/fonts'
 import { Button } from '~/components/ui/button'
 import {
   Select,
@@ -13,21 +10,15 @@ import {
   SelectPositioner,
   SelectTrigger,
 } from '~/components/ui/select'
+import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const FontFamilySelect = () => {
-  const [option, setOption] = useLocalStorage('park-ui-font-family', fonts[0])
-
-  useLayoutEffect(() => {
-    const root = document.querySelector<HTMLBodyElement>('body')
-    if (root && option) {
-      root.style.fontFamily = option.value
-    }
-  }, [option])
+  const { currentFontFamily, fontFamilies, updateFontFamily } = useThemeGenerator()
 
   return (
     <Select
-      selectedOption={option}
-      onChange={(e) => setOption(e ?? fonts[0])}
+      selectedOption={currentFontFamily}
+      onChange={(e: any) => updateFontFamily(e)}
       positioning={{ sameWidth: true }}
       size="sm"
     >
@@ -45,8 +36,12 @@ export const FontFamilySelect = () => {
           <Portal>
             <SelectPositioner>
               <SelectContent>
-                {fonts.map((font) => (
-                  <SelectOption key={font.value} value={font.value} label={font.label} />
+                {fontFamilies.map((fontFamily) => (
+                  <SelectOption
+                    key={fontFamily.value}
+                    value={fontFamily.value}
+                    label={fontFamily.label}
+                  />
                 ))}
               </SelectContent>
             </SelectPositioner>

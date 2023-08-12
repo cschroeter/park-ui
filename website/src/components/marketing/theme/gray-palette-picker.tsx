@@ -1,23 +1,13 @@
-import { useEffect } from 'react'
 import { Circle, Grid, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { useLocalStorage } from 'usehooks-ts'
 import { Button } from '~/components/ui/button'
 import { Typography } from '~/components/ui/typography'
-import { grayPalettes, updateGrayPalette, type GrayPalette } from '~/lib/update-gray-palette'
 import { useColorMode } from '~/lib/use-color-mode'
+import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const GrayPalettePicker = () => {
-  const [option, setOption] = useLocalStorage<GrayPalette>('park-ui-gray-palette', grayPalettes[0])
   const { colorMode } = useColorMode()
-
-  const handleOnClick = (option: GrayPalette) => {
-    setOption(option)
-  }
-
-  useEffect(() => {
-    updateGrayPalette(option)
-  }, [option])
+  const { currentGrayPalette, grayPalettes, updateGrayPalette } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -31,8 +21,8 @@ export const GrayPalettePicker = () => {
             variant="secondary"
             size="sm"
             justifyContent="start"
-            onClick={() => handleOnClick(grayPalette)}
-            {...(option.value === grayPalette.value ? { 'data-selected': 'true' } : {})}
+            onClick={() => updateGrayPalette(grayPalette)}
+            {...(currentGrayPalette.value === grayPalette.value ? { 'data-selected': 'true' } : {})}
             _selected={{
               background: 'initial',
               color: 'fg.default',

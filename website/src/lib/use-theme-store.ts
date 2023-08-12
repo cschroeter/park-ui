@@ -1,17 +1,14 @@
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import type { ColorPalette } from './use-theme-generator'
-
-type Palette = {
-  label: string
-  value: string
-}
+import type { ColorPalette, FontFamily, GrayPalette } from './use-theme-generator'
 
 interface ThemeStore {
   colorPalette: ColorPalette
-  grayPalette: Palette
+  grayPalette: GrayPalette
+  fontFamily: FontFamily
   setColorPalette: (palette: ColorPalette) => void
-  setGrayPalette: (palette: Palette) => void
+  setGrayPalette: (palette: GrayPalette) => void
+  setFontFamily: (font: FontFamily) => void
 }
 
 export const useThemeStore = create<ThemeStore>()(
@@ -20,8 +17,10 @@ export const useThemeStore = create<ThemeStore>()(
       (set) => ({
         colorPalette: { label: 'Neutral', value: 'neutral' },
         grayPalette: { label: 'Neutral', value: 'neutral' },
-        setColorPalette: (color) => set(() => ({ colorPalette: color })),
-        setGrayPalette: (color) => set(() => ({ grayPalette: color })),
+        fontFamily: { label: 'Jakarta', value: 'var(--font-body)' },
+        setColorPalette: (colorPalette) => set(() => ({ colorPalette })),
+        setGrayPalette: (grayPalette) => set(() => ({ grayPalette })),
+        setFontFamily: (fontFamily) => set(() => ({ fontFamily })),
       }),
       {
         name: 'park-ui-theme-store',
