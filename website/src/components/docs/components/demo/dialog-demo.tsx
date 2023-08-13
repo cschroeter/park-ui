@@ -40,7 +40,9 @@ export const DialogDemo = (props: DialogProps) => {
               </Stack>
             </Stack>
             <DialogCloseTrigger asChild position="absolute" top="2" right="2">
-              <IconButton icon={<FiX />} aria-label="Close Dialog" variant="tertiary" size="sm" />
+              <IconButton aria-label="Close Dialog" variant="tertiary" size="sm">
+                <FiX />
+              </IconButton>
             </DialogCloseTrigger>
           </DialogContent>
         </DialogContainer>

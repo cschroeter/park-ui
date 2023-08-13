@@ -18,21 +18,15 @@ export const QuantityPicker = () => {
         <NumberInputInput id="quantity" />
         <NumberInputControl>
           <NumberInputIncrementTrigger asChild>
-            <IconButton
-              size="xs"
-              variant="tertiary"
-              icon={<FiChevronUp />}
-              aria-label="Increment"
-            />
+            <IconButton size="xs" variant="tertiary" aria-label="Increment">
+              <FiChevronUp />
+            </IconButton>
           </NumberInputIncrementTrigger>
           <Divider />
           <NumberInputDecrementTrigger asChild>
-            <IconButton
-              size="xs"
-              variant="tertiary"
-              icon={<FiChevronDown />}
-              aria-label="Decrement"
-            />
+            <IconButton size="xs" variant="tertiary" aria-label="Decrement">
+              <FiChevronDown />
+            </IconButton>
           </NumberInputDecrementTrigger>
         </NumberInputControl>
       </NumberInput>

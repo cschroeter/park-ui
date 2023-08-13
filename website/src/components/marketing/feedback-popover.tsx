@@ -13,7 +13,7 @@ import {
   PopoverPositioner,
   type PopoverProps,
 } from '~/components/ui/popover'
-import { Textarea } from '../ui/textarea'
+import { Textarea } from '~/components/ui/textarea'
 
 type Fields = {
   message: string

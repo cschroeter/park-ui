@@ -17,16 +17,15 @@ export const NumberInputDemo = (props: NumberInputProps) => {
       <NumberInputInput />
       <NumberInputControl>
         <NumberInputIncrementTrigger asChild>
-          <IconButton size="xs" variant="tertiary" icon={<FiChevronUp />} aria-label="Increment" />
+          <IconButton size="xs" variant="tertiary" aria-label="Increment">
+            <FiChevronUp />
+          </IconButton>
         </NumberInputIncrementTrigger>
         <hr />
         <NumberInputDecrementTrigger asChild>
-          <IconButton
-            size="xs"
-            variant="tertiary"
-            icon={<FiChevronDown />}
-            aria-label="Decrement"
-          />
+          <IconButton size="xs" variant="tertiary" aria-label="Decrement">
+            <FiChevronDown />
+          </IconButton>
         </NumberInputDecrementTrigger>
       </NumberInputControl>
     </NumberInput>

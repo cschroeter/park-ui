@@ -43,12 +43,9 @@ export const ToastDemo = () => {
                       </Stack>
                       <Box position="absolute" top="3" right="3">
                         <ToastCloseTrigger asChild>
-                          <IconButton
-                            icon={<FiX />}
-                            size="sm"
-                            variant="link"
-                            aria-label="Close Toast"
-                          />
+                          <IconButton size="sm" variant="link" aria-label="Close Toast">
+                            <FiX />
+                          </IconButton>
                         </ToastCloseTrigger>
                       </Box>
                     </Toast>

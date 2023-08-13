@@ -2,9 +2,9 @@
 import { useEffect, useState } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useCopyToClipboard } from 'usehooks-ts'
-import { IconButton, type IconButtonProps } from '../ui/icon-button'
+import { IconButton } from '~/components/ui/icon-button'
 
-type Props = { content: string } & Omit<IconButtonProps, 'aria-label' | 'icon'>
+type Props = { content: string }
 
 export const CopyCodeButton = (props: Props) => {
   const { content } = props
@@ -27,9 +27,10 @@ export const CopyCodeButton = (props: Props) => {
       variant="tertiary"
       size="sm"
       {...props}
-      icon={visible ? <FiCopy /> : <FiCheck />}
       aria-label="Copy code to clipboard"
       onClick={handleClick}
-    />
+    >
+      {visible ? <FiCopy /> : <FiCheck />}
+    </IconButton>
   )
 }

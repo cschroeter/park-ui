@@ -1,9 +1,9 @@
 import NextLink from 'next/link'
 import { AiFillApi } from 'react-icons/ai'
 import { HStack } from 'styled-system/jsx'
+import { Badge } from '~/components/ui/badge'
 import { slugify } from '~/lib/slugify'
 import { ArkIcon } from '../../icons/ark'
-import { Badge } from '../../ui/badge'
 
 type Props = {
   name: string

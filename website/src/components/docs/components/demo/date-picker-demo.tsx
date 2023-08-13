@@ -39,11 +39,9 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                 <Input />
               </DatePickerInput>
               <DatePickerTrigger asChild>
-                <IconButton
-                  icon={<FiCalendar />}
-                  variant="secondary"
-                  aria-label="Open date picker"
-                />
+                <IconButton variant="secondary" aria-label="Open date picker">
+                  <FiCalendar />
+                </IconButton>
               </DatePickerTrigger>
             </Stack>
           </DatePickerControl>
@@ -53,12 +51,9 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                 <Stack gap="3">
                   <Stack justify="space-between" direction="row">
                     <DatePickerPrevTrigger asChild>
-                      <IconButton
-                        icon={<FiChevronLeft />}
-                        size="sm"
-                        variant="tertiary"
-                        aria-label="Prev"
-                      />
+                      <IconButton size="sm" variant="tertiary" aria-label="Prev">
+                        <FiChevronLeft />
+                      </IconButton>
                     </DatePickerPrevTrigger>
                     <DatePickerViewTrigger asChild>
                       <Button variant="tertiary" size="sm">
@@ -68,12 +63,9 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                       </Button>
                     </DatePickerViewTrigger>
                     <DatePickerNextTrigger asChild>
-                      <IconButton
-                        icon={<FiChevronRight />}
-                        size="sm"
-                        variant="tertiary"
-                        aria-label="Next"
-                      />
+                      <IconButton size="sm" variant="tertiary" aria-label="Next">
+                        <FiChevronRight />
+                      </IconButton>
                     </DatePickerNextTrigger>
                   </Stack>
                   {api.view === 'day' && (

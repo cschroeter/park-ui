@@ -1,8 +1,8 @@
 import NextLink from 'next/link'
 import { TbBrandReact, TbBrandSolidjs, TbBrandVue } from 'react-icons/tb'
+import { Button } from '~/components/ui/button'
+import { Heading, Typography } from '~/components/ui/typography'
 import { Box, Container, HStack, Stack } from '../../../styled-system/jsx'
-import { button } from '../../../styled-system/recipes'
-import { Heading, Typography } from '../ui/typography'
 
 export const Hero = () => {
   return (
@@ -18,18 +18,12 @@ export const Hero = () => {
           </Typography>
         </Stack>
         <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
-          <NextLink
-            href="/docs/overview/introduction"
-            className={button({ variant: 'primary', size: { base: 'xl', md: '2xl' } })}
-          >
-            Get Started
-          </NextLink>
-          <NextLink
-            href="/docs/components/accordion"
-            className={button({ variant: 'secondary', size: { base: 'xl', md: '2xl' } })}
-          >
-            View Components
-          </NextLink>
+          <Button size={{ base: 'xl', md: '2xl' }} asChild>
+            <NextLink href="/docs/overview/introduction">Get Started</NextLink>
+          </Button>
+          <Button size={{ base: 'xl', md: '2xl' }} variant="secondary" asChild>
+            <NextLink href="/docs/components/accordion">View Components</NextLink>
+          </Button>
         </Stack>
         <HStack gap={{ base: '10', md: '12' }}>
           {[
