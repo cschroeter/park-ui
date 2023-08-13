@@ -7,6 +7,7 @@
 ### Changed
 
 - Renamed box shadow token `outline` to `accent`.
+- Changed the color of the column header in `DatePicker` to `fg.subtle`.
 
 ## 0.5.0 - 2023-08-10
 
