@@ -1,6 +1,5 @@
 import type { PropsWithChildren } from 'react'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
-import { slugify } from '~/lib/slugify'
 
 type TagVariants = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
 
@@ -25,10 +24,9 @@ type HeadingProps = PropsWithChildren<{
 
 export const Heading = (props: HeadingProps) => {
   const { as = 'h2', children, ...rest } = props
-  const id = typeof children === 'string' ? slugify(children) : undefined
 
   return (
-    <Typography as={as} id={id} fontWeight="bold" {...rest}>
+    <Typography as={as} fontWeight="bold" {...rest}>
       {children}
     </Typography>
   )

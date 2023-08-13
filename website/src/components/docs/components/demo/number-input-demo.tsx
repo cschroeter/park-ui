@@ -7,11 +7,12 @@ import {
   NumberInputIncrementTrigger,
   NumberInputInput,
   NumberInputScrubber,
+  type NumberInputProps,
 } from '~/components/ui/number-input'
 
-export const NumberInputDemo = () => {
+export const NumberInputDemo = (props: NumberInputProps) => {
   return (
-    <NumberInput min={-50} max={50} defaultValue="42">
+    <NumberInput min={-50} max={50} defaultValue="42" {...props}>
       <NumberInputScrubber />
       <NumberInputInput />
       <NumberInputControl>

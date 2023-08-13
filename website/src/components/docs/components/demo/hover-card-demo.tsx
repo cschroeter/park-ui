@@ -9,11 +9,12 @@ import {
   HoverCardContent,
   HoverCardPositioner,
   HoverCardTrigger,
+  type HoverCardProps,
 } from '~/components/ui/hover-card'
 import { Typography } from '~/components/ui/typography'
 
-export const HoverCardDemo = () => (
-  <HoverCard>
+export const HoverCardDemo = (props: HoverCardProps) => (
+  <HoverCard {...props}>
     <HoverCardTrigger asChild>
       <styled.a
         href="https://twitter.com/grizzly_codes/"

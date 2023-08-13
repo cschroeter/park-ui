@@ -1,12 +1,6 @@
 import { Container } from 'styled-system/jsx'
 import { Button } from './ui/button'
-import {
-  Radio,
-  RadioButtonGroup,
-  RadioControl,
-  RadioInput,
-  RadioLabel,
-} from './ui/radio-button-group'
+import { Radio, RadioButtonGroup, RadioControl, RadioLabel } from './ui/radio-button-group'
 import {
   Slider,
   SliderControl,
@@ -36,7 +30,6 @@ export const App = () => {
             {[{ value: 'S' }, { value: 'M' }, { value: 'L', disabled: true }, { value: 'XL' }].map(
               (option, id) => (
                 <Radio key={id} value={option.value} disabled={option.disabled}>
-                  <RadioInput data-peer />
                   <RadioControl />
                   <RadioLabel>{option.value}</RadioLabel>
                 </Radio>

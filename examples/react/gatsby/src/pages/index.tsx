@@ -6,7 +6,6 @@ import {
   Radio,
   RadioButtonGroup,
   RadioControl,
-  RadioInput,
   RadioLabel,
 } from '../components/ui/radio-button-group'
 import {
@@ -38,7 +37,6 @@ const IndexPage: React.FC<PageProps> = () => {
             {[{ value: 'S' }, { value: 'M' }, { value: 'L', disabled: true }, { value: 'XL' }].map(
               (option, id) => (
                 <Radio key={id} value={option.value} disabled={option.disabled}>
-                  <RadioInput data-peer />
                   <RadioControl />
                   <RadioLabel>{option.value}</RadioLabel>
                 </Radio>

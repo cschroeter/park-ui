@@ -22,12 +22,13 @@ import {
   MenuSeparator,
   MenuTrigger,
   MenuTriggerItem,
+  type MenuProps,
 } from '~/components/ui/menu'
 import { Typography } from '~/components/ui/typography'
 
-export const MenuDemo = () => {
+export const MenuDemo = (props: MenuProps) => {
   return (
-    <Menu>
+    <Menu {...props}>
       <MenuTrigger asChild>
         <Button variant="secondary">Open menu</Button>
       </MenuTrigger>

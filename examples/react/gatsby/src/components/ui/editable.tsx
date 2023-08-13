@@ -10,7 +10,10 @@ export type EditableProps = Ark.EditableProps & EditableVariantProps
 
 const EditableRoot = withProvider(styled(Ark.Editable.Root), 'root')
 export const EditableArea = withContext(styled(Ark.Editable.Area), 'area')
-export const EditabCancelTrigger = withContext(styled(Ark.Editable.CancelTrigger), 'cancelTrigger')
+export const EditableCancelTrigger = withContext(
+  styled(Ark.Editable.CancelTrigger),
+  'cancelTrigger',
+)
 export const EditableControl = withContext(styled(Ark.Editable.Control), 'control')
 export const EditableEditTrigger = withContext(styled(Ark.Editable.EditTrigger), 'editTrigger')
 export const EditableInput = withContext(styled(Ark.Editable.Input), 'input')
@@ -24,7 +27,7 @@ export const EditableSubmitTrigger = withContext(
 export const Editable = Object.assign(EditableRoot, {
   Root: EditableRoot,
   Area: EditableArea,
-  CancelTrigger: EditableArea,
+  CancelTrigger: EditableCancelTrigger,
   Control: EditableControl,
   EditTrigger: EditableEditTrigger,
   Input: EditableInput,

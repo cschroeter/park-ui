@@ -2,30 +2,26 @@ import {
   Segment,
   SegmentControl,
   SegmentGroup,
-  SegmentIndicator,
-  SegmentInput,
+  SegmentGroupIndicator,
   SegmentLabel,
   type SegmentGroupProps,
 } from '~/components/ui/segment-group'
 
 export const SegmentGroupDemo = (props: SegmentGroupProps) => {
-  // TODO bug in Ark UI
-  const { orientation = 'vertical', ...rest } = props
   const options = [
     { id: 'react', label: 'React' },
     { id: 'solid', label: 'Solid' },
     { id: 'vue', label: 'Vue' },
   ]
   return (
-    <SegmentGroup defaultValue="react" orientation={orientation} {...rest}>
+    <SegmentGroup defaultValue="react" {...props}>
       {options.map((option, id) => (
-        <Segment key={id} value={option.id} data-orientation={orientation}>
-          <SegmentInput data-peer />
+        <Segment key={id} value={option.id}>
           <SegmentControl />
           <SegmentLabel>{option.label}</SegmentLabel>
         </Segment>
       ))}
-      <SegmentIndicator />
+      <SegmentGroupIndicator />
     </SegmentGroup>
   )
 }
