@@ -52,7 +52,9 @@ export const DrawerDemo = (props: DrawerProps) => {
             </Stack>
 
             <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-              <IconButton icon={<FiX />} aria-label="Close Drawer" variant="tertiary" />
+              <IconButton aria-label="Close Drawer" variant="tertiary">
+                <FiX />
+              </IconButton>
             </DrawerCloseTrigger>
           </DrawerContent>
         </DrawerContainer>

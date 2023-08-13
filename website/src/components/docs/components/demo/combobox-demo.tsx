@@ -41,7 +41,9 @@ export const ComboboxDemo = (props: ComboboxProps) => {
           <Input />
         </ComboboxInput>
         <ComboboxTrigger asChild>
-          <IconButton variant="link" icon={<BiExpandVertical />} aria-label="open" size="sm" />
+          <IconButton variant="link" aria-label="open" size="sm">
+            <BiExpandVertical />
+          </IconButton>
         </ComboboxTrigger>
       </ComboboxControl>
       <Portal>

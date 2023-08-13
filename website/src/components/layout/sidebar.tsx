@@ -10,8 +10,8 @@ import {
   SegmentGroupIndicator,
   SegmentLabel,
 } from '~/components/ui/segment-group'
+import { Typography } from '~/components/ui/typography'
 import { sitemap } from '../../sitemap'
-import { Typography } from '../ui/typography'
 
 export const Sidebar = () => {
   const pathname = usePathname()

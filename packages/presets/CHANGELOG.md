@@ -10,6 +10,10 @@
 - Renamed `tablist` part to `list` in `Tabs` recipe.
 - Changed the color of the column header in `DatePicker` to `fg.subtle`.
 
+### Removed
+
+- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop. Code snippets have been updated accordingly.
+
 ## 0.5.0 - 2023-08-10
 
 ### Added

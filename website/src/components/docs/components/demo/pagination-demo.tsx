@@ -20,7 +20,9 @@ export const PaginationDemo = (props: PaginationProps) => {
         <>
           <PaginationList>
             <PaginationPrevPageTrigger asChild>
-              <IconButton variant="tertiary" icon={<FiChevronLeft />} aria-label="Next Page" />
+              <IconButton variant="tertiary" aria-label="Next Page">
+                <FiChevronLeft />
+              </IconButton>
             </PaginationPrevPageTrigger>
 
             {pages.map((page, index) =>
@@ -36,7 +38,9 @@ export const PaginationDemo = (props: PaginationProps) => {
             )}
 
             <PaginationNextPageTrigger asChild>
-              <IconButton variant="tertiary" icon={<FiChevronRight />} aria-label="Next Page" />
+              <IconButton variant="tertiary" aria-label="Next Page">
+                <FiChevronRight />
+              </IconButton>
             </PaginationNextPageTrigger>
           </PaginationList>
         </>

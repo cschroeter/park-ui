@@ -25,8 +25,6 @@ export const ColorModeButton = () => {
           px: '0',
         }),
       )}
-      data-scope="button"
-      data-part="root"
     />
   )
 }

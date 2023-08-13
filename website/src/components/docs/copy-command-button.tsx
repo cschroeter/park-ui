@@ -3,6 +3,7 @@ import { Portal } from '@ark-ui/react'
 import { useEffect, useState } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useCopyToClipboard } from 'usehooks-ts'
+import { IconButton, type IconButtonProps } from '~/components/ui/icon-button'
 import {
   Menu,
   MenuContent,
@@ -12,7 +13,6 @@ import {
   MenuTrigger,
 } from '~/components/ui/menu'
 import { convertCommand, type PackageManager } from '~/lib/convert-command'
-import { IconButton, type IconButtonProps } from '../ui/icon-button'
 
 type Props = { content: string } & Omit<IconButtonProps, 'aria-label' | 'icon'>
 
@@ -45,13 +45,9 @@ export const CopyCommandButton = (props: Props) => {
       }}
     >
       <MenuTrigger asChild>
-        <IconButton
-          variant="tertiary"
-          size="xs"
-          {...rest}
-          icon={visible ? <FiCopy /> : <FiCheck />}
-          aria-label="Copy code to clipboard"
-        />
+        <IconButton variant="tertiary" size="xs" {...rest} aria-label="Copy code to clipboard">
+          {visible ? <FiCopy /> : <FiCheck />}
+        </IconButton>
       </MenuTrigger>
       <Portal>
         <MenuPositioner>

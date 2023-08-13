@@ -7,6 +7,7 @@ import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
 import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   Select,
   SelectContent,
@@ -17,7 +18,6 @@ import {
 } from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
-import { IconButton } from '../../ui/icon-button'
 import { AccordionDemo } from './demo/accordion-demo'
 import { AlertDemo } from './demo/alert-demo'
 import { AvatarDemo } from './demo/avatar-demo'
@@ -122,8 +122,9 @@ export const Playground = (props: Props) => {
             variant="secondary"
             size="sm"
             aria-label="Open settings"
-            icon={<FiSliders />}
-          />
+          >
+            <FiSliders />
+          </IconButton>
         </Box>
       )}
       <Flex
@@ -164,9 +165,9 @@ export const Playground = (props: Props) => {
             variant="tertiary"
             size="sm"
             aria-label='Close "Settings"'
-            icon={<FiX />}
-            color="fg.muted"
-          />
+          >
+            <FiX />
+          </IconButton>
         </Box>
         <Typography textStyle="sm" p="4" fontWeight="semibold">
           Settings

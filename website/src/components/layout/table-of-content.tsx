@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react'
 import { Box, Stack, styled } from 'styled-system/jsx'
 import { link } from 'styled-system/recipes'
+import { Typography } from '~/components/ui/typography'
 import { useScrollSpy } from '~/lib/use-scroll-spy'
-import { Typography } from '../ui/typography'
 
 type Heading = {
   id: string
