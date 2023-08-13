@@ -23,7 +23,7 @@ const data = [
   { label: 'Vue', value: 'vue' },
 ]
 
-export const ComboboxDemo = () => {
+export const ComboboxDemo = (props: ComboboxProps) => {
   const [options, setOptions] = useState(data)
 
   const handleInputChange: ComboboxProps['onInputChange'] = (e) => {
@@ -32,7 +32,7 @@ export const ComboboxDemo = () => {
   }
 
   return (
-    <Combobox onInputChange={handleInputChange}>
+    <Combobox onInputChange={handleInputChange} {...props}>
       <ComboboxLabel asChild>
         <Label>JS Frameworks</Label>
       </ComboboxLabel>

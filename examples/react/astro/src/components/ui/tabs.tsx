@@ -11,7 +11,7 @@ export type TabsProps = Ark.TabsProps & TabsVariantProps
 const TabsRoot = withProvider(styled(Ark.Tabs.Root), 'root')
 export const TabContent = withContext(styled(Ark.Tabs.Content), 'content')
 export const TabIndicator = withContext(styled(Ark.Tabs.Indicator), 'indicator')
-export const TabList = withContext(styled(Ark.Tabs.List), 'tablist')
+export const TabList = withContext(styled(Ark.Tabs.List), 'list')
 export const TabTrigger = withContext(styled(Ark.Tabs.Trigger), 'trigger')
 
 export const Tabs = Object.assign(TabsRoot, {

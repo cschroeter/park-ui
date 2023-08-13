@@ -11,12 +11,13 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
+  type DialogProps,
 } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 
-export const DialogDemo = () => {
+export const DialogDemo = (props: DialogProps) => {
   return (
-    <Dialog>
+    <Dialog {...props}>
       <DialogTrigger asChild>
         <Button variant="secondary">Open dialog</Button>
       </DialogTrigger>

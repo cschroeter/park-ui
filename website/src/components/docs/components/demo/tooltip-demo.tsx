@@ -6,10 +6,11 @@ import {
   TooltipContent,
   TooltipPositioner,
   TooltipTrigger,
+  type TooltipProps,
 } from '~/components/ui/tooltip'
 
-export const TooltipDemo = () => (
-  <Tooltip>
+export const TooltipDemo = (props: TooltipProps) => (
+  <Tooltip {...props}>
     <TooltipTrigger>Hover Me</TooltipTrigger>
     <Portal>
       <TooltipPositioner>
