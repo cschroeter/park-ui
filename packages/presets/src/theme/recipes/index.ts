@@ -5,6 +5,7 @@ import { badge } from './badge'
 import { button } from './button'
 import { carousel } from './carousel'
 import { checkbox } from './checkbox'
+import { code } from './code'
 import { colorPicker } from './color-picker'
 import { combobox } from './combobox'
 import { datePicker } from './date-picker'
@@ -38,6 +39,7 @@ export const recipes = {
   alert,
   badge,
   button,
+  code,
   input,
   label,
   link,

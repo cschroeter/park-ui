@@ -25,6 +25,7 @@ import { BadgeDemo } from './demo/badge-demo'
 import { ButtonDemo } from './demo/button-demo'
 import { CarouselDemo } from './demo/carousel-demo'
 import { CheckboxDemo } from './demo/checkbox-demo'
+import { CodeDemo } from './demo/code-demo'
 import { ColorPickerDemo } from './demo/color-picker-demo'
 import { ComboboxDemo } from './demo/combobox-demo'
 import { DatePickerDemo } from './demo/date-picker-demo'
@@ -79,6 +80,7 @@ export const Playground = (props: Props) => {
     .with('Button', () => ButtonDemo)
     .with('Carousel', () => CarouselDemo)
     .with('Checkbox', () => CheckboxDemo)
+    .with('Code', () => CodeDemo)
     .with('Color Picker', () => ColorPickerDemo)
     .with('Combobox', () => ComboboxDemo)
     .with('Date Picker', () => DatePickerDemo)

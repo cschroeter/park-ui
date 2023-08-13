@@ -123,6 +123,18 @@ export const sitemap = [
         },
       },
       {
+        title: 'Code',
+        description: 'A component to display inline code snippets.',
+        href: '/docs/components/code',
+        isPrimitive: true,
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
+      },
+      {
         title: 'Color Picker',
         description: 'A component that allows users to select a color from a predefined set.',
         href: '/docs/components/color-picker',

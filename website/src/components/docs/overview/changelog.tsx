@@ -1,5 +1,6 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { sva } from 'styled-system/css'
+import { Code } from '~/components/ui/code'
 import { allChangelogs } from '~/contentlayer'
 
 const markdown = sva({
@@ -46,19 +47,6 @@ const markdown = sva({
         content: "'–'",
       },
     },
-    code: {
-      alignItems: 'center',
-      bg: 'bg.subtle',
-      borderRadius: 'sm',
-      borderWidth: '1px',
-      color: 'fg.default',
-      display: 'inline-flex',
-      fontFamily: 'var(--font-code)',
-      fontWeight: 'medium',
-      height: '6',
-      px: '1',
-      textStyle: 'sm',
-    },
     a: {
       textDecoration: 'underline',
     },
@@ -79,7 +67,7 @@ export const Changelog = () => {
           p: (props) => <p className={p} {...props} />,
           ul: (props) => <ul className={ul} {...props} />,
           li: (props) => <li className={li} {...props} />,
-          code: (props) => <code className={code} {...props} />,
+          code: (props: any) => <Code {...props} />,
         }}
       />
     </article>
