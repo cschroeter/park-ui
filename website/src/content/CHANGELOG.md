@@ -1,3 +1,7 @@
+## [Unreleased]
+
+## [0.6.0] - 2023-08-13
+
 ### Added
 
 - Added `Code` component to display inline code snippets.
