@@ -1,4 +1,4 @@
-## Unreleased
+## [Unreleased]
 
 ### Added
 
@@ -15,13 +15,13 @@
 
 - The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop. Code snippets have been updated accordingly.
 
-## 0.5.0 - 2023-08-10
+## [0.5.0] - 2023-08-10
 
 ### Added
 
 - Added `DatePicker` component.
 
-## 0.4.0 - 2023-08-10
+## [0.4.0] - 2023-08-10
 
 ### Added
 
@@ -37,7 +37,7 @@
 
 - Resolved an issue with bundling the `@park-ui/presets` package.
 
-## 0.3.0 - 2023-08-09
+## [0.3.0] - 2023-08-09
 
 ### Added
 
