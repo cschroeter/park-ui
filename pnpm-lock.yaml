@@ -30,8 +30,8 @@ importers:
   examples/react/astro:
     dependencies:
       '@ark-ui/react':
-        specifier: 0.12.0
-        version: 0.12.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.13.0
+        version: 0.13.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@astrojs/react':
         specifier: 2.2.1
         version: 2.2.1(@types/react-dom@18.2.7)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
@@ -74,8 +74,8 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@ark-ui/react':
-        specifier: 0.12.0
-        version: 0.12.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.13.0
+        version: 0.13.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@pandacss/dev':
         specifier: 0.11.0
         version: 0.11.0(@internationalized/date@3.3.0)(@types/node@20.3.3)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
@@ -110,8 +110,8 @@ importers:
   examples/react/next-js:
     dependencies:
       '@ark-ui/react':
-        specifier: 0.12.0
-        version: 0.12.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.13.0
+        version: 0.13.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@park-ui/presets':
         specifier: 0.5.0
         version: link:../../../packages/presets
@@ -161,6 +161,12 @@ importers:
       handlebars:
         specifier: 4.7.8
         version: 4.7.8
+      prettier:
+        specifier: 3.0.01
+        version: 3.0.1
+      prettier-plugin-organize-imports:
+        specifier: 3.2.3
+        version: 3.2.3(prettier@3.0.1)(typescript@5.1.6)
       ts-pattern:
         specifier: 5.0.5
         version: 5.0.5
@@ -169,8 +175,8 @@ importers:
         version: 1.4.1
     devDependencies:
       '@ark-ui/react':
-        specifier: 0.12.0
-        version: 0.12.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.13.0
+        version: 0.13.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@types/fs-extra':
         specifier: 11.0.1
         version: 11.0.1
@@ -194,8 +200,8 @@ importers:
         version: 0.11.0(@internationalized/date@3.3.0)(@types/node@20.4.9)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
     devDependencies:
       '@ark-ui/react':
-        specifier: 0.12.0
-        version: 0.12.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.13.0
+        version: 0.13.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@pandacss/types':
         specifier: 0.11.0
         version: 0.11.0
@@ -215,8 +221,8 @@ importers:
   website:
     dependencies:
       '@ark-ui/react':
-        specifier: 0.12.0
-        version: 0.12.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.13.0
+        version: 0.13.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@park-ui/presets':
         specifier: workspace:*
         version: link:../packages/presets
@@ -323,8 +329,8 @@ packages:
       - encoding
       - supports-color
 
-  /@ark-ui/react@0.12.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Kwm5EMMdFtUtNApKaItQOWSbD9/3AWi8yi+H7hghXX1Nsu4SWKzgHRS+yIywAD0IiVtPDSmAOHPe44TRGeMC+g==}
+  /@ark-ui/react@0.13.0(@internationalized/date@3.3.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Nfs3ZxDJnhV8dqXrHNxIhrqQX3nW+CasjVneSJ7u9wbVM38J0aJb+jr6DD4D9e6GDXDvWtkKuS2vaKPgKg+aLA==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -463,7 +469,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(@types/node@20.3.3)
+      astro: 2.9.6(@types/node@20.4.9)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -4767,6 +4773,7 @@ packages:
 
   /@types/node@20.3.3:
     resolution: {integrity: sha512-wheIYdr4NYML61AjC8MKj/2jrR/kDQri/CIpVoZwldwhnIrD/j9jIU5bJ8yBKuB2VhpFV7Ab6G2XkBjv9r9Zzw==}
+    dev: true
 
   /@types/node@20.4.9:
     resolution: {integrity: sha512-8e2HYcg7ohnTUbHk8focoklEQYvemQmu9M/f43DZVx43kHn0tE3BY/6gSDxS7k0SprtS0NHvj+L80cGLnoOUcQ==}
@@ -6538,6 +6545,7 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
 
   /astro@2.9.6(@types/node@20.4.9):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
@@ -13738,7 +13746,6 @@ packages:
     dependencies:
       prettier: 3.0.1
       typescript: 5.1.6
-    dev: true
 
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
@@ -13749,7 +13756,6 @@ packages:
     resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: true
 
   /pretty-error@2.1.2:
     resolution: {integrity: sha512-EY5oDzmsX5wvuynAByrmY0P0hcp+QpnAKbJng2A2MPjVKXCxrDSUkzghVJ4ZGPIv+JC4gX8fPUWscC0RtjsWGw==}
@@ -16116,6 +16122,7 @@ packages:
       rollup: 3.26.3
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /vite@4.4.8(@types/node@20.4.9):
     resolution: {integrity: sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==}
@@ -16160,7 +16167,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.8(@types/node@20.3.3)
+      vite: 4.4.8(@types/node@20.4.9)
 
   /voca@1.4.1:
     resolution: {integrity: sha512-NJC/BzESaHT1p4B5k4JykxedeltmNbau4cummStd4RjFojgq/kLew5TzYge9N2geeWyI2w8T30wUET5v+F7ZHA==}

@@ -23,13 +23,14 @@ import {
   DatePickerViewTrigger,
   DatePickerYearCell,
   DatePickerYearCellTrigger,
+  type DatePickerProps,
 } from '~/components/ui/date-picker'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 
-export const DatePickerDemo = () => {
+export const DatePickerDemo = (props: DatePickerProps) => {
   return (
-    <DatePicker positioning={{ sameWidth: true }} selectionMode="range">
+    <DatePicker positioning={{ sameWidth: true }} selectionMode="range" {...props}>
       {(api) => (
         <>
           <DatePickerControl>

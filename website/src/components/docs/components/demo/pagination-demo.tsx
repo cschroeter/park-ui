@@ -9,12 +9,13 @@ import {
   PaginationNextPageTrigger,
   PaginationPageTrigger,
   PaginationPrevPageTrigger,
+  type PaginationProps,
 } from '~/components/ui/pagination'
 
-export const PaginationDemo = (props: any) => {
+export const PaginationDemo = (props: PaginationProps) => {
   const matches = useMediaQuery('(max-width: 600px)')
   return (
-    <Pagination count={90} pageSize={10} siblingCount={matches ? 0 : 1} defaultPage={2} {...props}>
+    <Pagination count={90} pageSize={10} siblingCount={matches ? 0 : 1} defaultPage={2}>
       {({ pages }) => (
         <>
           <PaginationList>

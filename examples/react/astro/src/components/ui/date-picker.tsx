@@ -22,14 +22,14 @@ export const DatePickerControl = withContext(styled(Ark.DatePicker.Control), 'co
 export const DatePickerDayCell = withContext(styled(Ark.DatePicker.DayCell), 'dayCell')
 export const DatePickerDayCellTrigger = withContext(
   styled(Ark.DatePicker.DayCellTrigger),
-  'cellTrigger',
+  'dayCellTrigger',
 )
 export const DatePickerGrid = withContext(styled(Ark.DatePicker.Grid), 'grid')
 export const DatePickerInput = withContext(styled(Ark.DatePicker.Input), 'input')
 export const DatePickerMonthCell = withContext(styled(Ark.DatePicker.MonthCell), 'monthCell')
 export const DatePickerMonthCellTrigger = withContext(
   styled(Ark.DatePicker.MonthCellTrigger),
-  'cellTrigger',
+  'monthCellTrigger',
 )
 export const DatePickerMonthSelect = withContext(styled(Ark.DatePicker.MonthSelect), 'monthSelect')
 export const DatePickerNextTrigger = withContext(styled(Ark.DatePicker.NextTrigger), 'nextTrigger')
@@ -43,7 +43,7 @@ export const DatePickerViewTrigger = withContext(styled(Ark.DatePicker.ViewTrigg
 export const DatePickerYearCell = withContext(styled(Ark.DatePicker.YearCell), 'yearCell')
 export const DatePickerYearCellTrigger = withContext(
   styled(Ark.DatePicker.YearCellTrigger),
-  'cellTrigger',
+  'yearCellTrigger',
 )
 export const DatePickerYearSelect = withContext(styled(Ark.DatePicker.YearSelect), 'yearSelect')
 

@@ -3,13 +3,7 @@ import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Stack } from 'styled-system/jsx'
-import {
-  Segment,
-  SegmentControl,
-  SegmentGroup,
-  SegmentIndicator,
-  SegmentLabel,
-} from '~/components/ui/segment-group'
+import { SegmentGroup } from '~/components/ui/segment-group'
 import { sitemap } from '../../sitemap'
 import { Typography } from '../ui/typography'
 
@@ -28,17 +22,28 @@ export const Sidebar = () => {
           <Typography textStyle={{ base: 'md', md: 'sm' }} fontWeight="bold">
             {group.name}
           </Typography>
-          <SegmentGroup value={currentPath} orientation="vertical" size={{ base: 'md', md: 'sm' }}>
+          <SegmentGroup.Root
+            value={currentPath}
+            orientation="vertical"
+            size={{ base: 'md', md: 'sm' }}
+          >
             {group.entries.map((option, id) => (
-              <Segment key={id} value={option.href} data-orientation="vertical" asChild>
+              <SegmentGroup.Segment
+                key={id}
+                value={option.href}
+                data-orientation="vertical"
+                asChild
+              >
                 <NextLink href={option.href}>
-                  <SegmentControl />
-                  <SegmentLabel>{option.title}</SegmentLabel>
+                  <SegmentGroup.SegmentControl />
+                  <SegmentGroup.SegmentLabel>{option.title} </SegmentGroup.SegmentLabel>
                 </NextLink>
-              </Segment>
+              </SegmentGroup.Segment>
             ))}
-            <SegmentIndicator hidden={!group.entries.some((entry) => entry.href === currentPath)} />
-          </SegmentGroup>
+            <SegmentGroup.Indicator
+              hidden={!group.entries.some((entry) => entry.href === currentPath)}
+            />
+          </SegmentGroup.Root>
         </Stack>
       ))}
     </Stack>

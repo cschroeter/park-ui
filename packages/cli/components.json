@@ -289,8 +289,8 @@
     "components": {
       "Root": { "name": "SegmentGroup", "partName": "root" },
       "Label": { "name": "SegmentGroupLabel", "partName": "label" },
+      "Indicator": { "name": "SegmentGroupIndicator", "partName": "indicator" },
       "Segment": { "name": "Segment", "partName": "radio" },
-      "SegmentIndicator": { "name": "SegmentIndicator", "partName": "radioIndicator" },
       "SegmentLabel": { "name": "SegmentLabel", "partName": "radioLabel" },
       "SegmentControl": { "name": "SegmentControl", "partName": "radioControl" }
     },
