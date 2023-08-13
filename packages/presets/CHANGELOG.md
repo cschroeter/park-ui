@@ -2,6 +2,7 @@
 
 ### Added
 
+- Added `Code` component to display inline code snippets.
 - Input elements like `Input`, `Textarea`, `NumberInput` etc. use `accent` color when focused.
 
 ### Changed

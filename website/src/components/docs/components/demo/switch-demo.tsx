@@ -8,7 +8,7 @@ import {
 } from '~/components/ui/switch'
 
 export const SwitchDemo = (props: SwitchProps) => (
-  <Switch {...props}>
+  <Switch defaultChecked {...props}>
     <SwitchControl>
       <SwitchInput />
       <SwitchThumb />
