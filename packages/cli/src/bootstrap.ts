@@ -16,8 +16,8 @@ const main = async () => {
         ...value,
       }
       const output = template(view)
-      outputFile(`./dist/${key}.tsx`, output, 'utf-8')
-      // outputFile(`../../website/src/components/ui/${key}.tsx`, output, 'utf-8')
+      // outputFile(`./dist/${key}.tsx`, output, 'utf-8')
+      outputFile(`../../website/src/components/ui/${key}.tsx`, output, 'utf-8')
     }),
   )
 }

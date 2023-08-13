@@ -8,7 +8,6 @@ import {
   SegmentControl,
   SegmentGroup,
   SegmentIndicator,
-  SegmentInput,
   SegmentLabel,
 } from '~/components/ui/segment-group'
 import { sitemap } from '../../sitemap'
@@ -33,7 +32,6 @@ export const Sidebar = () => {
             {group.entries.map((option, id) => (
               <Segment key={id} value={option.href} data-orientation="vertical" asChild>
                 <NextLink href={option.href}>
-                  <SegmentInput />
                   <SegmentControl />
                   <SegmentLabel>{option.title}</SegmentLabel>
                 </NextLink>

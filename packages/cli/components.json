@@ -145,7 +145,7 @@
     "components": {
       "Root": { "name": "Editable", "partName": "root" },
       "Area": { "name": "EditableArea", "partName": "area" },
-      "CancelTrigger": { "name": "EditableArea", "partName": "cancelTrigger" },
+      "CancelTrigger": { "name": "EditableCancelTrigger", "partName": "cancelTrigger" },
       "Control": { "name": "EditableControl", "partName": "control" },
       "EditTrigger": { "name": "EditableEditTrigger", "partName": "editTrigger" },
       "Input": { "name": "EditableInput", "partName": "input" },
@@ -251,7 +251,6 @@
       "Root": { "name": "RadioGroup", "partName": "root" },
       "Label": { "name": "RadioGroupLabel", "partName": "label" },
       "Radio": { "name": "Radio", "partName": "radio" },
-      "RadioInput": { "name": "RadioInput", "partName": "radioInput" },
       "RadioLabel": { "name": "RadioLabel", "partName": "radioLabel" },
       "RadioControl": { "name": "RadioControl", "partName": "radioControl" }
     },
@@ -290,11 +289,10 @@
     "components": {
       "Root": { "name": "SegmentGroup", "partName": "root" },
       "Label": { "name": "SegmentGroupLabel", "partName": "label" },
-      "Segment": { "name": "Segment", "partName": "segment" },
-      "SegmentIndicator": { "name": "SegmentIndicator", "partName": "segmentIndicator" },
-      "SegmentInput": { "name": "SegmentInput", "partName": "segmentInput" },
-      "SegmentLabel": { "name": "SegmentLabel", "partName": "segmentLabel" },
-      "SegmentControl": { "name": "SegmentControl", "partName": "segmentControl" }
+      "Segment": { "name": "Segment", "partName": "radio" },
+      "SegmentIndicator": { "name": "SegmentIndicator", "partName": "radioIndicator" },
+      "SegmentLabel": { "name": "SegmentLabel", "partName": "radioLabel" },
+      "SegmentControl": { "name": "SegmentControl", "partName": "radioControl" }
     },
     "isArkComponent": true,
     "rootComponent": "SegmentGroup",
