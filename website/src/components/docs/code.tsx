@@ -8,7 +8,7 @@ export const Code = async (props: Props) => {
   const { code, lang = 'typescript', ...flexProps } = props
 
   return (
-    <Box className="dark" position="relative" bg="bg.subtle" borderRadius="lg" borderWidth="1px">
+    <Box className="dark" position="relative" bg="bg.subtle" borderRadius="l3" borderWidth="1px">
       <Box position="absolute" top="2" right="2" zIndex={1}>
         <CopyCodeButton content={code} />
       </Box>

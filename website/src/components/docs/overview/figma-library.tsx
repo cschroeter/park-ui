@@ -13,7 +13,7 @@ export const FigmaLibrary = () => {
           Philipp Körner
         </Link>
       </Typography>
-      <Flex bg="bg.subtle" borderRadius="lg" borderWidth="1px" overflow="hidden">
+      <Flex bg="bg.subtle" borderRadius="l3" borderWidth="1px" overflow="hidden">
         <iframe
           width="100%"
           height="352px"

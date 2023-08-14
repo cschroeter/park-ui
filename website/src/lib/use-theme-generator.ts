@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react'
-import { token } from 'styled-system/tokens'
+import { token, type Token } from 'styled-system/tokens'
+import { match } from 'ts-pattern'
 import { useColorMode } from './use-color-mode'
 import { useThemeStore } from './use-theme-store'
 
@@ -9,10 +10,13 @@ export const useThemeGenerator = () => {
   const currentColorPalete = useThemeStore((state) => state.colorPalette)
   const currentGrayPalette = useThemeStore((state) => state.grayPalette)
   const currentFontFamily = useThemeStore((state) => state.fontFamily)
+  const currentBorderRadii = useThemeStore((state) => state.borderRadii)
 
   const updateColorPalette = useThemeStore((state) => state.setColorPalette)
   const updateGrayPalette = useThemeStore((state) => state.setGrayPalette)
   const updateFontFamily = useThemeStore((state) => state.setFontFamily)
+  const updateBorderRadii = useThemeStore((state) => state.setBorderRadii)
+
   const reset = useThemeStore((state) => state.reset)
 
   useLayoutEffect(() => {
@@ -27,6 +31,10 @@ export const useThemeGenerator = () => {
     syncFontFamily(currentFontFamily)
   }, [currentFontFamily])
 
+  useLayoutEffect(() => {
+    syncBorderRadii(currentBorderRadii)
+  }, [currentBorderRadii])
+
   return {
     colorPlaettes,
     grayPalettes,
@@ -34,9 +42,11 @@ export const useThemeGenerator = () => {
     currentColorPalete,
     currentGrayPalette,
     currentFontFamily,
+    currentBorderRadii,
     updateColorPalette,
     updateGrayPalette,
     updateFontFamily,
+    updateBorderRadii,
     reset,
   }
 }
@@ -150,6 +160,71 @@ const syncFontFamily = (fontFamily: FontFamily) => {
   }
 }
 
+export type BorderRadii = 0 | 1 | 2 | 3 | 4
+const syncBorderRadii = (currentBorderRadii: BorderRadii) => {
+  const root = document.querySelector<HTMLHtmlElement>(':root')
+  if (root) {
+    root.style.setProperty('--radii-l1', token.var('radii.xs'))
+    const map = match<BorderRadii, Record<'l1' | 'l2' | 'l3', Token>>(currentBorderRadii)
+      .with(0, () => ({
+        l1: 'radii.none',
+        l2: 'radii.none',
+        l3: 'radii.none',
+      }))
+      .with(1, () => ({
+        l1: 'radii.2xs',
+        l2: 'radii.xs',
+        l3: 'radii.sm',
+      }))
+      .with(2, () => ({
+        l1: 'radii.xs',
+        l2: 'radii.sm',
+        l3: 'radii.lg',
+      }))
+      .with(3, () => ({
+        l1: 'radii.sm',
+        l2: 'radii.lg',
+        l3: 'radii.2xl',
+      }))
+      .with(4, () => ({
+        l1: 'radii.2xl',
+        l2: 'radii.2xl',
+        l3: 'radii.3xl',
+      }))
+      .exhaustive()
+
+    Object.entries(map).map(([key, value]) => {
+      root.style.setProperty(`--radii-${key}`, token.var(value))
+    })
+  }
+}
+
 type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<infer ElementType>
   ? ElementType
   : never
+
+// .with(0, () => ({
+//   l1: 'radii.none',
+//   l2: 'radii.none',
+//   l3: 'radii.none',
+// }))
+// .with(1, () => ({
+//   l1: 'radii.none',
+//   l2: 'radii.2xs',
+//   l3: 'radii.xs',
+// }))
+// .with(2, () => ({
+//   l1: 'radii.2xs',
+//   l2: 'radii.xs',
+//   l3: 'radii.sm',
+// }))
+// .with(3, () => ({
+//   l1: 'radii.xs',
+//   l2: 'radii.sm',
+//   l3: 'radii.lg',
+// }))
+// .with(4, () => ({
+//   l1: 'radii.sm',
+//   l2: 'radii.lg',
+//   l3: 'radii.2xl',
+// }))

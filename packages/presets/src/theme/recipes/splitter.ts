@@ -13,7 +13,7 @@ export const splitter = defineSlotRecipe({
     panel: {
       borderWidth: '1px',
       background: 'bg.subtle',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       color: 'fg.muted',
       display: 'flex',
       alignItems: 'center',

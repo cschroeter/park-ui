@@ -5,12 +5,12 @@ export const ImageGallery = () => {
     <Stack gap={{ base: '4', lg: '8' }} direction={{ base: 'column-reverse', lg: 'row' }}>
       <Stack gap={{ base: '3', lg: '4' }} direction={{ base: 'row', lg: 'column' }}>
         {['1', '2', '3', '4'].map((image) => (
-          <Box key={image} width="24" borderRadius="sm" overflow="hidden">
+          <Box key={image} width="24" borderRadius="l2" overflow="hidden">
             <PlaceholderImage width="96" height="auto" />
           </Box>
         ))}
       </Stack>
-      <Box bg="bg.subtle" borderRadius="lg" overflow="hidden">
+      <Box bg="bg.subtle" borderRadius="l3" overflow="hidden">
         <PlaceholderImage width="100%" height="480" />
       </Box>
     </Stack>

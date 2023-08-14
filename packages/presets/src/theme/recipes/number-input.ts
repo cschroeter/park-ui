@@ -8,7 +8,7 @@ export const numberInput = defineSlotRecipe({
   base: {
     root: {
       borderColor: 'border.emphasized',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       borderWidth: '1px',
       display: 'flex',
       overflow: 'hidden',
@@ -33,10 +33,10 @@ export const numberInput = defineSlotRecipe({
       width: 'full',
     },
     decrementTrigger: {
-      borderRadius: 'unset',
+      borderRadius: '0',
     },
     incrementTrigger: {
-      borderRadius: 'unset',
+      borderRadius: '0',
     },
   },
   defaultVariants: {

@@ -3,6 +3,7 @@ import { Box, Stack } from 'styled-system/jsx'
 import { Heading, Typography } from '~/components/ui/typography'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { IconButton } from '../ui/icon-button'
+import { BorderRadiusSlider } from './theme/border-radius-slider'
 import { ColorPalettePicker } from './theme/color-palette-picker'
 import { FontFamilySelect } from './theme/font-family-select'
 import { GrayPalettePicker } from './theme/gray-palette-picker'
@@ -13,7 +14,7 @@ export const ThemeGenerator = () => {
   return (
     <Box
       bg="bg.default"
-      borderRadius="default"
+      borderRadius="l3"
       borderWidth="1px"
       p="6"
       boxShadow="sm"
@@ -40,8 +41,7 @@ export const ThemeGenerator = () => {
         <FontFamilySelect />
         <GrayPalettePicker />
         <ColorPalettePicker />
-
-        {/* <BorderRadiusSlider /> */}
+        <BorderRadiusSlider />
       </Stack>
     </Box>
   )

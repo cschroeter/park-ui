@@ -9,12 +9,12 @@ export const carousel = defineSlotRecipe({
     viewport: {
       overflowX: 'hidden',
       position: 'relative',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
     },
     control: {
       alignItems: 'center',
       background: 'bg.default',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       bottom: '4',
       display: 'flex',
       left: '50%',

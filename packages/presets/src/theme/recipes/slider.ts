@@ -16,12 +16,12 @@ export const slider = defineSlotRecipe({
     },
     track: {
       backgroundColor: 'bg.muted',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       flex: '1',
     },
     range: {
       background: 'accent.default',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
     },
     thumb: {
       background: 'bg.default',

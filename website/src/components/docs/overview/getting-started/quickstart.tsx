@@ -21,7 +21,7 @@ export const QuickStart = () => {
           target="_blank"
         >
           <Flex
-            borderRadius="lg"
+            borderRadius="l3"
             borderWidth="1px"
             p="4"
             bg="bg.default"
@@ -42,7 +42,7 @@ export const QuickStart = () => {
           target="_blank"
         >
           <Flex
-            borderRadius="lg"
+            borderRadius="l3"
             borderWidth="1px"
             p="4"
             bg="bg.default"
@@ -62,7 +62,7 @@ export const QuickStart = () => {
           target="_blank"
         >
           <Flex
-            borderRadius="lg"
+            borderRadius="l3"
             borderWidth="1px"
             p="4"
             bg="bg.default"
