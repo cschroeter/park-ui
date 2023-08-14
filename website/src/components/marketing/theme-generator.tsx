@@ -1,14 +1,17 @@
-import { Box, HStack, Stack } from 'styled-system/jsx'
+import { Box, Stack } from 'styled-system/jsx'
+import { useBoolean } from 'usehooks-ts'
 import { Heading, Typography } from '~/components/ui/typography'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
-import { Button } from '../ui/button'
 import { BorderRadiusSlider } from './theme/border-radius-slider'
 import { ColorPalettePicker } from './theme/color-palette-picker'
 import { FontFamilySelect } from './theme/font-family-select'
 import { GrayPalettePicker } from './theme/gray-palette-picker'
+import { ThemeConfigDialog } from './theme/theme-config-dialog'
+import { ThemeContextMenu } from './theme/theme-context-menu'
 
 export const ThemeGenerator = () => {
   const { reset } = useThemeGenerator()
+  const { value, setValue, setTrue, setFalse, toggle } = useBoolean(false)
 
   return (
     <Box
@@ -20,25 +23,21 @@ export const ThemeGenerator = () => {
       width="sm"
       position="relative"
     >
-      <Stack gap="8">
-        <Stack gap="5">
-          <Stack gap="1">
-            <Heading as="h3">Make it yours</Heading>
-            <Typography color="fg.muted" textStyle="sm">
-              Pick a style and color for your components.
-            </Typography>
-          </Stack>
-          <FontFamilySelect />
-          <GrayPalettePicker />
-          <ColorPalettePicker />
-          <BorderRadiusSlider />
+      <ThemeConfigDialog open={value} onClose={setFalse} />
+      <Box position="absolute" top="2" right="2">
+        <ThemeContextMenu onReset={reset} onCopy={setTrue} />
+      </Box>
+      <Stack gap="4">
+        <Stack gap="1">
+          <Heading as="h3">Make it yours</Heading>
+          <Typography color="fg.muted" textStyle="sm">
+            Pick a style and color for your components.
+          </Typography>
         </Stack>
-        <HStack gap="3">
-          <Button variant="secondary" width="full" onClick={() => reset()}>
-            Reset
-          </Button>
-          <Button width="full">Copy Code</Button>
-        </HStack>
+        <FontFamilySelect />
+        <GrayPalettePicker />
+        <ColorPalettePicker />
+        <BorderRadiusSlider />
       </Stack>
     </Box>
   )
