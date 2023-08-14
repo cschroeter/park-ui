@@ -86,6 +86,6 @@ export const semanticTokens = defineSemanticTokens({
   radii: {
     l1: { value: '{radii.xs}' },
     l2: { value: '{radii.sm}' },
-    l3: { value: '{radii.lg}' },
+    l3: { value: '{radii.md}' },
   },
 })

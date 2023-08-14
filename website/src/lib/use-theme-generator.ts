@@ -212,29 +212,3 @@ const syncBorderRadii = (currentBorderRadii: BorderRadii) => {
 type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<infer ElementType>
   ? ElementType
   : never
-
-// .with(0, () => ({
-//   l1: 'radii.none',
-//   l2: 'radii.none',
-//   l3: 'radii.none',
-// }))
-// .with(1, () => ({
-//   l1: 'radii.none',
-//   l2: 'radii.2xs',
-//   l3: 'radii.xs',
-// }))
-// .with(2, () => ({
-//   l1: 'radii.2xs',
-//   l2: 'radii.xs',
-//   l3: 'radii.sm',
-// }))
-// .with(3, () => ({
-//   l1: 'radii.xs',
-//   l2: 'radii.sm',
-//   l3: 'radii.lg',
-// }))
-// .with(4, () => ({
-//   l1: 'radii.sm',
-//   l2: 'radii.lg',
-//   l3: 'radii.2xl',
-// }))
