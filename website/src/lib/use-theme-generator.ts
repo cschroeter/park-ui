@@ -160,7 +160,7 @@ const syncFontFamily = (fontFamily: FontFamily) => {
   }
 }
 
-export type BorderRadii = 0 | 1 | 2 | 3 | 4
+export type BorderRadii = 0 | 1 | 2 | 3 | 4 | 5 | 6
 const syncBorderRadii = (currentBorderRadii: BorderRadii) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
@@ -179,15 +179,25 @@ const syncBorderRadii = (currentBorderRadii: BorderRadii) => {
       .with(2, () => ({
         l1: 'radii.xs',
         l2: 'radii.sm',
-        l3: 'radii.lg',
+        l3: 'radii.md',
       }))
       .with(3, () => ({
         l1: 'radii.sm',
-        l2: 'radii.lg',
-        l3: 'radii.2xl',
+        l2: 'radii.md',
+        l3: 'radii.lg',
       }))
       .with(4, () => ({
-        l1: 'radii.2xl',
+        l1: 'radii.md',
+        l2: 'radii.lg',
+        l3: 'radii.xl',
+      }))
+      .with(5, () => ({
+        l1: 'radii.lg',
+        l2: 'radii.xl',
+        l3: 'radii.2xl',
+      }))
+      .with(6, () => ({
+        l1: 'radii.xl',
         l2: 'radii.2xl',
         l3: 'radii.3xl',
       }))

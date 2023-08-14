@@ -14,7 +14,7 @@ export const BorderRadiusSlider = () => {
   return (
     <Slider
       min={0}
-      max={4}
+      max={6}
       value={currentBorderRadii}
       // @ts-expect-error
       onChange={(e) => updateBorderRadii(Number(e.value))}
