@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [0.7.0] - 2023-08-15
+
+### Added
+
+- `25` hue levels added for all grays palettes.
+- Added `none` and `2xs` border radius tokens.
+- Added `{radii.l1}`, `{radii.l2}` and `{radii.l3}` to the semantic tokens border radii.
+
 ## [0.6.0] - 2023-08-13
 
 ### Added
