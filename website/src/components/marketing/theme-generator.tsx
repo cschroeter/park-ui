@@ -39,7 +39,7 @@ export const ThemeGenerator = (props: Props) => {
     >
       <ThemeConfigDialog open={value} onClose={setFalse} />
       {!hideContextMenu && (
-        <Box position="absolute" top="2" right="2">
+        <Box position="absolute" top="18px" right="2">
           <ThemeContextMenu onReset={reset} onCopy={handleCopy} />
         </Box>
       )}
