@@ -30,22 +30,22 @@ export const ThemeConfigDialog = (props: Props) => {
           <DialogContent>
             <Stack gap="8" p="6">
               <Stack gap="1">
-                <DialogTitle>Custom Theme</DialogTitle>
+                <DialogTitle>Make it yours</DialogTitle>
                 <DialogDescription>
-                  Copy and paste the following code into your Panda Config file.
+                  Copy and paste the following code into your Panda config.
                 </DialogDescription>
               </Stack>
               <Box
                 className="dark"
                 position="relative"
                 bg="bg.subtle"
-                borderRadius="l3"
+                borderRadius="l2"
                 borderWidth="1px"
               >
                 <Box position="absolute" top="2" right="2" zIndex={1}>
                   <CopyCodeButton content={themeConfig.config} />
                 </Box>
-                <Flex overflow="auto" p="4">
+                <Flex overflow="auto" p="4" maxW="lg" maxH="lg">
                   <Box
                     dangerouslySetInnerHTML={{
                       __html: themeConfig.code,

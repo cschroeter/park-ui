@@ -7,7 +7,7 @@ import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const ColorPalettePicker = () => {
   const { colorMode } = useColorMode()
-  const { currentColorPalette, colorPlaettes, updateColorPalette } = useThemeGenerator()
+  const { currentColorPalette, colorPalettes, updateColorPalette } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -15,7 +15,7 @@ export const ColorPalettePicker = () => {
         Color
       </Typography>
       <Grid columns={3}>
-        {colorPlaettes.map((colorPalette, id) => (
+        {colorPalettes.map((colorPalette, id) => (
           <Button
             key={id}
             variant="secondary"

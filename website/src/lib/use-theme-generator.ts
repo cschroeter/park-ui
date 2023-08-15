@@ -25,7 +25,11 @@ export const useThemeGenerator = () => {
     const result = await fetch('/api/code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ colorPlaette: currentColorPalette, borderRadii: currentBorderRadii }),
+      body: JSON.stringify({
+        borderRadii: currentBorderRadii,
+        colorPalette: currentColorPalette,
+        grayPalette: currentGrayPalette,
+      }),
     }).then((res) => res.json())
 
     updateThemeConfig(result.data)
@@ -48,7 +52,7 @@ export const useThemeGenerator = () => {
   }, [currentBorderRadii])
 
   return {
-    colorPlaettes,
+    colorPalettes,
     grayPalettes,
     fontFamilies,
     currentColorPalette,
@@ -81,7 +85,7 @@ export const grayPalettes = [
 
 export const syncGrayPalette = (color: GrayPalette) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
-  const hues = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
+  const hues = [25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
   if (root) {
     hues.map((value) => {
       root.style.setProperty(
@@ -92,8 +96,8 @@ export const syncGrayPalette = (color: GrayPalette) => {
   }
 }
 
-export type ColorPalette = ElementType<typeof colorPlaettes>
-export const colorPlaettes = [
+export type ColorPalette = ElementType<typeof colorPalettes>
+export const colorPalettes = [
   { label: 'Neutral', value: 'neutral' },
   { label: 'Rose', value: 'rose' },
   { label: 'Pink', value: 'pink' },

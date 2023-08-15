@@ -7,25 +7,44 @@ export default defineConfig({
   exclude: [],
   jsxFramework: 'react',
   outdir: 'styled-system',
+  {{#if isThemeDifferent}}
   theme: {
     extend: {
+      {{#if isGrayPaletteDifferent}}
+      tokens: {
+        colors: {
+          grayPalette: {
+          {{#each grayPalette}}    
+            {{@key}}: { value: '{{this}}' }, 
+          {{/each}}
+          },
+        },
+      },
+      {{/if}}
+      {{#if areSemanticTokensDifferent}}
       semanticTokens: {
+        {{#if isColorPaletteDifferent}}
         colors: {
           accent: {
             default: { value: { base: '{colors.{{colorPalette}}.500}', _dark: '{colors.{{colorPalette}}.500}' } },
             emphasized: { value: { base: '{colors.{{colorPalette}}.600}', _dark: '{colors.{{colorPalette}}.400}' } },
-            fg: { value: { base: '{colors.white}', _dark: '{colors.neutral.950}' } },
+            fg: { value: { base: '{colors.white}', _dark: '{colors.gray-palette.950}' } },
           },
           border: {
             accent: { value: { base: '{colors.{{colorPalette}}.500}', _dark: '{colors.{{colorPalette}}.500}' } },
           },
         },
+        {{/if}}
+        {{#if isRadiiDifferent}}
         radii: {
           l1: { value: '{{curlyOpen}}{{radii.l1}}{{curlyClose}}' },
           l2: { value: '{{curlyOpen}}{{radii.l2}}{{curlyClose}}' },
           l3: { value: '{{curlyOpen}}{{radii.l3}}{{curlyClose}}' },
         },
+        {{/if}}
       },
+      {{/if}}
     },
   },
+  {{/if}}
 })
