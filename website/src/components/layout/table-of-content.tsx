@@ -15,12 +15,12 @@ export const TableOfContent = () => {
   const activeId = useScrollSpy(headings.map((item) => item.id))
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLHeadingElement>('h2')).map(
-      (elem) => ({
+    const elements = Array.from(document.querySelectorAll<HTMLHeadingElement>('h2'))
+      .map((elem) => ({
         id: elem.id,
         text: elem.innerText,
-      }),
-    )
+      }))
+      .filter((item) => item.id !== '')
     setHeadings(elements)
   }, [])
 

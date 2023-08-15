@@ -9,10 +9,10 @@ import { GrayPalettePicker } from './theme/gray-palette-picker'
 import { ThemeConfigDialog } from './theme/theme-config-dialog'
 import { ThemeContextMenu } from './theme/theme-context-menu'
 
-type Props = { hideContextMenu?: boolean } & BoxProps
+type Props = { hideContextMenu?: boolean; onCopy?: () => void } & BoxProps
 
 export const ThemeGenerator = (props: Props) => {
-  const { hideContextMenu, ...rest } = props
+  const { hideContextMenu, onCopy, ...rest } = props
   const { reset, generateConfig } = useThemeGenerator()
   const { value, setTrue, setFalse } = useBoolean(false)
   const isClient = useIsClient()
@@ -24,6 +24,7 @@ export const ThemeGenerator = (props: Props) => {
   const handleCopy = () => {
     generateConfig()
     setTrue()
+    onCopy?.()
   }
 
   return (
