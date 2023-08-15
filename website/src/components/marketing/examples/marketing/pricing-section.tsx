@@ -13,7 +13,7 @@ export const PricingSection = () => {
           key={plan.name}
           bg="bg.default"
           borderWidth="1px"
-          borderRadius="lg"
+          borderRadius="l3"
           p={{ base: '6', md: '8' }}
         >
           <Stack gap="10" width="full">

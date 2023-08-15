@@ -3,7 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 const itemStyle = {
   alignItems: 'center',
-  borderRadius: 'xs',
+  borderRadius: 'l1',
   color: 'fg.emphasized',
   cursor: 'pointer',
   display: 'flex',
@@ -33,7 +33,7 @@ export const menu = defineSlotRecipe({
     },
     content: {
       background: 'bg.default',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       borderWidth: '1px',
       boxShadow: 'lg',
       _hidden: {

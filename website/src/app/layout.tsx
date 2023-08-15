@@ -1,18 +1,24 @@
 import { Analytics } from '@vercel/analytics/react'
 import { type Metadata } from 'next'
-import { Fira_Code, Plus_Jakarta_Sans } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css/cx'
 import { Navbar } from '~/components/layout/navbar'
 import { colorModeLocalStorageKey } from '~/lib/use-color-mode'
 import '../global.css'
-
-const body = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-body' })
-const code = Fira_Code({ subsets: ['latin'], variable: '--font-code' })
+import { firaCode, inter, jakarta, outfit, raleway } from './fonts'
 
 const RootLayout = (props: PropsWithChildren) => {
   return (
-    <html lang="en" className={cx(body.variable, code.variable)}>
+    <html
+      lang="en"
+      className={cx(
+        inter.variable,
+        firaCode.variable,
+        outfit.variable,
+        jakarta.variable,
+        raleway.variable,
+      )}
+    >
       <head>
         <ColorModeScript />
       </head>

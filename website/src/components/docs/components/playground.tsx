@@ -116,7 +116,7 @@ export const Playground = (props: Props) => {
   const { value, setFalse, setTrue } = useBoolean(false)
 
   return (
-    <Flex minH="md" position="relative" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Flex minH="md" position="relative" borderWidth="1px" borderRadius="l3" overflow="hidden">
       {hasSettings && (
         <Box position="absolute" top="2" right="2" zIndex={1}>
           <IconButton

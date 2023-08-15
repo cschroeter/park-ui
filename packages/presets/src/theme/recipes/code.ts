@@ -6,7 +6,7 @@ export const code = defineRecipe({
   base: {
     alignItems: 'center',
     bg: 'bg.subtle',
-    borderRadius: 'sm',
+    borderRadius: 'l2',
     borderWidth: '1px',
     color: 'fg.default',
     display: 'inline-flex',

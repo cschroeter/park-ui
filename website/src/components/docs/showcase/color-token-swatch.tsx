@@ -11,7 +11,7 @@ export const ColorTokenSwatch = (props: ColorToken) => {
   return (
     <Flex
       aspectRatio={5 / 3}
-      borderRadius="lg"
+      borderRadius="l3"
       boxShadow="sm"
       p="4"
       style={{

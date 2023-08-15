@@ -6,7 +6,7 @@ export const button = defineRecipe({
   base: {
     alignItems: 'center',
     appearance: 'none',
-    borderRadius: 'sm',
+    borderRadius: 'l2',
     cursor: 'pointer',
     display: 'inline-flex',
     fontWeight: 'semibold',
@@ -14,7 +14,7 @@ export const button = defineRecipe({
     outline: 'none',
     position: 'relative',
     transitionDuration: 'normal',
-    transitionProperty: 'background, border-color, color',
+    transitionProperty: 'background, border-color, color, box-shadow',
     transitionTimingFunction: 'default',
     userSelect: 'none',
     verticalAlign: 'middle',

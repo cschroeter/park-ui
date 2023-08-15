@@ -9,7 +9,7 @@ type CommandProps = {
 export const Command = async (props: CommandProps) => {
   const { command } = props
   return (
-    <Box className="dark" bg="bg.subtle" borderRadius="lg" borderWidth="1px" px="4" py="2">
+    <Box className="dark" bg="bg.subtle" borderRadius="l3" borderWidth="1px" px="4" py="2">
       <HStack justify="space-between">
         <div
           dangerouslySetInnerHTML={{ __html: await highlight({ code: command, lang: 'zsh' }) }}

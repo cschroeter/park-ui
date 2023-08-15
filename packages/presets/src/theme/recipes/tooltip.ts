@@ -8,7 +8,7 @@ export const tooltip = defineSlotRecipe({
   base: {
     content: {
       background: 'fg.default',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       boxShadow: 'lg',
       color: 'bg.default',
       fontWeight: 'semibold',

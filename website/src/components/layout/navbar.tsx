@@ -8,6 +8,7 @@ import { IconButton } from '~/components/ui/icon-button'
 import { ColorModeButton } from '../color-mode-button'
 import { Logo } from '../icons/logo'
 import { FeedbackPopover } from '../marketing/feedback-popover'
+import { ThemePopover } from '../marketing/theme-popover'
 import { MobileNavbar } from './mobile-navbar'
 import { MobileSidebarContainer } from './mobile-sidebar-container'
 import { Sidebar } from './sidebar'
@@ -24,7 +25,7 @@ export const Navbar = () => {
               <NextLink href="/">
                 <Logo />
               </NextLink>
-              <HStack gap="8" display={{ base: 'none', md: 'flex' }}>
+              <HStack gap="8" display={{ base: 'none', lg: 'flex' }}>
                 <NextLink
                   href="/docs/overview/introduction"
                   aria-current={pathName.includes('/docs/overview/') ? 'page' : undefined}
@@ -42,6 +43,7 @@ export const Navbar = () => {
                 <NextLink href="/#examples" className={link({ variant: 'navbar' })}>
                   Examples
                 </NextLink>
+                <ThemePopover />
               </HStack>
             </HStack>
             <HStack gap={{ base: '2', md: '4' }}>

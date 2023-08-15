@@ -14,7 +14,7 @@ export const radioButtonGroup = defineSlotRecipe({
       alignItems: 'center',
       appearance: 'none',
       borderColor: 'border.emphasized',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       borderWidth: '1px',
       color: 'fg.emphasized',
       cursor: 'pointer',

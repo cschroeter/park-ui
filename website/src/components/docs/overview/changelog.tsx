@@ -42,7 +42,7 @@ const markdown = sva({
     li: {
       lineHeight: 'relaxed',
       color: 'fg.muted',
-      ps: '1',
+      ps: '2',
       _marker: {
         content: "'–'",
       },

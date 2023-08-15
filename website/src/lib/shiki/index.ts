@@ -1,3 +1,4 @@
+import path from 'path'
 import type { Highlighter, Lang } from 'shiki'
 import { getHighlighter, renderToHtml } from 'shiki'
 
@@ -14,6 +15,10 @@ export async function highlight(options: HighlightOptions) {
     highlighter = await getHighlighter({
       langs: ['tsx', 'typescript', 'zsh'],
       theme: 'css-variables',
+      paths: {
+        themes: path.join(process.cwd(), 'src', 'lib', 'shiki', 'themes'),
+        languages: path.join(process.cwd(), 'src', 'lib', 'shiki', 'languages'),
+      },
     })
   }
 

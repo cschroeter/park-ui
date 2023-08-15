@@ -48,7 +48,7 @@ export const ECommerce = () => {
             </Button>
           </Grid>
           <Button size="xl">Add to Cart</Button>
-          <Box bg="bg.subtle" p="4" borderRadius="sm">
+          <Box bg="bg.subtle" p="4" borderRadius="l2">
             <Stack gap="4" color="fg.muted" fontWeight="medium">
               <HStack gap="3">
                 <FiShoppingBag />
