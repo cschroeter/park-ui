@@ -1,4 +1,3 @@
-import { useIsClient } from 'usehooks-ts'
 import {
   Slider,
   SliderControl,
@@ -11,11 +10,6 @@ import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const BorderRadiusSlider = () => {
   const { currentBorderRadii, updateBorderRadii } = useThemeGenerator()
-  const isClient = useIsClient()
-  // prevent false positive for server-side rendering
-  if (!isClient) {
-    return null
-  }
 
   return (
     <Slider
