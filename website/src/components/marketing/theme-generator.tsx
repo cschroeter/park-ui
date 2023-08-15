@@ -1,4 +1,4 @@
-import { Box, Stack } from 'styled-system/jsx'
+import { Box, Stack, type BoxProps } from 'styled-system/jsx'
 import { useBoolean, useIsClient } from 'usehooks-ts'
 import { Heading, Typography } from '~/components/ui/typography'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
@@ -9,7 +9,10 @@ import { GrayPalettePicker } from './theme/gray-palette-picker'
 import { ThemeConfigDialog } from './theme/theme-config-dialog'
 import { ThemeContextMenu } from './theme/theme-context-menu'
 
-export const ThemeGenerator = () => {
+type Props = { hideContextMenu?: boolean } & BoxProps
+
+export const ThemeGenerator = (props: Props) => {
+  const { hideContextMenu, ...rest } = props
   const { reset, generateConfig } = useThemeGenerator()
   const { value, setTrue, setFalse } = useBoolean(false)
   const isClient = useIsClient()
@@ -32,11 +35,14 @@ export const ThemeGenerator = () => {
       boxShadow="sm"
       width="sm"
       position="relative"
+      {...rest}
     >
       <ThemeConfigDialog open={value} onClose={setFalse} />
-      <Box position="absolute" top="2" right="2">
-        <ThemeContextMenu onReset={reset} onCopy={handleCopy} />
-      </Box>
+      {!hideContextMenu && (
+        <Box position="absolute" top="2" right="2">
+          <ThemeContextMenu onReset={reset} onCopy={handleCopy} />
+        </Box>
+      )}
       <Stack gap="4">
         <Stack gap="1">
           <Heading as="h3">Make it yours</Heading>

@@ -19,7 +19,7 @@ export const ThemeContextMenu = (props: Props) => {
         </IconButton>
       </MenuTrigger>
       <Portal>
-        <MenuPositioner>
+        <MenuPositioner zIndex="toast">
           <MenuContent minW="48">
             <MenuItem id="copy" onClick={() => onCopy()}>
               <HStack gap="2">

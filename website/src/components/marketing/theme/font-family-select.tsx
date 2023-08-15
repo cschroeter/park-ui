@@ -34,7 +34,7 @@ export const FontFamilySelect = () => {
             </Button>
           </SelectTrigger>
           <Portal>
-            <SelectPositioner>
+            <SelectPositioner zIndex="toast">
               <SelectContent>
                 {fontFamilies.map((fontFamily) => (
                   <SelectOption
