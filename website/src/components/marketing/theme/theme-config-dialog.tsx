@@ -45,7 +45,7 @@ export const ThemeConfigDialog = (props: Props) => {
                 <Box position="absolute" top="2" right="2" zIndex={1}>
                   <CopyCodeButton content={themeConfig.config} />
                 </Box>
-                <Flex overflow="auto" p="4" maxW="lg" maxH="lg">
+                <Flex overflow="auto" p="4" width="lg" maxH="lg" minH="md">
                   <Box
                     dangerouslySetInnerHTML={{
                       __html: themeConfig.code,
