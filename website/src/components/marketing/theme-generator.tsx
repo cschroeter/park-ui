@@ -10,8 +10,13 @@ import { ThemeConfigDialog } from './theme/theme-config-dialog'
 import { ThemeContextMenu } from './theme/theme-context-menu'
 
 export const ThemeGenerator = () => {
-  const { reset } = useThemeGenerator()
-  const { value, setValue, setTrue, setFalse, toggle } = useBoolean(false)
+  const { reset, generateConfig } = useThemeGenerator()
+  const { value, setTrue, setFalse } = useBoolean(false)
+
+  const handleCopy = () => {
+    generateConfig()
+    setTrue()
+  }
 
   return (
     <Box
@@ -25,7 +30,7 @@ export const ThemeGenerator = () => {
     >
       <ThemeConfigDialog open={value} onClose={setFalse} />
       <Box position="absolute" top="2" right="2">
-        <ThemeContextMenu onReset={reset} onCopy={setTrue} />
+        <ThemeContextMenu onReset={reset} onCopy={handleCopy} />
       </Box>
       <Stack gap="4">
         <Stack gap="1">

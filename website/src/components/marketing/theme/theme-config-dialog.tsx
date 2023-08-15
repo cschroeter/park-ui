@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
+import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 type Props = {
   open: boolean
@@ -19,6 +20,8 @@ type Props = {
 }
 
 export const ThemeConfigDialog = (props: Props) => {
+  const { themeConfig } = useThemeGenerator()
+
   return (
     <Dialog {...props}>
       <Portal>
@@ -40,10 +43,14 @@ export const ThemeConfigDialog = (props: Props) => {
                 borderWidth="1px"
               >
                 <Box position="absolute" top="2" right="2" zIndex={1}>
-                  <CopyCodeButton content="placeholder" />
+                  <CopyCodeButton content={themeConfig.config} />
                 </Box>
                 <Flex overflow="auto" p="4">
-                  <Box>Placeholder</Box>
+                  <Box
+                    dangerouslySetInnerHTML={{
+                      __html: themeConfig.code,
+                    }}
+                  />
                 </Flex>
               </Box>
             </Stack>

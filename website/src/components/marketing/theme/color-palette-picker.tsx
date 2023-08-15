@@ -7,7 +7,7 @@ import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const ColorPalettePicker = () => {
   const { colorMode } = useColorMode()
-  const { currentColorPalete, colorPlaettes, updateColorPalette } = useThemeGenerator()
+  const { currentColorPalette, colorPlaettes, updateColorPalette } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -22,7 +22,7 @@ export const ColorPalettePicker = () => {
             size="sm"
             justifyContent="start"
             onClick={() => updateColorPalette(colorPalette)}
-            {...(currentColorPalete.value === colorPalette.value
+            {...(currentColorPalette.value === colorPalette.value
               ? { 'data-selected': 'true' }
               : {})}
             _selected={{

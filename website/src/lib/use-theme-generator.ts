@@ -1,27 +1,39 @@
 import { useLayoutEffect } from 'react'
-import { token, type Token } from 'styled-system/tokens'
-import { match } from 'ts-pattern'
+import { token } from 'styled-system/tokens'
+import { getBorderRadiiTokens } from './get-border-raddii-tokens'
 import { useColorMode } from './use-color-mode'
 import { useThemeStore } from './use-theme-store'
 
 export const useThemeGenerator = () => {
   const { colorMode } = useColorMode()
 
-  const currentColorPalete = useThemeStore((state) => state.colorPalette)
+  const currentColorPalette = useThemeStore((state) => state.colorPalette)
   const currentGrayPalette = useThemeStore((state) => state.grayPalette)
   const currentFontFamily = useThemeStore((state) => state.fontFamily)
   const currentBorderRadii = useThemeStore((state) => state.borderRadii)
+  const themeConfig = useThemeStore((state) => state.themeConfig)
 
   const updateColorPalette = useThemeStore((state) => state.setColorPalette)
   const updateGrayPalette = useThemeStore((state) => state.setGrayPalette)
   const updateFontFamily = useThemeStore((state) => state.setFontFamily)
   const updateBorderRadii = useThemeStore((state) => state.setBorderRadii)
+  const updateThemeConfig = useThemeStore((state) => state.setThemeConfig)
 
   const reset = useThemeStore((state) => state.reset)
 
+  const generateConfig = async () => {
+    const result = await fetch('/api/code', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ colorPlaette: currentColorPalette, borderRadii: currentBorderRadii }),
+    }).then((res) => res.json())
+
+    updateThemeConfig(result.data)
+  }
+
   useLayoutEffect(() => {
-    syncColorPalette(currentColorPalete, colorMode)
-  }, [currentColorPalete, colorMode])
+    syncColorPalette(currentColorPalette, colorMode)
+  }, [currentColorPalette, colorMode])
 
   useLayoutEffect(() => {
     syncGrayPalette(currentGrayPalette)
@@ -39,10 +51,12 @@ export const useThemeGenerator = () => {
     colorPlaettes,
     grayPalettes,
     fontFamilies,
-    currentColorPalete,
+    currentColorPalette,
     currentGrayPalette,
     currentFontFamily,
     currentBorderRadii,
+    themeConfig,
+    generateConfig,
     updateColorPalette,
     updateGrayPalette,
     updateFontFamily,
@@ -50,6 +64,12 @@ export const useThemeGenerator = () => {
     reset,
   }
 }
+
+export type ThemeConfig = {
+  code: string
+  config: string
+}
+
 export type GrayPalette = ElementType<typeof grayPalettes>
 export const grayPalettes = [
   { label: 'Neutral', value: 'neutral' },
@@ -164,46 +184,8 @@ export type BorderRadii = 0 | 1 | 2 | 3 | 4 | 5 | 6
 const syncBorderRadii = (currentBorderRadii: BorderRadii) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
-    root.style.setProperty('--radii-l1', token.var('radii.xs'))
-    const map = match<BorderRadii, Record<'l1' | 'l2' | 'l3', Token>>(currentBorderRadii)
-      .with(0, () => ({
-        l1: 'radii.none',
-        l2: 'radii.none',
-        l3: 'radii.none',
-      }))
-      .with(1, () => ({
-        l1: 'radii.2xs',
-        l2: 'radii.xs',
-        l3: 'radii.sm',
-      }))
-      .with(2, () => ({
-        l1: 'radii.xs',
-        l2: 'radii.sm',
-        l3: 'radii.md',
-      }))
-      .with(3, () => ({
-        l1: 'radii.sm',
-        l2: 'radii.md',
-        l3: 'radii.lg',
-      }))
-      .with(4, () => ({
-        l1: 'radii.md',
-        l2: 'radii.lg',
-        l3: 'radii.xl',
-      }))
-      .with(5, () => ({
-        l1: 'radii.lg',
-        l2: 'radii.xl',
-        l3: 'radii.2xl',
-      }))
-      .with(6, () => ({
-        l1: 'radii.xl',
-        l2: 'radii.2xl',
-        l3: 'radii.3xl',
-      }))
-      .exhaustive()
-
-    Object.entries(map).map(([key, value]) => {
+    const borderRadiiTokens = getBorderRadiiTokens(currentBorderRadii)
+    Object.entries(borderRadiiTokens).map(([key, value]) => {
       root.style.setProperty(`--radii-${key}`, token.var(value))
     })
   }
