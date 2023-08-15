@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.7.0] - 2023-08-15
+
 ### Added
 
 - `25` hue levels added for all grays palettes.
