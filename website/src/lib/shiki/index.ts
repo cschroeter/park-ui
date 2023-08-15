@@ -16,7 +16,8 @@ export async function highlight(options: HighlightOptions) {
       langs: ['tsx', 'typescript', 'zsh'],
       theme: 'css-variables',
       paths: {
-        themes: path.join(process.cwd(), 'src', 'lib', 'shiki'),
+        themes: path.join(process.cwd(), 'src', 'lib', 'shiki', 'themes'),
+        languages: path.join(process.cwd(), 'src', 'lib', 'shiki', 'languages'),
       },
     })
   }

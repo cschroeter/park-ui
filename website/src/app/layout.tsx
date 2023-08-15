@@ -1,6 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
 import { type Metadata } from 'next'
-
 import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css/cx'
 import { Navbar } from '~/components/layout/navbar'

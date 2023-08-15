@@ -66,7 +66,7 @@ export const checkbox = defineSlotRecipe({
         control: {
           width: '5',
           height: '5',
-          borderRadius: 'l2',
+          borderRadius: 'l1',
           '& svg': {
             width: '3.5',
             height: '3.5',
@@ -83,7 +83,7 @@ export const checkbox = defineSlotRecipe({
         control: {
           width: '6',
           height: '6',
-          borderRadius: 'l2',
+          borderRadius: 'l1',
           '& svg': {
             width: '4',
             height: '4',
