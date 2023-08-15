@@ -22,7 +22,7 @@ export const ThemePopover = (props: PopoverProps) => {
           <Portal>
             <PopoverPositioner>
               <PopoverContent p="0" borderWidth="0" boxShadow="none">
-                <ThemeGenerator onCopy={() => api.close()} />
+                <ThemeGenerator onCopy={() => api.close()} boxShadow="lg" />
               </PopoverContent>
             </PopoverPositioner>
           </Portal>
