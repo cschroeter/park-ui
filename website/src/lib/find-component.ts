@@ -28,7 +28,6 @@ export const findComponent = async (name: string): Promise<Component | undefined
 
   const recipeName = match(name)
     .with('icon-button', () => 'button')
-    .with('range-slider', () => 'slider')
     .otherwise(() => name)
 
   if (entry) {

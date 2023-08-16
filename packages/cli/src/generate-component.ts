@@ -29,7 +29,6 @@ export const generateComponent = async (moduleName: string) => {
       rootComponent: pascalCase(moduleName),
       className: match(moduleName)
         .with('switch', () => 'switchRecipe') // resvered word
-        .with('range-slider', () => 'slider') // same recipe
         .otherwise(() => camelCase(moduleName)),
     },
   }
