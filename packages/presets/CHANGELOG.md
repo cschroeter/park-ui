@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Provided a dedicated recipe for the `RangeSlider` component instead of using the `Slider` recipe.
+
 ## [0.7.0] - 2023-08-15
 
 ### Added
