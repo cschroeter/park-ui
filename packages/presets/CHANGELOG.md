@@ -4,6 +4,10 @@
 
 - Introduced a new `4.5` token for enhanced `spacing` and `sizes`.
 
+### Changed
+
+- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other icon libraries.
+
 ## [0.7.1] - 2023-08-16
 
 ### Changed
