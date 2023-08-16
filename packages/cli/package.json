@@ -11,8 +11,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@clack/core": "0.3.2",
-    "@clack/prompts": "0.6.3",
+    "@clack/core": "0.3.3",
+    "@clack/prompts": "0.7.0",
     "fs-extra": "11.1.1",
     "handlebars": "4.7.8",
     "prettier": "3.0.01",
