@@ -23,6 +23,7 @@ import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { radioButtonGroup } from './radio-button-group'
 import { radioGroup } from './radio-group'
+import { rangeSlider } from './range-slider'
 import { ratingGroup } from './rating-group'
 import { segmentGroup } from './segment-group'
 import { select } from './select'
@@ -64,6 +65,7 @@ export const slotRecipes = {
   pinInput,
   popover,
   radioGroup,
+  rangeSlider,
   radioButtonGroup,
   ratingGroup,
   segmentGroup,
