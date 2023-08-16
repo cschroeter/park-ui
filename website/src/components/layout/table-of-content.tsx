@@ -20,6 +20,7 @@ export const TableOfContent = () => {
         id: elem.id,
         text: elem.innerText,
       }))
+      .filter((item) => item.text !== 'Make it yours') // TODO quickfix -.-
       .filter((item) => item.id !== '')
     setHeadings(elements)
   }, [])
