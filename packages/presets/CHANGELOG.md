@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Resolved a bug in the `Article` component where the font size didn't adjust appropriately in responsive modes.
+
 ## [0.8.0] - 2023-08-17
 
 ### Added

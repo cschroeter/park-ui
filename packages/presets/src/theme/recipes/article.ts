@@ -16,10 +16,10 @@ export const article = defineRecipe({
     },
     '& :where(a)': {
       color: 'fg.emphasized',
+      fontWeight: 'medium',
       textDecoration: 'underline',
       textDecorationColor: 'accent.default',
       textUnderlineOffset: '0.2em',
-      fontWeight: 'medium',
     },
     '& :where(p, li)': {
       color: 'fg.muted',
@@ -41,10 +41,10 @@ export const article = defineRecipe({
       fontWeight: 'medium',
     },
     '& :where(pre)': {
-      overflowX: 'auto',
       backgroundColor: 'bg.subtle',
       borderRadius: 'l3',
       borderWidth: '1px',
+      overflowX: 'auto',
     },
     '& :where(blockquote)': {
       borderLeftWidth: '4px',
@@ -88,19 +88,19 @@ export const article = defineRecipe({
         },
         '& :where(h2)': {
           fontSize: 'xl',
-          lineHeight: '1.75rrem',
-          mt: '8',
+          lineHeight: '1.75rem',
           mb: '4',
+          mt: '8',
         },
         '& :where(h3)': {
           fontSize: 'lg',
-          lineHeight: '1.75rrem',
-          mt: '7',
+          lineHeight: '1.75rem',
           mb: '2',
+          mt: '7',
         },
         '& :where(p)': {
-          lineHeight: '1.5rem',
           fontSize: 'sm',
+          lineHeight: '1.5rem',
           my: '4',
         },
         '& :where(hr)': {
@@ -110,8 +110,8 @@ export const article = defineRecipe({
           ps: '5',
         },
         '& :where(li)': {
-          lineHeight: '1.5rem',
           fontSize: 'sm',
+          lineHeight: '1.5rem',
           my: '1',
         },
         '& :where(code)': {
@@ -129,9 +129,9 @@ export const article = defineRecipe({
           ps: '4',
         },
         '& :where(h1 + p)': {
+          color: 'fg.emphasized',
           fontSize: 'lg',
           lineHeight: '1.75rem',
-          color: 'fg.emphasized',
           mb: '4',
         },
       },
@@ -145,8 +145,8 @@ export const article = defineRecipe({
         '& :where(h2)': {
           fontSize: '2xl',
           lineHeight: '2rem',
-          mt: '12',
           mb: '6',
+          mt: '12',
         },
         '& :where(h3)': {
           fontSize: 'xl',
@@ -155,6 +155,7 @@ export const article = defineRecipe({
           mb: '3',
         },
         '& :where(p)': {
+          fontSize: 'md',
           lineHeight: 'relaxed',
           my: '5',
         },
@@ -165,13 +166,14 @@ export const article = defineRecipe({
           ps: '6',
         },
         '& :where(li)': {
+          fontSize: 'md',
           lineHeight: 'relaxed',
           my: '2',
         },
         '& :where(code)': {
+          fontSize: 'sm',
           height: '6',
           px: '1',
-          fontSize: 'sm',
         },
         '& :where(pre)': {
           my: '6',
@@ -183,9 +185,9 @@ export const article = defineRecipe({
           ps: '4',
         },
         '& :where(h1 + p)': {
+          color: 'fg.emphasized',
           fontSize: 'xl',
           lineHeight: '2rem',
-          color: 'fg.emphasized',
           mb: '6',
         },
       },
@@ -199,18 +201,18 @@ export const article = defineRecipe({
         '& :where(h2)': {
           fontSize: '3xl',
           lineHeight: '2.5rem',
-          mt: '14',
           mb: '8',
+          mt: '14',
         },
         '& :where(h3)': {
           fontSize: '2xl',
           lineHeight: '2.25rem',
-          mt: '10',
           mb: '4',
+          mt: '10',
         },
         '& :where(p)': {
-          lineHeight: '2rem',
           fontSize: 'lg',
+          lineHeight: '2rem',
           my: '6',
         },
         '& :where(hr)': {
@@ -220,8 +222,8 @@ export const article = defineRecipe({
           ps: '7',
         },
         '& :where(li)': {
-          lineHeight: '2rem',
           fontSize: 'lg',
+          lineHeight: '2rem',
           my: '3',
         },
         '& :where(code)': {
@@ -239,9 +241,9 @@ export const article = defineRecipe({
           ps: '4.5',
         },
         '& :where(h1 + p)': {
+          color: 'fg.emphasized',
           fontSize: '2xl',
           lineHeight: '2rem',
-          color: 'fg.emphasized',
           mb: '6',
         },
       },
