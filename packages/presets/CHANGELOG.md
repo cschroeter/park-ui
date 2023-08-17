@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.8.0] - 2023-08-17
+
 ### Added
 
 - Introduced a new `4.5` and `14` token for enhanced `spacing` and `sizes`.
