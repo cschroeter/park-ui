@@ -1,5 +1,22 @@
 ## [Unreleased]
 
+## [0.8.0] - 2023-08-17
+
+### Added
+
+- Introduced a new `4.5` and `14` token for enhanced `spacing` and `sizes`.
+- Added `Article` component to effortlessly style Markdown or CMS-generated HTML.
+
+### Changed
+
+- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other icon libraries.
+
+## [0.7.1] - 2023-08-16
+
+### Changed
+
+- Provided a dedicated recipe for the `RangeSlider` component instead of using the `Slider` recipe.
+
 ## [0.7.0] - 2023-08-15
 
 ### Added
