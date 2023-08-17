@@ -2,7 +2,8 @@
 
 ### Added
 
-- Introduced a new `4.5` token for enhanced `spacing` and `sizes`.
+- Introduced a new `4.5` and `14` token for enhanced `spacing` and `sizes`.
+- Added `Article` component to effortlessly style Markdown or CMS-generated HTML.
 
 ### Changed
 
