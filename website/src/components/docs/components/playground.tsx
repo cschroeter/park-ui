@@ -20,6 +20,7 @@ import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
 import { AccordionDemo } from './demo/accordion-demo'
 import { AlertDemo } from './demo/alert-demo'
+import { ArticleDemo } from './demo/article-demo'
 import { AvatarDemo } from './demo/avatar-demo'
 import { BadgeDemo } from './demo/badge-demo'
 import { ButtonDemo } from './demo/button-demo'
@@ -75,6 +76,7 @@ export const Playground = (props: Props) => {
   const Component: any = match(component)
     .with('Accordion', () => AccordionDemo)
     .with('Alert', () => AlertDemo)
+    .with('Article', () => ArticleDemo)
     .with('Avatar', () => AvatarDemo)
     .with('Badge', () => BadgeDemo)
     .with('Button', () => ButtonDemo)

@@ -12,6 +12,7 @@ import {
 } from '~/components/ui/segment-group'
 import { Typography } from '~/components/ui/typography'
 import { sitemap } from '../../sitemap'
+import { Badge } from '../ui/badge'
 
 export const Sidebar = () => {
   const pathname = usePathname()
@@ -33,7 +34,10 @@ export const Sidebar = () => {
               <Segment key={id} value={option.href} data-orientation="vertical" asChild>
                 <NextLink href={option.href}>
                   <SegmentControl />
-                  <SegmentLabel>{option.title} </SegmentLabel>
+                  <SegmentLabel display="inline-flex" gap="2">
+                    {/* @ts-expect-error */}
+                    {option.title} {option?.isNew && <Badge size="sm">New</Badge>}
+                  </SegmentLabel>
                 </NextLink>
               </Segment>
             ))}

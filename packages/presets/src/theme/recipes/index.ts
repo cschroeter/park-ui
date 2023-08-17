@@ -1,5 +1,6 @@
 import { accordion } from './accordion'
 import { alert } from './alert'
+import { article } from './article'
 import { avatar } from './avatar'
 import { badge } from './badge'
 import { button } from './button'
@@ -38,6 +39,7 @@ import { tooltip } from './tooltip'
 
 export const recipes = {
   alert,
+  article,
   badge,
   button,
   code,

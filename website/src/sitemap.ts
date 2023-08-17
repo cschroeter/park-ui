@@ -63,6 +63,19 @@ export const sitemap = [
         isPrimitive: true,
       },
       {
+        title: 'Article',
+        description: 'Effortlessly style Markdown or CMS-generated HTML',
+        href: '/docs/components/article',
+        isNew: true,
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
+        isPrimitive: true,
+      },
+      {
         title: 'Avatar',
         description: 'A graphical representation of the user, often used in profile sections.',
         href: '/docs/components/avatar',

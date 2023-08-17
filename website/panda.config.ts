@@ -12,6 +12,7 @@ export default defineConfig({
   staticCss: {
     recipes: {
       avatar: [{ size: ['*'] }],
+      article: [{ size: ['*'] }],
       badge: [{ variant: ['*'], size: ['*'] }],
       button: [{ variant: ['*'], size: ['*'] }],
       carousel: [{ size: ['*'] }],
