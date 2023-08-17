@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://panda-ui.com',
+    url: 'https://park-ui.com',
     description: 'Beautifully designed components built with Ark UI and Panda CSS.',
   },
   twitter: {
