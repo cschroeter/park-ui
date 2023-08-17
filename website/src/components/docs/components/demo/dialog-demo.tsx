@@ -11,12 +11,13 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
+  type DialogProps,
 } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 
-export const DialogDemo = () => {
+export const DialogDemo = (props: DialogProps) => {
   return (
-    <Dialog>
+    <Dialog {...props}>
       <DialogTrigger asChild>
         <Button variant="secondary">Open dialog</Button>
       </DialogTrigger>
@@ -39,7 +40,9 @@ export const DialogDemo = () => {
               </Stack>
             </Stack>
             <DialogCloseTrigger asChild position="absolute" top="2" right="2">
-              <IconButton icon={<FiX />} aria-label="Close Dialog" variant="tertiary" size="sm" />
+              <IconButton aria-label="Close Dialog" variant="tertiary" size="sm">
+                <FiX />
+              </IconButton>
             </DialogCloseTrigger>
           </DialogContent>
         </DialogContainer>

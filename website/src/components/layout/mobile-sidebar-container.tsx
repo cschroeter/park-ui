@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 import { useEffect, type PropsWithChildren } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
-import { Logo } from '../icons/logo'
 import {
   Drawer,
   DrawerBackdrop,
@@ -14,8 +13,9 @@ import {
   DrawerContainer,
   DrawerContent,
   DrawerTrigger,
-} from '../ui/drawer'
-import { IconButton } from '../ui/icon-button'
+} from '~/components/ui/drawer'
+import { IconButton } from '~/components/ui/icon-button'
+import { Logo } from '../icons/logo'
 
 export const MobileSidebarContainer = (props: PropsWithChildren) => {
   return (
@@ -23,7 +23,9 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => {
       {({ close }) => (
         <>
           <DrawerTrigger asChild>
-            <IconButton icon={<FiMenu />} aria-label="Open Menu" variant="tertiary" size="sm" />
+            <IconButton aria-label="Open Menu" variant="tertiary" size="sm">
+              <FiMenu />
+            </IconButton>
           </DrawerTrigger>
           <RouteChangeHandler close={close} />
           <Portal>
@@ -37,7 +39,9 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => {
                   {props.children}
                 </Stack>
                 <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-                  <IconButton icon={<FiX />} aria-label="Close Sidebar" variant="tertiary" />
+                  <IconButton aria-label="Close Sidebar" variant="tertiary">
+                    <FiX />
+                  </IconButton>
                 </DrawerCloseTrigger>
               </DrawerContent>
             </DrawerContainer>

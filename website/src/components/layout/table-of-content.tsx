@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react'
 import { Box, Stack, styled } from 'styled-system/jsx'
 import { link } from 'styled-system/recipes'
+import { Typography } from '~/components/ui/typography'
 import { useScrollSpy } from '~/lib/use-scroll-spy'
-import { Typography } from '../ui/typography'
 
 type Heading = {
   id: string
@@ -15,12 +15,13 @@ export const TableOfContent = () => {
   const activeId = useScrollSpy(headings.map((item) => item.id))
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLHeadingElement>('h2')).map(
-      (elem) => ({
+    const elements = Array.from(document.querySelectorAll<HTMLHeadingElement>('h2'))
+      .map((elem) => ({
         id: elem.id,
         text: elem.innerText,
-      }),
-    )
+      }))
+      .filter((item) => item.text !== 'Make it yours') // TODO quickfix -.-
+      .filter((item) => item.id !== '')
     setHeadings(elements)
   }, [])
 
@@ -29,8 +30,8 @@ export const TableOfContent = () => {
       display={{ base: 'none', xl: 'flex' }}
       position="fixed"
       width="48"
-      top="24"
-      mt="2"
+      top="28"
+      mt="1px"
       bottom="0"
       right="max(0px, calc(100vw / 2 - 616px))"
     >
@@ -39,9 +40,9 @@ export const TableOfContent = () => {
           On This Page
         </Typography>
         <Stack>
-          {headings.map((heading) => (
+          {headings.map((heading, id) => (
             <styled.a
-              key={heading.id}
+              key={id}
               href={`#${heading.id}`}
               aria-current={activeId === heading.id ? 'page' : undefined}
               className={link({ variant: 'toc' })}

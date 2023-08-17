@@ -47,12 +47,9 @@ export const ColorPickerDemo = () => {
 
               <HStack gap="3">
                 <ColorPickerEyeDropperTrigger asChild>
-                  <IconButton
-                    size="xs"
-                    variant="secondary"
-                    aria-label="Pick color"
-                    icon={<IoMdColorFilter />}
-                  />
+                  <IconButton size="xs" variant="secondary" aria-label="Pick color">
+                    <IoMdColorFilter />
+                  </IconButton>
                 </ColorPickerEyeDropperTrigger>
                 <Stack gap="3" width="full">
                   <ColorPickerChannelSliderTrack channel={hue}>

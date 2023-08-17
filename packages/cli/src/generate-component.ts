@@ -20,7 +20,8 @@ export const generateComponent = async (moduleName: string) => {
             [key]: {
               // @ts-expect-error
               name: value.displayName ?? pascalCase(moduleName).concat(key === 'Root' ? '' : key),
-              partName: camelCase(key),
+              // Segment is an alias for Radio
+              partName: camelCase(key.replace('Segment', 'Radio')),
             },
           }
         }, {}),
@@ -28,7 +29,6 @@ export const generateComponent = async (moduleName: string) => {
       rootComponent: pascalCase(moduleName),
       className: match(moduleName)
         .with('switch', () => 'switchRecipe') // resvered word
-        .with('range-slider', () => 'slider') // same recipe
         .otherwise(() => camelCase(moduleName)),
     },
   }

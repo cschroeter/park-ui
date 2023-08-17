@@ -5,6 +5,10 @@ export const link = defineRecipe({
   description: 'A link style',
   base: {
     color: 'fg.subtle',
+    cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '2',
     transitionDuration: 'normal',
     transitionProperty: 'color, font-weight',
     transitionTimingFunction: 'default',
@@ -35,7 +39,7 @@ export const link = defineRecipe({
       },
       navbar: {
         fontWeight: 'semibold',
-        textStyle: 'sm',
+        textStyle: 'md',
         _hover: {
           color: 'fg.muted',
         },

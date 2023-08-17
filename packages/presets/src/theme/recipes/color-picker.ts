@@ -7,7 +7,7 @@ export const colorPicker = defineSlotRecipe({
   slots: colorPickerAnatomy.keys(),
   base: {
     content: {
-      borderRadius: 'lg',
+      borderRadius: 'l3',
       borderWidth: '1px',
       boxShadow: 'lg',
       padding: '4',
@@ -15,7 +15,7 @@ export const colorPicker = defineSlotRecipe({
     },
     area: {
       height: '36',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       overflow: 'hidden',
     },
     areaGradient: {

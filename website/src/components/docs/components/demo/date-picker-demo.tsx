@@ -23,13 +23,14 @@ import {
   DatePickerViewTrigger,
   DatePickerYearCell,
   DatePickerYearCellTrigger,
+  type DatePickerProps,
 } from '~/components/ui/date-picker'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 
-export const DatePickerDemo = () => {
+export const DatePickerDemo = (props: DatePickerProps) => {
   return (
-    <DatePicker positioning={{ sameWidth: true }} selectionMode="range">
+    <DatePicker positioning={{ sameWidth: true }} selectionMode="range" {...props}>
       {(api) => (
         <>
           <DatePickerControl>
@@ -38,11 +39,9 @@ export const DatePickerDemo = () => {
                 <Input />
               </DatePickerInput>
               <DatePickerTrigger asChild>
-                <IconButton
-                  icon={<FiCalendar />}
-                  variant="secondary"
-                  aria-label="Open date picker"
-                />
+                <IconButton variant="secondary" aria-label="Open date picker">
+                  <FiCalendar />
+                </IconButton>
               </DatePickerTrigger>
             </Stack>
           </DatePickerControl>
@@ -52,12 +51,9 @@ export const DatePickerDemo = () => {
                 <Stack gap="3">
                   <Stack justify="space-between" direction="row">
                     <DatePickerPrevTrigger asChild>
-                      <IconButton
-                        icon={<FiChevronLeft />}
-                        size="sm"
-                        variant="tertiary"
-                        aria-label="Prev"
-                      />
+                      <IconButton size="sm" variant="tertiary" aria-label="Prev">
+                        <FiChevronLeft />
+                      </IconButton>
                     </DatePickerPrevTrigger>
                     <DatePickerViewTrigger asChild>
                       <Button variant="tertiary" size="sm">
@@ -67,12 +63,9 @@ export const DatePickerDemo = () => {
                       </Button>
                     </DatePickerViewTrigger>
                     <DatePickerNextTrigger asChild>
-                      <IconButton
-                        icon={<FiChevronRight />}
-                        size="sm"
-                        variant="tertiary"
-                        aria-label="Next"
-                      />
+                      <IconButton size="sm" variant="tertiary" aria-label="Next">
+                        <FiChevronRight />
+                      </IconButton>
                     </DatePickerNextTrigger>
                   </Stack>
                   {api.view === 'day' && (

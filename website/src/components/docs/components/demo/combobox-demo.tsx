@@ -1,4 +1,4 @@
-import { ComboboxLabel, Portal } from '@ark-ui/react'
+import { Portal } from '@ark-ui/react'
 import { useState } from 'react'
 import { BiExpandVertical } from 'react-icons/bi'
 import {
@@ -6,6 +6,7 @@ import {
   ComboboxContent,
   ComboboxControl,
   ComboboxInput,
+  ComboboxLabel,
   ComboboxOption,
   ComboboxPositioner,
   ComboboxTrigger,
@@ -22,7 +23,7 @@ const data = [
   { label: 'Vue', value: 'vue' },
 ]
 
-export const ComboboxDemo = () => {
+export const ComboboxDemo = (props: ComboboxProps) => {
   const [options, setOptions] = useState(data)
 
   const handleInputChange: ComboboxProps['onInputChange'] = (e) => {
@@ -31,7 +32,7 @@ export const ComboboxDemo = () => {
   }
 
   return (
-    <Combobox onInputChange={handleInputChange}>
+    <Combobox onInputChange={handleInputChange} {...props}>
       <ComboboxLabel asChild>
         <Label>JS Frameworks</Label>
       </ComboboxLabel>
@@ -40,7 +41,9 @@ export const ComboboxDemo = () => {
           <Input />
         </ComboboxInput>
         <ComboboxTrigger asChild>
-          <IconButton variant="link" icon={<BiExpandVertical />} aria-label="open" size="sm" />
+          <IconButton variant="link" aria-label="open" size="sm">
+            <BiExpandVertical />
+          </IconButton>
         </ComboboxTrigger>
       </ComboboxControl>
       <Portal>

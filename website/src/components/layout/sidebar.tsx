@@ -7,12 +7,12 @@ import {
   Segment,
   SegmentControl,
   SegmentGroup,
-  SegmentIndicator,
-  SegmentInput,
+  SegmentGroupIndicator,
   SegmentLabel,
 } from '~/components/ui/segment-group'
+import { Typography } from '~/components/ui/typography'
 import { sitemap } from '../../sitemap'
-import { Typography } from '../ui/typography'
+import { Badge } from '../ui/badge'
 
 export const Sidebar = () => {
   const pathname = usePathname()
@@ -33,13 +33,17 @@ export const Sidebar = () => {
             {group.entries.map((option, id) => (
               <Segment key={id} value={option.href} data-orientation="vertical" asChild>
                 <NextLink href={option.href}>
-                  <SegmentInput />
                   <SegmentControl />
-                  <SegmentLabel>{option.title}</SegmentLabel>
+                  <SegmentLabel display="inline-flex" gap="2">
+                    {/* @ts-expect-error */}
+                    {option.title} {option?.isNew && <Badge size="sm">New</Badge>}
+                  </SegmentLabel>
                 </NextLink>
               </Segment>
             ))}
-            <SegmentIndicator hidden={!group.entries.some((entry) => entry.href === currentPath)} />
+            <SegmentGroupIndicator
+              hidden={!group.entries.some((entry) => entry.href === currentPath)}
+            />
           </SegmentGroup>
         </Stack>
       ))}

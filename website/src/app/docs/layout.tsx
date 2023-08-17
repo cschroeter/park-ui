@@ -10,7 +10,7 @@ const DocsLayout = (props: PropsWithChildren) => {
         display={{ base: 'none', lg: 'flex' }}
         position="fixed"
         width="60"
-        top="16"
+        top="74px"
         bottom="0"
         pt="10"
         overflowY="auto"
@@ -22,7 +22,7 @@ const DocsLayout = (props: PropsWithChildren) => {
           pb={{ base: '12', md: '24' }}
           pl={{ base: 'none', lg: '16' }}
           width="full"
-          mt={{ base: '6', md: '35px' }}
+          mt={{ base: '8', md: '10' }}
         >
           {children}
         </Box>

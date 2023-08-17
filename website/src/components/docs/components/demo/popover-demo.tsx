@@ -35,7 +35,9 @@ export const PopoverDemo = (props: PopoverProps) => (
           </Stack>
           <Box position="absolute" top="1" right="1">
             <PopoverCloseTrigger asChild>
-              <IconButton icon={<FiX />} aria-label="Close Popover" variant="tertiary" size="sm" />
+              <IconButton aria-label="Close Popover" variant="tertiary" size="sm">
+                <FiX />
+              </IconButton>
             </PopoverCloseTrigger>
           </Box>
         </PopoverContent>

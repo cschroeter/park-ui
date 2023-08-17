@@ -37,12 +37,9 @@ export const CarouselDemo = (props: CarouselProps) => {
         </CarouselSlideGroup>
         <CarouselControl>
           <CarouselPrevSlideTrigger asChild>
-            <IconButton
-              size="sm"
-              variant="link"
-              icon={<FiChevronLeft />}
-              aria-label="Previous Slide"
-            />
+            <IconButton size="sm" variant="link" aria-label="Previous Slide">
+              <FiChevronLeft />
+            </IconButton>
           </CarouselPrevSlideTrigger>
           <CarouselIndicatorGroup>
             {images.map((_, index) => (
@@ -50,12 +47,9 @@ export const CarouselDemo = (props: CarouselProps) => {
             ))}
           </CarouselIndicatorGroup>
           <CarouselNextSlideTrigger asChild>
-            <IconButton
-              size="sm"
-              variant="link"
-              icon={<FiChevronRight />}
-              aria-label="Next Slide"
-            />
+            <IconButton size="sm" variant="link" aria-label="Next Slide">
+              <FiChevronRight />
+            </IconButton>
           </CarouselNextSlideTrigger>
         </CarouselControl>
       </CarouselViewport>

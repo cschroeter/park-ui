@@ -63,6 +63,19 @@ export const sitemap = [
         isPrimitive: true,
       },
       {
+        title: 'Article',
+        description: 'Effortlessly style Markdown or CMS-generated HTML',
+        href: '/docs/components/article',
+        isNew: true,
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
+        isPrimitive: true,
+      },
+      {
         title: 'Avatar',
         description: 'A graphical representation of the user, often used in profile sections.',
         href: '/docs/components/avatar',
@@ -115,6 +128,18 @@ export const sitemap = [
         title: 'Checkbox',
         description: 'A control element that allows for multiple selections within a set.',
         href: '/docs/components/checkbox',
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
+      },
+      {
+        title: 'Code',
+        description: 'A component to display inline code snippets.',
+        href: '/docs/components/code',
+        isPrimitive: true,
         defaultProps: {
           size: {
             options: ['sm', 'md', 'lg'],

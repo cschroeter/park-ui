@@ -4,7 +4,6 @@ import {
   Radio,
   RadioButtonGroup,
   RadioControl,
-  RadioInput,
   RadioLabel,
 } from '~/components/ui/radio-button-group'
 import { Typography } from '~/components/ui/typography'
@@ -20,7 +19,6 @@ export const SizePicker = () => {
         <RadioButtonGroup size="xl">
           {product.sizes.map((option, id) => (
             <Radio key={id} value={option.size} disabled={option.disabled}>
-              <RadioInput data-peer />
               <RadioControl />
               <RadioLabel>{option.size}</RadioLabel>
             </Radio>

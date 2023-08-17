@@ -1,9 +1,9 @@
 import NextLink from 'next/link'
 import { AiFillApi } from 'react-icons/ai'
 import { HStack } from 'styled-system/jsx'
+import { Badge } from '~/components/ui/badge'
 import { slugify } from '~/lib/slugify'
 import { ArkIcon } from '../../icons/ark'
-import { Badge } from '../../ui/badge'
 
 type Props = {
   name: string
@@ -19,7 +19,7 @@ export const ArkDocumentationLinks = (props: Props) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Badge borderRadius="xs">
+        <Badge borderRadius="l1">
           <ArkIcon width="4" height="4" /> Ark UI
         </Badge>
       </NextLink>
@@ -28,7 +28,7 @@ export const ArkDocumentationLinks = (props: Props) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Badge borderRadius="sm">
+        <Badge borderRadius="l2">
           <AiFillApi /> API Reference
         </Badge>
       </NextLink>

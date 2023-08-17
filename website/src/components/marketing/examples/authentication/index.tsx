@@ -6,7 +6,7 @@ import { SignInForm } from './signin-form'
 
 export const Authentication = () => {
   return (
-    <Flex borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Flex borderWidth="1px" borderRadius="l3" overflow="hidden">
       <Box flex="1" display={{ base: 'none', md: 'block' }} bg="bg.subtle">
         <Flex direction="column" px={{ base: '4', md: '8' }} height="full">
           <Flex align="center" h="24">

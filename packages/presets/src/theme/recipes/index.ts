@@ -1,10 +1,12 @@
 import { accordion } from './accordion'
 import { alert } from './alert'
+import { article } from './article'
 import { avatar } from './avatar'
 import { badge } from './badge'
 import { button } from './button'
 import { carousel } from './carousel'
 import { checkbox } from './checkbox'
+import { code } from './code'
 import { colorPicker } from './color-picker'
 import { combobox } from './combobox'
 import { datePicker } from './date-picker'
@@ -22,6 +24,7 @@ import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { radioButtonGroup } from './radio-button-group'
 import { radioGroup } from './radio-group'
+import { rangeSlider } from './range-slider'
 import { ratingGroup } from './rating-group'
 import { segmentGroup } from './segment-group'
 import { select } from './select'
@@ -36,8 +39,10 @@ import { tooltip } from './tooltip'
 
 export const recipes = {
   alert,
+  article,
   badge,
   button,
+  code,
   input,
   label,
   link,
@@ -62,6 +67,7 @@ export const slotRecipes = {
   pinInput,
   popover,
   radioGroup,
+  rangeSlider,
   radioButtonGroup,
   ratingGroup,
   segmentGroup,

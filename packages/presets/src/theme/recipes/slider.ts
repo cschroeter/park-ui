@@ -16,12 +16,12 @@ export const slider = defineSlotRecipe({
     },
     track: {
       backgroundColor: 'bg.muted',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       flex: '1',
     },
     range: {
       background: 'accent.default',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
     },
     thumb: {
       background: 'bg.default',
@@ -30,6 +30,10 @@ export const slider = defineSlotRecipe({
       borderWidth: '2px',
       boxShadow: 'sm',
       outline: 'none',
+    },
+    label: {
+      color: 'fg.emphasized',
+      fontWeight: 'semibold',
     },
   },
   defaultVariants: {
@@ -53,7 +57,10 @@ export const slider = defineSlotRecipe({
         },
         marker: {
           mt: '2',
-          textStyle: 'md',
+          textStyle: 'sm',
+        },
+        label: {
+          textStyle: 'sm',
         },
       },
     },

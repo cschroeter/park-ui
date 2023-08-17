@@ -2,12 +2,13 @@
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
-import { css, cx } from 'styled-system/css'
 import { Box, Container, HStack, styled } from 'styled-system/jsx'
-import { button, link } from 'styled-system/recipes'
+import { link } from 'styled-system/recipes'
+import { IconButton } from '~/components/ui/icon-button'
 import { ColorModeButton } from '../color-mode-button'
 import { Logo } from '../icons/logo'
 import { FeedbackPopover } from '../marketing/feedback-popover'
+import { ThemePopover } from '../marketing/theme-popover'
 import { MobileNavbar } from './mobile-navbar'
 import { MobileSidebarContainer } from './mobile-sidebar-container'
 import { Sidebar } from './sidebar'
@@ -18,13 +19,13 @@ export const Navbar = () => {
   return (
     <styled.nav role="navigation" position="sticky" top="0" zIndex="sticky" bg="bg.default">
       <Box borderBottomWidth="1px" position="relative">
-        <Container py="4">
+        <Container py={{ base: '3', md: '4' }}>
           <HStack justify="space-between" gap="8">
             <HStack gap="10">
               <NextLink href="/">
                 <Logo />
               </NextLink>
-              <HStack gap="8" display={{ base: 'none', md: 'flex' }}>
+              <HStack gap="8" display={{ base: 'none', lg: 'flex' }}>
                 <NextLink
                   href="/docs/overview/introduction"
                   aria-current={pathName.includes('/docs/overview/') ? 'page' : undefined}
@@ -42,38 +43,25 @@ export const Navbar = () => {
                 <NextLink href="/#examples" className={link({ variant: 'navbar' })}>
                   Examples
                 </NextLink>
+                <ThemePopover />
               </HStack>
             </HStack>
-            <HStack gap={{ base: '2', md: '6' }}>
+            <HStack gap={{ base: '2', md: '4' }}>
               <FeedbackPopover
                 closeOnInteractOutside={false}
                 positioning={{ placement: 'bottom-end', gutter: 4 }}
               />
               <HStack gap="0.5">
-                <NextLink
-                  href="https://twitter.com/grizzly_codes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Twitter profile"
-                  className={cx(
-                    button({ variant: 'tertiary', size: 'sm' }),
-                    css({ px: '0', color: 'fg.mtued' }),
-                  )}
-                >
-                  <AiOutlineTwitter />
-                </NextLink>
-                <NextLink
-                  href="https://github.com/cschroeter/park-ui"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub repository"
-                  className={cx(
-                    button({ variant: 'tertiary', size: 'sm' }),
-                    css({ px: '0', color: 'fg.mtued' }),
-                  )}
-                >
-                  <AiOutlineGithub />
-                </NextLink>
+                <IconButton aria-label="Twitter profile" variant="tertiary" asChild>
+                  <NextLink href="https://twitter.com/grizzly_codes" target="_blank">
+                    <AiOutlineTwitter />
+                  </NextLink>
+                </IconButton>
+                <IconButton aria-label="GitHub repository" variant="tertiary" asChild>
+                  <NextLink href="https://github.com/cschroeter/park-ui" target="_blank">
+                    <AiOutlineGithub />
+                  </NextLink>
+                </IconButton>
                 <ColorModeButton />
               </HStack>
             </HStack>

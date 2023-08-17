@@ -7,6 +7,7 @@ import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
 import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   Select,
   SelectContent,
@@ -17,14 +18,15 @@ import {
 } from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
-import { IconButton } from '../../ui/icon-button'
 import { AccordionDemo } from './demo/accordion-demo'
 import { AlertDemo } from './demo/alert-demo'
+import { ArticleDemo } from './demo/article-demo'
 import { AvatarDemo } from './demo/avatar-demo'
 import { BadgeDemo } from './demo/badge-demo'
 import { ButtonDemo } from './demo/button-demo'
 import { CarouselDemo } from './demo/carousel-demo'
 import { CheckboxDemo } from './demo/checkbox-demo'
+import { CodeDemo } from './demo/code-demo'
 import { ColorPickerDemo } from './demo/color-picker-demo'
 import { ComboboxDemo } from './demo/combobox-demo'
 import { DatePickerDemo } from './demo/date-picker-demo'
@@ -74,11 +76,13 @@ export const Playground = (props: Props) => {
   const Component: any = match(component)
     .with('Accordion', () => AccordionDemo)
     .with('Alert', () => AlertDemo)
+    .with('Article', () => ArticleDemo)
     .with('Avatar', () => AvatarDemo)
     .with('Badge', () => BadgeDemo)
     .with('Button', () => ButtonDemo)
     .with('Carousel', () => CarouselDemo)
     .with('Checkbox', () => CheckboxDemo)
+    .with('Code', () => CodeDemo)
     .with('Color Picker', () => ColorPickerDemo)
     .with('Combobox', () => ComboboxDemo)
     .with('Date Picker', () => DatePickerDemo)
@@ -114,7 +118,7 @@ export const Playground = (props: Props) => {
   const { value, setFalse, setTrue } = useBoolean(false)
 
   return (
-    <Flex minH="md" position="relative" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Flex minH="md" position="relative" borderWidth="1px" borderRadius="l3" overflow="hidden">
       {hasSettings && (
         <Box position="absolute" top="2" right="2" zIndex={1}>
           <IconButton
@@ -122,8 +126,9 @@ export const Playground = (props: Props) => {
             variant="secondary"
             size="sm"
             aria-label="Open settings"
-            icon={<FiSliders />}
-          />
+          >
+            <FiSliders />
+          </IconButton>
         </Box>
       )}
       <Flex
@@ -164,9 +169,9 @@ export const Playground = (props: Props) => {
             variant="tertiary"
             size="sm"
             aria-label='Close "Settings"'
-            icon={<FiX />}
-            color="fg.muted"
-          />
+          >
+            <FiX />
+          </IconButton>
         </Box>
         <Typography textStyle="sm" p="4" fontWeight="semibold">
           Settings

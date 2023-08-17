@@ -5,7 +5,7 @@ export const alert = defineRecipe({
   description: 'An alert style',
   base: {
     background: 'bg.default',
-    borderRadius: 'lg',
+    borderRadius: 'l3',
     borderWidth: '1px',
     p: '4',
     textStyle: 'sm',

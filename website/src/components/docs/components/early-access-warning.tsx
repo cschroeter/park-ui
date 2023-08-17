@@ -25,12 +25,13 @@ export const EarlyAccesWarning = () => {
       </Stack>
       <Box position="absolute" top="2" right="2">
         <IconButton
-          icon={<FiX />}
           aria-label="Close Alert"
           variant="tertiary"
           size="xs"
           onClick={() => setIsVisible(false)}
-        />
+        >
+          <FiX />
+        </IconButton>
       </Box>
     </Alert>
   ) : null

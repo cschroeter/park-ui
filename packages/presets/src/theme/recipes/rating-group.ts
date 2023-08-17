@@ -23,7 +23,7 @@ export const ratingGroup = defineSlotRecipe({
       },
       _focusVisible: {
         outline: '2px solid',
-        outlineColor: 'border.outline',
+        outlineColor: 'border.accent',
       },
     },
   },

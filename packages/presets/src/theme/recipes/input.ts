@@ -7,7 +7,7 @@ export const input = defineRecipe({
     appearance: 'none',
     backgroundColor: 'bg.default',
     borderColor: 'border.emphasized',
-    borderRadius: 'sm',
+    borderRadius: 'l2',
     borderWidth: '1px',
     outline: 0,
     position: 'relative',
@@ -20,8 +20,8 @@ export const input = defineRecipe({
       cursor: 'not-allowed',
     },
     _focus: {
-      borderColor: 'border.outline',
-      boxShadow: 'outline',
+      borderColor: 'border.accent',
+      boxShadow: 'accent',
     },
   },
   defaultVariants: {

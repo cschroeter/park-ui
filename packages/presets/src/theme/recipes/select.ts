@@ -8,7 +8,7 @@ export const select = defineSlotRecipe({
   base: {
     content: {
       background: 'bg.default',
-      borderRadius: 'sm',
+      borderRadius: 'l2',
       borderWidth: '1px',
       boxShadow: 'lg',
       display: 'flex',
@@ -30,7 +30,7 @@ export const select = defineSlotRecipe({
     },
     option: {
       alignItems: 'center',
-      borderRadius: 'xs',
+      borderRadius: 'l1',
       cursor: 'pointer',
       display: 'flex',
       fontWeight: 'medium',
@@ -43,10 +43,10 @@ export const select = defineSlotRecipe({
       _highlighted: {
         background: 'bg.subtle',
       },
-      label: {
-        color: 'fg.emphasized',
-        fontWeight: 'medium',
-      },
+    },
+    label: {
+      color: 'fg.emphasized',
+      fontWeight: 'semibold',
     },
   },
   defaultVariants: {

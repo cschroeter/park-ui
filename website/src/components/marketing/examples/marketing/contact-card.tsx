@@ -10,7 +10,7 @@ export const ContactCard = () => {
       p={{ base: '6', lg: '10' }}
       justify="center"
       align="center"
-      borderRadius="lg"
+      borderRadius="l3"
       bg="bg.subtle"
     >
       <HStack gap="0">

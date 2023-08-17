@@ -1,7 +1,6 @@
 import { Portal } from '@ark-ui/react'
 import { FiArrowRight, FiX } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
-import type { DrawerVariantProps } from 'styled-system/recipes'
 import { Button } from '~/components/ui/button'
 import {
   Drawer,
@@ -12,12 +11,13 @@ import {
   DrawerDescription,
   DrawerTitle,
   DrawerTrigger,
+  type DrawerProps,
 } from '~/components/ui/drawer'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 
-export const DrawerDemo = (props: DrawerVariantProps) => {
+export const DrawerDemo = (props: DrawerProps) => {
   return (
     <Drawer {...props}>
       <DrawerTrigger asChild>
@@ -52,7 +52,9 @@ export const DrawerDemo = (props: DrawerVariantProps) => {
             </Stack>
 
             <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-              <IconButton icon={<FiX />} aria-label="Close Drawer" variant="tertiary" />
+              <IconButton aria-label="Close Drawer" variant="tertiary">
+                <FiX />
+              </IconButton>
             </DrawerCloseTrigger>
           </DrawerContent>
         </DrawerContainer>

@@ -9,19 +9,19 @@ export const article = cva({
       fontWeight: 'semibold',
     },
     '& h1': {
-      fontWeight: 'semibold',
+      fontWeight: 'bold',
       mt: { base: '8', md: '10' },
       mb: { base: '4', md: '5' },
       textStyle: { base: '2xl', md: '3xl' },
     },
     '& h2': {
-      fontWeight: 'semibold',
+      fontWeight: 'bold',
       mt: { base: '8', md: '8' },
       mb: { base: '3', md: '4' },
       textStyle: { base: 'xl', md: '2xl' },
     },
     '& h3': {
-      fontWeight: 'semibold',
+      fontWeight: 'bold',
       mt: { base: '5', md: '8' },
       mb: { base: '2', md: '3' },
       textStyle: { base: 'lg', md: 'xl' },
@@ -69,7 +69,7 @@ export const Introduction = () => {
         Park UI isn't a conventional component library. It's a valuable collection of re-usable
         components that you can effortlessly copy and paste into your applications.
       </Typography>
-      <Heading textStyle={{ base: 'lg', md: 'xl' }}>What does that mean?</Heading>
+      <Heading>What does that mean?</Heading>
       <Typography>
         When we say Park UI isn't a conventional component library, we mean its main function is not
         to serve as an installable package dependency that provides pre-made components for direct
@@ -77,7 +77,7 @@ export const Introduction = () => {
         Preset package for Panda, the primary purpose of Park UI is to provide code snippets for
         components that can be copied and integrated into your projects.
       </Typography>
-      <Heading textStyle={{ base: 'lg', md: 'xl' }}>So how does it work?</Heading>
+      <Heading>So how does it work?</Heading>
       <Typography>
         With Park UI, you're in the driver's seat. Simply browse through our comprehensive
         collection of components, select the ones that suit your needs, and then copy and paste the

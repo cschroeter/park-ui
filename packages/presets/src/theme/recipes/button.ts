@@ -6,15 +6,15 @@ export const button = defineRecipe({
   base: {
     alignItems: 'center',
     appearance: 'none',
-    borderRadius: 'sm',
+    borderRadius: 'l2',
     cursor: 'pointer',
     display: 'inline-flex',
-    fontWeight: 'bold',
+    fontWeight: 'semibold',
     justifyContent: 'center',
     outline: 'none',
     position: 'relative',
     transitionDuration: 'normal',
-    transitionProperty: 'background, border-color, color',
+    transitionProperty: 'background, border-color, color, box-shadow',
     transitionTimingFunction: 'default',
     userSelect: 'none',
     verticalAlign: 'middle',
@@ -35,7 +35,7 @@ export const button = defineRecipe({
         _focusVisible: {
           outlineOffset: '2px',
           outline: '2px solid',
-          outlineColor: 'border.outline',
+          outlineColor: 'border.accent',
         },
         _disabled: {
           background: 'bg.disabled',
@@ -119,9 +119,9 @@ export const button = defineRecipe({
             color: 'fg.disabled',
           },
         },
-        height: 'auto !important',
-        px: '0 !important',
-        minW: '0 !important',
+        height: 'auto!',
+        px: '0!',
+        minW: '0!',
       },
     },
     size: {
@@ -133,6 +133,8 @@ export const button = defineRecipe({
         gap: '2',
         '& svg': {
           fontSize: 'md',
+          width: '4',
+          height: '4',
         },
       },
       sm: {
@@ -142,7 +144,8 @@ export const button = defineRecipe({
         px: '3.5',
         gap: '2',
         '& svg': {
-          fontSize: 'lg',
+          width: '4.5',
+          height: '4.5',
         },
       },
       md: {
@@ -153,16 +156,19 @@ export const button = defineRecipe({
         gap: '2',
         '& svg': {
           fontSize: 'xl',
+          width: '5',
+          height: '5',
         },
       },
       lg: {
         h: '11',
         minW: '11',
         textStyle: 'md',
-        px: '18px', // TODO token
+        px: '4.5',
         gap: '2',
         '& svg': {
-          fontSize: 'xl',
+          width: '5',
+          height: '5',
         },
       },
       xl: {
@@ -172,7 +178,8 @@ export const button = defineRecipe({
         px: '5',
         gap: '2.5',
         '& svg': {
-          fontSize: 'xl',
+          width: '5',
+          height: '5',
         },
       },
       '2xl': {
@@ -182,7 +189,8 @@ export const button = defineRecipe({
         px: '7',
         gap: '3',
         '& svg': {
-          fontSize: '1.75rem', // TODO token
+          width: '6',
+          height: '6',
         },
       },
     },

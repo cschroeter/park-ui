@@ -7,7 +7,7 @@ import {
 
 export const CheckboxDemo = (props: CheckboxProps) => {
   return (
-    <Checkbox {...props}>
+    <Checkbox defaultChecked {...props}>
       {(state) => (
         <>
           <CheckboxControl>

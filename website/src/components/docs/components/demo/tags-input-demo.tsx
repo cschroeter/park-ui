@@ -10,11 +10,12 @@ import {
   TagsInputControl,
   TagsInputInput,
   TagsInputLabel,
+  type TagsInputProps,
 } from '~/components/ui/tags-input'
 
-export const TagsInputDemo = () => {
+export const TagsInputDemo = (props: TagsInputProps) => {
   return (
-    <TagsInput defaultValue={['React', 'Solid', 'Vue']}>
+    <TagsInput defaultValue={['React', 'Solid', 'Vue']} {...props}>
       {({ value }) => (
         <>
           <TagsInputLabel asChild>
@@ -26,7 +27,9 @@ export const TagsInputDemo = () => {
                 <Tag index={index} value={value}>
                   {value}
                   <TagDeleteTrigger index={index} value={value} asChild>
-                    <IconButton aria-label="Delete tag" icon={<FiX />} variant="link" size="xs" />
+                    <IconButton aria-label="Delete tag" variant="link" size="xs">
+                      <FiX />
+                    </IconButton>
                   </TagDeleteTrigger>
                 </Tag>
                 <TagInput index={index} value={value} />

@@ -3,40 +3,54 @@ import { defineSemanticTokens } from '@pandacss/dev'
 export const semanticTokens = defineSemanticTokens({
   colors: {
     bg: {
-      canvas: { value: { base: '{colors.neutral.25}', _dark: '{colors.neutral.950}' } },
-      default: { value: { base: '{colors.white}', _dark: '{colors.neutral.950}' } },
-      subtle: { value: { base: '{colors.neutral.100}', _dark: '{colors.neutral.900}' } },
-      muted: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
-      emphasized: { value: { base: '{colors.neutral.300}', _dark: '{colors.neutral.700}' } },
-      disabled: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
+      canvas: { value: { base: '{colors.gray-palette.25}', _dark: '{colors.gray-palette.950}' } },
+      default: { value: { base: '{colors.white}', _dark: '{colors.gray-palette.950}' } },
+      subtle: { value: { base: '{colors.gray-palette.100}', _dark: '{colors.gray-palette.900}' } },
+      muted: { value: { base: '{colors.gray-palette.200}', _dark: '{colors.gray-palette.800}' } },
+      emphasized: {
+        value: { base: '{colors.gray-palette.300}', _dark: '{colors.gray-palette.600}' },
+      },
+      disabled: {
+        value: { base: '{colors.gray-palette.200}', _dark: '{colors.gray-palette.700}' },
+      },
     },
     fg: {
-      default: { value: { base: '{colors.neutral.950}', _dark: '{colors.white}' } },
-      emphasized: { value: { base: '{colors.neutral.700}', _dark: '{colors.neutral.200}' } },
-      muted: { value: { base: '{colors.neutral.600}', _dark: '{colors.neutral.300}' } },
-      subtle: { value: { base: '{colors.neutral.500}', _dark: '{colors.neutral.400}' } },
-      disabled: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
+      default: { value: { base: '{colors.gray-palette.950}', _dark: '{colors.white}' } },
+      emphasized: {
+        value: { base: '{colors.gray-palette.700}', _dark: '{colors.gray-palette.200}' },
+      },
+      muted: { value: { base: '{colors.gray-palette.600}', _dark: '{colors.gray-palette.300}' } },
+      subtle: { value: { base: '{colors.gray-palette.500}', _dark: '{colors.gray-palette.400}' } },
+      disabled: {
+        value: { base: '{colors.gray-palette.200}', _dark: '{colors.gray-palette.800}' },
+      },
     },
     accent: {
-      default: { value: { base: '{colors.neutral.950}', _dark: '{colors.white}' } },
-      emphasized: { value: { base: '{colors.neutral.800}', _dark: '{colors.neutral.200}' } },
-      fg: { value: { base: '{colors.white}', _dark: '{colors.neutral.950}' } },
+      default: { value: { base: '{colors.gray-palette.950}', _dark: '{colors.white}' } },
+      emphasized: {
+        value: { base: '{colors.gray-palette.800}', _dark: '{colors.gray-palette.200}' },
+      },
+      fg: { value: { base: '{colors.white}', _dark: '{colors.gray-palette.950}' } },
     },
 
     border: {
-      default: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
-      emphasized: { value: { base: '{colors.neutral.300}', _dark: '{colors.neutral.700}' } },
-      outline: { value: { base: '{colors.neutral.700}', _dark: '{colors.neutral.300}' } },
-      accent: { value: { base: '{colors.neutral.950}', _dark: '{colors.white}' } },
-      disabled: { value: { base: '{colors.neutral.200}', _dark: '{colors.neutral.800}' } },
+      default: { value: { base: '{colors.gray-palette.200}', _dark: '{colors.gray-palette.800}' } },
+      emphasized: {
+        value: { base: '{colors.gray-palette.300}', _dark: '{colors.gray-palette.700}' },
+      },
+      outline: { value: { base: '{colors.gray-palette.600}', _dark: '{colors.gray-palette.400}' } },
+      accent: { value: { base: '{colors.gray-palette.900}', _dark: '{colors.white}' } },
+      disabled: {
+        value: { base: '{colors.gray-palette.200}', _dark: '{colors.gray-palette.800}' },
+      },
     },
   },
   shadows: {
+    accent: {
+      value: '0 0 0 1px {colors.border.accent}',
+    },
     outline: {
-      value: {
-        base: '0 0 0 1px {colors.border.outline}',
-        _dark: '0 0 0 1px {colors.border.outline}',
-      },
+      value: '0 0 0 1px {colors.border.outline}',
     },
     xs: {
       value: {
@@ -68,5 +82,10 @@ export const semanticTokens = defineSemanticTokens({
         _dark: '0px 16px 24px rgba(0, 0, 0, 1.0)',
       },
     },
+  },
+  radii: {
+    l1: { value: '{radii.xs}' },
+    l2: { value: '{radii.sm}' },
+    l3: { value: '{radii.md}' },
   },
 })
