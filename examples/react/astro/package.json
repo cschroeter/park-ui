@@ -12,15 +12,15 @@
   },
   "dependencies": {
     "@ark-ui/react": "0.13.1",
-    "@astrojs/react": "2.2.2",
-    "@park-ui/presets": "0.7.1",
-    "astro": "2.10.9",
+    "astro": "2.10.12",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@astrojs/react": "2.3.2",
     "@pandacss/astro": "0.11.1",
     "@pandacss/dev": "0.11.1",
+    "@park-ui/presets": "0.8.1",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7"
   }
