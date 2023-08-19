@@ -29,6 +29,7 @@ export const datePicker = defineSlotRecipe({
       borderRadius: 'l3',
       borderWidth: '1px',
       p: '4',
+      width: 'fit-content',
     },
     grid: {
       display: 'flex',
