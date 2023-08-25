@@ -17,7 +17,7 @@
     "@vercel/analytics": "1.0.2",
     "contentlayer": "0.3.4",
     "handlebars-loader": "1.7.3",
-    "next": "13.4.18",
+    "next": "13.4.19",
     "next-contentlayer": "0.3.4",
     "next-sitemap": "4.2.2",
     "react": "18.2.0",
@@ -30,13 +30,13 @@
     "zustand": "4.4.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.11.1",
+    "@pandacss/dev": "0.12.2",
     "@types/eslint": "8.44.02",
     "@types/handlebars": "4.1.0",
-    "@types/react": "18.2.20",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "eslint": "8.47.0",
-    "eslint-config-next": "13.4.18",
-    "typescript": "5.1.6"
+    "eslint-config-next": "13.4.19",
+    "typescript": "5.2.2"
   }
 }
