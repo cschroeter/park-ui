@@ -14,7 +14,6 @@ export const textarea = defineRecipe({
     position: 'relative',
     transitionDuration: 'normal',
     transitionProperty: 'border-color, box-shadow',
-    resize: 'none',
     width: 'full',
     _disabled: {
       opacity: 0.4,

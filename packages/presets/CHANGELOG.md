@@ -5,6 +5,10 @@
 - Added `Card` component.
 - Added a `2xs` size token with a value of `16rem` or `256px`.
 
+### Fixed
+
+- Resolved an issue with the `Textarea` recipe where the resize handle would be hidden.
+
 ## [0.8.1] - 2023-08-17
 
 ### Fixed
