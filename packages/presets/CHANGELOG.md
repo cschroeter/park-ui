@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+### Added
+
+- Added `Card` component.
+- Added a `2xs` size token with a value of `16rem` or `256px`.
+
 ## [0.8.1] - 2023-08-17
 
 ### Fixed
