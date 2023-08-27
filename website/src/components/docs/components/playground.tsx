@@ -24,6 +24,7 @@ import { ArticleDemo } from './demo/article-demo'
 import { AvatarDemo } from './demo/avatar-demo'
 import { BadgeDemo } from './demo/badge-demo'
 import { ButtonDemo } from './demo/button-demo'
+import { CardDemo } from './demo/card-demo'
 import { CarouselDemo } from './demo/carousel-demo'
 import { CheckboxDemo } from './demo/checkbox-demo'
 import { CodeDemo } from './demo/code-demo'
@@ -80,6 +81,7 @@ export const Playground = (props: Props) => {
     .with('Avatar', () => AvatarDemo)
     .with('Badge', () => BadgeDemo)
     .with('Button', () => ButtonDemo)
+    .with('Card', () => CardDemo)
     .with('Carousel', () => CarouselDemo)
     .with('Checkbox', () => CheckboxDemo)
     .with('Code', () => CodeDemo)

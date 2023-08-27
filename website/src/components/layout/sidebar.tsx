@@ -36,7 +36,7 @@ export const Sidebar = () => {
                   <SegmentControl />
                   <SegmentLabel display="inline-flex" gap="2">
                     {/* @ts-expect-error */}
-                    {option.title} {option?.isNew && <Badge size="sm">New</Badge>}
+                    {option.title} {option?.label && <Badge size="sm">{option.label}</Badge>}
                   </SegmentLabel>
                 </NextLink>
               </Segment>

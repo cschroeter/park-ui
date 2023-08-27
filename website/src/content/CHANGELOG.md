@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added `Card` component.
+
 ## [0.8.0] - 2023-08-17
 
 ### Added

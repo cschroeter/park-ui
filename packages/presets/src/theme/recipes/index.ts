@@ -4,6 +4,7 @@ import { article } from './article'
 import { avatar } from './avatar'
 import { badge } from './badge'
 import { button } from './button'
+import { card } from './card'
 import { carousel } from './carousel'
 import { checkbox } from './checkbox'
 import { code } from './code'
@@ -52,6 +53,7 @@ export const recipes = {
 export const slotRecipes = {
   accordion,
   avatar,
+  card,
   carousel,
   checkbox,
   colorPicker,

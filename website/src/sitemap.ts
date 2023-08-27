@@ -66,7 +66,7 @@ export const sitemap = [
         title: 'Article',
         description: 'Effortlessly style Markdown or CMS-generated HTML',
         href: '/docs/components/article',
-        isNew: true,
+        label: 'New',
         defaultProps: {
           size: {
             options: ['sm', 'md', 'lg'],
@@ -117,6 +117,14 @@ export const sitemap = [
             defaultValue: 'md',
           },
         },
+      },
+      {
+        title: 'Card',
+        description: 'A container component that displays content in a compact and organized way.',
+        href: '/docs/components/card',
+        label: 'Upcoming',
+        isPrimitive: true,
+        defaultProps: {},
       },
       {
         title: 'Carousel',
