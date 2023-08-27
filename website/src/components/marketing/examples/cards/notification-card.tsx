@@ -1,4 +1,4 @@
-import { Box, Stack } from 'styled-system/jsx'
+import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
   Card,
@@ -18,16 +18,16 @@ export const NotificationCard = () => {
         <CardTitle>Notifications</CardTitle>
         <CardDescription>Manage when you'll receive notifications.</CardDescription>
       </CardHeader>
-      <CardContent gap="3">
-        <Stack direction="row" gap="2" justify="space-between">
-          <Box>
-            <Typography textStyle="sm" fontWeight="semibold">
+      <CardContent gap="4">
+        <Stack direction="row" justify="space-between">
+          <Stack gap="0.5">
+            <Typography textStyle="sm" fontWeight="medium">
               Disputes
             </Typography>
             <Typography textStyle="sm" color="fg.muted">
               Receive a notification if a payment is disputed by a customer.
             </Typography>
-          </Box>
+          </Stack>
           <Switch defaultChecked>
             <SwitchControl>
               <SwitchInput />
@@ -35,15 +35,15 @@ export const NotificationCard = () => {
             </SwitchControl>
           </Switch>
         </Stack>
-        <Stack direction="row" gap="2" justify="space-between">
-          <Box>
-            <Typography textStyle="sm" fontWeight="semibold">
+        <Stack direction="row" justify="space-between">
+          <Stack gap="0.5">
+            <Typography textStyle="sm" fontWeight="medium">
               Fraudulent payments
             </Typography>
             <Typography textStyle="sm" color="fg.muted">
               Receive a notification if Radar detects a fraudulent payment on your account.
             </Typography>
-          </Box>
+          </Stack>
           <Switch>
             <SwitchControl>
               <SwitchInput />
@@ -51,15 +51,15 @@ export const NotificationCard = () => {
             </SwitchControl>
           </Switch>
         </Stack>
-        <Stack direction="row" gap="2" justify="space-between">
-          <Box>
-            <Typography textStyle="sm" fontWeight="semibold">
+        <Stack direction="row" justify="space-between">
+          <Stack gap="0.5">
+            <Typography textStyle="sm" fontWeight="medium">
               Successful payments
             </Typography>
             <Typography textStyle="sm" color="fg.muted">
               Receive a notification for every successful payment.
             </Typography>
-          </Box>
+          </Stack>
           <Switch>
             <SwitchControl>
               <SwitchInput />

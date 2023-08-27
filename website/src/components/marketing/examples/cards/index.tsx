@@ -1,6 +1,7 @@
 import { Grid, GridItem } from 'styled-system/jsx'
 import { AuthenticationCard } from './authentication-card'
 import { NotificationCard } from './notification-card'
+import { ReportIssueCard } from './report-issue-card'
 
 export const Cards = () => {
   return (
@@ -11,7 +12,9 @@ export const Cards = () => {
       <GridItem>
         <NotificationCard />
       </GridItem>
-      <GridItem></GridItem>
+      <GridItem>
+        <ReportIssueCard />
+      </GridItem>
     </Grid>
   )
 }

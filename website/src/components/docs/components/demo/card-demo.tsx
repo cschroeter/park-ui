@@ -14,7 +14,7 @@ import { Label } from '~/components/ui/label'
 
 export const CardDemo = (props: CardProps) => {
   return (
-    <Card {...props}>
+    <Card width="sm" {...props}>
       <CardHeader>
         <CardTitle>Team Members</CardTitle>
         <CardDescription>Add new members to your organisation.</CardDescription>
@@ -29,7 +29,7 @@ export const CardDemo = (props: CardProps) => {
           <Input id="email" type="email" placeholder="Email" />
         </Stack>
       </CardContent>
-      <CardFooter>
+      <CardFooter gap="3">
         <Button variant="secondary">Cancel</Button>
         <Button>Invite</Button>
       </CardFooter>
