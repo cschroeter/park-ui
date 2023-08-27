@@ -44,7 +44,7 @@ export const NotificationCard = () => {
               Receive a notification if Radar detects a fraudulent payment on your account.
             </Typography>
           </Stack>
-          <Switch>
+          <Switch defaultChecked>
             <SwitchControl>
               <SwitchInput />
               <SwitchThumb />

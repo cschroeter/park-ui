@@ -6,7 +6,7 @@ export const ImageGallery = () => {
       <Stack gap={{ base: '3', lg: '4' }} direction={{ base: 'row', lg: 'column' }}>
         {['1', '2', '3', '4'].map((image) => (
           <Box key={image} width="24" borderRadius="l2" overflow="hidden">
-            <PlaceholderImage width="96" height="auto" />
+            <PlaceholderImage width="96" />
           </Box>
         ))}
       </Stack>

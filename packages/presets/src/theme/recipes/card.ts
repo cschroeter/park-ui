@@ -10,6 +10,7 @@ export const card = defineSlotRecipe({
       borderWidth: '1px',
       bg: 'bg.default',
       boxShadow: 'xs',
+      position: 'relative',
     },
     header: {
       p: '6',

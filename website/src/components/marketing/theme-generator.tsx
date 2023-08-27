@@ -1,7 +1,14 @@
-import { Box, Stack, type BoxProps } from 'styled-system/jsx'
+import { Box } from 'styled-system/jsx'
 import { useBoolean, useIsClient } from 'usehooks-ts'
-import { Heading, Typography } from '~/components/ui/typography'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  type CardProps,
+} from '../ui/card'
 import { BorderRadiusSlider } from './theme/border-radius-slider'
 import { ColorPalettePicker } from './theme/color-palette-picker'
 import { FontFamilySelect } from './theme/font-family-select'
@@ -9,7 +16,7 @@ import { GrayPalettePicker } from './theme/gray-palette-picker'
 import { ThemeConfigDialog } from './theme/theme-config-dialog'
 import { ThemeContextMenu } from './theme/theme-context-menu'
 
-type Props = { hideContextMenu?: boolean; onCopy?: () => void } & BoxProps
+type Props = { hideContextMenu?: boolean; onCopy?: () => void } & CardProps
 
 export const ThemeGenerator = (props: Props) => {
   const { hideContextMenu, onCopy, ...rest } = props
@@ -28,34 +35,25 @@ export const ThemeGenerator = (props: Props) => {
   }
 
   return (
-    <Box
-      bg="bg.default"
-      borderRadius="l3"
-      borderWidth="1px"
-      p="6"
-      boxShadow="sm"
-      width="sm"
-      position="relative"
-      {...rest}
-    >
+    <Card width="sm" {...rest}>
       <ThemeConfigDialog open={value} onClose={setFalse} />
       {!hideContextMenu && (
         <Box position="absolute" top="18px" right="2">
           <ThemeContextMenu onReset={reset} onCopy={handleCopy} />
         </Box>
       )}
-      <Stack gap="4">
-        <Stack gap="1">
-          <Heading as="h3">Make it yours</Heading>
-          <Typography color="fg.muted" textStyle="sm">
-            Pick a style and color for your components.
-          </Typography>
-        </Stack>
+      <CardHeader>
+        <CardTitle>Make it yours</CardTitle>
+        <CardDescription>
+          Customize your theme and copy the config to use in your project.
+        </CardDescription>
+      </CardHeader>
+      <CardContent gap="4">
         <FontFamilySelect />
         <GrayPalettePicker />
         <ColorPalettePicker />
         <BorderRadiusSlider />
-      </Stack>
-    </Box>
+      </CardContent>
+    </Card>
   )
 }

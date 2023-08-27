@@ -17,16 +17,16 @@ export const Examples = () => {
           <TabTrigger value="marketing">Marketing</TabTrigger>
           <TabIndicator />
         </TabList>
-        <TabContent value="authentication">
+        <TabContent value="authentication" lazyMount unmountOnExit>
           <Authentication />
         </TabContent>
-        <TabContent value="cards">
+        <TabContent value="cards" lazyMount unmountOnExit>
           <Cards />
         </TabContent>
-        <TabContent value="e-commerce">
+        <TabContent value="e-commerce" lazyMount unmountOnExit>
           <ECommerce />
         </TabContent>
-        <TabContent value="marketing">
+        <TabContent value="marketing" lazyMount unmountOnExit>
           <Marketing />
         </TabContent>
       </Tabs>
