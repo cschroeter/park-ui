@@ -2,11 +2,11 @@
 
 import { Portal } from '@ark-ui/react'
 import { useState } from 'react'
-import { FiChevronDown, FiSliders, FiX } from 'react-icons/fi'
-import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
+import { BiExpandVertical } from 'react-icons/bi'
+import { FiSliders, FiX } from 'react-icons/fi'
+import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
-import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 import {
   Select,
@@ -193,16 +193,11 @@ export const Playground = (props: Props) => {
                   size="sm"
                   onChange={(e) => setState({ ...state, [key]: e?.value ?? '' })}
                 >
-                  {({ isOpen, selectedOption }) => (
+                  {({ selectedOption }) => (
                     <Stack gap="1.5">
                       <SelectLabel textTransform="capitalize">{key}</SelectLabel>
-                      <SelectTrigger asChild>
-                        <Button variant="secondary" size="sm">
-                          <HStack justify="space-between" flex="1" fontWeight="medium">
-                            {selectedOption?.label ?? defaultValue}
-                            <SelectIcon isOpen={isOpen} />
-                          </HStack>
-                        </Button>
+                      <SelectTrigger>
+                        {selectedOption?.label ?? defaultValue} <BiExpandVertical />
                       </SelectTrigger>
                       <Portal>
                         <SelectPositioner zIndex="docked">
@@ -223,14 +218,4 @@ export const Playground = (props: Props) => {
       </Box>
     </Flex>
   )
-}
-
-const SelectIcon = (props: { isOpen: boolean }) => {
-  const iconStyles = {
-    transform: props.isOpen ? 'rotate(-180deg)' : undefined,
-    transition: 'transform 0.2s',
-    transformOrigin: 'center',
-    fontSize: '18px',
-  }
-  return <FiChevronDown style={iconStyles} />
 }

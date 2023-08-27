@@ -1,7 +1,6 @@
 import { Portal } from '@ark-ui/react'
-import { FiChevronDown } from 'react-icons/fi'
-import { HStack, Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
+import { BiExpandVertical } from 'react-icons/bi'
+import { Stack } from 'styled-system/jsx'
 import {
   Select,
   SelectContent,
@@ -22,16 +21,11 @@ export const FontFamilySelect = () => {
       positioning={{ sameWidth: true }}
       size="sm"
     >
-      {({ selectedOption, isOpen }) => (
+      {({ selectedOption }) => (
         <Stack gap="1.5">
           <SelectLabel>Font Family</SelectLabel>
-          <SelectTrigger asChild>
-            <Button variant="secondary" size="sm">
-              <HStack justify="space-between" flex="1" fontWeight="medium">
-                {selectedOption?.label}
-                <SelectIcon isOpen={isOpen} />
-              </HStack>
-            </Button>
+          <SelectTrigger>
+            {selectedOption?.label} <BiExpandVertical />
           </SelectTrigger>
           <Portal>
             <SelectPositioner zIndex="toast">
@@ -50,14 +44,4 @@ export const FontFamilySelect = () => {
       )}
     </Select>
   )
-}
-
-const SelectIcon = (props: { isOpen: boolean }) => {
-  const iconStyles = {
-    transform: props.isOpen ? 'rotate(-180deg)' : undefined,
-    transition: 'transform 0.2s',
-    transformOrigin: 'center',
-    fontSize: '18px',
-  }
-  return <FiChevronDown style={iconStyles} />
 }

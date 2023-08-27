@@ -1,10 +1,10 @@
 import { Portal } from '@ark-ui/react'
-import { FiChevronDown } from 'react-icons/fi'
-import { HStack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
+import { BiExpandVertical } from 'react-icons/bi'
+import { Stack } from 'styled-system/jsx'
 import {
   Select,
   SelectContent,
+  SelectLabel,
   SelectOption,
   SelectPositioner,
   SelectTrigger,
@@ -14,15 +14,12 @@ import {
 export const SelectDemo = (props: SelectProps) => {
   return (
     <Select positioning={{ sameWidth: true }} {...props}>
-      {({ selectedOption, isOpen }) => (
-        <>
-          <SelectTrigger asChild>
-            <Button variant="secondary" minW="252px">
-              <HStack justify="space-between" flex="1" fontWeight="medium">
-                {selectedOption?.label ?? 'Select Framework'}
-                <SelectIcon isOpen={isOpen} />
-              </HStack>
-            </Button>
+      {({ selectedOption }) => (
+        <Stack gap="1.5" width="2xs">
+          <SelectLabel>Framework</SelectLabel>
+          <SelectTrigger>
+            {selectedOption?.label ?? 'Select Framework'}
+            <BiExpandVertical />
           </SelectTrigger>
           <Portal>
             <SelectPositioner>
@@ -37,18 +34,8 @@ export const SelectDemo = (props: SelectProps) => {
               </SelectContent>
             </SelectPositioner>
           </Portal>
-        </>
+        </Stack>
       )}
     </Select>
   )
-}
-
-const SelectIcon = (props: { isOpen: boolean }) => {
-  const iconStyles = {
-    transform: props.isOpen ? 'rotate(-180deg)' : undefined,
-    transition: 'transform 0.2s',
-    transformOrigin: 'center',
-    fontSize: '18px',
-  }
-  return <FiChevronDown style={iconStyles} />
 }

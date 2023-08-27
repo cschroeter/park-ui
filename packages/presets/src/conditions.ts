@@ -8,5 +8,6 @@ export const conditions = {
     hidden: '&:is([hidden])',
     current: '&:is([data-current])',
     today: '&:is([data-today])',
+    placeholderShown: '&:is(:placeholder-shown, [data-placeholder-shown])',
   },
 }
