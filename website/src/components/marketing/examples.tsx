@@ -2,6 +2,7 @@
 import { Container } from 'styled-system/jsx'
 import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui/tabs'
 import { Authentication } from './examples/authentication'
+import { Cards } from './examples/cards'
 import { ECommerce } from './examples/e-commerce'
 import { Marketing } from './examples/marketing'
 
@@ -11,12 +12,16 @@ export const Examples = () => {
       <Tabs defaultValue="authentication">
         <TabList>
           <TabTrigger value="authentication">Authentication</TabTrigger>
+          <TabTrigger value="cards">Cards</TabTrigger>
           <TabTrigger value="e-commerce">E-Commerce</TabTrigger>
           <TabTrigger value="marketing">Marketing</TabTrigger>
           <TabIndicator />
         </TabList>
         <TabContent value="authentication">
           <Authentication />
+        </TabContent>
+        <TabContent value="cards">
+          <Cards />
         </TabContent>
         <TabContent value="e-commerce">
           <ECommerce />
