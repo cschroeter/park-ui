@@ -91,7 +91,7 @@ export const select = defineSlotRecipe({
       lg: {
         content: { p: '1.5', gap: '1' },
         option: { textStyle: 'md', px: '2', height: '11' },
-        label: { textStyle: 'md' },
+        label: { textStyle: 'sm' },
         trigger: { px: '3.5', h: '11', minW: '11', fontSize: 'md' },
       },
     },

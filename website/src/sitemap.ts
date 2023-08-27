@@ -331,7 +331,12 @@ export const sitemap = [
         title: 'Select',
         description: 'Displays a list of options for the user to pick from.',
         href: '/docs/components/select',
-        defaultProps: {},
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
       },
       {
         title: 'Slider',
