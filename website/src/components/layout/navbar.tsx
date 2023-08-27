@@ -22,7 +22,7 @@ export const Navbar = () => {
         <Container py={{ base: '3', md: '4' }}>
           <HStack justify="space-between" gap="8">
             <HStack gap="10">
-              <NextLink href="/">
+              <NextLink href="/" aria-label="Go to start page">
                 <Logo />
               </NextLink>
               <HStack gap="8" display={{ base: 'none', lg: 'flex' }}>
