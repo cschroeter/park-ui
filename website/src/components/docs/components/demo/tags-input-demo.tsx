@@ -15,7 +15,7 @@ import {
 
 export const TagsInputDemo = (props: TagsInputProps) => {
   return (
-    <TagsInput defaultValue={['React', 'Solid', 'Vue']} {...props}>
+    <TagsInput defaultValue={['React', 'Solid', 'Vue']} maxW="xs" {...props}>
       {({ value }) => (
         <>
           <TagsInputLabel asChild>

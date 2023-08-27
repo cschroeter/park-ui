@@ -4,7 +4,7 @@ import { Label } from '~/components/ui/label'
 
 export const InputDemo = (props: InputProps) => {
   return (
-    <Stack gap="1.5">
+    <Stack gap="1.5" width="2xs">
       <Label htmlFor="name">Name</Label>
       <Input id="name" placeholder="Your Name" {...props} />
     </Stack>
