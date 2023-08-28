@@ -1,4 +1,4 @@
-import { FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaGoogle } from 'react-icons/fa'
 import { Divider, HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -25,17 +25,13 @@ export const AuthenticationCard = () => {
       <CardContent>
         <Stack gap="4">
           <Stack direction="row" gap="3">
-            <Button variant="secondary" w="full">
+            <Button variant="secondary" width="full">
               <FaGoogle />
               Google
             </Button>
-            <Button variant="secondary" w="full">
+            <Button variant="secondary" width="full">
               <FaGithub />
               GitHub
-            </Button>
-            <Button variant="secondary" w="full">
-              <FaTwitter />
-              Twitter
             </Button>
           </Stack>
           <HStack gap="2">

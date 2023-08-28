@@ -4,6 +4,7 @@ import { CardWithTabs } from './card-with-tabs'
 import { NotificationCard } from './notification-card'
 import { PaymentCard } from './payment-card'
 import { ReportIssueCard } from './report-issue-card'
+import { ShareDocumentCard } from './share-document-card'
 
 export const Cards = () => {
   return (
@@ -17,6 +18,7 @@ export const Cards = () => {
         <NotificationCard />
       </Stack>
       <Stack gap="8">
+        <ShareDocumentCard />
         <CardWithTabs />
       </Stack>
     </Grid>

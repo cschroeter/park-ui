@@ -34,11 +34,11 @@ export const CardWithTabs = () => {
           <CardContent gap="4">
             <Stack gap="1.5">
               <Label htmlFor="username">Username</Label>
-              <Input id="username" />
+              <Input id="username" defaultValue="grizzly_codes" />
             </Stack>
             <Stack gap="1.5">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" />
+              <Input id="password" type="password" placeholder="*****" />
             </Stack>
           </CardContent>
           <CardFooter>
