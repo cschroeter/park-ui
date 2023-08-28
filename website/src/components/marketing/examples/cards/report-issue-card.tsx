@@ -32,7 +32,7 @@ export const ReportIssueCard = () => {
       <CardContent gap="4">
         <Stack gap="1.5">
           <Label htmlFor="title">Title</Label>
-          <Input id="title" placeholder="Title" />
+          <Input id="title" />
         </Stack>
         <Select positioning={{ sameWidth: true }}>
           {({ selectedOption }) => (
