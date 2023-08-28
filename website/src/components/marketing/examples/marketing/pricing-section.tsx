@@ -19,13 +19,11 @@ export const PricingSection = () => {
       {plans.map((plan, id) => (
         <Card key={id}>
           <CardHeader>
-            <CardTitle textStyle={{ base: 'lg', md: 'xl' }}>{plan.name}</CardTitle>
-            <CardDescription textStyle={{ base: 'sm', md: 'md' }}>
-              {plan.description}
-            </CardDescription>
+            <CardTitle textStyle="xl">{plan.name}</CardTitle>
+            <CardDescription textStyle="md">{plan.description}</CardDescription>
           </CardHeader>
           <CardContent gap="8">
-            <Typography textStyle="5xl" fontWeight="bold">
+            <Typography textStyle="5xl" fontWeight="semibold">
               {plan.price}
               <Typography as="span" textStyle="xl">
                 /month
