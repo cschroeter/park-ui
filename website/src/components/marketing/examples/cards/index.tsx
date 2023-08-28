@@ -1,5 +1,6 @@
-import { Grid, GridItem, Stack } from 'styled-system/jsx'
+import { Grid, Stack } from 'styled-system/jsx'
 import { AuthenticationCard } from './authentication-card'
+import { CardWithTabs } from './card-with-tabs'
 import { NotificationCard } from './notification-card'
 import { PaymentCard } from './payment-card'
 import { ReportIssueCard } from './report-issue-card'
@@ -11,12 +12,13 @@ export const Cards = () => {
         <AuthenticationCard />
         <PaymentCard />
       </Stack>
-      <GridItem>
-        <NotificationCard />
-      </GridItem>
-      <GridItem>
+      <Stack gap="8">
         <ReportIssueCard />
-      </GridItem>
+        <NotificationCard />
+      </Stack>
+      <Stack gap="8">
+        <CardWithTabs />
+      </Stack>
     </Grid>
   )
 }

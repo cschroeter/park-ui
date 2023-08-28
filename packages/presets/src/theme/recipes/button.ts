@@ -109,6 +109,7 @@ export const button = defineRecipe({
       },
       link: {
         color: 'fg.muted',
+        verticalAlign: 'baseline',
         _hover: {
           color: 'fg.default',
         },
