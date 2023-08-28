@@ -24,7 +24,7 @@ export const radioButtonGroup = defineSlotRecipe({
       outline: 'none',
       position: 'relative',
       transitionDuration: 'normal',
-      transitionProperty: 'background, border-color, color',
+      transitionProperty: 'background, border-color, color, box-shadow',
       transitionTimingFunction: 'default',
       userSelect: 'none',
       verticalAlign: 'middle',
@@ -35,34 +35,54 @@ export const radioButtonGroup = defineSlotRecipe({
       },
       _checked: {
         cursor: 'default',
-        color: 'accent.fg',
-        borderColor: 'border.accent',
-        background: 'accent.default',
-        _hover: {
-          color: 'accent.fg',
-          background: 'accent.default',
-        },
       },
       _disabled: {
         borderColor: 'border.disabled',
         color: 'fg.disabled',
         cursor: 'not-allowed',
-        backgroundImage:
-          'linear-gradient(315deg, transparent 49%, var(--colors-border-disabled) 49%, var(--colors-border-disabled) 51%, transparent 51%)',
         _hover: {
-          background: 'transparent',
-          backgroundImage:
-            'linear-gradient(315deg, transparent 49%, var(--colors-border-disabled) 49%, var(--colors-border-disabled) 51%, transparent 51%)',
+          background: 'initial',
           borderColor: 'border.disabled',
           color: 'fg.disabled',
         },
       },
     },
+    radioLabel: {
+      display: 'inline-flex',
+      alignItems: 'center',
+    },
   },
   defaultVariants: {
     size: 'md',
+    variant: 'solid',
   },
   variants: {
+    variant: {
+      solid: {
+        radio: {
+          _checked: {
+            background: 'accent.default',
+            borderColor: 'border.accent',
+            color: 'accent.fg',
+            _hover: {
+              color: 'accent.fg',
+              background: 'accent.default',
+            },
+          },
+        },
+      },
+      outline: {
+        radio: {
+          _checked: {
+            borderColor: 'border.accent',
+            boxShadow: 'accent',
+            _hover: {
+              background: 'initial',
+            },
+          },
+        },
+      },
+    },
     size: {
       sm: {
         root: {
@@ -70,11 +90,17 @@ export const radioButtonGroup = defineSlotRecipe({
         },
         radio: {
           h: '9',
-          w: '9',
+          minW: '9',
           textStyle: 'sm',
+          px: '3.5',
+
           '& svg': {
-            fontSize: 'xl',
+            width: '4.5',
+            height: '4.5',
           },
+        },
+        radioLabel: {
+          gap: '2',
         },
       },
       md: {
@@ -83,11 +109,16 @@ export const radioButtonGroup = defineSlotRecipe({
         },
         radio: {
           h: '10',
-          w: '10',
+          minW: '10',
           textStyle: 'sm',
+          px: '4',
           '& svg': {
-            fontSize: 'xl',
+            width: '5',
+            height: '5',
           },
+        },
+        radioLabel: {
+          gap: '2',
         },
       },
       lg: {
@@ -96,11 +127,16 @@ export const radioButtonGroup = defineSlotRecipe({
         },
         radio: {
           h: '11',
-          w: '11',
+          minW: '11',
           textStyle: 'md',
+          px: '4.5',
           '& svg': {
-            fontSize: 'xl',
+            width: '5',
+            height: '5',
           },
+        },
+        radioLabel: {
+          gap: '2',
         },
       },
       xl: {
@@ -109,11 +145,16 @@ export const radioButtonGroup = defineSlotRecipe({
         },
         radio: {
           h: '12',
-          w: '12',
+          minW: '12',
           textStyle: 'md',
+          px: '5',
           '& svg': {
-            fontSize: 'xl',
+            width: '5',
+            height: '5',
           },
+        },
+        radioLabel: {
+          gap: '2.5',
         },
       },
     },

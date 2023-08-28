@@ -179,7 +179,7 @@ export const Playground = (props: Props) => {
           Settings
         </Typography>
         <hr />
-        <Stack gap="6" py="5" px="4">
+        <Stack gap="4" py="5" px="4">
           {Object.entries(defaultProps || {}).map(([key, value]) =>
             match(value)
               .with(Pattern.string, () => <span key={key} />)

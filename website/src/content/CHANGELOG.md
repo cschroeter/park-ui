@@ -4,6 +4,7 @@
 
 - Added `Card` component.
 - Added a `2xs` size token with a value of `16rem` or `256px`.
+- Added new variant `outline` to the `RadioButtonGroup` component.
 
 ### Changed
 
@@ -12,6 +13,7 @@
 ### Fixed
 
 - Resolved an issue with the `Textarea` recipe where the resize handle would be hidden.
+- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was longer than the specified width.
 
 ## [0.8.1] - 2023-08-17
 

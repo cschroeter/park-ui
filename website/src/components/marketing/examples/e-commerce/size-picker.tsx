@@ -18,7 +18,16 @@ export const SizePicker = () => {
         </Typography>
         <RadioButtonGroup size="xl">
           {product.sizes.map((option, id) => (
-            <Radio key={id} value={option.size} disabled={option.disabled}>
+            <Radio
+              key={id}
+              value={option.size}
+              disabled={option.disabled}
+              px="0"
+              _disabled={{
+                backgroundImage:
+                  'linear-gradient(315deg, transparent 49%, var(--colors-border-disabled) 49%, var(--colors-border-disabled) 51%, transparent 51%)',
+              }}
+            >
               <RadioControl />
               <RadioLabel>{option.size}</RadioLabel>
             </Radio>

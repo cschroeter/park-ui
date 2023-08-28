@@ -1,6 +1,11 @@
-import { Circle, Grid, Stack } from 'styled-system/jsx'
+import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { Button } from '~/components/ui/button'
+import {
+  Radio,
+  RadioButtonGroup,
+  RadioControl,
+  RadioLabel,
+} from '~/components/ui/radio-button-group'
 import { Typography } from '~/components/ui/typography'
 import { useColorMode } from '~/lib/use-color-mode'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
@@ -14,35 +19,40 @@ export const GrayPalettePicker = () => {
       <Typography textStyle="sm" fontWeight="semibold">
         Gray Palette
       </Typography>
-      <Grid columns={3}>
+      <RadioButtonGroup
+        value={currentGrayPalette.value}
+        size="sm"
+        variant="outline"
+        display="grid"
+        gridTemplateColumns="repeat(3, 1fr)"
+        onChange={(e) => {
+          updateGrayPalette(
+            grayPalettes.find((grayPalette) => grayPalette.value === e.value) ?? currentGrayPalette,
+          )
+        }}
+      >
         {grayPalettes.map((grayPalette, id) => (
-          <Button
+          <Radio
             key={id}
-            variant="secondary"
-            size="sm"
-            justifyContent="start"
-            onClick={() => updateGrayPalette(grayPalette)}
-            {...(currentGrayPalette.value === grayPalette.value ? { 'data-selected': 'true' } : {})}
-            _selected={{
-              background: 'initial',
-              color: 'fg.default',
-              borderColor: 'border.outline',
-              boxShadow: 'outline',
-            }}
+            value={grayPalette.value}
+            _checked={{ borderColor: 'border.outline', boxShadow: 'outline' }}
+            justifyContent="flex-start"
           >
-            <Circle
-              width="3.5"
-              height="3.5"
-              style={{
-                background: token.var(
-                  `colors.${grayPalette.value}.${colorMode === 'dark' ? '500' : '400'}`,
-                ),
-              }}
-            />
-            {grayPalette.label}
-          </Button>
+            <RadioControl />
+            <RadioLabel>
+              <Circle
+                size="3.5"
+                style={{
+                  background: token.var(
+                    `colors.${grayPalette.value}.${colorMode === 'dark' ? '500' : '400'}`,
+                  ),
+                }}
+              />
+              {grayPalette.label}
+            </RadioLabel>
+          </Radio>
         ))}
-      </Grid>
+      </RadioButtonGroup>
     </Stack>
   )
 }
