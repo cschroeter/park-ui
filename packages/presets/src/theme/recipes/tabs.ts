@@ -8,25 +8,19 @@ export const tabs = defineSlotRecipe({
   base: {
     list: {
       display: 'flex',
-      flexDirection: {
-        _horizontal: 'row',
-        _vertical: 'column',
+      _horizontal: {
+        boxShadow: '0 -1px 0 0 inset var(--colors-border-default)',
+        flexDirection: 'row',
+        gap: '4',
       },
-      gap: {
-        _horizontal: '4',
-        _vertical: '1',
-      },
-      borderBottomWidth: {
-        _horizontal: '1px',
-      },
-      borderLeftWidth: {
-        _vertical: '1px',
+      _vertical: {
+        boxShadow: '1px 0 0 0 inset var(--colors-border-default)',
+        gap: '1',
+        flexDirection: 'column',
       },
       position: 'relative',
-      overflow: 'scroll',
+      overflow: 'auto',
       scrollbarWidth: 'none',
-      msOverflowStyle: 'none',
-      WebkitOverflowScrolling: 'touch',
       '&::-webkit-scrollbar': {
         display: 'none',
       },
@@ -39,16 +33,15 @@ export const tabs = defineSlotRecipe({
       color: 'fg.subtle',
       fontWeight: 'semibold',
       whiteSpace: 'nowrap',
-      px: {
-        _horizontal: '1',
-        _vertical: '3',
+      _horizontal: {
+        px: '1',
+        pb: '3',
       },
-      pb: {
-        _horizontal: '3',
+      _vertical: {
+        px: '3',
+        py: '1.5',
       },
-      py: {
-        _vertical: '1.5',
-      },
+
       _hover: {
         color: 'fg.muted',
       },
@@ -61,17 +54,13 @@ export const tabs = defineSlotRecipe({
     },
     indicator: {
       background: 'accent.default',
-      height: {
-        _horizontal: '2px',
+      _horizontal: {
+        height: '2px',
+        bottom: '0',
       },
-      bottom: {
-        _horizontal: '-1px',
-      },
-      width: {
-        _vertical: '2px',
-      },
-      left: {
-        _vertical: '-1px',
+      _vertical: {
+        width: '2px',
+        left: '0',
       },
     },
     content: {
