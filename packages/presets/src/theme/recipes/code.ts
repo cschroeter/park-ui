@@ -2,7 +2,7 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const code = defineRecipe({
   className: 'code',
-  description: 'An code style',
+  description: 'A code style',
   base: {
     alignItems: 'center',
     bg: 'bg.subtle',
