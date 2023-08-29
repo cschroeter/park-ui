@@ -65,7 +65,7 @@ export const tabs = defineSlotRecipe({
         _horizontal: '2px',
       },
       bottom: {
-        _horizontal: '0px',
+        _horizontal: '-1px',
       },
       width: {
         _vertical: '2px',
