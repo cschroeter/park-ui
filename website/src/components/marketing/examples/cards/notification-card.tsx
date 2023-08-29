@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '~/components/ui/card'
-import { Switch, SwitchControl, SwitchInput, SwitchThumb } from '~/components/ui/switch'
+import { Switch, SwitchControl, SwitchThumb } from '~/components/ui/switch'
 import { Typography } from '~/components/ui/typography'
 
 export const NotificationCard = () => {
@@ -30,7 +30,6 @@ export const NotificationCard = () => {
           </Stack>
           <Switch defaultChecked>
             <SwitchControl>
-              <SwitchInput />
               <SwitchThumb />
             </SwitchControl>
           </Switch>
@@ -46,7 +45,6 @@ export const NotificationCard = () => {
           </Stack>
           <Switch defaultChecked>
             <SwitchControl>
-              <SwitchInput />
               <SwitchThumb />
             </SwitchControl>
           </Switch>
@@ -62,7 +60,6 @@ export const NotificationCard = () => {
           </Stack>
           <Switch>
             <SwitchControl>
-              <SwitchInput />
               <SwitchThumb />
             </SwitchControl>
           </Switch>
