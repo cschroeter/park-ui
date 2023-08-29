@@ -46,7 +46,11 @@ export const ShareDocumentCard = () => {
       </CardHeader>
       <CardContent gap="4">
         <Stack gap="3" direction="row">
-          <Input value="https://www.buymeacoffee.com/grizzlycodes" placeholder="Link to document" />
+          <Input
+            defaultValue="https://www.buymeacoffee.com/grizzlycodes"
+            readOnly
+            placeholder="Link to document"
+          />
           <CopyButton content="https://www.buymeacoffee.com/grizzlycodes" />
         </Stack>
         <Divider />
