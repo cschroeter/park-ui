@@ -23,6 +23,13 @@ export const tabs = defineSlotRecipe({
         _vertical: '1px',
       },
       position: 'relative',
+      overflow: 'scroll',
+      scrollbarWidth: 'none',
+      msOverflowStyle: 'none',
+      WebkitOverflowScrolling: 'touch',
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
     },
     trigger: {
       transitionDuration: 'normal',
@@ -31,6 +38,7 @@ export const tabs = defineSlotRecipe({
       cursor: 'pointer',
       color: 'fg.subtle',
       fontWeight: 'semibold',
+      whiteSpace: 'nowrap',
       px: {
         _horizontal: '1',
         _vertical: '3',
