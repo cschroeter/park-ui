@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@ark-ui/vue": "0.6.0",
+    "@nuxt/ui-templates": "1.3.1",
+    "nuxt": "3.7.0",
+    "unctx": "2.3.1",
+    "vue": "3.3.4"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "0.8.2",
+    "@pandacss/dev": "0.13.0",
+    "@park-ui/presets": "0.9.0",
+    "@types/node": "18.17.1",
+    "@types/vue": "2.0.0"
+  }
+}
