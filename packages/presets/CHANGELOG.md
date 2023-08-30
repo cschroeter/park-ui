@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Improved responsiveness of the `Tabs` component by using `overflow: auto`
+
 ## [0.9.0] - 2023-08-29
 
 ### Added
