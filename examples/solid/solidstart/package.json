@@ -1,0 +1,43 @@
+{
+  "name": "@park-ui/examples-solid-start",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen --silent",
+    "dev": "solid-start dev --port 3004",
+    "build": "solid-start build",
+    "start": "solid-start start",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+  },
+  "type": "module",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.3.0",
+    "@typescript-eslint/parser": "6.3.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.28.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-lodash": "7.4.0",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "@types/eslint-config-prettier": "6.11.0",
+    "@pandacss/dev": "0.13.0",
+    "@types/node": "18.16.19",
+    "esbuild": "0.14.54",
+    "postcss": "8.4.26",
+    "solid-start-node": "0.3.0",
+    "typescript": "4.9.5",
+    "vite-tsconfig-paths": "4.2.0",
+    "vite": "4.4.6"
+  },
+  "dependencies": {
+    "@ark-ui/solid": "0.9.0",
+    "@park-ui/presets": "0.9.0",
+    "@solidjs/meta": "0.28.5",
+    "@solidjs/router": "0.8.2",
+    "solid-js": "1.7.11",
+    "solid-start": "0.3.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

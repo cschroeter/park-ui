@@ -1,0 +1,5 @@
+@layer reset, base, tokens, recipes, utilities;
+
+:root {
+  --font-body: 'Plus Jakarta Sans Variable', sans-serif;
+}
