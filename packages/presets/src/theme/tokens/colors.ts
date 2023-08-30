@@ -2,10 +2,10 @@ import { defineTokens } from '@pandacss/dev'
 
 export const colors = defineTokens.colors({
   neutral: {
-    25: { value: '#fdfdfd' },
+    25: { value: '#fcfcfc' },
   },
   stone: {
-    25: { value: '#fcfcfc' },
+    25: { value: '#fcfcfa' },
   },
   zinc: {
     25: { value: '#fcfcfc' },
@@ -14,7 +14,7 @@ export const colors = defineTokens.colors({
     25: { value: '#fcfcfd' },
   },
   slate: {
-    25: { value: '#fcfcfd' },
+    25: { value: '#fbfbfd' },
   },
   grayPalette: {
     25: { value: '{colors.neutral.25}' },

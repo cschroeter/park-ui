@@ -42,7 +42,7 @@ export const Authentication = () => {
           </Flex>
         </Flex>
       </Box>
-      <Center flex="1" py={{ base: '16', md: '24' }}>
+      <Center bg="bg.default" flex="1" py={{ base: '16', md: '24' }}>
         <SignInForm />
       </Center>
     </Flex>
