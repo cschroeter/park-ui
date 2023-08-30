@@ -9,11 +9,11 @@ const { withProvider, withContext } = createStyleContext(radioGroup)
 export * from '@ark-ui/solid/radio-group'
 export type RadioGroupProps = Ark.RadioGroupProps & RadioGroupVariantProps
 
-const RadioGroupRoot = withProvider(styled(Ark.RadioGroup.Root), 'root')
-export const RadioGroupLabel = withContext(styled(Ark.RadioGroup.Label), 'label')
-export const Radio = withContext(styled(Ark.RadioGroup.Radio), 'radio')
-export const RadioLabel = withContext(styled(Ark.RadioGroup.RadioLabel), 'radioLabel')
-export const RadioControl = withContext(styled(Ark.RadioGroup.RadioControl), 'radioControl')
+const RadioGroupRoot = withProvider(styled(Ark.RadioGroup), 'root')
+export const RadioGroupLabel = withContext(styled(Ark.RadioGroupLabel), 'label')
+export const Radio = withContext(styled(Ark.RadioInput), 'radio')
+export const RadioLabel = withContext(styled(Ark.RadioLabel), 'radioLabel')
+export const RadioControl = withContext(styled(Ark.RadioControl), 'radioControl')
 
 export const RadioGroup = Object.assign(RadioGroupRoot, {
   Root: RadioGroupRoot,

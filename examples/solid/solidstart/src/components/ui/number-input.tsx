@@ -9,19 +9,19 @@ const { withProvider, withContext } = createStyleContext(numberInput)
 export * from '@ark-ui/solid/number-input'
 export type NumberInputProps = Ark.NumberInputProps & NumberInputVariantProps
 
-const NumberInputRoot = withProvider(styled(Ark.NumberInput.Root), 'root')
-export const NumberInputControl = withContext(styled(Ark.NumberInput.Control), 'control')
+const NumberInputRoot = withProvider(styled(Ark.NumberInput), 'root')
+export const NumberInputControl = withContext(styled(Ark.NumberInputControl), 'control')
 export const NumberInputDecrementTrigger = withContext(
-  styled(Ark.NumberInput.DecrementTrigger),
+  styled(Ark.NumberInputDecrementTrigger),
   'decrementTrigger',
 )
-export const NumberInputInput = withContext(styled(Ark.NumberInput.Input), 'input')
+export const NumberInputInput = withContext(styled(Ark.NumberInputField), 'input')
 export const NumberInputIncrementTrigger = withContext(
-  styled(Ark.NumberInput.IncrementTrigger),
+  styled(Ark.NumberInputIncrementTrigger),
   'incrementTrigger',
 )
-export const NumberInputLabel = withContext(styled(Ark.NumberInput.Label), 'label')
-export const NumberInputScrubber = withContext(styled(Ark.NumberInput.Scrubber), 'scrubber')
+export const NumberInputLabel = withContext(styled(Ark.NumberInputLabel), 'label')
+export const NumberInputScrubber = withContext(styled(Ark.NumberInputScrubber), 'scrubber')
 
 export const NumberInput = Object.assign(NumberInputRoot, {
   Root: NumberInputRoot,

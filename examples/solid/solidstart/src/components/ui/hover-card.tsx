@@ -9,12 +9,12 @@ const { withProvider, withContext } = createStyleContext(hoverCard)
 export * from '@ark-ui/solid/hover-card'
 export type HoverCardProps = Ark.HoverCardProps & HoverCardVariantProps
 
-const HoverCardRoot = withProvider(styled(Ark.HoverCard.Root), 'root')
-export const HoverCardArrow = withContext(styled(Ark.HoverCard.Arrow), 'arrow')
-export const HoverCardArrowTip = withContext(styled(Ark.HoverCard.ArrowTip), 'arrowTip')
-export const HoverCardContent = withContext(styled(Ark.HoverCard.Content), 'content')
-export const HoverCardPositioner = withContext(styled(Ark.HoverCard.Positioner), 'positioner')
-export const HoverCardTrigger = withContext(styled(Ark.HoverCard.Trigger), 'trigger')
+const HoverCardRoot = withProvider(styled(Ark.HoverCard), 'root')
+export const HoverCardArrow = withContext(styled(Ark.HoverCardArrow), 'arrow')
+export const HoverCardArrowTip = withContext(styled(Ark.HoverCardArrowTip), 'arrowTip')
+export const HoverCardContent = withContext(styled(Ark.HoverCardContent), 'content')
+export const HoverCardPositioner = withContext(styled(Ark.HoverCardPositioner), 'positioner')
+export const HoverCardTrigger = withContext(styled(Ark.HoverCardTrigger), 'trigger')
 
 export const HoverCard = Object.assign(HoverCardRoot, {
   Root: HoverCardRoot,

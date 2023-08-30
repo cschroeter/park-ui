@@ -9,24 +9,24 @@ const { withProvider, withContext } = createStyleContext(carousel)
 export * from '@ark-ui/solid/carousel'
 export type CarouselProps = Ark.CarouselProps & CarouselVariantProps
 
-const CarouselRoot = withProvider(styled(Ark.Carousel.Root), 'root')
-export const CarouselControl = withContext(styled(Ark.Carousel.Control), 'control')
-export const CarouselIndicator = withContext(styled(Ark.Carousel.Indicator), 'indicator')
+const CarouselRoot = withProvider(styled(Ark.Carousel), 'root')
+export const CarouselControl = withContext(styled(Ark.CarouselControl), 'control')
+export const CarouselIndicator = withContext(styled(Ark.CarouselIndicator), 'indicator')
 export const CarouselIndicatorGroup = withContext(
-  styled(Ark.Carousel.IndicatorGroup),
+  styled(Ark.CarouselIndicatorGroup),
   'indicatorGroup',
 )
 export const CarouselNextSlideTrigger = withContext(
-  styled(Ark.Carousel.NextSlideTrigger),
+  styled(Ark.CarouselNextSlideTrigger),
   'nextSlideTrigger',
 )
 export const CarouselPrevSlideTrigger = withContext(
-  styled(Ark.Carousel.PrevSlideTrigger),
+  styled(Ark.CarouselPrevSlideTrigger),
   'prevSlideTrigger',
 )
-export const CarouselSlide = withContext(styled(Ark.Carousel.Slide), 'slide')
-export const CarouselSlideGroup = withContext(styled(Ark.Carousel.SlideGroup), 'slideGroup')
-export const CarouselViewport = withContext(styled(Ark.Carousel.Viewport), 'viewport')
+export const CarouselSlide = withContext(styled(Ark.CarouselSlide), 'slide')
+export const CarouselSlideGroup = withContext(styled(Ark.CarouselSlideGroup), 'slideGroup')
+export const CarouselViewport = withContext(styled(Ark.CarouselViewport), 'viewport')
 
 export const Carousel = Object.assign(CarouselRoot, {
   Root: CarouselRoot,

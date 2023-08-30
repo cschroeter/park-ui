@@ -9,9 +9,9 @@ const { withProvider, withContext } = createStyleContext(checkbox)
 export * from '@ark-ui/solid/checkbox'
 export type CheckboxProps = Ark.CheckboxProps & CheckboxVariantProps
 
-const CheckboxRoot = withProvider(styled(Ark.Checkbox.Root), 'root')
-export const CheckboxControl = withContext(styled(Ark.Checkbox.Control), 'control')
-export const CheckboxLabel = withContext(styled(Ark.Checkbox.Label), 'label')
+const CheckboxRoot = withProvider(styled(Ark.Checkbox), 'root')
+export const CheckboxControl = withContext(styled(Ark.CheckboxControl), 'control')
+export const CheckboxLabel = withContext(styled(Ark.CheckboxLabel), 'label')
 
 export const Checkbox = Object.assign(CheckboxRoot, {
   Root: CheckboxRoot,

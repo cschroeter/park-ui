@@ -9,20 +9,17 @@ const { withProvider, withContext } = createStyleContext(combobox)
 export * from '@ark-ui/solid/combobox'
 export type ComboboxProps = Ark.ComboboxProps & ComboboxVariantProps
 
-const ComboboxRoot = withProvider(styled(Ark.Combobox.Root), 'root')
-export const ComboboxClearTrigger = withContext(styled(Ark.Combobox.ClearTrigger), 'clearTrigger')
-export const ComboboxContent = withContext(styled(Ark.Combobox.Content), 'content')
-export const ComboboxControl = withContext(styled(Ark.Combobox.Control), 'control')
-export const ComboboxInput = withContext(styled(Ark.Combobox.Input), 'input')
-export const ComboboxLabel = withContext(styled(Ark.Combobox.Label), 'label')
-export const ComboboxOption = withContext(styled(Ark.Combobox.Option), 'option')
-export const ComboboxOptionGroup = withContext(styled(Ark.Combobox.OptionGroup), 'optionGroup')
-export const ComboboxOptionGroupLabel = withContext(
-  styled(Ark.Combobox.OptionGroupLabel),
-  'optionGroupLabel',
-)
-export const ComboboxPositioner = withContext(styled(Ark.Combobox.Positioner), 'positioner')
-export const ComboboxTrigger = withContext(styled(Ark.Combobox.Trigger), 'trigger')
+const ComboboxRoot = withProvider(styled(Ark.Combobox), 'root')
+export const ComboboxClearTrigger = withContext(styled(Ark.ComboboxClearTrigger), 'clearTrigger')
+export const ComboboxContent = withContext(styled(Ark.ComboboxContent), 'content')
+export const ComboboxControl = withContext(styled(Ark.ComboboxControl), 'control')
+export const ComboboxInput = withContext(styled(Ark.ComboboxInput), 'input')
+export const ComboboxLabel = withContext(styled(Ark.ComboboxLabel), 'label')
+export const ComboboxOption = withContext(styled(Ark.ComboboxOption), 'option')
+export const ComboboxOptionGroup = withContext(styled(Ark.ComboboxOptionGroup), 'optionGroup')
+export const ComboboxOptionGroupLabel = withContext(styled(Ark.ComboboxLabel), 'optionGroupLabel')
+export const ComboboxPositioner = withContext(styled(Ark.ComboboxPositioner), 'positioner')
+export const ComboboxTrigger = withContext(styled(Ark.ComboboxTrigger), 'trigger')
 
 export const Combobox = Object.assign(ComboboxRoot, {
   Root: ComboboxRoot,

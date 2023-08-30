@@ -9,43 +9,40 @@ const { withProvider, withContext } = createStyleContext(colorPicker)
 export * from '@ark-ui/solid/color-picker'
 export type ColorPickerProps = Ark.ColorPickerProps & ColorPickerVariantProps
 
-const ColorPickerRoot = withProvider(styled(Ark.ColorPicker.Root), 'root')
-export const ColorPickerArea = withContext(styled(Ark.ColorPicker.Area), 'area')
+const ColorPickerRoot = withProvider(styled(Ark.ColorPicker), 'root')
+export const ColorPickerArea = withContext(styled(Ark.ColorPickerArea), 'area')
 export const ColorPickerAreaGradient = withContext(
-  styled(Ark.ColorPicker.AreaGradient),
+  styled(Ark.ColorPickerAreaGradient),
   'areaGradient',
 )
-export const ColorPickerAreaThumb = withContext(styled(Ark.ColorPicker.AreaThumb), 'areaThumb')
+export const ColorPickerAreaThumb = withContext(styled(Ark.ColorPickerAreaThumb), 'areaThumb')
 export const ColorPickerChannelInput = withContext(
-  styled(Ark.ColorPicker.ChannelInput),
+  styled(Ark.ColorPickerChannelInput),
   'channelInput',
 )
 export const ColorPickerChannelSliderBackground = withContext(
-  styled(Ark.ColorPicker.ChannelSliderBackground),
+  styled(Ark.ColorPickerChannelSliderBackground),
   'channelSliderBackground',
 )
 export const ColorPickerChannelSliderThumb = withContext(
-  styled(Ark.ColorPicker.ChannelSliderThumb),
+  styled(Ark.ColorPickerChannelSliderThumb),
   'channelSliderThumb',
 )
 export const ColorPickerChannelSliderTrack = withContext(
-  styled(Ark.ColorPicker.ChannelSliderTrack),
+  styled(Ark.ColorPickerChannelSliderTrack),
   'channelSliderTrack',
 )
-export const ColorPickerContent = withContext(styled(Ark.ColorPicker.Content), 'content')
+export const ColorPickerContent = withContext(styled(Ark.ColorPickerContent), 'content')
 export const ColorPickerEyeDropperTrigger = withContext(
-  styled(Ark.ColorPicker.EyeDropperTrigger),
+  styled(Ark.ColorPickerEyeDropperTrigger),
   'eyeDropperTrigger',
 )
-export const ColorPickerSwatch = withContext(styled(Ark.ColorPicker.Swatch), 'swatch')
+export const ColorPickerSwatch = withContext(styled(Ark.ColorPickerSwatch), 'swatch')
 export const ColorPickerSwatchBackground = withContext(
-  styled(Ark.ColorPicker.SwatchBackground),
+  styled(Ark.ColorPickerSwatchBackground),
   'swatchBackground',
 )
-export const ColorPickerSwatchGroup = withContext(
-  styled(Ark.ColorPicker.SwatchGroup),
-  'swatchGroup',
-)
+export const ColorPickerSwatchGroup = withContext(styled(Ark.ColorPickerSwatchGroup), 'swatchGroup')
 
 export const ColorPicker = Object.assign(ColorPickerRoot, {
   Root: ColorPickerRoot,

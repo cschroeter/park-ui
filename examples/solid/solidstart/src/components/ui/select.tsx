@@ -9,17 +9,17 @@ const { withProvider, withContext } = createStyleContext(select)
 export * from '@ark-ui/solid/select'
 export type SelectProps = Ark.SelectProps & SelectVariantProps
 
-const SelectRoot = withProvider(styled(Ark.Select.Root), 'root')
-export const SelectContent = withContext(styled(Ark.Select.Content), 'content')
-export const SelectLabel = withContext(styled(Ark.Select.Label), 'label')
-export const SelectOption = withContext(styled(Ark.Select.Option), 'option')
-export const SelectOptionGroup = withContext(styled(Ark.Select.OptionGroup), 'optionGroup')
+const SelectRoot = withProvider(styled(Ark.Select), 'root')
+export const SelectContent = withContext(styled(Ark.SelectContent), 'content')
+export const SelectLabel = withContext(styled(Ark.SelectLabel), 'label')
+export const SelectOption = withContext(styled(Ark.SelectOption), 'option')
+export const SelectOptionGroup = withContext(styled(Ark.SelectOptionGroup), 'optionGroup')
 export const SelectOptionGroupLabel = withContext(
-  styled(Ark.Select.OptionGroupLabel),
+  styled(Ark.SelectOptionGroupLabel),
   'optionGroupLabel',
 )
-export const SelectPositioner = withContext(styled(Ark.Select.Positioner), 'positioner')
-export const SelectTrigger = withContext(styled(Ark.Select.Trigger), 'trigger')
+export const SelectPositioner = withContext(styled(Ark.SelectPositioner), 'positioner')
+export const SelectTrigger = withContext(styled(Ark.SelectTrigger), 'trigger')
 
 export const Select = Object.assign(SelectRoot, {
   Root: SelectRoot,

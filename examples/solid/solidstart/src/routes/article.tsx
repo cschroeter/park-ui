@@ -1,8 +1,11 @@
+import { Title } from 'solid-start'
+
 import { Article } from '~/components/ui/article'
 
 export default function Home() {
   return (
     <Article mt="8" marginInline={'auto'}>
+      <Title>Park UI | Article</Title>
       <h1>The Beauty of Nature</h1>
       <p>
         Nature, in the broadest sense, is equivalent to the natural world, physical universe,

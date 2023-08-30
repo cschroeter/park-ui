@@ -9,10 +9,10 @@ const { withProvider, withContext } = createStyleContext(ratingGroup)
 export * from '@ark-ui/solid/rating-group'
 export type RatingGroupProps = Ark.RatingGroupProps & RatingGroupVariantProps
 
-const RatingGroupRoot = withProvider(styled(Ark.RatingGroup.Root), 'root')
-export const RatingGroupControl = withContext(styled(Ark.RatingGroup.Control), 'control')
-export const RatingGroupLabel = withContext(styled(Ark.RatingGroup.Label), 'label')
-export const Rating = withContext(styled(Ark.RatingGroup.Rating), 'rating')
+const RatingGroupRoot = withProvider(styled(Ark.RatingGroup), 'root')
+export const RatingGroupControl = withContext(styled(Ark.RatingGroupControl), 'control')
+export const RatingGroupLabel = withContext(styled(Ark.RatingGroupLabel), 'label')
+export const Rating = withContext(styled(Ark.Rating), 'rating')
 
 export const RatingGroup = Object.assign(RatingGroupRoot, {
   Root: RatingGroupRoot,

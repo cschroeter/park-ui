@@ -9,18 +9,15 @@ const { withProvider, withContext } = createStyleContext(rangeSlider)
 export * from '@ark-ui/solid/range-slider'
 export type RangeSliderProps = Ark.RangeSliderProps & RangeSliderVariantProps
 
-const RangeSliderRoot = withProvider(styled(Ark.RangeSlider.Root), 'root')
-export const RangeSliderControl = withContext(styled(Ark.RangeSlider.Control), 'control')
-export const RangeSliderLabel = withContext(styled(Ark.RangeSlider.Label), 'label')
-export const RangeSliderMarker = withContext(styled(Ark.RangeSlider.Marker), 'marker')
-export const RangeSliderMarkerGroup = withContext(
-  styled(Ark.RangeSlider.MarkerGroup),
-  'markerGroup',
-)
-export const RangeSliderOutput = withContext(styled(Ark.RangeSlider.Output), 'output')
-export const RangeSliderRange = withContext(styled(Ark.RangeSlider.Range), 'range')
-export const RangeSliderThumb = withContext(styled(Ark.RangeSlider.Thumb), 'thumb')
-export const RangeSliderTrack = withContext(styled(Ark.RangeSlider.Track), 'track')
+const RangeSliderRoot = withProvider(styled(Ark.RangeSlider), 'root')
+export const RangeSliderControl = withContext(styled(Ark.RangeSliderControl), 'control')
+export const RangeSliderLabel = withContext(styled(Ark.RangeSliderLabel), 'label')
+export const RangeSliderMarker = withContext(styled(Ark.RangeSliderMarker), 'marker')
+export const RangeSliderMarkerGroup = withContext(styled(Ark.RangeSliderMarkerGroup), 'markerGroup')
+export const RangeSliderOutput = withContext(styled(Ark.RangeSliderOutput), 'output')
+export const RangeSliderRange = withContext(styled(Ark.RangeSliderRange), 'range')
+export const RangeSliderThumb = withContext(styled(Ark.RangeSliderThumb), 'thumb')
+export const RangeSliderTrack = withContext(styled(Ark.RangeSliderTrack), 'track')
 
 export const RangeSlider = Object.assign(RangeSliderRoot, {
   Root: RangeSliderRoot,

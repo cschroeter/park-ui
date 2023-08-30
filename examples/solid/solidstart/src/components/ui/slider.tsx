@@ -9,15 +9,15 @@ const { withProvider, withContext } = createStyleContext(slider)
 export * from '@ark-ui/solid/slider'
 export type SliderProps = Ark.SliderProps & SliderVariantProps
 
-const SliderRoot = withProvider(styled(Ark.Slider.Root), 'root')
-export const SliderControl = withContext(styled(Ark.Slider.Control), 'control')
-export const SliderLabel = withContext(styled(Ark.Slider.Label), 'label')
-export const SliderMarker = withContext(styled(Ark.Slider.Marker), 'marker')
-export const SliderMarkerGroup = withContext(styled(Ark.Slider.MarkerGroup), 'markerGroup')
-export const SliderOutput = withContext(styled(Ark.Slider.Output), 'output')
-export const SliderRange = withContext(styled(Ark.Slider.Range), 'range')
-export const SliderThumb = withContext(styled(Ark.Slider.Thumb), 'thumb')
-export const SliderTrack = withContext(styled(Ark.Slider.Track), 'track')
+const SliderRoot = withProvider(styled(Ark.Slider), 'root')
+export const SliderControl = withContext(styled(Ark.SliderControl), 'control')
+export const SliderLabel = withContext(styled(Ark.SliderLabel), 'label')
+export const SliderMarker = withContext(styled(Ark.SliderMarker), 'marker')
+export const SliderMarkerGroup = withContext(styled(Ark.SliderMarkerGroup), 'markerGroup')
+export const SliderOutput = withContext(styled(Ark.SliderOutput), 'output')
+export const SliderRange = withContext(styled(Ark.SliderRange), 'range')
+export const SliderThumb = withContext(styled(Ark.SliderThumb), 'thumb')
+export const SliderTrack = withContext(styled(Ark.SliderTrack), 'track')
 
 export const Slider = Object.assign(SliderRoot, {
   Root: SliderRoot,

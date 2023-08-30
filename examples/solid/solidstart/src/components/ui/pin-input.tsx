@@ -9,10 +9,10 @@ const { withProvider, withContext } = createStyleContext(pinInput)
 export * from '@ark-ui/solid/pin-input'
 export type PinInputProps = Ark.PinInputProps & PinInputVariantProps
 
-const PinInputRoot = withProvider(styled(Ark.PinInput.Root), 'root')
-export const PinInputControl = withContext(styled(Ark.PinInput.Control), 'control')
-export const PinInputInput = withContext(styled(Ark.PinInput.Input), 'input')
-export const PinInputLabel = withContext(styled(Ark.PinInput.Label), 'label')
+const PinInputRoot = withProvider(styled(Ark.PinInput), 'root')
+export const PinInputControl = withContext(styled(Ark.PinInputControl), 'control')
+export const PinInputInput = withContext(styled(Ark.PinInputField), 'input')
+export const PinInputLabel = withContext(styled(Ark.PinInputLabel), 'label')
 
 export const PinInput = Object.assign(PinInputRoot, {
   Root: PinInputRoot,

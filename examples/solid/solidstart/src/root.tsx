@@ -18,6 +18,17 @@ import {
   Title,
 } from 'solid-start'
 
+const menuLinkStyle = css({
+  display: 'inline-block',
+  textDecoration: 'none',
+  paddingBlock: '0.5rem',
+  paddingInline: '0.75rem',
+  borderRadius: 'sm',
+  '&:hover': {
+    bg: 'bg.subtle',
+  },
+})
+
 export default function Root() {
   return (
     <Html lang="en">
@@ -37,13 +48,19 @@ export default function Root() {
               position={'fixed'}
               w="full"
             >
-              <Container>
-                <A href="/">Index</A>
-                <A href="/article">Article</A>
-                <A href="/nnnnnnnnnnnnnnnnnnnnnnnnn">Not Found</A>
+              <Container py="2.5">
+                <A class={menuLinkStyle} href="/">
+                  Index
+                </A>
+                <A class={menuLinkStyle} href="/article">
+                  Article
+                </A>
+                <A class={menuLinkStyle} href="/nnnnnnnnnnnnnnnnnnnnnnnnn">
+                  Not Found
+                </A>
               </Container>
             </Box>
-            <styled.main pt="12" class={container()}>
+            <styled.main pt="20" class={container()}>
               <Routes>
                 <FileRoutes />
               </Routes>

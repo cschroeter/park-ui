@@ -9,14 +9,14 @@ const { withProvider, withContext } = createStyleContext(dialog)
 export * from '@ark-ui/solid/dialog'
 export type DialogProps = Ark.DialogProps & DialogVariantProps
 
-const DialogRoot = withProvider(styled(Ark.Dialog.Root), 'root')
-export const DialogBackdrop = withContext(styled(Ark.Dialog.Backdrop), 'backdrop')
-export const DialogCloseTrigger = withContext(styled(Ark.Dialog.CloseTrigger), 'closeTrigger')
-export const DialogContainer = withContext(styled(Ark.Dialog.Container), 'container')
-export const DialogContent = withContext(styled(Ark.Dialog.Content), 'content')
-export const DialogDescription = withContext(styled(Ark.Dialog.Description), 'description')
-export const DialogTitle = withContext(styled(Ark.Dialog.Title), 'title')
-export const DialogTrigger = withContext(styled(Ark.Dialog.Trigger), 'trigger')
+const DialogRoot = withProvider(styled(Ark.Dialog), 'root')
+export const DialogBackdrop = withContext(styled(Ark.DialogBackdrop), 'backdrop')
+export const DialogCloseTrigger = withContext(styled(Ark.DialogCloseTrigger), 'closeTrigger')
+export const DialogContainer = withContext(styled(Ark.DialogContainer), 'container')
+export const DialogContent = withContext(styled(Ark.DialogContent), 'content')
+export const DialogDescription = withContext(styled(Ark.DialogDescription), 'description')
+export const DialogTitle = withContext(styled(Ark.DialogTitle), 'title')
+export const DialogTrigger = withContext(styled(Ark.DialogTrigger), 'trigger')
 
 export const Dialog = Object.assign(DialogRoot, {
   Root: DialogRoot,

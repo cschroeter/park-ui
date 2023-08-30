@@ -26,7 +26,7 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
     return Comp
   }
 
-  const withContext = <T extends { ref?: object }>(Component: ComponentType<T>, part?: string) => {
+  const withContext = <T extends object>(Component: ComponentType<T>, part?: string) => {
     if (!part) return Component
 
     const Comp = (props: T) => {

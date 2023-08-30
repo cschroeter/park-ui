@@ -1,12 +1,12 @@
-import './Counter.css'
-
 import { createSignal } from 'solid-js'
+
+import { Button } from './ui/button'
 
 export default function Counter() {
   const [count, setCount] = createSignal(0)
   return (
-    <button class="increment" onClick={() => setCount(count() + 1)}>
+    <Button variant="primary" size="xl" onClick={() => setCount(count() + 1)}>
       Clicks: {count()}
-    </button>
+    </Button>
   )
 }

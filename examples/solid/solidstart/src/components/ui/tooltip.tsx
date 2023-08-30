@@ -9,12 +9,12 @@ const { withProvider, withContext } = createStyleContext(tooltip)
 export * from '@ark-ui/solid/tooltip'
 export type TooltipProps = Ark.TooltipProps & TooltipVariantProps
 
-const TooltipRoot = withProvider(styled(Ark.Tooltip.Root), 'root')
-export const TooltipArrow = withContext(styled(Ark.Tooltip.Arrow), 'arrow')
-export const TooltipArrowTip = withContext(styled(Ark.Tooltip.ArrowTip), 'arrowTip')
-export const TooltipContent = withContext(styled(Ark.Tooltip.Content), 'content')
-export const TooltipPositioner = withContext(styled(Ark.Tooltip.Positioner), 'positioner')
-export const TooltipTrigger = withContext(styled(Ark.Tooltip.Trigger), 'trigger')
+const TooltipRoot = withProvider(styled(Ark.Tooltip), 'root')
+export const TooltipArrow = withContext(styled(Ark.TooltipArrow), 'arrow')
+export const TooltipArrowTip = withContext(styled(Ark.TooltipArrowTip), 'arrowTip')
+export const TooltipContent = withContext(styled(Ark.TooltipContent), 'content')
+export const TooltipPositioner = withContext(styled(Ark.TooltipPositioner), 'positioner')
+export const TooltipTrigger = withContext(styled(Ark.TooltipTrigger), 'trigger')
 
 export const Tooltip = Object.assign(TooltipRoot, {
   Root: TooltipRoot,
