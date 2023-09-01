@@ -4,6 +4,7 @@ import { Heading, Typography } from '~/components/ui/typography'
 import { Astro } from './astro'
 import { Gatsby } from './gatsby'
 import { Nextjs } from './next-js'
+import { Nuxt } from './nuxt'
 
 export const QuickStart = () => {
   return (
@@ -15,7 +16,7 @@ export const QuickStart = () => {
           with Park UI in seconds.
         </Typography>
       </Stack>
-      <Grid gap={{ base: '4', md: '6' }} columns={{ base: 3, sm: 4 }}>
+      <Grid gap={{ base: '4', md: '6' }} columns={{ base: 2, sm: 4 }}>
         <NextLink
           href="https://stackblitz.com/github/cschroeter/park-ui/tree/main/examples/react/next-js"
           target="_blank"
@@ -73,6 +74,26 @@ export const QuickStart = () => {
               <Gatsby />
               <Typography textStyle="sm" textAlign="center">
                 Gatsby
+              </Typography>
+            </Stack>
+          </Flex>
+        </NextLink>
+        <NextLink
+          href="https://stackblitz.com/github/cschroeter/park-ui/tree/main/examples/vue/nuxt"
+          target="_blank"
+        >
+          <Flex
+            borderRadius="l3"
+            borderWidth="1px"
+            p="4"
+            bg="bg.default"
+            align="center"
+            justify="center"
+          >
+            <Stack gap="2.5">
+              <Nuxt />
+              <Typography textStyle="sm" textAlign="center">
+                Nuxt
               </Typography>
             </Stack>
           </Flex>
