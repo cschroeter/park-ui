@@ -122,7 +122,7 @@ export const sitemap = [
         title: 'Card',
         description: 'A container component that displays content in a compact and organized way.',
         href: '/docs/components/card',
-        label: 'Upcoming',
+        label: 'New',
         isPrimitive: true,
         defaultProps: {},
       },
