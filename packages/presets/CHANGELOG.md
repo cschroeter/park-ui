@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.10.0] - 2023-09-03
+
 ### Added
 
 - Added support for the `disabled` state in the `RadioGroup`, `SegmentGroup` and `Tabs` components.
