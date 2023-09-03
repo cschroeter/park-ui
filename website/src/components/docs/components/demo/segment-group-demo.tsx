@@ -9,14 +9,15 @@ import {
 
 export const SegmentGroupDemo = (props: SegmentGroupProps) => {
   const options = [
-    { id: 'react', label: 'React' },
-    { id: 'solid', label: 'Solid' },
-    { id: 'vue', label: 'Vue' },
+    { id: 'overview', label: 'Overview' },
+    { id: 'customers', label: 'Customers' },
+    { id: 'premium', label: 'Premium', disabled: true },
+    { id: 'settings', label: 'Settings' },
   ]
   return (
-    <SegmentGroup defaultValue="react" {...props}>
-      {options.map((option, id) => (
-        <Segment key={id} value={option.id}>
+    <SegmentGroup defaultValue="customers" {...props}>
+      {options.map((option) => (
+        <Segment key={option.id} value={option.id} disabled={option.disabled}>
           <SegmentControl />
           <SegmentLabel>{option.label}</SegmentLabel>
         </Segment>

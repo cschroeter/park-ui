@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added support for the `disabled` state in the `RadioGroup`, `SegmentGroup` and `Tabs` components.
+
 ### Changed
 
 - Improved responsiveness of the `Tabs` component by using `overflow: auto`

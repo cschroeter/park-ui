@@ -41,7 +41,13 @@ export const tabs = defineSlotRecipe({
         px: '3',
         py: '1.5',
       },
-
+      _disabled: {
+        color: 'fg.disabled',
+        cursor: 'not-allowed',
+        _hover: {
+          color: 'fg.disabled',
+        },
+      },
       _hover: {
         color: 'fg.muted',
       },
