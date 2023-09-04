@@ -12,37 +12,26 @@ import {
 } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
-import {
-  RangeSlider,
-  RangeSliderControl,
-  RangeSliderTrack,
-  RangeSliderMarker,
-  RangeSliderMarkerGroup,
-  RangeSliderRange,
-  RangeSliderThumb,
-} from '~/components/ui/range-slider'
+import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui/tabs'
 
 const Typography = styled('p')
 
-const valuesRef = ref([-20, 20])
+const value = ref('react')
 </script>
 
 <template>
   <div :class="container({ py: '8', maxW: 'md', display: 'flex', flexDir: 'column', gap: '8' })">
-    <!-- <RangeSlider :min="50" :max="50" v-model="valuesRef">
-      <RangeSliderControl>
-        <RangeSliderTrack>
-          <RangeSliderRange />
-        </RangeSliderTrack>
-        <RangeSliderThumb v-for="(_, idx) in valuesRef" :key="idx" :index="idx" />
-      </RangeSliderControl>
-      <RangeSliderMarkerGroup>
-        <RangeSliderMarker value="{25}">25</RangeSliderMarker>
-        <RangeSliderMarker value="{50}">50</RangeSliderMarker>
-        <RangeSliderMarker value="{75}">75</RangeSliderMarker>
-      </RangeSliderMarkerGroup>
-    </RangeSlider> -->
-    <Card foo="3">
+    <Tabs v-model="value" size="sm">
+      <TabList>
+        <TabTrigger value="react"><button>React</button></TabTrigger>
+        <TabTrigger value="vue"><button>Vue</button></TabTrigger>
+        <TabIndicator />
+      </TabList>
+      <TabContent value="react">React Content</TabContent>
+      <TabContent value="vue">Vue Content</TabContent>
+    </Tabs>
+
+    <Card>
       <CardHeader>
         <CardTitle>Sign Up</CardTitle>
         <CardDescription>

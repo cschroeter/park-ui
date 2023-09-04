@@ -1,3 +1,5 @@
+import { mergeProps } from 'vue'
+
 type AnyProps = Record<string, unknown>
 type AnyRecipe = {
   (props?: AnyProps): Record<string, string>
@@ -7,10 +9,11 @@ type AnyRecipe = {
 export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const withProvider = (Dynamic: Component, part?: string) => {
     return defineComponent({
-      name: Dynamic.name,
+      name: Dynamic.name || 'DynamicComponent',
       inheritAttrs: false,
       props: { as: { type: [String, Object], default: Dynamic } },
-      setup(props, { slots }) {
+      setup(props, { slots, attrs }) {
+        // console.log(Dynamic.name, 'setup', props, slots, attrs)
         const splittedProps = computed(() => {
           return recipe.splitVariantProps(props)
         })
@@ -21,17 +24,14 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
 
         provide('styles', styles)
 
-        return () => {
-          const [_, elementProps] = splittedProps.value
-          return h(
-            props.as,
+        return () =>
+          h(
+            Dynamic,
+            { ...mergeProps(attrs, props, { class: styles.value[part ?? ''] }) },
             {
-              class: styles.value[part ?? ''],
-              ...elementProps,
+              default: () => slots.default && slots.default(),
             },
-            () => slots.default?.(),
           )
-        }
       },
     })
   }
@@ -45,12 +45,11 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
         const styles = inject<ComputedRef<Record<string, string>>>('styles')
         return () =>
           h(
-            props.as,
+            Dynamic,
+            { ...mergeProps(attrs, props, { class: styles?.value[part ?? ''] }) },
             {
-              class: styles?.value[part ?? ''],
-              ...props,
+              default: () => slots.default && slots.default(),
             },
-            () => slots.default && slots.default(),
           )
       },
     })
