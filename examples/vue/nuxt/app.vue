@@ -1,25 +1,44 @@
 <script setup lang="ts">
 import { Divider, HStack, Stack, styled } from 'styled-system/jsx'
 import { container } from 'styled-system/patterns'
-import { card } from 'styled-system/recipes'
 import { Button } from '~/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
+import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui/tabs'
 
-const { content, description, footer, header, root, title } = card()
 const Typography = styled('p')
+
+const value = ref('react')
 </script>
 
 <template>
-  <div :class="container({ py: '8', maxW: 'md' })">
-    <div :class="root">
-      <div :class="header">
-        <h2 :class="title">Sign Up</h2>
-        <p :class="description">
+  <div :class="container({ py: '8', maxW: 'md', display: 'flex', flexDir: 'column', gap: '8' })">
+    <Tabs v-model="value" size="sm">
+      <TabList>
+        <TabTrigger value="react"><button>React</button></TabTrigger>
+        <TabTrigger value="vue"><button>Vue</button></TabTrigger>
+        <TabIndicator />
+      </TabList>
+      <TabContent value="react">React Content</TabContent>
+      <TabContent value="vue">Vue Content</TabContent>
+    </Tabs>
+
+    <Card>
+      <CardHeader>
+        <CardTitle>Sign Up</CardTitle>
+        <CardDescription>
           Create an account and discover the worlds' best UI component framework.
-        </p>
-      </div>
-      <div :class="content">
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
         <Stack gap="4">
           <Stack gap="3" direction="row">
             <Button variant="secondary" width="full">Google</Button>
@@ -41,10 +60,10 @@ const Typography = styled('p')
             <Input id="password" type="password" placeholder="Your Password" />
           </Stack>
         </Stack>
-      </div>
-      <div :class="footer">
+      </CardContent>
+      <CardFooter>
         <Button width="full">Create Account</Button>
-      </div>
-    </div>
+      </CardFooter>
+    </Card>
   </div>
 </template>
