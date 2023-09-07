@@ -1,4 +1,3 @@
-'use client'
 import type { Component as ComponentType } from 'solid-js'
 import { createContext, useContext } from 'solid-js'
 

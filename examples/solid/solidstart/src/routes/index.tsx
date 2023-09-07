@@ -1,9 +1,12 @@
-import { Container } from '@styled-system/jsx'
+import { Container, Stack } from '@styled-system/jsx'
 import { For } from 'solid-js'
 import { Title } from 'solid-start'
 
 import Counter from '~/components/Counter'
+import { BellIcon } from '~/components/icons/bell'
+import { MenuIcon } from '~/components/icons/menu'
 import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
 import {
   Radio,
   RadioButtonGroup,
@@ -34,8 +37,14 @@ export default function Home() {
             <TabIndicator />
           </TabList>
           <TabContent value="button">
-            <Button size="md">Hello Park UI</Button>
-            <Counter />
+            <Stack direction="row" gap="4">
+              <Button size="md">Hello Park UI</Button>
+              <Counter />
+              <IconButton icon={MenuIcon} aria-label="menu" />
+              <IconButton aria-label="menu">
+                <BellIcon />
+              </IconButton>
+            </Stack>
           </TabContent>
           <TabContent value="radio">
             <RadioButtonGroup value="S">

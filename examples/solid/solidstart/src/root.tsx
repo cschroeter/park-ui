@@ -2,7 +2,7 @@
 import './root.css'
 
 import { css } from '@styled-system/css'
-import { Box, Container, styled } from '@styled-system/jsx'
+import { Box, Container, Stack, styled } from '@styled-system/jsx'
 import { container } from '@styled-system/patterns'
 import { Suspense } from 'solid-js'
 import {
@@ -17,6 +17,8 @@ import {
   Scripts,
   Title,
 } from 'solid-start'
+
+import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar'
 
 const menuLinkStyle = css({
   display: 'inline-block',
@@ -49,15 +51,25 @@ export default function Root() {
               w="full"
             >
               <Container py="2.5">
-                <A class={menuLinkStyle} href="/">
-                  Index
-                </A>
-                <A class={menuLinkStyle} href="/article">
-                  Article
-                </A>
-                <A class={menuLinkStyle} href="/nnnnnnnnnnnnnnnnnnnnnnnnn">
-                  Not Found
-                </A>
+                <Stack direction="row" justifyContent={'space-between'}>
+                  <styled.nav>
+                    <A class={menuLinkStyle} href="/">
+                      Index
+                    </A>
+                    <A class={menuLinkStyle} href="/article">
+                      Article
+                    </A>
+                    <A class={menuLinkStyle} href="/nnnnnnnnnnnnnnnnnnnnnnnnn">
+                      Not Found
+                    </A>
+                  </styled.nav>
+                  <Box>
+                    <Avatar>
+                      <AvatarFallback>PA</AvatarFallback>
+                      <AvatarImage src="https://i.pravatar.cc/300" alt="avatar" />
+                    </Avatar>
+                  </Box>
+                </Stack>
               </Container>
             </Box>
             <styled.main pt="20" class={container()}>
