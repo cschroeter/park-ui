@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.11.0] - 2023-09-08
+
 ### Changed
 
 - Revised `PinInput` component.

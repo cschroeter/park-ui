@@ -19,7 +19,7 @@
   "devDependencies": {
     "@nuxt/devtools": "0.8.3",
     "@pandacss/dev": "0.14.0",
-    "@park-ui/presets": "0.10.0",
+    "@park-ui/presets": "0.11.0",
     "@types/node": "18.17.1",
     "@types/vue": "2.0.0"
   }
