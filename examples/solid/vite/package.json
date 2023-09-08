@@ -1,0 +1,24 @@
+{
+  "name": "test-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ark-ui/solid": "0.11.0",
+    "solid-js": "1.7.8"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "0.14.0",
+    "@park-ui/presets": "0.11.0",
+    "typescript": "5.0.2",
+    "vite": "4.4.5",
+    "vite-plugin-solid": "2.7.0",
+    "vite-tsconfig-paths": "4.2.0"
+  }
+}
