@@ -4,6 +4,10 @@
 
 - Added open and close animations to the `Menu` component.
 
+### Changed
+
+- Revised `NUmberInput` component.
+
 ## [0.11.0] - 2023-09-08
 
 ### Changed

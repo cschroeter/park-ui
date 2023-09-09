@@ -249,7 +249,12 @@ export const sitemap = [
         title: 'Number Input',
         description: 'A field that allows user input of numeric values.',
         href: '/docs/components/number-input',
-        defaultProps: {},
+        defaultProps: {
+          size: {
+            options: ['md', 'lg', 'xl'],
+            defaultValue: 'md',
+          },
+        },
       },
       {
         title: 'Pagination',

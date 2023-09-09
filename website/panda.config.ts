@@ -22,6 +22,7 @@ export default defineConfig({
       input: [{ size: ['*'] }],
       label: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],
+      numberInput: [{ size: ['*'] }],
       radioGroup: [{ size: ['*'] }],
       radioButtonGroup: [{ size: ['*'] }],
       ratingGroup: [{ size: ['*'] }],
