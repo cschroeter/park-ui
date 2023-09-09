@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added open and close animations to the `Menu` component.
+
 ## [0.11.0] - 2023-09-08
 
 ### Changed
