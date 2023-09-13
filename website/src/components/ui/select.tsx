@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(select)
 export * from '@ark-ui/react/select'
 export type SelectProps = Ark.SelectProps & SelectVariantProps
 
-const SelectRoot = withProvider(styled(Ark.Select.Root), 'root')
+const SelectRoot = withProvider(styled(Ark.Select.Root))
 export const SelectContent = withContext(styled(Ark.Select.Content), 'content')
 export const SelectLabel = withContext(styled(Ark.Select.Label), 'label')
 export const SelectOption = withContext(styled(Ark.Select.Option), 'option')
