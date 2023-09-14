@@ -11,9 +11,11 @@ import { Input } from '~/components/ui/input'
 import {
   Select,
   SelectContent,
-  SelectOption,
+  SelectItem,
+  SelectItemText,
   SelectPositioner,
   SelectTrigger,
+  SelectValue,
 } from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 
@@ -93,26 +95,26 @@ const Member = (props: Props) => {
       </Stack>
       <Box>
         <Select
-          defaultValue={{ value: 'read', label: 'Read' }}
+          items={['Write', 'Read']}
+          defaultValue={['Read']}
           positioning={{ sameWidth: true }}
           size="sm"
         >
-          {({ selectedOption }) => (
-            <>
-              <SelectTrigger>
-                {selectedOption?.label}
-                <BiExpandVertical />
-              </SelectTrigger>
-              <Portal>
-                <SelectPositioner>
-                  <SelectContent>
-                    <SelectOption value="write" label="Write" />
-                    <SelectOption value="read" label="Read" />
-                  </SelectContent>
-                </SelectPositioner>
-              </Portal>
-            </>
-          )}
+          <SelectTrigger>
+            <SelectValue />
+            <BiExpandVertical />
+          </SelectTrigger>
+          <Portal>
+            <SelectPositioner>
+              <SelectContent>
+                {['Write', 'Read'].map((framework) => (
+                  <SelectItem key={framework} item={framework}>
+                    <SelectItemText>{framework}</SelectItemText>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectPositioner>
+          </Portal>
         </Select>
       </Box>
     </Stack>

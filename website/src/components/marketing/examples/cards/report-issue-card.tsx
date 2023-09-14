@@ -1,5 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { BiExpandVertical } from 'react-icons/bi'
+import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -15,14 +15,19 @@ import { Label } from '~/components/ui/label'
 import {
   Select,
   SelectContent,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
   SelectLabel,
-  SelectOption,
   SelectPositioner,
   SelectTrigger,
+  SelectValue,
 } from '~/components/ui/select'
+
 import { Textarea } from '~/components/ui/textarea'
 
 export const ReportIssueCard = () => {
+  const frameworks = ['React', 'Solid', 'Vue']
   return (
     <Card>
       <CardHeader>
@@ -34,31 +39,26 @@ export const ReportIssueCard = () => {
           <Label htmlFor="title">Title</Label>
           <Input id="title" />
         </Stack>
-        <Select positioning={{ sameWidth: true }}>
-          {({ selectedOption }) => (
-            <>
-              <Stack gap="1.5">
-                <SelectLabel>Framework</SelectLabel>
-                <SelectTrigger>
-                  {selectedOption?.label ?? 'Select Framework'}
-                  <BiExpandVertical />
-                </SelectTrigger>
-              </Stack>
-              <Portal>
-                <SelectPositioner>
-                  <SelectContent>
-                    <SelectOption value="react" label="React" />
-                    <SelectOption value="solid" label="Solid">
-                      Solid
-                    </SelectOption>
-                    <SelectOption value="vue" label="Vue">
-                      Vue
-                    </SelectOption>
-                  </SelectContent>
-                </SelectPositioner>
-              </Portal>
-            </>
-          )}
+        <Select items={frameworks} positioning={{ sameWidth: true }} multiple>
+          <SelectLabel>Frameworks</SelectLabel>
+          <SelectTrigger>
+            <SelectValue placeholder="Select a Framework" />
+            <BiExpandVertical />
+          </SelectTrigger>
+          <Portal>
+            <SelectPositioner>
+              <SelectContent>
+                {frameworks.map((framework) => (
+                  <SelectItem key={framework} item={framework}>
+                    <SelectItemText>{framework}</SelectItemText>
+                    <SelectItemIndicator>
+                      <BiCheck />
+                    </SelectItemIndicator>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectPositioner>
+          </Portal>
         </Select>
         <Stack gap="1.5">
           <Label htmlFor="description">Description</Label>
