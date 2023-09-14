@@ -31,7 +31,7 @@
     "@pandacss/dev": "0.15.0"
   },
   "devDependencies": {
-    "@ark-ui/react": "0.15.0-beta.0",
+    "@ark-ui/react": "0.15.0",
     "@pandacss/types": "0.15.0",
     "@release-it/keep-a-changelog": "4.0.0",
     "clean-package": "2.2.0",

@@ -55,8 +55,8 @@ importers:
         version: 1.4.1
     devDependencies:
       '@ark-ui/react':
-        specifier: 0.15.0-beta.0
-        version: 0.15.0-beta.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.15.0
+        version: 0.15.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
       '@types/fs-extra':
         specifier: 11.0.1
         version: 11.0.1
@@ -80,8 +80,8 @@ importers:
         version: 0.15.0(@internationalized/date@3.4.0)(@types/node@20.4.7)(@types/react-dom@18.2.7)(@types/react@18.2.21)(typescript@5.2.2)
     devDependencies:
       '@ark-ui/react':
-        specifier: 0.15.0-beta.0
-        version: 0.15.0-beta.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.15.0
+        version: 0.15.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
       '@pandacss/types':
         specifier: 0.15.0
         version: 0.15.0
@@ -101,8 +101,8 @@ importers:
   website:
     dependencies:
       '@ark-ui/react':
-        specifier: 0.15.0-beta.0
-        version: 0.15.0-beta.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.15.0
+        version: 0.15.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
       '@park-ui/presets':
         specifier: workspace:*
         version: link:../packages/presets
@@ -191,8 +191,8 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
 
-  /@ark-ui/react@0.15.0-beta.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-dTzNEu4mcn4rRcYPYzw2kEmOwOpBA9z2LbKaXLFdYn1nvbZEUtQTh3+YibI7ipgksIRrWfQPNvD0QrnkLwTY0g==}
+  /@ark-ui/react@0.15.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Y4vkTy969pAcWPKFvgHNoAJ0cv2VoES43/CMeWmJRUuT6WTSE8WcLbOzEQoZ6vuFcOXQh65Dk5le1CVXrVC2cQ==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'

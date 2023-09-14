@@ -17,7 +17,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@ark-ui/react": "0.14.0",
+    "@ark-ui/react": "0.15.0",
     "@pandacss/dev": "0.15.0",
     "@park-ui/presets": "0.11.0",
     "@types/node": "20.3.3",
