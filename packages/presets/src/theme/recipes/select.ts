@@ -6,6 +6,12 @@ export const select = defineSlotRecipe({
   description: 'A select style',
   slots: selectAnatomy.keys(),
   base: {
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.5',
+      width: 'full',
+    },
     content: {
       background: 'bg.default',
       borderRadius: 'l2',
@@ -28,11 +34,12 @@ export const select = defineSlotRecipe({
         outlineColor: 'border.outline',
       },
     },
-    option: {
+    item: {
       alignItems: 'center',
       borderRadius: 'l1',
       cursor: 'pointer',
       display: 'flex',
+      justifyContent: 'space-between',
       transitionDuration: 'fast',
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
@@ -42,6 +49,16 @@ export const select = defineSlotRecipe({
       _highlighted: {
         background: 'bg.subtle',
       },
+      _disabled: {
+        color: 'fg.disabled',
+        cursor: 'not-allowed',
+        _hover: {
+          background: 'transparent',
+        },
+      },
+    },
+    itemIndicator: {
+      color: 'red.300',
     },
     label: {
       color: 'fg.emphasized',
@@ -79,19 +96,19 @@ export const select = defineSlotRecipe({
     size: {
       sm: {
         content: { p: '0.5', gap: '1' },
-        option: { textStyle: 'sm', px: '2', height: '9' },
+        item: { textStyle: 'sm', px: '2', height: '9' },
         label: { textStyle: 'sm' },
         trigger: { px: '2.5', h: '9', minW: '9', fontSize: 'sm', gap: '2' },
       },
       md: {
         content: { p: '1', gap: '1' },
-        option: { textStyle: 'md', px: '2', height: '10' },
+        item: { textStyle: 'md', px: '2', height: '10' },
         label: { textStyle: 'sm' },
         trigger: { px: '3', h: '10', minW: '10', fontSize: 'md', gap: '2' },
       },
       lg: {
         content: { p: '1.5', gap: '1' },
-        option: { textStyle: 'md', px: '2', height: '11' },
+        item: { textStyle: 'md', px: '2', height: '11' },
         label: { textStyle: 'sm' },
         trigger: { px: '3.5', h: '11', minW: '11', fontSize: 'md', gap: '2' },
       },

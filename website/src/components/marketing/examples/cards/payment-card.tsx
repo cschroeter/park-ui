@@ -1,6 +1,4 @@
-import { Portal } from '@ark-ui/react'
 import { AiFillApple, AiOutlineCreditCard, AiOutlineGoogle } from 'react-icons/ai'
-import { BiExpandVertical } from 'react-icons/bi'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -19,14 +17,14 @@ import {
   RadioControl,
   RadioLabel,
 } from '~/components/ui/radio-button-group'
-import {
-  Select,
-  SelectContent,
-  SelectLabel,
-  SelectOption,
-  SelectPositioner,
-  SelectTrigger,
-} from '~/components/ui/select'
+// import {
+//   Select,
+//   SelectContent,
+//   SelectLabel,
+//   SelectOption,
+//   SelectPositioner,
+//   SelectTrigger,
+// } from '~/components/ui/select'
 
 export const PaymentCard = () => {
   return (
@@ -67,7 +65,7 @@ export const PaymentCard = () => {
           <Input id="card" />
         </Stack>
         <Stack direction="row" gap="3">
-          <Select positioning={{ sameWidth: true }}>
+          {/* <Select positioning={{ sameWidth: true }}>
             {({ selectedOption }) => (
               <>
                 <Stack gap="1.5" width="full">
@@ -123,7 +121,7 @@ export const PaymentCard = () => {
                 </Portal>
               </>
             )}
-          </Select>
+          </Select> */}
           <Stack gap="1.5">
             <Label htmlFor="cvc">CVC</Label>
             <Input id="cvc" />

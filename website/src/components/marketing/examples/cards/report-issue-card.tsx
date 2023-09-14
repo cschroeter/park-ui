@@ -1,5 +1,3 @@
-import { Portal } from '@ark-ui/react'
-import { BiExpandVertical } from 'react-icons/bi'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -12,14 +10,14 @@ import {
 } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectLabel,
-  SelectOption,
-  SelectPositioner,
-  SelectTrigger,
-} from '~/components/ui/select'
+// import {
+//   Select,
+//   SelectContent,
+//   SelectLabel,
+//   SelectOption,
+//   SelectPositioner,
+//   SelectTrigger,
+// } from '~/components/ui/select'
 import { Textarea } from '~/components/ui/textarea'
 
 export const ReportIssueCard = () => {
@@ -34,7 +32,7 @@ export const ReportIssueCard = () => {
           <Label htmlFor="title">Title</Label>
           <Input id="title" />
         </Stack>
-        <Select positioning={{ sameWidth: true }}>
+        {/* <Select positioning={{ sameWidth: true }}>
           {({ selectedOption }) => (
             <>
               <Stack gap="1.5">
@@ -59,7 +57,7 @@ export const ReportIssueCard = () => {
               </Portal>
             </>
           )}
-        </Select>
+        </Select> */}
         <Stack gap="1.5">
           <Label htmlFor="description">Description</Label>
           <Textarea id="description" placeholder="A brief description of the issue" rows={3} />

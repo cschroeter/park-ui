@@ -1,21 +1,11 @@
 'use client'
 
-import { Portal } from '@ark-ui/react'
 import { useState } from 'react'
-import { BiExpandVertical } from 'react-icons/bi'
 import { FiSliders, FiX } from 'react-icons/fi'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
 import { IconButton } from '~/components/ui/icon-button'
-import {
-  Select,
-  SelectContent,
-  SelectLabel,
-  SelectOption,
-  SelectPositioner,
-  SelectTrigger,
-} from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
 import { AccordionDemo } from './demo/accordion-demo'
@@ -185,33 +175,35 @@ export const Playground = (props: Props) => {
               .with(Pattern.string, () => <span key={key} />)
               .with(Pattern.number, () => <span key={key} />)
               .with(Pattern.boolean, (x) => <span key={key} />)
-              .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
-                <Select
-                  key={key}
-                  positioning={{ sameWidth: true }}
-                  closeOnSelect={false}
-                  size="sm"
-                  onChange={(e) => setState({ ...state, [key]: e?.value ?? '' })}
-                >
-                  {({ selectedOption }) => (
-                    <Stack gap="1.5">
-                      <SelectLabel textTransform="capitalize">{key}</SelectLabel>
-                      <SelectTrigger>
-                        {selectedOption?.label ?? defaultValue} <BiExpandVertical />
-                      </SelectTrigger>
-                      <Portal>
-                        <SelectPositioner zIndex="docked">
-                          <SelectContent>
-                            {options.map((option, id) => (
-                              <SelectOption key={id} value={option} label={option} />
-                            ))}
-                          </SelectContent>
-                        </SelectPositioner>
-                      </Portal>
-                    </Stack>
-                  )}
-                </Select>
-              ))
+              .with(
+                { defaultValue: Pattern.string },
+                ({ options, defaultValue }) => null,
+                // <Select
+                //   key={key}
+                //   positioning={{ sameWidth: true }}
+                //   closeOnSelect={false}
+                //   size="sm"
+                //   onChange={(e) => setState({ ...state, [key]: e?.value ?? '' })}
+                // >
+                //   {({ selectedOption }) => (
+                //     <Stack gap="1.5">
+                //       <SelectLabel textTransform="capitalize">{key}</SelectLabel>
+                //       <SelectTrigger>
+                //         {selectedOption?.label ?? defaultValue} <BiExpandVertical />
+                //       </SelectTrigger>
+                //       <Portal>
+                //         <SelectPositioner zIndex="docked">
+                //           <SelectContent>
+                //             {options.map((option, id) => (
+                //               <SelectOption key={id} value={option} label={option} />
+                //             ))}
+                //           </SelectContent>
+                //         </SelectPositioner>
+                //       </Portal>
+                //     </Stack>
+                //   )}
+                // </Select>
+              )
               .exhaustive(),
           )}
         </Stack>
