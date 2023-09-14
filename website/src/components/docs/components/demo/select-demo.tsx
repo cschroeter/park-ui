@@ -1,5 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { BiExpandVertical } from 'react-icons/bi'
+import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import {
   Select,
   SelectContent,
@@ -39,7 +39,9 @@ export const SelectDemo = () => {
               {items.map((item) => (
                 <SelectItem key={item.value} item={item}>
                   <SelectItemText>{item.label}</SelectItemText>
-                  <SelectItemIndicator>✓</SelectItemIndicator>
+                  <SelectItemIndicator>
+                    <BiCheck />
+                  </SelectItemIndicator>
                 </SelectItem>
               ))}
             </SelectItemGroup>
