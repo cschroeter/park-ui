@@ -8,6 +8,7 @@ import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/component
 import { Authentication } from './examples/authentication'
 import { Cards } from './examples/cards'
 import { ECommerce } from './examples/e-commerce'
+import { Editor } from './examples/editor'
 import { Marketing } from './examples/marketing'
 
 const examples = [
@@ -22,6 +23,11 @@ const examples = [
     component: Cards,
   },
   {
+    value: 'editor',
+    label: 'Editor',
+    component: Editor,
+  },
+  {
     value: 'e-commerce',
     label: 'E-Commerce',
     component: ECommerce,
@@ -34,7 +40,7 @@ const examples = [
 ]
 
 export const Examples = () => {
-  const [activeTab, setActiveTab] = useState('authentication')
+  const [activeTab, setActiveTab] = useState('editor')
   return (
     <Container pb={{ base: '16', md: '24' }} pt={{ base: '16' }} id="examples">
       <Tabs value={activeTab} onChange={(e) => setActiveTab(e.value!)}>
