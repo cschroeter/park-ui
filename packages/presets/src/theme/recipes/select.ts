@@ -62,10 +62,6 @@ export const select = defineSlotRecipe({
       textStyle: 'sm',
     },
     itemIndicator: {
-      '& svg': {
-        width: '5',
-        height: '5',
-      },
       color: 'accent.default',
     },
     label: {
@@ -105,16 +101,29 @@ export const select = defineSlotRecipe({
       sm: {
         content: { p: '0.5', gap: '1' },
         item: { textStyle: 'sm', px: '2', height: '9' },
+        itemIndicator: {
+          '& svg': {
+            width: '4',
+            height: '4',
+          },
+        },
         itemGroupLabel: {
           px: '2',
           py: '1.5',
         },
+
         label: { textStyle: 'sm' },
         trigger: { px: '2.5', h: '9', minW: '9', fontSize: 'sm', gap: '2' },
       },
       md: {
         content: { p: '1', gap: '1' },
         item: { textStyle: 'md', px: '2', height: '10' },
+        itemIndicator: {
+          '& svg': {
+            width: '5',
+            height: '5',
+          },
+        },
         itemGroupLabel: {
           px: '2',
           py: '1.5',
@@ -125,6 +134,12 @@ export const select = defineSlotRecipe({
       lg: {
         content: { p: '1.5', gap: '1' },
         item: { textStyle: 'md', px: '2', height: '11' },
+        itemIndicator: {
+          '& svg': {
+            width: '5',
+            height: '5',
+          },
+        },
         itemGroupLabel: {
           px: '2',
           py: '1.5',

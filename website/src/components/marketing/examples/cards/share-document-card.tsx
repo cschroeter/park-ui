@@ -1,5 +1,6 @@
-import { AvatarFallback, AvatarImage } from '@ark-ui/react'
+import { AvatarFallback, AvatarImage, Portal } from '@ark-ui/react'
 import { useEffect, useState } from 'react'
+import { BiExpandVertical } from 'react-icons/bi'
 import { FiCheck, FiCopy, FiUser } from 'react-icons/fi'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { useCopyToClipboard } from 'usehooks-ts'
@@ -7,13 +8,15 @@ import { Avatar } from '~/components/ui/avatar'
 import { Button } from '~/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
-// import {
-//   Select,
-//   SelectContent,
-//   SelectOption,
-//   SelectPositioner,
-//   SelectTrigger,
-// } from '~/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectItemText,
+  SelectPositioner,
+  SelectTrigger,
+  SelectValue,
+} from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 
 const members = [
@@ -91,28 +94,28 @@ const Member = (props: Props) => {
         </Box>
       </Stack>
       <Box>
-        {/* <Select
-          defaultValue={{ value: 'read', label: 'Read' }}
+        <Select
+          items={['Write', 'Read']}
+          defaultValue={['Read']}
           positioning={{ sameWidth: true }}
           size="sm"
         >
-          {({ selectedOption }) => (
-            <>
-              <SelectTrigger>
-                {selectedOption?.label}
-                <BiExpandVertical />
-              </SelectTrigger>
-              <Portal>
-                <SelectPositioner>
-                  <SelectContent>
-                    <SelectOption value="write" label="Write" />
-                    <SelectOption value="read" label="Read" />
-                  </SelectContent>
-                </SelectPositioner>
-              </Portal>
-            </>
-          )}
-        </Select> */}
+          <SelectTrigger>
+            <SelectValue />
+            <BiExpandVertical />
+          </SelectTrigger>
+          <Portal>
+            <SelectPositioner>
+              <SelectContent>
+                {['Write', 'Read'].map((framework) => (
+                  <SelectItem key={framework} item={framework}>
+                    <SelectItemText>{framework}</SelectItemText>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectPositioner>
+          </Portal>
+        </Select>
       </Box>
     </Stack>
   )

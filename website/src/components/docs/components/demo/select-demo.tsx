@@ -1,4 +1,4 @@
-import { Portal } from '@ark-ui/react'
+import { Portal, type CollectionItem } from '@ark-ui/react'
 import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import {
   Select,
@@ -13,9 +13,10 @@ import {
   SelectPositioner,
   SelectTrigger,
   SelectValue,
+  type SelectProps,
 } from '~/components/ui/select'
 
-export const SelectDemo = () => {
+export const SelectDemo = (props: SelectProps<CollectionItem>) => {
   const items = [
     { label: 'React', value: 'react' },
     { label: 'Solid', value: 'solid' },
@@ -23,7 +24,7 @@ export const SelectDemo = () => {
     { label: 'Vue', value: 'vue' },
   ]
   return (
-    <Select items={items} positioning={{ sameWidth: true }} width="2xs">
+    <Select positioning={{ sameWidth: true }} width="2xs" {...props} items={items}>
       <SelectLabel>Framework</SelectLabel>
       <SelectControl>
         <SelectTrigger>

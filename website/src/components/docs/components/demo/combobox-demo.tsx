@@ -1,4 +1,5 @@
-import { Portal } from '@ark-ui/react'
+import { Portal, type CollectionItem } from '@ark-ui/react'
+import { useState } from 'react'
 import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import {
   Combobox,
@@ -13,20 +14,28 @@ import {
   ComboboxLabel,
   ComboboxPositioner,
   ComboboxTrigger,
+  type ComboboxProps,
 } from '~/components/ui/combobox'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 
-export const ComboboxDemo = () => {
-  const items = [
-    { label: 'React', value: 'react' },
-    { label: 'Solid', value: 'solid' },
-    { label: 'Svelte', value: 'svelte', disabled: true },
-    { label: 'Vue', value: 'vue' },
-  ]
+const data = [
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Svelte', value: 'svelte', disabled: true },
+  { label: 'Vue', value: 'vue' },
+]
+
+export const ComboboxDemo = (props: ComboboxProps<CollectionItem>) => {
+  const [items, setItems] = useState(data)
+
+  const handleChange = (e: any) => {
+    const filtered = data.filter((item) => item.label.toLowerCase().includes(e.value.toLowerCase()))
+    setItems(filtered.length > 0 ? filtered : data)
+  }
 
   return (
-    <Combobox items={items} width="2xs" multiple>
+    <Combobox width="2xs" onInputChange={handleChange} {...props} items={items}>
       <ComboboxLabel>Framework</ComboboxLabel>
       <ComboboxControl>
         <ComboboxInput placeholder="Select a Framework" asChild>

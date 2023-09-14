@@ -1,4 +1,6 @@
+import { Portal } from '@ark-ui/react'
 import { AiFillApple, AiOutlineCreditCard, AiOutlineGoogle } from 'react-icons/ai'
+import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -17,14 +19,20 @@ import {
   RadioControl,
   RadioLabel,
 } from '~/components/ui/radio-button-group'
-// import {
-//   Select,
-//   SelectContent,
-//   SelectLabel,
-//   SelectOption,
-//   SelectPositioner,
-//   SelectTrigger,
-// } from '~/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
+  SelectLabel,
+  SelectPositioner,
+  SelectTrigger,
+  SelectValue,
+} from '~/components/ui/select'
+
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const years = ['2023', '2024', '2025']
 
 export const PaymentCard = () => {
   return (
@@ -65,63 +73,49 @@ export const PaymentCard = () => {
           <Input id="card" />
         </Stack>
         <Stack direction="row" gap="3">
-          {/* <Select positioning={{ sameWidth: true }}>
-            {({ selectedOption }) => (
-              <>
-                <Stack gap="1.5" width="full">
-                  <SelectLabel>Month</SelectLabel>
-                  <SelectTrigger>
-                    {selectedOption?.label ?? 'Month'}
-                    <BiExpandVertical />
-                  </SelectTrigger>
-                </Stack>
-                <Portal>
-                  <SelectPositioner>
-                    <SelectContent>
-                      {[
-                        'Jan',
-                        'Feb',
-                        'Mar',
-                        'Apr',
-                        'May',
-                        'Jun',
-                        'Jul',
-                        'Aug',
-                        'Sep',
-                        'Oct',
-                        'Nov',
-                        'Dec',
-                      ].map((month) => (
-                        <SelectOption key={month} value={month} label={month} />
-                      ))}
-                    </SelectContent>
-                  </SelectPositioner>
-                </Portal>
-              </>
-            )}
+          <Select items={months} positioning={{ sameWidth: true }}>
+            <SelectLabel>Month</SelectLabel>
+            <SelectTrigger>
+              <SelectValue placeholder="Month" />
+              <BiExpandVertical />
+            </SelectTrigger>
+
+            <Portal>
+              <SelectPositioner>
+                <SelectContent>
+                  {months.map((month) => (
+                    <SelectItem key={month} item={month}>
+                      <SelectItemText>{month}</SelectItemText>
+                      <SelectItemIndicator>
+                        <BiCheck />
+                      </SelectItemIndicator>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </SelectPositioner>
+            </Portal>
           </Select>
-          <Select positioning={{ sameWidth: true }}>
-            {({ selectedOption }) => (
-              <>
-                <Stack gap="1.5" width="full">
-                  <SelectLabel>Year</SelectLabel>
-                  <SelectTrigger>
-                    {selectedOption?.label ?? 'Year'}
-                    <BiExpandVertical />
-                  </SelectTrigger>
-                </Stack>
-                <Portal>
-                  <SelectPositioner>
-                    <SelectContent>
-                      <SelectOption value="2023" label="2023" />
-                      <SelectOption value="2024" label="2024" />
-                      <SelectOption value="2025" label="2025" />
-                    </SelectContent>
-                  </SelectPositioner>
-                </Portal>
-              </>
-            )}
-          </Select> */}
+          <Select items={years} positioning={{ sameWidth: true }}>
+            <SelectLabel>Year</SelectLabel>
+            <SelectTrigger>
+              <SelectValue placeholder="Year" />
+              <BiExpandVertical />
+            </SelectTrigger>
+            <Portal>
+              <SelectPositioner>
+                <SelectContent>
+                  {years.map((year) => (
+                    <SelectItem key={year} item={year}>
+                      <SelectItemText>{year}</SelectItemText>
+                      <SelectItemIndicator>
+                        <BiCheck />
+                      </SelectItemIndicator>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </SelectPositioner>
+            </Portal>
+          </Select>
           <Stack gap="1.5">
             <Label htmlFor="cvc">CVC</Label>
             <Input id="cvc" />
