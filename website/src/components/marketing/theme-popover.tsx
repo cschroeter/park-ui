@@ -21,7 +21,7 @@ export const ThemePopover = (props: PopoverProps) => {
           </PopoverTrigger>
           <Portal>
             <PopoverPositioner>
-              <PopoverContent p="0" borderWidth="0" boxShadow="none">
+              <PopoverContent p="0" borderWidth="0" boxShadow="none" lazyMount unmountOnExit>
                 <ThemeGenerator onCopy={() => api.close()} />
               </PopoverContent>
             </PopoverPositioner>
