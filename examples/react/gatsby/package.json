@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@ark-ui/react": "0.14.0",
-    "@pandacss/dev": "0.14.0",
+    "@pandacss/dev": "0.15.0",
     "@park-ui/presets": "0.11.0",
     "@types/node": "20.3.3",
     "@types/react": "18.2.21",
