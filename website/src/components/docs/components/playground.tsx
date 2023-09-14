@@ -59,6 +59,7 @@ import { TabsDemo } from './demo/tabs-demo'
 import { TagsInputDemo } from './demo/tags-input-demo'
 import { TextareaDemo } from './demo/textarea-demo'
 import { ToastDemo } from './demo/toast-demo'
+import { ToggleGroupDemo } from './demo/toggle-group-demo'
 import { TooltipDemo } from './demo/tooltip-demo'
 
 type Props = {
@@ -116,6 +117,7 @@ export const Playground = (props: Props) => {
     .with('Tags Input', () => TagsInputDemo)
     .with('Textarea', () => TextareaDemo)
     .with('Toast', () => ToastDemo)
+    .with('Toggle Group', () => ToggleGroupDemo)
     .with('Tooltip', () => TooltipDemo)
     .run()
 

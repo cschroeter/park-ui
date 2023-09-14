@@ -36,6 +36,7 @@ import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
 import { textarea } from './textarea'
 import { toast } from './toast'
+import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
 
 export const recipes = {
@@ -80,5 +81,6 @@ export const slotRecipes = {
   tabs,
   tagsInput,
   toast,
+  toggleGroup,
   tooltip,
 }

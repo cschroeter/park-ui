@@ -415,6 +415,26 @@ export const sitemap = [
         defaultProps: {},
       },
       {
+        title: 'Toggle Group',
+        description: 'A set of two-state buttons that can be toggled on or off.',
+        href: '/docs/components/toggle-group',
+        label: 'New',
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+          variant: {
+            options: ['outline', 'ghost'],
+            defaultValue: 'outline',
+          },
+          orientation: {
+            options: ['horizontal', 'vertical'],
+            defaultValue: 'horizontal',
+          },
+        },
+      },
+      {
         title: 'Tooltip',
         description: 'A label that provides information on hover or focus.',
         href: '/docs/components/tooltip',

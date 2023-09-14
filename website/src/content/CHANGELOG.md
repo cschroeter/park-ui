@@ -3,10 +3,13 @@
 ### Added
 
 - Added open and close animations to the `Menu` component.
+- Added `ToggleGroup` component.
 
 ### Changed
 
-- Revised `NUmberInput` component.
+- Revised `NumberInput` component.
+- Revised `Select` component.
+- Revised `Combobox` component.
 
 ## [0.11.0] - 2023-09-08
 

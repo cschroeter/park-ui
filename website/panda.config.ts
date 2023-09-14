@@ -31,6 +31,7 @@ export default defineConfig({
       switchRecipe: [{ size: ['*'] }],
       tabs: [{ size: ['*'] }],
       textarea: [{ size: ['*'] }],
+      toggleGroup: [{ size: ['*'], variant: ['*'] }],
     },
   },
   globalCss: {
