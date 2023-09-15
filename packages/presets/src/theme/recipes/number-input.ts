@@ -10,9 +10,9 @@ const trigger = {
   transitionDuration: 'normal',
   transitionProperty: 'background, border-color, color, box-shadow',
   transitionTimingFunction: 'default',
-  color: 'fg.emphasized',
+  color: 'fg.subtle',
   _hover: {
-    color: 'fg.default',
+    color: 'fg.emphasized',
     background: 'bg.subtle',
   },
   _disabled: {
