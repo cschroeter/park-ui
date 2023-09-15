@@ -50,6 +50,11 @@ export default defineConfig({
         flexDirection: 'column',
         flexGrow: '1',
       },
+      '.tiptap': {
+        '&:focus': {
+          outline: 'none',
+        },
+      },
       pre: {
         fontFamily: 'var(--font-code)',
         overflowX: 'auto',

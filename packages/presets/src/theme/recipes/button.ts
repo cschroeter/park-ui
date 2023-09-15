@@ -146,8 +146,8 @@ export const button = defineRecipe({
         px: '3.5',
         gap: '2',
         '& svg': {
-          width: '4.5',
-          height: '4.5',
+          width: '4',
+          height: '4',
         },
       },
       md: {

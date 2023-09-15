@@ -8,6 +8,7 @@ import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/component
 import { Authentication } from './examples/authentication'
 import { Cards } from './examples/cards'
 import { ECommerce } from './examples/e-commerce'
+import { Editor } from './examples/editor'
 import { Marketing } from './examples/marketing'
 
 const examples = [
@@ -20,6 +21,11 @@ const examples = [
     value: 'cards',
     label: 'Cards',
     component: Cards,
+  },
+  {
+    value: 'editor',
+    label: 'Editor',
+    component: Editor,
   },
   {
     value: 'e-commerce',
