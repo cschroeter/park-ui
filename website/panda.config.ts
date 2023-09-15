@@ -19,6 +19,7 @@ export default defineConfig({
       checkbox: [{ size: ['*'] }],
       code: [{ size: ['*'] }],
       drawer: [{ placement: ['*'] }],
+      icon: [{ size: ['*'] }],
       input: [{ size: ['*'] }],
       label: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],

@@ -15,6 +15,7 @@ import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
 import { hoverCard } from './hover-card'
+import { icon } from './icon'
 import { input } from './input'
 import { label } from './label'
 import { link } from './link'
@@ -45,6 +46,7 @@ export const recipes = {
   badge,
   button,
   code,
+  icon,
   input,
   label,
   link,

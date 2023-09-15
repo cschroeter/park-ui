@@ -39,6 +39,7 @@ import { DrawerDemo } from './demo/drawer-demo'
 import { EditableDemo } from './demo/editable-demo'
 import { HoverCardDemo } from './demo/hover-card-demo'
 import { IconButtonDemo } from './demo/icon-button-demo'
+import { IconDemo } from './demo/icon-demo'
 import { InputDemo } from './demo/input-demo'
 import { LabelDemo } from './demo/label-demo'
 import { MenuDemo } from './demo/menu-demo'
@@ -96,6 +97,7 @@ export const Playground = (props: Props) => {
     .with('Drawer', () => DrawerDemo)
     .with('Editable', () => EditableDemo)
     .with('Hover Card', () => HoverCardDemo)
+    .with('Icon', () => IconDemo)
     .with('Icon Button', () => IconButtonDemo)
     .with('Input', () => InputDemo)
     .with('Label', () => LabelDemo)

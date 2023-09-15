@@ -207,6 +207,19 @@ export const sitemap = [
         defaultProps: {},
       },
       {
+        title: 'Icon',
+        description: 'A graphical representation of an action, file, or concept.',
+        href: '/docs/components/icon',
+        isPrimitive: true,
+        label: 'New',
+        defaultProps: {
+          size: {
+            options: ['xs', 'sm', 'md', 'lg', 'xl'],
+            defaultValue: 'md',
+          },
+        },
+      },
+      {
         title: 'Icon Button',
         description:
           'A button component featuring an icon for a more visual and compact interface interaction.',

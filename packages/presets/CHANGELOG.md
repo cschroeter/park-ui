@@ -2,6 +2,7 @@
 
 ### Added
 
+- Added `Icon` component.
 - Added `ghost` variant to the `Select` component.
 
 ## [0.12.0] - 2023-09-14
