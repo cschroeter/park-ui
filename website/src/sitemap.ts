@@ -164,7 +164,12 @@ export const sitemap = [
         description: 'A single input field that combines the functionality of a select and input.',
         href: '/docs/components/combobox',
         label: 'Updated',
-        defaultProps: {},
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
       },
       {
         title: 'Dialog',

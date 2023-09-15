@@ -1,30 +1,27 @@
-import {
-  FiAlignCenter,
-  FiAlignJustify,
-  FiAlignLeft,
-  FiAlignRight,
-  FiBold,
-  FiCheckSquare,
-  FiCode,
-  FiCornerUpLeft,
-  FiCornerUpRight,
-  FiImage,
-  FiItalic,
-  FiLink,
-  FiList,
-  FiPenTool,
-  FiRotateCcw,
-  FiShare2,
-  FiUnderline,
-  FiVideo,
-} from 'react-icons/fi'
-import { Box, Container, Divider, HStack, Wrap } from 'styled-system/jsx'
+import TextAlign from '@tiptap/extension-text-align'
+import { EditorContent, useEditor } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
+import { FiRotateCcw, FiShare2 } from 'react-icons/fi'
+import { Box, Container, HStack } from 'styled-system/jsx'
+import { article } from 'styled-system/recipes'
 import { Button } from '~/components/ui/button'
-import { Toggle, ToggleGroup } from '~/components/ui/toggle-group'
+import { content } from './content'
 import { Logo } from './logo'
-import { TypographySelect } from './typography-select'
+import { MenuBar } from './menu-bar'
+
+const extensions = [
+  TextAlign.configure({
+    types: ['heading', 'paragraph'],
+  }),
+  StarterKit,
+]
 
 export const Editor = () => {
+  const editor = useEditor({
+    extensions,
+    content,
+  })
+
   return (
     <Box bg="bg.subtle" borderWidth="1px" borderRadius="l3" overflow="hidden">
       <Box bg="bg.default" py="2" className="dark">
@@ -49,79 +46,13 @@ export const Editor = () => {
       </Box>
       <Box bg="bg.default" borderBottomWidth="1px">
         <Container py="1.5" display="flex" justifyContent="center">
-          <Wrap gap="2.5" align="center">
-            <HStack gap="1">
-              <Button px="0" variant="tertiary" size="sm">
-                <FiCornerUpLeft />
-              </Button>
-              <Button px="0" variant="tertiary" size="sm">
-                <FiCornerUpRight />
-              </Button>
-            </HStack>
-            <Divider orientation="vertical" h="6" />
-            <TypographySelect />
-            <Divider orientation="vertical" h="6" />
-            <ToggleGroup multiple size="sm" variant="ghost">
-              <Toggle value="bold" aria-label="Toggle Bold">
-                <FiBold />
-              </Toggle>
-              <Toggle value="italic" aria-label="Toggle Italic">
-                <FiItalic />
-              </Toggle>
-              <Toggle value="underline" aria-label="Toggle Underline">
-                <FiUnderline />
-              </Toggle>
-            </ToggleGroup>
-            <Divider orientation="vertical" h="6" />
-            <ToggleGroup size="sm" variant="ghost">
-              <Toggle value="code" aria-label="Align Left">
-                <FiCode />
-              </Toggle>
-              <Toggle value="pen" aria-label="Align Left">
-                <FiPenTool />
-              </Toggle>
-              <Toggle value="link" aria-label="Align Left">
-                <FiLink />
-              </Toggle>
-            </ToggleGroup>
-            <Divider orientation="vertical" h="6" />
-            <ToggleGroup defaultValue={['left']} size="sm" variant="ghost">
-              <Toggle value="left" aria-label="Align Left">
-                <FiAlignLeft />
-              </Toggle>
-              <Toggle value="center" aria-label="Align Center">
-                <FiAlignCenter />
-              </Toggle>
-              <Toggle value="right" aria-label="Align Right">
-                <FiAlignRight />
-              </Toggle>
-              <Toggle value="justify" aria-label="Align Justify">
-                <FiAlignJustify />
-              </Toggle>
-            </ToggleGroup>
-            <Divider orientation="vertical" h="6" />
-            <ToggleGroup size="sm" variant="ghost" multiple>
-              <Toggle value="left" aria-label="Align Left">
-                <FiList />
-              </Toggle>
-              <Toggle value="center" aria-label="Align Center">
-                <FiCheckSquare />
-              </Toggle>
-            </ToggleGroup>
-            <Divider orientation="vertical" h="6" />
-            <ToggleGroup size="sm" variant="ghost" multiple>
-              <Toggle value="left" aria-label="Align Left">
-                <FiImage />
-              </Toggle>
-              <Toggle value="center" aria-label="Align Center">
-                <FiVideo />
-              </Toggle>
-            </ToggleGroup>
-          </Wrap>
+          <MenuBar editor={editor} />
         </Container>
       </Box>
       <Container maxW="3xl" py="5">
-        <Box bg="bg.default" borderWidth="1px" minH="3xl" />
+        <Box bg="bg.default" borderWidth="1px" minH="3xl" p="6">
+          <EditorContent editor={editor} className={article()} />
+        </Box>
       </Container>
     </Box>
   )
