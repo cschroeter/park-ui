@@ -71,32 +71,52 @@ export const select = defineSlotRecipe({
     trigger: {
       appearance: 'none',
       alignItems: 'center',
-      backgroundColor: 'bg.default',
       borderColor: 'border.emphasized',
       borderRadius: 'l2',
-      borderWidth: '1px',
       cursor: 'pointer',
       display: 'inline-flex',
       justifyContent: 'space-between',
       outline: 0,
       position: 'relative',
       transitionDuration: 'normal',
-      transitionProperty: 'box-shadow, border-color',
+      transitionProperty: 'background, box-shadow, border-color',
       transitionTimingFunction: 'default',
       width: 'full',
-      _focus: {
-        borderColor: 'border.accent',
-        boxShadow: 'accent',
-      },
       _placeholderShown: {
+        color: 'fg.subtle',
+      },
+      '& :where(svg)': {
         color: 'fg.subtle',
       },
     },
   },
   defaultVariants: {
     size: 'md',
+    variant: 'outline',
   },
   variants: {
+    variant: {
+      outline: {
+        trigger: {
+          backgroundColor: 'bg.default',
+          borderWidth: '1px',
+          _focus: {
+            borderColor: 'border.accent',
+            boxShadow: 'accent',
+          },
+        },
+      },
+      ghost: {
+        trigger: {
+          _hover: {
+            background: 'bg.subtle',
+          },
+          _focus: {
+            background: 'bg.subtle',
+          },
+        },
+      },
+    },
     size: {
       sm: {
         content: { p: '0.5', gap: '1' },

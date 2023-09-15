@@ -345,6 +345,10 @@ export const sitemap = [
             options: ['sm', 'md', 'lg'],
             defaultValue: 'md',
           },
+          variant: {
+            options: ['ghost', 'outline'],
+            defaultValue: 'outline',
+          },
         },
       },
       {

@@ -27,7 +27,7 @@ export default defineConfig({
       radioButtonGroup: [{ size: ['*'] }],
       ratingGroup: [{ size: ['*'] }],
       segmentGroup: [{ size: ['*'] }],
-      select: [{ size: ['*'] }],
+      select: [{ size: ['*'], variant: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
       tabs: [{ size: ['*'] }],
       textarea: [{ size: ['*'] }],
