@@ -40,7 +40,7 @@ const examples = [
 ]
 
 export const Examples = () => {
-  const [activeTab, setActiveTab] = useState('editor')
+  const [activeTab, setActiveTab] = useState('authentication')
   return (
     <Container pb={{ base: '16', md: '24' }} pt={{ base: '16' }} id="examples">
       <Tabs value={activeTab} onChange={(e) => setActiveTab(e.value!)}>

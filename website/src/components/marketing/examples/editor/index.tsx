@@ -20,6 +20,11 @@ export const Editor = () => {
   const editor = useEditor({
     extensions,
     content,
+    editorProps: {
+      attributes: {
+        class: article(),
+      },
+    },
   })
 
   return (
@@ -50,8 +55,8 @@ export const Editor = () => {
         </Container>
       </Box>
       <Container maxW="3xl" py="5">
-        <Box bg="bg.default" borderWidth="1px" minH="3xl" p="6">
-          <EditorContent editor={editor} className={article()} />
+        <Box bg="bg.default" borderWidth="1px" minH="3xl" p={{ base: '6', md: '12' }}>
+          <EditorContent editor={editor} />
         </Box>
       </Container>
     </Box>

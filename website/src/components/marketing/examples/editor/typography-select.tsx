@@ -38,7 +38,7 @@ export const TypographySelect = (props: Props) => {
   return (
     <Select
       items={items}
-      value={value}
+      value={value.length === 0 ? ['paragraph'] : value}
       positioning={{ sameWidth: true }}
       size="sm"
       width="32"
