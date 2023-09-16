@@ -1,5 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { FiX } from 'react-icons/fi'
+import { XIcon } from 'lucide-react'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { CopyCodeButton } from '~/components/docs/copy-code-button'
 import {
@@ -56,7 +56,7 @@ export const ThemeConfigDialog = (props: Props) => {
             </Stack>
             <DialogCloseTrigger asChild position="absolute" top="2" right="2">
               <IconButton aria-label="Close Dialog" variant="tertiary" size="sm">
-                <FiX />
+                <XIcon />
               </IconButton>
             </DialogCloseTrigger>
           </DialogContent>

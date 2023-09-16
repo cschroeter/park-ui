@@ -1,5 +1,5 @@
 'use client'
-import { FiInfo, FiX } from 'react-icons/fi'
+import { FiInfo } from 'react-icons/fi'
 import { Box, Stack } from 'styled-system/jsx'
 import { useLocalStorage } from 'usehooks-ts'
 import { Alert } from '~/components/ui/alert'
@@ -30,7 +30,7 @@ export const EarlyAccesWarning = () => {
           size="xs"
           onClick={() => setIsVisible(false)}
         >
-          <FiX />
+          <XIcon />
         </IconButton>
       </Box>
     </Alert>

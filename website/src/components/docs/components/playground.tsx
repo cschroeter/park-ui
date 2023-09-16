@@ -3,7 +3,7 @@
 import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { FiSliders, FiX } from 'react-icons/fi'
+import { FiSliders } from 'react-icons/fi'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
@@ -179,7 +179,7 @@ export const Playground = (props: Props) => {
             size="sm"
             aria-label='Close "Settings"'
           >
-            <FiX />
+            <XIcon />
           </IconButton>
         </Box>
         <Typography textStyle="sm" p="4" fontWeight="semibold">
