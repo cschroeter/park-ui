@@ -21,7 +21,7 @@ export const ThemePopover = (props: PopoverProps) => {
           </PopoverTrigger>
           <Portal>
             <PopoverPositioner>
-              <PopoverContent p="0" borderWidth="0" boxShadow="none" lazyMount unmountOnExit>
+              <PopoverContent p="0" borderWidth="0" lazyMount unmountOnExit>
                 <ThemeGenerator onCopy={() => api.close()} />
               </PopoverContent>
             </PopoverPositioner>
@@ -37,7 +37,8 @@ const PopoverIcon = (props: { isOpen: boolean }) => {
     transform: props.isOpen ? 'rotate(-180deg)' : undefined,
     transition: 'transform 0.2s',
     transformOrigin: 'center',
-    fontSize: '18px',
+    width: '18px',
+    height: '18px',
   }
   return <ChevronDownIcon style={iconStyles} />
 }
