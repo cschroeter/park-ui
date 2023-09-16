@@ -1,4 +1,5 @@
 'use client'
+import { XIcon } from 'lucide-react'
 import { FiInfo } from 'react-icons/fi'
 import { Box, Stack } from 'styled-system/jsx'
 import { useLocalStorage } from 'usehooks-ts'

@@ -1,7 +1,7 @@
 'use client'
 
 import { Portal } from '@ark-ui/react'
-import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
+import { CheckIcon, ChevronsUpDownIcon, XIcon } from 'lucide-react'
 import { useState } from 'react'
 import { FiSliders } from 'react-icons/fi'
 import { Box, Flex, Stack } from 'styled-system/jsx'
