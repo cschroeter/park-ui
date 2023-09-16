@@ -1,12 +1,12 @@
 import {
-  FiAlignCenter,
-  FiAlignJustify,
-  FiAlignLeft,
-  FiAlignRight,
-  FiBold,
-  FiItalic,
-  FiUnderline,
-} from 'react-icons/fi'
+  AlignCenterIcon,
+  AlignJustifyIcon,
+  AlignLeftIcon,
+  AlignRightIcon,
+  BoldIcon,
+  ItalicIcon,
+  UnderlineIcon,
+} from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Toggle, ToggleGroup, type ToggleGroupProps } from '~/components/ui/toggle-group'
 
@@ -22,27 +22,27 @@ export const ToggleGroupDemo = (props: ToggleGroupProps) => {
     >
       <ToggleGroup multiple {...props}>
         <Toggle value="bold" aria-label="Toggle Bold">
-          <FiBold />
+          <BoldIcon />
         </Toggle>
         <Toggle value="italic" aria-label="Toggle Italic">
-          <FiItalic />
+          <ItalicIcon />
         </Toggle>
         <Toggle value="underline" aria-label="Toggle Underline">
-          <FiUnderline />
+          <UnderlineIcon />
         </Toggle>
       </ToggleGroup>
       <ToggleGroup defaultValue={['left']} {...props}>
         <Toggle value="left" aria-label="Align Left">
-          <FiAlignLeft />
+          <AlignLeftIcon />
         </Toggle>
         <Toggle value="center" aria-label="Align Center">
-          <FiAlignCenter />
+          <AlignCenterIcon />
         </Toggle>
         <Toggle value="right" aria-label="Align Right">
-          <FiAlignRight />
+          <AlignRightIcon />
         </Toggle>
         <Toggle value="justify" aria-label="Align Justify">
-          <FiAlignJustify />
+          <AlignJustifyIcon />
         </Toggle>
       </ToggleGroup>
     </Stack>

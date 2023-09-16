@@ -1,4 +1,4 @@
-import { FiChevronDown } from 'react-icons/fi'
+import { ChevronDownIcon } from 'lucide-react'
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
   type AccordionProps,
 } from '~/components/ui/accordion'
+import { Icon } from '~/components/ui/icon'
 
 export const AccordionDemo = (props: AccordionProps) => {
   const items = ['React', 'Solid', 'Vue']
@@ -39,5 +40,9 @@ const AccordionIcon = (props: { isOpen: boolean }) => {
     transition: 'transform 0.2s',
     transformOrigin: 'center',
   }
-  return <FiChevronDown style={iconStyles} />
+  return (
+    <Icon style={iconStyles}>
+      <ChevronDownIcon />
+    </Icon>
+  )
 }

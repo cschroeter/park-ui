@@ -11,6 +11,10 @@ const trigger = {
   transitionProperty: 'background, border-color, color, box-shadow',
   transitionTimingFunction: 'default',
   color: 'fg.subtle',
+  '& :where(svg)': {
+    width: '4',
+    height: '4',
+  },
   _hover: {
     color: 'fg.emphasized',
     background: 'bg.subtle',

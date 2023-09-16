@@ -1,6 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import { FiCalendar } from 'react-icons/fi'
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -41,7 +40,7 @@ export const DatePickerDemo = (props: DatePickerProps) => {
               </DatePickerInput>
               <DatePickerTrigger asChild>
                 <IconButton variant="secondary" aria-label="Open date picker">
-                  <FiCalendar />
+                  <CalendarIcon />
                 </IconButton>
               </DatePickerTrigger>
             </Stack>
