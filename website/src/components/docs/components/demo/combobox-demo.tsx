@@ -1,6 +1,6 @@
 import { Portal, type CollectionItem } from '@ark-ui/react'
+import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import {
   Combobox,
   ComboboxContent,
@@ -43,7 +43,7 @@ export const ComboboxDemo = (props: ComboboxProps<CollectionItem>) => {
         </ComboboxInput>
         <ComboboxTrigger asChild>
           <IconButton variant="link" aria-label="open" size="xs">
-            <BiExpandVertical />
+            <ChevronsUpDownIcon />
           </IconButton>
         </ComboboxTrigger>
       </ComboboxControl>
@@ -56,7 +56,7 @@ export const ComboboxDemo = (props: ComboboxProps<CollectionItem>) => {
                 <ComboboxItem key={item.value} item={item}>
                   <ComboboxItemText>{item.label}</ComboboxItemText>
                   <ComboboxItemIndicator>
-                    <BiCheck />
+                    <CheckIcon />
                   </ComboboxItemIndicator>
                 </ComboboxItem>
               ))}

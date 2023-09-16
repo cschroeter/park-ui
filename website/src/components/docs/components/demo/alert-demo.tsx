@@ -8,7 +8,7 @@ export const AlertDemo = (props: AlertProps) => {
   return (
     <Alert {...props}>
       <Stack gap="4" direction={{ base: 'column', sm: 'row' }}>
-        <Icon size="sm" color="fg.emphasized">
+        <Icon color="fg.emphasized">
           <InfoIcon />
         </Icon>
         <Stack gap="1">

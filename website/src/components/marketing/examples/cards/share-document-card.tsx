@@ -1,6 +1,6 @@
 import { AvatarFallback, AvatarImage, Portal } from '@ark-ui/react'
+import { ChevronsUpDownIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { BiExpandVertical } from 'react-icons/bi'
 import { FiCheck, FiCopy, FiUser } from 'react-icons/fi'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { useCopyToClipboard } from 'usehooks-ts'
@@ -102,7 +102,7 @@ const Member = (props: Props) => {
         >
           <SelectTrigger>
             <SelectValue />
-            <BiExpandVertical />
+            <ChevronsUpDownIcon />
           </SelectTrigger>
           <Portal>
             <SelectPositioner>

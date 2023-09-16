@@ -1,5 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { BiCheck, BiExpandVertical } from 'react-icons/bi'
+import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -29,7 +29,7 @@ export const FontFamilySelect = () => {
       <SelectLabel>Font Family</SelectLabel>
       <SelectTrigger>
         <SelectValue />
-        <BiExpandVertical />
+        <ChevronsUpDownIcon />
       </SelectTrigger>
       <Portal>
         <SelectPositioner zIndex="toast">
@@ -38,7 +38,7 @@ export const FontFamilySelect = () => {
               <SelectItem key={id} item={fontFamily}>
                 <SelectItemText>{fontFamily.label}</SelectItemText>
                 <SelectItemIndicator>
-                  <BiCheck />
+                  <CheckIcon />
                 </SelectItemIndicator>
               </SelectItem>
             ))}

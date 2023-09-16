@@ -1,6 +1,6 @@
 import { Portal } from '@ark-ui/react'
+import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { AiFillApple, AiOutlineCreditCard, AiOutlineGoogle } from 'react-icons/ai'
-import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -77,7 +77,7 @@ export const PaymentCard = () => {
             <SelectLabel>Month</SelectLabel>
             <SelectTrigger>
               <SelectValue placeholder="Month" />
-              <BiExpandVertical />
+              <ChevronsUpDownIcon />
             </SelectTrigger>
 
             <Portal>
@@ -87,7 +87,7 @@ export const PaymentCard = () => {
                     <SelectItem key={month} item={month}>
                       <SelectItemText>{month}</SelectItemText>
                       <SelectItemIndicator>
-                        <BiCheck />
+                        <CheckIcon />
                       </SelectItemIndicator>
                     </SelectItem>
                   ))}
@@ -99,7 +99,7 @@ export const PaymentCard = () => {
             <SelectLabel>Year</SelectLabel>
             <SelectTrigger>
               <SelectValue placeholder="Year" />
-              <BiExpandVertical />
+              <ChevronsUpDownIcon />
             </SelectTrigger>
             <Portal>
               <SelectPositioner>
@@ -108,7 +108,7 @@ export const PaymentCard = () => {
                     <SelectItem key={year} item={year}>
                       <SelectItemText>{year}</SelectItemText>
                       <SelectItemIndicator>
-                        <BiCheck />
+                        <CheckIcon />
                       </SelectItemIndicator>
                     </SelectItem>
                   ))}

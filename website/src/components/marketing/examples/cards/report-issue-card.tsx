@@ -1,5 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { BiCheck, BiExpandVertical } from 'react-icons/bi'
+import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -43,7 +43,7 @@ export const ReportIssueCard = () => {
           <SelectLabel>Frameworks</SelectLabel>
           <SelectTrigger>
             <SelectValue placeholder="Select a Framework" />
-            <BiExpandVertical />
+            <ChevronsUpDownIcon />
           </SelectTrigger>
           <Portal>
             <SelectPositioner>
@@ -52,7 +52,7 @@ export const ReportIssueCard = () => {
                   <SelectItem key={framework} item={framework}>
                     <SelectItemText>{framework}</SelectItemText>
                     <SelectItemIndicator>
-                      <BiCheck />
+                      <CheckIcon />
                     </SelectItemIndicator>
                   </SelectItem>
                 ))}

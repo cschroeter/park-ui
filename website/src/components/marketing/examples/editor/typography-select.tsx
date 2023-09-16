@@ -1,6 +1,6 @@
 import { Portal } from '@ark-ui/react'
 import { type Editor } from '@tiptap/react'
-import { BiCheck, BiExpandVertical } from 'react-icons/bi'
+import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -55,7 +55,7 @@ export const TypographySelect = (props: Props) => {
     >
       <SelectTrigger>
         <SelectValue />
-        <BiExpandVertical />
+        <ChevronsUpDownIcon />
       </SelectTrigger>
       <Portal>
         <SelectPositioner>
@@ -64,7 +64,7 @@ export const TypographySelect = (props: Props) => {
               <SelectItem key={id} item={item}>
                 <SelectItemText>{item.label}</SelectItemText>
                 <SelectItemIndicator>
-                  <BiCheck />
+                  <CheckIcon />
                 </SelectItemIndicator>
               </SelectItem>
             ))}

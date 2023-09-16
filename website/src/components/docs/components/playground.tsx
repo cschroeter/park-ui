@@ -1,8 +1,8 @@
 'use client'
 
 import { Portal } from '@ark-ui/react'
+import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { BiCheck, BiExpandVertical } from 'react-icons/bi'
 import { FiSliders, FiX } from 'react-icons/fi'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
@@ -205,7 +205,7 @@ export const Playground = (props: Props) => {
                   <SelectLabel textTransform="capitalize">{key}</SelectLabel>
                   <SelectTrigger>
                     <SelectValue placeholder="Select a Framework" />
-                    <BiExpandVertical />
+                    <ChevronsUpDownIcon />
                   </SelectTrigger>
                   <Portal>
                     <SelectPositioner zIndex="docked">
@@ -214,7 +214,7 @@ export const Playground = (props: Props) => {
                           <SelectItem key={option} item={option}>
                             <SelectItemText>{option}</SelectItemText>
                             <SelectItemIndicator>
-                              <BiCheck />
+                              <CheckIcon />
                             </SelectItemIndicator>
                           </SelectItem>
                         ))}
