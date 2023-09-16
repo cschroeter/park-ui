@@ -22,7 +22,7 @@
     "@vercel/analytics": "1.0.2",
     "contentlayer": "0.3.4",
     "handlebars-loader": "1.7.3",
-    "lucide-react": "0.277.0",
+    "lucide-react": "0.279.0",
     "next": "13.4.19",
     "next-contentlayer": "0.3.4",
     "next-sitemap": "4.2.3",

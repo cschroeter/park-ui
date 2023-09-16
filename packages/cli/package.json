@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@ark-ui/react": "0.15.0",
-    "@types/fs-extra": "11.0.1",
+    "@types/fs-extra": "11.0.2",
     "@types/handlebars": "4.1.0",
     "@types/voca": "1.4.2",
     "tsx": "3.12.10",
