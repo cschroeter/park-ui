@@ -5,6 +5,10 @@
 - Added `Icon` component.
 - Added `ghost` variant to the `Select` component.
 
+### Changed
+
+- Revised `Menu` component.
+
 ## [0.12.0] - 2023-09-14
 
 ### Added

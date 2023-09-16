@@ -1,4 +1,4 @@
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { useMediaQuery } from 'usehooks-ts'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
@@ -21,7 +21,7 @@ export const PaginationDemo = (props: PaginationProps) => {
           <PaginationList>
             <PaginationPrevPageTrigger asChild>
               <IconButton variant="tertiary" aria-label="Next Page">
-                <FiChevronLeft />
+                <ChevronLeftIcon />
               </IconButton>
             </PaginationPrevPageTrigger>
 
@@ -39,7 +39,7 @@ export const PaginationDemo = (props: PaginationProps) => {
 
             <PaginationNextPageTrigger asChild>
               <IconButton variant="tertiary" aria-label="Next Page">
-                <FiChevronRight />
+                <ChevronRightIcon />
               </IconButton>
             </PaginationNextPageTrigger>
           </PaginationList>

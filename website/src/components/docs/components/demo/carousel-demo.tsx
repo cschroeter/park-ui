@@ -1,4 +1,4 @@
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import {
   Carousel,
   CarouselControl,
@@ -38,7 +38,7 @@ export const CarouselDemo = (props: CarouselProps) => {
         <CarouselControl>
           <CarouselPrevSlideTrigger asChild>
             <IconButton size="sm" variant="link" aria-label="Previous Slide">
-              <FiChevronLeft />
+              <ChevronLeftIcon />
             </IconButton>
           </CarouselPrevSlideTrigger>
           <CarouselIndicatorGroup>
@@ -48,7 +48,7 @@ export const CarouselDemo = (props: CarouselProps) => {
           </CarouselIndicatorGroup>
           <CarouselNextSlideTrigger asChild>
             <IconButton size="sm" variant="link" aria-label="Next Slide">
-              <FiChevronRight />
+              <ChevronRightIcon />
             </IconButton>
           </CarouselNextSlideTrigger>
         </CarouselControl>

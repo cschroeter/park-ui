@@ -255,7 +255,13 @@ export const sitemap = [
         title: 'Menu',
         description: 'A list of options that appears when a user interacts with a button.',
         href: '/docs/components/menu',
-        defaultProps: {},
+        label: 'Updated',
+        defaultProps: {
+          size: {
+            options: ['xs', 'sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
       },
       {
         title: 'Number Input',

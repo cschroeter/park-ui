@@ -1,15 +1,15 @@
 import { Portal } from '@ark-ui/react'
 import {
-  FiChevronRight,
-  FiCreditCard,
-  FiLogOut,
-  FiMail,
-  FiMessageSquare,
-  FiPlusCircle,
-  FiSettings,
-  FiUser,
-  FiUserPlus,
-} from 'react-icons/fi'
+  ChevronRightIcon,
+  CreditCardIcon,
+  LogOutIcon,
+  MailIcon,
+  MessageSquareIcon,
+  PlusCircleIcon,
+  SettingsIcon,
+  UserIcon,
+  UserPlusIcon,
+} from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -30,7 +30,9 @@ export const MenuDemo = (props: MenuProps) => {
   return (
     <Menu {...props}>
       <MenuTrigger asChild>
-        <Button variant="secondary">Open menu</Button>
+        <Button variant="secondary" size={props.size}>
+          Open menu
+        </Button>
       </MenuTrigger>
       <Portal>
         <MenuPositioner>
@@ -41,7 +43,7 @@ export const MenuDemo = (props: MenuProps) => {
               <MenuItem id="profile">
                 <HStack gap="6" justify="space-between" flex="1">
                   <HStack gap="2">
-                    <FiUser />
+                    <UserIcon />
                     Profile
                   </HStack>
                   <Typography as="span" color="fg.subtle" textStyle="xs">
@@ -51,57 +53,55 @@ export const MenuDemo = (props: MenuProps) => {
               </MenuItem>
               <MenuItem id="billing">
                 <HStack gap="2">
-                  <FiCreditCard /> Billing
+                  <CreditCardIcon /> Billing
                 </HStack>
               </MenuItem>
               <MenuItem id="settings">
                 <HStack gap="6" justify="space-between" flex="1">
                   <HStack gap="2">
-                    <FiSettings /> Settings
+                    <SettingsIcon /> Settings
                   </HStack>
                   <Typography as="span" color="fg.subtle" textStyle="xs">
                     ⌘,
                   </Typography>
                 </HStack>
               </MenuItem>
-              <Menu positioning={{ placement: 'right-start', gutter: -2 }}>
-                <MenuTriggerItem>
-                  <HStack gap="12" justify="space-between" flex="1">
-                    <HStack gap="2">
-                      <FiUserPlus />
-                      Inivte member
-                    </HStack>
-                    <FiChevronRight />
+              <Menu positioning={{ placement: 'right-start', gutter: -2 }} {...props}>
+                <MenuTriggerItem justifyContent="space-between">
+                  <HStack gap="2">
+                    <UserPlusIcon />
+                    Inivte member
                   </HStack>
+                  <ChevronRightIcon />
                 </MenuTriggerItem>
                 <Portal>
                   <MenuPositioner>
                     <MenuContent>
                       <MenuItem id="email">
                         <HStack gap="2">
-                          <FiMail /> Email
+                          <MailIcon /> Email
                         </HStack>
                       </MenuItem>
                       <MenuItem id="message">
                         <HStack gap="2">
-                          <FiMessageSquare /> Message
+                          <MessageSquareIcon /> Message
                         </HStack>
                       </MenuItem>
                       <MenuSeparator />
                       <MenuItem id="other">
                         <HStack gap="2">
-                          <FiPlusCircle /> More Options...
+                          <PlusCircleIcon />
+                          More Options...
                         </HStack>
                       </MenuItem>
                     </MenuContent>
                   </MenuPositioner>
                 </Portal>
               </Menu>
-
               <MenuSeparator />
               <MenuItem id="logout">
                 <HStack gap="2">
-                  <FiLogOut />
+                  <LogOutIcon />
                   Logout
                 </HStack>
               </MenuItem>
