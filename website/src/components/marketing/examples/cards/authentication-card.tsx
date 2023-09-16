@@ -1,4 +1,4 @@
-import { FaGithub, FaGoogle } from 'react-icons/fa'
+import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
 import { Divider, HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -26,11 +26,11 @@ export const AuthenticationCard = () => {
         <Stack gap="4">
           <Stack direction="row" gap="3">
             <Button variant="secondary" width="full">
-              <FaGoogle />
+              <SiGoogle />
               Google
             </Button>
             <Button variant="secondary" width="full">
-              <FaGithub />
+              <SiGithub />
               GitHub
             </Button>
           </Stack>

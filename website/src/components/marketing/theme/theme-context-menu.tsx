@@ -1,5 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { FiCopy, FiMoreVertical, FiRotateCcw } from 'react-icons/fi'
+import { CopyIcon, MoreVerticalIcon, RotateCcwIcon } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
 import { IconButton } from '~/components/ui/icon-button'
 import { Menu, MenuContent, MenuItem, MenuPositioner, MenuTrigger } from '~/components/ui/menu'
@@ -15,7 +15,7 @@ export const ThemeContextMenu = (props: Props) => {
     <Menu size="xs" positioning={{ placement: 'bottom-end' }}>
       <MenuTrigger asChild>
         <IconButton aria-label="Open Menu" variant="tertiary" size="sm">
-          <FiMoreVertical />
+          <MoreVerticalIcon />
         </IconButton>
       </MenuTrigger>
       <Portal>
@@ -23,13 +23,13 @@ export const ThemeContextMenu = (props: Props) => {
           <MenuContent minW="48">
             <MenuItem id="copy" onClick={() => onCopy()}>
               <HStack gap="2">
-                <FiCopy />
+                <CopyIcon />
                 Copy Config
               </HStack>
             </MenuItem>
             <MenuItem id="reset" onClick={() => onReset()}>
               <HStack gap="2">
-                <FiRotateCcw />
+                <RotateCcwIcon />
                 Restore Defaults
               </HStack>
             </MenuItem>

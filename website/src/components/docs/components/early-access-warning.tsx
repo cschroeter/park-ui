@@ -1,9 +1,9 @@
 'use client'
-import { XIcon } from 'lucide-react'
-import { FiInfo } from 'react-icons/fi'
+import { InfoIcon, XIcon } from 'lucide-react'
 import { Box, Stack } from 'styled-system/jsx'
 import { useLocalStorage } from 'usehooks-ts'
 import { Alert } from '~/components/ui/alert'
+import { Icon } from '~/components/ui/icon'
 import { IconButton } from '~/components/ui/icon-button'
 import { Heading, Typography } from '~/components/ui/typography'
 
@@ -12,9 +12,9 @@ export const EarlyAccesWarning = () => {
   return isVisible ? (
     <Alert position="relative">
       <Stack gap="4" direction={{ base: 'column', sm: 'row' }}>
-        <Box fontSize="1.25rem" color="fg.emphasized">
-          <FiInfo />
-        </Box>
+        <Icon color="fg.emphasized">
+          <InfoIcon />
+        </Icon>
         <Stack gap="1">
           <Heading as="h5" fontWeight="semibold">
             Early Access

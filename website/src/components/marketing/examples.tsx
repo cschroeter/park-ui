@@ -1,6 +1,6 @@
 'use client'
+import { ArrowRightIcon } from 'lucide-react'
 import { useState } from 'react'
-import { FiArrowRight } from 'react-icons/fi'
 import { css, cx } from 'styled-system/css'
 import { Container, Spacer } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
@@ -24,7 +24,7 @@ const examples = [
   },
   {
     value: 'editor',
-    label: 'Editor',
+    label: 'Text Editor',
     component: Editor,
   },
   {
@@ -60,7 +60,7 @@ export const Examples = () => {
               css({ alignSelf: 'flex-start', display: { base: 'none', md: 'inline-flex' } }),
             )}
           >
-            Get Code <FiArrowRight />
+            Get Code <ArrowRightIcon />
           </a>
         </TabList>
         {examples.map((example) => (

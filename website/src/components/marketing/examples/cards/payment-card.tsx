@@ -1,6 +1,6 @@
 import { Portal } from '@ark-ui/react'
-import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import { AiFillApple, AiOutlineCreditCard, AiOutlineGoogle } from 'react-icons/ai'
+import { SiApple, SiPaypal } from '@icons-pack/react-simple-icons'
+import { CheckIcon, ChevronsUpDownIcon, CreditCardIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import {
@@ -51,9 +51,9 @@ export const PaymentCard = () => {
           gridTemplateColumns="repeat(3, 1fr)"
         >
           {[
-            { value: 'card', label: 'Card', icon: AiOutlineCreditCard },
-            { value: 'apple', label: 'Apple', icon: AiFillApple },
-            { value: 'google', label: 'Google', icon: AiOutlineGoogle },
+            { value: 'card', label: 'Card', icon: CreditCardIcon },
+            { value: 'paypal', label: 'Paypal', icon: SiPaypal },
+            { value: 'apple', label: 'Apple', icon: SiApple },
           ].map((option, id) => (
             <Radio key={id} value={option.value} height="unset" py="4">
               <RadioControl />

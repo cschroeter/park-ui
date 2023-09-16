@@ -103,6 +103,9 @@ importers:
       '@ark-ui/react':
         specifier: 0.15.0
         version: 0.15.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
+      '@icons-pack/react-simple-icons':
+        specifier: 9.0.0
+        version: 9.0.0(react@18.2.0)
       '@park-ui/presets':
         specifier: workspace:*
         version: link:../packages/presets
@@ -151,9 +154,6 @@ importers:
       react-hook-form:
         specifier: 7.46.1
         version: 7.46.1(react@18.2.0)
-      react-icons:
-        specifier: 4.11.0
-        version: 4.11.0(react@18.2.0)
       shiki:
         specifier: 0.14.4
         version: 0.14.4
@@ -1677,6 +1677,14 @@ packages:
   /@iarna/toml@2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
+
+  /@icons-pack/react-simple-icons@9.0.0(react@18.2.0):
+    resolution: {integrity: sha512-2ZLcJKCmz0VESaKbuiJ8ks4Qd8fldTdK63JkO3bLgD0GVXQi994jy7/1Kd+mIrMmrSMGPe23+DGGx5g9aAsc2w==}
+    peerDependencies:
+      react: ^16.13 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@internationalized/date@3.4.0:
     resolution: {integrity: sha512-QUDSGCsvrEVITVf+kv9VSAraAmCgjQmU5CiXtesUBBhBe374NmnEIIaOFBZ72t29dfGMBP0zF+v6toVnbcc6jg==}
@@ -9175,14 +9183,6 @@ packages:
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
-    dependencies:
-      react: 18.2.0
-    dev: false
-
-  /react-icons@4.11.0(react@18.2.0):
-    resolution: {integrity: sha512-V+4khzYcE5EBk/BvcuYRq6V/osf11ODUM2J8hg2FDSswRrGvqiYUYPRy4OdrWaQOBj4NcpJfmHZLNaD+VH0TyA==}
-    peerDependencies:
-      react: '*'
     dependencies:
       react: 18.2.0
     dev: false

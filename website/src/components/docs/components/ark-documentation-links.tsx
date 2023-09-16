@@ -1,7 +1,8 @@
+import { CableIcon } from 'lucide-react'
 import NextLink from 'next/link'
-import { AiFillApi } from 'react-icons/ai'
 import { HStack } from 'styled-system/jsx'
 import { Badge } from '~/components/ui/badge'
+import { Icon } from '~/components/ui/icon'
 import { slugify } from '~/lib/slugify'
 import { ArkIcon } from '../../icons/ark'
 
@@ -29,7 +30,10 @@ export const ArkDocumentationLinks = (props: Props) => {
         rel="noopener noreferrer"
       >
         <Badge borderRadius="l2">
-          <AiFillApi /> API Reference
+          <Icon size="xs">
+            <CableIcon />
+          </Icon>
+          API Reference
         </Badge>
       </NextLink>
     </HStack>

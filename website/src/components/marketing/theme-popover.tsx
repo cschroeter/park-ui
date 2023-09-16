@@ -1,6 +1,6 @@
 'use client'
 import { Portal } from '@ark-ui/react'
-import { FiChevronDown } from 'react-icons/fi'
+import { ChevronDownIcon } from 'lucide-react'
 import { link } from 'styled-system/recipes'
 import {
   Popover,
@@ -39,5 +39,5 @@ const PopoverIcon = (props: { isOpen: boolean }) => {
     transformOrigin: 'center',
     fontSize: '18px',
   }
-  return <FiChevronDown style={iconStyles} />
+  return <ChevronDownIcon style={iconStyles} />
 }

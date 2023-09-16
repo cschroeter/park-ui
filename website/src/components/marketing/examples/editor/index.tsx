@@ -1,7 +1,7 @@
 import TextAlign from '@tiptap/extension-text-align'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { FiRotateCcw, FiShare2 } from 'react-icons/fi'
+import { RotateCcwIcon, Share2Icon } from 'lucide-react'
 import { Box, Container, HStack } from 'styled-system/jsx'
 import { article } from 'styled-system/recipes'
 import { Button } from '~/components/ui/button'
@@ -38,11 +38,11 @@ export const Editor = () => {
             <Box>Center</Box>
             <HStack gap="3">
               <Button size="sm" variant="tertiary">
-                <FiRotateCcw />
+                <RotateCcwIcon />
                 Reset
               </Button>
               <Button size="sm" variant="primary">
-                <FiShare2 />
+                <Share2Icon />
                 Share
               </Button>
             </HStack>

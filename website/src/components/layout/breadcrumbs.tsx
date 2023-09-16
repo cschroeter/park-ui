@@ -1,9 +1,10 @@
 'use client'
+import { ChevronRightIcon } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { Fragment } from 'react'
-import { FiChevronRight } from 'react-icons/fi'
-import { Box, HStack, type HstackProps } from 'styled-system/jsx'
+import { HStack, type HstackProps } from 'styled-system/jsx'
 import { Typography } from '~/components/ui/typography'
+import { Icon } from '../ui/icon'
 
 export const Breadcrumbs = (props: HstackProps) => {
   const pathName = usePathname()
@@ -27,9 +28,9 @@ export const Breadcrumbs = (props: HstackProps) => {
             {crumb}
           </Typography>
           {arr.length - 1 !== index && (
-            <Box color="fg.subtle" alignSelf="end">
-              <FiChevronRight />
-            </Box>
+            <Icon color="fg.subtle" alignSelf="center" size="sm">
+              <ChevronRightIcon />
+            </Icon>
           )}
         </Fragment>
       ))}

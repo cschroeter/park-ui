@@ -1,6 +1,6 @@
 'use client'
+import { SiReact, SiSolid, SiVuedotjs } from '@icons-pack/react-simple-icons'
 import NextLink from 'next/link'
-import { TbBrandReact, TbBrandSolidjs, TbBrandVue } from 'react-icons/tb'
 import { Box, Container, Flex, HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Heading, Typography } from '../ui/typography'
@@ -37,9 +37,9 @@ export const Hero = () => {
           </Stack>
           <HStack gap={{ base: '10', md: '12' }}>
             {[
-              { framework: 'React', icon: <TbBrandReact /> },
-              { framework: 'Vue', icon: <TbBrandVue /> },
-              { framework: 'Solid', icon: <TbBrandSolidjs /> },
+              { framework: 'React', icon: <SiReact /> },
+              { framework: 'Vue', icon: <SiVuedotjs /> },
+              { framework: 'Solid', icon: <SiSolid /> },
             ].map(({ framework, icon }) => (
               <HStack key={framework} gap="2">
                 <Box fontSize="3xl" color="fg.emphasized">

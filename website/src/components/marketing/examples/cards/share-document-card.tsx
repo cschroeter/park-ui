@@ -1,7 +1,6 @@
 import { AvatarFallback, AvatarImage, Portal } from '@ark-ui/react'
-import { ChevronsUpDownIcon } from 'lucide-react'
+import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { FiCheck, FiCopy, FiUser } from 'react-icons/fi'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { useCopyToClipboard } from 'usehooks-ts'
 import { Avatar } from '~/components/ui/avatar'
@@ -80,7 +79,7 @@ const Member = (props: Props) => {
       <Stack direction="row" gap="3">
         <Avatar>
           <AvatarFallback>
-            <FiUser />
+            <UserIcon />
           </AvatarFallback>
           <AvatarImage src={avatar} alt={name} />
         </Avatar>
@@ -143,7 +142,7 @@ const CopyButton = (props: CopyButtonProps) => {
 
   return (
     <Button variant="secondary" aria-label="Copy code to clipboard" onClick={handleClick} px="0">
-      {visible ? <FiCopy /> : <FiCheck />}
+      {visible ? <CopyIcon /> : <CheckIcon />}
     </Button>
   )
 }

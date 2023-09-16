@@ -1,5 +1,5 @@
+import { ChevronDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { FiChevronDown } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
 import {
   Accordion,
@@ -75,5 +75,5 @@ const AccordionIcon = (props: { isOpen: boolean }) => {
     transition: 'transform 0.2s',
     transformOrigin: 'center',
   }
-  return <FiChevronDown style={iconStyles} />
+  return <ChevronDownIcon size="18" style={iconStyles} />
 }

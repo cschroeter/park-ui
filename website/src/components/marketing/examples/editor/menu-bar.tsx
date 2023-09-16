@@ -1,22 +1,22 @@
 import { Editor } from '@tiptap/react'
 import {
-  FiAlignCenter,
-  FiAlignJustify,
-  FiAlignLeft,
-  FiAlignRight,
-  FiBold,
-  FiCheckSquare,
-  FiCode,
-  FiCornerUpLeft,
-  FiCornerUpRight,
-  FiImage,
-  FiItalic,
-  FiLink,
-  FiList,
-  FiPenTool,
-  FiUnderline,
-  FiVideo,
-} from 'react-icons/fi'
+  AlignCenterIcon,
+  AlignJustifyIcon,
+  AlignLeftIcon,
+  AlignRightIcon,
+  BoldIcon,
+  BrushIcon,
+  CheckSquareIcon,
+  CodeIcon,
+  ImageIcon,
+  ItalicIcon,
+  LinkIcon,
+  ListIcon,
+  RedoIcon,
+  StrikethroughIcon,
+  UndoIcon,
+  VideoIcon,
+} from 'lucide-react'
 import { Divider, HStack, Wrap } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Toggle, ToggleGroup } from '~/components/ui/toggle-group'
@@ -44,7 +44,7 @@ export const MenuBar = (props: Props) => {
             onClick={() => editor.chain().focus().undo().run()}
             disabled={!editor.can().chain().focus().undo().run()}
           >
-            <FiCornerUpLeft />
+            <UndoIcon />
           </Button>
           <Button
             px="0"
@@ -53,7 +53,7 @@ export const MenuBar = (props: Props) => {
             onClick={() => editor.chain().focus().redo().run()}
             disabled={!editor.can().chain().focus().redo().run()}
           >
-            <FiCornerUpRight />
+            <RedoIcon />
           </Button>
         </HStack>
         <Divider orientation="vertical" h="6" />
@@ -74,21 +74,21 @@ export const MenuBar = (props: Props) => {
             aria-label="Toggle Bold"
             onClick={() => editor.chain().focus().toggleBold().run()}
           >
-            <FiBold />
+            <BoldIcon />
           </Toggle>
           <Toggle
             value="italic"
             aria-label="Toggle Italic"
             onClick={() => editor.chain().focus().toggleItalic().run()}
           >
-            <FiItalic />
+            <ItalicIcon />
           </Toggle>
           <Toggle
             value="underline"
             aria-label="Toggle Underline"
             onClick={() => editor.chain().focus().toggleStrike().run()}
           >
-            <FiUnderline />
+            <StrikethroughIcon />
           </Toggle>
         </ToggleGroup>
         <Divider orientation="vertical" h="6" />
@@ -104,13 +104,13 @@ export const MenuBar = (props: Props) => {
             onClick={() => editor.chain().focus().toggleCode().run()}
             disabled={!editor.can().chain().focus().toggleCode().run()}
           >
-            <FiCode />
+            <CodeIcon />
           </Toggle>
           <Toggle value="pen" aria-label="Align Left">
-            <FiPenTool />
+            <BrushIcon />
           </Toggle>
           <Toggle value="link" aria-label="Align Left">
-            <FiLink />
+            <LinkIcon />
           </Toggle>
         </ToggleGroup>
         <Divider orientation="vertical" h="6" />
@@ -132,34 +132,34 @@ export const MenuBar = (props: Props) => {
           }
         >
           <Toggle value="left" aria-label="Align Left">
-            <FiAlignLeft />
+            <AlignLeftIcon />
           </Toggle>
           <Toggle value="center" aria-label="Align Center">
-            <FiAlignCenter />
+            <AlignCenterIcon />
           </Toggle>
           <Toggle value="right" aria-label="Align Right">
-            <FiAlignRight />
+            <AlignRightIcon />
           </Toggle>
           <Toggle value="justify" aria-label="Align Justify">
-            <FiAlignJustify />
+            <AlignJustifyIcon />
           </Toggle>
         </ToggleGroup>
         <Divider orientation="vertical" h="6" />
         <ToggleGroup size="sm" variant="ghost" multiple>
           <Toggle value="left" aria-label="Align Left">
-            <FiList />
+            <ListIcon />
           </Toggle>
           <Toggle value="center" aria-label="Align Center">
-            <FiCheckSquare />
+            <CheckSquareIcon />
           </Toggle>
         </ToggleGroup>
         <Divider orientation="vertical" h="6" />
         <ToggleGroup size="sm" variant="ghost" multiple>
           <Toggle value="left" aria-label="Align Left">
-            <FiImage />
+            <ImageIcon />
           </Toggle>
           <Toggle value="center" aria-label="Align Center">
-            <FiVideo />
+            <VideoIcon />
           </Toggle>
         </ToggleGroup>
       </Wrap>

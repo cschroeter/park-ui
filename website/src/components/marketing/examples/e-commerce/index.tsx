@@ -1,8 +1,9 @@
-import { BiLogoFacebookCircle, BiLogoPinterest, BiLogoWhatsapp } from 'react-icons/bi'
-import { FiHeart, FiHelpCircle, FiShield, FiShoppingBag } from 'react-icons/fi'
+import { SiFacebook, SiPinterest, SiWhatsapp } from '@icons-pack/react-simple-icons'
+import { HeartIcon, HelpCircleIcon, ShieldIcon, ShoppingBagIcon } from 'lucide-react'
 import { Box, Divider, Grid, HStack, Stack } from 'styled-system/jsx'
 import { Badge } from '~/components/ui/badge'
 import { Button } from '~/components/ui/button'
+import { Icon } from '~/components/ui/icon'
 import { Heading, Typography } from '~/components/ui/typography'
 import { product } from './data'
 import { ImageGallery } from './image-gallery'
@@ -44,22 +45,28 @@ export const ECommerce = () => {
           <Grid columns={2} gap="8">
             <QuantityPicker />
             <Button size="xl" variant="secondary" alignSelf="end">
-              <FiHeart /> Favourite
+              <HeartIcon /> Favourite
             </Button>
           </Grid>
           <Button size="xl">Add to Cart</Button>
           <Box bg="bg.subtle" p="4" borderRadius="l2">
             <Stack gap="4" color="fg.muted" fontWeight="medium">
-              <HStack gap="3">
-                <FiShoppingBag />
+              <HStack gap="2">
+                <Icon size="sm">
+                  <ShoppingBagIcon />
+                </Icon>
                 <Typography textStyle="sm"> Free shipping and returns</Typography>
               </HStack>
-              <HStack gap="3">
-                <FiShield />
+              <HStack gap="2">
+                <Icon size="sm">
+                  <ShieldIcon />
+                </Icon>
                 <Typography textStyle="sm">2 year extended warranty</Typography>
               </HStack>
-              <HStack gap="3">
-                <FiHelpCircle />
+              <HStack gap="2">
+                <Icon size="sm">
+                  <HelpCircleIcon />
+                </Icon>
                 <Typography textStyle="sm">We're here for you 24/7</Typography>
               </HStack>
             </Stack>
@@ -68,10 +75,16 @@ export const ECommerce = () => {
             <Typography textStyle="sm" color="fg.emphasized" fontWeight="medium">
               Share
             </Typography>
-            <HStack gap="3" fontSize="1.5rem" color="fg.subtle">
-              <BiLogoPinterest />
-              <BiLogoFacebookCircle />
-              <BiLogoWhatsapp />
+            <HStack gap="3" color="fg.subtle">
+              <Icon>
+                <SiPinterest />
+              </Icon>
+              <Icon>
+                <SiFacebook />
+              </Icon>
+              <Icon>
+                <SiWhatsapp />
+              </Icon>
             </HStack>
           </Stack>
         </Stack>

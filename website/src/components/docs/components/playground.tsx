@@ -1,9 +1,8 @@
 'use client'
 
 import { Portal } from '@ark-ui/react'
-import { CheckIcon, ChevronsUpDownIcon, XIcon } from 'lucide-react'
+import { CheckIcon, ChevronsUpDownIcon, SlidersIcon, XIcon } from 'lucide-react'
 import { useState } from 'react'
-import { FiSliders } from 'react-icons/fi'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
@@ -136,7 +135,7 @@ export const Playground = (props: Props) => {
             size="sm"
             aria-label="Open settings"
           >
-            <FiSliders />
+            <SlidersIcon />
           </IconButton>
         </Box>
       )}
