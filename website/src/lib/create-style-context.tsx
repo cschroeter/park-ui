@@ -9,9 +9,11 @@ type Recipe = {
 type Slot<R extends Recipe> = keyof ReturnType<R>
 type SlotRecipe<R extends Recipe> = Record<Slot<R>, string>
 type VariantProps<R extends Recipe> = Parameters<R>[0]
+type Assign<T, U> = Omit<T, keyof U> & U
 
 export interface StyledContextProvider<T extends ElementType, R extends Recipe> {
   (props: ComponentProps<T> & VariantProps<R>): JSX.Element
+  <P extends object>(props: Assign<ComponentProps<T>, P> & VariantProps<R>): JSX.Element
 }
 
 const cx = (...args: (string | undefined)[]) => args.filter(Boolean).join(' ')
