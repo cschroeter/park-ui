@@ -1,12 +1,12 @@
 {
-  "name": "@park-ui/root",
-  "version": "0.0.0",
+  "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "website"
+  ],
   "scripts": {
-    "prepare": "husky install",
-    "cli": "pnpm --filter=@park-ui/cli",
-    "presets": "pnpm --filter=@park-ui/presets",
-    "web": "pnpm --filter=@park-ui/website"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
@@ -25,6 +25,5 @@
     "**/*.{js,jsx,ts,tsx,json}": [
       "prettier --plugin prettier-plugin-organize-imports --write"
     ]
-  },
-  "packageManager": "pnpm@8.6.7"
+  }
 }
