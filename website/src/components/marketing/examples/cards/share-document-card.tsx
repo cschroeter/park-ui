@@ -1,7 +1,6 @@
 import { AvatarFallback, AvatarImage, Portal } from '@ark-ui/react'
+import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { BiExpandVertical } from 'react-icons/bi'
-import { FiCheck, FiCopy, FiUser } from 'react-icons/fi'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { useCopyToClipboard } from 'usehooks-ts'
 import { Avatar } from '~/components/ui/avatar'
@@ -11,9 +10,11 @@ import { Input } from '~/components/ui/input'
 import {
   Select,
   SelectContent,
-  SelectOption,
+  SelectItem,
+  SelectItemText,
   SelectPositioner,
   SelectTrigger,
+  SelectValue,
 } from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 
@@ -78,7 +79,7 @@ const Member = (props: Props) => {
       <Stack direction="row" gap="3">
         <Avatar>
           <AvatarFallback>
-            <FiUser />
+            <UserIcon />
           </AvatarFallback>
           <AvatarImage src={avatar} alt={name} />
         </Avatar>
@@ -93,26 +94,26 @@ const Member = (props: Props) => {
       </Stack>
       <Box>
         <Select
-          defaultValue={{ value: 'read', label: 'Read' }}
+          items={['Write', 'Read']}
+          defaultValue={['Read']}
           positioning={{ sameWidth: true }}
           size="sm"
         >
-          {({ selectedOption }) => (
-            <>
-              <SelectTrigger>
-                {selectedOption?.label}
-                <BiExpandVertical />
-              </SelectTrigger>
-              <Portal>
-                <SelectPositioner>
-                  <SelectContent>
-                    <SelectOption value="write" label="Write" />
-                    <SelectOption value="read" label="Read" />
-                  </SelectContent>
-                </SelectPositioner>
-              </Portal>
-            </>
-          )}
+          <SelectTrigger>
+            <SelectValue />
+            <ChevronsUpDownIcon />
+          </SelectTrigger>
+          <Portal>
+            <SelectPositioner>
+              <SelectContent>
+                {['Write', 'Read'].map((framework) => (
+                  <SelectItem key={framework} item={framework}>
+                    <SelectItemText>{framework}</SelectItemText>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectPositioner>
+          </Portal>
         </Select>
       </Box>
     </Stack>
@@ -141,7 +142,7 @@ const CopyButton = (props: CopyButtonProps) => {
 
   return (
     <Button variant="secondary" aria-label="Copy code to clipboard" onClick={handleClick} px="0">
-      {visible ? <FiCopy /> : <FiCheck />}
+      {visible ? <CopyIcon /> : <CheckIcon />}
     </Button>
   )
 }

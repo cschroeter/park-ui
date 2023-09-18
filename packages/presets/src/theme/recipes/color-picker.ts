@@ -9,7 +9,7 @@ export const colorPicker = defineSlotRecipe({
     content: {
       borderRadius: 'l3',
       borderWidth: '1px',
-      boxShadow: 'lg',
+      boxShadow: 'sm',
       padding: '4',
       maxW: '264px',
     },

@@ -1,15 +1,16 @@
-import { FiInfo } from 'react-icons/fi'
-import { Box, Stack } from 'styled-system/jsx'
+import { InfoIcon } from 'lucide-react'
+import { Stack } from 'styled-system/jsx'
 import { Alert, type AlertProps } from '~/components/ui/alert'
+import { Icon } from '~/components/ui/icon'
 import { Heading, Typography } from '~/components/ui/typography'
 
 export const AlertDemo = (props: AlertProps) => {
   return (
     <Alert {...props}>
       <Stack gap="4" direction={{ base: 'column', sm: 'row' }}>
-        <Box fontSize="1.25rem" color="fg.emphasized">
-          <FiInfo />
-        </Box>
+        <Icon color="fg.emphasized">
+          <InfoIcon />
+        </Icon>
         <Stack gap="1">
           <Heading as="h5" fontWeight="medium">
             Browser update available

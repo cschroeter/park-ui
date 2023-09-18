@@ -1,6 +1,6 @@
 'use client'
+import { CheckIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useCopyToClipboard } from 'usehooks-ts'
 import { IconButton } from '~/components/ui/icon-button'
 
@@ -30,7 +30,7 @@ export const CopyCodeButton = (props: Props) => {
       aria-label="Copy code to clipboard"
       onClick={handleClick}
     >
-      {visible ? <FiCopy /> : <FiCheck />}
+      {visible ? <CopyIcon /> : <CheckIcon />}
     </IconButton>
   )
 }

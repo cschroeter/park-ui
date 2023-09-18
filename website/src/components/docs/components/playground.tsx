@@ -1,9 +1,8 @@
 'use client'
 
 import { Portal } from '@ark-ui/react'
+import { CheckIcon, ChevronsUpDownIcon, SlidersIcon, XIcon } from 'lucide-react'
 import { useState } from 'react'
-import { BiExpandVertical } from 'react-icons/bi'
-import { FiSliders, FiX } from 'react-icons/fi'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
 import { useBoolean } from 'usehooks-ts'
@@ -11,10 +10,13 @@ import { IconButton } from '~/components/ui/icon-button'
 import {
   Select,
   SelectContent,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
   SelectLabel,
-  SelectOption,
   SelectPositioner,
   SelectTrigger,
+  SelectValue,
 } from '~/components/ui/select'
 import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
@@ -36,6 +38,7 @@ import { DrawerDemo } from './demo/drawer-demo'
 import { EditableDemo } from './demo/editable-demo'
 import { HoverCardDemo } from './demo/hover-card-demo'
 import { IconButtonDemo } from './demo/icon-button-demo'
+import { IconDemo } from './demo/icon-demo'
 import { InputDemo } from './demo/input-demo'
 import { LabelDemo } from './demo/label-demo'
 import { MenuDemo } from './demo/menu-demo'
@@ -56,6 +59,7 @@ import { TabsDemo } from './demo/tabs-demo'
 import { TagsInputDemo } from './demo/tags-input-demo'
 import { TextareaDemo } from './demo/textarea-demo'
 import { ToastDemo } from './demo/toast-demo'
+import { ToggleGroupDemo } from './demo/toggle-group-demo'
 import { TooltipDemo } from './demo/tooltip-demo'
 
 type Props = {
@@ -92,6 +96,7 @@ export const Playground = (props: Props) => {
     .with('Drawer', () => DrawerDemo)
     .with('Editable', () => EditableDemo)
     .with('Hover Card', () => HoverCardDemo)
+    .with('Icon', () => IconDemo)
     .with('Icon Button', () => IconButtonDemo)
     .with('Input', () => InputDemo)
     .with('Label', () => LabelDemo)
@@ -113,6 +118,7 @@ export const Playground = (props: Props) => {
     .with('Tags Input', () => TagsInputDemo)
     .with('Textarea', () => TextareaDemo)
     .with('Toast', () => ToastDemo)
+    .with('Toggle Group', () => ToggleGroupDemo)
     .with('Tooltip', () => TooltipDemo)
     .run()
 
@@ -129,7 +135,7 @@ export const Playground = (props: Props) => {
             size="sm"
             aria-label="Open settings"
           >
-            <FiSliders />
+            <SlidersIcon />
           </IconButton>
         </Box>
       )}
@@ -172,7 +178,7 @@ export const Playground = (props: Props) => {
             size="sm"
             aria-label='Close "Settings"'
           >
-            <FiX />
+            <XIcon />
           </IconButton>
         </Box>
         <Typography textStyle="sm" p="4" fontWeight="semibold">
@@ -188,28 +194,32 @@ export const Playground = (props: Props) => {
               .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
                 <Select
                   key={key}
+                  defaultValue={[defaultValue]}
+                  items={options}
                   positioning={{ sameWidth: true }}
                   closeOnSelect={false}
                   size="sm"
-                  onChange={(e) => setState({ ...state, [key]: e?.value ?? '' })}
+                  onChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
                 >
-                  {({ selectedOption }) => (
-                    <Stack gap="1.5">
-                      <SelectLabel textTransform="capitalize">{key}</SelectLabel>
-                      <SelectTrigger>
-                        {selectedOption?.label ?? defaultValue} <BiExpandVertical />
-                      </SelectTrigger>
-                      <Portal>
-                        <SelectPositioner zIndex="docked">
-                          <SelectContent>
-                            {options.map((option, id) => (
-                              <SelectOption key={id} value={option} label={option} />
-                            ))}
-                          </SelectContent>
-                        </SelectPositioner>
-                      </Portal>
-                    </Stack>
-                  )}
+                  <SelectLabel textTransform="capitalize">{key}</SelectLabel>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a Framework" />
+                    <ChevronsUpDownIcon />
+                  </SelectTrigger>
+                  <Portal>
+                    <SelectPositioner zIndex="docked">
+                      <SelectContent>
+                        {options.map((option) => (
+                          <SelectItem key={option} item={option}>
+                            <SelectItemText>{option}</SelectItemText>
+                            <SelectItemIndicator>
+                              <CheckIcon />
+                            </SelectItemIndicator>
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </SelectPositioner>
+                  </Portal>
                 </Select>
               ))
               .exhaustive(),

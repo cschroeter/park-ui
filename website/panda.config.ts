@@ -19,6 +19,7 @@ export default defineConfig({
       checkbox: [{ size: ['*'] }],
       code: [{ size: ['*'] }],
       drawer: [{ placement: ['*'] }],
+      icon: [{ size: ['*'] }],
       input: [{ size: ['*'] }],
       label: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],
@@ -27,10 +28,11 @@ export default defineConfig({
       radioButtonGroup: [{ size: ['*'] }],
       ratingGroup: [{ size: ['*'] }],
       segmentGroup: [{ size: ['*'] }],
-      select: [{ size: ['*'] }],
+      select: [{ size: ['*'], variant: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
       tabs: [{ size: ['*'] }],
       textarea: [{ size: ['*'] }],
+      toggleGroup: [{ size: ['*'], variant: ['*'] }],
     },
   },
   globalCss: {
@@ -48,6 +50,11 @@ export default defineConfig({
         display: 'flex',
         flexDirection: 'column',
         flexGrow: '1',
+      },
+      '.tiptap': {
+        '&:focus': {
+          outline: 'none',
+        },
       },
       pre: {
         fontFamily: 'var(--font-code)',

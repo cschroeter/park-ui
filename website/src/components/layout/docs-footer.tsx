@@ -1,5 +1,5 @@
+import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react'
 import NextLink from 'next/link'
-import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Typography } from '~/components/ui/typography'
@@ -24,7 +24,7 @@ export const DocsFooter = (props: FooterProps) => {
               Previous
             </Typography>
             <NextLink href={prevPage.href} className={button({ variant: 'link', size: 'lg' })}>
-              <FiArrowLeft />
+              <ArrowLeftIcon />
               {prevPage.title}
             </NextLink>
           </Stack>
@@ -37,7 +37,7 @@ export const DocsFooter = (props: FooterProps) => {
             </Typography>
             <NextLink href={nextPage.href} className={button({ variant: 'link', size: 'lg' })}>
               {nextPage.title}
-              <FiArrowRight />
+              <ArrowRightIcon />
             </NextLink>
           </Stack>
         )}

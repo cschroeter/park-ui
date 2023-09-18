@@ -1,6 +1,6 @@
+import { SiGoogle } from '@icons-pack/react-simple-icons'
+import { CheckIcon } from 'lucide-react'
 import Link from 'next/link'
-import { BsGoogle } from 'react-icons/bs'
-import { FiCheck } from 'react-icons/fi'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Checkbox, CheckboxControl, CheckboxLabel } from '~/components/ui/checkbox'
@@ -36,7 +36,7 @@ export const SignInForm = () => {
           <Checkbox size="sm">
             {(state) => (
               <>
-                <CheckboxControl>{state.isChecked && <FiCheck />}</CheckboxControl>
+                <CheckboxControl>{state.isChecked && <CheckIcon />}</CheckboxControl>
                 <CheckboxLabel>Remember me</CheckboxLabel>
               </>
             )}
@@ -48,7 +48,7 @@ export const SignInForm = () => {
         <Stack gap="4">
           <Button>Sign in</Button>
           <Button variant="secondary">
-            <BsGoogle /> Sign in with Google
+            <SiGoogle /> Sign in with Google
           </Button>
         </Stack>
       </Stack>

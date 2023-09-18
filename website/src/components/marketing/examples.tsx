@@ -1,6 +1,6 @@
 'use client'
+import { ArrowRightIcon } from 'lucide-react'
 import { useState } from 'react'
-import { FiArrowRight } from 'react-icons/fi'
 import { css, cx } from 'styled-system/css'
 import { Container, Spacer } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
@@ -8,6 +8,7 @@ import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '~/component
 import { Authentication } from './examples/authentication'
 import { Cards } from './examples/cards'
 import { ECommerce } from './examples/e-commerce'
+import { Editor } from './examples/editor'
 import { Marketing } from './examples/marketing'
 
 const examples = [
@@ -20,6 +21,11 @@ const examples = [
     value: 'cards',
     label: 'Cards',
     component: Cards,
+  },
+  {
+    value: 'editor',
+    label: 'Text Editor',
+    component: Editor,
   },
   {
     value: 'e-commerce',
@@ -54,7 +60,7 @@ export const Examples = () => {
               css({ alignSelf: 'flex-start', display: { base: 'none', md: 'inline-flex' } }),
             )}
           >
-            Get Code <FiArrowRight />
+            Get Code <ArrowRightIcon />
           </a>
         </TabList>
         {examples.map((example) => (

@@ -2,11 +2,25 @@
 
 ### Added
 
-- Added open and close animations to the `Menu` component.
+- Added `Icon` component.
+- Added `ghost` variant to the `Select` component.
 
 ### Changed
 
-- Revised `NUmberInput` component.
+- Revised `Menu` component.
+
+## [0.12.0] - 2023-09-14
+
+### Added
+
+- Added open and close animations to the `Menu` component.
+- Added `ToggleGroup` component.
+
+### Changed
+
+- Revised `NumberInput` component.
+- Revised `Select` component.
+- Revised `Combobox` component.
 
 ## [0.11.0] - 2023-09-08
 

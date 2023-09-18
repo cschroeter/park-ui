@@ -1,10 +1,10 @@
 'use client'
 
 import { Portal } from '@ark-ui/react'
+import { MenuIcon, XIcon } from 'lucide-react'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, type PropsWithChildren } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi'
 import { Stack } from 'styled-system/jsx'
 import {
   Drawer,
@@ -24,7 +24,7 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => {
         <>
           <DrawerTrigger asChild>
             <IconButton aria-label="Open Menu" variant="tertiary" size="sm">
-              <FiMenu />
+              <MenuIcon />
             </IconButton>
           </DrawerTrigger>
           <RouteChangeHandler close={close} />
@@ -40,7 +40,7 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => {
                 </Stack>
                 <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
                   <IconButton aria-label="Close Sidebar" variant="tertiary">
-                    <FiX />
+                    <XIcon />
                   </IconButton>
                 </DrawerCloseTrigger>
               </DrawerContent>

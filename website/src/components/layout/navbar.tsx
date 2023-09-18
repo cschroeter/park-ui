@@ -1,7 +1,7 @@
 'use client'
+import { SiGithub, SiTwitter } from '@icons-pack/react-simple-icons'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
-import { AiOutlineGithub, AiOutlineTwitter } from 'react-icons/ai'
 import { Box, Container, HStack, styled } from 'styled-system/jsx'
 import { link } from 'styled-system/recipes'
 import { IconButton } from '~/components/ui/icon-button'
@@ -54,12 +54,12 @@ export const Navbar = () => {
               <HStack gap="0.5">
                 <IconButton aria-label="Twitter profile" variant="tertiary" asChild>
                   <NextLink href="https://twitter.com/grizzly_codes" target="_blank">
-                    <AiOutlineTwitter />
+                    <SiTwitter />
                   </NextLink>
                 </IconButton>
                 <IconButton aria-label="GitHub repository" variant="tertiary" asChild>
                   <NextLink href="https://github.com/cschroeter/park-ui" target="_blank">
-                    <AiOutlineGithub />
+                    <SiGithub />
                   </NextLink>
                 </IconButton>
                 <ColorModeButton />

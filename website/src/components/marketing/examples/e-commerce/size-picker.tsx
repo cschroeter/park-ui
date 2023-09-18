@@ -1,5 +1,6 @@
-import { PiRuler } from 'react-icons/pi'
+import { RulerIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
+import { Icon } from '~/components/ui/icon'
 import {
   Radio,
   RadioButtonGroup,
@@ -36,7 +37,9 @@ export const SizePicker = () => {
       </Stack>
 
       <HStack gap="2">
-        <PiRuler />
+        <Icon size="sm" color="fg.muted">
+          <RulerIcon />
+        </Icon>
         <Typography textStyle="sm" textDecoration="underline">
           View size guide
         </Typography>

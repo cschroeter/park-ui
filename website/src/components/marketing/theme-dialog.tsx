@@ -1,5 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { FiX } from 'react-icons/fi'
+import { XIcon } from 'lucide-react'
 import { Button } from '../ui/button'
 import {
   Dialog,
@@ -31,7 +31,7 @@ export const ThemeDialog = () => {
             <ThemeGenerator hideContextMenu />
             <DialogCloseTrigger asChild position="absolute" top="2" right="2">
               <IconButton aria-label="Close Dialog" variant="tertiary" size="sm">
-                <FiX />
+                <XIcon />
               </IconButton>
             </DialogCloseTrigger>
           </DialogContent>

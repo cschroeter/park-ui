@@ -1,4 +1,4 @@
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 import {
   NumberInput,
   NumberInputControl,
@@ -16,10 +16,10 @@ export const NumberInputDemo = (props: NumberInputProps) => {
       <NumberInputControl>
         <NumberInputInput />
         <NumberInputIncrementTrigger>
-          <FiChevronUp />
+          <ChevronUpIcon />
         </NumberInputIncrementTrigger>
         <NumberInputDecrementTrigger>
-          <FiChevronDown />
+          <ChevronDownIcon />
         </NumberInputDecrementTrigger>
       </NumberInputControl>
     </NumberInput>

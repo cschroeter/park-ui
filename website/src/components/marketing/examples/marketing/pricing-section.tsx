@@ -1,5 +1,5 @@
-import { FiCheckCircle } from 'react-icons/fi'
-import { Box, Grid, HStack, styled } from 'styled-system/jsx'
+import { CheckCircleIcon } from 'lucide-react'
+import { Grid, HStack, styled } from 'styled-system/jsx'
 import { stack } from 'styled-system/patterns/stack'
 import { Button } from '~/components/ui/button'
 import {
@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '~/components/ui/card'
+import { Icon } from '~/components/ui/icon'
 import { Typography } from '~/components/ui/typography'
 import { plans } from './data'
 
@@ -33,9 +34,9 @@ export const PricingSection = () => {
               {plan.features.map((feature) => (
                 <styled.li key={feature} color="fg.muted">
                   <HStack gap="4">
-                    <Box fontSize="xl" color="accent.default">
-                      <FiCheckCircle />
-                    </Box>
+                    <Icon color="accent.default">
+                      <CheckCircleIcon />
+                    </Icon>
                     <Typography>{feature}</Typography>
                   </HStack>
                 </styled.li>

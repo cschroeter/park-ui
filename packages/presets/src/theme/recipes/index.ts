@@ -15,6 +15,7 @@ import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
 import { hoverCard } from './hover-card'
+import { icon } from './icon'
 import { input } from './input'
 import { label } from './label'
 import { link } from './link'
@@ -36,6 +37,7 @@ import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
 import { textarea } from './textarea'
 import { toast } from './toast'
+import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
 
 export const recipes = {
@@ -44,6 +46,7 @@ export const recipes = {
   badge,
   button,
   code,
+  icon,
   input,
   label,
   link,
@@ -80,5 +83,6 @@ export const slotRecipes = {
   tabs,
   tagsInput,
   toast,
+  toggleGroup,
   tooltip,
 }

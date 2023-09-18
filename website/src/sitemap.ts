@@ -66,7 +66,6 @@ export const sitemap = [
         title: 'Article',
         description: 'Effortlessly style Markdown or CMS-generated HTML',
         href: '/docs/components/article',
-        label: 'New',
         defaultProps: {
           size: {
             options: ['sm', 'md', 'lg'],
@@ -122,7 +121,6 @@ export const sitemap = [
         title: 'Card',
         description: 'A container component that displays content in a compact and organized way.',
         href: '/docs/components/card',
-        label: 'New',
         isPrimitive: true,
         defaultProps: {},
       },
@@ -165,6 +163,7 @@ export const sitemap = [
         title: 'Combobox',
         description: 'A single input field that combines the functionality of a select and input.',
         href: '/docs/components/combobox',
+        label: 'Updated',
         defaultProps: {},
       },
       {
@@ -201,6 +200,19 @@ export const sitemap = [
         description: 'A card that appears when a user hovers over an element.',
         href: '/docs/components/hover-card',
         defaultProps: {},
+      },
+      {
+        title: 'Icon',
+        description: 'A graphical representation of an action, file, or concept.',
+        href: '/docs/components/icon',
+        isPrimitive: true,
+        label: 'New',
+        defaultProps: {
+          size: {
+            options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],
+            defaultValue: 'md',
+          },
+        },
       },
       {
         title: 'Icon Button',
@@ -243,7 +255,13 @@ export const sitemap = [
         title: 'Menu',
         description: 'A list of options that appears when a user interacts with a button.',
         href: '/docs/components/menu',
-        defaultProps: {},
+        label: 'Updated',
+        defaultProps: {
+          size: {
+            options: ['xs', 'sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+        },
       },
       {
         title: 'Number Input',
@@ -340,10 +358,15 @@ export const sitemap = [
         title: 'Select',
         description: 'Displays a list of options for the user to pick from.',
         href: '/docs/components/select',
+        label: 'Updated',
         defaultProps: {
           size: {
             options: ['sm', 'md', 'lg'],
             defaultValue: 'md',
+          },
+          variant: {
+            options: ['ghost', 'outline'],
+            defaultValue: 'outline',
           },
         },
       },
@@ -413,6 +436,26 @@ export const sitemap = [
         description: 'A message that appears on the screen to provide feedback on an action.',
         href: '/docs/components/toast',
         defaultProps: {},
+      },
+      {
+        title: 'Toggle Group',
+        description: 'A set of two-state buttons that can be toggled on or off.',
+        href: '/docs/components/toggle-group',
+        label: 'New',
+        defaultProps: {
+          size: {
+            options: ['sm', 'md', 'lg'],
+            defaultValue: 'md',
+          },
+          variant: {
+            options: ['outline', 'ghost'],
+            defaultValue: 'outline',
+          },
+          orientation: {
+            options: ['horizontal', 'vertical'],
+            defaultValue: 'horizontal',
+          },
+        },
       },
       {
         title: 'Tooltip',
