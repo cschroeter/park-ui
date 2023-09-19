@@ -107,6 +107,9 @@ importers:
       '@ark-ui/react':
         specifier: 0.14.0
         version: 0.14.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
+      '@fontsource/plus-jakarta-sans':
+        specifier: 5.0.12
+        version: 5.0.12
       '@ladle/react':
         specifier: 2.16.1
         version: 2.16.1(@types/node@20.4.7)(react-dom@18.2.0)(react@18.2.0)
@@ -1545,6 +1548,10 @@ packages:
 
   /@floating-ui/utils@0.1.1:
     resolution: {integrity: sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==}
+
+  /@fontsource/plus-jakarta-sans@5.0.12:
+    resolution: {integrity: sha512-Xdx7f909JdzVM0f6WQcjr4HuvBjvbgMVWW8r/eOh6iNW1hlsIBdW+dAV3mBb5zrqk/XoZBoYl0wZXXCTyz5p2Q==}
+    dev: true
 
   /@grpc/grpc-js@1.9.0:
     resolution: {integrity: sha512-H8+iZh+kCE6VR/Krj6W28Y/ZlxoZ1fOzsNt77nrdE3knkbSelW1Uus192xOFCxHyeszLj8i4APQkSIXjAoOxXg==}

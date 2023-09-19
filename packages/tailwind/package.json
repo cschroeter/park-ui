@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@ark-ui/react": "0.14.0",
+    "@fontsource/plus-jakarta-sans": "5.0.12",
     "@release-it/keep-a-changelog": "4.0.0",
     "prejss-cli": "0.3.3",
     "release-it": "16.1.5",

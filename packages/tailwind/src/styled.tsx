@@ -11,6 +11,9 @@ const getClassName = <T extends string | StylesObject>(styles: T, partName: stri
   if (typeof styles === 'string') {
     return styles
   }
+  if (!partName) {
+    return
+  }
   return styles?.[partName]?.() ?? ''
 }
 
@@ -44,11 +47,8 @@ export const createStyled = (createStyles: (...args: any) => any) => {
     Component: ExoticComponent<ComponentProps>,
     partName?: string,
   ) => {
-    console.log('CREATED styled', partName)
     const Comp = forwardRef<typeof Component, ComponentProps>((props, ref) => {
-      console.log('render styled', partName)
       const styles = useContext(StyleContext)
-      console.log(partName, styles['root']?.())
 
       const componentProps = mergeProps(props, {
         className: getClassName(styles, partName),

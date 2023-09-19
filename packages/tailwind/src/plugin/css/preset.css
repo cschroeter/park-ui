@@ -1,48 +1,79 @@
-@import "tailwindcss/base" layer(tailwind_base);
-@import "tailwindcss/components" layer(tailwind_components);
-@import "tailwindcss/utilities" layer(tailwind_utilities);
+@import 'tailwindcss/base' layer(tailwind_base);
+@import 'tailwindcss/components' layer(tailwind_components);
+@import 'tailwindcss/utilities' layer(tailwind_utilities);
+
+html {
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg-canvas);
+  color: var(--fg-default);
+  font-family: var(--font-body), sans-serif;
+}
+
+body._dark {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  border-color: var(--border-default);
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+*::placeholder {
+  opacity: 1;
+  color: var(--fg-subtle);
+}
 
 :root {
-  --fg-default: theme("colors.neutral.950");
-  --fg-emphasized: theme("colors.neutral.700");
-  --fg-muted: theme("colors.neutral.600");
-  --fg-subtle: theme("colors.neutral.500");
+  --fg-default: theme('colors.neutral.950');
+  --fg-emphasized: theme('colors.neutral.700');
+  --fg-muted: theme('colors.neutral.600');
+  --fg-subtle: theme('colors.neutral.500');
   --fg-accent: white;
-  --fg-disabled: theme("colors.neutral.200");
+  --fg-disabled: theme('colors.neutral.200');
 
-  --bg-canvas: theme("colors.neutral.25");
+  --bg-canvas: theme('colors.neutral.25');
   --bg-default: white;
-  --bg-subtle: theme("colors.neutral.100");
-  --bg-muted: theme("colors.neutral.200");
-  --bg-emphasized: theme("colors.neutral.300");
-  --bg-accent: theme("colors.neutral.950");
-  --bg-disabled: theme("colors.neutral.200");
+  --bg-subtle: theme('colors.neutral.100');
+  --bg-muted: theme('colors.neutral.200');
+  --bg-emphasized: theme('colors.neutral.300');
+  --bg-accent: theme('colors.neutral.950');
+  --bg-disabled: theme('colors.neutral.200');
 
-  --border-default: theme("colors.neutral.200");
-  --border-emphasized: theme("colors.neutral.300");
-  --border-accent: theme("colors.neutral.950");
-  --border-disabled: theme("colors.neutral.200");
+  --border-default: theme('colors.neutral.200');
+  --border-emphasized: theme('colors.neutral.300');
+  --border-accent: theme('colors.neutral.950');
+  --border-disabled: theme('colors.neutral.200');
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
   --fg-default: white;
-  --fg-emphasized: theme("colors.neutral.200");
-  --fg-muted: theme("colors.neutral.300");
-  --fg-subtle: theme("colors.neutral.400");
-  --fg-accent: theme("colors.neutral.950");
-  --fg-disabled: theme("colors.neutral.800");
+  --fg-emphasized: theme('colors.neutral.200');
+  --fg-muted: theme('colors.neutral.300');
+  --fg-subtle: theme('colors.neutral.400');
+  --fg-accent: theme('colors.neutral.950');
+  --fg-disabled: theme('colors.neutral.800');
 
-  --bg-canvas: theme("colors.neutral.950");
-  --bg-default: theme("colors.neutral.950");
-  --bg-subtle: theme("colors.neutral.900");
-  --bg-muted: theme("colors.neutral.800");
-  --bg-emphasized: theme("colors.neutral.700");
+  --bg-canvas: theme('colors.neutral.950');
+  --bg-default: theme('colors.neutral.950');
+  --bg-subtle: theme('colors.neutral.900');
+  --bg-muted: theme('colors.neutral.800');
+  --bg-emphasized: theme('colors.neutral.700');
   --bg-accent: white;
-  --bg-disabled: theme("colors.neutral.800");
+  --bg-disabled: theme('colors.neutral.800');
 
-  --border-default: theme("colors.neutral.800");
-  --border-emphasized: theme("colors.neutral.700");
+  --border-default: theme('colors.neutral.800');
+  --border-emphasized: theme('colors.neutral.700');
   --border-accent: white;
-  --border-disabled: theme("colors.neutral.800");
+  --border-disabled: theme('colors.neutral.800');
 }
 
 :where(:root, :host) {
@@ -63,12 +94,12 @@
   --font-weights-bold: 700;
   --font-weights-extrabold: 800;
   --font-weights-black: 900;
-  --fonts-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fonts-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --fonts-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --fonts-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --fonts-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --fonts-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   --letter-spacings-tighter: -0.05em;
   --letter-spacings-tight: -0.025em;
   --letter-spacings-normal: 0em;
@@ -111,14 +142,10 @@
   --animations-backdrop-out: fade-out 200ms cubic-bezier(0.2, 0, 0, 1);
   --animations-dialog-in: slide-in 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
   --animations-dialog-out: slide-out 200ms cubic-bezier(0.3, 0, 0.8, 0.15);
-  --animations-drawer-in-left: slide-in-left 400ms
-    cubic-bezier(0.05, 0.7, 0.1, 1);
-  --animations-drawer-out-left: slide-out-left 200ms
-    cubic-bezier(0.3, 0, 0.8, 0.15);
-  --animations-drawer-in-right: slide-in-right 400ms
-    cubic-bezier(0.05, 0.7, 0.1, 1);
-  --animations-drawer-out-right: slide-out-right 200ms
-    cubic-bezier(0.3, 0, 0.8, 0.15);
+  --animations-drawer-in-left: slide-in-left 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  --animations-drawer-out-left: slide-out-left 200ms cubic-bezier(0.3, 0, 0.8, 0.15);
+  --animations-drawer-in-right: slide-in-right 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  --animations-drawer-out-right: slide-out-right 200ms cubic-bezier(0.3, 0, 0.8, 0.15);
   --colors-current: currentColor;
   --colors-black: #000;
   --colors-white: #fff;
