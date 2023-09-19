@@ -1,4 +1,4 @@
-import { accordionAnatomy } from '@ark-ui/react'
+import { accordionAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const accordion = defineSlotRecipe({

@@ -1,4 +1,4 @@
-import { datePickerAnatomy } from '@ark-ui/react'
+import { datePickerAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const datePicker = defineSlotRecipe({

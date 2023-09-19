@@ -1,4 +1,4 @@
-import { popoverAnatomy } from '@ark-ui/react'
+import { popoverAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const popover = defineSlotRecipe({

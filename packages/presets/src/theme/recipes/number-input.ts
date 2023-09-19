@@ -1,4 +1,4 @@
-import { numberInputAnatomy } from '@ark-ui/react'
+import { numberInputAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 const trigger = {

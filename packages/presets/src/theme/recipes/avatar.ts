@@ -1,4 +1,4 @@
-import { avatarAnatomy } from '@ark-ui/react'
+import { avatarAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const avatar = defineSlotRecipe({

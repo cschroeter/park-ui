@@ -1,4 +1,4 @@
-import { menuAnatomy } from '@ark-ui/react'
+import { menuAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 const itemStyle = {
