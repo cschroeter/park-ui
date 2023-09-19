@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.13.0] - 2023-09-19
+
 ### Added
 
 - Added `Icon` component.
