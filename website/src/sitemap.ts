@@ -421,6 +421,10 @@ export const sitemap = [
             options: ['sm', 'md'],
             defaultValue: 'md',
           },
+          variant: {
+            options: ['plain', 'outline'],
+            defaultValue: 'plain',
+          },
         },
       },
       {

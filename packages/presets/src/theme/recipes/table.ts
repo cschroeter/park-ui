@@ -37,18 +37,33 @@ export const table = defineSlotRecipe({
       transitionDuration: 'normal',
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
-      _hover: {
-        bg: 'bg.subtle',
-      },
-      _selected: {
-        bg: 'bg.muted',
-      },
     },
   },
   defaultVariants: {
     size: 'md',
+    variant: 'plain',
   },
   variants: {
+    variant: {
+      outline: {
+        root: {
+          borderWidth: '1px',
+        },
+        header: {
+          bg: 'bg.subtle',
+        },
+      },
+      plain: {
+        row: {
+          _hover: {
+            bg: 'bg.subtle',
+          },
+          _selected: {
+            bg: 'bg.muted',
+          },
+        },
+      },
+    },
     size: {
       sm: {
         root: {
@@ -58,11 +73,12 @@ export const table = defineSlotRecipe({
           mt: '4',
         },
         cell: {
-          p: '2.5',
+          height: '11',
+          px: '3',
         },
         head: {
-          height: '10',
-          px: '2.5',
+          height: '11',
+          px: '3',
         },
       },
       md: {
@@ -73,10 +89,11 @@ export const table = defineSlotRecipe({
           mt: '4',
         },
         cell: {
-          p: '4',
+          height: '14',
+          px: '4',
         },
         head: {
-          height: '12',
+          height: '11',
           px: '4',
         },
       },
