@@ -414,6 +414,18 @@ export const sitemap = [
         },
       },
       {
+        title: 'Table',
+        description: 'A component that displays data in a tabular format.',
+        href: '/docs/components/table',
+        label: 'New',
+        defaultProps: {
+          size: {
+            options: ['sm', 'md'],
+            defaultValue: 'md',
+          },
+        },
+      },
+      {
         title: 'Tags Input',
         description: 'A component that allows users to add tags to an input field.',
         href: '/docs/components/tags-input',

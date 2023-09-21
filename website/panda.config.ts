@@ -31,6 +31,7 @@ export default defineConfig({
       select: [{ size: ['*'], variant: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
       tabs: [{ size: ['*'] }],
+      table: [{ size: ['*'] }],
       textarea: [{ size: ['*'] }],
       toggleGroup: [{ size: ['*'], variant: ['*'] }],
     },

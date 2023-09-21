@@ -55,6 +55,7 @@ import { SelectDemo } from './demo/select-demo'
 import { SliderDemo } from './demo/slider-demo'
 import { SplitterDemo } from './demo/splitter-demo'
 import { SwitchDemo } from './demo/switch-demo'
+import { TableDemo } from './demo/table-demo'
 import { TabsDemo } from './demo/tabs-demo'
 import { TagsInputDemo } from './demo/tags-input-demo'
 import { TextareaDemo } from './demo/textarea-demo'
@@ -115,6 +116,7 @@ export const Playground = (props: Props) => {
     .with('Splitter', () => SplitterDemo)
     .with('Switch', () => SwitchDemo)
     .with('Tabs', () => TabsDemo)
+    .with('Table', () => TableDemo)
     .with('Tags Input', () => TagsInputDemo)
     .with('Textarea', () => TextareaDemo)
     .with('Toast', () => ToastDemo)

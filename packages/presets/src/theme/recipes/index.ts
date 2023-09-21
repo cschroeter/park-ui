@@ -33,6 +33,7 @@ import { select } from './select'
 import { slider } from './slider'
 import { splitter } from './splitter'
 import { switchRecipe } from './switch'
+import { table } from './table'
 import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
 import { textarea } from './textarea'
@@ -81,6 +82,7 @@ export const slotRecipes = {
   splitter,
   switchRecipe,
   tabs,
+  table,
   tagsInput,
   toast,
   toggleGroup,
