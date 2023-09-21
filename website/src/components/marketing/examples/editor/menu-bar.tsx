@@ -39,7 +39,7 @@ export const MenuBar = (props: Props) => {
         <HStack gap="1">
           <Button
             px="0"
-            variant="tertiary"
+            variant="ghost"
             size="sm"
             onClick={() => editor.chain().focus().undo().run()}
             disabled={!editor.can().chain().focus().undo().run()}
@@ -48,7 +48,7 @@ export const MenuBar = (props: Props) => {
           </Button>
           <Button
             px="0"
-            variant="tertiary"
+            variant="ghost"
             size="sm"
             onClick={() => editor.chain().focus().redo().run()}
             disabled={!editor.can().chain().focus().redo().run()}

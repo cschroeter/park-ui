@@ -17,7 +17,7 @@ export const ThemeDialog = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          variant="secondary"
+          variant="outline"
           size={{ base: 'xl', md: '2xl' }}
           display={{ base: 'inline-flex', lg: 'none' }}
         >
@@ -30,7 +30,7 @@ export const ThemeDialog = () => {
           <DialogContent>
             <ThemeGenerator hideContextMenu />
             <DialogCloseTrigger asChild position="absolute" top="2" right="2">
-              <IconButton aria-label="Close Dialog" variant="tertiary" size="sm">
+              <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
                 <XIcon />
               </IconButton>
             </DialogCloseTrigger>

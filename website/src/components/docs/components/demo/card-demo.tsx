@@ -30,7 +30,7 @@ export const CardDemo = (props: CardProps) => {
         </Stack>
       </CardContent>
       <CardFooter gap="3">
-        <Button variant="secondary">Cancel</Button>
+        <Button variant="outline">Cancel</Button>
         <Button>Invite</Button>
       </CardFooter>
     </Card>

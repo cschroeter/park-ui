@@ -44,7 +44,7 @@ export const ECommerce = () => {
           <SizePicker />
           <Grid columns={2} gap="8">
             <QuantityPicker />
-            <Button size="xl" variant="secondary" alignSelf="end">
+            <Button size="xl" variant="outline" alignSelf="end">
               <HeartIcon /> Favourite
             </Button>
           </Grid>

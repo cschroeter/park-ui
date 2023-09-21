@@ -25,11 +25,11 @@ export const AuthenticationCard = () => {
       <CardContent>
         <Stack gap="4">
           <Stack direction="row" gap="3">
-            <Button variant="secondary" width="full">
+            <Button variant="outline" width="full">
               <SiGoogle />
               Google
             </Button>
-            <Button variant="secondary" width="full">
+            <Button variant="outline" width="full">
               <SiGithub />
               GitHub
             </Button>

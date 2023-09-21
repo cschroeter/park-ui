@@ -39,7 +39,7 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                 <Input />
               </DatePickerInput>
               <DatePickerTrigger asChild>
-                <IconButton variant="secondary" aria-label="Open date picker">
+                <IconButton variant="outline" aria-label="Open date picker">
                   <CalendarIcon />
                 </IconButton>
               </DatePickerTrigger>
@@ -51,19 +51,19 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                 <Stack gap="3">
                   <Stack justify="space-between" direction="row">
                     <DatePickerPrevTrigger asChild>
-                      <IconButton size="sm" variant="tertiary" aria-label="Prev">
+                      <IconButton size="sm" variant="ghost" aria-label="Prev">
                         <ChevronLeftIcon />
                       </IconButton>
                     </DatePickerPrevTrigger>
                     <DatePickerViewTrigger asChild>
-                      <Button variant="tertiary" size="sm">
+                      <Button variant="ghost" size="sm">
                         {api.view === 'day' && api.visibleRangeText.start}
                         {api.view === 'month' && api.visibleRange.start.year}
                         {api.view === 'year' && `${api.getDecade().start} - ${api.getDecade().end}`}
                       </Button>
                     </DatePickerViewTrigger>
                     <DatePickerNextTrigger asChild>
-                      <IconButton size="sm" variant="tertiary" aria-label="Next">
+                      <IconButton size="sm" variant="ghost" aria-label="Next">
                         <ChevronRightIcon />
                       </IconButton>
                     </DatePickerNextTrigger>
@@ -83,7 +83,7 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                             {week.map((day, id) => (
                               <DatePickerDayCell key={id} value={day}>
                                 <DatePickerDayCellTrigger asChild>
-                                  <Button variant="tertiary" px="0">
+                                  <Button variant="ghost" px="0">
                                     {day.day}
                                   </Button>
                                 </DatePickerDayCellTrigger>
@@ -102,7 +102,7 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                             {months.map((month, index) => (
                               <DatePickerMonthCell key={index} value={month.value}>
                                 <DatePickerMonthCellTrigger asChild>
-                                  <Button variant="tertiary">{month.label}</Button>
+                                  <Button variant="ghost">{month.label}</Button>
                                 </DatePickerMonthCellTrigger>
                               </DatePickerMonthCell>
                             ))}
@@ -119,7 +119,7 @@ export const DatePickerDemo = (props: DatePickerProps) => {
                             {years.map((year, index) => (
                               <DatePickerYearCell key={index} value={year.value}>
                                 <DatePickerYearCellTrigger>
-                                  <Button variant="tertiary">{year.label}</Button>
+                                  <Button variant="ghost">{year.label}</Button>
                                 </DatePickerYearCellTrigger>
                               </DatePickerYearCell>
                             ))}

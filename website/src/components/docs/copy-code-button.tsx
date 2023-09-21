@@ -24,7 +24,7 @@ export const CopyCodeButton = (props: Props) => {
 
   return (
     <IconButton
-      variant="tertiary"
+      variant="ghost"
       size="sm"
       {...props}
       aria-label="Copy code to clipboard"

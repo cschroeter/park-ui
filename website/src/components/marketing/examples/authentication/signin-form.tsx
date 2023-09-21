@@ -47,7 +47,7 @@ export const SignInForm = () => {
         </HStack>
         <Stack gap="4">
           <Button>Sign in</Button>
-          <Button variant="secondary">
+          <Button variant="outline">
             <SiGoogle /> Sign in with Google
           </Button>
         </Stack>

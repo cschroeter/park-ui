@@ -66,7 +66,7 @@ export const NotificationCard = () => {
         </Stack>
       </CardContent>
       <CardFooter>
-        <Button variant="secondary" width="full">
+        <Button variant="outline" width="full">
           Save Preferences
         </Button>
       </CardFooter>

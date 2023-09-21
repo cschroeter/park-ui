@@ -108,8 +108,8 @@ export const sitemap = [
         isPrimitive: true,
         defaultProps: {
           variant: {
-            options: ['primary', 'secondary', 'tertiary', 'link'],
-            defaultValue: 'primary',
+            options: ['solid', 'outline', 'ghost', 'link'],
+            defaultValue: 'solid',
           },
           size: {
             options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],
@@ -226,8 +226,8 @@ export const sitemap = [
         isPrimitive: true,
         defaultProps: {
           variant: {
-            options: ['primary', 'secondary', 'tertiary', 'link'],
-            defaultValue: 'primary',
+            options: ['solid', 'outline', 'ghost', 'link'],
+            defaultValue: 'solid',
           },
           size: {
             options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],

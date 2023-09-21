@@ -30,7 +30,7 @@ export const MenuDemo = (props: MenuProps) => {
   return (
     <Menu {...props}>
       <MenuTrigger asChild>
-        <Button variant="secondary" size={props.size}>
+        <Button variant="outline" size={props.size}>
           Open menu
         </Button>
       </MenuTrigger>

@@ -21,7 +21,7 @@ export const DrawerDemo = (props: DrawerProps) => {
   return (
     <Drawer {...props}>
       <DrawerTrigger asChild>
-        <Button variant="secondary">Open Drawer</Button>
+        <Button variant="outline">Open Drawer</Button>
       </DrawerTrigger>
       <Portal>
         <DrawerBackdrop />
@@ -51,7 +51,7 @@ export const DrawerDemo = (props: DrawerProps) => {
               </DrawerCloseTrigger>
             </Stack>
             <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-              <IconButton aria-label="Close Drawer" variant="tertiary">
+              <IconButton aria-label="Close Drawer" variant="ghost">
                 <XIcon />
               </IconButton>
             </DrawerCloseTrigger>

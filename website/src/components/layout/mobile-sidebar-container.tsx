@@ -23,7 +23,7 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => {
       {({ close }) => (
         <>
           <DrawerTrigger asChild>
-            <IconButton aria-label="Open Menu" variant="tertiary" size="sm">
+            <IconButton aria-label="Open Menu" variant="ghost" size="sm">
               <MenuIcon />
             </IconButton>
           </DrawerTrigger>
@@ -39,7 +39,7 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => {
                   {props.children}
                 </Stack>
                 <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-                  <IconButton aria-label="Close Sidebar" variant="tertiary">
+                  <IconButton aria-label="Close Sidebar" variant="ghost">
                     <XIcon />
                   </IconButton>
                 </DrawerCloseTrigger>

@@ -21,12 +21,12 @@ export const button = defineRecipe({
     whiteSpace: 'nowrap',
   },
   defaultVariants: {
-    variant: 'primary',
+    variant: 'solid',
     size: 'md',
   },
   variants: {
     variant: {
-      primary: {
+      solid: {
         background: 'accent.default',
         color: 'accent.fg',
         _hover: {
@@ -45,7 +45,7 @@ export const button = defineRecipe({
           },
         },
       },
-      secondary: {
+      outline: {
         borderWidth: '1px',
         borderColor: 'border.emphasized',
         background: 'bg.default',
@@ -80,7 +80,7 @@ export const button = defineRecipe({
           outlineColor: 'border.outline',
         },
       },
-      tertiary: {
+      ghost: {
         color: 'fg.emphasized',
         _hover: {
           color: 'fg.default',

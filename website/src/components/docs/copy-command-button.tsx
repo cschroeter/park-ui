@@ -45,7 +45,7 @@ export const CopyCommandButton = (props: Props) => {
       }}
     >
       <MenuTrigger asChild>
-        <IconButton variant="tertiary" size="xs" {...rest} aria-label="Copy code to clipboard">
+        <IconButton variant="ghost" size="xs" {...rest} aria-label="Copy code to clipboard">
           {visible ? <CopyIcon /> : <CheckIcon />}
         </IconButton>
       </MenuTrigger>

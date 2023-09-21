@@ -55,7 +55,7 @@ export const ThemeConfigDialog = (props: Props) => {
               </Box>
             </Stack>
             <DialogCloseTrigger asChild position="absolute" top="2" right="2">
-              <IconButton aria-label="Close Dialog" variant="tertiary" size="sm">
+              <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
                 <XIcon />
               </IconButton>
             </DialogCloseTrigger>

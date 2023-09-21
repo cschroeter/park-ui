@@ -27,7 +27,7 @@ export const EarlyAccesWarning = () => {
       <Box position="absolute" top="2" right="2">
         <IconButton
           aria-label="Close Alert"
-          variant="tertiary"
+          variant="ghost"
           size="xs"
           onClick={() => setIsVisible(false)}
         >

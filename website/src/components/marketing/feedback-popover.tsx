@@ -43,7 +43,7 @@ export const FeedbackPopover = (props: PopoverProps) => {
     <Popover portalled {...props} open={value} onClose={setFalse}>
       <PopoverAnchor asChild>
         <Button
-          variant="secondary"
+          variant="outline"
           onClick={() => toggle()}
           display={{ base: 'none', sm: 'inline-flex' }}
         >
@@ -61,11 +61,11 @@ export const FeedbackPopover = (props: PopoverProps) => {
                 <Textarea rows={4} placeholder="Your feedback" required {...register('message')} />
                 <Stack gap="3" direction="row">
                   <PopoverCloseTrigger asChild>
-                    <Button variant="secondary" size="sm" width="full">
+                    <Button variant="outline" size="sm" width="full">
                       Cancel
                     </Button>
                   </PopoverCloseTrigger>
-                  <Button type="submit" variant="primary" size="sm" width="full">
+                  <Button type="submit" size="sm" width="full">
                     {isSubmitting ? 'Sending...' : 'Send'}
                   </Button>
                 </Stack>

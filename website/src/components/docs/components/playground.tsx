@@ -133,7 +133,7 @@ export const Playground = (props: Props) => {
         <Box position="absolute" top="2" right="2" zIndex={1}>
           <IconButton
             onClick={() => setTrue()}
-            variant="secondary"
+            variant="outline"
             size="sm"
             aria-label="Open settings"
           >
@@ -176,7 +176,7 @@ export const Playground = (props: Props) => {
         <Box position="absolute" top="2" right="2" zIndex={1}>
           <IconButton
             onClick={() => setFalse()}
-            variant="tertiary"
+            variant="ghost"
             size="sm"
             aria-label='Close "Settings"'
           >

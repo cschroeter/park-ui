@@ -52,12 +52,12 @@ export const Navbar = () => {
                 positioning={{ placement: 'bottom-end', gutter: 4 }}
               />
               <HStack gap="0.5">
-                <IconButton aria-label="Twitter profile" variant="tertiary" asChild>
+                <IconButton aria-label="Twitter profile" variant="ghost" asChild>
                   <NextLink href="https://twitter.com/grizzly_codes" target="_blank">
                     <SiTwitter />
                   </NextLink>
                 </IconButton>
-                <IconButton aria-label="GitHub repository" variant="tertiary" asChild>
+                <IconButton aria-label="GitHub repository" variant="ghost" asChild>
                   <NextLink href="https://github.com/cschroeter/park-ui" target="_blank">
                     <SiGithub />
                   </NextLink>

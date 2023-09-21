@@ -58,7 +58,7 @@ export const FaqSection = () => {
         <Button
           size="xl"
           alignSelf="center"
-          variant="secondary"
+          variant="outline"
           onClick={() => setShowAll(true)}
           display={showAll ? 'none' : 'flex'}
         >

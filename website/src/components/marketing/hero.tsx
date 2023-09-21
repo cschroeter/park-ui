@@ -27,7 +27,7 @@ export const Hero = () => {
             </Button>
             <Button
               size={{ base: 'xl', md: '2xl' }}
-              variant="secondary"
+              variant="outline"
               display={{ base: 'none', lg: 'inline-flex' }}
               asChild
             >

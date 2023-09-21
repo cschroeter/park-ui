@@ -14,7 +14,7 @@ export const ThemeContextMenu = (props: Props) => {
   return (
     <Menu size="xs" positioning={{ placement: 'bottom-end' }}>
       <MenuTrigger asChild>
-        <IconButton aria-label="Open Menu" variant="tertiary" size="sm">
+        <IconButton aria-label="Open Menu" variant="ghost" size="sm">
           <MoreVerticalIcon />
         </IconButton>
       </MenuTrigger>

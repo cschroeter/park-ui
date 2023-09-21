@@ -66,7 +66,7 @@ export const ReportIssueCard = () => {
         </Stack>
       </CardContent>
       <CardFooter gap="3">
-        <Button variant="secondary">Cancel</Button>
+        <Button variant="outline">Cancel</Button>
         <Button>Submit</Button>
       </CardFooter>
     </Card>

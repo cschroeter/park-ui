@@ -141,7 +141,7 @@ const CopyButton = (props: CopyButtonProps) => {
   }
 
   return (
-    <Button variant="secondary" aria-label="Copy code to clipboard" onClick={handleClick} px="0">
+    <Button variant="outline" aria-label="Copy code to clipboard" onClick={handleClick} px="0">
       {visible ? <CopyIcon /> : <CheckIcon />}
     </Button>
   )

@@ -37,11 +37,11 @@ export const Editor = () => {
             </Box>
             <Box>Center</Box>
             <HStack gap="3">
-              <Button size="sm" variant="tertiary">
+              <Button size="sm" variant="ghost">
                 <RotateCcwIcon />
                 Reset
               </Button>
-              <Button size="sm" variant="primary">
+              <Button size="sm">
                 <Share2Icon />
                 Share
               </Button>
