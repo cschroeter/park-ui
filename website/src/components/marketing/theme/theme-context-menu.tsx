@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { CopyIcon, MoreVerticalIcon, RotateCcwIcon } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
 import { IconButton } from '~/components/ui/icon-button'
@@ -18,24 +17,22 @@ export const ThemeContextMenu = (props: Props) => {
           <MoreVerticalIcon />
         </IconButton>
       </MenuTrigger>
-      <Portal>
-        <MenuPositioner zIndex="toast">
-          <MenuContent minW="48">
-            <MenuItem id="copy" onClick={() => onCopy()}>
-              <HStack gap="2">
-                <CopyIcon />
-                Copy Config
-              </HStack>
-            </MenuItem>
-            <MenuItem id="reset" onClick={() => onReset()}>
-              <HStack gap="2">
-                <RotateCcwIcon />
-                Restore Defaults
-              </HStack>
-            </MenuItem>
-          </MenuContent>
-        </MenuPositioner>
-      </Portal>
+      <MenuPositioner>
+        <MenuContent minW="48">
+          <MenuItem id="copy" onClick={() => onCopy()}>
+            <HStack gap="2">
+              <CopyIcon />
+              Copy Config
+            </HStack>
+          </MenuItem>
+          <MenuItem id="reset" onClick={() => onReset()}>
+            <HStack gap="2">
+              <RotateCcwIcon />
+              Restore Defaults
+            </HStack>
+          </MenuItem>
+        </MenuContent>
+      </MenuPositioner>
     </Menu>
   )
 }

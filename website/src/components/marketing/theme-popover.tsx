@@ -1,5 +1,4 @@
 'use client'
-import { Portal } from '@ark-ui/react'
 import { ChevronDownIcon } from 'lucide-react'
 import { link } from 'styled-system/recipes'
 import {
@@ -13,19 +12,17 @@ import { ThemeGenerator } from './theme-generator'
 
 export const ThemePopover = (props: PopoverProps) => {
   return (
-    <Popover portalled {...props} positioning={{ offset: { mainAxis: 8 } }}>
+    <Popover {...props} positioning={{ offset: { mainAxis: 8 } }}>
       {(api) => (
         <>
           <PopoverTrigger className={link({ variant: 'navbar' })}>
             Theme <PopoverIcon isOpen={api.isOpen} />
           </PopoverTrigger>
-          <Portal>
-            <PopoverPositioner>
-              <PopoverContent p="0" borderWidth="0" lazyMount unmountOnExit>
-                <ThemeGenerator onCopy={() => api.close()} />
-              </PopoverContent>
-            </PopoverPositioner>
-          </Portal>
+          <PopoverPositioner>
+            <PopoverContent p="0" borderWidth="0" lazyMount unmountOnExit>
+              <ThemeGenerator onCopy={() => api.close()} />
+            </PopoverContent>
+          </PopoverPositioner>
         </>
       )}
     </Popover>

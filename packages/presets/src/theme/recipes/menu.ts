@@ -56,6 +56,9 @@ export const menu = defineSlotRecipe({
       display: 'flex',
       flexDirection: 'column',
     },
+    positioner: {
+      zIndex: 'dropdown',
+    },
     item: itemStyle,
     optionItem: itemStyle,
     triggerItem: itemStyle,

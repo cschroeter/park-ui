@@ -1,12 +1,12 @@
 'use client'
 
 import { Portal } from '@ark-ui/react'
-import { CheckIcon, ChevronsUpDownIcon, SlidersIcon, XIcon } from 'lucide-react'
+import { CheckIcon, ChevronsUpDownIcon, SlidersIcon } from 'lucide-react'
 import { useState } from 'react'
-import { Box, Flex, Stack } from 'styled-system/jsx'
+import { Box, Flex } from 'styled-system/jsx'
 import { Pattern, match } from 'ts-pattern'
-import { useBoolean } from 'usehooks-ts'
 import { IconButton } from '~/components/ui/icon-button'
+import { Popover, PopoverContent, PopoverPositioner, PopoverTrigger } from '~/components/ui/popover'
 import {
   Select,
   SelectContent,
@@ -18,7 +18,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '~/components/ui/select'
-import { Typography } from '~/components/ui/typography'
 import type { DefaultProps } from '~/lib/find-component'
 import { AccordionDemo } from './demo/accordion-demo'
 import { AlertDemo } from './demo/alert-demo'
@@ -125,109 +124,65 @@ export const Playground = (props: Props) => {
     .run()
 
   const hasSettings = Object.keys(defaultProps ?? {}).length > 0
-  const { value, setFalse, setTrue } = useBoolean(false)
 
   return (
     <Flex minH="md" position="relative" borderWidth="1px" borderRadius="l3" overflow="hidden">
       {hasSettings && (
         <Box position="absolute" top="2" right="2" zIndex={1}>
-          <IconButton
-            onClick={() => setTrue()}
-            variant="outline"
-            size="sm"
-            aria-label="Open settings"
-          >
-            <SlidersIcon />
-          </IconButton>
+          <Popover portalled positioning={{ gutter: 16, placement: 'right-start' }}>
+            <PopoverTrigger asChild>
+              <IconButton variant="outline" size="sm" aria-label="Open settings">
+                <SlidersIcon />
+              </IconButton>
+            </PopoverTrigger>
+            <Portal>
+              <PopoverPositioner>
+                <PopoverContent minW="48" gap="4" py="5">
+                  {Object.entries(defaultProps || {}).map(([key, value]) =>
+                    match(value)
+                      .with(Pattern.string, () => <span key={key} />)
+                      .with(Pattern.number, () => <span key={key} />)
+                      .with(Pattern.boolean, (x) => <span key={key} />)
+                      .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
+                        <Select
+                          key={key}
+                          defaultValue={[defaultValue]}
+                          items={options}
+                          positioning={{ sameWidth: true }}
+                          closeOnSelect={false}
+                          size="sm"
+                          onChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
+                        >
+                          <SelectLabel textTransform="capitalize">{key}</SelectLabel>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a Framework" />
+                            <ChevronsUpDownIcon />
+                          </SelectTrigger>
+                          <SelectPositioner>
+                            <SelectContent>
+                              {options.map((option) => (
+                                <SelectItem key={option} item={option}>
+                                  <SelectItemText>{option}</SelectItemText>
+                                  <SelectItemIndicator>
+                                    <CheckIcon />
+                                  </SelectItemIndicator>
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </SelectPositioner>
+                        </Select>
+                      ))
+                      .exhaustive(),
+                  )}
+                </PopoverContent>
+              </PopoverPositioner>
+            </Portal>
+          </Popover>
         </Box>
       )}
-      <Flex
-        transition="width"
-        transitionDuration="250ms"
-        transitionTimingFunction="cubic-bezier(0.4, 0, 0.2, 1)"
-        width="100%"
-        _open={{
-          width: 'calc(100% - 13rem)',
-        }}
-        data-state={value ? 'open' : 'closed'}
-        align="center"
-        justify="center"
-        p={{ base: '4', md: '6' }}
-      >
+      <Flex width="full" align="center" justify="center" p={{ base: '4', md: '6' }}>
         <Component {...state} />
       </Flex>
-      {hasSettings}
-      <Box
-        position="absolute"
-        bg="bg.default"
-        height="full"
-        right="-13rem"
-        width="13rem"
-        transition="right"
-        transitionDuration="250ms"
-        transitionTimingFunction="cubic-bezier(0.4, 0, 0.2, 1)"
-        data-state={value ? 'open' : 'closed'}
-        borderLeftWidth="1px"
-        _open={{
-          right: '0',
-        }}
-        zIndex={2}
-      >
-        <Box position="absolute" top="2" right="2" zIndex={1}>
-          <IconButton
-            onClick={() => setFalse()}
-            variant="ghost"
-            size="sm"
-            aria-label='Close "Settings"'
-          >
-            <XIcon />
-          </IconButton>
-        </Box>
-        <Typography textStyle="sm" p="4" fontWeight="semibold">
-          Settings
-        </Typography>
-        <hr />
-        <Stack gap="4" py="5" px="4">
-          {Object.entries(defaultProps || {}).map(([key, value]) =>
-            match(value)
-              .with(Pattern.string, () => <span key={key} />)
-              .with(Pattern.number, () => <span key={key} />)
-              .with(Pattern.boolean, (x) => <span key={key} />)
-              .with({ defaultValue: Pattern.string }, ({ options, defaultValue }) => (
-                <Select
-                  key={key}
-                  defaultValue={[defaultValue]}
-                  items={options}
-                  positioning={{ sameWidth: true }}
-                  closeOnSelect={false}
-                  size="sm"
-                  onChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
-                >
-                  <SelectLabel textTransform="capitalize">{key}</SelectLabel>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a Framework" />
-                    <ChevronsUpDownIcon />
-                  </SelectTrigger>
-                  <Portal>
-                    <SelectPositioner zIndex="docked">
-                      <SelectContent>
-                        {options.map((option) => (
-                          <SelectItem key={option} item={option}>
-                            <SelectItemText>{option}</SelectItemText>
-                            <SelectItemIndicator>
-                              <CheckIcon />
-                            </SelectItemIndicator>
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </SelectPositioner>
-                  </Portal>
-                </Select>
-              ))
-              .exhaustive(),
-          )}
-        </Stack>
-      </Box>
     </Flex>
   )
 }

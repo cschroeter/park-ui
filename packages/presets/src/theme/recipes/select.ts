@@ -33,6 +33,9 @@ export const select = defineSlotRecipe({
         outlineColor: 'border.outline',
       },
     },
+    positioner: {
+      zIndex: 'dropdown',
+    },
     item: {
       alignItems: 'center',
       borderRadius: 'l1',

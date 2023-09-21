@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import {
   Select,
@@ -31,20 +30,18 @@ export const FontFamilySelect = () => {
         <SelectValue />
         <ChevronsUpDownIcon />
       </SelectTrigger>
-      <Portal>
-        <SelectPositioner zIndex="toast">
-          <SelectContent>
-            {fontFamilies.map((fontFamily, id) => (
-              <SelectItem key={id} item={fontFamily}>
-                <SelectItemText>{fontFamily.label}</SelectItemText>
-                <SelectItemIndicator>
-                  <CheckIcon />
-                </SelectItemIndicator>
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </SelectPositioner>
-      </Portal>
+      <SelectPositioner>
+        <SelectContent>
+          {fontFamilies.map((fontFamily, id) => (
+            <SelectItem key={id} item={fontFamily}>
+              <SelectItemText>{fontFamily.label}</SelectItemText>
+              <SelectItemIndicator>
+                <CheckIcon />
+              </SelectItemIndicator>
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </SelectPositioner>
     </Select>
   )
 }
