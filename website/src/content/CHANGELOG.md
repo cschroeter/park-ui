@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.14.0] - 2023-09-21
+
 ### Added
 
 - Added `Table` component.
