@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+## [0.15.0] - 2023-09-21
+
+### Added
+
+- Added `ghost` variant to the `Code` component.
+
+### Changed
+
+- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and `tertiary` to `ghost`.
+
 ## [0.14.0] - 2023-09-21
 
 ### Added
