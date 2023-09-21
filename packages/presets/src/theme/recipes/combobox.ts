@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const combobox = defineSlotRecipe({
   className: 'combobox',
-  description: 'A combobox style',
   slots: comboboxAnatomy.keys(),
   base: {
     root: {

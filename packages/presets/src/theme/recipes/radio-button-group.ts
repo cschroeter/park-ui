@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const radioButtonGroup = defineSlotRecipe({
   className: 'radioButtonGroup',
-  description: 'A radio button group style',
   slots: radioGroupAnatomy.keys(),
   base: {
     root: {
@@ -93,7 +92,6 @@ export const radioButtonGroup = defineSlotRecipe({
           minW: '9',
           textStyle: 'sm',
           px: '3.5',
-
           '& svg': {
             width: '4.5',
             height: '4.5',

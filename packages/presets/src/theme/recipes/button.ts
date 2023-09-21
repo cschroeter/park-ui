@@ -2,7 +2,6 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const button = defineRecipe({
   className: 'button',
-  description: 'A button style',
   base: {
     alignItems: 'center',
     appearance: 'none',

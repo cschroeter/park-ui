@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const popover = defineSlotRecipe({
   className: 'popover',
-  description: 'A popover style',
   slots: popoverAnatomy.keys(),
   base: {
     positioner: {

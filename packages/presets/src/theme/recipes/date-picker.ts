@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const datePicker = defineSlotRecipe({
   className: 'datePicker',
-  description: 'A date picker style',
   slots: [...datePickerAnatomy.keys()],
   base: {
     cellTrigger: {

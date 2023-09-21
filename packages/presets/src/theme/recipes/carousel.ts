@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const carousel = defineSlotRecipe({
   className: 'carousel',
-  description: 'A carousel style',
   slots: carouselAnatomy.keys(),
   base: {
     viewport: {

@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const colorPicker = defineSlotRecipe({
   className: 'colorPicker',
-  description: 'A color picker style',
   slots: colorPickerAnatomy.keys(),
   base: {
     content: {

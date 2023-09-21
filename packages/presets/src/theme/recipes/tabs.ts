@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tabs = defineSlotRecipe({
   className: 'tabs',
-  description: 'A tabs style',
   slots: tabsAnatomy.keys(),
   base: {
     list: {

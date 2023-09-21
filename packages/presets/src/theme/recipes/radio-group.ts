@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const radioGroup = defineSlotRecipe({
   className: 'radioGroup',
-  description: 'A radio group style',
   slots: radioGroupAnatomy.keys(),
   base: {
     root: {
@@ -36,7 +35,6 @@ export const radioGroup = defineSlotRecipe({
       _disabled: {
         borderColor: 'border.disabled',
         color: 'fg.disabled',
-
         _hover: {
           bg: 'initial',
           color: 'fg.disabled',

@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const splitter = defineSlotRecipe({
   className: 'splitter',
-  description: 'A splitter style',
   slots: splitterAnatomy.keys(),
   base: {
     root: {
