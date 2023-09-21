@@ -1,4 +1,4 @@
-import { Portal, type CollectionItem } from '@ark-ui/react'
+import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import {
   Select,
@@ -16,7 +16,13 @@ import {
   type SelectProps,
 } from '~/components/ui/select'
 
-export const SelectDemo = (props: SelectProps<CollectionItem>) => {
+type Item = {
+  label: string
+  value: string
+  disabled?: boolean
+}
+
+export const SelectDemo = (props: SelectProps<Item>) => {
   const items = [
     { label: 'React', value: 'react' },
     { label: 'Solid', value: 'solid' },
@@ -25,7 +31,12 @@ export const SelectDemo = (props: SelectProps<CollectionItem>) => {
   ]
 
   return (
-    <Select positioning={{ sameWidth: true }} width="2xs" {...props} items={items}>
+    <Select<SelectProps<Item>>
+      positioning={{ sameWidth: true }}
+      width="2xs"
+      {...props}
+      items={items}
+    >
       <SelectLabel>Framework</SelectLabel>
       <SelectControl>
         <SelectTrigger>

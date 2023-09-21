@@ -1,4 +1,4 @@
-import { switchAnatomy } from '@ark-ui/react'
+import { switchAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const switchRecipe = defineSlotRecipe({

@@ -1,4 +1,4 @@
-import { splitterAnatomy } from '@ark-ui/react'
+import { splitterAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const splitter = defineSlotRecipe({

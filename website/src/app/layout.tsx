@@ -34,6 +34,7 @@ const RootLayout = (props: PropsWithChildren) => {
 export default RootLayout
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://park-ui.com'),
   title: {
     default: 'Park UI',
     template: '%s | Park UI',
