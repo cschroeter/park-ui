@@ -1,18 +1,16 @@
 import * as Ark from '@ark-ui/react/accordion'
-import { createStyled } from '../../styled'
+import { createStyleContext } from '../../create-style-context'
 import { accordionStyles } from './recipe'
-
-const { styled, styledRoot } = createStyled(accordionStyles)
 export * from '@ark-ui/react/accordion'
 
 export type AccordionProps = React.ComponentProps<typeof Accordion>
-const AccordionRoot = styledRoot(Ark.Accordion.Root, 'root')
 
-export const AccordionContent = styled(Ark.Accordion.Content, 'content')
+const { withProvider, withContext } = createStyleContext(accordionStyles)
 
-export const AccordionItem = styled(Ark.Accordion.Item, 'item')
-
-export const AccordionTrigger = styled(Ark.Accordion.Trigger, 'trigger')
+const AccordionRoot = withProvider(Ark.Accordion.Root, 'root')
+export const AccordionContent = withContext(Ark.Accordion.Content, 'content')
+export const AccordionItem = withContext(Ark.Accordion.Item, 'item')
+export const AccordionTrigger = withContext(Ark.Accordion.Trigger, 'trigger')
 
 export const Accordion = Object.assign(AccordionRoot, {
   Root: AccordionRoot,
