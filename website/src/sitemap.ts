@@ -163,7 +163,6 @@ export const sitemap = [
         title: 'Combobox',
         description: 'A single input field that combines the functionality of a select and input.',
         href: '/docs/components/combobox',
-        label: 'Updated',
         defaultProps: {},
       },
       {
@@ -255,7 +254,6 @@ export const sitemap = [
         title: 'Menu',
         description: 'A list of options that appears when a user interacts with a button.',
         href: '/docs/components/menu',
-        label: 'Updated',
         defaultProps: {
           size: {
             options: ['xs', 'sm', 'md', 'lg'],
@@ -358,7 +356,6 @@ export const sitemap = [
         title: 'Select',
         description: 'Displays a list of options for the user to pick from.',
         href: '/docs/components/select',
-        label: 'Updated',
         defaultProps: {
           size: {
             options: ['sm', 'md', 'lg'],
@@ -418,6 +415,7 @@ export const sitemap = [
         description: 'A component that displays data in a tabular format.',
         href: '/docs/components/table',
         label: 'New',
+        isPrimitive: true,
         defaultProps: {
           size: {
             options: ['sm', 'md'],
