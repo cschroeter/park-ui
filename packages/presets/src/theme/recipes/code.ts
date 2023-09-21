@@ -6,16 +6,22 @@ export const code = defineRecipe({
     alignItems: 'center',
     bg: 'bg.subtle',
     borderRadius: 'l2',
-    borderWidth: '1px',
-    color: 'fg.default',
+    color: 'fg.emphasized',
     display: 'inline-flex',
     fontFamily: 'var(--font-code)',
     fontWeight: 'medium',
   },
   defaultVariants: {
     size: 'md',
+    variant: 'outline',
   },
   variants: {
+    variant: {
+      outline: {
+        borderWidth: '1px',
+      },
+      ghost: {},
+    },
     size: {
       sm: {
         height: '5',

@@ -146,10 +146,15 @@ export const sitemap = [
         description: 'A component to display inline code snippets.',
         href: '/docs/components/code',
         isPrimitive: true,
+        label: 'Updated',
         defaultProps: {
           size: {
             options: ['sm', 'md', 'lg'],
             defaultValue: 'md',
+          },
+          variant: {
+            options: ['outline', 'ghost'],
+            defaultValue: 'outline',
           },
         },
       },

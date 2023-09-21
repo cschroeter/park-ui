@@ -17,7 +17,7 @@ export default defineConfig({
       button: [{ variant: ['*'], size: ['*'] }],
       carousel: [{ size: ['*'] }],
       checkbox: [{ size: ['*'] }],
-      code: [{ size: ['*'] }],
+      code: [{ size: ['*'], variant: ['*'] }],
       drawer: [{ placement: ['*'] }],
       icon: [{ size: ['*'] }],
       input: [{ size: ['*'] }],
