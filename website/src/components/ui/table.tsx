@@ -1,13 +1,14 @@
 import { ark } from '@ark-ui/react'
+import type { ComponentPropsWithoutRef } from 'react'
 import { styled } from 'styled-system/jsx'
-import { table } from 'styled-system/recipes'
+import { table, type TableVariantProps } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(table)
 
-const TableRoot = withProvider(styled(ark.table), 'root')
-export type TableProps = typeof TableRoot
+export type TableProps = TableVariantProps & ComponentPropsWithoutRef<typeof ark.table>
 
+const TableRoot = withProvider(styled(ark.table), 'root')
 export const TableBody = withContext(styled(ark.tbody), 'body')
 export const TableCaption = withContext(styled(ark.caption), 'caption')
 export const TableCell = withContext(styled(ark.td), 'cell')

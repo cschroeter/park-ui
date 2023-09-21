@@ -1,13 +1,14 @@
 import { ark } from '@ark-ui/react'
+import type { ComponentPropsWithoutRef } from 'react'
 import { styled } from 'styled-system/jsx'
-import { card } from 'styled-system/recipes'
+import { card, type CardVariantProps } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(card)
 
-const CardRoot = withProvider(styled(ark.div), 'root')
-export type CardProps = typeof CardRoot
+export type CardProps = CardVariantProps & ComponentPropsWithoutRef<typeof ark.div>
 
+const CardRoot = withProvider(styled(ark.div), 'root')
 export const CardContent = withContext(styled(ark.div), 'content')
 export const CardDescription = withContext(styled(ark.p), 'description')
 export const CardFooter = withContext(styled(ark.div), 'footer')
