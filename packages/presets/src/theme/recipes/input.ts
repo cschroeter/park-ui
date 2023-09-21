@@ -2,7 +2,6 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const input = defineRecipe({
   className: 'input',
-  description: 'An input style',
   base: {
     appearance: 'none',
     backgroundColor: 'bg.default',

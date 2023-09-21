@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const pagination = defineSlotRecipe({
   className: 'pagination',
-  description: 'A pagination style',
   slots: paginationAnatomy.keys(),
   base: {
     root: {

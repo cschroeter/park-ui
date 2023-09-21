@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const segmentGroup = defineSlotRecipe({
   className: 'segmentGroup',
-  description: 'A segment group style',
   slots: segmentGroupAnatomy.keys(),
   base: {
     root: {

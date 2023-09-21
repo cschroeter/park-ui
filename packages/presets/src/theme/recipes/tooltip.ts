@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tooltip = defineSlotRecipe({
   className: 'tooltip',
-  description: 'A tooltip style',
   slots: tooltipAnatomy.keys(),
   base: {
     content: {

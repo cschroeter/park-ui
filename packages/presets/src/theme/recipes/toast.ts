@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const toast = defineSlotRecipe({
   className: 'toast',
-  description: 'A toast style',
   slots: toastAnatomy.keys(),
   base: {
     root: {

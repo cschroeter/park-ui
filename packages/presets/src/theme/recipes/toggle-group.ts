@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const toggleGroup = defineSlotRecipe({
   className: 'toggleGroup',
-  description: 'A toggle group style',
   slots: toggleGroupAnatomy.keys(),
   base: {
     root: {

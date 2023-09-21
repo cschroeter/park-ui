@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const hoverCard = defineSlotRecipe({
   className: 'hoverCard',
-  description: 'A hover card style',
   slots: hoverCardAnatomy.keys(),
   base: {
     content: {
