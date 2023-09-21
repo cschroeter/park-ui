@@ -30,17 +30,14 @@ const Page = async (props: any) => {
         >
           {!component.isPrimitive && <ArkDocumentationLinks name={component.title} />}
         </PageHeader>
-        <Tabs defaultValue="preview">
+        <Playground component={component.title} defaultProps={component.defaultProps} />
+        <Tabs defaultValue="code">
           <TabList>
-            <TabTrigger value="preview">Preview</TabTrigger>
             <TabTrigger value="code">Code</TabTrigger>
             <TabTrigger value="snippet">Snippet</TabTrigger>
             <TabTrigger value="recipe">Recipe</TabTrigger>
             <TabIndicator />
           </TabList>
-          <TabContent value="preview">
-            <Playground component={component.title} defaultProps={component.defaultProps} />
-          </TabContent>
           <TabContent value="code">
             <Code code={component.files.code} h="md" />
           </TabContent>

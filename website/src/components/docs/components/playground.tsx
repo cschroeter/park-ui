@@ -126,7 +126,7 @@ export const Playground = (props: Props) => {
   const hasSettings = Object.keys(defaultProps ?? {}).length > 0
 
   return (
-    <Flex minH="md" position="relative" borderWidth="1px" borderRadius="l3" overflow="hidden">
+    <Flex minH="56" position="relative" borderWidth="1px" borderRadius="l3" overflow="hidden">
       {hasSettings && (
         <Box position="absolute" top="2" right="2" zIndex={1}>
           <Popover portalled positioning={{ gutter: 16, placement: 'right-start' }}>
@@ -180,7 +180,7 @@ export const Playground = (props: Props) => {
           </Popover>
         </Box>
       )}
-      <Flex width="full" align="center" justify="center" p={{ base: '4', md: '6' }}>
+      <Flex width="full" align="center" justify="center" p={{ base: '4', md: '12' }}>
         <Component {...state} />
       </Flex>
     </Flex>
