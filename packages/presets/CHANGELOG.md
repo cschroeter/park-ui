@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.15.0] - 2023-09-21
+
 ### Added
 
 - Added `ghost` variant to the `Code` component.
