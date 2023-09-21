@@ -14,7 +14,7 @@ export const table = defineSlotRecipe({
       },
     },
     caption: {
-      color: 'fg.muted',
+      color: 'fg.subtle',
     },
     cell: {
       verticalAlign: 'middle',
@@ -58,12 +58,11 @@ export const table = defineSlotRecipe({
           mt: '4',
         },
         cell: {
-          p: '2',
+          p: '2.5',
         },
         head: {
-          textStyle: 'xs',
-          height: '8',
-          px: '2',
+          height: '10',
+          px: '2.5',
         },
       },
       md: {
