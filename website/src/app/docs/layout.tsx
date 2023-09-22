@@ -20,6 +20,7 @@ const DocsLayout = (props: PropsWithChildren) => {
       </Flex>
       <Flex flex="1" pl={{ base: 'none', lg: '15rem' }}>
         <Box
+          px={{ base: '4', md: '6' }}
           pb={{ base: '12', md: '24' }}
           pl={{ base: 'none', lg: '16' }}
           width="full"
