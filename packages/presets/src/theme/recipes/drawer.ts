@@ -33,7 +33,9 @@ export const drawer = defineSlotRecipe({
     },
     content: {
       background: 'bg.default',
-      boxShadow: 'lg',
+      boxShadow: 'md',
+      display: 'flex',
+      flexDirection: 'column',
       height: 'full',
       width: { base: 'xs', sm: 'sm' },
       overflowY: 'auto',
@@ -43,6 +45,9 @@ export const drawer = defineSlotRecipe({
         md: '6',
       },
       py: '6',
+      _hidden: {
+        display: 'none',
+      },
     },
     title: {
       fontWeight: 'semibold',

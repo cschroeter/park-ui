@@ -16,7 +16,7 @@ export const GrayPalettePicker = () => {
 
   return (
     <Stack gap="1.5">
-      <Typography textStyle="sm" fontWeight="semibold">
+      <Typography textStyle="sm" fontWeight="medium">
         Gray Palette
       </Typography>
       <RadioButtonGroup

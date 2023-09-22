@@ -1,17 +1,13 @@
 'use client'
-import { SiGithub, SiTwitter } from '@icons-pack/react-simple-icons'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Box, Container, HStack, styled } from 'styled-system/jsx'
 import { link } from 'styled-system/recipes'
-import { IconButton } from '~/components/ui/icon-button'
-import { ColorModeButton } from '../color-mode-button'
 import { Logo } from '../icons/logo'
-import { FeedbackPopover } from '../marketing/feedback-popover'
-import { ThemePopover } from '../marketing/theme-popover'
 import { MobileNavbar } from './mobile-navbar'
 import { MobileSidebarContainer } from './mobile-sidebar-container'
 import { Sidebar } from './sidebar'
+import { ThemeDrawer } from './theme-drawer'
 
 export const Navbar = () => {
   const pathName = usePathname()
@@ -43,28 +39,9 @@ export const Navbar = () => {
                 <NextLink href="/#examples" className={link({ variant: 'navbar' })}>
                   Examples
                 </NextLink>
-                <ThemePopover />
               </HStack>
             </HStack>
-            <HStack gap={{ base: '2', md: '4' }}>
-              <FeedbackPopover
-                closeOnInteractOutside={false}
-                positioning={{ placement: 'bottom-end', gutter: 4 }}
-              />
-              <HStack gap="0.5">
-                <IconButton aria-label="Twitter profile" variant="ghost" asChild>
-                  <NextLink href="https://twitter.com/grizzly_codes" target="_blank">
-                    <SiTwitter />
-                  </NextLink>
-                </IconButton>
-                <IconButton aria-label="GitHub repository" variant="ghost" asChild>
-                  <NextLink href="https://github.com/cschroeter/park-ui" target="_blank">
-                    <SiGithub />
-                  </NextLink>
-                </IconButton>
-                <ColorModeButton />
-              </HStack>
-            </HStack>
+            <ThemeDrawer />
           </HStack>
         </Container>
       </Box>

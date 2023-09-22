@@ -1,6 +1,6 @@
 import { useEffectOnce, useLocalStorage, useUpdateEffect } from 'usehooks-ts'
 
-type ColorMode = 'light' | 'dark'
+export type ColorMode = 'light' | 'dark' | 'system'
 
 export const colorModeLocalStorageKey = 'park-ui-color-mode'
 

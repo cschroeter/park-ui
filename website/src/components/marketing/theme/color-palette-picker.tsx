@@ -16,7 +16,7 @@ export const ColorPalettePicker = () => {
 
   return (
     <Stack gap="1.5">
-      <Typography textStyle="sm" fontWeight="semibold">
+      <Typography textStyle="sm" fontWeight="medium">
         Color
       </Typography>
       <RadioButtonGroup

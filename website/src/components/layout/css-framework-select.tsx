@@ -30,22 +30,22 @@ type Item = {
   disabled?: boolean
 }
 
-export const FrameworkSelect = memo(() => {
+export const CSSFrameworkSelect = memo(() => {
   const frameworks = [
-    { label: 'React', value: 'react' },
-    { label: 'Solid', value: 'solid', disabled: true },
-    { label: 'Vue', value: 'vue', disabled: true },
+    { label: 'Panda CSS', value: 'panda' },
+    { label: 'Tailwind', value: 'tailwind', disabled: true },
+    { label: 'UnoCSS', value: 'uno', disabled: true },
   ]
 
   return (
     <Select<SelectProps<Item>>
-      defaultValue={['react']}
+      defaultValue={['panda']}
       positioning={{ sameWidth: true }}
       items={frameworks}
       size="sm"
     >
       <HStack gap="1.5">
-        <SelectLabel>JS Framework</SelectLabel>
+        <SelectLabel>CSS Framework</SelectLabel>
         <Tooltip openDelay={0} closeDelay={0} positioning={{ placement: 'top' }}>
           <TooltipTrigger asChild>
             <Icon size="sm" color="fg.subtle">
@@ -57,15 +57,14 @@ export const FrameworkSelect = memo(() => {
               <TooltipArrowTip />
             </TooltipArrow>
             <TooltipContent>
-              Code examples and documentation are tailored to the selected framework. Vue and Solid
-              coming soon.
+              Code examples and documentation are tailored to the selected framework.
             </TooltipContent>
           </TooltipPositioner>
         </Tooltip>
       </HStack>
       <SelectControl>
         <SelectTrigger>
-          <SelectValue placeholder="Select a Framework" />
+          <SelectValue />
           <ChevronsUpDownIcon />
         </SelectTrigger>
       </SelectControl>
@@ -85,4 +84,4 @@ export const FrameworkSelect = memo(() => {
   )
 })
 
-FrameworkSelect.displayName = 'FrameworkSelect'
+CSSFrameworkSelect.displayName = 'CSSFrameworkSelect'
