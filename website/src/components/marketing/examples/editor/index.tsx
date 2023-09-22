@@ -18,6 +18,7 @@ const extensions = [
 
 export const Editor = () => {
   const editor = useEditor({
+    // @ts-expect-error tiptap types are bad af
     extensions,
     content,
     editorProps: {

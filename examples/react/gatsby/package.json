@@ -18,15 +18,15 @@
   },
   "devDependencies": {
     "@ark-ui/react": "0.15.0",
-    "@pandacss/dev": "0.15.0",
-    "@park-ui/presets": "0.12.0",
+    "@pandacss/dev": "0.15.1",
+    "@park-ui/presets": "0.15.0",
     "@types/node": "20.3.3",
-    "@types/react": "18.2.21",
+    "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "eslint-plugin-flowtype": "8.0.3",
     "gatsby-plugin-alias-imports": "1.0.5",
     "gatsby-plugin-postcss": "6.12.0",
-    "postcss": "8.4.29",
+    "postcss": "8.4.30",
     "typescript": "5.2.2"
   }
 }
