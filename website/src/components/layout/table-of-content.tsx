@@ -36,7 +36,7 @@ export const TableOfContent = () => {
       right="max(0px, calc(100vw / 2 - 616px))"
     >
       <Stack gap="4">
-        <Typography textStyle="sm" fontWeight="bold">
+        <Typography textStyle="sm" fontWeight="semibold">
           On This Page
         </Typography>
         <Stack>

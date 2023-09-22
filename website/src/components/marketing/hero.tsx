@@ -13,7 +13,7 @@ export const Hero = () => {
       <Stack direction="row" gap="8" align="center">
         <Stack gap={{ base: '8', md: '12' }} maxW={{ lg: 'xl' }} flexShrink={0} width="full">
           <Stack gap={{ base: '4', md: '6' }}>
-            <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }}>
+            <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
               Build your own Design System.
             </Heading>
             <Typography textStyle={{ base: 'lg', md: 'xl' }} color="fg.muted">

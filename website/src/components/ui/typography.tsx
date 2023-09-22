@@ -28,7 +28,7 @@ export const Heading = (props: HeadingProps) => {
   const id = typeof children === 'string' ? slugify(children) : undefined
 
   return (
-    <Typography as={as} id={id} fontWeight="bold" {...rest}>
+    <Typography as={as} id={id} fontWeight="semibold" {...rest}>
       {children}
     </Typography>
   )

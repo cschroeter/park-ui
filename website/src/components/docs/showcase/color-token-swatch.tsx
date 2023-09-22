@@ -22,7 +22,7 @@ export const ColorTokenSwatch = (props: ColorToken) => {
       <Stack justify="space-between" width="full">
         <Box />
         <Box>
-          <Typography textStyle="sm" fontWeight="bold">
+          <Typography textStyle="sm" fontWeight="semibold">
             {name}
           </Typography>
           <Typography textStyle="xs">{colorMode === 'light' ? value.base : value._dark}</Typography>

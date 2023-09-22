@@ -13,6 +13,7 @@ import {
 import { Typography } from '~/components/ui/typography'
 import { sitemap } from '../../sitemap'
 import { Badge } from '../ui/badge'
+import { FrameworkSelect } from './framework-select'
 
 export const Sidebar = () => {
   const pathname = usePathname()
@@ -24,9 +25,10 @@ export const Sidebar = () => {
 
   return (
     <Stack gap="8" alignItems="stretch">
+      <FrameworkSelect />
       {sitemap.map((group) => (
         <Stack gap="3" key={group.name}>
-          <Typography textStyle={{ base: 'md', md: 'sm' }} fontWeight="bold">
+          <Typography textStyle={{ base: 'md', md: 'sm' }} fontWeight="semibold">
             {group.name}
           </Typography>
           <SegmentGroup value={currentPath} orientation="vertical" size={{ base: 'md', md: 'sm' }}>
