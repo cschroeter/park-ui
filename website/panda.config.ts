@@ -30,7 +30,7 @@ export default defineConfig({
       segmentGroup: [{ size: ['*'] }],
       select: [{ size: ['*'], variant: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
-      tabs: [{ size: ['*'] }],
+      tabs: [{ size: ['*'], variant: ['*'] }],
       table: [{ size: ['*'], variant: ['*'] }],
       textarea: [{ size: ['*'] }],
       toggleGroup: [{ size: ['*'], variant: ['*'] }],

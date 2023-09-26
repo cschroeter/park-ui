@@ -405,8 +405,12 @@ export const sitemap = [
         description: 'Flexible navigation tool with various modes and features.',
         href: '/docs/components/tabs',
         defaultProps: {
+          variant: {
+            options: ['line', 'outline'],
+            defaultValue: 'line',
+          },
           size: {
-            options: ['sm', 'md'],
+            options: ['sm', 'md', 'lg'],
             defaultValue: 'md',
           },
           orientation: {

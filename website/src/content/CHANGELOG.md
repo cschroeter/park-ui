@@ -3,6 +3,11 @@
 ### Added
 
 - Added open and close animation to the `Tooltip` component.
+- Added `outline` variant and `lg` size to the `Tabs` component.
+
+### Changed
+
+- Improved `horizontal` and `vertical` orientation in `Tabs`.
 
 ## [0.15.0] - 2023-09-21
 

@@ -1,4 +1,11 @@
-import { TabIndicator, TabList, TabTrigger, Tabs, type TabsProps } from '~/components/ui/tabs'
+import {
+  TabContent,
+  TabIndicator,
+  TabList,
+  TabTrigger,
+  Tabs,
+  type TabsProps,
+} from '~/components/ui/tabs'
 
 export const TabsDemo = (props: TabsProps) => {
   const options = [
@@ -17,6 +24,10 @@ export const TabsDemo = (props: TabsProps) => {
         ))}
         <TabIndicator />
       </TabList>
+      <TabContent value="react">&nbsp;</TabContent>
+      <TabContent value="solid">&nbsp;</TabContent>
+      <TabContent value="svelte">&nbsp;</TabContent>
+      <TabContent value="vue">&nbsp;</TabContent>
     </Tabs>
   )
 }
