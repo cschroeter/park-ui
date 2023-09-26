@@ -36,6 +36,7 @@ export const tabs = defineSlotRecipe({
       color: 'fg.subtle',
       cursor: 'pointer',
       display: 'inline-flex',
+      flexShrink: '0',
       fontWeight: 'semibold',
       gap: '2',
       justifyContent: 'center',
@@ -97,7 +98,7 @@ export const tabs = defineSlotRecipe({
         },
         trigger: {
           _horizontal: {
-            pb: '1',
+            pb: '2.5',
           },
         },
       },

@@ -18,10 +18,10 @@ export const CardWithTabs = () => {
     <Card>
       <Tabs defaultValue="login" size="sm">
         <TabList pt="4" mx="6">
-          <TabTrigger value="login" width="full">
+          <TabTrigger value="login" flex="1">
             Login
           </TabTrigger>
-          <TabTrigger value="register" width="full">
+          <TabTrigger value="register" flex="1">
             Register
           </TabTrigger>
           <TabIndicator />
