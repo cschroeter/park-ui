@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.16.0] - 2023-09-27
+
 ### Added
 
 - Added open and close animation to the `Tooltip` component.
