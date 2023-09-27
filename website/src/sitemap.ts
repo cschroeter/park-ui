@@ -106,6 +106,7 @@ export const sitemap = [
         description: 'An interactive element used to trigger actions.',
         href: '/docs/components/button',
         isPrimitive: true,
+        label: 'Updated',
         defaultProps: {
           variant: {
             options: ['solid', 'outline', 'ghost', 'link'],
@@ -210,7 +211,6 @@ export const sitemap = [
         description: 'A graphical representation of an action, file, or concept.',
         href: '/docs/components/icon',
         isPrimitive: true,
-        label: 'New',
         defaultProps: {
           size: {
             options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],
@@ -404,6 +404,7 @@ export const sitemap = [
         title: 'Tabs',
         description: 'Flexible navigation tool with various modes and features.',
         href: '/docs/components/tabs',
+        label: 'Updated',
         defaultProps: {
           variant: {
             options: ['line', 'outline'],
@@ -464,7 +465,6 @@ export const sitemap = [
         title: 'Toggle Group',
         description: 'A set of two-state buttons that can be toggled on or off.',
         href: '/docs/components/toggle-group',
-        label: 'New',
         defaultProps: {
           size: {
             options: ['sm', 'md', 'lg'],
@@ -484,6 +484,7 @@ export const sitemap = [
         title: 'Tooltip',
         description: 'A label that provides information on hover or focus.',
         href: '/docs/components/tooltip',
+        label: 'Updated',
         defaultProps: {},
       },
     ],
