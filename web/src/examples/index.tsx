@@ -35,7 +35,7 @@ const examples = [
 export const Examples = () => {
   const [activeTab, setActiveTab] = useState('authentication')
   return (
-    <Container pb={{ base: '16', md: '24' }} pt={{ base: '16' }} id="examples">
+    <Container pb={{ base: '16', md: '24' }} pt={{ base: '16' }} id="examples" maxW="7xl">
       <Tabs value={activeTab} onChange={(e) => setActiveTab(e.value!)}>
         <TabList>
           {examples.map((example, id) => (

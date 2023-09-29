@@ -1,6 +1,5 @@
 export * from './accordion'
 export * from './alert'
-export * from './article'
 export * from './button'
 export * from './code'
 export * from './heading'

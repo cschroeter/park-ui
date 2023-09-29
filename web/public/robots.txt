@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://park-ui.com
+
+# Sitemaps
+Sitemap: https://park-ui.com/sitemap-index.xml

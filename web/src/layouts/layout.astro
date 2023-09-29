@@ -18,11 +18,38 @@ const { title, description } = Astro.props
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>{title} | Park UI</title>
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="Panda CSS,Ark UI,Components,React,Solid,Vue" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180" />
+
+    <!-- OpenGraph -->
+    <meta property="og:url" content="https://park-ui.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1350" />
+    <meta property="og:image" content="https://park-ui.com/opengraph-image.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@grizzly_codes" />
+    <meta
+      name="twitter:description"
+      content="Beautifully designed components built with Ark UI and Panda CSS."
+    />
+    <meta name="twitter:image:type" content="image/png" />
+    <meta name="twitter:image:width" content="2400" />
+    <meta name="twitter:image:height" content="1350" />
+    <meta name="twitter:image" content="https://park-ui.com/twitter-image.png" />
+
     <ViewTransitions />
   </head>
   <body>

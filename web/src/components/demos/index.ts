@@ -1,6 +1,5 @@
 export { Demo as Accordion } from './accordion.demo'
 export { Demo as Alert } from './alert.demo'
-export { Demo as Article } from './article.demo'
 export { Demo as Avatar } from './avatar.demo'
 export { Demo as Badge } from './badge.demo'
 export { Demo as Button } from './button.demo'
