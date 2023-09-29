@@ -17,7 +17,6 @@ export const FontFamilySelect = () => {
 
   return (
     <Select
-      // @ts-expect-error
       items={fontFamilies}
       value={[currentFontFamily.value]}
       // @ts-expect-error

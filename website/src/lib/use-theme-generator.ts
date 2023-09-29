@@ -172,7 +172,7 @@ export const fontFamilies = [
     value: 'var(--font-raleway)',
   },
   {
-    label: 'Fira Code',
+    label: 'Roboto Mono',
     value: 'var(--font-code)',
   },
 ] as const

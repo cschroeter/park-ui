@@ -11,4 +11,4 @@ const code = fs.readFileSync(`./src/components/demos/${componentId}.demo.tsx`, '
 ---
 
 <Playground id={componentId} componentProps={componentProps} client:load />
-<CodePreview code={code} borderTopWidth="0" borderTopRadius="0" />
+<CodePreview code={code} isAttached />

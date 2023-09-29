@@ -1,0 +1,8 @@
+---
+import fs from 'fs'
+import CodePreview from './code-preview.astro'
+const recipeName = Astro.params.slug?.split('/').pop()
+const code = fs.readFileSync(`../packages/presets/src/theme/recipes/${recipeName}.ts`, 'utf8')
+---
+
+<CodePreview code={code} />

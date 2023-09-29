@@ -1,0 +1,47 @@
+import { Portal } from '@ark-ui/react'
+import { XIcon } from 'lucide-react'
+import { Box, Stack } from 'styled-system/jsx'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
+import {
+  Popover,
+  PopoverArrow,
+  PopoverArrowTip,
+  PopoverCloseTrigger,
+  PopoverContent,
+  PopoverDescription,
+  PopoverPositioner,
+  PopoverTitle,
+  PopoverTrigger,
+  type PopoverProps,
+} from '~/components/ui/popover'
+
+export const Demo = (props: PopoverProps) => (
+  <Popover portalled {...props}>
+    <PopoverTrigger asChild>
+      <Button variant="outline">Open Popover</Button>
+    </PopoverTrigger>
+    <Portal>
+      <PopoverPositioner>
+        <PopoverContent>
+          <PopoverArrow>
+            <PopoverArrowTip />
+          </PopoverArrow>
+          <Stack gap="1">
+            <PopoverTitle>Favorite Framework</PopoverTitle>
+            <PopoverDescription>
+              Tell us what is your favorite framework and why you love to use it.
+            </PopoverDescription>
+          </Stack>
+          <Box position="absolute" top="1" right="1">
+            <PopoverCloseTrigger asChild>
+              <IconButton aria-label="Close Popover" variant="ghost" size="sm">
+                <XIcon />
+              </IconButton>
+            </PopoverCloseTrigger>
+          </Box>
+        </PopoverContent>
+      </PopoverPositioner>
+    </Portal>
+  </Popover>
+)

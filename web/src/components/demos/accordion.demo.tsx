@@ -8,7 +8,7 @@ import {
   type AccordionProps,
 } from '~/components/ui/accordion'
 
-export const AccordionDemo = (props: AccordionProps) => {
+export const Demo = (props: AccordionProps) => {
   const items = ['React', 'Solid', 'Vue']
   return (
     <Accordion defaultValue={['React']} multiple {...props}>

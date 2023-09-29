@@ -1,8 +1,19 @@
 import { defineConfig } from '@pandacss/dev'
+import presetPark from '@park-ui/presets'
+import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
   preflight: true,
-  presets: ['@pandacss/dev/presets', '@park-ui/presets'],
+  presets: [
+    '@pandacss/dev/presets',
+    presetPark,
+    typographyPreset({
+      recipe: {
+        sizes: ['base'],
+        notProse: true,
+      },
+    }),
+  ],
   include: ['./src/**/*.{ts,tsx,js,jsx,astro}'],
   exclude: [],
   jsxFramework: 'react',
@@ -32,13 +43,19 @@ export default defineConfig({
       },
       '&:root': {
         '--font-body': 'Plus Jakarta Sans Variable',
-        '--font-code': 'Fira Code Variable',
+        '--font-code': 'Roboto Mono Variable',
         '--font-inter': 'Inter Variable',
         '--font-outfit': 'Outfit Variable',
         '--font-raleway': 'Raleway Variable',
       },
+      article: {
+        '--colors-prose-body': 'colors.fg.muted',
+        '--colors-prose-heading': 'colors.fg.default',
+        '--colors-prose-bold': 'colors.fg.emphasized',
+        '--colors-prose-link': 'colors.fg.emphasized',
+      },
       'pre, code': {
-        fontFamily: 'Fira Code Variable!',
+        fontFamily: 'Roboto Mono Variable!',
       },
       pre: {
         overflowX: 'auto',

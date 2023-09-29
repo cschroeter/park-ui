@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import { Box, Circle, Stack } from 'styled-system/jsx'
-import { Text } from './text'
+import { Heading } from './heading'
 
 export const Steps = (props: PropsWithChildren) => {
   return (
@@ -31,13 +31,11 @@ export const Step = (props: PropsWithChildren<StepProps>) => {
         >
           {number}
         </Circle>
-        <Text textStyle={{ base: 'lg', md: 'xl' }} as="span" fontWeight="semibold">
+        <Heading as="h3" my="0!">
           {title}
-        </Text>
+        </Heading>
       </Stack>
-      <Stack ps="12" pt={{ base: '3', md: '4' }}>
-        {children}
-      </Stack>
+      <Box ps="12">{children}</Box>
     </Box>
   )
 }

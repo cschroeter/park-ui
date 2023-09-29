@@ -1,9 +1,9 @@
 ---
 import { type CollectionEntry } from 'astro:content'
 import path from 'path'
+import { prose } from 'styled-system/recipes'
 import DocsHero from '~/components/navigation/docs-hero.astro'
 import Pre from '~/components/pre.astro'
-import { Article } from '~/components/ui/article'
 import DocsLayout from '~/layouts/docs.layout.astro'
 import { getAllCollections } from '~/lib/page-control'
 
@@ -26,8 +26,7 @@ const { Content, headings } = await entry.render()
 
 <DocsLayout title={entry.data.title} description={entry.data.description} headings={headings}>
   <DocsHero slot="hero" entry={entry} />
-  <Article maxW="100%">
+  <article class={prose({ size: 'base' })}>
     <Content components={{ pre: Pre }} />
-  </Article>
+  </article>
 </DocsLayout>
-<Article />

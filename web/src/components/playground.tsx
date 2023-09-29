@@ -1,10 +1,8 @@
-import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { sva } from 'styled-system/css'
+import { cx, sva } from 'styled-system/css'
 import { Box, Flex, Stack } from 'styled-system/jsx'
-import { match } from 'ts-pattern'
-import { AccordionDemo, ButtonDemo } from './demos'
+import * as demos from './demos'
 import {
   Select,
   SelectContent,
@@ -23,7 +21,7 @@ const styles = sva({
     root: {
       borderWidth: '1px',
       borderTopRadius: 'l3',
-      divideY: '1px',
+      borderBottomWidth: '0!',
       overflow: 'hidden',
     },
     container: {
@@ -59,25 +57,29 @@ type Props = {
   >
 }
 
+const toTitleCase = (str = '') => {
+  return str
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('')
+}
+
 export const Playground = (props: Props) => {
-  const { componentProps, id } = props
+  const { componentProps = {}, id } = props
   const [state, setState] = useState(
     Object.fromEntries(
-      Object.entries(componentProps ?? {}).map(([key, value]) => [
+      Object.entries(componentProps).map(([key, value]) => [
         key,
         typeof value === 'object' ? value.defaultValue : value,
       ]),
     ),
   )
 
-  const hasSettings = Object.keys(componentProps ?? {}).length > 0
-  const Component = match(id)
-    .with('accordion', () => AccordionDemo)
-    .with('button', () => ButtonDemo)
-    .run()
-
+  const hasSettings = Object.keys(componentProps).length > 0
+  // @ts-expect-error
+  const Component = demos[toTitleCase(id)]
   return (
-    <Box className={styles.root}>
+    <Box className={cx(styles.root, 'not-prose')}>
       <Stack className={styles.container}>
         <Flex className={styles.preview}>
           <Component {...state} />
@@ -99,20 +101,18 @@ export const Playground = (props: Props) => {
                   <SelectValue placeholder="Select a Framework" />
                   <ChevronsUpDownIcon />
                 </SelectTrigger>
-                <Portal>
-                  <SelectPositioner>
-                    <SelectContent>
-                      {(options ?? []).map((option) => (
-                        <SelectItem key={option} item={option}>
-                          <SelectItemText>{option}</SelectItemText>
-                          <SelectItemIndicator>
-                            <CheckIcon />
-                          </SelectItemIndicator>
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </SelectPositioner>
-                </Portal>
+                <SelectPositioner>
+                  <SelectContent>
+                    {(options ?? []).map((option) => (
+                      <SelectItem key={option} item={option}>
+                        <SelectItemText>{option}</SelectItemText>
+                        <SelectItemIndicator>
+                          <CheckIcon />
+                        </SelectItemIndicator>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </SelectPositioner>
               </Select>
             ))}
           </Stack>
