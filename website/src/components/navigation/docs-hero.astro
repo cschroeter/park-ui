@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Box, Container } from 'styled-system/jsx'
+import { prose } from 'styled-system/recipes'
+import { Heading, Text } from '~/components/ui'
+
+interface Props {
+  entry: CollectionEntry<'components' | 'overview'>
+}
+
+const { entry } = Astro.props
+---
+
+<Box bg={{ base: 'gray.50', _dark: 'black' }} borderBottomWidth="1px">
+  <Container maxW="66rem" py={{ base: '16', md: '24' }}>
+    <article class={prose({ size: 'base' })}>
+      <Heading as="h1" fontWeight="bold">{entry.data.title}</Heading>
+      <Text className="lead" color="fg.emphasized">{entry.data.description}</Text>
+    </article>
+    <!-- <DocsHeroTabs client:load /> -->
+  </Container>
+</Box>

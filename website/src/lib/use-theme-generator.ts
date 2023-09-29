@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
 import { getBorderRadiiTokens } from './get-border-raddii-tokens'
 import { useColorMode } from './use-color-mode'
@@ -35,19 +35,19 @@ export const useThemeGenerator = () => {
     updateThemeConfig(result.data)
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncColorPalette(currentColorPalette, colorMode)
   }, [currentColorPalette, colorMode])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncGrayPalette(currentGrayPalette)
   }, [currentGrayPalette])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncFontFamily(currentFontFamily)
   }, [currentFontFamily])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncBorderRadii(currentBorderRadii)
   }, [currentBorderRadii])
 
@@ -172,7 +172,7 @@ export const fontFamilies = [
     value: 'var(--font-raleway)',
   },
   {
-    label: 'Fira Code',
+    label: 'Roboto Mono',
     value: 'var(--font-code)',
   },
 ] as const

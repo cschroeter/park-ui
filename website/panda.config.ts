@@ -1,38 +1,43 @@
 import { defineConfig } from '@pandacss/dev'
 import presetPark from '@park-ui/presets'
-import type { ContainerProperties } from 'styled-system/patterns/container'
+import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
   preflight: true,
-  presets: ['@pandacss/dev/presets', presetPark],
-  include: ['./src/**/*.{js,jsx,ts,tsx}'],
+  presets: [
+    '@pandacss/dev/presets',
+    presetPark,
+    typographyPreset({
+      recipe: {
+        sizes: ['base'],
+        notProse: true,
+      },
+    }),
+  ],
+  include: ['./src/**/*.{ts,tsx,js,jsx,astro}'],
   exclude: [],
   jsxFramework: 'react',
   outdir: 'styled-system',
   staticCss: {
     recipes: {
       avatar: [{ size: ['*'] }],
-      article: [{ size: ['*'] }],
       badge: [{ variant: ['*'], size: ['*'] }],
       button: [{ variant: ['*'], size: ['*'] }],
-      carousel: [{ size: ['*'] }],
       checkbox: [{ size: ['*'] }],
-      code: [{ size: ['*'], variant: ['*'] }],
+      code: [{ variant: ['*'], size: ['*'] }],
       drawer: [{ placement: ['*'] }],
       icon: [{ size: ['*'] }],
       input: [{ size: ['*'] }],
-      label: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],
       numberInput: [{ size: ['*'] }],
       radioGroup: [{ size: ['*'] }],
-      radioButtonGroup: [{ size: ['*'] }],
+      radioButtonGroup: [{ size: ['*'], variant: ['*'] }],
       ratingGroup: [{ size: ['*'] }],
       segmentGroup: [{ size: ['*'] }],
       select: [{ size: ['*'], variant: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
-      tabs: [{ size: ['*'], variant: ['*'] }],
       table: [{ size: ['*'], variant: ['*'] }],
-      textarea: [{ size: ['*'] }],
+      tabs: [{ size: ['*'], variant: ['*'] }],
       toggleGroup: [{ size: ['*'], variant: ['*'] }],
     },
   },
@@ -47,31 +52,42 @@ export default defineConfig({
         flexDirection: 'column',
         height: 'unset',
       },
-      '#__next, #root, body': {
+      'body, main': {
         display: 'flex',
         flexDirection: 'column',
         flexGrow: '1',
       },
-      '.tiptap': {
-        '&:focus': {
-          outline: 'none',
-        },
+      '&:root': {
+        '--font-body': 'Plus Jakarta Sans Variable',
+        '--font-code': 'Roboto Mono Variable',
+        '--font-inter': 'Inter Variable',
+        '--font-outfit': 'Outfit Variable',
+        '--font-raleway': 'Raleway Variable',
+      },
+      article: {
+        '--colors-prose-body': 'colors.fg.muted',
+        '--colors-prose-heading': 'colors.fg.default',
+        '--colors-prose-bold': 'colors.fg.emphasized',
+        '--colors-prose-link': 'colors.fg.emphasized',
+        '--colors-prose-code': 'colors.fg.emphasized',
+      },
+      'pre, code': {
+        fontFamily: 'Roboto Mono Variable!',
       },
       pre: {
-        fontFamily: 'var(--font-code)',
         overflowX: 'auto',
         fontSize: '14px !important',
-        '--shiki-color-text': 'white',
-        '--shiki-color-background': 'colors.grayPalette.400',
-        '--shiki-token-constant': 'colors.grayPalette.400',
-        '--shiki-token-string': 'colors.grayPalette.400',
-        '--shiki-token-comment': 'colors.grayPalette.400',
-        '--shiki-token-keyword': 'colors.grayPalette.400',
-        '--shiki-token-parameter': 'colors.grayPalette.400',
-        '--shiki-token-function': 'white',
-        '--shiki-token-string-expression': 'colors.grayPalette.400',
-        '--shiki-token-punctuation': 'colors.grayPalette.400',
-        '--shiki-token-link': 'colors.grayPalette.400',
+        '--astro-code-color-text': 'colors.fg.emphasized',
+        '--astro-code-color-background': 'transparent',
+        '--astro-code-token-constant': 'colors.fg.emphasized',
+        '--astro-code-token-string': 'colors.fg.subtle',
+        '--astro-code-token-comment': 'colors.fg.subtle',
+        '--astro-code-token-keyword': 'colors.fg.subtle',
+        '--astro-code-token-parameter': 'colors.fg.subtle',
+        '--astro-code-token-function': 'colors.fg.emphasized',
+        '--astro-code-token-string-expression': 'colors.fg.subtle',
+        '--astro-code-token-punctuation': 'colors.fg.subtle',
+        '--astro-code-token-link': 'colors.fg.subtle',
         '& code': {
           fontFamily: 'inherit',
         },
@@ -81,11 +97,11 @@ export default defineConfig({
   patterns: {
     extend: {
       container: {
-        transform(props: ContainerProperties) {
+        // @ts-ignore
+        transform(props: StyledPprops) {
           return {
             position: 'relative',
             width: '100%',
-            maxWidth: '7xl',
             mx: 'auto',
             px: { base: '4', md: '6' },
             ...props,

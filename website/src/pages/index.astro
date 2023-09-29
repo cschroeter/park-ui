@@ -1,0 +1,21 @@
+---
+import { Box, Container } from 'styled-system/jsx'
+import Hero from '~/components/marketing/hero.astro'
+import Navbar from '~/components/navigation/navbar.astro'
+import { Examples } from '~/examples'
+import Layout from '~/layouts/layout.astro'
+import { layout } from '~/layouts/layout.recipe'
+
+const styles = layout()
+---
+
+<Layout title="Home" description="Beautifully designed components built with Ark UI and Panda CSS.">
+  <header class={styles.header}>
+    <Navbar />
+  </header>
+
+  <Box pt="16">
+    <Hero />
+  </Box>
+  <Examples client:load />
+</Layout>

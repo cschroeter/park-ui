@@ -1,0 +1,21 @@
+---
+import { Stack } from 'styled-system/jsx'
+import { Text } from '~/components/ui/text'
+import { getSitemap } from '~/lib/page-control'
+import { SidebarGroup } from './sidebar-group'
+
+const sitemap = await getSitemap()
+---
+
+<Stack gap="8">
+  {
+    sitemap.map((entry) => (
+      <Stack gap="3">
+        <Text textStyle={{ base: 'md', md: 'sm' }} fontWeight="semibold">
+          {entry.title}
+        </Text>
+        <SidebarGroup items={entry.items} client:load transition:persist />
+      </Stack>
+    ))
+  }
+</Stack>

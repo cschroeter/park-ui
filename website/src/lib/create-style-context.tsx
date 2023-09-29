@@ -1,4 +1,3 @@
-'use client'
 import { createContext, forwardRef, useContext, type ComponentProps, type ElementType } from 'react'
 
 type Props = Record<string, unknown>
