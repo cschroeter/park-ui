@@ -1,0 +1,73 @@
+---
+import { SiGithub, SiTwitter } from '@icons-pack/react-simple-icons'
+import { css, cx } from 'styled-system/css'
+import { Box, Container, HStack } from 'styled-system/jsx'
+import { button, link } from 'styled-system/recipes'
+import ColorModeButton from '~/components/color-mode-button.astro'
+import Logo from '~/components/logo.astro'
+import { ThemePopover } from '../theme/theme-popover'
+import Breadcrumbs from './breadcrumbs.astro'
+import { MobileSidebarContainer } from './mobile-sidebar-container'
+import Sidebar from './sidebar.astro'
+---
+
+<Box borderBottomWidth="1px" divideY="1px">
+  <Container>
+    <HStack justify="space-between" py="3" gap="8">
+      <HStack gap="10">
+        <a href="/" aria-label="Go to start page">
+          <Logo />
+        </a>
+        <HStack gap="8" display={{ base: 'none', lg: 'flex' }}>
+          <a
+            href="/docs/overview/introduction"
+            aria-current={Astro.url.pathname.includes('/overview/') ? 'page' : undefined}
+            class={link({ variant: 'navbar' })}
+          >
+            Documentation
+          </a>
+          <a
+            href="/docs/components/accordion"
+            aria-current={Astro.url.pathname.includes('/components/') ? 'page' : undefined}
+            class={link({ variant: 'navbar' })}
+          >
+            Components
+          </a>
+          <a href="/#examples" class={link({ variant: 'navbar' })}>Examples</a>
+          <ThemePopover client:only="react" />
+        </HStack>
+      </HStack>
+      <HStack gap="1">
+        <a
+          href="https://twitter.com/grizzly_codes"
+          target="_blank"
+          class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
+        >
+          <SiTwitter />
+        </a>
+        <a
+          href="https://github.com/cschroeter/park-ui"
+          target="_blank"
+          class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
+        >
+          <SiGithub />
+        </a>
+        <ColorModeButton />
+      </HStack>
+    </HStack>
+    {
+      Astro.url.pathname !== '/' && (
+        <Box display={{ base: 'block', md: 'none' }}>
+          <Container py="1">
+            <HStack gap="2">
+              <MobileSidebarContainer client:load>
+                <Sidebar />
+              </MobileSidebarContainer>
+              <Breadcrumbs />
+            </HStack>
+          </Container>
+        </Box>
+      )
+    }
+  </Container>
+</Box>

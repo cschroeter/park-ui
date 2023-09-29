@@ -23,6 +23,6 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.15.1"
+    "@pandacss/dev": "0.15.3"
   }
 }

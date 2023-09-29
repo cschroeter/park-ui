@@ -1,0 +1,59 @@
+---
+import { SiReact, SiSolid, SiVuedotjs } from '@icons-pack/react-simple-icons'
+import { Box, Container, Flex, HStack, Stack } from 'styled-system/jsx'
+import { button } from 'styled-system/recipes'
+import { Heading, Text } from '~/components/ui'
+import { ThemeGenerator } from '../theme/theme-generator'
+---
+
+<Container py={{ base: '16', md: '24' }}>
+  <Stack direction="row" gap="8" align="center">
+    <Stack gap={{ base: '8', md: '12' }} maxW={{ lg: 'xl' }} flexShrink={0} width="full">
+      <Stack gap={{ base: '4', md: '6' }}>
+        <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
+          Build your own Design System.
+        </Heading>
+        <Text textStyle={{ base: 'lg', md: 'xl' }} color="fg.muted">
+          Beautifully designed components built with Ark UI and Panda CSS that work with a variety
+          of JS frameworks.
+        </Text>
+      </Stack>
+      <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
+        <a href="/docs/overview/introduction" class={button({ size: { base: 'xl', md: '2xl' } })}
+          >Get Started</a
+        >
+        <a
+          href="/docs/components/accordion"
+          class={button({ size: { base: 'xl', md: '2xl' }, variant: 'outline' })}>Show Components</a
+        >
+      </Stack>
+      <HStack gap={{ base: '10', md: '12' }}>
+        {
+          [
+            { framework: 'React', icon: <SiReact /> },
+            { framework: 'Vue', icon: <SiVuedotjs /> },
+            { framework: 'Solid', icon: <SiSolid /> },
+          ].map(({ framework, icon }) => (
+            <HStack key={framework} gap="2">
+              <Box fontSize="3xl" color="fg.emphasized">
+                {icon}
+              </Box>
+              <Text as="span" color="fg.muted">
+                {framework}
+              </Text>
+            </HStack>
+          ))
+        }
+      </HStack>
+    </Stack>
+    <Flex
+      align="center"
+      justify="center"
+      display={{ base: 'none', lg: 'flex' }}
+      flexShrink={1}
+      width="full"
+    >
+      <ThemeGenerator client:only="react" />
+    </Flex>
+  </Stack>
+</Container>

@@ -1,0 +1,53 @@
+---
+import '@fontsource-variable/fira-code'
+import '@fontsource-variable/inter'
+import '@fontsource-variable/outfit'
+import '@fontsource-variable/plus-jakarta-sans'
+import '@fontsource-variable/raleway'
+import { ViewTransitions } from 'astro:transitions'
+
+interface Props {
+  title: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+    <script>
+      const setColorMode = () => {
+        const colorMode = (() => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('park-ui-color-mode')) {
+            return JSON.parse(localStorage.getItem('park-ui-color-mode'))
+          }
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+          }
+          return 'light'
+        })()
+
+        if (colorMode === 'light') {
+          document.documentElement.classList.remove('dark')
+        } else {
+          document.documentElement.classList.add('dark')
+        }
+        window.localStorage.setItem('park-ui-color-mode', JSON.stringify(colorMode))
+      }
+      setColorMode()
+      document.addEventListener('astro:after-swap', setColorMode)
+    </script>
+  </body>
+</html>

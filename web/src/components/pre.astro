@@ -1,0 +1,22 @@
+---
+import * as cheerio from 'cheerio'
+import { Box } from 'styled-system/jsx'
+import CodePreview from './code-preview.astro'
+import { LivePreview } from './live-preview'
+
+const html = await Astro.slots.render('default')
+const code = cheerio.load(html).root().text().trim()
+
+const showLivePreview = html.includes('metastring="live"')
+---
+
+<Box>
+  {
+    showLivePreview && (
+      <Box p="4" borderWidth="1px" borderTopRadius="l3">
+        <LivePreview code={code} client:load />
+      </Box>
+    )
+  }
+  <CodePreview code={code} />
+</Box>

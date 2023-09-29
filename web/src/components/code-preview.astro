@@ -1,0 +1,37 @@
+---
+import { Code } from 'astro:components'
+import { css } from 'styled-system/css'
+import { Box, type BoxProps } from 'styled-system/jsx'
+import { CopyToClipboardButton } from './copy-to-clipboard-button'
+
+type Props = {
+  code: string
+} & BoxProps
+
+const { code, ...rest } = Astro.props
+---
+
+<Box
+  position="relative"
+  bg={{ base: 'grayPalette.50', _dark: 'grayPalette.900' }}
+  borderWidth="1px"
+  borderRadius="l3"
+  {...rest}
+  className={css({
+    '& pre': {
+      m: '0!',
+      p: '4',
+      border: '0',
+    },
+    '& code': {
+      p: '0',
+    },
+  })}
+>
+  <Box position="absolute" right="3" top="2">
+    <CopyToClipboardButton content={code} client:load />
+  </Box>
+  <Box maxHeight="sm" overflow="auto">
+    <Code code={code} lang="tsx" theme="css-variables" />
+  </Box>
+</Box>

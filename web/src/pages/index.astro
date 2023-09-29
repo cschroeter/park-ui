@@ -1,0 +1,15 @@
+---
+import { Container } from 'styled-system/jsx'
+import Hero from '~/components/marketing/hero.astro'
+import Navbar from '~/components/navigation/navbar.astro'
+import { Examples } from '~/examples'
+import Layout from '~/layouts/layout.astro'
+---
+
+<Layout title="Welcome to Astro.">
+  <Navbar />
+  <Container maxW="7xl">
+    <Hero />
+    <Examples client:load />
+  </Container>
+</Layout>

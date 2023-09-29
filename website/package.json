@@ -35,7 +35,7 @@
     "zustand": "4.4.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.15.1",
+    "@pandacss/dev": "0.15.3",
     "@types/eslint": "8.44.02",
     "@types/handlebars": "4.1.0",
     "@types/react": "18.2.22",

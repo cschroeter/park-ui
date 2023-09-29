@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Box, Container } from 'styled-system/jsx'
+import { Article } from '~/components/ui'
+
+interface Props {
+  entry: CollectionEntry<'components' | 'overview'>
+}
+
+const { entry } = Astro.props
+---
+
+<Box bg={{ base: 'gray.50', _dark: 'black' }} borderBottomWidth="1px">
+  <Container maxW="66rem" py={{ base: '16', md: '24' }} transition:animate="slide">
+    <Article>
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.description}</p>
+    </Article>
+    <!-- <DocsHeroTabs client:load /> -->
+  </Container>
+</Box>

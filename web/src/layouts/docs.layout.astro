@@ -1,0 +1,44 @@
+---
+import type { MarkdownHeading } from 'astro'
+import { Box, Container, Flex, Stack } from 'styled-system/jsx'
+import DocsFooter from '~/components/navigation/docs-footer.astro'
+import Navbar from '~/components/navigation/navbar.astro'
+import Sidebar from '~/components/navigation/sidebar.astro'
+import TableOfContent from '~/components/navigation/toc.astro'
+import Layout from './layout.astro'
+import { layout } from './layout.recipe'
+
+interface Props {
+  title: string
+  description?: string
+  headings?: MarkdownHeading[]
+}
+
+const { title, description, headings } = Astro.props
+const styles = layout()
+---
+
+<Layout title={title} description={description}>
+  <header class={styles.header}>
+    <Navbar />
+  </header>
+  <nav class={styles.nav}>
+    <Sidebar />
+  </nav>
+  <main class={styles.main}>
+    <slot name="hero" />
+    <Flex justify="space-between" py="12" position="relative">
+      <Container maxW="51rem" minWidth="0">
+        <Stack gap="12">
+          <slot />
+          <DocsFooter />
+        </Stack>
+      </Container>
+      <Box display={{ base: 'none', lg: 'block' }} flex="0 0 240px">
+        <Box position="sticky" top="28" right="0" ps="8">
+          <TableOfContent headings={headings} />
+        </Box>
+      </Box>
+    </Flex>
+  </main>
+</Layout>

@@ -1,0 +1,138 @@
+---
+id: button
+title: Button
+category: Components
+description: An interactive element used to trigger actions.
+---
+
+import ComponentPreview from '~/components/component-preview.astro'
+import { Steps, Step } from '~/components/ui'
+
+## Usage
+
+<ComponentPreview />
+
+## Installation
+
+<Steps>
+<Step title="Add the component" number="1">
+
+Copy and paste the following snippet into your project. Make sure to adjust the
+imports when needed.
+
+```tsx
+import { ark } from '@ark-ui/react'
+import type { ComponentPropsWithoutRef } from 'react'
+import { styled } from 'styled-system/jsx'
+import { button, type ButtonVariantProps } from 'styled-system/recipes'
+
+export type ButtonProps = ButtonVariantProps &
+  ComponentPropsWithoutRef<typeof ark.button>
+export const Button = styled(ark.button, button)
+```
+
+</Step>
+<Step title="Add the recipe" number="2">
+
+If you don't use the @park-ui/preset, you'll need to add the recipe to your
+project.
+
+```tsx
+import { avatarAnatomy } from '@ark-ui/anatomy'
+import { defineSlotRecipe } from '@pandacss/dev'
+
+export const avatar = defineSlotRecipe({
+  className: 'avatar',
+  slots: avatarAnatomy.keys(),
+  base: {
+    root: {
+      borderRadius: 'full',
+      borderWidth: '1px',
+      flexShrink: 0,
+    },
+    fallback: {
+      alignItems: 'center',
+      background: 'bg.subtle',
+      borderWidth: '1px',
+      display: 'flex',
+      fontWeight: 'semibold',
+      height: 'inherit',
+      justifyContent: 'center',
+    },
+    image: {
+      objectFit: 'cover',
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+  variants: {
+    size: {
+      xs: {
+        root: {
+          height: '8',
+          width: '8',
+        },
+        fallback: {
+          textStyle: 'xs',
+        },
+      },
+      sm: {
+        root: {
+          height: '9',
+          width: '9',
+        },
+        fallback: {
+          textStyle: 'sm',
+        },
+      },
+      md: {
+        root: {
+          height: '10',
+          width: '10',
+        },
+        fallback: {
+          textStyle: 'md',
+        },
+      },
+      lg: {
+        root: {
+          height: '11',
+          width: '11',
+        },
+        fallback: {
+          textStyle: 'lg',
+        },
+      },
+      xl: {
+        root: {
+          height: '12',
+          width: '12',
+        },
+        fallback: {
+          textStyle: 'xl',
+        },
+      },
+      '2xl': {
+        root: {
+          height: '16',
+          width: '16',
+        },
+        fallback: {
+          textStyle: '2xl',
+        },
+      },
+    },
+  },
+})
+```
+
+</Step>
+<Step number="3" title="Start using it">
+
+```tsx
+import { Button } from '@/components/ui/button'
+```
+
+</Step>
+</Steps>
