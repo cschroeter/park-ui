@@ -55,19 +55,20 @@ import Sidebar from './sidebar.astro'
         <ColorModeButton />
       </HStack>
     </HStack>
-    {
-      Astro.url.pathname !== '/' && (
-        <Box display={{ base: 'block', md: 'none' }}>
-          <Container py="1">
-            <HStack gap="2">
-              <MobileSidebarContainer client:load>
-                <Sidebar />
-              </MobileSidebarContainer>
-              <Breadcrumbs />
-            </HStack>
-          </Container>
-        </Box>
-      )
-    }
   </Container>
+
+  {
+    Astro.url.pathname !== '/' && (
+      <Box display={{ base: 'block', md: 'none' }}>
+        <Container py="1">
+          <HStack gap="2">
+            <MobileSidebarContainer client:load>
+              <Sidebar />
+            </MobileSidebarContainer>
+            <Breadcrumbs />
+          </HStack>
+        </Container>
+      </Box>
+    )
+  }
 </Box>

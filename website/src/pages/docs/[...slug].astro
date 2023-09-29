@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry } from 'astro:content'
 import path from 'path'
+import { css } from 'styled-system/css'
+import { cx } from 'styled-system/css/cx'
 import { prose } from 'styled-system/recipes'
 import DocsHero from '~/components/navigation/docs-hero.astro'
 import Pre from '~/components/pre.astro'
@@ -26,7 +28,7 @@ const { Content, headings } = await entry.render()
 
 <DocsLayout title={entry.data.title} description={entry.data.description} headings={headings}>
   <DocsHero slot="hero" entry={entry} />
-  <article class={prose({ size: 'base' })}>
+  <article class={cx(prose({ size: 'base' }), css({ '& :first-child': { mt: '0' } }))}>
     <Content components={{ pre: Pre }} />
   </article>
 </DocsLayout>
