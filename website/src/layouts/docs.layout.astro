@@ -35,7 +35,7 @@ const styles = layout()
       </Box>
     </Navbar>
   </header>
-  <nav class={styles.nav}>
+  <nav class={styles.nav} id="sidebar">
     <Sidebar />
   </nav>
   <main class={styles.main}>
@@ -55,3 +55,22 @@ const styles = layout()
     </Flex>
   </main>
 </Layout>
+
+<script>
+  const restoreScrollPosition = () => {
+    const leftSidebarScroll = sessionStorage.getItem('sidebar-scroll')
+    if (leftSidebarScroll !== null) {
+      document.querySelector('#sidebar')?.scrollTo({ top: parseInt(leftSidebarScroll, 10) })
+    }
+  }
+  const registerScrollEvent = () => {
+    const leftSidebar = document.querySelector('#sidebar')
+    console.log(leftSidebar)
+    leftSidebar?.addEventListener('scroll', () => {
+      sessionStorage.setItem('sidebar-scroll', leftSidebar?.scrollTop.toString() ?? '0')
+    })
+  }
+
+  document.addEventListener('astro:after-swap', restoreScrollPosition)
+  document.addEventListener('astro:page-load', registerScrollEvent)
+</script>

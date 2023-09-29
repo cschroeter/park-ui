@@ -29,8 +29,8 @@ const styles = sva({
       divideX: '1px',
     },
     preview: {
-      px: '6',
-      py: '6',
+      p: { base: '4', md: '6' },
+      minH: '32',
       flex: '1',
       justifyContent: 'center',
       alignItems: 'center',
