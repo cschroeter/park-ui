@@ -1,3 +1,4 @@
+'use client'
 import * as Ark from '@ark-ui/react/tabs'
 import { styled } from 'styled-system/jsx'
 import { tabs, type TabsVariantProps } from 'styled-system/recipes'

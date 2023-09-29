@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { token } from 'styled-system/tokens'
 import { getBorderRadiiTokens } from './get-border-raddii-tokens'
 import { useColorMode } from './use-color-mode'
@@ -35,19 +35,19 @@ export const useThemeGenerator = () => {
     updateThemeConfig(result.data)
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     syncColorPalette(currentColorPalette, colorMode)
   }, [currentColorPalette, colorMode])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     syncGrayPalette(currentGrayPalette)
   }, [currentGrayPalette])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     syncFontFamily(currentFontFamily)
   }, [currentFontFamily])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     syncBorderRadii(currentBorderRadii)
   }, [currentBorderRadii])
 
