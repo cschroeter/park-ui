@@ -1,7 +1,8 @@
 {
-  "name": "park-astro2",
+  "name": "@park-ui/website",
+  "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
     "prepare": "pandacss codegen",
     "dev": "astro dev",
