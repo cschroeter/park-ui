@@ -2,6 +2,7 @@ import { Portal } from '@ark-ui/react'
 import { MenuIcon, XIcon } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 import { Stack } from 'styled-system/jsx'
+import { Logo } from '../logo'
 import { Button } from '../ui/button'
 import {
   Drawer,
@@ -26,8 +27,10 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => (
           <DrawerBackdrop />
           <DrawerContainer>
             <DrawerContent>
-              <Stack gap="8" mt="-0.5" align="start">
-                <a href="/">Home</a>
+              <Stack gap="8" mt="-1.5" align="start">
+                <a href="/" aria-label="Go to start page">
+                  <Logo />
+                </a>
                 {props.children}
               </Stack>
               <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>

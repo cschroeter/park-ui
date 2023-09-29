@@ -17,7 +17,7 @@ export const SidebarGroup = (props: Props) => {
   }, [])
 
   return (
-    <SegmentGroup value={active} orientation="vertical" size="sm">
+    <SegmentGroup value={active} orientation="vertical" size={{ base: 'md', md: 'sm' }}>
       {items.map((option, id) => (
         <a key={id} href={option.href} style={{ display: 'flex' }}>
           <Segment value={option.href} data-orientation="vertical">
