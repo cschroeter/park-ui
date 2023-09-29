@@ -1,0 +1,14 @@
+{
+  "size": {
+    "options": ["sm", "md", "lg"],
+    "defaultValue": "md"
+  },
+  "variant": {
+    "options": ["outline", "ghost"],
+    "defaultValue": "outline"
+  },
+  "orientation": {
+    "options": ["horizontal", "vertical"],
+    "defaultValue": "horizontal"
+  }
+}

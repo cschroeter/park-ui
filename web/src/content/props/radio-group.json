@@ -1,0 +1,10 @@
+{
+  "size": {
+    "options": ["sm", "md", "lg"],
+    "defaultValue": "md"
+  },
+  "orientation": {
+    "options": ["horizontal", "vertical"],
+    "defaultValue": "vertical"
+  }
+}
