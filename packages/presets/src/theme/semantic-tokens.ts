@@ -3,7 +3,7 @@ import { defineSemanticTokens } from '@pandacss/dev'
 export const semanticTokens = defineSemanticTokens({
   colors: {
     bg: {
-      canvas: { value: { base: '{colors.gray-palette.25}', _dark: '{colors.gray-palette.950}' } },
+      canvas: { value: { base: '{colors.gray-palette.50}', _dark: '{colors.gray-palette.950}' } },
       default: { value: { base: '{colors.white}', _dark: '{colors.gray-palette.950}' } },
       subtle: { value: { base: '{colors.gray-palette.100}', _dark: '{colors.gray-palette.900}' } },
       muted: { value: { base: '{colors.gray-palette.200}', _dark: '{colors.gray-palette.800}' } },

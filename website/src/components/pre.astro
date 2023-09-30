@@ -1,7 +1,8 @@
 ---
+import { Code } from 'astro/components'
 import * as cheerio from 'cheerio'
 import { Box } from 'styled-system/jsx'
-import CodePreview from './code-preview.astro'
+import { CodePreview } from './code-preview'
 import { LivePreview } from './live-preview'
 
 const html = await Astro.slots.render('default')
@@ -18,5 +19,7 @@ const showLivePreview = html.includes('metastring="live"')
       </Box>
     )
   }
-  <CodePreview code={code} />
+  <CodePreview code={code} client:load>
+    <Code code={code} lang="tsx" theme="css-variables" />
+  </CodePreview>
 </Box>

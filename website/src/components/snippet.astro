@@ -1,8 +1,11 @@
 ---
 import fs from 'fs'
-import CodePreview from './code-preview.astro'
+import { CodePreview } from './code-preview'
+import { Code } from 'astro/components'
 const componentName = Astro.params.slug?.split('/').pop()
 const code = fs.readFileSync(`./src/components/ui/${componentName}.tsx`, 'utf8')
 ---
 
-<CodePreview code={code} />
+<CodePreview code={code} client:load>
+  <Code code={code} lang="tsx" theme="css-variables" />
+</CodePreview>
