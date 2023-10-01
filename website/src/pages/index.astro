@@ -1,21 +1,44 @@
 ---
-import { Box, Container } from 'styled-system/jsx'
+import { sva } from 'styled-system/css'
+import { Box, Stack } from 'styled-system/jsx'
 import Hero from '~/components/marketing/hero.astro'
 import Navbar from '~/components/navigation/navbar.astro'
-import { Examples } from '~/examples'
+import { Cards } from '~/examples/cards'
 import Layout from '~/layouts/layout.astro'
-import { layout } from '~/layouts/layout.recipe'
 
-const styles = layout()
+const styles = sva({
+  slots: ['main', 'header', 'showcase'],
+  base: {
+    header: {
+      display: 'flex',
+      flexDirection: 'column',
+      left: '0',
+      position: 'fixed',
+      right: '0',
+      top: '0',
+      zIndex: 'sticky',
+    },
+    main: {
+      display: 'flex',
+      flexDirection: 'column',
+      flex: '1',
+      justifyContent: 'center',
+      pt: '24',
+    },
+  },
+})()
 ---
 
 <Layout title="Home" description="Beautifully designed components built with Ark UI and Panda CSS.">
   <header class={styles.header}>
     <Navbar />
   </header>
-
-  <Box pt="16">
-    <Hero />
-  </Box>
-  <Examples client:load />
+  <main class={styles.main}>
+    <Stack gap="24" direction="row" alignItems="center" flex="1">
+      <Hero />
+      <Box height="calc(100vh - 96px)" overflow="hidden">
+        <Cards client:load />
+      </Box>
+    </Stack>
+  </main>
 </Layout>
