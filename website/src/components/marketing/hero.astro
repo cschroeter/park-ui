@@ -1,46 +1,49 @@
 ---
 import { SiReact, SiSolid, SiVuedotjs } from '@icons-pack/react-simple-icons'
 import { ArrowRightIcon } from 'lucide-react'
-import { Box, Container, HStack, Stack } from 'styled-system/jsx'
+import { Box, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Heading, Text } from '~/components/ui'
 import { ThemeDialog } from '../theme/theme-dialog'
 ---
 
-<Container py={{ base: '16', md: '24' }} width="xl" flexShrink="0">
-  <Stack gap={{ base: '8', md: '12' }}>
-    <Stack gap={{ base: '4', md: '6' }}>
-      <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
-        Build your own Design System.
-      </Heading>
-      <Text textStyle={{ base: 'lg', md: 'xl' }} color="fg.muted">
-        Beautifully designed components built with Ark UI and Panda CSS that work with a variety of
-        JS frameworks.
-      </Text>
-    </Stack>
-    <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
-      <a href="/docs/overview/introduction" class={button({ size: { base: 'xl', md: '2xl' } })}
-        >Get Started <ArrowRightIcon /></a
-      >
-      <ThemeDialog client:only />
-    </Stack>
-    <HStack gap={{ base: '10', md: '12' }}>
-      {
-        [
-          { framework: 'React', icon: <SiReact /> },
-          { framework: 'Vue', icon: <SiVuedotjs /> },
-          { framework: 'Solid', icon: <SiSolid /> },
-        ].map(({ framework, icon }) => (
-          <HStack key={framework} gap="2">
-            <Box fontSize="3xl" color="fg.emphasized">
-              {icon}
-            </Box>
-            <Text as="span" color="fg.muted">
-              {framework}
-            </Text>
-          </HStack>
-        ))
-      }
-    </HStack>
+<Stack
+  gap={{ base: '8', md: '12' }}
+  py={{ base: '16', md: '24', lg: '0' }}
+  px={{ base: '4', md: '6' }}
+  maxW={{ base: 'full', md: 'xl' }}
+>
+  <Stack gap={{ base: '4', md: '6' }}>
+    <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
+      Build your own Design System.
+    </Heading>
+    <Text textStyle={{ base: 'lg', md: 'xl' }} color="fg.muted">
+      Beautifully designed components built with Ark UI and Panda CSS that work with a variety of JS
+      frameworks.
+    </Text>
   </Stack>
-</Container>
+  <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
+    <a href="/docs/overview/introduction" class={button({ size: { base: 'xl', md: '2xl' } })}
+      >Get Started <ArrowRightIcon /></a
+    >
+    <ThemeDialog client:only />
+  </Stack>
+  <HStack gap={{ base: '10', md: '12' }}>
+    {
+      [
+        { framework: 'React', icon: <SiReact /> },
+        { framework: 'Vue', icon: <SiVuedotjs /> },
+        { framework: 'Solid', icon: <SiSolid /> },
+      ].map(({ framework, icon }) => (
+        <HStack key={framework} gap="2">
+          <Box fontSize="3xl" color="fg.emphasized">
+            {icon}
+          </Box>
+          <Text as="span" color="fg.muted">
+            {framework}
+          </Text>
+        </HStack>
+      ))
+    }
+  </HStack>
+</Stack>

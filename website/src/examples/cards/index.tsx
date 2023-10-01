@@ -1,4 +1,4 @@
-import { Stack } from 'styled-system/jsx'
+import { Container, Grid, Stack } from 'styled-system/jsx'
 import { AuthenticationCard } from './authentication-card'
 import { CardWithTabs } from './card-with-tabs'
 import { ECommerceCard } from './e-commerce-card'
@@ -10,21 +10,23 @@ import { ShareDocumentCard } from './share-document-card'
 
 export const Cards = () => {
   return (
-    <Stack gap={8} direction="row" px={{ base: '4', md: '6' }}>
-      <Stack gap="8" maxW="sm">
-        <AuthenticationCard />
-        <NotificationCard />
-        <PricingCard />
-      </Stack>
-      <Stack gap="8" maxW="md">
-        <ECommerceCard />
-        <PaymentCard />
-      </Stack>
-      <Stack gap="8" maxW="sm">
-        <ShareDocumentCard />
-        <ReportIssueCard />
-        <CardWithTabs />
-      </Stack>
-    </Stack>
+    <Container>
+      <Grid gap={8} columns={{ base: 1, md: 2, lg: 1, xl: 2, '2xl': 3 }}>
+        <Stack gap="8">
+          <AuthenticationCard />
+          <NotificationCard />
+          <PricingCard />
+        </Stack>
+        <Stack gap="8">
+          <ECommerceCard />
+          <PaymentCard />
+        </Stack>
+        <Stack gap="8">
+          <ShareDocumentCard />
+          <ReportIssueCard />
+          <CardWithTabs />
+        </Stack>
+      </Grid>
+    </Container>
   )
 }

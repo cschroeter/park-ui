@@ -12,6 +12,7 @@ const styles = sva({
     header: {
       display: 'flex',
       flexDirection: 'column',
+      bg: 'bg.canvas',
       left: '0',
       position: 'fixed',
       right: '0',
@@ -25,6 +26,13 @@ const styles = sva({
       justifyContent: 'center',
       pt: '24',
     },
+    showcase: {
+      overflow: { base: 'auto', lg: 'hidden' },
+      height: {
+        base: 'auto',
+        lg: 'calc(100vh - 96px)',
+      },
+    },
   },
 })()
 ---
@@ -34,9 +42,14 @@ const styles = sva({
     <Navbar />
   </header>
   <main class={styles.main}>
-    <Stack gap="24" direction="row" alignItems="center" flex="1">
+    <Stack
+      gap={{ base: '0', lg: '24' }}
+      direction={{ base: 'column', lg: 'row' }}
+      alignItems={{ base: 'start', lg: 'center' }}
+      flex="1"
+    >
       <Hero />
-      <Box height="calc(100vh - 96px)" overflow="hidden">
+      <Box className={styles.showcase}>
         <Cards client:load />
       </Box>
     </Stack>
