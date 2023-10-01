@@ -6,7 +6,7 @@ import { CopyToClipboardButton } from './copy-to-clipboard-button'
 import { Button } from './ui'
 
 const styles = sva({
-  slots: ['root', 'control', 'preview'],
+  slots: ['root', 'control', 'preview', 'footer'],
   base: {
     root: {
       position: 'relative',
@@ -29,10 +29,20 @@ const styles = sva({
           content: "''",
           inset: '0',
           position: 'absolute',
-          backgroundImage: 'linear-gradient(0deg, var(--colors-bg-canvas) 16%,transparent 100%)',
+          backgroundImage: 'linear-gradient(0deg, var(--colors-bg-code) 16%,transparent 100%)',
           borderRadius: 'l3',
           pointerEvents: 'none',
         },
+      },
+    },
+    footer: {
+      alignItems: 'center',
+      bottom: '3',
+      justifyContent: 'center',
+      position: 'absolute',
+      width: 'full',
+      _expanded: {
+        display: 'none',
       },
     },
   },
@@ -51,7 +61,7 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
 
   return (
     <Box className={cx(styles.root, 'not-prose')} borderTopRadius={isAttached ? '0!' : 'l3'}>
-      <Flex className={styles.control}>
+      <Flex className={styles.control} display={{ base: 'none', md: 'flex' }}>
         {isCollapsable && (
           <Button px="0" variant="ghost" size="xs" onClick={() => setCollapsed(!collapsed)}>
             {collapsed ? <ArrowDownToLineIcon /> : <ArrowUpToLineIcon />}
@@ -62,6 +72,11 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
       <Box className={styles.preview} data-state={collapsed ? 'collapsed' : 'expanded'}>
         {props.children}
       </Box>
+      <Flex className={styles.footer} data-state={collapsed ? 'collapsed' : 'expanded'}>
+        <Button variant="link" size="sm" onClick={() => setCollapsed(false)}>
+          Expand code
+        </Button>
+      </Flex>
     </Box>
   )
 }

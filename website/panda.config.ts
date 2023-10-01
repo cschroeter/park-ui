@@ -110,4 +110,18 @@ export default defineConfig({
       },
     },
   },
+  theme: {
+    extend: {
+      semanticTokens: {
+        colors: {
+          bg: {
+            code: {
+              // TODO takl with @phil
+              value: { base: '{colors.gray-palette.50}', _dark: '{colors.gray-palette.900}' },
+            },
+          },
+        },
+      },
+    },
+  },
 })
