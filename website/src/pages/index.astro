@@ -2,8 +2,8 @@
 import { sva } from 'styled-system/css'
 import { Box, Grid, GridItem } from 'styled-system/jsx'
 import Hero from '~/components/marketing/hero.astro'
+import Showcase from '~/components/marketing/showcase.astro'
 import Navbar from '~/components/navigation/navbar.astro'
-import { Cards } from '~/examples/cards'
 import Layout from '~/layouts/layout.astro'
 
 const styles = sva({
@@ -59,7 +59,7 @@ const styles = sva({
       </GridItem>
       <GridItem overflow={{ base: 'scroll', lg: 'visible' }}>
         <Box className={styles.showcase}>
-          <Cards client:load />
+          <Showcase />
         </Box>
       </GridItem>
     </Grid>
