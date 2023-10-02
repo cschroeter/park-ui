@@ -72,7 +72,7 @@ export default defineConfig({
         '--colors-prose-code': 'colors.fg.emphasized',
       },
       'pre, code': {
-        fontFamily: 'Roboto Mono Variable!',
+        fontFamily: 'var(--font-code)',
       },
       pre: {
         overflowX: 'auto',

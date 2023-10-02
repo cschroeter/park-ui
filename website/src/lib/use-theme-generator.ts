@@ -184,9 +184,9 @@ export const fontFamilies = [
 ] as const
 
 const syncFontFamily = (fontFamily: FontFamily) => {
-  const root = document.querySelector<HTMLBodyElement>('body')
+  const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
-    root.style.fontFamily = fontFamily.value
+    root.style.setProperty('--font-body', fontFamily.value)
   }
 }
 
