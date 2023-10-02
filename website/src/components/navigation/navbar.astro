@@ -1,34 +1,40 @@
 ---
 import { SiGithub, SiTwitter } from '@icons-pack/react-simple-icons'
 import { css, cx } from 'styled-system/css'
-import { Box, Container, HStack } from 'styled-system/jsx'
+import { Box, Container, HStack, type BoxProps } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import ColorModeButton from '~/components/color-mode-button.astro'
 import { Logo } from '~/components/logo'
+
+interface Props extends BoxProps {}
+const props = Astro.props
 ---
 
-<Box divideY="1px">
+<Box divideY="1px" {...props}>
   <Container>
     <HStack justify="space-between" py="3" gap="8">
       <a href="/" aria-label="Go to start page">
         <Logo />
       </a>
-      <HStack gap="1">
-        <a
-          href="https://twitter.com/grizzly_codes"
-          target="_blank"
-          class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
-        >
-          <SiTwitter />
-        </a>
-        <a
-          href="https://github.com/cschroeter/park-ui"
-          target="_blank"
-          class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
-        >
-          <SiGithub />
-        </a>
-        <ColorModeButton />
+      <HStack gap={{ base: '2', md: '4' }}>
+        <slot name="action" />
+        <HStack gap="0.5">
+          <a
+            href="https://twitter.com/grizzly_codes"
+            target="_blank"
+            class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
+          >
+            <SiTwitter />
+          </a>
+          <a
+            href="https://github.com/cschroeter/park-ui"
+            target="_blank"
+            class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
+          >
+            <SiGithub />
+          </a>
+          <ColorModeButton />
+        </HStack>
       </HStack>
     </HStack>
   </Container>

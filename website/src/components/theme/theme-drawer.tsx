@@ -19,12 +19,18 @@ import { ColorPalettePicker } from './color-palette-picker'
 import { FontFamilySelect } from './font-family-select'
 import { GrayPalettePicker } from './gray-palette-picker'
 
-export const ThemeDrawer = () => {
+interface Props {
+  isHero?: boolean
+  placement?: 'left' | 'right'
+}
+
+export const ThemeDrawer = (props: Props) => {
+  const { placement = 'left', isHero } = props
   const { reset } = useThemeGenerator()
   return (
-    <Drawer placement="left">
+    <Drawer placement={placement}>
       <DrawerTrigger asChild>
-        <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>
+        <Button variant="outline" size={isHero ? { base: 'xl', md: '2xl' } : 'md'}>
           <Settings2Icon />
           Make it yours
         </Button>

@@ -7,6 +7,7 @@ import { MobileSidebarContainer } from '~/components/navigation/mobile-sidebar-c
 import Navbar from '~/components/navigation/navbar.astro'
 import Sidebar from '~/components/navigation/sidebar.astro'
 import TableOfContent from '~/components/navigation/toc.astro'
+import { ThemeDrawer } from '~/components/theme/theme-drawer'
 import Layout from './layout.astro'
 import { layout } from './layout.recipe'
 
@@ -22,7 +23,8 @@ const styles = layout()
 
 <Layout title={title} description={description}>
   <header class={styles.header}>
-    <Navbar>
+    <Navbar borderBottomWidth="1px">
+      <ThemeDrawer client:only slot="action" placement="right" />
       <Box display={{ base: 'block', md: 'none' }}>
         <Container py="1">
           <HStack gap="2">
