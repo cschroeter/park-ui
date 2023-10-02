@@ -32,7 +32,7 @@ export const slider = defineSlotRecipe({
     },
     label: {
       color: 'fg.emphasized',
-      fontWeight: 'semibold',
+      fontWeight: 'medium',
     },
   },
   defaultVariants: {

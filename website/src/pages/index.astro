@@ -1,21 +1,64 @@
 ---
-import { Box, Container } from 'styled-system/jsx'
+import { sva } from 'styled-system/css'
+import { Box, Container, Flex, Grid, GridItem, Stack } from 'styled-system/jsx'
 import Hero from '~/components/marketing/hero.astro'
 import Navbar from '~/components/navigation/navbar.astro'
-import { Examples } from '~/examples'
+import { Cards } from '~/examples/cards'
 import Layout from '~/layouts/layout.astro'
-import { layout } from '~/layouts/layout.recipe'
 
-const styles = layout()
+const styles = sva({
+  slots: ['main', 'header', 'showcase'],
+  base: {
+    header: {
+      display: 'flex',
+      flexDirection: 'column',
+      left: '0',
+      position: 'fixed',
+      right: '0',
+      top: '0',
+      zIndex: 'sticky',
+    },
+    main: {
+      display: 'flex',
+      flexDirection: 'column',
+      flex: '1',
+      justifyContent: 'center',
+      pt: '24',
+      overflow: { lg: 'hidden' },
+    },
+    showcase: {
+      height: 'calc(100vh - 96px)',
+      width: '1312px',
+      px: { base: '4', md: '6' },
+      transform: { base: 'none', lg: 'rotate(8deg) translateX(50px)' },
+    },
+  },
+})()
 ---
 
 <Layout title="Home" description="Beautifully designed components built with Ark UI and Panda CSS.">
   <header class={styles.header}>
     <Navbar />
   </header>
-
-  <Box pt="16">
-    <Hero />
-  </Box>
-  <Examples client:load />
+  <main class={styles.main}>
+    <Grid
+      gridTemplateColumns={{ base: '1fr', lg: 'minmax(512px, 1fr) 1312px' }}
+      gap={{ base: '0', lg: '24' }}
+    >
+      <GridItem
+        display="flex"
+        justifyContent={{ base: 'start', lg: 'center' }}
+        alignItems={{ base: 'start', lg: 'center' }}
+        py={{ base: '16', md: '24', lg: '0' }}
+        px={{ base: '4', md: '6' }}
+      >
+        <Hero />
+      </GridItem>
+      <GridItem overflow={{ base: 'scroll', lg: 'visible' }}>
+        <Box className={styles.showcase}>
+          <Cards client:load />
+        </Box>
+      </GridItem>
+    </Grid>
+  </main>
 </Layout>

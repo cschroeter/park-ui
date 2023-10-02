@@ -1,4 +1,4 @@
-import { XIcon } from 'lucide-react'
+import { Settings2Icon, XIcon } from 'lucide-react'
 import { Button } from '../ui/button'
 import {
   Dialog,
@@ -15,12 +15,9 @@ export const ThemeDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          size={{ base: 'xl', md: '2xl' }}
-          display={{ base: 'inline-flex', lg: 'none' }}
-        >
-          Customize Theme
+        <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>
+          <Settings2Icon />
+          Make it yours
         </Button>
       </DialogTrigger>
       <DialogBackdrop />
