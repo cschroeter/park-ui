@@ -4,7 +4,7 @@ import { ArrowRightIcon } from 'lucide-react'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Heading, Text } from '~/components/ui'
-import { ThemeDialog } from '../theme/theme-dialog'
+import { ThemeDrawer } from '../theme/theme-drawer'
 ---
 
 <Stack gap={{ base: '8', md: '12' }} maxW={{ md: 'xl' }}>
@@ -21,7 +21,7 @@ import { ThemeDialog } from '../theme/theme-dialog'
     <a href="/docs/overview/introduction" class={button({ size: { base: 'xl', md: '2xl' } })}
       >Get Started <ArrowRightIcon /></a
     >
-    <ThemeDialog client:only />
+    <ThemeDrawer client:only />
   </Stack>
   <HStack gap={{ base: '10', md: '12' }}>
     {
