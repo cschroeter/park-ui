@@ -22,14 +22,20 @@ const props = Astro.props
           <a
             href="https://twitter.com/grizzly_codes"
             target="_blank"
-            class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
+            class={cx(
+              button({ variant: 'ghost' }),
+              css({ px: '0', display: { base: 'none', sm: 'inline-flex' } }),
+            )}
           >
             <SiTwitter />
           </a>
           <a
             href="https://github.com/cschroeter/park-ui"
             target="_blank"
-            class={cx(button({ variant: 'ghost' }), css({ px: '0' }))}
+            class={cx(
+              button({ variant: 'ghost' }),
+              css({ px: '0', display: { base: 'none', sm: 'inline-flex' } }),
+            )}
           >
             <SiGithub />
           </a>
