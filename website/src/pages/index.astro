@@ -1,6 +1,6 @@
 ---
 import { sva } from 'styled-system/css'
-import { Box, Stack } from 'styled-system/jsx'
+import { Box, Container, Flex, Grid, GridItem, Stack } from 'styled-system/jsx'
 import Hero from '~/components/marketing/hero.astro'
 import Navbar from '~/components/navigation/navbar.astro'
 import { Cards } from '~/examples/cards'
@@ -27,11 +27,9 @@ const styles = sva({
       pt: '24',
     },
     showcase: {
-      overflow: { base: 'auto', lg: 'hidden' },
-      height: {
-        base: 'auto',
-        lg: 'calc(100vh - 96px)',
-      },
+      height: 'calc(100vh - 96px)',
+      width: '1312px',
+      px: { base: '4', md: '6' },
     },
   },
 })()
@@ -42,16 +40,24 @@ const styles = sva({
     <Navbar />
   </header>
   <main class={styles.main}>
-    <Stack
+    <Grid
+      gridTemplateColumns={{ base: '1fr', lg: 'minmax(512px, 1fr) 1312px' }}
       gap={{ base: '0', lg: '24' }}
-      direction={{ base: 'column', lg: 'row' }}
-      alignItems={{ base: 'start', lg: 'center' }}
-      flex="1"
     >
-      <Hero />
-      <Box className={styles.showcase}>
-        <Cards client:load />
-      </Box>
-    </Stack>
+      <GridItem
+        display="flex"
+        justifyContent={{ base: 'start', lg: 'center' }}
+        alignItems={{ base: 'start', lg: 'center' }}
+        py={{ base: '16', md: '24', lg: '0' }}
+        px={{ base: '4', md: '6' }}
+      >
+        <Hero />
+      </GridItem>
+      <GridItem overflowX={{ base: 'scroll', lg: 'hidden' }} overflowY="hidden">
+        <Box className={styles.showcase}>
+          <Cards client:load />
+        </Box>
+      </GridItem>
+    </Grid>
   </main>
 </Layout>

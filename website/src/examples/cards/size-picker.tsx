@@ -44,7 +44,7 @@ export const SizePicker = () => {
         </RadioButtonGroup>
       </Stack>
 
-      <HStack gap="2">
+      <HStack gap="2" color="fg.muted">
         <Icon size="sm" color="fg.muted">
           <RulerIcon />
         </Icon>

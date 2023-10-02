@@ -1,4 +1,3 @@
-import { SiFacebook, SiPinterest, SiWhatsapp } from '@icons-pack/react-simple-icons'
 import { HeartIcon, HelpCircleIcon, ShieldIcon, ShoppingBagIcon } from 'lucide-react'
 import { Box, Divider, Grid, HStack, Stack } from 'styled-system/jsx'
 import { Badge } from '~/components/ui/badge'
@@ -20,7 +19,7 @@ export const ECommerceCard = () => {
             <Badge variant="solid" size="md">
               New in stock
             </Badge>
-            <Heading as="h1" textStyle="3xl" fontWeight="semibold">
+            <Heading as="h1" textStyle="2xl" fontWeight="semibold">
               New Balance 574
             </Heading>
           </Stack>
@@ -36,10 +35,10 @@ export const ECommerceCard = () => {
           </Text>
         </Stack>
       </CardHeader>
-      <CardContent gap="8">
+      <CardContent gap="4">
         <Divider />
         <SizePicker />
-        <Grid columns={2} gap="8">
+        <Grid columns={2} gap="4">
           <QuantityPicker />
           <Button variant="outline" alignSelf="end">
             <HeartIcon /> Favourite
@@ -68,22 +67,6 @@ export const ECommerceCard = () => {
             </HStack>
           </Stack>
         </Box>
-        <Stack>
-          <Text textStyle="sm" color="fg.emphasized" fontWeight="medium">
-            Share
-          </Text>
-          <HStack gap="3" color="fg.subtle">
-            <Icon>
-              <SiPinterest />
-            </Icon>
-            <Icon>
-              <SiFacebook />
-            </Icon>
-            <Icon>
-              <SiWhatsapp />
-            </Icon>
-          </HStack>
-        </Stack>
       </CardContent>
     </Card>
   )
