@@ -6,7 +6,7 @@ export const code = defineRecipe({
     alignItems: 'center',
     bg: 'bg.subtle',
     borderRadius: 'l2',
-    color: 'fg.emphasized',
+    color: 'fg.muted',
     display: 'inline-flex',
     fontFamily: 'var(--font-code)',
     fontWeight: 'medium',

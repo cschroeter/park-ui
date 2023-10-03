@@ -40,6 +40,13 @@ export default defineConfig({
       tabs: [{ size: ['*'], variant: ['*'] }],
       toggleGroup: [{ size: ['*'], variant: ['*'] }],
     },
+    css: [
+      {
+        properties: {
+          textStyle: ['*'],
+        },
+      },
+    ],
   },
   globalCss: {
     extend: {

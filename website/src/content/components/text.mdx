@@ -1,0 +1,78 @@
+---
+id: text
+title: Text
+category: typography
+description: To display text in a variety of sizes and weights.
+---
+
+import { Text } from '~/components/ui/text'
+import Snippet from '~/components/Snippet.astro'
+
+## Usage
+
+```tsx live
+<Text>Sphinx of black quartz, judge my vow.</Text>
+```
+
+## Examples
+
+### As another element
+
+Utilize the `as` property to specify the HTML tag. This changes semantic markup without affecting visual style.
+
+```tsx live
+<>
+  <Text as="p">
+    This is a <Code>p</Code> element.
+  </Text>
+  <Text as="label">
+    This is a <Code>label</Code> element.
+  </Text>
+  <Text as="div">
+    This is a <Code>div</Code> element.
+  </Text>
+  <Text as="span">
+    This is a <Code>span</Code> element.
+  </Text>
+</>
+```
+
+### Font Size
+
+Use `textStyle` for text size. It makes line height and spacing smaller as text size grows and also ensures text size is
+even for better layout.
+
+```tsx live
+<>
+  <Text textStyle="xs">Ag</Text>
+  <Text textStyle="sm">Ag</Text>
+  <Text textStyle="md">Ag</Text>
+  <Text textStyle="lg">Ag</Text>
+  <Text textStyle="xl">Ag</Text>
+  <Text textStyle="2xl">Ag</Text>
+  <Text textStyle="3xl">Ag</Text>
+  <Text textStyle="4xl">Ag</Text>
+  <Text textStyle="5xl">Ag</Text>
+  <Text textStyle="6xl">Ag</Text>
+  <Text textStyle="7xl">Ag</Text>
+</>
+```
+
+### Font Weight
+
+Use the `fontWeight` prop to set the text weight.
+
+```tsx live
+<>
+  <Text fontWeight="regular">Sphinx of black quartz, judge my vow.</Text>
+  <Text fontWeight="medium">Sphinx of black quartz, judge my vow.</Text>
+  <Text fontWeight="semibold">Sphinx of black quartz, judge my vow.</Text>
+  <Text fontWeight="bold">Sphinx of black quartz, judge my vow.</Text>
+</>
+```
+
+## Installation
+
+Insert code snippet into your project. Update import paths as needed.
+
+<Snippet />

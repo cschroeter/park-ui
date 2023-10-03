@@ -57,7 +57,7 @@ type Props = {
 
 export const CodePreview = (props: PropsWithChildren<Props>) => {
   const { isAttached, expanded, code } = props
-  const isCollapsable = code.split('\n').length > 3
+  const isCollapsable = code.split('\n').length > 8
   const [collapsed, setCollapsed] = useState(isCollapsable && !expanded)
 
   return (

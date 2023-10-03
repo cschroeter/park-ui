@@ -11,7 +11,7 @@ const sitemap = await getSitemap()
   {
     sitemap.map((entry) => (
       <Stack gap="3">
-        <Text textStyle={{ base: 'md', md: 'sm' }} fontWeight="semibold">
+        <Text textStyle={{ base: 'md', md: 'sm' }} fontWeight="semibold" textTransform="capitalize">
           {entry.title}
         </Text>
         <SidebarGroup items={entry.items} client:load transition:persist />

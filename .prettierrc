@@ -9,8 +9,9 @@
     {
       "files": "*.mdx",
       "options": {
-        "printWidth": 80,
-        "proseWrap": "always"
+        "printWidth": 120,
+        "proseWrap": "always",
+        "arrowParens": "avoid"
       }
     }
   ]

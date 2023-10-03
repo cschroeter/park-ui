@@ -1,12 +1,17 @@
 import { getCollection } from 'astro:content'
 import path from 'path'
 
-export const getAllCollections = async () => {
+const getOverviewPages = async () => {
   const priority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
-  const overviewPages = await getCollection('overview').then((items) =>
+  return getCollection('overview').then((items) =>
     items.sort((a, b) => priority.indexOf(a.slug) - priority.indexOf(b.slug)),
   )
+}
+
+export const getAllCollections = async () => {
+  const overviewPages = await getOverviewPages()
   const componentPages = await getCollection('components')
+
   return [...overviewPages, ...componentPages]
 }
 
@@ -45,25 +50,34 @@ type Sitemap = {
 }[]
 
 export const getSitemap = async (): Promise<Sitemap> => {
-  const collections = await getAllCollections()
+  const overviewPages = await getOverviewPages()
+  const componentPages = await getCollection('components')
+
+  const priority = ['typography', 'component']
+  const componentPagesGroupByCategory = componentPages
+    .map((item) => item.data.category)
+    .sort((a, b) => priority.indexOf(a) - priority.indexOf(b))
+    .filter((value, index, self) => self.indexOf(value) === index)
+    .map((category) => ({
+      title: category,
+      items: componentPages
+        .filter((item) => item.data.category === category)
+        .map((item) => ({
+          title: item.data.title,
+          href: path.join('/docs', item.collection, item.data.id),
+        })),
+    }))
+
   return [
     {
       title: 'Overview',
-      items: collections
+      items: overviewPages
         .filter((item) => item.collection === 'overview')
         .map((item) => ({
           title: item.data.title,
           href: path.join('/docs', item.collection, item.data.id),
         })),
     },
-    {
-      title: 'Components',
-      items: collections
-        .filter((item) => item.collection === 'components')
-        .map((item) => ({
-          title: item.data.title,
-          href: path.join('/docs', item.collection, item.data.id),
-        })),
-    },
+    ...componentPagesGroupByCategory,
   ]
 }

@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 
-type As = 'p' | 'span' | 'div'
+type As = 'p' | 'span' | 'div' | 'label'
 
 type TypographyProps = PropsWithChildren<{
   as?: As

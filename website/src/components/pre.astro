@@ -3,28 +3,38 @@ import { Code } from 'astro/components'
 import * as cheerio from 'cheerio'
 import { Box } from 'styled-system/jsx'
 import { reactToSolid } from '~/lib/react-to-solid'
+import { reactToVue } from '~/lib/react-to-vue'
 import { CodePreview } from './code-preview'
 import { CodeWithTabs } from './code-with-tabs'
 import { LivePreview } from './live-preview'
-import { reactToVue } from '~/lib/react-to-vue'
 
 const html = await Astro.slots.render('default')
 const code = cheerio.load(html).root().text().trim()
 
 const showLivePreview = html.includes('metastring="live"')
 const isMultiView = html.includes('metastring="multi"')
+
+// TODO simplify this
 ---
 
 <Box className="not-prose">
   {
     showLivePreview && (
-      <Box p="4" borderWidth="1px" borderTopRadius="l3">
-        <LivePreview code={code} client:load />
+      <Box borderWidth="1px" divideY="1px" borderRadius="l3">
+        <Box p="4">
+          <LivePreview code={code} client:load />
+        </Box>
+        <Box>
+          <CodePreview code={code} client:load isAttached>
+            <Code code={code} lang="tsx" theme="css-variables" />
+          </CodePreview>
+        </Box>
       </Box>
     )
   }
+
   {
-    isMultiView ? (
+    isMultiView && (
       <CodeWithTabs client:load>
         <CodePreview code={code} client:load slot="react" isAttached>
           <Code code={code} lang="tsx" theme="css-variables" />
@@ -36,7 +46,11 @@ const isMultiView = html.includes('metastring="multi"')
           <Code code={reactToVue(code)} lang="tsx" theme="css-variables" />
         </CodePreview>
       </CodeWithTabs>
-    ) : (
+    )
+  }
+
+  {
+    !isMultiView && !showLivePreview && (
       <CodePreview code={code} client:load>
         <Code code={code} lang="tsx" theme="css-variables" />
       </CodePreview>
