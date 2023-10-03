@@ -7,7 +7,6 @@ description: A Step-by-step Guide to Using Park UI
 import { Steps, Step } from '~/components/ui'
 import Quickstart from '~/components/quickstart.astro'
 
-
 ## Quickstart
 
 Running tight on schedule? No worries! Check out our quickstart examples to get
@@ -32,7 +31,7 @@ The first step is to install [Ark UI](https://ark-ui.com). Ark UI is a headless
 component library that forms the foundation for most components. To install Ark
 UI, execute the following command in your project's root directory:
 
-```bash
+```bash multi
 npm install @ark-ui/react
 ```
 
@@ -49,7 +48,7 @@ npm install @park-ui/presets
 After you've installed the presets, you'll need to add it to your Panda
 configuration file along with your preferred `jsxFramework` like shown below:
 
-```tsx
+```tsx multi
 import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
@@ -107,13 +106,13 @@ To add a component, simply copy the code for the desired component and paste it
 into the appropriate place in your project. Let's demonstrate this process using
 the `Button` component. First, copy the code for the component:
 
-```tsx
-import type { ComponentProps } from 'react'
+```tsx multi
+import { ark, type HTMLArkProps } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
 import { button, type ButtonVariantProps } from 'styled-system/recipes'
 
-export type ButtonProps = ButtonVariantProps & ComponentProps<'button'>
-export const Button = styled('button', button)
+export type ButtonProps = ButtonVariantProps & HTMLArkProps<'button'>
+export const Button = styled(ark.button, button)
 ```
 
 and paste it into your `components/button.tsx` file. Now you can import and use

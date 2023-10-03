@@ -9,10 +9,10 @@ const styles = sva({
   slots: ['root', 'control', 'preview', 'footer'],
   base: {
     root: {
-      position: 'relative',
-      bg: { base: 'grayPalette.50', _dark: 'grayPalette.900' },
-      borderWidth: '1px',
+      bg: 'grayPalette.900',
       borderRadius: 'l3',
+      borderWidth: '1px',
+      position: 'relative',
     },
     control: {
       position: 'absolute',
@@ -29,7 +29,8 @@ const styles = sva({
           content: "''",
           inset: '0',
           position: 'absolute',
-          backgroundImage: 'linear-gradient(0deg, var(--colors-bg-code) 16%,transparent 100%)',
+          backgroundImage:
+            'linear-gradient(0deg, var(--colors-gray-palette-900) 16%,transparent 100%)',
           borderRadius: 'l3',
           pointerEvents: 'none',
         },
@@ -60,7 +61,11 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
   const [collapsed, setCollapsed] = useState(isCollapsable && !expanded)
 
   return (
-    <Box className={cx(styles.root, 'not-prose')} borderTopRadius={isAttached ? '0!' : 'l3'}>
+    <Box
+      className={cx(styles.root, 'not-prose', 'dark')}
+      borderTopRadius={isAttached ? '0!' : 'l3'}
+      borderWidth={isAttached ? '0!' : '1px'}
+    >
       <Flex className={styles.control} display={{ base: 'none', md: 'flex' }}>
         {isCollapsable && (
           <Button px="0" variant="ghost" size="xs" onClick={() => setCollapsed(!collapsed)}>

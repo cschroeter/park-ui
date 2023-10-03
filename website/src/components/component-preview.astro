@@ -11,7 +11,8 @@ const componentProps = types[0].data ?? {}
 const code = fs.readFileSync(`./src/components/demos/${componentId}.demo.tsx`, 'utf8')
 ---
 
-<Playground id={componentId} componentProps={componentProps} client:load />
-<CodePreview code={code} isAttached expanded client:load>
-  <Code code={code} lang="tsx" theme="css-variables" />
-</CodePreview>
+<Playground id={componentId} componentProps={componentProps} client:load>
+  <CodePreview code={code} isAttached expanded client:load>
+    <Code code={code} lang="tsx" theme="css-variables" />
+  </CodePreview>
+</Playground>

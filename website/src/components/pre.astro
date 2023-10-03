@@ -2,16 +2,20 @@
 import { Code } from 'astro/components'
 import * as cheerio from 'cheerio'
 import { Box } from 'styled-system/jsx'
+import { reactToSolid } from '~/lib/react-to-solid'
 import { CodePreview } from './code-preview'
+import { CodeWithTabs } from './code-with-tabs'
 import { LivePreview } from './live-preview'
+import { reactToVue } from '~/lib/react-to-vue'
 
 const html = await Astro.slots.render('default')
 const code = cheerio.load(html).root().text().trim()
 
 const showLivePreview = html.includes('metastring="live"')
+const isMultiView = html.includes('metastring="multi"')
 ---
 
-<Box>
+<Box className="not-prose">
   {
     showLivePreview && (
       <Box p="4" borderWidth="1px" borderTopRadius="l3">
@@ -19,7 +23,23 @@ const showLivePreview = html.includes('metastring="live"')
       </Box>
     )
   }
-  <CodePreview code={code} client:load>
-    <Code code={code} lang="tsx" theme="css-variables" />
-  </CodePreview>
+  {
+    isMultiView ? (
+      <CodeWithTabs client:load>
+        <CodePreview code={code} client:load slot="react" isAttached>
+          <Code code={code} lang="tsx" theme="css-variables" />
+        </CodePreview>
+        <CodePreview code={reactToSolid(code)} client:load slot="solid" isAttached>
+          <Code code={reactToSolid(code)} lang="tsx" theme="css-variables" />
+        </CodePreview>
+        <CodePreview code={reactToVue(code)} client:load slot="vue" isAttached>
+          <Code code={reactToVue(code)} lang="tsx" theme="css-variables" />
+        </CodePreview>
+      </CodeWithTabs>
+    ) : (
+      <CodePreview code={code} client:load>
+        <Code code={code} lang="tsx" theme="css-variables" />
+      </CodePreview>
+    )
+  }
 </Box>

@@ -4,7 +4,7 @@ import { Heading } from './heading'
 
 export const Steps = (props: PropsWithChildren) => {
   return (
-    <Stack gap="10" position="relative">
+    <Stack gap="8" position="relative">
       <Box width="1px" height="full" bg="border.default" position="absolute" left="4" top="0" />
       {props.children}
     </Stack>
@@ -35,7 +35,9 @@ export const Step = (props: PropsWithChildren<StepProps>) => {
           {title}
         </Heading>
       </Stack>
-      <Box ps="12">{children}</Box>
+      <Box ps="12" css={{ '&> :last-child': { mb: '0' } }}>
+        {children}
+      </Box>
     </Box>
   )
 }

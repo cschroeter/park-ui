@@ -77,17 +77,17 @@ export default defineConfig({
       pre: {
         overflowX: 'auto',
         fontSize: '14px !important',
-        '--astro-code-color-text': 'colors.fg.emphasized',
-        '--astro-code-color-background': 'transparent',
-        '--astro-code-token-constant': 'colors.fg.emphasized',
-        '--astro-code-token-string': 'colors.fg.subtle',
-        '--astro-code-token-comment': 'colors.fg.subtle',
-        '--astro-code-token-keyword': 'colors.fg.subtle',
-        '--astro-code-token-parameter': 'colors.fg.subtle',
-        '--astro-code-token-function': 'colors.fg.emphasized',
-        '--astro-code-token-string-expression': 'colors.fg.subtle',
-        '--astro-code-token-punctuation': 'colors.fg.subtle',
-        '--astro-code-token-link': 'colors.fg.subtle',
+        '--astro-code-color-text': 'colors.grayPalette.200',
+        '--astro-code-color-background': 'colors.grayPalette.900',
+        '--astro-code-token-constant': 'colors.grayPalette.200',
+        '--astro-code-token-string': 'colors.grayPalette.400',
+        '--astro-code-token-comment': 'colors.grayPalette.400',
+        '--astro-code-token-keyword': 'colors.grayPalette.400',
+        '--astro-code-token-parameter': 'colors.grayPalette.400',
+        '--astro-code-token-function': 'white',
+        '--astro-code-token-string-expression': 'colors.grayPalette.400',
+        '--astro-code-token-punctuation': 'colors.grayPalette.400',
+        '--astro-code-token-link': 'colors.grayPalette.400',
         '& code': {
           fontFamily: 'inherit',
         },
@@ -106,20 +106,6 @@ export default defineConfig({
             px: { base: '4', md: '6' },
             ...props,
           }
-        },
-      },
-    },
-  },
-  theme: {
-    extend: {
-      semanticTokens: {
-        colors: {
-          bg: {
-            code: {
-              // TODO takl with @phil
-              value: { base: '{colors.gray-palette.50}', _dark: '{colors.gray-palette.900}' },
-            },
-          },
         },
       },
     },

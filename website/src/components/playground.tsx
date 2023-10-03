@@ -1,5 +1,5 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import { useState } from 'react'
+import { useState, type PropsWithChildren } from 'react'
 import { cx, sva } from 'styled-system/css'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import * as demos from './demos'
@@ -20,9 +20,9 @@ const styles = sva({
   base: {
     root: {
       borderWidth: '1px',
-      borderTopRadius: 'l3',
-      borderBottomWidth: '0!',
+      borderRadius: 'l3',
       overflow: 'hidden',
+      divideY: '1px',
     },
     container: {
       flexDirection: { base: 'column', md: 'row' },
@@ -64,7 +64,7 @@ const toTitleCase = (str = '') => {
     .join('')
 }
 
-export const Playground = (props: Props) => {
+export const Playground = (props: PropsWithChildren<Props>) => {
   const { componentProps = {}, id } = props
   const [state, setState] = useState(
     Object.fromEntries(
@@ -118,6 +118,7 @@ export const Playground = (props: Props) => {
           </Stack>
         )}
       </Stack>
+      <Box>{props.children}</Box>
     </Box>
   )
 }
