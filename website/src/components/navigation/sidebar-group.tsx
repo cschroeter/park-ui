@@ -3,18 +3,23 @@ import { Segment, SegmentControl, SegmentGroup, SegmentGroupIndicator, SegmentLa
 
 interface Props {
   items: { href: string; title: string }[]
+  activeItem?: string | null
 }
 
 export const SidebarGroup = (props: Props) => {
-  const { items = [] } = props
+  const { items = [], activeItem } = props
   const [active, setActive] = useState<string>()
 
   useEffect(() => {
+    if (activeItem) {
+      setActive(activeItem)
+      return
+    }
     document.addEventListener('astro:after-swap', () => {
       setActive(window.location.pathname)
     })
     setActive(window.location.pathname)
-  }, [])
+  }, [activeItem])
 
   return (
     <SegmentGroup value={active} orientation="vertical" size={{ base: 'md', md: 'sm' }}>

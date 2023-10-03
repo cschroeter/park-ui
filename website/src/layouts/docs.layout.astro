@@ -6,7 +6,7 @@ import DocsFooter from '~/components/navigation/docs-footer.astro'
 import { MobileSidebarContainer } from '~/components/navigation/mobile-sidebar-container'
 import Navbar from '~/components/navigation/navbar.astro'
 import Sidebar from '~/components/navigation/sidebar.astro'
-import TableOfContent from '~/components/navigation/toc.astro'
+import { TableOfContent } from '~/components/navigation/toc'
 import { ThemeDrawer } from '~/components/theme/theme-drawer'
 import Layout from './layout.astro'
 import { layout } from './layout.recipe'
@@ -51,7 +51,7 @@ const styles = layout()
       </Container>
       <Box display={{ base: 'none', lg: 'block' }} flex="0 0 240px">
         <Box position="sticky" top="28" right="0" ps="8">
-          <TableOfContent headings={headings} />
+          <TableOfContent headings={headings} client:load />
         </Box>
       </Box>
     </Flex>
@@ -67,7 +67,6 @@ const styles = layout()
   }
   const registerScrollEvent = () => {
     const leftSidebar = document.querySelector('#sidebar')
-    console.log(leftSidebar)
     leftSidebar?.addEventListener('scroll', () => {
       sessionStorage.setItem('sidebar-scroll', leftSidebar?.scrollTop.toString() ?? '0')
     })
