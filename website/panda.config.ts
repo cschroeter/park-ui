@@ -43,6 +43,7 @@ export default defineConfig({
     css: [
       {
         properties: {
+          fontWeight: ['*'],
           textStyle: ['*'],
         },
       },

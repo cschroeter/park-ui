@@ -54,6 +54,8 @@ export const getSitemap = async (): Promise<Sitemap> => {
   const componentPages = await getCollection('components')
 
   const priority = ['typography', 'component']
+  const typographyPriority = ['text', 'heading', 'code']
+
   const componentPagesGroupByCategory = componentPages
     .map((item) => item.data.category)
     .sort((a, b) => priority.indexOf(a) - priority.indexOf(b))
@@ -62,6 +64,9 @@ export const getSitemap = async (): Promise<Sitemap> => {
       title: category,
       items: componentPages
         .filter((item) => item.data.category === category)
+        .sort(
+          (a, b) => typographyPriority.indexOf(a.data.id) - typographyPriority.indexOf(b.data.id),
+        )
         .map((item) => ({
           title: item.data.title,
           href: path.join('/docs', item.collection, item.data.id),

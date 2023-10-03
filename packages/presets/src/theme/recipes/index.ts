@@ -14,6 +14,7 @@ import { datePicker } from './date-picker'
 import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
+import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { input } from './input'
@@ -47,6 +48,7 @@ export const recipes = {
   badge,
   button,
   code,
+  heading,
   icon,
   input,
   label,
