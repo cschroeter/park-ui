@@ -7,6 +7,7 @@ const components = defineCollection({
     title: z.string(),
     category: z.string(),
     description: z.string(),
+    ark: z.object({ link: z.string() }).optional(),
   }),
 })
 
