@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.17.0] - 2023-10-04
+
 ### Added
 
 - Added support for icons in the `Badge` component.
