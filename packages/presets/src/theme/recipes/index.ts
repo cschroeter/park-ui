@@ -43,7 +43,6 @@ import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
 
 export const recipes = {
-  alert,
   article,
   badge,
   button,
@@ -58,6 +57,7 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion,
+  alert,
   avatar,
   card,
   carousel,

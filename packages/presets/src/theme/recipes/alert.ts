@@ -1,13 +1,36 @@
-import { defineRecipe } from '@pandacss/dev'
+import { defineSlotRecipe } from '@pandacss/dev'
 
-export const alert = defineRecipe({
+export const alert = defineSlotRecipe({
   className: 'alert',
+  slots: ['root', 'content', 'description', 'icon', 'title'],
   base: {
-    background: 'bg.default',
-    borderRadius: 'l3',
-    borderWidth: '1px',
-    p: '4',
-    textStyle: 'sm',
-    width: 'full',
+    root: {
+      background: 'bg.default',
+      borderWidth: '1px',
+      borderRadius: 'l3',
+      display: 'flex',
+      gap: '3',
+      p: '4',
+      width: 'full',
+    },
+    content: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1',
+    },
+    description: {
+      color: 'fg.muted',
+      textStyle: 'sm',
+    },
+    icon: {
+      color: 'fg.emphasized',
+      flexShrink: '0',
+      width: '5',
+      height: '5',
+    },
+    title: {
+      fontWeight: 'semibold',
+      textStyle: 'sm',
+    },
   },
 })

@@ -1,8 +1,10 @@
+import { InfoIcon } from 'lucide-react'
 import { generateElement } from 'react-live'
 import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
 import * as components from '~/components/ui'
 
-const scope = { ...components, Stack, HStack, Box, Flex }
+const icons = { InfoIcon }
+const scope = { ...components, ...icons, Stack, HStack, Box, Flex }
 
 type Props = {
   code: string
