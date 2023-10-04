@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/carousel'
 import { styled } from 'styled-system/jsx'
 import { carousel, type CarouselVariantProps } from 'styled-system/recipes'

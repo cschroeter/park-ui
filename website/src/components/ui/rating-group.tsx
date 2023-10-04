@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/rating-group'
 import { styled } from 'styled-system/jsx'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'

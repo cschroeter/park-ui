@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/pagination'
 import { styled } from 'styled-system/jsx'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'

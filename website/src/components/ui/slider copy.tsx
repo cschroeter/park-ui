@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/slider'
 import { styled } from 'styled-system/jsx'
 import { slider, type SliderVariantProps } from 'styled-system/recipes'

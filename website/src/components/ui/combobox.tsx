@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/combobox'
 import { styled } from 'styled-system/jsx'
 import { combobox, type ComboboxVariantProps } from 'styled-system/recipes'

@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/dialog'
 import { styled } from 'styled-system/jsx'
 import { drawer, type DrawerVariantProps } from 'styled-system/recipes'

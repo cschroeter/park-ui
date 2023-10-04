@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/switch'
 import { styled } from 'styled-system/jsx'
 import { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'

@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/tooltip'
 import { styled } from 'styled-system/jsx'
 import { tooltip, type TooltipVariantProps } from 'styled-system/recipes'

@@ -1,3 +1,5 @@
+'use client'
+
 import { ark, type HTMLArkProps } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
 import { alert, type AlertVariantProps } from 'styled-system/recipes'

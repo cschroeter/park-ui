@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/number-input'
 import { styled } from 'styled-system/jsx'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'

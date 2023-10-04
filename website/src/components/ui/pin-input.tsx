@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/pin-input'
 import { styled } from 'styled-system/jsx'
 import { pinInput, type PinInputVariantProps } from 'styled-system/recipes'

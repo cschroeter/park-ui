@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/avatar'
 import { styled } from 'styled-system/jsx'
 import { avatar, type AvatarVariantProps } from 'styled-system/recipes'

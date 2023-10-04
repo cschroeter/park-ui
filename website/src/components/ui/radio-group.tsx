@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/radio-group'
 import { styled } from 'styled-system/jsx'
 import { radioGroup, type RadioGroupVariantProps } from 'styled-system/recipes'

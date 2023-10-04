@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/toast'
 import { styled } from 'styled-system/jsx'
 import { toast, type ToastVariantProps } from 'styled-system/recipes'

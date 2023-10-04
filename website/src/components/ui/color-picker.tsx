@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/color-picker'
 import { styled } from 'styled-system/jsx'
 import { colorPicker, type ColorPickerVariantProps } from 'styled-system/recipes'

@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/checkbox'
 import { styled } from 'styled-system/jsx'
 import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'

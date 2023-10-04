@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/menu'
 import { styled } from 'styled-system/jsx'
 import { menu, type MenuVariantProps } from 'styled-system/recipes'

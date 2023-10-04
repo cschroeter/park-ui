@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/hover-card'
 import { styled } from 'styled-system/jsx'
 import { hoverCard, type HoverCardVariantProps } from 'styled-system/recipes'

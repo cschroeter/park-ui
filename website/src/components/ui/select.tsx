@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/select'
 import { styled } from 'styled-system/jsx'
 import { select, type SelectVariantProps } from 'styled-system/recipes'

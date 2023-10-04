@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/range-slider'
 import { styled } from 'styled-system/jsx'
 import { rangeSlider, type RangeSliderVariantProps } from 'styled-system/recipes'

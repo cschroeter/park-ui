@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/segment-group'
 import { styled } from 'styled-system/jsx'
 import { segmentGroup, type SegmentGroupVariantProps } from 'styled-system/recipes'

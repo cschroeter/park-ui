@@ -1,3 +1,5 @@
+'use client'
+
 import type { PropsWithChildren } from 'react'
 import { Box, Circle, Stack } from 'styled-system/jsx'
 import { Heading } from './heading'

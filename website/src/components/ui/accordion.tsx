@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/accordion'
 import { styled } from 'styled-system/jsx'
 import { accordion, type AccordionVariantProps } from 'styled-system/recipes'

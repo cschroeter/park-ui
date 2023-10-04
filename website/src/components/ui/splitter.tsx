@@ -1,3 +1,5 @@
+'use client'
+
 import * as Ark from '@ark-ui/react/splitter'
 import { styled } from 'styled-system/jsx'
 import { splitter, type SplitterVariantProps } from 'styled-system/recipes'
