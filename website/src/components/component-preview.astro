@@ -1,0 +1,18 @@
+---
+import { Code } from 'astro/components'
+import { getCollection } from 'astro:content'
+import fs from 'fs'
+import { CodePreview } from './code-preview'
+import { Playground } from './playground'
+
+const componentId = Astro.params.slug?.split('/').pop()
+const types = await getCollection('props', (x) => x.id === componentId)
+const componentProps = types[0].data ?? {}
+const code = fs.readFileSync(`./src/components/demos/${componentId}.demo.tsx`, 'utf8')
+---
+
+<Playground id={componentId} componentProps={componentProps} client:load>
+  <CodePreview code={code} isAttached expanded client:load>
+    <Code code={code} lang="tsx" theme="css-variables" />
+  </CodePreview>
+</Playground>

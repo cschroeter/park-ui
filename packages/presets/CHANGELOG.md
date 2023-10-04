@@ -1,5 +1,99 @@
 ## [Unreleased]
 
+## [0.17.0] - 2023-10-04
+
+### Added
+
+- Added support for icons in the `Badge` component.
+
+### Changed
+
+- Revised `Alert` component.
+
+## [0.16.0] - 2023-09-27
+
+### Added
+
+- Added open and close animation to the `Tooltip` component.
+- Added `outline` variant and `lg` size to the `Tabs` component.
+
+### Changed
+
+- Improved `horizontal` and `vertical` orientation in `Tabs`.
+
+## [0.15.0] - 2023-09-21
+
+### Added
+
+- Added `ghost` variant to the `Code` component.
+
+### Changed
+
+- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and `tertiary` to `ghost`.
+
+## [0.14.0] - 2023-09-21
+
+### Added
+
+- Added `Table` component.
+
+## [0.13.0] - 2023-09-19
+
+### Added
+
+- Added `Icon` component.
+- Added `ghost` variant to the `Select` component.
+
+### Changed
+
+- Revised `Menu` component.
+
+## [0.12.0] - 2023-09-14
+
+### Added
+
+- Added open and close animations to the `Menu` component.
+- Added `ToggleGroup` component.
+
+### Changed
+
+- Revised `NumberInput` component.
+- Revised `Select` component.
+- Revised `Combobox` component.
+
+## [0.11.0] - 2023-09-08
+
+### Changed
+
+- Revised `PinInput` component.
+
+## [0.10.0] - 2023-09-03
+
+### Added
+
+- Added support for the `disabled` state in the `RadioGroup`, `SegmentGroup` and `Tabs` components.
+
+### Changed
+
+- Improved responsiveness of the `Tabs` component by using `overflow: auto`
+
+## [0.9.0] - 2023-08-29
+
+### Added
+
+- Added `Card` component.
+- Added a `2xs` size token with a value of `16rem` or `256px`.
+- Added new variant `outline` to the `RadioButtonGroup` component.
+
+### Changed
+
+- Revised `Select` component to match the visual style of the `Input` component.
+
+### Fixed
+
+- Resolved an issue with the `Textarea` recipe where the resize handle would be hidden.
+- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was longer than the specified width.
+
 ## [0.8.1] - 2023-08-17
 
 ### Fixed

@@ -1,9 +1,8 @@
-import { segmentGroupAnatomy } from '@ark-ui/react'
+import { segmentGroupAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const segmentGroup = defineSlotRecipe({
   className: 'segmentGroup',
-  description: 'A segment group style',
   slots: segmentGroupAnatomy.keys(),
   base: {
     root: {
@@ -51,6 +50,13 @@ export const segmentGroup = defineSlotRecipe({
         color: 'fg.emphasized',
         _hover: {
           color: 'fg.emphasized',
+        },
+      },
+      _disabled: {
+        color: 'fg.disabled',
+        cursor: 'not-allowed',
+        _hover: {
+          color: 'fg.disabled',
         },
       },
       px: {

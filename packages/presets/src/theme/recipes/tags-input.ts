@@ -1,9 +1,8 @@
-import { tagsInputAnatomy } from '@ark-ui/react'
+import { tagsInputAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tagsInput = defineSlotRecipe({
   className: 'tagsInput',
-  description: 'A tags input style',
   slots: tagsInputAnatomy.keys(),
   base: {
     root: {

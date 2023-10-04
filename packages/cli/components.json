@@ -343,7 +343,6 @@
     "components": {
       "Root": { "name": "Switch", "partName": "root" },
       "Control": { "name": "SwitchControl", "partName": "control" },
-      "Input": { "name": "SwitchInput", "partName": "input" },
       "Label": { "name": "SwitchLabel", "partName": "label" },
       "Thumb": { "name": "SwitchThumb", "partName": "thumb" }
     },

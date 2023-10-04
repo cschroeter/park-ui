@@ -1,19 +1,20 @@
 {
-  "name": "@park-ui/root",
-  "version": "0.0.0",
+  "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "website"
+  ],
   "scripts": {
-    "prepare": "husky install",
-    "cli": "pnpm --filter=@park-ui/cli",
-    "presets": "pnpm --filter=@park-ui/presets",
-    "web": "pnpm --filter=@park-ui/website"
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.7.1",
+    "@commitlint/cli": "17.7.2",
     "@commitlint/config-conventional": "17.7.0",
     "husky": "8.0.3",
-    "lint-staged": "14.0.0",
-    "prettier": "3.0.01",
+    "lint-staged": "14.0.1",
+    "prettier": "3.0.3",
+    "prettier-plugin-astro": "0.12.0",
     "prettier-plugin-organize-imports": "3.2.3"
   },
   "commitlint": {
@@ -25,6 +26,5 @@
     "**/*.{js,jsx,ts,tsx,json}": [
       "prettier --plugin prettier-plugin-organize-imports --write"
     ]
-  },
-  "packageManager": "pnpm@8.6.7"
+  }
 }

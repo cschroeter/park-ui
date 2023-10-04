@@ -1,9 +1,8 @@
-import { checkboxAnatomy } from '@ark-ui/react'
+import { checkboxAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const checkbox = defineSlotRecipe({
   className: 'checkbox',
-  description: 'A checkbox style',
   slots: checkboxAnatomy.keys(),
   base: {
     root: {

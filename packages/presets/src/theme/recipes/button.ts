@@ -2,7 +2,6 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const button = defineRecipe({
   className: 'button',
-  description: 'A button style',
   base: {
     alignItems: 'center',
     appearance: 'none',
@@ -10,6 +9,7 @@ export const button = defineRecipe({
     cursor: 'pointer',
     display: 'inline-flex',
     fontWeight: 'semibold',
+    minWidth: '0',
     justifyContent: 'center',
     outline: 'none',
     position: 'relative',
@@ -21,12 +21,12 @@ export const button = defineRecipe({
     whiteSpace: 'nowrap',
   },
   defaultVariants: {
-    variant: 'primary',
+    variant: 'solid',
     size: 'md',
   },
   variants: {
     variant: {
-      primary: {
+      solid: {
         background: 'accent.default',
         color: 'accent.fg',
         _hover: {
@@ -45,7 +45,7 @@ export const button = defineRecipe({
           },
         },
       },
-      secondary: {
+      outline: {
         borderWidth: '1px',
         borderColor: 'border.emphasized',
         background: 'bg.default',
@@ -80,7 +80,7 @@ export const button = defineRecipe({
           outlineColor: 'border.outline',
         },
       },
-      tertiary: {
+      ghost: {
         color: 'fg.emphasized',
         _hover: {
           color: 'fg.default',
@@ -109,6 +109,7 @@ export const button = defineRecipe({
       },
       link: {
         color: 'fg.muted',
+        verticalAlign: 'baseline',
         _hover: {
           color: 'fg.default',
         },
@@ -144,8 +145,8 @@ export const button = defineRecipe({
         px: '3.5',
         gap: '2',
         '& svg': {
-          width: '4.5',
-          height: '4.5',
+          width: '4',
+          height: '4',
         },
       },
       md: {
@@ -155,7 +156,6 @@ export const button = defineRecipe({
         px: '4',
         gap: '2',
         '& svg': {
-          fontSize: 'xl',
           width: '5',
           height: '5',
         },

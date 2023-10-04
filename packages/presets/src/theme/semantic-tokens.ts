@@ -22,7 +22,7 @@ export const semanticTokens = defineSemanticTokens({
       muted: { value: { base: '{colors.gray-palette.600}', _dark: '{colors.gray-palette.300}' } },
       subtle: { value: { base: '{colors.gray-palette.500}', _dark: '{colors.gray-palette.400}' } },
       disabled: {
-        value: { base: '{colors.gray-palette.200}', _dark: '{colors.gray-palette.800}' },
+        value: { base: '{colors.gray-palette.300}', _dark: '{colors.gray-palette.700}' },
       },
     },
     accent: {
@@ -78,7 +78,7 @@ export const semanticTokens = defineSemanticTokens({
     },
     xl: {
       value: {
-        defaubaselt: '0px 16px 24px rgba(23, 23, 23,  0.1)',
+        base: '0px 16px 24px rgba(23, 23, 23,  0.1)',
         _dark: '0px 16px 24px rgba(0, 0, 0, 1.0)',
       },
     },

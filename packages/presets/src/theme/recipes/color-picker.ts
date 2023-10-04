@@ -1,15 +1,14 @@
-import { colorPickerAnatomy } from '@ark-ui/react'
+import { colorPickerAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const colorPicker = defineSlotRecipe({
   className: 'colorPicker',
-  description: 'A color picker style',
   slots: colorPickerAnatomy.keys(),
   base: {
     content: {
       borderRadius: 'l3',
       borderWidth: '1px',
-      boxShadow: 'lg',
+      boxShadow: 'sm',
       padding: '4',
       maxW: '264px',
     },

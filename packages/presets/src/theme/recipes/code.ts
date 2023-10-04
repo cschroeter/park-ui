@@ -2,21 +2,26 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const code = defineRecipe({
   className: 'code',
-  description: 'An code style',
   base: {
     alignItems: 'center',
     bg: 'bg.subtle',
     borderRadius: 'l2',
-    borderWidth: '1px',
-    color: 'fg.default',
+    color: 'fg.muted',
     display: 'inline-flex',
     fontFamily: 'var(--font-code)',
     fontWeight: 'medium',
   },
   defaultVariants: {
     size: 'md',
+    variant: 'outline',
   },
   variants: {
+    variant: {
+      outline: {
+        borderWidth: '1px',
+      },
+      ghost: {},
+    },
     size: {
       sm: {
         height: '5',

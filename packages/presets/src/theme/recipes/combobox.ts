@@ -1,18 +1,22 @@
-import { comboboxAnatomy } from '@ark-ui/react'
+import { comboboxAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const combobox = defineSlotRecipe({
   className: 'combobox',
-  description: 'A combobox style',
   slots: comboboxAnatomy.keys(),
   base: {
     root: {
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',
+      width: 'full',
     },
     control: {
       position: 'relative',
+    },
+    label: {
+      color: 'fg.emphasized',
+      fontWeight: 'medium',
     },
     trigger: {
       position: 'absolute!',
@@ -24,7 +28,7 @@ export const combobox = defineSlotRecipe({
       background: 'bg.default',
       borderRadius: 'l2',
       borderWidth: '1px',
-      boxShadow: 'lg',
+      boxShadow: 'sm',
       display: 'flex',
       flexDirection: 'column',
       _hidden: {
@@ -42,12 +46,12 @@ export const combobox = defineSlotRecipe({
         outlineColor: 'border.outline',
       },
     },
-    option: {
+    item: {
       alignItems: 'center',
       borderRadius: 'l1',
       cursor: 'pointer',
       display: 'flex',
-      fontWeight: 'medium',
+      justifyContent: 'space-between',
       transitionDuration: 'fast',
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
@@ -57,6 +61,23 @@ export const combobox = defineSlotRecipe({
       _highlighted: {
         background: 'bg.subtle',
       },
+      _disabled: {
+        color: 'fg.disabled',
+        cursor: 'not-allowed',
+        _hover: {
+          background: 'transparent',
+        },
+      },
+    },
+    itemGroupLabel: {
+      fontWeight: 'semibold',
+      textStyle: 'sm',
+    },
+    itemIndicator: {
+      color: 'accent.default',
+    },
+    positioner: {
+      zIndex: 'dropdown',
     },
   },
   defaultVariants: {
@@ -66,16 +87,51 @@ export const combobox = defineSlotRecipe({
     size: {
       sm: {
         content: { p: '0.5', gap: '1' },
-        option: { textStyle: 'sm', px: '2', height: '9' },
+        item: { textStyle: 'sm', px: '2', height: '9' },
+        itemIndicator: {
+          '& :where(svg)': {
+            width: '4',
+            height: '4',
+          },
+        },
+        itemGroupLabel: {
+          px: '2',
+          py: '1.5',
+        },
+        label: { textStyle: 'sm' },
+        trigger: { right: '2.5' },
       },
       md: {
         content: { p: '1', gap: '1' },
-        option: { textStyle: 'sm', px: '2', height: '10' },
-        trigger: { right: '4' },
+        item: { textStyle: 'md', px: '2', height: '10' },
+        itemIndicator: {
+          '& :where(svg)': {
+            width: '4',
+            height: '4',
+          },
+        },
+        itemGroupLabel: {
+          px: '2',
+          py: '1.5',
+        },
+        label: { textStyle: 'sm' },
+        trigger: { right: '3' },
       },
       lg: {
         content: { p: '1.5', gap: '1' },
-        option: { textStyle: 'md', px: '2', height: '11' },
+        item: { textStyle: 'md', px: '2', height: '11' },
+        itemIndicator: {
+          '& :where(svg)': {
+            width: '5',
+            height: '5',
+          },
+        },
+        itemGroupLabel: {
+          px: '2',
+          py: '1.5',
+        },
+        label: { textStyle: 'sm' },
+        trigger: { right: '3.5' },
       },
     },
   },

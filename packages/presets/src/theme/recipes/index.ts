@@ -4,6 +4,7 @@ import { article } from './article'
 import { avatar } from './avatar'
 import { badge } from './badge'
 import { button } from './button'
+import { card } from './card'
 import { carousel } from './carousel'
 import { checkbox } from './checkbox'
 import { code } from './code'
@@ -13,7 +14,9 @@ import { datePicker } from './date-picker'
 import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
+import { heading } from './heading'
 import { hoverCard } from './hover-card'
+import { icon } from './icon'
 import { input } from './input'
 import { label } from './label'
 import { link } from './link'
@@ -31,18 +34,21 @@ import { select } from './select'
 import { slider } from './slider'
 import { splitter } from './splitter'
 import { switchRecipe } from './switch'
+import { table } from './table'
 import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
 import { textarea } from './textarea'
 import { toast } from './toast'
+import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
 
 export const recipes = {
-  alert,
   article,
   badge,
   button,
   code,
+  heading,
+  icon,
   input,
   label,
   link,
@@ -51,7 +57,9 @@ export const recipes = {
 
 export const slotRecipes = {
   accordion,
+  alert,
   avatar,
+  card,
   carousel,
   checkbox,
   colorPicker,
@@ -76,7 +84,9 @@ export const slotRecipes = {
   splitter,
   switchRecipe,
   tabs,
+  table,
   tagsInput,
   toast,
+  toggleGroup,
   tooltip,
 }

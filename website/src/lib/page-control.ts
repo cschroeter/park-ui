@@ -1,15 +1,90 @@
-import { sitemap } from '~/sitemap'
+import { getCollection } from 'astro:content'
+import path from 'path'
 
-export const getNextPage = (title: string) => {
-  const pages = sitemap.flatMap((section) => section.entries)
-  const currentPageIndex = pages.findIndex((page) => page.title === title)
-  const nextPage = pages[currentPageIndex + 1]
-  return nextPage
+const getOverviewPages = async () => {
+  const priority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
+  return getCollection('overview').then((items) =>
+    items.sort((a, b) => priority.indexOf(a.slug) - priority.indexOf(b.slug)),
+  )
 }
 
-export const getPrevPage = (title: string) => {
-  const pages = sitemap.flatMap((section) => section.entries)
-  const currentPageIndex = pages.findIndex((page) => page.title === title)
-  const prevPage = pages[currentPageIndex - 1]
-  return prevPage
+export const getAllCollections = async () => {
+  const overviewPages = await getOverviewPages()
+  const componentPages = await getCollection('components')
+
+  return [...overviewPages, ...componentPages]
+}
+
+const getCurrentPageIndex = async (pathname?: string) => {
+  const slug = pathname?.split('/').pop() ?? ''
+  const collections = await getAllCollections()
+  return collections.findIndex((item) => item.slug.endsWith(slug))
+}
+
+export const getPreviousPage = async (pathname?: string) => {
+  const collections = await getAllCollections()
+  const index = await getCurrentPageIndex(pathname)
+
+  const item = collections[index - 1]
+  return item
+    ? { href: path.join('/docs', item.collection, item.data.id), name: item.data.title }
+    : null
+}
+
+export const getNextPage = async (pathname?: string) => {
+  const collections = await getAllCollections()
+  const index = await getCurrentPageIndex(pathname)
+
+  const item = collections[index + 1]
+  return item
+    ? { href: path.join('/docs', item.collection, item.data.id), name: item.data.title }
+    : null
+}
+
+type Sitemap = {
+  title: string
+  items: {
+    title: string
+    href: string
+    label?: string
+  }[]
+}[]
+
+export const getSitemap = async (): Promise<Sitemap> => {
+  const overviewPages = await getOverviewPages()
+  const componentPages = await getCollection('components')
+
+  const priority = ['typography', 'component']
+  const typographyPriority = ['text', 'heading', 'code']
+
+  const componentPagesGroupByCategory = componentPages
+    .map((item) => item.data.category)
+    .sort((a, b) => priority.indexOf(a) - priority.indexOf(b))
+    .filter((value, index, self) => self.indexOf(value) === index)
+    .map((category) => ({
+      title: category,
+      items: componentPages
+        .filter((item) => item.data.category === category)
+        .sort(
+          (a, b) => typographyPriority.indexOf(a.data.id) - typographyPriority.indexOf(b.data.id),
+        )
+        .map((item) => ({
+          title: item.data.title,
+          href: path.join('/docs', item.collection, item.data.id),
+          label: item.data.label,
+        })),
+    }))
+
+  return [
+    {
+      title: 'Overview',
+      items: overviewPages
+        .filter((item) => item.collection === 'overview')
+        .map((item) => ({
+          title: item.data.title,
+          href: path.join('/docs', item.collection, item.data.id),
+        })),
+    },
+    ...componentPagesGroupByCategory,
+  ]
 }

@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { FigmaIcon, FileTextIcon, PenLineIcon } from 'lucide-react'
+import { Box, Container, HStack } from 'styled-system/jsx'
+import { prose } from 'styled-system/recipes'
+import { Heading, Text } from '~/components/ui'
+import { Badge } from '../ui/badge'
+
+interface Props {
+  entry: CollectionEntry<'components' | 'overview'>
+}
+
+const { entry } = Astro.props
+const isComponent = entry.collection === 'components'
+---
+
+<Box bg={{ base: 'gray.50', _dark: 'black' }} borderBottomWidth="1px">
+  <Container maxW="66rem" py={{ base: '16', md: '24' }}>
+    <article class={prose({ size: 'base' })}>
+      <Heading as="h1" fontWeight="bold">{entry.data.title}</Heading>
+      <Text className="lead" color="fg.emphasized">{entry.data.description}</Text>
+    </article>
+    {
+      isComponent && (
+        <HStack gap="3">
+          {entry.data.ark?.link && (
+            <a href={entry.data.ark.link} target="_blank">
+              <Badge borderRadius="l2">
+                <FileTextIcon />
+                API Reference
+              </Badge>
+            </a>
+          )}
+          <a href="https://www.figma.com/community/file/1268615283036362769" target="_blank">
+            <Badge borderRadius="l2">
+              <FigmaIcon />
+              Figma
+            </Badge>
+          </a>
+          <a
+            href={`https://github.com/cschroeter/park-ui/issues/new?title=[${entry.data.title}]%20Issue`}
+            target="_blank"
+          >
+            <Badge borderRadius="l2">
+              <PenLineIcon />
+              Feedback
+            </Badge>
+          </a>
+        </HStack>
+      )
+    }
+
+    <!-- <DocsHeroTabs client:load /> -->
+  </Container>
+</Box>

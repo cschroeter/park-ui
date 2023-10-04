@@ -1,9 +1,8 @@
-import { radioGroupAnatomy } from '@ark-ui/react'
+import { radioGroupAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const radioGroup = defineSlotRecipe({
   className: 'radioGroup',
-  description: 'A radio group style',
   slots: radioGroupAnatomy.keys(),
   base: {
     root: {
@@ -33,15 +32,29 @@ export const radioGroup = defineSlotRecipe({
           background: 'accent.default',
         },
       },
+      _disabled: {
+        borderColor: 'border.disabled',
+        color: 'fg.disabled',
+        _hover: {
+          bg: 'initial',
+          color: 'fg.disabled',
+        },
+      },
     },
     radio: {
       alignItems: 'center',
       cursor: 'pointer',
       display: 'flex',
+      _disabled: {
+        cursor: 'not-allowed',
+      },
     },
     radioLabel: {
       color: 'fg.emphasized',
       fontWeight: 'medium',
+      _disabled: {
+        color: 'fg.disabled',
+      },
     },
   },
   defaultVariants: {

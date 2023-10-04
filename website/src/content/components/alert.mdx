@@ -1,0 +1,31 @@
+---
+id: alert
+title: Alert
+category: component
+description: A component that displays a brief, important message to the user.
+label: Updated
+---
+
+import ComponentPreview from '~/components/component-preview.astro'
+import InstallationGuide from '~/components/installation-guide.astro'
+
+## Usage
+
+<ComponentPreview />
+
+## Examples
+
+### With Icon and Title
+
+```tsx live
+<Alert>
+  <AlertIcon asChild>
+    <InfoIcon />
+  </AlertIcon>
+  <AlertTitle>Browser Update available</AlertTitle>
+</Alert>
+```
+
+## Installation
+
+<InstallationGuide />
