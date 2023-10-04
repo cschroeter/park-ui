@@ -5,7 +5,7 @@ import typographyPreset from 'pandacss-preset-typography'
 export default defineConfig({
   preflight: true,
   presets: [
-    '@pandacss/dev/presets',
+    '@pandacss/preset-base',
     presetPark,
     typographyPreset({
       recipe: {

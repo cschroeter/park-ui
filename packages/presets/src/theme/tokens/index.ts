@@ -1,19 +1,28 @@
 import { defineTokens } from '@pandacss/dev'
-import { animations, easings } from './animations'
+import { animations } from './animations'
+import { blurs } from './blurs'
+import { borders } from './borders'
 import { colors } from './colors'
-import { lineHeights } from './line-heights'
+import { easings } from './easings'
 import { radii } from './radii'
 import { sizes } from './sizes'
 import { spacing } from './spacing'
+import { fontSizes, fontWeights, fonts, letterSpacings, lineHeights } from './typography'
 import { zIndex } from './z-index'
 
 export const tokens = defineTokens({
   animations,
+  blurs,
+  borders,
   colors,
   easings,
+  fonts,
+  fontSizes,
+  fontWeights,
+  letterSpacings,
   lineHeights,
+  radii,
   sizes,
   spacing,
-  radii,
   zIndex,
 })

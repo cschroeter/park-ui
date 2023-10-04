@@ -1,11 +1,24 @@
 ---
 id: changelog
 title: Changelog
-description:
-  All notable changes to this project will be documented in this file.
+description: All notable changes to this project will be documented in this file.
 ---
 
 ## [Unreleased]
+
+### Changed
+
+- BREAKING: Use `@pandacss/preset-base` as preset instead of `@pandacss/dev/presets`.
+
+## [0.17.0] - 2023-10-04
+
+### Added
+
+- Added support for icons in the `Badge` component.
+
+### Changed
+
+- Revised `Alert` component.
 
 ## [0.16.0] - 2023-09-27
 
@@ -26,8 +39,8 @@ description:
 
 ### Changed
 
-- BREAKING: Renamed `button` variants to match their visual style: `primary` to
-  `solid`, `secondary` to `outline` and `tertiary` to `ghost`.
+- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and
+  `tertiary` to `ghost`.
 
 ## [0.14.0] - 2023-09-21
 
@@ -69,8 +82,7 @@ description:
 
 ### Added
 
-- Added support for the `disabled` state in the `RadioGroup`, `SegmentGroup` and
-  `Tabs` components.
+- Added support for the `disabled` state in the `RadioGroup`, `SegmentGroup` and `Tabs` components.
 
 ### Changed
 
@@ -90,37 +102,33 @@ description:
 
 ### Fixed
 
-- Resolved an issue with the `Textarea` recipe where the resize handle would be
-  hidden.
-- Resolved an issue with the `RadioButtonGroup` component where the radio
-  buttons would be misaligned when the text was longer than the specified width.
+- Resolved an issue with the `Textarea` recipe where the resize handle would be hidden.
+- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was
+  longer than the specified width.
 
 ## [0.8.1] - 2023-08-17
 
 ### Fixed
 
-- Resolved a bug in the `Article` component where the font size didn't adjust
-  appropriately in responsive modes.
+- Resolved a bug in the `Article` component where the font size didn't adjust appropriately in responsive modes.
 
 ## [0.8.0] - 2023-08-17
 
 ### Added
 
 - Introduced a new `4.5` and `14` token for enhanced `spacing` and `sizes`.
-- Added `Article` component to effortlessly style Markdown or CMS-generated
-  HTML.
+- Added `Article` component to effortlessly style Markdown or CMS-generated HTML.
 
 ### Changed
 
-- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button`
-  for a greater compatibility with other icon libraries.
+- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other
+  icon libraries.
 
 ## [0.7.1] - 2023-08-16
 
 ### Changed
 
-- Provided a dedicated recipe for the `RangeSlider` component instead of using
-  the `Slider` recipe.
+- Provided a dedicated recipe for the `RangeSlider` component instead of using the `Slider` recipe.
 
 ## [0.7.0] - 2023-08-15
 
@@ -128,16 +136,14 @@ description:
 
 - `25` hue levels added for all grays palettes.
 - Added `none` and `2xs` border radius tokens.
-- Added `{radii.l1}`, `{radii.l2}` and `{radii.l3}` to the semantic tokens
-  border radii.
+- Added `{radii.l1}`, `{radii.l2}` and `{radii.l3}` to the semantic tokens border radii.
 
 ## [0.6.0] - 2023-08-13
 
 ### Added
 
 - Added `Code` component to display inline code snippets.
-- Input elements like `Input`, `Textarea`, `NumberInput` etc. use `accent` color
-  when focused.
+- Input elements like `Input`, `Textarea`, `NumberInput` etc. use `accent` color when focused.
 
 ### Changed
 
@@ -147,9 +153,8 @@ description:
 
 ### Removed
 
-- The `icon` prop has been removed from `IconButton` as it would affect
-  compatibility with the Ark UI `asChild` prop. Code snippets have been updated
-  accordingly.
+- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop.
+  Code snippets have been updated accordingly.
 
 ## [0.5.0] - 2023-08-10
 
@@ -165,9 +170,8 @@ description:
 
 ### Changed
 
-- All relevant recipes now use the new
-  [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda
-  CSS to help organize the styles.
+- All relevant recipes now use the new [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda CSS
+  to help organize the styles.
 
 ## 0.3.1 - 2023-08-09
 
@@ -179,15 +183,14 @@ description:
 
 ### Added
 
-- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of
-  semantic tokens. Interative elements like buttons and links will use these
-  colors for their background and foreground colors.
+- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens. Interative elements like
+  buttons and links will use these colors for their background and foreground colors.
 
 ### Changed
 
 - All recipes now use semantic tokens for their colors.
-- Changed `outline` from `neutral.500` to `neutral.700` in light mode and
-  `neutral.500` to `neutral.300` in dark mode to improve contrast.
+- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to `neutral.300` in dark mode to
+  improve contrast.
 
 ### Removed
 
@@ -198,14 +201,12 @@ description:
 ### Added
 
 - Added `Drawer` component.
-- Added new `easings` options: `easings.default`, `easings.emphasized-in`,
-  `easings.emphasized-out`.
+- Added new `easings` options: `easings.default`, `easings.emphasized-in`, `easings.emphasized-out`.
 
 ### Changed
 
 - Changed animation for `Modal` components.
-- Changed `transitionTimingFunction` for all relevant components to the new
-  `easings.default`.
+- Changed `transitionTimingFunction` for all relevant components to the new `easings.default`.
 - Tweaked `bg.canvas` to be slightly darker in `light` mode.
 
 ## 0.1.0 - 2023-08-02

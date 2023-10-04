@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- BREAKING: Use `@pandacss/preset-base` as preset instead of `@pandacss/dev/presets`.
+
 ## [0.17.0] - 2023-10-04
 
 ### Added
