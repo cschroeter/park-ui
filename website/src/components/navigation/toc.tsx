@@ -52,7 +52,7 @@ const useScrollSpy = (selectors: string[]) => {
           }
         })
       },
-      { rootMargin: '-20% 0px' },
+      { rootMargin: '-30% 0px' },
     )
     elements.forEach((element) => {
       if (element) observer.current?.observe(element)

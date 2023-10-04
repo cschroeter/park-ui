@@ -8,6 +8,7 @@ const components = defineCollection({
     category: z.string(),
     description: z.string(),
     ark: z.object({ link: z.string() }).optional(),
+    label: z.string().optional(),
   }),
 })
 

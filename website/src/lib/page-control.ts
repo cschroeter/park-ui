@@ -46,6 +46,7 @@ type Sitemap = {
   items: {
     title: string
     href: string
+    label?: string
   }[]
 }[]
 
@@ -70,6 +71,7 @@ export const getSitemap = async (): Promise<Sitemap> => {
         .map((item) => ({
           title: item.data.title,
           href: path.join('/docs', item.collection, item.data.id),
+          label: item.data.label,
         })),
     }))
 
