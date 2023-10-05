@@ -1,11 +1,25 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "sourceMap": true,
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/react/*"]
     },
-    "jsx": "preserve"
+    "baseUrl": "./"
   },
-  "include": ["src", "styled-system"]
+  "include": ["src", ".ladle/useDarkMode.ts", "styled-system"]
 }
