@@ -7,11 +7,9 @@ import {
   RadioLabel,
 } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
-import { useColorMode } from '~/lib/use-color-mode'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const GrayPalettePicker = () => {
-  const { colorMode } = useColorMode()
   const { currentGrayPalette, grayPalettes, updateGrayPalette } = useThemeGenerator()
 
   return (
@@ -20,35 +18,33 @@ export const GrayPalettePicker = () => {
         Gray Palette
       </Text>
       <RadioButtonGroup
-        value={currentGrayPalette.value}
+        value={currentGrayPalette}
         size="sm"
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
         onChange={(e) => {
           updateGrayPalette(
-            grayPalettes.find((grayPalette) => grayPalette.value === e.value) ?? currentGrayPalette,
+            grayPalettes.find((grayPalette) => grayPalette === e.value) ?? currentGrayPalette,
           )
         }}
       >
         {grayPalettes.map((grayPalette, id) => (
           <Radio
             key={id}
-            value={grayPalette.value}
+            value={grayPalette}
             _checked={{ borderColor: 'border.outline', boxShadow: 'outline' }}
             justifyContent="flex-start"
           >
             <RadioControl />
-            <RadioLabel>
+            <RadioLabel textTransform="capitalize">
               <Circle
                 size="3.5"
                 style={{
-                  background: token.var(
-                    `colors.${grayPalette.value}.${colorMode === 'dark' ? '500' : '400'}`,
-                  ),
+                  background: token.var(`colors.${grayPalette}.9`),
                 }}
               />
-              {grayPalette.label}
+              {grayPalette}
             </RadioLabel>
           </Radio>
         ))}

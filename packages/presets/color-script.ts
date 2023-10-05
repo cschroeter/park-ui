@@ -3,6 +3,7 @@ import colors from '@radix-ui/colors'
 Object.entries(colors)
   .filter(([name]) => !/[A-Z]/.test(name))
   .map(([name, colorObj]) => {
+    console.log(name)
     const baseColors = Object.entries(colorObj).reduce((acc, [key, value]) => {
       const scale = key.replace(/\D+/g, '')
       return {
@@ -33,21 +34,18 @@ Object.entries(colors)
     return result
   })
   .map((x) => {
-    const [name, value] = Object.entries(x)[0]
-    const file = Bun.file(`src/theme/semantic-tokens/colors/${name}.ts`)
-    const writer = file.writer()
-
-    // export const yellow = {
-    //   1: { value: { base: '{colors.yellow.light.1}', _dark: '{colors.yellow.dark.1}' } },
-    // }
-
-    writer.write('export const ' + name + ' = {')
-    Object.entries(value).forEach(([key, value]) => {
-      writer.write(`  ${key}: ${JSON.stringify(value)},\n`)
-    })
-    writer.write('}')
-
-    writer.flush()
+    // const [name, value] = Object.entries(x)[0]
+    // const file = Bun.file(`src/theme/semantic-tokens/colors/${name}.ts`)
+    // const writer = file.writer()
+    // // export const yellow = {
+    // //   1: { value: { base: '{colors.yellow.light.1}', _dark: '{colors.yellow.dark.1}' } },
+    // // }
+    // writer.write('export const ' + name + ' = {')
+    // Object.entries(value).forEach(([key, value]) => {
+    //   writer.write(`  ${key}: ${JSON.stringify(value)},\n`)
+    // })
+    // writer.write('}')
+    // writer.flush()
   })
 
 // Object.entries(colors)

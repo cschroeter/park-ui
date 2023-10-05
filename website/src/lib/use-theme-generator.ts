@@ -1,6 +1,4 @@
 import { useEffect } from 'react'
-import { token } from 'styled-system/tokens'
-import { getBorderRadiiTokens } from './get-border-raddii-tokens'
 import { useColorMode } from './use-color-mode'
 import { useThemeStore } from './use-theme-store'
 
@@ -36,8 +34,8 @@ export const useThemeGenerator = () => {
   }
 
   useEffect(() => {
-    syncColorPalette(currentColorPalette, colorMode)
-  }, [currentColorPalette, colorMode])
+    syncColorPalette(currentColorPalette)
+  }, [currentColorPalette])
 
   useEffect(() => {
     syncGrayPalette(currentGrayPalette)
@@ -75,87 +73,48 @@ export type ThemeConfig = {
 }
 
 export type GrayPalette = ElementType<typeof grayPalettes>
-export const grayPalettes = [
-  { label: 'Neutral', value: 'neutral' },
-  { label: 'Stone', value: 'stone' },
-  { label: 'Zinc', value: 'zinc' },
-  { label: 'Gray', value: 'gray' },
-  { label: 'Slate', value: 'slate' },
-] as const
+export const grayPalettes = ['neutral', 'mauve', 'sage', 'olive', 'slate', 'sand'] as const
 
 export const syncGrayPalette = (color: GrayPalette) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
-  const hues = [25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
   if (root) {
-    hues.map((value) => {
-      root.style.setProperty(
-        `--colors-gray-palette-${value}`,
-        token.var(`colors.${color.value}.${value}`),
-      )
-    })
+    root.setAttribute('data-gray-color', color)
   }
 }
 
 export type ColorPalette = ElementType<typeof colorPalettes>
 export const colorPalettes = [
-  { label: 'Neutral', value: 'neutral' },
-  { label: 'Red', value: 'red' },
-  { label: 'Orange', value: 'orange' },
-  { label: 'Amber', value: 'amber' },
-  { label: 'Yellow', value: 'yellow' },
-  { label: 'Lime', value: 'lime' },
-  { label: 'Green', value: 'green' },
-  { label: 'Emerald', value: 'emerald' },
-  { label: 'Teal', value: 'teal' },
-  { label: 'Cyan', value: 'cyan' },
-  { label: 'Sky', value: 'sky' },
-  { label: 'Blue', value: 'blue' },
-  { label: 'Indigo', value: 'indigo' },
-  { label: 'Violet', value: 'violet' },
-  { label: 'Purple', value: 'purple' },
-  { label: 'Fuchsia', value: 'fuchsia' },
-  { label: 'Pink', value: 'pink' },
-  { label: 'Rose', value: 'rose' },
+  'gray',
+  'bronze',
+  'brown',
+  'yellow',
+  'amber',
+  'orange',
+  'tomato',
+  'red',
+  'ruby',
+  'crimson',
+  'pink',
+  'plum',
+  'purple',
+  'violet',
+  'iris',
+  'indigo',
+  'blue',
+  'cyan',
+  'teal',
+  'jade',
+  'green',
+  'grass',
+  'lime',
+  'mint',
+  'sky',
 ] as const
 
-const syncColorPalette = (color: ColorPalette, colorMode: 'light' | 'dark') => {
+const syncColorPalette = (color: ColorPalette) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
-    if (color.value === 'neutral') {
-      root.style.setProperty(
-        '--colors-accent-default',
-        token.var(colorMode === 'light' ? 'colors.neutral.950' : 'colors.white'),
-      )
-      root.style.setProperty(
-        '--colors-accent-emphasized',
-        token.var(`colors.neutral.${colorMode === 'light' ? '700' : '200'}`),
-      )
-      root.style.setProperty(
-        '--colors-accent-fg',
-        token.var(colorMode === 'light' ? 'colors.white' : 'colors.neutral.950'),
-      )
-      root.style.setProperty(
-        '--colors-border-accent',
-        token.var(colorMode === 'light' ? 'colors.neutral.950' : 'colors.white'),
-      )
-    } else {
-      root.style.setProperty(
-        '--colors-accent-default',
-        token.var(`colors.${color.value}.${colorMode === 'light' ? '600' : '300'}`),
-      )
-      root.style.setProperty(
-        '--colors-accent-emphasized',
-        token.var(`colors.${color.value}.${colorMode === 'light' ? '700' : '400'}`),
-      )
-      root.style.setProperty(
-        '--colors-accent-fg',
-        token.var(colorMode === 'light' ? 'colors.white' : 'colors.neutral.950'),
-      )
-      root.style.setProperty(
-        '--colors-border-accent',
-        token.var(`colors.${color.value}.${colorMode === 'light' ? '600' : '300'}`),
-      )
-    }
+    root.setAttribute('data-accent-color', color)
   }
 }
 
@@ -184,20 +143,17 @@ export const fontFamilies = [
 ] as const
 
 const syncFontFamily = (fontFamily: FontFamily) => {
-  const root = document.querySelector<HTMLHtmlElement>(':root')
-  if (root) {
-    root.style.setProperty('--font-body', fontFamily.value)
-  }
+  // const root = document.querySelector<HTMLHtmlElement>(':root')
+  // if (root) {
+  //   root.style.setProperty('--font-body', fontFamily.value)
+  // }
 }
 
 export type BorderRadii = 0 | 1 | 2 | 3 | 4 | 5 | 6
-const syncBorderRadii = (currentBorderRadii: BorderRadii) => {
+const syncBorderRadii = (borderRadii: BorderRadii) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
-    const borderRadiiTokens = getBorderRadiiTokens(currentBorderRadii)
-    Object.entries(borderRadiiTokens).map(([key, value]) => {
-      root.style.setProperty(`--radii-${key}`, token.var(value))
-    })
+    root.setAttribute('data-radius', borderRadii.toString())
   }
 }
 

@@ -4,6 +4,20 @@ import { colors } from './colors'
 export const semanticTokens = defineSemanticTokens({
   colors: {
     ...colors,
+
+    gray: {
+      1: {
+        value: {
+          _sandGray: '{colors.sand.1}',
+          _slateGray: '{colors.slate.1}',
+          _neutralGray: '{colors.neutral.1}',
+          _oliveGray: '{colors.olive.1}',
+          _sageGray: '{colors.sage.1}',
+          _mauveGray: '{colors.mauve.1}',
+        },
+      },
+    },
+
     bg: {
       canvas: { value: '{colors.gray.1}' },
       default: { value: { base: '{colors.white}', _dark: '{colors.gray.2}' } },
@@ -20,15 +34,15 @@ export const semanticTokens = defineSemanticTokens({
       disabled: { value: '{colors.gray.7}' },
     },
     accent: {
-      default: { value: '{colors.gray.12}' }, // colors.gray.12
-      emphasized: { value: '{colors.gray.12}' }, // colors.gray11.5
+      default: { value: '{colors.indigo.9}' },
+      emphasized: { value: '{colors.indigo.10}' },
       fg: { value: 'white' },
     },
     border: {
       default: { value: '{colors.gray.6}' },
       emphasized: { value: '{colors.gray.7}' },
       muted: { value: '{colors.gray.3}' },
-      accent: { value: '{colors.iris.9}' },
+      accent: { value: '{colors.indigo.9}' },
       disabled: { value: '{colors.gray.6}' },
     },
   },

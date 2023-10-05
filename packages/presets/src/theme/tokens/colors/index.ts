@@ -7,7 +7,6 @@ import { crimson } from './crimson'
 import { cyan } from './cyan'
 import { gold } from './gold'
 import { grass } from './grass'
-import { gray } from './gray'
 import { green } from './green'
 import { indigo } from './indigo'
 import { iris } from './iris'
@@ -15,6 +14,7 @@ import { jade } from './jade'
 import { lime } from './lime'
 import { mauve } from './mauve'
 import { mint } from './mint'
+import { neutral } from './neutral'
 import { olive } from './olive'
 import { orange } from './orange'
 import { pink } from './pink'
@@ -44,7 +44,7 @@ export const colors = defineTokens.colors({
   cyan,
   gold,
   grass,
-  gray,
+  neutral,
   green,
   indigo,
   iris,

@@ -1,4 +1,4 @@
-export const gray = {
+export const neutral = {
   light: {
     1: { value: '#fcfcfc' },
     2: { value: '#f9f9f9' },
