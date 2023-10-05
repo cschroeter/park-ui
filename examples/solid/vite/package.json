@@ -14,7 +14,7 @@
     "solid-js": "1.7.12"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.15.4",
+    "@pandacss/dev": "0.15.5",
     "@park-ui/presets": "0.16.0",
     "typescript": "5.2.2",
     "vite": "4.4.9",

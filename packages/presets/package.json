@@ -29,10 +29,10 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "0.1.0",
-    "@pandacss/dev": "0.15.4"
+    "@pandacss/dev": "0.15.5"
   },
   "devDependencies": {
-    "@pandacss/types": "0.15.4",
+    "@pandacss/types": "0.15.5",
     "@release-it/keep-a-changelog": "4.0.0",
     "clean-package": "2.2.0",
     "release-it": "16.2.1",
