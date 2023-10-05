@@ -1,0 +1,6 @@
+{
+  "placement": {
+    "options": ["right", "left"],
+    "defaultValue": "right"
+  }
+}

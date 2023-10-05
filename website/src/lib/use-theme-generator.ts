@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
 import { getBorderRadiiTokens } from './get-border-raddii-tokens'
 import { useColorMode } from './use-color-mode'
@@ -35,19 +35,19 @@ export const useThemeGenerator = () => {
     updateThemeConfig(result.data)
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncColorPalette(currentColorPalette, colorMode)
   }, [currentColorPalette, colorMode])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncGrayPalette(currentGrayPalette)
   }, [currentGrayPalette])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncFontFamily(currentFontFamily)
   }, [currentFontFamily])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     syncBorderRadii(currentBorderRadii)
   }, [currentBorderRadii])
 
@@ -99,17 +99,23 @@ export const syncGrayPalette = (color: GrayPalette) => {
 export type ColorPalette = ElementType<typeof colorPalettes>
 export const colorPalettes = [
   { label: 'Neutral', value: 'neutral' },
-  { label: 'Rose', value: 'rose' },
-  { label: 'Pink', value: 'pink' },
-  { label: 'Fuchsia', value: 'fuchsia' },
-  { label: 'Purple', value: 'purple' },
-  { label: 'Violet', value: 'violet' },
-  { label: 'Indigo', value: 'indigo' },
-  { label: 'Blue', value: 'blue' },
-  { label: 'Sky', value: 'sky' },
-  { label: 'Cyan', value: 'cyan' },
-  { label: 'Teal', value: 'teal' },
+  { label: 'Red', value: 'red' },
+  { label: 'Orange', value: 'orange' },
+  { label: 'Amber', value: 'amber' },
+  { label: 'Yellow', value: 'yellow' },
+  { label: 'Lime', value: 'lime' },
   { label: 'Green', value: 'green' },
+  { label: 'Emerald', value: 'emerald' },
+  { label: 'Teal', value: 'teal' },
+  { label: 'Cyan', value: 'cyan' },
+  { label: 'Sky', value: 'sky' },
+  { label: 'Blue', value: 'blue' },
+  { label: 'Indigo', value: 'indigo' },
+  { label: 'Violet', value: 'violet' },
+  { label: 'Purple', value: 'purple' },
+  { label: 'Fuchsia', value: 'fuchsia' },
+  { label: 'Pink', value: 'pink' },
+  { label: 'Rose', value: 'rose' },
 ] as const
 
 const syncColorPalette = (color: ColorPalette, colorMode: 'light' | 'dark') => {
@@ -172,15 +178,15 @@ export const fontFamilies = [
     value: 'var(--font-raleway)',
   },
   {
-    label: 'Fira Code',
+    label: 'Roboto Mono',
     value: 'var(--font-code)',
   },
 ] as const
 
 const syncFontFamily = (fontFamily: FontFamily) => {
-  const root = document.querySelector<HTMLBodyElement>('body')
+  const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
-    root.style.fontFamily = fontFamily.value
+    root.style.setProperty('--font-body', fontFamily.value)
   }
 }
 

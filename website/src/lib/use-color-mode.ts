@@ -1,4 +1,5 @@
-import { useEffectOnce, useLocalStorage, useUpdateEffect } from 'usehooks-ts'
+import { useLocalStorage } from '@uidotdev/usehooks'
+import { useEffect } from 'react'
 
 type ColorMode = 'light' | 'dark'
 
@@ -7,16 +8,17 @@ export const colorModeLocalStorageKey = 'park-ui-color-mode'
 export const useColorMode = () => {
   const [colorMode, setColorMode] = useLocalStorage<ColorMode>(colorModeLocalStorageKey, 'light')
 
-  const syncColorMode = () =>
-    colorMode === 'dark'
-      ? document.documentElement.classList.add('dark')
-      : document.documentElement.classList.remove('dark')
-
-  useEffectOnce(syncColorMode)
-  useUpdateEffect(syncColorMode, [colorMode])
+  useEffect(() => {
+    const handleEvent = (e: any) => {
+      setColorMode(e.detail.colorMode)
+    }
+    window.addEventListener('color-mode', handleEvent)
+    return () => {
+      window.removeEventListener('color-mode', handleEvent)
+    }
+  }, [])
 
   return {
     colorMode,
-    toggle: () => setColorMode((prev) => (prev === 'dark' ? 'light' : 'dark')),
   }
 }

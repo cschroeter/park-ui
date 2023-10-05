@@ -3,5 +3,16 @@
   "singleQuote": true,
   "trailingComma": "all",
   "arrowParens": "always",
-  "semi": false
+  "semi": false,
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.mdx",
+      "options": {
+        "printWidth": 120,
+        "proseWrap": "always",
+        "arrowParens": "avoid"
+      }
+    }
+  ]
 }

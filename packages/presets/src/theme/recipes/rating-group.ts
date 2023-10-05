@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const ratingGroup = defineSlotRecipe({
   className: 'ratingGroup',
-  description: 'A rating group style',
   slots: ratingGroupAnatomy.keys(),
   base: {
     control: {
@@ -14,7 +13,6 @@ export const ratingGroup = defineSlotRecipe({
       transitionDuration: 'normal',
       transitionProperty: 'color, fill',
       transitionTimingFunction: 'default',
-
       color: 'var(--colors-bg-emphasized)',
       fill: 'var(--colors-bg-emphasized)',
       _highlighted: {

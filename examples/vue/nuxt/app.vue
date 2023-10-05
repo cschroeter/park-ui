@@ -22,8 +22,8 @@ const Typography = styled('p')
       <div :class="content">
         <Stack gap="4">
           <Stack gap="3" direction="row">
-            <Button variant="secondary" width="full">Google</Button>
-            <Button variant="secondary" width="full">GitHub</Button>
+            <Button variant="outline" width="full">Google</Button>
+            <Button variant="outline" width="full">GitHub</Button>
           </Stack>
           <HStack gap="2">
             <Divider />

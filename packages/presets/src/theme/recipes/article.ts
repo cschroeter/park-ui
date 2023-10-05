@@ -2,7 +2,6 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const article = defineRecipe({
   className: 'article',
-  description: 'An article style',
   base: {
     maxWidth: '65ch',
     '& :first-child': {

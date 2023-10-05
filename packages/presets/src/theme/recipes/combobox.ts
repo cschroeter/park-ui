@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const combobox = defineSlotRecipe({
   className: 'combobox',
-  description: 'A combobox style',
   slots: comboboxAnatomy.keys(),
   base: {
     root: {
@@ -76,6 +75,9 @@ export const combobox = defineSlotRecipe({
     },
     itemIndicator: {
       color: 'accent.default',
+    },
+    positioner: {
+      zIndex: 'dropdown',
     },
   },
   defaultVariants: {

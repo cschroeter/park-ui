@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const rangeSlider = defineSlotRecipe({
   className: 'range-slider',
-  description: 'A range slider style',
   slots: rangeSliderAnatomy.keys(),
   base: {
     root: {

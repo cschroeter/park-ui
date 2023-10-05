@@ -2,7 +2,6 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const textarea = defineRecipe({
   className: 'textarea',
-  description: 'A textarea style',
   base: {
     backgroundColor: 'bg.default',
     appearance: 'none',

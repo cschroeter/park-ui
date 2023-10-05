@@ -1,5 +1,46 @@
 ## [Unreleased]
 
+### Changed
+
+- BREAKING: Use `@pandacss/preset-base` as preset instead of `@pandacss/dev/presets`.
+
+## [0.17.0] - 2023-10-04
+
+### Added
+
+- Added support for icons in the `Badge` component.
+
+### Changed
+
+- Revised `Alert` component.
+
+## [0.16.0] - 2023-09-27
+
+### Added
+
+- Added open and close animation to the `Tooltip` component.
+- Added `outline` variant and `lg` size to the `Tabs` component.
+
+### Changed
+
+- Improved `horizontal` and `vertical` orientation in `Tabs`.
+
+## [0.15.0] - 2023-09-21
+
+### Added
+
+- Added `ghost` variant to the `Code` component.
+
+### Changed
+
+- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and `tertiary` to `ghost`.
+
+## [0.14.0] - 2023-09-21
+
+### Added
+
+- Added `Table` component.
+
 ## [0.13.0] - 2023-09-19
 
 ### Added

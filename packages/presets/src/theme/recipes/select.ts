@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const select = defineSlotRecipe({
   className: 'select',
-  description: 'A select style',
   slots: selectAnatomy.keys(),
   base: {
     root: {
@@ -33,6 +32,9 @@ export const select = defineSlotRecipe({
         outline: '2px solid',
         outlineColor: 'border.outline',
       },
+    },
+    positioner: {
+      zIndex: 'dropdown',
     },
     item: {
       alignItems: 'center',
@@ -131,7 +133,6 @@ export const select = defineSlotRecipe({
           px: '2',
           py: '1.5',
         },
-
         label: { textStyle: 'sm' },
         trigger: {
           px: '2.5',

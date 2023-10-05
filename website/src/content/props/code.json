@@ -1,0 +1,10 @@
+{
+  "size": {
+    "options": ["sm", "md", "lg"],
+    "defaultValue": "md"
+  },
+  "variant": {
+    "options": ["outline", "ghost"],
+    "defaultValue": "outline"
+  }
+}

@@ -27,7 +27,6 @@ const itemStyle = {
 
 export const menu = defineSlotRecipe({
   className: 'menu',
-  description: 'A menu style',
   slots: menuAnatomy.keys(),
   base: {
     itemGroupLabel: {
@@ -56,6 +55,9 @@ export const menu = defineSlotRecipe({
     itemGroup: {
       display: 'flex',
       flexDirection: 'column',
+    },
+    positioner: {
+      zIndex: 'dropdown',
     },
     item: itemStyle,
     optionItem: itemStyle,

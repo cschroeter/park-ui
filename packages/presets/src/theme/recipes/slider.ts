@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const slider = defineSlotRecipe({
   className: 'slider',
-  description: 'A slider style',
   slots: sliderAnatomy.keys(),
   base: {
     root: {
@@ -33,7 +32,7 @@ export const slider = defineSlotRecipe({
     },
     label: {
       color: 'fg.emphasized',
-      fontWeight: 'semibold',
+      fontWeight: 'medium',
     },
   },
   defaultVariants: {
