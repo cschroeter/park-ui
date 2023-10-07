@@ -10,12 +10,5 @@ export const conditions = {
     today: '&:is([data-today])',
     placeholderShown: '&:is(:placeholder-shown, [data-placeholder-shown])',
     collapsed: '&:is([aria-collapsed=true], [data-collapsed], [data-state="collapsed"])',
-
-    neutralGray: '[data-gray-color=neutral] &',
-    mauveGray: '[data-gray-color=mauve] &',
-    sandGray: '[data-gray-color=sand] &',
-    slateGray: '[data-gray-color=slate] &',
-    oliveGray: '[data-gray-color=olive] &',
-    sageGray: '[data-gray-color=sage] &',
   },
 }

@@ -10,7 +10,7 @@ import { Text } from '~/components/ui/text'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const GrayPalettePicker = () => {
-  const { currentGrayPalette, grayPalettes, updateGrayPalette } = useThemeGenerator()
+  const { currentGrayPalette, grayColors, updateGrayPalette } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -24,15 +24,13 @@ export const GrayPalettePicker = () => {
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
         onChange={(e) => {
-          updateGrayPalette(
-            grayPalettes.find((grayPalette) => grayPalette === e.value) ?? currentGrayPalette,
-          )
+          updateGrayPalette(grayColors.find((gray) => gray === e.value) ?? currentGrayPalette)
         }}
       >
-        {grayPalettes.map((grayPalette, id) => (
+        {grayColors.map((gray, id) => (
           <Radio
             key={id}
-            value={grayPalette}
+            value={gray}
             _checked={{ borderColor: 'border.outline', boxShadow: 'outline' }}
             justifyContent="flex-start"
           >
@@ -41,10 +39,10 @@ export const GrayPalettePicker = () => {
               <Circle
                 size="3.5"
                 style={{
-                  background: token.var(`colors.${grayPalette}.9`),
+                  background: token.var(`colors.${gray}.9`),
                 }}
               />
-              {grayPalette}
+              {gray}
             </RadioLabel>
           </Radio>
         ))}

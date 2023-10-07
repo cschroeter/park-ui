@@ -8,9 +8,15 @@ import { recipes, slotRecipes } from './theme/recipes'
 import { createSemanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
 import { tokens } from './theme/tokens'
-import type { PresetOptions } from './types'
+import {
+  accentColors,
+  grayColors,
+  type AccentColor,
+  type GrayColor,
+  type PresetOptions,
+} from './types'
 
-export const createPreset = (options: PresetOptions = {}): Preset => {
+const createPreset = (options: PresetOptions = {}): Preset => {
   const semanticTokens = createSemanticTokens(options)
   return definePreset({
     theme: {
@@ -29,6 +35,5 @@ export const createPreset = (options: PresetOptions = {}): Preset => {
   })
 }
 
-export default createPreset
-
-export type { PresetOptions }
+export { accentColors, createPreset, createPreset as default, grayColors }
+export type { AccentColor, GrayColor, PresetOptions }

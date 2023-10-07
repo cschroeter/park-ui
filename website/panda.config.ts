@@ -1,12 +1,105 @@
 import { defineConfig } from '@pandacss/dev'
-import presetPark from '@park-ui/presets'
+import presetPark, { accentColors, grayColors } from '@park-ui/presets'
 import typographyPreset from 'pandacss-preset-typography'
+
+const createConditions = () => {
+  const grayConditions = grayColors.reduce((acc, color) => {
+    acc[`${color}Gray`] = `[data-gray-color=${color}] &`
+    return acc
+  }, {})
+  const accentConditions = accentColors.reduce((acc, color) => {
+    acc[`${color}Accent`] = `[data-accent-color=${color}] &`
+    return acc
+  }, {})
+
+  return {
+    ...grayConditions,
+    ...accentConditions,
+    darkFg:
+      '[data-accent-color=yellow] &, [data-accent-color=mint] &, [data-accent-color=sky] &, [data-accent-color=lime] &, [data-accent-color=amber] &',
+  }
+}
+
+const createSemanticColorTokens = () => {
+  const gray = Array.from({ length: 12 }, (_, i) => i + 1).reduce(
+    (acc, scale) => ({
+      ...acc,
+      [scale]: {
+        value: {
+          ...grayColors.reduce((acc, color) => {
+            acc[`_${color}Gray`] = `{colors.${color}.${scale}}`
+            return acc
+          }, {}),
+        },
+      },
+      ['a' + scale]: {
+        value: {
+          ...grayColors.reduce((acc, color) => {
+            acc[`_${color}Gray`] = `{colors.${color}.a${scale}}`
+            return acc
+          }, {}),
+        },
+      },
+    }),
+    {},
+  )
+  const accent = Array.from({ length: 12 }, (_, i) => i + 1).reduce(
+    (acc, scale) => ({
+      ...acc,
+      [scale]: {
+        value: {
+          ...accentColors.reduce((acc, color) => {
+            acc[`_${color}Accent`] = `{colors.${color}.${scale}}`
+            return acc
+          }, {}),
+        },
+      },
+      ['a' + scale]: {
+        value: {
+          ...accentColors.reduce((acc, color) => {
+            acc[`_${color}Accent`] = `{colors.${color}.a${scale}}`
+            return acc
+          }, {}),
+        },
+      },
+    }),
+    {},
+  )
+
+  return {
+    gray,
+    accent: {
+      ...accent,
+      ...{
+        fg: {
+          value: {
+            base: '{colors.white}',
+            _darkFg: '{colors.black}',
+            _neutralAccent: { value: { base: '{colors.white}', _dark: '{colors.black}' } },
+          },
+        },
+        default: {
+          value: {
+            base: '{colors.accent.9}',
+            _neutralAccent: { value: '{colors.black}', _dark: '{colors.white}' },
+          },
+        },
+        emphasized: {
+          value: {
+            base: '{colors.accent.10}',
+            _neutralAccent: { value: '{colors.gray.12}' },
+          },
+        },
+      },
+    },
+  }
+}
 
 export default defineConfig({
   preflight: true,
   presets: [
     '@pandacss/preset-base',
-    presetPark(),
+    presetPark({ accentColor: 'indigo', grayColor: 'slate' }),
     typographyPreset({
       recipe: {
         sizes: ['base'],
@@ -75,9 +168,9 @@ export default defineConfig({
       article: {
         '--colors-prose-body': 'colors.fg.muted',
         '--colors-prose-heading': 'colors.fg.default',
-        '--colors-prose-bold': 'colors.fg.emphasized',
-        '--colors-prose-link': 'colors.fg.emphasized',
-        '--colors-prose-code': 'colors.fg.emphasized',
+        '--colors-prose-bold': 'colors.fg.default',
+        '--colors-prose-link': 'colors.fg.default',
+        '--colors-prose-code': 'colors.fg.default',
       },
       'pre, code': {
         fontFamily: 'var(--font-code)',
@@ -115,6 +208,16 @@ export default defineConfig({
             ...props,
           }
         },
+      },
+    },
+  },
+  conditions: {
+    extend: createConditions(),
+  },
+  theme: {
+    extend: {
+      semanticTokens: {
+        colors: createSemanticColorTokens(),
       },
     },
   },

@@ -2,6 +2,7 @@ import { defineSemanticTokens } from '@pandacss/dev'
 import { match } from 'ts-pattern'
 import type { AccentColor, GrayColor, PresetOptions } from '../../types'
 import { colors } from './colors'
+import { shadows } from './shadows'
 
 export const createSemanticTokens = (options: PresetOptions) => {
   const { accentColor = 'neutral', grayColor = 'neutral' } = options
@@ -29,49 +30,12 @@ export const createSemanticTokens = (options: PresetOptions) => {
       border: {
         default: { value: '{colors.gray.6}' },
         emphasized: { value: '{colors.gray.7}' },
-        muted: { value: '{colors.gray.3}' },
+        outline: { value: '{colors.gray.9}' },
         accent: { value: '{colors.accent.default}' },
         disabled: { value: '{colors.gray.6}' },
       },
     },
-    shadows: {
-      accent: {
-        value: '0 0 0 1px {colors.border.accent}',
-      },
-      outline: {
-        value: '0 0 0 1px {colors.border.outline}',
-      },
-      xs: {
-        value: {
-          base: '0px 1px 2px rgba(23, 23, 23,  0.1)',
-          _dark: '0px 1px 2px rgba(0, 0, 0, 1.0)',
-        },
-      },
-      sm: {
-        value: {
-          base: '0px 2px 4px rgba(23, 23, 23,  0.1)',
-          _dark: '0px 2px 4px rgba(0, 0, 0, 1.0)',
-        },
-      },
-      md: {
-        value: {
-          base: '0px 4px 8px rgba(23, 23, 23,  0.1)',
-          _dark: '0px 4px 8px rgba(0, 0, 0, 1.0)',
-        },
-      },
-      lg: {
-        value: {
-          base: '0px 8px 16px rgba(23, 23, 23,  0.1)',
-          _dark: '0px 8px 16px rgba(0, 0, 0, 1.0)',
-        },
-      },
-      xl: {
-        value: {
-          base: '0px 16px 24px rgba(23, 23, 23,  0.1)',
-          _dark: '0px 16px 24px rgba(0, 0, 0, 1.0)',
-        },
-      },
-    },
+    shadows,
     radii: {
       l1: { value: '{radii.xs}' },
       l2: { value: '{radii.sm}' },
@@ -109,6 +73,7 @@ const createColorPalette = (name: GrayColor | AccentColor) =>
     (acc, scale) => ({
       ...acc,
       [scale]: { value: `{colors.${name}.${scale}}` },
+      ['a' + scale]: { value: `{colors.${name}.${scale}}` },
     }),
     {},
   )

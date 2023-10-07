@@ -13,32 +13,35 @@ export interface PresetOptions {
   borderRadius?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 }
 
-export type AccentColor =
-  | 'amber'
-  | 'blue'
-  | 'bronze'
-  | 'brown'
-  | 'crimson'
-  | 'cyan'
-  | 'gold'
-  | 'grass'
-  | 'green'
-  | 'indigo'
-  | 'iris'
-  | 'jade'
-  | 'lime'
-  | 'mint'
-  | 'neutral'
-  | 'orange'
-  | 'pink'
-  | 'plum'
-  | 'purple'
-  | 'red'
-  | 'ruby'
-  | 'sky'
-  | 'teal'
-  | 'tomato'
-  | 'violet'
-  | 'yellow'
+export type AccentColor = (typeof accentColors)[number]
+export const accentColors = [
+  'amber',
+  'blue',
+  'bronze',
+  'brown',
+  'crimson',
+  'cyan',
+  'gold',
+  'grass',
+  'green',
+  'indigo',
+  'iris',
+  'jade',
+  'lime',
+  'mint',
+  'neutral',
+  'orange',
+  'pink',
+  'plum',
+  'purple',
+  'red',
+  'ruby',
+  'sky',
+  'teal',
+  'tomato',
+  'violet',
+  'yellow',
+] as const
 
-export type GrayColor = 'neutral' | 'mauve' | 'sage' | 'olive' | 'slate' | 'sand'
+export type GrayColor = (typeof grayColors)[number]
+export const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate'] as const

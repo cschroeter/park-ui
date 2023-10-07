@@ -10,7 +10,7 @@ import { Text } from '~/components/ui/text'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const ColorPalettePicker = () => {
-  const { currentColorPalette, colorPalettes, updateColorPalette } = useThemeGenerator()
+  const { currentColorPalette, accentColors, updateColorPalette } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -25,21 +25,21 @@ export const ColorPalettePicker = () => {
         gridTemplateColumns="repeat(3, 1fr)"
         onChange={(e) => {
           updateColorPalette(
-            colorPalettes.find((colorPalette) => colorPalette === e.value) ?? currentColorPalette,
+            accentColors.find((accent) => accent === e.value) ?? currentColorPalette,
           )
         }}
       >
-        {colorPalettes.map((colorPalette, id) => (
-          <Radio key={id} value={colorPalette} justifyContent="flex-start">
+        {accentColors.map((accent, id) => (
+          <Radio key={id} value={accent} justifyContent="flex-start">
             <RadioControl />
             <RadioLabel textTransform="capitalize">
               <Circle
                 size="3.5"
                 style={{
-                  background: token.var(`colors.${colorPalette}.9`),
+                  background: token.var(`colors.${accent}.9`),
                 }}
               />
-              {colorPalette}
+              {accent}
             </RadioLabel>
           </Radio>
         ))}
