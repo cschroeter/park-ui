@@ -29,7 +29,8 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "0.1.0",
-    "@pandacss/dev": "0.15.5"
+    "@pandacss/dev": "0.15.5",
+    "ts-pattern": "5.0.5"
   },
   "devDependencies": {
     "@radix-ui/colors": "3.0.0",

@@ -6,7 +6,7 @@ export default defineConfig({
   preflight: true,
   presets: [
     '@pandacss/preset-base',
-    presetPark,
+    presetPark(),
     typographyPreset({
       recipe: {
         sizes: ['base'],

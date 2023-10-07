@@ -5,24 +5,30 @@ import { globalCss } from './global-css'
 import { breakpoints } from './theme/breakpoints'
 import { keyframes } from './theme/keyframes'
 import { recipes, slotRecipes } from './theme/recipes'
-import { semanticTokens } from './theme/semantic-tokens'
+import { createSemanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
 import { tokens } from './theme/tokens'
+import type { PresetOptions } from './types'
 
-const preset: Preset = definePreset({
-  theme: {
-    extend: {
-      breakpoints,
-      keyframes,
-      recipes,
-      semanticTokens,
-      slotRecipes,
-      textStyles,
-      tokens,
+export const createPreset = (options: PresetOptions = {}): Preset => {
+  const semanticTokens = createSemanticTokens(options)
+  return definePreset({
+    theme: {
+      extend: {
+        breakpoints,
+        keyframes,
+        recipes,
+        semanticTokens,
+        slotRecipes,
+        textStyles,
+        tokens,
+      },
     },
-  },
-  conditions,
-  globalCss,
-})
+    conditions,
+    globalCss,
+  })
+}
 
-export default preset
+export default createPreset
+
+export type { PresetOptions }
