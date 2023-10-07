@@ -23,7 +23,10 @@
   },
   "scripts": {
     "start": "ladle serve",
-    "build": "node src/plugin/build.js"
+    "build:plugin": "node src/plugin/build.js",
+    "build:components": "tsx src/cli/components/bootstrap.ts",
+    "build:stories": "tsx src/cli/stories/bootstrap.ts",
+    "build:styles": "tsx src/cli/styles/bootstrap.ts"
   },
   "dependencies": {
     "tailwind-variants": "0.1.14"
@@ -33,6 +36,7 @@
     "@fontsource/plus-jakarta-sans": "5.0.14",
     "@ladle/react": "3.2.1",
     "@release-it/keep-a-changelog": "4.0.0",
+    "@types/node": "20.8.3",
     "@types/react": "18.2.25",
     "lucide-react": "0.284.0",
     "postcss": "8.4.31",

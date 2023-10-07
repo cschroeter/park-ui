@@ -1,4 +1,5 @@
 import { ChevronDownIcon } from 'lucide-react'
+import { Icon } from '../icon/snippet'
 import {
   Accordion,
   AccordionContent,
@@ -7,7 +8,7 @@ import {
   type AccordionProps,
 } from './snippet'
 
-export const AccordionDemo = (props: AccordionProps) => {
+export const Demo = (props: AccordionProps) => {
   const items = ['React', 'Solid', 'Vue']
   return (
     <Accordion defaultValue={['React']} multiple {...props}>
@@ -39,5 +40,9 @@ const AccordionIcon = (props: { isOpen: boolean }) => {
     transition: 'transform 0.2s',
     transformOrigin: 'center',
   }
-  return <ChevronDownIcon style={iconStyles} />
+  return (
+    <Icon style={iconStyles}>
+      <ChevronDownIcon />
+    </Icon>
+  )
 }
