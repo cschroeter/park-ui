@@ -1,4 +1,10 @@
-import { accentColors, grayColors, type AccentColor, type GrayColor } from '@park-ui/presets'
+import {
+  accentColors,
+  grayColors,
+  type AccentColor,
+  type BorderRadius,
+  type GrayColor,
+} from '@park-ui/presets'
 import { useEffect } from 'react'
 import { useThemeStore } from './use-theme-store'
 
@@ -84,11 +90,18 @@ const syncAccentColor = (color: AccentColor) => {
   }
 }
 
-export type FontFamily = ElementType<typeof fontFamilies>
+const syncBorderRadii = (borderRadius: BorderRadius) => {
+  const root = document.querySelector<HTMLHtmlElement>(':root')
+  if (root) {
+    root.setAttribute('data-radius', borderRadius)
+  }
+}
+
+export type FontFamily = (typeof fontFamilies)[number]
 export const fontFamilies = [
   {
     label: 'Jakarta',
-    value: 'var(--font-body)',
+    value: 'var(--font-jakarta)',
   },
   {
     label: 'Inter',
@@ -104,25 +117,13 @@ export const fontFamilies = [
   },
   {
     label: 'Roboto Mono',
-    value: 'var(--font-code)',
+    value: 'var(--font-roboto-mono)',
   },
 ] as const
 
 const syncFontFamily = (fontFamily: FontFamily) => {
-  // const root = document.querySelector<HTMLHtmlElement>(':root')
-  // if (root) {
-  //   root.style.setProperty('--font-body', fontFamily.value)
-  // }
-}
-
-export type BorderRadii = 0 | 1 | 2 | 3 | 4 | 5 | 6
-const syncBorderRadii = (borderRadii: BorderRadii) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
-    root.setAttribute('data-radius', borderRadii.toString())
+    root.style.setProperty('--fonts-body', fontFamily.value)
   }
 }
-
-type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<infer ElementType>
-  ? ElementType
-  : never

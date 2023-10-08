@@ -152,6 +152,7 @@ export default defineConfig({
         display: 'flex',
         flexDirection: 'column',
         height: 'unset',
+        fontFamily: 'body',
       },
       'body, main': {
         display: 'flex',
@@ -159,8 +160,8 @@ export default defineConfig({
         flexGrow: '1',
       },
       '&:root': {
-        '--font-body': 'Plus Jakarta Sans Variable',
-        '--font-code': 'Roboto Mono Variable',
+        '--font-jakarta': 'Plus Jakarta Sans Variable',
+        '--font-roboto-mono': 'Roboto Mono Variable',
         '--font-inter': 'Inter Variable',
         '--font-outfit': 'Outfit Variable',
         '--font-raleway': 'Raleway Variable',
@@ -216,8 +217,21 @@ export default defineConfig({
   },
   theme: {
     extend: {
+      tokens: {
+        fonts: {
+          body: { value: 'var(--font-jakarta), sans-serif' },
+          inter: { value: 'var(--font-inter), sans-serif' },
+          jakarta: { value: 'var(--font-jakarta), sans-serif' },
+          outfit: { value: 'var(--font-outfit), sans-serif' },
+          raleway: { value: 'var(--font-raleway), sans-serif' },
+          robotoMono: { value: 'var(--font-roboto-mono), monospace' },
+        },
+      },
       semanticTokens: {
         colors: createSemanticColorTokens(),
+        fonts: {
+          body: { value: { base: '{fonts.jakarta}' } },
+        },
       },
     },
   },

@@ -10,8 +10,10 @@ import { textStyles } from './theme/text-styles'
 import { tokens } from './theme/tokens'
 import {
   accentColors,
+  borderRadii,
   grayColors,
   type AccentColor,
+  type BorderRadius,
   type GrayColor,
   type PresetOptions,
 } from './types'
@@ -35,5 +37,5 @@ const createPreset = (options: PresetOptions = {}): Preset => {
   })
 }
 
-export { accentColors, createPreset, createPreset as default, grayColors }
-export type { AccentColor, GrayColor, PresetOptions }
+export { accentColors, borderRadii, createPreset, createPreset as default, grayColors }
+export type { AccentColor, BorderRadius, GrayColor, PresetOptions }

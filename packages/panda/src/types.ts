@@ -10,37 +10,40 @@ export interface PresetOptions {
   /**
    * @default 'sm'
    */
-  borderRadius?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  borderRadius?: BorderRadius
 }
+
+export type BorderRadius = (typeof borderRadii)[number]
+export const borderRadii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
 
 export type AccentColor = (typeof accentColors)[number]
 export const accentColors = [
-  'amber',
-  'blue',
-  'bronze',
-  'brown',
-  'crimson',
-  'cyan',
-  'gold',
-  'grass',
-  'green',
-  'indigo',
-  'iris',
-  'jade',
-  'lime',
-  'mint',
   'neutral',
-  'orange',
+  'tomato',
+  'red',
+  'ruby',
+  'crimson',
   'pink',
   'plum',
   'purple',
-  'red',
-  'ruby',
-  'sky',
-  'teal',
-  'tomato',
   'violet',
+  'iris',
+  'indigo',
+  'blue',
+  'cyan',
+  'teal',
+  'jade',
+  'green',
+  'grass',
+  'bronze',
+  'gold',
+  'brown',
+  'orange',
+  'amber',
   'yellow',
+  'lime',
+  'mint',
+  'sky',
 ] as const
 
 export type GrayColor = (typeof grayColors)[number]
