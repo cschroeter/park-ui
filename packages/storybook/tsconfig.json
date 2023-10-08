@@ -17,5 +17,5 @@
       "~/*": ["src/*"]
     }
   },
-  "include": ["src", "src", "styled-system"]
+  "include": ["src", "styled-system", ".storybook"]
 }

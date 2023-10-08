@@ -1,28 +1,26 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { button } from 'styled-system/recipes'
+import type { Meta } from '@storybook/react'
+import { Stack } from 'styled-system/jsx'
+import { Button, type ButtonProps } from '~/components/ui/button'
 
-const Button = () => {
-  return <button className={button()}>Hello</button>
+const meta: Meta<ButtonProps> = {
+  title: 'Button',
+  component: Button,
 }
 
-const meta = {
-  title: 'Components/Button',
-  component: Button,
-  tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <div>
-        <Story />
-      </div>
-    ),
-  ],
-} satisfies Meta<typeof Button>
-
 export default meta
-type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  args: {
-    children: 'Hello 🐼!',
-  },
+export const Basic = () => {
+  return (
+    <Stack gap="8" align="start">
+      <Button variant="solid" size="2xl">
+        Hello
+      </Button>
+      <Button variant="outline" size="2xl" borderColor="neutral.a7">
+        Hello
+      </Button>
+      <Button variant="outline" size="2xl" borderColor="neutral.7">
+        Hello
+      </Button>
+    </Stack>
+  )
 }

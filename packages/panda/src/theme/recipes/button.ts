@@ -48,10 +48,8 @@ export const button = defineRecipe({
       outline: {
         borderWidth: '1px',
         borderColor: 'border.emphasized',
-        background: 'bg.default',
-        color: 'fg.emphasized',
+        color: 'fg.default',
         _hover: {
-          color: 'fg.default',
           background: 'bg.subtle',
         },
         _selected: {

@@ -11,6 +11,13 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    isDarkMode: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+    },
+  },
 }
 
 export default preview
