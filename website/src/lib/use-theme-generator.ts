@@ -38,9 +38,15 @@ export const useThemeGenerator = () => {
     syncBorderRadii(currentBorderRadii)
   }, [currentBorderRadii])
 
+  const config = baseConfig
+    .replace('__ACCENT_COLOR__', currentAccentColor)
+    .replace('__GRAY_COLOR__', currentGrayColor)
+    .replace('__BORDER_RADIUS__', currentBorderRadii)
+
   return {
     accentColors,
     borderRadii,
+    config,
     fontFamilies,
     grayColors,
     currentAccentColor,
@@ -111,3 +117,23 @@ const syncFontFamily = (fontFamily: FontFamily) => {
     root.style.setProperty('--fonts-body', fontFamily.value)
   }
 }
+
+const baseConfig = `import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/presets'
+
+export default defineConfig({
+  preflight: true,
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: '__ACCENT_COLOR__',
+      grayColor: '__GRAY_COLOR__',
+      borderRadius: '__BORDER_RADIUS__',
+    }),
+  ],
+  include: ['./src/**/*.{js,jsx,ts,tsx}'],
+  exclude: [],
+  jsxFramework: 'react',
+  outdir: 'styled-system',
+})
+`

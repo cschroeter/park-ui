@@ -18,6 +18,7 @@ import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
 import { FontFamilySelect } from './font-family-select'
 import { GrayColorPicker } from './gray-color-picker'
+import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
   isHero?: boolean
@@ -59,8 +60,9 @@ export const ThemeDrawer = (props: Props) => {
             <HStack gap="3" justifyContent="end">
               <Button variant="outline" onClick={reset}>
                 <Undo2Icon />
-                Restore Defaults
+                Reset
               </Button>
+              <ThemeConfigDialog />
             </HStack>
           </DrawerContent>
         </DrawerContainer>

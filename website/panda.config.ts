@@ -153,7 +153,7 @@ export default defineConfig({
   preflight: true,
   presets: [
     '@pandacss/preset-base',
-    presetPark(),
+    presetPark({ accentColor: 'indigo', grayColor: 'neutral', borderRadius: 'sm' }),
     typographyPreset({
       recipe: {
         sizes: ['base'],

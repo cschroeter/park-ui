@@ -1,4 +1,4 @@
-import { XIcon } from 'lucide-react'
+import { CopyIcon, XIcon } from 'lucide-react'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import { CopyToClipboardButton } from '~/components/copy-to-clipboard-button'
 import {
@@ -9,17 +9,22 @@ import {
   DialogContent,
   DialogDescription,
   DialogTitle,
+  DialogTrigger,
 } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
+import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { Button } from '../ui'
 
-type Props = {
-  open: boolean
-  onClose: () => void
-}
-
-export const ThemeConfigDialog = (props: Props) => {
+export const ThemeConfigDialog = () => {
+  const { config } = useThemeGenerator()
   return (
-    <Dialog {...props}>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="solid">
+          <CopyIcon />
+          Copy Config
+        </Button>
+      </DialogTrigger>
       <DialogBackdrop />
       <DialogContainer>
         <DialogContent>
@@ -38,12 +43,19 @@ export const ThemeConfigDialog = (props: Props) => {
               borderWidth="1px"
             >
               <Box position="absolute" top="2" right="2" zIndex={1}>
-                <CopyToClipboardButton content={'themeConfig.config'} />
+                <CopyToClipboardButton content={config} />
               </Box>
-              <Flex overflow="auto" p="4" width="lg" maxH="lg" minH="md">
-                <Box
+              <Flex
+                overflow="auto"
+                p="4"
+                width="lg"
+                fontFamily="robotoMono"
+                textStyle="sm"
+                color="fg.muted"
+              >
+                <pre
                   dangerouslySetInnerHTML={{
-                    __html: 'themeConfig.code',
+                    __html: config,
                   }}
                 />
               </Flex>
