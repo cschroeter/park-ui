@@ -9,8 +9,8 @@ import {
 import { Text } from '~/components/ui/text'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
-export const ColorPalettePicker = () => {
-  const { currentColorPalette, accentColors, updateColorPalette } = useThemeGenerator()
+export const AccentColorPicker = () => {
+  const { currentAccentColor, accentColors, updateAccentColor } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -18,15 +18,13 @@ export const ColorPalettePicker = () => {
         Color
       </Text>
       <RadioButtonGroup
-        value={currentColorPalette}
+        value={currentAccentColor}
         size="sm"
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
         onChange={(e) => {
-          updateColorPalette(
-            accentColors.find((accent) => accent === e.value) ?? currentColorPalette,
-          )
+          updateAccentColor(accentColors.find((accent) => accent === e.value) ?? currentAccentColor)
         }}
       >
         {accentColors.map((accent, id) => (

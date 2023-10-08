@@ -14,10 +14,10 @@ import {
   DrawerTrigger,
 } from '../ui/drawer'
 import { IconButton } from '../ui/icon-button'
+import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
-import { ColorPalettePicker } from './color-palette-picker'
 import { FontFamilySelect } from './font-family-select'
-import { GrayPalettePicker } from './gray-palette-picker'
+import { GrayColorPicker } from './gray-color-picker'
 
 interface Props {
   isHero?: boolean
@@ -52,11 +52,10 @@ export const ThemeDrawer = (props: Props) => {
             </Stack>
             <Stack flex="1" gap="5">
               <FontFamilySelect />
-              <GrayPalettePicker />
-              <ColorPalettePicker />
+              <GrayColorPicker />
+              <AccentColorPicker />
               <BorderRadiusSlider />
             </Stack>
-
             <HStack gap="3" justifyContent="end">
               <Button variant="outline" onClick={reset}>
                 <Undo2Icon />

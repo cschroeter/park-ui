@@ -9,8 +9,8 @@ import {
 import { Text } from '~/components/ui/text'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
-export const GrayPalettePicker = () => {
-  const { currentGrayPalette, grayColors, updateGrayPalette } = useThemeGenerator()
+export const GrayColorPicker = () => {
+  const { currentGrayColor, grayColors, updateGrayColor } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
@@ -18,13 +18,13 @@ export const GrayPalettePicker = () => {
         Gray Palette
       </Text>
       <RadioButtonGroup
-        value={currentGrayPalette}
+        value={currentGrayColor}
         size="sm"
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
         onChange={(e) => {
-          updateGrayPalette(grayColors.find((gray) => gray === e.value) ?? currentGrayPalette)
+          updateGrayColor(grayColors.find((gray) => gray === e.value) ?? currentGrayColor)
         }}
       >
         {grayColors.map((gray, id) => (

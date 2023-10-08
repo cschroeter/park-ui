@@ -1,5 +1,6 @@
 import {
   accentColors,
+  borderRadii,
   grayColors,
   type AccentColor,
   type BorderRadius,
@@ -9,41 +10,25 @@ import { useEffect } from 'react'
 import { useThemeStore } from './use-theme-store'
 
 export const useThemeGenerator = () => {
-  const currentColorPalette = useThemeStore((state) => state.colorPalette)
-  const currentGrayPalette = useThemeStore((state) => state.grayPalette)
+  const currentAccentColor = useThemeStore((state) => state.accentColor)
+  const currentGrayColor = useThemeStore((state) => state.grayColor)
   const currentFontFamily = useThemeStore((state) => state.fontFamily)
-  const currentBorderRadii = useThemeStore((state) => state.borderRadii)
-  const themeConfig = useThemeStore((state) => state.themeConfig)
+  const currentBorderRadii = useThemeStore((state) => state.borderRadius)
 
-  const updateColorPalette = useThemeStore((state) => state.setColorPalette)
-  const updateGrayPalette = useThemeStore((state) => state.setGrayPalette)
+  const updateAccentColor = useThemeStore((state) => state.setAccentColor)
+  const updateGrayColor = useThemeStore((state) => state.setGrayColor)
   const updateFontFamily = useThemeStore((state) => state.setFontFamily)
-  const updateBorderRadii = useThemeStore((state) => state.setBorderRadii)
-  const updateThemeConfig = useThemeStore((state) => state.setThemeConfig)
+  const updateBorderRadius = useThemeStore((state) => state.setBorderRadius)
 
   const reset = useThemeStore((state) => state.reset)
 
-  const generateConfig = async () => {
-    const result = await fetch('/api/code', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        borderRadii: currentBorderRadii,
-        colorPalette: currentColorPalette,
-        grayPalette: currentGrayPalette,
-      }),
-    }).then((res) => res.json())
-
-    updateThemeConfig(result.data)
-  }
+  useEffect(() => {
+    syncAccentColor(currentAccentColor)
+  }, [currentAccentColor])
 
   useEffect(() => {
-    syncAccentColor(currentColorPalette)
-  }, [currentColorPalette])
-
-  useEffect(() => {
-    syncGrayColor(currentGrayPalette)
-  }, [currentGrayPalette])
+    syncGrayColor(currentGrayColor)
+  }, [currentGrayColor])
 
   useEffect(() => {
     syncFontFamily(currentFontFamily)
@@ -55,18 +40,17 @@ export const useThemeGenerator = () => {
 
   return {
     accentColors,
-    grayColors,
+    borderRadii,
     fontFamilies,
-    currentColorPalette,
-    currentGrayPalette,
-    currentFontFamily,
+    grayColors,
+    currentAccentColor,
     currentBorderRadii,
-    themeConfig,
-    generateConfig,
-    updateColorPalette,
-    updateGrayPalette,
+    currentFontFamily,
+    currentGrayColor,
+    updateAccentColor,
+    updateGrayColor,
     updateFontFamily,
-    updateBorderRadii,
+    updateBorderRadius,
     reset,
   }
 }

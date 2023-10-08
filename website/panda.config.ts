@@ -1,6 +1,7 @@
-import { defineConfig } from '@pandacss/dev'
-import presetPark, { accentColors, grayColors } from '@park-ui/presets'
+import { defineConfig, defineSemanticTokens } from '@pandacss/dev'
+import presetPark, { accentColors, borderRadii, grayColors } from '@park-ui/presets'
 import typographyPreset from 'pandacss-preset-typography'
+import { match } from 'ts-pattern'
 
 const createConditions = () => {
   const grayConditions = grayColors.reduce((acc, color) => {
@@ -12,9 +13,15 @@ const createConditions = () => {
     return acc
   }, {})
 
+  const radiiConditions = borderRadii.reduce((acc, radius) => {
+    acc[`${radius}Radius`] = `[data-radius='${radius}'] &`
+    return acc
+  }, {})
+
   return {
     ...grayConditions,
     ...accentConditions,
+    ...radiiConditions,
     darkFg:
       '[data-accent-color=yellow] &, [data-accent-color=mint] &, [data-accent-color=sky] &, [data-accent-color=lime] &, [data-accent-color=amber] &',
   }
@@ -95,11 +102,58 @@ const createSemanticColorTokens = () => {
   }
 }
 
+const createSemanticRadiiTokens = () => {
+  return defineSemanticTokens.radii({
+    l1: {
+      value: borderRadii.reduce((acc, radius) => {
+        acc[`_${radius}Radius`] = match(radius)
+          .with('none', () => '{radii.none}')
+          .with('xs', () => '{radii.2xs}')
+          .with('sm', () => '{radii.xs}')
+          .with('md', () => '{radii.sm}')
+          .with('lg', () => '{radii.md}')
+          .with('xl', () => '{radii.lg}')
+          .with('2xl', () => '{radii.xl}')
+          .exhaustive()
+        return acc
+      }, {}),
+    },
+    l2: {
+      value: borderRadii.reduce((acc, radius) => {
+        acc[`_${radius}Radius`] = match(radius)
+          .with('none', () => '{radii.none}')
+          .with('xs', () => '{radii.xs}')
+          .with('sm', () => '{radii.sm}')
+          .with('md', () => '{radii.md}')
+          .with('lg', () => '{radii.lg}')
+          .with('xl', () => '{radii.xl}')
+          .with('2xl', () => '{radii.2xl}')
+          .exhaustive()
+        return acc
+      }, {}),
+    },
+    l3: {
+      value: borderRadii.reduce((acc, radius) => {
+        acc[`_${radius}Radius`] = match(radius)
+          .with('none', () => '{radii.none}')
+          .with('xs', () => '{radii.sm}')
+          .with('sm', () => '{radii.md}')
+          .with('md', () => '{radii.lg}')
+          .with('lg', () => '{radii.xl}')
+          .with('xl', () => '{radii.2xl}')
+          .with('2xl', () => '{radii.3xl}')
+          .exhaustive()
+        return acc
+      }, {}),
+    },
+  })
+}
+
 export default defineConfig({
   preflight: true,
   presets: [
     '@pandacss/preset-base',
-    presetPark({ accentColor: 'indigo', grayColor: 'slate' }),
+    presetPark(),
     typographyPreset({
       recipe: {
         sizes: ['base'],
@@ -229,6 +283,7 @@ export default defineConfig({
       },
       semanticTokens: {
         colors: createSemanticColorTokens(),
+        radii: createSemanticRadiiTokens(),
         fonts: {
           body: { value: { base: '{fonts.jakarta}' } },
         },

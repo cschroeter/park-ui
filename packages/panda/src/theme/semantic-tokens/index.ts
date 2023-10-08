@@ -2,10 +2,11 @@ import { defineSemanticTokens } from '@pandacss/dev'
 import { match } from 'ts-pattern'
 import type { AccentColor, GrayColor, PresetOptions } from '../../types'
 import { colors } from './colors'
+import { createRadiiTokens } from './radii'
 import { shadows } from './shadows'
 
 export const createSemanticTokens = (options: PresetOptions) => {
-  const { accentColor = 'neutral', grayColor = 'neutral' } = options
+  const { accentColor = 'neutral', grayColor = 'neutral', borderRadius = 'sm' } = options
 
   return defineSemanticTokens({
     colors: {
@@ -36,11 +37,7 @@ export const createSemanticTokens = (options: PresetOptions) => {
       },
     },
     shadows,
-    radii: {
-      l1: { value: '{radii.xs}' },
-      l2: { value: '{radii.sm}' },
-      l3: { value: '{radii.md}' },
-    },
+    radii: createRadiiTokens(borderRadius),
   })
 }
 
