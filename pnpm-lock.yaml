@@ -251,6 +251,9 @@ importers:
       react-live:
         specifier: 4.1.5
         version: 4.1.5(react-dom@18.2.0)(react@18.2.0)
+      shiki:
+        specifier: 0.14.4
+        version: 0.14.4
       ts-pattern:
         specifier: 5.0.5
         version: 5.0.5
