@@ -7,7 +7,7 @@ import { keyframes } from './theme/keyframes'
 import { recipes, slotRecipes } from './theme/recipes'
 import { createSemanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
-import { tokens } from './theme/tokens'
+import { createTokens } from './theme/tokens'
 import {
   accentColors,
   borderRadii,
@@ -20,6 +20,8 @@ import {
 
 const createPreset = (options: PresetOptions = {}): Preset => {
   const semanticTokens = createSemanticTokens(options)
+  const tokens = createTokens(options)
+
   return definePreset({
     theme: {
       extend: {

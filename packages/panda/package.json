@@ -24,6 +24,7 @@
   "scripts": {
     "build": "tsup",
     "release-it": "release-it",
+    "test": "bun test",
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
@@ -36,6 +37,7 @@
     "@radix-ui/colors": "3.0.0",
     "@pandacss/types": "0.15.5",
     "@release-it/keep-a-changelog": "4.0.0",
+    "bun-types": "1.0.4",
     "clean-package": "2.2.0",
     "release-it": "16.2.1",
     "tsup": "7.2.0"
