@@ -1,7 +1,7 @@
 import { addons, types } from '@storybook/addons'
 import { useGlobals } from '@storybook/api'
 import { IconButton } from '@storybook/components'
-import { useCallback } from 'react'
+import React, { useCallback } from 'react'
 
 addons.setConfig({
   toolbar: {
