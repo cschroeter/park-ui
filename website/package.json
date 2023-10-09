@@ -36,6 +36,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-live": "4.1.5",
+    "shiki": "0.14.4",
     "ts-pattern": "5.0.5",
     "zustand": "4.4.3"
   }
