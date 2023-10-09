@@ -10,7 +10,6 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
-    "types": ["bun-types"]
+    "strict": true
   }
 }
