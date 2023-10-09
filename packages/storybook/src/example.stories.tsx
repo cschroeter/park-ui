@@ -1,21 +1,21 @@
-import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
 import type { Meta } from '@storybook/react'
-import { Divider, HStack, Stack } from 'styled-system/jsx'
-import { Button, Input, Label, Text } from './components/ui'
+import { Stack } from 'styled-system/jsx'
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from './components/ui/card'
+  AuthenticationCard,
+  CardWithTabs,
+  ECommerceCard,
+  NotificationCard,
+  PaymentCard,
+  PricingCard,
+  ReportIssueCard,
+  ShareDocumentCard,
+} from './demos'
 
 const meta: Meta = {
-  title: 'Examples/Authentication Card',
+  title: 'Examples/Showcase',
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         <Story />
       </div>
     ),
@@ -24,47 +24,23 @@ const meta: Meta = {
 
 export default meta
 
-export const AuthenticationCard = () => {
+export const Showcase = () => {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Sign Up</CardTitle>
-        <CardDescription>
-          Create an account and discover the worlds' best UI component framework.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Stack gap="4">
-          <Stack direction="row" gap="3">
-            <Button variant="outline" width="full">
-              <SiGoogle />
-              Google
-            </Button>
-            <Button variant="outline" width="full">
-              <SiGithub />
-              GitHub
-            </Button>
-          </Stack>
-          <HStack gap="2">
-            <Divider />
-            <Text color="fg.subtle" textStyle="sm" whiteSpace="nowrap">
-              or sign up with
-            </Text>
-            <Divider />
-          </HStack>
-          <Stack gap="1.5">
-            <Label htmlFor="name">E-Mail</Label>
-            <Input id="name" placeholder="Your E-Mail" />
-          </Stack>
-          <Stack gap="1.5">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" placeholder="Your Password" />
-          </Stack>
-        </Stack>
-      </CardContent>
-      <CardFooter>
-        <Button width="full">Create Account</Button>
-      </CardFooter>
-    </Card>
+    <Stack gap={{ base: '6', lg: '8' }} direction="row">
+      <Stack gap={{ base: '6', lg: '8' }} maxW="sm">
+        <AuthenticationCard />
+        <NotificationCard />
+        <PricingCard />
+      </Stack>
+      <Stack gap={{ base: '6', lg: '8' }} maxW="md">
+        <PaymentCard />
+        <ECommerceCard />
+      </Stack>
+      <Stack gap={{ base: '6', lg: '8' }} maxW="sm">
+        <ShareDocumentCard />
+        <ReportIssueCard />
+        <CardWithTabs />
+      </Stack>
+    </Stack>
   )
 }

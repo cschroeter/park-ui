@@ -38,29 +38,20 @@ export const button = defineRecipe({
           outlineColor: 'border.accent',
         },
         _disabled: {
-          background: 'bg.disabled',
+          color: 'fg.disabled',
+          background: 'gray.a3',
           cursor: 'not-allowed',
           _hover: {
-            background: 'bg.disabled',
+            color: 'fg.disabled',
+            background: 'gray.a3',
           },
         },
       },
       outline: {
         borderWidth: '1px',
-        borderColor: 'border.emphasized',
-        color: 'fg.default',
+        borderColor: 'gray.a7',
         _hover: {
-          background: 'bg.subtle',
-        },
-        _selected: {
-          background: 'accent.default',
-          borderColor: 'border.accent',
-          color: 'accent.fg',
-          _hover: {
-            color: 'accent.fg',
-            background: 'accent.default',
-            borderColor: 'border.accent',
-          },
+          background: 'gray.a2',
         },
         _disabled: {
           borderColor: 'border.disabled',
@@ -79,10 +70,8 @@ export const button = defineRecipe({
         },
       },
       ghost: {
-        color: 'fg.emphasized',
         _hover: {
-          color: 'fg.default',
-          background: 'bg.subtle',
+          background: 'gray.a3',
         },
         _disabled: {
           color: 'fg.disabled',
@@ -96,26 +85,14 @@ export const button = defineRecipe({
           outline: '2px solid',
           outlineColor: 'border.outline',
         },
-        _selected: {
-          background: 'accent.default',
-          color: 'accent.fg',
-          _hover: {
-            color: 'accent.fg',
-            background: 'accent.default',
-          },
-        },
       },
       link: {
-        color: 'fg.muted',
         verticalAlign: 'baseline',
-        _hover: {
-          color: 'fg.default',
-        },
         _disabled: {
-          color: 'fg.disabled',
+          color: 'border.disabled',
           cursor: 'not-allowed',
           _hover: {
-            color: 'fg.disabled',
+            color: 'border.disabled',
           },
         },
         height: 'auto!',

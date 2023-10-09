@@ -26,14 +26,14 @@ export const createSemanticTokens = (options: PresetOptions) => {
         emphasized: { value: '{colors.gray.12}' },
         muted: { value: '{colors.gray.11}' },
         subtle: { value: '{colors.gray.10}' },
-        disabled: { value: '{colors.gray.7}' },
+        disabled: { value: '{colors.gray.8}' },
       },
       border: {
-        default: { value: '{colors.gray.6}' },
-        emphasized: { value: '{colors.gray.7}' },
-        outline: { value: '{colors.gray.9}' },
+        default: { value: '{colors.gray.a4}' },
+        emphasized: { value: '{colors.gray.a7}' },
+        outline: { value: '{colors.gray.12}' },
         accent: { value: '{colors.accent.default}' },
-        disabled: { value: '{colors.gray.6}' },
+        disabled: { value: '{colors.gray.a6}' },
       },
     },
     shadows,
@@ -49,7 +49,7 @@ const createAccentColorPalette = (accentColor: AccentColor) => {
       emphasized: { value: '{colors.gray.12}' },
     }))
     .with('amber', 'lime', 'mint', 'sky', 'yellow', () => ({
-      fg: { value: '{colors.black}' },
+      fg: { value: '{colors.gray.light.12}' },
       default: { value: '{colors.accent.9}' },
       emphasized: { value: '{colors.accent.10}' },
     }))
@@ -70,7 +70,7 @@ const createColorPalette = (name: GrayColor | AccentColor) =>
     (acc, scale) => ({
       ...acc,
       [scale]: { value: `{colors.${name}.${scale}}` },
-      ['a' + scale]: { value: `{colors.${name}.${scale}}` },
+      ['a' + scale]: { value: `{colors.${name}.a${scale}}` },
     }),
     {},
   )

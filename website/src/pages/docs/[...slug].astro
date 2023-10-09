@@ -2,14 +2,12 @@
 import { ark } from '@ark-ui/react'
 import { type CollectionEntry } from 'astro:content'
 import path from 'path'
-import { css } from 'styled-system/css'
-import { cx } from 'styled-system/css/cx'
+import { styled } from 'styled-system/jsx'
 import { prose } from 'styled-system/recipes'
 import DocsHero from '~/components/navigation/docs-hero.astro'
 import Pre from '~/components/pre.astro'
 import { Code } from '~/components/ui'
 import DocsLayout from '~/layouts/docs.layout.astro'
-import { styled } from 'styled-system/jsx'
 import { getAllCollections } from '~/lib/page-control'
 
 type Props = {

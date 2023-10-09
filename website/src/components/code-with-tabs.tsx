@@ -15,9 +15,9 @@ export const CodeWithTabs = (props: Props) => {
       borderRadius="l3"
       overflow="hidden"
       className="dark"
-      background="grayPalette.900"
+      background="gray.dark.2"
     >
-      <TabList bg="grayPalette.950" gap="0" pt="1" px="1.5">
+      <TabList bg="gray.dark1" gap="0" pt="1" px="1.5">
         <TabTrigger value="react" pb="1!">
           React
         </TabTrigger>

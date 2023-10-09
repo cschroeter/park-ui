@@ -5,7 +5,6 @@ import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { Button } from '../ui/button'
 import {
   Drawer,
-  DrawerBackdrop,
   DrawerCloseTrigger,
   DrawerContainer,
   DrawerContent,
@@ -37,7 +36,6 @@ export const ThemeDrawer = (props: Props) => {
         </Button>
       </DrawerTrigger>
       <Portal>
-        <DrawerBackdrop />
         <DrawerContainer>
           <DrawerContent gap="6">
             <Stack gap="1">

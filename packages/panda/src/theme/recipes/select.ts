@@ -46,10 +46,10 @@ export const select = defineSlotRecipe({
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
       _hover: {
-        background: 'bg.subtle',
+        background: 'gray.a3',
       },
       _highlighted: {
-        background: 'bg.subtle',
+        background: 'gray.a3',
       },
       _disabled: {
         color: 'fg.disabled',
@@ -111,10 +111,10 @@ export const select = defineSlotRecipe({
       ghost: {
         trigger: {
           _hover: {
-            background: 'bg.subtle',
+            background: 'gray.a3',
           },
           _focus: {
-            background: 'bg.subtle',
+            background: 'gray.a3',
           },
         },
       },

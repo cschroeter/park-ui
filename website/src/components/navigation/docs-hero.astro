@@ -14,7 +14,7 @@ const { entry } = Astro.props
 const isComponent = entry.collection === 'components'
 ---
 
-<Box bg={{ base: 'gray.50', _dark: 'black' }} borderBottomWidth="1px">
+<Box bg="gray.2" borderBottomWidth="1px">
   <Container maxW="66rem" py={{ base: '16', md: '24' }}>
     <article class={prose({ size: 'base' })}>
       <Heading as="h1" fontWeight="bold">{entry.data.title}</Heading>

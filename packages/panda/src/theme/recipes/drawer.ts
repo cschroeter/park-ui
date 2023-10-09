@@ -33,7 +33,7 @@ export const drawer = defineSlotRecipe({
     },
     content: {
       background: 'bg.default',
-      boxShadow: 'md',
+      boxShadow: 'xl',
       display: 'flex',
       flexDirection: 'column',
       height: 'full',
