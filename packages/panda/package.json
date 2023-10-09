@@ -1,6 +1,7 @@
 {
   "name": "@park-ui/presets",
   "version": "0.17.0",
+  "type": "module",
   "description": "Panda CSS presets for Ark UI components",
   "keywords": [
     "Ark UI",

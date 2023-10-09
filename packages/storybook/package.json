@@ -1,6 +1,7 @@
 {
   "name": "@park-ui/storybook",
   "description": "Storybook for Park UI",
+  "type": "module",
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
   "homepage": "https://park-ui.com",
   "license": "MIT",

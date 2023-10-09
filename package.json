@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "type": "module",
   "private": true,
   "workspaces": [
     "packages/*",
