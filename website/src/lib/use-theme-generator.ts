@@ -13,7 +13,7 @@ export const useThemeGenerator = () => {
   const currentAccentColor = useThemeStore((state) => state.accentColor)
   const currentGrayColor = useThemeStore((state) => state.grayColor)
   const currentFontFamily = useThemeStore((state) => state.fontFamily)
-  const currentBorderRadii = useThemeStore((state) => state.borderRadius)
+  const currentBorderRadius = useThemeStore((state) => state.borderRadius)
 
   const updateAccentColor = useThemeStore((state) => state.setAccentColor)
   const updateGrayColor = useThemeStore((state) => state.setGrayColor)
@@ -35,22 +35,17 @@ export const useThemeGenerator = () => {
   }, [currentFontFamily])
 
   useEffect(() => {
-    syncBorderRadii(currentBorderRadii)
-  }, [currentBorderRadii])
-
-  const config = baseConfig
-    .replace('__ACCENT_COLOR__', currentAccentColor)
-    .replace('__GRAY_COLOR__', currentGrayColor)
-    .replace('__BORDER_RADIUS__', currentBorderRadii)
+    syncBorderRaius(currentBorderRadius)
+  }, [currentBorderRadius])
 
   return {
     accentColors,
     borderRadii,
-    config,
+    baseConfig,
     fontFamilies,
     grayColors,
     currentAccentColor,
-    currentBorderRadii,
+    currentBorderRadius,
     currentFontFamily,
     currentGrayColor,
     updateAccentColor,
@@ -80,7 +75,7 @@ const syncAccentColor = (color: AccentColor) => {
   }
 }
 
-const syncBorderRadii = (borderRadius: BorderRadius) => {
+const syncBorderRaius = (borderRadius: BorderRadius) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (root) {
     root.setAttribute('data-radius', borderRadius)
@@ -118,7 +113,7 @@ const syncFontFamily = (fontFamily: FontFamily) => {
   }
 }
 
-const baseConfig = `import { defineConfig } from '@pandacss/dev'
+export const baseConfig = `import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/presets'
 
 export default defineConfig({

@@ -10,6 +10,9 @@ import { TableOfContent } from '~/components/navigation/toc'
 import { ThemeDrawer } from '~/components/theme/theme-drawer'
 import Layout from './layout.astro'
 import { layout } from './layout.recipe'
+import { CodePreview } from '~/components/code-preview'
+import { Code } from 'astro:components'
+import { baseConfig } from '~/lib/use-theme-generator'
 
 interface Props {
   title: string
@@ -24,7 +27,9 @@ const styles = layout()
 <Layout title={title} description={description}>
   <header class={styles.header}>
     <Navbar borderBottomWidth="1px">
-      <ThemeDrawer client:only slot="action" placement="right" />
+      <ThemeDrawer client:load slot="action" placement="right">
+        <Code code={baseConfig} lang="tsx" theme="css-variables" />
+      </ThemeDrawer>
       <Box display={{ base: 'block', md: 'none' }}>
         <Container py="1">
           <HStack gap="2">

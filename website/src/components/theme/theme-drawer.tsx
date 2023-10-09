@@ -1,5 +1,6 @@
 import { Portal } from '@ark-ui/react'
 import { Settings2Icon, Undo2Icon, XIcon } from 'lucide-react'
+import type { PropsWithChildren } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { Button } from '../ui/button'
@@ -24,7 +25,7 @@ interface Props {
   placement?: 'left' | 'right'
 }
 
-export const ThemeDrawer = (props: Props) => {
+export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const { placement = 'left', isHero } = props
   const { reset } = useThemeGenerator()
   return (
@@ -60,7 +61,7 @@ export const ThemeDrawer = (props: Props) => {
                 <Undo2Icon />
                 Reset
               </Button>
-              <ThemeConfigDialog />
+              <ThemeConfigDialog>{props.children}</ThemeConfigDialog>
             </HStack>
           </DrawerContent>
         </DrawerContainer>

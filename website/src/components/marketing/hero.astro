@@ -1,9 +1,11 @@
 ---
 import { SiReact, SiSolid, SiVuedotjs } from '@icons-pack/react-simple-icons'
+import { Code } from 'astro:components'
 import { ArrowRightIcon } from 'lucide-react'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Heading, Text } from '~/components/ui'
+import { baseConfig } from '~/lib/use-theme-generator'
 import { ThemeDrawer } from '../theme/theme-drawer'
 ---
 
@@ -21,7 +23,9 @@ import { ThemeDrawer } from '../theme/theme-drawer'
     <a href="/docs/overview/introduction" class={button({ size: { base: 'xl', md: '2xl' } })}
       >Get Started <ArrowRightIcon /></a
     >
-    <ThemeDrawer client:only isHero />
+    <ThemeDrawer client:load isHero>
+      <Code code={baseConfig} lang="tsx" theme="css-variables" />
+    </ThemeDrawer>
   </Stack>
   <HStack gap={{ base: '10', md: '12' }}>
     {

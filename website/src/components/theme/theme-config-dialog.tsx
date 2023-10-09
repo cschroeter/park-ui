@@ -1,6 +1,6 @@
 import { CopyIcon, XIcon } from 'lucide-react'
-import { Box, Flex, Stack } from 'styled-system/jsx'
-import { CopyToClipboardButton } from '~/components/copy-to-clipboard-button'
+import { type PropsWithChildren } from 'react'
+import { Stack } from 'styled-system/jsx'
 import {
   Dialog,
   DialogBackdrop,
@@ -13,10 +13,12 @@ import {
 } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { CodePreview } from '../code-preview'
 import { Button } from '../ui'
 
-export const ThemeConfigDialog = () => {
-  const { config } = useThemeGenerator()
+export const ThemeConfigDialog = (props: PropsWithChildren) => {
+  const { currentAccentColor, currentGrayColor, currentBorderRadius } = useThemeGenerator()
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -35,31 +37,17 @@ export const ThemeConfigDialog = () => {
                 Copy and paste the following code into your Panda config.
               </DialogDescription>
             </Stack>
-            <Box
-              className="dark"
-              position="relative"
-              bg="bg.subtle"
-              borderRadius="l2"
-              borderWidth="1px"
-            >
-              <Box position="absolute" top="2" right="2" zIndex={1}>
-                <CopyToClipboardButton content={config} />
-              </Box>
-              <Flex
-                overflow="auto"
-                p="4"
-                width="lg"
-                fontFamily="robotoMono"
-                textStyle="sm"
-                color="fg.muted"
-              >
-                <pre
-                  dangerouslySetInnerHTML={{
-                    __html: config,
-                  }}
-                />
-              </Flex>
-            </Box>
+            <CodePreview code="console.log('foo')">
+              <div
+                dangerouslySetInnerHTML={{
+                  // @ts-expect-error TODO fix later
+                  __html: props.children.props.value
+                    .replace('__ACCENT_COLOR__', currentAccentColor)
+                    .replace('__GRAY_COLOR__', currentGrayColor)
+                    .replace('__BORDER_RADIUS__', currentBorderRadius),
+                }}
+              ></div>
+            </CodePreview>
           </Stack>
           <DialogCloseTrigger asChild position="absolute" top="2" right="2">
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
