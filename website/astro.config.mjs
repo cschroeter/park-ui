@@ -10,4 +10,11 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
   },
+  vite: {
+    server: {
+      watch: {
+        ignored: ['**/styled-system/**/*'],
+      },
+    },
+  },
 })
