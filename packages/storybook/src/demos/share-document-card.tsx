@@ -1,5 +1,4 @@
 import { Portal } from '@ark-ui/react'
-import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
@@ -126,7 +125,6 @@ type CopyButtonProps = {
 
 const CopyButton = (props: CopyButtonProps) => {
   const { content } = props
-  const [_, copy] = useCopyToClipboard()
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
@@ -136,7 +134,6 @@ const CopyButton = (props: CopyButtonProps) => {
   }, [visible])
 
   const handleClick = () => {
-    copy(content)
     setVisible(false)
   }
 

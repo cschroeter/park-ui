@@ -1,6 +1,6 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
-export const shadows = defineSemanticTokens({
+export const shadows = defineSemanticTokens.shadows({
   accent: {
     value: '0 0 0 1px {colors.border.accent}',
   },
@@ -9,32 +9,38 @@ export const shadows = defineSemanticTokens({
   },
   xs: {
     value: {
-      base: '0px 1px 2px rgba(23, 23, 23,  0.1)',
-      _dark: '0px 1px 2px rgba(0, 0, 0, 1.0)',
+      base: '0px 1px 2px {colors.gray.a3}, 0px 0px 1px {colors.gray.a6}',
+      _dark: '0px 1px 2px {colors.black.a11}, 0px 0px 1px inset {colors.gray.a7}',
     },
   },
   sm: {
     value: {
-      base: '0px 2px 4px rgba(23, 23, 23,  0.1)',
-      _dark: '0px 2px 4px rgba(0, 0, 0, 1.0)',
+      base: '0px 2px 4px {colors.gray.a3}, 0px 0px 1px {colors.gray.a6}',
+      _dark: '0px 2px 4px {colors.black.a11}, 0px 0px 1px inset {colors.gray.a7}',
     },
   },
   md: {
     value: {
-      base: '0px 4px 8px rgba(23, 23, 23,  0.1)',
-      _dark: '0px 4px 8px rgba(0, 0, 0, 1.0)',
+      base: '0px 4px 8px {colors.gray.a3}, 0px 0px 1px {colors.gray.a6}',
+      _dark: '0px 4px 8px {colors.black.a11}, 0px 0px 1px inset {colors.gray.a7}',
     },
   },
   lg: {
     value: {
-      base: '0px 8px 16px rgba(23, 23, 23,  0.1)',
-      _dark: '0px 8px 16px rgba(0, 0, 0, 1.0)',
+      base: '0px 8px 16px {colors.gray.a3}, 0px 0px 1px {colors.gray.a6}',
+      _dark: '0px 8px 16px {colors.black.a11}, 0px 0px 1px inset {colors.gray.a7}',
     },
   },
   xl: {
     value: {
-      base: '0px 16px 24px rgba(23, 23, 23,  0.1)',
-      _dark: '0px 16px 24px rgba(0, 0, 0, 1.0)',
+      base: '0px 16px 24px {colors.gray.a3}, 0px 0px 1px {colors.gray.a6}',
+      _dark: '0px 16px 24px {colors.black.a11}, 0px 0px 1px inset {colors.gray.a7}',
+    },
+  },
+  '2xl': {
+    value: {
+      base: '0px 24px 40px {colors.gray.a3}, 0px 0px 1px {colors.gray.a6}',
+      _dark: '0px 24px 40px {colors.black.a11}, 0px 0px 1px inset {colors.gray.a7}',
     },
   },
 })
