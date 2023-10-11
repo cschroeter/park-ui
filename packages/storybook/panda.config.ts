@@ -29,7 +29,7 @@ export default defineConfig({
       radioGroup: [{ size: ['*'] }],
       radioButtonGroup: [{ size: ['*'], variant: ['*'] }],
       ratingGroup: [{ size: ['*'] }],
-      segmentGroup: [{ size: ['*'] }],
+      segmentGroup: [{ size: ['*'], variant: ['*'] }],
       select: [{ size: ['*'], variant: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
       table: [{ size: ['*'], variant: ['*'] }],

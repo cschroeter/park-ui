@@ -11,6 +11,7 @@ export const segmentGroup = defineSlotRecipe({
         _horizontal: 'row',
         _vertical: 'column',
       },
+      alignItems: 'flex-start',
       gap: {
         _horizontal: '4',
         _vertical: '1',
@@ -36,20 +37,17 @@ export const segmentGroup = defineSlotRecipe({
       },
     },
     radio: {
-      color: 'fg.subtle',
+      color: 'fg.muted',
       cursor: 'pointer',
       fontWeight: 'medium',
       transitionDuration: 'normal',
       transitionProperty: 'color',
       transitionTimingFunction: 'default',
-      _hover: {
-        color: 'fg.muted',
-      },
       _checked: {
         fontWeight: 'semibold',
-        color: 'fg.emphasized',
+        color: 'fg.default',
         _hover: {
-          color: 'fg.emphasized',
+          color: 'fg.default',
         },
       },
       _disabled: {
