@@ -4,6 +4,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const checkbox = defineSlotRecipe({
   className: 'checkbox',
   slots: checkboxAnatomy.keys(),
+  jsx: ['Checkbox', /Checkbox\.+/],
   base: {
     root: {
       alignItems: 'center',

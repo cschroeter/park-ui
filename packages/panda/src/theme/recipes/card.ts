@@ -3,6 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const card = defineSlotRecipe({
   className: 'card',
   slots: ['root', 'header', 'content', 'footer', 'title', 'description'],
+  jsx: ['Card', /Card\.+/],
   base: {
     root: {
       bg: 'bg.default',

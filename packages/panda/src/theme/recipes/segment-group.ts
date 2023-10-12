@@ -4,6 +4,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const segmentGroup = defineSlotRecipe({
   className: 'segmentGroup',
   slots: segmentGroupAnatomy.keys(),
+  jsx: ['SegmentGroup', /SegmentGroup\.+/],
   base: {
     root: {
       display: 'flex',

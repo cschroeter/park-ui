@@ -4,6 +4,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const splitter = defineSlotRecipe({
   className: 'splitter',
   slots: splitterAnatomy.keys(),
+  jsx: ['Splitter', /Splitter\.+/],
   base: {
     root: {
       display: 'flex',

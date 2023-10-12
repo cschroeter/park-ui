@@ -4,6 +4,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const toast = defineSlotRecipe({
   className: 'toast',
   slots: toastAnatomy.keys(),
+  jsx: ['Toast', /Toast\.+/],
   base: {
     root: {
       background: 'bg.default',
