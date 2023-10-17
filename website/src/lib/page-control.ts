@@ -116,9 +116,9 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
 
 // a very primitive appraoch but it works
 export const hasVariants = async (pathname?: string) => {
-  const slug = pathname?.split('/').pop() ?? ''
+  const id = pathname?.split('/').pop() ?? ''
   const collections = await getAllCollections()
-  const items = collections.filter((item) => item.slug.endsWith(slug))
+  const items = collections.filter((item) => item.data.id === id)
 
   return items.length > 1
 }
