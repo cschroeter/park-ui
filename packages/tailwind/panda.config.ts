@@ -27,6 +27,7 @@ export default defineConfig({
       checkbox: [{ size: ['*'] }],
       code: [{ variant: ['*'], size: ['*'] }],
       combobox: [{ size: ['*'] }],
+      dialog: [{}],
       drawer: [{ placement: ['*'] }],
       editable: [{}],
       hoverCard: [{}],

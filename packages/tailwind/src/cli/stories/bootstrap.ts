@@ -15,7 +15,10 @@ main()
 function getDemoFilePaths() {
   const demoDir = join(__dirname, '../../../../../website/src/components/demos')
 
-  const ignoredComponents = ['hover-card']
+  const ignoredComponents = [
+    'hover-card',
+    'dialog', // uses style props on button and Trigger
+  ]
 
   const demoFiles = readdirSync(demoDir)
     .filter((fileName) => !fileName.includes('index.ts'))
@@ -53,6 +56,11 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
     )
     .replace(`~/components/ui/${componentName}`, './snippet')
     .replaceAll(/~\/components\/ui\/(\w+)/g, '../$1/snippet')
+    .replaceAll('<Stack gap="8" p="6">', '<div className="flex flex-col gap-8 p-6">')
+    .replaceAll(
+      '<Stack gap="3" direction="row" width="full">',
+      '<div className="flex flex-row gap-3 w-full">',
+    )
     .replaceAll('<Stack gap="1.5" width="2xs">', '<div className="flex flex-col gap-1.5 w-8/12">')
     .replaceAll('<Stack gap="1.5">', '<div className="flex flex-col gap-1.5">')
     .replaceAll('<Stack gap="4" direction="row">', '<div className="flex flex-row gap-4">')

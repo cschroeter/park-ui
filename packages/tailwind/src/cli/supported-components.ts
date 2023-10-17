@@ -11,7 +11,7 @@ export const supportedMultiPartComponents = [
   // 'color-picker', // wait
   'combobox',
   // 'date-picker', // wait
-  // 'dialog',
+  'dialog',
   // 'drawer',
   'editable',
   'hover-card',
