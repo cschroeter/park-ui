@@ -68,7 +68,17 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
     .replaceAll('<Stack gap="6">', '<div className="flex flex-col gap-6">')
     .replaceAll('<Stack gap="1">', '<div className="flex flex-col gap-1">')
     .replaceAll('<Stack gap="3">', '<div className="flex flex-col gap-3">')
+    .replaceAll(
+      '<HStack gap="6" justify="space-between" flex="1">',
+      '<div className="flex flex-row gap-6 justify-between flex-1">',
+    )
+    .replaceAll('<HStack gap="2">', '<div className="flex flex-row gap-2">')
     .replaceAll('</Stack>', '</div>')
+    .replaceAll(
+      '<MenuTriggerItem justifyContent="space-between">',
+      '<MenuTriggerItem className="justify-between">',
+    )
+    .replaceAll('</HStack>', '</div>')
 
   writeFileSync(componentFile, storyWithReplacements)
 }

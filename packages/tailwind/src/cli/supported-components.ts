@@ -15,7 +15,7 @@ export const supportedMultiPartComponents = [
   'drawer',
   'editable',
   'hover-card',
-  // 'menu',
+  'menu',
   'number-input',
   // 'pagination',
   'pin-input',
