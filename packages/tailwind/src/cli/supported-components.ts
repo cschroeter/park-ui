@@ -8,9 +8,9 @@ export const supportedMultiPartComponents = [
   'card',
   'carousel',
   'checkbox',
-  // 'color-picker',
-  // 'combobox',
-  // 'date-picker',
+  // 'color-picker', // wait
+  'combobox',
+  // 'date-picker', // wait
   // 'dialog',
   // 'drawer',
   'editable',
@@ -22,7 +22,7 @@ export const supportedMultiPartComponents = [
   // 'popover',
   // 'radio-button-group'
   'radio-group',
-  // 'range-slider',
+  // 'range-slider', // wait
   'rating-group',
   // 'segment-group',
   // 'select',
@@ -32,7 +32,7 @@ export const supportedMultiPartComponents = [
   // 'table',
   'tabs',
   // 'tags-input',
-  // 'toast',
+  // 'toast', // wait
   // 'toggle-group'
   // 'tooltip',
 ]

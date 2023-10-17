@@ -19,7 +19,11 @@ const main = async () => {
   )
   const multiComponents = await fetchComponentsJson()
 
-  const ignoredMultiComponents = ['card', 'text']
+  const ignoredMultiComponents = [
+    'card',
+    'combobox', // json not up2date
+    'text',
+  ]
 
   Object.keys(multiComponents).forEach((key) => {
     if (!supportedClassNames.includes(key) || ignoredMultiComponents.includes(key)) {

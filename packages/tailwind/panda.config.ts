@@ -26,6 +26,7 @@ export default defineConfig({
       carousel: [{ size: ['*'] }],
       checkbox: [{ size: ['*'] }],
       code: [{ variant: ['*'], size: ['*'] }],
+      combobox: [{ size: ['*'] }],
       drawer: [{ placement: ['*'] }],
       editable: [{}],
       hoverCard: [{}],

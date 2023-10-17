@@ -1,5 +1,5 @@
 import { mergeProps } from '@zag-js/react'
-import { ExoticComponent, forwardRef } from 'react'
+import { forwardRef, type ExoticComponent } from 'react'
 
 type ProviderComponentProps<ComponentProps extends {}> =
   | ExoticComponent<ComponentProps>
