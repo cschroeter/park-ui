@@ -31,7 +31,7 @@ export const supportedMultiPartComponents = [
   'switch',
   'table',
   'tabs',
-  // 'tags-input',
+  'tags-input',
   // 'toast', // wait
   // 'toggle-group'
   // 'tooltip',

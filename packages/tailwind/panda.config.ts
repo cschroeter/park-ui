@@ -47,6 +47,7 @@ export default defineConfig({
       switchRecipe: [{ size: ['*'] }],
       table: [{ size: ['*'], variant: ['*'] }],
       tabs: [{ size: ['*'], variant: ['*'] }],
+      tagsInput: [{ size: ['*'], variant: ['*'] }],
       textarea: [{ size: ['*'], variant: ['*'] }],
       toggleGroup: [{ size: ['*'], variant: ['*'] }],
     },
