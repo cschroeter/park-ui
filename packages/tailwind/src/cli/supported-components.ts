@@ -17,7 +17,7 @@ export const supportedMultiPartComponents = [
   'hover-card',
   'menu',
   'number-input',
-  // 'pagination',
+  'pagination',
   'pin-input',
   // 'popover',
   // 'radio-button-group'

@@ -34,6 +34,7 @@ export default defineConfig({
       icon: [{ size: ['*'] }],
       input: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],
+      pagination: [{}],
       pinInput: [{ size: ['*'] }],
       numberInput: [{ size: ['*'] }],
       radioGroup: [{ size: ['*'] }],
