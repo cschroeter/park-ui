@@ -23,7 +23,7 @@ const itemStyle = {
   '& :where(svg)': {
     color: 'fg.muted',
   },
-} as const
+}
 
 export const menu = defineSlotRecipe({
   className: 'menu',
