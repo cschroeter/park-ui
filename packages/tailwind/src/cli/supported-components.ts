@@ -24,9 +24,9 @@ export const supportedMultiPartComponents = [
   'radio-group',
   // 'range-slider', // wait
   'rating-group',
-  // 'segment-group',
+  // 'segment-group', // todo
   'select',
-  // 'slider',
+  'slider',
   // 'splitter',
   'switch',
   'table',

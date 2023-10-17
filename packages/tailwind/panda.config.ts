@@ -43,6 +43,7 @@ export default defineConfig({
       ratingGroup: [{ size: ['*'] }],
       segmentGroup: [{ size: ['*'] }],
       select: [{ size: ['*'], variant: ['*'] }],
+      slider: [{ size: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
       table: [{ size: ['*'], variant: ['*'] }],
       tabs: [{ size: ['*'], variant: ['*'] }],
