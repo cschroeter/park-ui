@@ -20,16 +20,12 @@ export default defineConfig({
   outdir: 'styled-system',
   staticCss: {
     recipes: {
-      accordion: [{}],
-      alert: [{}],
       avatar: [{ size: ['*'] }],
       badge: [{ variant: ['*'], size: ['*'] }],
       button: [{ variant: ['*'], size: ['*'] }],
-      card: [{}],
       checkbox: [{ size: ['*'] }],
       code: [{ variant: ['*'], size: ['*'] }],
       drawer: [{ placement: ['*'] }],
-      hoverCard: [{}],
       icon: [{ size: ['*'] }],
       input: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],
@@ -42,7 +38,6 @@ export default defineConfig({
       switchRecipe: [{ size: ['*'] }],
       table: [{ size: ['*'], variant: ['*'] }],
       tabs: [{ size: ['*'], variant: ['*'] }],
-      textarea: [{ size: ['*'], variant: ['*'] }],
       toggleGroup: [{ size: ['*'], variant: ['*'] }],
     },
     css: [

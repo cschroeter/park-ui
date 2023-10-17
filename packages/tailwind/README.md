@@ -1,7 +1,6 @@
 # Build plugin
-
 ```bash
-cd website && bun run panda cssgen "static" --outfile ../packages/tailwind/src/plugin/css/styles.css && cd ../packages/tailwind && yarn build:plugin && cd ../..
+bun build:plugin
 ```
 
 ## Generate components
