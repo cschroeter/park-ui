@@ -20,7 +20,7 @@ export const supportedMultiPartComponents = [
   'pagination',
   'pin-input',
   'popover',
-  // 'radio-button-group'
+  'radio-button-group',
   'radio-group',
   // 'range-slider', // wait
   'rating-group',
