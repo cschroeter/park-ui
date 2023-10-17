@@ -64,6 +64,8 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
     .replaceAll('<Stack gap="1.5" width="2xs">', '<div className="flex flex-col gap-1.5 w-8/12">')
     .replaceAll('<Stack gap="1.5">', '<div className="flex flex-col gap-1.5">')
     .replaceAll('<Stack gap="4" direction="row">', '<div className="flex flex-row gap-4">')
+    .replaceAll('<Stack gap="4">', '<div className="flex flex-col gap-4">')
+    .replaceAll('<Stack gap="6">', '<div className="flex flex-col gap-6">')
     .replaceAll('<Stack gap="1">', '<div className="flex flex-col gap-1">')
     .replaceAll('<Stack gap="3">', '<div className="flex flex-col gap-3">')
     .replaceAll('</Stack>', '</div>')
