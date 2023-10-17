@@ -13,3 +13,4 @@ cd packages/tailwind && bun run build:stories && bun run build:components && bun
 - publish plugin to npm
 - website: snippet.tsx for Icon is not shown (because it is not a ts file) -> TODO rename to tsx
 - publish lib files
+- click freezes all buttons

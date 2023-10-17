@@ -25,7 +25,7 @@ export const supportedMultiPartComponents = [
   // 'range-slider', // wait
   'rating-group',
   // 'segment-group',
-  // 'select',
+  'select',
   // 'slider',
   // 'splitter',
   'switch',
