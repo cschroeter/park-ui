@@ -6,35 +6,35 @@ export const supportedMultiPartComponents = [
   'alert',
   'avatar',
   'card',
-  // 'carousel',
+  'carousel',
   'checkbox',
-  // 'color-picker',
-  // 'combobox',
-  // 'date-picker',
-  // 'dialog',
-  // 'drawer',
+  // 'color-picker', // wait
+  'combobox',
+  // 'date-picker', // wait
+  'dialog',
+  'drawer',
   'editable',
   'hover-card',
-  // 'menu',
+  'menu',
   'number-input',
-  // 'pagination',
+  'pagination',
   'pin-input',
-  // 'popover',
-  // 'radio-button-group'
+  'popover',
+  'radio-button-group',
   'radio-group',
-  // 'range-slider',
+  // 'range-slider', // wait
   'rating-group',
-  // 'segment-group',
-  // 'select',
-  // 'slider',
-  // 'splitter',
+  // 'segment-group', // TODO
+  'select',
+  'slider',
+  // 'splitter', // TODO trigger missing
   'switch',
-  // 'table',
+  'table',
   'tabs',
-  // 'tags-input',
-  // 'toast',
-  // 'toggle-group'
-  // 'tooltip',
+  'tags-input',
+  // 'toast', // wait
+  'toggle-group',
+  'tooltip',
 ]
 
 /**

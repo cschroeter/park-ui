@@ -11,6 +11,9 @@ function writeFormattedStylesJson(cssInJs) {
 
 function readStylesToCssInJs() {
   const css = readFileSync('./src/plugin/css/styles.css').toString()
+
+  // TODO remove layers
+
   const root = postcss.parse(css)
   const cssInJs = postcssJs.objectify(root)
   return cssInJs

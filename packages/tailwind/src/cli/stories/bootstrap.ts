@@ -15,7 +15,11 @@ main()
 function getDemoFilePaths() {
   const demoDir = join(__dirname, '../../../../../website/src/components/demos')
 
-  const ignoredComponents = ['hover-card']
+  const ignoredComponents = [
+    'hover-card',
+    'dialog', // uses style props on button and Trigger
+    'toggle-group', // uses style props on Stack
+  ]
 
   const demoFiles = readdirSync(demoDir)
     .filter((fileName) => !fileName.includes('index.ts'))
@@ -47,14 +51,45 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
 
   const storyWithReplacements = componentFileContent
     .replaceAll("import { Icon } from '~/components/ui'", "import { Icon } from '../icon/snippet'")
+    .replaceAll(
+      "import { IconButton } from '~/components/ui/icon-button'",
+      "import { IconButton } from '../icon-button/snippet'",
+    )
     .replace(`~/components/ui/${componentName}`, './snippet')
     .replaceAll(/~\/components\/ui\/(\w+)/g, '../$1/snippet')
+    .replaceAll('<Stack gap="8" p="6">', '<div className="flex flex-col gap-8 p-6">')
+    .replaceAll(
+      '<Stack gap="3" direction="row" width="full">',
+      '<div className="flex flex-row gap-3 w-full">',
+    )
     .replaceAll('<Stack gap="1.5" width="2xs">', '<div className="flex flex-col gap-1.5 w-8/12">')
     .replaceAll('<Stack gap="1.5">', '<div className="flex flex-col gap-1.5">')
     .replaceAll('<Stack gap="4" direction="row">', '<div className="flex flex-row gap-4">')
+    .replaceAll('<Stack gap="4">', '<div className="flex flex-col gap-4">')
+    .replaceAll('<Stack gap="6">', '<div className="flex flex-col gap-6">')
     .replaceAll('<Stack gap="1">', '<div className="flex flex-col gap-1">')
     .replaceAll('<Stack gap="3">', '<div className="flex flex-col gap-3">')
+    .replaceAll(
+      '<HStack gap="6" justify="space-between" flex="1">',
+      '<div className="flex flex-row gap-6 justify-between flex-1">',
+    )
+    .replaceAll('<TableHead textAlign="right">', '<TableHead className="text-right">')
+    .replaceAll('<TableCell fontWeight="medium">', '<TableCell className="font-medium">')
+    .replaceAll('<TableCell textAlign="right">', '<TableCell className="text-right">')
+    .replaceAll('<HStack gap="2">', '<div className="flex flex-row gap-2">')
+    .replaceAll(
+      '<MenuTriggerItem justifyContent="space-between">',
+      '<MenuTriggerItem className="justify-between">',
+    )
+    .replaceAll('type TableProps,', '')
+    .replaceAll('props: TableProps) => {', 'props) => {')
+    .replaceAll(
+      '<Box position="absolute" top="1" right="1">',
+      '<div className="absolute top-1 right-1">',
+    )
+    .replaceAll('</Box>', '</div>')
     .replaceAll('</Stack>', '</div>')
+    .replaceAll('</HStack>', '</div>')
 
   writeFileSync(componentFile, storyWithReplacements)
 }
