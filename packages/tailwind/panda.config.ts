@@ -36,6 +36,7 @@ export default defineConfig({
       menu: [{ size: ['*'] }],
       pagination: [{}],
       pinInput: [{ size: ['*'] }],
+      popover: [{}],
       numberInput: [{ size: ['*'] }],
       radioGroup: [{ size: ['*'] }],
       radioButtonGroup: [{ size: ['*'], variant: ['*'] }],
