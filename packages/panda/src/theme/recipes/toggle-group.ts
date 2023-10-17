@@ -4,6 +4,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const toggleGroup = defineSlotRecipe({
   className: 'toggleGroup',
   slots: toggleGroupAnatomy.keys(),
+  jsx: ['ToggleGroup', /ToggleGroup\.+/],
   base: {
     root: {
       display: 'flex',

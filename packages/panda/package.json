@@ -1,7 +1,6 @@
 {
   "name": "@park-ui/presets",
-  "version": "0.17.0",
-  "type": "module",
+  "version": "0.18.0",
   "description": "Panda CSS presets for Ark UI components",
   "keywords": [
     "Ark UI",
@@ -31,12 +30,11 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "0.1.0",
-    "@pandacss/dev": "0.15.5",
-    "ts-pattern": "5.0.5"
+    "@pandacss/dev": "0.16.0"
   },
   "devDependencies": {
+    "@pandacss/types": "0.16.0",
     "@radix-ui/colors": "3.0.0",
-    "@pandacss/types": "0.15.5",
     "@release-it/keep-a-changelog": "4.0.0",
     "bun-types": "1.0.4",
     "clean-package": "2.2.0",

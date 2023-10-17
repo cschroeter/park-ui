@@ -4,6 +4,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const select = defineSlotRecipe({
   className: 'select',
   slots: selectAnatomy.keys(),
+  jsx: ['Select', /Select\.+/],
   base: {
     root: {
       display: 'flex',

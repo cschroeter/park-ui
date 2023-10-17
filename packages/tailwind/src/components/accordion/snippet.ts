@@ -1,5 +1,5 @@
 import * as Ark from '@ark-ui/react/accordion'
-import { createStyleContext } from '../../create-style-context'
+import { createStyleContext } from '~/lib/create-style-context'
 import { accordionStyles } from './recipe'
 export * from '@ark-ui/react/accordion'
 

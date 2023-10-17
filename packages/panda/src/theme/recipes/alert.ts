@@ -3,6 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const alert = defineSlotRecipe({
   className: 'alert',
   slots: ['root', 'content', 'description', 'icon', 'title'],
+  jsx: ['Alert', /Alert\.+/],
   base: {
     root: {
       background: 'bg.default',

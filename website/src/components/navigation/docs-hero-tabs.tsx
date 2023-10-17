@@ -1,16 +1,34 @@
+import { Container, HStack } from 'styled-system/jsx'
 import { TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui'
+import { Badge } from '../ui/badge'
 
-export const DocsHeroTabs = () => {
+interface Props {
+  value: string
+  pathname: string
+}
+
+export const DocsHeroTabs = (props: Props) => {
+  const { pathname, value } = props
   return (
-    <Tabs defaultValue="Overview" mb="-1px">
-      <TabList>
-        {['Overview'].map((item, id) => (
-          <TabTrigger key={id} value={item}>
-            {item}
+    <Container maxW="66rem">
+      <Tabs value={value} size="lg" variant="outline">
+        <TabList>
+          <TabTrigger value="panda">
+            <a href={pathname.replace('tailwind', 'panda')}>Panda</a>
           </TabTrigger>
-        ))}
-        <TabIndicator />
-      </TabList>
-    </Tabs>
+          <TabTrigger value="tailwind">
+            <a href={pathname.replace('panda', 'tailwind')}>
+              <HStack gap="2">
+                Tailwind
+                <Badge variant="subtle" size="sm">
+                  Alpha
+                </Badge>
+              </HStack>
+            </a>
+          </TabTrigger>
+          <TabIndicator />
+        </TabList>
+      </Tabs>
+    </Container>
   )
 }

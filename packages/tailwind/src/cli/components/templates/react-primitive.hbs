@@ -1,0 +1,9 @@
+import { ark, type HTMLArkProps } from '@ark-ui/react';
+import { type VariantProps } from 'tailwind-variants';
+import { styled } from '~/lib/styled';
+import { {{className}}Styles } from './recipe';
+
+type {{componentName}}VariantProps = VariantProps<typeof {{className}}Styles>;
+export type {{componentName}}Props = {{componentName}}VariantProps & HTMLArkProps<'{{elementName}}'>
+
+export const {{componentName}} = styled<{{componentName}}Props>(ark.{{elementName}}, {{className}}Styles)

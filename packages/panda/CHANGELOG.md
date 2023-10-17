@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.18.0] - 2023-10-12
+
+### Added
+
+- Added support for component dot notation, e.g., `<Accordion.Content />` alongside `<AccordionContent />`.
+
 ### Changed
 
 - BREAKING: Use `@pandacss/preset-base` as preset instead of `@pandacss/dev/presets`.

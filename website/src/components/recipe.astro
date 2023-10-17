@@ -1,24 +1,28 @@
 ---
 import { Code } from 'astro:components'
-import fs from 'node:fs/promises'
+import { readFile } from 'node:fs/promises'
+import { match } from 'ts-pattern'
 import { CodePreview } from './code-preview'
-import { CSSFrameworkTabs } from './css-framework-tabs'
 
-const recipeName = Astro.params.slug?.split('/').pop()
+const { slug } = Astro.params
 
-const pandaRecipe = await fs
-  .readFile(`../packages/panda/src/theme/recipes/${recipeName}.ts`, 'utf8')
-  .catch(() => 'Not yet available')
-const tailwindRecipe = await fs
-  .readFile(`../packages/tailwind/src/components/${recipeName}/recipe.ts`, 'utf8')
-  .catch(() => 'Not yet available')
+const component = slug?.split('/').pop()
+const cssFramework = slug?.split('/')[0]
+
+const code = await match(cssFramework)
+  .with('panda', () =>
+    readFile(`../packages/panda/src/theme/recipes/${component}.ts`, 'utf8').catch(
+      () => 'Not yet available',
+    ),
+  )
+  .with('tailwind', () =>
+    readFile(`../packages/tailwind/src/components/${component}/recipe.ts`, 'utf8').catch(
+      () => 'Not yet available',
+    ),
+  )
+  .otherwise(() => 'Not yet available')
 ---
 
-<CSSFrameworkTabs client:load>
-  <CodePreview code={pandaRecipe} client:load slot="panda" isAttached>
-    <Code code={pandaRecipe} lang="tsx" theme="css-variables" />
-  </CodePreview>
-  <CodePreview code={tailwindRecipe} client:load slot="tailwind" isAttached>
-    <Code code={tailwindRecipe} lang="tsx" theme="css-variables" />
-  </CodePreview>
-</CSSFrameworkTabs>
+<CodePreview code={code} client:load>
+  <Code code={code} lang="tsx" theme="css-variables" />
+</CodePreview>

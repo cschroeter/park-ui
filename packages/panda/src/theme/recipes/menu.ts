@@ -23,11 +23,12 @@ const itemStyle = {
   '& :where(svg)': {
     color: 'fg.muted',
   },
-} as const
+}
 
 export const menu = defineSlotRecipe({
   className: 'menu',
   slots: menuAnatomy.keys(),
+  jsx: ['Menu', /Menu\.+/],
   base: {
     itemGroupLabel: {
       fontWeight: 'semibold',

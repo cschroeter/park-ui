@@ -5,13 +5,20 @@ import { Box, Container, HStack } from 'styled-system/jsx'
 import { prose } from 'styled-system/recipes'
 import { Heading, Text } from '~/components/ui'
 import { Badge } from '../ui/badge'
+import { DocsHeroTabs } from './docs-hero-tabs'
+import { hasVariants } from '~/lib/page-control'
 
 interface Props {
   entry: CollectionEntry<'components' | 'overview'>
 }
 
 const { entry } = Astro.props
+const { slug } = Astro.params
+
+const value = slug?.split('/')[0] ?? 'panda'
 const isComponent = entry.collection === 'components'
+
+const showHeroTabs = await hasVariants(Astro.params.slug)
 ---
 
 <Box bg="gray.2" borderBottomWidth="1px">
@@ -49,7 +56,7 @@ const isComponent = entry.collection === 'components'
         </HStack>
       )
     }
-
-    <!-- <DocsHeroTabs client:load /> -->
   </Container>
+
+  {showHeroTabs && <DocsHeroTabs pathname={Astro.url.pathname} value={value} client:load />}
 </Box>
