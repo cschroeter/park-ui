@@ -72,11 +72,16 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
       '<HStack gap="6" justify="space-between" flex="1">',
       '<div className="flex flex-row gap-6 justify-between flex-1">',
     )
+    .replaceAll('<TableHead textAlign="right">', '<TableHead className="text-right">')
+    .replaceAll('<TableCell fontWeight="medium">', '<TableCell className="font-medium">')
+    .replaceAll('<TableCell textAlign="right">', '<TableCell className="text-right">')
     .replaceAll('<HStack gap="2">', '<div className="flex flex-row gap-2">')
     .replaceAll(
       '<MenuTriggerItem justifyContent="space-between">',
       '<MenuTriggerItem className="justify-between">',
     )
+    .replaceAll('type TableProps,', '')
+    .replaceAll('props: TableProps) => {', 'props) => {')
     .replaceAll(
       '<Box position="absolute" top="1" right="1">',
       '<div className="absolute top-1 right-1">',

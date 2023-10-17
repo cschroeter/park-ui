@@ -29,7 +29,7 @@ export const supportedMultiPartComponents = [
   // 'slider',
   // 'splitter',
   'switch',
-  // 'table',
+  'table',
   'tabs',
   // 'tags-input',
   // 'toast', // wait
