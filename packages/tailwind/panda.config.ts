@@ -51,6 +51,7 @@ export default defineConfig({
       tagsInput: [{ size: ['*'], variant: ['*'] }],
       textarea: [{ size: ['*'], variant: ['*'] }],
       toggleGroup: [{ size: ['*'], variant: ['*'] }],
+      tooltip: [{}],
     },
     css: [
       {
