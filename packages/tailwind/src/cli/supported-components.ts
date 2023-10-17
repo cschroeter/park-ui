@@ -24,10 +24,10 @@ export const supportedMultiPartComponents = [
   'radio-group',
   // 'range-slider', // wait
   'rating-group',
-  // 'segment-group', // todo
+  // 'segment-group', // TODO
   'select',
   'slider',
-  // 'splitter',
+  // 'splitter', // TODO trigger missing
   'switch',
   'table',
   'tabs',

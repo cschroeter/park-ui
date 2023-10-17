@@ -44,6 +44,7 @@ export default defineConfig({
       segmentGroup: [{ size: ['*'] }],
       select: [{ size: ['*'], variant: ['*'] }],
       slider: [{ size: ['*'] }],
+      splitter: [{ size: ['*'] }],
       switchRecipe: [{ size: ['*'] }],
       table: [{ size: ['*'], variant: ['*'] }],
       tabs: [{ size: ['*'], variant: ['*'] }],
