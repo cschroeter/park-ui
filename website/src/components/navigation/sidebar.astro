@@ -4,7 +4,11 @@ import { Text } from '~/components/ui/text'
 import { getSitemap } from '~/lib/page-control'
 import { SidebarGroup } from './sidebar-group'
 
-const sitemap = await getSitemap()
+const { slug } = Astro.params
+const cssFramework = slug?.split('/')[0] ?? 'panda'
+
+//@ts-expect-error improve later
+const sitemap = await getSitemap({ cssFramework })
 ---
 
 <Stack gap="8">
@@ -14,7 +18,7 @@ const sitemap = await getSitemap()
         <Text textStyle={{ base: 'md', md: 'sm' }} fontWeight="semibold" textTransform="capitalize">
           {entry.title}
         </Text>
-        <SidebarGroup items={entry.items} client:load transition:persist />
+        <SidebarGroup items={entry.items} client:load />
       </Stack>
     ))
   }
