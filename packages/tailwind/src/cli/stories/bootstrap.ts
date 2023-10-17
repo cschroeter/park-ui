@@ -18,6 +18,7 @@ function getDemoFilePaths() {
   const ignoredComponents = [
     'hover-card',
     'dialog', // uses style props on button and Trigger
+    'toggle-group', // uses style props on Stack
   ]
 
   const demoFiles = readdirSync(demoDir)
