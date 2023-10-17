@@ -23,6 +23,7 @@ export default defineConfig({
       badge: [{ variant: ['*'], size: ['*'] }],
       button: [{ variant: ['*'], size: ['*'] }],
       card: [{}],
+      carousel: [{ size: ['*'] }],
       checkbox: [{ size: ['*'] }],
       code: [{ variant: ['*'], size: ['*'] }],
       drawer: [{ placement: ['*'] }],

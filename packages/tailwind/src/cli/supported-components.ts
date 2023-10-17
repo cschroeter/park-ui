@@ -6,7 +6,7 @@ export const supportedMultiPartComponents = [
   'alert',
   'avatar',
   'card',
-  // 'carousel',
+  'carousel',
   'checkbox',
   // 'color-picker',
   // 'combobox',

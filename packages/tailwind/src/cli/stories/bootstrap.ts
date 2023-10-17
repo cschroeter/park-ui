@@ -47,6 +47,10 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
 
   const storyWithReplacements = componentFileContent
     .replaceAll("import { Icon } from '~/components/ui'", "import { Icon } from '../icon/snippet'")
+    .replaceAll(
+      "import { IconButton } from '~/components/ui/icon-button'",
+      "import { IconButton } from '../icon-button/snippet'",
+    )
     .replace(`~/components/ui/${componentName}`, './snippet')
     .replaceAll(/~\/components\/ui\/(\w+)/g, '../$1/snippet')
     .replaceAll('<Stack gap="1.5" width="2xs">', '<div className="flex flex-col gap-1.5 w-8/12">')
