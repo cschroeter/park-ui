@@ -78,7 +78,7 @@ export default defineConfig({
         '--colors-prose-heading': 'colors.fg.default',
         '--colors-prose-bold': 'colors.fg.default',
         '--colors-prose-link': 'colors.fg.default',
-        '--colors-prose-code': 'colors.fg.muted',
+        '--colors-prose-code': 'colors.fg.default',
       },
       'pre, code': {
         fontFamily: 'robotoMono',
@@ -124,6 +124,8 @@ export default defineConfig({
       tokens: {
         fonts: {
           body: { value: 'var(--font-jakarta), sans-serif' },
+          code: { value: 'var(--font-roboto-mono), monospace' },
+
           inter: { value: 'var(--font-inter), sans-serif' },
           jakarta: { value: 'var(--font-jakarta), sans-serif' },
           outfit: { value: 'var(--font-outfit), sans-serif' },

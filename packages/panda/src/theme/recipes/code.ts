@@ -8,7 +8,7 @@ export const code = defineRecipe({
     borderRadius: 'l2',
     color: 'fg.muted',
     display: 'inline-flex',
-    fontFamily: 'var(--font-code)',
+    fontFamily: 'var(--fonts-code)',
     fontWeight: 'medium',
   },
   defaultVariants: {
