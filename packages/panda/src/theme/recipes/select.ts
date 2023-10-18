@@ -47,9 +47,14 @@ export const select = defineSlotRecipe({
       transitionTimingFunction: 'default',
       _hover: {
         background: 'gray.a3',
+        color: 'fg.default',
       },
       _highlighted: {
         background: 'gray.a3',
+        color: 'fg.default',
+      },
+      _selected: {
+        color: 'fg.default',
       },
       _disabled: {
         color: 'fg.disabled',
@@ -100,7 +105,6 @@ export const select = defineSlotRecipe({
     variant: {
       outline: {
         trigger: {
-          backgroundColor: 'bg.default',
           borderWidth: '1px',
           _focus: {
             borderColor: 'border.accent',

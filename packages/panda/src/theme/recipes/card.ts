@@ -34,6 +34,7 @@ export const card = defineSlotRecipe({
       px: '6',
     },
     title: {
+      color: 'fg.default',
       textStyle: 'lg',
       fontWeight: 'semibold',
     },

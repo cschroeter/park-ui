@@ -4,9 +4,9 @@ import { FigmaIcon, FileTextIcon, PenLineIcon } from 'lucide-react'
 import { Box, Container, HStack } from 'styled-system/jsx'
 import { prose } from 'styled-system/recipes'
 import { Heading, Text } from '~/components/ui'
+import { hasVariants } from '~/lib/page-control'
 import { Badge } from '../ui/badge'
 import { DocsHeroTabs } from './docs-hero-tabs'
-import { hasVariants } from '~/lib/page-control'
 
 interface Props {
   entry: CollectionEntry<'components' | 'overview'>
@@ -21,7 +21,7 @@ const isComponent = entry.collection === 'components'
 const showHeroTabs = await hasVariants(Astro.params.slug)
 ---
 
-<Box bg="gray.2" borderBottomWidth="1px">
+<Box borderBottomWidth="1px" bg={{ base: 'gray.2', _dark: 'black.a2' }}>
   <Container maxW="66rem" py={{ base: '16', md: '24' }}>
     <article class={prose({ size: 'base' })}>
       <Heading as="h1" fontWeight="bold">{entry.data.title}</Heading>

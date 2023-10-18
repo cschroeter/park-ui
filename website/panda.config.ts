@@ -87,7 +87,7 @@ export default defineConfig({
         overflowX: 'auto',
         fontSize: '14px !important',
         '--astro-code-color-text': 'colors.gray.dark.12',
-        '--astro-code-color-background': 'colors.gray.dark.1',
+        '--astro-code-color-background': 'colors.gray.dark.2',
         '--astro-code-token-constant': 'colors.gray.dark.12',
         '--astro-code-token-string': 'colors.gray.dark.11',
         '--astro-code-token-comment': 'colors.gray.dark.11',
@@ -134,6 +134,11 @@ export default defineConfig({
       semanticTokens: {
         fonts: {
           body: { value: { base: '{fonts.jakarta}' } },
+        },
+        colors: {
+          bg: {
+            surface: { value: { base: '{colors.white}', _dark: '{colors.gray.1}' } },
+          },
         },
       },
     },

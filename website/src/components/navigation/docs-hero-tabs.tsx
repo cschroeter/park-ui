@@ -13,10 +13,10 @@ export const DocsHeroTabs = (props: Props) => {
     <Container maxW="66rem">
       <Tabs value={value} size="lg" variant="outline">
         <TabList>
-          <TabTrigger value="panda">
+          <TabTrigger value="panda" _selected={{ bg: 'bg.surface' }}>
             <a href={pathname.replace('tailwind', 'panda')}>Panda</a>
           </TabTrigger>
-          <TabTrigger value="tailwind">
+          <TabTrigger value="tailwind" _selected={{ bg: 'bg.surface' }}>
             <a href={pathname.replace('panda', 'tailwind')}>
               <HStack gap="2">
                 Tailwind

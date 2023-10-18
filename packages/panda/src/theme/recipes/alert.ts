@@ -30,6 +30,7 @@ export const alert = defineSlotRecipe({
       height: '5',
     },
     title: {
+      color: 'fg.default',
       fontWeight: 'semibold',
       textStyle: 'sm',
     },

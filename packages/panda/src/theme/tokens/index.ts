@@ -4,6 +4,7 @@ import { animations } from './animations'
 import { blurs } from './blurs'
 import { borders } from './borders'
 import { defineColorTokens } from './colors'
+import { durations } from './durations'
 import { easings } from './easings'
 import { radii } from './radii'
 import { sizes } from './sizes'
@@ -17,6 +18,7 @@ export const createTokens = (options: PresetOptions) => {
     blurs,
     borders,
     colors: defineColorTokens(options),
+    durations,
     easings,
     fonts,
     fontSizes,
