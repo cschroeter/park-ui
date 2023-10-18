@@ -10,7 +10,4 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
   },
-  redirects: {
-    '/docs/[...slug]': '/docs/panda/[...slug]',
-  },
 })
