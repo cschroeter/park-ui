@@ -1,10 +1,7 @@
 {
   "name": "root",
+  "type": "module",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "website"
-  ],
   "scripts": {
     "prepare": "husky install"
   },
