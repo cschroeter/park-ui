@@ -22,7 +22,7 @@ export const createSemanticTokens = (options: PresetOptions) => {
         disabled: { value: '{colors.gray.3}' },
       },
       fg: {
-        default: { value: 'red', _dark: 'blue' },
+        default: { value: '{colors.gray.12}' },
         emphasized: { value: '{colors.gray.12}' },
         muted: { value: '{colors.gray.11}' },
         subtle: { value: '{colors.gray.10}' },
