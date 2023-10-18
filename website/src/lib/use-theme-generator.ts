@@ -7,6 +7,8 @@ import {
   type GrayColor,
 } from '@park-ui/presets'
 import { useEffect } from 'react'
+import { token } from 'styled-system/tokens'
+import { match } from 'ts-pattern'
 import { useThemeStore } from './use-theme-store'
 
 export const useThemeGenerator = () => {
@@ -62,24 +64,94 @@ export type ThemeConfig = {
 }
 
 export const syncGrayColor = (color: GrayColor) => {
-  const root = document.querySelector<HTMLHtmlElement>(':root')
-  if (root) {
-    root.setAttribute('data-gray-color', color)
-  }
+  syncColorPalette(color, 'gray')
 }
 
 const syncAccentColor = (color: AccentColor) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
-  if (root) {
-    root.setAttribute('data-accent-color', color)
-  }
+  if (!root) return
+
+  syncColorPalette(color, 'accent')
+
+  match(color)
+    .with('neutral', () => {
+      root.style.removeProperty('--colors-accent-fg')
+      root.style.removeProperty('--colors-accent-default')
+      root.style.removeProperty('--colors-accent-emphasized')
+    })
+    .with('amber', 'lime', 'mint', 'sky', 'yellow', () => {
+      root.style.setProperty('--colors-accent-fg', token.var(`colors.gray.light.12`))
+      root.style.setProperty('--colors-accent-default', token.var(`colors.accent.9`))
+      root.style.setProperty('--colors-accent-emphasized', token.var(`colors.accent.10`))
+    })
+    .otherwise(() => {
+      root.style.setProperty('--colors-accent-fg', token.var(`colors.white`))
+      root.style.setProperty('--colors-accent-default', token.var(`colors.accent.9`))
+      root.style.setProperty('--colors-accent-emphasized', token.var(`colors.accent.10`))
+    })
+}
+
+const syncColorPalette = (color: GrayColor | AccentColor, name: 'accent' | 'gray') => {
+  const root = document.querySelector<HTMLHtmlElement>(':root')
+  if (!root) return
+
+  const hues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const
+  const isDefaultColor = color === 'neutral'
+
+  isDefaultColor
+    ? hues.map((hue) => {
+        root.style.removeProperty(`--colors-${name}-${hue}`)
+      })
+    : hues.map((hue) => {
+        root.style.setProperty(`--colors-${name}-${hue}`, token.var(`colors.${color}.${hue}`))
+      })
 }
 
 const syncBorderRaius = (borderRadius: BorderRadius) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
-  if (root) {
-    root.setAttribute('data-radius', borderRadius)
-  }
+  if (!root) return
+
+  const borderRadii = match(borderRadius)
+    .with('none', () => ({
+      l1: token.var('radii.none'),
+      l2: token.var('radii.none'),
+      l3: token.var('radii.none'),
+    }))
+    .with('xs', () => ({
+      l1: token.var('radii.2xs'),
+      l2: token.var('radii.xs'),
+      l3: token.var('radii.sm'),
+    }))
+    .with('sm', () => ({
+      l1: token.var('radii.xs'),
+      l2: token.var('radii.sm'),
+      l3: token.var('radii.md'),
+    }))
+    .with('md', () => ({
+      l1: token.var('radii.sm'),
+      l2: token.var('radii.md'),
+      l3: token.var('radii.lg'),
+    }))
+    .with('lg', () => ({
+      l1: token.var('radii.md'),
+      l2: token.var('radii.lg'),
+      l3: token.var('radii.xl'),
+    }))
+    .with('xl', () => ({
+      l1: token.var('radii.lg'),
+      l2: token.var('radii.xl'),
+      l3: token.var('radii.2xl'),
+    }))
+    .with('2xl', () => ({
+      l1: token.var('radii.xl'),
+      l2: token.var('radii.2xl'),
+      l3: token.var('radii.3xl'),
+    }))
+    .exhaustive()
+
+  root.style.setProperty('--radii-l1', borderRadii.l1)
+  root.style.setProperty('--radii-l2', borderRadii.l2)
+  root.style.setProperty('--radii-l3', borderRadii.l3)
 }
 
 export type FontFamily = (typeof fontFamilies)[number]
