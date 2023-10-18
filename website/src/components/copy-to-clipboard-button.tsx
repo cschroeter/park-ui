@@ -25,6 +25,7 @@ export const CopyToClipboardButton = (props: Props) => {
     <Button
       variant="ghost"
       size="xs"
+      color="gray.dark.11"
       px="0"
       {...props}
       aria-label="Copy code to clipboard"

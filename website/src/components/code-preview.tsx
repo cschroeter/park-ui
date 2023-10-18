@@ -67,7 +67,13 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
     >
       <Flex className={styles.control} display={{ base: 'none', md: 'flex' }}>
         {isCollapsable && (
-          <Button px="0" variant="ghost" size="xs" onClick={() => setCollapsed(!collapsed)}>
+          <Button
+            px="0"
+            variant="ghost"
+            size="xs"
+            onClick={() => setCollapsed(!collapsed)}
+            color="gray.dark.11"
+          >
             {collapsed ? <ArrowDownToLineIcon /> : <ArrowUpToLineIcon />}
           </Button>
         )}
@@ -77,7 +83,7 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
         {props.children}
       </Box>
       <Flex className={styles.footer} data-state={collapsed ? 'collapsed' : 'expanded'}>
-        <Button variant="link" size="sm" onClick={() => setCollapsed(false)}>
+        <Button variant="link" color="gray.dark.11" size="sm" onClick={() => setCollapsed(false)}>
           Expand code
         </Button>
       </Flex>
