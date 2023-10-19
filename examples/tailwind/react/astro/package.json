@@ -50,9 +50,10 @@
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
+    "@ark-ui/react": "0.15.0",
+    "@park-ui/tailwind-plugin": "0.11.1",
     "astro-boilerplate-components": "^1.0.15",
     "date-fns": "^2.28.0",
-    "@park-ui/tailwind-plugin": "0.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
