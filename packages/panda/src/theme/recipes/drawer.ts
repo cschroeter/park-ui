@@ -9,9 +9,8 @@ export const drawer = defineSlotRecipe({
     backdrop: {
       backdropFilter: 'blur(4px)',
       background: {
-        // TODO: replace when supported in Panda: bg.canvas/80
-        base: 'rgba(250, 250, 250, 0.8)',
-        _dark: 'rgba(10, 10, 10, 0.8)',
+        base: 'white.a10',
+        _dark: 'black.a10',
       },
       inset: '0',
       position: 'fixed',
@@ -30,6 +29,7 @@ export const drawer = defineSlotRecipe({
       bottom: 0,
       justifyContent: 'center',
       position: 'fixed',
+      width: { base: 'full', sm: 'sm' },
       zIndex: 'modal',
     },
     content: {
@@ -40,7 +40,7 @@ export const drawer = defineSlotRecipe({
       gridTemplateColumns: '1fr',
       gridTemplateRows: 'auto 1fr auto',
       height: 'full',
-      width: { base: 'full', sm: 'sm' },
+      width: 'full',
       _hidden: {
         display: 'none',
       },

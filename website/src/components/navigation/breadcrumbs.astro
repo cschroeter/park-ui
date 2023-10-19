@@ -6,7 +6,7 @@ import { Text } from '~/components/ui'
 const crumbs = Astro.url.pathname
   .split('/')
   .filter(Boolean)
-  .filter((path) => !['docs', 'react', 'vue', 'solid', 'usage', 'types'].includes(path))
+  .filter((path) => !['docs', 'panda', 'tailwind'].includes(path))
   .map((path) => path.replace(/-/g, ' '))
   .map((item) => item.charAt(0).toUpperCase() + item.substring(1))
 
