@@ -9,18 +9,23 @@ import {
 import { Flex, Grid, Stack } from 'styled-system/jsx'
 import { Text } from './ui/text'
 
-const frameworks = [
-  { name: 'Next.js', icon: SiNextdotjs, slug: 'react/next-js' },
-  { name: 'Astro', icon: SiAstro, slug: 'react/astro' },
-  { name: 'Gatsby', icon: SiGatsby, slug: 'react/gatsby' },
-  { name: 'Solid', icon: SiSolid, slug: 'solid/vite' },
-  { name: 'Nuxt', icon: SiNuxtdotjs, slug: 'vue/nuxt' },
+const { slug } = Astro.params
+const cssFramework = slug?.split('/')[0] ?? 'panda'
+
+const frameworks = [  
+  { name: 'Next.js', icon: SiNextdotjs, slug: 'panda/react/next-js' },
+  { name: 'Astro', icon: SiAstro, slug: 'panda/react/astro' },
+  { name: 'Gatsby', icon: SiGatsby, slug: 'panda/react/gatsby' },
+  { name: 'Solid', icon: SiSolid, slug: 'panda/solid/vite' },
+  { name: 'Nuxt', icon: SiNuxtdotjs, slug: 'panda/vue/nuxt' },
+
+  { name: 'Astro', icon: SiAstro, slug: 'tailwind/react/astro' },
 ]
 ---
 
 <Grid gap={{ base: '4', md: '6' }} minChildWidth="7rem" className="not-prose">
   {
-    frameworks.map(({ name, icon: Icon, slug }) => (
+    frameworks.filter(framework => framework.slug.startsWith(cssFramework)).map(({ name, icon: Icon, slug }) => (
       <a
         href={'https://stackblitz.com/github/cschroeter/park-ui/tree/main/examples/' + slug}
         target="_blank"
@@ -33,6 +38,7 @@ const frameworks = [
           color="fg.default"
           align="center"
           justify="center"
+          maxW="10rem"
         >
           <Stack gap="2.5">
             <Icon size="48" />

@@ -10,7 +10,7 @@
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
   "homepage": "https://park-ui.com",
   "license": "MIT",
-  "repository": "ttps://github.com/cschroeter/park-ui",
+  "repository": "https://github.com/cschroeter/park-ui",
   "bugs": {
     "url": "https://github.com/cschroeter/park-ui/issues"
   },
