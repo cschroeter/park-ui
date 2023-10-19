@@ -25,7 +25,7 @@
     "@icons-pack/react-simple-icons": "9.1.0",
     "@pandacss/astro": "0.16.0",
     "@pandacss/dev": "0.16.0",
-    "@park-ui/presets": "workspace:*",
+    "@park-ui/panda-preset": "workspace:*",
     "@types/react": "18.2.29",
     "@types/react-dom": "18.2.14",
     "@uidotdev/usehooks": "2.4.0",

@@ -34,10 +34,9 @@ package name.
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/presets'
 
 export default defineConfig({
-  presets: ['@pandacss/preset-base', '@park-ui/presets'],
+  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
   theme: {
     extend: {
       tokens: {
@@ -66,7 +65,7 @@ export default defineConfig({
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/presets'
+import { createPreset } from '@park-ui/panda-preset'
 
 export default defineConfig({
   presets: [
@@ -258,7 +257,7 @@ export default defineConfig({
 
 ### Fixed
 
-- Resolved an issue with bundling the `@park-ui/presets` package.
+- Resolved an issue with bundling the `@park-ui/panda-preset` package.
 
 ## [0.3.0] - 2023-08-09
 

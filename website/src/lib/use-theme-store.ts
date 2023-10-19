@@ -1,4 +1,4 @@
-import type { AccentColor, BorderRadius, GrayColor } from '@park-ui/presets'
+import type { AccentColor, BorderRadius, GrayColor } from '@park-ui/panda-preset'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 import type { FontFamily } from './use-theme-generator'
