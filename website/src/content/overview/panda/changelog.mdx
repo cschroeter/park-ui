@@ -6,6 +6,84 @@ description: All notable changes to this project will be documented in this file
 
 ## [Unreleased]
 
+This is one of the biggest releases of Park UI so far. We've introduced a new way to configure presets, which will make
+it easier to customize the theme to your needs. We've also replaced the default colors from `@pandacss/preset-base` with
+[Radix Colors](https://www.radix-ui.com/colors).
+
+The overall look and feel of Park UI has been improved as well. We've revised the `Card` and `Drawer` components and
+tweaked many of the existing components to make them more consistent.
+
+We've also started to work on a Taildwind CSS plugin that will allow you to use Park UI as a plugin in your Tailwind CSS
+project. This is still a work in progress, but we're excited to share it with you soon.
+
+In the light of these changes, we've renamed the `@park-ui/presets` package to `@park-ui/panda-preset`. We will continue
+to support the old package name for the time being, but we recommend that you update your configuration to use the new
+package name.
+
+### Added
+
+- `createPreset` function introduced for more convenient and flexible preset configuration. See the examples below for
+  more details.
+- Replaced default colors from `@pandacss/preset-base` with [Radix Colors](https://www.radix-ui.com/colors). This will
+  allow us to provide more consistent colors when switching between light and dark mode.
+
+### Changed
+
+- Revised `Card` component.
+- Revised `Drawer` component.
+
+### Examples
+
+**Before**: Extending Theme
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
+  theme: {
+    extend: {
+      tokens: {
+        colors: {
+          grayPalette: {
+            25: { value: '#fcfcfc' },
+            // etc ..
+          },
+        },
+      },
+      semanticTokens: {
+        colors: {
+          accent: {
+            default: { value: { base: '{colors.indigo.500}', _dark: '{colors.indigo.200}' } },
+            // etc ..
+          },
+        },
+      },
+    },
+  },
+  // ...
+})
+```
+
+**After**: Using `createPreset`
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
+
+export default defineConfig({
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: 'amber',
+      grayColor: 'sand',
+      borderRadius: 'md',
+    }),
+  ],
+  // ...
+})
+```
+
 ## [0.18.0] - 2023-10-12
 
 ### Added
@@ -183,7 +261,7 @@ description: All notable changes to this project will be documented in this file
 
 ### Fixed
 
-- Resolved an issue with bundling the `@park-ui/presets` package.
+- Resolved an issue with bundling the `@park-ui/panda-preset` package.
 
 ## [0.3.0] - 2023-08-09
 

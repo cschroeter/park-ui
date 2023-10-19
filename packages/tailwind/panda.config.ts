@@ -1,5 +1,5 @@
 import { defineConfig } from '@pandacss/dev'
-import presetPark from '@park-ui/presets'
+import presetPark from '@park-ui/panda-preset'
 import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({

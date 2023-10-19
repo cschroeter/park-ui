@@ -1,12 +1,12 @@
 import { defineConfig } from '@pandacss/dev'
-import presetPark from '@park-ui/presets'
+import { createPreset } from '@park-ui/panda-preset'
 import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
   preflight: true,
   presets: [
     '@pandacss/preset-base',
-    presetPark({ accentColor: 'neutral', grayColor: 'neutral', borderRadius: 'sm' }),
+    createPreset(),
     typographyPreset({
       recipe: {
         sizes: ['base'],

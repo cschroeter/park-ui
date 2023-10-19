@@ -41,7 +41,7 @@
     "@fontsource/plus-jakarta-sans": "5.0.15",
     "@ladle/react": "3.2.2",
     "@release-it/keep-a-changelog": "4.0.0",
-    "@park-ui/presets": "workspace:*",
+    "@park-ui/panda-preset": "workspace:*",
     "pandacss-preset-typography": "0.1.4",
     "@types/node": "20.8.3",
     "@types/react": "18.2.29",

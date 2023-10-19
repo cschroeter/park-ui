@@ -1,9 +1,84 @@
 ## [Unreleased]
 
-## Changed
+## [0.19.0] - 2023-10-19
+
+This is one of the biggest releases of Park UI so far. We've introduced a new way to configure presets, which will make
+it easier to customize the theme to your needs. We've also replaced the default colors from `@pandacss/preset-base` with
+[Radix Colors](https://www.radix-ui.com/colors).
+
+The overall look and feel of Park UI has been improved as well. We've revised the `Card` and `Drawer` components and
+tweaked many of the existing components to make them more consistent.
+
+We've also started to work on a Taildwind CSS plugin that will allow you to use Park UI as a plugin in your Tailwind CSS
+project. This is still a work in progress, but we're excited to share it with you soon.
+
+In the light of these changes, we've renamed the `@park-ui/presets` package to `@park-ui/panda-preset`. We will continue
+to support the old package name for the time being, but we recommend that you update your configuration to use the new
+package name.
+
+### Added
+
+- `createPreset` function introduced for more convenient and flexible preset configuration. See the examples below for
+  more details.
+- Replaced default colors from `@pandacss/preset-base` with [Radix Colors](https://www.radix-ui.com/colors). This will
+  allow us to provide more consistent colors when switching between light and dark mode.
+
+### Changed
 
 - Revised `Card` component.
 - Revised `Drawer` component.
+
+### Examples
+
+**Before**: Extending Theme
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
+  theme: {
+    extend: {
+      tokens: {
+        colors: {
+          grayPalette: {
+            25: { value: '#fcfcfc' },
+            // etc ..
+          },
+        },
+      },
+      semanticTokens: {
+        colors: {
+          accent: {
+            default: { value: { base: '{colors.indigo.500}', _dark: '{colors.indigo.200}' } },
+            // etc ..
+          },
+        },
+      },
+    },
+  },
+  // ...
+})
+```
+
+**After**: Using `createPreset`
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
+
+export default defineConfig({
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: 'amber',
+      grayColor: 'sand',
+      borderRadius: 'md',
+    }),
+  ],
+  // ...
+})
+```
 
 ## [0.18.0] - 2023-10-12
 
@@ -44,7 +119,8 @@
 
 ### Changed
 
-- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and `tertiary` to `ghost`.
+- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and
+  `tertiary` to `ghost`.
 
 ## [0.14.0] - 2023-09-21
 
@@ -107,7 +183,8 @@
 ### Fixed
 
 - Resolved an issue with the `Textarea` recipe where the resize handle would be hidden.
-- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was longer than the specified width.
+- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was
+  longer than the specified width.
 
 ## [0.8.1] - 2023-08-17
 
@@ -124,7 +201,8 @@
 
 ### Changed
 
-- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other icon libraries.
+- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other
+  icon libraries.
 
 ## [0.7.1] - 2023-08-16
 
@@ -155,7 +233,8 @@
 
 ### Removed
 
-- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop. Code snippets have been updated accordingly.
+- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop.
+  Code snippets have been updated accordingly.
 
 ## [0.5.0] - 2023-08-10
 
@@ -171,24 +250,27 @@
 
 ### Changed
 
-- All relevant recipes now use the new [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda CSS to help organize the styles.
+- All relevant recipes now use the new [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda CSS
+  to help organize the styles.
 
 ## 0.3.1 - 2023-08-09
 
 ### Fixed
 
-- Resolved an issue with bundling the `@park-ui/presets` package.
+- Resolved an issue with bundling the `@park-ui/panda-preset` package.
 
 ## [0.3.0] - 2023-08-09
 
 ### Added
 
-- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens. Interative elements like buttons and links will use these colors for their background and foreground colors.
+- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens. Interative elements like
+  buttons and links will use these colors for their background and foreground colors.
 
 ### Changed
 
 - All recipes now use semantic tokens for their colors.
-- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to `neutral.300` in dark mode to improve contrast.
+- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to `neutral.300` in dark mode to
+  improve contrast.
 
 ### Removed
 

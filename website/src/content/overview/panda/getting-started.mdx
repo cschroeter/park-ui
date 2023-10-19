@@ -35,11 +35,11 @@ npm install @ark-ui/react
 </Step>
 <Step number="3" title="Install the Panda Presets">
 
-The next package you will need is `@park-ui/presets`. This package contains all the recipes and tokens explicitly built
+The next package you will need is `@park-ui/panda-preset`. This package contains all the recipes and tokens explicitly built
 for Ark UI's headless components.
 
 ```bash
-npm install @park-ui/presets
+npm install @park-ui/panda-preset
 ```
 
 After you've installed the presets, you'll need to add it to your Panda configuration file along with your preferred
@@ -50,7 +50,7 @@ import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
   preflight: true,
-  presets: ['@pandacss/preset-base', '@park-ui/presets'],
+  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
   exclude: [],
   jsxFramework: 'react',

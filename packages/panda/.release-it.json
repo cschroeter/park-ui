@@ -9,6 +9,10 @@
       "filename": "CHANGELOG.md"
     }
   },
+  "github": {
+    "release": true,
+    "releaseName": "${npm.name}@${version}"
+  },
   "npm": {
     "versionArgs": ["--workspaces-update=false"]
   },

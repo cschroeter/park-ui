@@ -5,7 +5,7 @@ import {
   type AccentColor,
   type BorderRadius,
   type GrayColor,
-} from '@park-ui/presets'
+} from '@park-ui/panda-preset'
 import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
 import { match } from 'ts-pattern'
@@ -188,7 +188,7 @@ const syncFontFamily = (fontFamily: FontFamily) => {
 }
 
 export const baseConfig = `import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/presets'
+import { createPreset } from '@park-ui/panda-preset'
 
 export default defineConfig({
   preflight: true,
