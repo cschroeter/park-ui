@@ -18,8 +18,8 @@ importers:
         specifier: 8.0.3
         version: 8.0.3
       lint-staged:
-        specifier: 15.0.1
-        version: 15.0.1
+        specifier: 15.0.2
+        version: 15.0.2
       prettier:
         specifier: 3.0.3
         version: 3.0.3
@@ -83,7 +83,7 @@ importers:
         version: 0.1.0(@internationalized/date@3.5.0)
       '@pandacss/dev':
         specifier: 0.16.0
-        version: 0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.29)(typescript@5.2.2)
+        version: 0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.30)(typescript@5.2.2)
       ts-pattern:
         specifier: 5.0.5
         version: 5.0.5
@@ -117,8 +117,8 @@ importers:
         specifier: 0.15.0
         version: 0.15.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@fontsource/plus-jakarta-sans':
-        specifier: 5.0.15
-        version: 5.0.15
+        specifier: 5.0.16
+        version: 5.0.16
       '@ladle/react':
         specifier: 3.2.2
         version: 3.2.2(@types/node@20.8.3)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
@@ -132,8 +132,8 @@ importers:
         specifier: 20.8.3
         version: 20.8.3
       '@types/react':
-        specifier: 18.2.29
-        version: 18.2.29
+        specifier: 18.2.30
+        version: 18.2.30
       lucide-react:
         specifier: 0.288.0
         version: 0.288.0(react@18.2.0)
@@ -169,28 +169,28 @@ importers:
         version: 1.1.2(astro@3.3.2)
       '@astrojs/react':
         specifier: 3.0.3
-        version: 3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
+        version: 3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.30)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
       '@astrojs/sitemap':
         specifier: 3.0.2
         version: 3.0.2
       '@fontsource-variable/fira-code':
-        specifier: 5.0.13
-        version: 5.0.13
+        specifier: 5.0.14
+        version: 5.0.14
       '@fontsource-variable/inter':
-        specifier: 5.0.13
-        version: 5.0.13
+        specifier: 5.0.14
+        version: 5.0.14
       '@fontsource-variable/outfit':
         specifier: 5.0.8
         version: 5.0.8
       '@fontsource-variable/plus-jakarta-sans':
-        specifier: 5.0.16
-        version: 5.0.16
+        specifier: 5.0.17
+        version: 5.0.17
       '@fontsource-variable/raleway':
-        specifier: 5.0.14
-        version: 5.0.14
+        specifier: 5.0.15
+        version: 5.0.15
       '@fontsource-variable/roboto-mono':
-        specifier: 5.0.14
-        version: 5.0.14
+        specifier: 5.0.15
+        version: 5.0.15
       '@icons-pack/react-simple-icons':
         specifier: 9.1.0
         version: 9.1.0(react@18.2.0)
@@ -199,13 +199,13 @@ importers:
         version: 0.16.0(astro@3.3.2)(ts-node@10.9.1)(typescript@5.2.2)
       '@pandacss/dev':
         specifier: 0.16.0
-        version: 0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.29)(typescript@5.2.2)
+        version: 0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.30)(typescript@5.2.2)
       '@park-ui/panda-preset':
         specifier: workspace:*
         version: link:../packages/panda
       '@types/react':
-        specifier: 18.2.29
-        version: 18.2.29
+        specifier: 18.2.30
+        version: 18.2.30
       '@types/react-dom':
         specifier: 18.2.14
         version: 18.2.14
@@ -238,7 +238,7 @@ importers:
         version: 5.0.5
       zustand:
         specifier: 4.4.3
-        version: 4.4.3(@types/react@18.2.29)(react@18.2.0)
+        version: 4.4.3(@types/react@18.2.30)(react@18.2.0)
 
 packages:
 
@@ -420,7 +420,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(@types/node@20.5.1)
+      astro: 2.9.6(@types/node@20.8.3)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -499,7 +499,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@2.2.1(@types/react-dom@18.2.14)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0):
+  /@astrojs/react@2.2.1(@types/react-dom@18.2.14)(@types/react@18.2.30)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-nq5Zr8iWdwjSp5fh1NReaCplwsnL4w5PXAY5XWu1jE/frxEfF/ycGHrrhwWW0uJHX9G+kUtmQLR0GBhlR4FmAw==}
     engines: {node: '>=16.12.0'}
     peerDependencies:
@@ -510,14 +510,14 @@ packages:
     dependencies:
       '@babel/core': 7.23.2
       '@babel/plugin-transform-react-jsx': 7.22.15(@babel/core@7.23.2)
-      '@types/react': 18.2.29
+      '@types/react': 18.2.30
       '@types/react-dom': 18.2.14
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/react@3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0):
+  /@astrojs/react@3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.30)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0):
     resolution: {integrity: sha512-foliIy1whJobo+ZpsvOMS4WCiR0z4/2Seyxth5xMlweVVM+gA1Lqk0GdzE6F0ISUW9CuXrCRS7ZyTNW8SM6vog==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -526,7 +526,7 @@ packages:
       react: ^17.0.2 || ^18.0.0
       react-dom: ^17.0.2 || ^18.0.0
     dependencies:
-      '@types/react': 18.2.29
+      '@types/react': 18.2.30
       '@types/react-dom': 18.2.14
       '@vitejs/plugin-react': 4.1.0(vite@4.5.0)
       react: 18.2.0
@@ -1598,32 +1598,32 @@ packages:
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
 
-  /@fontsource-variable/fira-code@5.0.13:
-    resolution: {integrity: sha512-dzmEk2tuvUcz/pcf9vhSir8K8G7fIdmJA7E5t1MTD/2s0vjbBDVCqYr4gC84L8c/XzmwtXg56GhY6rcl91JFRA==}
+  /@fontsource-variable/fira-code@5.0.14:
+    resolution: {integrity: sha512-lB2+f2fQxO3JOptia9GEyyHzkbDpXtBdBDGKVBFmqSG5iI40OuzEd0Qfm/qll5QRNvBCUbVfLjxf0OCfN7/NBQ==}
     dev: false
 
-  /@fontsource-variable/inter@5.0.13:
-    resolution: {integrity: sha512-mb2WyZ2rHeqIG8aqGJIvLBOmo4sg2x7SHlsE6PUhwxbOicVzO59EZwSGtzNO3FmchuDPFVAxzcXYcR5B6jE6Qw==}
+  /@fontsource-variable/inter@5.0.14:
+    resolution: {integrity: sha512-i+aX+g14Qw9aEZ+VoJXNAFOs6TnYqAuWnj0lGDJP/4wbJsvTU+nVYfiqyh4QTLv9KTdwB7K4ZvE8B9A/yYyrrg==}
     dev: false
 
   /@fontsource-variable/outfit@5.0.8:
     resolution: {integrity: sha512-j4JHCbuk2+Nl7PwTVT+RJKTDMDw7TWWt/85CIucD7KvOS7Iv0IiymE5ur21/aFbTwamOHrXX91WrQZHN7QDrmw==}
     dev: false
 
-  /@fontsource-variable/plus-jakarta-sans@5.0.16:
-    resolution: {integrity: sha512-bFVypDdE+IlfdF1+UGVRw/DuKJBeUEOCebiB6J5t/mDJzhtb9uFf2WjX/uw/4ZzwhR/QANnMWSw85SKnSLGYlA==}
+  /@fontsource-variable/plus-jakarta-sans@5.0.17:
+    resolution: {integrity: sha512-Ll/2W8jmAuIg/N9Q/rdtVVs1zv7TPnWaZU9IMrYtqXK9PSON9NKcm0WqKhcdQIVK3kuJQWjQSEufMwhwnkooiQ==}
     dev: false
 
-  /@fontsource-variable/raleway@5.0.14:
-    resolution: {integrity: sha512-eWk/dkEhyazD97xXRLRjCA64FUqQ3q5E1VV79CBgDO8sdRHDA3DMZw0LiUwnfB7jp6e9v0CdF/310lyRAFyiDQ==}
+  /@fontsource-variable/raleway@5.0.15:
+    resolution: {integrity: sha512-9sv/yJ8irSxf935CgOSuOy3nu5HA07/50DdhOOo37xKFsKsMiJiYIE/JGVudD+AQqwk7NUfeC4hS5C1UULQiZg==}
     dev: false
 
-  /@fontsource-variable/roboto-mono@5.0.14:
-    resolution: {integrity: sha512-PegRC4zlmlh6AKOgEGpXR8ZsKVKzgOjBoK9QFkKZaJu6rc74juIspXwceMRlwtgrF02eDKdFEbxqrhyFXjrbdg==}
+  /@fontsource-variable/roboto-mono@5.0.15:
+    resolution: {integrity: sha512-VyZe6dcKoe9ygF6V9ErL8S7vVho0IAyDk4VDoLqNgE12otAg319+znjVDXS29gGFTpufZq95QDtMMZ2iONPFNg==}
     dev: false
 
-  /@fontsource/plus-jakarta-sans@5.0.15:
-    resolution: {integrity: sha512-o37CGvg0TTui9qxhWcSks6PMjLolt85HUUE+qJey+Jze0YhfSUQQe2gkYHHzidLDBrsHhlaxgM+pZej6AD9dog==}
+  /@fontsource/plus-jakarta-sans@5.0.16:
+    resolution: {integrity: sha512-GGB8ThKbh0RJCguvqQWKW0U9IyK9L7Gq5VZtmulOyQkFeABOpa5sjFEKedOAswLDK8T1M189l3j0TbZl9bFTYA==}
     dev: true
 
   /@iarna/toml@2.2.5:
@@ -1783,7 +1783,7 @@ packages:
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.9
-      '@types/react': 18.2.29
+      '@types/react': 18.2.30
       react: 18.2.0
     dev: true
 
@@ -2008,7 +2008,7 @@ packages:
       postcss-selector-parser: 6.0.13
       ts-pattern: 5.0.5
 
-  /@pandacss/dev@0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.29)(typescript@5.2.2):
+  /@pandacss/dev@0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.30)(typescript@5.2.2):
     resolution: {integrity: sha512-LCDLM9zlq61NPAPeD14qk9ri3flUJY8WyihTPyFb93C5tkYTQY+l7xk1NyrtBwEc48/5NDg17wNPeCgv6KvSVQ==}
     hasBin: true
     dependencies:
@@ -2020,7 +2020,7 @@ packages:
       '@pandacss/postcss': 0.16.0(typescript@5.2.2)
       '@pandacss/preset-panda': 0.16.0
       '@pandacss/shared': 0.16.0
-      '@pandacss/studio': 0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.29)(typescript@5.2.2)
+      '@pandacss/studio': 0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.30)(typescript@5.2.2)
       '@pandacss/token-dictionary': 0.16.0
       '@pandacss/types': 0.16.0
       cac: 6.7.14
@@ -2043,7 +2043,7 @@ packages:
       - typescript
     dev: false
 
-  /@pandacss/dev@0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.29)(typescript@5.2.2):
+  /@pandacss/dev@0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.30)(typescript@5.2.2):
     resolution: {integrity: sha512-LCDLM9zlq61NPAPeD14qk9ri3flUJY8WyihTPyFb93C5tkYTQY+l7xk1NyrtBwEc48/5NDg17wNPeCgv6KvSVQ==}
     hasBin: true
     dependencies:
@@ -2055,7 +2055,7 @@ packages:
       '@pandacss/postcss': 0.16.0(typescript@5.2.2)
       '@pandacss/preset-panda': 0.16.0
       '@pandacss/shared': 0.16.0
-      '@pandacss/studio': 0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.29)(typescript@5.2.2)
+      '@pandacss/studio': 0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.30)(typescript@5.2.2)
       '@pandacss/token-dictionary': 0.16.0
       '@pandacss/types': 0.16.0
       cac: 6.7.14
@@ -2194,11 +2194,11 @@ packages:
   /@pandacss/shared@0.16.0:
     resolution: {integrity: sha512-kWqAzEDVIJ2KjizJMLoDQqU21y0pyOVF3zWfxfrzwrG7Y0BzHrm/9Rk0rSoI3+33z0GqFc4/UMbKuFI1qIl4Wg==}
 
-  /@pandacss/studio@0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.29)(typescript@5.2.2):
+  /@pandacss/studio@0.16.0(@internationalized/date@3.5.0)(@types/node@20.5.1)(@types/react-dom@18.2.14)(@types/react@18.2.30)(typescript@5.2.2):
     resolution: {integrity: sha512-XadiHCXDCzkfGvnY64SEgcEBPW9x3FHsyI/0XMFzr0t1vZ4MRszQ6szMb0lb60PzSKuNI0VNlcbHelsHHOwcrw==}
     dependencies:
       '@ark-ui/react': 0.9.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
-      '@astrojs/react': 2.2.1(@types/react-dom@18.2.14)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
+      '@astrojs/react': 2.2.1(@types/react-dom@18.2.14)(@types/react@18.2.30)(react-dom@18.2.0)(react@18.2.0)
       '@pandacss/config': 0.16.0
       '@pandacss/logger': 0.16.0
       '@pandacss/node': 0.16.0(typescript@5.2.2)
@@ -2227,11 +2227,11 @@ packages:
       - typescript
     dev: false
 
-  /@pandacss/studio@0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.29)(typescript@5.2.2):
+  /@pandacss/studio@0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.30)(typescript@5.2.2):
     resolution: {integrity: sha512-XadiHCXDCzkfGvnY64SEgcEBPW9x3FHsyI/0XMFzr0t1vZ4MRszQ6szMb0lb60PzSKuNI0VNlcbHelsHHOwcrw==}
     dependencies:
       '@ark-ui/react': 0.9.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
-      '@astrojs/react': 2.2.1(@types/react-dom@18.2.14)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)
+      '@astrojs/react': 2.2.1(@types/react-dom@18.2.14)(@types/react@18.2.30)(react-dom@18.2.0)(react@18.2.0)
       '@pandacss/config': 0.16.0
       '@pandacss/logger': 0.16.0
       '@pandacss/node': 0.16.0(typescript@5.2.2)
@@ -2632,10 +2632,10 @@ packages:
   /@types/react-dom@18.2.14:
     resolution: {integrity: sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==}
     dependencies:
-      '@types/react': 18.2.29
+      '@types/react': 18.2.30
 
-  /@types/react@18.2.29:
-    resolution: {integrity: sha512-Z+ZrIRocWtdD70j45izShRwDuiB4JZqDegqMFW/I8aG5DxxLKOzVNoq62UIO82v9bdgi+DO1jvsb9sTEZUSm+Q==}
+  /@types/react@18.2.30:
+    resolution: {integrity: sha512-OfqdJnDsSo4UNw0bqAjFCuBpLYQM7wvZidz0hVxHRjrEkzRlvZL1pJVyOSY55HMiKvRNEo9DUBRuEl7FNlJ/Vg==}
     dependencies:
       '@types/prop-types': 15.7.9
       '@types/scheduler': 0.16.5
@@ -4521,6 +4521,7 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: false
 
   /astro@2.9.6(@types/node@20.8.3):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
@@ -7441,8 +7442,8 @@ packages:
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  /lint-staged@15.0.1:
-    resolution: {integrity: sha512-2IU5OWmCaxch0X0+IBF4/v7sutpB+F3qoXbro43pYjQTOo5wumckjxoxn47pQBqqBsCWrD5HnI2uG/zJA7isew==}
+  /lint-staged@15.0.2:
+    resolution: {integrity: sha512-vnEy7pFTHyVuDmCAIFKR5QDO8XLVlPFQQyujQ/STOxe40ICWqJ6knS2wSJ/ffX/Lw0rz83luRDh+ET7toN+rOw==}
     engines: {node: '>=18.12.0'}
     hasBin: true
     dependencies:
@@ -7451,17 +7452,17 @@ packages:
       debug: 4.3.4
       execa: 8.0.1
       lilconfig: 2.1.0
-      listr2: 7.0.1
+      listr2: 7.0.2
       micromatch: 4.0.5
       pidtree: 0.6.0
       string-argv: 0.3.2
-      yaml: 2.3.2
+      yaml: 2.3.3
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /listr2@7.0.1:
-    resolution: {integrity: sha512-nz+7hwgbDp8eWNoDgzdl4hA/xDSLrNRzPu1TLgOYs6l5Y+Ma6zVWWy9Oyt9TQFONwKoSPoka3H50D3vD5EuNwg==}
+  /listr2@7.0.2:
+    resolution: {integrity: sha512-rJysbR9GKIalhTbVL2tYbF2hVyDnrf7pFUZBwjPaMIdadYHmeT+EVi/Bu3qd7ETQPahTotg2WRCatXwRBW554g==}
     engines: {node: '>=16.0.0'}
     dependencies:
       cli-truncate: 3.1.0
@@ -8736,7 +8737,7 @@ packages:
     peerDependencies:
       '@pandacss/dev': '>=0.9.0'
     dependencies:
-      '@pandacss/dev': 0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.29)(typescript@5.2.2)
+      '@pandacss/dev': 0.16.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react@18.2.30)(typescript@5.2.2)
       '@tailwindcss/typography': 0.5.10(tailwindcss@3.3.3)
       tailwindcss: 3.3.3(ts-node@10.9.1)
     transitivePeerDependencies:
@@ -11024,6 +11025,7 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
+    dev: false
 
   /vite@4.5.0(@types/node@20.8.3):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
@@ -11068,7 +11070,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0(@types/node@20.5.1)
+      vite: 4.5.0(@types/node@20.8.3)
 
   /voca@1.4.1:
     resolution: {integrity: sha512-NJC/BzESaHT1p4B5k4JykxedeltmNbau4cummStd4RjFojgq/kLew5TzYge9N2geeWyI2w8T30wUET5v+F7ZHA==}
@@ -11305,6 +11307,11 @@ packages:
     resolution: {integrity: sha512-N/lyzTPaJasoDmfV7YTrYCI0G/3ivm/9wdG0aHuheKowWQwGTsK0Eoiw6utmzAnI6pkJa0DUVygvp3spqqEKXg==}
     engines: {node: '>= 14'}
 
+  /yaml@2.3.3:
+    resolution: {integrity: sha512-zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==}
+    engines: {node: '>= 14'}
+    dev: true
+
   /yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
     engines: {node: '>=10'}
@@ -11351,7 +11358,7 @@ packages:
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
 
-  /zustand@4.4.3(@types/react@18.2.29)(react@18.2.0):
+  /zustand@4.4.3(@types/react@18.2.30)(react@18.2.0):
     resolution: {integrity: sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -11366,7 +11373,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.2.29
+      '@types/react': 18.2.30
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
