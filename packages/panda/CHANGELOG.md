@@ -1,9 +1,69 @@
 ## [Unreleased]
 
-## Changed
+### Added
+
+- `createPreset` function introduced for more convenient and flexible preset configuration. See the examples below for
+  more details.
+- Replaced default colors from `@pandacss/preset-base` with [Radix Colors](https://www.radix-ui.com/colors). This will
+  allow us to provide more consistent colors when switching between light and dark mode.
+
+### Changed
 
 - Revised `Card` component.
 - Revised `Drawer` component.
+
+### Examples
+
+**Before**: Extending Theme
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/presets'
+
+export default defineConfig({
+  presets: ['@pandacss/preset-base', '@park-ui/presets'],
+  theme: {
+    extend: {
+      tokens: {
+        colors: {
+          grayPalette: {
+            25: { value: '#fcfcfc' },
+            // etc ..
+          },
+        },
+      },
+      semanticTokens: {
+        colors: {
+          accent: {
+            default: { value: { base: '{colors..indigo.500}', _dark: '{colors..indigo.500}' } },
+            // etc ..
+          },
+        },
+      },
+    },
+  },
+  // ...
+})
+```
+
+**After**: Using createPreset
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/presets'
+
+export default defineConfig({
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: 'amber',
+      grayColor: 'sand',
+      borderRadius: 'md',
+    }),
+  ],
+  // ...
+})
+```
 
 ## [0.18.0] - 2023-10-12
 
@@ -44,7 +104,8 @@
 
 ### Changed
 
-- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and `tertiary` to `ghost`.
+- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and
+  `tertiary` to `ghost`.
 
 ## [0.14.0] - 2023-09-21
 
@@ -107,7 +168,8 @@
 ### Fixed
 
 - Resolved an issue with the `Textarea` recipe where the resize handle would be hidden.
-- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was longer than the specified width.
+- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was
+  longer than the specified width.
 
 ## [0.8.1] - 2023-08-17
 
@@ -124,7 +186,8 @@
 
 ### Changed
 
-- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other icon libraries.
+- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other
+  icon libraries.
 
 ## [0.7.1] - 2023-08-16
 
@@ -155,7 +218,8 @@
 
 ### Removed
 
-- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop. Code snippets have been updated accordingly.
+- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop.
+  Code snippets have been updated accordingly.
 
 ## [0.5.0] - 2023-08-10
 
@@ -171,7 +235,8 @@
 
 ### Changed
 
-- All relevant recipes now use the new [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda CSS to help organize the styles.
+- All relevant recipes now use the new [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda CSS
+  to help organize the styles.
 
 ## 0.3.1 - 2023-08-09
 
@@ -183,12 +248,14 @@
 
 ### Added
 
-- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens. Interative elements like buttons and links will use these colors for their background and foreground colors.
+- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens. Interative elements like
+  buttons and links will use these colors for their background and foreground colors.
 
 ### Changed
 
 - All recipes now use semantic tokens for their colors.
-- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to `neutral.300` in dark mode to improve contrast.
+- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to `neutral.300` in dark mode to
+  improve contrast.
 
 ### Removed
 

@@ -18,7 +18,13 @@ import {
   type PresetOptions,
 } from './types'
 
-const createPreset = (options: PresetOptions = {}): Preset => {
+const defaultOptions: PresetOptions = {
+  accentColor: 'neutral',
+  borderRadius: 'sm',
+  grayColor: 'neutral',
+}
+
+const createPreset = (options: PresetOptions = defaultOptions): Preset => {
   const semanticTokens = createSemanticTokens(options)
   const tokens = createTokens(options)
 

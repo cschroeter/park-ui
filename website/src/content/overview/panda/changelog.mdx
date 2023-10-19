@@ -6,6 +6,71 @@ description: All notable changes to this project will be documented in this file
 
 ## [Unreleased]
 
+### Added
+
+- `createPreset` function introduced for more convenient and flexible preset configuration. See the examples below for
+  more details.
+- Replaced default colors from `@pandacss/preset-base` with [Radix Colors](https://www.radix-ui.com/colors). This will
+  allow us to provide more consistent colors when switching between light and dark mode.
+
+### Changed
+
+- Revised `Card` component.
+- Revised `Drawer` component.
+
+### Examples
+
+**Before**: Extending Theme
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/presets'
+
+export default defineConfig({
+  presets: ['@pandacss/preset-base', '@park-ui/presets'],
+  theme: {
+    extend: {
+      tokens: {
+        colors: {
+          grayPalette: {
+            25: { value: '#fcfcfc' },
+            // etc ..
+          },
+        },
+      },
+      semanticTokens: {
+        colors: {
+          accent: {
+            default: { value: { base: '{colors.indigo.500}', _dark: '{colors.indigo.200}' } },
+            // etc ..
+          },
+        },
+      },
+    },
+  },
+  // ...
+})
+```
+
+**After**: Using createPreset
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/presets'
+
+export default defineConfig({
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: 'amber',
+      grayColor: 'sand',
+      borderRadius: 'md',
+    }),
+  ],
+  // ...
+})
+```
+
 ## [0.18.0] - 2023-10-12
 
 ### Added
