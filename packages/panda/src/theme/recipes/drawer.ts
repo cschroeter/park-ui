@@ -1,9 +1,11 @@
 import { dialogAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
+const anatomy = dialogAnatomy.extendWith('header', 'body', 'footer')
+
 export const drawer = defineSlotRecipe({
   className: 'drawer',
-  slots: [...dialogAnatomy.keys(), 'header', 'body', 'footer'],
+  slots: [...anatomy.keys()],
   jsx: ['Drawer', /Drawer\.+/],
   base: {
     backdrop: {
@@ -39,6 +41,11 @@ export const drawer = defineSlotRecipe({
       divideY: '1px',
       gridTemplateColumns: '1fr',
       gridTemplateRows: 'auto 1fr auto',
+      gridTemplateAreas: `
+        'header'
+        'body'
+        'footer'
+      `,
       height: 'full',
       width: 'full',
       _hidden: {
@@ -49,6 +56,7 @@ export const drawer = defineSlotRecipe({
       display: 'flex',
       flexDirection: 'column',
       gap: '1',
+      gridArea: 'header',
       pt: { base: '4', md: '6' },
       pb: '4',
       px: { base: '4', md: '6' },
@@ -56,11 +64,13 @@ export const drawer = defineSlotRecipe({
     body: {
       display: 'flex',
       flexDirection: 'column',
+      gridArea: 'body',
       overflow: 'auto',
       p: { base: '4', md: '6' },
     },
     footer: {
       display: 'flex',
+      gridArea: 'footer',
       justifyContent: 'flex-end',
       py: '4',
       px: { base: '4', md: '6' },

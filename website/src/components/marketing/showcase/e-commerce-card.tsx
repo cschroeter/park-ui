@@ -2,7 +2,7 @@ import { HeartIcon, HelpCircleIcon, ShieldIcon, ShoppingBagIcon } from 'lucide-r
 import { Box, Divider, Grid, HStack, Stack } from 'styled-system/jsx'
 import { Badge } from '~/components/ui/badge'
 import { Button } from '~/components/ui/button'
-import { Card, CardContent, CardHeader } from '~/components/ui/card'
+import { Card } from '~/components/ui/card'
 import { Heading } from '~/components/ui/heading'
 import { Icon } from '~/components/ui/icon'
 import { Text } from '~/components/ui/text'
@@ -12,8 +12,8 @@ import { SizePicker } from './size-picker'
 
 export const ECommerceCard = () => {
   return (
-    <Card>
-      <CardHeader>
+    <Card.Root>
+      <Card.Header>
         <Stack gap="4">
           <Stack gap="3" align="start">
             <Badge variant="solid" size="md">
@@ -34,8 +34,8 @@ export const ECommerceCard = () => {
             occasion.
           </Text>
         </Stack>
-      </CardHeader>
-      <CardContent gap="4">
+      </Card.Header>
+      <Card.Body gap="4">
         <Divider />
         <SizePicker />
         <Grid columns={2} gap="4">
@@ -67,7 +67,7 @@ export const ECommerceCard = () => {
             </HStack>
           </Stack>
         </Box>
-      </CardContent>
-    </Card>
+      </Card.Body>
+    </Card.Root>
   )
 }

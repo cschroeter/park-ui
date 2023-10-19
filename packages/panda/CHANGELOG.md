@@ -2,6 +2,7 @@
 
 ## Changed
 
+- Revised `Card` component.
 - Revised `Drawer` component.
 
 ## [0.18.0] - 2023-10-12

@@ -2,14 +2,7 @@ import { CheckCircleIcon } from 'lucide-react'
 import { HStack, styled } from 'styled-system/jsx'
 import { stack } from 'styled-system/patterns'
 import { Button, Icon, Text } from '~/components/ui'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '~/components/ui/card'
+import { Card } from '~/components/ui/card'
 
 export const PricingCard = () => {
   const features = [
@@ -20,12 +13,12 @@ export const PricingCard = () => {
     'Custom Integration',
   ]
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle textStyle="xl">Starter Plan</CardTitle>
-        <CardDescription textStyle="md">Kickstart your digital journey.</CardDescription>
-      </CardHeader>
-      <CardContent gap="8">
+    <Card.Root>
+      <Card.Header>
+        <Card.Title textStyle="xl">Starter Plan</Card.Title>
+        <Card.Description textStyle="md">Kickstart your digital journey.</Card.Description>
+      </Card.Header>
+      <Card.Body gap="8">
         <Text textStyle="5xl" fontWeight="semibold">
           $19
           <Text as="span" textStyle="xl">
@@ -44,10 +37,10 @@ export const PricingCard = () => {
             </styled.li>
           ))}
         </styled.ul>
-      </CardContent>
-      <CardFooter>
+      </Card.Body>
+      <Card.Footer>
         <Button width="full">Buy Now</Button>
-      </CardFooter>
-    </Card>
+      </Card.Footer>
+    </Card.Root>
   )
 }

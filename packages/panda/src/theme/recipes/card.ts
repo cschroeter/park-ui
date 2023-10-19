@@ -2,7 +2,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const card = defineSlotRecipe({
   className: 'card',
-  slots: ['root', 'header', 'content', 'footer', 'title', 'description'],
+  slots: ['root', 'header', 'body', 'footer', 'title', 'description'],
   jsx: ['Card', /Card\.+/],
   base: {
     root: {
@@ -19,7 +19,7 @@ export const card = defineSlotRecipe({
       gap: '1',
       p: '6',
     },
-    content: {
+    body: {
       display: 'flex',
       flex: '1',
       flexDirection: 'column',

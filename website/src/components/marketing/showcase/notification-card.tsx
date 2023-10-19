@@ -1,24 +1,17 @@
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '~/components/ui/card'
+import { Card } from '~/components/ui/card'
 import { Switch, SwitchControl, SwitchThumb } from '~/components/ui/switch'
 import { Text } from '~/components/ui/text'
 
 export const NotificationCard = () => {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Notifications</CardTitle>
-        <CardDescription>Manage when you'll receive notifications.</CardDescription>
-      </CardHeader>
-      <CardContent gap="4">
+    <Card.Root>
+      <Card.Header>
+        <Card.Title>Notifications</Card.Title>
+        <Card.Description>Manage when you'll receive notifications.</Card.Description>
+      </Card.Header>
+      <Card.Body gap="4">
         <Stack direction="row" justify="space-between">
           <Stack gap="0.5">
             <Text textStyle="sm" fontWeight="medium">
@@ -64,12 +57,12 @@ export const NotificationCard = () => {
             </SwitchControl>
           </Switch>
         </Stack>
-      </CardContent>
-      <CardFooter>
+      </Card.Body>
+      <Card.Footer>
         <Button variant="outline" width="full">
           Save Preferences
         </Button>
-      </CardFooter>
-    </Card>
+      </Card.Footer>
+    </Card.Root>
   )
 }

@@ -2,14 +2,7 @@ import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '~/components/ui/card'
+import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 import {
@@ -29,12 +22,12 @@ import { Textarea } from '~/components/ui/textarea'
 export const ReportIssueCard = () => {
   const frameworks = ['React', 'Solid', 'Vue']
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Report an issue</CardTitle>
-        <CardDescription>Found a bug? Let us know so we can fix it.</CardDescription>
-      </CardHeader>
-      <CardContent gap="4">
+    <Card.Root>
+      <Card.Header>
+        <Card.Title>Report an issue</Card.Title>
+        <Card.Description>Found a bug? Let us know so we can fix it.</Card.Description>
+      </Card.Header>
+      <Card.Body gap="4">
         <Stack gap="1.5">
           <Label htmlFor="title">Title</Label>
           <Input id="title" />
@@ -64,11 +57,11 @@ export const ReportIssueCard = () => {
           <Label htmlFor="description">Description</Label>
           <Textarea id="description" placeholder="A brief description of the issue" rows={3} />
         </Stack>
-      </CardContent>
-      <CardFooter gap="3">
+      </Card.Body>
+      <Card.Footer gap="3">
         <Button variant="outline">Cancel</Button>
         <Button>Submit</Button>
-      </CardFooter>
-    </Card>
+      </Card.Footer>
+    </Card.Root>
   )
 }

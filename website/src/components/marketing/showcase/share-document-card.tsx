@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { Avatar } from '~/components/ui/avatar'
 import { Button } from '~/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
+import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import {
   Select,
@@ -38,14 +38,14 @@ const members = [
 
 export const ShareDocumentCard = () => {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Share Document</CardTitle>
-        <CardDescription>
+    <Card.Root>
+      <Card.Header>
+        <Card.Title>Share Document</Card.Title>
+        <Card.Description>
           Share this document with your team members and collaborate in real-time.
-        </CardDescription>
-      </CardHeader>
-      <CardContent gap="4">
+        </Card.Description>
+      </Card.Header>
+      <Card.Body gap="4">
         <Stack gap="3" direction="row">
           <Input
             defaultValue="https://www.buymeacoffee.com/grizzlycodes"
@@ -61,8 +61,8 @@ export const ShareDocumentCard = () => {
         {members.map((member) => (
           <Member key={member.name} {...member} />
         ))}
-      </CardContent>
-    </Card>
+      </Card.Body>
+    </Card.Root>
   )
 }
 

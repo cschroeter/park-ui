@@ -3,14 +3,7 @@ import { SiApple, SiPaypal } from '@icons-pack/react-simple-icons'
 import { CheckIcon, ChevronsUpDownIcon, CreditCardIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '~/components/ui/card'
+import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 import {
@@ -36,14 +29,14 @@ const years = ['2023', '2024', '2025']
 
 export const PaymentCard = () => {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Payment Method</CardTitle>
-        <CardDescription>
+    <Card.Root>
+      <Card.Header>
+        <Card.Title>Payment Method</Card.Title>
+        <Card.Description>
           Add a payment method to your account to start your subscription.
-        </CardDescription>
-      </CardHeader>
-      <CardContent gap="4">
+        </Card.Description>
+      </Card.Header>
+      <Card.Body gap="4">
         <RadioButtonGroup
           defaultValue="card"
           variant="outline"
@@ -121,10 +114,10 @@ export const PaymentCard = () => {
             <Input id="cvc" />
           </Stack>
         </Stack>
-      </CardContent>
-      <CardFooter>
+      </Card.Body>
+      <Card.Footer>
         <Button width="full">Continue</Button>
-      </CardFooter>
-    </Card>
+      </Card.Footer>
+    </Card.Root>
   )
 }
