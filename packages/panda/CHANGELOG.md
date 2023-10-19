@@ -1,5 +1,19 @@
 ## [Unreleased]
 
+This is one of the biggest releases of Park UI so far. We've introduced a new way to configure presets, which will make
+it easier to customize the theme to your needs. We've also replaced the default colors from `@pandacss/preset-base` with
+[Radix Colors](https://www.radix-ui.com/colors).
+
+The overall look and feel of Park UI has been improved as well. We've revised the `Card` and `Drawer` components and
+tweaked many of the existing components to make them more consistent.
+
+We've also started to work on a Taildwind CSS plugin that will allow you to use Park UI as a plugin in your Tailwind CSS
+project. This is still a work in progress, but we're excited to share it with you soon.
+
+In the light of these changes, we've renamed the `@park-ui/presets` package to `@park-ui/panda-preset`. We will continue
+to support the old package name for the time being, but we recommend that you update your configuration to use the new
+package name.
+
 ### Added
 
 - `createPreset` function introduced for more convenient and flexible preset configuration. See the examples below for
@@ -35,7 +49,7 @@ export default defineConfig({
       semanticTokens: {
         colors: {
           accent: {
-            default: { value: { base: '{colors..indigo.500}', _dark: '{colors..indigo.500}' } },
+            default: { value: { base: '{colors.indigo.500}', _dark: '{colors.indigo.200}' } },
             // etc ..
           },
         },
@@ -46,7 +60,7 @@ export default defineConfig({
 })
 ```
 
-**After**: Using createPreset
+**After**: Using `createPreset`
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'

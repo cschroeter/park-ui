@@ -1,11 +1,12 @@
 {
   "name": "@park-ui/presets",
   "version": "0.18.0",
-  "description": "Panda CSS presets for Ark UI components",
+  "description": "Panda CSS Preset for Park UI",
   "keywords": [
     "Ark UI",
     "Panda CSS",
-    "Presets"
+    "Preset",
+    "Park UI"
   ],
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
   "homepage": "https://park-ui.com",
