@@ -29,7 +29,7 @@ export const ThemeConfigDialog = (props: PropsWithChildren) => {
       </DialogTrigger>
       <DialogBackdrop />
       <DialogContainer>
-        <DialogContent>
+        <DialogContent bg="bg.surface">
           <Stack gap="8" p="6">
             <Stack gap="1">
               <DialogTitle>Make it yours</DialogTitle>
