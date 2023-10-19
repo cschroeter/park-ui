@@ -16,17 +16,17 @@
   "dependencies": {
     "@ark-ui/react": "0.15.0",
     "@icons-pack/react-simple-icons": "9.1.0",
-    "@pandacss/dev": "0.15.5",
+    "@pandacss/dev": "0.16.0",
     "@park-ui/presets": "workspace:*",
-    "@storybook/addon-essentials": "^7.4.6",
-    "@storybook/react": "7.4.6",
-    "@storybook/react-vite": "7.4.6",
-    "@types/react": "18.2.27",
-    "@types/react-dom": "18.2.12",
-    "lucide-react": "0.284.0",
+    "@storybook/addon-essentials": "7.5.0",
+    "@storybook/react": "7.5.0",
+    "@storybook/react-vite": "7.5.0",
+    "@types/react": "18.2.29",
+    "@types/react-dom": "18.2.14",
+    "lucide-react": "0.288.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.4.6",
+    "storybook": "7.5.0",
     "vite-tsconfig-paths": "4.2.1"
   }
 }

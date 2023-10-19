@@ -44,7 +44,7 @@
     "@park-ui/presets": "workspace:*",
     "pandacss-preset-typography": "0.1.4",
     "@types/node": "20.8.3",
-    "@types/react": "18.2.28",
+    "@types/react": "18.2.29",
     "lucide-react": "0.288.0",
     "postcss": "8.4.31",
     "postcss-js": "4.0.1",
