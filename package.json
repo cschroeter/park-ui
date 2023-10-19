@@ -3,7 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "website": "pnpm --filter=@park-ui/website"
   },
   "devDependencies": {
     "@commitlint/cli": "17.8.0",

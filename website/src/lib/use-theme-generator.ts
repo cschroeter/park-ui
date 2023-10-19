@@ -101,9 +101,11 @@ const syncColorPalette = (color: GrayColor | AccentColor, name: 'accent' | 'gray
   isDefaultColor
     ? hues.map((hue) => {
         root.style.removeProperty(`--colors-${name}-${hue}`)
+        root.style.removeProperty(`--colors-${name}-a${hue}`)
       })
     : hues.map((hue) => {
         root.style.setProperty(`--colors-${name}-${hue}`, token.var(`colors.${color}.${hue}`))
+        root.style.setProperty(`--colors-${name}-a${hue}`, token.var(`colors.${color}.a${hue}`))
       })
 }
 
