@@ -1,3 +1,4 @@
+import { ark } from '@ark-ui/react'
 import * as Ark from '@ark-ui/react/dialog'
 import { styled } from 'styled-system/jsx'
 import { drawer, type DrawerVariantProps } from 'styled-system/recipes'
@@ -16,6 +17,9 @@ export const DrawerContent = withContext(styled(Ark.Dialog.Content), 'content')
 export const DrawerDescription = withContext(styled(Ark.Dialog.Description), 'description')
 export const DrawerTitle = withContext(styled(Ark.Dialog.Title), 'title')
 export const DrawerTrigger = withContext(styled(Ark.Dialog.Trigger), 'trigger')
+export const DrawerHeader = withContext(styled(ark.div), 'header')
+export const DrawerBody = withContext(styled(ark.div), 'body')
+export const DrawerFooter = withContext(styled(ark.div), 'footer')
 
 export const Drawer = Object.assign(DrawerRoot, {
   Root: DrawerRoot,
@@ -26,4 +30,7 @@ export const Drawer = Object.assign(DrawerRoot, {
   Description: DrawerDescription,
   Title: DrawerTitle,
   Trigger: DrawerTrigger,
+  Header: DrawerHeader,
+  Body: DrawerBody,
+  Footer: DrawerFooter,
 })

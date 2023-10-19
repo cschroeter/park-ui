@@ -1,63 +1,29 @@
 import { Portal } from '@ark-ui/react'
-import { ArrowRightIcon, XIcon } from 'lucide-react'
-import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import {
-  Drawer,
-  DrawerBackdrop,
-  DrawerCloseTrigger,
-  DrawerContainer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerTitle,
-  DrawerTrigger,
-  type DrawerProps,
-} from '~/components/ui/drawer'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
-import { Label } from '~/components/ui/label'
+import { Drawer, type DrawerProps } from '~/components/ui/drawer'
 
 export const Demo = (props: DrawerProps) => {
   return (
-    <Drawer {...props}>
-      <DrawerTrigger asChild>
+    <Drawer.Root {...props}>
+      <Drawer.Trigger asChild>
         <Button variant="outline">Open Drawer</Button>
-      </DrawerTrigger>
+      </Drawer.Trigger>
       <Portal>
-        <DrawerBackdrop />
-        <DrawerContainer>
-          <DrawerContent>
-            <Stack gap="6">
-              <Stack gap="1">
-                <DrawerTitle mb="1">Drawer Heading</DrawerTitle>
-                <DrawerDescription>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-                </DrawerDescription>
-              </Stack>
-              <Stack gap="4">
-                <Stack gap="1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Your name" />
-                </Stack>
-                <Stack gap="1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Your e-mail" />
-                </Stack>
-              </Stack>
-              <DrawerCloseTrigger asChild>
-                <Button>
-                  Continue <ArrowRightIcon />
-                </Button>
-              </DrawerCloseTrigger>
-            </Stack>
-            <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-              <IconButton aria-label="Close Drawer" variant="ghost">
-                <XIcon />
-              </IconButton>
-            </DrawerCloseTrigger>
-          </DrawerContent>
-        </DrawerContainer>
+        <Drawer.Backdrop />
+        <Drawer.Container>
+          <Drawer.Content>
+            <Drawer.Header>
+              <Drawer.Title>Title</Drawer.Title>
+              <Drawer.Description>Description</Drawer.Description>
+            </Drawer.Header>
+            <Drawer.Body>Content</Drawer.Body>
+            <Drawer.Footer gap="3">
+              <Button variant="outline">Secondary</Button>
+              <Button>Primary</Button>
+            </Drawer.Footer>
+          </Drawer.Content>
+        </Drawer.Container>
       </Portal>
-    </Drawer>
+    </Drawer.Root>
   )
 }

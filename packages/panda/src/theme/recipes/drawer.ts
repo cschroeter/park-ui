@@ -3,7 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const drawer = defineSlotRecipe({
   className: 'drawer',
-  slots: dialogAnatomy.keys(),
+  slots: [...dialogAnatomy.keys(), 'header', 'body', 'footer'],
   jsx: ['Drawer', /Drawer\.+/],
   base: {
     backdrop: {
@@ -35,22 +35,38 @@ export const drawer = defineSlotRecipe({
     content: {
       background: 'bg.default',
       boxShadow: 'xl',
-      display: 'flex',
-      flexDirection: 'column',
+      display: 'grid',
+      divideY: '1px',
+      gridTemplateColumns: '1fr',
+      gridTemplateRows: 'auto 1fr auto',
       height: 'full',
       width: { base: 'full', sm: 'sm' },
-      overflowY: 'auto',
-      position: 'relative',
       _hidden: {
         display: 'none',
       },
-      px: {
-        base: '4',
-        md: '6',
-      },
-      py: '6',
+    },
+    header: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1',
+      pt: { base: '4', md: '6' },
+      pb: '4',
+      px: { base: '4', md: '6' },
+    },
+    body: {
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'auto',
+      p: { base: '4', md: '6' },
+    },
+    footer: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      py: '4',
+      px: { base: '4', md: '6' },
     },
     title: {
+      color: 'fg.default',
       fontWeight: 'semibold',
       textStyle: 'xl',
     },

@@ -4,16 +4,7 @@ import type { PropsWithChildren } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { Button } from '../ui/button'
-import {
-  Drawer,
-  DrawerCloseTrigger,
-  DrawerContainer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerTitle,
-  DrawerTrigger,
-} from '../ui/drawer'
-import { IconButton } from '../ui/icon-button'
+import { Drawer } from '../ui/drawer'
 import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
 import { FontFamilySelect } from './font-family-select'
@@ -29,43 +20,54 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const { placement = 'left', isHero } = props
   const { reset } = useThemeGenerator()
   return (
-    <Drawer placement={placement}>
-      <DrawerTrigger asChild>
+    <Drawer.Root placement={placement}>
+      <Drawer.Trigger asChild>
         <Button variant="outline" size={isHero ? { base: 'xl', md: '2xl' } : 'md'}>
           <Settings2Icon />
           Make it yours
         </Button>
-      </DrawerTrigger>
+      </Drawer.Trigger>
       <Portal>
-        <DrawerContainer>
-          <DrawerContent gap="6">
-            <Stack gap="1">
-              <DrawerTitle>Make it yours</DrawerTitle>
-              <DrawerDescription>
+        <Drawer.Container>
+          <Drawer.Content>
+            <Drawer.Header>
+              <Drawer.Title>Make it yours</Drawer.Title>
+              <Drawer.Description>
                 Customize your theme and copy the config to use in your project.
-              </DrawerDescription>
-              <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-                <IconButton aria-label="Close Sidebar" variant="ghost">
+              </Drawer.Description>
+              <Drawer.CloseTrigger asChild>
+                <Button
+                  aria-label="Close Sidebar"
+                  variant="ghost"
+                  position="absolute"
+                  top="3"
+                  right="4"
+                  px="0"
+                >
                   <XIcon />
-                </IconButton>
-              </DrawerCloseTrigger>
-            </Stack>
-            <Stack flex="1" gap="5">
-              <FontFamilySelect />
-              <GrayColorPicker />
-              <AccentColorPicker />
-              <BorderRadiusSlider />
-            </Stack>
-            <HStack gap="3" justifyContent="end">
-              <Button variant="outline" onClick={reset}>
-                <Undo2Icon />
-                Reset
-              </Button>
-              <ThemeConfigDialog>{props.children}</ThemeConfigDialog>
-            </HStack>
-          </DrawerContent>
-        </DrawerContainer>
+                </Button>
+              </Drawer.CloseTrigger>
+            </Drawer.Header>
+            <Drawer.Body>
+              <Stack flex="1" gap="5">
+                <FontFamilySelect />
+                <GrayColorPicker />
+                <AccentColorPicker />
+                <BorderRadiusSlider />
+              </Stack>
+            </Drawer.Body>
+            <Drawer.Footer>
+              <HStack gap="3">
+                <Button variant="outline" onClick={reset}>
+                  <Undo2Icon />
+                  Reset
+                </Button>
+                <ThemeConfigDialog>{props.children}</ThemeConfigDialog>
+              </HStack>
+            </Drawer.Footer>
+          </Drawer.Content>
+        </Drawer.Container>
       </Portal>
-    </Drawer>
+    </Drawer.Root>
   )
 }
