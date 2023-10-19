@@ -31,7 +31,7 @@ export const createSemanticTokens = (options: PresetOptions) => {
       border: {
         default: { value: '{colors.gray.a4}' },
         emphasized: { value: '{colors.gray.a7}' },
-        outline: { value: '{colors.gray.12}' },
+        outline: { value: '{colors.gray.a9}' },
         accent: { value: '{colors.accent.default}' },
         disabled: { value: '{colors.gray.a6}' },
       },
