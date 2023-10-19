@@ -7,44 +7,42 @@ import {
   RadioLabel,
 } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
-import { useColorMode } from '~/lib/use-color-mode'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
-export const ColorPalettePicker = () => {
-  const { colorMode } = useColorMode()
-  const { currentColorPalette, colorPalettes, updateColorPalette } = useThemeGenerator()
+export const GrayColorPicker = () => {
+  const { currentGrayColor, grayColors, updateGrayColor } = useThemeGenerator()
 
   return (
     <Stack gap="1.5">
       <Text textStyle="sm" fontWeight="semibold">
-        Color
+        Gray Palette
       </Text>
       <RadioButtonGroup
-        value={currentColorPalette.value}
+        value={currentGrayColor}
         size="sm"
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
         onChange={(e) => {
-          updateColorPalette(
-            colorPalettes.find((colorPalette) => colorPalette.value === e.value) ??
-              currentColorPalette,
-          )
+          updateGrayColor(grayColors.find((gray) => gray === e.value) ?? currentGrayColor)
         }}
       >
-        {colorPalettes.map((colorPalette, id) => (
-          <Radio key={id} value={colorPalette.value} justifyContent="flex-start">
+        {grayColors.map((gray, id) => (
+          <Radio
+            key={id}
+            value={gray}
+            _checked={{ borderColor: 'border.outline', boxShadow: 'outline' }}
+            justifyContent="flex-start"
+          >
             <RadioControl />
-            <RadioLabel>
+            <RadioLabel textTransform="capitalize">
               <Circle
                 size="3.5"
                 style={{
-                  background: token.var(
-                    `colors.${colorPalette.value}.${colorMode === 'light' ? '600' : '300'}`,
-                  ),
+                  background: token.var(`colors.${gray}.9`),
                 }}
               />
-              {colorPalette.label}
+              {gray}
             </RadioLabel>
           </Radio>
         ))}

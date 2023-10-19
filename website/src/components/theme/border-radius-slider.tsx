@@ -9,15 +9,14 @@ import {
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const BorderRadiusSlider = () => {
-  const { currentBorderRadii, updateBorderRadii } = useThemeGenerator()
+  const { currentBorderRadius, borderRadii, updateBorderRadius } = useThemeGenerator()
 
   return (
     <Slider
       min={0}
-      max={6}
-      value={currentBorderRadii}
-      // @ts-expect-error
-      onChange={(e) => updateBorderRadii(Number(e.value))}
+      max={borderRadii.length - 1}
+      value={borderRadii.indexOf(currentBorderRadius)}
+      onChange={(e) => updateBorderRadius(borderRadii[e.value])}
     >
       <SliderLabel>Radius</SliderLabel>
       <SliderControl>

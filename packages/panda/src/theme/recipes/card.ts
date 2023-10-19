@@ -8,8 +8,7 @@ export const card = defineSlotRecipe({
     root: {
       bg: 'bg.default',
       borderRadius: 'l3',
-      borderWidth: '1px',
-      boxShadow: 'xs',
+      boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
@@ -35,6 +34,7 @@ export const card = defineSlotRecipe({
       px: '6',
     },
     title: {
+      color: 'fg.default',
       textStyle: 'lg',
       fontWeight: 'semibold',
     },

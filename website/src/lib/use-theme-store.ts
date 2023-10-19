@@ -1,36 +1,28 @@
+import type { AccentColor, BorderRadius, GrayColor } from '@park-ui/presets'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import type {
-  BorderRadii,
-  ColorPalette,
-  FontFamily,
-  GrayPalette,
-  ThemeConfig,
-} from './use-theme-generator'
+import type { FontFamily } from './use-theme-generator'
 
 type State = {
-  borderRadii: BorderRadii
-  colorPalette: ColorPalette
+  accentColor: AccentColor
+  borderRadius: BorderRadius
   fontFamily: FontFamily
-  grayPalette: GrayPalette
-  themeConfig: ThemeConfig
+  grayColor: GrayColor
 }
 
 type Actions = {
-  setColorPalette: (palette: ColorPalette) => void
-  setGrayPalette: (palette: GrayPalette) => void
+  setAccentColor: (color: AccentColor) => void
+  setGrayColor: (color: GrayColor) => void
   setFontFamily: (font: FontFamily) => void
-  setBorderRadii: (borderRadii: BorderRadii) => void
-  setThemeConfig: (themeConfig: ThemeConfig) => void
+  setBorderRadius: (radius: BorderRadius) => void
   reset: () => void
 }
 
 const initialState: State = {
-  colorPalette: { label: 'Neutral', value: 'neutral' },
-  grayPalette: { label: 'Neutral', value: 'neutral' },
-  fontFamily: { label: 'Jakarta', value: 'var(--font-body)' },
-  themeConfig: { code: '', config: '' },
-  borderRadii: 2,
+  accentColor: 'neutral',
+  borderRadius: 'sm',
+  fontFamily: { label: 'Jakarta', value: 'var(--font-jakarta)' },
+  grayColor: 'neutral',
 }
 
 export const useThemeStore = create<State & Actions>()(
@@ -38,17 +30,17 @@ export const useThemeStore = create<State & Actions>()(
     persist(
       (set) => ({
         ...initialState,
-        setColorPalette: (colorPalette) => set(() => ({ colorPalette })),
-        setGrayPalette: (grayPalette) => set(() => ({ grayPalette })),
+        setAccentColor: (accentColor) => set(() => ({ accentColor })),
+        setBorderRadius: (borderRadius) => set(() => ({ borderRadius })),
         setFontFamily: (fontFamily) => set(() => ({ fontFamily })),
-        setBorderRadii: (borderRadii) => set(() => ({ borderRadii })),
-        setThemeConfig: (themeConfig) => set(() => ({ themeConfig })),
+        setGrayColor: (grayColor) => set(() => ({ grayColor })),
         reset: () => {
           set(initialState)
         },
       }),
       {
         name: 'park-ui-theme-store',
+        version: 2,
       },
     ),
   ),

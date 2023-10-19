@@ -11,7 +11,6 @@ export const globalCss = defineGlobalStyles({
   body: {
     background: 'bg.canvas',
     color: 'fg.default',
-    fontFamily: 'var(--font-body), sans-serif',
     _dark: {
       colorScheme: 'dark',
     },

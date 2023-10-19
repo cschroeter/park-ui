@@ -9,7 +9,7 @@ const styles = sva({
   slots: ['root', 'control', 'preview', 'footer'],
   base: {
     root: {
-      bg: 'grayPalette.900',
+      bg: 'gray.dark.2',
       borderRadius: 'l3',
       borderWidth: '1px',
       position: 'relative',
@@ -29,8 +29,7 @@ const styles = sva({
           content: "''",
           inset: '0',
           position: 'absolute',
-          backgroundImage:
-            'linear-gradient(0deg, var(--colors-gray-palette-900) 16%,transparent 100%)',
+          backgroundImage: 'linear-gradient(0deg, var(--colors-gray-dark-2) 16%,transparent 100%)',
           borderRadius: 'l3',
           pointerEvents: 'none',
         },
@@ -68,7 +67,13 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
     >
       <Flex className={styles.control} display={{ base: 'none', md: 'flex' }}>
         {isCollapsable && (
-          <Button px="0" variant="ghost" size="xs" onClick={() => setCollapsed(!collapsed)}>
+          <Button
+            px="0"
+            variant="ghost"
+            size="xs"
+            onClick={() => setCollapsed(!collapsed)}
+            color="gray.dark.11"
+          >
             {collapsed ? <ArrowDownToLineIcon /> : <ArrowUpToLineIcon />}
           </Button>
         )}
@@ -78,7 +83,7 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
         {props.children}
       </Box>
       <Flex className={styles.footer} data-state={collapsed ? 'collapsed' : 'expanded'}>
-        <Button variant="link" size="sm" onClick={() => setCollapsed(false)}>
+        <Button variant="link" color="gray.dark.11" size="sm" onClick={() => setCollapsed(false)}>
           Expand code
         </Button>
       </Flex>

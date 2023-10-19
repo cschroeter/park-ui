@@ -9,9 +9,8 @@ export const dialog = defineSlotRecipe({
     backdrop: {
       backdropFilter: 'blur(4px)',
       background: {
-        // TODO: replace when supported in Panda: bg.canvas/80
-        base: 'rgba(250, 250, 250, 0.8)',
-        _dark: 'rgba(10, 10, 10, 0.8)',
+        base: 'white.a10',
+        _dark: 'black.a10',
       },
       inset: '0',
       position: 'fixed',
@@ -34,7 +33,6 @@ export const dialog = defineSlotRecipe({
     content: {
       background: 'bg.default',
       borderRadius: 'l3',
-      borderWidth: '1px',
       boxShadow: 'lg',
       minW: 'sm',
       position: 'relative',

@@ -1,6 +1,6 @@
 import { defineTokens } from '@pandacss/dev'
 
-export const radii = defineTokens.durations({
+export const durations = defineTokens.durations({
   fastest: { value: '50ms' },
   faster: { value: '100ms' },
   fast: { value: '150ms' },

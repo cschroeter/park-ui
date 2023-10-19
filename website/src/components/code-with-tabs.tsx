@@ -6,6 +6,7 @@ type Props = {
   vue?: JSX.Element
 }
 
+// TODO there is a bug with nested semanatic token forcing dark mode
 export const CodeWithTabs = (props: Props) => {
   return (
     <Tabs
@@ -14,20 +15,23 @@ export const CodeWithTabs = (props: Props) => {
       borderWidth="1px"
       borderRadius="l3"
       overflow="hidden"
-      className="dark"
-      background="grayPalette.900"
+      borderColor="gray.dark.a3"
     >
-      <TabList bg="grayPalette.950" gap="0" pt="1" px="1.5">
-        <TabTrigger value="react" pb="1!">
-          React
-        </TabTrigger>
-        <TabTrigger value="solid" pb="1!">
-          Solid
-        </TabTrigger>
-        <TabTrigger value="vue" pb="1!">
-          Vue
-        </TabTrigger>
-        <TabIndicator />
+      <TabList bg="gray.dark.1" gap="0" pt="2" px="1.5">
+        {['react', 'solid', 'vue'].map((tab) => (
+          <TabTrigger
+            key={tab}
+            value={tab}
+            pb="2!"
+            color="gray.dark.11"
+            _selected={{ color: 'gray.dark.12' }}
+            textTransform="capitalize"
+          >
+            {tab}
+          </TabTrigger>
+        ))}
+
+        <TabIndicator bg="white" />
       </TabList>
       <TabContent value="react" p="0!">
         {props.react}

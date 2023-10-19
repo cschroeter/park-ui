@@ -10,7 +10,6 @@ export const hoverCard = defineSlotRecipe({
       '--hover-card-background': 'colors.bg.default',
       background: 'var(--hover-card-background)',
       borderRadius: 'l3',
-      borderWidth: '1px',
       boxShadow: 'lg',
       maxW: '80',
       p: '4',

@@ -37,7 +37,6 @@ export const menu = defineSlotRecipe({
     content: {
       background: 'bg.default',
       borderRadius: 'l2',
-      borderWidth: '1px',
       boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',

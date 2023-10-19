@@ -6,7 +6,7 @@ export default defineConfig({
   preflight: true,
   presets: [
     '@pandacss/preset-base',
-    presetPark,
+    presetPark({ accentColor: 'neutral', grayColor: 'neutral', borderRadius: 'sm' }),
     typographyPreset({
       recipe: {
         sizes: ['base'],
@@ -59,6 +59,7 @@ export default defineConfig({
         display: 'flex',
         flexDirection: 'column',
         height: 'unset',
+        fontFamily: 'body',
       },
       'body, main': {
         display: 'flex',
@@ -66,8 +67,8 @@ export default defineConfig({
         flexGrow: '1',
       },
       '&:root': {
-        '--font-body': 'Plus Jakarta Sans Variable',
-        '--font-code': 'Roboto Mono Variable',
+        '--font-jakarta': 'Plus Jakarta Sans Variable',
+        '--font-roboto-mono': 'Roboto Mono Variable',
         '--font-inter': 'Inter Variable',
         '--font-outfit': 'Outfit Variable',
         '--font-raleway': 'Raleway Variable',
@@ -75,27 +76,27 @@ export default defineConfig({
       article: {
         '--colors-prose-body': 'colors.fg.muted',
         '--colors-prose-heading': 'colors.fg.default',
-        '--colors-prose-bold': 'colors.fg.emphasized',
-        '--colors-prose-link': 'colors.fg.emphasized',
-        '--colors-prose-code': 'colors.fg.emphasized',
+        '--colors-prose-bold': 'colors.fg.default',
+        '--colors-prose-link': 'colors.fg.default',
+        '--colors-prose-code': 'colors.fg.default',
       },
       'pre, code': {
-        fontFamily: 'var(--font-code)',
+        fontFamily: 'robotoMono',
       },
       pre: {
         overflowX: 'auto',
         fontSize: '14px !important',
-        '--astro-code-color-text': 'colors.grayPalette.200',
-        '--astro-code-color-background': 'colors.grayPalette.900',
-        '--astro-code-token-constant': 'colors.grayPalette.200',
-        '--astro-code-token-string': 'colors.grayPalette.400',
-        '--astro-code-token-comment': 'colors.grayPalette.400',
-        '--astro-code-token-keyword': 'colors.grayPalette.400',
-        '--astro-code-token-parameter': 'colors.grayPalette.400',
-        '--astro-code-token-function': 'white',
-        '--astro-code-token-string-expression': 'colors.grayPalette.400',
-        '--astro-code-token-punctuation': 'colors.grayPalette.400',
-        '--astro-code-token-link': 'colors.grayPalette.400',
+        '--astro-code-color-text': 'colors.gray.dark.12',
+        '--astro-code-color-background': 'colors.gray.dark.2',
+        '--astro-code-token-constant': 'colors.gray.dark.12',
+        '--astro-code-token-string': 'colors.gray.dark.11',
+        '--astro-code-token-comment': 'colors.gray.dark.11',
+        '--astro-code-token-keyword': 'colors.gray.dark.11',
+        '--astro-code-token-parameter': 'colors.gray.dark.11',
+        '--astro-code-token-function': 'colors.white',
+        '--astro-code-token-string-expression': 'colors.gray.dark.11',
+        '--astro-code-token-punctuation': 'colors.gray.dark.11',
+        '--astro-code-token-link': 'colors.gray.dark.11',
         '& code': {
           fontFamily: 'inherit',
         },
@@ -114,6 +115,32 @@ export default defineConfig({
             px: { base: '4', md: '6' },
             ...props,
           }
+        },
+      },
+    },
+  },
+  theme: {
+    extend: {
+      tokens: {
+        fonts: {
+          body: { value: 'var(--font-jakarta), sans-serif' },
+          code: { value: 'var(--font-roboto-mono), monospace' },
+
+          inter: { value: 'var(--font-inter), sans-serif' },
+          jakarta: { value: 'var(--font-jakarta), sans-serif' },
+          outfit: { value: 'var(--font-outfit), sans-serif' },
+          raleway: { value: 'var(--font-raleway), sans-serif' },
+          robotoMono: { value: 'var(--font-roboto-mono), monospace' },
+        },
+      },
+      semanticTokens: {
+        fonts: {
+          body: { value: { base: '{fonts.jakarta}' } },
+        },
+        colors: {
+          bg: {
+            surface: { value: { base: '{colors.white}', _dark: '{colors.gray.1}' } },
+          },
         },
       },
     },

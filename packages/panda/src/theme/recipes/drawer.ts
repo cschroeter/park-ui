@@ -34,7 +34,7 @@ export const drawer = defineSlotRecipe({
     },
     content: {
       background: 'bg.default',
-      boxShadow: 'md',
+      boxShadow: 'xl',
       display: 'flex',
       flexDirection: 'column',
       height: 'full',
@@ -69,7 +69,6 @@ export const drawer = defineSlotRecipe({
           left: 0,
         },
         content: {
-          borderRightWidth: '1px',
           _open: {
             animation: 'drawer-in-left',
           },
@@ -83,7 +82,6 @@ export const drawer = defineSlotRecipe({
           right: 0,
         },
         content: {
-          borderLeftWidth: '1px',
           _open: {
             animation: 'drawer-in-right',
           },

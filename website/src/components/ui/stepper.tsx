@@ -23,10 +23,11 @@ export const Step = (props: PropsWithChildren<StepProps>) => {
       <Stack direction="row" gap="4">
         <Circle
           size="8"
-          bg="bg.subtle"
+          color="fg.default"
+          bg="bg.surface"
           borderWidth="1px"
           zIndex={1}
-          boxShadow="0 0 0 12px var(--colors-bg-canvas)"
+          boxShadow="0 0 0 12px var(--colors-bg-surface)"
           fontWeight="semibold"
         >
           {number}

@@ -4,7 +4,7 @@ export const layout = sva({
   slots: ['header', 'nav', 'main', 'footer'],
   base: {
     header: {
-      background: 'bg.default',
+      background: 'bg.surface',
       display: 'flex',
       flexDirection: 'column',
       left: '0',
@@ -14,7 +14,7 @@ export const layout = sva({
       zIndex: 'sticky',
     },
     nav: {
-      background: 'bg.default',
+      background: 'bg.surface',
       borderEndWidth: '1px',
       bottom: '0',
       display: { base: 'none', md: 'flex' },
@@ -29,11 +29,11 @@ export const layout = sva({
       zIndex: '1',
     },
     main: {
+      background: 'bg.surface',
       display: 'flex',
       flexDirection: 'column',
       pt: { base: '110px', md: '16' },
       ps: { base: '0', md: '64' },
-      bg: 'bg.default',
     },
   },
 })

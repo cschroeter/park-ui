@@ -30,8 +30,7 @@ export const radioButtonGroup = defineSlotRecipe({
       verticalAlign: 'middle',
       whiteSpace: 'nowrap',
       _hover: {
-        color: 'fg.default',
-        background: 'bg.subtle',
+        background: 'gray.a2',
       },
       _checked: {
         cursor: 'default',

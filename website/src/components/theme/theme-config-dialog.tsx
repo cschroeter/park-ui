@@ -1,6 +1,6 @@
-import { XIcon } from 'lucide-react'
-import { Box, Flex, Stack } from 'styled-system/jsx'
-import { CopyToClipboardButton } from '~/components/copy-to-clipboard-button'
+import { CopyIcon, XIcon } from 'lucide-react'
+import { type PropsWithChildren } from 'react'
+import { Stack } from 'styled-system/jsx'
 import {
   Dialog,
   DialogBackdrop,
@@ -9,23 +9,27 @@ import {
   DialogContent,
   DialogDescription,
   DialogTitle,
+  DialogTrigger,
 } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { CodePreview } from '../code-preview'
+import { Button } from '../ui'
 
-type Props = {
-  open: boolean
-  onClose: () => void
-}
-
-export const ThemeConfigDialog = (props: Props) => {
-  const { themeConfig } = useThemeGenerator()
+export const ThemeConfigDialog = (props: PropsWithChildren) => {
+  const { currentAccentColor, currentGrayColor, currentBorderRadius } = useThemeGenerator()
 
   return (
-    <Dialog {...props}>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="solid">
+          <CopyIcon />
+          Copy Config
+        </Button>
+      </DialogTrigger>
       <DialogBackdrop />
       <DialogContainer>
-        <DialogContent>
+        <DialogContent bg="bg.surface">
           <Stack gap="8" p="6">
             <Stack gap="1">
               <DialogTitle>Make it yours</DialogTitle>
@@ -33,24 +37,17 @@ export const ThemeConfigDialog = (props: Props) => {
                 Copy and paste the following code into your Panda config.
               </DialogDescription>
             </Stack>
-            <Box
-              className="dark"
-              position="relative"
-              bg="bg.subtle"
-              borderRadius="l2"
-              borderWidth="1px"
-            >
-              <Box position="absolute" top="2" right="2" zIndex={1}>
-                <CopyToClipboardButton content={themeConfig.config} />
-              </Box>
-              <Flex overflow="auto" p="4" width="lg" maxH="lg" minH="md">
-                <Box
-                  dangerouslySetInnerHTML={{
-                    __html: themeConfig.code,
-                  }}
-                />
-              </Flex>
-            </Box>
+            <CodePreview code="console.log('foo')">
+              <div
+                dangerouslySetInnerHTML={{
+                  // @ts-expect-error TODO fix later
+                  __html: props.children.props.value
+                    .replace('__ACCENT_COLOR__', currentAccentColor)
+                    .replace('__GRAY_COLOR__', currentGrayColor)
+                    .replace('__BORDER_RADIUS__', currentBorderRadius),
+                }}
+              ></div>
+            </CodePreview>
           </Stack>
           <DialogCloseTrigger asChild position="absolute" top="2" right="2">
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">

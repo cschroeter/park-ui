@@ -1,11 +1,11 @@
 import { Portal } from '@ark-ui/react'
 import { Settings2Icon, Undo2Icon, XIcon } from 'lucide-react'
+import type { PropsWithChildren } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { Button } from '../ui/button'
 import {
   Drawer,
-  DrawerBackdrop,
   DrawerCloseTrigger,
   DrawerContainer,
   DrawerContent,
@@ -14,17 +14,18 @@ import {
   DrawerTrigger,
 } from '../ui/drawer'
 import { IconButton } from '../ui/icon-button'
+import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
-import { ColorPalettePicker } from './color-palette-picker'
 import { FontFamilySelect } from './font-family-select'
-import { GrayPalettePicker } from './gray-palette-picker'
+import { GrayColorPicker } from './gray-color-picker'
+import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
   isHero?: boolean
   placement?: 'left' | 'right'
 }
 
-export const ThemeDrawer = (props: Props) => {
+export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const { placement = 'left', isHero } = props
   const { reset } = useThemeGenerator()
   return (
@@ -36,7 +37,6 @@ export const ThemeDrawer = (props: Props) => {
         </Button>
       </DrawerTrigger>
       <Portal>
-        <DrawerBackdrop />
         <DrawerContainer>
           <DrawerContent gap="6">
             <Stack gap="1">
@@ -52,16 +52,16 @@ export const ThemeDrawer = (props: Props) => {
             </Stack>
             <Stack flex="1" gap="5">
               <FontFamilySelect />
-              <GrayPalettePicker />
-              <ColorPalettePicker />
+              <GrayColorPicker />
+              <AccentColorPicker />
               <BorderRadiusSlider />
             </Stack>
-
             <HStack gap="3" justifyContent="end">
               <Button variant="outline" onClick={reset}>
                 <Undo2Icon />
-                Restore Defaults
+                Reset
               </Button>
+              <ThemeConfigDialog>{props.children}</ThemeConfigDialog>
             </HStack>
           </DrawerContent>
         </DrawerContainer>

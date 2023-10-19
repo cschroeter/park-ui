@@ -5,24 +5,39 @@ import { globalCss } from './global-css'
 import { breakpoints } from './theme/breakpoints'
 import { keyframes } from './theme/keyframes'
 import { recipes, slotRecipes } from './theme/recipes'
-import { semanticTokens } from './theme/semantic-tokens'
+import { createSemanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
-import { tokens } from './theme/tokens'
+import { createTokens } from './theme/tokens'
+import {
+  accentColors,
+  borderRadii,
+  grayColors,
+  type AccentColor,
+  type BorderRadius,
+  type GrayColor,
+  type PresetOptions,
+} from './types'
 
-const preset: Preset = definePreset({
-  theme: {
-    extend: {
-      breakpoints,
-      keyframes,
-      recipes,
-      semanticTokens,
-      slotRecipes,
-      textStyles,
-      tokens,
+const createPreset = (options: PresetOptions = {}): Preset => {
+  const semanticTokens = createSemanticTokens(options)
+  const tokens = createTokens(options)
+
+  return definePreset({
+    theme: {
+      extend: {
+        breakpoints,
+        keyframes,
+        recipes,
+        semanticTokens,
+        slotRecipes,
+        textStyles,
+        tokens,
+      },
     },
-  },
-  conditions,
-  globalCss,
-})
+    conditions,
+    globalCss,
+  })
+}
 
-export default preset
+export { accentColors, borderRadii, createPreset, createPreset as default, grayColors }
+export type { AccentColor, BorderRadius, GrayColor, PresetOptions }
