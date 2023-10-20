@@ -9,7 +9,7 @@ export const ratingGroup = defineSlotRecipe({
     control: {
       display: 'flex',
     },
-    rating: {
+    item: {
       cursor: 'pointer',
       transitionDuration: 'normal',
       transitionProperty: 'color, fill',

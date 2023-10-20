@@ -1,16 +1,7 @@
 import { CopyIcon, XIcon } from 'lucide-react'
 import { type PropsWithChildren } from 'react'
 import { Stack } from 'styled-system/jsx'
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContainer,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from '~/components/ui/dialog'
+import { Dialog } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { CodePreview } from '../code-preview'
@@ -20,22 +11,22 @@ export const ThemeConfigDialog = (props: PropsWithChildren) => {
   const { currentAccentColor, currentGrayColor, currentBorderRadius } = useThemeGenerator()
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
         <Button variant="solid">
           <CopyIcon />
           Copy Config
         </Button>
-      </DialogTrigger>
-      <DialogBackdrop />
-      <DialogContainer>
-        <DialogContent bg="bg.surface">
+      </Dialog.Trigger>
+      <Dialog.Backdrop />
+      <Dialog.Positioner>
+        <Dialog.Content bg="bg.surface">
           <Stack gap="8" p="6">
             <Stack gap="1">
-              <DialogTitle>Make it yours</DialogTitle>
-              <DialogDescription>
+              <Dialog.Title>Make it yours</Dialog.Title>
+              <Dialog.Description>
                 Copy and paste the following code into your Panda config.
-              </DialogDescription>
+              </Dialog.Description>
             </Stack>
             <CodePreview code="console.log('foo')">
               <div
@@ -49,13 +40,13 @@ export const ThemeConfigDialog = (props: PropsWithChildren) => {
               ></div>
             </CodePreview>
           </Stack>
-          <DialogCloseTrigger asChild position="absolute" top="2" right="2">
+          <Dialog.CloseTrigger asChild position="absolute" top="2" right="2">
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
               <XIcon />
             </IconButton>
-          </DialogCloseTrigger>
-        </DialogContent>
-      </DialogContainer>
-    </Dialog>
+          </Dialog.CloseTrigger>
+        </Dialog.Content>
+      </Dialog.Positioner>
+    </Dialog.Root>
   )
 }

@@ -14,7 +14,7 @@ export const toggleGroup = defineSlotRecipe({
         flexDirection: 'column',
       },
     },
-    toggle: {
+    item: {
       alignItems: 'center',
       appearance: 'none',
       background: 'bg.default',
@@ -75,7 +75,7 @@ export const toggleGroup = defineSlotRecipe({
             divideY: '1px',
           },
         },
-        toggle: {
+        item: {
           borderColor: 'border.default',
           _focusVisible: {
             color: 'fg.default',
@@ -87,7 +87,7 @@ export const toggleGroup = defineSlotRecipe({
         root: {
           gap: '1',
         },
-        toggle: {
+        item: {
           borderRadius: 'l2',
           _focusVisible: {
             outlineOffset: '2px',
@@ -99,7 +99,7 @@ export const toggleGroup = defineSlotRecipe({
     },
     size: {
       sm: {
-        toggle: {
+        item: {
           h: '9',
           minW: '9',
           textStyle: 'sm',
@@ -111,7 +111,7 @@ export const toggleGroup = defineSlotRecipe({
         },
       },
       md: {
-        toggle: {
+        item: {
           h: '10',
           minW: '10',
           textStyle: 'sm',
@@ -123,7 +123,7 @@ export const toggleGroup = defineSlotRecipe({
         },
       },
       lg: {
-        toggle: {
+        item: {
           h: '11',
           minW: '11',
           textStyle: 'md',

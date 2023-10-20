@@ -28,7 +28,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
         </Button>
       </Drawer.Trigger>
       <Portal>
-        <Drawer.Container>
+        <Drawer.Positioner>
           <Drawer.Content>
             <Drawer.Header>
               <Drawer.Title>Make it yours</Drawer.Title>
@@ -66,7 +66,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
               </HStack>
             </Drawer.Footer>
           </Drawer.Content>
-        </Drawer.Container>
+        </Drawer.Positioner>
       </Portal>
     </Drawer.Root>
   )

@@ -3,45 +3,34 @@ import { XIcon } from 'lucide-react'
 import { Box, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
-import {
-  Popover,
-  PopoverArrow,
-  PopoverArrowTip,
-  PopoverCloseTrigger,
-  PopoverContent,
-  PopoverDescription,
-  PopoverPositioner,
-  PopoverTitle,
-  PopoverTrigger,
-  type PopoverProps,
-} from '~/components/ui/popover'
+import { Popover, type PopoverProps } from '~/components/ui/popover'
 
 export const Demo = (props: PopoverProps) => (
-  <Popover portalled {...props}>
-    <PopoverTrigger asChild>
+  <Popover.Root portalled {...props}>
+    <Popover.Trigger asChild>
       <Button variant="outline">Open Popover</Button>
-    </PopoverTrigger>
+    </Popover.Trigger>
     <Portal>
-      <PopoverPositioner>
-        <PopoverContent>
-          <PopoverArrow>
-            <PopoverArrowTip />
-          </PopoverArrow>
+      <Popover.Positioner>
+        <Popover.Content>
+          <Popover.Arrow>
+            <Popover.ArrowTip />
+          </Popover.Arrow>
           <Stack gap="1">
-            <PopoverTitle>Favorite Framework</PopoverTitle>
-            <PopoverDescription>
+            <Popover.Title>Favorite Framework</Popover.Title>
+            <Popover.Description>
               Tell us what is your favorite framework and why you love to use it.
-            </PopoverDescription>
+            </Popover.Description>
           </Stack>
           <Box position="absolute" top="1" right="1">
-            <PopoverCloseTrigger asChild>
+            <Popover.CloseTrigger asChild>
               <IconButton aria-label="Close Popover" variant="ghost" size="sm">
                 <XIcon />
               </IconButton>
-            </PopoverCloseTrigger>
+            </Popover.CloseTrigger>
           </Box>
-        </PopoverContent>
-      </PopoverPositioner>
+        </Popover.Content>
+      </Popover.Positioner>
     </Portal>
-  </Popover>
+  </Popover.Root>
 )

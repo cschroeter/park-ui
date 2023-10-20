@@ -24,7 +24,7 @@ export const drawer = defineSlotRecipe({
         animation: 'backdrop-out',
       },
     },
-    container: {
+    positioner: {
       alignItems: 'center',
       display: 'flex',
       top: 0,

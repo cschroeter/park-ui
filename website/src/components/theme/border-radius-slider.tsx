@@ -1,30 +1,23 @@
-import {
-  Slider,
-  SliderControl,
-  SliderLabel,
-  SliderRange,
-  SliderThumb,
-  SliderTrack,
-} from '~/components/ui/slider'
+import { Slider } from '~/components/ui/slider'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const BorderRadiusSlider = () => {
   const { currentBorderRadius, borderRadii, updateBorderRadius } = useThemeGenerator()
 
   return (
-    <Slider
+    <Slider.Root
       min={0}
       max={borderRadii.length - 1}
-      value={borderRadii.indexOf(currentBorderRadius)}
-      onChange={(e) => updateBorderRadius(borderRadii[e.value])}
+      value={[borderRadii.indexOf(currentBorderRadius)]}
+      onValueChange={(e) => updateBorderRadius(borderRadii[e.value[0]])}
     >
-      <SliderLabel>Radius</SliderLabel>
-      <SliderControl>
-        <SliderTrack>
-          <SliderRange />
-        </SliderTrack>
-        <SliderThumb />
-      </SliderControl>
-    </Slider>
+      <Slider.Label>Radius</Slider.Label>
+      <Slider.Control>
+        <Slider.Track>
+          <Slider.Range />
+        </Slider.Track>
+        <Slider.Thumb index={0} />
+      </Slider.Control>
+    </Slider.Root>
   )
 }

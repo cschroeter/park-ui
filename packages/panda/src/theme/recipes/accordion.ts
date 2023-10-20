@@ -10,7 +10,7 @@ export const accordion = defineSlotRecipe({
       divideY: '1px',
       width: 'full',
     },
-    trigger: {
+    itemTrigger: {
       alignItems: 'center',
       color: 'fg.default',
       cursor: 'pointer',
@@ -20,7 +20,7 @@ export const accordion = defineSlotRecipe({
       textStyle: 'lg',
       width: 'full',
     },
-    content: {
+    itemContent: {
       color: 'fg.muted',
       display: 'grid',
       gridTemplateRows: '0fr',
@@ -41,10 +41,10 @@ export const accordion = defineSlotRecipe({
   variants: {
     size: {
       md: {
-        trigger: {
+        itemIndicator: {
           py: '4',
         },
-        content: {
+        itemContent: {
           pb: '6',
           pr: '8',
           _closed: {

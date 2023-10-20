@@ -5,18 +5,7 @@ import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from '~/components/ui/select'
-
+import { Select } from '~/components/ui/select'
 import { Textarea } from '~/components/ui/textarea'
 
 export const ReportIssueCard = () => {
@@ -32,27 +21,27 @@ export const ReportIssueCard = () => {
           <Label htmlFor="title">Title</Label>
           <Input id="title" />
         </Stack>
-        <Select items={frameworks} positioning={{ sameWidth: true }} multiple>
-          <SelectLabel>Frameworks</SelectLabel>
-          <SelectTrigger>
-            <SelectValue placeholder="Select a Framework" />
+        <Select.Root items={frameworks} positioning={{ sameWidth: true }} multiple>
+          <Select.Label>Frameworks</Select.Label>
+          <Select.Trigger>
+            <Select.ValueText placeholder="Select a Framework" />
             <ChevronsUpDownIcon />
-          </SelectTrigger>
+          </Select.Trigger>
           <Portal>
-            <SelectPositioner>
-              <SelectContent>
+            <Select.Positioner>
+              <Select.Content>
                 {frameworks.map((framework) => (
-                  <SelectItem key={framework} item={framework}>
-                    <SelectItemText>{framework}</SelectItemText>
-                    <SelectItemIndicator>
+                  <Select.Item key={framework} item={framework}>
+                    <Select.ItemText>{framework}</Select.ItemText>
+                    <Select.ItemIndicator>
                       <CheckIcon />
-                    </SelectItemIndicator>
-                  </SelectItem>
+                    </Select.ItemIndicator>
+                  </Select.Item>
                 ))}
-              </SelectContent>
-            </SelectPositioner>
+              </Select.Content>
+            </Select.Positioner>
           </Portal>
-        </Select>
+        </Select.Root>
         <Stack gap="1.5">
           <Label htmlFor="description">Description</Label>
           <Textarea id="description" placeholder="A brief description of the issue" rows={3} />

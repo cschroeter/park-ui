@@ -6,23 +6,8 @@ import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
-import {
-  Radio,
-  RadioButtonGroup,
-  RadioControl,
-  RadioLabel,
-} from '~/components/ui/radio-button-group'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from '~/components/ui/select'
+import { RadioButtonGroup } from '~/components/ui/radio-button-group'
+import { Select } from '~/components/ui/select'
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const years = ['2023', '2024', '2025']
@@ -37,7 +22,7 @@ export const PaymentCard = () => {
         </Card.Description>
       </Card.Header>
       <Card.Body gap="4">
-        <RadioButtonGroup
+        <RadioButtonGroup.Root
           defaultValue="card"
           variant="outline"
           display="grid"
@@ -48,15 +33,15 @@ export const PaymentCard = () => {
             { value: 'paypal', label: 'Paypal', icon: SiPaypal },
             { value: 'apple', label: 'Apple', icon: SiApple },
           ].map((option, id) => (
-            <Radio key={id} value={option.value} height="unset" py="4">
-              <RadioControl />
-              <RadioLabel flexDirection="column">
+            <RadioButtonGroup.Item key={id} value={option.value} height="unset" py="4">
+              <RadioButtonGroup.ItemControl />
+              <RadioButtonGroup.ItemText flexDirection="column">
                 <option.icon style={{ width: '1.5rem', height: '1.5rem' }} />
                 {option.label}
-              </RadioLabel>
-            </Radio>
+              </RadioButtonGroup.ItemText>
+            </RadioButtonGroup.Item>
           ))}
-        </RadioButtonGroup>
+        </RadioButtonGroup.Root>
         <Stack gap="1.5">
           <Label htmlFor="owner">Owner</Label>
           <Input id="owner" />
@@ -66,47 +51,46 @@ export const PaymentCard = () => {
           <Input id="card" />
         </Stack>
         <Stack direction="row" gap="3">
-          <Select items={months} positioning={{ sameWidth: true }}>
-            <SelectLabel>Month</SelectLabel>
-            <SelectTrigger>
-              <SelectValue placeholder="Month" />
+          <Select.Root items={months} positioning={{ sameWidth: true }}>
+            <Select.Label>Month</Select.Label>
+            <Select.Trigger>
+              <Select.ValueText placeholder="Month" />
               <ChevronsUpDownIcon />
-            </SelectTrigger>
-
+            </Select.Trigger>
             <Portal>
-              <SelectPositioner>
-                <SelectContent>
+              <Select.Positioner>
+                <Select.Content>
                   {months.map((month) => (
-                    <SelectItem key={month} item={month}>
-                      <SelectItemText>{month}</SelectItemText>
-                      <SelectItemIndicator>
+                    <Select.Item key={month} item={month}>
+                      <Select.ItemText>{month}</Select.ItemText>
+                      <Select.ItemIndicator>
                         <CheckIcon />
-                      </SelectItemIndicator>
-                    </SelectItem>
+                      </Select.ItemIndicator>
+                    </Select.Item>
                   ))}
-                </SelectContent>
-              </SelectPositioner>
+                </Select.Content>
+              </Select.Positioner>
             </Portal>
-          </Select>
+          </Select.Root>
           <Select items={years} positioning={{ sameWidth: true }}>
-            <SelectLabel>Year</SelectLabel>
-            <SelectTrigger>
-              <SelectValue placeholder="Year" />
+            <Select.Label>Year</Select.Label>
+            <Select.Trigger>
+              <Select.ValueText placeholder="Year" />
               <ChevronsUpDownIcon />
-            </SelectTrigger>
+            </Select.Trigger>
             <Portal>
-              <SelectPositioner>
-                <SelectContent>
+              <Select.Positioner>
+                <Select.Content>
                   {years.map((year) => (
-                    <SelectItem key={year} item={year}>
-                      <SelectItemText>{year}</SelectItemText>
-                      <SelectItemIndicator>
+                    <Select.Item key={year} item={year}>
+                      <Select.ItemText>{year}</Select.ItemText>
+                      <Select.ItemIndicator>
                         <CheckIcon />
-                      </SelectItemIndicator>
-                    </SelectItem>
+                      </Select.ItemIndicator>
+                    </Select.Item>
                   ))}
-                </SelectContent>
-              </SelectPositioner>
+                </Select.Content>
+              </Select.Positioner>
             </Portal>
           </Select>
           <Stack gap="1.5">

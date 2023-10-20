@@ -12,35 +12,24 @@ import {
 } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import {
-  Menu,
-  MenuContent,
-  MenuItem,
-  MenuItemGroup,
-  MenuItemGroupLabel,
-  MenuPositioner,
-  MenuSeparator,
-  MenuTrigger,
-  MenuTriggerItem,
-  type MenuProps,
-} from '~/components/ui/menu'
+import { Menu, type MenuProps } from '~/components/ui/menu'
 import { Text } from '~/components/ui/text'
 
 export const Demo = (props: MenuProps) => {
   return (
-    <Menu {...props}>
-      <MenuTrigger asChild>
+    <Menu.Root {...props}>
+      <Menu.Trigger asChild>
         <Button variant="outline" size={props.size}>
           Open menu
         </Button>
-      </MenuTrigger>
+      </Menu.Trigger>
       <Portal>
-        <MenuPositioner>
-          <MenuContent>
-            <MenuItemGroup id="group-1">
-              <MenuItemGroupLabel htmlFor="group-1">My Account</MenuItemGroupLabel>
-              <MenuSeparator />
-              <MenuItem id="profile">
+        <Menu.Positioner>
+          <Menu.Content>
+            <Menu.ItemGroup id="group-1">
+              <Menu.ItemGroupLabel htmlFor="group-1">My Account</Menu.ItemGroupLabel>
+              <Menu.Separator />
+              <Menu.Item id="profile">
                 <HStack gap="6" justify="space-between" flex="1">
                   <HStack gap="2">
                     <UserIcon />
@@ -50,13 +39,13 @@ export const Demo = (props: MenuProps) => {
                     ⇧⌘P
                   </Text>
                 </HStack>
-              </MenuItem>
-              <MenuItem id="billing">
+              </Menu.Item>
+              <Menu.Item id="billing">
                 <HStack gap="2">
                   <CreditCardIcon /> Billing
                 </HStack>
-              </MenuItem>
-              <MenuItem id="settings">
+              </Menu.Item>
+              <Menu.Item id="settings">
                 <HStack gap="6" justify="space-between" flex="1">
                   <HStack gap="2">
                     <SettingsIcon /> Settings
@@ -65,50 +54,50 @@ export const Demo = (props: MenuProps) => {
                     ⌘,
                   </Text>
                 </HStack>
-              </MenuItem>
-              <Menu positioning={{ placement: 'right-start', gutter: -2 }} {...props}>
-                <MenuTriggerItem justifyContent="space-between">
+              </Menu.Item>
+              <Menu.Root positioning={{ placement: 'right-start', gutter: -2 }} {...props}>
+                <Menu.TriggerItem justifyContent="space-between">
                   <HStack gap="2">
                     <UserPlusIcon />
                     Inivte member
                   </HStack>
                   <ChevronRightIcon />
-                </MenuTriggerItem>
+                </Menu.TriggerItem>
                 <Portal>
-                  <MenuPositioner>
-                    <MenuContent>
-                      <MenuItem id="email">
+                  <Menu.Positioner>
+                    <Menu.Content>
+                      <Menu.Item id="email">
                         <HStack gap="2">
                           <MailIcon /> Email
                         </HStack>
-                      </MenuItem>
-                      <MenuItem id="message">
+                      </Menu.Item>
+                      <Menu.Item id="message">
                         <HStack gap="2">
                           <MessageSquareIcon /> Message
                         </HStack>
-                      </MenuItem>
-                      <MenuSeparator />
-                      <MenuItem id="other">
+                      </Menu.Item>
+                      <Menu.Separator />
+                      <Menu.Item id="other">
                         <HStack gap="2">
                           <PlusCircleIcon />
                           More Options...
                         </HStack>
-                      </MenuItem>
-                    </MenuContent>
-                  </MenuPositioner>
+                      </Menu.Item>
+                    </Menu.Content>
+                  </Menu.Positioner>
                 </Portal>
-              </Menu>
-              <MenuSeparator />
-              <MenuItem id="logout">
+              </Menu.Root>
+              <Menu.Separator />
+              <Menu.Item id="logout">
                 <HStack gap="2">
                   <LogOutIcon />
                   Logout
                 </HStack>
-              </MenuItem>
-            </MenuItemGroup>
-          </MenuContent>
-        </MenuPositioner>
+              </Menu.Item>
+            </Menu.ItemGroup>
+          </Menu.Content>
+        </Menu.Positioner>
       </Portal>
-    </Menu>
+    </Menu.Root>
   )
 }

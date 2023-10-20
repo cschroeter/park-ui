@@ -3,17 +3,7 @@ import { useState, type PropsWithChildren } from 'react'
 import { cx, sva } from 'styled-system/css'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import * as demos from './demos'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from './ui/select'
+import { Select } from './ui/select'
 
 const styles = sva({
   slots: ['root', 'preview', 'container', 'configurator'],
@@ -87,33 +77,33 @@ export const Playground = (props: PropsWithChildren<Props>) => {
         {hasSettings && (
           <Stack className={styles.configurator}>
             {Object.entries(componentProps || {}).map(([key, { options, defaultValue }]) => (
-              <Select
+              <Select.Root
                 key={key}
                 defaultValue={[defaultValue ?? '']}
                 items={options ?? []}
                 positioning={{ sameWidth: true }}
                 closeOnSelect={false}
                 size="sm"
-                onChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
+                onValueChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
               >
-                <SelectLabel textTransform="capitalize">{key}</SelectLabel>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a Framework" />
+                <Select.Label textTransform="capitalize">{key}</Select.Label>
+                <Select.Trigger>
+                  <Select.ValueText placeholder="Select a Framework" />
                   <ChevronsUpDownIcon />
-                </SelectTrigger>
-                <SelectPositioner>
-                  <SelectContent>
+                </Select.Trigger>
+                <Select.Positioner>
+                  <Select.Content>
                     {(options ?? []).map((option) => (
-                      <SelectItem key={option} item={option}>
-                        <SelectItemText>{option}</SelectItemText>
-                        <SelectItemIndicator>
+                      <Select.Item key={option} item={option}>
+                        <Select.ItemText>{option}</Select.ItemText>
+                        <Select.ItemIndicator>
                           <CheckIcon />
-                        </SelectItemIndicator>
-                      </SelectItem>
+                        </Select.ItemIndicator>
+                      </Select.Item>
                     ))}
-                  </SelectContent>
-                </SelectPositioner>
-              </Select>
+                  </Select.Content>
+                </Select.Positioner>
+              </Select.Root>
             ))}
           </Stack>
         )}

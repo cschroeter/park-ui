@@ -31,7 +31,7 @@ export const tagsInput = defineSlotRecipe({
       outline: 'none',
       background: 'transparent',
     },
-    tag: {
+    item: {
       alignItems: 'center',
       borderColor: 'border.default',
       borderRadius: 'l1',
@@ -48,7 +48,7 @@ export const tagsInput = defineSlotRecipe({
         display: 'none',
       },
     },
-    tagInput: {
+    itemInput: {
       background: 'transparent',
       outline: 'none',
     },

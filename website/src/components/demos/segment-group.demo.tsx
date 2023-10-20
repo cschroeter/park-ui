@@ -1,11 +1,4 @@
-import {
-  Segment,
-  SegmentControl,
-  SegmentGroup,
-  SegmentGroupIndicator,
-  SegmentLabel,
-  type SegmentGroupProps,
-} from '~/components/ui/segment-group'
+import { SegmentGroup, type SegmentGroupProps } from '~/components/ui/segment-group'
 
 export const Demo = (props: SegmentGroupProps) => {
   const options = [
@@ -15,14 +8,14 @@ export const Demo = (props: SegmentGroupProps) => {
     { id: 'settings', label: 'Settings' },
   ]
   return (
-    <SegmentGroup defaultValue="customers" {...props}>
+    <SegmentGroup.Root defaultValue="customers" {...props}>
       {options.map((option) => (
-        <Segment key={option.id} value={option.id} disabled={option.disabled}>
-          <SegmentControl />
-          <SegmentLabel>{option.label}</SegmentLabel>
-        </Segment>
+        <SegmentGroup.Item key={option.id} value={option.id} disabled={option.disabled}>
+          <SegmentGroup.ItemControl />
+          <SegmentGroup.ItemText>{option.label}</SegmentGroup.ItemText>
+        </SegmentGroup.Item>
       ))}
-      <SegmentGroupIndicator />
-    </SegmentGroup>
+      <SegmentGroup.Indicator />
+    </SegmentGroup.Root>
   )
 }

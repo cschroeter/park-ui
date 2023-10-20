@@ -22,7 +22,7 @@ export const dialog = defineSlotRecipe({
         animation: 'backdrop-out',
       },
     },
-    container: {
+    positioner: {
       alignItems: 'center',
       display: 'flex',
       inset: '0',

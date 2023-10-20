@@ -4,7 +4,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const slider = defineSlotRecipe({
   className: 'slider',
   slots: sliderAnatomy.keys(),
-  jsx: ['Slider', /Slider\.+/],
+  jsx: ['RangeSlider', /RangeSlider\.+/],
   base: {
     root: {
       width: 'full',
@@ -15,7 +15,7 @@ export const slider = defineSlotRecipe({
       alignItems: 'center',
     },
     track: {
-      backgroundColor: 'bg.emphasized',
+      backgroundColor: 'bg.muted',
       borderRadius: 'l2',
       flex: '1',
     },

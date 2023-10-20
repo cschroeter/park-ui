@@ -1,34 +1,24 @@
 import { ChevronDownIcon } from 'lucide-react'
 import { Icon } from '~/components/ui'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  type AccordionProps,
-} from '~/components/ui/accordion'
+import { Accordion, type AccordionProps } from '~/components/ui/accordion'
 
 export const Demo = (props: AccordionProps) => {
   const items = ['React', 'Solid', 'Vue']
   return (
     <Accordion defaultValue={['React']} multiple {...props}>
       {items.map((item, id) => (
-        <AccordionItem key={id} value={item}>
-          {({ isOpen }) => (
-            <>
-              <AccordionTrigger>
-                {item}
-                <AccordionIcon isOpen={isOpen} />
-              </AccordionTrigger>
-              <AccordionContent>
-                <div>
-                  Pudding donut gummies chupa chups oat cake marzipan biscuit tart. Dessert macaroon
-                  ice cream bonbon jelly. Jelly topping tiramisu halvah lollipop.
-                </div>
-              </AccordionContent>
-            </>
-          )}
-        </AccordionItem>
+        <Accordion.Item key={id} value={item}>
+          <Accordion.ItemTrigger>
+            {item}
+            <Accordion.ItemIndicator />
+          </Accordion.ItemTrigger>
+          <Accordion.ItemContent>
+            <div>
+              Pudding donut gummies chupa chups oat cake marzipan biscuit tart. Dessert macaroon ice
+              cream bonbon jelly. Jelly topping tiramisu halvah lollipop.
+            </div>
+          </Accordion.ItemContent>
+        </Accordion.Item>
       ))}
     </Accordion>
   )

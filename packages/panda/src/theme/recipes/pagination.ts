@@ -11,11 +11,11 @@ export const pagination = defineSlotRecipe({
       justifyContent: 'space-between',
       gap: '4',
     },
-    list: {
-      display: 'flex',
-      gap: '2',
-    },
-    pageTrigger: {
+    // list: {
+    //   display: 'flex',
+    //   gap: '2',
+    // },
+    item: {
       fontVariantNumeric: 'tabular-nums',
     },
     ellipsis: {

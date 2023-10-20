@@ -37,7 +37,7 @@ export const segmentGroup = defineSlotRecipe({
         _vertical: 'translateX(-1px)',
       },
     },
-    radio: {
+    item: {
       color: 'fg.muted',
       cursor: 'pointer',
       fontWeight: 'medium',
@@ -76,12 +76,12 @@ export const segmentGroup = defineSlotRecipe({
   variants: {
     size: {
       sm: {
-        radio: {
+        item: {
           textStyle: 'sm',
         },
       },
       md: {
-        radio: {
+        item: {
           textStyle: 'md',
         },
       },

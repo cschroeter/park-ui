@@ -7,15 +7,7 @@ import { Avatar } from '~/components/ui/avatar'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemText,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from '~/components/ui/select'
+import { Select } from '~/components/ui/select'
 import { Text } from '~/components/ui/text'
 
 const members = [
@@ -93,28 +85,28 @@ const Member = (props: Props) => {
         </Box>
       </Stack>
       <Box>
-        <Select
+        <Select.Root
           items={['Write', 'Read']}
           defaultValue={['Read']}
           positioning={{ sameWidth: true }}
           size="sm"
         >
-          <SelectTrigger>
-            <SelectValue />
+          <Select.Trigger>
+            <Select.ValueText />
             <ChevronsUpDownIcon />
-          </SelectTrigger>
+          </Select.Trigger>
           <Portal>
-            <SelectPositioner>
-              <SelectContent>
+            <Select.Positioner>
+              <Select.Content>
                 {['Write', 'Read'].map((framework) => (
-                  <SelectItem key={framework} item={framework}>
-                    <SelectItemText>{framework}</SelectItemText>
-                  </SelectItem>
+                  <Select.Item key={framework} item={framework}>
+                    <Select.ItemText>{framework}</Select.ItemText>
+                  </Select.Item>
                 ))}
-              </SelectContent>
-            </SelectPositioner>
+              </Select.Content>
+            </Select.Positioner>
           </Portal>
-        </Select>
+        </Select.Root>
       </Box>
     </Stack>
   )

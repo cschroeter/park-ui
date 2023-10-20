@@ -10,7 +10,7 @@ export const Demo = (props: DrawerProps) => {
       </Drawer.Trigger>
       <Portal>
         <Drawer.Backdrop />
-        <Drawer.Container>
+        <Drawer.Positioner>
           <Drawer.Content>
             <Drawer.Header>
               <Drawer.Title>Title</Drawer.Title>
@@ -22,7 +22,7 @@ export const Demo = (props: DrawerProps) => {
               <Button>Primary</Button>
             </Drawer.Footer>
           </Drawer.Content>
-        </Drawer.Container>
+        </Drawer.Positioner>
       </Portal>
     </Drawer.Root>
   )

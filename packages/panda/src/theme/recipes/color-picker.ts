@@ -17,14 +17,14 @@ export const colorPicker = defineSlotRecipe({
       borderRadius: 'l2',
       overflow: 'hidden',
     },
-    areaGradient: {
+    areaBackground: {
       height: '100%',
     },
     channelSliderTrack: {
       height: '2',
       borderRadius: 'full',
     },
-    channelSliderTrackBackground: {
+    channelSlider: {
       overflow: 'hidden',
       borderRadius: 'full',
     },
