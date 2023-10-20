@@ -1,6 +1,5 @@
 {
   "name": "@park-ui/tailwind-plugin",
-  "type": "module",
   "version": "0.11.1",
   "description": "Tailwind CSS plugin for Ark UI components",
   "keywords": [
@@ -16,19 +15,17 @@
     "url": "https://github.com/cschroeter/park-ui/issues"
   },
   "files": [
-    "dist",
-    "src/plugin",
-    "src/lib",
-    "src/plugin/css/styles.css",
-    "src/plugin/css/styles.json"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "start": "ladle serve",
+    "release-it": "release-it",
+    "build": "pnpm prebuild:plugin && pnpm build:plugin",
     "prebuild:plugin": "panda cssgen static --outfile src/plugin/css/styles.css",
-    "build:plugin": "node src/plugin/build.js",
+    "build:plugin": "tsx src/plugin/build.ts && tsup",
     "build:components": "tsx src/cli/components/bootstrap.ts",
     "build:stories": "tsx src/cli/stories/bootstrap.ts",
     "build:styles": "tsx src/cli/styles/bootstrap.ts"
@@ -40,21 +37,47 @@
     "@ark-ui/react": "0.15.0",
     "@fontsource/plus-jakarta-sans": "5.0.16",
     "@ladle/react": "3.2.2",
-    "@release-it/keep-a-changelog": "4.0.0",
+    "@pandacss/dev": "0.16.0",
     "@park-ui/panda-preset": "workspace:*",
-    "pandacss-preset-typography": "0.1.4",
+    "@release-it/keep-a-changelog": "4.0.0",
     "@types/node": "20.8.3",
     "@types/react": "18.2.30",
+    "@zag-js/react": "0.26.0",
     "lucide-react": "0.288.0",
+    "pandacss-preset-typography": "0.1.4",
     "postcss": "8.4.31",
     "postcss-js": "4.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "release-it": "16.2.1",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.3.3",
+    "tsup": "7.2.0",
+    "tsx": "3.14.0"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
   },
-  "main": "src/plugin/index.js"
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "clean": true,
+    "dts": true,
+    "sourcemap": true,
+    "format": [
+      "esm",
+      "cjs"
+    ]
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  }
 }

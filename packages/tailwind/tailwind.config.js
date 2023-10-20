@@ -1,4 +1,4 @@
-const { parkwindPlugin } = require('./src/plugin')
+const { parkwindPlugin } = require('./dist')
 
 module.exports = {
   plugins: [parkwindPlugin],

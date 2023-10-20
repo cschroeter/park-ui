@@ -1,23 +1,13 @@
 import { defineConfig } from '@pandacss/dev'
 import presetPark from '@park-ui/panda-preset'
-import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
   preflight: false,
-  presets: [
-    '@pandacss/preset-base',
-    presetPark,
-    typographyPreset({
-      recipe: {
-        sizes: ['base'],
-        notProse: true,
-      },
-    }),
-  ],
+  presets: ['@pandacss/preset-base', presetPark()],
   outdir: 'styled-system',
   staticCss: {
     recipes: {
-      accordion: [{}],
+      accordion: [{ size: ['*'] }],
       alert: [{}],
       avatar: [{ size: ['*'] }],
       badge: [{ variant: ['*'], size: ['*'] }],
