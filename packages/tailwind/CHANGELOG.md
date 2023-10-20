@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.11.2] - 2023-10-20
+
 ### Fixed
 - Resolved an issue that some css layers where omitted
 
