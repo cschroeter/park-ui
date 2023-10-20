@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.11.3] - 2023-10-20
+
 ### Fixed
 
 - Resolved an issue that css files where not published
