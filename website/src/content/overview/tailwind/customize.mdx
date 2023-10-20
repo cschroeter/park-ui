@@ -1,0 +1,78 @@
+---
+id: customize
+title: Customize
+description: Customize Park UI to fit your needs.
+---
+
+import { Steps, Step } from '~/components/ui'
+import Quickstart from '~/components/quickstart.astro'
+
+## Concept
+
+The Tailwind Plugin uses the generated static CSS classes from the Park UI Panda recipes as a preset. In this guide, we
+will explore various ways to tailor Park UI to your specific needs and make it truly yours.
+
+### Tailwind theme config
+
+The Park UI Tailwind theme config is a powerful and comprehensive way to customize the appearance of Park UI components.
+It allows you to adjust various design elements such as the color palette, accent colors, and border radius, effectively
+transforming the look and feel of your UI components.
+
+Here's how you can set your theme preferences in your Tailwind config file:
+
+```js
+const { parkwindPlugin } = require('@park-ui/tailwind-plugin')
+
+module.exports = {
+  plugins: [parkwindPlugin],
+  parkUI: {
+    accentColor: 'neutral',
+    grayColor: 'neutral',
+    borderRadius: 'md',
+  },
+  darkMode: ['class'],
+  // ...
+}
+```
+
+This configuration lets you control elements like color palettes and accent hues to align your UI with your brand
+identity and project style. You can find the supported values under "Make it yours" on the documentation page.
+
+### Adding classes to recipes
+
+Park UI components are composed of various classes that define their appearance. You can further customize component
+variants by adding or modifying classes. For example, if you want to underline the solid button variant, you can include
+the underline class within its definition:
+
+```js
+import { tv } from 'tailwind-variants'
+
+export const buttonStyles = tv({
+  base: 'button',
+  // ...
+  variants: {
+    variant: {
+      solid: 'button--variant_solid underline',
+      // ...
+    },
+    // ...
+  },
+})
+```
+
+This approach empowers you to make granular changes to individual component styles, allowing you to create a UI that
+suits your specific needs.
+
+### Extending CSS Classes
+
+Sometimes, you may need to go beyond what the preset classes offer. To make more advanced customizations, you can extend
+the CSS classes of the Park UI components. This lets you create entirely new styles or modify existing ones:
+
+```css
+.button--variant_solid {
+  @apply underline;
+}
+```
+
+This approach enables you to craft unique and specific design changes while keeping your customizations organized and
+maintainable.
