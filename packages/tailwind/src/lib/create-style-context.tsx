@@ -43,7 +43,8 @@ export const createStyleContext = <ComponentStyles extends Recipe>(
   const withContext = <T extends ElementType>(Component: T, slot?: string) => {
     const Comp = forwardRef((props: ComponentProps<T>, ref) => {
       const slotRecipe = useContext(StyleContext)
-      const variantClassNames = slotRecipe?.[slot ?? '']()
+
+      const variantClassNames = slotRecipe?.[slot ?? '']?.()
 
       return (
         // @ts-expect-error

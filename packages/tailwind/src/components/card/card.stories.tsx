@@ -1,24 +1,16 @@
 import { Button } from '../button/snippet'
 import { Input } from '../input/snippet'
 import { Label } from '../label/snippet'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  type CardProps,
-} from './snippet'
+import { Card, CardBody, CardDescription, CardFooter, CardHeader, CardTitle } from './snippet'
 
-export const Demo = (props: CardProps) => {
+export const Demo = () => {
   return (
-    <Card width="sm" {...props}>
+    <Card width="sm">
       <CardHeader>
         <CardTitle>Team Members</CardTitle>
         <CardDescription>Add new members to your organisation.</CardDescription>
       </CardHeader>
-      <CardContent gap="4">
+      <CardBody className="gap-4">
         <div className="flex flex-col gap-1.5">
           <Label htmlFor="name">Name</Label>
           <Input id="name" placeholder="Name" />
@@ -27,8 +19,8 @@ export const Demo = (props: CardProps) => {
           <Label htmlFor="email">Email</Label>
           <Input id="email" type="email" placeholder="Email" />
         </div>
-      </CardContent>
-      <CardFooter gap="3">
+      </CardBody>
+      <CardFooter className="gap-3">
         <Button variant="outline">Cancel</Button>
         <Button>Invite</Button>
       </CardFooter>

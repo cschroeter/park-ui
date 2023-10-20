@@ -5,7 +5,7 @@ export const cardStyles = tv({
   slots: {
     root: 'card__root',
     header: 'card__header',
-    content: 'card__content',
+    body: 'card__body',
     footer: 'card__footer',
     title: 'card__title',
     description: 'card__description',
