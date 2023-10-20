@@ -48,3 +48,5 @@ dist
 .contentlayer
 
 .astro
+
+.turbo

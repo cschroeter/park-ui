@@ -3,17 +3,19 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "build": "turbo build",
     "prepare": "husky install",
     "website": "pnpm --filter=@park-ui/website"
   },
-  "devDependencies": {
+  "dependencies": {
     "@commitlint/cli": "17.8.0",
     "@commitlint/config-conventional": "17.8.0",
     "husky": "8.0.3",
     "lint-staged": "15.0.2",
     "prettier": "3.0.3",
     "prettier-plugin-astro": "0.12.0",
-    "prettier-plugin-organize-imports": "3.2.3"
+    "prettier-plugin-organize-imports": "3.2.3",
+    "turbo": "1.10.16"
   },
   "commitlint": {
     "extends": [
