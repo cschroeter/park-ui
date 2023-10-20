@@ -6,11 +6,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-    parkwindPlugin,
-  ],
+  plugins: [parkwindPlugin],
   parkUI: {
     accentColor: 'neutral',
     grayColor: 'neutral',
