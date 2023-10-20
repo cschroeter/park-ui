@@ -13,12 +13,11 @@ export const carousel = defineSlotRecipe({
     },
     control: {
       alignItems: 'center',
-      background: 'bg.default',
+      background: { base: 'gray.dark.a12', _dark: 'gray.light.a12' },
       borderRadius: 'l2',
       bottom: '4',
       display: 'flex',
       left: '50%',
-      opacity: '0.9',
       position: 'absolute',
       transform: 'translateX(-50%)',
       zIndex: 'docked',
@@ -28,7 +27,7 @@ export const carousel = defineSlotRecipe({
     },
     indicator: {
       borderRadius: 'full',
-      background: 'bg.emphasized',
+      background: 'gray.6',
       cursor: 'pointer',
       _current: {
         background: 'accent.default',

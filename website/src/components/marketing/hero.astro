@@ -34,9 +34,7 @@ import { ThemeDrawer } from '../theme/theme-drawer'
         { framework: 'Solid', icon: <SiSolid /> },
       ].map(({ framework, icon }) => (
         <HStack key={framework} gap="2">
-          <Box fontSize="3xl" color="fg.emphasized">
-            {icon}
-          </Box>
+          <Box fontSize="3xl">{icon}</Box>
           <Text as="span" color="fg.muted">
             {framework}
           </Text>

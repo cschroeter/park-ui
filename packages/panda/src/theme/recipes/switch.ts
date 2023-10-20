@@ -13,7 +13,7 @@ export const switchRecipe = defineSlotRecipe({
     },
     control: {
       alignItems: 'center',
-      background: 'bg.muted',
+      background: 'bg.emphasized',
       borderRadius: 'full',
       cursor: 'pointer',
       display: 'inline-flex',
@@ -40,7 +40,7 @@ export const switchRecipe = defineSlotRecipe({
       zIndex: '1',
       _checked: {
         transform: 'translateX(100%)',
-        background: 'bg.default',
+        background: { base: 'bg.default', _dark: 'accent.fg' },
       },
     },
   },

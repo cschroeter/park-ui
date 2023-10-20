@@ -20,7 +20,7 @@ export const pagination = defineSlotRecipe({
     },
     ellipsis: {
       alignItems: 'center',
-      color: 'fg.emphasized',
+      color: 'fg.default',
       display: 'inline-flex',
       fontWeight: 'semibold',
       px: '2',

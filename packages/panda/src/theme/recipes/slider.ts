@@ -15,7 +15,7 @@ export const slider = defineSlotRecipe({
       alignItems: 'center',
     },
     track: {
-      backgroundColor: 'bg.muted',
+      backgroundColor: 'bg.emphasized',
       borderRadius: 'l2',
       flex: '1',
     },
@@ -32,7 +32,7 @@ export const slider = defineSlotRecipe({
       outline: 'none',
     },
     label: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       fontWeight: 'medium',
     },
   },

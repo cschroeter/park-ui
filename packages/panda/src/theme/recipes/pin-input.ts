@@ -16,7 +16,7 @@ export const pinInput = defineSlotRecipe({
       gap: '2',
     },
     label: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       fontWeight: 'medium',
     },
   },

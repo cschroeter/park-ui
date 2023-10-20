@@ -5,7 +5,7 @@ export const textarea = defineRecipe({
   base: {
     backgroundColor: 'bg.default',
     appearance: 'none',
-    borderColor: 'border.emphasized',
+    borderColor: 'border.default',
     borderRadius: 'l2',
     borderWidth: '1px',
     minWidth: 0,

@@ -24,7 +24,7 @@ export const ECommerceCard = () => {
             </Heading>
           </Stack>
           <HStack justify="space-between" width="full">
-            <Text textStyle="xl" fontWeight="medium" color="fg.emphasized">
+            <Text textStyle="xl" fontWeight="medium">
               $79.99
             </Text>
             <RatingInfo />

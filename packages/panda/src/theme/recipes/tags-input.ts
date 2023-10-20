@@ -13,7 +13,7 @@ export const tagsInput = defineSlotRecipe({
     },
     control: {
       alignItems: 'center',
-      borderColor: 'border.emphasized',
+      borderColor: 'border.default',
       borderRadius: 'l2',
       borderWidth: '1px',
       display: 'flex',
@@ -33,10 +33,10 @@ export const tagsInput = defineSlotRecipe({
     },
     tag: {
       alignItems: 'center',
-      borderColor: 'border.emphasized',
+      borderColor: 'border.default',
       borderRadius: 'l1',
       borderWidth: '1px',
-      color: 'fg.emphasized',
+      color: 'fg.default',
       background: 'bg.subtle',
       display: 'inline-flex',
       fontWeight: 'medium',

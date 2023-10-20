@@ -32,7 +32,7 @@ export const rangeSlider = defineSlotRecipe({
       outline: 'none',
     },
     label: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       fontWeight: 'semibold',
     },
   },

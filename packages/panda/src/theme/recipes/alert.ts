@@ -24,7 +24,7 @@ export const alert = defineSlotRecipe({
       textStyle: 'sm',
     },
     icon: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       flexShrink: '0',
       width: '5',
       height: '5',

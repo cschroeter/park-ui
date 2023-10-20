@@ -72,13 +72,13 @@ export const select = defineSlotRecipe({
       color: 'accent.default',
     },
     label: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       fontWeight: 'medium',
     },
     trigger: {
       appearance: 'none',
       alignItems: 'center',
-      borderColor: 'border.emphasized',
+      borderColor: 'border.default',
       borderRadius: 'l2',
       cursor: 'pointer',
       display: 'inline-flex',

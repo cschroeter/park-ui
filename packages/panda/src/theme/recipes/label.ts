@@ -3,7 +3,7 @@ import { defineRecipe } from '@pandacss/dev'
 export const label = defineRecipe({
   className: 'label',
   base: {
-    color: 'fg.emphasized',
+    color: 'fg.default',
     fontWeight: 'medium',
   },
   defaultVariants: {

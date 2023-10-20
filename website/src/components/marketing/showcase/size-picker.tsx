@@ -22,7 +22,7 @@ export const SizePicker = () => {
   return (
     <Stack gap="3">
       <Stack gap="1.5">
-        <Text textStyle="sm" color="fg.emphasized" fontWeight="medium">
+        <Text textStyle="sm" fontWeight="medium">
           Size
         </Text>
         <RadioButtonGroup>

@@ -13,10 +13,10 @@ export const radioButtonGroup = defineSlotRecipe({
     radio: {
       alignItems: 'center',
       appearance: 'none',
-      borderColor: 'border.emphasized',
+      borderColor: 'border.default',
       borderRadius: 'l2',
       borderWidth: '1px',
-      color: 'fg.emphasized',
+      color: 'fg.default',
       cursor: 'pointer',
       display: 'inline-flex',
       fontWeight: 'semibold',

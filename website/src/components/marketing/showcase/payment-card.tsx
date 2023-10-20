@@ -62,7 +62,7 @@ export const PaymentCard = () => {
           <Input id="owner" />
         </Stack>
         <Stack gap="1.5">
-          <Label htmlFor="Name">Card Number</Label>
+          <Label htmlFor="card">Card Number</Label>
           <Input id="card" />
         </Stack>
         <Stack direction="row" gap="3">

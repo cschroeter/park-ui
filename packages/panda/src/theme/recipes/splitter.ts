@@ -12,7 +12,7 @@ export const splitter = defineSlotRecipe({
     },
     panel: {
       borderWidth: '1px',
-      background: 'bg.subtle',
+      background: 'bg.default',
       borderRadius: 'l2',
       color: 'fg.muted',
       display: 'flex',
@@ -25,19 +25,19 @@ export const splitter = defineSlotRecipe({
       transitionProperty: 'background',
       transitionTimingFunction: 'default',
       outline: '0',
-      background: 'bg.muted',
+      background: 'gray.7',
       _hover: {
-        background: 'bg.emphasized',
+        background: 'gray.8',
       },
       _active: {
-        background: 'bg.emphasized',
+        background: 'gray.8',
       },
       _horizontal: {
-        minWidth: '6px',
+        minWidth: '1.5',
         margin: 'min(1rem, 20%) 0',
       },
       _vertical: {
-        minHeight: '6px',
+        minHeight: '1.5',
         margin: '0 min(1rem, 20%)',
       },
     },

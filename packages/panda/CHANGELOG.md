@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Tweaked semantic color tokens for a more consistent look and feel.
+
 ## [0.19.0] - 2023-10-19
 
 This is one of the biggest releases of Park UI so far. We've introduced a new way to configure presets, which will make

@@ -11,12 +11,12 @@ export const checkbox = defineSlotRecipe({
       display: 'flex',
     },
     label: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       fontWeight: 'medium',
     },
     control: {
       alignItems: 'center',
-      borderColor: 'border.emphasized',
+      borderColor: 'border.default',
       borderWidth: '1px',
       color: 'accent.fg',
       cursor: 'pointer',

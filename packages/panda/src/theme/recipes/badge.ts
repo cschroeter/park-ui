@@ -22,16 +22,16 @@ export const badge = defineRecipe({
       },
       subtle: {
         background: 'bg.subtle',
-        borderColor: 'border.default',
+        borderColor: 'border.subtle',
         borderWidth: '1px',
-        color: 'fg.emphasized',
+        color: 'fg.default',
         '& svg': {
           color: 'fg.muted',
         },
       },
       outline: {
         borderWidth: '2px',
-        borderColor: 'border.emphasized',
+        borderColor: 'border.default',
       },
     },
     size: {

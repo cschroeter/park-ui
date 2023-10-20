@@ -30,9 +30,9 @@ export const link = defineRecipe({
         },
         _currentPage: {
           fontWeight: 'semibold',
-          color: 'fg.emphasized',
+          color: 'fg.default',
           _hover: {
-            color: 'fg.emphasized',
+            color: 'fg.default',
           },
         },
       },
@@ -43,9 +43,9 @@ export const link = defineRecipe({
           color: 'fg.muted',
         },
         _currentPage: {
-          color: 'fg.emphasized',
+          color: 'fg.default',
           _hover: {
-            color: 'fg.emphasized',
+            color: 'fg.default',
           },
         },
       },

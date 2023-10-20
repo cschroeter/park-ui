@@ -49,7 +49,7 @@ export const button = defineRecipe({
       },
       outline: {
         borderWidth: '1px',
-        borderColor: 'gray.a7',
+        borderColor: 'border.default',
         _hover: {
           background: 'gray.a2',
         },

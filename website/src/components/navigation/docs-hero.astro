@@ -25,7 +25,7 @@ const showHeroTabs = await hasVariants(Astro.params.slug)
   <Container maxW="66rem" py={{ base: '16', md: '24' }}>
     <article class={prose({ size: 'base' })}>
       <Heading as="h1" fontWeight="bold">{entry.data.title}</Heading>
-      <Text className="lead" color="fg.emphasized">{entry.data.description}</Text>
+      <Text className="lead">{entry.data.description}</Text>
     </article>
     {
       isComponent && (

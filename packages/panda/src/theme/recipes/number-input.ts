@@ -3,7 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 const trigger = {
   alignItems: 'center',
-  borderColor: 'border.emphasized',
+  borderColor: 'border.default',
   color: 'fg.muted',
   cursor: 'pointer',
   display: 'inline-flex',
@@ -40,7 +40,7 @@ export const numberInput = defineSlotRecipe({
       gap: '1.5',
     },
     control: {
-      borderColor: 'border.emphasized',
+      borderColor: 'border.default',
       borderRadius: 'l2',
       borderWidth: '1px',
       display: 'grid',
@@ -63,7 +63,7 @@ export const numberInput = defineSlotRecipe({
       gridRow: '2',
     },
     label: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       fontWeight: 'medium',
     },
     decrementTrigger: { ...trigger, borderTopWidth: '1px' },

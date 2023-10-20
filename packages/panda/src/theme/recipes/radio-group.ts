@@ -15,7 +15,7 @@ export const radioGroup = defineSlotRecipe({
     },
     radioControl: {
       background: 'transparent',
-      borderColor: 'border.emphasized',
+      borderColor: 'border.default',
       borderRadius: 'full',
       borderWidth: '1px',
       transitionDuration: 'normal',
@@ -51,7 +51,7 @@ export const radioGroup = defineSlotRecipe({
       },
     },
     radioLabel: {
-      color: 'fg.emphasized',
+      color: 'fg.default',
       fontWeight: 'medium',
       _disabled: {
         color: 'fg.disabled',
