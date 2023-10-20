@@ -32,13 +32,14 @@
     "build:styles": "tsx src/cli/styles/bootstrap.ts"
   },
   "dependencies": {
-    "tailwind-variants": "0.1.14"
+    "tailwind-variants": "0.1.14",
+    "ts-pattern": "5.0.5"
   },
   "devDependencies": {
     "@ark-ui/react": "0.15.0",
     "@fontsource/plus-jakarta-sans": "5.0.16",
     "@ladle/react": "3.2.2",
-    "@pandacss/dev": "0.16.0",
+    "@pandacss/dev": "0.15.5",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "4.0.0",
     "@types/node": "20.8.3",

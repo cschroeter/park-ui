@@ -11,5 +11,10 @@ module.exports = {
     require('@tailwindcss/typography'),
     parkwindPlugin,
   ],
+  parkUI: {
+    accentColor: 'neutral',
+    grayColor: 'neutral',
+    borderRadius: 'md',
+  },
   darkMode: ['class'],
 }

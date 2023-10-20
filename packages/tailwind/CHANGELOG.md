@@ -1,5 +1,27 @@
 ## [Unreleased]
 
+### Changed
+
+This is one of the biggest releases of Park UI so far. We've introduced a new way to configure presets, which will make
+it easier to customize the theme to your needs. We've also replaced the default colors with
+[Radix Colors](https://www.radix-ui.com/colors).
+
+The tailwind config respects now to configure the preset colors:
+
+```js
+const { parkwindPlugin } = require('./dist')
+
+module.exports = {
+  plugins: [parkwindPlugin],
+  parkUI: {
+    accentColor: 'amber',
+    grayColor: 'sand',
+    borderRadius: '2xl',
+  },
+  // ...rest of your config
+}
+```
+
 ## [0.11.3] - 2023-10-20
 
 ### Fixed
