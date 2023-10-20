@@ -1,64 +1,26 @@
 {
   "name": "tailwind-astro",
-  "version": "1.0.0",
-  "private": true,
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "clean": "rimraf dist",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
-    "build-types": "tsc --noEmit --pretty"
-  },
-  "devDependencies": {
-    "@astrojs/react": "^3.0.3",
-    "@astrojs/rss": "^0.2.2",
-    "@astrojs/sitemap": "^0.1.2",
-    "@astrojs/tailwind": "^5.0.2",
-    "@commitlint/cli": "^17.8.0",
-    "@commitlint/config-conventional": "^17.8.0",
-    "@jridgewell/sourcemap-codec": "^1.4.15",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.10",
-    "@types/react": "^18.2.28",
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
-    "astro": "3.3.0",
-    "astro-eslint-parser": "^0.2.2",
-    "astro-imagetools": "^0.6.10",
-    "astro-robots-txt": "^0.3.2",
-    "eslint": "^8.51.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-tailwindcss": "^3.5.2",
-    "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^12.5.0",
-    "path-browserify": "^1.0.1",
-    "prettier": "^2.6.2",
-    "prettier-plugin-astro": "0.1.0-next.5",
-    "rimraf": "^5.0.5",
-    "tailwind-variants": "0.1.14",
-    "tailwindcss": "^3.3.3"
+    "astro": "astro"
   },
   "dependencies": {
     "@ark-ui/react": "0.15.0",
-    "@park-ui/tailwind-plugin": "0.11.1",
-    "astro-boilerplate-components": "^1.0.15",
-    "date-fns": "^2.28.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@park-ui/tailwind-plugin": "0.11.3",
+    "astro": "3.3.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
-  "volta": {
-    "node": "16.15.1"
-  },
-  "author": "Simon Holzmayer (https://github.com/sholzmayer)"
+  "devDependencies": {
+    "@astrojs/react": "3.0.3",
+    "@astrojs/tailwind": "5.0.2",
+    "tailwindcss": "3.3.3",
+    "@tailwindcss/aspect-ratio": "0.4.2",
+    "@tailwindcss/typography": "0.5.10"
+  }
 }

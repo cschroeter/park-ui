@@ -1,4 +1,4 @@
-import '@park-ui/tailwind-plugin/src/plugin/css/preset.css'
+import '@park-ui/tailwind-plugin/preset.css'
 import { Button } from './ui/button/snippet'
 
 export const App = () => {
