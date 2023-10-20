@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.12.0] - 2023-10-20
+
 ### Changed
 
 This is one of the biggest releases of Park UI so far. We've introduced a new way to configure presets, which will make
