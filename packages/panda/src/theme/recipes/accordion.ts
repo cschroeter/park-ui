@@ -41,7 +41,7 @@ export const accordion = defineSlotRecipe({
   variants: {
     size: {
       md: {
-        itemIndicator: {
+        itemTrigger: {
           py: '4',
         },
         itemContent: {
