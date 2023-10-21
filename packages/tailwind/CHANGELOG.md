@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Resolved an issue that broke the plugin startup without a parkUI config
+
 ## [0.12.0] - 2023-10-20
 
 ### Changed
