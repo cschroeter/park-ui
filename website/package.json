@@ -7,7 +7,7 @@
     "panda": "pandacss codegen",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "pandacss codegen && astro build",
+    "build": "pandacss codegen && sleep 3 && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
