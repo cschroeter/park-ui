@@ -18,10 +18,9 @@ export const AccentColorPicker = () => {
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
-        onChange={(e) => {
-          // @ts-expect-error TODO
+        onValueChange={(e) =>
           updateAccentColor(accentColors.find((accent) => accent === e.value) ?? currentAccentColor)
-        }}
+        }
       >
         {accentColors.map((accent, id) => (
           <RadioButtonGroup.Item key={id} value={accent} justifyContent="flex-start">

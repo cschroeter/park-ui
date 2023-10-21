@@ -18,10 +18,9 @@ export const GrayColorPicker = () => {
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
-        onChange={(e) => {
-          // @ts-expect-error
+        onValueChange={(e) =>
           updateGrayColor(grayColors.find((gray) => gray === e.value) ?? currentGrayColor)
-        }}
+        }
       >
         {grayColors.map((gray, id) => (
           <RadioButtonGroup.Item
