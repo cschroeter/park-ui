@@ -28,7 +28,6 @@ const itemStyle = {
 export const menu = defineSlotRecipe({
   className: 'menu',
   slots: menuAnatomy.keys(),
-  jsx: ['Menu', /Menu\.+/],
   base: {
     itemGroupLabel: {
       fontWeight: 'semibold',

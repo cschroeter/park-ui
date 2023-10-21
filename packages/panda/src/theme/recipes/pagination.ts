@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const pagination = defineSlotRecipe({
   className: 'pagination',
   slots: paginationAnatomy.keys(),
-  jsx: ['Pagination', /Pagination\.+/],
   base: {
     root: {
       display: 'flex',

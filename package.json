@@ -8,8 +8,8 @@
     "website": "pnpm --filter=@park-ui/website"
   },
   "dependencies": {
-    "@commitlint/cli": "17.8.0",
-    "@commitlint/config-conventional": "17.8.0",
+    "@commitlint/cli": "18.0.0",
+    "@commitlint/config-conventional": "18.0.0",
     "husky": "8.0.3",
     "lint-staged": "15.0.2",
     "prettier": "3.0.3",

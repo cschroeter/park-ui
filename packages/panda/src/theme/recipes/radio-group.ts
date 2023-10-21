@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const radioGroup = defineSlotRecipe({
   className: 'radioGroup',
   slots: radioGroupAnatomy.keys(),
-  jsx: ['RadioGroup', /RadioGroup\.+/],
   base: {
     root: {
       display: 'flex',

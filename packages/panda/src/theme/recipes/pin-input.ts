@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const pinInput = defineSlotRecipe({
   className: 'pinInput',
   slots: pinInputAnatomy.keys(),
-  jsx: ['PinInput', /PinInput\.+/],
   base: {
     root: {
       display: 'flex',

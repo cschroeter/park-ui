@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const switchRecipe = defineSlotRecipe({
   className: 'switchRecipe',
   slots: switchAnatomy.keys(),
-  jsx: ['Switch', /Switch\.+/],
   base: {
     root: {
       alignItems: 'center',

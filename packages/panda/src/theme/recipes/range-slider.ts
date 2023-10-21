@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const rangeSlider = defineSlotRecipe({
   className: 'range-slider',
   slots: rangeSliderAnatomy.keys(),
-  jsx: ['RangeSlider', /RangeSlider\.+/],
   base: {
     root: {
       width: 'full',

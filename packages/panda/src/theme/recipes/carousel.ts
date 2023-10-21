@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const carousel = defineSlotRecipe({
   className: 'carousel',
   slots: carouselAnatomy.keys(),
-  jsx: ['Carousel', /Carousel\.+/],
   base: {
     viewport: {
       overflowX: 'hidden',

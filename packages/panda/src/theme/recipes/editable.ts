@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const editable = defineSlotRecipe({
   className: 'editable',
   slots: editableAnatomy.keys(),
-  jsx: ['Editable', /Editable\.+/],
   base: {
     root: {
       display: 'flex',
