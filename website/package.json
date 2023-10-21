@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "pandacss codegen",
+    "panda": "pandacss codegen",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "pandacss codegen && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
