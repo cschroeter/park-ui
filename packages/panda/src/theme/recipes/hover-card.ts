@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const hoverCard = defineSlotRecipe({
   className: 'hoverCard',
   slots: hoverCardAnatomy.keys(),
-  jsx: ['HoverCard', /HoverCard\.+/],
   base: {
     content: {
       '--hover-card-background': 'colors.bg.default',

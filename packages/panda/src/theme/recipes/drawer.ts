@@ -6,7 +6,6 @@ const anatomy = dialogAnatomy.extendWith('header', 'body', 'footer')
 export const drawer = defineSlotRecipe({
   className: 'drawer',
   slots: [...anatomy.keys()],
-  jsx: ['Drawer', /Drawer\.+/],
   base: {
     backdrop: {
       backdropFilter: 'blur(4px)',

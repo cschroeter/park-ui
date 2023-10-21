@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const tooltip = defineSlotRecipe({
   className: 'tooltip',
   slots: tooltipAnatomy.keys(),
-  jsx: ['Tooltip', /Tooltip\.+/],
   base: {
     content: {
       background: 'fg.default',

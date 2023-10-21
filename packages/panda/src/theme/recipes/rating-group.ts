@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const ratingGroup = defineSlotRecipe({
   className: 'ratingGroup',
   slots: ratingGroupAnatomy.keys(),
-  jsx: ['RatingGroup', /RatingGroup\.+/],
   base: {
     control: {
       display: 'flex',

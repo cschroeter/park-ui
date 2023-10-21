@@ -31,11 +31,11 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "1.0.0-beta.0",
-    "@pandacss/dev": "0.16.0",
+    "@pandacss/dev": "0.17.0",
     "ts-pattern": "5.0.5"
   },
   "devDependencies": {
-    "@pandacss/types": "0.16.0",
+    "@pandacss/types": "0.17.0",
     "@radix-ui/colors": "3.0.0",
     "@release-it/keep-a-changelog": "4.0.0",
     "clean-package": "2.2.0",

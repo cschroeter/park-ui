@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const dialog = defineSlotRecipe({
   className: 'dialog',
   slots: dialogAnatomy.keys(),
-  jsx: ['Dialog', /Dialog\.+/],
   base: {
     backdrop: {
       backdropFilter: 'blur(4px)',

@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const tabs = defineSlotRecipe({
   className: 'tabs',
   slots: tabsAnatomy.keys(),
-  jsx: ['Tabs', /Tabs\.+/],
   base: {
     root: {
       display: 'flex',

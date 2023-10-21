@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const datePicker = defineSlotRecipe({
   className: 'datePicker',
   slots: [...datePickerAnatomy.keys()],
-  jsx: ['DatePicker', /DatePicker\.+/],
   base: {
     //   cellTrigger: {
     //     _today: {

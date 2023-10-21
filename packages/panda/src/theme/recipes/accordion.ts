@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const accordion = defineSlotRecipe({
   className: 'accordion',
   slots: accordionAnatomy.keys(),
-  jsx: ['Accordion', /Accordion\.+/],
   base: {
     root: {
       divideY: '1px',

@@ -32,7 +32,6 @@ const trigger = {
 export const numberInput = defineSlotRecipe({
   className: 'numberInput',
   slots: numberInputAnatomy.keys(),
-  jsx: ['NumberInput', /NumberInput\.+/],
   base: {
     root: {
       display: 'flex',

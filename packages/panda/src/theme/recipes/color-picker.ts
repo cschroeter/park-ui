@@ -4,7 +4,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 export const colorPicker = defineSlotRecipe({
   className: 'colorPicker',
   slots: colorPickerAnatomy.keys(),
-  jsx: ['ColorPicker', /ColorPicker\.+/],
   base: {
     content: {
       borderRadius: 'l3',
