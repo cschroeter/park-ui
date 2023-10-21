@@ -1,12 +1,10 @@
-const { parkwindPlugin } = require('./dist')
+import { parkwindPlugin } from './dist'
 
-module.exports = {
-  plugins: [parkwindPlugin],
-  parkUI: {
-    accentColor: 'neutral',
-    grayColor: 'neutral',
-    borderRadius: 'md',
-  },
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: ['class'], // TODO dark mode switcher
+export const plugins = [parkwindPlugin]
+export const parkUI = {
+  accentColor: 'neutral',
+  grayColor: 'neutral',
+  borderRadius: 'md',
 }
+export const content = ['./src/**/*.{js,jsx,ts,tsx}']
+export const darkMode = ['class']
