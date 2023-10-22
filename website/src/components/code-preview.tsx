@@ -4,6 +4,7 @@ import { cx, sva } from 'styled-system/css'
 import { Box, Flex } from 'styled-system/jsx'
 import { CopyToClipboardButton } from './copy-to-clipboard-button'
 import { Button } from './ui'
+import { IconButton } from './ui/icon-button'
 
 const styles = sva({
   slots: ['root', 'control', 'preview', 'footer'],
@@ -67,15 +68,14 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
     >
       <Flex className={styles.control} display={{ base: 'none', md: 'flex' }}>
         {isCollapsable && (
-          <Button
-            px="0"
+          <IconButton
             variant="ghost"
             size="xs"
             onClick={() => setCollapsed(!collapsed)}
             color="gray.dark.11"
           >
             {collapsed ? <ArrowDownToLineIcon /> : <ArrowUpToLineIcon />}
-          </Button>
+          </IconButton>
         )}
         <CopyToClipboardButton content={code} />
       </Flex>

@@ -4,8 +4,8 @@ import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { Avatar } from '~/components/ui/avatar'
-import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
+import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 import {
   Select,
@@ -141,8 +141,8 @@ const CopyButton = (props: CopyButtonProps) => {
   }
 
   return (
-    <Button variant="outline" aria-label="Copy code to clipboard" onClick={handleClick} px="0">
+    <IconButton variant="outline" aria-label="Copy code to clipboard" onClick={handleClick}>
       {visible ? <CopyIcon /> : <CheckIcon />}
-    </Button>
+    </IconButton>
   )
 }

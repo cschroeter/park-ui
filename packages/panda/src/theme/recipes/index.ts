@@ -16,6 +16,7 @@ import { editable } from './editable'
 import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
+import { iconButton } from './icon-button'
 import { input } from './input'
 import { label } from './label'
 import { link } from './link'
@@ -47,6 +48,7 @@ export const recipes = {
   code,
   heading,
   icon,
+  iconButton,
   input,
   label,
   link,
