@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Changed the background color of text that is selected by the user to match the `accent` color.
+
 ## [0.20.0] - 2023-10-22
 
 ### Added
