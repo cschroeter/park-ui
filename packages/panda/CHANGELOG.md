@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.20.0] - 2023-10-22
+
 ### Added
 
 - Added a default export to `@park-ui/panda-preset` for easier configuration. This will use `neutral` as accent and gray color with `borderRadius` of `sm`.
