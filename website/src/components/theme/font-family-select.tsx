@@ -10,7 +10,7 @@ export const FontFamilySelect = () => {
       items={fontFamilies}
       value={[currentFontFamily.value]}
       // @ts-expect-error
-      onChange={(e) => updateFontFamily(e.items[0])}
+      onValueChange={(e) => updateFontFamily(e.items[0])}
       positioning={{ sameWidth: true }}
       size="sm"
     >

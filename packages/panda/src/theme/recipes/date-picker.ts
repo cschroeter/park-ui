@@ -6,29 +6,41 @@ export const datePicker = defineSlotRecipe({
   slots: [...datePickerAnatomy.keys()],
   base: {
     //   cellTrigger: {
-    //     _today: {
-    //       _before: {
-    //         content: "'−'",
-    //         color: 'accent.default',
-    //         position: 'absolute',
-    //         marginTop: '6',
-    //       },
-    //     },
-    //     '&[data-in-range]': {
-    //       background: 'bg.subtle',
-    //     },
-    //     _selected: {
-    //       _before: {
-    //         color: 'accent.fg',
-    //       },
-    //     },
+
     //   },
-    //   content: {
-    //     background: 'bg.default',
-    //     borderRadius: 'l3',
-    //     p: '4',
-    //     width: 'fit-content',
-    //   },
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.5',
+    },
+    content: {
+      background: 'bg.default',
+      borderRadius: 'l3',
+      boxShadow: 'md',
+      display: 'flex',
+      flexDirection: 'column',
+      p: '4',
+      width: 'fit-content',
+      _hidden: {
+        display: 'none',
+      },
+    },
+    control: {
+      display: 'flex',
+      flexDirection: 'row',
+      gap: '2',
+    },
+    label: {
+      color: 'fg.default',
+      fontWeight: 'medium',
+      textStyle: 'sm',
+    },
+    trigger: {},
+    viewControl: {
+      display: 'flex',
+      gap: '2',
+      justifyContent: 'space-between',
+    },
     //   grid: {
     //     display: 'flex',
     //     flexDirection: 'column',

@@ -1,12 +1,13 @@
 import { Portal } from '@ark-ui/react'
-import { CalendarIcon } from 'lucide-react'
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { DatePicker, type DatePickerProps } from '~/components/ui/date-picker'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
+import { Button } from '../ui/button'
 
 export const Demo = (props: DatePickerProps) => {
   return (
-    <DatePicker.Root>
+    <DatePicker.Root positioning={{ sameWidth: true }} startOfWeek={1}>
       <DatePicker.Label>Label</DatePicker.Label>
       <DatePicker.Control>
         <DatePicker.Input asChild>
@@ -22,17 +23,23 @@ export const Demo = (props: DatePickerProps) => {
       <Portal>
         <DatePicker.Positioner>
           <DatePicker.Content>
-            <DatePicker.YearSelect />
-            <DatePicker.MonthSelect />
             <DatePicker.View view="day">
               {(api) => (
                 <>
                   <DatePicker.ViewControl>
-                    <DatePicker.PrevTrigger>Prev</DatePicker.PrevTrigger>
+                    <DatePicker.PrevTrigger asChild>
+                      <Button variant="ghost" px="0">
+                        <ChevronLeftIcon />
+                      </Button>
+                    </DatePicker.PrevTrigger>
                     <DatePicker.ViewTrigger>
                       <DatePicker.RangeText />
                     </DatePicker.ViewTrigger>
-                    <DatePicker.NextTrigger>Next</DatePicker.NextTrigger>
+                    <DatePicker.NextTrigger asChild>
+                      <Button variant="ghost" px="0">
+                        <ChevronRightIcon />
+                      </Button>
+                    </DatePicker.NextTrigger>
                   </DatePicker.ViewControl>
                   <DatePicker.Table>
                     <DatePicker.TableHead>
@@ -47,7 +54,9 @@ export const Demo = (props: DatePickerProps) => {
                         <DatePicker.TableRow key={id}>
                           {week.map((day, id) => (
                             <DatePicker.TableCell key={id} value={day}>
-                              <DatePicker.TableCellTrigger>{day.day}</DatePicker.TableCellTrigger>
+                              <DatePicker.TableCellTrigger asChild>
+                                <Button variant="ghost">{day.day}</Button>
+                              </DatePicker.TableCellTrigger>
                             </DatePicker.TableCell>
                           ))}
                         </DatePicker.TableRow>
