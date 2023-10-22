@@ -1,26 +1,19 @@
 import { HStack, Stack, styled } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '~/components/ui/card'
+import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 
 export const AuthenticationCard = () => {
   return (
-    <Card maxW="sm">
-      <CardHeader>
-        <CardTitle>Sign Up</CardTitle>
-        <CardDescription>
+    <Card.Root maxW="sm">
+      <Card.Header>
+        <Card.Title>Sign Up</Card.Title>
+        <Card.Description>
           Create an account and discover the worlds' best UI component framework.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
+        </Card.Description>
+      </Card.Header>
+      <Card.Body>
         <Stack gap="4">
           <Stack direction="row" gap="3">
             <Button variant="outline" width="full">
@@ -46,10 +39,10 @@ export const AuthenticationCard = () => {
             <Input id="password" type="password" placeholder="Your Password" />
           </Stack>
         </Stack>
-      </CardContent>
-      <CardFooter>
+      </Card.Body>
+      <Card.Footer>
         <Button width="full">Create Account</Button>
-      </CardFooter>
-    </Card>
+      </Card.Footer>
+    </Card.Root>
   )
 }

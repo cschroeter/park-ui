@@ -2,7 +2,7 @@ import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
   preflight: true,
-  presets: ['@pandacss/dev/presets', '@park-ui/presets'],
+  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
   exclude: [],
   outdir: 'styled-system',

@@ -6,7 +6,7 @@ import { Button } from '~/components/ui/button'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 
-const { content, description, footer, header, root, title } = card()
+const { body, description, footer, header, root, title } = card()
 const Typography = styled('p')
 </script>
 
@@ -19,7 +19,7 @@ const Typography = styled('p')
           Create an account and discover the worlds' best UI component framework.
         </p>
       </div>
-      <div :class="content">
+      <div :class="body">
         <Stack gap="4">
           <Stack gap="3" direction="row">
             <Button variant="outline" width="full">Google</Button>
