@@ -45,5 +45,7 @@ const createPreset = (options: PresetOptions = defaultOptions): Preset => {
   })
 }
 
-export { accentColors, borderRadii, createPreset, createPreset as default, grayColors }
+const defaultPreset = createPreset()
+
+export { accentColors, borderRadii, createPreset, defaultPreset as default, grayColors }
 export type { AccentColor, BorderRadius, GrayColor, PresetOptions }
