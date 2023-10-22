@@ -1,9 +1,8 @@
 import { defineConfig } from '@pandacss/dev'
-import presetPark from '@park-ui/panda-preset'
 
 export default defineConfig({
   preflight: false,
-  presets: ['@pandacss/preset-base', presetPark()],
+  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
   outdir: 'styled-system',
   staticCss: {
     recipes: {

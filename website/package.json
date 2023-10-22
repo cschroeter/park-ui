@@ -4,10 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "panda": "pandacss codegen",
+    "prepare": "pandacss codegen",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "pandacss codegen && sleep 3 && astro build",
+    "prebuild": "pandacss codegen",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
