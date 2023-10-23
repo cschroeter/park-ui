@@ -43,9 +43,10 @@ export const useThemeGenerator = () => {
   return {
     accentColors,
     borderRadii,
-    baseConfig,
     fontFamilies,
     grayColors,
+    pandaConfig,
+    tailwindConfig,
     currentAccentColor,
     currentBorderRadius,
     currentFontFamily,
@@ -187,7 +188,7 @@ const syncFontFamily = (fontFamily: FontFamily) => {
   }
 }
 
-export const baseConfig = `import { defineConfig } from '@pandacss/dev'
+export const pandaConfig = `import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
 
 export default defineConfig({
@@ -201,8 +202,26 @@ export default defineConfig({
     }),
   ],
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
-  exclude: [],
   jsxFramework: 'react',
   outdir: 'styled-system',
 })
+`
+
+export const tailwindConfig = `const { parkwindPlugin } = require('@park-ui/tailwind-plugin')
+
+module.exports = {
+  content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [parkwindPlugin],
+
+  parkUI: {
+    accentColor: '__ACCENT_COLOR__',
+    grayColor: '__GRAY_COLOR__',
+    borderRadius: '__BORDER_RADIUS__',
+  },
+  
+  darkMode: ['class'],
+}
 `
