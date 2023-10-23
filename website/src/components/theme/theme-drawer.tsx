@@ -35,7 +35,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
             <Drawer.Header>
               <Drawer.Title>Make it yours</Drawer.Title>
               <Drawer.Description>
-                Customize your theme and copy the config to use in your project.
+                Customize the theme and copy the configuration to your project.
               </Drawer.Description>
               <Drawer.CloseTrigger asChild>
                 <Button

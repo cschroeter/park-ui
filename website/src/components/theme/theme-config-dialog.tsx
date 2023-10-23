@@ -28,19 +28,19 @@ export const ThemeConfigDialog = (props: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="solid">
+        <Button>
           <CopyIcon />
           Copy Config
         </Button>
       </DialogTrigger>
       <DialogBackdrop />
       <DialogContainer>
-        <DialogContent bg="bg.surface" width="md">
-          <Stack gap="8" p="6">
+        <DialogContent bg="bg.surface" maxW="md" width="full">
+          <Stack gap="6" p="6">
             <Stack gap="1">
               <DialogTitle>Make it yours</DialogTitle>
               <DialogDescription>
-                Copy and paste the following code into your Panda config.
+                Copy and paste the following code into your Panda or Tailwind config file.
               </DialogDescription>
             </Stack>
             <CSSFrameworkTabs
