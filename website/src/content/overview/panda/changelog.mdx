@@ -41,6 +41,45 @@ export default defineConfig({
 
 ### Changed
 
+- Changed the background color of text that is selected by the user to match the `accent` color.
+
+## [0.20.0] - 2023-10-22
+
+### Added
+
+- Added a default export to `@park-ui/panda-preset` for easier configuration. This will use `neutral` as accent and gray
+  color with `borderRadius` of `sm`.
+
+```jsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
+  // ...
+})
+```
+
+To customize the Park UI preset, use the `createPreset` function as shown below:
+
+```jsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
+
+export default defineConfig({
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: 'amber',
+      grayColor: 'sand',
+      borderRadius: 'none',
+    }),
+  ],
+  // ...
+})
+```
+
+### Changed
+
 - Tweaked semantic color tokens for a more consistent look and feel.
 
 ## [0.19.0] - 2023-10-19

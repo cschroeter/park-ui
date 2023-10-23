@@ -24,4 +24,7 @@ export const globalCss = defineGlobalStyles({
     opacity: 1,
     color: 'fg.subtle',
   },
+  '*::selection': {
+    bg: 'accent.a4',
+  },
 })
