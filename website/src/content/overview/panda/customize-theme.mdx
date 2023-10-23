@@ -1,0 +1,60 @@
+---
+id: theming
+title: Theming
+description: Learn how to customize the Park UI theme.
+---
+
+## Updte a component inline
+
+TBD
+
+```tsx live
+<Button textTransform="uppercase">Click me</Button>
+```
+
+## Customize a one part component
+
+In your `panda.config.ts` file, you can customize the theme by adding a `theme` property.
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  theme: {
+    extend: {
+      recipes: {
+        button: {
+          base: {
+            textTransform: 'uppercase',
+          },
+        },
+      },
+    },
+  },
+})
+```
+
+## Customize a multi part component
+
+In the following example, we customize the `Card` component to remove the default box shadow. To know what css
+properties you can check each components page and look for the recipe section.
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  theme: {
+    extend: {
+      slotRecipes: {
+        card: {
+          base: {
+            root: {
+              boxShadow: 'none',
+            },
+          },
+        },
+      },
+    },
+  },
+})
+```

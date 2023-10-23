@@ -45,6 +45,7 @@ export default defineConfig({
         properties: {
           fontWeight: ['*'],
           textStyle: ['*'],
+          textTransform: ['uppercase'],
         },
       },
     ],
@@ -121,6 +122,15 @@ export default defineConfig({
   },
   theme: {
     extend: {
+      slotRecipes: {
+        card: {
+          base: {
+            root: {
+              boxShadow: 'none',
+            },
+          },
+        },
+      },
       tokens: {
         fonts: {
           body: { value: 'var(--font-jakarta), sans-serif' },
