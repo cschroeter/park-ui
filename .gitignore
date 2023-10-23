@@ -34,9 +34,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Panda
-styled-system
-
 # Sitemap
 sitemap*.xml
 
@@ -44,9 +41,5 @@ sitemap*.xml
 dist
 *.tgz
 
-# contentlayer
-.contentlayer
-
-.astro
 
 .turbo

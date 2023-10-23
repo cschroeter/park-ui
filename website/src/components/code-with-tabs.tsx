@@ -17,7 +17,13 @@ export const CodeWithTabs = (props: Props) => {
       overflow="hidden"
       borderColor="gray.dark.a3"
     >
-      <TabList bg="gray.dark.1" gap="0" pt="2" px="1.5">
+      <TabList
+        bg="gray.dark.1"
+        gap="0"
+        pt="2"
+        px="1.5"
+        boxShadow="0 -1px 0 0 inset var(--colors-gray-a4)"
+      >
         {['react', 'solid', 'vue'].map((tab) => (
           <TabTrigger
             key={tab}

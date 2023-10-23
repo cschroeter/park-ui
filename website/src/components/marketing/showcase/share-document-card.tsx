@@ -22,9 +22,9 @@ const members = [
     email: 'segun@park-ui.com',
   },
   {
-    name: 'Tyler Pfledderer',
-    avatar: 'https://avatars.githubusercontent.com/u/65234762?v=4',
-    email: 'tyler@park-ui.com',
+    name: 'Simon Holzmayer',
+    avatar: 'https://avatars.githubusercontent.com/u/20296626?v=4',
+    email: 'simon@park-ui.com',
   },
 ]
 

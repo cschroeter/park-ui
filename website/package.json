@@ -7,7 +7,6 @@
     "prepare": "pandacss codegen",
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "pandacss codegen",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

@@ -1,5 +1,6 @@
 ---
 import type { MarkdownHeading } from 'astro'
+import { Code } from 'astro:components'
 import { Box, Container, Flex, HStack, Stack } from 'styled-system/jsx'
 import Breadcrumbs from '~/components/navigation/breadcrumbs.astro'
 import DocsFooter from '~/components/navigation/docs-footer.astro'
@@ -8,11 +9,9 @@ import Navbar from '~/components/navigation/navbar.astro'
 import Sidebar from '~/components/navigation/sidebar.astro'
 import { TableOfContent } from '~/components/navigation/toc'
 import { ThemeDrawer } from '~/components/theme/theme-drawer'
+import { pandaConfig, tailwindConfig } from '~/lib/use-theme-generator'
 import Layout from './layout.astro'
 import { layout } from './layout.recipe'
-import { CodePreview } from '~/components/code-preview'
-import { Code } from 'astro:components'
-import { baseConfig } from '~/lib/use-theme-generator'
 
 interface Props {
   title: string
@@ -28,7 +27,8 @@ const styles = layout()
   <header class={styles.header}>
     <Navbar borderBottomWidth="1px">
       <ThemeDrawer client:load slot="action" placement="right">
-        <Code code={baseConfig} lang="tsx" theme="css-variables" />
+        <Code code={pandaConfig} lang="tsx" theme="css-variables" slot="panda" />
+        <Code code={tailwindConfig} lang="tsx" theme="css-variables" slot="tailwind" />
       </ThemeDrawer>
       <Box display={{ base: 'block', md: 'none' }}>
         <Container py="1">

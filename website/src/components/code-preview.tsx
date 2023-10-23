@@ -65,11 +65,15 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
       borderTopRadius={isAttached ? '0!' : 'l3'}
       borderWidth={isAttached ? '0!' : '1px'}
     >
-      <Flex className={styles.control} display={{ base: 'none', md: 'flex' }}>
-        {isCollapsable && (
+      <Flex className={styles.control} display={{ base: 'none', md: 'flex' }} gap="1">
+        {isCollapsable && !expanded && (
           <Button
             px="0"
             variant="ghost"
+            bg="gray.dark.3"
+            borderColor="gray.dark.5"
+            borderWidth="1px"
+            _hover={{ bg: 'gray.dark.4' }}
             size="xs"
             onClick={() => setCollapsed(!collapsed)}
             color="gray.dark.11"

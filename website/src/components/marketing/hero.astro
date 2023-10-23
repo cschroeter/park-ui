@@ -1,12 +1,15 @@
 ---
-import { SiReact, SiSolid, SiVuedotjs } from '@icons-pack/react-simple-icons'
+import { SiReact, SiVuedotjs } from '@icons-pack/react-simple-icons'
 import { Code } from 'astro:components'
 import { ArrowRightIcon } from 'lucide-react'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
 import { Heading, Text } from '~/components/ui'
-import { baseConfig } from '~/lib/use-theme-generator'
+import { pandaConfig, tailwindConfig } from '~/lib/use-theme-generator'
 import { ThemeDrawer } from '../theme/theme-drawer'
+import { PandaIcon } from './panda.icon'
+import { SolidIcon } from './solid.icon'
+import { TailwindIcon } from './tailwind.icon'
 ---
 
 <Stack gap={{ base: '8', md: '12' }} maxW={{ md: '2xl' }}>
@@ -23,19 +26,22 @@ import { ThemeDrawer } from '../theme/theme-drawer'
       >Get Started <ArrowRightIcon /></a
     >
     <ThemeDrawer client:load isHero>
-      <Code code={baseConfig} lang="tsx" theme="css-variables" />
+      <Code code={pandaConfig} lang="tsx" theme="css-variables" slot="panda" />
+      <Code code={tailwindConfig} lang="tsx" theme="css-variables" slot="tailwind" />
     </ThemeDrawer>
   </Stack>
-  <HStack gap={{ base: '10', md: '12' }}>
+  <HStack gap="6">
     {
       [
         { framework: 'React', icon: <SiReact /> },
         { framework: 'Vue', icon: <SiVuedotjs /> },
-        { framework: 'Solid', icon: <SiSolid /> },
+        { framework: 'Solid', icon: <SolidIcon /> },
+        { framework: 'Panda', icon: <PandaIcon /> },
+        { framework: 'Tailwind', icon: <TailwindIcon /> },
       ].map(({ framework, icon }) => (
         <HStack key={framework} gap="2">
           <Box fontSize="3xl">{icon}</Box>
-          <Text as="span" color="fg.muted">
+          <Text as="span" color="fg.muted" display={{ base: 'none', sm: 'inline-block' }}>
             {framework}
           </Text>
         </HStack>

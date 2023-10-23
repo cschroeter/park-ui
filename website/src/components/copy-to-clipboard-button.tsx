@@ -26,6 +26,10 @@ export const CopyToClipboardButton = (props: Props) => {
       variant="ghost"
       size="xs"
       color="gray.dark.11"
+      bg="gray.dark.3"
+      borderColor="gray.dark.5"
+      borderWidth="1px"
+      _hover={{ bg: 'gray.dark.4' }}
       px="0"
       {...props}
       aria-label="Copy code to clipboard"

@@ -1,6 +1,5 @@
-import { Container, HStack } from 'styled-system/jsx'
+import { Container } from 'styled-system/jsx'
 import { TabIndicator, TabList, TabTrigger, Tabs } from '~/components/ui'
-import { Badge } from '../ui/badge'
 
 interface Props {
   value: string
@@ -17,14 +16,7 @@ export const DocsHeroTabs = (props: Props) => {
             <a href={pathname.replace('tailwind', 'panda')}>Panda</a>
           </TabTrigger>
           <TabTrigger value="tailwind" _selected={{ bg: 'bg.surface' }}>
-            <a href={pathname.replace('panda', 'tailwind')}>
-              <HStack gap="2">
-                Tailwind
-                <Badge variant="subtle" size="sm">
-                  Alpha
-                </Badge>
-              </HStack>
-            </a>
+            <a href={pathname.replace('panda', 'tailwind')}>Tailwind</a>
           </TabTrigger>
           <TabIndicator />
         </TabList>

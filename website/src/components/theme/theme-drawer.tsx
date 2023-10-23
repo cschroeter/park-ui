@@ -14,10 +14,12 @@ import { ThemeConfigDialog } from './theme-config-dialog'
 interface Props {
   isHero?: boolean
   placement?: 'left' | 'right'
+  panda?: JSX.Element
+  tailwind?: JSX.Element
 }
 
 export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
-  const { placement = 'left', isHero } = props
+  const { placement = 'left', isHero, panda, tailwind } = props
   const { reset } = useThemeGenerator()
   return (
     <Drawer.Root placement={placement}>
@@ -33,7 +35,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
             <Drawer.Header>
               <Drawer.Title>Make it yours</Drawer.Title>
               <Drawer.Description>
-                Customize your theme and copy the config to use in your project.
+                Customize the theme and copy the configuration to your project.
               </Drawer.Description>
               <Drawer.CloseTrigger asChild>
                 <Button
@@ -62,7 +64,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
                   <Undo2Icon />
                   Reset
                 </Button>
-                <ThemeConfigDialog>{props.children}</ThemeConfigDialog>
+                <ThemeConfigDialog panda={panda} tailwind={tailwind} />
               </HStack>
             </Drawer.Footer>
           </Drawer.Content>
