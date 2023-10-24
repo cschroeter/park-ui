@@ -1,3 +1,4 @@
+import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Select } from '~/components/ui/select'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
@@ -19,18 +20,20 @@ export const FontFamilySelect = () => {
         <Select.ValueText />
         <ChevronsUpDownIcon />
       </Select.Trigger>
-      <Select.Positioner>
-        <Select.Content>
-          {fontFamilies.map((fontFamily, id) => (
-            <Select.Item key={id} item={fontFamily}>
-              <Select.ItemText>{fontFamily.label}</Select.ItemText>
-              <Select.ItemIndicator>
-                <CheckIcon />
-              </Select.ItemIndicator>
-            </Select.Item>
-          ))}
-        </Select.Content>
-      </Select.Positioner>
+      <Portal>
+        <Select.Positioner>
+          <Select.Content>
+            {fontFamilies.map((fontFamily, id) => (
+              <Select.Item key={id} item={fontFamily}>
+                <Select.ItemText>{fontFamily.label}</Select.ItemText>
+                <Select.ItemIndicator>
+                  <CheckIcon />
+                </Select.ItemIndicator>
+              </Select.Item>
+            ))}
+          </Select.Content>
+        </Select.Positioner>
+      </Portal>
     </Select.Root>
   )
 }
