@@ -2,16 +2,15 @@ import { Portal } from '@ark-ui/react'
 import { MenuIcon, XIcon } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 import { Logo } from '../logo'
-import { Button } from '../ui/button'
 import { Drawer } from '../ui/drawer'
 import { IconButton } from '../ui/icon-button'
 
 export const MobileSidebarContainer = (props: PropsWithChildren) => (
   <Drawer.Root placement="left">
     <Drawer.Trigger asChild>
-      <Button px="0" aria-label="Open Menu" variant="ghost" size="sm">
+      <IconButton aria-label="Open Menu" variant="ghost" size="sm">
         <MenuIcon />
-      </Button>
+      </IconButton>
     </Drawer.Trigger>
     <Portal>
       <Drawer.Backdrop />
@@ -21,8 +20,8 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => (
             <a href="/" aria-label="Go to start page">
               <Logo />
             </a>
-            <Drawer.CloseTrigger position="absolute" top="3" right="4" asChild>
-              <IconButton aria-label="Close Sidebar" variant="ghost">
+            <Drawer.CloseTrigger position="absolute" asChild>
+              <IconButton aria-label="Close Sidebar" variant="ghost" top="3" right="4">
                 <XIcon />
               </IconButton>
             </Drawer.CloseTrigger>

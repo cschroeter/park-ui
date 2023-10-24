@@ -7,18 +7,18 @@ description: Customize Park UI to fit your needs.
 import { Steps, Step } from '~/components/ui'
 import Quickstart from '~/components/quickstart.astro'
 
-## Concept
-
 The Tailwind Plugin uses the generated static CSS classes from the Park UI Panda recipes as a preset. In this guide, we
 will explore various ways to tailor Park UI to your specific needs and make it truly yours.
 
-### Tailwind theme config
+## Make it yours
 
 The Park UI Tailwind theme config is a powerful and comprehensive way to customize the appearance of Park UI components.
 It allows you to adjust various design elements such as the color palette, accent colors, and border radius, effectively
-transforming the look and feel of your UI components.
+transforming the look and feel of all UI components.
 
-Here's how you can set your theme preferences in your Tailwind config file:
+Here's how you can set your theme preferences in your Tailwind config file to another color palette. In our example, we
+will use the "amber" color palette, which is one of the available color palettes in Park UI. Also we will use the "sand"
+color palette for the gray colors. We will not have a border radius here:
 
 ```js
 const { parkwindPlugin } = require('@park-ui/tailwind-plugin')
@@ -26,9 +26,9 @@ const { parkwindPlugin } = require('@park-ui/tailwind-plugin')
 module.exports = {
   plugins: [parkwindPlugin],
   parkUI: {
-    accentColor: 'neutral',
-    grayColor: 'neutral',
-    borderRadius: 'md',
+    accentColor: 'amber',
+    grayColor: 'sand',
+    borderRadius: 'none',
   },
   darkMode: ['class'],
   // ...
@@ -38,11 +38,11 @@ module.exports = {
 This configuration lets you control elements like color palettes and accent hues to align your UI with your brand
 identity and project style. You can find the supported values under "Make it yours" on the documentation page.
 
-### Adding classes to recipes
+## Change existing variants
 
 Park UI components are composed of various classes that define their appearance. You can further customize component
-variants by adding or modifying classes. For example, if you want to underline the solid button variant, you can include
-the underline class within its definition:
+variants by adding or modifying classes. For example, if you want to change the solid button to uppercase, you can
+include the Tailwind uppercase class within its recipe styles:
 
 ```js
 import { tv } from 'tailwind-variants'
@@ -52,7 +52,7 @@ export const buttonStyles = tv({
   // ...
   variants: {
     variant: {
-      solid: 'button--variant_solid underline',
+      solid: 'button--variant_solid uppercase',
       // ...
     },
     // ...
@@ -63,16 +63,51 @@ export const buttonStyles = tv({
 This approach empowers you to make granular changes to individual component styles, allowing you to create a UI that
 suits your specific needs.
 
-### Extending CSS Classes
-
 Sometimes, you may need to go beyond what the preset classes offer. To make more advanced customizations, you can extend
-the CSS classes of the Park UI components. This lets you create entirely new styles or modify existing ones:
+or override the CSS classes of the Park UI components. This lets you create entirely new styles or modify existing ones.
+For example, if you want to change the solid button to uppercase, you can add the Tailwind uppercase class to its recipe
+styles:
 
 ```css
 .button--variant_solid {
-  @apply underline;
+  @apply uppercase;
 }
 ```
 
 This approach enables you to craft unique and specific design changes while keeping your customizations organized and
 maintainable.
+
+## Add new variants
+
+Imagine you want to add another button variant called "uppercase" to the existing variants. You can do this by adding
+the new variant to the `variants` object in the button recipe:
+
+```js
+import { tv } from 'tailwind-variants'
+
+export const buttonStyles = tv({
+  base: 'button',
+  // ...
+  variants: {
+    variant: {
+      uppercase: 'button--variant_uppercase',
+      // ...
+    },
+    // ...
+  },
+})
+```
+
+With that in place, typescript allows you to use the "uppercase" variant now. You can use the new variant in your code:
+
+```jsx
+<Button variant="uppercase">Uppercase</Button>
+```
+
+The `button--variant_uppercase` is a CSS class that you should define in your CSS file:
+
+```css
+.button--variant_uppercase {
+  @apply uppercase;
+}
+```

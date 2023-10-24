@@ -32,6 +32,7 @@
   "dependencies": {
     "@ark-ui/anatomy": "1.0.0-beta.0",
     "@pandacss/dev": "0.17.0",
+    "deepmerge": "4.3.1",
     "ts-pattern": "5.0.5"
   },
   "devDependencies": {

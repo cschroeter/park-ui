@@ -37,6 +37,7 @@ export default defineConfig({
 ### Changed
 
 - Changed the background color of text that is selected by the user to match the `accent` color.
+- Revised the `IconButton`.
 
 ## [0.20.0] - 2023-10-22
 
