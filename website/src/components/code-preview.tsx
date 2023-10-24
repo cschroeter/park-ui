@@ -3,7 +3,7 @@ import { useState, type PropsWithChildren } from 'react'
 import { cx, sva } from 'styled-system/css'
 import { Box, Flex } from 'styled-system/jsx'
 import { CopyToClipboardButton } from './copy-to-clipboard-button'
-import { Button } from './ui'
+import { Button, IconButton } from './ui'
 
 const styles = sva({
   slots: ['root', 'control', 'preview', 'footer'],
@@ -67,8 +67,7 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
     >
       <Flex className={styles.control} display={{ base: 'none', md: 'flex' }} gap="1">
         {isCollapsable && !expanded && (
-          <Button
-            px="0"
+          <IconButton
             variant="ghost"
             bg="gray.dark.3"
             borderColor="gray.dark.5"
@@ -79,7 +78,7 @@ export const CodePreview = (props: PropsWithChildren<Props>) => {
             color="gray.dark.11"
           >
             {collapsed ? <ArrowDownToLineIcon /> : <ArrowUpToLineIcon />}
-          </Button>
+          </IconButton>
         )}
         <CopyToClipboardButton content={code} />
       </Flex>

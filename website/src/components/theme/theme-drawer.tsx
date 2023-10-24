@@ -3,6 +3,7 @@ import { Settings2Icon, Undo2Icon, XIcon } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { IconButton } from '../ui'
 import { Button } from '../ui/button'
 import { Drawer } from '../ui/drawer'
 import { AccentColorPicker } from './accent-color-picker'
@@ -38,16 +39,15 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
                 Customize the theme and copy the configuration to your project.
               </Drawer.Description>
               <Drawer.CloseTrigger asChild>
-                <Button
+                <IconButton
                   aria-label="Close Sidebar"
                   variant="ghost"
                   position="absolute"
                   top="3"
                   right="4"
-                  px="0"
                 >
                   <XIcon />
-                </Button>
+                </IconButton>
               </Drawer.CloseTrigger>
             </Drawer.Header>
             <Drawer.Body>

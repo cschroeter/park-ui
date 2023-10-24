@@ -27,6 +27,7 @@ export default defineConfig({
       code: [{ variant: ['*'], size: ['*'] }],
       drawer: [{ placement: ['*'] }],
       icon: [{ size: ['*'] }],
+      iconButton: [{ variant: ['*'], size: ['*'] }],
       input: [{ size: ['*'] }],
       menu: [{ size: ['*'] }],
       numberInput: [{ size: ['*'] }],

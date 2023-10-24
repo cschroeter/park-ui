@@ -1,7 +1,7 @@
 {
   "variant": {
     "options": ["solid", "outline", "ghost", "link"],
-    "defaultValue": "solid"
+    "defaultValue": "outline"
   },
   "size": {
     "options": ["xs", "sm", "md", "lg", "xl", "2xl"],

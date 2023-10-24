@@ -1,7 +1,7 @@
 import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Button } from './ui'
+import { IconButton } from './ui'
 
 type Props = { content: string }
 
@@ -22,7 +22,7 @@ export const CopyToClipboardButton = (props: Props) => {
   }
 
   return (
-    <Button
+    <IconButton
       variant="ghost"
       size="xs"
       color="gray.dark.11"
@@ -30,12 +30,11 @@ export const CopyToClipboardButton = (props: Props) => {
       borderColor="gray.dark.5"
       borderWidth="1px"
       _hover={{ bg: 'gray.dark.4' }}
-      px="0"
       {...props}
       aria-label="Copy code to clipboard"
       onClick={handleClick}
     >
       {visible ? <CopyIcon /> : <CheckIcon />}
-    </Button>
+    </IconButton>
   )
 }
