@@ -44,6 +44,15 @@ export const datePicker = defineSlotRecipe({
       gap: '2',
       justifyContent: 'space-between',
     },
+    table: {
+      width: 'full',
+    },
+    tableCell: {
+      textAlign: 'center',
+    },
+    tableCellTrigger: {
+      width: '100%',
+    },
     //   grid: {
     //     display: 'flex',
     //     flexDirection: 'column',

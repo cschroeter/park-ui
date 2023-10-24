@@ -73,17 +73,17 @@ export const Demo = (props: DatePickerProps) => {
                 <>
                   <DatePicker.ViewControl>
                     <DatePicker.PrevTrigger asChild>
-                      <IconButton variant="ghost">
+                      <IconButton variant="ghost" size="sm">
                         <ChevronLeftIcon />
                       </IconButton>
                     </DatePicker.PrevTrigger>
-                    <DatePicker.ViewTrigger>
-                      <Button variant="ghost">
+                    <DatePicker.ViewTrigger asChild>
+                      <Button variant="ghost" size="sm">
                         <DatePicker.RangeText />
                       </Button>
                     </DatePicker.ViewTrigger>
                     <DatePicker.NextTrigger asChild>
-                      <IconButton variant="ghost">
+                      <IconButton variant="ghost" size="sm">
                         <ChevronRightIcon />
                       </IconButton>
                     </DatePicker.NextTrigger>
@@ -111,17 +111,17 @@ export const Demo = (props: DatePickerProps) => {
                 <>
                   <DatePicker.ViewControl>
                     <DatePicker.PrevTrigger asChild>
-                      <IconButton variant="ghost">
+                      <IconButton variant="ghost" size="sm">
                         <ChevronLeftIcon />
                       </IconButton>
                     </DatePicker.PrevTrigger>
                     <DatePicker.ViewTrigger asChild>
-                      <Button variant="ghost">
+                      <Button variant="ghost" size="sm">
                         <DatePicker.RangeText />
                       </Button>
                     </DatePicker.ViewTrigger>
                     <DatePicker.NextTrigger asChild>
-                      <IconButton variant="ghost">
+                      <IconButton variant="ghost" size="sm">
                         <ChevronRightIcon />
                       </IconButton>
                     </DatePicker.NextTrigger>
