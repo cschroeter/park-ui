@@ -5,9 +5,6 @@ export const datePicker = defineSlotRecipe({
   className: 'datePicker',
   slots: [...datePickerAnatomy.keys()],
   base: {
-    //   cellTrigger: {
-
-    //   },
     root: {
       display: 'flex',
       flexDirection: 'column',
@@ -19,8 +16,9 @@ export const datePicker = defineSlotRecipe({
       boxShadow: 'md',
       display: 'flex',
       flexDirection: 'column',
+      gap: '3',
       p: '4',
-      width: 'fit-content',
+      width: '312px',
       _hidden: {
         display: 'none',
       },
@@ -35,7 +33,12 @@ export const datePicker = defineSlotRecipe({
       fontWeight: 'medium',
       textStyle: 'sm',
     },
-    trigger: {},
+    tableHeader: {
+      color: 'fg.muted',
+      fontWeight: 'semibold',
+      height: '10',
+      textStyle: 'sm',
+    },
     viewControl: {
       display: 'flex',
       gap: '2',
@@ -68,14 +71,7 @@ export const datePicker = defineSlotRecipe({
     //     gridTemplateColumns: 'repeat(7, 1fr)',
     //   },
     //   columnHeader: {
-    //     alignItems: 'center',
-    //     color: 'fg.subtle',
-    //     display: 'inline-flex',
-    //     fontWeight: 'semibold',
-    //     height: '10',
-    //     justifyContent: 'center',
-    //     textStyle: 'sm',
-    //     width: '10',
+
     //   },
   },
 })

@@ -28,24 +28,26 @@ export const Demo = (props: DatePickerProps) => {
                 <>
                   <DatePicker.ViewControl>
                     <DatePicker.PrevTrigger asChild>
-                      <Button variant="ghost" px="0">
+                      <IconButton variant="ghost" size="sm">
                         <ChevronLeftIcon />
-                      </Button>
+                      </IconButton>
                     </DatePicker.PrevTrigger>
-                    <DatePicker.ViewTrigger>
-                      <DatePicker.RangeText />
+                    <DatePicker.ViewTrigger asChild>
+                      <Button variant="ghost" size="sm">
+                        <DatePicker.RangeText />
+                      </Button>
                     </DatePicker.ViewTrigger>
                     <DatePicker.NextTrigger asChild>
-                      <Button variant="ghost" px="0">
+                      <IconButton variant="ghost" size="sm">
                         <ChevronRightIcon />
-                      </Button>
+                      </IconButton>
                     </DatePicker.NextTrigger>
                   </DatePicker.ViewControl>
                   <DatePicker.Table>
                     <DatePicker.TableHead>
                       <DatePicker.TableRow>
                         {api.weekDays.map((weekDay, id) => (
-                          <DatePicker.TableHeader key={id}>{weekDay.short}</DatePicker.TableHeader>
+                          <DatePicker.TableHeader key={id}>{weekDay.narrow}</DatePicker.TableHeader>
                         ))}
                       </DatePicker.TableRow>
                     </DatePicker.TableHead>
@@ -55,7 +57,7 @@ export const Demo = (props: DatePickerProps) => {
                           {week.map((day, id) => (
                             <DatePicker.TableCell key={id} value={day}>
                               <DatePicker.TableCellTrigger asChild>
-                                <Button variant="ghost">{day.day}</Button>
+                                <IconButton variant="ghost">{day.day}</IconButton>
                               </DatePicker.TableCellTrigger>
                             </DatePicker.TableCell>
                           ))}
@@ -70,11 +72,21 @@ export const Demo = (props: DatePickerProps) => {
               {(api) => (
                 <>
                   <DatePicker.ViewControl>
-                    <DatePicker.PrevTrigger>Prev</DatePicker.PrevTrigger>
+                    <DatePicker.PrevTrigger asChild>
+                      <IconButton variant="ghost">
+                        <ChevronLeftIcon />
+                      </IconButton>
+                    </DatePicker.PrevTrigger>
                     <DatePicker.ViewTrigger>
-                      <DatePicker.RangeText />
+                      <Button variant="ghost">
+                        <DatePicker.RangeText />
+                      </Button>
                     </DatePicker.ViewTrigger>
-                    <DatePicker.NextTrigger>Next</DatePicker.NextTrigger>
+                    <DatePicker.NextTrigger asChild>
+                      <IconButton variant="ghost">
+                        <ChevronRightIcon />
+                      </IconButton>
+                    </DatePicker.NextTrigger>
                   </DatePicker.ViewControl>
                   <DatePicker.Table>
                     <DatePicker.TableBody>
@@ -82,8 +94,8 @@ export const Demo = (props: DatePickerProps) => {
                         <DatePicker.TableRow key={id}>
                           {months.map((month, id) => (
                             <DatePicker.TableCell key={id} value={month.value}>
-                              <DatePicker.TableCellTrigger>
-                                {month.label}
+                              <DatePicker.TableCellTrigger asChild>
+                                <Button variant="ghost">{month.label}</Button>
                               </DatePicker.TableCellTrigger>
                             </DatePicker.TableCell>
                           ))}
@@ -98,11 +110,21 @@ export const Demo = (props: DatePickerProps) => {
               {(api) => (
                 <>
                   <DatePicker.ViewControl>
-                    <DatePicker.PrevTrigger>Prev</DatePicker.PrevTrigger>
-                    <DatePicker.ViewTrigger>
-                      <DatePicker.RangeText />
+                    <DatePicker.PrevTrigger asChild>
+                      <IconButton variant="ghost">
+                        <ChevronLeftIcon />
+                      </IconButton>
+                    </DatePicker.PrevTrigger>
+                    <DatePicker.ViewTrigger asChild>
+                      <Button variant="ghost">
+                        <DatePicker.RangeText />
+                      </Button>
                     </DatePicker.ViewTrigger>
-                    <DatePicker.NextTrigger>Next</DatePicker.NextTrigger>
+                    <DatePicker.NextTrigger asChild>
+                      <IconButton variant="ghost">
+                        <ChevronRightIcon />
+                      </IconButton>
+                    </DatePicker.NextTrigger>
                   </DatePicker.ViewControl>
                   <DatePicker.Table>
                     <DatePicker.TableBody>
@@ -110,8 +132,8 @@ export const Demo = (props: DatePickerProps) => {
                         <DatePicker.TableRow key={id}>
                           {years.map((year, id) => (
                             <DatePicker.TableCell key={id} value={year.value}>
-                              <DatePicker.TableCellTrigger>
-                                {year.label}
+                              <DatePicker.TableCellTrigger asChild>
+                                <Button variant="ghost">{year.label}</Button>
                               </DatePicker.TableCellTrigger>
                             </DatePicker.TableCell>
                           ))}

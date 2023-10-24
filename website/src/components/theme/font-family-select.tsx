@@ -22,7 +22,7 @@ export const FontFamilySelect = () => {
       </Select.Trigger>
       <Portal>
         <Select.Positioner>
-          <Select.Content>
+          <Select.Content zIndex={100}>
             {fontFamilies.map((fontFamily, id) => (
               <Select.Item key={id} item={fontFamily}>
                 <Select.ItemText>{fontFamily.label}</Select.ItemText>
