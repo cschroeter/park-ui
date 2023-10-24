@@ -1,0 +1,76 @@
+---
+id: semantic-tokens
+title: Semantic Tokens
+description: Bring the Park UI semantic to your entire application
+---
+
+import { Steps, Step } from '~/components/ui'
+
+The Park UI Theme uses tokens to define the appearance of components. These tokens are also helpful to build your own
+components with the same design language.
+
+## Background
+
+| Name       | CSS Variable           | Token Name      |
+| ---------- | ---------------------- | --------------- |
+| Canvas     | `var(--bg-canvas)`     | `bg-canvas`     |
+| Default    | `var(--bg-default)`    | `bg-default`    |
+| Subtle     | `var(--bg-subtle)`     | `bg-subtle`     |
+| Muted      | `var(--bg-muted)`      | `bg-muted`      |
+| Emphasized | `var(--bg-emphasized)` | `bg-emphasized` |
+| Disabled   | `var(--bg-disabled)`   | `bg-disabled`   |
+
+To use the the bg-canvas token in your application as background color, you have to prefix it with `bg-` and add it as a
+class like:
+
+```jsx
+<div className="bg-bg-canvas">Hello from Park</div>
+```
+
+## Foreground
+
+| Name     | CSS Variable         | Token Name    |
+| -------- | -------------------- | ------------- |
+| Default  | `var(--fg-default)`  | `fg-default`  |
+| Muted    | `var(--fg-muted)`    | `fg-muted`    |
+| Subtle   | `var(--fg-subtle)`   | `fg-subtle`   |
+| Disabled | `var(--fg-disabled)` | `fg-disabled` |
+
+To use the a muted color token in your application as text color, you have to prefix it with `text-` and add it as a
+class like:
+
+```jsx
+<p className="text-fg-muted">Hello from Park</p>
+```
+
+## Border
+
+| TypeName | CSS Variable             | Token Name        |
+| -------- | ------------------------ | ----------------- |
+| Default  | `var(--border-default)`  | `border-default`  |
+| Muted    | `var(--border-muted)`    | `border-muted`    |
+| Subtle   | `var(--border-subtle)`   | `border-subtle`   |
+| Disabled | `var(--border-disabled)` | `border-disabled` |
+| Outline  | `var(--border-outline)`  | `border-outline`  |
+| Accent   | `var(--border-accent)`   | `border-accent`   |
+
+To use the a muted border color token in your application, you have to prefix it with `border-` and add it as a class
+like:
+
+```jsx
+<div className="border border-border-muted">Hello from Park</div>
+```
+
+## Border Radius
+
+| Name    | CSS Variable      | Token Name   |
+| ------- | ----------------- | ------------ |
+| Level 1 | `var(--radii-l1)` | `rounded-l1` |
+| Level 2 | `var(--radii-l2)` | `rounded-l2` |
+| Level 3 | `var(--radii-l3)` | `rounded-l3` |
+
+To use the a border radius token in your application, you have to prefix it with `rounded-` and add it as a class like:
+
+```jsx
+<div className="border border-border-accent rounded-l1">Hello from Park</div>
+```
