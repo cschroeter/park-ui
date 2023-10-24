@@ -1,9 +1,5 @@
-import { PipetteIcon } from 'lucide-react'
-import { HStack, Stack } from 'styled-system/jsx'
 import { ColorPicker } from '~/components/ui/color-picker'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
-import { Text } from '~/components/ui/text'
+import { Input } from '../ui/input'
 
 const presets = [
   'hsl(10, 81%, 59%)',
@@ -20,50 +16,53 @@ const presets = [
 
 export const Demo = () => {
   return (
-    <ColorPicker.Root defaultValue="hsl(10, 81%, 59%)">
-      <ColorPicker.Content>
-        <Stack gap="4">
+    <ColorPicker.Root defaultValue="hsl(0, 100%, 50%)">
+      <ColorPicker.Label>Color</ColorPicker.Label>
+      <ColorPicker.Control>
+        <ColorPicker.ChannelInput channel="hex" asChild>
+          <Input />
+        </ColorPicker.ChannelInput>
+        <ColorPicker.ChannelInput channel="alpha" asChild>
+          <Input />
+        </ColorPicker.ChannelInput>
+        <ColorPicker.Trigger>open</ColorPicker.Trigger>
+        <ColorPicker.Trigger asChild>
+          <ColorPicker.Swatch value="red">
+            <ColorPicker.TransparencyGrid size="10px" />
+          </ColorPicker.Swatch>
+        </ColorPicker.Trigger>
+      </ColorPicker.Control>
+      <ColorPicker.Positioner>
+        <ColorPicker.Content>
           <ColorPicker.Area>
             <ColorPicker.AreaBackground />
             <ColorPicker.AreaThumb />
           </ColorPicker.Area>
-          <HStack gap="3">
-            <ColorPicker.EyeDropperTrigger asChild>
-              <IconButton size="xs" variant="outline" aria-label="Pick color">
-                <PipetteIcon />
-              </IconButton>
-            </ColorPicker.EyeDropperTrigger>
-            <Stack gap="3" width="full">
-              <ColorPicker.ChannelSlider channel="hue">
-                <ColorPicker.ChannelSliderTrack />
-                <ColorPicker.ChannelSliderThumb />
-              </ColorPicker.ChannelSlider>
-              <ColorPicker.ChannelSlider channel="alpha">
-                <ColorPicker.ChannelSliderTrack />
-                <ColorPicker.ChannelSliderThumb />
-              </ColorPicker.ChannelSlider>
-            </Stack>
-          </HStack>
-          <HStack gap="2">
-            <ColorPicker.ChannelInput channel="hex" asChild>
-              <Input size="2xs" />
-            </ColorPicker.ChannelInput>
-            <ColorPicker.ChannelInput channel="alpha" asChild>
-              <Input size="2xs" />
-            </ColorPicker.ChannelInput>
-          </HStack>
-          <Text textStyle="xs" fontWeight="medium">
-            Saved Colors
-          </Text>
+          <ColorPicker.ChannelSlider channel="hue">
+            <ColorPicker.ChannelSliderTrack />
+            <ColorPicker.ChannelSliderThumb />
+          </ColorPicker.ChannelSlider>
+          <ColorPicker.ChannelSlider channel="alpha">
+            <ColorPicker.TransparencyGrid size="16px" />
+            <ColorPicker.ChannelSliderTrack />
+            <ColorPicker.ChannelSliderThumb />
+          </ColorPicker.ChannelSlider>
           <ColorPicker.SwatchGroup>
-            {presets.map((color) => (
-              <ColorPicker.Swatch key={color} value={color} aria-label={`Pick color ${color}`}>
-                <ColorPicker.TransparencyGrid size="12px" />
-              </ColorPicker.Swatch>
-            ))}
+            <ColorPicker.SwatchTrigger value="red">
+              <ColorPicker.Swatch value="red" />
+            </ColorPicker.SwatchTrigger>
+            <ColorPicker.SwatchTrigger value="blue">
+              <ColorPicker.Swatch value="blue" />
+            </ColorPicker.SwatchTrigger>
+            <ColorPicker.SwatchTrigger value="green">
+              <ColorPicker.Swatch value="green" />
+            </ColorPicker.SwatchTrigger>
           </ColorPicker.SwatchGroup>
-        </Stack>
-      </ColorPicker.Content>
+          <ColorPicker.ChannelInput channel="hex" />
+          <ColorPicker.ChannelInput channel="alpha" />
+          <ColorPicker.EyeDropperTrigger>Pick color</ColorPicker.EyeDropperTrigger>
+        </ColorPicker.Content>
+      </ColorPicker.Positioner>
     </ColorPicker.Root>
   )
 }

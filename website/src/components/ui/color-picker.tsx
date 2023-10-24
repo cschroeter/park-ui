@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(colorPicker)
 export * from '@ark-ui/react/color-picker'
 export type ColorPickerProps = Ark.ColorPickerProps & ColorPickerVariantProps
 
-const ColorPickerRoot = withProvider(styled(Ark.ColorPicker.Root))
+const ColorPickerRoot = withProvider(styled(Ark.ColorPicker.Root), 'root')
 export const ColorPickerArea = withContext(styled(Ark.ColorPicker.Area), 'area')
 export const ColorPickerAreaBackground = withContext(
   styled(Ark.ColorPicker.AreaBackground),
