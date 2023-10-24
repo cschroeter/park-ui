@@ -113,8 +113,8 @@ importers:
   packages/tailwind:
     dependencies:
       tailwind-variants:
-        specifier: 0.1.14
-        version: 0.1.14(tailwindcss@3.3.3)
+        specifier: 0.1.16
+        version: 0.1.16(tailwindcss@3.3.3)
       ts-pattern:
         specifier: 5.0.5
         version: 5.0.5
@@ -123,8 +123,8 @@ importers:
         specifier: 0.15.0
         version: 0.15.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@fontsource/plus-jakarta-sans':
-        specifier: 5.0.16
-        version: 5.0.16
+        specifier: 5.0.17
+        version: 5.0.17
       '@ladle/react':
         specifier: 3.2.2
         version: 3.2.2(@types/node@20.8.3)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
@@ -184,7 +184,7 @@ importers:
         version: 0.15.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@astrojs/mdx':
         specifier: 1.1.2
-        version: 1.1.2(astro@3.3.2)
+        version: 1.1.2(astro@3.3.3)
       '@astrojs/react':
         specifier: 3.0.3
         version: 3.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
@@ -192,29 +192,29 @@ importers:
         specifier: 3.0.2
         version: 3.0.2
       '@fontsource-variable/fira-code':
-        specifier: 5.0.14
-        version: 5.0.14
+        specifier: 5.0.15
+        version: 5.0.15
       '@fontsource-variable/inter':
-        specifier: 5.0.14
-        version: 5.0.14
+        specifier: 5.0.15
+        version: 5.0.15
       '@fontsource-variable/outfit':
         specifier: 5.0.8
         version: 5.0.8
       '@fontsource-variable/plus-jakarta-sans':
-        specifier: 5.0.17
-        version: 5.0.17
+        specifier: 5.0.18
+        version: 5.0.18
       '@fontsource-variable/raleway':
-        specifier: 5.0.15
-        version: 5.0.15
+        specifier: 5.0.16
+        version: 5.0.16
       '@fontsource-variable/roboto-mono':
-        specifier: 5.0.15
-        version: 5.0.15
+        specifier: 5.0.16
+        version: 5.0.16
       '@icons-pack/react-simple-icons':
         specifier: 9.1.0
         version: 9.1.0(react@18.2.0)
       '@pandacss/astro':
         specifier: 0.17.0
-        version: 0.17.0(astro@3.3.2)(ts-node@10.9.1)(typescript@5.2.2)
+        version: 0.17.0(astro@3.3.3)(ts-node@10.9.1)(typescript@5.2.2)
       '@pandacss/dev':
         specifier: 0.17.0
         version: 0.17.0(@internationalized/date@3.5.0)(@types/node@18.18.6)(@types/react-dom@18.2.14)(@types/react@18.2.31)(typescript@5.2.2)
@@ -228,11 +228,11 @@ importers:
         specifier: 18.2.14
         version: 18.2.14
       '@uidotdev/usehooks':
-        specifier: 2.4.0
-        version: 2.4.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.4.1
+        version: 2.4.1(react-dom@18.2.0)(react@18.2.0)
       astro:
-        specifier: 3.3.2
-        version: 3.3.2(@types/node@18.18.6)(typescript@5.2.2)
+        specifier: 3.3.3
+        version: 3.3.3(@types/node@18.18.6)(typescript@5.2.2)
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -255,8 +255,8 @@ importers:
         specifier: 5.0.5
         version: 5.0.5
       zustand:
-        specifier: 4.4.3
-        version: 4.4.3(@types/react@18.2.31)(react@18.2.0)
+        specifier: 4.4.4
+        version: 4.4.4(@types/react@18.2.31)(react@18.2.0)
 
 packages:
 
@@ -438,7 +438,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(@types/node@20.8.3)
+      astro: 2.9.6(@types/node@18.18.6)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -454,13 +454,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/markdown-remark@3.3.0(astro@3.3.2):
+  /@astrojs/markdown-remark@3.3.0(astro@3.3.3):
     resolution: {integrity: sha512-ezFzEiZygc/ASe2Eul9v1yrTbNGqSbR348UGNXQ4Dtkx8MYRwfiBfmPm6VnEdfIGkW+bi5qIUReKfc7mPVUkIg==}
     peerDependencies:
       astro: ^3.3.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.3.2(@types/node@18.18.6)(typescript@5.2.2)
+      astro: 3.3.3(@types/node@18.18.6)(typescript@5.2.2)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       mdast-util-definitions: 6.0.0
@@ -478,16 +478,16 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@1.1.2(astro@3.3.2):
+  /@astrojs/mdx@1.1.2(astro@3.3.3):
     resolution: {integrity: sha512-W+CXjdrfbIAUEDUedNOeZvpxyg+6Coji5NaOvF4e3jNhcOMtCWXpTKZTuzkFe25/uIzV2huuUl3ICJnp7qdWFA==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       astro: ^3.3.0
     dependencies:
-      '@astrojs/markdown-remark': 3.3.0(astro@3.3.2)
+      '@astrojs/markdown-remark': 3.3.0(astro@3.3.3)
       '@mdx-js/mdx': 2.3.0
       acorn: 8.10.0
-      astro: 3.3.2(@types/node@18.18.6)(typescript@5.2.2)
+      astro: 3.3.3(@types/node@18.18.6)(typescript@5.2.2)
       es-module-lexer: 1.3.1
       estree-util-visit: 1.2.1
       github-slugger: 2.0.0
@@ -1616,32 +1616,32 @@ packages:
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
 
-  /@fontsource-variable/fira-code@5.0.14:
-    resolution: {integrity: sha512-lB2+f2fQxO3JOptia9GEyyHzkbDpXtBdBDGKVBFmqSG5iI40OuzEd0Qfm/qll5QRNvBCUbVfLjxf0OCfN7/NBQ==}
+  /@fontsource-variable/fira-code@5.0.15:
+    resolution: {integrity: sha512-tp56A54PjfH1RBJQ3Jdqh5cvrEHd4n302z3v6sGAnTKW9+oQgU0dK4WAMIXgDhFY35BrhpoIElowfkAT7NYJfA==}
     dev: false
 
-  /@fontsource-variable/inter@5.0.14:
-    resolution: {integrity: sha512-i+aX+g14Qw9aEZ+VoJXNAFOs6TnYqAuWnj0lGDJP/4wbJsvTU+nVYfiqyh4QTLv9KTdwB7K4ZvE8B9A/yYyrrg==}
+  /@fontsource-variable/inter@5.0.15:
+    resolution: {integrity: sha512-CdQPQQgOVxg6ifmbrqYZeUqtQf7p2wPn6EvJ4M+vdNnsmYZgYwPPPQDNlIOU7LCUlSGaN26v6H0uA030WKn61g==}
     dev: false
 
   /@fontsource-variable/outfit@5.0.8:
     resolution: {integrity: sha512-j4JHCbuk2+Nl7PwTVT+RJKTDMDw7TWWt/85CIucD7KvOS7Iv0IiymE5ur21/aFbTwamOHrXX91WrQZHN7QDrmw==}
     dev: false
 
-  /@fontsource-variable/plus-jakarta-sans@5.0.17:
-    resolution: {integrity: sha512-Ll/2W8jmAuIg/N9Q/rdtVVs1zv7TPnWaZU9IMrYtqXK9PSON9NKcm0WqKhcdQIVK3kuJQWjQSEufMwhwnkooiQ==}
+  /@fontsource-variable/plus-jakarta-sans@5.0.18:
+    resolution: {integrity: sha512-VSBjZU3gTaMmz2bVgcyw8xU2oyrLvLlDV4zSZFBLOrO1AvrG20RHW85VKUdRCwbM5Ih2fmRlXkWhdIIUs45bmA==}
     dev: false
 
-  /@fontsource-variable/raleway@5.0.15:
-    resolution: {integrity: sha512-9sv/yJ8irSxf935CgOSuOy3nu5HA07/50DdhOOo37xKFsKsMiJiYIE/JGVudD+AQqwk7NUfeC4hS5C1UULQiZg==}
+  /@fontsource-variable/raleway@5.0.16:
+    resolution: {integrity: sha512-so9XnyYFX22qNFn6f70ZherFZwhkJYp58R7bS7ZLuXUefWLyhualoowvujDANoMtMPqT85nMrzOwoK4yPG0Crw==}
     dev: false
 
-  /@fontsource-variable/roboto-mono@5.0.15:
-    resolution: {integrity: sha512-VyZe6dcKoe9ygF6V9ErL8S7vVho0IAyDk4VDoLqNgE12otAg319+znjVDXS29gGFTpufZq95QDtMMZ2iONPFNg==}
+  /@fontsource-variable/roboto-mono@5.0.16:
+    resolution: {integrity: sha512-f4/XARRCSW8aG9qR7fF+lqIMsS/xJ46fKySdlQ3BaFLzEXeioeQylkHS6DoOF+2MPZUylLQFpmnpC0q22Orp0g==}
     dev: false
 
-  /@fontsource/plus-jakarta-sans@5.0.16:
-    resolution: {integrity: sha512-GGB8ThKbh0RJCguvqQWKW0U9IyK9L7Gq5VZtmulOyQkFeABOpa5sjFEKedOAswLDK8T1M189l3j0TbZl9bFTYA==}
+  /@fontsource/plus-jakarta-sans@5.0.17:
+    resolution: {integrity: sha512-A3NerN+0qNsotzuEz+slG5dvyGQXSEufzoDLz1CS5cicHzlpnjlB0xPRTZvB67lmVLEzDR1pyAbrmbNr7UzoEQ==}
     dev: true
 
   /@iarna/toml@2.2.5:
@@ -1975,13 +1975,13 @@ packages:
     resolution: {integrity: sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==}
     dev: true
 
-  /@pandacss/astro@0.17.0(astro@3.3.2)(ts-node@10.9.1)(typescript@5.2.2):
+  /@pandacss/astro@0.17.0(astro@3.3.3)(ts-node@10.9.1)(typescript@5.2.2):
     resolution: {integrity: sha512-eO6+yAIKMxBO4a1Vwqlw/XBg2Ug1wyk6UEvUsgmxSybBWLvRrh0uglwogjUZ69vInUHzHT/l4wgdziGvwybo2A==}
     peerDependencies:
       astro: '>=2.x'
     dependencies:
       '@pandacss/postcss': 0.17.0(typescript@5.2.2)
-      astro: 3.3.2(@types/node@18.18.6)(typescript@5.2.2)
+      astro: 3.3.3(@types/node@18.18.6)(typescript@5.2.2)
       autoprefixer: 10.4.16(postcss@8.4.31)
       postcss: 8.4.31
       postcss-load-config: 4.0.1(postcss@8.4.31)(ts-node@10.9.1)
@@ -2690,8 +2690,8 @@ packages:
   /@types/yargs-parser@21.0.2:
     resolution: {integrity: sha512-5qcvofLPbfjmBfKaLfj/+f+Sbd6pN4zl7w7VSVI5uz7m9QZTuB2aZAa2uo1wHFBNN2x6g/SoTkXmd8mQnQF2Cw==}
 
-  /@uidotdev/usehooks@2.4.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-NrpTsZUGsawYxFbEXrd8+FPpfziC4M01GSQgYWOnGa84UiavqVCzCL5bSRe6rfQc4QsHS2rGAA0h63ya/j+p6A==}
+  /@uidotdev/usehooks@2.4.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>=18.0.0'
@@ -4572,7 +4572,6 @@ packages:
       - sugarss
       - supports-color
       - terser
-    dev: false
 
   /astro@2.9.6(@types/node@20.8.3):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
@@ -4652,14 +4651,14 @@ packages:
       - supports-color
       - terser
 
-  /astro@3.3.2(@types/node@18.18.6)(typescript@5.2.2):
-    resolution: {integrity: sha512-uyimGY0p1gYXKAZe3/RCfbqNbuwpEvPkTKF5TE63Glb9ZgeLUBXu+ZlsG4LIMxCQ40p5F0D5+zuNJdH+om2PQQ==}
+  /astro@3.3.3(@types/node@18.18.6)(typescript@5.2.2):
+    resolution: {integrity: sha512-FZkv5nJfa2KADzwo8m6fytWzzhO3Uw/EOvxmBT2E1OW/dWUgIKbZd59TY3816gZl3le5Ct5amSAkaxcQghbUZA==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 2.2.1
       '@astrojs/internal-helpers': 0.2.1
-      '@astrojs/markdown-remark': 3.3.0(astro@3.3.2)
+      '@astrojs/markdown-remark': 3.3.0(astro@3.3.3)
       '@astrojs/telemetry': 3.0.3
       '@babel/core': 7.23.2
       '@babel/generator': 7.23.0
@@ -10225,8 +10224,8 @@ packages:
     resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
     dev: false
 
-  /tailwind-variants@0.1.14(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-qfOkSGP+cSolTTkJboldGmiM+w5uE77pazCRkwixEBsuaml9CmhN0E8qgH7QnZNmOTVSsgRK1tn/MsKOvOKVWA==}
+  /tailwind-variants@0.1.16(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-WXwbKhmPMyPuzqRB68yBZIyqEv31qHfodbhDPXWP/sxww2wa4vq+T0/i5cQvJ8DV2mR3UQ8YWTQQ9VUBrf7Qjg==}
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
@@ -11095,7 +11094,6 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
-    dev: false
 
   /vite@4.5.0(@types/node@20.8.3):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
@@ -11140,7 +11138,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0(@types/node@20.8.3)
+      vite: 4.5.0(@types/node@18.18.6)
 
   /voca@1.4.1:
     resolution: {integrity: sha512-NJC/BzESaHT1p4B5k4JykxedeltmNbau4cummStd4RjFojgq/kLew5TzYge9N2geeWyI2w8T30wUET5v+F7ZHA==}
@@ -11425,8 +11423,8 @@ packages:
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
 
-  /zustand@4.4.3(@types/react@18.2.31)(react@18.2.0):
-    resolution: {integrity: sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==}
+  /zustand@4.4.4(@types/react@18.2.31)(react@18.2.0):
+    resolution: {integrity: sha512-5UTUIAiHMNf5+mFp7/AnzJXS7+XxktULFN0+D1sCiZWyX7ZG+AQpqs2qpYrynRij4QvoDdCD+U+bmg/cG3Ucxw==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@types/react': '>=16.8'
