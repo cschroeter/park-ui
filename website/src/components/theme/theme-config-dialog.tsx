@@ -1,11 +1,9 @@
 import { CopyIcon, XIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Dialog } from '~/components/ui/dialog'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, Dialog, IconButton } from '~/components/ui'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { CodePreview } from '../code-preview'
 import { CSSFrameworkTabs } from '../css-framework-tabs'
-import { Button } from '../ui'
 
 interface Props {
   panda?: JSX.Element
@@ -17,7 +15,7 @@ export const ThemeConfigDialog = (props: Props) => {
     useThemeGenerator()
 
   return (
-    <Dialog>
+    <Dialog.Root>
       <Dialog.Trigger asChild>
         <Button>
           <CopyIcon />
@@ -84,6 +82,6 @@ export const ThemeConfigDialog = (props: Props) => {
           </Dialog.CloseTrigger>
         </Dialog.Content>
       </Dialog.Positioner>
-    </Dialog>
+    </Dialog.Root>
   )
 }

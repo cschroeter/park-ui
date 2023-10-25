@@ -11,6 +11,7 @@ export const toast = defineSlotRecipe({
       boxShadow: 'lg',
       minWidth: 'xs',
       p: '4',
+      position: 'relative',
       _open: {
         animation: 'slideInFromBottom 0.2s ease-out',
       },
@@ -22,12 +23,18 @@ export const toast = defineSlotRecipe({
       p: '4',
     },
     title: {
+      color: 'fg.default',
       fontWeight: 'semibold',
       textStyle: 'sm',
     },
     description: {
       color: 'fg.muted',
       textStyle: 'sm',
+    },
+    closeTrigger: {
+      position: 'absolute',
+      top: '3',
+      right: '3',
     },
   },
 })

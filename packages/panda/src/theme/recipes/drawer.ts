@@ -90,7 +90,7 @@ export const drawer = defineSlotRecipe({
   variants: {
     placement: {
       left: {
-        container: {
+        positioner: {
           left: 0,
         },
         content: {
@@ -103,7 +103,7 @@ export const drawer = defineSlotRecipe({
         },
       },
       right: {
-        container: {
+        positioner: {
           right: 0,
         },
         content: {

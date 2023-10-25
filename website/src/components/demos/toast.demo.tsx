@@ -1,5 +1,6 @@
 import { createToaster } from '@ark-ui/react/toast'
-import { Button, Toast } from '~/components/ui'
+import { XIcon } from 'lucide-react'
+import { Button, IconButton, Toast } from '~/components/ui'
 
 const [Toaster, toast] = createToaster({
   placement: 'top-end',
@@ -8,7 +9,11 @@ const [Toaster, toast] = createToaster({
       <Toast.Root>
         <Toast.Title>{toast.title}</Toast.Title>
         <Toast.Description>{toast.description}</Toast.Description>
-        <Toast.CloseTrigger>Close</Toast.CloseTrigger>
+        <Toast.CloseTrigger asChild>
+          <IconButton size="sm" variant="link">
+            <XIcon />
+          </IconButton>
+        </Toast.CloseTrigger>
       </Toast.Root>
     )
   },
@@ -16,8 +21,11 @@ const [Toaster, toast] = createToaster({
 
 export const Demo = () => (
   <>
-    <Button onClick={() => toast.create({ title: 'Title', description: 'Description' })}>
-      Toast
+    <Button
+      variant="outline"
+      onClick={() => toast.create({ title: 'Title', description: 'Description' })}
+    >
+      Create Toast
     </Button>
     <Toaster />
   </>

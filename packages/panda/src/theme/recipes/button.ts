@@ -12,7 +12,6 @@ export const button = defineRecipe({
     minWidth: '0',
     justifyContent: 'center',
     outline: 'none',
-    position: 'relative',
     transitionDuration: 'normal',
     transitionProperty: 'background, border-color, color, box-shadow',
     transitionTimingFunction: 'default',

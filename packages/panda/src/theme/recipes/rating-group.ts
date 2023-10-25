@@ -5,6 +5,15 @@ export const ratingGroup = defineSlotRecipe({
   className: 'ratingGroup',
   slots: ratingGroupAnatomy.keys(),
   base: {
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.5',
+    },
+    label: {
+      color: 'fg.default',
+      fontWeight: 'medium',
+    },
     control: {
       display: 'flex',
     },
@@ -40,6 +49,9 @@ export const ratingGroup = defineSlotRecipe({
             height: '4',
           },
         },
+        label: {
+          textStyle: 'sm',
+        },
       },
       md: {
         control: {
@@ -51,6 +63,9 @@ export const ratingGroup = defineSlotRecipe({
             height: '5',
           },
         },
+        label: {
+          textStyle: 'sm',
+        },
       },
       lg: {
         control: {
@@ -61,6 +76,9 @@ export const ratingGroup = defineSlotRecipe({
             width: '6',
             height: '6',
           },
+        },
+        label: {
+          textStyle: 'sm',
         },
       },
     },
