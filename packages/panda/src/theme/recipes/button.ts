@@ -19,6 +19,9 @@ export const button = defineRecipe({
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+    _hidden: {
+      display: 'none',
+    },
   },
   defaultVariants: {
     variant: 'solid',

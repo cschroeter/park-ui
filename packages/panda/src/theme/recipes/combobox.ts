@@ -27,7 +27,7 @@ export const combobox = defineSlotRecipe({
     content: {
       background: 'bg.default',
       borderRadius: 'l2',
-      boxShadow: 'sm',
+      boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
       _hidden: {

@@ -12,7 +12,7 @@ export const popover = defineSlotRecipe({
     content: {
       background: 'bg.default',
       borderRadius: 'l3',
-      boxShadow: 'md',
+      boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
       maxWidth: 'sm',
