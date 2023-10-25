@@ -70,6 +70,9 @@ export const button = defineRecipe({
           outline: '2px solid',
           outlineColor: 'border.outline',
         },
+        _selected: {
+          background: 'gray.a3',
+        },
       },
       ghost: {
         _hover: {

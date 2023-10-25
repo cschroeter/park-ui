@@ -15,7 +15,6 @@ export const Demo = (props: ToggleGroupProps) => {
     <Stack
       direction={props.orientation === 'horizontal' ? 'row' : 'column'}
       gap="3"
-      bg="bg.default"
       borderRadius="l3"
       borderWidth={props.variant === 'ghost' ? '1px' : '0'}
       p={props.variant === 'ghost' ? '1' : '0'}

@@ -1,4 +1,5 @@
-import { TagsInput, type TagsInputProps } from '~/components/ui'
+import { XIcon } from 'lucide-react'
+import { Button, IconButton, TagsInput, type TagsInputProps } from '~/components/ui'
 
 export const Demo = (props: TagsInputProps) => {
   return (
@@ -9,14 +10,20 @@ export const Demo = (props: TagsInputProps) => {
           <TagsInput.Control>
             {api.value.map((value, index) => (
               <TagsInput.Item key={index} index={index} value={value}>
-                <TagsInput.ItemInput />
                 <TagsInput.ItemText>{value}</TagsInput.ItemText>
-                <TagsInput.ItemDeleteTrigger>Delete</TagsInput.ItemDeleteTrigger>
+                <TagsInput.ItemDeleteTrigger asChild>
+                  <IconButton variant="link" size="xs">
+                    <XIcon />
+                  </IconButton>
+                </TagsInput.ItemDeleteTrigger>
+                <TagsInput.ItemInput />
               </TagsInput.Item>
             ))}
+            <TagsInput.Input placeholder="Add Framework" />
           </TagsInput.Control>
-          <TagsInput.Input placeholder="Add Framework" />
-          <TagsInput.ClearTrigger>Clear all</TagsInput.ClearTrigger>
+          <TagsInput.ClearTrigger asChild>
+            <Button variant="outline">Clear</Button>
+          </TagsInput.ClearTrigger>
         </>
       )}
     </TagsInput.Root>
