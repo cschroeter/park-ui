@@ -1,10 +1,7 @@
 import { Portal } from '@ark-ui/react'
 import { MapPinIcon } from 'lucide-react'
 import { HStack, Stack, styled } from 'styled-system/jsx'
-import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar'
-import { HoverCard, type HoverCardProps } from '~/components/ui/hover-card'
-import { Icon } from '~/components/ui/icon'
-import { Text } from '~/components/ui/text'
+import { Avatar, HoverCard, Icon, Text, type HoverCardProps } from '~/components/ui'
 
 export const Demo = (props: HoverCardProps) => (
   <HoverCard.Root {...props}>
@@ -25,10 +22,10 @@ export const Demo = (props: HoverCardProps) => (
             <HoverCard.ArrowTip />
           </HoverCard.Arrow>
           <Stack gap="4" direction="row">
-            <Avatar>
-              <AvatarFallback>CS</AvatarFallback>
-              <AvatarImage src="https://avatars.githubusercontent.com/u/1846056" alt="avatar" />
-            </Avatar>
+            <Avatar.Root>
+              <Avatar.Fallback>CS</Avatar.Fallback>
+              <Avatar.Image src="https://avatars.githubusercontent.com/u/1846056" alt="avatar" />
+            </Avatar.Root>
             <Stack gap="3">
               <Stack gap="1">
                 <Text textStyle="sm" fontWeight="semibold">

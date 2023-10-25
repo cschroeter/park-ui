@@ -1,4 +1,4 @@
-import { RatingGroup, type RatingGroupProps } from '~/components/ui/rating-group'
+import { RatingGroup, type RatingGroupProps } from '~/components/ui'
 
 export const Demo = (props: RatingGroupProps) => {
   return (

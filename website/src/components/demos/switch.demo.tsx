@@ -1,4 +1,4 @@
-import { Switch, type SwitchProps } from '~/components/ui/switch'
+import { Switch, type SwitchProps } from '~/components/ui'
 
 export const Demo = (props: SwitchProps) => (
   <Switch defaultChecked {...props}>

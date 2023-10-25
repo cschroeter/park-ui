@@ -1,4 +1,4 @@
-import { SegmentGroup, type SegmentGroupProps } from '~/components/ui/segment-group'
+import { SegmentGroup, type SegmentGroupProps } from '~/components/ui'
 
 export const Demo = (props: SegmentGroupProps) => {
   const options = [

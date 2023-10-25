@@ -1,5 +1,5 @@
 import { InfoIcon } from 'lucide-react'
-import { Alert, type AlertProps } from '~/components/ui/alert'
+import { Alert, type AlertProps } from '~/components/ui'
 
 export const Demo = (props: AlertProps) => {
   return (

@@ -1,6 +1,5 @@
 import { Portal } from '@ark-ui/react'
-import { Button } from '~/components/ui/button'
-import { Drawer, type DrawerProps } from '~/components/ui/drawer'
+import { Button, Drawer, type DrawerProps } from '~/components/ui'
 
 export const Demo = (props: DrawerProps) => {
   return (

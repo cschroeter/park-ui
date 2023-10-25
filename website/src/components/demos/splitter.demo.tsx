@@ -1,4 +1,4 @@
-import { Splitter, type SplitterProps } from '~/components/ui/splitter'
+import { Splitter, type SplitterProps } from '~/components/ui'
 
 export const Demo = (props: SplitterProps) => {
   return (

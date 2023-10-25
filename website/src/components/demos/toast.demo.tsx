@@ -1,5 +1,4 @@
-import { Button } from '~/components/ui/button'
-import { Toast, createToaster } from '~/components/ui/toast'
+import { Button, Toast, createToaster } from '~/components/ui'
 
 const [Toaster, toast] = createToaster({
   placement: 'top-end',

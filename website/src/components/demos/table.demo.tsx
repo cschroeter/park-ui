@@ -1,4 +1,4 @@
-import { Table, type TableProps } from '~/components/ui/table'
+import { Table, type TableProps } from '~/components/ui'
 
 export const Demo = (props: TableProps) => {
   return (

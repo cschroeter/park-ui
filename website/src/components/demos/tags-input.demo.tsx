@@ -1,4 +1,4 @@
-import { TagsInput, type TagsInputProps } from '~/components/ui/tags-input'
+import { TagsInput, type TagsInputProps } from '~/components/ui'
 
 export const Demo = (props: TagsInputProps) => {
   return (

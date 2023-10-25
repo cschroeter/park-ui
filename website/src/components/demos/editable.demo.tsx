@@ -1,6 +1,4 @@
-import { Button } from '~/components/ui/button'
-import { Editable, type EditableProps } from '~/components/ui/editable'
-import { Label } from '~/components/ui/label'
+import { Button, Editable, Label, type EditableProps } from '~/components/ui'
 
 export const Demo = (props: EditableProps) => {
   return (
