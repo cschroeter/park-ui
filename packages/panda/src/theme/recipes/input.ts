@@ -4,7 +4,7 @@ export const input = defineRecipe({
   className: 'input',
   base: {
     appearance: 'none',
-    backgroundColor: 'bg.default',
+    background: 'none',
     borderColor: 'border.default',
     borderRadius: 'l2',
     borderWidth: '1px',

@@ -8,7 +8,7 @@ import { Button } from '../ui/button'
 export const Demo = (props: DatePickerProps) => {
   return (
     <DatePicker.Root positioning={{ sameWidth: true }} startOfWeek={1} selectionMode="range">
-      <DatePicker.Label>Label</DatePicker.Label>
+      <DatePicker.Label>Date Picker</DatePicker.Label>
       <DatePicker.Control>
         <DatePicker.Input asChild>
           <Input />

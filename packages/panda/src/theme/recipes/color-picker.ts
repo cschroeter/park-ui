@@ -13,11 +13,17 @@ export const colorPicker = defineSlotRecipe({
     label: {
       color: 'fg.default',
       fontWeight: 'medium',
+      textStyle: 'sm',
+    },
+    control: {
+      display: 'flex',
+      flexDirection: 'row',
+      gap: '2',
     },
     content: {
       background: 'bg.default',
       borderRadius: 'l3',
-      boxShadow: 'md',
+      boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
       maxWidth: 'sm',
@@ -33,56 +39,52 @@ export const colorPicker = defineSlotRecipe({
         display: 'none',
       },
     },
-    // content: {
-    //   borderRadius: 'l3',
-    //   boxShadow: 'lg',
-    //   padding: '4',
-    //   maxW: '264px',
-    // },
-    // area: {
-    //   height: '36',
-    //   borderRadius: 'l2',
-    //   overflow: 'hidden',
-    // },
-    // areaBackground: {
-    //   height: '100%',
-    // },
-    // channelSliderTrack: {
-    //   height: '2',
-    //   borderRadius: 'full',
-    // },
-    // channelSlider: {
-    //   overflow: 'hidden',
-    //   borderRadius: 'full',
-    // },
-    // swatchGroup: {
-    //   display: 'grid',
-    //   gridTemplateColumns: 'repeat(7, 1fr)',
-    //   gap: '2',
-    //   background: 'bg.default',
-    // },
-    // swatch: {
-    //   height: '6',
-    //   width: '6',
-    //   borderRadius: 'full',
-    //   boxShadow:
-    //     '0 0 0 1px var(--colors-border-emphasized), 0 0 0 2px var(--colors-bg-default) inset',
-    // },
-    // areaThumb: {
-    //   borderRadius: 'full',
-    //   height: '2.5',
-    //   width: '2.5',
-    //   boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
-    //   outline: 'none',
-    // },
-    // channelSliderThumb: {
-    //   borderRadius: 'full',
-    //   height: '2.5',
-    //   width: '2.5',
-    //   boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
-    //   transform: 'translate(-50%, -50%)',
-    //   zIndex: '1',
-    //   outline: 'none',
-    // },
+    area: {
+      height: '36',
+      borderRadius: 'l2',
+      overflow: 'hidden',
+    },
+    areaThumb: {
+      borderRadius: 'full',
+      height: '2.5',
+      width: '2.5',
+      boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
+      outline: 'none',
+    },
+    areaBackground: {
+      height: 'full',
+    },
+    channelSlider: {
+      borderRadius: 'l2',
+    },
+    channelSliderTrack: {
+      height: '3',
+      borderRadius: 'l2',
+    },
+    swatchGroup: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(7, 1fr)',
+      gap: '2',
+      background: 'bg.default',
+    },
+    swatch: {
+      height: '6',
+      width: '6',
+      borderRadius: 'l2',
+      boxShadow:
+        '0 0 0 1px var(--colors-border-emphasized), 0 0 0 2px var(--colors-bg-default) inset',
+    },
+    channelSliderThumb: {
+      borderRadius: 'full',
+      height: '2.5',
+      width: '2.5',
+      boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
+      transform: 'translate(-50%, -50%)',
+      zIndex: '1',
+      outline: 'none',
+    },
+    transparencyGrid: {
+      borderRadius: 'l2',
+    },
   },
 })

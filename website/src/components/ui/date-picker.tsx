@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(datePicker)
 export * from '@ark-ui/react/date-picker'
 export type DatePickerProps = Ark.DatePickerProps & DatePickerVariantProps
 
-const DatePickerRoot = withProvider(styled(Ark.DatePicker.Root))
+const DatePickerRoot = withProvider(styled(Ark.DatePicker.Root), 'root')
 export const DatePickerClearTrigger = withContext(
   styled(Ark.DatePicker.ClearTrigger),
   'clearTrigger',
