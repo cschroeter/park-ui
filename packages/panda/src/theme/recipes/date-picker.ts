@@ -13,12 +13,12 @@ export const datePicker = defineSlotRecipe({
     content: {
       background: 'bg.default',
       borderRadius: 'l3',
-      boxShadow: 'md',
+      boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
       gap: '3',
       p: '4',
-      width: '312px',
+      width: '344px',
       _hidden: {
         display: 'none',
       },
@@ -46,41 +46,39 @@ export const datePicker = defineSlotRecipe({
     },
     table: {
       width: 'full',
+      borderCollapse: 'separate',
+      borderSpacing: '1',
+      m: '-1',
     },
     tableCell: {
       textAlign: 'center',
     },
     tableCellTrigger: {
       width: '100%',
+      _today: {
+        _before: {
+          content: "'−'",
+          color: 'accent.default',
+          position: 'absolute',
+          marginTop: '6',
+        },
+      },
+      '&[data-in-range]': {
+        background: 'bg.muted',
+      },
+      _selected: {
+        _before: {
+          color: 'accent.fg',
+        },
+      },
     },
-    //   grid: {
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     gap: '1',
-    //     '&[data-type="day"] [data-part="row"]': {
-    //       gridTemplateColumns: 'repeat(7, 1fr)',
-    //     },
-    //     '&[data-type="month"] [data-part="row"]': {
-    //       gridTemplateColumns: 'repeat(4, 1fr)',
-    //     },
-    //     '&[data-type="year"] [data-part="row"]': {
-    //       gridTemplateColumns: 'repeat(4, 1fr)',
-    //     },
-    //   },
-    //   rowGroup: {
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     gap: '1',
-    //   },
-    //   row: {
-    //     display: 'grid',
-    //   },
-    //   rowHeader: {
-    //     display: 'grid',
-    //     gridTemplateColumns: 'repeat(7, 1fr)',
-    //   },
-    //   columnHeader: {
-
-    //   },
+    view: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '3',
+      _hidden: {
+        display: 'none',
+      },
+    },
   },
 })
