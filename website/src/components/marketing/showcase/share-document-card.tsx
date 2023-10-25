@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -95,17 +94,15 @@ const Member = (props: Props) => {
             <Select.ValueText />
             <ChevronsUpDownIcon />
           </Select.Trigger>
-          <Portal>
-            <Select.Positioner>
-              <Select.Content>
-                {['Write', 'Read'].map((framework) => (
-                  <Select.Item key={framework} item={framework}>
-                    <Select.ItemText>{framework}</Select.ItemText>
-                  </Select.Item>
-                ))}
-              </Select.Content>
-            </Select.Positioner>
-          </Portal>
+          <Select.Positioner>
+            <Select.Content>
+              {['Write', 'Read'].map((framework) => (
+                <Select.Item key={framework} item={framework}>
+                  <Select.ItemText>{framework}</Select.ItemText>
+                </Select.Item>
+              ))}
+            </Select.Content>
+          </Select.Positioner>
         </Select.Root>
       </Box>
     </Stack>

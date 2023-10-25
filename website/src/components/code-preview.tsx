@@ -18,7 +18,6 @@ const styles = sva({
       position: 'absolute',
       right: '3',
       top: '3',
-      zIndex: '1',
     },
     preview: {
       p: '4',

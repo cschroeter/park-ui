@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
@@ -27,20 +26,18 @@ export const ReportIssueCard = () => {
             <Select.ValueText placeholder="Select a Framework" />
             <ChevronsUpDownIcon />
           </Select.Trigger>
-          <Portal>
-            <Select.Positioner>
-              <Select.Content>
-                {frameworks.map((framework) => (
-                  <Select.Item key={framework} item={framework}>
-                    <Select.ItemText>{framework}</Select.ItemText>
-                    <Select.ItemIndicator>
-                      <CheckIcon />
-                    </Select.ItemIndicator>
-                  </Select.Item>
-                ))}
-              </Select.Content>
-            </Select.Positioner>
-          </Portal>
+          <Select.Positioner>
+            <Select.Content>
+              {frameworks.map((framework) => (
+                <Select.Item key={framework} item={framework}>
+                  <Select.ItemText>{framework}</Select.ItemText>
+                  <Select.ItemIndicator>
+                    <CheckIcon />
+                  </Select.ItemIndicator>
+                </Select.Item>
+              ))}
+            </Select.Content>
+          </Select.Positioner>
         </Select.Root>
         <Stack gap="1.5">
           <Label htmlFor="description">Description</Label>

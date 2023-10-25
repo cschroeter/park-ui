@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { SiApple, SiPaypal } from '@icons-pack/react-simple-icons'
 import { CheckIcon, ChevronsUpDownIcon, CreditCardIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
@@ -57,20 +56,18 @@ export const PaymentCard = () => {
               <Select.ValueText placeholder="Month" />
               <ChevronsUpDownIcon />
             </Select.Trigger>
-            <Portal>
-              <Select.Positioner>
-                <Select.Content>
-                  {months.map((month) => (
-                    <Select.Item key={month} item={month}>
-                      <Select.ItemText>{month}</Select.ItemText>
-                      <Select.ItemIndicator>
-                        <CheckIcon />
-                      </Select.ItemIndicator>
-                    </Select.Item>
-                  ))}
-                </Select.Content>
-              </Select.Positioner>
-            </Portal>
+            <Select.Positioner>
+              <Select.Content>
+                {months.map((month) => (
+                  <Select.Item key={month} item={month}>
+                    <Select.ItemText>{month}</Select.ItemText>
+                    <Select.ItemIndicator>
+                      <CheckIcon />
+                    </Select.ItemIndicator>
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Positioner>
           </Select.Root>
           <Select items={years} positioning={{ sameWidth: true }}>
             <Select.Label>Year</Select.Label>
@@ -78,20 +75,18 @@ export const PaymentCard = () => {
               <Select.ValueText placeholder="Year" />
               <ChevronsUpDownIcon />
             </Select.Trigger>
-            <Portal>
-              <Select.Positioner>
-                <Select.Content>
-                  {years.map((year) => (
-                    <Select.Item key={year} item={year}>
-                      <Select.ItemText>{year}</Select.ItemText>
-                      <Select.ItemIndicator>
-                        <CheckIcon />
-                      </Select.ItemIndicator>
-                    </Select.Item>
-                  ))}
-                </Select.Content>
-              </Select.Positioner>
-            </Portal>
+            <Select.Positioner>
+              <Select.Content>
+                {years.map((year) => (
+                  <Select.Item key={year} item={year}>
+                    <Select.ItemText>{year}</Select.ItemText>
+                    <Select.ItemIndicator>
+                      <CheckIcon />
+                    </Select.ItemIndicator>
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Positioner>
           </Select>
           <Stack gap="1.5">
             <Label htmlFor="cvc">CVC</Label>

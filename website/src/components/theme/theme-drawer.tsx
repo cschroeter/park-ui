@@ -32,7 +32,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
       </Drawer.Trigger>
       <Portal>
         <Drawer.Positioner>
-          <Drawer.Content>
+          <Drawer.Content lazyMount>
             <Drawer.Header>
               <Drawer.Title>Make it yours</Drawer.Title>
               <Drawer.Description>

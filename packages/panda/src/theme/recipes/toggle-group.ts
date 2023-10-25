@@ -30,7 +30,6 @@ export const toggleGroup = defineSlotRecipe({
       userSelect: 'none',
       verticalAlign: 'middle',
       whiteSpace: 'nowrap',
-      zIndex: '1',
       _hover: {
         color: 'fg.default',
         background: 'gray.a3',

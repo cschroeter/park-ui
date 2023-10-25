@@ -80,7 +80,6 @@ export const colorPicker = defineSlotRecipe({
       width: '2.5',
       boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
       transform: 'translate(-50%, -50%)',
-      zIndex: '1',
       outline: 'none',
     },
     transparencyGrid: {

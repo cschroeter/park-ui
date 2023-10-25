@@ -19,7 +19,6 @@ export const carousel = defineSlotRecipe({
       left: '50%',
       position: 'absolute',
       transform: 'translateX(-50%)',
-      zIndex: 'docked',
     },
     indicatorGroup: {
       display: 'flex',
