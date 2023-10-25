@@ -24,7 +24,7 @@
     "@fontsource-variable/roboto-mono": "5.0.16",
     "@icons-pack/react-simple-icons": "9.1.0",
     "@pandacss/astro": "0.17.0",
-    "@pandacss/dev": "0.17.0",
+    "@pandacss/dev": "0.0.0-dev-20231025190231",
     "@park-ui/panda-preset": "workspace:*",
     "@types/react": "18.2.31",
     "@types/react-dom": "18.2.14",
