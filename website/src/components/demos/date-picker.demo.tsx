@@ -1,12 +1,6 @@
 import { Portal } from '@ark-ui/react'
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import {
-  Button,
-  DatePicker,
-  IconButton,
-  Input,
-  type DatePickerProps,
-} from '~/components/ui/date-picker'
+import { Button, DatePicker, IconButton, Input, type DatePickerProps } from '~/components/ui'
 
 export const Demo = (props: DatePickerProps) => {
   return (

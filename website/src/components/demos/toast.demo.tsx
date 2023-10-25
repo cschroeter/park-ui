@@ -1,4 +1,5 @@
-import { Button, Toast, createToaster } from '~/components/ui'
+import { createToaster } from '@ark-ui/react/toast'
+import { Button, Toast } from '~/components/ui'
 
 const [Toaster, toast] = createToaster({
   placement: 'top-end',
