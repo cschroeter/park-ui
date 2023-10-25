@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from 'lucide-react'
-import { Accordion, Icon, type AccordionProps } from '~/components/ui'
+import { Accordion, type AccordionProps } from '~/components/ui'
 
 export const Demo = (props: AccordionProps) => {
   const items = ['React', 'Solid', 'Vue']
@@ -9,7 +9,9 @@ export const Demo = (props: AccordionProps) => {
         <Accordion.Item key={id} value={item}>
           <Accordion.ItemTrigger>
             {item}
-            <Accordion.ItemIndicator />
+            <Accordion.ItemIndicator>
+              <ChevronDownIcon />
+            </Accordion.ItemIndicator>
           </Accordion.ItemTrigger>
           <Accordion.ItemContent>
             <div>
@@ -20,18 +22,5 @@ export const Demo = (props: AccordionProps) => {
         </Accordion.Item>
       ))}
     </Accordion>
-  )
-}
-
-const AccordionIcon = (props: { isOpen: boolean }) => {
-  const iconStyles = {
-    transform: props.isOpen ? 'rotate(-180deg)' : undefined,
-    transition: 'transform 0.2s',
-    transformOrigin: 'center',
-  }
-  return (
-    <Icon style={iconStyles}>
-      <ChevronDownIcon />
-    </Icon>
   )
 }

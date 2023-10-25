@@ -1,5 +1,6 @@
 import { Portal } from '@ark-ui/react'
-import { Button, Drawer, type DrawerProps } from '~/components/ui'
+import { XIcon } from 'lucide-react'
+import { Button, Drawer, IconButton, type DrawerProps } from '~/components/ui'
 
 export const Demo = (props: DrawerProps) => {
   return (
@@ -14,10 +15,17 @@ export const Demo = (props: DrawerProps) => {
             <Drawer.Header>
               <Drawer.Title>Title</Drawer.Title>
               <Drawer.Description>Description</Drawer.Description>
+              <Drawer.CloseTrigger asChild position="absolute" top="3" right="4">
+                <IconButton variant="ghost">
+                  <XIcon />
+                </IconButton>
+              </Drawer.CloseTrigger>
             </Drawer.Header>
-            <Drawer.Body>Content</Drawer.Body>
+            <Drawer.Body>{/* Content */}</Drawer.Body>
             <Drawer.Footer gap="3">
-              <Button variant="outline">Secondary</Button>
+              <Drawer.CloseTrigger asChild>
+                <Button variant="outline">Cancel</Button>
+              </Drawer.CloseTrigger>
               <Button>Primary</Button>
             </Drawer.Footer>
           </Drawer.Content>

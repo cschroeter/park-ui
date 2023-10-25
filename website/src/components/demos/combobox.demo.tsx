@@ -19,7 +19,7 @@ export const Demo = (props: ComboboxProps<CollectionItem>) => {
   }
 
   return (
-    <Combobox.Root width="2xs" onInputChange={handleChange} {...props} items={items}>
+    <Combobox.Root width="2xs" onInputValueChange={handleChange} {...props} items={items}>
       <Combobox.Label>Framework</Combobox.Label>
       <Combobox.Control>
         <Combobox.Input placeholder="Select a Framework" asChild>

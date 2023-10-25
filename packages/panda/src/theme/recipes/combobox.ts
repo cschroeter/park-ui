@@ -19,9 +19,10 @@ export const combobox = defineSlotRecipe({
       fontWeight: 'medium',
     },
     trigger: {
-      position: 'absolute!',
-      right: '0',
       bottom: '0',
+      color: 'fg.muted',
+      position: 'absolute',
+      right: '0',
       top: '0',
     },
     content: {

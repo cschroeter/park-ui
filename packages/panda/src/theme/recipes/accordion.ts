@@ -19,6 +19,16 @@ export const accordion = defineSlotRecipe({
       textStyle: 'lg',
       width: 'full',
     },
+    itemIndicator: {
+      color: 'fg.muted',
+      transformOrigin: 'center',
+      transitionDuration: 'normal',
+      transitionProperty: 'transform',
+      transitionTimingFunction: 'default',
+      _open: {
+        transform: 'rotate(-180deg)',
+      },
+    },
     itemContent: {
       color: 'fg.muted',
       display: 'grid',
