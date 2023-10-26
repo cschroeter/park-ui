@@ -36,7 +36,7 @@
     "ts-pattern": "5.0.5"
   },
   "devDependencies": {
-    "@pandacss/types": "0.17.0",
+    "@pandacss/types": "0.0.0-dev-20231025190231",
     "@radix-ui/colors": "3.0.0",
     "@release-it/keep-a-changelog": "4.0.0",
     "clean-package": "2.2.0",
