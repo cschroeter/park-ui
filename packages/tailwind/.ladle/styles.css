@@ -5,3 +5,7 @@
 :root {
   --font-body: 'Jakarta', sans-serif;
 }
+
+.ladle-main {
+  background: var(--colors-bg-canvas);
+}

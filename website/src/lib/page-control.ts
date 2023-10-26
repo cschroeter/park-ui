@@ -2,17 +2,24 @@ import { getCollection } from 'astro:content'
 import path from 'path'
 
 const getOverviewPages = async () => {
-  const priority = ['introduction', 'getting-started', 'customize', 'figma', 'changelog', 'about']
+  const priority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
   return getCollection('overview').then((items) =>
+    items.sort((a, b) => priority.indexOf(a.data.id) - priority.indexOf(b.data.id)),
+  )
+}
+const getThemePages = async () => {
+  const priority = ['customize', 'semantic-tokens']
+  return getCollection('theme').then((items) =>
     items.sort((a, b) => priority.indexOf(a.data.id) - priority.indexOf(b.data.id)),
   )
 }
 
 export const getAllCollections = async () => {
   const overviewPages = await getOverviewPages()
+  const themePages = await getThemePages()
   const componentPages = await getCollection('components')
 
-  return [...overviewPages, ...componentPages]
+  return [...overviewPages, ...themePages, ...componentPages]
 }
 
 const getCurrentPageIndex = async (pathname?: string) => {
@@ -75,6 +82,7 @@ type Props = {
 export const getSitemap = async (props: Props): Promise<Sitemap> => {
   const { cssFramework } = props
   const overviewPages = await getOverviewPages()
+  const themePages = await getThemePages()
   const componentPages = await getCollection('components')
 
   const priority = ['typography', 'component']
@@ -99,6 +107,8 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
         })),
     }))
 
+  const hasThemePagesForCssFramework = themePages.some((item) => item.slug.startsWith(cssFramework))
+
   return [
     {
       title: 'Overview',
@@ -110,8 +120,20 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
         })),
     },
+    hasThemePagesForCssFramework
+      ? {
+          title: 'Theme',
+          items: themePages
+            .filter((item) => item.collection === 'theme')
+            .filter((item) => item.slug.startsWith(cssFramework))
+            .map((item) => ({
+              title: item.data.title,
+              href: path.join('/docs', cssFramework, item.collection, item.data.id),
+            })),
+        }
+      : undefined,
     ...componentPagesGroupByCategory,
-  ]
+  ].filter(Boolean) as Sitemap
 }
 
 // a very primitive appraoch but it works

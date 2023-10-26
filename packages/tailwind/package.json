@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/tailwind-plugin",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "Tailwind CSS plugin for Ark UI components",
   "keywords": [
     "Ark UI",
@@ -25,7 +25,7 @@
     "start": "ladle serve",
     "release-it": "release-it",
     "build": "pnpm prebuild:plugin && pnpm build:plugin",
-    "prebuild:plugin": "panda cssgen static --outfile src/plugin/css/styles.css",
+    "prebuild:plugin": "panda cssgen --outfile src/plugin/css/styles.css",
     "build:plugin": "tsx src/plugin/build.ts && tsup",
     "build:components": "tsx src/cli/components/bootstrap.ts",
     "build:stories": "tsx src/cli/stories/bootstrap.ts",

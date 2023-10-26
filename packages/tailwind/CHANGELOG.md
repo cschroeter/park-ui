@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.12.2] - 2023-10-24
+
+### Added
+
+- Support the semantic tokens from the panda-recipes also in Tailwind CSS files. Have a look at the documentation for [semantic tokens](https://park-ui.com/docs/tailwind/overview/semantic-tokens) for more information.
+
 ## [0.12.1] - 2023-10-21
 
 ### Fixed
