@@ -61,8 +61,8 @@ importers:
         version: 1.4.1
     devDependencies:
       '@ark-ui/react':
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.0.0-beta.3
+        version: 1.0.0-beta.3(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@types/fs-extra':
         specifier: 11.0.3
         version: 11.0.3
@@ -123,8 +123,8 @@ importers:
         version: 5.0.5
     devDependencies:
       '@ark-ui/react':
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.0.0-beta.3
+        version: 1.0.0-beta.3(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@fontsource/plus-jakarta-sans':
         specifier: 5.0.17
         version: 5.0.17
@@ -183,8 +183,8 @@ importers:
   website:
     dependencies:
       '@ark-ui/react':
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.0.0-beta.3
+        version: 1.0.0-beta.3(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@astrojs/mdx':
         specifier: 1.1.3
         version: 1.1.3(astro@3.3.4)
@@ -355,8 +355,8 @@ packages:
     transitivePeerDependencies:
       - '@internationalized/date'
 
-  /@ark-ui/react@1.0.0-beta.2(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Qwp5QdYkXEk5q62U0vPR/n4sAygagpQ9SujV+Af8z7Oeh6+qhp0wkXOv95AkbPrZPgpq6rMSXOPDrbNbCOjtyg==}
+  /@ark-ui/react@1.0.0-beta.3(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-S6jVe9GMVPELGBFOaWgBB61H472mnJi2k67MZLB/IjGPKV5BuObdkQY4qTor25ZbAgwa1ZubTpR66LqrxlTytg==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -2094,6 +2094,7 @@ packages:
       - supports-color
       - terser
       - typescript
+    dev: false
 
   /@pandacss/dev@0.0.0-dev-20231025190231(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react-dom@18.2.14)(@types/react@18.2.31)(typescript@5.2.2):
     resolution: {integrity: sha512-43WhD79X8DYeLd7hCiSATEXWwiMtP7UgoCplVnxh+Ejpexwl8qrXqOhBcOOXY9w/4bG4Mn3k6J061RUEehlAgA==}
@@ -2128,7 +2129,6 @@ packages:
       - supports-color
       - terser
       - typescript
-    dev: true
 
   /@pandacss/error@0.0.0-dev-20231025190231:
     resolution: {integrity: sha512-aTLhXPFbPcJUjSBumsZf4XM5x6I/t1V6VPP/zMY8aFfDg3YFU4nn5p+iLFYxqQUz3E4JM7FSifu1MQNUhK8CCg==}
@@ -2406,6 +2406,7 @@ packages:
       - supports-color
       - terser
       - typescript
+    dev: false
 
   /@pandacss/studio@0.0.0-dev-20231025190231(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react-dom@18.2.14)(@types/react@18.2.31)(typescript@5.2.2):
     resolution: {integrity: sha512-5/IFN+rcuM/zzkdnJ8PmAt7b5OGjY7YCRIArPeRafRvXEDEcNhsusQE6Ah9RB6k2I2yUXK+I/5GYTD7I14wfug==}
@@ -2438,7 +2439,6 @@ packages:
       - supports-color
       - terser
       - typescript
-    dev: true
 
   /@pandacss/token-dictionary@0.0.0-dev-20231025190231:
     resolution: {integrity: sha512-SqvO+V6vocmw5W5Oe1S1ExA8SViaVXLrLCju4QwZm1O3FCskwc8Q6R655NYRBMUUKkD/qw3vFd1eKFJhX7PQog==}
@@ -2900,7 +2900,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.23.2)
       '@types/babel__core': 7.20.3
       react-refresh: 0.14.0
-      vite: 4.5.0(@types/node@18.18.6)
+      vite: 4.5.0(@types/node@20.8.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -4260,7 +4260,6 @@ packages:
       - sugarss
       - supports-color
       - terser
-    dev: true
 
   /astro@3.3.4(@types/node@18.18.6)(typescript@5.2.2):
     resolution: {integrity: sha512-1yy1p8/QpACpToK2bYFxbbPug7+HeUW+IGvkIss2KQDv4pwDk19UbfQrS8aMHtW3nvR7PpBYL/H/Dprcqxy40A==}
@@ -8405,7 +8404,7 @@ packages:
     peerDependencies:
       '@pandacss/dev': '>=0.9.0'
     dependencies:
-      '@pandacss/dev': 0.0.0-dev-20231025190231(@internationalized/date@3.5.0)(@types/node@18.18.6)(@types/react-dom@18.2.14)(@types/react@18.2.31)(typescript@5.2.2)
+      '@pandacss/dev': 0.0.0-dev-20231025190231(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react-dom@18.2.14)(@types/react@18.2.31)(typescript@5.2.2)
       '@tailwindcss/typography': 0.5.10(tailwindcss@3.3.4)
       tailwindcss: 3.3.4(ts-node@10.9.1)
     transitivePeerDependencies:
@@ -10644,6 +10643,7 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
+    dev: false
 
   /vite@4.4.11(@types/node@20.8.3):
     resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}
@@ -10679,7 +10679,6 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /vite@4.5.0(@types/node@18.18.6):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
@@ -10750,7 +10749,6 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /vitefu@0.2.5(vite@4.5.0):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
