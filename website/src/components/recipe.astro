@@ -1,6 +1,7 @@
 ---
 import { Code } from 'astro:components'
 import { readFile } from 'node:fs/promises'
+import { Box } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
 import { CodePreview } from './code-preview'
 
@@ -23,6 +24,8 @@ const code = await match(cssFramework)
   .otherwise(() => 'Not yet available')
 ---
 
-<CodePreview code={code} client:load>
-  <Code code={code} lang="tsx" theme="css-variables" />
-</CodePreview>
+<Box borderRadius="l3" overflow="hidden" divideY="1px" borderWidth="1px" className="not-prose">
+  <CodePreview code={code} client:load standalone>
+    <Code code={code} lang="tsx" theme="css-variables" />
+  </CodePreview>
+</Box>

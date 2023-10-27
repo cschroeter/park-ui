@@ -70,7 +70,11 @@ export const button = defineRecipe({
         },
       },
       ghost: {
+        color: 'fg.default',
         _hover: {
+          background: 'gray.a3',
+        },
+        _selected: {
           background: 'gray.a3',
         },
         _disabled: {

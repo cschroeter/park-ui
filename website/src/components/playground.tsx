@@ -1,6 +1,6 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState, type PropsWithChildren } from 'react'
-import { cx, sva } from 'styled-system/css'
+import { sva } from 'styled-system/css'
 import { Box, Flex, Stack } from 'styled-system/jsx'
 import * as demos from './demos'
 import {
@@ -18,15 +18,12 @@ import {
 const styles = sva({
   slots: ['root', 'preview', 'container', 'configurator'],
   base: {
-    root: {
-      borderWidth: '1px',
-      borderRadius: 'l3',
-      overflow: 'hidden',
-      divideY: '1px',
-    },
+    root: {},
     container: {
+      background: 'bg.canvas',
       flexDirection: { base: 'column', md: 'row' },
       divideX: '1px',
+      borderBottomWidth: '1px',
     },
     preview: {
       p: { base: '4', md: '6' },
@@ -36,6 +33,7 @@ const styles = sva({
       alignItems: 'center',
     },
     configurator: {
+      background: 'bg.surface',
       gap: '3',
       px: '4',
       pt: '5',
@@ -79,7 +77,7 @@ export const Playground = (props: PropsWithChildren<Props>) => {
   // @ts-expect-error
   const Component = demos[toTitleCase(id)]
   return (
-    <Box className={cx(styles.root, 'not-prose')}>
+    <Box>
       <Stack className={styles.container}>
         <Flex className={styles.preview}>
           <Component {...state} />

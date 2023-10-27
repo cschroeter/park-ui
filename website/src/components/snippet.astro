@@ -1,11 +1,11 @@
 ---
 import { Code } from 'astro:components'
 import { readFile } from 'node:fs/promises'
+import { Box } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
 import { reactToSolid } from '~/lib/react-to-solid'
 import { reactToVue } from '~/lib/react-to-vue'
-import { CodePreview } from './code-preview'
-import { CodeWithTabs } from './code-with-tabs'
+import { CodePreviewTabs } from './code-preview-tabs'
 
 const { slug } = Astro.params
 
@@ -24,14 +24,17 @@ const code = await match(cssFramework)
   .otherwise(() => 'Not yet available')
 ---
 
-<CodeWithTabs client:load>
-  <CodePreview code={code} client:load slot="react" isAttached>
-    <Code code={code} lang="tsx" theme="css-variables" />
-  </CodePreview>
-  <CodePreview code={reactToSolid(code)} client:load slot="solid" isAttached>
-    <Code code={reactToSolid(code)} lang="tsx" theme="css-variables" />
-  </CodePreview>
-  <CodePreview code={reactToVue(code)} client:load slot="vue" isAttached>
-    <Code code={reactToVue(code)} lang="tsx" theme="css-variables" />
-  </CodePreview>
-</CodeWithTabs>
+<Box borderRadius="l3" overflow="hidden" divideY="1px" borderWidth="1px" className="not-prose">
+  <CodePreviewTabs
+    tabs={{
+      react: { label: 'React', code: code },
+      solid: { label: 'Solid', code: reactToSolid(code) },
+      vue: { label: 'Vue', code: reactToVue(code) },
+    }}
+    client:load
+  >
+    <Code code={code} lang="tsx" theme="css-variables" slot="react" />
+    <Code code={reactToSolid(code)} lang="tsx" theme="css-variables" slot="solid" />
+    <Code code={reactToVue(code)} lang="tsx" theme="css-variables" slot="vue" />
+  </CodePreviewTabs>
+</Box>

@@ -2,11 +2,15 @@ import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { IconButton } from './ui'
+import { Tooltip } from './ui/tooltip'
 
-type Props = { content: string }
+interface Props {
+  content: string
+  dark?: boolean
+}
 
 export const CopyToClipboardButton = (props: Props) => {
-  const { content } = props
+  const { content, ...rest } = props
   const [_, copyToClipboard] = useCopyToClipboard()
   const [visible, setVisible] = useState(true)
 
@@ -21,20 +25,28 @@ export const CopyToClipboardButton = (props: Props) => {
     setVisible(false)
   }
 
+  const styles = props.dark ? { color: 'gray.dark.12', _hover: { bg: 'gray.dark.a3' } } : {}
+
   return (
-    <IconButton
-      variant="ghost"
-      size="xs"
-      color="gray.dark.11"
-      bg="gray.dark.3"
-      borderColor="gray.dark.5"
-      borderWidth="1px"
-      _hover={{ bg: 'gray.dark.4' }}
-      {...props}
-      aria-label="Copy code to clipboard"
-      onClick={handleClick}
-    >
-      {visible ? <CopyIcon /> : <CheckIcon />}
-    </IconButton>
+    <Tooltip.Root openDelay={0} closeDelay={0} positioning={{ placement: 'top' }}>
+      <Tooltip.Trigger asChild>
+        <IconButton
+          variant="ghost"
+          size="sm"
+          aria-label="Copy code to clipboard"
+          onClick={handleClick}
+          {...styles}
+        >
+          {visible ? <CopyIcon /> : <CheckIcon />}
+        </IconButton>
+      </Tooltip.Trigger>
+
+      <Tooltip.Positioner>
+        <Tooltip.Arrow>
+          <Tooltip.ArrowTip />
+        </Tooltip.Arrow>
+        <Tooltip.Content>Copy source</Tooltip.Content>
+      </Tooltip.Positioner>
+    </Tooltip.Root>
   )
 }
