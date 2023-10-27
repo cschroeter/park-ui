@@ -1,11 +1,16 @@
 import { ArrowRightIcon } from 'lucide-react'
-import { Button, type ButtonProps } from './snippet'
+import { useState } from 'react'
+import { Button } from './snippet'
 
-export const Demo = (props: ButtonProps) => {
+export const Demo = () => {
+  const [state, setState] = useState(false)
   return (
-    <Button {...props}>
-      Button
-      <ArrowRightIcon />
-    </Button>
+    <div className="inline-flex flex-col">
+      {state ? 'Active' : 'Inactive'}
+      <Button onClick={() => setState(!state)}>
+        Toggle
+        <ArrowRightIcon />
+      </Button>
+    </div>
   )
 }

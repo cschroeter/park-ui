@@ -1,62 +1,38 @@
 import { Portal } from '@ark-ui/react'
-import { ArrowRightIcon, XIcon } from 'lucide-react'
+import { XIcon } from 'lucide-react'
 import { Button } from '../button/snippet'
 import { IconButton } from '../icon-button/snippet'
-import { Input } from '../input/snippet'
-import { Label } from '../label/snippet'
-import {
-  Drawer,
-  DrawerBackdrop,
-  DrawerCloseTrigger,
-  DrawerContainer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerTitle,
-  DrawerTrigger,
-  type DrawerProps,
-} from './snippet'
+import { Drawer } from './snippet'
 
-export const Demo = (props: DrawerProps) => {
+export const Demo = () => {
   return (
-    <Drawer {...props}>
-      <DrawerTrigger asChild>
+    <Drawer.Root placement="right">
+      <Drawer.Trigger asChild>
         <Button variant="outline">Open Drawer</Button>
-      </DrawerTrigger>
+      </Drawer.Trigger>
       <Portal>
-        <DrawerBackdrop />
-        <DrawerContainer>
-          <DrawerContent>
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-1">
-                <DrawerTitle mb="1">Drawer Heading</DrawerTitle>
-                <DrawerDescription>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-                </DrawerDescription>
-              </div>
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Your name" />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Your e-mail" />
-                </div>
-              </div>
-              <DrawerCloseTrigger asChild>
-                <Button>
-                  Continue <ArrowRightIcon />
-                </Button>
-              </DrawerCloseTrigger>
-            </div>
-            <DrawerCloseTrigger position="absolute" top="3" right="4" asChild>
-              <IconButton aria-label="Close Drawer" variant="ghost">
-                <XIcon />
-              </IconButton>
-            </DrawerCloseTrigger>
-          </DrawerContent>
-        </DrawerContainer>
+        <Drawer.Backdrop />
+        <Drawer.Positioner>
+          <Drawer.Content>
+            <Drawer.Header>
+              <Drawer.Title>Title</Drawer.Title>
+              <Drawer.Description>Description</Drawer.Description>
+              <Drawer.CloseTrigger asChild className="absolute top-3 right-4">
+                <IconButton variant="ghost" aria-label="Close">
+                  <XIcon />
+                </IconButton>
+              </Drawer.CloseTrigger>
+            </Drawer.Header>
+            <Drawer.Body>{/* Content */}</Drawer.Body>
+            <Drawer.Footer className="gap-3">
+              <Drawer.CloseTrigger asChild>
+                <Button variant="outline">Cancel</Button>
+              </Drawer.CloseTrigger>
+              <Button>Primary</Button>
+            </Drawer.Footer>
+          </Drawer.Content>
+        </Drawer.Positioner>
       </Portal>
-    </Drawer>
+    </Drawer.Root>
   )
 }

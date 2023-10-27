@@ -1,18 +1,19 @@
-import { Rating, RatingGroup, RatingGroupControl, type RatingGroupProps } from './snippet'
+import { RatingGroup, type RatingGroupProps } from './snippet'
 
 export const Demo = (props: RatingGroupProps) => {
   return (
-    <RatingGroup {...props} max={5} defaultValue={3} allowHalf={false}>
-      <RatingGroupControl>
-        {({ sizeArray }) =>
-          sizeArray.map((index) => (
-            <Rating key={index} index={index}>
+    <RatingGroup.Root {...props} max={5} defaultValue={3} allowHalf={false}>
+      <RatingGroup.Label>Rating</RatingGroup.Label>
+      <RatingGroup.Control>
+        {({ items }) =>
+          items.map((index) => (
+            <RatingGroup.Item key={index} index={index}>
               {({ isHalf }) => <Icon isHalf={isHalf} />}
-            </Rating>
+            </RatingGroup.Item>
           ))
         }
-      </RatingGroupControl>
-    </RatingGroup>
+      </RatingGroup.Control>
+    </RatingGroup.Root>
   )
 }
 

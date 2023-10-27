@@ -1,4 +1,3 @@
-import { mergeProps } from '@zag-js/react'
 import { forwardRef, type ExoticComponent } from 'react'
 
 type ProviderComponentProps<ComponentProps extends {}> =
@@ -10,11 +9,13 @@ export const styled = <ComponentProps extends {}>(
   createStyles: (...args: any) => any,
 ) => {
   const Comp = forwardRef<typeof Component, ComponentProps>((props, ref) => {
-    const classNames = createStyles(props)
+    const className = createStyles(props)
 
-    const componentProps = mergeProps(props, {
-      className: classNames,
-    } as any) // TODO remove variant props from component props
+    // TODO reenable after is released https://github.com/chakra-ui/zag/pull/967
+    // const componentProps = mergeProps(props, {
+    //   className: classNames,
+    // } as any) // TODO remove variant props from component props
+    const componentProps = { ...props, className }
 
     return <Component {...componentProps} ref={ref} />
   })

@@ -8,31 +8,31 @@ export const toggleGroupStyles = tv({
   },
   slots: {
     root: 'toggleGroup__root',
-    toggle: 'toggleGroup__toggle',
+    item: 'toggleGroup__item',
   },
   variants: {
     variant: {
       outline: {
         root: 'toggleGroup__root--variant_outline',
-        toggle: 'toggleGroup__toggle--variant_outline',
+        item: 'toggleGroup__item--variant_outline',
       },
       ghost: {
         root: 'toggleGroup__root--variant_ghost',
-        toggle: 'toggleGroup__toggle--variant_ghost',
+        item: 'toggleGroup__item--variant_ghost',
       },
     },
     size: {
       sm: {
         root: 'toggleGroup__root--size_sm',
-        toggle: 'toggleGroup__toggle--size_sm',
+        item: 'toggleGroup__item--size_sm',
       },
       md: {
         root: 'toggleGroup__root--size_md',
-        toggle: 'toggleGroup__toggle--size_md',
+        item: 'toggleGroup__item--size_md',
       },
       lg: {
         root: 'toggleGroup__root--size_lg',
-        toggle: 'toggleGroup__toggle--size_lg',
+        item: 'toggleGroup__item--size_lg',
       },
     },
   },

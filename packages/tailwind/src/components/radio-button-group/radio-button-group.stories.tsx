@@ -1,15 +1,21 @@
-import { Radio, RadioButtonGroup, RadioControl, RadioLabel, type RadioGroupProps } from './snippet'
+import { RadioButtonGroup, type RadioGroupProps } from './snippet'
 
 export const Demo = (props: RadioGroupProps) => {
   const options = [{ value: 'S' }, { value: 'M' }, { value: 'L', disabled: true }, { value: 'XL' }]
+
   return (
-    <RadioButtonGroup defaultValue="M" {...props}>
+    <RadioButtonGroup.Root defaultValue="M" {...props}>
       {options.map((option, id) => (
-        <Radio key={id} value={option.value} disabled={option.disabled} px="0">
-          <RadioControl />
-          <RadioLabel>{option.value}</RadioLabel>
-        </Radio>
+        <RadioButtonGroup.Item
+          key={id}
+          value={option.value}
+          disabled={option.disabled}
+          className="px-0"
+        >
+          <RadioButtonGroup.ItemControl />
+          <RadioButtonGroup.ItemText>{option.value}</RadioButtonGroup.ItemText>
+        </RadioButtonGroup.Item>
       ))}
-    </RadioButtonGroup>
+    </RadioButtonGroup.Root>
   )
 }

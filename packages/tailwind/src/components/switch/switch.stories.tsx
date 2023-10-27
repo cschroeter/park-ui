@@ -1,10 +1,10 @@
-import { Switch, SwitchControl, SwitchLabel, SwitchThumb, type SwitchProps } from './snippet'
+import { Switch, type SwitchProps } from './snippet'
 
 export const Demo = (props: SwitchProps) => (
   <Switch defaultChecked {...props}>
-    <SwitchControl>
-      <SwitchThumb />
-    </SwitchControl>
-    <SwitchLabel>Label</SwitchLabel>
+    <Switch.Control>
+      <Switch.Thumb />
+    </Switch.Control>
+    <Switch.Label>Label</Switch.Label>
   </Switch>
 )

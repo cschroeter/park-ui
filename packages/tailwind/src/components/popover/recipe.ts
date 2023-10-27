@@ -7,6 +7,7 @@ export const popoverStyles = tv({
     arrowTip: 'popover__arrowTip',
     anchor: 'popover__anchor',
     trigger: 'popover__trigger',
+    indicator: 'popover__indicator',
     positioner: 'popover__positioner',
     content: 'popover__content',
     title: 'popover__title',

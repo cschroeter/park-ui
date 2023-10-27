@@ -10,11 +10,11 @@ const { withProvider, withContext } = createStyleContext(ratingGroupStyles)
 const RatingGroupRoot = withProvider(Ark.RatingGroup.Root, 'root')
 export const RatingGroupControl = withContext(Ark.RatingGroup.Control, 'control')
 export const RatingGroupLabel = withContext(Ark.RatingGroup.Label, 'label')
-export const Rating = withContext(Ark.RatingGroup.Rating, 'rating')
+export const RatingGroupItem = withContext(Ark.RatingGroup.Item, 'item')
 
 export const RatingGroup = Object.assign(RatingGroupRoot, {
   Root: RatingGroupRoot,
   Control: RatingGroupControl,
   Label: RatingGroupLabel,
-  Rating: Rating,
+  Item: RatingGroupItem,
 })
