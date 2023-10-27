@@ -1,9 +1,8 @@
 {
-  "name": "Park UI Documentation",
-  "short_name": "Park UI",
+  "name": "Park UI",
   "display": "standalone",
   "start_url": "https://park-ui.com",
-  "description": "Beautifully designed components built with Ark UI and Panda CSS.",
+  "description": "Beautifully designed components built for your choice of JS and CSS frameworks.",
   "icons": [
     {
       "src": "/icon-192.png",
