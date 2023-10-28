@@ -14,8 +14,8 @@ export const AccentColorPicker = () => {
 
   return (
     <Stack gap="1.5">
-      <Text textStyle="sm" fontWeight="semibold">
-        Color
+      <Text textStyle="sm" fontWeight="medium">
+        Accent
       </Text>
       <RadioButtonGroup
         value={currentAccentColor}

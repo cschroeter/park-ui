@@ -1,0 +1,48 @@
+---
+id: colors
+title: Colors
+description: Learn about Park UI's color system.
+---
+
+import ColorGrid from '~/components/color-grid.astro'
+import ColorPairings from '~/components/color-pairings.astro'
+
+Park UI's color palette is designed to be accessible and consistent. It is based on the
+[Radix Colors](https://www.radix-ui.com/colors) and has been slightly modified to match Park UI's naming scheme.
+
+## Gray Colors
+
+Gray colors play a crucial role in establishing visual balance, providing contrast, and guiding users' focus on
+essential elements.
+
+<ColorGrid type="gray" />
+
+## Accent Colors
+
+Accent colors serve as the foundation for the entire color scheme of a user interface. These colors play a pivotal role
+in establishing the brand identity.
+
+<ColorGrid type="accent" />
+
+## Virtual Colors
+
+Park UI theme is built on one gray and one accent color. Here you can see the virtual colors that are currently
+configured in the theme.
+
+<ColorGrid type="virtual" />
+
+## Composing gray and accent
+
+By default, Park UI uses `neutral` as the gray color and accent color. However, you can change these colors to any other
+color in the Park UI color palette.
+
+### Neutral pairing
+
+If you want a neutral vibe, or you want to keep things simple, `neutral` will work well with any hue or palette.
+
+### Natural pairing
+
+Alternatively, choose the gray scale which is saturated with the hue closest to your accent hue. The difference is
+subtle, but this will create a more colorful and harmonius vibe.
+
+<ColorPairings />
