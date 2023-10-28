@@ -8,16 +8,23 @@ const getOverviewPages = async () => {
   )
 }
 const getThemePages = async () => {
-  const priority = ['customize', 'semantic-tokens']
+  const priority = ['colors', 'semantic-tokens', 'customize']
   return getCollection('theme').then((items) =>
     items.sort((a, b) => priority.indexOf(a.data.id) - priority.indexOf(b.data.id)),
+  )
+}
+
+const getComponentsPages = async () => {
+  const priority = ['typography', 'component']
+  return getCollection('components').then((items) =>
+    items.sort((a, b) => priority.indexOf(a.data.category) - priority.indexOf(b.data.category)),
   )
 }
 
 export const getAllCollections = async () => {
   const overviewPages = await getOverviewPages()
   const themePages = await getThemePages()
-  const componentPages = await getCollection('components')
+  const componentPages = await getComponentsPages()
 
   return [...overviewPages, ...themePages, ...componentPages]
 }
@@ -86,7 +93,6 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
   const componentPages = await getCollection('components')
 
   const priority = ['typography', 'component']
-  const typographyPriority = ['text', 'heading', 'code']
 
   const componentPagesGroupByCategory = componentPages
     .map((item) => item.data.category)
@@ -97,17 +103,13 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
       items: componentPages
         .filter((item) => item.slug.startsWith(cssFramework))
         .filter((item) => item.data.category === category)
-        .sort(
-          (a, b) => typographyPriority.indexOf(a.data.id) - typographyPriority.indexOf(b.data.id),
-        )
+
         .map((item) => ({
           title: item.data.title,
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
           label: item.data.label,
         })),
     }))
-
-  const hasThemePagesForCssFramework = themePages.some((item) => item.slug.startsWith(cssFramework))
 
   return [
     {
@@ -120,18 +122,16 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
         })),
     },
-    hasThemePagesForCssFramework
-      ? {
-          title: 'Theme',
-          items: themePages
-            .filter((item) => item.collection === 'theme')
-            .filter((item) => item.slug.startsWith(cssFramework))
-            .map((item) => ({
-              title: item.data.title,
-              href: path.join('/docs', cssFramework, item.collection, item.data.id),
-            })),
-        }
-      : undefined,
+    {
+      title: 'Theme',
+      items: themePages
+        .filter((item) => item.collection === 'theme')
+        .filter((item) => item.slug.startsWith(cssFramework))
+        .map((item) => ({
+          title: item.data.title,
+          href: path.join('/docs', cssFramework, item.collection, item.data.id),
+        })),
+    },
     ...componentPagesGroupByCategory,
   ].filter(Boolean) as Sitemap
 }

@@ -57,7 +57,14 @@ const data = grayColors
                 style={{
                   color: token.var(
                     match<string, Token>(color)
-                      .with('amber', 'lime', 'mint', 'sky', 'yellow', () => 'colors.gray.light.12')
+                      .with(
+                        'amber',
+                        'lime',
+                        'mint',
+                        'sky',
+                        'yellow',
+                        () => `colors.${item.gray}.light.12`,
+                      )
                       .otherwise(() => 'colors.white'),
                   ),
                 }}
