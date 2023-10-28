@@ -14,8 +14,8 @@ export const GrayColorPicker = () => {
 
   return (
     <Stack gap="1.5">
-      <Text textStyle="sm" fontWeight="semibold">
-        Gray Palette
+      <Text textStyle="sm" fontWeight="medium">
+        Gray Color
       </Text>
       <RadioButtonGroup
         value={currentGrayColor}
