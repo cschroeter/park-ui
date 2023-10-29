@@ -1,18 +1,17 @@
 ---
 import { accentColors, grayColors } from '@park-ui/panda-preset'
-import { Box, Grid, Stack } from 'styled-system/jsx'
-import { token } from 'styled-system/tokens/index.mjs'
+import { Stack } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
+import ColorPalette from './color-palette.astro'
 import { Text } from './ui/text'
 
 interface Props {
-  type: 'gray' | 'accent' | 'virtual'
+  type: 'gray' | 'accent'
 }
 
 const colors = match(Astro.props.type)
   .with('gray', () => grayColors)
   .with('accent', () => accentColors)
-  .with('virtual', () => ['gray', 'accent'])
   .exhaustive()
 ---
 
@@ -23,21 +22,7 @@ const colors = match(Astro.props.type)
         <Text textStyle="sm" textTransform="capitalize" color="fg.default">
           {color}
         </Text>
-
-        <Grid columns={{ base: 6, sm: 12 }} gap="1">
-          {Array.from({ length: 12 }, (_, i) => i + 1).map((shade) => (
-            <Box
-              width="full"
-              maxH="12"
-              borderRadius="l2"
-              boxShadow="xs"
-              aspectRatio={1}
-              style={{
-                background: token.var(`colors.${color}.${shade}`),
-              }}
-            />
-          ))}
-        </Grid>
+        <ColorPalette color={color} />
       </Stack>
     ))
   }

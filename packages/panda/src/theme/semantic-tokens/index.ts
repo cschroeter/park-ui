@@ -1,11 +1,11 @@
-import { defineSemanticTokens } from '@pandacss/dev'
+import { SemanticTokens, defineSemanticTokens } from '@pandacss/dev'
 import { match } from 'ts-pattern'
 import type { AccentColor, GrayColor, PresetOptions } from '../../types'
 import { colors } from './colors'
 import { createRadiiTokens } from './radii'
 import { shadows } from './shadows'
 
-export const createSemanticTokens = (options: PresetOptions) => {
+export const createSemanticTokens = (options: PresetOptions): SemanticTokens => {
   const { accentColor = 'neutral', grayColor = 'neutral', borderRadius = 'sm' } = options
 
   return defineSemanticTokens({

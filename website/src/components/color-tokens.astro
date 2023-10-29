@@ -1,0 +1,52 @@
+---
+import { createSemanticTokens } from '@park-ui/panda-preset/src/theme/semantic-tokens'
+import { Box, Flex, Grid, Stack } from 'styled-system/jsx'
+import { token } from 'styled-system/tokens'
+import { match } from 'ts-pattern'
+import { Text } from './ui/text'
+
+interface Props {
+  type: 'bg' | 'fg' | 'accent'
+}
+
+const semanticTokens = createSemanticTokens({
+  grayColor: 'neutral',
+  accentColor: 'neutral',
+  borderRadius: 'sm',
+})
+
+const colors: Record<string, unknown> = match(Astro.props.type)
+  .with('bg', () => semanticTokens.colors['bg'])
+  .with('fg', () => semanticTokens.colors['fg'])
+  .with('accent', () => semanticTokens.colors['accent'])
+  .exhaustive()
+---
+
+<Grid gap={{ base: '4', md: '6' }} columns={{ base: 2, sm: 3 }} className="not-prose">
+  {
+    Object.entries(colors).map(([color]) => (
+      <Flex
+        borderRadius="l3"
+        boxShadow="sm"
+        flexDirection="column-reverse"
+        minH="24"
+        style={{
+          background: token.var(`colors.bg.${color.toLowerCase()}`),
+        }}
+      >
+        <Box p="3">
+          <Text
+            textStyle="sm"
+            textTransform="lowercase"
+            color="fg.default"
+            textStyle="sm"
+            fontWeight="semibold"
+          >
+            bg.{color}
+          </Text>
+          <Text textStyle="xs">gray.1</Text>
+        </Box>
+      </Flex>
+    ))
+  }
+</Grid>

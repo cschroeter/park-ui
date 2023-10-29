@@ -1,0 +1,48 @@
+---
+id: semantic-tokens
+title: Semantic Tokens
+description: Bring the Park UI semantic to your entire application
+---
+
+import ColorPalette from '~/components/color-palette.astro'
+import ColorTokens from '~/components/color-tokens.astro'
+
+## Colors
+
+Park UI's theme primarily revolves around one gray and one accent color. These colors are used to later than compose
+`bg`, `fg` and `accent` tokens.
+
+### Gray
+
+<ColorPalette color="gray" withLegend />
+
+### Accent
+
+<ColorPalette color="accent" withLegend />
+
+### Background
+
+These colors are applied to the background elements of a user interface, such as containers, sections, or entire
+screens.
+
+<ColorTokens type="bg" />
+
+### Foreground
+
+These colors are applied to foreground elements, such as text, icons, buttons, and other interactive components.
+
+<ColorTokens type="fg" />
+
+### Accent
+
+These colors play a crucial role in guiding users' attention to specific actions, content, or interactive elements.
+
+<ColorTokens type="accent" />
+
+## Shadow
+
+The shadow tokens are used to add depth to elements. They are used to create a sense of hierarchy and separation between
+
+## Border
+
+The border tokens are used to add depth to elements. They are used to create a sense of hierarchy and separation between
