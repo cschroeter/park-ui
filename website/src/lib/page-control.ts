@@ -141,6 +141,5 @@ export const hasVariants = async (pathname?: string) => {
   const id = pathname?.split('/').pop() ?? ''
   const collections = await getAllCollections()
   const items = collections.filter((item) => item.data.id === id)
-
-  return items.length > 1
+  return items.length > 1 && !['introduction', 'figma', 'about'].includes(id)
 }
