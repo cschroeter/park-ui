@@ -11,8 +11,8 @@ import RadiusTokens from '~/components/radius-tokens.astro'
 
 ## Colors
 
-Park UI's theme primarily revolves around one gray and one accent color. These colors are used to later than compose
-`bg`, `fg` and `accent` tokens.
+Park UI's themeprimarily revolves around one gray and one accent color.. These foundational colors are later utilized to
+define the `bg` (background), `fg` (foreground), and `accent` tokens.
 
 ### Gray
 
@@ -24,38 +24,39 @@ Park UI's theme primarily revolves around one gray and one accent color. These c
 
 ### Background
 
-These colors are applied to the background elements of a user interface, such as containers, sections, or entire
-screens.
+Background colors are designated for the backdrop elements of a user interface. They can be used for components like
+containers, sections, or the entire screen's layout.
 
 <ColorTokens type="bg" />
 
 ### Foreground
 
-These colors are applied to foreground elements, such as text, icons, buttons, and other interactive components.
+Foreground colors are meant for elements that stand out against the background, such as text, icons, buttons, and other
+interactive components.
 
 <ColorTokens type="fg" />
 
 ### Accent
 
-These colors play a crucial role in guiding users' attention to specific actions, content, or interactive elements.
+Accent colors are pivotal in directing the user's attention to specific actions, content, or interactive elements.
 
 <ColorTokens type="accent" />
 
 ### Border
 
-The border tokens are used to add depth to elements. They are used to create a sense of hierarchy and separation between
+Border tokens contribute depth to UI elements. They establish hierarchy and delineate between components.
 
 <ColorTokens type="border" />
 
-## Shadow
+## Shadows
 
-Shadows are used to add depth to elements to create a sense of hierarchy.
+Shadows provide depth to UI components, emphasizing a layered appearance and hierarchical structure.
 
 <ShadowTokens />
 
-## Radius
+## Radii
 
-The radii tokens `l1`, `l2` and `l3` are used to create rounded corners on elements. Use `l1` for elements that will not
-render any more rounded corners and use `l2` to wrap`l1` elements. `l3` is used to wrap `l2` elements.
+`l1`, `l2`, and `l3` are tokens to create rounded corners. `l1` is for basic rounding, `l2` is for wrapping `l1` items,
+and `l3` wraps `l2` items
 
 <RadiusTokens />
