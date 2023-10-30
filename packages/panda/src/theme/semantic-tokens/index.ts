@@ -45,19 +45,19 @@ export const createSemanticTokens = (options: PresetOptions) => {
 const createAccentColorPalette = (accentColor: AccentColor) => {
   const tokens = match(accentColor)
     .with('neutral', () => ({
-      fg: { value: { base: '{colors.white}', _dark: '{colors.black}' } },
       default: { value: { base: '{colors.black}', _dark: '{colors.white}' } },
       emphasized: { value: '{colors.gray.12}' },
+      fg: { value: { base: '{colors.white}', _dark: '{colors.black}' } },
     }))
     .with('amber', 'lime', 'mint', 'sky', 'yellow', () => ({
-      fg: { value: '{colors.gray.light.12}' },
       default: { value: '{colors.accent.9}' },
       emphasized: { value: '{colors.accent.10}' },
+      fg: { value: '{colors.gray.light.12}' },
     }))
     .otherwise(() => ({
-      fg: { value: '{colors.white}' },
       default: { value: '{colors.accent.9}' },
       emphasized: { value: '{colors.accent.10}' },
+      fg: { value: '{colors.white}' },
     }))
 
   return {

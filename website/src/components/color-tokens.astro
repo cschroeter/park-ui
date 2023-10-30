@@ -1,0 +1,34 @@
+---
+import { Box, Flex, Grid } from 'styled-system/jsx'
+import { token } from 'styled-system/tokens'
+import { getColorTokens } from '~/lib/get-color-tokens'
+import { Text } from './ui/text'
+
+interface Props {
+  type: 'bg' | 'fg' | 'accent'
+}
+
+const { type } = Astro.props
+const colorTokens = getColorTokens({ type })
+---
+
+<Grid gap="4" columns={{ base: 2, sm: 4 }} className="not-prose">
+  {
+    colorTokens.map((colorToken) => (
+      <Flex
+        borderRadius="l3"
+        boxShadow="sm"
+        flexDirection="column-reverse"
+        minH="20"
+        style={{
+          color: token.var(colorToken.color),
+          background: token.var(colorToken.background),
+        }}
+      >
+        <Box px="3" py="2">
+          <Text textStyle="sm">{colorToken.name}</Text>
+        </Box>
+      </Flex>
+    ))
+  }
+</Grid>
