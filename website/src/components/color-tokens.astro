@@ -1,50 +1,32 @@
 ---
-import { createSemanticTokens } from '@park-ui/panda-preset/src/theme/semantic-tokens'
-import { Box, Flex, Grid, Stack } from 'styled-system/jsx'
+import { Box, Flex, Grid } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { match } from 'ts-pattern'
+import { getColorTokens } from '~/lib/get-color-tokens'
 import { Text } from './ui/text'
 
 interface Props {
   type: 'bg' | 'fg' | 'accent'
 }
 
-const semanticTokens = createSemanticTokens({
-  grayColor: 'neutral',
-  accentColor: 'neutral',
-  borderRadius: 'sm',
-})
-
-const colors: Record<string, unknown> = match(Astro.props.type)
-  .with('bg', () => semanticTokens.colors['bg'])
-  .with('fg', () => semanticTokens.colors['fg'])
-  .with('accent', () => semanticTokens.colors['accent'])
-  .exhaustive()
+const { type } = Astro.props
+const colorTokens = getColorTokens({ type })
 ---
 
-<Grid gap={{ base: '4', md: '6' }} columns={{ base: 2, sm: 3 }} className="not-prose">
+<Grid gap="4" columns={{ base: 2, sm: 4 }} className="not-prose">
   {
-    Object.entries(colors).map(([color]) => (
+    colorTokens.map((colorToken) => (
       <Flex
         borderRadius="l3"
         boxShadow="sm"
         flexDirection="column-reverse"
-        minH="24"
+        minH="20"
         style={{
-          background: token.var(`colors.bg.${color.toLowerCase()}`),
+          color: token.var(colorToken.color),
+          background: token.var(colorToken.background),
         }}
       >
-        <Box p="3">
-          <Text
-            textStyle="sm"
-            textTransform="lowercase"
-            color="fg.default"
-            textStyle="sm"
-            fontWeight="semibold"
-          >
-            bg.{color}
-          </Text>
-          <Text textStyle="xs">gray.1</Text>
+        <Box px="3" py="2">
+          <Text textStyle="sm">{colorToken.name}</Text>
         </Box>
       </Flex>
     ))

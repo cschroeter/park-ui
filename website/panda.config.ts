@@ -46,6 +46,7 @@ export default defineConfig({
         properties: {
           fontWeight: ['*'],
           textStyle: ['*'],
+          boxShadow: ['*'],
         },
       },
     ],

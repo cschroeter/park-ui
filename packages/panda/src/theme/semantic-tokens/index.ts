@@ -1,11 +1,11 @@
-import { SemanticTokens, defineSemanticTokens } from '@pandacss/dev'
+import { defineSemanticTokens } from '@pandacss/dev'
 import { match } from 'ts-pattern'
 import type { AccentColor, GrayColor, PresetOptions } from '../../types'
 import { colors } from './colors'
 import { createRadiiTokens } from './radii'
 import { shadows } from './shadows'
 
-export const createSemanticTokens = (options: PresetOptions): SemanticTokens => {
+export const createSemanticTokens = (options: PresetOptions) => {
   const { accentColor = 'neutral', grayColor = 'neutral', borderRadius = 'sm' } = options
 
   return defineSemanticTokens({
@@ -45,19 +45,19 @@ export const createSemanticTokens = (options: PresetOptions): SemanticTokens => 
 const createAccentColorPalette = (accentColor: AccentColor) => {
   const tokens = match(accentColor)
     .with('neutral', () => ({
-      fg: { value: { base: '{colors.white}', _dark: '{colors.black}' } },
       default: { value: { base: '{colors.black}', _dark: '{colors.white}' } },
       emphasized: { value: '{colors.gray.12}' },
+      fg: { value: { base: '{colors.white}', _dark: '{colors.black}' } },
     }))
     .with('amber', 'lime', 'mint', 'sky', 'yellow', () => ({
-      fg: { value: '{colors.gray.light.12}' },
       default: { value: '{colors.accent.9}' },
       emphasized: { value: '{colors.accent.10}' },
+      fg: { value: '{colors.gray.light.12}' },
     }))
     .otherwise(() => ({
-      fg: { value: '{colors.white}' },
       default: { value: '{colors.accent.9}' },
       emphasized: { value: '{colors.accent.10}' },
+      fg: { value: '{colors.white}' },
     }))
 
   return {

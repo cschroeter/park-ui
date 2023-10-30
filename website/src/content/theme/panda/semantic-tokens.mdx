@@ -6,6 +6,8 @@ description: Bring the Park UI semantic to your entire application
 
 import ColorPalette from '~/components/color-palette.astro'
 import ColorTokens from '~/components/color-tokens.astro'
+import ShadowTokens from '~/components/shadow-tokens.astro'
+import RadiusTokens from '~/components/radius-tokens.astro'
 
 ## Colors
 
@@ -39,10 +41,21 @@ These colors play a crucial role in guiding users' attention to specific actions
 
 <ColorTokens type="accent" />
 
-## Shadow
-
-The shadow tokens are used to add depth to elements. They are used to create a sense of hierarchy and separation between
-
-## Border
+### Border
 
 The border tokens are used to add depth to elements. They are used to create a sense of hierarchy and separation between
+
+<ColorTokens type="border" />
+
+## Shadow
+
+Shadows are used to add depth to elements to create a sense of hierarchy.
+
+<ShadowTokens />
+
+## Radius
+
+The radii tokens `l1`, `l2` and `l3` are used to create rounded corners on elements. Use `l1` for elements that will not
+render any more rounded corners and use `l2` to wrap`l1` elements. `l3` is used to wrap `l2` elements.
+
+<RadiusTokens />
