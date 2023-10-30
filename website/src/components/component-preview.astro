@@ -2,7 +2,8 @@
 import { Code } from 'astro/components'
 import { getCollection } from 'astro:content'
 import fs from 'fs'
-import { CodePreview } from './code-preview'
+import { Box } from 'styled-system/jsx'
+import { CodePreviewTabs } from './code-preview-tabs'
 import { Playground } from './playground'
 
 const componentId = Astro.params.slug?.split('/').pop()
@@ -11,8 +12,18 @@ const componentProps = types[0].data ?? {}
 const code = fs.readFileSync(`./src/components/demos/${componentId}.demo.tsx`, 'utf8')
 ---
 
-<Playground id={componentId} componentProps={componentProps} client:load>
-  <CodePreview code={code} isAttached expanded client:load>
-    <Code code={code} lang="tsx" theme="css-variables" />
-  </CodePreview>
-</Playground>
+<Box borderRadius="l3" overflow="hidden" borderWidth="1px" className="not-prose">
+  <Playground id={componentId} componentProps={componentProps} client:load>
+    <CodePreviewTabs
+      tabs={{
+        react: { label: 'React', code: code },
+        solid: { label: 'Solid', disabled: true, code: '' },
+        vue: { label: 'Vue', disabled: true, code: '' },
+      }}
+      expandable
+      client:load
+    >
+      <Code code={code} lang="tsx" theme="css-variables" slot="react" />
+    </CodePreviewTabs>
+  </Playground>
+</Box>

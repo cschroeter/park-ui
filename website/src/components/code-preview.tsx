@@ -1,94 +1,28 @@
-import { ArrowDownToLineIcon, ArrowUpToLineIcon } from 'lucide-react'
-import { useState, type PropsWithChildren } from 'react'
-import { cx, sva } from 'styled-system/css'
-import { Box, Flex } from 'styled-system/jsx'
+import { type PropsWithChildren } from 'react'
+import { Box, type BoxProps } from 'styled-system/jsx'
 import { CopyToClipboardButton } from './copy-to-clipboard-button'
-import { Button, IconButton } from './ui'
 
-const styles = sva({
-  slots: ['root', 'control', 'preview', 'footer'],
-  base: {
-    root: {
-      bg: 'gray.dark.2',
-      borderRadius: 'l3',
-      borderWidth: '1px',
-      position: 'relative',
-    },
-    control: {
-      position: 'absolute',
-      right: '3',
-      top: '3',
-    },
-    preview: {
-      p: '4',
-      _collapsed: {
-        maxHeight: '32',
-        overflow: 'hidden',
-        _before: {
-          content: "''",
-          inset: '0',
-          position: 'absolute',
-          backgroundImage: 'linear-gradient(0deg, var(--colors-gray-dark-2) 16%,transparent 100%)',
-          borderRadius: 'l3',
-          pointerEvents: 'none',
-        },
-      },
-    },
-    footer: {
-      alignItems: 'center',
-      bottom: '3',
-      justifyContent: 'center',
-      position: 'absolute',
-      width: 'full',
-      _expanded: {
-        display: 'none',
-      },
-    },
-  },
-})()
-
-type Props = {
-  isAttached?: boolean
-  expanded?: boolean
+interface Props extends BoxProps {
   code: string
+  standalone?: boolean
 }
 
 export const CodePreview = (props: PropsWithChildren<Props>) => {
-  const { isAttached, expanded, code } = props
-  const isCollapsable = code.split('\n').length > 8
-  const [collapsed, setCollapsed] = useState(isCollapsable && !expanded)
-
+  const { children, standalone, code, ...rest } = props
   return (
-    <Box
-      className={cx(styles.root, 'not-prose', 'dark')}
-      borderTopRadius={isAttached ? '0!' : 'l3'}
-      borderWidth={isAttached ? '0!' : '1px'}
-    >
-      <Flex className={styles.control} display={{ base: 'none', md: 'flex' }} gap="1">
-        {isCollapsable && !expanded && (
-          <IconButton
-            variant="ghost"
-            bg="gray.dark.3"
-            borderColor="gray.dark.5"
-            borderWidth="1px"
-            _hover={{ bg: 'gray.dark.4' }}
-            size="xs"
-            onClick={() => setCollapsed(!collapsed)}
-            color="gray.dark.11"
-          >
-            {collapsed ? <ArrowDownToLineIcon /> : <ArrowUpToLineIcon />}
-          </IconButton>
-        )}
-        <CopyToClipboardButton content={code} />
-      </Flex>
-      <Box className={styles.preview} data-state={collapsed ? 'collapsed' : 'expanded'}>
-        {props.children}
+    <Box bg="gray.dark.2" position="relative" {...rest}>
+      <Box
+        position="absolute"
+        top="1"
+        right="1"
+        className="dark"
+        display={props.standalone ? 'block' : 'none'}
+      >
+        <CopyToClipboardButton content={code} dark />
       </Box>
-      <Flex className={styles.footer} data-state={collapsed ? 'collapsed' : 'expanded'}>
-        <Button variant="link" color="gray.dark.11" size="sm" onClick={() => setCollapsed(false)}>
-          Expand code
-        </Button>
-      </Flex>
+      <Box maxH="xl" overflow="auto" p="4">
+        {children}
+      </Box>
     </Box>
   )
 }

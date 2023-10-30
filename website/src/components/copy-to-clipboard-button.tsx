@@ -3,10 +3,13 @@ import { CheckIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { IconButton, Tooltip } from './ui'
 
-type Props = { content: string }
+interface Props {
+  content: string
+  dark?: boolean
+}
 
 export const CopyToClipboardButton = (props: Props) => {
-  const { content } = props
+  const { content, ...rest } = props
   const [_, copyToClipboard] = useCopyToClipboard()
   const [visible, setVisible] = useState(true)
 
@@ -21,14 +24,17 @@ export const CopyToClipboardButton = (props: Props) => {
     setVisible(false)
   }
 
+  const styles = props.dark ? { color: 'gray.dark.12', _hover: { bg: 'gray.dark.a3' } } : {}
+
   return (
     <Tooltip.Root openDelay={0} closeDelay={0} positioning={{ placement: 'top' }}>
       <Tooltip.Trigger asChild>
         <IconButton
           variant="ghost"
-          size="xs"
+          size="sm"
           aria-label="Copy code to clipboard"
           onClick={handleClick}
+          {...styles}
         >
           {visible ? <CopyIcon /> : <CheckIcon />}
         </IconButton>

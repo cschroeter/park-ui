@@ -1,0 +1,111 @@
+---
+id: customize
+title: Customize
+description: Learn how to customize Park UI
+---
+
+A simple but powerful way to customize the Park UI is when setting up the `@park-ui/panda-preset`. With this you can
+customize design elements like color palettes and border radii to match your brand identity.
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
+
+export default defineConfig({
+  preflight: true,
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: 'amber',
+      grayColor: 'sand',
+      borderRadius: 'sm',
+    }),
+  ],
+  include: ['./src/**/*.{js,jsx,ts,tsx}'],
+  jsxFramework: 'react',
+  outdir: 'styled-system',
+})
+```
+
+## Semantic Tokens
+
+Another way to tailor Park UI is by adjusting [semantic tokens](https://park-ui.com/docs/panda/theme/semantic-tokens).
+In the example below, the foreground color of the `default` token is changed to `accent.12`, giving a more vibrant
+aesthetic.
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  // ...
+  theme: {
+    extend: {
+      semanticTokens: {
+        colors: {
+          fg: {
+            default: { value: '{colors.accent.12}' },
+          },
+        },
+      },
+    },
+  },
+})
+```
+
+It's important to remember that semantic tokens are utilized across all recipes. Thus, altering a single token can
+substantially affect the overall appearance and feel of your UI.
+
+## Adjust a Recipe
+
+In the example below, the `base` recipe of the `button` component is altered to display text in `uppercase`.
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  // ...
+  theme: {
+    extend: {
+      recipes: {
+        button: {
+          base: {
+            textTransform: 'uppercase',
+          },
+        },
+      },
+    },
+  },
+})
+```
+
+You also have the option to change just a single variant. The following example demonstrates how to modify the `line`
+variant of the `Tabs` component.
+
+```tsx
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  // ...
+  theme: {
+    extend: {
+      slotRecipes: {
+        tabs: {
+          variants: {
+            variant: {
+              line: {
+                list: {
+                  content: {
+                    pt: '6',
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+})
+```
+
+For major style deviations from the original, consider duplicating and maintaining the recipe in your codebase.

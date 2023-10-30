@@ -1,0 +1,29 @@
+---
+import { accentColors, grayColors } from '@park-ui/panda-preset'
+import { Stack } from 'styled-system/jsx'
+import { match } from 'ts-pattern'
+import ColorPalette from './color-palette.astro'
+import { Text } from './ui/text'
+
+interface Props {
+  type: 'gray' | 'accent'
+}
+
+const colors = match(Astro.props.type)
+  .with('gray', () => grayColors)
+  .with('accent', () => accentColors)
+  .exhaustive()
+---
+
+<Stack className="not-prose" gap="5">
+  {
+    colors.map((color) => (
+      <Stack gap="1.5">
+        <Text textStyle="sm" textTransform="capitalize" color="fg.default">
+          {color}
+        </Text>
+        <ColorPalette color={color} />
+      </Stack>
+    ))
+  }
+</Stack>

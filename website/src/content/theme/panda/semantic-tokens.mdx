@@ -1,0 +1,62 @@
+---
+id: semantic-tokens
+title: Semantic Tokens
+description: Bring the Park UI semantic to your entire application
+---
+
+import ColorPalette from '~/components/color-palette.astro'
+import ColorTokens from '~/components/color-tokens.astro'
+import ShadowTokens from '~/components/shadow-tokens.astro'
+import RadiusTokens from '~/components/radius-tokens.astro'
+
+## Colors
+
+Park UI's themeprimarily revolves around one gray and one accent color.. These foundational colors are later utilized to
+define the `bg` (background), `fg` (foreground), and `accent` tokens.
+
+### Gray
+
+<ColorPalette color="gray" withLegend />
+
+### Accent
+
+<ColorPalette color="accent" withLegend />
+
+### Background
+
+Background colors are designated for the backdrop elements of a user interface. They can be used for components like
+containers, sections, or the entire screen's layout.
+
+<ColorTokens type="bg" />
+
+### Foreground
+
+Foreground colors are meant for elements that stand out against the background, such as text, icons, buttons, and other
+interactive components.
+
+<ColorTokens type="fg" />
+
+### Accent
+
+Accent colors are pivotal in directing the user's attention to specific actions, content, or interactive elements.
+
+<ColorTokens type="accent" />
+
+### Border
+
+Border tokens contribute depth to UI elements. They establish hierarchy and delineate between components.
+
+<ColorTokens type="border" />
+
+## Shadows
+
+Shadows provide depth to UI components, emphasizing a layered appearance and hierarchical structure.
+
+<ShadowTokens />
+
+## Radii
+
+`l1`, `l2`, and `l3` are tokens to create rounded corners. `l1` is for basic rounding, `l2` is for wrapping `l1` items,
+and `l3` wraps `l2` items
+
+<RadiusTokens />

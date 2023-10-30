@@ -21,7 +21,8 @@ const { title, description } = Astro.props
     <title>{title} | Park UI</title>
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="Panda CSS,Ark UI,Components,React,Solid,Vue" />
+    <meta name="keywords" content="Panda,Tailwind,CSS,Ark UI,Components,Library,React,Solid,Vue" />
+    <link rel="manifest" href="/app.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Icons -->
@@ -30,26 +31,28 @@ const { title, description } = Astro.props
     <link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180" />
 
     <!-- OpenGraph -->
-    <meta property="og:url" content="https://park-ui.com/" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="2400" />
-    <meta property="og:image:height" content="1350" />
-    <meta property="og:image" content="https://park-ui.com/opengraph-image.png" />
     <meta property="og:type" content="website" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="@grizzly_codes" />
+    <meta property="og:image" content="https://park-ui.com/og.png" />
+    <meta property="og:url" content="https://park-ui.com/" />
+    <meta property="og:title" content="Park UI" />
     <meta
-      name="twitter:description"
+      property="og:description"
       content="Beautifully designed components built for your choice of JS and CSS frameworks."
     />
-    <meta name="twitter:image:type" content="image/png" />
-    <meta name="twitter:image:width" content="2400" />
-    <meta name="twitter:image:height" content="1350" />
-    <meta name="twitter:image" content="https://park-ui.com/twitter-image.png" />
+    <meta property="og:locale" content="en_US" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="x:creator" content="@grizzly_codes" />
+    <meta property="x:title" content="Park UI" />
+    <meta
+      name="x:description"
+      content="Beautifully designed components built for your choice of JS and CSS frameworks."
+    />
+    <meta name="x:image" content="https://park-ui.com/og.png" />
+
+    <!-- Tracking -->
+    <script defer data-domain="park-ui.com" src="https://plausible.io/js/script.js"></script>
     <ViewTransitions />
   </head>
   <body>
