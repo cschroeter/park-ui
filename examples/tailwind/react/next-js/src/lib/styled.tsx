@@ -1,5 +1,9 @@
-import { mergeProps } from '@zag-js/react'
 import { forwardRef, type ExoticComponent } from 'react'
+
+const mergeProps = <T extends Record<string, any>>(baseProps: T, propsToMerge: Partial<T>): T => ({
+  ...baseProps,
+  ...propsToMerge,
+})
 
 type ProviderComponentProps<ComponentProps extends {}> =
   | ExoticComponent<ComponentProps>
