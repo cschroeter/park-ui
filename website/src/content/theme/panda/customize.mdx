@@ -1,11 +1,16 @@
 ---
 id: customize
 title: Customize
-description: Learn how to customize Park UI
+description: Learn how to customize the Park UI Theme
 ---
 
-A simple but powerful way to customize the Park UI is when setting up the `@park-ui/panda-preset`. With this you can
-customize design elements like color palettes and border radii to match your brand identity.
+Depending on your project's needs, you may want to customize the Park UI theme. This guide will walk you through the
+different ways you can tailor Park UI to fit your brand.
+
+## Presets
+
+Park UI was built with customization in mind. Whenn you integrate the `@park-ui/panda-preset` into your Panda config, it
+lets you adjust features like color palettes and border radii to fit your brand.
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
@@ -29,9 +34,9 @@ export default defineConfig({
 
 ## Semantic Tokens
 
-Another way to tailor Park UI is by adjusting [semantic tokens](https://park-ui.com/docs/panda/theme/semantic-tokens).
-In the example below, the foreground color of the `default` token is changed to `accent.12`, giving a more vibrant
-aesthetic.
+Another cool way to customize Park UI is by adjusting
+[semantic tokens](https://park-ui.com/docs/panda/theme/semantic-tokens). This is helpful if you want to modify specific
+aspects of the theme, such as the appearance of disabled elements.
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
@@ -43,7 +48,10 @@ export default defineConfig({
       semanticTokens: {
         colors: {
           fg: {
-            default: { value: '{colors.accent.12}' },
+            disabled: { value: '{colors.gray.6}' },
+          },
+          bg: {
+            disabled: { value: { base: '{colors.gray.4}', _dark: '{colors.gray.5}' } },
           },
         },
       },
@@ -52,12 +60,12 @@ export default defineConfig({
 })
 ```
 
-It's important to remember that semantic tokens are utilized across all recipes. Thus, altering a single token can
-substantially affect the overall appearance and feel of your UI.
+> You don't have to use color tokens. You can also use simple color values like `#000` or `black`.
 
-## Adjust a Recipe
+## Recipes
 
-In the example below, the `base` recipe of the `button` component is altered to display text in `uppercase`.
+To customize or enhance a component's style, you want to extend its recipe. In the example below we're extending the
+`button` recipe to render all buttons in uppercase.
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
@@ -78,8 +86,8 @@ export default defineConfig({
 })
 ```
 
-You also have the option to change just a single variant. The following example demonstrates how to modify the `line`
-variant of the `Tabs` component.
+You can also add a completly new variant to a component. The following example demonstrates how to add a `primary`
+variant to the `button` component.
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
@@ -88,16 +96,13 @@ export default defineConfig({
   // ...
   theme: {
     extend: {
-      slotRecipes: {
-        tabs: {
+      recipes: {
+        button: {
           variants: {
-            variant: {
-              line: {
-                list: {
-                  content: {
-                    pt: '6',
-                  },
-                },
+            primary: {
+              base: {
+                color: '{colors.white}',
+                // etc...
               },
             },
           },
@@ -108,4 +113,5 @@ export default defineConfig({
 })
 ```
 
-For major style deviations from the original, consider duplicating and maintaining the recipe in your codebase.
+Learn more about [recipes](https://panda-css.com/docs/concepts/recipes) and
+[slot recipes](https://panda-css.com/docs/concepts/slot-recipes) at Panda CSS.
