@@ -44,9 +44,12 @@ export default defineConfig({
     css: [
       {
         properties: {
+          backgroundColor: ['*'],
+          borderColor: ['*'],
+          boxShadow: ['*'],
+          color: ['*'],
           fontWeight: ['*'],
           textStyle: ['*'],
-          boxShadow: ['*'],
         },
       },
     ],
@@ -81,6 +84,8 @@ export default defineConfig({
         '--colors-prose-bold': 'colors.fg.default',
         '--colors-prose-link': 'colors.fg.default',
         '--colors-prose-code': 'colors.fg.default',
+        '--colors-prose-td-border': 'colors.border.subtle',
+        '--colors-prose-th-border': 'colors.border.subtle',
       },
       'pre, code': {
         fontFamily: 'robotoMono',
