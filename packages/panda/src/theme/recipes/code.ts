@@ -6,10 +6,10 @@ export const code = defineRecipe({
     alignItems: 'center',
     bg: 'bg.subtle',
     borderRadius: 'l2',
-    color: 'fg.muted',
+    color: 'fg.default',
     display: 'inline-flex',
+    fontWeight: 'medium!',
     fontFamily: 'var(--fonts-code)',
-    fontWeight: 'medium',
   },
   defaultVariants: {
     size: 'md',
@@ -24,18 +24,20 @@ export const code = defineRecipe({
     },
     size: {
       sm: {
-        height: '5',
+        minHeight: '5',
         px: '0.5',
         textStyle: 'xs',
       },
       md: {
-        height: '6',
-        px: '1',
+        minHeight: '6',
         textStyle: 'sm',
+        px: '1',
+        py: '1px',
       },
       lg: {
-        height: '7',
+        minHeight: '7',
         px: '1.5',
+        py: '1px',
         textStyle: 'md',
       },
     },
