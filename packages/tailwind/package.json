@@ -39,7 +39,7 @@
     "@ark-ui/react": "0.15.0",
     "@fontsource/plus-jakarta-sans": "5.0.17",
     "@ladle/react": "3.3.0",
-    "@pandacss/dev": "0.17.3",
+    "@pandacss/dev": "0.17.4",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "4.0.0",
     "@types/node": "20.8.3",

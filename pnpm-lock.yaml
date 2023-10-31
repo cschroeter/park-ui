@@ -146,9 +146,6 @@ importers:
       '@types/react':
         specifier: 18.2.33
         version: 18.2.33
-      '@zag-js/react':
-        specifier: 0.26.0
-        version: 0.26.0(react-dom@18.2.0)(react@18.2.0)
       lucide-react:
         specifier: 0.290.0
         version: 0.290.0(react@18.2.0)
@@ -3066,13 +3063,6 @@ packages:
       klona: 2.0.6
     dev: false
 
-  /@zag-js/core@0.26.0:
-    resolution: {integrity: sha512-pwVFL1hTZ7w86NEA1Xs9Brq9OmTkW94JTGsBGNEMuH6LVuGGF/fike/nkJP/G/DpvdIrkwI5dKLr7P/nQ55DbQ==}
-    dependencies:
-      '@zag-js/store': 0.26.0
-      klona: 2.0.6
-    dev: true
-
   /@zag-js/date-picker@0.12.0:
     resolution: {integrity: sha512-72fnmI8YlY9YvAUFRIefDhMVwWA8zkDAXcX24+ZNtjbmBnUhjkE16W0w5duOAqiIG2VoYMyQmx4cyyVfR9EB7Q==}
     dependencies:
@@ -3825,20 +3815,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  /@zag-js/react@0.26.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-PEZm+qRhL162PFbKwMNpnULsN6OGmqqp0cT31T2lMpGUY98bPMy9e4iWyqvrwMroJyr67Cak3/GZ3l5qMEJNNA==}
-    peerDependencies:
-      react: '>=18.0.0'
-      react-dom: '>=18.0.0'
-    dependencies:
-      '@zag-js/core': 0.26.0
-      '@zag-js/store': 0.26.0
-      '@zag-js/types': 0.26.0
-      proxy-compare: 2.5.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: true
-
   /@zag-js/rect-utils@0.12.0:
     resolution: {integrity: sha512-J1h2SG0n3oI3UCM2pXPyhV+1vA/m5HQ5MhHk0ArfLdpaWad/pHN2iNdiDfufkpImTI7mS7tx3W/H7wzFiBvg3A==}
 
@@ -4005,12 +3981,6 @@ packages:
     dependencies:
       proxy-compare: 2.5.1
     dev: false
-
-  /@zag-js/store@0.26.0:
-    resolution: {integrity: sha512-NcIWqP5RE7QU9zHi4ixl6CVX0Ff56Q8tAikwWPKAQOin/XctI1rHGNWI0/uUa+9Ib3Wsc2M83I6kTLrWstkZQQ==}
-    dependencies:
-      proxy-compare: 2.5.1
-    dev: true
 
   /@zag-js/switch@0.12.0:
     resolution: {integrity: sha512-THR/+BKc5RM79VELDRjvrnfmByDTDRFkZ8mNMLK8DKzmeAxKP2AF8fxvdM/Sgu5Qmn1U5A9MLcC7Tu2JzvHVJg==}
@@ -4260,12 +4230,6 @@ packages:
     dependencies:
       csstype: 3.1.2
     dev: false
-
-  /@zag-js/types@0.26.0:
-    resolution: {integrity: sha512-pQWK9dngn9zYCIzEbuGG9PboCYd1CaTWgEX3+KGFYTqOEcunPijx1MW3LZNmLaqYZLNd8yCRU5IKlno/cRBKVA==}
-    dependencies:
-      csstype: 3.1.2
-    dev: true
 
   /@zag-js/utils@0.12.0:
     resolution: {integrity: sha512-kRPHpeh3cWIudwfAzTcwVrFnZAWpOqAp110EXX6h3TdhYDSG7+vnvT3PulwKDLdtGdn3vVUViolIHP00ZIWCAQ==}
