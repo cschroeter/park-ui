@@ -15,10 +15,12 @@ export const FontFamilySelect = () => {
       size="sm"
     >
       <Select.Label>Font Family</Select.Label>
-      <Select.Trigger>
-        <Select.ValueText />
-        <ChevronsUpDownIcon />
-      </Select.Trigger>
+      <Select.Control>
+        <Select.Trigger>
+          <Select.ValueText />
+          <ChevronsUpDownIcon />
+        </Select.Trigger>
+      </Select.Control>
       <Select.Positioner>
         <Select.Content>
           {fontFamilies.map((fontFamily, id) => (

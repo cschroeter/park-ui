@@ -22,10 +22,12 @@ export const ReportIssueCard = () => {
         </Stack>
         <Select.Root items={frameworks} positioning={{ sameWidth: true }} multiple>
           <Select.Label>Frameworks</Select.Label>
-          <Select.Trigger>
-            <Select.ValueText placeholder="Select a Framework" />
-            <ChevronsUpDownIcon />
-          </Select.Trigger>
+          <Select.Control>
+            <Select.Trigger>
+              <Select.ValueText placeholder="Select a Framework" />
+              <ChevronsUpDownIcon />
+            </Select.Trigger>
+          </Select.Control>
           <Select.Positioner>
             <Select.Content>
               {frameworks.map((framework) => (

@@ -85,10 +85,12 @@ export const Playground = (props: PropsWithChildren<Props>) => {
                 onValueChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
               >
                 <Select.Label textTransform="capitalize">{key}</Select.Label>
-                <Select.Trigger>
-                  <Select.ValueText placeholder="Select a Framework" />
-                  <ChevronsUpDownIcon />
-                </Select.Trigger>
+                <Select.Control>
+                  <Select.Trigger>
+                    <Select.ValueText placeholder="Select a Framework" />
+                    <ChevronsUpDownIcon />
+                  </Select.Trigger>
+                </Select.Control>
                 <Select.Positioner>
                   <Select.Content>
                     {(options ?? []).map((option) => (

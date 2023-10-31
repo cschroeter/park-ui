@@ -90,10 +90,12 @@ const Member = (props: Props) => {
           positioning={{ sameWidth: true }}
           size="sm"
         >
-          <Select.Trigger>
-            <Select.ValueText />
-            <ChevronsUpDownIcon />
-          </Select.Trigger>
+          <Select.Control>
+            <Select.Trigger>
+              <Select.ValueText />
+              <ChevronsUpDownIcon />
+            </Select.Trigger>
+          </Select.Control>
           <Select.Positioner>
             <Select.Content>
               {['Write', 'Read'].map((framework) => (

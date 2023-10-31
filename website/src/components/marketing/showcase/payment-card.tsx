@@ -52,10 +52,12 @@ export const PaymentCard = () => {
         <Stack direction="row" gap="3">
           <Select.Root items={months} positioning={{ sameWidth: true }}>
             <Select.Label>Month</Select.Label>
-            <Select.Trigger>
-              <Select.ValueText placeholder="Month" />
-              <ChevronsUpDownIcon />
-            </Select.Trigger>
+            <Select.Control>
+              <Select.Trigger>
+                <Select.ValueText placeholder="Month" />
+                <ChevronsUpDownIcon />
+              </Select.Trigger>
+            </Select.Control>
             <Select.Positioner>
               <Select.Content>
                 {months.map((month) => (
@@ -71,10 +73,12 @@ export const PaymentCard = () => {
           </Select.Root>
           <Select items={years} positioning={{ sameWidth: true }}>
             <Select.Label>Year</Select.Label>
-            <Select.Trigger>
-              <Select.ValueText placeholder="Year" />
-              <ChevronsUpDownIcon />
-            </Select.Trigger>
+            <Select.Control>
+              <Select.Trigger>
+                <Select.ValueText placeholder="Year" />
+                <ChevronsUpDownIcon />
+              </Select.Trigger>
+            </Select.Control>
             <Select.Positioner>
               <Select.Content>
                 {years.map((year) => (
