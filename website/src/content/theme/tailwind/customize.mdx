@@ -110,3 +110,63 @@ The `button--variant_uppercase` is a CSS class that you should define in your CS
   @apply uppercase;
 }
 ```
+
+## Custom color palette
+
+To add your brand colors to the Park UI Tailwind theme, you have to add the color palette to the global css file. As an
+example, we will use the "my-brand" color palette, as you can see in the following example:
+
+```css
+:root {
+  --colors-my-accent-1: #f9fefd;
+  --colors-my-accent-2: #f2fbf9;
+  --colors-my-accent-3: #ddf9f2;
+  --colors-my-accent-4: #c8f4e9;
+  --colors-my-accent-5: #b3ecde;
+  --colors-my-accent-6: #9ce0d0;
+  --colors-my-accent-7: #7ecfbd;
+  --colors-my-accent-8: #4cbba5;
+  --colors-my-accent-9: #86ead4;
+  --colors-my-accent-10: #7de0cb;
+  --colors-my-accent-11: #027864;
+  --colors-my-accent-12: #16433c;
+
+  --colors-my-accent-a1: #0e1515;
+  --colors-my-accent-a2: #0f1b1b;
+  --colors-my-accent-a3: #092c2b;
+  --colors-my-accent-a4: #003a38;
+  --colors-my-accent-a5: #004744;
+  --colors-my-accent-a6: #105650;
+  --colors-my-accent-a7: #1e685f;
+  --colors-my-accent-a8: #277f70;
+  --colors-my-accent-a9: #86ead4;
+  --colors-my-accent-a10: #a8f5e5;
+  --colors-my-accent-a11: #58d5ba;
+  --colors-my-accent-a12: #c4f5e1;
+}
+```
+
+Then you can use it in your Park UI Tailwind theme config:
+
+```ts
+const { parkwindPlugin } = require('@park-ui/tailwind-plugin')
+
+module.exports = {
+  plugins: [parkwindPlugin],
+  parkUI: {
+    accentColor: 'my-accent',
+    grayColor: 'sand',
+    borderRadius: 'none',
+  },
+  darkMode: ['class'],
+  // ...
+}
+```
+
+Please make sure, that the css variable name matches the following syntax: `--colors-<your-color-name>-<number>`.
+`<your-color-name>` can be any name you want. `<number>` must be from 1 to 12. The idea is that the color value 9 is
+your brand color and matches the a9 color. You can see more in the [colors section](/docs/tailwind/theme/colors) of the
+documentation.
+
+The same conecpt applies to the gray colors. You can add your own gray color palette to the global css file, and then
+use it as a grayColor in your Park UI Tailwind theme config.
