@@ -17,7 +17,7 @@ import InstallationGuide from '~/components/installation-guide.astro'
 
 ## Examples
 
-### With Icon
+### With an Icon
 
 ```tsx live
 <Link href="https://park-ui.com">
@@ -27,11 +27,12 @@ import InstallationGuide from '~/components/installation-guide.astro'
 
 ### As another element
 
-Utilize the `asChild` property to specify the HTML tag. This changes semantic markup without affecting visual style.
+The `asChild` property allows you to embed framework-specific link components, such as the one provided by
+[Next.js](https://nextjs.org/), within your styled `Link` component, as shown below:
 
 ```tsx
 <Link asChild>
-  <NextLink>About</NextLink>
+  <NextLink href="/about">About</NextLink>
 </Link>
 ```
 
@@ -42,17 +43,17 @@ even for better layout.
 
 ```tsx live
 <Flex direction="column">
-  <Link textStyle="xs">Park UI</Link>
-  <Link textStyle="sm">Park UI</Link>
-  <Link textStyle="md">Park UI</Link>
-  <Link textStyle="lg">Park UI</Link>
-  <Link textStyle="xl">Park UI</Link>
-  <Link textStyle="2xl">Park UI</Link>
-  <Link textStyle="3xl">Park UI</Link>
-  <Link textStyle="4xl">Park UI</Link>
-  <Link textStyle="5xl">Park UI</Link>
-  <Link textStyle="6xl">Park UI</Link>
-  <Link textStyle="7xl">Park UI</Link>
+  <Link textStyle="xs">Ag</Link>
+  <Link textStyle="sm">Ag</Link>
+  <Link textStyle="md">Ag</Link>
+  <Link textStyle="lg">Ag</Link>
+  <Link textStyle="xl">Ag</Link>
+  <Link textStyle="2xl">Ag</Link>
+  <Link textStyle="3xl">Ag</Link>
+  <Link textStyle="4xl">Ag</Link>
+  <Link textStyle="5xl">Ag</Link>
+  <Link textStyle="6xl">Ag</Link>
+  <Link textStyle="7xl">Ag</Link>
 </Flex>
 ```
 

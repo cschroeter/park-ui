@@ -83,7 +83,7 @@ export default defineConfig({
         '--colors-prose-body': 'colors.fg.muted',
         '--colors-prose-heading': 'colors.fg.default',
         '--colors-prose-bold': 'colors.fg.default',
-        '--colors-prose-link': 'colors.fg.default',
+        '--colors-prose-link': 'colors.accent.11',
         '--colors-prose-code': 'colors.fg.default',
         '--colors-prose-td-border': 'colors.border.subtle',
         '--colors-prose-th-border': 'colors.border.subtle',
