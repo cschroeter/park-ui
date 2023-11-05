@@ -10,12 +10,12 @@ export const link = defineRecipe({
     fontWeight: 'medium',
     gap: '2',
     textDecoration: 'underline 0.1em transparent',
-    textUnderlineOffset: '0.2em',
+    textUnderlineOffset: '0.125em',
     transitionDuration: 'fast',
     transitionProperty: 'text-decoration-color',
     transitionTimingFunction: 'default',
     _hover: {
-      textDecorationColor: 'accent.11',
+      textDecorationColor: 'accent.default',
     },
     '& svg': {
       width: '1em',
