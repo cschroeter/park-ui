@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.21.0] - 2023-11-05
+
 ### Added
 
 - Added `Link` component.
