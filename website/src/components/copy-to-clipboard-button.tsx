@@ -34,6 +34,7 @@ export const CopyToClipboardButton = (props: Props) => {
           variant="ghost"
           size="sm"
           aria-label="Copy code to clipboard"
+          display={{ base: 'none', sm: 'inline-flex' }}
           onClick={handleClick}
           {...styles}
         >
