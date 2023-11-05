@@ -29,6 +29,7 @@ export default defineConfig({
       icon: [{ size: ['*'] }],
       iconButton: [{ variant: ['*'], size: ['*'] }],
       input: [{ size: ['*'] }],
+      link: ['*'],
       menu: [{ size: ['*'] }],
       numberInput: [{ size: ['*'] }],
       radioGroup: [{ size: ['*'] }],

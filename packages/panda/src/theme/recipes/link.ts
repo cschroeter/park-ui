@@ -3,52 +3,36 @@ import { defineRecipe } from '@pandacss/dev'
 export const link = defineRecipe({
   className: 'link',
   base: {
-    color: 'fg.subtle',
+    alignItems: 'center',
+    color: 'accent.a11',
     cursor: 'pointer',
     display: 'inline-flex',
-    alignItems: 'center',
+    position: 'relative',
+    width: 'fit-content',
     gap: '2',
-    transitionDuration: 'normal',
-    transitionProperty: 'color, font-weight',
-    transitionTimingFunction: 'default',
-  },
-  defaultVariants: {
-    variant: 'text',
-  },
-  variants: {
-    variant: {
-      text: {
-        fontWeight: 'medium',
-        color: 'fg.default',
-        textDecoration: 'underline',
+    _before: {
+      content: '""',
+      position: 'absolute',
+      width: 'full',
+      height: '0.1em',
+      backgroundColor: 'accent.a11',
+      bottom: '0',
+      left: '0',
+      transformOrigin: 'right',
+      transform: 'scaleX(0)',
+      transitionDuration: 'normal',
+      transitionProperty: 'transform',
+      transitionTimingFunction: 'default',
+    },
+    _hover: {
+      _before: {
+        transformOrigin: 'left',
+        transform: 'scaleX(1)',
       },
-      toc: {
-        fontWeight: 'medium',
-        textStyle: 'sm',
-        _hover: {
-          color: 'fg.muted',
-        },
-        _currentPage: {
-          fontWeight: 'semibold',
-          color: 'fg.default',
-          _hover: {
-            color: 'fg.default',
-          },
-        },
-      },
-      navbar: {
-        fontWeight: 'semibold',
-        textStyle: 'md',
-        _hover: {
-          color: 'fg.muted',
-        },
-        _currentPage: {
-          color: 'fg.default',
-          _hover: {
-            color: 'fg.default',
-          },
-        },
-      },
+    },
+    '& svg': {
+      width: '1em',
+      height: '1em',
     },
   },
 })

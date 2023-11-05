@@ -1,0 +1,75 @@
+---
+id: link
+title: Link
+category: typography
+description: A semantic element for navigation between pages.
+label: New
+---
+
+import { Link } from '~/components/ui/link'
+import InstallationGuide from '~/components/installation-guide.astro'
+
+## Usage
+
+```tsx live
+<Link href="https://park-ui.com">Park UI</Link>
+```
+
+## Examples
+
+### With Icon
+
+```tsx live
+<Link href="https://park-ui.com">
+  Park UI <ExternalLinkIcon />
+</Link>
+```
+
+### As another element
+
+Utilize the `asChild` property to specify the HTML tag. This changes semantic markup without affecting visual style.
+
+```tsx
+<Link asChild>
+  <NextLink>About</NextLink>
+</Link>
+```
+
+### Font Size
+
+Use `textStyle` for link size. It makes line height and spacing smaller as link size grows and also ensures link size is
+even for better layout.
+
+```tsx live
+<Flex direction="column">
+  <Link textStyle="xs">Park UI</Link>
+  <Link textStyle="sm">Park UI</Link>
+  <Link textStyle="md">Park UI</Link>
+  <Link textStyle="lg">Park UI</Link>
+  <Link textStyle="xl">Park UI</Link>
+  <Link textStyle="2xl">Park UI</Link>
+  <Link textStyle="3xl">Park UI</Link>
+  <Link textStyle="4xl">Park UI</Link>
+  <Link textStyle="5xl">Park UI</Link>
+  <Link textStyle="6xl">Park UI</Link>
+  <Link textStyle="7xl">Park UI</Link>
+</Flex>
+```
+
+### Font Weight
+
+Use the `fontWeight` prop to set the font weight.
+
+```tsx live
+<Flex direction="column">
+  <Link fontWeight="light">Park UI</Link>
+  <Link fontWeight="normal">Park UI</Link>
+  <Link fontWeight="medium">Park UI</Link>
+  <Link fontWeight="semibold">Park UI</Link>
+  <Link fontWeight="bold">Park UI</Link>
+</Flex>
+```
+
+## Installation
+
+<InstallationGuide />
