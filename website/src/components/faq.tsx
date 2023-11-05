@@ -1,11 +1,4 @@
-import { ChevronDownIcon } from 'lucide-react'
-import { Icon } from '~/components/ui'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '~/components/ui/accordion'
+import { Accordion } from '~/components/ui'
 
 export const Faq = () => {
   const questions = [
@@ -45,33 +38,16 @@ export const Faq = () => {
     },
   ]
   return (
-    <Accordion defaultValue={[questions[0].question]} multiple>
+    <Accordion.Root defaultValue={[questions[0].question]} multiple>
       {questions.map((item, id) => (
-        <AccordionItem key={id} value={item.question}>
-          {({ isOpen }) => (
-            <>
-              <AccordionTrigger>
-                {item.question}
-                <AccordionIcon isOpen={isOpen} />
-              </AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
-            </>
-          )}
-        </AccordionItem>
+        <Accordion.Item key={id} value={item.question}>
+          <Accordion.ItemTrigger>
+            {item.question}
+            <Accordion.ItemIndicator />
+          </Accordion.ItemTrigger>
+          <Accordion.ItemContent>{item.answer}</Accordion.ItemContent>
+        </Accordion.Item>
       ))}
-    </Accordion>
-  )
-}
-
-const AccordionIcon = (props: { isOpen: boolean }) => {
-  const iconStyles = {
-    transform: props.isOpen ? 'rotate(-180deg)' : undefined,
-    transition: 'transform 0.2s',
-    transformOrigin: 'center',
-  }
-  return (
-    <Icon style={iconStyles}>
-      <ChevronDownIcon />
-    </Icon>
+    </Accordion.Root>
   )
 }
