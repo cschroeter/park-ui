@@ -1,23 +1,28 @@
 ---
 id: introduction
 title: Introduction
-description: Welcome to Park UI, your source for highly versatile components, all designed using Ark UI and Panda CSS.
+description: The only component library that lets you choose the JS/CSS framework
 ---
 
-Park UI isn't a conventional component library. It's a valuable collection of re-usable components that you can effortlessly copy and paste into your applications.
+import { Faq } from '~/components/faq'
 
-## What does that mean?
+## Motivation
 
-When we say Park UI isn't a conventional component library, we mean its main function is not to serve as an installable package dependency that provides pre-made components for direct use. While Park UI does require the installation of Ark UI as a dependency and offers a Preset package for Panda, the primary purpose of Park UI is to provide code snippets for components that can be copied and integrated into your projects.
+Most popular component libraries are designed for a specific JS framework and have their own way of styling components.
+While this works fine for individuals and small businesses, it can be challenging for larger organizations or agencies
+dealing with various clients or teams that use different frameworks.
 
-## So how does it work?
+In addition, most component libraries tightly couple component design and functionality, making it difficult to
+customize and at times, impossible.
 
-With Park UI, you're in the driver's seat. Simply browse through our comprehensive collection of components, select the ones that suit your needs, and then copy and paste the corresponding code snippets directly into your project. The beauty of this approach is twofold:
+## Solution
 
-**Customization**: Once you've copied the component code, it's completely yours to modify. You can tailor each component to perfectly match your specific needs.
+Enter Park UI. Our goal is to put you in control allowing you to decide how the components are built and styled. Park UI
+provides a set of components with sensible defaults that can be easily customized to fit your needs.
 
-**Efficiency**: You only copy what you need. This means your project remains lean and clean, free of unnecessary dependencies.
+Unlike many other component libraries, Park UI doesn't ship as a single npm package. Instead, it ships various packages
+tailored for each supported CSS framework. This allows you to only install the components you need and nothing more.
 
-We encourage you to use Park UI as a starting point, or a reference, in building your own component libraries or enhancing your existing ones.
+## FAQ
 
-Welcome to a new way of integrating high-quality components into your apps. Welcome to Park UI!
+<Faq client:load />

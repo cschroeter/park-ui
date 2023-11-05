@@ -24,7 +24,9 @@ const showHeroTabs = await hasVariants(Astro.params.slug)
 <Box borderBottomWidth="1px" bg={{ base: 'gray.2', _dark: 'black.a2' }}>
   <Container maxW="66rem" py={{ base: '16', md: '24' }}>
     <article class={prose({ size: 'base' })}>
-      <Heading as="h1" fontWeight="bold">{entry.data.title}</Heading>
+      <Heading as="h1" fontWeight="bold">
+        {entry.data.title === 'Introduction' ? 'Welcome to Park UI' : entry.data.title}
+      </Heading>
       <Text className="lead">{entry.data.description}</Text>
     </article>
     {
