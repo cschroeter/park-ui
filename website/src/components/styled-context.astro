@@ -1,0 +1,28 @@
+---
+import { Code } from 'astro:components'
+import { readFile } from 'node:fs/promises'
+import { Box } from 'styled-system/jsx'
+import { CodePreviewTabs } from './code-preview-tabs'
+
+const react = await readFile('./src/lib/create-style-context.tsx', 'utf8')
+const solid = await readFile(
+  '../examples/panda/solid/vite/src/lib/create-style-context.tsx',
+  'utf8',
+)
+const vue = await readFile('../examples/panda/vue/nuxt/lib/create-style-context.ts', 'utf8')
+---
+
+<Box borderRadius="l3" overflow="hidden" divideY="1px" borderWidth="1px" className="not-prose">
+  <CodePreviewTabs
+    tabs={{
+      react: { label: 'React', code: react },
+      solid: { label: 'Solid', code: solid },
+      vue: { label: 'Vue', code: vue },
+    }}
+    client:load
+  >
+    <Code code={react} lang="tsx" theme="css-variables" slot="react" />
+    <Code code={solid} lang="tsx" theme="css-variables" slot="solid" />
+    <Code code={vue} lang="ts" theme="css-variables" slot="vue" />
+  </CodePreviewTabs>
+</Box>
