@@ -4,6 +4,7 @@ import { type CollectionEntry } from 'astro:content'
 import path from 'path'
 import { styled } from 'styled-system/jsx'
 import { prose } from 'styled-system/recipes'
+import Link from '~/components/mdx-link'
 import DocsHero from '~/components/navigation/docs-hero.astro'
 import Pre from '~/components/pre.astro'
 import { Code } from '~/components/ui'
@@ -32,6 +33,6 @@ const Prose = styled(ark.article, prose)
 <DocsLayout title={entry.data.title} description={entry.data.description} headings={headings}>
   <DocsHero slot="hero" entry={entry} />
   <Prose css={{ maxWidth: 'full', '&> :first-child': { mt: '0' } }}>
-    <Content components={{ pre: Pre, code: Code }} />
+    <Content components={{ pre: Pre, code: Code, a: Link }} />
   </Prose>
 </DocsLayout>
