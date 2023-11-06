@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added `indeterminate` styles to the `Checkbox` component.
+
 ## [0.21.0] - 2023-11-05
 
 ### Added
