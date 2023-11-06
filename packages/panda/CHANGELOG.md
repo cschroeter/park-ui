@@ -4,6 +4,10 @@
 
 - Added `indeterminate` styles to the `Checkbox` component.
 
+### Changed
+
+- Revised `Slider`component.
+
 ## [0.21.0] - 2023-11-05
 
 ### Added
