@@ -18,6 +18,17 @@ export const sliderStyles = tv({
   },
   variants: {
     size: {
+      sm: {
+        root: 'slider__root--size_sm',
+        label: 'slider__label--size_sm',
+        thumb: 'slider__thumb--size_sm',
+        output: 'slider__output--size_sm',
+        track: 'slider__track--size_sm',
+        range: 'slider__range--size_sm',
+        control: 'slider__control--size_sm',
+        markerGroup: 'slider__markerGroup--size_sm',
+        marker: 'slider__marker--size_sm',
+      },
       md: {
         root: 'slider__root--size_md',
         label: 'slider__label--size_md',
@@ -28,6 +39,17 @@ export const sliderStyles = tv({
         control: 'slider__control--size_md',
         markerGroup: 'slider__markerGroup--size_md',
         marker: 'slider__marker--size_md',
+      },
+      lg: {
+        root: 'slider__root--size_lg',
+        label: 'slider__label--size_lg',
+        thumb: 'slider__thumb--size_lg',
+        output: 'slider__output--size_lg',
+        track: 'slider__track--size_lg',
+        range: 'slider__range--size_lg',
+        control: 'slider__control--size_lg',
+        markerGroup: 'slider__markerGroup--size_lg',
+        marker: 'slider__marker--size_lg',
       },
     },
   },

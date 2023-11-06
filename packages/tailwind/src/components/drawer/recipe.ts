@@ -13,6 +13,9 @@ export const drawerStyles = tv({
     title: 'drawer__title',
     description: 'drawer__description',
     closeTrigger: 'drawer__closeTrigger',
+    header: 'drawer__header',
+    body: 'drawer__body',
+    footer: 'drawer__footer',
   },
   variants: {
     placement: {
@@ -24,6 +27,9 @@ export const drawerStyles = tv({
         title: 'drawer__title--placement_left',
         description: 'drawer__description--placement_left',
         closeTrigger: 'drawer__closeTrigger--placement_left',
+        header: 'drawer__header--placement_left',
+        body: 'drawer__body--placement_left',
+        footer: 'drawer__footer--placement_left',
       },
       right: {
         trigger: 'drawer__trigger--placement_right',
@@ -33,6 +39,9 @@ export const drawerStyles = tv({
         title: 'drawer__title--placement_right',
         description: 'drawer__description--placement_right',
         closeTrigger: 'drawer__closeTrigger--placement_right',
+        header: 'drawer__header--placement_right',
+        body: 'drawer__body--placement_right',
+        footer: 'drawer__footer--placement_right',
       },
     },
   },
