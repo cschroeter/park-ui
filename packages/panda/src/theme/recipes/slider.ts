@@ -42,6 +42,11 @@ export const slider = defineSlotRecipe({
       mt: '-1',
     },
     marker: {
+      '--before-background': {
+        base: 'colors.white',
+        _dark: 'colors.accent.fg',
+      },
+      color: 'fg.muted',
       _before: {
         background: 'white',
         borderRadius: 'full',
@@ -51,7 +56,11 @@ export const slider = defineSlotRecipe({
         position: 'relative',
         transform: 'translateX(-50%)',
       },
-      color: 'fg.muted',
+      _underValue: {
+        _before: {
+          background: 'var(--before-background)',
+        },
+      },
     },
   },
   defaultVariants: {
