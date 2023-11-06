@@ -6,7 +6,7 @@
 
 ### Changed
 
-- Revised `Slider`component.
+- Revised `Slider` component.
 
 ## [0.21.0] - 2023-11-05
 
