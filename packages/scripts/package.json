@@ -21,9 +21,9 @@
   },
   "devDependencies": {
     "@ark-ui/react": "0.15.0",
-    "@types/fs-extra": "11.0.3",
+    "@types/fs-extra": "11.0.4",
     "@types/handlebars": "4.1.0",
-    "@types/voca": "1.4.4",
+    "@types/voca": "1.4.5",
     "typescript": "5.2.2"
   }
 }
