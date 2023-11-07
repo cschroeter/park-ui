@@ -7,7 +7,7 @@
   "keywords": [],
   "author": "",
   "bin": {
-    "park": "dist/index.js"
+    "park-ui": "dist/index.js"
   },
   "scripts": {
     "dev": "tsup --watch",
@@ -25,7 +25,6 @@
   "devDependencies": {
     "@release-it/keep-a-changelog": "4.0.0",
     "release-it": "16.2.1",
-    "tsx": "3.14.0",
     "typescript": "5.2.2",
     "tsup": "7.2.0"
   },

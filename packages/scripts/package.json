@@ -1,11 +1,9 @@
 {
-  "name": "@park-ui/panda-cli",
+  "name": "@park-ui/scripts",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
   "main": "src/index.ts",
-  "keywords": [],
-  "author": "",
+  "private": true,
   "scripts": {
     "dev": "tsx src/index.ts",
     "bootstrap": "tsx src/bootstrap.ts"
@@ -26,7 +24,6 @@
     "@types/fs-extra": "11.0.3",
     "@types/handlebars": "4.1.0",
     "@types/voca": "1.4.4",
-    "tsx": "3.14.0",
     "typescript": "5.2.2"
   }
 }
