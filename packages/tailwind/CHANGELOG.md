@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.13.0] - 2023-11-06
+
+- Added Header, Footer and Body to Drawer
+- Added sm and lg variants to Slider
+
 ## [0.12.2] - 2023-10-24
 
 ### Added

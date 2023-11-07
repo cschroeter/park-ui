@@ -1,44 +1,19 @@
 ## [Unreleased]
 
-## [0.21.0-0] - 2023-10-26
+### Added
+
+- Added `indeterminate` styles to the `Checkbox` component.
 
 ### Changed
 
 - Integrated Ark UI 1.0
+- Revised `Slider` component.
 
-## [0.20.0] - 2023-10-22
+## [0.21.0] - 2023-11-05
 
 ### Added
 
-- Added a default export to `@park-ui/panda-preset` for easier configuration. This will use `neutral` as accent and gray color with `borderRadius` of `sm`.
-
-```jsx
-import { defineConfig } from '@pandacss/dev'
-
-export default defineConfig({
-  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
-  // ...
-})
-```
-
-To customize the Park UI preset, use the `createPreset` function as shown below:
-
-```jsx
-import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/panda-preset'
-
-export default defineConfig({
-  presets: [
-    '@pandacss/preset-base',
-    createPreset({
-      accentColor: 'amber',
-      grayColor: 'sand',
-      borderRadius: 'none',
-    }),
-  ],
-  // ...
-})
-```
+- Added `Link` component.
 
 ### Changed
 

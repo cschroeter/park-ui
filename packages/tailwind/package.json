@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/tailwind-plugin",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "description": "Tailwind CSS plugin for Ark UI components",
   "keywords": [
     "Ark UI",
@@ -39,12 +39,12 @@
     "@ark-ui/react": "1.0.0-beta.4",
     "@fontsource/plus-jakarta-sans": "5.0.17",
     "@ladle/react": "3.3.1",
-    "@pandacss/dev": "0.17.5",
+    "@pandacss/dev": "0.18.0",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "4.0.0",
     "@types/node": "20.8.3",
-    "@types/react": "18.2.34",
-    "lucide-react": "0.291.0",
+    "@types/react": "18.2.37",
+    "lucide-react": "0.292.0",
     "pandacss-preset-typography": "0.1.5",
     "postcss": "8.4.31",
     "postcss-js": "4.0.1",

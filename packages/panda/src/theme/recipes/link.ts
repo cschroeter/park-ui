@@ -3,52 +3,23 @@ import { defineRecipe } from '@pandacss/dev'
 export const link = defineRecipe({
   className: 'link',
   base: {
-    color: 'fg.subtle',
+    alignItems: 'center',
+    color: 'fg.default',
     cursor: 'pointer',
     display: 'inline-flex',
-    alignItems: 'center',
+    fontWeight: 'medium',
     gap: '2',
+    textDecoration: 'underline 0.1em transparent',
+    textUnderlineOffset: '0.125em',
     transitionDuration: 'normal',
-    transitionProperty: 'color, font-weight',
+    transitionProperty: 'text-decoration-color',
     transitionTimingFunction: 'default',
-  },
-  defaultVariants: {
-    variant: 'text',
-  },
-  variants: {
-    variant: {
-      text: {
-        fontWeight: 'medium',
-        color: 'fg.default',
-        textDecoration: 'underline',
-      },
-      toc: {
-        fontWeight: 'medium',
-        textStyle: 'sm',
-        _hover: {
-          color: 'fg.muted',
-        },
-        _currentPage: {
-          fontWeight: 'semibold',
-          color: 'fg.default',
-          _hover: {
-            color: 'fg.default',
-          },
-        },
-      },
-      navbar: {
-        fontWeight: 'semibold',
-        textStyle: 'md',
-        _hover: {
-          color: 'fg.muted',
-        },
-        _currentPage: {
-          color: 'fg.default',
-          _hover: {
-            color: 'fg.default',
-          },
-        },
-      },
+    _hover: {
+      textDecorationColor: 'accent.default',
+    },
+    '& svg': {
+      width: '1em',
+      height: '1em',
     },
   },
 })

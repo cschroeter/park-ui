@@ -1,9 +1,10 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState, type PropsWithChildren } from 'react'
 import { sva } from 'styled-system/css'
-import { Box, Flex, Stack } from 'styled-system/jsx'
+import { Box, Flex, Stack, styled } from 'styled-system/jsx'
+import { match } from 'ts-pattern'
+import { Select, Slider } from '~/components/ui'
 import * as demos from './demos'
-import { Select } from './ui/select'
 
 const styles = sva({
   slots: ['root', 'preview', 'container', 'configurator'],
@@ -24,7 +25,7 @@ const styles = sva({
     },
     configurator: {
       background: 'bg.surface',
-      gap: '3',
+      gap: '4',
       px: '4',
       pt: '5',
       pb: '6',
@@ -74,37 +75,64 @@ export const Playground = (props: PropsWithChildren<Props>) => {
         </Flex>
         {hasSettings && (
           <Stack className={styles.configurator}>
-            {Object.entries(componentProps || {}).map(([key, { options, defaultValue }]) => (
-              <Select.Root
-                key={key}
-                defaultValue={[defaultValue ?? '']}
-                items={options ?? []}
-                positioning={{ sameWidth: true }}
-                closeOnSelect={false}
-                size="sm"
-                onValueChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
-              >
-                <Select.Label textTransform="capitalize">{key}</Select.Label>
-                <Select.Control>
-                  <Select.Trigger>
-                    <Select.ValueText placeholder="Select a Framework" />
-                    <ChevronsUpDownIcon />
-                  </Select.Trigger>
-                </Select.Control>
-                <Select.Positioner>
-                  <Select.Content>
-                    {(options ?? []).map((option) => (
-                      <Select.Item key={option} item={option}>
-                        <Select.ItemText>{option}</Select.ItemText>
-                        <Select.ItemIndicator>
-                          <CheckIcon />
-                        </Select.ItemIndicator>
-                      </Select.Item>
-                    ))}
-                  </Select.Content>
-                </Select.Positioner>
-              </Select.Root>
-            ))}
+            {Object.entries(componentProps || {}).map(([key, { options, defaultValue }]) =>
+              match(key)
+                .with('size', () => (
+                  <Slider.Root
+                    key={key}
+                    min={0}
+                    max={(options?.length ?? 0) - 1}
+                    // onChange={(e) => setState({ ...state, [key]: options?.[e.value] ?? '' })}
+                    // defaultValue={options?.indexOf(defaultValue ?? '') ?? 0}
+                  >
+                    <Slider.Label>
+                      <styled.span textTransform="capitalize">{key}:</styled.span> {state[key]}
+                    </Slider.Label>
+                    <Slider.Control>
+                      <Slider.Track>
+                        <Slider.Range />
+                      </Slider.Track>
+                      <Slider.Thumb index={0} />
+                    </Slider.Control>
+                    <Slider.MarkerGroup>
+                      {options?.map((option, index) => (
+                        <Slider.Marker key={option} value={index} />
+                      ))}
+                    </Slider.MarkerGroup>
+                  </Slider.Root>
+                ))
+                .otherwise(() => (
+                  <Select.Root
+                    key={key}
+                    defaultValue={[defaultValue ?? '']}
+                    items={options ?? []}
+                    positioning={{ sameWidth: true }}
+                    closeOnSelect={false}
+                    size="sm"
+                    onValueChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
+                  >
+                    <Select.Label textTransform="capitalize">{key}</Select.Label>
+                    <Select.Control>
+                      <Select.Trigger>
+                        <Select.ValueText placeholder="Select a Framework" />
+                        <ChevronsUpDownIcon />
+                      </Select.Trigger>
+                    </Select.Control>
+                    <Select.Positioner>
+                      <Select.Content>
+                        {(options ?? []).map((option) => (
+                          <Select.Item key={option} item={option}>
+                            <Select.ItemText>{option}</Select.ItemText>
+                            <Select.ItemIndicator>
+                              <CheckIcon />
+                            </Select.ItemIndicator>
+                          </Select.Item>
+                        ))}
+                      </Select.Content>
+                    </Select.Positioner>
+                  </Select.Root>
+                )),
+            )}
           </Stack>
         )}
       </Stack>

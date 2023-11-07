@@ -23,20 +23,20 @@
     "@fontsource-variable/raleway": "5.0.16",
     "@fontsource-variable/roboto-mono": "5.0.16",
     "@icons-pack/react-simple-icons": "9.1.0",
-    "@pandacss/astro": "0.17.5",
-    "@pandacss/dev": "0.17.5",
+    "@pandacss/astro": "0.18.0",
+    "@pandacss/dev": "0.18.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@types/react": "18.2.34",
-    "@types/react-dom": "18.2.14",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
     "@uidotdev/usehooks": "2.4.1",
-    "astro": "3.4.2",
+    "astro": "3.4.3",
     "cheerio": "1.0.0-rc.12",
-    "lucide-react": "0.291.0",
+    "lucide-react": "0.292.0",
     "pandacss-preset-typography": "0.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-live": "4.1.5",
     "ts-pattern": "5.0.5",
-    "zustand": "4.4.5"
+    "zustand": "4.4.6"
   }
 }

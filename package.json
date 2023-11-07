@@ -3,8 +3,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "turbo build",
     "prepare": "husky install",
+    "cli": "pnpm --filter=@park-ui/cli",
+    "panda": "pnpm --filter=@park-ui/panda-preset",
+    "scripts": "pnpm --filter=@park-ui/scripts",
+    "tailwind": "pnpm --filter=@park-ui/tailwind-plugin",
     "website": "pnpm --filter=@park-ui/website"
   },
   "dependencies": {
@@ -14,8 +17,7 @@
     "lint-staged": "15.0.2",
     "prettier": "3.0.3",
     "prettier-plugin-astro": "0.12.1",
-    "prettier-plugin-organize-imports": "3.2.3",
-    "turbo": "1.10.16"
+    "prettier-plugin-organize-imports": "3.2.3"
   },
   "commitlint": {
     "extends": [

@@ -1,4 +1,4 @@
-import { Accordion } from '~/components/ui'
+import { Accordion, Link } from '~/components/ui'
 
 export const Faq = () => {
   const questions = [
@@ -28,17 +28,17 @@ export const Faq = () => {
       answer: (
         <div>
           Park UI currently supports the following CSS frameworks:{' '}
-          <a href="https://panda-css.com/">Panda CSS</a> and{' '}
-          <a href="https://tailwindcss.com/">Tailwind CSS</a>. We intend to add support for{' '}
-          <a href="https://unocss.dev/">UnoCSS</a> later this year. If you'd like to see support for
-          other CSS frameworks, please open an issue on{' '}
-          <a href="https://github.com/cschroeter/park-ui/issues/new">GitHub</a>.
+          <Link href="https://panda-css.com/">Panda CSS</Link> and{' '}
+          <Link href="https://tailwindcss.com/">Tailwind CSS</Link>. We intend to add support for{' '}
+          <Link href="https://unocss.dev/">UnoCSS</Link> later this year. If you'd like to see
+          support for other CSS frameworks, please open an issue on{' '}
+          <Link href="https://github.com/cschroeter/park-ui/issues/new">GitHub</Link>.
         </div>
       ),
     },
   ]
   return (
-    <Accordion.Root defaultValue={[questions[0].question]} multiple>
+    <Accordion.Root defaultValue={[questions[0].question]} multiple className="not-prose">
       {questions.map((item, id) => (
         <Accordion.Item key={id} value={item.question}>
           <Accordion.ItemTrigger>

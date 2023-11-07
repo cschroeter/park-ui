@@ -11,13 +11,18 @@ export const BorderRadiusSlider = () => {
       value={[borderRadii.indexOf(currentBorderRadius)]}
       onValueChange={(e) => updateBorderRadius(borderRadii[e.value[0]])}
     >
-      <Slider.Label>Radius</Slider.Label>
+      <Slider.Label>Radius: {currentBorderRadius}</Slider.Label>
       <Slider.Control>
         <Slider.Track>
           <Slider.Range />
         </Slider.Track>
         <Slider.Thumb index={0} />
       </Slider.Control>
+      <Slider.MarkerGroup>
+        {borderRadii.map((borderRadius, i) => (
+          <Slider.Marker key={borderRadius} value={i} />
+        ))}
+      </Slider.MarkerGroup>
     </Slider.Root>
   )
 }

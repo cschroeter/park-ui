@@ -8,36 +8,17 @@ description: All notable changes to this project will be documented in this file
 
 ### Added
 
-- Added a default export to `@park-ui/panda-preset` for easier configuration. This will use `neutral` as accent and gray
-  color with `borderRadius` of `sm`.
+- Added `indeterminate` styles to the `Checkbox` component.
 
-```jsx
-import { defineConfig } from '@pandacss/dev'
+### Changed
 
-export default defineConfig({
-  presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
-  // ...
-})
-```
+- Revised `Slider` component.
 
-To customize the Park UI preset, use the `createPreset` function as shown below:
+## [0.21.0] - 2023-11-05
 
-```jsx
-import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/panda-preset'
+### Added
 
-export default defineConfig({
-  presets: [
-    '@pandacss/preset-base',
-    createPreset({
-      accentColor: 'amber',
-      grayColor: 'sand',
-      borderRadius: 'none',
-    }),
-  ],
-  // ...
-})
-```
+- Added `Link` component.
 
 ### Changed
 
