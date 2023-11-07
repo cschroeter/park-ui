@@ -33,6 +33,37 @@ importers:
         specifier: 1.10.16
         version: 1.10.16
 
+  packages/cli:
+    dependencies:
+      '@clack/core':
+        specifier: 0.3.3
+        version: 0.3.3
+      '@clack/prompts':
+        specifier: 0.7.0
+        version: 0.7.0
+      ts-pattern:
+        specifier: 5.0.5
+        version: 5.0.5
+      voca:
+        specifier: 1.4.1
+        version: 1.4.1
+    devDependencies:
+      '@release-it/keep-a-changelog':
+        specifier: 4.0.0
+        version: 4.0.0(release-it@16.2.1)
+      release-it:
+        specifier: 16.2.1
+        version: 16.2.1(typescript@5.2.2)
+      tsup:
+        specifier: 7.2.0
+        version: 7.2.0(postcss@8.4.31)(typescript@5.2.2)
+      tsx:
+        specifier: 3.14.0
+        version: 3.14.0
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+
   packages/panda:
     dependencies:
       '@ark-ui/anatomy':
@@ -8931,7 +8962,7 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.31
-      yaml: 2.3.2
+      yaml: 2.3.3
 
   /postcss-merge-rules@6.0.1(postcss@8.4.31):
     resolution: {integrity: sha512-a4tlmJIQo9SCjcfiCcCMg/ZCEe0XTkl/xK0XHBs955GWg9xDX3NwP9pwZ78QUOWB8/0XCjZeJn98Dae0zg6AAw==}
@@ -11276,14 +11307,9 @@ packages:
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  /yaml@2.3.2:
-    resolution: {integrity: sha512-N/lyzTPaJasoDmfV7YTrYCI0G/3ivm/9wdG0aHuheKowWQwGTsK0Eoiw6utmzAnI6pkJa0DUVygvp3spqqEKXg==}
-    engines: {node: '>= 14'}
-
   /yaml@2.3.3:
     resolution: {integrity: sha512-zw0VAJxgeZ6+++/su5AFoqBbZbrEakwu+X0M5HmcwUiBL7AzcuPKjj5we4xfQLp78LkEMpD0cOnUhmgOVy3KdQ==}
     engines: {node: '>= 14'}
-    dev: false
 
   /yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}

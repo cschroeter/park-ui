@@ -1,0 +1,44 @@
+{
+  "name": "@park-ui/cli",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "src/index.ts",
+  "keywords": [],
+  "author": "",
+  "bin": {
+    "park": "dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "release-it": "release-it",
+    "build": "tsup"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@clack/core": "0.3.3",
+    "@clack/prompts": "0.7.0",
+    "ts-pattern": "5.0.5",
+    "voca": "1.4.1"
+  },
+  "devDependencies": {
+    "@release-it/keep-a-changelog": "4.0.0",
+    "release-it": "16.2.1",
+    "tsx": "3.14.0",
+    "typescript": "5.2.2",
+    "tsup": "7.2.0"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "clean": true,
+    "dts": true,
+    "sourcemap": true,
+    "format": [
+      "esm",
+      "cjs"
+    ]
+  }
+}
