@@ -134,9 +134,6 @@ importers:
       '@types/voca':
         specifier: 1.4.4
         version: 1.4.4
-      tsx:
-        specifier: 3.14.0
-        version: 3.14.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
