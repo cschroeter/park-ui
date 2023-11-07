@@ -82,8 +82,10 @@ export const Playground = (props: PropsWithChildren<Props>) => {
                     key={key}
                     min={0}
                     max={(options?.length ?? 0) - 1}
-                    // onChange={(e) => setState({ ...state, [key]: options?.[e.value] ?? '' })}
-                    // defaultValue={options?.indexOf(defaultValue ?? '') ?? 0}
+                    onValueChange={(e) =>
+                      setState({ ...state, [key]: options?.[e.value[0]] ?? '' })
+                    }
+                    defaultValue={[options?.indexOf(defaultValue ?? '') ?? 0]}
                   >
                     <Slider.Label>
                       <styled.span textTransform="capitalize">{key}:</styled.span> {state[key]}
