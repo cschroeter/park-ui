@@ -17,11 +17,9 @@ export const slider = defineSlotRecipe({
       alignItems: 'center',
     },
     track: {
-      backgroundColor: 'bg.muted',
-      borderRadius: 'l2',
-      // backgroundColor: 'bg.emphasized',
-      // borderRadius: 'full',
-      // overflow: 'hidden',
+      backgroundColor: 'bg.emphasized',
+      borderRadius: 'full',
+      overflow: 'hidden',
       flex: '1',
     },
     range: {
