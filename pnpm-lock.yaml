@@ -33,7 +33,41 @@ importers:
         specifier: 1.10.16
         version: 1.10.16
 
-  packages/cli:
+  packages/panda:
+    dependencies:
+      '@ark-ui/anatomy':
+        specifier: 0.1.0
+        version: 0.1.0(@internationalized/date@3.5.0)
+      '@pandacss/dev':
+        specifier: 0.17.5
+        version: 0.17.5(@internationalized/date@3.5.0)(@types/node@18.18.6)(@types/react-dom@18.2.14)(@types/react@18.2.35)(typescript@5.2.2)
+      deepmerge:
+        specifier: 4.3.1
+        version: 4.3.1
+      ts-pattern:
+        specifier: 5.0.5
+        version: 5.0.5
+    devDependencies:
+      '@pandacss/types':
+        specifier: 0.17.5
+        version: 0.17.5
+      '@radix-ui/colors':
+        specifier: 3.0.0
+        version: 3.0.0
+      '@release-it/keep-a-changelog':
+        specifier: 4.0.0
+        version: 4.0.0(release-it@16.2.1)
+      clean-package:
+        specifier: 2.2.0
+        version: 2.2.0
+      release-it:
+        specifier: 16.2.1
+        version: 16.2.1(typescript@5.2.2)
+      tsup:
+        specifier: 7.2.0
+        version: 7.2.0(postcss@8.4.31)(typescript@5.2.2)
+
+  packages/panda-cli:
     dependencies:
       '@clack/core':
         specifier: 0.3.3
@@ -78,40 +112,6 @@ importers:
       typescript:
         specifier: 5.2.2
         version: 5.2.2
-
-  packages/panda:
-    dependencies:
-      '@ark-ui/anatomy':
-        specifier: 0.1.0
-        version: 0.1.0(@internationalized/date@3.5.0)
-      '@pandacss/dev':
-        specifier: 0.17.5
-        version: 0.17.5(@internationalized/date@3.5.0)(@types/node@18.18.6)(@types/react-dom@18.2.14)(@types/react@18.2.35)(typescript@5.2.2)
-      deepmerge:
-        specifier: 4.3.1
-        version: 4.3.1
-      ts-pattern:
-        specifier: 5.0.5
-        version: 5.0.5
-    devDependencies:
-      '@pandacss/types':
-        specifier: 0.17.5
-        version: 0.17.5
-      '@radix-ui/colors':
-        specifier: 3.0.0
-        version: 3.0.0
-      '@release-it/keep-a-changelog':
-        specifier: 4.0.0
-        version: 4.0.0(release-it@16.2.1)
-      clean-package:
-        specifier: 2.2.0
-        version: 2.2.0
-      release-it:
-        specifier: 16.2.1
-        version: 16.2.1(typescript@5.2.2)
-      tsup:
-        specifier: 7.2.0
-        version: 7.2.0(postcss@8.4.31)(typescript@5.2.2)
 
   packages/tailwind:
     dependencies:
@@ -438,7 +438,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(@types/node@20.8.3)
+      astro: 2.9.6(@types/node@18.18.6)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -2602,7 +2602,6 @@ packages:
 
   /@types/node@18.18.6:
     resolution: {integrity: sha512-wf3Vz+jCmOQ2HV1YUJuCWdL64adYxumkrxtc+H1VUQlnQI04+5HtH+qZCOE21lBE7gIrt+CwX2Wv8Acrw5Ak6w==}
-    dev: false
 
   /@types/node@20.8.3:
     resolution: {integrity: sha512-jxiZQFpb+NlH5kjW49vXxvxTjeeqlbsnTAdBTKpzEdPs9itay7MscYXz3Fo9VYFEsfQ6LJFitHad3faerLAjCw==}
@@ -4505,7 +4504,6 @@ packages:
       - sugarss
       - supports-color
       - terser
-    dev: false
 
   /astro@2.9.6(@types/node@20.8.3):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
@@ -11003,7 +11001,6 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
-    dev: false
 
   /vite@4.5.0(@types/node@20.8.3):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
@@ -11048,7 +11045,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0(@types/node@20.8.3)
+      vite: 4.5.0(@types/node@18.18.6)
 
   /voca@1.4.1:
     resolution: {integrity: sha512-NJC/BzESaHT1p4B5k4JykxedeltmNbau4cummStd4RjFojgq/kLew5TzYge9N2geeWyI2w8T30wUET5v+F7ZHA==}
