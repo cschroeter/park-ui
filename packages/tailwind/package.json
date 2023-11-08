@@ -24,7 +24,7 @@
   "scripts": {
     "start": "ladle serve",
     "release-it": "release-it",
-    "build": "pnpm prebuild:plugin && pnpm build:plugin",
+    "build": "bun run prebuild:plugin && bun build:plugin",
     "prebuild:plugin": "panda cssgen --outfile src/plugin/css/styles.css",
     "build:plugin": "tsx src/plugin/build.ts && tsup",
     "build:components": "tsx src/cli/components/bootstrap.ts",

@@ -4,4 +4,4 @@ To get started, see more information at [Park UI](https://park-ui.com/docs/tailw
 
 ## Dev
 
-To run the dev server, please run `pnpm build` and `pnpm dev` in this directory.
+To run the dev server, please run `bun run build` and `bun run dev` in this directory.
