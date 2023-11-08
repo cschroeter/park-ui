@@ -1,0 +1,2 @@
+# the CLI generates a park-ui.json, but it should not be checked in accidentally in that package
+park-ui.json

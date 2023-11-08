@@ -1,24 +1,11 @@
-import { intro, outro, select } from '@clack/prompts'
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
+import { initCommand } from './commands/init'
 
-intro(`Welcome to Park UI!`)
-
-const cssFramework = await select({
-  message: 'Which CSS framework would you like to use?',
-  options: [
-    { value: 'panda', label: 'Panda CSS' },
-    { value: 'tailwind', label: 'Tailwind CSS' },
-  ],
-})
-
-const jsFramework = await select({
-  message: 'Which JS framework would you like to use?',
-  options: [
-    { value: 'react', label: 'React' },
-    { value: 'solid', label: 'Solid' },
-    { value: 'vue', label: 'Vue' },
-  ],
-})
-
-console.log(cssFramework, jsFramework)
-
-outro(`You're all set!!`)
+const main = async () => {
+  yargs(hideBin(process.argv))
+    .command('init', 'Initialize a new Park UI project', initCommand)
+    .demandCommand(1)
+    .strictCommands().argv
+}
+main()

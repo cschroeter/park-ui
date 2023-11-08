@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "",
   "main": "src/index.ts",
@@ -19,14 +19,19 @@
     "@clack/core": "0.3.3",
     "@clack/prompts": "0.7.0",
     "ts-pattern": "5.0.5",
-    "voca": "1.4.1"
+    "voca": "1.4.1",
+    "yargs": "17.7.2"
   },
   "devDependencies": {
     "@release-it/keep-a-changelog": "4.0.0",
+    "json-schema-to-ts": "2.9.2",
+    "@types/node": "20.9.0",
+    "pkg-dir": "8.0.0",
     "release-it": "16.2.1",
     "tsup": "7.2.0",
     "tsx": "4.0.0",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "@types/yargs": "17.0.31"
   },
   "tsup": {
     "entry": [
