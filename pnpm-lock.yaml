@@ -54,6 +54,9 @@ importers:
       tsup:
         specifier: 7.2.0
         version: 7.2.0(postcss@8.4.31)(typescript@5.2.2)
+      tsx:
+        specifier: 3.14.0
+        version: 3.14.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -2065,7 +2068,6 @@ packages:
       - supports-color
       - terser
       - typescript
-    dev: false
 
   /@pandacss/dev@0.18.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react-dom@18.2.15)(@types/react@18.2.37)(typescript@5.2.2):
     resolution: {integrity: sha512-l8SmPppFcvjqVw7jTdiyUUVa5ccJjHpDnERjfOxjDJIvfw0GqylJvRfpUXhL0iJgfNdCxGdNC1Mr7jFNFbVwTQ==}
@@ -2100,6 +2102,7 @@ packages:
       - supports-color
       - terser
       - typescript
+    dev: true
 
   /@pandacss/error@0.18.0:
     resolution: {integrity: sha512-UGlh+Rkx1ORQDc152EgPZdy837iJ6ktuGpRAdLdxmP2HmOoAWt7bUtjdUk4io+ypU5Z5KxrS+7VN5XBDLZhDvg==}
@@ -2248,7 +2251,6 @@ packages:
       - supports-color
       - terser
       - typescript
-    dev: false
 
   /@pandacss/studio@0.18.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react-dom@18.2.15)(@types/react@18.2.37)(typescript@5.2.2):
     resolution: {integrity: sha512-0YoZwxc5iZ/xaTo2St4HOxfVsmieCaRGhBNmmQLoiIUsdzXfLOO+8aiUJIMfnFHct07g/7E1+qcK+kDODLrN9A==}
@@ -2281,6 +2283,7 @@ packages:
       - supports-color
       - terser
       - typescript
+    dev: true
 
   /@pandacss/token-dictionary@0.18.0:
     resolution: {integrity: sha512-XcJJhKx4jv3nSQepKmg+6A0CvhXCza2/U6MNBvzXRT24ZLFVZf71scDDahCAwdx5UN4Ar//cvqglNFshrJwPZw==}
@@ -2719,7 +2722,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.23.2)
       '@types/babel__core': 7.20.3
       react-refresh: 0.14.0
-      vite: 4.5.0(@types/node@20.8.3)
+      vite: 4.5.0(@types/node@18.18.6)
     transitivePeerDependencies:
       - supports-color
 
@@ -4603,6 +4606,7 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
 
   /astro@3.4.3(@types/node@18.18.6)(typescript@5.2.2):
     resolution: {integrity: sha512-6zcONz2FjX6GaAy6Mysie4gT8rH5QCBXyPjkuYZKiPdV+sXmDpLm44J2MpQwA3mHb8YQ35L5O4nNg09d4luQ7g==}
@@ -8746,7 +8750,7 @@ packages:
     peerDependencies:
       '@pandacss/dev': '>=0.9.0'
     dependencies:
-      '@pandacss/dev': 0.18.0(@internationalized/date@3.5.0)(@types/node@20.8.3)(@types/react-dom@18.2.15)(@types/react@18.2.37)(typescript@5.2.2)
+      '@pandacss/dev': 0.18.0(@internationalized/date@3.5.0)(@types/node@18.18.6)(@types/react-dom@18.2.15)(@types/react@18.2.37)(typescript@5.2.2)
       '@tailwindcss/typography': 0.5.10(tailwindcss@3.3.5)
       tailwindcss: 3.3.5
     transitivePeerDependencies:
@@ -10891,7 +10895,6 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
-    dev: false
 
   /vite@4.4.11(@types/node@20.8.3):
     resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}
@@ -10927,6 +10930,7 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vite@4.5.0(@types/node@18.18.6):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
@@ -10997,6 +11001,7 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vitefu@0.2.5(vite@4.5.0):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
