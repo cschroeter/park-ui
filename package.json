@@ -2,13 +2,12 @@
   "name": "root",
   "type": "module",
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "website"
+  ],
   "scripts": {
-    "prepare": "husky install",
-    "cli": "pnpm --filter=@park-ui/cli",
-    "panda": "pnpm --filter=@park-ui/panda-preset",
-    "scripts": "pnpm --filter=@park-ui/scripts",
-    "tailwind": "pnpm --filter=@park-ui/tailwind-plugin",
-    "website": "pnpm --filter=@park-ui/website"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@commitlint/cli": "18.2.0",
