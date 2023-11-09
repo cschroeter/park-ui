@@ -8,7 +8,7 @@ export const Demo = (props: RadioGroupProps) => {
     { id: 'vue', label: 'Vue' },
   ]
   return (
-    <RadioGroup.Root defaultValue="react" orientation="vertical" {...props}>
+    <RadioGroup.Root defaultValue="react" {...props}>
       {options.map((option) => (
         <RadioGroup.Item key={option.id} value={option.id} disabled={option.disabled}>
           <RadioGroup.ItemControl />

@@ -23,7 +23,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const { placement = 'left', isHero, panda, tailwind } = props
   const { reset } = useThemeGenerator()
   return (
-    <Drawer.Root placement={placement}>
+    <Drawer.Root placement={placement} lazyMount>
       <Drawer.Trigger asChild>
         <Button variant="outline" size={isHero ? { base: 'xl', md: '2xl' } : 'md'}>
           <Settings2Icon />
@@ -32,7 +32,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
       </Drawer.Trigger>
       <Portal>
         <Drawer.Positioner>
-          <Drawer.Content lazyMount>
+          <Drawer.Content>
             <Drawer.Header>
               <Drawer.Title>Make it yours</Drawer.Title>
               <Drawer.Description>
