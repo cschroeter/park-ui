@@ -1,13 +1,19 @@
 ## [Unreleased]
 
+With the introduction of Ark UI 1.0 support, this version implements significant changes, resulting in several breaking updates. Key component revisions include:
+`Accordion`, `ColorPicker`, `DatePicker`, `Dialog`, `RadioGroup`, `SegmentGroup`, `TagsInput`, `Toast`, and `ToggleGroup`.
+
 ### Added
 
 - Added `indeterminate` styles to the `Checkbox` component.
 
 ### Changed
 
-- Integrated Ark UI 1.0
 - Revised `Slider` component.
+
+### Removed
+
+- `RangeSlider` component has been removed in favor of the `Slider` component.
 
 ## [0.21.0] - 2023-11-05
 
