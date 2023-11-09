@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.22.0] - 2023-11-09
+
 With the introduction of Ark UI 1.0 support, this version implements significant changes, resulting in several breaking updates. Key component revisions include:
 `Accordion`, `ColorPicker`, `DatePicker`, `Dialog`, `RadioGroup`, `SegmentGroup`, `TagsInput`, `Toast`, and `ToggleGroup`.
 
