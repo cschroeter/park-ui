@@ -12,17 +12,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "gatsby": "5.12.8",
+    "gatsby": "5.12.9",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@ark-ui/react": "0.15.0",
-    "@pandacss/dev": "0.17.0",
-    "@park-ui/panda-preset": "0.20.0",
+    "@ark-ui/react": "1.0.0",
+    "@pandacss/dev": "0.18.0",
+    "@park-ui/panda-preset": "0.22.0",
     "@types/node": "20.3.3",
-    "@types/react": "18.2.31",
-    "@types/react-dom": "18.2.14",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
     "eslint-plugin-flowtype": "8.0.3",
     "gatsby-plugin-alias-imports": "1.0.5",
     "gatsby-plugin-postcss": "6.12.0",
