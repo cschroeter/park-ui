@@ -20,7 +20,7 @@
     "voca": "1.4.1"
   },
   "devDependencies": {
-    "@ark-ui/react": "0.15.0",
+    "@ark-ui/react": "1.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/handlebars": "4.1.0",
     "@types/voca": "1.4.5",
