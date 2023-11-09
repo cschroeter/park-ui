@@ -15,16 +15,10 @@ export const CarouselIndicatorGroup = withContext(
   styled(Ark.Carousel.IndicatorGroup),
   'indicatorGroup',
 )
-export const CarouselNextSlideTrigger = withContext(
-  styled(Ark.Carousel.NextSlideTrigger),
-  'nextSlideTrigger',
-)
-export const CarouselPrevSlideTrigger = withContext(
-  styled(Ark.Carousel.PrevSlideTrigger),
-  'prevSlideTrigger',
-)
-export const CarouselSlide = withContext(styled(Ark.Carousel.Slide), 'slide')
-export const CarouselSlideGroup = withContext(styled(Ark.Carousel.SlideGroup), 'slideGroup')
+export const CarouselItem = withContext(styled(Ark.Carousel.Item), 'item')
+export const CarouselItemGroup = withContext(styled(Ark.Carousel.ItemGroup), 'itemGroup')
+export const CarouselNextTrigger = withContext(styled(Ark.Carousel.NextTrigger), 'nextTrigger')
+export const CarouselPrevTrigger = withContext(styled(Ark.Carousel.PrevTrigger), 'prevTrigger')
 export const CarouselViewport = withContext(styled(Ark.Carousel.Viewport), 'viewport')
 
 export const Carousel = Object.assign(CarouselRoot, {
@@ -32,9 +26,9 @@ export const Carousel = Object.assign(CarouselRoot, {
   Control: CarouselControl,
   Indicator: CarouselIndicator,
   IndicatorGroup: CarouselIndicatorGroup,
-  NextSlideTrigger: CarouselNextSlideTrigger,
-  PrevSlideTrigger: CarouselPrevSlideTrigger,
-  Slide: CarouselSlide,
-  SlideGroup: CarouselSlideGroup,
+  Item: CarouselItem,
+  ItemGroup: CarouselItemGroup,
+  NextTrigger: CarouselNextTrigger,
+  PrevTrigger: CarouselPrevTrigger,
   Viewport: CarouselViewport,
 })

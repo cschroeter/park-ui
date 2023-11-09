@@ -26,7 +26,7 @@ export const App = () => {
             )}
           </RadioButtonGroup.Root>
         </Tabs.Content>
-        <Tabs.Content value="Slider.">
+        <Tabs.Content value="slider">
           <Slider.Root min={0} max={100} defaultValue={[33]}>
             <Slider.Control>
               <Slider.Track>
