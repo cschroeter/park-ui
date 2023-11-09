@@ -8,7 +8,7 @@ import { Playground } from './playground'
 
 const componentId = Astro.params.slug?.split('/').pop()
 const types = await getCollection('props', (x) => x.id === componentId)
-const componentProps = types[0].data ?? {}
+const componentProps = types[0]?.data ?? {}
 const code = fs.readFileSync(`./src/components/demos/${componentId}.demo.tsx`, 'utf8')
 ---
 

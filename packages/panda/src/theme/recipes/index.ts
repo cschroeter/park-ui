@@ -18,6 +18,7 @@ import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { iconButton } from './icon-button'
 import { input } from './input'
+import { kbd } from './kbd'
 import { label } from './label'
 import { link } from './link'
 import { menu } from './menu'
@@ -50,6 +51,7 @@ export const recipes = {
   icon,
   iconButton,
   input,
+  kbd,
   label,
   link,
   textarea,

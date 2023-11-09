@@ -65,7 +65,8 @@ const toTitleCase = (str = '') => {
 }
 
 export const Playground = (props: PropsWithChildren<Props>) => {
-  const { componentProps = {}, id } = props
+  if (!props) return null
+  const { componentProps, id } = props
   const [state, setState] = useState(
     Object.fromEntries(
       Object.entries(componentProps).map(([key, value]) => [
