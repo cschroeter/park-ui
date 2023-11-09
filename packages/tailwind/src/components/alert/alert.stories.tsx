@@ -1,23 +1,16 @@
 import { InfoIcon } from 'lucide-react'
-import {
-  Alert,
-  AlertContent,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-  type AlertProps,
-} from './snippet'
+import { Alert } from './snippet'
 
-export const Demo = (props: AlertProps) => {
+export const Demo = () => {
   return (
-    <Alert {...props}>
-      <AlertIcon asChild>
+    <Alert.Root>
+      <Alert.Icon asChild>
         <InfoIcon />
-      </AlertIcon>
-      <AlertContent>
-        <AlertTitle>Browser Update available</AlertTitle>
-        <AlertDescription>For the best experience, please update your browser.</AlertDescription>
-      </AlertContent>
-    </Alert>
+      </Alert.Icon>
+      <Alert.Content>
+        <Alert.Title>Browser Update available</Alert.Title>
+        <Alert.Description>For the best experience, please update your browser.</Alert.Description>
+      </Alert.Content>
+    </Alert.Root>
   )
 }

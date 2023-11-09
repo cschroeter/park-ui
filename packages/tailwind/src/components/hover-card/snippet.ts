@@ -7,7 +7,7 @@ export type HoverCardProps = React.ComponentProps<typeof HoverCard>
 
 const { withProvider, withContext } = createStyleContext(hoverCardStyles)
 
-const HoverCardRoot = withProvider(Ark.HoverCard.Root, 'root')
+const HoverCardRoot = withProvider(Ark.HoverCard.Root)
 export const HoverCardArrow = withContext(Ark.HoverCard.Arrow, 'arrow')
 export const HoverCardArrowTip = withContext(Ark.HoverCard.ArrowTip, 'arrowTip')
 export const HoverCardContent = withContext(Ark.HoverCard.Content, 'content')

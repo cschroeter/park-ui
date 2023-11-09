@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { HStack } from 'styled-system/jsx'
-import { Segment, SegmentControl, SegmentGroup, SegmentGroupIndicator, SegmentLabel } from '../ui'
+import { SegmentGroup } from '../ui'
 import { Badge } from '../ui/badge'
 
 interface Props {
@@ -24,21 +24,21 @@ export const SidebarGroup = (props: Props) => {
   }, [activeItem])
 
   return (
-    <SegmentGroup value={active} orientation="vertical" size={{ base: 'md', md: 'sm' }}>
+    <SegmentGroup.Root value={active} orientation="vertical" size={{ base: 'md', md: 'sm' }}>
       {items.map((item, id) => (
         <a key={id} href={item.href} style={{ display: 'flex', width: 'fit-content' }}>
-          <Segment value={item.href} data-orientation="vertical">
-            <SegmentControl />
-            <SegmentLabel>
+          <SegmentGroup.Item value={item.href} data-orientation="vertical">
+            <SegmentGroup.ItemControl />
+            <SegmentGroup.ItemText>
               <HStack gap="2">
                 {item.title}
                 {item.label && <Badge size="sm">{item.label}</Badge>}
               </HStack>
-            </SegmentLabel>
-          </Segment>
+            </SegmentGroup.ItemText>
+          </SegmentGroup.Item>
         </a>
       ))}
-      <SegmentGroupIndicator hidden={!items.some((entry) => entry.href === active)} />
-    </SegmentGroup>
+      <SegmentGroup.Indicator hidden={!items.some((entry) => entry.href === active)} />
+    </SegmentGroup.Root>
   )
 }

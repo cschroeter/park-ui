@@ -1,12 +1,7 @@
 import { RulerIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Icon } from '~/components/ui/icon'
-import {
-  Radio,
-  RadioButtonGroup,
-  RadioControl,
-  RadioLabel,
-} from '~/components/ui/radio-button-group'
+import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
 
 export const SizePicker = () => {
@@ -25,9 +20,9 @@ export const SizePicker = () => {
         <Text textStyle="sm" fontWeight="medium">
           Size
         </Text>
-        <RadioButtonGroup>
+        <RadioButtonGroup.Root>
           {sizes.map((option, id) => (
-            <Radio
+            <RadioButtonGroup.Item
               key={id}
               value={option.size}
               disabled={option.disabled}
@@ -37,11 +32,11 @@ export const SizePicker = () => {
                   'linear-gradient(315deg, transparent 49%, var(--colors-border-disabled) 49%, var(--colors-border-disabled) 51%, transparent 51%)',
               }}
             >
-              <RadioControl />
-              <RadioLabel>{option.size}</RadioLabel>
-            </Radio>
+              <RadioButtonGroup.ItemControl />
+              <RadioButtonGroup.ItemText>{option.size}</RadioButtonGroup.ItemText>
+            </RadioButtonGroup.Item>
           ))}
-        </RadioButtonGroup>
+        </RadioButtonGroup.Root>
       </Stack>
 
       <HStack gap="2" color="fg.muted">

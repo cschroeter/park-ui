@@ -19,7 +19,7 @@ export const CardWithTabs = () => {
           </TabTrigger>
           <TabIndicator />
         </TabList>
-        <TabContent value="login" lazyMount unmountOnExit>
+        <TabContent value="login">
           <Card.Header>
             <Card.Title>Welcome to Park UI</Card.Title>
             <Card.Description>Enter your credentials to login to your account.</Card.Description>
@@ -30,15 +30,15 @@ export const CardWithTabs = () => {
               <Input id="username" defaultValue="grizzly_codes" />
             </Stack>
             <Stack gap="1.5">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" placeholder="*****" />
+              <Label htmlFor="password-2">Password</Label>
+              <Input id="password-2" type="password" placeholder="*****" />
             </Stack>
           </Card.Body>
           <Card.Footer>
             <Button width="full">Login</Button>
           </Card.Footer>
         </TabContent>
-        <TabContent value="register" lazyMount unmountOnExit>
+        <TabContent value="register">
           <Card.Header>
             <Card.Title>Create an account</Card.Title>
             <Card.Description>
@@ -55,8 +55,8 @@ export const CardWithTabs = () => {
               <Input id="email" />
             </Stack>
             <Stack gap="1.5">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" />
+              <Label htmlFor="password-3">Password</Label>
+              <Input id="password-3" type="password" />
             </Stack>
             <Stack gap="1.5">
               <Label htmlFor="confirm">Confirm Password</Label>

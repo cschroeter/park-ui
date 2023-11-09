@@ -1,44 +1,31 @@
 import { XIcon } from 'lucide-react'
-import { Fragment } from 'react'
-import { IconButton } from '~/components/ui/icon-button'
-import { Label } from '~/components/ui/label'
-import {
-  Tag,
-  TagDeleteTrigger,
-  TagInput,
-  TagsInput,
-  TagsInputControl,
-  TagsInputInput,
-  TagsInputLabel,
-  type TagsInputProps,
-} from '~/components/ui/tags-input'
+import { Button, IconButton, TagsInput, type TagsInputProps } from '~/components/ui'
 
 export const Demo = (props: TagsInputProps) => {
   return (
-    <TagsInput defaultValue={['React', 'Solid', 'Vue']} maxW="xs" {...props}>
-      {({ value }) => (
+    <TagsInput.Root defaultValue={['React', 'Solid', 'Vue']} maxW="xs" {...props}>
+      {(api) => (
         <>
-          <TagsInputLabel asChild>
-            <Label>Framework</Label>
-          </TagsInputLabel>
-          <TagsInputControl>
-            {(value ?? []).map((value, index) => (
-              <Fragment key={index}>
-                <Tag index={index} value={value}>
-                  {value}
-                  <TagDeleteTrigger index={index} value={value} asChild>
-                    <IconButton aria-label="Delete tag" variant="link" size="xs">
-                      <XIcon />
-                    </IconButton>
-                  </TagDeleteTrigger>
-                </Tag>
-                <TagInput index={index} value={value} />
-              </Fragment>
+          <TagsInput.Label>Frameworks</TagsInput.Label>
+          <TagsInput.Control>
+            {api.value.map((value, index) => (
+              <TagsInput.Item key={index} index={index} value={value}>
+                <TagsInput.ItemText>{value}</TagsInput.ItemText>
+                <TagsInput.ItemDeleteTrigger asChild>
+                  <IconButton variant="link" size="xs">
+                    <XIcon />
+                  </IconButton>
+                </TagsInput.ItemDeleteTrigger>
+                <TagsInput.ItemInput />
+              </TagsInput.Item>
             ))}
-            <TagsInputInput placeholder="Add tag" />
-          </TagsInputControl>
+            <TagsInput.Input placeholder="Add Framework" />
+          </TagsInput.Control>
+          <TagsInput.ClearTrigger asChild>
+            <Button variant="outline">Clear</Button>
+          </TagsInput.ClearTrigger>
         </>
       )}
-    </TagsInput>
+    </TagsInput.Root>
   )
 }

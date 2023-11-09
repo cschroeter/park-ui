@@ -6,18 +6,18 @@ export * from '@ark-ui/react/radio-group'
 
 const { withProvider, withContext } = createStyleContext(radioButtonGroupStyles)
 
-const RadioGroupRoot = withProvider(Ark.RadioGroup.Root, 'root')
-const RadioGroupLabel = withContext(Ark.RadioGroup.Label, 'label')
-const Radio = withContext(Ark.RadioGroup.Radio, 'radio')
-const RadioLabel = withContext(Ark.RadioGroup.RadioLabel, 'radioLabel')
-const RadioControl = withContext(Ark.RadioGroup.RadioControl, 'radioControl')
+const RadioButtonGroupRoot = withProvider(Ark.RadioGroup.Root, 'root')
+export const RadioButtonGroupIndicator = withContext(Ark.RadioGroup.Indicator, 'indicator')
+export const RadioButtonGroupItem = withContext(Ark.RadioGroup.Item, 'item')
+export const RadioButtonGroupItemControl = withContext(Ark.RadioGroup.ItemControl, 'itemControl')
+export const RadioButtonGroupItemText = withContext(Ark.RadioGroup.ItemText, 'itemText')
+export const RadioButtonGroupLabel = withContext(Ark.RadioGroup.Label, 'label')
 
-const RadioButtonGroup = Object.assign(RadioGroupRoot, {
-  Root: RadioGroupRoot,
-  Label: RadioGroupLabel,
-  Radio: Radio,
-  RadioLabel: RadioLabel,
-  RadioControl: RadioControl,
+export const RadioButtonGroup = Object.assign(RadioButtonGroupRoot, {
+  Root: RadioButtonGroupRoot,
+  Indicator: RadioButtonGroupIndicator,
+  Item: RadioButtonGroupItem,
+  ItemControl: RadioButtonGroupItemControl,
+  ItemText: RadioButtonGroupItemText,
+  Label: RadioButtonGroupLabel,
 })
-
-export { Radio, RadioButtonGroup, RadioControl, RadioGroupLabel, RadioLabel }

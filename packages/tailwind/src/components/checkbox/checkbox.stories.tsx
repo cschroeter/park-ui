@@ -1,18 +1,18 @@
-import { Checkbox, CheckboxControl, CheckboxLabel, type CheckboxProps } from './snippet'
+import { Checkbox, type CheckboxProps } from './snippet'
 
 export const Demo = (props: CheckboxProps) => {
   return (
-    <Checkbox defaultChecked {...props}>
+    <Checkbox.Root defaultChecked {...props}>
       {(state) => (
         <>
-          <CheckboxControl>
+          <Checkbox.Control>
             {state.isChecked && <CheckIcon />}
             {state.isIndeterminate && <MinusIcon />}
-          </CheckboxControl>
-          <CheckboxLabel>Label</CheckboxLabel>
+          </Checkbox.Control>
+          <Checkbox.Label>Label</Checkbox.Label>
         </>
       )}
-    </Checkbox>
+    </Checkbox.Root>
   )
 }
 

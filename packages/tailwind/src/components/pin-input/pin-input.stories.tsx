@@ -1,21 +1,15 @@
 import { Input } from '../input/snippet'
-import {
-  PinInput,
-  PinInputControl,
-  PinInputInput,
-  PinInputLabel,
-  type PinInputProps,
-} from './snippet'
+import { PinInput, type PinInputProps } from './snippet'
 
 export const Demo = (props: PinInputProps) => (
-  <PinInput placeholder="0" onComplete={(e) => alert(e.valueAsString)}>
-    <PinInputLabel>Enter your pin</PinInputLabel>
-    <PinInputControl>
+  <PinInput.Root placeholder="0" onValueComplete={(e) => alert(e.valueAsString)}>
+    <PinInput.Label>Pin Input</PinInput.Label>
+    <PinInput.Control>
       {[0, 1, 2, 3].map((id, index) => (
-        <PinInputInput key={id} index={index} asChild>
-          <Input size="lg" width="0" textAlign="center" />
-        </PinInputInput>
+        <PinInput.Input key={id} index={index} asChild>
+          <Input size="lg" className="text-center w-0" />
+        </PinInput.Input>
       ))}
-    </PinInputControl>
-  </PinInput>
+    </PinInput.Control>
+  </PinInput.Root>
 )

@@ -1,52 +1,40 @@
 import { Portal } from '@ark-ui/react'
 import { XIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContainer,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-  type DialogProps,
-} from '~/components/ui/dialog'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, Dialog, IconButton, type DialogProps } from '~/components/ui'
 
 export const Demo = (props: DialogProps) => {
   return (
-    <Dialog {...props}>
-      <DialogTrigger asChild>
+    <Dialog.Root {...props}>
+      <Dialog.Trigger asChild>
         <Button variant="outline">Open dialog</Button>
-      </DialogTrigger>
+      </Dialog.Trigger>
       <Portal>
-        <DialogBackdrop />
-        <DialogContainer>
-          <DialogContent>
+        <Dialog.Backdrop />
+        <Dialog.Positioner>
+          <Dialog.Content>
             <Stack gap="8" p="6">
               <Stack gap="1">
-                <DialogTitle>Dialog Title</DialogTitle>
-                <DialogDescription>Dialog Description</DialogDescription>
+                <Dialog.Title>Dialog Title</Dialog.Title>
+                <Dialog.Description>Dialog Description</Dialog.Description>
               </Stack>
               <Stack gap="3" direction="row" width="full">
-                <DialogCloseTrigger asChild>
+                <Dialog.CloseTrigger asChild>
                   <Button variant="outline" width="full">
                     Cancel
                   </Button>
-                </DialogCloseTrigger>
+                </Dialog.CloseTrigger>
                 <Button width="full">Confirm</Button>
               </Stack>
             </Stack>
-            <DialogCloseTrigger asChild position="absolute" top="2" right="2">
+            <Dialog.CloseTrigger asChild position="absolute" top="2" right="2">
               <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
                 <XIcon />
               </IconButton>
-            </DialogCloseTrigger>
-          </DialogContent>
-        </DialogContainer>
+            </Dialog.CloseTrigger>
+          </Dialog.Content>
+        </Dialog.Positioner>
       </Portal>
-    </Dialog>
+    </Dialog.Root>
   )
 }

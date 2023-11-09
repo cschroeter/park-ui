@@ -35,12 +35,12 @@ export const AuthenticationCard = () => {
             <Divider />
           </HStack>
           <Stack gap="1.5">
-            <Label htmlFor="name">E-Mail</Label>
-            <Input id="name" placeholder="Your E-Mail" />
+            <Label htmlFor="email-1">E-Mail</Label>
+            <Input id="email-1" placeholder="Your E-Mail" />
           </Stack>
           <Stack gap="1.5">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" placeholder="Your Password" />
+            <Label htmlFor="password-1">Password</Label>
+            <Input id="password-1" type="password" placeholder="Your Password" />
           </Stack>
         </Stack>
       </Card.Body>

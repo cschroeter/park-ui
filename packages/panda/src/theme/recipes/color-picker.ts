@@ -5,27 +5,61 @@ export const colorPicker = defineSlotRecipe({
   className: 'colorPicker',
   slots: colorPickerAnatomy.keys(),
   base: {
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.5',
+    },
+    label: {
+      color: 'fg.default',
+      fontWeight: 'medium',
+      textStyle: 'sm',
+    },
+    control: {
+      display: 'flex',
+      flexDirection: 'row',
+      gap: '2',
+    },
     content: {
+      background: 'bg.default',
       borderRadius: 'l3',
       boxShadow: 'lg',
-      padding: '4',
-      maxW: '264px',
+      display: 'flex',
+      flexDirection: 'column',
+      maxWidth: 'sm',
+      p: '4',
+      zIndex: 'dropdown',
+      _open: {
+        animation: 'fadeIn 0.25s ease-out',
+      },
+      _closed: {
+        animation: 'fadeOut 0.2s ease-out',
+      },
+      _hidden: {
+        display: 'none',
+      },
     },
     area: {
       height: '36',
       borderRadius: 'l2',
       overflow: 'hidden',
     },
-    areaGradient: {
-      height: '100%',
+    areaThumb: {
+      borderRadius: 'full',
+      height: '2.5',
+      width: '2.5',
+      boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
+      outline: 'none',
+    },
+    areaBackground: {
+      height: 'full',
+    },
+    channelSlider: {
+      borderRadius: 'l2',
     },
     channelSliderTrack: {
-      height: '2',
-      borderRadius: 'full',
-    },
-    channelSliderTrackBackground: {
-      overflow: 'hidden',
-      borderRadius: 'full',
+      height: '3',
+      borderRadius: 'l2',
     },
     swatchGroup: {
       display: 'grid',
@@ -36,16 +70,9 @@ export const colorPicker = defineSlotRecipe({
     swatch: {
       height: '6',
       width: '6',
-      borderRadius: 'full',
+      borderRadius: 'l2',
       boxShadow:
         '0 0 0 1px var(--colors-border-emphasized), 0 0 0 2px var(--colors-bg-default) inset',
-    },
-    areaThumb: {
-      borderRadius: 'full',
-      height: '2.5',
-      width: '2.5',
-      boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
-      outline: 'none',
     },
     channelSliderThumb: {
       borderRadius: 'full',
@@ -53,8 +80,10 @@ export const colorPicker = defineSlotRecipe({
       width: '2.5',
       boxShadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
       transform: 'translate(-50%, -50%)',
-      zIndex: '1',
       outline: 'none',
+    },
+    transparencyGrid: {
+      borderRadius: 'l2',
     },
   },
 })

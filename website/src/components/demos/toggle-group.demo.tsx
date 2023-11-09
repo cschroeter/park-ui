@@ -8,43 +8,42 @@ import {
   UnderlineIcon,
 } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Toggle, ToggleGroup, type ToggleGroupProps } from '~/components/ui/toggle-group'
+import { ToggleGroup, type ToggleGroupProps } from '~/components/ui'
 
 export const Demo = (props: ToggleGroupProps) => {
   return (
     <Stack
       direction={props.orientation === 'horizontal' ? 'row' : 'column'}
       gap="3"
-      bg="bg.default"
       borderRadius="l3"
       borderWidth={props.variant === 'ghost' ? '1px' : '0'}
       p={props.variant === 'ghost' ? '1' : '0'}
     >
-      <ToggleGroup multiple {...props}>
-        <Toggle value="bold" aria-label="Toggle Bold">
+      <ToggleGroup.Root multiple {...props}>
+        <ToggleGroup.Item value="bold" aria-label="Toggle Bold">
           <BoldIcon />
-        </Toggle>
-        <Toggle value="italic" aria-label="Toggle Italic">
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="italic" aria-label="Toggle Italic">
           <ItalicIcon />
-        </Toggle>
-        <Toggle value="underline" aria-label="Toggle Underline">
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="underline" aria-label="Toggle Underline">
           <UnderlineIcon />
-        </Toggle>
-      </ToggleGroup>
-      <ToggleGroup defaultValue={['left']} {...props}>
-        <Toggle value="left" aria-label="Align Left">
+        </ToggleGroup.Item>
+      </ToggleGroup.Root>
+      <ToggleGroup.Root defaultValue={['left']} {...props}>
+        <ToggleGroup.Item value="left" aria-label="Align Left">
           <AlignLeftIcon />
-        </Toggle>
-        <Toggle value="center" aria-label="Align Center">
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="center" aria-label="Align Center">
           <AlignCenterIcon />
-        </Toggle>
-        <Toggle value="right" aria-label="Align Right">
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="right" aria-label="Align Right">
           <AlignRightIcon />
-        </Toggle>
-        <Toggle value="justify" aria-label="Align Justify">
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="justify" aria-label="Align Justify">
           <AlignJustifyIcon />
-        </Toggle>
-      </ToggleGroup>
+        </ToggleGroup.Item>
+      </ToggleGroup.Root>
     </Stack>
   )
 }

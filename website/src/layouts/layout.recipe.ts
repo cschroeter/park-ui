@@ -26,7 +26,6 @@ export const layout = sva({
       py: '8',
       top: '16',
       width: '64',
-      zIndex: '1',
     },
     main: {
       background: 'bg.surface',

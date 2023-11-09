@@ -1,22 +1,10 @@
-import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from '~/components/ui/select'
-
+import { Select } from '~/components/ui/select'
 import { Textarea } from '~/components/ui/textarea'
 
 export const ReportIssueCard = () => {
@@ -32,27 +20,27 @@ export const ReportIssueCard = () => {
           <Label htmlFor="title">Title</Label>
           <Input id="title" />
         </Stack>
-        <Select items={frameworks} positioning={{ sameWidth: true }} multiple>
-          <SelectLabel>Frameworks</SelectLabel>
-          <SelectTrigger>
-            <SelectValue placeholder="Select a Framework" />
-            <ChevronsUpDownIcon />
-          </SelectTrigger>
-          <Portal>
-            <SelectPositioner>
-              <SelectContent>
-                {frameworks.map((framework) => (
-                  <SelectItem key={framework} item={framework}>
-                    <SelectItemText>{framework}</SelectItemText>
-                    <SelectItemIndicator>
-                      <CheckIcon />
-                    </SelectItemIndicator>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </SelectPositioner>
-          </Portal>
-        </Select>
+        <Select.Root items={frameworks} positioning={{ sameWidth: true }} multiple>
+          <Select.Label>Frameworks</Select.Label>
+          <Select.Control>
+            <Select.Trigger>
+              <Select.ValueText placeholder="Select a Framework" />
+              <ChevronsUpDownIcon />
+            </Select.Trigger>
+          </Select.Control>
+          <Select.Positioner>
+            <Select.Content>
+              {frameworks.map((framework) => (
+                <Select.Item key={framework} item={framework}>
+                  <Select.ItemText>{framework}</Select.ItemText>
+                  <Select.ItemIndicator>
+                    <CheckIcon />
+                  </Select.ItemIndicator>
+                </Select.Item>
+              ))}
+            </Select.Content>
+          </Select.Positioner>
+        </Select.Root>
         <Stack gap="1.5">
           <Label htmlFor="description">Description</Label>
           <Textarea id="description" placeholder="A brief description of the issue" rows={3} />

@@ -1,21 +1,10 @@
 import { Button } from '../button/snippet'
 import { Label } from '../label/snippet'
-import {
-  Editable,
-  EditableArea,
-  EditableCancelTrigger,
-  EditableControl,
-  EditableEditTrigger,
-  EditableInput,
-  EditableLabel,
-  EditablePreview,
-  EditableSubmitTrigger,
-  type EditableProps,
-} from './snippet'
+import { Editable, type EditableProps } from './snippet'
 
 export const Demo = (props: EditableProps) => {
   return (
-    <Editable
+    <Editable.Root
       placeholder="Your favorite Framework"
       defaultValue="Double click to edit"
       activationMode="dblclick"
@@ -23,31 +12,31 @@ export const Demo = (props: EditableProps) => {
     >
       {(state) => (
         <>
-          <EditableLabel asChild>
+          <Editable.Label asChild>
             <Label>Framework</Label>
-          </EditableLabel>
-          <EditableArea>
-            <EditableInput />
-            <EditablePreview />
-          </EditableArea>
-          <EditableControl>
+          </Editable.Label>
+          <Editable.Area>
+            <Editable.Input />
+            <Editable.Preview />
+          </Editable.Area>
+          <Editable.Control>
             {state.isEditing ? (
               <>
-                <EditableSubmitTrigger asChild>
+                <Editable.SubmitTrigger asChild>
                   <Button variant="link">Save</Button>
-                </EditableSubmitTrigger>
-                <EditableCancelTrigger asChild>
+                </Editable.SubmitTrigger>
+                <Editable.CancelTrigger asChild>
                   <Button variant="link">Cancel</Button>
-                </EditableCancelTrigger>
+                </Editable.CancelTrigger>
               </>
             ) : (
-              <EditableEditTrigger asChild>
+              <Editable.EditTrigger asChild>
                 <Button variant="link">Edit</Button>
-              </EditableEditTrigger>
+              </Editable.EditTrigger>
             )}
-          </EditableControl>
+          </Editable.Control>
         </>
       )}
-    </Editable>
+    </Editable.Root>
   )
 }

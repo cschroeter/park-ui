@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import {
   ChevronRightIcon,
   CreditCardIcon,
@@ -12,102 +11,87 @@ import {
 } from 'lucide-react'
 import { Button } from '../button/snippet'
 import { Text } from '../text/snippet'
-import {
-  Menu,
-  MenuContent,
-  MenuItem,
-  MenuItemGroup,
-  MenuItemGroupLabel,
-  MenuPositioner,
-  MenuSeparator,
-  MenuTrigger,
-  MenuTriggerItem,
-  type MenuProps,
-} from './snippet'
+import { Menu, type MenuProps } from './snippet'
 
 export const Demo = (props: MenuProps) => {
   return (
-    <Menu {...props}>
-      <MenuTrigger asChild>
+    <Menu.Root {...props}>
+      <Menu.Trigger asChild>
         <Button variant="outline" size={props.size}>
           Open menu
         </Button>
-      </MenuTrigger>
-      <Portal>
-        <MenuPositioner>
-          <MenuContent>
-            <MenuItemGroup id="group-1">
-              <MenuItemGroupLabel htmlFor="group-1">My Account</MenuItemGroupLabel>
-              <MenuSeparator />
-              <MenuItem id="profile">
-                <div className="flex flex-row gap-6 justify-between flex-1">
-                  <div className="flex flex-row gap-2">
-                    <UserIcon />
-                    Profile
-                  </div>
-                  <Text as="span" color="fg.subtle" textStyle="xs">
-                    ⇧⌘P
-                  </Text>
-                </div>
-              </MenuItem>
-              <MenuItem id="billing">
+      </Menu.Trigger>
+      <Menu.Positioner>
+        <Menu.Content>
+          <Menu.ItemGroup id="group-1">
+            <Menu.ItemGroupLabel htmlFor="group-1">My Account</Menu.ItemGroupLabel>
+            <Menu.Separator />
+            <Menu.Item id="profile">
+              <div className="flex flex-row gap-6 justify-between flex-1">
                 <div className="flex flex-row gap-2">
-                  <CreditCardIcon /> Billing
+                  <UserIcon />
+                  Profile
                 </div>
-              </MenuItem>
-              <MenuItem id="settings">
-                <div className="flex flex-row gap-6 justify-between flex-1">
-                  <div className="flex flex-row gap-2">
-                    <SettingsIcon /> Settings
-                  </div>
-                  <Text as="span" color="fg.subtle" textStyle="xs">
-                    ⌘,
-                  </Text>
-                </div>
-              </MenuItem>
-              <Menu positioning={{ placement: 'right-start', gutter: -2 }} {...props}>
-                <MenuTriggerItem className="justify-between">
-                  <div className="flex flex-row gap-2">
-                    <UserPlusIcon />
-                    Inivte member
-                  </div>
-                  <ChevronRightIcon />
-                </MenuTriggerItem>
-                <Portal>
-                  <MenuPositioner>
-                    <MenuContent>
-                      <MenuItem id="email">
-                        <div className="flex flex-row gap-2">
-                          <MailIcon /> Email
-                        </div>
-                      </MenuItem>
-                      <MenuItem id="message">
-                        <div className="flex flex-row gap-2">
-                          <MessageSquareIcon /> Message
-                        </div>
-                      </MenuItem>
-                      <MenuSeparator />
-                      <MenuItem id="other">
-                        <div className="flex flex-row gap-2">
-                          <PlusCircleIcon />
-                          More Options...
-                        </div>
-                      </MenuItem>
-                    </MenuContent>
-                  </MenuPositioner>
-                </Portal>
-              </Menu>
-              <MenuSeparator />
-              <MenuItem id="logout">
+                <Text as="span" color="fg.subtle" textStyle="xs">
+                  ⇧⌘P
+                </Text>
+              </div>
+            </Menu.Item>
+            <Menu.Item id="billing">
+              <div className="flex flex-row gap-2">
+                <CreditCardIcon /> Billing
+              </div>
+            </Menu.Item>
+            <Menu.Item id="settings">
+              <div className="flex flex-row gap-6 justify-between flex-1">
                 <div className="flex flex-row gap-2">
-                  <LogOutIcon />
-                  Logout
+                  <SettingsIcon /> Settings
                 </div>
-              </MenuItem>
-            </MenuItemGroup>
-          </MenuContent>
-        </MenuPositioner>
-      </Portal>
-    </Menu>
+                <Text as="span" color="fg.subtle" textStyle="xs">
+                  ⌘,
+                </Text>
+              </div>
+            </Menu.Item>
+            <Menu.Root positioning={{ placement: 'right-start', gutter: -2 }} {...props}>
+              <Menu.TriggerItem className="justify-between">
+                <div className="flex flex-row gap-2">
+                  <UserPlusIcon />
+                  Inivte member
+                </div>
+                <ChevronRightIcon />
+              </Menu.TriggerItem>
+              <Menu.Positioner>
+                <Menu.Content>
+                  <Menu.Item id="email">
+                    <div className="flex flex-row gap-2">
+                      <MailIcon /> Email
+                    </div>
+                  </Menu.Item>
+                  <Menu.Item id="message">
+                    <div className="flex flex-row gap-2">
+                      <MessageSquareIcon /> Message
+                    </div>
+                  </Menu.Item>
+                  <Menu.Separator />
+                  <Menu.Item id="other">
+                    <div className="flex flex-row gap-2">
+                      <PlusCircleIcon />
+                      More Options...
+                    </div>
+                  </Menu.Item>
+                </Menu.Content>
+              </Menu.Positioner>
+            </Menu.Root>
+            <Menu.Separator />
+            <Menu.Item id="logout">
+              <div className="flex flex-row gap-2">
+                <LogOutIcon />
+                Logout
+              </div>
+            </Menu.Item>
+          </Menu.ItemGroup>
+        </Menu.Content>
+      </Menu.Positioner>
+    </Menu.Root>
   )
 }

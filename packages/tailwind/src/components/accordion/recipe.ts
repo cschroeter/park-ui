@@ -8,16 +8,18 @@ export const accordionStyles = tv({
   slots: {
     root: 'accordion__root',
     item: 'accordion__item',
-    trigger: 'accordion__trigger',
-    content: 'accordion__content',
+    itemTrigger: 'accordion__itemTrigger',
+    itemContent: 'accordion__itemContent',
+    itemIndicator: 'accordion__itemIndicator',
   },
   variants: {
     size: {
       md: {
         root: 'accordion__root--size_md',
         item: 'accordion__item--size_md',
-        trigger: 'accordion__trigger--size_md',
-        content: 'accordion__content--size_md',
+        itemTrigger: 'accordion__itemTrigger--size_md',
+        itemContent: 'accordion__itemContent--size_md',
+        itemIndicator: 'accordion__itemIndicator--size_md',
       },
     },
   },

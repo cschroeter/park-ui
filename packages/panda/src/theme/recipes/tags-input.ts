@@ -9,6 +9,7 @@ export const tagsInput = defineSlotRecipe({
       width: 'full',
       display: 'flex',
       flexDirection: 'column',
+      gap: '1.5',
     },
     control: {
       alignItems: 'center',
@@ -30,13 +31,12 @@ export const tagsInput = defineSlotRecipe({
       outline: 'none',
       background: 'transparent',
     },
-    tag: {
+    item: {
       alignItems: 'center',
       borderColor: 'border.default',
       borderRadius: 'l1',
       borderWidth: '1px',
       color: 'fg.default',
-      background: 'bg.subtle',
       display: 'inline-flex',
       fontWeight: 'medium',
       _highlighted: {
@@ -47,9 +47,14 @@ export const tagsInput = defineSlotRecipe({
         display: 'none',
       },
     },
-    tagInput: {
+    itemInput: {
       background: 'transparent',
       outline: 'none',
+    },
+    label: {
+      color: 'fg.default',
+      fontWeight: 'medium',
+      textStyle: 'sm',
     },
   },
   defaultVariants: {
@@ -68,7 +73,7 @@ export const tagsInput = defineSlotRecipe({
           px: '3',
           py: '7px', // TODO line break
         },
-        tag: {
+        item: {
           gap: '1',
           h: '6',
           pe: '1',

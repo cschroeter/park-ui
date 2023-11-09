@@ -6,6 +6,7 @@
 
 ### Changed
 
+- Integrated Ark UI 1.0
 - Revised `Slider` component.
 
 ## [0.21.0] - 2023-11-05

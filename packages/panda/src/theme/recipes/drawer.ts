@@ -23,7 +23,7 @@ export const drawer = defineSlotRecipe({
         animation: 'backdrop-out',
       },
     },
-    container: {
+    positioner: {
       alignItems: 'center',
       display: 'flex',
       top: 0,
@@ -35,7 +35,7 @@ export const drawer = defineSlotRecipe({
     },
     content: {
       background: 'bg.default',
-      boxShadow: 'xl',
+      boxShadow: 'lg',
       display: 'grid',
       divideY: '1px',
       gridTemplateColumns: '1fr',
@@ -90,7 +90,7 @@ export const drawer = defineSlotRecipe({
   variants: {
     placement: {
       left: {
-        container: {
+        positioner: {
           left: 0,
         },
         content: {
@@ -103,7 +103,7 @@ export const drawer = defineSlotRecipe({
         },
       },
       right: {
-        container: {
+        positioner: {
           right: 0,
         },
         content: {

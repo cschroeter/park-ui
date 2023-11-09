@@ -14,7 +14,7 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => (
     </Drawer.Trigger>
     <Portal>
       <Drawer.Backdrop />
-      <Drawer.Container>
+      <Drawer.Positioner>
         <Drawer.Content>
           <Drawer.Header pt="5">
             <a href="/" aria-label="Go to start page">
@@ -28,7 +28,7 @@ export const MobileSidebarContainer = (props: PropsWithChildren) => (
           </Drawer.Header>
           <Drawer.Body>{props.children}</Drawer.Body>
         </Drawer.Content>
-      </Drawer.Container>
+      </Drawer.Positioner>
     </Portal>
   </Drawer.Root>
 )

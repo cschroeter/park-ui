@@ -1,47 +1,38 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from '~/components/ui/select'
+import { Select } from '~/components/ui/select'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const FontFamilySelect = () => {
   const { currentFontFamily, fontFamilies, updateFontFamily } = useThemeGenerator()
 
   return (
-    <Select
-      // @ts-expect-error
+    <Select.Root
       items={fontFamilies}
       value={[currentFontFamily.value]}
       // @ts-expect-error
-      onChange={(e) => updateFontFamily(e.items[0])}
+      onValueChange={(e) => updateFontFamily(e.items[0])}
       positioning={{ sameWidth: true }}
       size="sm"
     >
-      <SelectLabel>Font Family</SelectLabel>
-      <SelectTrigger>
-        <SelectValue />
-        <ChevronsUpDownIcon />
-      </SelectTrigger>
-      <SelectPositioner>
-        <SelectContent>
+      <Select.Label>Font Family</Select.Label>
+      <Select.Control>
+        <Select.Trigger>
+          <Select.ValueText />
+          <ChevronsUpDownIcon />
+        </Select.Trigger>
+      </Select.Control>
+      <Select.Positioner>
+        <Select.Content>
           {fontFamilies.map((fontFamily, id) => (
-            <SelectItem key={id} item={fontFamily}>
-              <SelectItemText>{fontFamily.label}</SelectItemText>
-              <SelectItemIndicator>
+            <Select.Item key={id} item={fontFamily}>
+              <Select.ItemText>{fontFamily.label}</Select.ItemText>
+              <Select.ItemIndicator>
                 <CheckIcon />
-              </SelectItemIndicator>
-            </SelectItem>
+              </Select.ItemIndicator>
+            </Select.Item>
           ))}
-        </SelectContent>
-      </SelectPositioner>
-    </Select>
+        </Select.Content>
+      </Select.Positioner>
+    </Select.Root>
   )
 }

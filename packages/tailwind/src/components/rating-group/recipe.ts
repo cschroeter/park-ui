@@ -8,7 +8,7 @@ export const ratingGroupStyles = tv({
   slots: {
     root: 'ratingGroup__root',
     label: 'ratingGroup__label',
-    rating: 'ratingGroup__rating',
+    item: 'ratingGroup__item',
     control: 'ratingGroup__control',
   },
   variants: {
@@ -16,19 +16,19 @@ export const ratingGroupStyles = tv({
       sm: {
         root: 'ratingGroup__root--size_sm',
         label: 'ratingGroup__label--size_sm',
-        rating: 'ratingGroup__rating--size_sm',
+        item: 'ratingGroup__item--size_sm',
         control: 'ratingGroup__control--size_sm',
       },
       md: {
         root: 'ratingGroup__root--size_md',
         label: 'ratingGroup__label--size_md',
-        rating: 'ratingGroup__rating--size_md',
+        item: 'ratingGroup__item--size_md',
         control: 'ratingGroup__control--size_md',
       },
       lg: {
         root: 'ratingGroup__root--size_lg',
         label: 'ratingGroup__label--size_lg',
-        rating: 'ratingGroup__rating--size_lg',
+        item: 'ratingGroup__item--size_lg',
         control: 'ratingGroup__control--size_lg',
       },
     },

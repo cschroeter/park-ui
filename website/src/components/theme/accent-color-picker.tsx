@@ -1,11 +1,6 @@
 import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import {
-  Radio,
-  RadioButtonGroup,
-  RadioControl,
-  RadioLabel,
-} from '~/components/ui/radio-button-group'
+import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
@@ -17,20 +12,20 @@ export const AccentColorPicker = () => {
       <Text textStyle="sm" fontWeight="medium">
         Accent
       </Text>
-      <RadioButtonGroup
+      <RadioButtonGroup.Root
         value={currentAccentColor}
         size="sm"
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
-        onChange={(e) => {
+        onValueChange={(e) =>
           updateAccentColor(accentColors.find((accent) => accent === e.value) ?? currentAccentColor)
-        }}
+        }
       >
         {accentColors.map((accent, id) => (
-          <Radio key={id} value={accent} justifyContent="flex-start">
-            <RadioControl />
-            <RadioLabel textTransform="capitalize">
+          <RadioButtonGroup.Item key={id} value={accent} justifyContent="flex-start">
+            <RadioButtonGroup.ItemControl />
+            <RadioButtonGroup.ItemText textTransform="capitalize">
               <Circle
                 size="3.5"
                 style={{
@@ -38,10 +33,10 @@ export const AccentColorPicker = () => {
                 }}
               />
               {accent}
-            </RadioLabel>
-          </Radio>
+            </RadioButtonGroup.ItemText>
+          </RadioButtonGroup.Item>
         ))}
-      </RadioButtonGroup>
+      </RadioButtonGroup.Root>
     </Stack>
   )
 }

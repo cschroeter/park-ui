@@ -8,15 +8,17 @@ export type RadioGroupProps = React.ComponentProps<typeof RadioGroup>
 const { withProvider, withContext } = createStyleContext(radioGroupStyles)
 
 const RadioGroupRoot = withProvider(Ark.RadioGroup.Root, 'root')
+export const RadioGroupIndicator = withContext(Ark.RadioGroup.Indicator, 'indicator')
+export const RadioGroupItem = withContext(Ark.RadioGroup.Item, 'item')
+export const RadioGroupItemControl = withContext(Ark.RadioGroup.ItemControl, 'itemControl')
+export const RadioGroupItemText = withContext(Ark.RadioGroup.ItemText, 'itemText')
 export const RadioGroupLabel = withContext(Ark.RadioGroup.Label, 'label')
-export const Radio = withContext(Ark.RadioGroup.Radio, 'radio')
-export const RadioLabel = withContext(Ark.RadioGroup.RadioLabel, 'radioLabel')
-export const RadioControl = withContext(Ark.RadioGroup.RadioControl, 'radioControl')
 
 export const RadioGroup = Object.assign(RadioGroupRoot, {
   Root: RadioGroupRoot,
+  Indicator: RadioGroupIndicator,
+  Item: RadioGroupItem,
+  ItemControl: RadioGroupItemControl,
+  ItemText: RadioGroupItemText,
   Label: RadioGroupLabel,
-  Radio: Radio,
-  RadioLabel: RadioLabel,
-  RadioControl: RadioControl,
 })

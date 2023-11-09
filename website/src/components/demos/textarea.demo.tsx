@@ -1,6 +1,5 @@
 import { Stack } from 'styled-system/jsx'
-import { Label } from '~/components/ui/label'
-import { Textarea, type TextareaProps } from '~/components/ui/textarea'
+import { Label, Textarea, type TextareaProps } from '~/components/ui'
 
 export const Demo = (props: TextareaProps) => {
   return (

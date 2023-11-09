@@ -8,7 +8,7 @@ export const drawerStyles = tv({
   slots: {
     trigger: 'drawer__trigger',
     backdrop: 'drawer__backdrop',
-    container: 'drawer__container',
+    positioner: 'drawer__positioner',
     content: 'drawer__content',
     title: 'drawer__title',
     description: 'drawer__description',
@@ -22,7 +22,7 @@ export const drawerStyles = tv({
       left: {
         trigger: 'drawer__trigger--placement_left',
         backdrop: 'drawer__backdrop--placement_left',
-        container: 'drawer__container--placement_left',
+        positioner: 'drawer__positioner--placement_left',
         content: 'drawer__content--placement_left',
         title: 'drawer__title--placement_left',
         description: 'drawer__description--placement_left',
@@ -34,7 +34,7 @@ export const drawerStyles = tv({
       right: {
         trigger: 'drawer__trigger--placement_right',
         backdrop: 'drawer__backdrop--placement_right',
-        container: 'drawer__container--placement_right',
+        positioner: 'drawer__positioner--placement_right',
         content: 'drawer__content--placement_right',
         title: 'drawer__title--placement_right',
         description: 'drawer__description--placement_right',

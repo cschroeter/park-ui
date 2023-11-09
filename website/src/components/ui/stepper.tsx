@@ -26,7 +26,7 @@ export const Step = (props: PropsWithChildren<StepProps>) => {
           color="fg.default"
           bg="bg.surface"
           borderWidth="1px"
-          zIndex={1}
+          zIndex="1"
           boxShadow="0 0 0 12px var(--colors-bg-surface)"
           fontWeight="semibold"
         >

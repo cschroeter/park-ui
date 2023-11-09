@@ -12,13 +12,15 @@ export const button = defineRecipe({
     minWidth: '0',
     justifyContent: 'center',
     outline: 'none',
-    position: 'relative',
     transitionDuration: 'normal',
     transitionProperty: 'background, border-color, color, box-shadow',
     transitionTimingFunction: 'default',
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+    _hidden: {
+      display: 'none',
+    },
   },
   defaultVariants: {
     variant: 'solid',
@@ -67,6 +69,9 @@ export const button = defineRecipe({
           outlineOffset: '2px',
           outline: '2px solid',
           outlineColor: 'border.outline',
+        },
+        _selected: {
+          background: 'gray.a3',
         },
       },
       ghost: {

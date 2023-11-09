@@ -17,6 +17,7 @@ export const select = defineSlotRecipe({
       boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
+      zIndex: 'dropdown',
       _hidden: {
         display: 'none',
       },
@@ -31,9 +32,6 @@ export const select = defineSlotRecipe({
         outline: '2px solid',
         outlineColor: 'border.outline',
       },
-    },
-    positioner: {
-      zIndex: 'dropdown',
     },
     item: {
       alignItems: 'center',

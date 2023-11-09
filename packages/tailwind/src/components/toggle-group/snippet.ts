@@ -7,9 +7,9 @@ const { withProvider, withContext } = createStyleContext(toggleGroupStyles)
 export * from '@ark-ui/react/toggle-group'
 
 const ToggleGroupRoot = withProvider(Ark.ToggleGroup.Root, 'root')
-export const Toggle = withContext(Ark.ToggleGroup.Toggle, 'toggle')
+export const ToggleGroupItem = withContext(Ark.ToggleGroup.Item, 'item')
 
 export const ToggleGroup = Object.assign(ToggleGroupRoot, {
   Root: ToggleGroupRoot,
-  Toggle: Toggle,
+  Item: ToggleGroupItem,
 })

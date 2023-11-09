@@ -1,20 +1,6 @@
 import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import {
-  Select,
-  SelectContent,
-  SelectControl,
-  SelectItem,
-  SelectItemGroup,
-  SelectItemGroupLabel,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-  type SelectProps,
-} from '~/components/ui/select'
+import { Select, type SelectProps } from '~/components/ui'
 
 type Item = {
   label: string
@@ -31,36 +17,36 @@ export const Demo = (props: SelectProps<Item>) => {
   ]
 
   return (
-    <Select<SelectProps<Item>>
+    <Select.Root<SelectProps<Item>>
       positioning={{ sameWidth: true }}
       width="2xs"
       {...props}
       items={items}
     >
-      <SelectLabel>Framework</SelectLabel>
-      <SelectControl>
-        <SelectTrigger>
-          <SelectValue placeholder="Select a Framework" />
+      <Select.Label>Framework</Select.Label>
+      <Select.Control>
+        <Select.Trigger>
+          <Select.ValueText placeholder="Select a Framework" />
           <ChevronsUpDownIcon />
-        </SelectTrigger>
-      </SelectControl>
+        </Select.Trigger>
+      </Select.Control>
       <Portal>
-        <SelectPositioner>
-          <SelectContent>
-            <SelectItemGroup id="framework">
-              <SelectItemGroupLabel htmlFor="framework">Framework</SelectItemGroupLabel>
+        <Select.Positioner>
+          <Select.Content>
+            <Select.ItemGroup id="framework">
+              <Select.ItemGroupLabel htmlFor="framework">Framework</Select.ItemGroupLabel>
               {items.map((item) => (
-                <SelectItem key={item.value} item={item}>
-                  <SelectItemText>{item.label}</SelectItemText>
-                  <SelectItemIndicator>
+                <Select.Item key={item.value} item={item}>
+                  <Select.ItemText>{item.label}</Select.ItemText>
+                  <Select.ItemIndicator>
                     <CheckIcon />
-                  </SelectItemIndicator>
-                </SelectItem>
+                  </Select.ItemIndicator>
+                </Select.Item>
               ))}
-            </SelectItemGroup>
-          </SelectContent>
-        </SelectPositioner>
+            </Select.ItemGroup>
+          </Select.Content>
+        </Select.Positioner>
       </Portal>
-    </Select>
+    </Select.Root>
   )
 }

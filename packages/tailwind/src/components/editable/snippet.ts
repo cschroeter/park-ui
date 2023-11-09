@@ -6,7 +6,6 @@ export * from '@ark-ui/react/editable'
 export type EditableProps = React.ComponentProps<typeof Editable>
 
 const { withProvider, withContext } = createStyleContext(editableStyles)
-
 const EditableRoot = withProvider(Ark.Editable.Root, 'root')
 export const EditableArea = withContext(Ark.Editable.Area, 'area')
 export const EditableCancelTrigger = withContext(Ark.Editable.CancelTrigger, 'cancelTrigger')

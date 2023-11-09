@@ -3,19 +3,8 @@ import { useState, type PropsWithChildren } from 'react'
 import { sva } from 'styled-system/css'
 import { Box, Flex, Stack, styled } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
+import { Select, Slider } from '~/components/ui'
 import * as demos from './demos'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from './ui/select'
-import { Slider } from './ui/slider'
 
 const styles = sva({
   slots: ['root', 'preview', 'container', 'configurator'],
@@ -93,8 +82,10 @@ export const Playground = (props: PropsWithChildren<Props>) => {
                     key={key}
                     min={0}
                     max={(options?.length ?? 0) - 1}
-                    onChange={(e) => setState({ ...state, [key]: options?.[e.value] ?? '' })}
-                    defaultValue={options?.indexOf(defaultValue ?? '') ?? 0}
+                    onValueChange={(e) =>
+                      setState({ ...state, [key]: options?.[e.value[0]] ?? '' })
+                    }
+                    defaultValue={[options?.indexOf(defaultValue ?? '') ?? 0]}
                   >
                     <Slider.Label>
                       <styled.span textTransform="capitalize">{key}:</styled.span> {state[key]}
@@ -103,7 +94,7 @@ export const Playground = (props: PropsWithChildren<Props>) => {
                       <Slider.Track>
                         <Slider.Range />
                       </Slider.Track>
-                      <Slider.Thumb />
+                      <Slider.Thumb index={0} />
                     </Slider.Control>
                     <Slider.MarkerGroup>
                       {options?.map((option, index) => (
@@ -113,33 +104,35 @@ export const Playground = (props: PropsWithChildren<Props>) => {
                   </Slider.Root>
                 ))
                 .otherwise(() => (
-                  <Select
+                  <Select.Root
                     key={key}
                     defaultValue={[defaultValue ?? '']}
                     items={options ?? []}
                     positioning={{ sameWidth: true }}
                     closeOnSelect={false}
                     size="sm"
-                    onChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
+                    onValueChange={(e) => setState({ ...state, [key]: e.value[0] ?? '' })}
                   >
-                    <SelectLabel textTransform="capitalize">{key}</SelectLabel>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a Framework" />
-                      <ChevronsUpDownIcon />
-                    </SelectTrigger>
-                    <SelectPositioner>
-                      <SelectContent>
+                    <Select.Label textTransform="capitalize">{key}</Select.Label>
+                    <Select.Control>
+                      <Select.Trigger>
+                        <Select.ValueText placeholder="Select a Framework" />
+                        <ChevronsUpDownIcon />
+                      </Select.Trigger>
+                    </Select.Control>
+                    <Select.Positioner>
+                      <Select.Content>
                         {(options ?? []).map((option) => (
-                          <SelectItem key={option} item={option}>
-                            <SelectItemText>{option}</SelectItemText>
-                            <SelectItemIndicator>
+                          <Select.Item key={option} item={option}>
+                            <Select.ItemText>{option}</Select.ItemText>
+                            <Select.ItemIndicator>
                               <CheckIcon />
-                            </SelectItemIndicator>
-                          </SelectItem>
+                            </Select.ItemIndicator>
+                          </Select.Item>
                         ))}
-                      </SelectContent>
-                    </SelectPositioner>
-                  </Select>
+                      </Select.Content>
+                    </Select.Positioner>
+                  </Select.Root>
                 )),
             )}
           </Stack>

@@ -7,7 +7,7 @@ export type PopoverProps = React.ComponentProps<typeof Popover>
 
 const { withProvider, withContext } = createStyleContext(popoverStyles)
 
-const PopoverRoot = withProvider(Ark.Popover.Root, 'root')
+const PopoverRoot = withProvider(Ark.Popover.Root)
 export const PopoverAnchor = withContext(Ark.Popover.Anchor, 'anchor')
 export const PopoverArrow = withContext(Ark.Popover.Arrow, 'arrow')
 export const PopoverArrowTip = withContext(Ark.Popover.ArrowTip, 'arrowTip')

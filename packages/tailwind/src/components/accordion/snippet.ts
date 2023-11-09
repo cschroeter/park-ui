@@ -8,13 +8,15 @@ export type AccordionProps = React.ComponentProps<typeof Accordion>
 const { withProvider, withContext } = createStyleContext(accordionStyles)
 
 const AccordionRoot = withProvider(Ark.Accordion.Root, 'root')
-export const AccordionContent = withContext(Ark.Accordion.Content, 'content')
 export const AccordionItem = withContext(Ark.Accordion.Item, 'item')
-export const AccordionTrigger = withContext(Ark.Accordion.Trigger, 'trigger')
+export const AccordionItemContent = withContext(Ark.Accordion.ItemContent, 'itemContent')
+export const AccordionItemIndicator = withContext(Ark.Accordion.ItemIndicator, 'itemIndicator')
+export const AccordionItemTrigger = withContext(Ark.Accordion.ItemTrigger, 'itemTrigger')
 
 export const Accordion = Object.assign(AccordionRoot, {
   Root: AccordionRoot,
-  Content: AccordionContent,
   Item: AccordionItem,
-  Trigger: AccordionTrigger,
+  ItemContent: AccordionItemContent,
+  ItemIndicator: AccordionItemIndicator,
+  ItemTrigger: AccordionItemTrigger,
 })
