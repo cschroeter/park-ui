@@ -23,7 +23,7 @@ export const CodePreviewTabs = (props: PropsWithChildren<Props>) => {
   const [value, setValue] = useState(tabs[0][0])
 
   return (
-    <Tabs.Root value={value} onChange={(e) => setValue(e.value)}>
+    <Tabs.Root value={value} onValueChange={(e) => setValue(e.value)}>
       <HStack justifyContent="space-between" p="1">
         <Tabs.List>
           {Object.entries(props.tabs).map(([key, value]) => (
