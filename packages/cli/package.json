@@ -30,7 +30,7 @@
     "release-it": "16.2.1",
     "read-package-up": "11.0.0",
     "tsup": "7.2.0",
-    "tsx": "4.0.0",
+    "tsx": "4.1.0",
     "typescript": "5.2.2",
     "@types/yargs": "17.0.31"
   },
