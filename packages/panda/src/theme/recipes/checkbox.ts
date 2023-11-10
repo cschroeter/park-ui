@@ -41,6 +41,14 @@ export const checkbox = defineSlotRecipe({
           background: 'accent.default',
         },
       },
+      '&:has(+ :focus-visible)': {
+        outlineOffset: '2px',
+        outline: '2px solid',
+        outlineColor: 'border.outline',
+        _checked: {
+          outlineColor: 'border.accent',
+        },
+      },
     },
   },
   defaultVariants: {

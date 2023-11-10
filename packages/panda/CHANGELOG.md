@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added `focusVisible` styles to the `Checkbox` component.
+
 ## [0.22.0] - 2023-11-09
 
 With the introduction of Ark UI 1.0 support, this version implements significant changes, resulting in several breaking updates. Key component revisions include:
