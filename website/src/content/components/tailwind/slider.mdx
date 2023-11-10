@@ -22,16 +22,15 @@ import { Slider } from '~/components/ui'
 
 To use the slider as a range slider, you need to provide an array of values.
 
-```tsx live
+```tsx live multi
 <Slider.Root min={0} max={100} defaultValue={[33, 66]}>
   <Slider.Label>Label</Slider.Label>
   <Slider.Control>
     <Slider.Track>
       <Slider.Range />
     </Slider.Track>
-    {[33, 66].map((_, index) => (
-      <Slider.Thumb key={index} index={index} />
-    ))}
+    <Slider.Thumb index={0} />
+    <Slider.Thumb index={1} />
   </Slider.Control>
 </Slider.Root>
 ```
@@ -40,7 +39,7 @@ To use the slider as a range slider, you need to provide an array of values.
 
 The slider can also be used without a label while still showing indicators within the track.
 
-```tsx live
+```tsx live multi
 <Slider.Root min={0} max={100} defaultValue={[33]}>
   <Slider.Label>Label</Slider.Label>
   <Slider.Control>
