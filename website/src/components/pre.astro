@@ -16,7 +16,7 @@ const code = cheerio.load(html).root().text().trim()
 <Box borderRadius="l3" overflow="hidden" borderWidth="1px" className="not-prose">
   {
     html.includes('metastring="live"') && (
-      <Box p="4" borderBottomWidth="1px">
+      <Box p={{ base: '4', md: '6' }} borderBottomWidth="1px">
         <LivePreview code={code} client:load />
       </Box>
     )
