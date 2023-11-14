@@ -8,27 +8,21 @@ type Recipe = {
 type Slot<R extends Recipe> = keyof ReturnType<R>
 type SlotRecipe<R extends Recipe> = Record<Slot<R>, string>
 type VariantProps<R extends Recipe> = Parameters<R>[0]
-type Assign<T, U> = Omit<T, keyof U> & U
-
-export interface StyledContextProvider<T extends ElementType, R extends Recipe> {
-  (props: ComponentProps<T> & VariantProps<R>): JSX.Element
-  <P extends object>(props: Assign<ComponentProps<T>, P> & VariantProps<R>): JSX.Element
-}
 
 const cx = (...args: (string | undefined)[]) => args.filter(Boolean).join(' ')
 
 export const createStyleContext = <R extends Recipe>(recipe: R) => {
   const StyleContext = createContext<SlotRecipe<R> | null>(null)
 
-  const withProvider = <T extends ElementType>(Component: T, slot?: Slot<R>) => {
-    const Comp = forwardRef((props: ComponentProps<T> & VariantProps<R>, ref) => {
+  const withProvider = <C extends ElementType>(Component: C, slot?: Slot<R>): C => {
+    const Comp = forwardRef((props: ComponentProps<C> & VariantProps<R>, ref) => {
       const [variantProps, localProps] = recipe.splitVariantProps(props)
       const slotRecipe = recipe(variantProps) as SlotRecipe<R>
       return (
         <StyleContext.Provider value={slotRecipe}>
           <Component
             ref={ref}
-            {...localProps}
+            {...(props as any)}
             className={cx(slotRecipe[slot ?? ''], localProps.className)}
           />
         </StyleContext.Provider>
@@ -36,21 +30,24 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     })
     // @ts-expect-error JSX.IntrinsicElements do not have a displayName but Function and Class components do
     Comp.displayName = Component.displayName || Component.name || 'Component'
-    return Comp as unknown as StyledContextProvider<T, R>
+    return Comp as unknown as C
   }
 
-  const withContext = <T extends ElementType>(Component: T, slot?: Slot<R>) => {
-    const Comp = forwardRef((props: ComponentProps<T>, ref) => {
-      const slotRecipe = useContext(StyleContext)
+  const withContext = <C extends ElementType>(Component: C, slot?: Slot<R>): C => {
+    const Comp = forwardRef((props: ComponentProps<C>, ref) => {
+      const recipe = useContext(StyleContext)
       return (
-        // @ts-expect-error
-        <Component ref={ref} {...props} className={cx(slotRecipe?.[slot ?? ''], props.className)} />
+        <Component
+          ref={ref}
+          {...(props as any)}
+          className={cx(recipe?.[slot ?? ''], props.className)}
+        />
       )
     })
+
     // @ts-expect-error JSX.IntrinsicElements do not have a displayName but Function and Class components do
     Comp.displayName = Component.displayName || Component.name || 'Component'
-
-    return Comp as unknown as T
+    return Comp as unknown as C
   }
 
   return {
