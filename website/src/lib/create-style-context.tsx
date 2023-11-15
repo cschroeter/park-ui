@@ -25,20 +25,20 @@ export interface StyledContextProvider<T extends ElementType, R extends Recipe> 
 }
 
 export const createStyleContext = <R extends Recipe>(recipe: R) => {
-  const RecipeContext = createContext<SlotRecipe<R> | null>(null)
+  const SlotRecipeContext = createContext<SlotRecipe<R> | null>(null)
 
   const withProvider = <T extends ElementType>(Component: T, slot?: Slot<R>) => {
     const Comp = forwardRef((props: ComponentProps<T>, ref) => {
       const [variantProps, localProps] = recipe.splitVariantProps(props)
       const slotRecipe = recipe(variantProps) as SlotRecipe<R>
       return (
-        <RecipeContext.Provider value={slotRecipe}>
+        <SlotRecipeContext.Provider value={slotRecipe}>
           <Component
             ref={ref}
             {...localProps}
             className={cx(slotRecipe[slot ?? ''], localProps.className)}
           />
-        </RecipeContext.Provider>
+        </SlotRecipeContext.Provider>
       )
     })
     return Comp as unknown as StyledContextProvider<T, R>
@@ -46,7 +46,7 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
 
   const withContext = <T extends ElementType>(Component: T, slot?: Slot<R>) => {
     const Comp = forwardRef((props: ComponentProps<T>, ref) => {
-      const recipe = useContext(RecipeContext)
+      const recipe = useContext(SlotRecipeContext)
       return createElement(Component, {
         ...props,
         className: cx(recipe?.[slot ?? ''], props.className),
