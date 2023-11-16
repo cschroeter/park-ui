@@ -1,35 +1,50 @@
-import type { Component as ComponentType } from 'solid-js'
-import { createContext, useContext } from 'solid-js'
+import {
+  createComponent,
+  createContext,
+  mergeProps,
+  useContext,
+  type ComponentProps,
+  type ValidComponent,
+} from 'solid-js'
+import { Dynamic } from 'solid-js/web'
 
 type AnyProps = Record<string, unknown>
 type AnyRecipe = {
   (props?: AnyProps): Record<string, string>
-  splitVariantProps: (props: AnyProps) => any
+  splitVariantProps: (props: any) => any
 }
 
 export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null)
 
-  const withProvider = <T extends object>(Component: ComponentType<T>, part?: string) => {
-    const Comp = (props: T & Parameters<R>[0]) => {
-      const [variantProps, rest] = recipe.splitVariantProps(props)
+  const withProvider = <T extends ValidComponent, P = ComponentProps<T>>(
+    Component: T,
+    slot?: string,
+  ) => {
+    const Comp = (props: P & Parameters<R>[0]) => {
+      const [variantProps, componentProps] = recipe.splitVariantProps(props)
       const styles = recipe(variantProps)
       return (
         <StyleContext.Provider value={styles}>
-          <Component class={styles?.[part ?? '']} {...rest} />
+          <Dynamic component={Component} class={styles?.[slot ?? '']} {...componentProps} />
         </StyleContext.Provider>
       )
     }
     return Comp
   }
 
-  const withContext = <T extends object>(Component: ComponentType<T>, part?: string) => {
-    if (!part) return Component
-    const Comp = (props: T) => {
+  const withContext = <T extends ValidComponent, P = ComponentProps<T>>(
+    Component: T,
+    slot?: string,
+  ) => {
+    const Comp = (props: P) => {
       const styles = useContext(StyleContext)
-      return <Component class={styles?.[part ?? '']} {...props} />
+      return createComponent(
+        Dynamic,
+        mergeProps(props, { component: Component, class: styles?.[slot ?? ''] }),
+      )
     }
-    return Comp
+    return Comp as T
   }
 
   return {

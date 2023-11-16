@@ -10,14 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ark-ui/solid": "1.0.0",
+    "@ark-ui/solid": "1.0.1",
     "solid-js": "1.8.5"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.18.0",
+    "@pandacss/dev": "0.18.3",
     "@park-ui/panda-preset": "0.22.0",
     "typescript": "5.2.2",
-    "vite": "4.5.0",
+    "vite": "5.0.0",
     "vite-plugin-solid": "2.7.2",
     "vite-tsconfig-paths": "4.2.1"
   }
