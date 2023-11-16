@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js'
+import { JSX, createSignal } from 'solid-js'
 
 type ProviderComponentProps<ComponentProps extends {}> = (prop: ComponentProps) => JSX.Element
 

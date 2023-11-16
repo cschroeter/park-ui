@@ -36,7 +36,8 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const withContext = <T extends ValidComponent, P = ComponentProps<T>>(
     Component: T,
     slot?: string,
-  ) => {
+  ): T => {
+    if (!slot) return Component
     const Comp = (props: P) => {
       const styles = useContext(StyleContext)
       return createComponent(
