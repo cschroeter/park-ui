@@ -2,7 +2,6 @@ import {
   createComponent,
   createContext,
   mergeProps,
-  splitProps,
   useContext,
   type ComponentProps,
   type ValidComponent,
@@ -22,11 +21,13 @@ export const createStyleContext = <R extends Recipe>(createStyles: (...args: any
     slot?: string,
   ) => {
     const Comp = (props: P) => {
-      const [styleProps, rest] = splitProps(props, ['class'])
+      const localProps = mergeProps(props)
+      // TODO calling this function will break
+      // const styles = createStyles(mergeProps(props))
 
       return (
-        <StyleContext.Provider value={createStyles(styleProps)}>
-          <Dynamic component={Component} {...rest} />
+        <StyleContext.Provider value={null}>
+          <Dynamic component={Component} {...localProps} />
         </StyleContext.Provider>
       )
     }

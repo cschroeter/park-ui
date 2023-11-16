@@ -2,6 +2,8 @@ import { ark } from '@ark-ui/solid'
 import { createStyleContext } from '~/lib/create-style-context'
 import { tableStyles } from './recipe'
 
+tableStyles({})
+
 const { withProvider, withContext } = createStyleContext(tableStyles)
 
 const TableRoot = withProvider(ark.table, 'root')
