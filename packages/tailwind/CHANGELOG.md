@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- ported latest style updates from park-ui panda
+
 ## [0.13.0] - 2023-11-06
 
 - Added Header, Footer and Body to Drawer
