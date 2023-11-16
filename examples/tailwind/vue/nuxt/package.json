@@ -16,7 +16,7 @@
     "vue": "3.3.6"
   },
   "devDependencies": {
-    "@park-ui/tailwind-plugin": "0.12.2",
+    "@park-ui/tailwind-plugin": "0.14.0",
     "@nuxt/devtools": "1.0.0",
     "@types/node": "18.17.1",
     "@types/vue": "2.0.0",
