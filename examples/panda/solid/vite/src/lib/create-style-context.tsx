@@ -8,29 +8,33 @@ import {
 } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
-type AnyProps = Record<string, unknown>
-type AnyRecipe = {
-  (props?: AnyProps): Record<string, string>
-  splitVariantProps: (props: any) => any
+type GenericProps = Record<string, unknown>
+type StyleRecipe = {
+  (props?: GenericProps): Record<string, string>
+  splitVariantProps: (props?: GenericProps) => any
 }
 
-export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
+export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null)
 
   const withProvider = <T extends ValidComponent, P = ComponentProps<T>>(
     Component: T,
     slot?: string,
   ) => {
-    const Comp = (props: P & Parameters<R>[0]) => {
+    const StyledComponent = (props: P & Parameters<R>[0]) => {
       const [variantProps, componentProps] = recipe.splitVariantProps(props)
-      const styles = recipe(variantProps)
+      const styleProperties = recipe(variantProps)
       return (
-        <StyleContext.Provider value={styles}>
-          <Dynamic component={Component} class={styles?.[slot ?? '']} {...componentProps} />
+        <StyleContext.Provider value={styleProperties}>
+          <Dynamic
+            component={Component}
+            class={styleProperties?.[slot ?? '']}
+            {...componentProps}
+          />
         </StyleContext.Provider>
       )
     }
-    return Comp
+    return StyledComponent
   }
 
   const withContext = <T extends ValidComponent, P = ComponentProps<T>>(
@@ -38,14 +42,14 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
     slot?: string,
   ): T => {
     if (!slot) return Component
-    const Comp = (props: P) => {
-      const styles = useContext(StyleContext)
+    const StyledComponent = (props: P) => {
+      const styleProperties = useContext(StyleContext)
       return createComponent(
         Dynamic,
-        mergeProps(props, { component: Component, class: styles?.[slot ?? ''] }),
+        mergeProps(props, { component: Component, class: styleProperties?.[slot ?? ''] }),
       )
     }
-    return Comp as T
+    return StyledComponent as T
   }
 
   return {

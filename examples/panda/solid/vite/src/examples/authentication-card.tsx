@@ -1,4 +1,4 @@
-import { HStack, Stack, styled } from 'styled-system/jsx'
+import { Divider, HStack, Stack, styled } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
@@ -24,11 +24,11 @@ export const AuthenticationCard = () => {
             </Button>
           </Stack>
           <HStack gap="2">
-            <hr style={{ width: '100%' }} />
+            <Divider />
             <styled.p color="fg.subtle" textStyle="sm" whiteSpace="nowrap">
               or sign up with
             </styled.p>
-            <hr style={{ width: '100%' }} />
+            <Divider />
           </HStack>
           <Stack gap="1.5">
             <Label for="name">E-Mail</Label>
