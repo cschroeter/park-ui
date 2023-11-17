@@ -45,6 +45,7 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
   }
 
   const withContext = <T extends ElementType>(Component: T, slot?: Slot<R>) => {
+    if (!slot) return Component
     const Comp = forwardRef((props: ComponentProps<T>, ref) => {
       const recipe = useContext(SlotRecipeContext)
       return createElement(Component, {

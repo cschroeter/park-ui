@@ -1,47 +1,72 @@
-import type { Component as ComponentType } from 'solid-js'
-import { createContext, useContext } from 'solid-js'
-import { tv } from 'tailwind-variants'
+import {
+  createComponent,
+  createContext,
+  mergeProps,
+  splitProps,
+  useContext,
+  type ComponentProps,
+  type ValidComponent,
+} from 'solid-js'
+import { Dynamic, DynamicProps } from 'solid-js/web'
 
-type Recipe = ReturnType<typeof tv>
+type Recipe = {
+  (props: Record<string, unknown>): Record<string, CallableFunction>
+  variantKeys: string[]
+}
+
+type Slot<R extends Recipe> = keyof ReturnType<R>
+type SlotRecipe<R extends Recipe> = Record<Slot<R>, CallableFunction>
+type VariantProps<R extends Recipe> = Parameters<R>[0]
 
 const cx = (...args: (string | undefined)[]) => args.filter(Boolean).join(' ')
 
-export const createStyleContext = <ComponentStyles extends Recipe>(
-  createStyles: (...args: any) => any,
-) => {
-  const StyleContext = createContext<ReturnType<typeof createStyles> | null>(null)
+export const createStyleContext = <R extends Recipe>(recipe: R) => {
+  const StyleContext = createContext<SlotRecipe<R> | null>(null)
 
-  const withProvider = <T extends object>(Component: ComponentType<T>, part?: string) => {
-    console.log('with provider', part)
-    const Comp = (props: T & Parameters<ComponentStyles>[0]) => {
-      const styles = createStyles(props)
-      console.log('styles', styles)
-      const localProps = props
+  const withProvider = <T extends ValidComponent, P = ComponentProps<T>>(
+    Component: T,
+    slot?: Slot<R>,
+  ) => {
+    const Comp = (props: Partial<DynamicProps<T, P>> & VariantProps<R>) => {
+      const [variantProps, dynamicProps] = splitProps(props, [
+        'class',
+        'className',
+        ...recipe.variantKeys,
+      ])
+      const styles = recipe(variantProps) as SlotRecipe<R>
 
-      const variantClassNames = styles[part ?? '']?.()
       return (
         <StyleContext.Provider value={styles}>
-          <Component class={cx(variantClassNames, localProps.className)} {...localProps} />
+          {createComponent(
+            Dynamic,
+            mergeProps(dynamicProps, {
+              component: Component,
+              class: styles?.[slot ?? '']?.(),
+            }),
+          )}
         </StyleContext.Provider>
       )
     }
     return Comp
   }
 
-  const withContext = <T extends object>(Component: ComponentType<T>, part?: string) => {
-    console.log('with context', part)
-    if (!part) return Component
-    type PropsWithClass<T> = T & { class?: string }
+  const withContext = <T extends ValidComponent, P = ComponentProps<T>>(
+    Component: T,
+    slot?: Slot<R>,
+  ): T => {
+    if (!slot) return Component
+    const Comp = (props: Partial<DynamicProps<T, P>> & { class?: string }) => {
+      const styles = useContext(StyleContext)
 
-    const Comp = (props: PropsWithClass<T>) => {
-      const slotRecipe = useContext(StyleContext)
-      const variantClassNames = slotRecipe?.[part ?? '']?.()
-
-      console.log(slotRecipe)
-
-      return <Component class={cx(variantClassNames, props.class)} {...props} />
+      return createComponent(
+        Dynamic,
+        mergeProps(props, {
+          component: Component,
+          class: cx(styles?.[slot]?.(), props.class),
+        }),
+      )
     }
-    return Comp
+    return Comp as T
   }
 
   return {
