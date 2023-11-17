@@ -1,4 +1,0 @@
-{
-  // .babelrc file: Disabling unsupported SWC build on StackBlitz.
-  "presets": ["next/babel"]
-}
