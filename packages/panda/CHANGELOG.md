@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.23.0] - 2023-11-17
+
 ### Added
 
 - Added `focusVisible` styles to the `Checkbox` component.
