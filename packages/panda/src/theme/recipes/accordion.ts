@@ -22,6 +22,10 @@ export const accordion = defineSlotRecipe({
       textStyle: 'lg',
       textAlign: 'left',
       width: 'full',
+      _disabled: {
+        color: 'fg.disabled',
+        cursor: 'not-allowed',
+      },
     },
     itemIndicator: {
       color: 'fg.muted',

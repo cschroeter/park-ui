@@ -3,6 +3,7 @@
 ### Added
 
 - Added `focusVisible` styles to the `Checkbox` component.
+- Added `disabled` styles to the `Accordion` component.
 
 ## [0.22.0] - 2023-11-09
 

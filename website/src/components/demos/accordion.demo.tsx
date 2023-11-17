@@ -2,11 +2,11 @@ import { ChevronDownIcon } from 'lucide-react'
 import { Accordion, type AccordionProps } from '~/components/ui'
 
 export const Demo = (props: AccordionProps) => {
-  const items = ['React', 'Solid', 'Vue']
+  const items = ['React', 'Solid', 'Svelte', 'Vue']
   return (
     <Accordion defaultValue={['React']} multiple {...props}>
       {items.map((item, id) => (
-        <Accordion.Item key={id} value={item}>
+        <Accordion.Item key={id} value={item} disabled={item === 'Svelte'}>
           <Accordion.ItemTrigger>
             {item}
             <Accordion.ItemIndicator>
