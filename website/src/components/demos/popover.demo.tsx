@@ -6,7 +6,7 @@ import { Button, IconButton, Popover, type PopoverProps } from '~/components/ui'
 export const Demo = (props: PopoverProps) => (
   <Popover.Root portalled {...props}>
     <Popover.Trigger asChild>
-      <Button variant="outline">Open Popover</Button>
+      <Button>Open Popover</Button>
     </Popover.Trigger>
     <Portal>
       <Popover.Positioner>

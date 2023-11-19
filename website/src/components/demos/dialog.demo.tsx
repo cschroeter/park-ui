@@ -7,7 +7,7 @@ export const Demo = (props: DialogProps) => {
   return (
     <Dialog.Root {...props}>
       <Dialog.Trigger asChild>
-        <Button variant="outline">Open dialog</Button>
+        <Button>Open Dialog</Button>
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />

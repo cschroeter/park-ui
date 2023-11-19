@@ -30,7 +30,7 @@ export const drawer = defineSlotRecipe({
       bottom: 0,
       justifyContent: 'center',
       position: 'fixed',
-      width: { base: 'full', sm: 'sm' },
+      width: { base: '100vw', sm: 'sm' },
       zIndex: 'modal',
     },
     content: {

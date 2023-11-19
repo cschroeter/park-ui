@@ -24,7 +24,8 @@ export const dialog = defineSlotRecipe({
     positioner: {
       alignItems: 'center',
       display: 'flex',
-      inset: '0',
+      width: '100vw',
+      height: '100vh',
       justifyContent: 'center',
       position: 'fixed',
       zIndex: 'modal',

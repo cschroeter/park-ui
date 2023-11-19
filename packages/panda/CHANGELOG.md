@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Resolved an issue with the `Dialog` component where the scrollbar would cause a layout shift.
+
 ## [0.23.0] - 2023-11-17
 
 ### Added

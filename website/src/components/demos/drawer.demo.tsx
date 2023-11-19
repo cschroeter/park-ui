@@ -6,7 +6,7 @@ export const Demo = (props: DrawerProps) => {
   return (
     <Drawer.Root {...props}>
       <Drawer.Trigger asChild>
-        <Button variant="outline">Open Drawer</Button>
+        <Button>Open Drawer</Button>
       </Drawer.Trigger>
       <Portal>
         <Drawer.Backdrop />

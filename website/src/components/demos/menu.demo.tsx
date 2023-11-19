@@ -17,7 +17,7 @@ export const Demo = (props: MenuProps) => {
     <Menu.Root {...props}>
       <Menu.Trigger asChild>
         <Button variant="outline" size={props.size}>
-          Open menu
+          Open Menu
         </Button>
       </Menu.Trigger>
       <Menu.Positioner>
