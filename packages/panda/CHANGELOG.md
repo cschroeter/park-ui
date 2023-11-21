@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added `FileUpload` component.
+
 ### Fixed
 
 - Resolved an issue with the `Dialog` component where the scrollbar would cause a layout shift.

@@ -6,12 +6,10 @@ export const fileUpload = defineSlotRecipe({
   slots: fileUploadAnatomy.keys(),
   base: {
     root: {
-      background: 'bg.default',
       display: 'flex',
       flexDirection: 'column',
       gap: '4',
       width: '100%',
-      maxW: 'lg',
     },
     label: {
       fontWeight: 'medium',
@@ -19,13 +17,14 @@ export const fileUpload = defineSlotRecipe({
     },
     dropzone: {
       alignItems: 'center',
+      background: 'bg.default',
       borderRadius: 'l3',
       borderWidth: '1px',
       display: 'flex',
       flexDirection: 'column',
-      gap: '2',
+      gap: '3',
       justifyContent: 'center',
-      minH: '40',
+      minHeight: 'xs',
       px: '6',
       py: '4',
     },
