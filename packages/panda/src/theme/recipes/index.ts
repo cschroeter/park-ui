@@ -13,6 +13,7 @@ import { datePicker } from './date-picker'
 import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
+import { fileUpload } from './file-upload'
 import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
@@ -67,6 +68,7 @@ export const slotRecipes = {
   dialog,
   drawer,
   editable,
+  fileUpload,
   hoverCard,
   menu,
   numberInput,
