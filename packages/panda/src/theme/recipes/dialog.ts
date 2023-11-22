@@ -11,8 +11,11 @@ export const dialog = defineSlotRecipe({
         base: 'white.a10',
         _dark: 'black.a10',
       },
-      inset: '0',
+      height: '100vh',
+      left: '0',
       position: 'fixed',
+      top: '0',
+      width: '100vw',
       zIndex: 'overlay',
       _open: {
         animation: 'backdrop-in',
@@ -24,10 +27,13 @@ export const dialog = defineSlotRecipe({
     positioner: {
       alignItems: 'center',
       display: 'flex',
-      width: '100vw',
-      height: '100vh',
       justifyContent: 'center',
+      left: '0',
+      overflow: 'auto',
       position: 'fixed',
+      top: '0',
+      width: '100vw',
+      height: '100dvh',
       zIndex: 'modal',
     },
     content: {
