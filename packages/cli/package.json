@@ -9,6 +9,9 @@
   "bin": {
     "park-ui": "dist/index.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "tsx src/index.ts",
     "release-it": "release-it",
