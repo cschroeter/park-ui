@@ -6,24 +6,25 @@
   "private": true,
   "scripts": {
     "dev": "tsx src/index.ts",
+    "colors": "tsx src/color-script.ts",
     "bootstrap": "tsx src/bootstrap.ts"
   },
   "license": "MIT",
   "dependencies": {
+    "@ark-ui/react": "1.1.0",
     "@clack/core": "0.3.3",
     "@clack/prompts": "0.7.0",
-    "fs-extra": "11.1.1",
-    "handlebars": "4.7.8",
-    "prettier": "3.0.01",
-    "prettier-plugin-organize-imports": "3.2.4",
-    "ts-pattern": "5.0.5",
-    "voca": "1.4.1"
-  },
-  "devDependencies": {
-    "@ark-ui/react": "1.1.0",
+    "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/handlebars": "4.1.0",
     "@types/voca": "1.4.5",
-    "typescript": "5.3.2"
+    "fs-extra": "11.1.1",
+    "handlebars": "4.7.8",
+    "prettier-plugin-organize-imports": "3.2.4",
+    "prettier": "3.0.01",
+    "ts-pattern": "5.0.5",
+    "tsx": "4.2.0",
+    "typescript": "5.3.2",
+    "voca": "1.4.1"
   }
 }
