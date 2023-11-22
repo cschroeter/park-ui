@@ -1,32 +1,40 @@
-// add componet command
 import * as p from '@clack/prompts'
 
 import { mkdirSync, writeFileSync } from 'fs'
 import { match } from 'ts-pattern'
 import { Config, getCssFramework, getImportAliases } from '../config/config'
 
-const getComponentDownloadPath = (componentName: string, cssFramework: Config['cssFramework']) => {
+const getComponentDownloadPaths = (
+  componentName: string,
+  cssFramework: Config['cssFramework'],
+): { fileName: string; url: string }[] => {
   return match(cssFramework)
-    .with(
-      'panda',
-      () =>
-        `https://raw.githubusercontent.com/cschroeter/park-ui/main/website/src/components/ui/${componentName}.tsx`,
-    )
-    .with(
-      'tailwind',
-      () =>
-        `https://raw.githubusercontent.com/cschroeter/park-ui/main/packages/tailwind/src/components/${componentName}/snippet.ts`,
-    )
+    .with('panda', () => [
+      {
+        fileName: `${componentName}.tsx`,
+        url: `https://raw.githubusercontent.com/cschroeter/park-ui/main/website/src/components/ui/${componentName}.tsx`,
+      },
+    ])
+    .with('tailwind', () => [
+      {
+        fileName: `${componentName}/snippet.ts`,
+        url: `https://raw.githubusercontent.com/cschroeter/park-ui/main/packages/tailwind/src/components/${componentName}/snippet.ts`,
+      },
+      {
+        fileName: `${componentName}/recipe.ts`,
+        url: `https://raw.githubusercontent.com/cschroeter/park-ui/main/packages/tailwind/src/components/${componentName}/recipe.ts`,
+      },
+    ])
     .exhaustive()
 }
 
-const downloadComponent = async (componentName: string, cssFramework: Config['cssFramework']) => {
-  const componentResult = await fetch(getComponentDownloadPath(componentName, cssFramework))
+const downloadComponent = async (url: string) => {
+  const componentResult = await fetch(url)
   if (componentResult.status === 200) {
     const component = await componentResult.text()
     return component
   }
-  throw new Error(`Component ${componentName} not found`)
+  throw new Error(`Component at ${url} not found`)
 }
 
 const saveComponentToFile = (
@@ -35,7 +43,7 @@ const saveComponentToFile = (
   component: string,
 ) => {
   // TODO resolve imports like ~ with tsconfig, but for now just make sure to not end up in the home dir
-  const componentPath = `${componentsImportAlias?.replace('~/', './')}/${componentName}.tsx`
+  const componentPath = `${componentsImportAlias?.replace('~/', './')}/${componentName}`
   const folder = componentPath.split('/').slice(0, -1).join('/')
   mkdirSync(folder, { recursive: true })
   writeFileSync(componentPath, component)
@@ -45,11 +53,14 @@ export const addComponent = async (componentName: string) => {
   const cssFramework = await getCssFramework()
   const { componentsImportAlias } = await getImportAliases()
 
-  const component = await downloadComponent(componentName, cssFramework)
-  if (!component) {
-    throw new Error(`Component ${componentName} not found`)
+  const componentDownloadPaths = getComponentDownloadPaths(componentName, cssFramework)
+  for (const { fileName, url } of componentDownloadPaths) {
+    const component = await downloadComponent(url)
+    if (!component) {
+      throw new Error(`Component ${componentName} not found`)
+    }
+    saveComponentToFile(componentsImportAlias, fileName, component)
   }
-  saveComponentToFile(componentsImportAlias, componentName, component)
 }
 
 export const addComponentsCommand = async () => {
