@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- added hashbang to use node to run the cli
+
 ## [0.1.0] - 2023-11-22
 
 - added support to initialize a new project
