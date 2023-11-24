@@ -15,27 +15,28 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "release-it": "release-it",
-    "build": "tsup"
+    "build": "tsup",
+    "schema": "json2ts ../../website/public/schema.json > schema.d.ts"
   },
   "license": "MIT",
   "dependencies": {
     "@clack/core": "0.3.3",
     "@clack/prompts": "0.7.0",
+    "pkg-dir": "8.0.0",
     "ts-pattern": "5.0.5",
     "voca": "1.4.1",
     "yargs": "17.7.2"
   },
   "devDependencies": {
     "@release-it/keep-a-changelog": "5.0.0",
-    "json-schema-to-ts": "2.9.2",
     "@types/node": "20.9.0",
-    "pkg-dir": "8.0.0",
-    "release-it": "17.0.0",
+    "@types/yargs": "17.0.32",
+    "json-schema-to-typescript": "13.1.1",
     "read-package-up": "11.0.0",
+    "release-it": "17.0.0",
     "tsup": "8.0.1",
     "tsx": "4.2.0",
-    "typescript": "5.3.2",
-    "@types/yargs": "17.0.32"
+    "typescript": "5.3.2"
   },
   "tsup": {
     "entry": [
