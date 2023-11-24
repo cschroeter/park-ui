@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "button.ts",
+      "content": "export const Button = () => <button>Button</button>"
+    }
+  ]
+}
