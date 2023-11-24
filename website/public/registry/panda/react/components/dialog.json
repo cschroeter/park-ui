@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "dialog.tsx",
+      "content": "import * as Ark from '@ark-ui/react/dialog'\nimport { styled } from 'styled-system/jsx'\nimport { dialog, type DialogVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(dialog)\n\nexport * from '@ark-ui/react/dialog'\nexport type DialogProps = Ark.DialogProps & DialogVariantProps\n\nconst DialogRoot = withProvider(styled(Ark.Dialog.Root), 'root')\nexport const DialogBackdrop = withContext(styled(Ark.Dialog.Backdrop), 'backdrop')\nexport const DialogCloseTrigger = withContext(styled(Ark.Dialog.CloseTrigger), 'closeTrigger')\nexport const DialogContent = withContext(styled(Ark.Dialog.Content), 'content')\nexport const DialogDescription = withContext(styled(Ark.Dialog.Description), 'description')\nexport const DialogPositioner = withContext(styled(Ark.Dialog.Positioner), 'positioner')\nexport const DialogTitle = withContext(styled(Ark.Dialog.Title), 'title')\nexport const DialogTrigger = withContext(styled(Ark.Dialog.Trigger), 'trigger')\n\nexport const Dialog = Object.assign(DialogRoot, {\n  Root: DialogRoot,\n  Backdrop: DialogBackdrop,\n  CloseTrigger: DialogCloseTrigger,\n  Content: DialogContent,\n  Description: DialogDescription,\n  Positioner: DialogPositioner,\n  Title: DialogTitle,\n  Trigger: DialogTrigger,\n})\n"
+    }
+  ]
+}

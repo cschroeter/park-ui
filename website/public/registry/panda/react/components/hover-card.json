@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "hover-card.tsx",
+      "content": "import * as Ark from '@ark-ui/react/hover-card'\nimport { styled } from 'styled-system/jsx'\nimport { hoverCard, type HoverCardVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(hoverCard)\n\nexport * from '@ark-ui/react/hover-card'\nexport type HoverCardProps = Ark.HoverCardProps & HoverCardVariantProps\n\nconst HoverCardRoot = withProvider(styled(Ark.HoverCard.Root), 'root')\nexport const HoverCardArrow = withContext(styled(Ark.HoverCard.Arrow), 'arrow')\nexport const HoverCardArrowTip = withContext(styled(Ark.HoverCard.ArrowTip), 'arrowTip')\nexport const HoverCardContent = withContext(styled(Ark.HoverCard.Content), 'content')\nexport const HoverCardPositioner = withContext(styled(Ark.HoverCard.Positioner), 'positioner')\nexport const HoverCardTrigger = withContext(styled(Ark.HoverCard.Trigger), 'trigger')\n\nexport const HoverCard = Object.assign(HoverCardRoot, {\n  Root: HoverCardRoot,\n  Arrow: HoverCardArrow,\n  ArrowTip: HoverCardArrowTip,\n  Content: HoverCardContent,\n  Positioner: HoverCardPositioner,\n  Trigger: HoverCardTrigger,\n})\n"
+    }
+  ]
+}
