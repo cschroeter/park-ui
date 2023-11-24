@@ -3,8 +3,8 @@ import { defineRecipe } from '@pandacss/dev'
 export const textarea = defineRecipe({
   className: 'textarea',
   base: {
-    backgroundColor: 'bg.default',
     appearance: 'none',
+    background: 'none',
     borderColor: 'border.default',
     borderRadius: 'l2',
     borderWidth: '1px',

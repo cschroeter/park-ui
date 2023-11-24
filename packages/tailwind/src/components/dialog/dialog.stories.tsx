@@ -2,50 +2,40 @@ import { Portal } from '@ark-ui/react'
 import { XIcon } from 'lucide-react'
 import { Button } from '../button/snippet'
 import { IconButton } from '../icon-button/snippet'
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContainer,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-  type DialogProps,
-} from './snippet'
+import { Dialog } from './snippet'
 
-export const Demo = (props: DialogProps) => {
+export const Demo = () => {
   return (
-    <Dialog {...props}>
-      <DialogTrigger asChild>
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
         <Button variant="outline">Open dialog</Button>
-      </DialogTrigger>
+      </Dialog.Trigger>
       <Portal>
-        <DialogBackdrop />
-        <DialogContainer>
-          <DialogContent>
-            <div className="flex flex-col gap-8 p-6">
-              <div className="flex flex-col gap-1">
-                <DialogTitle>Dialog Title</DialogTitle>
-                <DialogDescription>Dialog Description</DialogDescription>
+        <Dialog.Backdrop />
+        <Dialog.Positioner>
+          <Dialog.Content>
+            <div className="flex flex-col p-6 gap-8">
+              <div className="gap-1">
+                <Dialog.Title>Dialog Title</Dialog.Title>
+                <Dialog.Description>Dialog Description</Dialog.Description>
               </div>
-              <div className="flex flex-row gap-3 w-full">
-                <DialogCloseTrigger asChild>
+              <div className="flex gap-3 flex-row w-full">
+                <Dialog.CloseTrigger asChild>
                   <Button variant="outline" className="w-full">
                     Cancel
                   </Button>
-                </DialogCloseTrigger>
+                </Dialog.CloseTrigger>
                 <Button className="w-full">Confirm</Button>
               </div>
             </div>
-            <DialogCloseTrigger asChild className="absolute top-2 right-2">
+            <Dialog.CloseTrigger asChild className="absolute top-2 right-2">
               <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
                 <XIcon />
               </IconButton>
-            </DialogCloseTrigger>
-          </DialogContent>
-        </DialogContainer>
+            </Dialog.CloseTrigger>
+          </Dialog.Content>
+        </Dialog.Positioner>
       </Portal>
-    </Dialog>
+    </Dialog.Root>
   )
 }

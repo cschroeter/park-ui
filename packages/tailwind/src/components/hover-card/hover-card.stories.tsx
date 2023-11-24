@@ -16,7 +16,7 @@ import {
 export const Demo = (props: HoverCardProps) => (
   <HoverCard {...props}>
     <HoverCardTrigger asChild>
-      <a href="https://twitter.com/grizzly_codes/" target="_blank" className="font-medium text-sm">
+      <a href="https://twitter.com/simon_h7r" target="_blank" className="font-medium text-sm">
         @smn_h7r
       </a>
     </HoverCardTrigger>
@@ -34,7 +34,7 @@ export const Demo = (props: HoverCardProps) => (
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-1">
                 <Text textStyle="sm" fontWeight="semibold">
-                  @smn_h7r
+                  @simon_h7r
                 </Text>
                 <Text textStyle="sm" color="fg.muted">
                   Frontend Engineer

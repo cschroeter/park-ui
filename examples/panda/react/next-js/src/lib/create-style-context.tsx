@@ -1,38 +1,63 @@
-'use client'
-import { createContext, forwardRef, useContext, type ComponentType } from 'react'
+import {
+  createContext,
+  createElement,
+  forwardRef,
+  useContext,
+  type ComponentProps,
+  type ElementType,
+  type JSX,
+} from 'react'
 
-type AnyProps = Record<string, unknown>
-type AnyRecipe = {
-  (props?: AnyProps): Record<string, string>
-  splitVariantProps: (props: AnyProps) => any
+type GenericProps = Record<string, unknown>
+type StyleRecipe = {
+  (props?: GenericProps): Record<string, string>
+  splitVariantProps: (props: GenericProps) => any
+}
+type StyleSlot<R extends StyleRecipe> = keyof ReturnType<R>
+type StyleSlotRecipe<R extends StyleRecipe> = Record<StyleSlot<R>, string>
+type StyleVariantProps<R extends StyleRecipe> = Parameters<R>[0]
+type CombineProps<T, U> = Omit<T, keyof U> & U
+
+const cx = (...args: (string | undefined)[]) => args.filter(Boolean).join(' ')
+
+export interface ComponentVariants<T extends ElementType, R extends StyleRecipe> {
+  (props: CombineProps<ComponentProps<T>, StyleVariantProps<R>>): JSX.Element
 }
 
-export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
-  const StyleContext = createContext<Record<string, string> | null>(null)
+export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
+  const StyleContext = createContext<StyleSlotRecipe<R> | null>(null)
 
-  const withProvider = <T extends {}>(Component: ComponentType<T>, part?: string) => {
-    const Comp = forwardRef((props: T & Parameters<R>[0], ref) => {
-      const [variantProps, rest] = recipe.splitVariantProps(props)
-      const styles = recipe(variantProps)
+  const withProvider = <T extends ElementType>(
+    Component: T,
+    slot?: StyleSlot<R>,
+  ): ComponentVariants<T, R> => {
+    const StyledComponent = forwardRef((props: ComponentProps<T>, ref) => {
+      const [variantProps, otherProps] = recipe.splitVariantProps(props)
+      const slotStyles = recipe(variantProps) as StyleSlotRecipe<R>
       return (
-        <StyleContext.Provider value={styles}>
-          <Component ref={ref} className={styles?.[part ?? '']} {...rest} />
+        <StyleContext.Provider value={slotStyles}>
+          <Component
+            ref={ref}
+            {...otherProps}
+            className={cx(slotStyles[slot ?? ''], otherProps.className)}
+          />
         </StyleContext.Provider>
       )
     })
-    Comp.displayName = Component.displayName || Component.name
-    return Comp
+    return StyledComponent as unknown as ComponentVariants<T, R>
   }
 
-  const withContext = <T extends {}>(Component: ComponentType<T>, part?: string) => {
-    if (!part) return Component
-
-    const Comp = forwardRef((props: T, ref) => {
-      const styles = useContext(StyleContext)
-      return <Component ref={ref} className={styles?.[part ?? '']} {...props} />
+  const withContext = <T extends ElementType>(Component: T, slot?: StyleSlot<R>): T => {
+    if (!slot) return Component
+    const StyledComponent = forwardRef((props: ComponentProps<T>, ref) => {
+      const slotStyles = useContext(StyleContext)
+      return createElement(Component, {
+        ...props,
+        className: cx(slotStyles?.[slot ?? ''], props.className),
+        ref,
+      })
     })
-    Comp.displayName = Component.displayName || Component.name
-    return Comp
+    return StyledComponent as unknown as T
   }
 
   return {

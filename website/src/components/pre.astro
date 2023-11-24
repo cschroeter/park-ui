@@ -15,14 +15,37 @@ const code = cheerio.load(html).root().text().trim()
 
 <Box borderRadius="l3" overflow="hidden" borderWidth="1px" className="not-prose">
   {
-    html.includes('metastring="live"') && (
-      <Box p="4" borderBottomWidth="1px">
-        <LivePreview code={code} client:load />
-      </Box>
-    )
-  }
-  {
     match(html)
+      .with(P.string.includes('metastring="live multi"'), () => (
+        <>
+          <Box p={{ base: '4', md: '6' }} borderBottomWidth="1px">
+            <LivePreview code={code} client:load />
+          </Box>
+          <CodePreviewTabs
+            tabs={{
+              react: { label: 'React', code: code },
+              solid: { label: 'Solid', code: reactToSolid(code) },
+              vue: { label: 'Vue', code: reactToVue(code) },
+            }}
+            expandable
+            client:load
+          >
+            <Code code={code} lang="tsx" theme="css-variables" slot="react" />
+            <Code code={reactToSolid(code)} lang="tsx" theme="css-variables" slot="solid" />
+            <Code code={reactToVue(code)} lang="tsx" theme="css-variables" slot="vue" />
+          </CodePreviewTabs>
+        </>
+      ))
+      .with(P.string.includes('metastring="live"'), () => (
+        <>
+          <Box p={{ base: '4', md: '6' }} borderBottomWidth="1px">
+            <LivePreview code={code} client:load />
+          </Box>
+          <CodePreview code={code} client:load>
+            <Code code={code} lang="tsx" theme="css-variables" />
+          </CodePreview>
+        </>
+      ))
       .with(P.string.includes('metastring="multi"'), () => (
         <CodePreviewTabs
           tabs={{
@@ -38,7 +61,7 @@ const code = cheerio.load(html).root().text().trim()
         </CodePreviewTabs>
       ))
       .otherwise(() => (
-        <CodePreview code={code} standalone client:load>
+        <CodePreview code={code} client:load>
           <Code code={code} lang="tsx" theme="css-variables" />
         </CodePreview>
       ))

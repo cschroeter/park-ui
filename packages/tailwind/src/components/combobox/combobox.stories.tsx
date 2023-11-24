@@ -1,23 +1,9 @@
-import { Portal, type CollectionItem } from '@ark-ui/react'
+import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
 import { IconButton } from '../icon-button/snippet'
 import { Input } from '../input/snippet'
-import {
-  Combobox,
-  ComboboxContent,
-  ComboboxControl,
-  ComboboxInput,
-  ComboboxItem,
-  ComboboxItemGroup,
-  ComboboxItemGroupLabel,
-  ComboboxItemIndicator,
-  ComboboxItemText,
-  ComboboxLabel,
-  ComboboxPositioner,
-  ComboboxTrigger,
-  type ComboboxProps,
-} from './snippet'
+import { Combobox } from './snippet'
 
 const data = [
   { label: 'React', value: 'react' },
@@ -26,7 +12,7 @@ const data = [
   { label: 'Vue', value: 'vue' },
 ]
 
-export const Demo = (props: ComboboxProps<CollectionItem>) => {
+export const Demo = () => {
   const [items, setItems] = useState(data)
 
   const handleChange = (e: any) => {
@@ -35,35 +21,35 @@ export const Demo = (props: ComboboxProps<CollectionItem>) => {
   }
 
   return (
-    <Combobox width="2xs" onInputChange={handleChange} {...props} items={items}>
-      <ComboboxLabel>Framework</ComboboxLabel>
-      <ComboboxControl>
-        <ComboboxInput placeholder="Select a Framework" asChild>
+    <Combobox.Root width="2xs" onInputValueChange={handleChange} items={items}>
+      <Combobox.Label>Framework</Combobox.Label>
+      <Combobox.Control>
+        <Combobox.Input placeholder="Select a Framework" asChild>
           <Input />
-        </ComboboxInput>
-        <ComboboxTrigger asChild>
+        </Combobox.Input>
+        <Combobox.Trigger asChild>
           <IconButton variant="link" aria-label="open" size="xs">
             <ChevronsUpDownIcon />
           </IconButton>
-        </ComboboxTrigger>
-      </ComboboxControl>
+        </Combobox.Trigger>
+      </Combobox.Control>
       <Portal>
-        <ComboboxPositioner>
-          <ComboboxContent>
-            <ComboboxItemGroup id="framework">
-              <ComboboxItemGroupLabel htmlFor="framework">Frameworks</ComboboxItemGroupLabel>
+        <Combobox.Positioner>
+          <Combobox.Content>
+            <Combobox.ItemGroup id="framework">
+              <Combobox.ItemGroupLabel htmlFor="framework">Frameworks</Combobox.ItemGroupLabel>
               {items.map((item) => (
-                <ComboboxItem key={item.value} item={item}>
-                  <ComboboxItemText>{item.label}</ComboboxItemText>
-                  <ComboboxItemIndicator>
+                <Combobox.Item key={item.value} item={item}>
+                  <Combobox.ItemText>{item.label}</Combobox.ItemText>
+                  <Combobox.ItemIndicator>
                     <CheckIcon />
-                  </ComboboxItemIndicator>
-                </ComboboxItem>
+                  </Combobox.ItemIndicator>
+                </Combobox.Item>
               ))}
-            </ComboboxItemGroup>
-          </ComboboxContent>
-        </ComboboxPositioner>
+            </Combobox.ItemGroup>
+          </Combobox.Content>
+        </Combobox.Positioner>
       </Portal>
-    </Combobox>
+    </Combobox.Root>
   )
 }

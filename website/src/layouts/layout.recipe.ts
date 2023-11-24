@@ -7,9 +7,8 @@ export const layout = sva({
       background: 'bg.surface',
       display: 'flex',
       flexDirection: 'column',
-      left: '0',
       position: 'fixed',
-      right: '0',
+      width: '100vw',
       top: '0',
       zIndex: 'sticky',
     },
@@ -26,7 +25,6 @@ export const layout = sva({
       py: '8',
       top: '16',
       width: '64',
-      zIndex: '1',
     },
     main: {
       background: 'bg.surface',

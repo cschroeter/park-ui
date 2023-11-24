@@ -1,21 +1,21 @@
 import { HStack } from 'styled-system/jsx'
-import { Rating, RatingGroup, RatingGroupControl } from '~/components/ui/rating-group'
+import { RatingGroup } from '~/components/ui/rating-group'
 import { Text } from '~/components/ui/text'
 
 export const RatingInfo = () => {
   return (
     <HStack gap="1.5">
-      <RatingGroup max={5} defaultValue={4} readOnly size="sm">
-        <RatingGroupControl>
-          {({ sizeArray }) =>
-            sizeArray.map((index) => (
-              <Rating key={index} index={index}>
+      <RatingGroup.Root max={5} defaultValue={4} readOnly size="sm">
+        <RatingGroup.Control>
+          {({ items }) =>
+            items.map((index) => (
+              <RatingGroup.Item key={index} index={index}>
                 {({ isHalf }) => <Icon isHalf={isHalf} />}
-              </Rating>
+              </RatingGroup.Item>
             ))
           }
-        </RatingGroupControl>
-      </RatingGroup>
+        </RatingGroup.Control>
+      </RatingGroup.Root>
       <Text textStyle="xs" textDecoration="underline">
         12 Reviews
       </Text>

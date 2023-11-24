@@ -7,15 +7,15 @@ export const popover = defineSlotRecipe({
   base: {
     positioner: {
       position: 'relative',
-      zIndex: 'popover',
     },
     content: {
       background: 'bg.default',
       borderRadius: 'l3',
-      boxShadow: 'md',
+      boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
       maxWidth: 'sm',
+      zIndex: 'popover',
       p: '4',
       _open: {
         animation: 'fadeIn 0.25s ease-out',

@@ -25,7 +25,7 @@ const code = await match(cssFramework)
 ---
 
 <Box borderRadius="l3" overflow="hidden" divideY="1px" borderWidth="1px" className="not-prose">
-  <CodePreview code={code} client:load standalone>
+  <CodePreview code={code} client:load>
     <Code code={code} lang="tsx" theme="css-variables" />
   </CodePreview>
 </Box>

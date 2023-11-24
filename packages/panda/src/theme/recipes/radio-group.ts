@@ -12,7 +12,7 @@ export const radioGroup = defineSlotRecipe({
         _horizontal: 'row',
       },
     },
-    radioControl: {
+    itemControl: {
       background: 'transparent',
       borderColor: 'border.default',
       borderRadius: 'full',
@@ -41,7 +41,7 @@ export const radioGroup = defineSlotRecipe({
         },
       },
     },
-    radio: {
+    item: {
       alignItems: 'center',
       cursor: 'pointer',
       display: 'flex',
@@ -49,7 +49,7 @@ export const radioGroup = defineSlotRecipe({
         cursor: 'not-allowed',
       },
     },
-    radioLabel: {
+    itemText: {
       color: 'fg.default',
       fontWeight: 'medium',
       _disabled: {
@@ -69,10 +69,10 @@ export const radioGroup = defineSlotRecipe({
             _horizontal: '4',
           },
         },
-        radio: {
+        item: {
           gap: '2',
         },
-        radioControl: {
+        itemControl: {
           width: '4',
           height: '4',
           _checked: {
@@ -80,7 +80,7 @@ export const radioGroup = defineSlotRecipe({
             outlineOffset: '-4px',
           },
         },
-        radioLabel: {
+        itemText: {
           textStyle: 'sm',
         },
       },
@@ -91,10 +91,10 @@ export const radioGroup = defineSlotRecipe({
             _horizontal: '6',
           },
         },
-        radio: {
+        item: {
           gap: '3',
         },
-        radioControl: {
+        itemControl: {
           width: '5',
           height: '5',
           _checked: {
@@ -102,7 +102,7 @@ export const radioGroup = defineSlotRecipe({
             outlineOffset: '-5px',
           },
         },
-        radioLabel: {
+        itemText: {
           textStyle: 'md',
         },
       },
@@ -113,10 +113,10 @@ export const radioGroup = defineSlotRecipe({
             _horizontal: '8',
           },
         },
-        radio: {
+        item: {
           gap: '4',
         },
-        radioControl: {
+        itemControl: {
           width: '6',
           height: '6',
           _checked: {
@@ -124,7 +124,7 @@ export const radioGroup = defineSlotRecipe({
             outlineOffset: '-6px',
           },
         },
-        radioLabel: {
+        itemText: {
           textStyle: 'lg',
         },
       },

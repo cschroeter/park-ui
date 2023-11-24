@@ -8,9 +8,9 @@ export const supportedMultiPartComponents = [
   'card',
   'carousel',
   'checkbox',
-  // 'color-picker', // wait
+  'color-picker',
   'combobox',
-  // 'date-picker', // wait
+  'date-picker',
   'dialog',
   'drawer',
   'editable',
@@ -19,20 +19,21 @@ export const supportedMultiPartComponents = [
   'number-input',
   'pagination',
   'pin-input',
+  'icon-button',
   'popover',
   'radio-button-group',
   'radio-group',
-  // 'range-slider', // wait
+  'range-slider',
   'rating-group',
-  // 'segment-group', // TODO
+  'segment-group',
   'select',
   'slider',
-  // 'splitter', // TODO trigger missing
+  'splitter',
   'switch',
   'table',
   'tabs',
   'tags-input',
-  // 'toast', // wait
+  'toast',
   'toggle-group',
   'tooltip',
 ]

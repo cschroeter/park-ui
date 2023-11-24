@@ -4,12 +4,10 @@ export const paginationStyles = tv({
   base: 'pagination',
   slots: {
     root: 'pagination__root',
-    pageTrigger: 'pagination__pageTrigger',
+    item: 'pagination__item',
     ellipsis: 'pagination__ellipsis',
-    prevPageTrigger: 'pagination__prevPageTrigger',
-    nextPageTrigger: 'pagination__nextPageTrigger',
-    list: 'pagination__list',
-    listItem: 'pagination__listItem',
+    prevTrigger: 'pagination__prevTrigger',
+    nextTrigger: 'pagination__nextTrigger',
   },
   variants: {},
 })

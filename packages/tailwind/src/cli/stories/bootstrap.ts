@@ -18,7 +18,6 @@ function getDemoFilePaths() {
   const ignoredComponents = [
     'hover-card',
     'dialog', // uses style props on button and Trigger
-    'toggle-group', // uses style props on Stack
   ]
 
   const demoFiles = readdirSync(demoDir)
@@ -56,6 +55,7 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
       "import { IconButton } from '../icon-button/snippet'",
     )
     .replace(`~/components/ui/${componentName}`, './snippet')
+    .replace(`~/components/ui`, './snippet')
     .replaceAll(/~\/components\/ui\/(\w+)/g, '../$1/snippet')
     .replaceAll('<Stack gap="8" p="6">', '<div className="flex flex-col gap-8 p-6">')
     .replaceAll(
@@ -69,17 +69,32 @@ function createStoryFile(options: { fileName: string; demoDir: string }) {
     .replaceAll('<Stack gap="6">', '<div className="flex flex-col gap-6">')
     .replaceAll('<Stack gap="1">', '<div className="flex flex-col gap-1">')
     .replaceAll('<Stack gap="3">', '<div className="flex flex-col gap-3">')
+    .replaceAll('<HStack gap="3">', '<div className="flex flex-row gap-3">')
+    .replaceAll('<Stack gap="2" flex="1">', '<div className="flex flex-col gap-2 flex-1">')
+    .replaceAll('<HStack>', '<div className="flex flex-row">')
     .replaceAll(
       '<HStack gap="6" justify="space-between" flex="1">',
       '<div className="flex flex-row gap-6 justify-between flex-1">',
     )
-    .replaceAll('<TableHead textAlign="right">', '<TableHead className="text-right">')
-    .replaceAll('<TableCell fontWeight="medium">', '<TableCell className="font-medium">')
-    .replaceAll('<TableCell textAlign="right">', '<TableCell className="text-right">')
+    .replaceAll('<Table.Head textAlign="right">', '<Table.Head className="text-right">')
+    .replaceAll('<Table.Cell fontWeight="medium">', '<Table.Cell className="font-medium">')
+    .replaceAll('<Table.Cell textAlign="right">', '<Table.Cell className="text-right">')
     .replaceAll('<HStack gap="2">', '<div className="flex flex-row gap-2">')
     .replaceAll(
-      '<MenuTriggerItem justifyContent="space-between">',
-      '<MenuTriggerItem className="justify-between">',
+      '<Drawer.CloseTrigger asChild position="absolute" top="3" right="4">',
+      '<Drawer.CloseTrigger asChild className="absolute top-3 right-4">',
+    )
+    .replaceAll(
+      '<RadioButtonGroup.Item key={id} value={option.value} disabled={option.disabled} px="0">',
+      '<RadioButtonGroup.Item key={id} value={option.value} disabled={option.disabled} className="px-0">',
+    )
+    .replaceAll(
+      '<Menu.TriggerItem justifyContent="space-between">',
+      '<Menu.TriggerItem className="justify-between">',
+    )
+    .replaceAll(
+      '<Input size="lg" width="0" textAlign="center" />',
+      '<Input size="lg" className="text-center w-0" />',
     )
     .replaceAll('type TableProps,', '')
     .replaceAll('props: TableProps) => {', 'props) => {')

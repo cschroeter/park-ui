@@ -1,35 +1,55 @@
-import type { Component as ComponentType } from 'solid-js'
-import { createContext, useContext } from 'solid-js'
+import {
+  createComponent,
+  createContext,
+  mergeProps,
+  useContext,
+  type ComponentProps,
+  type ValidComponent,
+} from 'solid-js'
+import { Dynamic } from 'solid-js/web'
 
-type AnyProps = Record<string, unknown>
-type AnyRecipe = {
-  (props?: AnyProps): Record<string, string>
-  splitVariantProps: (props: AnyProps) => any
+type GenericProps = Record<string, unknown>
+type StyleRecipe = {
+  (props?: GenericProps): Record<string, string>
+  splitVariantProps: (props?: GenericProps) => any
 }
 
-export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
+export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null)
 
-  const withProvider = <T extends object>(Component: ComponentType<T>, part?: string) => {
-    const Comp = (props: T & Parameters<R>[0]) => {
-      const [variantProps, rest] = recipe.splitVariantProps(props)
-      const styles = recipe(variantProps)
+  const withProvider = <T extends ValidComponent, P = ComponentProps<T>>(
+    Component: T,
+    slot?: string,
+  ) => {
+    const StyledComponent = (props: P & Parameters<R>[0]) => {
+      const [variantProps, componentProps] = recipe.splitVariantProps(props)
+      const styleProperties = recipe(variantProps)
       return (
-        <StyleContext.Provider value={styles}>
-          <Component class={styles?.[part ?? '']} {...rest} />
+        <StyleContext.Provider value={styleProperties}>
+          <Dynamic
+            component={Component}
+            class={styleProperties?.[slot ?? '']}
+            {...componentProps}
+          />
         </StyleContext.Provider>
       )
     }
-    return Comp
+    return StyledComponent
   }
 
-  const withContext = <T extends object>(Component: ComponentType<T>, part?: string) => {
-    if (!part) return Component
-    const Comp = (props: T) => {
-      const styles = useContext(StyleContext)
-      return <Component class={styles?.[part ?? '']} {...props} />
+  const withContext = <T extends ValidComponent, P = ComponentProps<T>>(
+    Component: T,
+    slot?: string,
+  ): T => {
+    if (!slot) return Component
+    const StyledComponent = (props: P) => {
+      const styleProperties = useContext(StyleContext)
+      return createComponent(
+        Dynamic,
+        mergeProps(props, { component: Component, class: styleProperties?.[slot ?? ''] }),
+      )
     }
-    return Comp
+    return StyledComponent as T
   }
 
   return {

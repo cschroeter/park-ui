@@ -1,24 +1,16 @@
 import { Portal } from '@ark-ui/react'
-import {
-  Tooltip,
-  TooltipArrow,
-  TooltipArrowTip,
-  TooltipContent,
-  TooltipPositioner,
-  TooltipTrigger,
-  type TooltipProps,
-} from './snippet'
+import { Tooltip, type TooltipProps } from './snippet'
 
 export const Demo = (props: TooltipProps) => (
-  <Tooltip {...props}>
-    <TooltipTrigger>Hover Me</TooltipTrigger>
+  <Tooltip.Root {...props}>
+    <Tooltip.Trigger>Hover Me</Tooltip.Trigger>
     <Portal>
-      <TooltipPositioner>
-        <TooltipArrow>
-          <TooltipArrowTip />
-        </TooltipArrow>
-        <TooltipContent>I am a Tooltip!</TooltipContent>
-      </TooltipPositioner>
+      <Tooltip.Positioner>
+        <Tooltip.Arrow>
+          <Tooltip.ArrowTip />
+        </Tooltip.Arrow>
+        <Tooltip.Content>I am a Tooltip!</Tooltip.Content>
+      </Tooltip.Positioner>
     </Portal>
-  </Tooltip>
+  </Tooltip.Root>
 )

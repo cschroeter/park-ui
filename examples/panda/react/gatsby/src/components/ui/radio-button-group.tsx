@@ -3,24 +3,26 @@ import { styled } from 'styled-system/jsx'
 import { radioButtonGroup, type RadioButtonGroupVariantProps } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
-export * from '@ark-ui/react/radio-group'
-
 const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 
-export type RadioGroupProps = Ark.RadioGroupProps & RadioButtonGroupVariantProps
+export * from '@ark-ui/react/radio-group'
+export type RadioButtonGroupProps = Ark.RadioGroupProps & RadioButtonGroupVariantProps
 
-const RadioGroupRoot = withProvider(styled(Ark.RadioGroup.Root), 'root')
-const RadioGroupLabel = withContext(styled(Ark.RadioGroup.Label), 'label')
-const Radio = withContext(styled(Ark.RadioGroup.Radio), 'radio')
-const RadioLabel = withContext(styled(Ark.RadioGroup.RadioLabel), 'radioLabel')
-const RadioControl = withContext(styled(Ark.RadioGroup.RadioControl), 'radioControl')
+const RadioButtonGroupRoot = withProvider(styled(Ark.RadioGroup.Root), 'root')
+export const RadioButtonGroupIndicator = withContext(styled(Ark.RadioGroup.Indicator), 'indicator')
+export const RadioButtonGroupItem = withContext(styled(Ark.RadioGroup.Item), 'item')
+export const RadioButtonGroupItemControl = withContext(
+  styled(Ark.RadioGroup.ItemControl),
+  'itemControl',
+)
+export const RadioButtonGroupItemText = withContext(styled(Ark.RadioGroup.ItemText), 'itemText')
+export const RadioButtonGroupLabel = withContext(styled(Ark.RadioGroup.Label), 'label')
 
-const RadioButtonGroup = Object.assign(RadioGroupRoot, {
-  Root: RadioGroupRoot,
-  Label: RadioGroupLabel,
-  Radio: Radio,
-  RadioLabel: RadioLabel,
-  RadioControl: RadioControl,
+export const RadioButtonGroup = Object.assign(RadioButtonGroupRoot, {
+  Root: RadioButtonGroupRoot,
+  Indicator: RadioButtonGroupIndicator,
+  Item: RadioButtonGroupItem,
+  ItemControl: RadioButtonGroupItemControl,
+  ItemText: RadioButtonGroupItemText,
+  Label: RadioButtonGroupLabel,
 })
-
-export { Radio, RadioButtonGroup, RadioControl, RadioGroupLabel, RadioLabel }

@@ -1,5 +1,31 @@
 ## [Unreleased]
 
+### Fixed
+
+- Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was scrolled.
+
+## [0.24.0] - 2023-11-21
+
+### Added
+
+- Added `FileUpload` component.
+
+### Fixed
+
+- Resolved an issue with the `Dialog` component where the scrollbar would cause a layout shift.
+
+## [0.23.0] - 2023-11-17
+
+### Added
+
+- Added `focusVisible` styles to the `Checkbox` component.
+- Added `disabled` styles to the `Accordion` component.
+
+## [0.22.0] - 2023-11-09
+
+With the introduction of Ark UI 1.0 support, this version implements significant changes, resulting in several breaking updates. Key component revisions include:
+`Accordion`, `ColorPicker`, `DatePicker`, `Dialog`, `RadioGroup`, `SegmentGroup`, `TagsInput`, `Toast`, and `ToggleGroup`.
+
 ### Added
 
 - Added `indeterminate` styles to the `Checkbox` component.
@@ -7,6 +33,10 @@
 ### Changed
 
 - Revised `Slider` component.
+
+### Removed
+
+- `RangeSlider` component has been removed in favor of the `Slider` component.
 
 ## [0.21.0] - 2023-11-05
 

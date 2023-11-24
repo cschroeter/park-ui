@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -7,15 +6,7 @@ import { Avatar } from '~/components/ui/avatar'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectItemText,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValue,
-} from '~/components/ui/select'
+import { Select } from '~/components/ui/select'
 import { Text } from '~/components/ui/text'
 
 const members = [
@@ -93,28 +84,28 @@ const Member = (props: Props) => {
         </Box>
       </Stack>
       <Box>
-        <Select
+        <Select.Root
           items={['Write', 'Read']}
           defaultValue={['Read']}
           positioning={{ sameWidth: true }}
           size="sm"
         >
-          <SelectTrigger>
-            <SelectValue />
-            <ChevronsUpDownIcon />
-          </SelectTrigger>
-          <Portal>
-            <SelectPositioner>
-              <SelectContent>
-                {['Write', 'Read'].map((framework) => (
-                  <SelectItem key={framework} item={framework}>
-                    <SelectItemText>{framework}</SelectItemText>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </SelectPositioner>
-          </Portal>
-        </Select>
+          <Select.Control>
+            <Select.Trigger>
+              <Select.ValueText />
+              <ChevronsUpDownIcon />
+            </Select.Trigger>
+          </Select.Control>
+          <Select.Positioner>
+            <Select.Content>
+              {['Write', 'Read'].map((framework) => (
+                <Select.Item key={framework} item={framework}>
+                  <Select.ItemText>{framework}</Select.ItemText>
+                </Select.Item>
+              ))}
+            </Select.Content>
+          </Select.Positioner>
+        </Select.Root>
       </Box>
     </Stack>
   )

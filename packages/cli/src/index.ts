@@ -1,24 +1,19 @@
-import { intro, outro, select } from '@clack/prompts'
+#!/usr/bin/env node
 
-intro(`Welcome to Park UI!`)
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
+import { addComponentsCommand } from './commands/add'
+import { initCommand } from './commands/init'
+import { getVersion } from './commands/version'
 
-const cssFramework = await select({
-  message: 'Which CSS framework would you like to use?',
-  options: [
-    { value: 'panda', label: 'Panda CSS' },
-    { value: 'tailwind', label: 'Tailwind CSS' },
-  ],
-})
-
-const jsFramework = await select({
-  message: 'Which JS framework would you like to use?',
-  options: [
-    { value: 'react', label: 'React' },
-    { value: 'solid', label: 'Solid' },
-    { value: 'vue', label: 'Vue' },
-  ],
-})
-
-console.log(cssFramework, jsFramework)
-
-outro(`You're all set!!`)
+const main = async () => {
+  yargs(hideBin(process.argv))
+    .command('init', 'Initialize a new Park UI project', initCommand)
+    .command('add', 'Add a new component', addComponentsCommand)
+    .example('$0 init', 'Initialize a new Park UI project')
+    .example('$0 add button accordion', 'Add accordion component')
+    .describe('init', 'Initialize a new Park UI project')
+    .version(`Park UI CLI version ${await getVersion()}`)
+    .demandCommand(1).argv
+}
+main()

@@ -6,22 +6,16 @@ import { createStyleContext } from '~/lib/create-style-context'
 const { withProvider, withContext } = createStyleContext(toast)
 
 export * from '@ark-ui/react/toast'
-export const ToastProvider = withContext(styled(Ark.Toast.Provider), 'provider')
-export const ToastTitle = withContext(styled(Ark.Toast.Title), 'title')
 export type ToastProps = Ark.ToastProps & ToastVariantProps
 
 const ToastRoot = withProvider(styled(Ark.Toast.Root), 'root')
+export const ToastTitle = withContext(styled(Ark.Toast.Title), 'title')
 export const ToastDescription = withContext(styled(Ark.Toast.Description), 'description')
 export const ToastCloseTrigger = withContext(styled(Ark.Toast.CloseTrigger), 'closeTrigger')
-export const ToastPlacements = withContext(styled(Ark.Toast.Placements), 'placements')
-export const ToastGroup = withContext(styled(Ark.Toast.Group), 'group')
 
 export const Toast = Object.assign(ToastRoot, {
-  Provider: ToastProvider,
-  Title: ToastTitle,
   Root: ToastRoot,
+  Title: ToastTitle,
   Description: ToastDescription,
   CloseTrigger: ToastCloseTrigger,
-  Placements: ToastPlacements,
-  Group: ToastGroup,
 })

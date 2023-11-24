@@ -1,7 +1,9 @@
-import { Button, type ButtonProps } from '../button/snippet'
+import { ark, type HTMLArkProps } from '@ark-ui/react'
+import { type VariantProps } from 'tailwind-variants'
+import { styled } from '~/lib/styled'
+import { iconButtonStyles } from './recipe'
 
-export type IconButtonProps = ButtonProps & { 'aria-label': string }
+type IconButtonVariantProps = VariantProps<typeof iconButtonStyles>
+export interface IconButtonProps extends IconButtonVariantProps, HTMLArkProps<'button'> {}
 
-export const IconButton = (props: IconButtonProps) => {
-  return <Button className="px-0" {...props} />
-}
+export const IconButton = styled<IconButtonProps>(ark.button, iconButtonStyles)

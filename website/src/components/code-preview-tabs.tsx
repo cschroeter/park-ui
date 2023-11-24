@@ -1,11 +1,8 @@
 import { Tabs } from '@ark-ui/react/tabs'
-import { Code2Icon } from 'lucide-react'
 import { useState, type PropsWithChildren } from 'react'
 import { HStack } from 'styled-system/jsx'
 import { CodePreview } from './code-preview'
-import { CopyToClipboardButton } from './copy-to-clipboard-button'
-import { Button, IconButton } from './ui'
-import { Tooltip } from './ui/tooltip'
+import { Button } from './ui'
 
 interface Props {
   code?: string
@@ -23,7 +20,7 @@ export const CodePreviewTabs = (props: PropsWithChildren<Props>) => {
   const [value, setValue] = useState(tabs[0][0])
 
   return (
-    <Tabs.Root value={value} onChange={(e) => setValue(e.value)}>
+    <Tabs.Root value={value} onValueChange={(e) => setValue(e.value)}>
       <HStack justifyContent="space-between" p="1">
         <Tabs.List>
           {Object.entries(props.tabs).map(([key, value]) => (
@@ -45,24 +42,10 @@ export const CodePreviewTabs = (props: PropsWithChildren<Props>) => {
         </Tabs.List>
         <HStack gap="1">
           {expandable && (
-            <Tooltip.Root openDelay={0} closeDelay={0} positioning={{ placement: 'top' }}>
-              <Tooltip.Trigger asChild>
-                <IconButton
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => setCollapsed(!collapsed)}
-                  aria-label={collapsed ? 'Show Code' : 'Hide Code'}
-                  {...(!collapsed ? { 'data-selected': 'true' } : {})}
-                >
-                  <Code2Icon />
-                </IconButton>
-              </Tooltip.Trigger>
-              <Tooltip.Positioner>
-                <Tooltip.Content>{collapsed ? 'Show Code' : 'Hide Code'}</Tooltip.Content>
-              </Tooltip.Positioner>
-            </Tooltip.Root>
+            <Button variant="ghost" size="sm" onClick={() => setCollapsed(!collapsed)}>
+              {collapsed ? 'Show Code' : 'Hide Code'}
+            </Button>
           )}
-          <CopyToClipboardButton content={props.tabs[value].code} />
         </HStack>
       </HStack>
       {Object.entries(props.tabs).map(([key, value]) => (

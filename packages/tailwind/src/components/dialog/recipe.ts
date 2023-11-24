@@ -5,7 +5,7 @@ export const dialogStyles = tv({
   slots: {
     trigger: 'dialog__trigger',
     backdrop: 'dialog__backdrop',
-    container: 'dialog__container',
+    positioner: 'dialog__positioner',
     content: 'dialog__content',
     title: 'dialog__title',
     description: 'dialog__description',

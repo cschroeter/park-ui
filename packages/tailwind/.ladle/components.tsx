@@ -29,5 +29,5 @@ const useAddBackground = () => {
 export const Provider: GlobalProvider = ({ children }) => {
   useDarkMode()
   useAddBackground()
-  return <div className="text-fg-default bg-bg-default p-8">{children}</div>
+  return <div className="text-fg-default bg-bg-canvas p-8 ">{children}</div>
 }

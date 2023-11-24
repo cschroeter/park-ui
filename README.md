@@ -6,11 +6,11 @@ Beautifully designed components built on [Ark UI](https://ark-ui.com) that work 
 
 ## Supported Frameworks
 
-|                                   | [Panda CSS](https://panda-css.com/) | [Tailwind CSS](https://tailwindcss.com/) | [UnoCSS](https://unocss.dev/) |
-| --------------------------------- | ----------------------------------- | ---------------------------------------- | ----------------------------- |
-| [React](https://react.dev/)       | ✓                                   | ✓                                        | Planned                       |
-| [Solid](https://www.solidjs.com/) | ✓                                   | ✓                                        | Planned                       |
-| [Vue](https://vuejs.org/)         | ✓                                   | ✓                                        | Planned                       |
+|                                   | [Chakra UI](https://chakra-ui.com) | [Panda CSS](https://panda-css.com/) | [Tailwind CSS](https://tailwindcss.com/) | [UnoCSS](https://unocss.dev/) |
+| --------------------------------- | ---------------------------------- | ----------------------------------- | ---------------------------------------- | ----------------------------- |
+| [React](https://react.dev/)       | In Progress                        | ✓                                   | ✓                                        | Planned                       |
+| [Solid](https://www.solidjs.com/) | -                                  | ✓                                   | ✓                                        | Planned                       |
+| [Vue](https://vuejs.org/)         | -                                  | ✓                                   | ✓                                        | Planned                       |
 
 ## Documentation
 

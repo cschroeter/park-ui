@@ -1,10 +1,10 @@
-import { Avatar, AvatarFallback, AvatarImage, type AvatarProps } from '~/components/ui/avatar'
+import { Avatar, type AvatarProps } from '~/components/ui'
 
 export const Demo = (props: AvatarProps) => {
   return (
-    <Avatar {...props}>
-      <AvatarFallback>PA</AvatarFallback>
-      <AvatarImage src="https://i.pravatar.cc/300" alt="avatar" />
-    </Avatar>
+    <Avatar.Root {...props}>
+      <Avatar.Fallback>PA</Avatar.Fallback>
+      <Avatar.Image src="https://i.pravatar.cc/300" alt="avatar" />
+    </Avatar.Root>
   )
 }

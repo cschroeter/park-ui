@@ -13,6 +13,7 @@ import { datePicker } from './date-picker'
 import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
+import { fileUpload } from './file-upload'
 import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
@@ -28,7 +29,6 @@ import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { radioButtonGroup } from './radio-button-group'
 import { radioGroup } from './radio-group'
-import { rangeSlider } from './range-slider'
 import { ratingGroup } from './rating-group'
 import { segmentGroup } from './segment-group'
 import { select } from './select'
@@ -70,6 +70,7 @@ export const slotRecipes = {
   dialog,
   drawer,
   editable,
+  fileUpload,
   hoverCard,
   menu,
   numberInput,
@@ -77,7 +78,6 @@ export const slotRecipes = {
   pinInput,
   popover,
   radioGroup,
-  rangeSlider,
   radioButtonGroup,
   ratingGroup,
   segmentGroup,

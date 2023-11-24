@@ -9,7 +9,7 @@ export const radioButtonGroup = defineSlotRecipe({
       display: 'flex',
       flexWrap: 'wrap',
     },
-    radio: {
+    item: {
       alignItems: 'center',
       appearance: 'none',
       borderColor: 'border.default',
@@ -45,7 +45,7 @@ export const radioButtonGroup = defineSlotRecipe({
         },
       },
     },
-    radioLabel: {
+    itemText: {
       display: 'inline-flex',
       alignItems: 'center',
     },
@@ -57,7 +57,7 @@ export const radioButtonGroup = defineSlotRecipe({
   variants: {
     variant: {
       solid: {
-        radio: {
+        item: {
           _checked: {
             background: 'accent.default',
             borderColor: 'border.accent',
@@ -70,7 +70,7 @@ export const radioButtonGroup = defineSlotRecipe({
         },
       },
       outline: {
-        radio: {
+        item: {
           _checked: {
             borderColor: 'border.accent',
             boxShadow: 'accent',
@@ -86,7 +86,7 @@ export const radioButtonGroup = defineSlotRecipe({
         root: {
           gap: '2',
         },
-        radio: {
+        item: {
           h: '9',
           minW: '9',
           textStyle: 'sm',
@@ -96,7 +96,7 @@ export const radioButtonGroup = defineSlotRecipe({
             height: '4.5',
           },
         },
-        radioLabel: {
+        itemText: {
           gap: '2',
         },
       },
@@ -104,7 +104,7 @@ export const radioButtonGroup = defineSlotRecipe({
         root: {
           gap: '3',
         },
-        radio: {
+        item: {
           h: '10',
           minW: '10',
           textStyle: 'sm',
@@ -114,7 +114,7 @@ export const radioButtonGroup = defineSlotRecipe({
             height: '5',
           },
         },
-        radioLabel: {
+        itemText: {
           gap: '2',
         },
       },
@@ -122,7 +122,7 @@ export const radioButtonGroup = defineSlotRecipe({
         root: {
           gap: '3',
         },
-        radio: {
+        item: {
           h: '11',
           minW: '11',
           textStyle: 'md',
@@ -132,7 +132,7 @@ export const radioButtonGroup = defineSlotRecipe({
             height: '5',
           },
         },
-        radioLabel: {
+        itemText: {
           gap: '2',
         },
       },
@@ -140,7 +140,7 @@ export const radioButtonGroup = defineSlotRecipe({
         root: {
           gap: '3',
         },
-        radio: {
+        item: {
           h: '12',
           minW: '12',
           textStyle: 'md',
@@ -150,7 +150,7 @@ export const radioButtonGroup = defineSlotRecipe({
             height: '5',
           },
         },
-        radioLabel: {
+        itemText: {
           gap: '2.5',
         },
       },

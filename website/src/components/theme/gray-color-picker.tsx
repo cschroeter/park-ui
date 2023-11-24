@@ -1,11 +1,6 @@
 import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import {
-  Radio,
-  RadioButtonGroup,
-  RadioControl,
-  RadioLabel,
-} from '~/components/ui/radio-button-group'
+import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
@@ -17,25 +12,25 @@ export const GrayColorPicker = () => {
       <Text textStyle="sm" fontWeight="medium">
         Gray Color
       </Text>
-      <RadioButtonGroup
+      <RadioButtonGroup.Root
         value={currentGrayColor}
         size="sm"
         variant="outline"
         display="grid"
         gridTemplateColumns="repeat(3, 1fr)"
-        onChange={(e) => {
+        onValueChange={(e) =>
           updateGrayColor(grayColors.find((gray) => gray === e.value) ?? currentGrayColor)
-        }}
+        }
       >
         {grayColors.map((gray, id) => (
-          <Radio
+          <RadioButtonGroup.Item
             key={id}
             value={gray}
             _checked={{ borderColor: 'border.outline', boxShadow: 'outline' }}
             justifyContent="flex-start"
           >
-            <RadioControl />
-            <RadioLabel textTransform="capitalize">
+            <RadioButtonGroup.ItemControl />
+            <RadioButtonGroup.ItemText textTransform="capitalize">
               <Circle
                 size="3.5"
                 style={{
@@ -43,10 +38,10 @@ export const GrayColorPicker = () => {
                 }}
               />
               {gray}
-            </RadioLabel>
-          </Radio>
+            </RadioButtonGroup.ItemText>
+          </RadioButtonGroup.Item>
         ))}
-      </RadioButtonGroup>
+      </RadioButtonGroup.Root>
     </Stack>
   )
 }

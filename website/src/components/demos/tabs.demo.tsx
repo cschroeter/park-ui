@@ -1,11 +1,4 @@
-import {
-  TabContent,
-  TabIndicator,
-  TabList,
-  TabTrigger,
-  Tabs,
-  type TabsProps,
-} from '~/components/ui/tabs'
+import { Tabs, type TabsProps } from '~/components/ui'
 
 export const Demo = (props: TabsProps) => {
   const options = [
@@ -15,19 +8,19 @@ export const Demo = (props: TabsProps) => {
     { id: 'vue', label: 'Vue' },
   ]
   return (
-    <Tabs defaultValue="react" {...props}>
-      <TabList>
+    <Tabs.Root defaultValue="react" {...props}>
+      <Tabs.List>
         {options.map((option) => (
-          <TabTrigger key={option.id} value={option.id} disabled={option.disabled}>
+          <Tabs.Trigger key={option.id} value={option.id} disabled={option.disabled}>
             {option.label}
-          </TabTrigger>
+          </Tabs.Trigger>
         ))}
-        <TabIndicator />
-      </TabList>
-      <TabContent value="react">&nbsp;</TabContent>
-      <TabContent value="solid">&nbsp;</TabContent>
-      <TabContent value="svelte">&nbsp;</TabContent>
-      <TabContent value="vue">&nbsp;</TabContent>
-    </Tabs>
+        <Tabs.Indicator />
+      </Tabs.List>
+      <Tabs.Content value="react">&nbsp;</Tabs.Content>
+      <Tabs.Content value="solid">&nbsp;</Tabs.Content>
+      <Tabs.Content value="svelte">&nbsp;</Tabs.Content>
+      <Tabs.Content value="vue">&nbsp;</Tabs.Content>
+    </Tabs.Root>
   )
 }

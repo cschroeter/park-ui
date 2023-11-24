@@ -1,6 +1,5 @@
 import { Stack } from 'styled-system/jsx'
-import { Input, type InputProps } from '~/components/ui/input'
-import { Label } from '~/components/ui/label'
+import { Input, Label, type InputProps } from '~/components/ui'
 
 export const Demo = (props: InputProps) => {
   return (

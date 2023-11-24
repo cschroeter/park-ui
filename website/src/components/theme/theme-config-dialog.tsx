@@ -1,15 +1,6 @@
 import { CopyIcon, XIcon } from 'lucide-react'
 import { Box, Stack } from 'styled-system/jsx'
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContainer,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from '~/components/ui/dialog'
+import { Dialog } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { CodePreviewTabs } from '../code-preview-tabs'
@@ -25,22 +16,22 @@ export const ThemeConfigDialog = (props: Props) => {
     useThemeGenerator()
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
         <Button>
           <CopyIcon />
           Copy Config
         </Button>
-      </DialogTrigger>
-      <DialogBackdrop />
-      <DialogContainer>
-        <DialogContent bg="bg.surface" maxW="md" width="full">
+      </Dialog.Trigger>
+      <Dialog.Backdrop />
+      <Dialog.Positioner>
+        <Dialog.Content bg="bg.surface" maxW="md" width="full">
           <Stack gap="6" p="6">
             <Stack gap="1">
-              <DialogTitle>Make it yours</DialogTitle>
-              <DialogDescription>
+              <Dialog.Title>Make it yours</Dialog.Title>
+              <Dialog.Description>
                 Copy and paste the following code into your Panda or Tailwind config file.
-              </DialogDescription>
+              </Dialog.Description>
             </Stack>
             <Box borderRadius="l3" overflow="hidden" borderWidth="1px">
               <CodePreviewTabs
@@ -85,13 +76,13 @@ export const ThemeConfigDialog = (props: Props) => {
               />
             </Box>
           </Stack>
-          <DialogCloseTrigger asChild position="absolute" top="2" right="2">
+          <Dialog.CloseTrigger asChild position="absolute" top="2" right="2">
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
               <XIcon />
             </IconButton>
-          </DialogCloseTrigger>
-        </DialogContent>
-      </DialogContainer>
-    </Dialog>
+          </Dialog.CloseTrigger>
+        </Dialog.Content>
+      </Dialog.Positioner>
+    </Dialog.Root>
   )
 }

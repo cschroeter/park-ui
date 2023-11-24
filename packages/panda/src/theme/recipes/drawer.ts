@@ -13,8 +13,11 @@ export const drawer = defineSlotRecipe({
         base: 'white.a10',
         _dark: 'black.a10',
       },
-      inset: '0',
+      height: '100vh',
+      left: '0',
       position: 'fixed',
+      top: '0',
+      width: '100vw',
       zIndex: 'overlay',
       _open: {
         animation: 'backdrop-in',
@@ -23,19 +26,19 @@ export const drawer = defineSlotRecipe({
         animation: 'backdrop-out',
       },
     },
-    container: {
+    positioner: {
       alignItems: 'center',
       display: 'flex',
-      top: 0,
-      bottom: 0,
+      height: '100dvh',
       justifyContent: 'center',
       position: 'fixed',
-      width: { base: 'full', sm: 'sm' },
+      top: 0,
+      width: { base: '100vw', sm: 'sm' },
       zIndex: 'modal',
     },
     content: {
       background: 'bg.default',
-      boxShadow: 'xl',
+      boxShadow: 'lg',
       display: 'grid',
       divideY: '1px',
       gridTemplateColumns: '1fr',
@@ -90,7 +93,7 @@ export const drawer = defineSlotRecipe({
   variants: {
     placement: {
       left: {
-        container: {
+        positioner: {
           left: 0,
         },
         content: {
@@ -103,7 +106,7 @@ export const drawer = defineSlotRecipe({
         },
       },
       right: {
-        container: {
+        positioner: {
           right: 0,
         },
         content: {
