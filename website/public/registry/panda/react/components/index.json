@@ -1,91 +1,91 @@
 {
-  "resources": [
+  "components": [
     {
-      "name": "accordion",
+      "name": "Accordion",
       "href": "https://park-ui.com/registry/panda/react/components/accordion.json"
     },
-    { "name": "avatar", "href": "https://park-ui.com/registry/panda/react/components/avatar.json" },
+    { "name": "Avatar", "href": "https://park-ui.com/registry/panda/react/components/avatar.json" },
     {
-      "name": "carousel",
+      "name": "Carousel",
       "href": "https://park-ui.com/registry/panda/react/components/carousel.json"
     },
     {
-      "name": "checkbox",
+      "name": "Checkbox",
       "href": "https://park-ui.com/registry/panda/react/components/checkbox.json"
     },
     {
-      "name": "color-picker",
+      "name": "Color Picker",
       "href": "https://park-ui.com/registry/panda/react/components/color-picker.json"
     },
     {
-      "name": "combobox",
+      "name": "Combobox",
       "href": "https://park-ui.com/registry/panda/react/components/combobox.json"
     },
     {
-      "name": "date-picker",
+      "name": "Date Picker",
       "href": "https://park-ui.com/registry/panda/react/components/date-picker.json"
     },
-    { "name": "dialog", "href": "https://park-ui.com/registry/panda/react/components/dialog.json" },
+    { "name": "Dialog", "href": "https://park-ui.com/registry/panda/react/components/dialog.json" },
     {
-      "name": "editable",
+      "name": "Editable",
       "href": "https://park-ui.com/registry/panda/react/components/editable.json"
     },
     {
-      "name": "file-upload",
+      "name": "File Upload",
       "href": "https://park-ui.com/registry/panda/react/components/file-upload.json"
     },
     {
-      "name": "hover-card",
+      "name": "Hover Card",
       "href": "https://park-ui.com/registry/panda/react/components/hover-card.json"
     },
-    { "name": "menu", "href": "https://park-ui.com/registry/panda/react/components/menu.json" },
+    { "name": "Menu", "href": "https://park-ui.com/registry/panda/react/components/menu.json" },
     {
-      "name": "number-input",
+      "name": "Number Input",
       "href": "https://park-ui.com/registry/panda/react/components/number-input.json"
     },
     {
-      "name": "pagination",
+      "name": "Pagination",
       "href": "https://park-ui.com/registry/panda/react/components/pagination.json"
     },
     {
-      "name": "pin-input",
+      "name": "Pin Input",
       "href": "https://park-ui.com/registry/panda/react/components/pin-input.json"
     },
     {
-      "name": "popover",
+      "name": "Popover",
       "href": "https://park-ui.com/registry/panda/react/components/popover.json"
     },
     {
-      "name": "radio-group",
+      "name": "Radio Group",
       "href": "https://park-ui.com/registry/panda/react/components/radio-group.json"
     },
     {
-      "name": "rating-group",
+      "name": "Rating Group",
       "href": "https://park-ui.com/registry/panda/react/components/rating-group.json"
     },
     {
-      "name": "segment-group",
+      "name": "Segment Group",
       "href": "https://park-ui.com/registry/panda/react/components/segment-group.json"
     },
-    { "name": "select", "href": "https://park-ui.com/registry/panda/react/components/select.json" },
-    { "name": "slider", "href": "https://park-ui.com/registry/panda/react/components/slider.json" },
+    { "name": "Select", "href": "https://park-ui.com/registry/panda/react/components/select.json" },
+    { "name": "Slider", "href": "https://park-ui.com/registry/panda/react/components/slider.json" },
     {
-      "name": "splitter",
+      "name": "Splitter",
       "href": "https://park-ui.com/registry/panda/react/components/splitter.json"
     },
-    { "name": "switch", "href": "https://park-ui.com/registry/panda/react/components/switch.json" },
-    { "name": "tabs", "href": "https://park-ui.com/registry/panda/react/components/tabs.json" },
+    { "name": "Switch", "href": "https://park-ui.com/registry/panda/react/components/switch.json" },
+    { "name": "Tabs", "href": "https://park-ui.com/registry/panda/react/components/tabs.json" },
     {
-      "name": "tags-input",
+      "name": "Tags Input",
       "href": "https://park-ui.com/registry/panda/react/components/tags-input.json"
     },
-    { "name": "toast", "href": "https://park-ui.com/registry/panda/react/components/toast.json" },
+    { "name": "Toast", "href": "https://park-ui.com/registry/panda/react/components/toast.json" },
     {
-      "name": "toggle-group",
+      "name": "Toggle Group",
       "href": "https://park-ui.com/registry/panda/react/components/toggle-group.json"
     },
     {
-      "name": "tooltip",
+      "name": "Tooltip",
       "href": "https://park-ui.com/registry/panda/react/components/tooltip.json"
     }
   ]

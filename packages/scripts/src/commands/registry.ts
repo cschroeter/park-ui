@@ -9,6 +9,14 @@ import data from '../../components.json'
 
 const prettierConfig = await prettier.resolveConfig('.')
 const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
+const pascalCase = (s: string) =>
+  v
+    .chain(s)
+    .camelCase()
+    .capitalize()
+    .value()
+    .replace(/([A-Z])/g, ' $1')
+    .trim()
 
 // const jsFrameworks = ['react']
 // const cssFrameworks = ['panda']
@@ -19,7 +27,7 @@ const generateIndex = async () => {
   const content = await prettier.format(
     JSON.stringify({
       components: Object.entries(data).map(([key, value]) => ({
-        name: key,
+        name: pascalCase(value.rootComponent),
         href: `https://park-ui.com/registry/panda/react/components/${key}.json`,
       })),
     }),
