@@ -9,6 +9,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Accordion",
+    "filename": "accordion.ts",
     "className": "accordion"
   },
   "avatar": {
@@ -19,6 +20,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Avatar",
+    "filename": "avatar.ts",
     "className": "avatar"
   },
   "carousel": {
@@ -35,6 +37,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Carousel",
+    "filename": "carousel.ts",
     "className": "carousel"
   },
   "checkbox": {
@@ -46,6 +49,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Checkbox",
+    "filename": "checkbox.ts",
     "className": "checkbox"
   },
   "color-picker": {
@@ -85,6 +89,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "ColorPicker",
+    "filename": "color-picker.ts",
     "className": "colorPicker"
   },
   "combobox": {
@@ -105,6 +110,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Combobox",
+    "filename": "combobox.ts",
     "className": "combobox"
   },
   "date-picker": {
@@ -135,6 +141,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "DatePicker",
+    "filename": "date-picker.ts",
     "className": "datePicker"
   },
   "dialog": {
@@ -150,6 +157,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Dialog",
+    "filename": "dialog.ts",
     "className": "dialog"
   },
   "editable": {
@@ -166,6 +174,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Editable",
+    "filename": "editable.ts",
     "className": "editable"
   },
   "file-upload": {
@@ -186,6 +195,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "FileUpload",
+    "filename": "file-upload.ts",
     "className": "fileUpload"
   },
   "hover-card": {
@@ -199,6 +209,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "HoverCard",
+    "filename": "hover-card.ts",
     "className": "hoverCard"
   },
   "menu": {
@@ -219,6 +230,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Menu",
+    "filename": "menu.ts",
     "className": "menu"
   },
   "number-input": {
@@ -233,6 +245,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "NumberInput",
+    "filename": "number-input.ts",
     "className": "numberInput"
   },
   "pagination": {
@@ -245,6 +258,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Pagination",
+    "filename": "pagination.ts",
     "className": "pagination"
   },
   "pin-input": {
@@ -256,6 +270,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "PinInput",
+    "filename": "pin-input.ts",
     "className": "pinInput"
   },
   "popover": {
@@ -274,6 +289,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Popover",
+    "filename": "popover.ts",
     "className": "popover"
   },
   "radio-group": {
@@ -287,6 +303,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "RadioGroup",
+    "filename": "radio-group.ts",
     "className": "radioGroup"
   },
   "rating-group": {
@@ -298,6 +315,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "RatingGroup",
+    "filename": "rating-group.ts",
     "className": "ratingGroup"
   },
   "segment-group": {
@@ -311,6 +329,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "SegmentGroup",
+    "filename": "segment-group.ts",
     "className": "segmentGroup"
   },
   "select": {
@@ -332,6 +351,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Select",
+    "filename": "select.ts",
     "className": "select"
   },
   "slider": {
@@ -348,6 +368,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Slider",
+    "filename": "slider.ts",
     "className": "slider"
   },
   "splitter": {
@@ -358,6 +379,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Splitter",
+    "filename": "splitter.ts",
     "className": "splitter"
   },
   "switch": {
@@ -369,6 +391,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Switch",
+    "filename": "switch.ts",
     "className": "switchRecipe"
   },
   "tabs": {
@@ -381,6 +404,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Tabs",
+    "filename": "tabs.ts",
     "className": "tabs"
   },
   "tags-input": {
@@ -400,6 +424,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "TagsInput",
+    "filename": "tags-input.ts",
     "className": "tagsInput"
   },
   "toast": {
@@ -411,6 +436,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Toast",
+    "filename": "toast.ts",
     "className": "toast"
   },
   "toggle-group": {
@@ -420,6 +446,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "ToggleGroup",
+    "filename": "toggle-group.ts",
     "className": "toggleGroup"
   },
   "tooltip": {
@@ -433,6 +460,7 @@
     },
     "isArkComponent": true,
     "rootComponent": "Tooltip",
+    "filename": "tooltip.ts",
     "className": "tooltip"
   }
 }

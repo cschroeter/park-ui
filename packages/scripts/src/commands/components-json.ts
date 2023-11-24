@@ -41,6 +41,7 @@ const generateComponentsJson = async () => {
             }, {}),
           isArkComponent: true,
           rootComponent: pascalCase(moduleName),
+          filename: `${moduleName}.ts`,
           className: match(moduleName)
             .with('switch', () => 'switchRecipe') // resvered word
             .otherwise(() => camelCase(moduleName)),
