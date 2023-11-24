@@ -1,14 +1,6 @@
-import fs from 'fs-extra'
-import { generateComponent } from './generate-component'
-import { supportedComponents } from './supported-components'
+import { Command } from 'commander'
+import { componentsJsonCmd } from './commands/components-json'
 
-const main = async () => {
-  const x = await Promise.all(supportedComponents.map((component) => generateComponent(component)))
-  const y = x.reduce((acc, curr) => {
-    return { ...acc, ...curr }
-  }, {})
+const program = new Command()
 
-  const file = './components.json'
-  fs.outputJsonSync(file, y)
-}
-main()
+program.name('park').version('1.0.0').addCommand(componentsJsonCmd).parse()

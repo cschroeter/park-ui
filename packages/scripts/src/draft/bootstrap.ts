@@ -2,7 +2,7 @@ import { outputFile, readFileSync } from 'fs-extra'
 import Handlebars from 'handlebars'
 import prettier from 'prettier'
 import { titleCase } from 'voca'
-import data from '../components.json'
+import data from '../../components.json'
 
 const targets = [
   '../../website/src/components/ui/',
