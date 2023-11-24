@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "pin-input.tsx",
+      "filename": "pin-input.ts",
       "content": "import * as Ark from '@ark-ui/react/pin-input'\nimport { styled } from 'styled-system/jsx'\nimport { pinInput, type PinInputVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(pinInput)\n\nexport * from '@ark-ui/react/pin-input'\nexport type PinInputProps = Ark.PinInputProps & PinInputVariantProps\n\nconst PinInputRoot = withProvider(styled(Ark.PinInput.Root), 'root')\nexport const PinInputControl = withContext(styled(Ark.PinInput.Control), 'control')\nexport const PinInputInput = withContext(styled(Ark.PinInput.Input), 'input')\nexport const PinInputLabel = withContext(styled(Ark.PinInput.Label), 'label')\n\nexport const PinInput = Object.assign(PinInputRoot, {\n  Root: PinInputRoot,\n  Control: PinInputControl,\n  Input: PinInputInput,\n  Label: PinInputLabel,\n})\n"
     }
   ]

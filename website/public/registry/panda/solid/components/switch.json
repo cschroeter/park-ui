@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "switch.ts",
+      "content": "import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(switchRecipe)\n\nexport type SwitchRecipeProps = ArkSwitchProps & SwitchRecipeVariantProps\n\nconst SwitchRoot = withProvider(styled(ArkSwitch.Root), 'root')\nexport const SwitchControl = withContext(styled(ArkSwitch.Control), 'control')\nexport const SwitchLabel = withContext(styled(ArkSwitch.Label), 'label')\nexport const SwitchThumb = withContext(styled(ArkSwitch.Thumb), 'thumb')\n\nexport const Switch = Object.assign(SwitchRoot, {\n  Root: SwitchRoot,\n  Control: SwitchControl,\n  Label: SwitchLabel,\n  Thumb: SwitchThumb,\n})\n"
+    }
+  ]
+}

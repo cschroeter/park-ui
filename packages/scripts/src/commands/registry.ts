@@ -7,6 +7,14 @@ import prettier from 'prettier'
 import v from 'voca'
 import data from '../../components.json'
 
+type Options = {
+  cssFramwork: 'panda' | 'tailwind'
+  jsFramework: 'react' | 'solid'
+}
+
+Handlebars.registerHelper('eq', (a, b) => a === b)
+Handlebars.registerHelper('titleCase', v.titleCase)
+
 const prettierConfig = await prettier.resolveConfig('.')
 const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
 const pascalCase = (s: string) =>
@@ -18,17 +26,18 @@ const pascalCase = (s: string) =>
     .replace(/([A-Z])/g, ' $1')
     .trim()
 
-// const jsFrameworks = ['react']
-// const cssFrameworks = ['panda']
+const templates = {
+  react: Handlebars.compile(fs.readFileSync('./src/templates/react.hbs', 'utf-8')),
+  solid: Handlebars.compile(fs.readFileSync('./src/templates/solid.hbs', 'utf-8')),
+}
 
-const reactTemplate = Handlebars.compile(fs.readFileSync('./src/templates/react.hbs', 'utf-8'))
-
-const generateIndex = async () => {
+const generateIndex = async (options: Options) => {
+  const { cssFramwork, jsFramework } = options
   const content = await prettier.format(
     JSON.stringify({
-      components: Object.entries(data).map(([key, value]) => ({
+      components: Object.entries(data).map(([componentName, value]) => ({
         name: pascalCase(value.rootComponent),
-        href: `https://park-ui.com/registry/panda/react/components/${key}.json`,
+        href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${componentName}.json`,
       })),
     }),
     {
@@ -43,8 +52,8 @@ const generateIndex = async () => {
       'website',
       'public',
       'registry',
-      'panda',
-      'react',
+      cssFramwork,
+      jsFramework,
       'components',
       'index.json',
     ),
@@ -52,16 +61,16 @@ const generateIndex = async () => {
   )
 }
 
-const generateRegistry = async () => {
-  Handlebars.registerHelper('eq', (a, b) => a === b)
-  Handlebars.registerHelper('titleCase', v.titleCase)
+const generateComponents = async (options: Options) => {
+  const { cssFramwork, jsFramework } = options
   await Promise.all(
     Object.entries(data).map(async ([key, value]) => {
       const view = {
         key,
         ...value,
       }
-      const templateString = reactTemplate(view)
+      const templateString = templates[jsFramework](view)
+
       const code = await prettier.format(templateString, {
         ...prettierConfig,
         plugins: ['prettier-plugin-organize-imports'],
@@ -72,7 +81,7 @@ const generateRegistry = async () => {
         JSON.stringify({
           files: [
             {
-              filename: `${key}.tsx`,
+              filename: `${key}.ts`,
               content: code,
             },
           ],
@@ -89,8 +98,8 @@ const generateRegistry = async () => {
           'website',
           'public',
           'registry',
-          'panda',
-          'react',
+          cssFramwork,
+          jsFramework,
           'components',
           key + '.json',
         ),
@@ -98,7 +107,15 @@ const generateRegistry = async () => {
       )
     }),
   )
-  await generateIndex()
+}
+
+const generateRegistry = async () => {
+  const jsFrameworks = ['react', 'solid'] as const
+
+  jsFrameworks.forEach((jsFramework) => {
+    generateComponents({ cssFramwork: 'panda', jsFramework })
+    generateIndex({ cssFramwork: 'panda', jsFramework })
+  })
 }
 
 export const registryCmd = new Command()

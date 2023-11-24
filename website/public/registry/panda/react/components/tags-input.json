@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "tags-input.tsx",
+      "filename": "tags-input.ts",
       "content": "import * as Ark from '@ark-ui/react/tags-input'\nimport { styled } from 'styled-system/jsx'\nimport { tagsInput, type TagsInputVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tagsInput)\n\nexport * from '@ark-ui/react/tags-input'\nexport type TagsInputProps = Ark.TagsInputProps & TagsInputVariantProps\n\nconst TagsInputRoot = withProvider(styled(Ark.TagsInput.Root), 'root')\nexport const TagsInputClearTrigger = withContext(styled(Ark.TagsInput.ClearTrigger), 'clearTrigger')\nexport const TagsInputControl = withContext(styled(Ark.TagsInput.Control), 'control')\nexport const TagsInputInput = withContext(styled(Ark.TagsInput.Input), 'input')\nexport const TagsInputItem = withContext(styled(Ark.TagsInput.Item), 'item')\nexport const TagsInputItemDeleteTrigger = withContext(\n  styled(Ark.TagsInput.ItemDeleteTrigger),\n  'itemDeleteTrigger',\n)\nexport const TagsInputItemInput = withContext(styled(Ark.TagsInput.ItemInput), 'itemInput')\nexport const TagsInputItemText = withContext(styled(Ark.TagsInput.ItemText), 'itemText')\nexport const TagsInputLabel = withContext(styled(Ark.TagsInput.Label), 'label')\n\nexport const TagsInput = Object.assign(TagsInputRoot, {\n  Root: TagsInputRoot,\n  ClearTrigger: TagsInputClearTrigger,\n  Control: TagsInputControl,\n  Input: TagsInputInput,\n  Item: TagsInputItem,\n  ItemDeleteTrigger: TagsInputItemDeleteTrigger,\n  ItemInput: TagsInputItemInput,\n  ItemText: TagsInputItemText,\n  Label: TagsInputLabel,\n})\n"
     }
   ]

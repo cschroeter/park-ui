@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "slider.ts",
+      "content": "import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { slider, type SliderVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(slider)\n\nexport type SliderProps = ArkSliderProps & SliderVariantProps\n\nconst SliderRoot = withProvider(styled(ArkSlider.Root), 'root')\nexport const SliderControl = withContext(styled(ArkSlider.Control), 'control')\nexport const SliderLabel = withContext(styled(ArkSlider.Label), 'label')\nexport const SliderMarker = withContext(styled(ArkSlider.Marker), 'marker')\nexport const SliderMarkerGroup = withContext(styled(ArkSlider.MarkerGroup), 'markerGroup')\nexport const SliderRange = withContext(styled(ArkSlider.Range), 'range')\nexport const SliderThumb = withContext(styled(ArkSlider.Thumb), 'thumb')\nexport const SliderTrack = withContext(styled(ArkSlider.Track), 'track')\nexport const SliderValueText = withContext(styled(ArkSlider.ValueText), 'valueText')\n\nexport const Slider = Object.assign(SliderRoot, {\n  Root: SliderRoot,\n  Control: SliderControl,\n  Label: SliderLabel,\n  Marker: SliderMarker,\n  MarkerGroup: SliderMarkerGroup,\n  Range: SliderRange,\n  Thumb: SliderThumb,\n  Track: SliderTrack,\n  ValueText: SliderValueText,\n})\n"
+    }
+  ]
+}

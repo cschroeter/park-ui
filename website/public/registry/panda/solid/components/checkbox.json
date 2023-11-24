@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "checkbox.ts",
+      "content": "import { Checkbox as ArkCheckbox, type CheckboxProps as ArkCheckboxProps } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(checkbox)\n\nexport type CheckboxProps = ArkCheckboxProps & CheckboxVariantProps\n\nconst CheckboxRoot = withProvider(styled(ArkCheckbox.Root), 'root')\nexport const CheckboxControl = withContext(styled(ArkCheckbox.Control), 'control')\nexport const CheckboxLabel = withContext(styled(ArkCheckbox.Label), 'label')\nexport const CheckboxIndicator = withContext(styled(ArkCheckbox.Indicator), 'indicator')\n\nexport const Checkbox = Object.assign(CheckboxRoot, {\n  Root: CheckboxRoot,\n  Control: CheckboxControl,\n  Label: CheckboxLabel,\n  Indicator: CheckboxIndicator,\n})\n"
+    }
+  ]
+}

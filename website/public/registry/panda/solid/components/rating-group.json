@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "rating-group.ts",
+      "content": "import {\n  RatingGroup as ArkRatingGroup,\n  type RatingGroupProps as ArkRatingGroupProps,\n} from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(ratingGroup)\n\nexport type RatingGroupProps = ArkRatingGroupProps & RatingGroupVariantProps\n\nconst RatingGroupRoot = withProvider(styled(ArkRatingGroup.Root), 'root')\nexport const RatingGroupControl = withContext(styled(ArkRatingGroup.Control), 'control')\nexport const RatingGroupLabel = withContext(styled(ArkRatingGroup.Label), 'label')\nexport const RatingGroupItem = withContext(styled(ArkRatingGroup.Item), 'item')\n\nexport const RatingGroup = Object.assign(RatingGroupRoot, {\n  Root: RatingGroupRoot,\n  Control: RatingGroupControl,\n  Label: RatingGroupLabel,\n  Item: RatingGroupItem,\n})\n"
+    }
+  ]
+}

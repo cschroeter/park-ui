@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "pagination.tsx",
+      "filename": "pagination.ts",
       "content": "import * as Ark from '@ark-ui/react/pagination'\nimport { styled } from 'styled-system/jsx'\nimport { pagination, type PaginationVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(pagination)\n\nexport * from '@ark-ui/react/pagination'\nexport type PaginationProps = Ark.PaginationProps & PaginationVariantProps\n\nconst PaginationRoot = withProvider(styled(Ark.Pagination.Root), 'root')\nexport const PaginationEllipsis = withContext(styled(Ark.Pagination.Ellipsis), 'ellipsis')\nexport const PaginationItem = withContext(styled(Ark.Pagination.Item), 'item')\nexport const PaginationNextTrigger = withContext(styled(Ark.Pagination.NextTrigger), 'nextTrigger')\nexport const PaginationPrevTrigger = withContext(styled(Ark.Pagination.PrevTrigger), 'prevTrigger')\n\nexport const Pagination = Object.assign(PaginationRoot, {\n  Root: PaginationRoot,\n  Ellipsis: PaginationEllipsis,\n  Item: PaginationItem,\n  NextTrigger: PaginationNextTrigger,\n  PrevTrigger: PaginationPrevTrigger,\n})\n"
     }
   ]

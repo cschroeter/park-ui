@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "splitter.tsx",
+      "filename": "splitter.ts",
       "content": "import * as Ark from '@ark-ui/react/splitter'\nimport { styled } from 'styled-system/jsx'\nimport { splitter, type SplitterVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport * from '@ark-ui/react/splitter'\nexport type SplitterProps = Ark.SplitterProps & SplitterVariantProps\n\nconst SplitterRoot = withProvider(styled(Ark.Splitter.Root), 'root')\nexport const SplitterPanel = withContext(styled(Ark.Splitter.Panel), 'panel')\nexport const SplitterResizeTrigger = withContext(\n  styled(Ark.Splitter.ResizeTrigger),\n  'resizeTrigger',\n)\n\nexport const Splitter = Object.assign(SplitterRoot, {\n  Root: SplitterRoot,\n  Panel: SplitterPanel,\n  ResizeTrigger: SplitterResizeTrigger,\n})\n"
     }
   ]

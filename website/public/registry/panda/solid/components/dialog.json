@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "dialog.ts",
+      "content": "import { Dialog as ArkDialog, type DialogProps as ArkDialogProps } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { dialog, type DialogVariantProps } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(dialog)\n\nexport type DialogProps = ArkDialogProps & DialogVariantProps\n\nconst DialogRoot = withProvider(styled(ArkDialog.Root), 'root')\nexport const DialogBackdrop = withContext(styled(ArkDialog.Backdrop), 'backdrop')\nexport const DialogCloseTrigger = withContext(styled(ArkDialog.CloseTrigger), 'closeTrigger')\nexport const DialogContent = withContext(styled(ArkDialog.Content), 'content')\nexport const DialogDescription = withContext(styled(ArkDialog.Description), 'description')\nexport const DialogPositioner = withContext(styled(ArkDialog.Positioner), 'positioner')\nexport const DialogTitle = withContext(styled(ArkDialog.Title), 'title')\nexport const DialogTrigger = withContext(styled(ArkDialog.Trigger), 'trigger')\n\nexport const Dialog = Object.assign(DialogRoot, {\n  Root: DialogRoot,\n  Backdrop: DialogBackdrop,\n  CloseTrigger: DialogCloseTrigger,\n  Content: DialogContent,\n  Description: DialogDescription,\n  Positioner: DialogPositioner,\n  Title: DialogTitle,\n  Trigger: DialogTrigger,\n})\n"
+    }
+  ]
+}
