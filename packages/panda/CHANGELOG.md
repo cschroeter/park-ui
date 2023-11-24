@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added `Kbd` component.
+
 ### Fixed
 
 - Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was scrolled.
