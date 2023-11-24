@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react'
 import { ThemeProvider } from './theme-provider'
+import React from 'react'
 
 const preview: Preview = {
   parameters: {
