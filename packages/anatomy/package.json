@@ -1,0 +1,8 @@
+{
+  "name": "@park-ui/anatomy",
+  "main": "src/index.ts",
+  "scripts": {},
+  "dependencies": {
+    "@ark-ui/anatomy": "1.1.0"
+  }
+}

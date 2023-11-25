@@ -30,6 +30,12 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(prettier@3.1.0)(typescript@5.3.2)
 
+  packages/anatomy:
+    dependencies:
+      '@ark-ui/anatomy':
+        specifier: 1.1.0
+        version: 1.1.0(@internationalized/date@3.5.0)
+
   packages/chakra:
     devDependencies:
       '@chakra-ui/anatomy':
