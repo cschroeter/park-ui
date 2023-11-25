@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "1.1.0",
-    "@ark-ui/react": "1.1.0",
     "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/handlebars": "4.1.0",

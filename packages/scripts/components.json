@@ -29,10 +29,10 @@
       "Control": { "name": "CarouselControl", "partName": "control" },
       "Indicator": { "name": "CarouselIndicator", "partName": "indicator" },
       "IndicatorGroup": { "name": "CarouselIndicatorGroup", "partName": "indicatorGroup" },
-      "NextTrigger": { "name": "CarouselNextTrigger", "partName": "nextTrigger" },
-      "PrevTrigger": { "name": "CarouselPrevTrigger", "partName": "prevTrigger" },
       "Item": { "name": "CarouselItem", "partName": "item" },
       "ItemGroup": { "name": "CarouselItemGroup", "partName": "itemGroup" },
+      "NextTrigger": { "name": "CarouselNextTrigger", "partName": "nextTrigger" },
+      "PrevTrigger": { "name": "CarouselPrevTrigger", "partName": "prevTrigger" },
       "Viewport": { "name": "CarouselViewport", "partName": "viewport" }
     },
     "isArkComponent": true,
@@ -44,8 +44,8 @@
     "components": {
       "Root": { "name": "Checkbox", "partName": "root" },
       "Control": { "name": "CheckboxControl", "partName": "control" },
-      "Label": { "name": "CheckboxLabel", "partName": "label" },
-      "Indicator": { "name": "CheckboxIndicator", "partName": "indicator" }
+      "Indicator": { "name": "CheckboxIndicator", "partName": "indicator" },
+      "Label": { "name": "CheckboxLabel", "partName": "label" }
     },
     "isArkComponent": true,
     "rootComponent": "Checkbox",
@@ -74,8 +74,8 @@
         "name": "ColorPickerEyeDropperTrigger",
         "partName": "eyeDropperTrigger"
       },
-      "FormatTrigger": { "name": "ColorPickerFormatTrigger", "partName": "formatTrigger" },
       "FormatSelect": { "name": "ColorPickerFormatSelect", "partName": "formatSelect" },
+      "FormatTrigger": { "name": "ColorPickerFormatTrigger", "partName": "formatTrigger" },
       "Label": { "name": "ColorPickerLabel", "partName": "label" },
       "Positioner": { "name": "ColorPickerPositioner", "partName": "positioner" },
       "Swatch": { "name": "ColorPickerSwatch", "partName": "swatch" },
@@ -146,7 +146,7 @@
   },
   "dialog": {
     "components": {
-      "Root": { "name": "Dialog", "partName": "root" },
+      "Root": { "name": "Dialog" },
       "Backdrop": { "name": "DialogBackdrop", "partName": "backdrop" },
       "CloseTrigger": { "name": "DialogCloseTrigger", "partName": "closeTrigger" },
       "Content": { "name": "DialogContent", "partName": "content" },
@@ -181,17 +181,17 @@
     "components": {
       "Root": { "name": "FileUpload", "partName": "root" },
       "Dropzone": { "name": "FileUploadDropzone", "partName": "dropzone" },
-      "Label": { "name": "FileUploadLabel", "partName": "label" },
-      "Trigger": { "name": "FileUploadTrigger", "partName": "trigger" },
-      "ItemGroup": { "name": "FileUploadItemGroup", "partName": "itemGroup" },
       "Item": { "name": "FileUploadItem", "partName": "item" },
-      "ItemName": { "name": "FileUploadItemName", "partName": "itemName" },
-      "ItemPreview": { "name": "FileUploadItemPreview", "partName": "itemPreview" },
-      "ItemSizeText": { "name": "FileUploadItemSizeText", "partName": "itemSizeText" },
       "ItemDeleteTrigger": {
         "name": "FileUploadItemDeleteTrigger",
         "partName": "itemDeleteTrigger"
-      }
+      },
+      "ItemGroup": { "name": "FileUploadItemGroup", "partName": "itemGroup" },
+      "ItemName": { "name": "FileUploadItemName", "partName": "itemName" },
+      "ItemPreview": { "name": "FileUploadItemPreview", "partName": "itemPreview" },
+      "ItemSizeText": { "name": "FileUploadItemSizeText", "partName": "itemSizeText" },
+      "Label": { "name": "FileUploadLabel", "partName": "label" },
+      "Trigger": { "name": "FileUploadTrigger", "partName": "trigger" }
     },
     "isArkComponent": true,
     "rootComponent": "FileUpload",
@@ -200,7 +200,7 @@
   },
   "hover-card": {
     "components": {
-      "Root": { "name": "HoverCard", "partName": "root" },
+      "Root": { "name": "HoverCard" },
       "Arrow": { "name": "HoverCardArrow", "partName": "arrow" },
       "ArrowTip": { "name": "HoverCardArrowTip", "partName": "arrowTip" },
       "Content": { "name": "HoverCardContent", "partName": "content" },
@@ -214,15 +214,21 @@
   },
   "menu": {
     "components": {
-      "Root": { "name": "Menu", "partName": "root" },
+      "Root": { "name": "Menu" },
       "Arrow": { "name": "MenuArrow", "partName": "arrow" },
       "ArrowTip": { "name": "MenuArrowTip", "partName": "arrowTip" },
       "Content": { "name": "MenuContent", "partName": "content" },
       "ContextTrigger": { "name": "MenuContextTrigger", "partName": "contextTrigger" },
+      "Indicator": { "name": "MenuIndicator", "partName": "indicator" },
       "Item": { "name": "MenuItem", "partName": "item" },
       "ItemGroup": { "name": "MenuItemGroup", "partName": "itemGroup" },
       "ItemGroupLabel": { "name": "MenuItemGroupLabel", "partName": "itemGroupLabel" },
       "OptionItem": { "name": "MenuOptionItem", "partName": "optionItem" },
+      "OptionItemIndicator": {
+        "name": "MenuOptionItemIndicator",
+        "partName": "optionItemIndicator"
+      },
+      "OptionItemText": { "name": "MenuOptionItemText", "partName": "optionItemText" },
       "Positioner": { "name": "MenuPositioner", "partName": "positioner" },
       "Separator": { "name": "MenuSeparator", "partName": "separator" },
       "Trigger": { "name": "MenuTrigger", "partName": "trigger" },
@@ -238,8 +244,8 @@
       "Root": { "name": "NumberInput", "partName": "root" },
       "Control": { "name": "NumberInputControl", "partName": "control" },
       "DecrementTrigger": { "name": "NumberInputDecrementTrigger", "partName": "decrementTrigger" },
-      "Input": { "name": "NumberInputInput", "partName": "input" },
       "IncrementTrigger": { "name": "NumberInputIncrementTrigger", "partName": "incrementTrigger" },
+      "Input": { "name": "NumberInputInput", "partName": "input" },
       "Label": { "name": "NumberInputLabel", "partName": "label" },
       "Scrubber": { "name": "NumberInputScrubber", "partName": "scrubber" }
     },
@@ -275,7 +281,7 @@
   },
   "popover": {
     "components": {
-      "Root": { "name": "Popover", "partName": "root" },
+      "Root": { "name": "Popover" },
       "Anchor": { "name": "PopoverAnchor", "partName": "anchor" },
       "Arrow": { "name": "PopoverArrow", "partName": "arrow" },
       "ArrowTip": { "name": "PopoverArrowTip", "partName": "arrowTip" },
@@ -310,8 +316,8 @@
     "components": {
       "Root": { "name": "RatingGroup", "partName": "root" },
       "Control": { "name": "RatingGroupControl", "partName": "control" },
-      "Label": { "name": "RatingGroupLabel", "partName": "label" },
-      "Item": { "name": "RatingGroupItem", "partName": "item" }
+      "Item": { "name": "RatingGroupItem", "partName": "item" },
+      "Label": { "name": "RatingGroupLabel", "partName": "label" }
     },
     "isArkComponent": true,
     "rootComponent": "RatingGroup",
@@ -397,10 +403,10 @@
   "tabs": {
     "components": {
       "Root": { "name": "Tabs", "partName": "root" },
-      "Content": { "name": "TabContent", "partName": "content" },
-      "Indicator": { "name": "TabIndicator", "partName": "indicator" },
-      "List": { "name": "TabList", "partName": "list" },
-      "Trigger": { "name": "TabTrigger", "partName": "trigger" }
+      "Content": { "name": "TabsContent", "partName": "content" },
+      "Indicator": { "name": "TabsIndicator", "partName": "indicator" },
+      "List": { "name": "TabsList", "partName": "list" },
+      "Trigger": { "name": "TabsTrigger", "partName": "trigger" }
     },
     "isArkComponent": true,
     "rootComponent": "Tabs",
@@ -430,9 +436,10 @@
   "toast": {
     "components": {
       "Root": { "name": "Toast", "partName": "root" },
-      "Title": { "name": "ToastTitle", "partName": "title" },
+      "CloseTrigger": { "name": "ToastCloseTrigger", "partName": "closeTrigger" },
       "Description": { "name": "ToastDescription", "partName": "description" },
-      "CloseTrigger": { "name": "ToastCloseTrigger", "partName": "closeTrigger" }
+      "Group": { "name": "ToastGroup", "partName": "group" },
+      "Title": { "name": "ToastTitle", "partName": "title" }
     },
     "isArkComponent": true,
     "rootComponent": "Toast",
@@ -451,7 +458,7 @@
   },
   "tooltip": {
     "components": {
-      "Root": { "name": "Tooltip", "partName": "root" },
+      "Root": { "name": "Tooltip" },
       "Arrow": { "name": "TooltipArrow", "partName": "arrow" },
       "ArrowTip": { "name": "TooltipArrowTip", "partName": "arrowTip" },
       "Content": { "name": "TooltipContent", "partName": "content" },
