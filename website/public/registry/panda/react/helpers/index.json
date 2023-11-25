@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "create-style-context.ts,",
+      "filename": "create-style-context.ts",
       "content": "export {}"
     }
   ]

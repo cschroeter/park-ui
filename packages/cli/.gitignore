@@ -3,3 +3,4 @@ park-ui.json
 # the CLI generates components and utils
 components
 utils
+lib
