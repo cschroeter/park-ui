@@ -1,66 +1,37 @@
 import * as p from '@clack/prompts'
 
-import { mkdirSync, writeFileSync } from 'fs'
-import { match } from 'ts-pattern'
-import { Config, getCssFramework, getImportAliases } from '../config/config'
+import { Config, getCssFramework, getImportAliases, getJsFramework } from '../config/config'
+import { saveComponentToFile } from '../helpers/save-file'
 
-const getComponentDownloadPaths = (
-  componentName: string,
-  cssFramework: Config['cssFramework'],
-): { fileName: string; url: string }[] => {
-  return match(cssFramework)
-    .with('panda', () => [
-      {
-        fileName: `${componentName}.tsx`,
-        url: `https://raw.githubusercontent.com/cschroeter/park-ui/main/website/src/components/ui/${componentName}.tsx`,
-      },
-    ])
-    .with('tailwind', () => [
-      {
-        fileName: `${componentName}/snippet.ts`,
-        url: `https://raw.githubusercontent.com/cschroeter/park-ui/main/packages/tailwind/src/components/${componentName}/snippet.ts`,
-      },
-      {
-        fileName: `${componentName}/recipe.ts`,
-        url: `https://raw.githubusercontent.com/cschroeter/park-ui/main/packages/tailwind/src/components/${componentName}/recipe.ts`,
-      },
-    ])
-    .exhaustive()
-}
-
-const downloadComponent = async (url: string) => {
-  const componentResult = await fetch(url)
-  if (componentResult.status === 200) {
-    const component = await componentResult.text()
-    return component
-  }
-  throw new Error(`Component at ${url} not found`)
-}
-
-const saveComponentToFile = (
-  componentsImportAlias: string | undefined,
-  componentName: string,
-  component: string,
-) => {
-  // TODO resolve imports like ~ with tsconfig, but for now just make sure to not end up in the home dir
-  const componentPath = `${componentsImportAlias?.replace('~/', './')}/${componentName}`
-  const folder = componentPath.split('/').slice(0, -1).join('/')
-  mkdirSync(folder, { recursive: true })
-  writeFileSync(componentPath, component)
+const downloadComponents = async (options: {
+  componentName: string
+  cssFramework: Config['cssFramework']
+  jsFramework: Config['jsFramework']
+}): Promise<{ filename: string; content: string }[]> => {
+  const { componentName, cssFramework, jsFramework } = options
+  const componentsUrl = `https://park-ui.com/registry/${cssFramework}/${jsFramework}/components/${componentName}.json`
+  const components = await fetch(componentsUrl)
+    .then((res) => res.json())
+    .then((res) => res.files)
+    .catch((e) => {
+      throw new Error(`Failed to download ${componentName} component\n${e?.message}`)
+    })
+  return components
 }
 
 export const addComponent = async (componentName: string) => {
   const cssFramework = await getCssFramework()
+  const jsFramework = await getJsFramework()
   const { componentsImportAlias } = await getImportAliases()
 
-  const componentDownloadPaths = getComponentDownloadPaths(componentName, cssFramework)
-  for (const { fileName, url } of componentDownloadPaths) {
-    const component = await downloadComponent(url)
-    if (!component) {
-      throw new Error(`Component ${componentName} not found`)
-    }
-    saveComponentToFile(componentsImportAlias, fileName, component)
-  }
+  const components = await downloadComponents({
+    componentName,
+    cssFramework,
+    jsFramework,
+  })
+  components.forEach(({ filename, content }) => {
+    saveComponentToFile(componentsImportAlias, filename, content)
+  })
 }
 
 export const addComponentsCommand = async () => {

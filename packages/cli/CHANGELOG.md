@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- added registry to download components and helpers
+
 ## [0.1.1] - 2023-11-22
 
 - added hashbang to use node to run the cli
