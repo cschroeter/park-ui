@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "avatar.ts",
+      "content": "import { Avatar as ArkAvatar } from '@ark-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\nimport { avatarStyles } from './recipe'\n\nconst { withProvider, withContext } = createStyleContext(avatarStyles)\n\nexport const AvatarRoot = withProvider(styled(ArkAvatar.Root), 'root')\nexport const AvatarFallback = withContext(styled(ArkAvatar.Fallback), 'fallback')\nexport const AvatarImage = withContext(styled(ArkAvatar.Image), 'image')\n\nexport const Avatar = Object.assign(AvatarRoot, {\n  Root: AvatarRoot,\n  Fallback: AvatarFallback,\n  Image: AvatarImage,\n})\n"
+    }
+  ]
+}

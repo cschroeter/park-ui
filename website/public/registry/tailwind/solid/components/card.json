@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "card.ts",
+      "content": "import { ark } from '@ark-ui/solid'\nimport { createStyleContext } from '~/lib/create-style-context'\nimport { cardStyles } from './recipe'\n\nconst { withProvider, withContext } = createStyleContext(cardStyles)\n\nexport const CardRoot = withProvider(styled(ark.div), 'root')\nexport const CardBody = withContext(styled(ark.div), 'body')\nexport const CardDescription = withContext(styled(ark.p), 'description')\nexport const CardFooter = withContext(styled(ark.div), 'footer')\nexport const CardHeader = withContext(styled(ark.div), 'header')\nexport const CardTitle = withContext(styled(ark.h3), 'title')\n\nexport const Card = Object.assign(CardRoot, {\n  Root: CardRoot,\n  Body: CardBody,\n  Description: CardDescription,\n  Footer: CardFooter,\n  Header: CardHeader,\n  Title: CardTitle,\n})\n"
+    }
+  ]
+}
