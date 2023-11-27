@@ -94,26 +94,13 @@ importers:
         version: 5.3.2
 
   packages/cli:
-    dependencies:
+    devDependencies:
       '@clack/core':
         specifier: 0.3.3
         version: 0.3.3
       '@clack/prompts':
         specifier: 0.7.0
         version: 0.7.0
-      pkg-dir:
-        specifier: 8.0.0
-        version: 8.0.0
-      ts-pattern:
-        specifier: 5.0.5
-        version: 5.0.5
-      voca:
-        specifier: 1.4.1
-        version: 1.4.1
-      yargs:
-        specifier: 17.7.2
-        version: 17.7.2
-    devDependencies:
       '@release-it/keep-a-changelog':
         specifier: 5.0.0
         version: 5.0.0(release-it@17.0.0)
@@ -126,12 +113,18 @@ importers:
       json-schema-to-typescript:
         specifier: 13.1.1
         version: 13.1.1
+      pkg-dir:
+        specifier: 8.0.0
+        version: 8.0.0
       read-package-up:
         specifier: 11.0.0
         version: 11.0.0
       release-it:
         specifier: 17.0.0
         version: 17.0.0(typescript@5.3.2)
+      ts-pattern:
+        specifier: 5.0.5
+        version: 5.0.5
       tsup:
         specifier: 8.0.1
         version: 8.0.1(postcss@8.4.31)(typescript@5.3.2)
@@ -141,6 +134,12 @@ importers:
       typescript:
         specifier: 5.3.2
         version: 5.3.2
+      voca:
+        specifier: 1.4.1
+        version: 1.4.1
+      yargs:
+        specifier: 17.7.2
+        version: 17.7.2
 
   packages/panda:
     dependencies:
@@ -3293,7 +3292,7 @@ packages:
       '@clack/core': 0.3.3
       picocolors: 1.0.0
       sisteransi: 1.0.5
-    dev: false
+    dev: true
     bundledDependencies:
       - is-unicode-supported
 
@@ -10275,6 +10274,7 @@ packages:
   /find-up-simple@1.0.0:
     resolution: {integrity: sha512-q7Us7kcjj2VMePAa02hDAF6d+MzsdsAWEwYyOpwUtlerRBkOEPBCRZrAV4XfcSN8fHAgaD0hP7miwoay6DCprw==}
     engines: {node: '>=18'}
+    dev: true
 
   /find-up@3.0.0:
     resolution: {integrity: sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==}
@@ -14365,7 +14365,7 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       find-up-simple: 1.0.0
-    dev: false
+    dev: true
 
   /pkg-types@1.0.3:
     resolution: {integrity: sha512-nN7pYi0AQqJnoLPC9eHFQ8AcyaixBUOwvqc5TDnIKCMEE6I0y8P7OKA7fPexsXGCGxQDl/cmrLAp26LhcwxZ4A==}
@@ -17378,7 +17378,6 @@ packages:
 
   /voca@1.4.1:
     resolution: {integrity: sha512-NJC/BzESaHT1p4B5k4JykxedeltmNbau4cummStd4RjFojgq/kLew5TzYge9N2geeWyI2w8T30wUET5v+F7ZHA==}
-    dev: false
 
   /volar-service-css@0.0.16(@volar/language-service@1.10.10):
     resolution: {integrity: sha512-gK/XD35t/P3SQrUuS8LMlCnE2ItIk+kXI6gPvBYl1NZ7O+tLH8rUWXA32YgpwNoITxYrm/G1seaq08zs4aiPvg==}
