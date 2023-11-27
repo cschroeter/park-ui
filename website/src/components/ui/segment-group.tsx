@@ -1,22 +1,19 @@
-import * as Ark from '@ark-ui/react/segment-group'
+import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { segmentGroup, type SegmentGroupVariantProps } from 'styled-system/recipes'
+import { segmentGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(segmentGroup)
 
-export * from '@ark-ui/react/segment-group'
-export type SegmentGroupProps = Ark.SegmentGroupProps & SegmentGroupVariantProps
-
-const SegmentGroupRoot = withProvider(styled(Ark.SegmentGroup.Root), 'root')
-export const SegmentGroupLabel = withContext(styled(Ark.SegmentGroup.Label), 'label')
-export const SegmentGroupIndicator = withContext(styled(Ark.SegmentGroup.Indicator), 'indicator')
-export const SegmentGroupItem = withContext(styled(Ark.SegmentGroup.Item), 'item')
-export const SegmentGroupItemText = withContext(styled(Ark.SegmentGroup.ItemText), 'itemText')
+export const SegmentGroupRoot = withProvider(styled(ArkSegmentGroup.Root), 'root')
+export const SegmentGroupIndicator = withContext(styled(ArkSegmentGroup.Indicator), 'indicator')
+export const SegmentGroupItem = withContext(styled(ArkSegmentGroup.Item), 'item')
 export const SegmentGroupItemControl = withContext(
-  styled(Ark.SegmentGroup.ItemControl),
+  styled(ArkSegmentGroup.ItemControl),
   'itemControl',
 )
+export const SegmentGroupItemText = withContext(styled(ArkSegmentGroup.ItemText), 'itemText')
+export const SegmentGroupLabel = withContext(styled(ArkSegmentGroup.Label), 'label')
 
 export const SegmentGroup = Object.assign(SegmentGroupRoot, {
   Root: SegmentGroupRoot,
@@ -26,3 +23,10 @@ export const SegmentGroup = Object.assign(SegmentGroupRoot, {
   ItemText: SegmentGroupItemText,
   Label: SegmentGroupLabel,
 })
+
+export type SegmentGroupProps = typeof SegmentGroupRoot
+export type SegmentGroupIndicatorProps = typeof SegmentGroupIndicator
+export type SegmentGroupItemProps = typeof SegmentGroupItem
+export type SegmentGroupItemControlProps = typeof SegmentGroupItemControl
+export type SegmentGroupItemTextProps = typeof SegmentGroupItemText
+export type SegmentGroupLabelProps = typeof SegmentGroupLabel

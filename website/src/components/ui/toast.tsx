@@ -1,21 +1,26 @@
-import * as Ark from '@ark-ui/react/toast'
+import { Toast as ArkToast } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { toast, type ToastVariantProps } from 'styled-system/recipes'
+import { toast } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(toast)
 
-export * from '@ark-ui/react/toast'
-export type ToastProps = Ark.ToastProps & ToastVariantProps
-
-const ToastRoot = withProvider(styled(Ark.Toast.Root), 'root')
-export const ToastTitle = withContext(styled(Ark.Toast.Title), 'title')
-export const ToastDescription = withContext(styled(Ark.Toast.Description), 'description')
-export const ToastCloseTrigger = withContext(styled(Ark.Toast.CloseTrigger), 'closeTrigger')
+export const ToastRoot = withProvider(styled(ArkToast.Root), 'root')
+export const ToastCloseTrigger = withContext(styled(ArkToast.CloseTrigger), 'closeTrigger')
+export const ToastDescription = withContext(styled(ArkToast.Description), 'description')
+export const ToastGroup = withContext(styled(ArkToast.Group), 'group')
+export const ToastTitle = withContext(styled(ArkToast.Title), 'title')
 
 export const Toast = Object.assign(ToastRoot, {
   Root: ToastRoot,
-  Title: ToastTitle,
-  Description: ToastDescription,
   CloseTrigger: ToastCloseTrigger,
+  Description: ToastDescription,
+  Group: ToastGroup,
+  Title: ToastTitle,
 })
+
+export type ToastProps = typeof ToastRoot
+export type ToastCloseTriggerProps = typeof ToastCloseTrigger
+export type ToastDescriptionProps = typeof ToastDescription
+export type ToastGroupProps = typeof ToastGroup
+export type ToastTitleProps = typeof ToastTitle

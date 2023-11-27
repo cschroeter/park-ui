@@ -1,19 +1,16 @@
-import * as Ark from '@ark-ui/react/hover-card'
+import { HoverCard as ArkHoverCard } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { hoverCard, type HoverCardVariantProps } from 'styled-system/recipes'
+import { hoverCard } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(hoverCard)
 
-export * from '@ark-ui/react/hover-card'
-export type HoverCardProps = Ark.HoverCardProps & HoverCardVariantProps
-
-const HoverCardRoot = withProvider(styled(Ark.HoverCard.Root))
-export const HoverCardArrow = withContext(styled(Ark.HoverCard.Arrow), 'arrow')
-export const HoverCardArrowTip = withContext(styled(Ark.HoverCard.ArrowTip), 'arrowTip')
-export const HoverCardContent = withContext(styled(Ark.HoverCard.Content), 'content')
-export const HoverCardPositioner = withContext(styled(Ark.HoverCard.Positioner), 'positioner')
-export const HoverCardTrigger = withContext(styled(Ark.HoverCard.Trigger), 'trigger')
+export const HoverCardRoot = withProvider(ArkHoverCard.Root)
+export const HoverCardArrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')
+export const HoverCardArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')
+export const HoverCardContent = withContext(styled(ArkHoverCard.Content), 'content')
+export const HoverCardPositioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')
+export const HoverCardTrigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')
 
 export const HoverCard = Object.assign(HoverCardRoot, {
   Root: HoverCardRoot,
@@ -23,3 +20,10 @@ export const HoverCard = Object.assign(HoverCardRoot, {
   Positioner: HoverCardPositioner,
   Trigger: HoverCardTrigger,
 })
+
+export type HoverCardProps = typeof HoverCardRoot
+export type HoverCardArrowProps = typeof HoverCardArrow
+export type HoverCardArrowTipProps = typeof HoverCardArrowTip
+export type HoverCardContentProps = typeof HoverCardContent
+export type HoverCardPositionerProps = typeof HoverCardPositioner
+export type HoverCardTriggerProps = typeof HoverCardTrigger

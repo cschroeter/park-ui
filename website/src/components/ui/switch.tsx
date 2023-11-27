@@ -1,17 +1,14 @@
-import * as Ark from '@ark-ui/react/switch'
+import { Switch as ArkSwitch } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'
+import { switchRecipe } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(switchRecipe)
 
-export * from '@ark-ui/react/switch'
-export type SwitchProps = Ark.SwitchProps & SwitchRecipeVariantProps
-
-const SwitchRoot = withProvider(styled(Ark.Switch.Root), 'root')
-export const SwitchControl = withContext(styled(Ark.Switch.Control), 'control')
-export const SwitchLabel = withContext(styled(Ark.Switch.Label), 'label')
-export const SwitchThumb = withContext(styled(Ark.Switch.Thumb), 'thumb')
+export const SwitchRoot = withProvider(styled(ArkSwitch.Root), 'root')
+export const SwitchControl = withContext(styled(ArkSwitch.Control), 'control')
+export const SwitchLabel = withContext(styled(ArkSwitch.Label), 'label')
+export const SwitchThumb = withContext(styled(ArkSwitch.Thumb), 'thumb')
 
 export const Switch = Object.assign(SwitchRoot, {
   Root: SwitchRoot,
@@ -19,3 +16,8 @@ export const Switch = Object.assign(SwitchRoot, {
   Label: SwitchLabel,
   Thumb: SwitchThumb,
 })
+
+export type SwitchProps = typeof SwitchRoot
+export type SwitchControlProps = typeof SwitchControl
+export type SwitchLabelProps = typeof SwitchLabel
+export type SwitchThumbProps = typeof SwitchThumb

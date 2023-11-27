@@ -1,21 +1,18 @@
-import * as Ark from '@ark-ui/react/accordion'
+import { Accordion as ArkAccordion } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { accordion, type AccordionVariantProps } from 'styled-system/recipes'
+import { accordion } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(accordion)
 
-export * from '@ark-ui/react/accordion'
-export type AccordionProps = Ark.AccordionProps & AccordionVariantProps
-
-const AccordionRoot = withProvider(styled(Ark.Accordion.Root), 'root')
-export const AccordionItem = withContext(styled(Ark.Accordion.Item), 'item')
-export const AccordionItemContent = withContext(styled(Ark.Accordion.ItemContent), 'itemContent')
+export const AccordionRoot = withProvider(styled(ArkAccordion.Root), 'root')
+export const AccordionItem = withContext(styled(ArkAccordion.Item), 'item')
+export const AccordionItemContent = withContext(styled(ArkAccordion.ItemContent), 'itemContent')
 export const AccordionItemIndicator = withContext(
-  styled(Ark.Accordion.ItemIndicator),
+  styled(ArkAccordion.ItemIndicator),
   'itemIndicator',
 )
-export const AccordionItemTrigger = withContext(styled(Ark.Accordion.ItemTrigger), 'itemTrigger')
+export const AccordionItemTrigger = withContext(styled(ArkAccordion.ItemTrigger), 'itemTrigger')
 
 export const Accordion = Object.assign(AccordionRoot, {
   Root: AccordionRoot,
@@ -24,3 +21,9 @@ export const Accordion = Object.assign(AccordionRoot, {
   ItemIndicator: AccordionItemIndicator,
   ItemTrigger: AccordionItemTrigger,
 })
+
+export type AccordionProps = typeof AccordionRoot
+export type AccordionItemProps = typeof AccordionItem
+export type AccordionItemContentProps = typeof AccordionItemContent
+export type AccordionItemIndicatorProps = typeof AccordionItemIndicator
+export type AccordionItemTriggerProps = typeof AccordionItemTrigger

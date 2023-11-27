@@ -1,28 +1,19 @@
-import * as Ark from '@ark-ui/react/editable'
+import { Editable as ArkEditable } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { editable, type EditableVariantProps } from 'styled-system/recipes'
+import { editable } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(editable)
 
-export * from '@ark-ui/react/editable'
-export type EditableProps = Ark.EditableProps & EditableVariantProps
-
-const EditableRoot = withProvider(styled(Ark.Editable.Root), 'root')
-export const EditableArea = withContext(styled(Ark.Editable.Area), 'area')
-export const EditableCancelTrigger = withContext(
-  styled(Ark.Editable.CancelTrigger),
-  'cancelTrigger',
-)
-export const EditableControl = withContext(styled(Ark.Editable.Control), 'control')
-export const EditableEditTrigger = withContext(styled(Ark.Editable.EditTrigger), 'editTrigger')
-export const EditableInput = withContext(styled(Ark.Editable.Input), 'input')
-export const EditableLabel = withContext(styled(Ark.Editable.Label), 'label')
-export const EditablePreview = withContext(styled(Ark.Editable.Preview), 'preview')
-export const EditableSubmitTrigger = withContext(
-  styled(Ark.Editable.SubmitTrigger),
-  'submitTrigger',
-)
+export const EditableRoot = withProvider(styled(ArkEditable.Root), 'root')
+export const EditableArea = withContext(styled(ArkEditable.Area), 'area')
+export const EditableCancelTrigger = withContext(styled(ArkEditable.CancelTrigger), 'cancelTrigger')
+export const EditableControl = withContext(styled(ArkEditable.Control), 'control')
+export const EditableEditTrigger = withContext(styled(ArkEditable.EditTrigger), 'editTrigger')
+export const EditableInput = withContext(styled(ArkEditable.Input), 'input')
+export const EditableLabel = withContext(styled(ArkEditable.Label), 'label')
+export const EditablePreview = withContext(styled(ArkEditable.Preview), 'preview')
+export const EditableSubmitTrigger = withContext(styled(ArkEditable.SubmitTrigger), 'submitTrigger')
 
 export const Editable = Object.assign(EditableRoot, {
   Root: EditableRoot,
@@ -35,3 +26,13 @@ export const Editable = Object.assign(EditableRoot, {
   Preview: EditablePreview,
   SubmitTrigger: EditableSubmitTrigger,
 })
+
+export type EditableProps = typeof EditableRoot
+export type EditableAreaProps = typeof EditableArea
+export type EditableCancelTriggerProps = typeof EditableCancelTrigger
+export type EditableControlProps = typeof EditableControl
+export type EditableEditTriggerProps = typeof EditableEditTrigger
+export type EditableInputProps = typeof EditableInput
+export type EditableLabelProps = typeof EditableLabel
+export type EditablePreviewProps = typeof EditablePreview
+export type EditableSubmitTriggerProps = typeof EditableSubmitTrigger

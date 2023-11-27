@@ -1,18 +1,15 @@
-import * as Ark from '@ark-ui/react/pagination'
+import { Pagination as ArkPagination } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
+import { pagination } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(pagination)
 
-export * from '@ark-ui/react/pagination'
-export type PaginationProps = Ark.PaginationProps & PaginationVariantProps
-
-const PaginationRoot = withProvider(styled(Ark.Pagination.Root), 'root')
-export const PaginationEllipsis = withContext(styled(Ark.Pagination.Ellipsis), 'ellipsis')
-export const PaginationNextTrigger = withContext(styled(Ark.Pagination.NextTrigger), 'nextTrigger')
-export const PaginationItem = withContext(styled(Ark.Pagination.Item), 'item')
-export const PaginationPrevTrigger = withContext(styled(Ark.Pagination.PrevTrigger), 'prevTrigger')
+export const PaginationRoot = withProvider(styled(ArkPagination.Root), 'root')
+export const PaginationEllipsis = withContext(styled(ArkPagination.Ellipsis), 'ellipsis')
+export const PaginationItem = withContext(styled(ArkPagination.Item), 'item')
+export const PaginationNextTrigger = withContext(styled(ArkPagination.NextTrigger), 'nextTrigger')
+export const PaginationPrevTrigger = withContext(styled(ArkPagination.PrevTrigger), 'prevTrigger')
 
 export const Pagination = Object.assign(PaginationRoot, {
   Root: PaginationRoot,
@@ -21,3 +18,9 @@ export const Pagination = Object.assign(PaginationRoot, {
   NextTrigger: PaginationNextTrigger,
   PrevTrigger: PaginationPrevTrigger,
 })
+
+export type PaginationProps = typeof PaginationRoot
+export type PaginationEllipsisProps = typeof PaginationEllipsis
+export type PaginationItemProps = typeof PaginationItem
+export type PaginationNextTriggerProps = typeof PaginationNextTrigger
+export type PaginationPrevTriggerProps = typeof PaginationPrevTrigger

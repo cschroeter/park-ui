@@ -1,22 +1,20 @@
-import * as Ark from '@ark-ui/react/splitter'
+import { Splitter as ArkSplitter } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { splitter, type SplitterVariantProps } from 'styled-system/recipes'
+import { splitter } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(splitter)
 
-export * from '@ark-ui/react/splitter'
-export type SplitterProps = Ark.SplitterProps & SplitterVariantProps
-
-const SplitterRoot = withProvider(styled(Ark.Splitter.Root), 'root')
-export const SplitterPanel = withContext(styled(Ark.Splitter.Panel), 'panel')
-export const SplitterResizeTrigger = withContext(
-  styled(Ark.Splitter.ResizeTrigger),
-  'resizeTrigger',
-)
+export const SplitterRoot = withProvider(styled(ArkSplitter.Root), 'root')
+export const SplitterPanel = withContext(styled(ArkSplitter.Panel), 'panel')
+export const SplitterResizeTrigger = withContext(styled(ArkSplitter.ResizeTrigger), 'resizeTrigger')
 
 export const Splitter = Object.assign(SplitterRoot, {
   Root: SplitterRoot,
   Panel: SplitterPanel,
   ResizeTrigger: SplitterResizeTrigger,
 })
+
+export type SplitterProps = typeof SplitterRoot
+export type SplitterPanelProps = typeof SplitterPanel
+export type SplitterResizeTriggerProps = typeof SplitterResizeTrigger

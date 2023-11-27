@@ -1,19 +1,16 @@
-import * as Ark from '@ark-ui/react/tooltip'
+import { Tooltip as ArkTooltip } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { tooltip, type TooltipVariantProps } from 'styled-system/recipes'
+import { tooltip } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
 
-export * from '@ark-ui/react/tooltip'
-export type TooltipProps = Ark.TooltipProps & TooltipVariantProps
-
-const TooltipRoot = withProvider(styled(Ark.Tooltip.Root))
-export const TooltipArrow = withContext(styled(Ark.Tooltip.Arrow), 'arrow')
-export const TooltipArrowTip = withContext(styled(Ark.Tooltip.ArrowTip), 'arrowTip')
-export const TooltipContent = withContext(styled(Ark.Tooltip.Content), 'content')
-export const TooltipPositioner = withContext(styled(Ark.Tooltip.Positioner), 'positioner')
-export const TooltipTrigger = withContext(styled(Ark.Tooltip.Trigger), 'trigger')
+export const TooltipRoot = withProvider(ArkTooltip.Root)
+export const TooltipArrow = withContext(styled(ArkTooltip.Arrow), 'arrow')
+export const TooltipArrowTip = withContext(styled(ArkTooltip.ArrowTip), 'arrowTip')
+export const TooltipContent = withContext(styled(ArkTooltip.Content), 'content')
+export const TooltipPositioner = withContext(styled(ArkTooltip.Positioner), 'positioner')
+export const TooltipTrigger = withContext(styled(ArkTooltip.Trigger), 'trigger')
 
 export const Tooltip = Object.assign(TooltipRoot, {
   Root: TooltipRoot,
@@ -23,3 +20,10 @@ export const Tooltip = Object.assign(TooltipRoot, {
   Positioner: TooltipPositioner,
   Trigger: TooltipTrigger,
 })
+
+export type TooltipProps = typeof TooltipRoot
+export type TooltipArrowProps = typeof TooltipArrow
+export type TooltipArrowTipProps = typeof TooltipArrowTip
+export type TooltipContentProps = typeof TooltipContent
+export type TooltipPositionerProps = typeof TooltipPositioner
+export type TooltipTriggerProps = typeof TooltipTrigger
