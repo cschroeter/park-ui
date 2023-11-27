@@ -5,7 +5,13 @@ import Handlebars from 'handlebars'
 import path from 'node:path'
 import prettier from 'prettier'
 import v from 'voca'
-import data from '../../components.json'
+import arkComponents from '../../components.json'
+import parkComponents from '../../park-components.json'
+
+const data = {
+  ...arkComponents,
+  ...parkComponents,
+}
 
 type Options = {
   cssFramwork: 'panda' | 'tailwind'
@@ -26,17 +32,12 @@ const pascalCase = (s: string) =>
     .replace(/([A-Z])/g, ' $1')
     .trim()
 
-const templates = {
-  react: Handlebars.compile(fs.readFileSync('./src/templates/react.hbs', 'utf-8')),
-  solid: Handlebars.compile(fs.readFileSync('./src/templates/solid.hbs', 'utf-8')),
-}
-
 const generateIndex = async (options: Options) => {
   const { cssFramwork, jsFramework } = options
   const content = await prettier.format(
     JSON.stringify({
       components: Object.entries(data).map(([componentName, value]) => ({
-        name: pascalCase(value.rootComponent),
+        name: pascalCase(value.name),
         href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${componentName}.json`,
       })),
     }),
@@ -69,7 +70,14 @@ const generateComponents = async (options: Options) => {
         key,
         ...value,
       }
-      const templateString = templates[jsFramework](view)
+
+      const variant = value.hasOwnProperty('parts') ? 'with-context' : 'without-context'
+
+      const template = Handlebars.compile(
+        fs.readFileSync(`./src/templates/${cssFramwork}/${jsFramework}/${variant}.hbs`, 'utf-8'),
+      )
+
+      const templateString = template(view)
 
       const code = await prettier.format(templateString, {
         ...prettierConfig,
@@ -91,6 +99,12 @@ const generateComponents = async (options: Options) => {
           parser: 'json',
         },
       )
+
+      // await fs.outputFile(path.join(`dist/${jsFramework}/${key}.ts`), code)
+      // await fs.outputFile(
+      //   path.join(rootDir, 'website', 'src', 'components', 'ui', `${key}.tsx`),
+      //   code,
+      // )
 
       await fs.outputFile(
         path.join(

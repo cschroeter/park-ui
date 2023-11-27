@@ -2,7 +2,7 @@ import { PinInput, type PinInputProps } from '~/components/ui'
 import { Input } from '~/components/ui/input'
 
 export const Demo = (props: PinInputProps) => (
-  <PinInput.Root placeholder="0" onValueComplete={(e) => alert(e.valueAsString)}>
+  <PinInput.Root placeholder="0" onValueComplete={(e) => alert(e.valueAsString)} {...props}>
     <PinInput.Label>Pin Input</PinInput.Label>
     <PinInput.Control>
       {[0, 1, 2, 3].map((id, index) => (

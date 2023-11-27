@@ -19,7 +19,7 @@ const generateComponentsJson = async () => {
 
       return {
         [component]: {
-          components: (value as AnatomyInstance<string>)
+          parts: (value as AnatomyInstance<string>)
             .keys()
             .sort((a, b) => {
               if (a === 'root') return -1
@@ -32,15 +32,23 @@ const generateComponentsJson = async () => {
                   ...acc,
                   [pascalCase(part)]: {
                     name: pascalCase(component).concat(part === 'root' ? '' : pascalCase(part)),
-                    partName: part,
+                    slot: part,
+                    component: 'Ark'
+                      .concat(pascalCase(component))
+                      .concat('.')
+                      .concat(part === 'root' ? 'Root' : pascalCase(part)),
                   },
                 }
               },
-              { Root: { name: pascalCase(component) } },
+              {
+                Root: {
+                  name: pascalCase(component),
+                  component: 'Ark'.concat(pascalCase(component)).concat('.Root'),
+                },
+              },
             ),
-          isArkComponent: true,
-          rootComponent: pascalCase(component),
-          filename: `${component}.ts`,
+          name: pascalCase(component),
+          imports: `${pascalCase(component)} as Ark${pascalCase(component)}`,
           className: match(component)
             .with('switch', () => 'switchRecipe') // resvered word
             .otherwise(() => camelCase(component)),

@@ -3,7 +3,7 @@ import { Button, IconButton, Pagination, type PaginationProps } from '~/componen
 
 export const Demo = (props: PaginationProps) => {
   return (
-    <Pagination.Root count={90} pageSize={10} siblingCount={1} defaultPage={2}>
+    <Pagination.Root count={90} pageSize={10} siblingCount={1} defaultPage={2} {...props}>
       {({ pages }) => (
         <>
           <Pagination.PrevTrigger asChild>

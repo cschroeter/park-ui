@@ -1,22 +1,25 @@
-import * as Ark from '@ark-ui/react/radio-group'
+import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/react'
 import { styled } from 'styled-system/jsx'
-import { radioButtonGroup, type RadioButtonGroupVariantProps } from 'styled-system/recipes'
+import { radioButtonGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 
-export * from '@ark-ui/react/radio-group'
-export type RadioButtonGroupProps = Ark.RadioGroupProps & RadioButtonGroupVariantProps
-
-const RadioButtonGroupRoot = withProvider(styled(Ark.RadioGroup.Root), 'root')
-export const RadioButtonGroupIndicator = withContext(styled(Ark.RadioGroup.Indicator), 'indicator')
-export const RadioButtonGroupItem = withContext(styled(Ark.RadioGroup.Item), 'item')
+export const RadioButtonGroupRoot = withProvider(styled(ArkRadioButtonGroup.Root), 'root')
+export const RadioButtonGroupIndicator = withContext(
+  styled(ArkRadioButtonGroup.Indicator),
+  'indicator',
+)
+export const RadioButtonGroupItem = withContext(styled(ArkRadioButtonGroup.Item), 'item')
 export const RadioButtonGroupItemControl = withContext(
-  styled(Ark.RadioGroup.ItemControl),
+  styled(ArkRadioButtonGroup.ItemControl),
   'itemControl',
 )
-export const RadioButtonGroupItemText = withContext(styled(Ark.RadioGroup.ItemText), 'itemText')
-export const RadioButtonGroupLabel = withContext(styled(Ark.RadioGroup.Label), 'label')
+export const RadioButtonGroupItemText = withContext(
+  styled(ArkRadioButtonGroup.ItemText),
+  'itemText',
+)
+export const RadioButtonGroupLabel = withContext(styled(ArkRadioButtonGroup.Label), 'label')
 
 export const RadioButtonGroup = Object.assign(RadioButtonGroupRoot, {
   Root: RadioButtonGroupRoot,
@@ -26,3 +29,10 @@ export const RadioButtonGroup = Object.assign(RadioButtonGroupRoot, {
   ItemText: RadioButtonGroupItemText,
   Label: RadioButtonGroupLabel,
 })
+
+export type RadioButtonGroupProps = typeof RadioButtonGroupRoot
+export type RadioButtonGroupIndicatorProps = typeof RadioButtonGroupIndicator
+export type RadioButtonGroupItemProps = typeof RadioButtonGroupItem
+export type RadioButtonGroupItemControlProps = typeof RadioButtonGroupItemControl
+export type RadioButtonGroupItemTextProps = typeof RadioButtonGroupItemText
+export type RadioButtonGroupLabelProps = typeof RadioButtonGroupLabel

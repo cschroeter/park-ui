@@ -1,0 +1,8 @@
+{
+  "files": [
+    {
+      "filename": "label.ts",
+      "content": "import { ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { label } from 'styled-system/recipes'\n\nexport const Label = styled(ark.label, label)\nexport type LabelProps = typeof Label\n"
+    }
+  ]
+}

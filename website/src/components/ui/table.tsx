@@ -1,20 +1,17 @@
 import { ark } from '@ark-ui/react'
-import type { ComponentPropsWithoutRef } from 'react'
 import { styled } from 'styled-system/jsx'
-import { table, type TableVariantProps } from 'styled-system/recipes'
+import { table } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(table)
 
-export type TableProps = TableVariantProps & ComponentPropsWithoutRef<typeof ark.table>
-
-const TableRoot = withProvider(styled(ark.table), 'root')
+export const TableRoot = withProvider(styled(ark.table), 'root')
 export const TableBody = withContext(styled(ark.tbody), 'body')
 export const TableCaption = withContext(styled(ark.caption), 'caption')
 export const TableCell = withContext(styled(ark.td), 'cell')
 export const TableFooter = withContext(styled(ark.tfoot), 'footer')
-export const TableHead = withContext(styled(ark.th), 'head')
-export const TableHeader = withContext(styled(ark.thead), 'header')
+export const TableHead = withContext(styled(ark.thead), 'head')
+export const TableHeader = withContext(styled(ark.th), 'header')
 export const TableRow = withContext(styled(ark.tr), 'row')
 
 export const Table = Object.assign(TableRoot, {
@@ -27,3 +24,12 @@ export const Table = Object.assign(TableRoot, {
   Header: TableHeader,
   Row: TableRow,
 })
+
+export type TableProps = typeof TableRoot
+export type TableBodyProps = typeof TableBody
+export type TableCaptionProps = typeof TableCaption
+export type TableCellProps = typeof TableCell
+export type TableFooterProps = typeof TableFooter
+export type TableHeadProps = typeof TableHead
+export type TableHeaderProps = typeof TableHeader
+export type TableRowProps = typeof TableRow

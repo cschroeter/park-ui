@@ -1,473 +1,951 @@
 {
   "accordion": {
-    "components": {
-      "Root": { "name": "Accordion", "partName": "root" },
-      "Item": { "name": "AccordionItem", "partName": "item" },
-      "ItemContent": { "name": "AccordionItemContent", "partName": "itemContent" },
-      "ItemIndicator": { "name": "AccordionItemIndicator", "partName": "itemIndicator" },
-      "ItemTrigger": { "name": "AccordionItemTrigger", "partName": "itemTrigger" }
+    "parts": {
+      "Root": { "name": "Accordion", "slot": "root", "component": "ArkAccordion.Root" },
+      "Item": { "name": "AccordionItem", "slot": "item", "component": "ArkAccordion.Item" },
+      "ItemContent": {
+        "name": "AccordionItemContent",
+        "slot": "itemContent",
+        "component": "ArkAccordion.ItemContent"
+      },
+      "ItemIndicator": {
+        "name": "AccordionItemIndicator",
+        "slot": "itemIndicator",
+        "component": "ArkAccordion.ItemIndicator"
+      },
+      "ItemTrigger": {
+        "name": "AccordionItemTrigger",
+        "slot": "itemTrigger",
+        "component": "ArkAccordion.ItemTrigger"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Accordion",
-    "filename": "accordion.ts",
+    "name": "Accordion",
+    "imports": "Accordion as ArkAccordion",
     "className": "accordion"
   },
   "avatar": {
-    "components": {
-      "Root": { "name": "Avatar", "partName": "root" },
-      "Fallback": { "name": "AvatarFallback", "partName": "fallback" },
-      "Image": { "name": "AvatarImage", "partName": "image" }
+    "parts": {
+      "Root": { "name": "Avatar", "slot": "root", "component": "ArkAvatar.Root" },
+      "Fallback": {
+        "name": "AvatarFallback",
+        "slot": "fallback",
+        "component": "ArkAvatar.Fallback"
+      },
+      "Image": { "name": "AvatarImage", "slot": "image", "component": "ArkAvatar.Image" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Avatar",
-    "filename": "avatar.ts",
+    "name": "Avatar",
+    "imports": "Avatar as ArkAvatar",
     "className": "avatar"
   },
   "carousel": {
-    "components": {
-      "Root": { "name": "Carousel", "partName": "root" },
-      "Control": { "name": "CarouselControl", "partName": "control" },
-      "Indicator": { "name": "CarouselIndicator", "partName": "indicator" },
-      "IndicatorGroup": { "name": "CarouselIndicatorGroup", "partName": "indicatorGroup" },
-      "Item": { "name": "CarouselItem", "partName": "item" },
-      "ItemGroup": { "name": "CarouselItemGroup", "partName": "itemGroup" },
-      "NextTrigger": { "name": "CarouselNextTrigger", "partName": "nextTrigger" },
-      "PrevTrigger": { "name": "CarouselPrevTrigger", "partName": "prevTrigger" },
-      "Viewport": { "name": "CarouselViewport", "partName": "viewport" }
+    "parts": {
+      "Root": { "name": "Carousel", "slot": "root", "component": "ArkCarousel.Root" },
+      "Control": {
+        "name": "CarouselControl",
+        "slot": "control",
+        "component": "ArkCarousel.Control"
+      },
+      "Indicator": {
+        "name": "CarouselIndicator",
+        "slot": "indicator",
+        "component": "ArkCarousel.Indicator"
+      },
+      "IndicatorGroup": {
+        "name": "CarouselIndicatorGroup",
+        "slot": "indicatorGroup",
+        "component": "ArkCarousel.IndicatorGroup"
+      },
+      "Item": { "name": "CarouselItem", "slot": "item", "component": "ArkCarousel.Item" },
+      "ItemGroup": {
+        "name": "CarouselItemGroup",
+        "slot": "itemGroup",
+        "component": "ArkCarousel.ItemGroup"
+      },
+      "NextTrigger": {
+        "name": "CarouselNextTrigger",
+        "slot": "nextTrigger",
+        "component": "ArkCarousel.NextTrigger"
+      },
+      "PrevTrigger": {
+        "name": "CarouselPrevTrigger",
+        "slot": "prevTrigger",
+        "component": "ArkCarousel.PrevTrigger"
+      },
+      "Viewport": {
+        "name": "CarouselViewport",
+        "slot": "viewport",
+        "component": "ArkCarousel.Viewport"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Carousel",
-    "filename": "carousel.ts",
+    "name": "Carousel",
+    "imports": "Carousel as ArkCarousel",
     "className": "carousel"
   },
   "checkbox": {
-    "components": {
-      "Root": { "name": "Checkbox", "partName": "root" },
-      "Control": { "name": "CheckboxControl", "partName": "control" },
-      "Indicator": { "name": "CheckboxIndicator", "partName": "indicator" },
-      "Label": { "name": "CheckboxLabel", "partName": "label" }
+    "parts": {
+      "Root": { "name": "Checkbox", "slot": "root", "component": "ArkCheckbox.Root" },
+      "Control": {
+        "name": "CheckboxControl",
+        "slot": "control",
+        "component": "ArkCheckbox.Control"
+      },
+      "Indicator": {
+        "name": "CheckboxIndicator",
+        "slot": "indicator",
+        "component": "ArkCheckbox.Indicator"
+      },
+      "Label": { "name": "CheckboxLabel", "slot": "label", "component": "ArkCheckbox.Label" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Checkbox",
-    "filename": "checkbox.ts",
+    "name": "Checkbox",
+    "imports": "Checkbox as ArkCheckbox",
     "className": "checkbox"
   },
   "color-picker": {
-    "components": {
-      "Root": { "name": "ColorPicker", "partName": "root" },
-      "Area": { "name": "ColorPickerArea", "partName": "area" },
-      "AreaBackground": { "name": "ColorPickerAreaBackground", "partName": "areaBackground" },
-      "AreaThumb": { "name": "ColorPickerAreaThumb", "partName": "areaThumb" },
-      "ChannelInput": { "name": "ColorPickerChannelInput", "partName": "channelInput" },
-      "ChannelSlider": { "name": "ColorPickerChannelSlider", "partName": "channelSlider" },
+    "parts": {
+      "Root": { "name": "ColorPicker", "slot": "root", "component": "ArkColorPicker.Root" },
+      "Area": { "name": "ColorPickerArea", "slot": "area", "component": "ArkColorPicker.Area" },
+      "AreaBackground": {
+        "name": "ColorPickerAreaBackground",
+        "slot": "areaBackground",
+        "component": "ArkColorPicker.AreaBackground"
+      },
+      "AreaThumb": {
+        "name": "ColorPickerAreaThumb",
+        "slot": "areaThumb",
+        "component": "ArkColorPicker.AreaThumb"
+      },
+      "ChannelInput": {
+        "name": "ColorPickerChannelInput",
+        "slot": "channelInput",
+        "component": "ArkColorPicker.ChannelInput"
+      },
+      "ChannelSlider": {
+        "name": "ColorPickerChannelSlider",
+        "slot": "channelSlider",
+        "component": "ArkColorPicker.ChannelSlider"
+      },
       "ChannelSliderThumb": {
         "name": "ColorPickerChannelSliderThumb",
-        "partName": "channelSliderThumb"
+        "slot": "channelSliderThumb",
+        "component": "ArkColorPicker.ChannelSliderThumb"
       },
       "ChannelSliderTrack": {
         "name": "ColorPickerChannelSliderTrack",
-        "partName": "channelSliderTrack"
+        "slot": "channelSliderTrack",
+        "component": "ArkColorPicker.ChannelSliderTrack"
       },
-      "Content": { "name": "ColorPickerContent", "partName": "content" },
-      "Control": { "name": "ColorPickerControl", "partName": "control" },
+      "Content": {
+        "name": "ColorPickerContent",
+        "slot": "content",
+        "component": "ArkColorPicker.Content"
+      },
+      "Control": {
+        "name": "ColorPickerControl",
+        "slot": "control",
+        "component": "ArkColorPicker.Control"
+      },
       "EyeDropperTrigger": {
         "name": "ColorPickerEyeDropperTrigger",
-        "partName": "eyeDropperTrigger"
+        "slot": "eyeDropperTrigger",
+        "component": "ArkColorPicker.EyeDropperTrigger"
       },
-      "FormatSelect": { "name": "ColorPickerFormatSelect", "partName": "formatSelect" },
-      "FormatTrigger": { "name": "ColorPickerFormatTrigger", "partName": "formatTrigger" },
-      "Label": { "name": "ColorPickerLabel", "partName": "label" },
-      "Positioner": { "name": "ColorPickerPositioner", "partName": "positioner" },
-      "Swatch": { "name": "ColorPickerSwatch", "partName": "swatch" },
-      "SwatchGroup": { "name": "ColorPickerSwatchGroup", "partName": "swatchGroup" },
-      "SwatchIndicator": { "name": "ColorPickerSwatchIndicator", "partName": "swatchIndicator" },
-      "SwatchTrigger": { "name": "ColorPickerSwatchTrigger", "partName": "swatchTrigger" },
-      "TransparencyGrid": { "name": "ColorPickerTransparencyGrid", "partName": "transparencyGrid" },
-      "Trigger": { "name": "ColorPickerTrigger", "partName": "trigger" },
-      "ValueText": { "name": "ColorPickerValueText", "partName": "valueText" },
-      "View": { "name": "ColorPickerView", "partName": "view" }
+      "FormatSelect": {
+        "name": "ColorPickerFormatSelect",
+        "slot": "formatSelect",
+        "component": "ArkColorPicker.FormatSelect"
+      },
+      "FormatTrigger": {
+        "name": "ColorPickerFormatTrigger",
+        "slot": "formatTrigger",
+        "component": "ArkColorPicker.FormatTrigger"
+      },
+      "Label": { "name": "ColorPickerLabel", "slot": "label", "component": "ArkColorPicker.Label" },
+      "Positioner": {
+        "name": "ColorPickerPositioner",
+        "slot": "positioner",
+        "component": "ArkColorPicker.Positioner"
+      },
+      "Swatch": {
+        "name": "ColorPickerSwatch",
+        "slot": "swatch",
+        "component": "ArkColorPicker.Swatch"
+      },
+      "SwatchGroup": {
+        "name": "ColorPickerSwatchGroup",
+        "slot": "swatchGroup",
+        "component": "ArkColorPicker.SwatchGroup"
+      },
+      "SwatchIndicator": {
+        "name": "ColorPickerSwatchIndicator",
+        "slot": "swatchIndicator",
+        "component": "ArkColorPicker.SwatchIndicator"
+      },
+      "SwatchTrigger": {
+        "name": "ColorPickerSwatchTrigger",
+        "slot": "swatchTrigger",
+        "component": "ArkColorPicker.SwatchTrigger"
+      },
+      "TransparencyGrid": {
+        "name": "ColorPickerTransparencyGrid",
+        "slot": "transparencyGrid",
+        "component": "ArkColorPicker.TransparencyGrid"
+      },
+      "Trigger": {
+        "name": "ColorPickerTrigger",
+        "slot": "trigger",
+        "component": "ArkColorPicker.Trigger"
+      },
+      "ValueText": {
+        "name": "ColorPickerValueText",
+        "slot": "valueText",
+        "component": "ArkColorPicker.ValueText"
+      },
+      "View": { "name": "ColorPickerView", "slot": "view", "component": "ArkColorPicker.View" }
     },
-    "isArkComponent": true,
-    "rootComponent": "ColorPicker",
-    "filename": "color-picker.ts",
+    "name": "ColorPicker",
+    "imports": "ColorPicker as ArkColorPicker",
     "className": "colorPicker"
   },
   "combobox": {
-    "components": {
-      "Root": { "name": "Combobox", "partName": "root" },
-      "ClearTrigger": { "name": "ComboboxClearTrigger", "partName": "clearTrigger" },
-      "Content": { "name": "ComboboxContent", "partName": "content" },
-      "Control": { "name": "ComboboxControl", "partName": "control" },
-      "Input": { "name": "ComboboxInput", "partName": "input" },
-      "Item": { "name": "ComboboxItem", "partName": "item" },
-      "ItemGroup": { "name": "ComboboxItemGroup", "partName": "itemGroup" },
-      "ItemGroupLabel": { "name": "ComboboxItemGroupLabel", "partName": "itemGroupLabel" },
-      "ItemIndicator": { "name": "ComboboxItemIndicator", "partName": "itemIndicator" },
-      "ItemText": { "name": "ComboboxItemText", "partName": "itemText" },
-      "Label": { "name": "ComboboxLabel", "partName": "label" },
-      "Positioner": { "name": "ComboboxPositioner", "partName": "positioner" },
-      "Trigger": { "name": "ComboboxTrigger", "partName": "trigger" }
+    "parts": {
+      "Root": { "name": "Combobox", "slot": "root", "component": "ArkCombobox.Root" },
+      "ClearTrigger": {
+        "name": "ComboboxClearTrigger",
+        "slot": "clearTrigger",
+        "component": "ArkCombobox.ClearTrigger"
+      },
+      "Content": {
+        "name": "ComboboxContent",
+        "slot": "content",
+        "component": "ArkCombobox.Content"
+      },
+      "Control": {
+        "name": "ComboboxControl",
+        "slot": "control",
+        "component": "ArkCombobox.Control"
+      },
+      "Input": { "name": "ComboboxInput", "slot": "input", "component": "ArkCombobox.Input" },
+      "Item": { "name": "ComboboxItem", "slot": "item", "component": "ArkCombobox.Item" },
+      "ItemGroup": {
+        "name": "ComboboxItemGroup",
+        "slot": "itemGroup",
+        "component": "ArkCombobox.ItemGroup"
+      },
+      "ItemGroupLabel": {
+        "name": "ComboboxItemGroupLabel",
+        "slot": "itemGroupLabel",
+        "component": "ArkCombobox.ItemGroupLabel"
+      },
+      "ItemIndicator": {
+        "name": "ComboboxItemIndicator",
+        "slot": "itemIndicator",
+        "component": "ArkCombobox.ItemIndicator"
+      },
+      "ItemText": {
+        "name": "ComboboxItemText",
+        "slot": "itemText",
+        "component": "ArkCombobox.ItemText"
+      },
+      "Label": { "name": "ComboboxLabel", "slot": "label", "component": "ArkCombobox.Label" },
+      "Positioner": {
+        "name": "ComboboxPositioner",
+        "slot": "positioner",
+        "component": "ArkCombobox.Positioner"
+      },
+      "Trigger": {
+        "name": "ComboboxTrigger",
+        "slot": "trigger",
+        "component": "ArkCombobox.Trigger"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Combobox",
-    "filename": "combobox.ts",
+    "name": "Combobox",
+    "imports": "Combobox as ArkCombobox",
     "className": "combobox"
   },
   "date-picker": {
-    "components": {
-      "Root": { "name": "DatePicker", "partName": "root" },
-      "ClearTrigger": { "name": "DatePickerClearTrigger", "partName": "clearTrigger" },
-      "Content": { "name": "DatePickerContent", "partName": "content" },
-      "Control": { "name": "DatePickerControl", "partName": "control" },
-      "Input": { "name": "DatePickerInput", "partName": "input" },
-      "Label": { "name": "DatePickerLabel", "partName": "label" },
-      "MonthSelect": { "name": "DatePickerMonthSelect", "partName": "monthSelect" },
-      "NextTrigger": { "name": "DatePickerNextTrigger", "partName": "nextTrigger" },
-      "Positioner": { "name": "DatePickerPositioner", "partName": "positioner" },
-      "PrevTrigger": { "name": "DatePickerPrevTrigger", "partName": "prevTrigger" },
-      "RangeText": { "name": "DatePickerRangeText", "partName": "rangeText" },
-      "Table": { "name": "DatePickerTable", "partName": "table" },
-      "TableBody": { "name": "DatePickerTableBody", "partName": "tableBody" },
-      "TableCell": { "name": "DatePickerTableCell", "partName": "tableCell" },
-      "TableCellTrigger": { "name": "DatePickerTableCellTrigger", "partName": "tableCellTrigger" },
-      "TableHead": { "name": "DatePickerTableHead", "partName": "tableHead" },
-      "TableHeader": { "name": "DatePickerTableHeader", "partName": "tableHeader" },
-      "TableRow": { "name": "DatePickerTableRow", "partName": "tableRow" },
-      "Trigger": { "name": "DatePickerTrigger", "partName": "trigger" },
-      "View": { "name": "DatePickerView", "partName": "view" },
-      "ViewControl": { "name": "DatePickerViewControl", "partName": "viewControl" },
-      "ViewTrigger": { "name": "DatePickerViewTrigger", "partName": "viewTrigger" },
-      "YearSelect": { "name": "DatePickerYearSelect", "partName": "yearSelect" }
+    "parts": {
+      "Root": { "name": "DatePicker", "slot": "root", "component": "ArkDatePicker.Root" },
+      "ClearTrigger": {
+        "name": "DatePickerClearTrigger",
+        "slot": "clearTrigger",
+        "component": "ArkDatePicker.ClearTrigger"
+      },
+      "Content": {
+        "name": "DatePickerContent",
+        "slot": "content",
+        "component": "ArkDatePicker.Content"
+      },
+      "Control": {
+        "name": "DatePickerControl",
+        "slot": "control",
+        "component": "ArkDatePicker.Control"
+      },
+      "Input": { "name": "DatePickerInput", "slot": "input", "component": "ArkDatePicker.Input" },
+      "Label": { "name": "DatePickerLabel", "slot": "label", "component": "ArkDatePicker.Label" },
+      "MonthSelect": {
+        "name": "DatePickerMonthSelect",
+        "slot": "monthSelect",
+        "component": "ArkDatePicker.MonthSelect"
+      },
+      "NextTrigger": {
+        "name": "DatePickerNextTrigger",
+        "slot": "nextTrigger",
+        "component": "ArkDatePicker.NextTrigger"
+      },
+      "Positioner": {
+        "name": "DatePickerPositioner",
+        "slot": "positioner",
+        "component": "ArkDatePicker.Positioner"
+      },
+      "PrevTrigger": {
+        "name": "DatePickerPrevTrigger",
+        "slot": "prevTrigger",
+        "component": "ArkDatePicker.PrevTrigger"
+      },
+      "RangeText": {
+        "name": "DatePickerRangeText",
+        "slot": "rangeText",
+        "component": "ArkDatePicker.RangeText"
+      },
+      "Table": { "name": "DatePickerTable", "slot": "table", "component": "ArkDatePicker.Table" },
+      "TableBody": {
+        "name": "DatePickerTableBody",
+        "slot": "tableBody",
+        "component": "ArkDatePicker.TableBody"
+      },
+      "TableCell": {
+        "name": "DatePickerTableCell",
+        "slot": "tableCell",
+        "component": "ArkDatePicker.TableCell"
+      },
+      "TableCellTrigger": {
+        "name": "DatePickerTableCellTrigger",
+        "slot": "tableCellTrigger",
+        "component": "ArkDatePicker.TableCellTrigger"
+      },
+      "TableHead": {
+        "name": "DatePickerTableHead",
+        "slot": "tableHead",
+        "component": "ArkDatePicker.TableHead"
+      },
+      "TableHeader": {
+        "name": "DatePickerTableHeader",
+        "slot": "tableHeader",
+        "component": "ArkDatePicker.TableHeader"
+      },
+      "TableRow": {
+        "name": "DatePickerTableRow",
+        "slot": "tableRow",
+        "component": "ArkDatePicker.TableRow"
+      },
+      "Trigger": {
+        "name": "DatePickerTrigger",
+        "slot": "trigger",
+        "component": "ArkDatePicker.Trigger"
+      },
+      "View": { "name": "DatePickerView", "slot": "view", "component": "ArkDatePicker.View" },
+      "ViewControl": {
+        "name": "DatePickerViewControl",
+        "slot": "viewControl",
+        "component": "ArkDatePicker.ViewControl"
+      },
+      "ViewTrigger": {
+        "name": "DatePickerViewTrigger",
+        "slot": "viewTrigger",
+        "component": "ArkDatePicker.ViewTrigger"
+      },
+      "YearSelect": {
+        "name": "DatePickerYearSelect",
+        "slot": "yearSelect",
+        "component": "ArkDatePicker.YearSelect"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "DatePicker",
-    "filename": "date-picker.ts",
+    "name": "DatePicker",
+    "imports": "DatePicker as ArkDatePicker",
     "className": "datePicker"
   },
   "dialog": {
-    "components": {
-      "Root": { "name": "Dialog" },
-      "Backdrop": { "name": "DialogBackdrop", "partName": "backdrop" },
-      "CloseTrigger": { "name": "DialogCloseTrigger", "partName": "closeTrigger" },
-      "Content": { "name": "DialogContent", "partName": "content" },
-      "Description": { "name": "DialogDescription", "partName": "description" },
-      "Positioner": { "name": "DialogPositioner", "partName": "positioner" },
-      "Title": { "name": "DialogTitle", "partName": "title" },
-      "Trigger": { "name": "DialogTrigger", "partName": "trigger" }
+    "parts": {
+      "Root": { "name": "Dialog", "component": "ArkDialog.Root" },
+      "Backdrop": {
+        "name": "DialogBackdrop",
+        "slot": "backdrop",
+        "component": "ArkDialog.Backdrop"
+      },
+      "CloseTrigger": {
+        "name": "DialogCloseTrigger",
+        "slot": "closeTrigger",
+        "component": "ArkDialog.CloseTrigger"
+      },
+      "Content": { "name": "DialogContent", "slot": "content", "component": "ArkDialog.Content" },
+      "Description": {
+        "name": "DialogDescription",
+        "slot": "description",
+        "component": "ArkDialog.Description"
+      },
+      "Positioner": {
+        "name": "DialogPositioner",
+        "slot": "positioner",
+        "component": "ArkDialog.Positioner"
+      },
+      "Title": { "name": "DialogTitle", "slot": "title", "component": "ArkDialog.Title" },
+      "Trigger": { "name": "DialogTrigger", "slot": "trigger", "component": "ArkDialog.Trigger" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Dialog",
-    "filename": "dialog.ts",
+    "name": "Dialog",
+    "imports": "Dialog as ArkDialog",
     "className": "dialog"
   },
   "editable": {
-    "components": {
-      "Root": { "name": "Editable", "partName": "root" },
-      "Area": { "name": "EditableArea", "partName": "area" },
-      "CancelTrigger": { "name": "EditableCancelTrigger", "partName": "cancelTrigger" },
-      "Control": { "name": "EditableControl", "partName": "control" },
-      "EditTrigger": { "name": "EditableEditTrigger", "partName": "editTrigger" },
-      "Input": { "name": "EditableInput", "partName": "input" },
-      "Label": { "name": "EditableLabel", "partName": "label" },
-      "Preview": { "name": "EditablePreview", "partName": "preview" },
-      "SubmitTrigger": { "name": "EditableSubmitTrigger", "partName": "submitTrigger" }
+    "parts": {
+      "Root": { "name": "Editable", "slot": "root", "component": "ArkEditable.Root" },
+      "Area": { "name": "EditableArea", "slot": "area", "component": "ArkEditable.Area" },
+      "CancelTrigger": {
+        "name": "EditableCancelTrigger",
+        "slot": "cancelTrigger",
+        "component": "ArkEditable.CancelTrigger"
+      },
+      "Control": {
+        "name": "EditableControl",
+        "slot": "control",
+        "component": "ArkEditable.Control"
+      },
+      "EditTrigger": {
+        "name": "EditableEditTrigger",
+        "slot": "editTrigger",
+        "component": "ArkEditable.EditTrigger"
+      },
+      "Input": { "name": "EditableInput", "slot": "input", "component": "ArkEditable.Input" },
+      "Label": { "name": "EditableLabel", "slot": "label", "component": "ArkEditable.Label" },
+      "Preview": {
+        "name": "EditablePreview",
+        "slot": "preview",
+        "component": "ArkEditable.Preview"
+      },
+      "SubmitTrigger": {
+        "name": "EditableSubmitTrigger",
+        "slot": "submitTrigger",
+        "component": "ArkEditable.SubmitTrigger"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Editable",
-    "filename": "editable.ts",
+    "name": "Editable",
+    "imports": "Editable as ArkEditable",
     "className": "editable"
   },
   "file-upload": {
-    "components": {
-      "Root": { "name": "FileUpload", "partName": "root" },
-      "Dropzone": { "name": "FileUploadDropzone", "partName": "dropzone" },
-      "Item": { "name": "FileUploadItem", "partName": "item" },
+    "parts": {
+      "Root": { "name": "FileUpload", "slot": "root", "component": "ArkFileUpload.Root" },
+      "Dropzone": {
+        "name": "FileUploadDropzone",
+        "slot": "dropzone",
+        "component": "ArkFileUpload.Dropzone"
+      },
+      "Item": { "name": "FileUploadItem", "slot": "item", "component": "ArkFileUpload.Item" },
       "ItemDeleteTrigger": {
         "name": "FileUploadItemDeleteTrigger",
-        "partName": "itemDeleteTrigger"
+        "slot": "itemDeleteTrigger",
+        "component": "ArkFileUpload.ItemDeleteTrigger"
       },
-      "ItemGroup": { "name": "FileUploadItemGroup", "partName": "itemGroup" },
-      "ItemName": { "name": "FileUploadItemName", "partName": "itemName" },
-      "ItemPreview": { "name": "FileUploadItemPreview", "partName": "itemPreview" },
-      "ItemSizeText": { "name": "FileUploadItemSizeText", "partName": "itemSizeText" },
-      "Label": { "name": "FileUploadLabel", "partName": "label" },
-      "Trigger": { "name": "FileUploadTrigger", "partName": "trigger" }
+      "ItemGroup": {
+        "name": "FileUploadItemGroup",
+        "slot": "itemGroup",
+        "component": "ArkFileUpload.ItemGroup"
+      },
+      "ItemName": {
+        "name": "FileUploadItemName",
+        "slot": "itemName",
+        "component": "ArkFileUpload.ItemName"
+      },
+      "ItemPreview": {
+        "name": "FileUploadItemPreview",
+        "slot": "itemPreview",
+        "component": "ArkFileUpload.ItemPreview"
+      },
+      "ItemSizeText": {
+        "name": "FileUploadItemSizeText",
+        "slot": "itemSizeText",
+        "component": "ArkFileUpload.ItemSizeText"
+      },
+      "Label": { "name": "FileUploadLabel", "slot": "label", "component": "ArkFileUpload.Label" },
+      "Trigger": {
+        "name": "FileUploadTrigger",
+        "slot": "trigger",
+        "component": "ArkFileUpload.Trigger"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "FileUpload",
-    "filename": "file-upload.ts",
+    "name": "FileUpload",
+    "imports": "FileUpload as ArkFileUpload",
     "className": "fileUpload"
   },
   "hover-card": {
-    "components": {
-      "Root": { "name": "HoverCard" },
-      "Arrow": { "name": "HoverCardArrow", "partName": "arrow" },
-      "ArrowTip": { "name": "HoverCardArrowTip", "partName": "arrowTip" },
-      "Content": { "name": "HoverCardContent", "partName": "content" },
-      "Positioner": { "name": "HoverCardPositioner", "partName": "positioner" },
-      "Trigger": { "name": "HoverCardTrigger", "partName": "trigger" }
+    "parts": {
+      "Root": { "name": "HoverCard", "component": "ArkHoverCard.Root" },
+      "Arrow": { "name": "HoverCardArrow", "slot": "arrow", "component": "ArkHoverCard.Arrow" },
+      "ArrowTip": {
+        "name": "HoverCardArrowTip",
+        "slot": "arrowTip",
+        "component": "ArkHoverCard.ArrowTip"
+      },
+      "Content": {
+        "name": "HoverCardContent",
+        "slot": "content",
+        "component": "ArkHoverCard.Content"
+      },
+      "Positioner": {
+        "name": "HoverCardPositioner",
+        "slot": "positioner",
+        "component": "ArkHoverCard.Positioner"
+      },
+      "Trigger": {
+        "name": "HoverCardTrigger",
+        "slot": "trigger",
+        "component": "ArkHoverCard.Trigger"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "HoverCard",
-    "filename": "hover-card.ts",
+    "name": "HoverCard",
+    "imports": "HoverCard as ArkHoverCard",
     "className": "hoverCard"
   },
   "menu": {
-    "components": {
-      "Root": { "name": "Menu" },
-      "Arrow": { "name": "MenuArrow", "partName": "arrow" },
-      "ArrowTip": { "name": "MenuArrowTip", "partName": "arrowTip" },
-      "Content": { "name": "MenuContent", "partName": "content" },
-      "ContextTrigger": { "name": "MenuContextTrigger", "partName": "contextTrigger" },
-      "Indicator": { "name": "MenuIndicator", "partName": "indicator" },
-      "Item": { "name": "MenuItem", "partName": "item" },
-      "ItemGroup": { "name": "MenuItemGroup", "partName": "itemGroup" },
-      "ItemGroupLabel": { "name": "MenuItemGroupLabel", "partName": "itemGroupLabel" },
-      "OptionItem": { "name": "MenuOptionItem", "partName": "optionItem" },
+    "parts": {
+      "Root": { "name": "Menu", "component": "ArkMenu.Root" },
+      "Arrow": { "name": "MenuArrow", "slot": "arrow", "component": "ArkMenu.Arrow" },
+      "ArrowTip": { "name": "MenuArrowTip", "slot": "arrowTip", "component": "ArkMenu.ArrowTip" },
+      "Content": { "name": "MenuContent", "slot": "content", "component": "ArkMenu.Content" },
+      "ContextTrigger": {
+        "name": "MenuContextTrigger",
+        "slot": "contextTrigger",
+        "component": "ArkMenu.ContextTrigger"
+      },
+      "Indicator": {
+        "name": "MenuIndicator",
+        "slot": "indicator",
+        "component": "ArkMenu.Indicator"
+      },
+      "Item": { "name": "MenuItem", "slot": "item", "component": "ArkMenu.Item" },
+      "ItemGroup": {
+        "name": "MenuItemGroup",
+        "slot": "itemGroup",
+        "component": "ArkMenu.ItemGroup"
+      },
+      "ItemGroupLabel": {
+        "name": "MenuItemGroupLabel",
+        "slot": "itemGroupLabel",
+        "component": "ArkMenu.ItemGroupLabel"
+      },
+      "OptionItem": {
+        "name": "MenuOptionItem",
+        "slot": "optionItem",
+        "component": "ArkMenu.OptionItem"
+      },
       "OptionItemIndicator": {
         "name": "MenuOptionItemIndicator",
-        "partName": "optionItemIndicator"
+        "slot": "optionItemIndicator",
+        "component": "ArkMenu.OptionItemIndicator"
       },
-      "OptionItemText": { "name": "MenuOptionItemText", "partName": "optionItemText" },
-      "Positioner": { "name": "MenuPositioner", "partName": "positioner" },
-      "Separator": { "name": "MenuSeparator", "partName": "separator" },
-      "Trigger": { "name": "MenuTrigger", "partName": "trigger" },
-      "TriggerItem": { "name": "MenuTriggerItem", "partName": "triggerItem" }
+      "OptionItemText": {
+        "name": "MenuOptionItemText",
+        "slot": "optionItemText",
+        "component": "ArkMenu.OptionItemText"
+      },
+      "Positioner": {
+        "name": "MenuPositioner",
+        "slot": "positioner",
+        "component": "ArkMenu.Positioner"
+      },
+      "Separator": {
+        "name": "MenuSeparator",
+        "slot": "separator",
+        "component": "ArkMenu.Separator"
+      },
+      "Trigger": { "name": "MenuTrigger", "slot": "trigger", "component": "ArkMenu.Trigger" },
+      "TriggerItem": {
+        "name": "MenuTriggerItem",
+        "slot": "triggerItem",
+        "component": "ArkMenu.TriggerItem"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Menu",
-    "filename": "menu.ts",
+    "name": "Menu",
+    "imports": "Menu as ArkMenu",
     "className": "menu"
   },
   "number-input": {
-    "components": {
-      "Root": { "name": "NumberInput", "partName": "root" },
-      "Control": { "name": "NumberInputControl", "partName": "control" },
-      "DecrementTrigger": { "name": "NumberInputDecrementTrigger", "partName": "decrementTrigger" },
-      "IncrementTrigger": { "name": "NumberInputIncrementTrigger", "partName": "incrementTrigger" },
-      "Input": { "name": "NumberInputInput", "partName": "input" },
-      "Label": { "name": "NumberInputLabel", "partName": "label" },
-      "Scrubber": { "name": "NumberInputScrubber", "partName": "scrubber" }
+    "parts": {
+      "Root": { "name": "NumberInput", "slot": "root", "component": "ArkNumberInput.Root" },
+      "Control": {
+        "name": "NumberInputControl",
+        "slot": "control",
+        "component": "ArkNumberInput.Control"
+      },
+      "DecrementTrigger": {
+        "name": "NumberInputDecrementTrigger",
+        "slot": "decrementTrigger",
+        "component": "ArkNumberInput.DecrementTrigger"
+      },
+      "IncrementTrigger": {
+        "name": "NumberInputIncrementTrigger",
+        "slot": "incrementTrigger",
+        "component": "ArkNumberInput.IncrementTrigger"
+      },
+      "Input": { "name": "NumberInputInput", "slot": "input", "component": "ArkNumberInput.Input" },
+      "Label": { "name": "NumberInputLabel", "slot": "label", "component": "ArkNumberInput.Label" },
+      "Scrubber": {
+        "name": "NumberInputScrubber",
+        "slot": "scrubber",
+        "component": "ArkNumberInput.Scrubber"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "NumberInput",
-    "filename": "number-input.ts",
+    "name": "NumberInput",
+    "imports": "NumberInput as ArkNumberInput",
     "className": "numberInput"
   },
   "pagination": {
-    "components": {
-      "Root": { "name": "Pagination", "partName": "root" },
-      "Ellipsis": { "name": "PaginationEllipsis", "partName": "ellipsis" },
-      "Item": { "name": "PaginationItem", "partName": "item" },
-      "NextTrigger": { "name": "PaginationNextTrigger", "partName": "nextTrigger" },
-      "PrevTrigger": { "name": "PaginationPrevTrigger", "partName": "prevTrigger" }
+    "parts": {
+      "Root": { "name": "Pagination", "slot": "root", "component": "ArkPagination.Root" },
+      "Ellipsis": {
+        "name": "PaginationEllipsis",
+        "slot": "ellipsis",
+        "component": "ArkPagination.Ellipsis"
+      },
+      "Item": { "name": "PaginationItem", "slot": "item", "component": "ArkPagination.Item" },
+      "NextTrigger": {
+        "name": "PaginationNextTrigger",
+        "slot": "nextTrigger",
+        "component": "ArkPagination.NextTrigger"
+      },
+      "PrevTrigger": {
+        "name": "PaginationPrevTrigger",
+        "slot": "prevTrigger",
+        "component": "ArkPagination.PrevTrigger"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Pagination",
-    "filename": "pagination.ts",
+    "name": "Pagination",
+    "imports": "Pagination as ArkPagination",
     "className": "pagination"
   },
   "pin-input": {
-    "components": {
-      "Root": { "name": "PinInput", "partName": "root" },
-      "Control": { "name": "PinInputControl", "partName": "control" },
-      "Input": { "name": "PinInputInput", "partName": "input" },
-      "Label": { "name": "PinInputLabel", "partName": "label" }
+    "parts": {
+      "Root": { "name": "PinInput", "slot": "root", "component": "ArkPinInput.Root" },
+      "Control": {
+        "name": "PinInputControl",
+        "slot": "control",
+        "component": "ArkPinInput.Control"
+      },
+      "Input": { "name": "PinInputInput", "slot": "input", "component": "ArkPinInput.Input" },
+      "Label": { "name": "PinInputLabel", "slot": "label", "component": "ArkPinInput.Label" }
     },
-    "isArkComponent": true,
-    "rootComponent": "PinInput",
-    "filename": "pin-input.ts",
+    "name": "PinInput",
+    "imports": "PinInput as ArkPinInput",
     "className": "pinInput"
   },
   "popover": {
-    "components": {
-      "Root": { "name": "Popover" },
-      "Anchor": { "name": "PopoverAnchor", "partName": "anchor" },
-      "Arrow": { "name": "PopoverArrow", "partName": "arrow" },
-      "ArrowTip": { "name": "PopoverArrowTip", "partName": "arrowTip" },
-      "CloseTrigger": { "name": "PopoverCloseTrigger", "partName": "closeTrigger" },
-      "Content": { "name": "PopoverContent", "partName": "content" },
-      "Description": { "name": "PopoverDescription", "partName": "description" },
-      "Indicator": { "name": "PopoverIndicator", "partName": "indicator" },
-      "Positioner": { "name": "PopoverPositioner", "partName": "positioner" },
-      "Title": { "name": "PopoverTitle", "partName": "title" },
-      "Trigger": { "name": "PopoverTrigger", "partName": "trigger" }
+    "parts": {
+      "Root": { "name": "Popover", "component": "ArkPopover.Root" },
+      "Anchor": { "name": "PopoverAnchor", "slot": "anchor", "component": "ArkPopover.Anchor" },
+      "Arrow": { "name": "PopoverArrow", "slot": "arrow", "component": "ArkPopover.Arrow" },
+      "ArrowTip": {
+        "name": "PopoverArrowTip",
+        "slot": "arrowTip",
+        "component": "ArkPopover.ArrowTip"
+      },
+      "CloseTrigger": {
+        "name": "PopoverCloseTrigger",
+        "slot": "closeTrigger",
+        "component": "ArkPopover.CloseTrigger"
+      },
+      "Content": { "name": "PopoverContent", "slot": "content", "component": "ArkPopover.Content" },
+      "Description": {
+        "name": "PopoverDescription",
+        "slot": "description",
+        "component": "ArkPopover.Description"
+      },
+      "Indicator": {
+        "name": "PopoverIndicator",
+        "slot": "indicator",
+        "component": "ArkPopover.Indicator"
+      },
+      "Positioner": {
+        "name": "PopoverPositioner",
+        "slot": "positioner",
+        "component": "ArkPopover.Positioner"
+      },
+      "Title": { "name": "PopoverTitle", "slot": "title", "component": "ArkPopover.Title" },
+      "Trigger": { "name": "PopoverTrigger", "slot": "trigger", "component": "ArkPopover.Trigger" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Popover",
-    "filename": "popover.ts",
+    "name": "Popover",
+    "imports": "Popover as ArkPopover",
     "className": "popover"
   },
   "radio-group": {
-    "components": {
-      "Root": { "name": "RadioGroup", "partName": "root" },
-      "Indicator": { "name": "RadioGroupIndicator", "partName": "indicator" },
-      "Item": { "name": "RadioGroupItem", "partName": "item" },
-      "ItemControl": { "name": "RadioGroupItemControl", "partName": "itemControl" },
-      "ItemText": { "name": "RadioGroupItemText", "partName": "itemText" },
-      "Label": { "name": "RadioGroupLabel", "partName": "label" }
+    "parts": {
+      "Root": { "name": "RadioGroup", "slot": "root", "component": "ArkRadioGroup.Root" },
+      "Indicator": {
+        "name": "RadioGroupIndicator",
+        "slot": "indicator",
+        "component": "ArkRadioGroup.Indicator"
+      },
+      "Item": { "name": "RadioGroupItem", "slot": "item", "component": "ArkRadioGroup.Item" },
+      "ItemControl": {
+        "name": "RadioGroupItemControl",
+        "slot": "itemControl",
+        "component": "ArkRadioGroup.ItemControl"
+      },
+      "ItemText": {
+        "name": "RadioGroupItemText",
+        "slot": "itemText",
+        "component": "ArkRadioGroup.ItemText"
+      },
+      "Label": { "name": "RadioGroupLabel", "slot": "label", "component": "ArkRadioGroup.Label" }
     },
-    "isArkComponent": true,
-    "rootComponent": "RadioGroup",
-    "filename": "radio-group.ts",
+    "name": "RadioGroup",
+    "imports": "RadioGroup as ArkRadioGroup",
     "className": "radioGroup"
   },
   "rating-group": {
-    "components": {
-      "Root": { "name": "RatingGroup", "partName": "root" },
-      "Control": { "name": "RatingGroupControl", "partName": "control" },
-      "Item": { "name": "RatingGroupItem", "partName": "item" },
-      "Label": { "name": "RatingGroupLabel", "partName": "label" }
+    "parts": {
+      "Root": { "name": "RatingGroup", "slot": "root", "component": "ArkRatingGroup.Root" },
+      "Control": {
+        "name": "RatingGroupControl",
+        "slot": "control",
+        "component": "ArkRatingGroup.Control"
+      },
+      "Item": { "name": "RatingGroupItem", "slot": "item", "component": "ArkRatingGroup.Item" },
+      "Label": { "name": "RatingGroupLabel", "slot": "label", "component": "ArkRatingGroup.Label" }
     },
-    "isArkComponent": true,
-    "rootComponent": "RatingGroup",
-    "filename": "rating-group.ts",
+    "name": "RatingGroup",
+    "imports": "RatingGroup as ArkRatingGroup",
     "className": "ratingGroup"
   },
   "segment-group": {
-    "components": {
-      "Root": { "name": "SegmentGroup", "partName": "root" },
-      "Indicator": { "name": "SegmentGroupIndicator", "partName": "indicator" },
-      "Item": { "name": "SegmentGroupItem", "partName": "item" },
-      "ItemControl": { "name": "SegmentGroupItemControl", "partName": "itemControl" },
-      "ItemText": { "name": "SegmentGroupItemText", "partName": "itemText" },
-      "Label": { "name": "SegmentGroupLabel", "partName": "label" }
+    "parts": {
+      "Root": { "name": "SegmentGroup", "slot": "root", "component": "ArkSegmentGroup.Root" },
+      "Indicator": {
+        "name": "SegmentGroupIndicator",
+        "slot": "indicator",
+        "component": "ArkSegmentGroup.Indicator"
+      },
+      "Item": { "name": "SegmentGroupItem", "slot": "item", "component": "ArkSegmentGroup.Item" },
+      "ItemControl": {
+        "name": "SegmentGroupItemControl",
+        "slot": "itemControl",
+        "component": "ArkSegmentGroup.ItemControl"
+      },
+      "ItemText": {
+        "name": "SegmentGroupItemText",
+        "slot": "itemText",
+        "component": "ArkSegmentGroup.ItemText"
+      },
+      "Label": {
+        "name": "SegmentGroupLabel",
+        "slot": "label",
+        "component": "ArkSegmentGroup.Label"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "SegmentGroup",
-    "filename": "segment-group.ts",
+    "name": "SegmentGroup",
+    "imports": "SegmentGroup as ArkSegmentGroup",
     "className": "segmentGroup"
   },
   "select": {
-    "components": {
-      "Root": { "name": "Select", "partName": "root" },
-      "ClearTrigger": { "name": "SelectClearTrigger", "partName": "clearTrigger" },
-      "Content": { "name": "SelectContent", "partName": "content" },
-      "Control": { "name": "SelectControl", "partName": "control" },
-      "Indicator": { "name": "SelectIndicator", "partName": "indicator" },
-      "Item": { "name": "SelectItem", "partName": "item" },
-      "ItemGroup": { "name": "SelectItemGroup", "partName": "itemGroup" },
-      "ItemGroupLabel": { "name": "SelectItemGroupLabel", "partName": "itemGroupLabel" },
-      "ItemIndicator": { "name": "SelectItemIndicator", "partName": "itemIndicator" },
-      "ItemText": { "name": "SelectItemText", "partName": "itemText" },
-      "Label": { "name": "SelectLabel", "partName": "label" },
-      "Positioner": { "name": "SelectPositioner", "partName": "positioner" },
-      "Trigger": { "name": "SelectTrigger", "partName": "trigger" },
-      "ValueText": { "name": "SelectValueText", "partName": "valueText" }
+    "parts": {
+      "Root": { "name": "Select", "slot": "root", "component": "ArkSelect.Root" },
+      "ClearTrigger": {
+        "name": "SelectClearTrigger",
+        "slot": "clearTrigger",
+        "component": "ArkSelect.ClearTrigger"
+      },
+      "Content": { "name": "SelectContent", "slot": "content", "component": "ArkSelect.Content" },
+      "Control": { "name": "SelectControl", "slot": "control", "component": "ArkSelect.Control" },
+      "Indicator": {
+        "name": "SelectIndicator",
+        "slot": "indicator",
+        "component": "ArkSelect.Indicator"
+      },
+      "Item": { "name": "SelectItem", "slot": "item", "component": "ArkSelect.Item" },
+      "ItemGroup": {
+        "name": "SelectItemGroup",
+        "slot": "itemGroup",
+        "component": "ArkSelect.ItemGroup"
+      },
+      "ItemGroupLabel": {
+        "name": "SelectItemGroupLabel",
+        "slot": "itemGroupLabel",
+        "component": "ArkSelect.ItemGroupLabel"
+      },
+      "ItemIndicator": {
+        "name": "SelectItemIndicator",
+        "slot": "itemIndicator",
+        "component": "ArkSelect.ItemIndicator"
+      },
+      "ItemText": {
+        "name": "SelectItemText",
+        "slot": "itemText",
+        "component": "ArkSelect.ItemText"
+      },
+      "Label": { "name": "SelectLabel", "slot": "label", "component": "ArkSelect.Label" },
+      "Positioner": {
+        "name": "SelectPositioner",
+        "slot": "positioner",
+        "component": "ArkSelect.Positioner"
+      },
+      "Trigger": { "name": "SelectTrigger", "slot": "trigger", "component": "ArkSelect.Trigger" },
+      "ValueText": {
+        "name": "SelectValueText",
+        "slot": "valueText",
+        "component": "ArkSelect.ValueText"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Select",
-    "filename": "select.ts",
+    "name": "Select",
+    "imports": "Select as ArkSelect",
     "className": "select"
   },
   "slider": {
-    "components": {
-      "Root": { "name": "Slider", "partName": "root" },
-      "Control": { "name": "SliderControl", "partName": "control" },
-      "Label": { "name": "SliderLabel", "partName": "label" },
-      "Marker": { "name": "SliderMarker", "partName": "marker" },
-      "MarkerGroup": { "name": "SliderMarkerGroup", "partName": "markerGroup" },
-      "Range": { "name": "SliderRange", "partName": "range" },
-      "Thumb": { "name": "SliderThumb", "partName": "thumb" },
-      "Track": { "name": "SliderTrack", "partName": "track" },
-      "ValueText": { "name": "SliderValueText", "partName": "valueText" }
+    "parts": {
+      "Root": { "name": "Slider", "slot": "root", "component": "ArkSlider.Root" },
+      "Control": { "name": "SliderControl", "slot": "control", "component": "ArkSlider.Control" },
+      "Label": { "name": "SliderLabel", "slot": "label", "component": "ArkSlider.Label" },
+      "Marker": { "name": "SliderMarker", "slot": "marker", "component": "ArkSlider.Marker" },
+      "MarkerGroup": {
+        "name": "SliderMarkerGroup",
+        "slot": "markerGroup",
+        "component": "ArkSlider.MarkerGroup"
+      },
+      "Range": { "name": "SliderRange", "slot": "range", "component": "ArkSlider.Range" },
+      "Thumb": { "name": "SliderThumb", "slot": "thumb", "component": "ArkSlider.Thumb" },
+      "Track": { "name": "SliderTrack", "slot": "track", "component": "ArkSlider.Track" },
+      "ValueText": {
+        "name": "SliderValueText",
+        "slot": "valueText",
+        "component": "ArkSlider.ValueText"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Slider",
-    "filename": "slider.ts",
+    "name": "Slider",
+    "imports": "Slider as ArkSlider",
     "className": "slider"
   },
   "splitter": {
-    "components": {
-      "Root": { "name": "Splitter", "partName": "root" },
-      "Panel": { "name": "SplitterPanel", "partName": "panel" },
-      "ResizeTrigger": { "name": "SplitterResizeTrigger", "partName": "resizeTrigger" }
+    "parts": {
+      "Root": { "name": "Splitter", "slot": "root", "component": "ArkSplitter.Root" },
+      "Panel": { "name": "SplitterPanel", "slot": "panel", "component": "ArkSplitter.Panel" },
+      "ResizeTrigger": {
+        "name": "SplitterResizeTrigger",
+        "slot": "resizeTrigger",
+        "component": "ArkSplitter.ResizeTrigger"
+      }
     },
-    "isArkComponent": true,
-    "rootComponent": "Splitter",
-    "filename": "splitter.ts",
+    "name": "Splitter",
+    "imports": "Splitter as ArkSplitter",
     "className": "splitter"
   },
   "switch": {
-    "components": {
-      "Root": { "name": "Switch", "partName": "root" },
-      "Control": { "name": "SwitchControl", "partName": "control" },
-      "Label": { "name": "SwitchLabel", "partName": "label" },
-      "Thumb": { "name": "SwitchThumb", "partName": "thumb" }
+    "parts": {
+      "Root": { "name": "Switch", "slot": "root", "component": "ArkSwitch.Root" },
+      "Control": { "name": "SwitchControl", "slot": "control", "component": "ArkSwitch.Control" },
+      "Label": { "name": "SwitchLabel", "slot": "label", "component": "ArkSwitch.Label" },
+      "Thumb": { "name": "SwitchThumb", "slot": "thumb", "component": "ArkSwitch.Thumb" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Switch",
-    "filename": "switch.ts",
+    "name": "Switch",
+    "imports": "Switch as ArkSwitch",
     "className": "switchRecipe"
   },
   "tabs": {
-    "components": {
-      "Root": { "name": "Tabs", "partName": "root" },
-      "Content": { "name": "TabsContent", "partName": "content" },
-      "Indicator": { "name": "TabsIndicator", "partName": "indicator" },
-      "List": { "name": "TabsList", "partName": "list" },
-      "Trigger": { "name": "TabsTrigger", "partName": "trigger" }
+    "parts": {
+      "Root": { "name": "Tabs", "slot": "root", "component": "ArkTabs.Root" },
+      "Content": { "name": "TabsContent", "slot": "content", "component": "ArkTabs.Content" },
+      "Indicator": {
+        "name": "TabsIndicator",
+        "slot": "indicator",
+        "component": "ArkTabs.Indicator"
+      },
+      "List": { "name": "TabsList", "slot": "list", "component": "ArkTabs.List" },
+      "Trigger": { "name": "TabsTrigger", "slot": "trigger", "component": "ArkTabs.Trigger" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Tabs",
-    "filename": "tabs.ts",
+    "name": "Tabs",
+    "imports": "Tabs as ArkTabs",
     "className": "tabs"
   },
   "tags-input": {
-    "components": {
-      "Root": { "name": "TagsInput", "partName": "root" },
-      "ClearTrigger": { "name": "TagsInputClearTrigger", "partName": "clearTrigger" },
-      "Control": { "name": "TagsInputControl", "partName": "control" },
-      "Input": { "name": "TagsInputInput", "partName": "input" },
-      "Item": { "name": "TagsInputItem", "partName": "item" },
+    "parts": {
+      "Root": { "name": "TagsInput", "slot": "root", "component": "ArkTagsInput.Root" },
+      "ClearTrigger": {
+        "name": "TagsInputClearTrigger",
+        "slot": "clearTrigger",
+        "component": "ArkTagsInput.ClearTrigger"
+      },
+      "Control": {
+        "name": "TagsInputControl",
+        "slot": "control",
+        "component": "ArkTagsInput.Control"
+      },
+      "Input": { "name": "TagsInputInput", "slot": "input", "component": "ArkTagsInput.Input" },
+      "Item": { "name": "TagsInputItem", "slot": "item", "component": "ArkTagsInput.Item" },
       "ItemDeleteTrigger": {
         "name": "TagsInputItemDeleteTrigger",
-        "partName": "itemDeleteTrigger"
+        "slot": "itemDeleteTrigger",
+        "component": "ArkTagsInput.ItemDeleteTrigger"
       },
-      "ItemInput": { "name": "TagsInputItemInput", "partName": "itemInput" },
-      "ItemText": { "name": "TagsInputItemText", "partName": "itemText" },
-      "Label": { "name": "TagsInputLabel", "partName": "label" }
+      "ItemInput": {
+        "name": "TagsInputItemInput",
+        "slot": "itemInput",
+        "component": "ArkTagsInput.ItemInput"
+      },
+      "ItemText": {
+        "name": "TagsInputItemText",
+        "slot": "itemText",
+        "component": "ArkTagsInput.ItemText"
+      },
+      "Label": { "name": "TagsInputLabel", "slot": "label", "component": "ArkTagsInput.Label" }
     },
-    "isArkComponent": true,
-    "rootComponent": "TagsInput",
-    "filename": "tags-input.ts",
+    "name": "TagsInput",
+    "imports": "TagsInput as ArkTagsInput",
     "className": "tagsInput"
   },
   "toast": {
-    "components": {
-      "Root": { "name": "Toast", "partName": "root" },
-      "CloseTrigger": { "name": "ToastCloseTrigger", "partName": "closeTrigger" },
-      "Description": { "name": "ToastDescription", "partName": "description" },
-      "Group": { "name": "ToastGroup", "partName": "group" },
-      "Title": { "name": "ToastTitle", "partName": "title" }
+    "parts": {
+      "Root": { "name": "Toast", "slot": "root", "component": "ArkToast.Root" },
+      "CloseTrigger": {
+        "name": "ToastCloseTrigger",
+        "slot": "closeTrigger",
+        "component": "ArkToast.CloseTrigger"
+      },
+      "Description": {
+        "name": "ToastDescription",
+        "slot": "description",
+        "component": "ArkToast.Description"
+      },
+      "Group": { "name": "ToastGroup", "slot": "group", "component": "ArkToast.Group" },
+      "Title": { "name": "ToastTitle", "slot": "title", "component": "ArkToast.Title" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Toast",
-    "filename": "toast.ts",
+    "name": "Toast",
+    "imports": "Toast as ArkToast",
     "className": "toast"
   },
   "toggle-group": {
-    "components": {
-      "Root": { "name": "ToggleGroup", "partName": "root" },
-      "Item": { "name": "ToggleGroupItem", "partName": "item" }
+    "parts": {
+      "Root": { "name": "ToggleGroup", "slot": "root", "component": "ArkToggleGroup.Root" },
+      "Item": { "name": "ToggleGroupItem", "slot": "item", "component": "ArkToggleGroup.Item" }
     },
-    "isArkComponent": true,
-    "rootComponent": "ToggleGroup",
-    "filename": "toggle-group.ts",
+    "name": "ToggleGroup",
+    "imports": "ToggleGroup as ArkToggleGroup",
     "className": "toggleGroup"
   },
   "tooltip": {
-    "components": {
-      "Root": { "name": "Tooltip" },
-      "Arrow": { "name": "TooltipArrow", "partName": "arrow" },
-      "ArrowTip": { "name": "TooltipArrowTip", "partName": "arrowTip" },
-      "Content": { "name": "TooltipContent", "partName": "content" },
-      "Positioner": { "name": "TooltipPositioner", "partName": "positioner" },
-      "Trigger": { "name": "TooltipTrigger", "partName": "trigger" }
+    "parts": {
+      "Root": { "name": "Tooltip", "component": "ArkTooltip.Root" },
+      "Arrow": { "name": "TooltipArrow", "slot": "arrow", "component": "ArkTooltip.Arrow" },
+      "ArrowTip": {
+        "name": "TooltipArrowTip",
+        "slot": "arrowTip",
+        "component": "ArkTooltip.ArrowTip"
+      },
+      "Content": { "name": "TooltipContent", "slot": "content", "component": "ArkTooltip.Content" },
+      "Positioner": {
+        "name": "TooltipPositioner",
+        "slot": "positioner",
+        "component": "ArkTooltip.Positioner"
+      },
+      "Trigger": { "name": "TooltipTrigger", "slot": "trigger", "component": "ArkTooltip.Trigger" }
     },
-    "isArkComponent": true,
-    "rootComponent": "Tooltip",
-    "filename": "tooltip.ts",
+    "name": "Tooltip",
+    "imports": "Tooltip as ArkTooltip",
     "className": "tooltip"
   }
 }

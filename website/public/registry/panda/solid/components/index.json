@@ -87,6 +87,29 @@
     {
       "name": "Tooltip",
       "href": "https://park-ui.com/registry/panda/solid/components/tooltip.json"
+    },
+    { "name": "Alert", "href": "https://park-ui.com/registry/panda/solid/components/alert.json" },
+    { "name": "Badge", "href": "https://park-ui.com/registry/panda/solid/components/badge.json" },
+    { "name": "Button", "href": "https://park-ui.com/registry/panda/solid/components/button.json" },
+    { "name": "Card", "href": "https://park-ui.com/registry/panda/solid/components/card.json" },
+    { "name": "Code", "href": "https://park-ui.com/registry/panda/solid/components/code.json" },
+    { "name": "Drawer", "href": "https://park-ui.com/registry/panda/solid/components/drawer.json" },
+    {
+      "name": "Icon Button",
+      "href": "https://park-ui.com/registry/panda/solid/components/icon-button.json"
+    },
+    { "name": "Input", "href": "https://park-ui.com/registry/panda/solid/components/input.json" },
+    { "name": "Kbd", "href": "https://park-ui.com/registry/panda/solid/components/kbd.json" },
+    { "name": "Label", "href": "https://park-ui.com/registry/panda/solid/components/label.json" },
+    { "name": "Link", "href": "https://park-ui.com/registry/panda/solid/components/link.json" },
+    {
+      "name": "Radio Button Group",
+      "href": "https://park-ui.com/registry/panda/solid/components/radio-button-group.json"
+    },
+    { "name": "Table", "href": "https://park-ui.com/registry/panda/solid/components/table.json" },
+    {
+      "name": "Textarea",
+      "href": "https://park-ui.com/registry/panda/solid/components/textarea.json"
     }
   ]
 }
