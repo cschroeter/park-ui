@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- fixed bug when adding a new component
+
 ## [0.1.2] - 2023-11-25
 
 - added registry to download components and helpers
