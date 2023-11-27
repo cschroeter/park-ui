@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.1.3] - 2023-11-27
+
 - fixed bug when adding a new component
 
 ## [0.1.2] - 2023-11-25
