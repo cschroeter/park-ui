@@ -4,14 +4,14 @@ export const Demo = (props: TableProps) => {
   return (
     <Table.Root {...props}>
       <Table.Caption>Product Inventory</Table.Caption>
-      <Table.Header>
+      <Table.Head>
         <Table.Row>
-          <Table.Head>ID</Table.Head>
-          <Table.Head>Name</Table.Head>
-          <Table.Head>Stock</Table.Head>
-          <Table.Head textAlign="right">Price</Table.Head>
+          <Table.Header>ID</Table.Header>
+          <Table.Header>Name</Table.Header>
+          <Table.Header>Stock</Table.Header>
+          <Table.Header textAlign="right">Price</Table.Header>
         </Table.Row>
-      </Table.Header>
+      </Table.Head>
       <Table.Body>
         {productData.map((product, index) => (
           <Table.Row key={index}>

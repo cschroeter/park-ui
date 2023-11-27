@@ -26,7 +26,7 @@ export const table = defineSlotRecipe({
         borderBottomWidth: '0',
       },
     },
-    head: {
+    header: {
       color: 'fg.muted',
       fontWeight: 'medium',
       textAlign: 'left',
@@ -49,7 +49,7 @@ export const table = defineSlotRecipe({
         root: {
           borderWidth: '1px',
         },
-        header: {
+        head: {
           bg: 'bg.subtle',
         },
       },
@@ -76,7 +76,7 @@ export const table = defineSlotRecipe({
           height: '11',
           px: '3',
         },
-        head: {
+        header: {
           height: '11',
           px: '3',
         },
@@ -92,7 +92,7 @@ export const table = defineSlotRecipe({
           height: '14',
           px: '4',
         },
-        head: {
+        header: {
           height: '11',
           px: '4',
         },

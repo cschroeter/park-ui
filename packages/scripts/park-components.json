@@ -154,8 +154,8 @@
       "Caption": { "name": "TableCaption", "slot": "caption", "component": "ark.caption" },
       "Cell": { "name": "TableCell", "slot": "cell", "component": "ark.td" },
       "Footer": { "name": "TableFooter", "slot": "footer", "component": "ark.tfoot" },
-      "Head": { "name": "TableHead", "slot": "head", "component": "ark.thead" },
-      "Header": { "name": "TableHeader", "slot": "header", "component": "ark.th" },
+      "Head": { "name": "TableHead", "slot": "header", "component": "ark.theader" },
+      "Header": { "name": "TableHeader", "slot": "head", "component": "ark.th" },
       "Row": { "name": "TableRow", "slot": "row", "component": "ark.tr" }
     },
     "name": "Table",

@@ -4,6 +4,10 @@
 
 - Added `Kbd` component.
 
+### Changed
+
+- Resolved an issue with `Table` markup where the `thead` element was not rendered correctly.
+
 ### Fixed
 
 - Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was scrolled.
