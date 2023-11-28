@@ -1,33 +1,23 @@
 import * as p from '@clack/prompts'
 
-import { Config, getCssFramework, getImportAliases, getJsFramework } from '../config/config'
+import { getImportAliases } from '../config/config'
+import { downloadComponents, getComponents } from '../helpers/park-api'
 import { saveComponentToFile } from '../helpers/save-file'
 
-const downloadComponents = async (options: {
-  componentName: string
-  cssFramework: Config['cssFramework']
-  jsFramework: Config['jsFramework']
-}): Promise<{ filename: string; content: string }[]> => {
-  const { componentName, cssFramework, jsFramework } = options
-  const componentsUrl = `https://park-ui.com/registry/${cssFramework}/${jsFramework}/components/${componentName}.json`
-  const components = await fetch(componentsUrl)
-    .then((res) => res.json())
-    .then((res) => res.files)
-    .catch((e) => {
-      throw new Error(`Failed to download ${componentName} component\n${e?.message}`)
-    })
-  return components
+const toKebabCase = (str: string) => {
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/\s+/g, '-')
+    .toLowerCase()
 }
 
-export const addComponent = async (componentName: string) => {
-  const cssFramework = await getCssFramework()
-  const jsFramework = await getJsFramework()
-  const { componentsImportAlias } = await getImportAliases()
+export const addComponent = async (options: { componentName: string; componentUrl: string }) => {
+  const { componentName, componentUrl } = options
+  const { componentsImportAlias } = getImportAliases()
 
   const components = await downloadComponents({
     componentName,
-    cssFramework,
-    jsFramework,
+    componentUrl,
   })
   components.forEach(({ filename, content }) => {
     saveComponentToFile(componentsImportAlias, filename, content)
@@ -35,20 +25,36 @@ export const addComponent = async (componentName: string) => {
 }
 
 export const addComponentsCommand = async () => {
-  const components = process.argv.slice(3)
-
   const spinner = p.spinner()
-  spinner.start(`Start to add components ${components.join(', ')}`)
+  spinner.start(`Start to add components...`)
+
+  const registeredComponents = await getComponents()
+
+  let componentNames = process.argv.slice(3)
+  if (componentNames.length === 1 && componentNames[0] === '--all') {
+    componentNames = registeredComponents.map((component) => component.name)
+  }
+
+  const components = componentNames.map((componentName) => {
+    const component = registeredComponents.find(
+      (registeredComponent) => toKebabCase(registeredComponent.name) === toKebabCase(componentName),
+    )
+    if (!component) {
+      spinner.stop(`Component ${componentName} is not known.`)
+      process.exit(1)
+    }
+    return component
+  })
 
   for (const component of components) {
-    spinner.message(`Downloading ${component} component...`)
+    spinner.message(`Downloading ${component.name} component...`)
     try {
-      await addComponent(component)
+      await addComponent({ componentName: component.name, componentUrl: component.href })
     } catch (e: any) {
-      spinner.stop(`Failed to download ${component} component\n${e?.message}`)
+      spinner.stop(`Failed to download ${component.name} component\n${e?.message}`)
       return
     }
   }
 
-  spinner.stop(`Downloaded ${components.join(', ')} 🏁`)
+  spinner.stop(`Downloaded ${componentNames.join(', ')} 🏁`)
 }

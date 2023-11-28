@@ -15,6 +15,7 @@ const main = async () => {
     .command('check', 'Update Park UI CLI to the latest version', checkCommand)
     .example('$0 init', 'Initialize a new Park UI project')
     .example('$0 add button accordion', 'Add accordion component')
+    .example('$0 add --all', 'Add all available components')
     .describe('init', 'Initialize a new Park UI project')
     .version(getVersionCommand())
     .demandCommand(1).argv
