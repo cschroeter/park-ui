@@ -43,7 +43,7 @@
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/node": "20.8.3",
-    "@types/react": "18.2.38",
+    "@types/react": "18.2.39",
     "lucide-react": "0.293.0",
     "pandacss-preset-typography": "0.1.5",
     "postcss": "8.4.31",
@@ -53,7 +53,7 @@
     "release-it": "17.0.0",
     "tailwindcss": "3.3.5",
     "tsup": "8.0.1",
-    "tsx": "4.5.0"
+    "tsx": "4.6.0"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.0"

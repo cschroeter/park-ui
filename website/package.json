@@ -28,10 +28,10 @@
     "@pandacss/astro": "0.19.0",
     "@pandacss/dev": "0.19.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@types/react": "18.2.38",
+    "@types/react": "18.2.39",
     "@types/react-dom": "18.2.17",
     "@uidotdev/usehooks": "2.4.1",
-    "astro": "3.6.0",
+    "astro": "3.6.1",
     "cheerio": "1.0.0-rc.12",
     "lucide-react": "0.293.0",
     "pandacss-preset-typography": "0.1.5",
@@ -40,6 +40,6 @@
     "react-live": "4.1.5",
     "ts-pattern": "5.0.5",
     "typescript": "5.3.2",
-    "zustand": "4.4.6"
+    "zustand": "4.4.7"
   }
 }

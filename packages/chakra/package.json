@@ -40,7 +40,7 @@
     "@storybook/react": "7.5.3",
     "@types/node": "20.9.4",
     "@types/react-dom": "18.2.17",
-    "@types/react": "18.2.38",
+    "@types/react": "18.2.39",
     "framer-motion": "10.16.5",
     "lucide-react": "0.293.0",
     "react-dom": "18.2.0",
