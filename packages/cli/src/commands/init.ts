@@ -25,9 +25,9 @@ const downloadHelpers = async (options: {
 }
 
 export const addHelpers = async () => {
-  const cssFramework = await getCssFramework()
-  const jsFramework = await getJsFramework()
-  const { utilsImportAlias } = await getImportAliases()
+  const cssFramework = getCssFramework()
+  const jsFramework = getJsFramework()
+  const { utilsImportAlias } = getImportAliases()
 
   const components = await downloadHelpers({
     cssFramework,
@@ -86,11 +86,6 @@ const getInitialConfig = async (): Promise<Config> => {
     },
   )
 
-  // TODO show spinner while downloading the files before ending the group https://github.com/natemoo-re/clack/issues/152
-  // maybe consider another lib than clack??
-
-  await addHelpers()
-
   return {
     cssFramework: config.cssFramework as any,
     jsFramework: config.jsFramework as any,
@@ -106,5 +101,10 @@ const getInitialConfig = async (): Promise<Config> => {
 export const initCommand = async () => {
   p.intro(`🚀 Setup park-ui`)
   const config = await getInitialConfig()
-  await writeConfig(config)
+  writeConfig(config)
+
+  // TODO show spinner while downloading the files before ending the group https://github.com/natemoo-re/clack/issues/152
+  // maybe consider another lib than clack??
+
+  await addHelpers()
 }
