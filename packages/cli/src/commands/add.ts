@@ -67,6 +67,9 @@ export const addComponentsCommand = async () => {
   }
 
   spinner.stop(`Downloaded ${componentNames.join(', ')} 🏁`)
+  p.note(
+    'The installed components are now in place.\nTo update any component, simply rerun the add command at a later time.',
+  )
 }
 
 const askUserForComponent = async (
