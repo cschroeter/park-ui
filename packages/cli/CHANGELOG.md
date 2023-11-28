@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- fixed an issue not finding fetch in global installation
+
 ## [0.2.0] - 2023-11-28
 
 ### Added

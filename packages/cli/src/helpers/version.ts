@@ -1,4 +1,5 @@
 import * as p from '@clack/prompts'
+import fetch from 'node-fetch'
 import { readPackageUpSync } from 'read-package-up'
 
 export const getVersion = (): string => {

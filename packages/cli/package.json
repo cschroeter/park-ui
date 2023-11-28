@@ -26,6 +26,7 @@
     "@types/node": "20.9.0",
     "@types/yargs": "17.0.32",
     "json-schema-to-typescript": "13.1.1",
+    "node-fetch": "3.3.2",
     "pkg-dir": "8.0.0",
     "read-package-up": "11.0.0",
     "release-it": "17.0.0",

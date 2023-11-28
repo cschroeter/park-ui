@@ -1,5 +1,4 @@
-// fetch all components from the registry
-
+import fetch from 'node-fetch'
 import { getCssFramework, getJsFramework } from '../config/config'
 
 export const getComponents = async (): Promise<{ name: string; href: string }[]> => {
@@ -9,7 +8,7 @@ export const getComponents = async (): Promise<{ name: string; href: string }[]>
   const componentsUrl = `https://park-ui.com/registry/${cssFramework}/${jsFramework}/components/index.json`
   const components = await fetch(componentsUrl)
     .then((res) => res.json())
-    .then((res) => res.components)
+    .then((res: any) => res.components)
     .catch((e) => {
       throw new Error(`Failed to download components\n${e?.message}`)
     })

@@ -113,6 +113,9 @@ importers:
       json-schema-to-typescript:
         specifier: 13.1.1
         version: 13.1.1
+      node-fetch:
+        specifier: 3.3.2
+        version: 3.3.2
       pkg-dir:
         specifier: 8.0.0
         version: 8.0.0
