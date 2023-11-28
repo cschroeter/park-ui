@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.2.0] - 2023-11-28
+
 ### Added
 
 - Added support for server components
