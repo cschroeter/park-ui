@@ -3,7 +3,7 @@ import * as p from '@clack/prompts'
 import { select } from '@clack/prompts'
 import { getImportAliases } from '../config/config'
 import { downloadComponents, getComponents } from '../helpers/park-api'
-import { saveComponentToFile } from '../helpers/save-file'
+import { saveToFile } from '../helpers/save-file'
 
 const toKebabCase = (str: string) => {
   return str
@@ -21,7 +21,7 @@ export const addComponent = async (options: { componentName: string; componentUr
     componentUrl,
   })
   components.forEach(({ filename, content }) => {
-    saveComponentToFile(componentsImportAlias, filename, content)
+    saveToFile(componentsImportAlias, filename, content)
   })
 }
 

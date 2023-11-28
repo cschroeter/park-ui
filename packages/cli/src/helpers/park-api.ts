@@ -30,3 +30,17 @@ export const downloadComponents = async (options: {
     })
   return components
 }
+
+export const downloadUtils = async (): Promise<{ filename: string; content: string }[]> => {
+  const cssFramework = getCssFramework()
+  const jsFramework = getJsFramework()
+
+  const helpersUrl = `https://park-ui.com/registry/${cssFramework}/${jsFramework}/helpers/index.json`
+  const components = await fetch(helpersUrl)
+    .then((res) => res.json())
+    .then((res) => res.files)
+    .catch((e) => {
+      throw new Error(`Failed to download ${jsFramework} ${cssFramework} helpers\n${e?.message}`)
+    })
+  return components
+}

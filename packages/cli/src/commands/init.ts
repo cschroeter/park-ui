@@ -1,42 +1,6 @@
 import * as p from '@clack/prompts'
-import {
-  CONFIG_FILE_NAME,
-  Config,
-  getCssFramework,
-  getImportAliases,
-  getJsFramework,
-  writeConfig,
-} from '../config/config'
-import { saveComponentToFile } from '../helpers/save-file'
-
-const downloadHelpers = async (options: {
-  cssFramework: Config['cssFramework']
-  jsFramework: Config['jsFramework']
-}): Promise<{ filename: string; content: string }[]> => {
-  const { cssFramework, jsFramework } = options
-  const helpersUrl = `https://park-ui.com/registry/${cssFramework}/${jsFramework}/helpers/index.json`
-  const components = await fetch(helpersUrl)
-    .then((res) => res.json())
-    .then((res) => res.files)
-    .catch((e) => {
-      throw new Error(`Failed to download ${jsFramework} ${cssFramework} helpers\n${e?.message}`)
-    })
-  return components
-}
-
-export const addHelpers = async () => {
-  const cssFramework = getCssFramework()
-  const jsFramework = getJsFramework()
-  const { utilsImportAlias } = getImportAliases()
-
-  const components = await downloadHelpers({
-    cssFramework,
-    jsFramework,
-  })
-  components.forEach(({ filename, content }) => {
-    saveComponentToFile(utilsImportAlias, filename, content)
-  })
-}
+import { CONFIG_FILE_NAME, Config, writeConfig } from '../config/config'
+import { addUtils } from '../helpers/add-utils'
 
 const getInitialConfig = async (): Promise<Config> => {
   const config = await p.group(
@@ -52,11 +16,11 @@ const getInitialConfig = async (): Promise<Config> => {
         }),
       jsFramework: () =>
         p.select({
-          message: `Which javascript framework do you use?`,
+          message: `Which javascript framework do you use? (vue coming soon)`,
           options: [
             { value: 'react', label: 'React' },
             { value: 'solid', label: 'Solid' },
-            { value: 'vue', label: 'Vue' },
+            // { value: 'vue', label: 'Vue' },
           ],
           initialValue: 'react',
         }),
@@ -98,13 +62,23 @@ const getInitialConfig = async (): Promise<Config> => {
   }
 }
 
+const getUtils = async () => {
+  const spinner = p.spinner()
+  spinner.start(`Start to add helpers...`)
+  await addUtils()
+    .catch(() => {
+      spinner.stop(`Failed to download utils.`)
+      process.exit(1)
+    })
+    .then(() => {
+      spinner.stop(`Downloaded utils 🏁`)
+    })
+}
+
 export const initCommand = async () => {
   p.intro(`🚀 Setup park-ui`)
   const config = await getInitialConfig()
   writeConfig(config)
 
-  // TODO show spinner while downloading the files before ending the group https://github.com/natemoo-re/clack/issues/152
-  // maybe consider another lib than clack??
-
-  await addHelpers()
+  await getUtils()
 }
