@@ -1,15 +1,10 @@
 import * as p from '@clack/prompts'
 import fetch from 'node-fetch'
+import path from 'path'
 import { readPackageUpSync } from 'read-package-up'
 
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-const __filename = fileURLToPath(import.meta.url)
-// the commonjs variables are not there in modules
-const __dirname = dirname(__filename)
-
 export const getVersion = (): string => {
-  const cwd = __dirname
+  const cwd = path.dirname(__filename)
   const result = readPackageUpSync({ cwd })
   if (result && result.packageJson && result.packageJson.version) {
     return result.packageJson.version
