@@ -8,6 +8,7 @@ import { getVersion } from './commands/version'
 
 const main = async () => {
   yargs(hideBin(process.argv))
+    .scriptName('park-ui')
     .command('init', 'Initialize a new Park UI project', initCommand)
     .command('add', 'Add a new component', addComponentsCommand)
     .example('$0 init', 'Initialize a new Park UI project')
