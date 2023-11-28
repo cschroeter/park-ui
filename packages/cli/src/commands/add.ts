@@ -29,7 +29,12 @@ export const addComponentsCommand = async () => {
   const spinner = p.spinner()
   spinner.start(`Start to add components...`)
 
-  const registeredComponents = await getComponents()
+  const registeredComponents = await getComponents().catch((error) => {
+    spinner.stop(`Failed to fetch components\n${error?.message}`)
+  })
+  if (!registeredComponents) {
+    return
+  }
 
   let componentNames = process.argv.slice(3)
 
