@@ -63,10 +63,10 @@ const getInitialConfig = async (): Promise<Config> => {
       importAliasComponents: () =>
         p.text({
           message: 'What is your import alias for components?',
-          initialValue: '~/lib/components',
+          initialValue: '~/components/ui',
         }),
       importAliasUtils: () =>
-        p.text({ message: 'What is your import alias for utils?', initialValue: '~/lib/utils' }),
+        p.text({ message: 'What is your import alias for utils?', initialValue: '~/lib' }),
       useServerComponents: ({ results }) => {
         const isReact = results.jsFramework === 'react'
         if (!isReact) return Promise.resolve(false)
