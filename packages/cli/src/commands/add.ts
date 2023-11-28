@@ -1,5 +1,6 @@
 import * as p from '@clack/prompts'
 
+import { select } from '@clack/prompts'
 import { getImportAliases } from '../config/config'
 import { downloadComponents, getComponents } from '../helpers/park-api'
 import { saveComponentToFile } from '../helpers/save-file'
@@ -31,6 +32,15 @@ export const addComponentsCommand = async () => {
   const registeredComponents = await getComponents()
 
   let componentNames = process.argv.slice(3)
+
+  if (componentNames.length === 0) {
+    spinner.stop('No component name provided. Please select a component.')
+
+    const selectedComponentName = await askUserForComponent(registeredComponents)
+    componentNames.push(selectedComponentName)
+
+    spinner.start(`Start to add components...`)
+  }
   if (componentNames.length === 1 && componentNames[0] === '--all') {
     componentNames = registeredComponents.map((component) => component.name)
   }
@@ -57,4 +67,19 @@ export const addComponentsCommand = async () => {
   }
 
   spinner.stop(`Downloaded ${componentNames.join(', ')} 🏁`)
+}
+
+const askUserForComponent = async (
+  registeredComponents: { name: string; href: string }[],
+): Promise<string> => {
+  const supportedComponents = registeredComponents.map((component) => component.name)
+  return (await select({
+    message: 'Select components to add.',
+    options: [
+      { label: 'Add all components', value: '--all' },
+      ...supportedComponents.map((component) => ({ value: component, label: component })),
+    ],
+    // https://github.com/natemoo-re/clack/issues/173
+    maxItems: 10, // ui glitch with multi select, so limit to 10
+  })) as string
 }
