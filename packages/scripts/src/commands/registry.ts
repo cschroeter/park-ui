@@ -36,10 +36,12 @@ const generateIndex = async (options: Options) => {
   const { cssFramwork, jsFramework } = options
   const content = await prettier.format(
     JSON.stringify({
-      components: Object.entries(data).map(([componentName, value]) => ({
-        name: pascalCase(value.name),
-        href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${componentName}.json`,
-      })),
+      components: Object.entries(data)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([componentName, value]) => ({
+          name: pascalCase(value.name),
+          href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${componentName}.json`,
+        })),
     }),
     {
       ...prettierConfig,
