@@ -66,8 +66,8 @@ const getUtils = async () => {
   const spinner = p.spinner()
   spinner.start(`Start to add helpers...`)
   await addUtils()
-    .catch(() => {
-      spinner.stop(`Failed to download utils.`)
+    .catch((error) => {
+      spinner.stop(`Failed to download utils. ${error.message}`)
       process.exit(1)
     })
     .then(() => {

@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+### Added
+
+- Added support for server components
+- Added upgrade note when new version is available
+- Added support to add all components at once
+- Added support to add component from selection menu
+
+### Fixed
+
+- Fixed an issue while initializing a new project
+
 ## [0.1.3] - 2023-11-27
 
 - fixed bug when adding a new component

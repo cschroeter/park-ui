@@ -65,10 +65,7 @@ export const getImportAliases = (): { componentsImportAlias: string; utilsImport
 
 export const getUseReactServerComponents = (): boolean => {
   const config = getConfig()
-  if (config.jsFramework !== 'React') {
-    throw new Error('React server components are only supported with React framework.')
-  }
 
   // @ts-expect-error ts(2339) - the field is only available for react and is not generated from json2ts
-  return config.useReactServerComponents
+  return config.useReactServerComponents ?? false
 }

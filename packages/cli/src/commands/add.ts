@@ -1,7 +1,7 @@
 import * as p from '@clack/prompts'
 
 import { select } from '@clack/prompts'
-import { getImportAliases } from '../config/config'
+import { getImportAliases, getUseReactServerComponents } from '../config/config'
 import { downloadComponents, getComponents } from '../helpers/park-api'
 import { saveToFile } from '../helpers/save-file'
 
@@ -13,6 +13,7 @@ const toKebabCase = (str: string) => {
 }
 
 export const addComponent = async (options: { componentName: string; componentUrl: string }) => {
+  const serverComponents = getUseReactServerComponents()
   const { componentName, componentUrl } = options
   const { componentsImportAlias } = getImportAliases()
 
@@ -21,7 +22,10 @@ export const addComponent = async (options: { componentName: string; componentUr
     componentUrl,
   })
   components.forEach(({ filename, content }) => {
-    saveToFile(componentsImportAlias, filename, content)
+    if (serverComponents) {
+      content = `'use client'\n\n${content}`
+      saveToFile(componentsImportAlias, filename, content)
+    }
   })
 }
 
