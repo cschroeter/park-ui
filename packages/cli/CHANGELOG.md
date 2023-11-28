@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed that it used the version of the project instead of the cli
+
 ## [0.2.1] - 2023-11-28
 
 - fixed an issue not finding fetch in global installation
