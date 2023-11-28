@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.2.3] - 2023-11-28
+
 ### Fixed
 
 - Fixed an issue not showing the version
