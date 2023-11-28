@@ -21,10 +21,10 @@ export interface ParkUiConfiguration {
     /**
      * The import alias for components.
      */
-    components?: string
+    components: string
     /**
      * The import alias for utilities.
      */
-    utils?: string
+    utils: string
   }
 }

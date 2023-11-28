@@ -27,6 +27,7 @@
           "description": "The import alias for utilities."
         }
       },
+      "required": ["components", "utils"],
       "additionalProperties": false,
       "description": "Configuration for import aliases."
     }

@@ -47,11 +47,12 @@ export const getImportAliases = async () => {
   return { componentsImportAlias: components, utilsImportAlias: utils }
 }
 
-export const getUseReactServerComponents = async () => {
+export const getUseReactServerComponents = async (): Promise<boolean> => {
   const config = await getConfig()
   if (config.jsFramework !== 'React') {
-    throw new Error('React Server Components are only available for React projects.')
+    throw new Error('React server components are only supported with React framework.')
   }
-  // @ts-expect-error ts(2339) - typeguard needed, because useReactServerComponents only exists for react
+
+  // @ts-expect-error ts(2339) - the field is only available for react and is not generated from json2ts
   return config.useReactServerComponents
 }
