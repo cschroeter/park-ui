@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.2.2] - 2023-11-28
+
 ### Fixed
 
 - Fixed that it used the version of the project instead of the cli
