@@ -9,4 +9,9 @@ export const radii = {
   '2xl': '1rem',
   '3xl': '1.5rem',
   full: '9999px',
+
+  // aliases
+  l1: '0.125rem',
+  l2: '0.25rem',
+  l3: '0.375rem',
 }

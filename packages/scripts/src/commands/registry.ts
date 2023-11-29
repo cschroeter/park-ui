@@ -139,5 +139,5 @@ const generateRegistry = async () => {
 
 export const registryCmd = new Command()
   .name('registry')
-  .description('Generates the components.json')
+  .description('Updates the registry using the components.json file')
   .action(generateRegistry)

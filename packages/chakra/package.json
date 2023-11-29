@@ -36,16 +36,20 @@
     "@storybook/addons": "7.5.3",
     "@storybook/api": "7.5.3",
     "@storybook/components": "7.5.3",
-    "@storybook/react-vite": "7.5.3",
     "@storybook/react": "7.5.3",
+    "@storybook/react-vite": "7.5.3",
     "@types/node": "20.9.4",
-    "@types/react-dom": "18.2.17",
     "@types/react": "18.2.39",
+    "@types/react-dom": "18.2.17",
     "framer-motion": "10.16.5",
     "lucide-react": "0.293.0",
-    "react-dom": "18.2.0",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
     "storybook": "7.5.3",
     "typescript": "5.3.2"
+  },
+  "dependencies": {
+    "@ark-ui/react": "1.1.0",
+    "@chakra-ui/system": "2.6.2"
   }
 }

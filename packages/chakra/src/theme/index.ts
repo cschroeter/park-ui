@@ -12,6 +12,7 @@ import { radii } from './radii'
 import { semanticTokens } from './semantic-tokens'
 import { sizes } from './sizes'
 import { space } from './space'
+import { styles } from './styles'
 import { textStyles } from './text-styles'
 import { transition } from './transition'
 import { zIndices } from './z-indices'
@@ -33,7 +34,7 @@ export const theme = {
   shadows: {},
   sizes,
   space,
-  styles: {},
+  styles,
   textStyles,
   transition,
   zIndices,

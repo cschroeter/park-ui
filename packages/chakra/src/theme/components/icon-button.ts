@@ -1,4 +1,4 @@
-export const Button = {
+export const IconButton = {
   baseStyle: {
     alignItems: 'center',
     appearance: 'none',
@@ -28,7 +28,7 @@ export const Button = {
       h: '8',
       minW: '8',
       textStyle: 'xs',
-      px: '3',
+      px: '0',
       gap: '2',
       '& svg': {
         fontSize: 'md',
@@ -40,7 +40,7 @@ export const Button = {
       h: '9',
       minW: '9',
       textStyle: 'sm',
-      px: '3.5',
+      px: '0',
       gap: '2',
       '& svg': {
         width: '4',
@@ -51,7 +51,7 @@ export const Button = {
       h: '10',
       minW: '10',
       textStyle: 'sm',
-      px: '4',
+      px: '0',
       gap: '2',
       '& svg': {
         width: '5',
@@ -62,7 +62,7 @@ export const Button = {
       h: '11',
       minW: '11',
       textStyle: 'md',
-      px: '4.5',
+      px: '0',
       gap: '2',
       '& svg': {
         width: '5',
@@ -73,7 +73,7 @@ export const Button = {
       h: '12',
       minW: '12',
       textStyle: 'md',
-      px: '5',
+      px: '0',
       gap: '2.5',
       '& svg': {
         width: '5',
@@ -84,7 +84,7 @@ export const Button = {
       h: '16',
       minW: '16',
       textStyle: 'lg',
-      px: '7',
+      px: '0',
       gap: '3',
       '& svg': {
         width: '6',

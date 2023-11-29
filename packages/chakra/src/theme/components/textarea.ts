@@ -1,4 +1,4 @@
-export const Input = {
+export const Textarea = {
   baseStyle: {
     field: {
       appearance: 'none',
