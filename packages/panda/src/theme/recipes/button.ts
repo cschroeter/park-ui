@@ -74,7 +74,7 @@ export const button = defineRecipe({
           outlineOffset: '2px',
         },
         _selected: {
-          background: 'gray.a3',
+          background: 'colorPalette.a3',
         },
       },
       ghost: {

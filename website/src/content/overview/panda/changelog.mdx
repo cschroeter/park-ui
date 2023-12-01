@@ -9,17 +9,14 @@ description: All notable changes to this project will be documented in this file
 ### Added
 
 - Added `Kbd` component.
-- Added support to render various components with different color palettes. Simply pass the `colorPalette` prop to the
-  component to change its color.
+- Added `accent.text` to the list of semantic tokens. This token is used do display text in interactive elements like
+  buttons and links.
+- Added support to render components with different colors. Pass the `colorPalette` prop to the component to change its
+  visual style.
 
 ```tsx
-<Badge colorPalette="green">Badge</Badge>
-<Button colorPalette="red">Button</Button>
-<Checkbox colorPalette="blue" />
+<Button colorPalette="red">Danger</Button>
 ```
-
-- Added semantic token `accent.text` to the list of semantic tokens. This token is used do display text in interactive
-  elements like buttons and links.
 
 ### Changed
 
