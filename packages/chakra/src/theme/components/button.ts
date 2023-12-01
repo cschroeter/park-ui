@@ -1,3 +1,7 @@
+import { defineStyle } from '@chakra-ui/react'
+
+// const vars = defineCssVars('button', ['bg', 'color'])
+
 export const Button = {
   baseStyle: {
     alignItems: 'center',
@@ -21,6 +25,7 @@ export const Button = {
   },
   defaultProps: {
     variant: 'solid',
+    colorScheme: 'teal',
     size: 'md',
   },
   sizes: {
@@ -93,11 +98,17 @@ export const Button = {
     },
   },
   variants: {
-    solid: {
-      background: 'accent.default',
-      color: 'accent.fg',
+    solid: defineStyle((props) => ({
+      // TODO ask Segun about this
+      // background: vars.bg.reference,
+      // color: vars.color.reference,
+      // [vars.bg.variable]: `colors.${props.colorScheme}.default`,
+      // [vars.color.variable]: `colors.${props.colorScheme}.fg`,
+
+      background: `${props.colorScheme}.default`,
+      color: `${props.colorScheme}.fg`,
       _hover: {
-        background: 'accent.emphasized',
+        background: `${props.colorScheme}.emphasized`,
       },
       _focusVisible: {
         outlineOffset: '2px',
@@ -113,7 +124,7 @@ export const Button = {
           background: 'gray.a3',
         },
       },
-    },
+    })),
     outline: {
       borderWidth: '1px',
       borderColor: 'border.default',

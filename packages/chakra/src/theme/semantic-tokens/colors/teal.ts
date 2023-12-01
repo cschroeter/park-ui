@@ -23,4 +23,9 @@ export const teal = {
   a10: { default: 'teal.light.a10', _dark: 'teal.dark.a10' },
   a11: { default: 'teal.light.a11', _dark: 'teal.dark.a11' },
   a12: { default: 'teal.light.a12', _dark: 'teal.dark.a12' },
+
+  default: 'teal.9',
+  emphasized: 'teal.10',
+  fg: 'white',
+  text: 'teal.a11',
 }

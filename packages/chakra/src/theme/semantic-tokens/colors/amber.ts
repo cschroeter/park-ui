@@ -23,4 +23,9 @@ export const amber = {
   a10: { default: 'amber.light.a10', _dark: 'amber.dark.a10' },
   a11: { default: 'amber.light.a11', _dark: 'amber.dark.a11' },
   a12: { default: 'amber.light.a12', _dark: 'amber.dark.a12' },
+
+  default: 'amber.9',
+  emphasized: 'amber.10',
+  fg: 'sand.light.12',
+  text: 'amber.a11',
 }
