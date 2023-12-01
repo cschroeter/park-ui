@@ -23,4 +23,9 @@ export const amber = {
   a10: { value: { base: '{colors.amber.light.a10}', _dark: '{colors.amber.dark.a10}' } },
   a11: { value: { base: '{colors.amber.light.a11}', _dark: '{colors.amber.dark.a11}' } },
   a12: { value: { base: '{colors.amber.light.a12}', _dark: '{colors.amber.dark.a12}' } },
+
+  default: { value: '{colors.amber.9}' },
+  emphasized: { value: '{colors.amber.10}' },
+  fg: { value: '{colors.sand.light.12}' },
+  text: { value: '{colors.amber.a11}' },
 }

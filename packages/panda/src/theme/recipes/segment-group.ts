@@ -6,12 +6,13 @@ export const segmentGroup = defineSlotRecipe({
   slots: segmentGroupAnatomy.keys(),
   base: {
     root: {
+      alignItems: 'flex-start',
+      colorPalette: 'accent',
       display: 'flex',
       flexDirection: {
         _horizontal: 'row',
         _vertical: 'column',
       },
-      alignItems: 'flex-start',
       gap: {
         _horizontal: '4',
         _vertical: '1',
@@ -30,7 +31,7 @@ export const segmentGroup = defineSlotRecipe({
       borderLeftWidth: {
         _vertical: '2px',
       },
-      borderColor: 'accent.default',
+      borderColor: 'colorPalette.default',
       transform: {
         _horizontal: 'translateY(1px)',
         _vertical: 'translateX(-1px)',

@@ -6,6 +6,7 @@ export const radioGroup = defineSlotRecipe({
   slots: radioGroupAnatomy.keys(),
   base: {
     root: {
+      colorPalette: 'accent',
       display: 'flex',
       flexDirection: {
         _vertical: 'column',
@@ -24,12 +25,12 @@ export const radioGroup = defineSlotRecipe({
         background: 'bg.subtle',
       },
       _checked: {
-        background: 'accent.default',
-        borderColor: 'border.accent',
+        background: 'colorPalette.default',
+        borderColor: 'colorPalette.default',
         outlineColor: 'bg.default',
         outlineStyle: 'solid',
         _hover: {
-          background: 'accent.default',
+          background: 'colorPalette.default',
         },
       },
       _disabled: {

@@ -23,4 +23,9 @@ export const gold = {
   a10: { value: { base: '{colors.gold.light.a10}', _dark: '{colors.gold.dark.a10}' } },
   a11: { value: { base: '{colors.gold.light.a11}', _dark: '{colors.gold.dark.a11}' } },
   a12: { value: { base: '{colors.gold.light.a12}', _dark: '{colors.gold.dark.a12}' } },
+
+  default: { value: '{colors.gold.9}' },
+  emphasized: { value: '{colors.gold.10}' },
+  fg: { value: '{colors.white}' },
+  text: { value: '{colors.gold.a11}' },
 }

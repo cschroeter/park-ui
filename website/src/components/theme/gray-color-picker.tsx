@@ -26,7 +26,10 @@ export const GrayColorPicker = () => {
           <RadioButtonGroup.Item
             key={id}
             value={gray}
-            _checked={{ borderColor: 'border.outline', boxShadow: 'outline' }}
+            _checked={{
+              borderColor: 'border.outline',
+              boxShadow: '0 0 0 1px var(--colors-border-outline)',
+            }}
             justifyContent="flex-start"
           >
             <RadioButtonGroup.ItemControl />

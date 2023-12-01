@@ -6,6 +6,7 @@ export const select = defineSlotRecipe({
   slots: selectAnatomy.keys(),
   base: {
     root: {
+      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',
@@ -66,7 +67,7 @@ export const select = defineSlotRecipe({
       textStyle: 'sm',
     },
     itemIndicator: {
-      color: 'accent.default',
+      color: 'colorPalette.default',
     },
     label: {
       color: 'fg.default',
@@ -78,6 +79,7 @@ export const select = defineSlotRecipe({
       borderColor: 'border.default',
       borderRadius: 'l2',
       cursor: 'pointer',
+      color: 'fg.default',
       display: 'inline-flex',
       justifyContent: 'space-between',
       outline: 0,
@@ -104,8 +106,8 @@ export const select = defineSlotRecipe({
         trigger: {
           borderWidth: '1px',
           _focus: {
-            borderColor: 'border.accent',
-            boxShadow: 'accent',
+            borderColor: 'colorPalette.default',
+            boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
           },
         },
       },

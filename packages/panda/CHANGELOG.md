@@ -3,6 +3,17 @@
 ### Added
 
 - Added `Kbd` component.
+- Added support to render various components with different color palettes. Simply pass the `colorPalette` prop to the
+  component to change its color.
+
+```tsx
+<Badge colorPalette="green">Badge</Badge>
+<Button colorPalette="red">Button</Button>
+<Checkbox colorPalette="blue" />
+```
+
+- Added semantic token `accent.text` to the list of semantic tokens. This token is used do display text in interactive
+  elements like buttons and links.
 
 ### Changed
 
@@ -11,6 +22,10 @@
 ### Fixed
 
 - Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was scrolled.
+
+### Removed
+
+- Removed `border.accent` from the list of semantic tokens. Use `accent.default` or `colorPalette.default` instead.
 
 ## [0.24.0] - 2023-11-21
 

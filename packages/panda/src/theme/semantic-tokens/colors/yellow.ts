@@ -23,4 +23,9 @@ export const yellow = {
   a10: { value: { base: '{colors.yellow.light.a10}', _dark: '{colors.yellow.dark.a10}' } },
   a11: { value: { base: '{colors.yellow.light.a11}', _dark: '{colors.yellow.dark.a11}' } },
   a12: { value: { base: '{colors.yellow.light.a12}', _dark: '{colors.yellow.dark.a12}' } },
+
+  default: { value: '{colors.yellow.9}' },
+  emphasized: { value: '{colors.yellow.10}' },
+  fg: { value: '{colors.sand.light.12}' },
+  text: { value: '{colors.yellow.a11}' },
 }

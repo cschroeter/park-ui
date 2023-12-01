@@ -23,4 +23,9 @@ export const green = {
   a10: { value: { base: '{colors.green.light.a10}', _dark: '{colors.green.dark.a10}' } },
   a11: { value: { base: '{colors.green.light.a11}', _dark: '{colors.green.dark.a11}' } },
   a12: { value: { base: '{colors.green.light.a12}', _dark: '{colors.green.dark.a12}' } },
+
+  default: { value: '{colors.green.9}' },
+  emphasized: { value: '{colors.green.10}' },
+  fg: { value: '{colors.white}' },
+  text: { value: '{colors.green.a11}' },
 }

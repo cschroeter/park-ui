@@ -6,10 +6,11 @@ export const tagsInput = defineSlotRecipe({
   slots: tagsInputAnatomy.keys(),
   base: {
     root: {
-      width: 'full',
+      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',
+      width: 'full',
     },
     control: {
       alignItems: 'center',
@@ -23,8 +24,8 @@ export const tagsInput = defineSlotRecipe({
       transitionProperty: 'border-color, box-shadow',
       transitionTimingFunction: 'default',
       _focusWithin: {
-        borderColor: 'border.accent',
-        boxShadow: 'accent',
+        borderColor: 'colorPalette.default',
+        boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
     },
     input: {
@@ -40,8 +41,8 @@ export const tagsInput = defineSlotRecipe({
       display: 'inline-flex',
       fontWeight: 'medium',
       _highlighted: {
-        borderColor: 'border.accent',
-        boxShadow: 'accent',
+        borderColor: 'colorPalette.default',
+        boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
       _hidden: {
         display: 'none',
