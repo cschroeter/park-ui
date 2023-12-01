@@ -26,11 +26,13 @@ const getSemanticTokensCssVars = (color: AccentColor | GrayColor) => {
       '--colors-accent-fg': 'var(--colors-gray-light-12)',
       '--colors-accent-default': 'var(--colors-accent-9)',
       '--colors-accent-emphasized': 'var(--colors-accent-10)',
+      '--colors-accent-text': 'var(--colors-accent-a11)',
     }))
     .otherwise(() => ({
       '--colors-accent-fg': 'var(--colors-white)',
       '--colors-accent-default': 'var(--colors-accent-9)',
       '--colors-accent-emphasized': 'var(--colors-accent-10)',
+      '--colors-accent-text': 'var(--colors-accent-a11)',
     }))
 }
 

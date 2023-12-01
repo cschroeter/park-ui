@@ -17,6 +17,12 @@ export default {
           subtle: 'var(--colors-fg-subtle)',
           disabled: 'var(--colors-fg-disabled)',
         },
+        accent: {
+          default: 'var(--colors-accent-default)',
+          emphasized: 'var(--colors-accent-emphasized)',
+          fg: 'var(--colors-accent-fg)',
+          text: 'var(--colors-accent-text)',
+        },
         border: {
           default: 'var(--colors-border-default)',
           muted: 'var(--colors-border-muted)',
@@ -24,7 +30,6 @@ export default {
           disabled: 'var(--colors-border-disabled)',
 
           outline: 'var(--colors-border-outline)',
-          accent: 'var(--colors-border-accent)',
         },
       },
       borderRadius: {
