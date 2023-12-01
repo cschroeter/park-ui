@@ -6,6 +6,7 @@ export const radioButtonGroup = defineSlotRecipe({
   slots: radioGroupAnatomy.keys(),
   base: {
     root: {
+      colorPalette: 'accent',
       display: 'flex',
       flexWrap: 'wrap',
     },
@@ -16,6 +17,7 @@ export const radioButtonGroup = defineSlotRecipe({
       borderRadius: 'l2',
       borderWidth: '1px',
       color: 'fg.default',
+
       cursor: 'pointer',
       display: 'inline-flex',
       fontWeight: 'semibold',
@@ -59,12 +61,12 @@ export const radioButtonGroup = defineSlotRecipe({
       solid: {
         item: {
           _checked: {
-            background: 'accent.default',
-            borderColor: 'border.accent',
-            color: 'accent.fg',
+            background: 'colorPalette.default',
+            borderColor: 'colorPalette.default',
+            color: 'colorPalette.fg',
             _hover: {
-              color: 'accent.fg',
-              background: 'accent.default',
+              color: 'colorPalette.fg',
+              background: 'colorPalette.default',
             },
           },
         },
@@ -72,8 +74,8 @@ export const radioButtonGroup = defineSlotRecipe({
       outline: {
         item: {
           _checked: {
-            borderColor: 'border.accent',
-            boxShadow: 'accent',
+            borderColor: 'colorPalette.default',
+            boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
             _hover: {
               background: 'initial',
             },

@@ -5,6 +5,7 @@ export const link = defineRecipe({
   base: {
     alignItems: 'center',
     color: 'fg.default',
+    colorPalette: 'accent',
     cursor: 'pointer',
     display: 'inline-flex',
     fontWeight: 'medium',
@@ -15,7 +16,7 @@ export const link = defineRecipe({
     transitionProperty: 'text-decoration-color',
     transitionTimingFunction: 'default',
     _hover: {
-      textDecorationColor: 'accent.default',
+      textDecorationColor: 'colorPalette.default',
     },
     '& svg': {
       width: '1em',

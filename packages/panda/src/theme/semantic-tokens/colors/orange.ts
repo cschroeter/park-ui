@@ -23,4 +23,9 @@ export const orange = {
   a10: { value: { base: '{colors.orange.light.a10}', _dark: '{colors.orange.dark.a10}' } },
   a11: { value: { base: '{colors.orange.light.a11}', _dark: '{colors.orange.dark.a11}' } },
   a12: { value: { base: '{colors.orange.light.a12}', _dark: '{colors.orange.dark.a12}' } },
+
+  default: { value: '{colors.orange.9}' },
+  emphasized: { value: '{colors.orange.10}' },
+  fg: { value: '{colors.white}' },
+  text: { value: '{colors.orange.a11}' },
 }

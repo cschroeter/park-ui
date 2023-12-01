@@ -8,6 +8,8 @@ export const input = defineRecipe({
     borderColor: 'border.default',
     borderRadius: 'l2',
     borderWidth: '1px',
+    colorPalette: 'accent',
+    color: 'fg.default',
     outline: 0,
     position: 'relative',
     transitionDuration: 'normal',
@@ -19,8 +21,8 @@ export const input = defineRecipe({
       cursor: 'not-allowed',
     },
     _focus: {
-      borderColor: 'border.accent',
-      boxShadow: 'accent',
+      borderColor: 'colorPalette.default',
+      boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
     },
   },
   defaultVariants: {

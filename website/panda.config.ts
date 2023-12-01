@@ -51,6 +51,7 @@ export default defineConfig({
           borderColor: ['*'],
           boxShadow: ['*'],
           color: ['*'],
+          colorPalette: ['red'],
           fontWeight: ['*'],
           textStyle: ['*'],
         },

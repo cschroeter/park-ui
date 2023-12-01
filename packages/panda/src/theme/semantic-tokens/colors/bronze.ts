@@ -23,4 +23,9 @@ export const bronze = {
   a10: { value: { base: '{colors.bronze.light.a10}', _dark: '{colors.bronze.dark.a10}' } },
   a11: { value: { base: '{colors.bronze.light.a11}', _dark: '{colors.bronze.dark.a11}' } },
   a12: { value: { base: '{colors.bronze.light.a12}', _dark: '{colors.bronze.dark.a12}' } },
+
+  default: { value: '{colors.bronze.9}' },
+  emphasized: { value: '{colors.bronze.10}' },
+  fg: { value: '{colors.white}' },
+  text: { value: '{colors.bronze.a11}' },
 }

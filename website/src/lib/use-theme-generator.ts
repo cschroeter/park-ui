@@ -79,16 +79,19 @@ const syncAccentColor = (color: AccentColor) => {
       root.style.removeProperty('--colors-accent-fg')
       root.style.removeProperty('--colors-accent-default')
       root.style.removeProperty('--colors-accent-emphasized')
+      root.style.removeProperty('--colors-accent-text')
     })
     .with('amber', 'lime', 'mint', 'sky', 'yellow', () => {
       root.style.setProperty('--colors-accent-fg', token.var(`colors.gray.light.12`))
       root.style.setProperty('--colors-accent-default', token.var(`colors.accent.9`))
       root.style.setProperty('--colors-accent-emphasized', token.var(`colors.accent.10`))
+      root.style.setProperty('--colors-accent-text', token.var(`colors.accent.a11`))
     })
     .otherwise(() => {
       root.style.setProperty('--colors-accent-fg', token.var(`colors.white`))
       root.style.setProperty('--colors-accent-default', token.var(`colors.accent.9`))
       root.style.setProperty('--colors-accent-emphasized', token.var(`colors.accent.10`))
+      root.style.setProperty('--colors-accent-text', token.var(`colors.accent.a11`))
     })
 }
 

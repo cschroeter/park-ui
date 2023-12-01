@@ -12,6 +12,26 @@ import InstallationGuide from '~/components/installation-guide.astro'
 
 <ComponentPreview />
 
+## Examples
+
+### With a different color
+
+Use the `colorPalette` prop to change the color of the button.
+
+```tsx live
+<Flex gap="3">
+  <Button colorPalette="red" variant="solid">
+    Button
+  </Button>
+  <Button colorPalette="red" variant="outline">
+    Button
+  </Button>
+  <Button colorPalette="red" variant="ghost">
+    Button
+  </Button>
+</Flex>
+```
+
 ## Installation
 
-<InstallationGuide />  
+<InstallationGuide />

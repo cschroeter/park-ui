@@ -1,12 +1,6 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
 export const shadows = defineSemanticTokens.shadows({
-  accent: {
-    value: '0 0 0 1px {colors.border.accent}',
-  },
-  outline: {
-    value: '0 0 0 1px {colors.border.outline}',
-  },
   xs: {
     value: {
       base: '0px 1px 2px {colors.gray.a3}, 0px 0px 1px {colors.gray.a7}',

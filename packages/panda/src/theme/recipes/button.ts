@@ -29,31 +29,34 @@ export const button = defineRecipe({
   variants: {
     variant: {
       solid: {
-        background: 'accent.default',
-        color: 'accent.fg',
+        background: 'colorPalette.default',
+        color: 'colorPalette.fg',
+        colorPalette: 'accent',
         _hover: {
-          background: 'accent.emphasized',
+          background: 'colorPalette.emphasized',
         },
         _focusVisible: {
-          outlineOffset: '2px',
           outline: '2px solid',
-          outlineColor: 'border.accent',
+          outlineColor: 'colorPalette.default',
+          outlineOffset: '2px',
         },
         _disabled: {
           color: 'fg.disabled',
-          background: 'gray.a3',
+          background: 'bg.disabled',
           cursor: 'not-allowed',
           _hover: {
             color: 'fg.disabled',
-            background: 'gray.a3',
+            background: 'bg.disabled',
           },
         },
       },
       outline: {
         borderWidth: '1px',
-        borderColor: 'border.default',
+        borderColor: 'colorPalette.a8',
+        color: 'colorPalette.text',
+        colorPalette: 'gray',
         _hover: {
-          background: 'gray.a2',
+          background: 'colorPalette.a2',
         },
         _disabled: {
           borderColor: 'border.disabled',
@@ -66,21 +69,22 @@ export const button = defineRecipe({
           },
         },
         _focusVisible: {
-          outlineOffset: '2px',
           outline: '2px solid',
-          outlineColor: 'border.outline',
+          outlineColor: 'colorPalette.default',
+          outlineOffset: '2px',
         },
         _selected: {
-          background: 'gray.a3',
+          background: 'colorPalette.a3',
         },
       },
       ghost: {
-        color: 'fg.default',
+        color: 'colorPalette.text',
+        colorPalette: 'gray',
         _hover: {
-          background: 'gray.a3',
+          background: 'colorPalette.a3',
         },
         _selected: {
-          background: 'gray.a3',
+          background: 'colorPalette.a3',
         },
         _disabled: {
           color: 'fg.disabled',
@@ -92,7 +96,8 @@ export const button = defineRecipe({
         },
         _focusVisible: {
           outline: '2px solid',
-          outlineColor: 'border.outline',
+          outlineColor: 'colorPalette.default',
+          outlineOffset: '2px',
         },
       },
       link: {

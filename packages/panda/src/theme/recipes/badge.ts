@@ -3,10 +3,11 @@ import { defineRecipe } from '@pandacss/dev'
 export const badge = defineRecipe({
   className: 'badge',
   base: {
-    borderRadius: 'full',
-    fontWeight: 'medium',
-    display: 'inline-flex',
     alignItems: 'center',
+    borderRadius: 'full',
+    colorPalette: 'accent',
+    display: 'inline-flex',
+    fontWeight: 'medium',
     userSelect: 'none',
     whiteSpace: 'nowrap',
   },
@@ -17,8 +18,8 @@ export const badge = defineRecipe({
   variants: {
     variant: {
       solid: {
-        background: 'accent.default',
-        color: 'accent.fg',
+        background: 'colorPalette.default',
+        color: 'colorPalette.fg',
       },
       subtle: {
         background: 'bg.subtle',
