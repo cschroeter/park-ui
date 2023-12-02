@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.15.0] - 2023-12-02
+
 ### Added
 
 - Added `Kbd` component.
