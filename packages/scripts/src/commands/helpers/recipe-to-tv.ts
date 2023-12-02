@@ -1,5 +1,11 @@
 import { RecipeConfig, SlotRecipeConfig } from '@pandacss/types'
+import { recipes, slotRecipes } from '@park-ui/panda-preset/src/theme/recipes'
 export type TailwindClassString = string
+
+const allRecipes = {
+  ...recipes,
+  ...slotRecipes,
+}
 
 const isSlotRecipeConfig = (
   recipe: RecipeConfig | SlotRecipeConfig,
@@ -8,7 +14,7 @@ const isSlotRecipeConfig = (
 }
 const prefix = ''
 
-export const transformRecipe = (
+const transformRecipeToTvConfig = (
   recipe: RecipeConfig | SlotRecipeConfig,
 ): Record<string, TailwindClassString> | string => {
   const { base: baseStyles = {}, className, variants = {}, defaultVariants } = recipe
@@ -44,9 +50,8 @@ export const transformRecipe = (
           if (!acc[variantName][variantValue]) {
             acc[variantName][variantValue] = {}
           }
-          acc[variantName][variantValue][
-            slot
-          ] = `${prefix}${className}__${slot}--${variantName}_${variantValue}`
+          acc[variantName][variantValue][slot] =
+            `${prefix}${className}__${slot}--${variantName}_${variantValue}`
         })
       } else {
         acc[variantName][variantValue] = `${prefix}${className}--${variantName}_${variantValue}`
@@ -56,4 +61,14 @@ export const transformRecipe = (
   }, {})
 
   return result
+}
+
+export const transformComponentToTvConfig = (component: string) => {
+  // @ts-expect-error ts(7053) string index
+  const recipe = allRecipes[component]
+
+  if (!recipe) {
+    throw new Error(`Recipe ${component} not found`)
+  }
+  return transformRecipeToTvConfig(recipe)
 }

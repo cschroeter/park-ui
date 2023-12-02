@@ -1,12 +1,13 @@
 {
   "name": "@park-ui/scripts",
-  "type": "module",
   "private": true,
   "scripts": {
     "start": "tsx src/index.ts"
   },
   "dependencies": {
     "@ark-ui/anatomy": "1.1.0",
+    "@park-ui/panda-preset": "workspace:*",
+    "@pandacss/dev": "0.19.0",
     "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/handlebars": "4.1.0",

@@ -190,6 +190,12 @@ importers:
       '@ark-ui/anatomy':
         specifier: 1.1.0
         version: 1.1.0(@internationalized/date@3.5.0)
+      '@pandacss/dev':
+        specifier: 0.19.0
+        version: 0.19.0(typescript@5.3.2)
+      '@park-ui/panda-preset':
+        specifier: workspace:*
+        version: link:../panda
       '@radix-ui/colors':
         specifier: 3.0.0
         version: 3.0.0

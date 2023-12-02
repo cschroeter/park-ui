@@ -6,21 +6,22 @@ import prettier from 'prettier'
 import { match } from 'ts-pattern'
 import v from 'voca'
 
-const prettierConfig = await prettier.resolveConfig('.')
-
 const pascalCase = (s: string) => v.chain(s).camelCase().capitalize().value()
 const camelCase = (s: string) => v.chain(s).camelCase().value()
 
 const generateComponentsJson = async () => {
+  const prettierConfig = await prettier.resolveConfig('.')
+
   const result = Object.entries(components)
     .filter(([key]) => !['createAnatomy'].includes(key))
+    .filter(([key]) => key !== 'default')
     .map(([key, value]) => {
       const component = v.slugify(key.replace('Anatomy', ''))
 
       return {
         [component]: {
           parts: (value as AnatomyInstance<string>)
-            .keys()
+            .keys?.()
             .sort((a, b) => {
               if (a === 'root') return -1
               if (b === 'root') return 1
