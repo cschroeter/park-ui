@@ -1,5 +1,5 @@
 import * as p from '@clack/prompts'
-import { CONFIG_FILE_NAME, Config, writeConfig } from '../config/config'
+import { CONFIG_FILE_NAME, Config, writeConfig } from '../config/park-ui-config'
 import { addUtils } from '../helpers/add-utils'
 
 const getInitialConfig = async (): Promise<Config> => {

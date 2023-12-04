@@ -1,7 +1,7 @@
 import * as p from '@clack/prompts'
 
 import { select } from '@clack/prompts'
-import { getImportAliases, getUseReactServerComponents } from '../config/config'
+import { getImportAliases, getUseReactServerComponents } from '../config/park-ui-config'
 import { downloadComponents, getComponents } from '../helpers/park-api'
 import { saveToFile } from '../helpers/save-file'
 

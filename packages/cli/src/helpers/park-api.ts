@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { getCssFramework, getJsFramework } from '../config/config'
+import { getCssFramework, getJsFramework } from '../config/park-ui-config'
 
 export const getComponents = async (): Promise<{ name: string; href: string }[]> => {
   const cssFramework = getCssFramework()

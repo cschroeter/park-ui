@@ -1,8 +1,8 @@
 import { mkdirSync, writeFileSync } from 'fs'
+import { resolveTypescriptPath } from '../config/typescript-config'
 
 export const saveToFile = (importAlias: string | undefined, fileName: string, content: string) => {
-  // TODO resolve imports like ~ with tsconfig, but for now just make sure to not end up in the home dir
-  const filePath = `${importAlias?.replace('~/', './')}/${fileName}`
+  const filePath = resolveTypescriptPath(`${importAlias}/${fileName}`)
   const folder = filePath.split('/').slice(0, -1).join('/')
   mkdirSync(folder, { recursive: true })
   writeFileSync(filePath, content)

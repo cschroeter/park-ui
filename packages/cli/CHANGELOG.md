@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- resolve ts paths via tsconfig.json
+
 ## [0.2.3] - 2023-11-28
 
 ### Fixed
