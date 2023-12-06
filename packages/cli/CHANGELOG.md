@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.3.1] - 2023-12-06
+
 ### Fixed
 
 - Only add `use client` when the component has multiple parts
