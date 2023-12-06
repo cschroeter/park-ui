@@ -2,7 +2,8 @@
   "files": [
     {
       "filename": "badge.ts",
-      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { badge } from 'styled-system/recipes'\n\nexport const Badge = styled(ark.div, badge)\nexport interface BadgeProps extends HTMLStyledProps<typeof Badge> {}\n"
+      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { badge } from 'styled-system/recipes'\n\nexport const Badge = styled(ark.div, badge)\nexport interface BadgeProps extends HTMLStyledProps<typeof Badge> {}\n",
+      "hasMultipleParts": false
     }
   ]
 }

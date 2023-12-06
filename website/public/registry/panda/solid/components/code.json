@@ -2,7 +2,8 @@
   "files": [
     {
       "filename": "code.ts",
-      "content": "import { ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport const Code = styled(ark.code, code)\nexport type CodeProps = typeof Code\n"
+      "content": "import { ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport const Code = styled(ark.code, code)\nexport type CodeProps = typeof Code\n",
+      "hasMultipleParts": false
     }
   ]
 }

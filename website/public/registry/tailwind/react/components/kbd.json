@@ -2,7 +2,8 @@
   "files": [
     {
       "filename": "kbd.ts",
-      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react'\nimport { type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype KbdVariantProps = VariantProps<typeof styles>\nexport type KbdProps = KbdVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({\n  base: 'kbd',\n  defaultVariants: { size: 'md' },\n  variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },\n})\nexport const Kbd = styled<KbdProps>(ark.ark.kbd, styles)\n"
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react'\nimport { type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype KbdVariantProps = VariantProps<typeof styles>\nexport type KbdProps = KbdVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({\n  base: 'kbd',\n  defaultVariants: { size: 'md' },\n  variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },\n})\nexport const Kbd = styled<KbdProps>(ark.ark.kbd, styles)\n",
+      "hasMultipleParts": false
     }
   ]
 }

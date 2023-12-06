@@ -2,7 +2,8 @@
   "files": [
     {
       "filename": "icon-button.ts",
-      "content": "import { ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { iconButton } from 'styled-system/recipes'\n\nexport const IconButton = styled(ark.button, iconButton)\nexport type IconButtonProps = typeof IconButton\n"
+      "content": "import { ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { iconButton } from 'styled-system/recipes'\n\nexport const IconButton = styled(ark.button, iconButton)\nexport type IconButtonProps = typeof IconButton\n",
+      "hasMultipleParts": false
     }
   ]
 }

@@ -2,7 +2,8 @@
   "files": [
     {
       "filename": "link.ts",
-      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\n\nexport const Link = styled(ark.a, link)\nexport interface LinkProps extends HTMLStyledProps<typeof Link> {}\n"
+      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\n\nexport const Link = styled(ark.a, link)\nexport interface LinkProps extends HTMLStyledProps<typeof Link> {}\n",
+      "hasMultipleParts": false
     }
   ]
 }

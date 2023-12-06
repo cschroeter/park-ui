@@ -2,7 +2,8 @@
   "files": [
     {
       "filename": "kbd.ts",
-      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { kbd } from 'styled-system/recipes'\n\nexport const Kbd = styled(ark.kbd, kbd)\nexport interface KbdProps extends HTMLStyledProps<typeof Kbd> {}\n"
+      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { kbd } from 'styled-system/recipes'\n\nexport const Kbd = styled(ark.kbd, kbd)\nexport interface KbdProps extends HTMLStyledProps<typeof Kbd> {}\n",
+      "hasMultipleParts": false
     }
   ]
 }

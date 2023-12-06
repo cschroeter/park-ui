@@ -98,6 +98,7 @@ const generateComponents = async (options: Options) => {
             {
               filename: `${key}.ts`,
               content: code,
+              hasMultipleParts: value.hasOwnProperty('parts'),
             },
           ],
         }),
