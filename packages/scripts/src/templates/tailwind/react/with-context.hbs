@@ -1,7 +1,6 @@
 import { {{imports}} } from '@ark-ui/react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
-import { styled } from '~/lib/styled'
 
 const styles = tv({{{tvConfig}}})
 const { withProvider, withContext } = createStyleContext(styles)
@@ -14,7 +13,7 @@ export const {{this.name}}Root = withProvider(styled({{this.component}}), '{{thi
 export const {{this.name}}Root = withProvider({{this.component}})
 {{/if}} 
 {{else}}
-export const {{this.name}} = withContext(styled({{this.component}}), '{{this.slot}}')
+export const {{this.name}} = withContext({{this.component}}, '{{this.slot}}')
 {{/if}}
 {{/each}}
 
