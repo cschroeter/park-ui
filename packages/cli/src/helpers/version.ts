@@ -58,7 +58,8 @@ export const showUpgradeNoteWhenNeeded = async (options: {
 
   if (currentVersion !== latestVersion) {
     p.note(
-      `Your Park UI CLI version is ${currentVersion}. The latest version is ${latestVersion}.\nRun "npm install -g @park-ui/cli" to update.`,
+      `Your installed Park UI CLI version is ${currentVersion}.\nRun "npm install -g @park-ui/cli" to update.`,
+      `New Version ${latestVersion} available`,
     )
   }
 }
