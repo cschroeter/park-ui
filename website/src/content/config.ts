@@ -18,6 +18,7 @@ const overview = defineCollection({
     id: z.string(),
     title: z.string(),
     description: z.string(),
+    label: z.string().optional(),
   }),
 })
 

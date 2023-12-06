@@ -120,6 +120,7 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
         .map((item) => ({
           title: item.data.title,
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
+          label: item.data.label,
         })),
     },
     {
