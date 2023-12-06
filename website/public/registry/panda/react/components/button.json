@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "button.ts",
-      "content": "import { ark } from '@ark-ui/react'\nimport { styled } from 'styled-system/jsx'\nimport { button } from 'styled-system/recipes'\n\nexport const Button = styled(ark.button, button)\nexport type ButtonProps = typeof Button\n"
+      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { button } from 'styled-system/recipes'\n\nexport const Button = styled(ark.button, button)\nexport interface ButtonProps extends HTMLStyledProps<typeof Button> {}\n"
     }
   ]
 }

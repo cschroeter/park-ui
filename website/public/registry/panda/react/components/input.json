@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "input.ts",
-      "content": "import { ark } from '@ark-ui/react'\nimport { styled } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\n\nexport const Input = styled(ark.input, input)\nexport type InputProps = typeof Input\n"
+      "content": "import { ark } from '@ark-ui/react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\n\nexport const Input = styled(ark.input, input)\nexport interface InputProps extends HTMLStyledProps<typeof Input> {}\n"
     }
   ]
 }

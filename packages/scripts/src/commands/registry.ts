@@ -108,31 +108,31 @@ const generateComponents = async (options: Options) => {
       )
 
       // await fs.outputFile(path.join(`dist/${cssFramwork}/${jsFramework}/${key}.tsx`), code)
-      await fs.outputFile(
-        path.join(rootDir, 'website', 'src', 'components', 'ui', `${key}.tsx`),
-        code,
-      )
-
       // await fs.outputFile(
-      //   path.join(
-      //     rootDir,
-      //     'website',
-      //     'public',
-      //     'registry',
-      //     cssFramwork,
-      //     jsFramework,
-      //     'components',
-      //     key + '.json',
-      //   ),
-      //   content,
+      //   path.join(rootDir, 'website', 'src', 'components', 'ui', `${key}.tsx`),
+      //   code,
       // )
+
+      await fs.outputFile(
+        path.join(
+          rootDir,
+          'website',
+          'public',
+          'registry',
+          cssFramwork,
+          jsFramework,
+          'components',
+          key + '.json',
+        ),
+        content,
+      )
     }),
   )
 }
 
 const generateRegistry = async () => {
-  const jsFrameworks = ['react'] as const
-  const cssFramworks = ['panda'] as const
+  const jsFrameworks = ['react', 'solid'] as const
+  const cssFramworks = ['panda', 'tailwind'] as const
 
   jsFrameworks.forEach((jsFramework) => {
     cssFramworks.forEach((cssFramwork) => {
