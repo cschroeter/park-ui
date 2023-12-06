@@ -1,26 +1,19 @@
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
-import {
-  NumberInput,
-  NumberInputControl,
-  NumberInputDecrementTrigger,
-  NumberInputIncrementTrigger,
-  NumberInputInput,
-  NumberInputLabel,
-} from '~/components/ui/number-input'
+import { NumberInput } from '~/components/ui'
 
 export const QuantityPicker = () => {
   return (
-    <NumberInput min={1} max={5} defaultValue="1">
-      <NumberInputLabel>Quantity</NumberInputLabel>
-      <NumberInputControl>
-        <NumberInputInput />
-        <NumberInputIncrementTrigger>
+    <NumberInput.Root min={1} max={5} defaultValue="1">
+      <NumberInput.Label>Quantity</NumberInput.Label>
+      <NumberInput.Control>
+        <NumberInput.Input />
+        <NumberInput.IncrementTrigger>
           <ChevronUpIcon />
-        </NumberInputIncrementTrigger>
-        <NumberInputDecrementTrigger>
+        </NumberInput.IncrementTrigger>
+        <NumberInput.DecrementTrigger>
           <ChevronDownIcon />
-        </NumberInputDecrementTrigger>
-      </NumberInputControl>
-    </NumberInput>
+        </NumberInput.DecrementTrigger>
+      </NumberInput.Control>
+    </NumberInput.Root>
   )
 }

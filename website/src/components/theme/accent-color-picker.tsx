@@ -1,7 +1,6 @@
 import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { RadioButtonGroup } from '~/components/ui/radio-button-group'
-import { Text } from '~/components/ui/text'
+import { RadioButtonGroup, Text } from '~/components/ui'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const AccentColorPicker = () => {

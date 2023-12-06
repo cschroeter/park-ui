@@ -1,8 +1,5 @@
 import { Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import { Card } from '~/components/ui/card'
-import { Switch, SwitchControl, SwitchThumb } from '~/components/ui/switch'
-import { Text } from '~/components/ui/text'
+import { Button, Card, Switch, Text } from '~/components/ui'
 
 export const NotificationCard = () => {
   return (
@@ -21,11 +18,11 @@ export const NotificationCard = () => {
               Receive a notification if a payment is disputed by a customer.
             </Text>
           </Stack>
-          <Switch defaultChecked>
-            <SwitchControl>
-              <SwitchThumb />
-            </SwitchControl>
-          </Switch>
+          <Switch.Root defaultChecked>
+            <Switch.Control>
+              <Switch.Thumb />
+            </Switch.Control>
+          </Switch.Root>
         </Stack>
         <Stack direction="row" justify="space-between">
           <Stack gap="0.5">
@@ -36,11 +33,11 @@ export const NotificationCard = () => {
               Receive a notification if Radar detects a fraudulent payment on your account.
             </Text>
           </Stack>
-          <Switch defaultChecked>
-            <SwitchControl>
-              <SwitchThumb />
-            </SwitchControl>
-          </Switch>
+          <Switch.Root defaultChecked>
+            <Switch.Control>
+              <Switch.Thumb />
+            </Switch.Control>
+          </Switch.Root>
         </Stack>
         <Stack direction="row" justify="space-between">
           <Stack gap="0.5">
@@ -51,11 +48,11 @@ export const NotificationCard = () => {
               Receive a notification for every successful payment.
             </Text>
           </Stack>
-          <Switch>
-            <SwitchControl>
-              <SwitchThumb />
-            </SwitchControl>
-          </Switch>
+          <Switch.Root>
+            <Switch.Control>
+              <Switch.Thumb />
+            </Switch.Control>
+          </Switch.Root>
         </Stack>
       </Card.Body>
       <Card.Footer>
