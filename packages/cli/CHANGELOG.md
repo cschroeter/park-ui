@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Improved prompts for adding components
+
 ## [0.3.1] - 2023-12-06
 
 ### Fixed

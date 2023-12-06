@@ -40,7 +40,8 @@ const getInitialConfig = async (): Promise<Config> => {
         p.confirm({ message: `Would you like to write the configuration to ${CONFIG_FILE_NAME}?` }),
       outro: async () =>
         p.note(
-          "🚀 You're all set now. Happy hacking! \n \nYou can start now adding your first component.\nFor example, run `park-ui add button`.",
+          'Run `npx @park-ui/cli add button` to add your first component.',
+          "🚀 You're all set now. Happy hacking!",
         ),
     },
     {
@@ -72,12 +73,12 @@ const getUtils = async () => {
       process.exit(1)
     })
     .then(() => {
-      spinner.stop(`Downloaded utils 🏁`)
+      spinner.stop(`Done.`)
     })
 }
 
 export const initCommand = async () => {
-  p.intro(`🚀 Setup park-ui`)
+  p.intro(`Welcome to Park UI!`)
   const config = await getInitialConfig()
   writeConfig(config)
 
