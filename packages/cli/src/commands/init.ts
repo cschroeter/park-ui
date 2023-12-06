@@ -7,7 +7,7 @@ const getInitialConfig = async (): Promise<Config> => {
     {
       cssFramework: () =>
         p.select({
-          message: `Which css framework do you use?`,
+          message: 'Which CSS framework do you use?',
           options: [
             { value: 'panda', label: 'Panda' },
             { value: 'tailwind', label: 'Tailwind' },
@@ -16,11 +16,11 @@ const getInitialConfig = async (): Promise<Config> => {
         }),
       jsFramework: () =>
         p.select({
-          message: `Which javascript framework do you use? (vue coming soon)`,
+          message: 'Which JavaScript framework do you use?',
           options: [
             { value: 'react', label: 'React' },
             { value: 'solid', label: 'Solid' },
-            // { value: 'vue', label: 'Vue' },
+            { value: 'vue', label: 'Vue' },
           ],
           initialValue: 'react',
         }),
@@ -30,13 +30,14 @@ const getInitialConfig = async (): Promise<Config> => {
           initialValue: '~/components/ui',
         }),
       importAliasUtils: () =>
-        p.text({ message: 'What is your import alias for utils?', initialValue: '~/lib' }),
+        p.text({ message: 'What is your import alias for utilities?', initialValue: '~/lib' }),
       useServerComponents: ({ results }) => {
         const isReact = results.jsFramework === 'react'
         if (!isReact) return Promise.resolve(false)
-        return p.confirm({ message: 'Do you want to use server components?' })
+        return p.confirm({ message: 'Do you want to use React Server Components?' })
       },
-      confirm: () => p.confirm({ message: `Write the config to ${CONFIG_FILE_NAME} ?` }),
+      confirm: () =>
+        p.confirm({ message: `Would you like to write the configuration to ${CONFIG_FILE_NAME}?` }),
       outro: async () =>
         p.note(
           "🚀 You're all set now. Happy hacking! \n \nYou can start now adding your first component.\nFor example, run `park-ui add button`.",
