@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.4.1] - 2023-12-06
+
 ### Fixed
 
 - Fixed an issue that adding a component did not work.
