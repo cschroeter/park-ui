@@ -18,7 +18,7 @@ export const getComponents = async (): Promise<{ name: string; href: string }[]>
 export const downloadComponents = async (options: {
   componentName: string
   componentUrl: string
-}): Promise<{ filename: string; content: string }[]> => {
+}): Promise<{ filename: string; content: string; hasMultipleParts: boolean }[]> => {
   const { componentName, componentUrl: componentsUrl } = options
 
   const components = await fetch(componentsUrl)

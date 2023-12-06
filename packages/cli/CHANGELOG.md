@@ -1,10 +1,14 @@
 ## [Unreleased]
 
+### Fixed
+
+- Only add `use client` when the component has multiple parts
+
 ## [0.3.0] - 2023-12-04
 
 ### Added
 
-- resolve ts paths via tsconfig.json
+- Resolved ts paths via tsconfig.json
 
 ## [0.2.3] - 2023-11-28
 

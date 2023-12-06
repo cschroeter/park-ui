@@ -21,8 +21,8 @@ export const addComponent = async (options: { componentName: string; componentUr
     componentName,
     componentUrl,
   })
-  components.forEach(({ filename, content }) => {
-    if (serverComponents) {
+  components.forEach(({ filename, content, hasMultipleParts }) => {
+    if (serverComponents && hasMultipleParts) {
       content = `'use client'\n\n${content}`
       saveToFile(componentsImportAlias, filename, content)
     }
