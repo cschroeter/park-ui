@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(styles)
 {{#each parts}}
 {{#if (eq @key "Root")}}
 {{#if this.slot}}
-export const {{this.name}}Root = withProvider(styled({{this.component}}), '{{this.slot}}')
+export const {{this.name}}Root = withProvider({{this.component}}, '{{this.slot}}')
 {{else}}
 export const {{this.name}}Root = withProvider({{this.component}})
 {{/if}} 

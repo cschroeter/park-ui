@@ -1,4 +1,5 @@
 import { {{imports}} } from '@ark-ui/solid'
+import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 import { styled } from '~/lib/styled'
 
@@ -8,12 +9,12 @@ const { withProvider, withContext } = createStyleContext(styles)
 {{#each parts}}
 {{#if (eq @key "Root")}}
 {{#if this.slot}}
-export const {{this.name}}Root = withProvider(styled({{this.component}}), '{{this.slot}}')
+export const {{this.name}}Root = withProvider({{this.component}}, '{{this.slot}}')
 {{else}}
 export const {{this.name}}Root = withProvider({{this.component}})
 {{/if}} 
 {{else}}
-export const {{this.name}} = withContext(styled({{this.component}}), '{{this.slot}}')
+export const {{this.name}} = withContext({{this.component}}, '{{this.slot}}')
 {{/if}}
 {{/each}}
 
