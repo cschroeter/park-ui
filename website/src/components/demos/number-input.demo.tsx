@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
-import { NumberInput, type NumberInputProps } from '~/components/ui'
+import type { NumberInputProps } from '~/components/ui/number-input'
+import * as NumberInput from '~/components/ui/number-input'
 
 export const Demo = (props: NumberInputProps) => {
   return (

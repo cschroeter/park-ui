@@ -1,7 +1,10 @@
 import { Portal } from '@ark-ui/react'
 import { XIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button, Dialog, IconButton, type DialogProps } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import type { DialogProps } from '~/components/ui/dialog'
+import * as Dialog from '~/components/ui/dialog'
+import { IconButton } from '~/components/ui/icon-button'
 
 export const Demo = (props: DialogProps) => {
   return (

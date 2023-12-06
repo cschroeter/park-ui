@@ -1,6 +1,6 @@
 import { ark } from '@ark-ui/react'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { textarea } from 'styled-system/recipes'
 
 export const Textarea = styled(ark.textarea, textarea)
-export type TextareaProps = typeof Textarea
+export interface TextareaProps extends HTMLStyledProps<typeof Textarea> {}

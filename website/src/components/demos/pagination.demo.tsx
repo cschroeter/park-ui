@@ -1,5 +1,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import { Button, IconButton, Pagination, type PaginationProps } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
+import type { PaginationProps } from '~/components/ui/pagination'
+import * as Pagination from '~/components/ui/pagination'
 
 export const Demo = (props: PaginationProps) => {
   return (

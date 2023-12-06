@@ -1,5 +1,8 @@
 import { XIcon } from 'lucide-react'
-import { Button, IconButton, TagsInput, type TagsInputProps } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
+import type { TagsInputProps } from '~/components/ui/tags-input'
+import * as TagsInput from '~/components/ui/tags-input'
 
 export const Demo = (props: TagsInputProps) => {
   return (

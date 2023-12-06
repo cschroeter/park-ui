@@ -1,5 +1,6 @@
 import { Portal } from '@ark-ui/react'
-import { Tooltip, type TooltipProps } from '~/components/ui'
+import type { TooltipProps } from '~/components/ui/tooltip'
+import * as Tooltip from '~/components/ui/tooltip'
 
 export const Demo = (props: TooltipProps) => (
   <Tooltip.Root {...props}>

@@ -1,7 +1,11 @@
 import { Portal } from '@ark-ui/react'
 import { MapPinIcon } from 'lucide-react'
 import { HStack, Stack, styled } from 'styled-system/jsx'
-import { Avatar, HoverCard, Icon, Text, type HoverCardProps } from '~/components/ui'
+import * as Avatar from '~/components/ui/avatar'
+import type { HoverCardProps } from '~/components/ui/hover-card'
+import * as HoverCard from '~/components/ui/hover-card'
+import { Icon } from '~/components/ui/icon'
+import { Text } from '~/components/ui/text'
 
 export const Demo = (props: HoverCardProps) => (
   <HoverCard.Root {...props}>

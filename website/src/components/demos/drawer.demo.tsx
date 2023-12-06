@@ -1,6 +1,9 @@
 import { Portal } from '@ark-ui/react'
 import { XIcon } from 'lucide-react'
-import { Button, Drawer, IconButton, type DrawerProps } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import type { DrawerProps } from '~/components/ui/drawer'
+import * as Drawer from '~/components/ui/drawer'
+import { IconButton } from '~/components/ui/icon-button'
 
 export const Demo = (props: DrawerProps) => {
   return (

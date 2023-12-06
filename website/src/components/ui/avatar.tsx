@@ -1,20 +1,20 @@
 import { Avatar as ArkAvatar } from '@ark-ui/react'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { avatar } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(avatar)
 
-export const AvatarRoot = withProvider(styled(ArkAvatar.Root), 'root')
-export const AvatarFallback = withContext(styled(ArkAvatar.Fallback), 'fallback')
-export const AvatarImage = withContext(styled(ArkAvatar.Image), 'image')
+const Avatar = withProvider(styled(ArkAvatar.Root), 'root')
+const AvatarFallback = withContext(styled(ArkAvatar.Fallback), 'fallback')
+const AvatarImage = withContext(styled(ArkAvatar.Image), 'image')
 
-export const Avatar = Object.assign(AvatarRoot, {
-  Root: AvatarRoot,
-  Fallback: AvatarFallback,
-  Image: AvatarImage,
-})
+const Root = Avatar
+const Fallback = AvatarFallback
+const Image = AvatarImage
 
-export type AvatarProps = typeof AvatarRoot
-export type AvatarFallbackProps = typeof AvatarFallback
-export type AvatarImageProps = typeof AvatarImage
+export { Avatar, AvatarFallback, AvatarImage, Fallback, Image, Root }
+
+export interface AvatarProps extends HTMLStyledProps<typeof Avatar> {}
+export interface AvatarFallbackProps extends HTMLStyledProps<typeof AvatarFallback> {}
+export interface AvatarImageProps extends HTMLStyledProps<typeof AvatarImage> {}

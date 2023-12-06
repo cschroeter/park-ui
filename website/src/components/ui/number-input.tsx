@@ -1,38 +1,55 @@
 import { NumberInput as ArkNumberInput } from '@ark-ui/react'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { numberInput } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(numberInput)
 
-export const NumberInputRoot = withProvider(styled(ArkNumberInput.Root), 'root')
-export const NumberInputControl = withContext(styled(ArkNumberInput.Control), 'control')
-export const NumberInputDecrementTrigger = withContext(
+const NumberInput = withProvider(styled(ArkNumberInput.Root), 'root')
+const NumberInputControl = withContext(styled(ArkNumberInput.Control), 'control')
+const NumberInputDecrementTrigger = withContext(
   styled(ArkNumberInput.DecrementTrigger),
   'decrementTrigger',
 )
-export const NumberInputIncrementTrigger = withContext(
+const NumberInputIncrementTrigger = withContext(
   styled(ArkNumberInput.IncrementTrigger),
   'incrementTrigger',
 )
-export const NumberInputInput = withContext(styled(ArkNumberInput.Input), 'input')
-export const NumberInputLabel = withContext(styled(ArkNumberInput.Label), 'label')
-export const NumberInputScrubber = withContext(styled(ArkNumberInput.Scrubber), 'scrubber')
+const NumberInputInput = withContext(styled(ArkNumberInput.Input), 'input')
+const NumberInputLabel = withContext(styled(ArkNumberInput.Label), 'label')
+const NumberInputScrubber = withContext(styled(ArkNumberInput.Scrubber), 'scrubber')
 
-export const NumberInput = Object.assign(NumberInputRoot, {
-  Root: NumberInputRoot,
-  Control: NumberInputControl,
-  DecrementTrigger: NumberInputDecrementTrigger,
-  IncrementTrigger: NumberInputIncrementTrigger,
-  Input: NumberInputInput,
-  Label: NumberInputLabel,
-  Scrubber: NumberInputScrubber,
-})
+const Root = NumberInput
+const Control = NumberInputControl
+const DecrementTrigger = NumberInputDecrementTrigger
+const IncrementTrigger = NumberInputIncrementTrigger
+const Input = NumberInputInput
+const Label = NumberInputLabel
+const Scrubber = NumberInputScrubber
 
-export type NumberInputProps = typeof NumberInputRoot
-export type NumberInputControlProps = typeof NumberInputControl
-export type NumberInputDecrementTriggerProps = typeof NumberInputDecrementTrigger
-export type NumberInputIncrementTriggerProps = typeof NumberInputIncrementTrigger
-export type NumberInputInputProps = typeof NumberInputInput
-export type NumberInputLabelProps = typeof NumberInputLabel
-export type NumberInputScrubberProps = typeof NumberInputScrubber
+export {
+  Control,
+  DecrementTrigger,
+  IncrementTrigger,
+  Input,
+  Label,
+  NumberInput,
+  NumberInputControl,
+  NumberInputDecrementTrigger,
+  NumberInputIncrementTrigger,
+  NumberInputInput,
+  NumberInputLabel,
+  NumberInputScrubber,
+  Root,
+  Scrubber,
+}
+
+export interface NumberInputProps extends HTMLStyledProps<typeof NumberInput> {}
+export interface NumberInputControlProps extends HTMLStyledProps<typeof NumberInputControl> {}
+export interface NumberInputDecrementTriggerProps
+  extends HTMLStyledProps<typeof NumberInputDecrementTrigger> {}
+export interface NumberInputIncrementTriggerProps
+  extends HTMLStyledProps<typeof NumberInputIncrementTrigger> {}
+export interface NumberInputInputProps extends HTMLStyledProps<typeof NumberInputInput> {}
+export interface NumberInputLabelProps extends HTMLStyledProps<typeof NumberInputLabel> {}
+export interface NumberInputScrubberProps extends HTMLStyledProps<typeof NumberInputScrubber> {}
