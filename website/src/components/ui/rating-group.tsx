@@ -1,23 +1,32 @@
 import { RatingGroup as ArkRatingGroup } from '@ark-ui/react'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { ratingGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(ratingGroup)
 
-export const RatingGroupRoot = withProvider(styled(ArkRatingGroup.Root), 'root')
-export const RatingGroupControl = withContext(styled(ArkRatingGroup.Control), 'control')
-export const RatingGroupItem = withContext(styled(ArkRatingGroup.Item), 'item')
-export const RatingGroupLabel = withContext(styled(ArkRatingGroup.Label), 'label')
+const RatingGroup = withProvider(styled(ArkRatingGroup.Root), 'root')
+const RatingGroupControl = withContext(styled(ArkRatingGroup.Control), 'control')
+const RatingGroupItem = withContext(styled(ArkRatingGroup.Item), 'item')
+const RatingGroupLabel = withContext(styled(ArkRatingGroup.Label), 'label')
 
-export const RatingGroup = Object.assign(RatingGroupRoot, {
-  Root: RatingGroupRoot,
-  Control: RatingGroupControl,
-  Item: RatingGroupItem,
-  Label: RatingGroupLabel,
-})
+const Root = RatingGroup
+const Control = RatingGroupControl
+const Item = RatingGroupItem
+const Label = RatingGroupLabel
 
-export type RatingGroupProps = typeof RatingGroupRoot
-export type RatingGroupControlProps = typeof RatingGroupControl
-export type RatingGroupItemProps = typeof RatingGroupItem
-export type RatingGroupLabelProps = typeof RatingGroupLabel
+export {
+  Control,
+  Item,
+  Label,
+  RatingGroup,
+  RatingGroupControl,
+  RatingGroupItem,
+  RatingGroupLabel,
+  Root,
+}
+
+export interface RatingGroupProps extends HTMLStyledProps<typeof RatingGroup> {}
+export interface RatingGroupControlProps extends HTMLStyledProps<typeof RatingGroupControl> {}
+export interface RatingGroupItemProps extends HTMLStyledProps<typeof RatingGroupItem> {}
+export interface RatingGroupLabelProps extends HTMLStyledProps<typeof RatingGroupLabel> {}

@@ -1,6 +1,8 @@
 import { Trash2Icon } from 'lucide-react'
-import { Button, IconButton } from '~/components/ui'
-import { FileUpload, type FileUploadProps } from '~/components/ui/file-upload'
+import { Button } from '~/components/ui/button'
+import type { FileUploadProps } from '~/components/ui/file-upload'
+import * as FileUpload from '~/components/ui/file-upload'
+import { IconButton } from '~/components/ui/icon-button'
 
 export const Demo = (props: FileUploadProps) => (
   <FileUpload.Root maxFiles={3} {...props}>

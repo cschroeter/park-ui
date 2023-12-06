@@ -1,4 +1,5 @@
-import { Tabs, type TabsProps } from '~/components/ui'
+import type { TabsProps } from '~/components/ui/tabs'
+import * as Tabs from '~/components/ui/tabs'
 
 export const Demo = (props: TabsProps) => {
   const options = [

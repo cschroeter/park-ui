@@ -1,8 +1,7 @@
 import { CheckCircleIcon } from 'lucide-react'
 import { HStack, styled } from 'styled-system/jsx'
 import { stack } from 'styled-system/patterns'
-import { Button, Icon, Text } from '~/components/ui'
-import { Card } from '~/components/ui/card'
+import { Button, Card, Icon, Text } from '~/components/ui'
 
 export const PricingCard = () => {
   const features = [

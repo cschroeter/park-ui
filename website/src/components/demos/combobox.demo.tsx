@@ -1,7 +1,10 @@
-import { Portal, type CollectionItem } from '@ark-ui/react'
+import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { Combobox, IconButton, Input, type ComboboxProps } from '~/components/ui'
+import type { ComboboxProps } from '~/components/ui/combobox'
+import * as Combobox from '~/components/ui/combobox'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
 
 const data = [
   { label: 'React', value: 'react' },
@@ -10,7 +13,7 @@ const data = [
   { label: 'Vue', value: 'vue' },
 ]
 
-export const Demo = (props: ComboboxProps<CollectionItem>) => {
+export const Demo = (props: ComboboxProps) => {
   const [items, setItems] = useState(data)
 
   const handleChange = (e: any) => {

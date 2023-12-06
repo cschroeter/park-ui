@@ -1,17 +1,17 @@
 import { ToggleGroup as ArkToggleGroup } from '@ark-ui/react'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { toggleGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(toggleGroup)
 
-export const ToggleGroupRoot = withProvider(styled(ArkToggleGroup.Root), 'root')
-export const ToggleGroupItem = withContext(styled(ArkToggleGroup.Item), 'item')
+const ToggleGroup = withProvider(styled(ArkToggleGroup.Root), 'root')
+const ToggleGroupItem = withContext(styled(ArkToggleGroup.Item), 'item')
 
-export const ToggleGroup = Object.assign(ToggleGroupRoot, {
-  Root: ToggleGroupRoot,
-  Item: ToggleGroupItem,
-})
+const Root = ToggleGroup
+const Item = ToggleGroupItem
 
-export type ToggleGroupProps = typeof ToggleGroupRoot
-export type ToggleGroupItemProps = typeof ToggleGroupItem
+export { Item, Root, ToggleGroup, ToggleGroupItem }
+
+export interface ToggleGroupProps extends HTMLStyledProps<typeof ToggleGroup> {}
+export interface ToggleGroupItemProps extends HTMLStyledProps<typeof ToggleGroupItem> {}

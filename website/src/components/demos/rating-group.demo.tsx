@@ -1,8 +1,9 @@
-import { RatingGroup, type RatingGroupProps } from '~/components/ui'
+import type { RatingGroupProps } from '~/components/ui/rating-group'
+import * as RatingGroup from '~/components/ui/rating-group'
 
 export const Demo = (props: RatingGroupProps) => {
   return (
-    <RatingGroup.Root {...props} max={5} defaultValue={3} allowHalf={false}>
+    <RatingGroup.Root {...props} count={5} defaultValue={3} allowHalf={false}>
       <RatingGroup.Label>Rating</RatingGroup.Label>
       <RatingGroup.Control>
         {({ items }) =>

@@ -10,7 +10,10 @@ import {
   UserPlusIcon,
 } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
-import { Button, Menu, Text, type MenuProps } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import type { MenuProps } from '~/components/ui/menu'
+import * as Menu from '~/components/ui/menu'
+import { Text } from '~/components/ui/text'
 
 export const Demo = (props: MenuProps) => {
   return (

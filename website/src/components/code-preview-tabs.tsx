@@ -1,8 +1,8 @@
 import { Tabs } from '@ark-ui/react/tabs'
 import { useState, type PropsWithChildren } from 'react'
 import { HStack } from 'styled-system/jsx'
+import { Button } from '~/components/ui'
 import { CodePreview } from './code-preview'
-import { Button } from './ui'
 
 interface Props {
   code?: string

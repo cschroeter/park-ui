@@ -1,6 +1,9 @@
 import { PipetteIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
-import { ColorPicker, IconButton, Input, Text } from '~/components/ui'
+import * as ColorPicker from '~/components/ui/color-picker'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
+import { Text } from '~/components/ui/text'
 
 export const Demo = () => {
   return (

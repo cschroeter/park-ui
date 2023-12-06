@@ -1,7 +1,6 @@
 import { CopyIcon, MoreVerticalIcon, RotateCcwIcon } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
-import { IconButton } from '~/components/ui/icon-button'
-import { Menu, MenuContent, MenuItem, MenuPositioner, MenuTrigger } from '~/components/ui/menu'
+import { IconButton, Menu } from '~/components/ui'
 
 type Props = {
   onReset: () => void
@@ -11,28 +10,28 @@ type Props = {
 export const ThemeContextMenu = (props: Props) => {
   const { onReset, onCopy } = props
   return (
-    <Menu size="xs" positioning={{ placement: 'bottom-end' }}>
-      <MenuTrigger asChild>
+    <Menu.Root size="xs" positioning={{ placement: 'bottom-end' }}>
+      <Menu.Trigger asChild>
         <IconButton aria-label="Open Menu" variant="ghost" size="sm">
           <MoreVerticalIcon />
         </IconButton>
-      </MenuTrigger>
-      <MenuPositioner>
-        <MenuContent minW="48">
-          <MenuItem id="copy" onClick={() => onCopy()}>
+      </Menu.Trigger>
+      <Menu.Positioner>
+        <Menu.Content minW="48">
+          <Menu.Item id="copy" onClick={() => onCopy()}>
             <HStack gap="2">
               <CopyIcon />
               Copy Config
             </HStack>
-          </MenuItem>
-          <MenuItem id="reset" onClick={() => onReset()}>
+          </Menu.Item>
+          <Menu.Item id="reset" onClick={() => onReset()}>
             <HStack gap="2">
               <RotateCcwIcon />
               Restore Defaults
             </HStack>
-          </MenuItem>
-        </MenuContent>
-      </MenuPositioner>
-    </Menu>
+          </Menu.Item>
+        </Menu.Content>
+      </Menu.Positioner>
+    </Menu.Root>
   )
 }

@@ -1,23 +1,32 @@
 import { Checkbox as ArkCheckbox } from '@ark-ui/react'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { checkbox } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(checkbox)
 
-export const CheckboxRoot = withProvider(styled(ArkCheckbox.Root), 'root')
-export const CheckboxControl = withContext(styled(ArkCheckbox.Control), 'control')
-export const CheckboxIndicator = withContext(styled(ArkCheckbox.Indicator), 'indicator')
-export const CheckboxLabel = withContext(styled(ArkCheckbox.Label), 'label')
+const Checkbox = withProvider(styled(ArkCheckbox.Root), 'root')
+const CheckboxControl = withContext(styled(ArkCheckbox.Control), 'control')
+const CheckboxIndicator = withContext(styled(ArkCheckbox.Indicator), 'indicator')
+const CheckboxLabel = withContext(styled(ArkCheckbox.Label), 'label')
 
-export const Checkbox = Object.assign(CheckboxRoot, {
-  Root: CheckboxRoot,
-  Control: CheckboxControl,
-  Indicator: CheckboxIndicator,
-  Label: CheckboxLabel,
-})
+const Root = Checkbox
+const Control = CheckboxControl
+const Indicator = CheckboxIndicator
+const Label = CheckboxLabel
 
-export type CheckboxProps = typeof CheckboxRoot
-export type CheckboxControlProps = typeof CheckboxControl
-export type CheckboxIndicatorProps = typeof CheckboxIndicator
-export type CheckboxLabelProps = typeof CheckboxLabel
+export {
+  Checkbox,
+  CheckboxControl,
+  CheckboxIndicator,
+  CheckboxLabel,
+  Control,
+  Indicator,
+  Label,
+  Root,
+}
+
+export interface CheckboxProps extends HTMLStyledProps<typeof Checkbox> {}
+export interface CheckboxControlProps extends HTMLStyledProps<typeof CheckboxControl> {}
+export interface CheckboxIndicatorProps extends HTMLStyledProps<typeof CheckboxIndicator> {}
+export interface CheckboxLabelProps extends HTMLStyledProps<typeof CheckboxLabel> {}
