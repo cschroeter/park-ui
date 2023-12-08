@@ -23,4 +23,9 @@ export const mauve = {
   a10: { default: 'mauve.light.a10', _dark: 'mauve.dark.a10' },
   a11: { default: 'mauve.light.a11', _dark: 'mauve.dark.a11' },
   a12: { default: 'mauve.light.a12', _dark: 'mauve.dark.a12' },
+
+  default: 'mauve.9',
+  emphasized: 'mauve.10',
+  fg: 'white',
+  text: 'mauve.a11',
 }

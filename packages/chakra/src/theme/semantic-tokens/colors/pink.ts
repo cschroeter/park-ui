@@ -23,4 +23,9 @@ export const pink = {
   a10: { default: 'pink.light.a10', _dark: 'pink.dark.a10' },
   a11: { default: 'pink.light.a11', _dark: 'pink.dark.a11' },
   a12: { default: 'pink.light.a12', _dark: 'pink.dark.a12' },
+
+  default: 'pink.9',
+  emphasized: 'pink.10',
+  fg: 'white',
+  text: 'pink.a11',
 }

@@ -23,4 +23,9 @@ export const grass = {
   a10: { default: 'grass.light.a10', _dark: 'grass.dark.a10' },
   a11: { default: 'grass.light.a11', _dark: 'grass.dark.a11' },
   a12: { default: 'grass.light.a12', _dark: 'grass.dark.a12' },
+
+  default: 'grass.9',
+  emphasized: 'grass.10',
+  fg: 'white',
+  text: 'grass.a11',
 }

@@ -23,4 +23,9 @@ export const orange = {
   a10: { default: 'orange.light.a10', _dark: 'orange.dark.a10' },
   a11: { default: 'orange.light.a11', _dark: 'orange.dark.a11' },
   a12: { default: 'orange.light.a12', _dark: 'orange.dark.a12' },
+
+  default: 'orange.9',
+  emphasized: 'orange.10',
+  fg: 'white',
+  text: 'orange.a11',
 }

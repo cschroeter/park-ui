@@ -23,4 +23,9 @@ export const slate = {
   a10: { default: 'slate.light.a10', _dark: 'slate.dark.a10' },
   a11: { default: 'slate.light.a11', _dark: 'slate.dark.a11' },
   a12: { default: 'slate.light.a12', _dark: 'slate.dark.a12' },
+
+  default: 'slate.9',
+  emphasized: 'slate.10',
+  fg: 'white',
+  text: 'slate.a11',
 }

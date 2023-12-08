@@ -23,4 +23,9 @@ export const red = {
   a10: { default: 'red.light.a10', _dark: 'red.dark.a10' },
   a11: { default: 'red.light.a11', _dark: 'red.dark.a11' },
   a12: { default: 'red.light.a12', _dark: 'red.dark.a12' },
+
+  default: 'red.9',
+  emphasized: 'red.10',
+  fg: 'white',
+  text: 'red.a11',
 }

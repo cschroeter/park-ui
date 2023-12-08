@@ -23,4 +23,9 @@ export const sage = {
   a10: { default: 'sage.light.a10', _dark: 'sage.dark.a10' },
   a11: { default: 'sage.light.a11', _dark: 'sage.dark.a11' },
   a12: { default: 'sage.light.a12', _dark: 'sage.dark.a12' },
+
+  default: 'sage.9',
+  emphasized: 'sage.10',
+  fg: 'white',
+  text: 'sage.a11',
 }

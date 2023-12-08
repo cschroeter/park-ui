@@ -23,4 +23,9 @@ export const neutral = {
   a10: { default: 'gray.light.a10', _dark: 'gray.dark.a10' },
   a11: { default: 'gray.light.a11', _dark: 'gray.dark.a11' },
   a12: { default: 'gray.light.a12', _dark: 'gray.dark.a12' },
+
+  default: { default: 'black', _dark: 'white' },
+  emphasized: 'gray.12',
+  fg: { default: 'white', _dark: 'black' },
+  text: { default: 'black', _dark: 'white' },
 }

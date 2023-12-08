@@ -23,4 +23,9 @@ export const lime = {
   a10: { default: 'lime.light.a10', _dark: 'lime.dark.a10' },
   a11: { default: 'lime.light.a11', _dark: 'lime.dark.a11' },
   a12: { default: 'lime.light.a12', _dark: 'lime.dark.a12' },
+
+  default: 'lime.9',
+  emphasized: 'lime.10',
+  fg: 'olive.light.12',
+  text: 'lime.a11',
 }

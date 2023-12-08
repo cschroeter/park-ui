@@ -23,4 +23,9 @@ export const cyan = {
   a10: { default: 'cyan.light.a10', _dark: 'cyan.dark.a10' },
   a11: { default: 'cyan.light.a11', _dark: 'cyan.dark.a11' },
   a12: { default: 'cyan.light.a12', _dark: 'cyan.dark.a12' },
+
+  default: 'cyan.9',
+  emphasized: 'cyan.10',
+  fg: 'white',
+  text: 'cyan.a11',
 }

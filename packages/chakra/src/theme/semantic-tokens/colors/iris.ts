@@ -23,4 +23,9 @@ export const iris = {
   a10: { default: 'iris.light.a10', _dark: 'iris.dark.a10' },
   a11: { default: 'iris.light.a11', _dark: 'iris.dark.a11' },
   a12: { default: 'iris.light.a12', _dark: 'iris.dark.a12' },
+
+  default: 'iris.9',
+  emphasized: 'iris.10',
+  fg: 'white',
+  text: 'iris.a11',
 }

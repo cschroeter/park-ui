@@ -23,4 +23,9 @@ export const tomato = {
   a10: { default: 'tomato.light.a10', _dark: 'tomato.dark.a10' },
   a11: { default: 'tomato.light.a11', _dark: 'tomato.dark.a11' },
   a12: { default: 'tomato.light.a12', _dark: 'tomato.dark.a12' },
+
+  default: 'tomato.9',
+  emphasized: 'tomato.10',
+  fg: 'white',
+  text: 'tomato.a11',
 }

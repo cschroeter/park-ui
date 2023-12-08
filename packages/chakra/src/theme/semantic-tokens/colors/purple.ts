@@ -23,4 +23,9 @@ export const purple = {
   a10: { default: 'purple.light.a10', _dark: 'purple.dark.a10' },
   a11: { default: 'purple.light.a11', _dark: 'purple.dark.a11' },
   a12: { default: 'purple.light.a12', _dark: 'purple.dark.a12' },
+
+  default: 'purple.9',
+  emphasized: 'purple.10',
+  fg: 'white',
+  text: 'purple.a11',
 }

@@ -23,4 +23,9 @@ export const ruby = {
   a10: { default: 'ruby.light.a10', _dark: 'ruby.dark.a10' },
   a11: { default: 'ruby.light.a11', _dark: 'ruby.dark.a11' },
   a12: { default: 'ruby.light.a12', _dark: 'ruby.dark.a12' },
+
+  default: 'ruby.9',
+  emphasized: 'ruby.10',
+  fg: 'white',
+  text: 'ruby.a11',
 }
