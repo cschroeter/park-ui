@@ -40,7 +40,7 @@
     "@radix-ui/colors": "3.0.0",
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
-    "release-it": "17.0.0",
+    "release-it": "17.0.1",
     "tsup": "8.0.1"
   },
   "clean-package": {
