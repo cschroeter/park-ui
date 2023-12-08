@@ -1,7 +1,5 @@
 import { defineStyle } from '@chakra-ui/react'
 
-// const vars = defineCssVars('button', ['bg', 'color'])
-
 export const Button = {
   baseStyle: {
     alignItems: 'center',
@@ -99,12 +97,6 @@ export const Button = {
   },
   variants: {
     solid: defineStyle((props) => ({
-      // TODO ask Segun about this
-      // background: vars.bg.reference,
-      // color: vars.color.reference,
-      // [vars.bg.variable]: `colors.${props.colorScheme}.default`,
-      // [vars.color.variable]: `colors.${props.colorScheme}.fg`,
-
       background: `${props.colorScheme}.default`,
       color: `${props.colorScheme}.fg`,
       _hover: {
