@@ -1,7 +1,7 @@
 import { addons, types } from '@storybook/addons'
 import { useGlobals } from '@storybook/api'
 import { IconButton } from '@storybook/components'
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 
 addons.register('CustomAddons', () => {
   addons.add('ThemeSwitcher', {
