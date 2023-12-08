@@ -1,5 +1,7 @@
+import { defineStyle } from '@chakra-ui/react'
+
 export const Input = {
-  baseStyle: {
+  baseStyle: defineStyle((props) => ({
     field: {
       appearance: 'none',
       background: 'none',
@@ -17,13 +19,14 @@ export const Input = {
         cursor: 'not-allowed',
       },
       _focus: {
-        borderColor: 'border.accent',
-        boxShadow: 'accent',
+        borderColor: `${props.colorScheme}.default`,
+        boxShadow: '0 0 0 1px var(--chakra-colors-accent-default)',
       },
     },
-  },
+  })),
   defaultProps: {
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     '2xs': {

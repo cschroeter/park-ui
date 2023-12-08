@@ -23,7 +23,7 @@ export const Button = {
   },
   defaultProps: {
     variant: 'solid',
-    colorScheme: 'teal',
+    colorScheme: 'accent',
     size: 'md',
   },
   sizes: {
