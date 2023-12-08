@@ -23,4 +23,9 @@ export const violet = {
   a10: { default: 'violet.light.a10', _dark: 'violet.dark.a10' },
   a11: { default: 'violet.light.a11', _dark: 'violet.dark.a11' },
   a12: { default: 'violet.light.a12', _dark: 'violet.dark.a12' },
+
+  default: 'violet.9',
+  emphasized: 'violet.10',
+  fg: 'white',
+  text: 'violet.a11',
 }

@@ -23,4 +23,9 @@ export const olive = {
   a10: { default: 'olive.light.a10', _dark: 'olive.dark.a10' },
   a11: { default: 'olive.light.a11', _dark: 'olive.dark.a11' },
   a12: { default: 'olive.light.a12', _dark: 'olive.dark.a12' },
+
+  default: 'olive.9',
+  emphasized: 'olive.10',
+  fg: 'white',
+  text: 'olive.a11',
 }

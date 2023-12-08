@@ -23,4 +23,9 @@ export const gold = {
   a10: { default: 'gold.light.a10', _dark: 'gold.dark.a10' },
   a11: { default: 'gold.light.a11', _dark: 'gold.dark.a11' },
   a12: { default: 'gold.light.a12', _dark: 'gold.dark.a12' },
+
+  default: 'gold.9',
+  emphasized: 'gold.10',
+  fg: 'white',
+  text: 'gold.a11',
 }

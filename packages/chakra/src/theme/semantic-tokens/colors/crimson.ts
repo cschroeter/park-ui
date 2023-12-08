@@ -23,4 +23,9 @@ export const crimson = {
   a10: { default: 'crimson.light.a10', _dark: 'crimson.dark.a10' },
   a11: { default: 'crimson.light.a11', _dark: 'crimson.dark.a11' },
   a12: { default: 'crimson.light.a12', _dark: 'crimson.dark.a12' },
+
+  default: 'crimson.9',
+  emphasized: 'crimson.10',
+  fg: 'white',
+  text: 'crimson.a11',
 }

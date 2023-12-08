@@ -23,4 +23,9 @@ export const jade = {
   a10: { default: 'jade.light.a10', _dark: 'jade.dark.a10' },
   a11: { default: 'jade.light.a11', _dark: 'jade.dark.a11' },
   a12: { default: 'jade.light.a12', _dark: 'jade.dark.a12' },
+
+  default: 'jade.9',
+  emphasized: 'jade.10',
+  fg: 'white',
+  text: 'jade.a11',
 }

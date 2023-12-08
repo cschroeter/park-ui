@@ -1,6 +1,4 @@
 export const shadows = {
-  accent: '0 0 0 1px var(--chakra-colors-accent-default)',
-  outline: '0 0 0 1px var(--chakra-colors-border-outline)',
   xs: {
     default: '0px 1px 2px var(--chakra-colors-gray-a3), 0px 0px 1px var(--chakra-colors-gray-a7)',
     _dark:

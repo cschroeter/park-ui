@@ -23,4 +23,9 @@ export const blue = {
   a10: { default: 'blue.light.a10', _dark: 'blue.dark.a10' },
   a11: { default: 'blue.light.a11', _dark: 'blue.dark.a11' },
   a12: { default: 'blue.light.a12', _dark: 'blue.dark.a12' },
+
+  default: 'blue.9',
+  emphasized: 'blue.10',
+  fg: 'white',
+  text: 'blue.a11',
 }

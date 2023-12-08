@@ -23,4 +23,9 @@ export const sky = {
   a10: { default: 'sky.light.a10', _dark: 'sky.dark.a10' },
   a11: { default: 'sky.light.a11', _dark: 'sky.dark.a11' },
   a12: { default: 'sky.light.a12', _dark: 'sky.dark.a12' },
+
+  default: 'sky.9',
+  emphasized: 'sky.10',
+  fg: 'slate.light.12',
+  text: 'sky.a11',
 }

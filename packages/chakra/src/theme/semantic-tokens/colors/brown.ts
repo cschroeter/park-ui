@@ -23,4 +23,9 @@ export const brown = {
   a10: { default: 'brown.light.a10', _dark: 'brown.dark.a10' },
   a11: { default: 'brown.light.a11', _dark: 'brown.dark.a11' },
   a12: { default: 'brown.light.a12', _dark: 'brown.dark.a12' },
+
+  default: 'brown.9',
+  emphasized: 'brown.10',
+  fg: 'white',
+  text: 'brown.a11',
 }

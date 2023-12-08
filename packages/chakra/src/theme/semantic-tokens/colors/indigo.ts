@@ -23,4 +23,9 @@ export const indigo = {
   a10: { default: 'indigo.light.a10', _dark: 'indigo.dark.a10' },
   a11: { default: 'indigo.light.a11', _dark: 'indigo.dark.a11' },
   a12: { default: 'indigo.light.a12', _dark: 'indigo.dark.a12' },
+
+  default: 'indigo.9',
+  emphasized: 'indigo.10',
+  fg: 'white',
+  text: 'indigo.a11',
 }

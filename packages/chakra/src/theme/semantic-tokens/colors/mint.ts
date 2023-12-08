@@ -23,4 +23,9 @@ export const mint = {
   a10: { default: 'mint.light.a10', _dark: 'mint.dark.a10' },
   a11: { default: 'mint.light.a11', _dark: 'mint.dark.a11' },
   a12: { default: 'mint.light.a12', _dark: 'mint.dark.a12' },
+
+  default: 'mint.9',
+  emphasized: 'mint.10',
+  fg: 'white',
+  text: 'mint.a11',
 }

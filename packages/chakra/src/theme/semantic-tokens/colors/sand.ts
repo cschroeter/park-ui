@@ -23,4 +23,9 @@ export const sand = {
   a10: { default: 'sand.light.a10', _dark: 'sand.dark.a10' },
   a11: { default: 'sand.light.a11', _dark: 'sand.dark.a11' },
   a12: { default: 'sand.light.a12', _dark: 'sand.dark.a12' },
+
+  default: 'sand.9',
+  emphasized: 'sand.10',
+  fg: 'white',
+  text: 'sand.a11',
 }

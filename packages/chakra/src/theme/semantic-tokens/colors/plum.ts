@@ -23,4 +23,9 @@ export const plum = {
   a10: { default: 'plum.light.a10', _dark: 'plum.dark.a10' },
   a11: { default: 'plum.light.a11', _dark: 'plum.dark.a11' },
   a12: { default: 'plum.light.a12', _dark: 'plum.dark.a12' },
+
+  default: 'plum.9',
+  emphasized: 'plum.10',
+  fg: 'white',
+  text: 'plum.a11',
 }

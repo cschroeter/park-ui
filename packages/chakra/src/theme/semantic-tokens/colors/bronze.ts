@@ -23,4 +23,9 @@ export const bronze = {
   a10: { default: 'bronze.light.a10', _dark: 'bronze.dark.a10' },
   a11: { default: 'bronze.light.a11', _dark: 'bronze.dark.a11' },
   a12: { default: 'bronze.light.a12', _dark: 'bronze.dark.a12' },
+
+  default: 'bronze.9',
+  emphasized: 'bronze.10',
+  fg: 'white',
+  text: 'bronze.a11',
 }
