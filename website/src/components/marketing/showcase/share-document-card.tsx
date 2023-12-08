@@ -2,12 +2,7 @@ import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
-import { Avatar } from '~/components/ui/avatar'
-import { Button } from '~/components/ui/button'
-import { Card } from '~/components/ui/card'
-import { Input } from '~/components/ui/input'
-import { Select } from '~/components/ui/select'
-import { Text } from '~/components/ui/text'
+import { Avatar, Button, Card, Input, Select, Text } from '~/components/ui'
 
 const members = [
   {
@@ -43,7 +38,7 @@ export const ShareDocumentCard = () => {
             readOnly
             placeholder="Link to document"
           />
-          <CopyButton content="https://www.buymeacoffee.com/grizzlycodes" />
+          <CopyButton url="https://www.buymeacoffee.com/grizzlycodes" />
         </Stack>
         <Divider />
         <Text textStyle="sm" fontWeight="medium">
@@ -112,11 +107,11 @@ const Member = (props: Props) => {
 }
 
 type CopyButtonProps = {
-  content: string
+  url: string
 }
 
 const CopyButton = (props: CopyButtonProps) => {
-  const { content } = props
+  const { url } = props
   const [_, copy] = useCopyToClipboard()
   const [visible, setVisible] = useState(true)
 
@@ -127,7 +122,7 @@ const CopyButton = (props: CopyButtonProps) => {
   }, [visible])
 
   const handleClick = () => {
-    copy(content)
+    copy(url)
     setVisible(false)
   }
 

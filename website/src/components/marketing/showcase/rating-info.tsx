@@ -1,11 +1,10 @@
 import { HStack } from 'styled-system/jsx'
-import { RatingGroup } from '~/components/ui/rating-group'
-import { Text } from '~/components/ui/text'
+import { RatingGroup, Text } from '~/components/ui'
 
 export const RatingInfo = () => {
   return (
     <HStack gap="1.5">
-      <RatingGroup.Root max={5} defaultValue={4} readOnly size="sm">
+      <RatingGroup.Root count={5} defaultValue={4} readOnly size="sm">
         <RatingGroup.Control>
           {({ items }) =>
             items.map((index) => (

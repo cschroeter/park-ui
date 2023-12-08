@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from 'lucide-react'
-import { IconButton, type IconButtonProps } from '~/components/ui'
+import { IconButton, type IconButtonProps } from '~/components/ui/icon-button'
 
 export const Demo = (props: IconButtonProps) => {
   return (

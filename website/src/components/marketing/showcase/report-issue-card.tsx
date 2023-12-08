@@ -1,11 +1,6 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import { Card } from '~/components/ui/card'
-import { Input } from '~/components/ui/input'
-import { Label } from '~/components/ui/label'
-import { Select } from '~/components/ui/select'
-import { Textarea } from '~/components/ui/textarea'
+import { Button, Card, Input, Label, Select, Textarea } from '~/components/ui'
 
 export const ReportIssueCard = () => {
   const frameworks = ['React', 'Solid', 'Vue']

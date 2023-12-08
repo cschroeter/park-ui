@@ -1,8 +1,6 @@
 import { RulerIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
-import { Icon } from '~/components/ui/icon'
-import { RadioButtonGroup } from '~/components/ui/radio-button-group'
-import { Text } from '~/components/ui/text'
+import { Icon, RadioButtonGroup, Text } from '~/components/ui'
 
 export const SizePicker = () => {
   const sizes = [

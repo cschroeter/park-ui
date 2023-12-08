@@ -1,5 +1,6 @@
-import { PinInput, type PinInputProps } from '~/components/ui'
 import { Input } from '~/components/ui/input'
+import type { PinInputProps } from '~/components/ui/pin-input'
+import * as PinInput from '~/components/ui/pin-input'
 
 export const Demo = (props: PinInputProps) => (
   <PinInput.Root placeholder="0" onValueComplete={(e) => alert(e.valueAsString)} {...props}>

@@ -1,4 +1,4 @@
-import { getImportAliases } from '../config/config'
+import { getImportAliases } from '../config/park-ui-config'
 import { downloadUtils } from './park-api'
 import { saveToFile } from './save-file'
 

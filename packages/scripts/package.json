@@ -1,12 +1,13 @@
 {
   "name": "@park-ui/scripts",
-  "type": "module",
   "private": true,
   "scripts": {
     "start": "tsx src/index.ts"
   },
   "dependencies": {
     "@ark-ui/anatomy": "1.1.0",
+    "@park-ui/panda-preset": "workspace:*",
+    "@pandacss/dev": "0.20.1",
     "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/handlebars": "4.1.0",
@@ -17,9 +18,9 @@
     "handlebars": "4.7.8",
     "prettier": "3.1.0",
     "prettier-plugin-organize-imports": "3.2.4",
-    "ts-pattern": "5.0.5",
-    "tsx": "4.6.1",
-    "typescript": "5.3.2",
+    "ts-pattern": "5.0.6",
+    "tsx": "4.6.2",
+    "typescript": "5.3.3",
     "voca": "1.4.1"
   }
 }

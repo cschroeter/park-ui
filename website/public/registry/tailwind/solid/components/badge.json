@@ -1,1 +1,9 @@
-{ "files": [{ "filename": "badge.ts", "content": "// TODO\n" }] }
+{
+  "files": [
+    {
+      "filename": "badge.ts",
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/solid'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype BadgeVariantProps = VariantProps<typeof styles>\nexport type BadgeProps = BadgeVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({\n  base: 'badge',\n  defaultVariants: { variant: 'subtle', size: 'md' },\n  variants: {\n    variant: {\n      solid: 'badge--variant_solid',\n      subtle: 'badge--variant_subtle',\n      outline: 'badge--variant_outline',\n    },\n    size: { sm: 'badge--size_sm', md: 'badge--size_md', lg: 'badge--size_lg' },\n  },\n})\nexport const Badge = styled<BadgeProps>(ark.div, styles)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

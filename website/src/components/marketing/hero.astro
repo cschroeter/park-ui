@@ -1,10 +1,10 @@
 ---
 import { SiReact, SiVuedotjs } from '@icons-pack/react-simple-icons'
 import { Code } from 'astro:components'
-import { ArrowRightIcon } from 'lucide-react'
+import { ArrowRightIcon, RocketIcon } from 'lucide-react'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { button } from 'styled-system/recipes'
-import { Heading, Text } from '~/components/ui'
+import { Badge, Heading, Text } from '~/components/ui'
 import { pandaConfig, tailwindConfig } from '~/lib/use-theme-generator'
 import { ThemeDrawer } from '../theme/theme-drawer'
 import { PandaIcon } from './panda.icon'
@@ -14,9 +14,16 @@ import { TailwindIcon } from './tailwind.icon'
 
 <Stack gap={{ base: '8', md: '12' }} maxW={{ md: '2xl' }}>
   <Stack gap={{ base: '4', md: '6' }}>
-    <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
-      Build your own Design System
-    </Heading>
+    <Stack gap="4">
+      <a href="/docs/panda/overview/cli">
+        <Badge size="lg" variant="outline">
+          <RocketIcon /> Checkout the new Park UI CLI <ArrowRightIcon />
+        </Badge>
+      </a>
+      <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
+        Build your own Design System
+      </Heading>
+    </Stack>
     <Text textStyle={{ base: 'lg', md: 'xl' }} color="fg.muted">
       Beautifully designed components built for your choice of JS and CSS frameworks.
     </Text>

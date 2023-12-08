@@ -6,6 +6,31 @@ description: All notable changes to this project will be documented in this file
 
 ## [Unreleased]
 
+### Changed
+
+- Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server Components, we've
+  revised the export method for multi-part components.
+
+```tsx
+// before
+import { Avatar } from '~/components/ui/avatar'
+// after
+import * as Avatar from '~/components/ui/avatar'
+
+function MyAvatar() {
+  return (
+    <Avatar.Root {...props}>
+      <Avatar.Fallback>PA</Avatar.Fallback>
+      <Avatar.Image src="https://i.pravatar.cc/300" alt="avatar" />
+    </Avatar.Root>
+  )
+}
+```
+
+### Fixed
+
+- Resolved an issue where the exported component props were not typed correctly
+
 ## [0.25.0] - 2023-12-01
 
 ### Added

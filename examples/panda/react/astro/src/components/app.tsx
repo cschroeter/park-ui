@@ -1,5 +1,8 @@
 import { Container } from 'styled-system/jsx'
-import { Button, RadioButtonGroup, Slider, Tabs } from './ui'
+import { Button } from '~/components/ui/button'
+import * as RadioButtonGroup from '~/components/ui/radio-button-group'
+import * as Slider from '~/components/ui/slider'
+import * as Tabs from '~/components/ui/tabs'
 
 export const App = () => {
   return (

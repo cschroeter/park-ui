@@ -1,7 +1,7 @@
 import { Index } from 'solid-js'
-import { Button } from './ui/button/snippet'
-import { RadioGroup } from './ui/radio-group'
-import { Table } from './ui/table/snippet'
+import { Button } from './components/ui/button'
+import { RadioGroup } from './components/ui/radio-group'
+import { Table } from './components/ui/table'
 
 export const App = () => {
   return (

@@ -7,6 +7,7 @@ import prettier from 'prettier'
 import v from 'voca'
 import arkComponents from '../../components.json'
 import parkComponents from '../../park-components.json'
+import { transformComponentToTvConfig } from './helpers/recipe-to-tv'
 
 const data = {
   ...arkComponents,
@@ -21,7 +22,6 @@ type Options = {
 Handlebars.registerHelper('eq', (a, b) => a === b)
 Handlebars.registerHelper('titleCase', v.titleCase)
 
-const prettierConfig = await prettier.resolveConfig('.')
 const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
 const pascalCase = (s: string) =>
   v
@@ -33,6 +33,8 @@ const pascalCase = (s: string) =>
     .trim()
 
 const generateIndex = async (options: Options) => {
+  const prettierConfig = await prettier.resolveConfig('.')
+
   const { cssFramwork, jsFramework } = options
   const content = await prettier.format(
     JSON.stringify({
@@ -65,12 +67,15 @@ const generateIndex = async (options: Options) => {
 }
 
 const generateComponents = async (options: Options) => {
+  const prettierConfig = await prettier.resolveConfig('.')
+
   const { cssFramwork, jsFramework } = options
   await Promise.all(
     Object.entries(data).map(async ([key, value]) => {
       const view = {
         key,
         ...value,
+        tvConfig: JSON.stringify(transformComponentToTvConfig(value.className)),
       }
 
       const variant = value.hasOwnProperty('parts') ? 'with-context' : 'without-context'
@@ -93,6 +98,7 @@ const generateComponents = async (options: Options) => {
             {
               filename: `${key}.ts`,
               content: code,
+              hasMultipleParts: value.hasOwnProperty('parts'),
             },
           ],
         }),

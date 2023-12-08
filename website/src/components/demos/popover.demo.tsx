@@ -1,7 +1,10 @@
 import { Portal } from '@ark-ui/react'
 import { XIcon } from 'lucide-react'
 import { Box, Stack } from 'styled-system/jsx'
-import { Button, IconButton, Popover, type PopoverProps } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
+import type { PopoverProps } from '~/components/ui/popover'
+import * as Popover from '~/components/ui/popover'
 
 export const Demo = (props: PopoverProps) => (
   <Popover.Root portalled {...props}>

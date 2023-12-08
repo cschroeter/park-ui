@@ -1,7 +1,7 @@
 import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { IconButton } from './ui'
+import { IconButton } from '~/components/ui'
 
 interface Props {
   content: string

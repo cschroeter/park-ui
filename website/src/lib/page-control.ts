@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content'
 import path from 'path'
 
 const getOverviewPages = async () => {
-  const priority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
+  const priority = ['introduction', 'getting-started', 'cli', 'figma', 'changelog', 'about']
   return getCollection('overview').then((items) =>
     items.sort((a, b) => priority.indexOf(a.data.id) - priority.indexOf(b.data.id)),
   )
@@ -120,6 +120,7 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
         .map((item) => ({
           title: item.data.title,
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
+          label: item.data.label,
         })),
     },
     {

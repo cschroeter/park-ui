@@ -1,5 +1,31 @@
 ## [Unreleased]
 
+## [0.15.0] - 2023-12-02
+
+### Added
+
+- Added `Kbd` component.
+- Added `accent.text` to the list of semantic tokens. This token is used do display text in interactive elements like
+  buttons and links.
+- Added support to render components with different colors. Pass the `colorPalette` prop to the component to change its
+  visual style. See the example below for more details.
+
+```tsx
+<Button colorPalette="red">Danger</Button>
+```
+
+### Changed
+
+- Resolved an issue with `Table` markup where the `thead` element was not rendered correctly.
+
+### Fixed
+
+- Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was scrolled.
+
+### Removed
+
+- Removed `border.accent` from the list of semantic tokens. Use `accent.default` or `colorPalette.default` instead.
+
 ## [0.14.0] - 2023-11-16
 
 - ported latest style updates from park-ui panda

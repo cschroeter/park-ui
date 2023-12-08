@@ -1,7 +1,7 @@
 import type { MarkdownHeading } from 'astro'
 import { useEffect, useRef, useState } from 'react'
 import { Stack } from 'styled-system/jsx'
-import { Text } from '~/components/ui/text'
+import { Text } from '~/components/ui'
 import { SidebarGroup } from './sidebar-group'
 
 interface Props {

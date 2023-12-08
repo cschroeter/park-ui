@@ -1,7 +1,7 @@
 import * as p from '@clack/prompts'
 
 import { select } from '@clack/prompts'
-import { getImportAliases, getUseReactServerComponents } from '../config/config'
+import { getImportAliases, getUseReactServerComponents } from '../config/park-ui-config'
 import { downloadComponents, getComponents } from '../helpers/park-api'
 import { saveToFile } from '../helpers/save-file'
 
@@ -21,11 +21,11 @@ export const addComponent = async (options: { componentName: string; componentUr
     componentName,
     componentUrl,
   })
-  components.forEach(({ filename, content }) => {
-    if (serverComponents) {
+  components.forEach(({ filename, content, hasMultipleParts }) => {
+    if (serverComponents && hasMultipleParts) {
       content = `'use client'\n\n${content}`
-      saveToFile(componentsImportAlias, filename, content)
     }
+    saveToFile(componentsImportAlias, filename, content)
   })
 }
 
@@ -77,7 +77,8 @@ export const addComponentsCommand = async () => {
 
   spinner.stop(`Downloaded ${componentNames.join(', ')} 🏁`)
   p.note(
-    'The installed components are now in place.\nTo update any component, simply rerun the add command at a later time.',
+    'To update any component, simply rerun the add command at a later time.',
+    '🚀 Selected components are ready. Have fun!',
   )
 }
 

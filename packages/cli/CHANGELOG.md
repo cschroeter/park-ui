@@ -1,5 +1,29 @@
 ## [Unreleased]
 
+## [0.4.1] - 2023-12-06
+
+### Fixed
+
+- Fixed an issue that adding a component did not work.
+
+## [0.4.0] - 2023-12-06
+
+### Added
+
+- Improved prompts for adding components
+
+## [0.3.1] - 2023-12-06
+
+### Fixed
+
+- Only add `use client` when the component has multiple parts
+
+## [0.3.0] - 2023-12-04
+
+### Added
+
+- Resolved ts paths via tsconfig.json
+
 ## [0.2.3] - 2023-11-28
 
 ### Fixed

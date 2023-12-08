@@ -3,8 +3,17 @@ import fetch from 'node-fetch'
 import path from 'path'
 import { readPackageUpSync } from 'read-package-up'
 
+const getCwd = () => {
+  try {
+    return path.dirname(__filename)
+  } catch (e) {
+    // __filename not available in dev mode
+    return process.cwd()
+  }
+}
+
 export const getVersion = (): string => {
-  const cwd = path.dirname(__filename)
+  const cwd = getCwd()
   const result = readPackageUpSync({ cwd })
   if (result && result.packageJson && result.packageJson.version) {
     return result.packageJson.version
@@ -49,7 +58,8 @@ export const showUpgradeNoteWhenNeeded = async (options: {
 
   if (currentVersion !== latestVersion) {
     p.note(
-      `Your Park UI CLI version is ${currentVersion}. The latest version is ${latestVersion}.\nRun "npm install -g @park-ui/cli" to update.`,
+      `Your installed Park UI CLI version is ${currentVersion}.\nRun "npm install -g @park-ui/cli" to update.`,
+      `New Version ${latestVersion} available`,
     )
   }
 }

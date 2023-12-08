@@ -1,0 +1,9 @@
+{
+  "cssFramework": "tailwind",
+  "jsFramework": "solid",
+  "importAliases": {
+    "components": "~/components/ui",
+    "utils": "~/lib"
+  },
+  "useReactServerComponents": false
+}
