@@ -7,7 +7,7 @@
   "dependencies": {
     "@ark-ui/anatomy": "1.1.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@pandacss/dev": "0.20.1",
+    "@pandacss/dev": "0.21.0",
     "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/handlebars": "4.1.0",
@@ -16,7 +16,7 @@
     "find-up": "7.0.0",
     "fs-extra": "11.2.0",
     "handlebars": "4.7.8",
-    "prettier": "3.1.0",
+    "prettier": "3.1.1",
     "prettier-plugin-organize-imports": "3.2.4",
     "ts-pattern": "5.0.6",
     "tsx": "4.6.2",
