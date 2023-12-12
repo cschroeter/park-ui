@@ -18,10 +18,10 @@ export const Demo = (props: TabsProps) => {
         ))}
         <Tabs.Indicator />
       </Tabs.List>
-      <Tabs.Content value="react">&nbsp;</Tabs.Content>
-      <Tabs.Content value="solid">&nbsp;</Tabs.Content>
-      <Tabs.Content value="svelte">&nbsp;</Tabs.Content>
-      <Tabs.Content value="vue">&nbsp;</Tabs.Content>
+      <Tabs.Content value="react">Know React? Check out Solid!</Tabs.Content>
+      <Tabs.Content value="solid">Know Solid? Check out Svelte!</Tabs.Content>
+      <Tabs.Content value="svelte">Know Svelte? Check out Vue!</Tabs.Content>
+      <Tabs.Content value="vue">Know Vue? Check out React!</Tabs.Content>
     </Tabs.Root>
   )
 }
