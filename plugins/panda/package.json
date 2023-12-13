@@ -30,7 +30,7 @@
     "postpack": "clean-package restore"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "1.1.0",
+    "@ark-ui/anatomy": "1.2.0",
     "@pandacss/dev": "0.21.0",
     "deepmerge": "4.3.1",
     "ts-pattern": "5.0.6"

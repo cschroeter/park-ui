@@ -5,7 +5,7 @@
     "start": "tsx src/index.ts"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "1.1.0",
+    "@ark-ui/anatomy": "1.2.0",
     "@park-ui/panda-preset": "workspace:*",
     "@pandacss/dev": "0.21.0",
     "@radix-ui/colors": "3.0.0",

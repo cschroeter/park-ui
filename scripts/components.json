@@ -460,6 +460,11 @@
         "slot": "itemPreview",
         "component": "ArkFileUpload.ItemPreview"
       },
+      "ItemPreviewImage": {
+        "name": "FileUploadItemPreviewImage",
+        "slot": "itemPreviewImage",
+        "component": "ArkFileUpload.ItemPreviewImage"
+      },
       "ItemSizeText": {
         "name": "FileUploadItemSizeText",
         "slot": "itemSizeText",

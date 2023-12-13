@@ -2,6 +2,7 @@
 
 ### Changed
 
+- Integrated latest version of Ark UI 1.2.0
 - Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server Components, we've revised the export method for multi-part components.
 
 ```tsx

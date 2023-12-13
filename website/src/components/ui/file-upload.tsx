@@ -15,6 +15,10 @@ const FileUploadItemDeleteTrigger = withContext(
 const FileUploadItemGroup = withContext(styled(ArkFileUpload.ItemGroup), 'itemGroup')
 const FileUploadItemName = withContext(styled(ArkFileUpload.ItemName), 'itemName')
 const FileUploadItemPreview = withContext(styled(ArkFileUpload.ItemPreview), 'itemPreview')
+const FileUploadItemPreviewImage = withContext(
+  styled(ArkFileUpload.ItemPreviewImage),
+  'itemPreviewImage',
+)
 const FileUploadItemSizeText = withContext(styled(ArkFileUpload.ItemSizeText), 'itemSizeText')
 const FileUploadLabel = withContext(styled(ArkFileUpload.Label), 'label')
 const FileUploadTrigger = withContext(styled(ArkFileUpload.Trigger), 'trigger')
@@ -26,6 +30,7 @@ const ItemDeleteTrigger = FileUploadItemDeleteTrigger
 const ItemGroup = FileUploadItemGroup
 const ItemName = FileUploadItemName
 const ItemPreview = FileUploadItemPreview
+const ItemPreviewImage = FileUploadItemPreviewImage
 const ItemSizeText = FileUploadItemSizeText
 const Label = FileUploadLabel
 const Trigger = FileUploadTrigger
@@ -39,6 +44,7 @@ export {
   FileUploadItemGroup,
   FileUploadItemName,
   FileUploadItemPreview,
+  FileUploadItemPreviewImage,
   FileUploadItemSizeText,
   FileUploadLabel,
   FileUploadTrigger,
@@ -47,6 +53,7 @@ export {
   ItemGroup,
   ItemName,
   ItemPreview,
+  ItemPreviewImage,
   ItemSizeText,
   Label,
   Root,
