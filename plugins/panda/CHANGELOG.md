@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.26.0] - 2023-12-13
+
 ### Changed
 
 - Integrated latest version of Ark UI 1.2.0
