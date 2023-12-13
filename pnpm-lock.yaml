@@ -87,8 +87,8 @@ importers:
   plugins/chakra:
     dependencies:
       '@ark-ui/react':
-        specifier: 1.2.0
-        version: 1.2.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.2.1
+        version: 1.2.1(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@chakra-ui/system':
         specifier: 2.6.2
         version: 2.6.2(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react@18.2.0)
@@ -198,8 +198,8 @@ importers:
         version: 5.0.6
     devDependencies:
       '@ark-ui/react':
-        specifier: 1.2.0
-        version: 1.2.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.2.1
+        version: 1.2.1(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@fontsource/plus-jakarta-sans':
         specifier: 5.0.18
         version: 5.0.18
@@ -309,8 +309,8 @@ importers:
   website:
     dependencies:
       '@ark-ui/react':
-        specifier: 1.2.0
-        version: 1.2.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.2.1
+        version: 1.2.1(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0)
       '@astrojs/check':
         specifier: 0.3.2
         version: 0.3.2(prettier-plugin-astro@0.12.2)(prettier@3.1.1)(typescript@5.3.3)
@@ -443,8 +443,8 @@ packages:
     transitivePeerDependencies:
       - '@internationalized/date'
 
-  /@ark-ui/react@1.2.0(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-yw6WGLQNPmqE2lDSeN1O7FGSy5k5y89xTTyDQoXwPjeWXQ2R9XzyDNaydaQmaj0M+0u1LivIfRBWuMvbD0nA6Q==}
+  /@ark-ui/react@1.2.1(@internationalized/date@3.5.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-CrKR5aeWsUlhC3W9tlkOCwmNGnxEUyR/Mai4y4eFQLYPJfyDHb3D8f0FpSQtxbpT+FwJKQq25OeqG3UIvEtKPQ==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'

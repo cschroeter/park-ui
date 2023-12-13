@@ -36,7 +36,7 @@
     "ts-pattern": "5.0.6"
   },
   "devDependencies": {
-    "@ark-ui/react": "1.2.0",
+    "@ark-ui/react": "1.2.1",
     "@fontsource/plus-jakarta-sans": "5.0.18",
     "@ladle/react": "4.0.2",
     "@pandacss/dev": "0.21.0",

@@ -12,12 +12,12 @@ const cssFramework = slug?.split('/')[0]
 
 const code = await match(cssFramework)
   .with('panda', () =>
-    readFile(`../packages/panda/src/theme/recipes/${component}.ts`, 'utf8').catch(
+    readFile(`../plugins/panda/src/theme/recipes/${component}.ts`, 'utf8').catch(
       () => 'Not yet available',
     ),
   )
   .with('tailwind', () =>
-    readFile(`../packages/tailwind/src/components/${component}/recipe.ts`, 'utf8').catch(
+    readFile(`../plugins/tailwind/src/components/${component}/recipe.ts`, 'utf8').catch(
       () => 'Not yet available',
     ),
   )
