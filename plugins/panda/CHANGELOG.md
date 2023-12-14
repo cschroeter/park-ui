@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.26.1] - 2023-12-14
+
 ### Fixed
 
 - Resolved an issue with ruby color values in semantic tokens
