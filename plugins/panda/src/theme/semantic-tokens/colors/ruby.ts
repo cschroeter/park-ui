@@ -24,8 +24,8 @@ export const ruby = {
   a11: { value: { base: '{colors.ruby.light.a11}', _dark: '{colors.ruby.dark.a11}' } },
   a12: { value: { base: '{colors.ruby.light.a12}', _dark: '{colors.ruby.dark.a12}' } },
 
-  default: { value: '{colors.rugby.9}' },
-  emphasized: { value: '{colors.rugby.10}' },
+  default: { value: '{colors.ruby.9}' },
+  emphasized: { value: '{colors.ruby.10}' },
   fg: { value: '{colors.white}' },
-  text: { value: '{colors.rugby.a11}' },
+  text: { value: '{colors.ruby.a11}' },
 }

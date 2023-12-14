@@ -6,10 +6,16 @@ description: All notable changes to this project will be documented in this file
 
 ## [Unreleased]
 
+### Fixed
+
+- Resolved an issue with ruby color values in semantic tokens
+
+## [0.26.0] - 2023-12-13
+
 ### Changed
 
-- Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server Components, we've
-  revised the export method for multi-part components.
+- Integrated latest version of Ark UI 1.2.0
+- Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server Components, we've revised the export method for multi-part components.
 
 ```tsx
 // before
@@ -30,6 +36,13 @@ function MyAvatar() {
 ### Fixed
 
 - Resolved an issue where the exported component props were not typed correctly
+
+```tsx
+// before
+export type ButtonProps = typeof Button
+// after
+export type ButtonProps = HTMLStyledProps<typeof Button>
+```
 
 ## [0.25.0] - 2023-12-01
 
