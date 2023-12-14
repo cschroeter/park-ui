@@ -1,4 +1,4 @@
-import { Pagination as ArkPagination } from '@ark-ui/react'
+import { Pagination as ArkPagination } from '@ark-ui/react/pagination'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { pagination } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

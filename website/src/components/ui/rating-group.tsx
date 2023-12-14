@@ -1,4 +1,4 @@
-import { RatingGroup as ArkRatingGroup } from '@ark-ui/react'
+import { RatingGroup as ArkRatingGroup } from '@ark-ui/react/rating-group'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { ratingGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

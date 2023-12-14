@@ -1,4 +1,4 @@
-import { HoverCard as ArkHoverCard } from '@ark-ui/react'
+import { HoverCard as ArkHoverCard } from '@ark-ui/react/hover-card'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { hoverCard } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

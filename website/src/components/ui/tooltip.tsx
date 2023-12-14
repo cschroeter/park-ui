@@ -1,4 +1,4 @@
-import { Tooltip as ArkTooltip } from '@ark-ui/react'
+import { Tooltip as ArkTooltip } from '@ark-ui/react/tooltip'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { tooltip } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

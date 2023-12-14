@@ -1,4 +1,4 @@
-import { Splitter as ArkSplitter } from '@ark-ui/react'
+import { Splitter as ArkSplitter } from '@ark-ui/react/splitter'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { splitter } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

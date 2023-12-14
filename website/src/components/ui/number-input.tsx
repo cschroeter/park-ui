@@ -1,4 +1,4 @@
-import { NumberInput as ArkNumberInput } from '@ark-ui/react'
+import { NumberInput as ArkNumberInput } from '@ark-ui/react/number-input'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { numberInput } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

@@ -1,4 +1,4 @@
-import { TagsInput as ArkTagsInput } from '@ark-ui/react'
+import { TagsInput as ArkTagsInput } from '@ark-ui/react/tags-input'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { tagsInput } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

@@ -1,4 +1,4 @@
-import { RadioGroup as ArkRadioGroup } from '@ark-ui/react'
+import { RadioGroup as ArkRadioGroup } from '@ark-ui/react/radio-group'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { radioGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

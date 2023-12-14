@@ -1,4 +1,4 @@
-import { Editable as ArkEditable } from '@ark-ui/react'
+import { Editable as ArkEditable } from '@ark-ui/react/editable'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { editable } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

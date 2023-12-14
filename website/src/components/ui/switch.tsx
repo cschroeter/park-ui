@@ -1,4 +1,4 @@
-import { Switch as ArkSwitch } from '@ark-ui/react'
+import { Switch as ArkSwitch } from '@ark-ui/react/switch'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { switchRecipe } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

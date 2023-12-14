@@ -49,7 +49,24 @@ const generateComponentsJson = async () => {
               },
             ),
           name: pascalCase(component),
-          imports: `${pascalCase(component)} as Ark${pascalCase(component)}`,
+          imports: {
+            react: [
+              `import { ${pascalCase(component)} as Ark${pascalCase(
+                component,
+              )} } from '@ark-ui/react/${component}'`,
+            ],
+            solid: [
+              `import { ${pascalCase(component)} as Ark${pascalCase(
+                component,
+              )} } from '@ark-ui/solid'`,
+            ],
+            vue: [
+              `import { ${pascalCase(component)} as Ark${pascalCase(
+                component,
+              )} } from '@ark-ui/vue/${component}'`,
+            ],
+          },
+
           className: match(component)
             .with('switch', () => 'switchRecipe') // resvered word
             .otherwise(() => camelCase(component)),

@@ -1,4 +1,4 @@
-import { Select as ArkSelect } from '@ark-ui/react'
+import { Select as ArkSelect } from '@ark-ui/react/select'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { select } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

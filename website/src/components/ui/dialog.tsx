@@ -1,4 +1,4 @@
-import { Dialog as ArkDialog } from '@ark-ui/react'
+import { Dialog as ArkDialog } from '@ark-ui/react/dialog'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { dialog } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

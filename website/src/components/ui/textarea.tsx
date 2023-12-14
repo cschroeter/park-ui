@@ -1,4 +1,4 @@
-import { ark } from '@ark-ui/react'
+import { ark } from '@ark-ui/react/factory'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { textarea } from 'styled-system/recipes'
 

@@ -1,4 +1,5 @@
-import { ark, Dialog as ArkDrawer } from '@ark-ui/react'
+import { Dialog as ArkDrawer } from '@ark-ui/react/dialog'
+import { ark } from '@ark-ui/react/factory'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { drawer } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

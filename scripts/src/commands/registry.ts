@@ -75,6 +75,7 @@ const generateComponents = async (options: Options) => {
       const view = {
         key,
         ...value,
+        imports: value.imports[jsFramework],
         tvConfig: JSON.stringify(transformComponentToTvConfig(value.className)),
       }
 
@@ -132,8 +133,8 @@ const generateComponents = async (options: Options) => {
 }
 
 const generateRegistry = async () => {
-  const jsFrameworks = ['react', 'solid'] as const
-  const cssFramworks = ['panda', 'tailwind'] as const
+  const jsFrameworks = ['react'] as const
+  const cssFramworks = ['panda'] as const
 
   jsFrameworks.forEach((jsFramework) => {
     cssFramworks.forEach((cssFramwork) => {

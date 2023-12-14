@@ -1,4 +1,4 @@
-import { DatePicker as ArkDatePicker } from '@ark-ui/react'
+import { DatePicker as ArkDatePicker } from '@ark-ui/react/date-picker'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { datePicker } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

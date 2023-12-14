@@ -20,7 +20,11 @@
       }
     },
     "name": "Accordion",
-    "imports": "Accordion as ArkAccordion",
+    "imports": {
+      "react": ["import { Accordion as ArkAccordion } from '@ark-ui/react/accordion'"],
+      "solid": ["import { Accordion as ArkAccordion } from '@ark-ui/solid'"],
+      "vue": ["import { Accordion as ArkAccordion } from '@ark-ui/vue/accordion'"]
+    },
     "className": "accordion"
   },
   "avatar": {
@@ -34,7 +38,11 @@
       "Image": { "name": "AvatarImage", "slot": "image", "component": "ArkAvatar.Image" }
     },
     "name": "Avatar",
-    "imports": "Avatar as ArkAvatar",
+    "imports": {
+      "react": ["import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'"],
+      "solid": ["import { Avatar as ArkAvatar } from '@ark-ui/solid'"],
+      "vue": ["import { Avatar as ArkAvatar } from '@ark-ui/vue/avatar'"]
+    },
     "className": "avatar"
   },
   "carousel": {
@@ -78,7 +86,11 @@
       }
     },
     "name": "Carousel",
-    "imports": "Carousel as ArkCarousel",
+    "imports": {
+      "react": ["import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'"],
+      "solid": ["import { Carousel as ArkCarousel } from '@ark-ui/solid'"],
+      "vue": ["import { Carousel as ArkCarousel } from '@ark-ui/vue/carousel'"]
+    },
     "className": "carousel"
   },
   "checkbox": {
@@ -97,7 +109,11 @@
       "Label": { "name": "CheckboxLabel", "slot": "label", "component": "ArkCheckbox.Label" }
     },
     "name": "Checkbox",
-    "imports": "Checkbox as ArkCheckbox",
+    "imports": {
+      "react": ["import { Checkbox as ArkCheckbox } from '@ark-ui/react/checkbox'"],
+      "solid": ["import { Checkbox as ArkCheckbox } from '@ark-ui/solid'"],
+      "vue": ["import { Checkbox as ArkCheckbox } from '@ark-ui/vue/checkbox'"]
+    },
     "className": "checkbox"
   },
   "color-picker": {
@@ -203,7 +219,11 @@
       "View": { "name": "ColorPickerView", "slot": "view", "component": "ArkColorPicker.View" }
     },
     "name": "ColorPicker",
-    "imports": "ColorPicker as ArkColorPicker",
+    "imports": {
+      "react": ["import { ColorPicker as ArkColorPicker } from '@ark-ui/react/color-picker'"],
+      "solid": ["import { ColorPicker as ArkColorPicker } from '@ark-ui/solid'"],
+      "vue": ["import { ColorPicker as ArkColorPicker } from '@ark-ui/vue/color-picker'"]
+    },
     "className": "colorPicker"
   },
   "combobox": {
@@ -259,7 +279,11 @@
       }
     },
     "name": "Combobox",
-    "imports": "Combobox as ArkCombobox",
+    "imports": {
+      "react": ["import { Combobox as ArkCombobox } from '@ark-ui/react/combobox'"],
+      "solid": ["import { Combobox as ArkCombobox } from '@ark-ui/solid'"],
+      "vue": ["import { Combobox as ArkCombobox } from '@ark-ui/vue/combobox'"]
+    },
     "className": "combobox"
   },
   "date-picker": {
@@ -361,7 +385,11 @@
       }
     },
     "name": "DatePicker",
-    "imports": "DatePicker as ArkDatePicker",
+    "imports": {
+      "react": ["import { DatePicker as ArkDatePicker } from '@ark-ui/react/date-picker'"],
+      "solid": ["import { DatePicker as ArkDatePicker } from '@ark-ui/solid'"],
+      "vue": ["import { DatePicker as ArkDatePicker } from '@ark-ui/vue/date-picker'"]
+    },
     "className": "datePicker"
   },
   "dialog": {
@@ -392,7 +420,11 @@
       "Trigger": { "name": "DialogTrigger", "slot": "trigger", "component": "ArkDialog.Trigger" }
     },
     "name": "Dialog",
-    "imports": "Dialog as ArkDialog",
+    "imports": {
+      "react": ["import { Dialog as ArkDialog } from '@ark-ui/react/dialog'"],
+      "solid": ["import { Dialog as ArkDialog } from '@ark-ui/solid'"],
+      "vue": ["import { Dialog as ArkDialog } from '@ark-ui/vue/dialog'"]
+    },
     "className": "dialog"
   },
   "editable": {
@@ -428,7 +460,11 @@
       }
     },
     "name": "Editable",
-    "imports": "Editable as ArkEditable",
+    "imports": {
+      "react": ["import { Editable as ArkEditable } from '@ark-ui/react/editable'"],
+      "solid": ["import { Editable as ArkEditable } from '@ark-ui/solid'"],
+      "vue": ["import { Editable as ArkEditable } from '@ark-ui/vue/editable'"]
+    },
     "className": "editable"
   },
   "file-upload": {
@@ -478,7 +514,11 @@
       }
     },
     "name": "FileUpload",
-    "imports": "FileUpload as ArkFileUpload",
+    "imports": {
+      "react": ["import { FileUpload as ArkFileUpload } from '@ark-ui/react/file-upload'"],
+      "solid": ["import { FileUpload as ArkFileUpload } from '@ark-ui/solid'"],
+      "vue": ["import { FileUpload as ArkFileUpload } from '@ark-ui/vue/file-upload'"]
+    },
     "className": "fileUpload"
   },
   "hover-card": {
@@ -507,7 +547,11 @@
       }
     },
     "name": "HoverCard",
-    "imports": "HoverCard as ArkHoverCard",
+    "imports": {
+      "react": ["import { HoverCard as ArkHoverCard } from '@ark-ui/react/hover-card'"],
+      "solid": ["import { HoverCard as ArkHoverCard } from '@ark-ui/solid'"],
+      "vue": ["import { HoverCard as ArkHoverCard } from '@ark-ui/vue/hover-card'"]
+    },
     "className": "hoverCard"
   },
   "menu": {
@@ -570,7 +614,11 @@
       }
     },
     "name": "Menu",
-    "imports": "Menu as ArkMenu",
+    "imports": {
+      "react": ["import { Menu as ArkMenu } from '@ark-ui/react/menu'"],
+      "solid": ["import { Menu as ArkMenu } from '@ark-ui/solid'"],
+      "vue": ["import { Menu as ArkMenu } from '@ark-ui/vue/menu'"]
+    },
     "className": "menu"
   },
   "number-input": {
@@ -600,7 +648,11 @@
       }
     },
     "name": "NumberInput",
-    "imports": "NumberInput as ArkNumberInput",
+    "imports": {
+      "react": ["import { NumberInput as ArkNumberInput } from '@ark-ui/react/number-input'"],
+      "solid": ["import { NumberInput as ArkNumberInput } from '@ark-ui/solid'"],
+      "vue": ["import { NumberInput as ArkNumberInput } from '@ark-ui/vue/number-input'"]
+    },
     "className": "numberInput"
   },
   "pagination": {
@@ -624,7 +676,11 @@
       }
     },
     "name": "Pagination",
-    "imports": "Pagination as ArkPagination",
+    "imports": {
+      "react": ["import { Pagination as ArkPagination } from '@ark-ui/react/pagination'"],
+      "solid": ["import { Pagination as ArkPagination } from '@ark-ui/solid'"],
+      "vue": ["import { Pagination as ArkPagination } from '@ark-ui/vue/pagination'"]
+    },
     "className": "pagination"
   },
   "pin-input": {
@@ -639,7 +695,11 @@
       "Label": { "name": "PinInputLabel", "slot": "label", "component": "ArkPinInput.Label" }
     },
     "name": "PinInput",
-    "imports": "PinInput as ArkPinInput",
+    "imports": {
+      "react": ["import { PinInput as ArkPinInput } from '@ark-ui/react/pin-input'"],
+      "solid": ["import { PinInput as ArkPinInput } from '@ark-ui/solid'"],
+      "vue": ["import { PinInput as ArkPinInput } from '@ark-ui/vue/pin-input'"]
+    },
     "className": "pinInput"
   },
   "popover": {
@@ -677,7 +737,11 @@
       "Trigger": { "name": "PopoverTrigger", "slot": "trigger", "component": "ArkPopover.Trigger" }
     },
     "name": "Popover",
-    "imports": "Popover as ArkPopover",
+    "imports": {
+      "react": ["import { Popover as ArkPopover } from '@ark-ui/react/popover'"],
+      "solid": ["import { Popover as ArkPopover } from '@ark-ui/solid'"],
+      "vue": ["import { Popover as ArkPopover } from '@ark-ui/vue/popover'"]
+    },
     "className": "popover"
   },
   "radio-group": {
@@ -702,7 +766,11 @@
       "Label": { "name": "RadioGroupLabel", "slot": "label", "component": "ArkRadioGroup.Label" }
     },
     "name": "RadioGroup",
-    "imports": "RadioGroup as ArkRadioGroup",
+    "imports": {
+      "react": ["import { RadioGroup as ArkRadioGroup } from '@ark-ui/react/radio-group'"],
+      "solid": ["import { RadioGroup as ArkRadioGroup } from '@ark-ui/solid'"],
+      "vue": ["import { RadioGroup as ArkRadioGroup } from '@ark-ui/vue/radio-group'"]
+    },
     "className": "radioGroup"
   },
   "rating-group": {
@@ -717,7 +785,11 @@
       "Label": { "name": "RatingGroupLabel", "slot": "label", "component": "ArkRatingGroup.Label" }
     },
     "name": "RatingGroup",
-    "imports": "RatingGroup as ArkRatingGroup",
+    "imports": {
+      "react": ["import { RatingGroup as ArkRatingGroup } from '@ark-ui/react/rating-group'"],
+      "solid": ["import { RatingGroup as ArkRatingGroup } from '@ark-ui/solid'"],
+      "vue": ["import { RatingGroup as ArkRatingGroup } from '@ark-ui/vue/rating-group'"]
+    },
     "className": "ratingGroup"
   },
   "segment-group": {
@@ -746,7 +818,11 @@
       }
     },
     "name": "SegmentGroup",
-    "imports": "SegmentGroup as ArkSegmentGroup",
+    "imports": {
+      "react": ["import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react/segment-group'"],
+      "solid": ["import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/solid'"],
+      "vue": ["import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/vue/segment-group'"]
+    },
     "className": "segmentGroup"
   },
   "select": {
@@ -799,7 +875,11 @@
       }
     },
     "name": "Select",
-    "imports": "Select as ArkSelect",
+    "imports": {
+      "react": ["import { Select as ArkSelect } from '@ark-ui/react/select'"],
+      "solid": ["import { Select as ArkSelect } from '@ark-ui/solid'"],
+      "vue": ["import { Select as ArkSelect } from '@ark-ui/vue/select'"]
+    },
     "className": "select"
   },
   "slider": {
@@ -823,7 +903,11 @@
       }
     },
     "name": "Slider",
-    "imports": "Slider as ArkSlider",
+    "imports": {
+      "react": ["import { Slider as ArkSlider } from '@ark-ui/react/slider'"],
+      "solid": ["import { Slider as ArkSlider } from '@ark-ui/solid'"],
+      "vue": ["import { Slider as ArkSlider } from '@ark-ui/vue/slider'"]
+    },
     "className": "slider"
   },
   "splitter": {
@@ -837,7 +921,11 @@
       }
     },
     "name": "Splitter",
-    "imports": "Splitter as ArkSplitter",
+    "imports": {
+      "react": ["import { Splitter as ArkSplitter } from '@ark-ui/react/splitter'"],
+      "solid": ["import { Splitter as ArkSplitter } from '@ark-ui/solid'"],
+      "vue": ["import { Splitter as ArkSplitter } from '@ark-ui/vue/splitter'"]
+    },
     "className": "splitter"
   },
   "switch": {
@@ -848,7 +936,11 @@
       "Thumb": { "name": "SwitchThumb", "slot": "thumb", "component": "ArkSwitch.Thumb" }
     },
     "name": "Switch",
-    "imports": "Switch as ArkSwitch",
+    "imports": {
+      "react": ["import { Switch as ArkSwitch } from '@ark-ui/react/switch'"],
+      "solid": ["import { Switch as ArkSwitch } from '@ark-ui/solid'"],
+      "vue": ["import { Switch as ArkSwitch } from '@ark-ui/vue/switch'"]
+    },
     "className": "switchRecipe"
   },
   "tabs": {
@@ -864,7 +956,11 @@
       "Trigger": { "name": "TabsTrigger", "slot": "trigger", "component": "ArkTabs.Trigger" }
     },
     "name": "Tabs",
-    "imports": "Tabs as ArkTabs",
+    "imports": {
+      "react": ["import { Tabs as ArkTabs } from '@ark-ui/react/tabs'"],
+      "solid": ["import { Tabs as ArkTabs } from '@ark-ui/solid'"],
+      "vue": ["import { Tabs as ArkTabs } from '@ark-ui/vue/tabs'"]
+    },
     "className": "tabs"
   },
   "tags-input": {
@@ -900,7 +996,11 @@
       "Label": { "name": "TagsInputLabel", "slot": "label", "component": "ArkTagsInput.Label" }
     },
     "name": "TagsInput",
-    "imports": "TagsInput as ArkTagsInput",
+    "imports": {
+      "react": ["import { TagsInput as ArkTagsInput } from '@ark-ui/react/tags-input'"],
+      "solid": ["import { TagsInput as ArkTagsInput } from '@ark-ui/solid'"],
+      "vue": ["import { TagsInput as ArkTagsInput } from '@ark-ui/vue/tags-input'"]
+    },
     "className": "tagsInput"
   },
   "toast": {
@@ -920,7 +1020,11 @@
       "Title": { "name": "ToastTitle", "slot": "title", "component": "ArkToast.Title" }
     },
     "name": "Toast",
-    "imports": "Toast as ArkToast",
+    "imports": {
+      "react": ["import { Toast as ArkToast } from '@ark-ui/react/toast'"],
+      "solid": ["import { Toast as ArkToast } from '@ark-ui/solid'"],
+      "vue": ["import { Toast as ArkToast } from '@ark-ui/vue/toast'"]
+    },
     "className": "toast"
   },
   "toggle-group": {
@@ -929,7 +1033,11 @@
       "Item": { "name": "ToggleGroupItem", "slot": "item", "component": "ArkToggleGroup.Item" }
     },
     "name": "ToggleGroup",
-    "imports": "ToggleGroup as ArkToggleGroup",
+    "imports": {
+      "react": ["import { ToggleGroup as ArkToggleGroup } from '@ark-ui/react/toggle-group'"],
+      "solid": ["import { ToggleGroup as ArkToggleGroup } from '@ark-ui/solid'"],
+      "vue": ["import { ToggleGroup as ArkToggleGroup } from '@ark-ui/vue/toggle-group'"]
+    },
     "className": "toggleGroup"
   },
   "tooltip": {
@@ -950,7 +1058,11 @@
       "Trigger": { "name": "TooltipTrigger", "slot": "trigger", "component": "ArkTooltip.Trigger" }
     },
     "name": "Tooltip",
-    "imports": "Tooltip as ArkTooltip",
+    "imports": {
+      "react": ["import { Tooltip as ArkTooltip } from '@ark-ui/react/tooltip'"],
+      "solid": ["import { Tooltip as ArkTooltip } from '@ark-ui/solid'"],
+      "vue": ["import { Tooltip as ArkTooltip } from '@ark-ui/vue/tooltip'"]
+    },
     "className": "tooltip"
   }
 }

@@ -1,4 +1,4 @@
-import { Popover as ArkPopover } from '@ark-ui/react'
+import { Popover as ArkPopover } from '@ark-ui/react/popover'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { popover } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

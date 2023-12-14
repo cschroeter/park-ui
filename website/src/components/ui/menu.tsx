@@ -1,4 +1,4 @@
-import { Menu as ArkMenu } from '@ark-ui/react'
+import { Menu as ArkMenu } from '@ark-ui/react/menu'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { menu } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

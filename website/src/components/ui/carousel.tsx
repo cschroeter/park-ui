@@ -1,4 +1,4 @@
-import { Carousel as ArkCarousel } from '@ark-ui/react'
+import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { carousel } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

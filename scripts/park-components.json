@@ -1,7 +1,11 @@
 {
   "alert": {
     "className": "alert",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Alert",
     "parts": {
       "Root": { "name": "Alert", "slot": "root", "component": "ark.div" },
@@ -14,13 +18,21 @@
   "badge": {
     "className": "badge",
     "component": "ark.div",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Badge"
   },
   "button": {
     "className": "button",
     "component": "ark.button",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Button"
   },
   "card": {
@@ -33,13 +45,21 @@
       "Title": { "name": "CardTitle", "slot": "title", "component": "ark.h3" }
     },
     "name": "Card",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "className": "card"
   },
   "code": {
     "className": "code",
     "component": "ark.code",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Code"
   },
   "drawer": {
@@ -77,37 +97,67 @@
       "Trigger": { "name": "DrawerTrigger", "slot": "trigger", "component": "ArkDrawer.Trigger" }
     },
     "name": "Drawer",
-    "imports": "ark, Dialog as ArkDrawer",
+    "imports": {
+      "react": [
+        "import { ark } from '@ark-ui/react/factory'",
+        "import { Dialog as ArkDrawer } from '@ark-ui/react/dialog'"
+      ],
+      "solid": ["import { ark, Dialog as ArkDrawer } from '@ark-ui/solid'"],
+      "vue": [
+        "import { ark } from '@ark-ui/vue/factory'",
+        "import { Dialog as ArkDrawer } from '@ark-ui/vue/dialog'"
+      ]
+    },
     "className": "drawer"
   },
   "icon-button": {
     "className": "iconButton",
     "component": "ark.button",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "IconButton"
   },
   "input": {
     "className": "input",
     "component": "ark.input",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Input"
   },
   "kbd": {
     "className": "kbd",
     "component": "ark.kbd",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Kbd"
   },
   "label": {
     "className": "label",
     "component": "ark.label",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Label"
   },
   "link": {
     "className": "link",
     "component": "ark.a",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Link"
   },
   "radio-button-group": {
@@ -144,7 +194,11 @@
       }
     },
     "name": "RadioButtonGroup",
-    "imports": "RadioGroup as ArkRadioButtonGroup",
+    "imports": {
+      "react": ["import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/react/radio-group'"],
+      "solid": ["import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/solid'"],
+      "vue": ["import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/vue/radio-group'"]
+    },
     "className": "radioButtonGroup"
   },
   "table": {
@@ -159,13 +213,21 @@
       "Row": { "name": "TableRow", "slot": "row", "component": "ark.tr" }
     },
     "name": "Table",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "className": "table"
   },
   "textarea": {
     "className": "textarea",
     "component": "ark.textarea",
-    "imports": "ark",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
     "name": "Textarea"
   }
 }

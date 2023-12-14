@@ -1,4 +1,4 @@
-import { FileUpload as ArkFileUpload } from '@ark-ui/react'
+import { FileUpload as ArkFileUpload } from '@ark-ui/react/file-upload'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { fileUpload } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -68,6 +68,8 @@ export interface FileUploadItemDeleteTriggerProps
 export interface FileUploadItemGroupProps extends HTMLStyledProps<typeof FileUploadItemGroup> {}
 export interface FileUploadItemNameProps extends HTMLStyledProps<typeof FileUploadItemName> {}
 export interface FileUploadItemPreviewProps extends HTMLStyledProps<typeof FileUploadItemPreview> {}
+export interface FileUploadItemPreviewImageProps
+  extends HTMLStyledProps<typeof FileUploadItemPreviewImage> {}
 export interface FileUploadItemSizeTextProps
   extends HTMLStyledProps<typeof FileUploadItemSizeText> {}
 export interface FileUploadLabelProps extends HTMLStyledProps<typeof FileUploadLabel> {}

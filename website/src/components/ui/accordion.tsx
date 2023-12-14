@@ -1,4 +1,4 @@
-import { Accordion as ArkAccordion } from '@ark-ui/react'
+import { Accordion as ArkAccordion } from '@ark-ui/react/accordion'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { accordion } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

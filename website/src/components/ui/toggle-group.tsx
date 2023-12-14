@@ -1,4 +1,4 @@
-import { ToggleGroup as ArkToggleGroup } from '@ark-ui/react'
+import { ToggleGroup as ArkToggleGroup } from '@ark-ui/react/toggle-group'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { toggleGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

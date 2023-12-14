@@ -6,6 +6,19 @@ description: All notable changes to this project will be documented in this file
 
 ## [Unreleased]
 
+### Changed 
+
+- Updated import paths for more precise module referencing to help with tree-shaking.
+
+```tsx
+// before
+import { Avatar as ArkAvatar } from '@ark-ui/react'
+// after
+import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
+
+
+## [0.26.1] - 2023-12-14
+
 ### Fixed
 
 - Resolved an issue with ruby color values in semantic tokens

@@ -1,4 +1,4 @@
-import { Checkbox as ArkCheckbox } from '@ark-ui/react'
+import { Checkbox as ArkCheckbox } from '@ark-ui/react/checkbox'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { checkbox } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

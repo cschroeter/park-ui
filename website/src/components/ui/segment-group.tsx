@@ -1,4 +1,4 @@
-import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react'
+import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react/segment-group'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { segmentGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

@@ -1,4 +1,4 @@
-import { Avatar as ArkAvatar } from '@ark-ui/react'
+import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { avatar } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

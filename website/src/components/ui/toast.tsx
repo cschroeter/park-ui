@@ -1,4 +1,4 @@
-import { Toast as ArkToast } from '@ark-ui/react'
+import { Toast as ArkToast } from '@ark-ui/react/toast'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { toast } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

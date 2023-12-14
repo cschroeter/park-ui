@@ -1,4 +1,4 @@
-import { Combobox as ArkCombobox } from '@ark-ui/react'
+import { Combobox as ArkCombobox } from '@ark-ui/react/combobox'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { combobox } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

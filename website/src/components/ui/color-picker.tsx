@@ -1,4 +1,4 @@
-import { ColorPicker as ArkColorPicker } from '@ark-ui/react'
+import { ColorPicker as ArkColorPicker } from '@ark-ui/react/color-picker'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { colorPicker } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

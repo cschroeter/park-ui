@@ -1,4 +1,4 @@
-import { PinInput as ArkPinInput } from '@ark-ui/react'
+import { PinInput as ArkPinInput } from '@ark-ui/react/pin-input'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { pinInput } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
