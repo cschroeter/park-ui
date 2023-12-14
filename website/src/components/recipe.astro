@@ -16,11 +16,7 @@ const code = await match(cssFramework)
       () => 'Not yet available',
     ),
   )
-  .with('tailwind', () =>
-    readFile(`../plugins/tailwind/src/components/ui/${component}.ts`, 'utf8').catch(
-      () => 'Not yet available',
-    ),
-  )
+  // no recipes for tailwind!
   .otherwise(() => 'Not yet available')
 ---
 
