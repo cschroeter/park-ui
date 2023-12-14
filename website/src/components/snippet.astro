@@ -17,7 +17,7 @@ const code = await match(cssFramework)
     readFile(`./src/components/ui/${component}.tsx`, 'utf8').catch(() => 'Not yet available'),
   )
   .with('tailwind', () =>
-    readFile(`../plugin/tailwind/src/components/ui/${component}.ts`, 'utf8').catch(
+    readFile(`../plugins/tailwind/src/components/ui/${component}.ts`, 'utf8').catch(
       () => 'Not yet available',
     ),
   )
