@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed an issue with path separators on windows [#113](https://github.com/cschroeter/park-ui/issues/113)
+
 ## [0.4.1] - 2023-12-06
 
 ### Fixed
