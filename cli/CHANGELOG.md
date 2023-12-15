@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.4.3] - 2023-12-15
+
 ### Fixed
 
 - Fixed an issue with resolving `tsconfig.json` on windows
