@@ -31,17 +31,21 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "1.2.0",
-    "@pandacss/dev": "0.22.1",
+    "@radix-ui/colors": "3.0.0",
     "deepmerge": "4.3.1",
     "ts-pattern": "5.0.6"
   },
   "devDependencies": {
+    "@pandacss/dev": "0.22.1",
     "@pandacss/types": "0.22.1",
-    "@radix-ui/colors": "3.0.0",
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
     "release-it": "17.0.1",
     "tsup": "8.0.1"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": ">0.22.0",
+    "@pandacss/types": ">0.22.0"
   },
   "clean-package": {
     "replace": {

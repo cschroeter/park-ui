@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Declared `@pandacss/dev` and `@pandacss/types` as peer dependencies to avoid ØTypeScript errors.
+
 ## [0.26.1] - 2023-12-14
 
 ### Fixed

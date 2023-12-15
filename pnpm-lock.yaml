@@ -159,9 +159,9 @@ importers:
       '@ark-ui/anatomy':
         specifier: 1.2.0
         version: 1.2.0(@internationalized/date@3.5.0)
-      '@pandacss/dev':
-        specifier: 0.22.1
-        version: 0.22.1(typescript@5.3.3)
+      '@radix-ui/colors':
+        specifier: 3.0.0
+        version: 3.0.0
       deepmerge:
         specifier: 4.3.1
         version: 4.3.1
@@ -169,12 +169,12 @@ importers:
         specifier: 5.0.6
         version: 5.0.6
     devDependencies:
+      '@pandacss/dev':
+        specifier: 0.22.1
+        version: 0.22.1(typescript@5.3.3)
       '@pandacss/types':
         specifier: 0.22.1
         version: 0.22.1
-      '@radix-ui/colors':
-        specifier: 3.0.0
-        version: 3.0.0
       '@release-it/keep-a-changelog':
         specifier: 5.0.0
         version: 5.0.0(release-it@17.0.1)
@@ -4614,6 +4614,7 @@ packages:
 
   /@radix-ui/colors@3.0.0:
     resolution: {integrity: sha512-FUOsGBkHrYJwCSEtWRCIfQbZG7q1e6DgxCIOe1SUQzDe/7rXXeA47s8yCn6fuTNQAj1Zq4oTFi9Yjp3wzElcxg==}
+    dev: false
 
   /@radix-ui/number@1.0.1:
     resolution: {integrity: sha512-T5gIdVO2mmPW3NNhjNgEP3cqMXjXL9UbO0BzWcXfvdBs+BohbQxvd/K5hSVKmn9/lbTdsQVKbUcP5WLCwvUbBg==}
