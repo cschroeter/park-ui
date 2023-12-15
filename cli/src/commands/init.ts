@@ -74,6 +74,7 @@ const getUtils = async () => {
     })
     .then(() => {
       spinner.stop(`Done.`)
+      process.exit(0)
     })
 }
 
