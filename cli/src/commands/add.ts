@@ -80,6 +80,7 @@ export const addComponentsCommand = async () => {
     'To update any component, simply rerun the add command at a later time.',
     '🚀 Selected components are ready. Have fun!',
   )
+  process.exit(0)
 }
 
 const askUserForComponent = async (

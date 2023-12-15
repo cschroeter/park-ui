@@ -1,3 +1,4 @@
+import path from 'path'
 import { tsconfigResolverSync } from 'tsconfig-resolver'
 
 const getTsConfigPath = () => {
@@ -20,16 +21,14 @@ const getTsConfigPath = () => {
 }
 
 export const resolveTypescriptPath = (pathToResolve: string): string => {
-  const { baseFolder, tsconfigPath } = getTsConfigPath()
+  const { tsconfigPath } = getTsConfigPath()
   const paths = tsconfigPath.config.compilerOptions?.paths ?? {}
 
   for (const [key, value] of Object.entries(paths)) {
     const normalizedKey = key.replace('*', '')
     if (pathToResolve.startsWith(normalizedKey)) {
       const normalizedValue = value[0].replace('*', '')
-      return pathToResolve
-        .replace(normalizedKey, `${baseFolder}/${normalizedValue}`)
-        .replaceAll('//', '')
+      return path.resolve(normalizedValue, pathToResolve.replace(normalizedKey, ''))
     }
   }
 
