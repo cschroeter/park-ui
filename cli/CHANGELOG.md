@@ -1,10 +1,14 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed an issue with resolving `tsconfig.json` on windows
+
 ## [0.4.2] - 2023-12-14
 
 ### Fixed
 
-- Fixed an issue with path separators on windows [#113](https://github.com/cschroeter/park-ui/issues/113)
+- Fixed an issue with path separators on windows
 
 ## [0.4.1] - 2023-12-06
 
