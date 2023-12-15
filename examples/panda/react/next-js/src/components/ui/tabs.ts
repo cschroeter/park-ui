@@ -1,4 +1,5 @@
-import { Tabs as ArkTabs } from '@ark-ui/react'
+'use client'
+import { Tabs as ArkTabs } from '@ark-ui/react/tabs'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { tabs } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'

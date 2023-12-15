@@ -1,4 +1,5 @@
-import { Slider as ArkSlider } from '@ark-ui/react'
+'use client'
+import { Slider as ArkSlider } from '@ark-ui/react/slider'
 import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { slider } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
