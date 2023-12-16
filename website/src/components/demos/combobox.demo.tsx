@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
 import type { ComboboxProps } from '~/components/ui/combobox'
@@ -34,23 +33,21 @@ export const Demo = (props: ComboboxProps) => {
           </IconButton>
         </Combobox.Trigger>
       </Combobox.Control>
-      <Portal>
-        <Combobox.Positioner>
-          <Combobox.Content>
-            <Combobox.ItemGroup id="framework">
-              <Combobox.ItemGroupLabel htmlFor="framework">Frameworks</Combobox.ItemGroupLabel>
-              {items.map((item) => (
-                <Combobox.Item key={item.value} item={item}>
-                  <Combobox.ItemText>{item.label}</Combobox.ItemText>
-                  <Combobox.ItemIndicator>
-                    <CheckIcon />
-                  </Combobox.ItemIndicator>
-                </Combobox.Item>
-              ))}
-            </Combobox.ItemGroup>
-          </Combobox.Content>
-        </Combobox.Positioner>
-      </Portal>
+      <Combobox.Positioner>
+        <Combobox.Content>
+          <Combobox.ItemGroup id="framework">
+            <Combobox.ItemGroupLabel htmlFor="framework">Frameworks</Combobox.ItemGroupLabel>
+            {items.map((item) => (
+              <Combobox.Item key={item.value} item={item}>
+                <Combobox.ItemText>{item.label}</Combobox.ItemText>
+                <Combobox.ItemIndicator>
+                  <CheckIcon />
+                </Combobox.ItemIndicator>
+              </Combobox.Item>
+            ))}
+          </Combobox.ItemGroup>
+        </Combobox.Content>
+      </Combobox.Positioner>
     </Combobox.Root>
   )
 }
