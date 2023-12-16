@@ -1,10 +1,26 @@
 ## [Unreleased]
 
+### Added
+
+- Added new `Button` variant `subtle`.
+
 ## [0.26.2] - 2023-12-15
 
 ### Fixed
 
-- Declared `@pandacss/dev` and `@pandacss/types` as peer dependencies to avoid ØTypeScript errors.
+- Declared `@pandacss/dev` and `@pandacss/types` as peer dependencies to avoid TypeScript errors.
+
+### Changed 
+
+- Updated import paths for more precise module referencing to help with tree-shaking.
+
+```tsx
+// before
+import { Avatar as ArkAvatar } from '@ark-ui/react'
+// after
+import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
+```
+
 
 ## [0.26.1] - 2023-12-14
 

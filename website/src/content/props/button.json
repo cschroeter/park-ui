@@ -1,6 +1,6 @@
 {
   "variant": {
-    "options": ["solid", "outline", "ghost", "link"],
+    "options": ["solid", "subtle", "outline", "ghost", "link"],
     "defaultValue": "solid"
   },
   "size": {

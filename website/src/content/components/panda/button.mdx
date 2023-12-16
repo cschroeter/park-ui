@@ -3,6 +3,7 @@ id: button
 title: Button
 category: component
 description: An interactive element used to trigger actions.
+label: Updated
 ---
 
 import ComponentPreview from '~/components/component-preview.astro'
@@ -21,6 +22,9 @@ Use the `colorPalette` prop to change the color of the button.
 ```tsx live
 <Flex gap="3">
   <Button colorPalette="red" variant="solid">
+    Button
+  </Button>
+  <Button colorPalette="red" variant="subtle">
     Button
   </Button>
   <Button colorPalette="red" variant="outline">

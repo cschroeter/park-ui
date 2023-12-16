@@ -113,6 +113,28 @@ export const button = defineRecipe({
         px: '0!',
         minW: '0!',
       },
+      subtle: {
+        background: 'colorPalette.a3',
+        color: 'colorPalette.text',
+        colorPalette: 'gray',
+        _hover: {
+          background: 'colorPalette.a4',
+        },
+        _focusVisible: {
+          outline: '2px solid',
+          outlineColor: 'colorPalette.default',
+          outlineOffset: '2px',
+        },
+        _disabled: {
+          background: 'bg.disabled',
+          color: 'fg.disabled',
+          cursor: 'not-allowed',
+          _hover: {
+            background: 'bg.disabled',
+            color: 'fg.disabled',
+          },
+        },
+      },
     },
     size: {
       xs: {

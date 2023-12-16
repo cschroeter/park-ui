@@ -1,4 +1,3 @@
-import { Portal } from '@ark-ui/react'
 import { Settings2Icon, Undo2Icon, XIcon } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
@@ -28,46 +27,44 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
           Make it yours
         </Button>
       </Drawer.Trigger>
-      <Portal>
-        <Drawer.Positioner>
-          <Drawer.Content>
-            <Drawer.Header>
-              <Drawer.Title>Make it yours</Drawer.Title>
-              <Drawer.Description>
-                Customize the theme and copy the configuration to your project.
-              </Drawer.Description>
-              <Drawer.CloseTrigger asChild>
-                <IconButton
-                  aria-label="Close Sidebar"
-                  variant="ghost"
-                  position="absolute"
-                  top="3"
-                  right="4"
-                >
-                  <XIcon />
-                </IconButton>
-              </Drawer.CloseTrigger>
-            </Drawer.Header>
-            <Drawer.Body>
-              <Stack flex="1" gap="5">
-                <FontFamilySelect />
-                <GrayColorPicker />
-                <AccentColorPicker />
-                <BorderRadiusSlider />
-              </Stack>
-            </Drawer.Body>
-            <Drawer.Footer>
-              <HStack gap="3">
-                <Button variant="outline" onClick={reset}>
-                  <Undo2Icon />
-                  Reset
-                </Button>
-                <ThemeConfigDialog panda={panda} tailwind={tailwind} />
-              </HStack>
-            </Drawer.Footer>
-          </Drawer.Content>
-        </Drawer.Positioner>
-      </Portal>
+      <Drawer.Positioner>
+        <Drawer.Content>
+          <Drawer.Header>
+            <Drawer.Title>Make it yours</Drawer.Title>
+            <Drawer.Description>
+              Customize the theme and copy the configuration to your project.
+            </Drawer.Description>
+            <Drawer.CloseTrigger asChild>
+              <IconButton
+                aria-label="Close Sidebar"
+                variant="ghost"
+                position="absolute"
+                top="3"
+                right="4"
+              >
+                <XIcon />
+              </IconButton>
+            </Drawer.CloseTrigger>
+          </Drawer.Header>
+          <Drawer.Body>
+            <Stack flex="1" gap="5">
+              <FontFamilySelect />
+              <GrayColorPicker />
+              <AccentColorPicker />
+              <BorderRadiusSlider />
+            </Stack>
+          </Drawer.Body>
+          <Drawer.Footer>
+            <HStack gap="3">
+              <Button variant="outline" onClick={reset}>
+                <Undo2Icon />
+                Reset
+              </Button>
+              <ThemeConfigDialog panda={panda} tailwind={tailwind} />
+            </HStack>
+          </Drawer.Footer>
+        </Drawer.Content>
+      </Drawer.Positioner>
     </Drawer.Root>
   )
 }
