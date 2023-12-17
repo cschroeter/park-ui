@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Bumped to @park-ui/panda-preset 0.26.2
+
 ## [0.15.0] - 2023-12-02
 
 ### Added
