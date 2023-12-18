@@ -2,9 +2,6 @@
 import { Code } from 'astro:components'
 import { readFile } from 'node:fs/promises'
 import { Box } from 'styled-system/jsx'
-import { match } from 'ts-pattern'
-import { reactToSolid } from '~/lib/react-to-solid'
-import { reactToVue } from '~/lib/react-to-vue'
 import { CodePreviewTabs } from './code-preview-tabs'
 
 const { slug } = Astro.params
@@ -12,29 +9,37 @@ const { slug } = Astro.params
 const component = slug?.split('/').pop()
 const cssFramework = slug?.split('/')[0]
 
-const code = await match(cssFramework)
-  .with('panda', () =>
-    readFile(`./src/components/ui/${component}.tsx`, 'utf8').catch(() => 'Not yet available'),
+type JSFramework = 'react' | 'solid' | 'vue'
+
+const getCode = async (jsFramework: JSFramework) => {
+  const fileContent = await readFile(
+    `./public/registry/${cssFramework}/${jsFramework}/components/${component}.json`,
+    'utf8',
   )
-  .with('tailwind', () =>
-    readFile(`../plugins/tailwind/src/components/ui/${component}.ts`, 'utf8').catch(
-      () => 'Not yet available',
-    ),
-  )
-  .otherwise(() => 'Not yet available')
+    .then((entry) => JSON.parse(entry)['files'][0]['content'])
+    .catch(() => 'Not yet available')
+
+  return fileContent
+}
+
+const codeSnippets: Record<JSFramework, string> = {
+  react: await getCode('react'),
+  solid: await getCode('solid'),
+  vue: await getCode('vue'),
+}
 ---
 
 <Box borderRadius="l3" overflow="hidden" divideY="1px" borderWidth="1px" className="not-prose">
   <CodePreviewTabs
     tabs={{
-      react: { label: 'React', code: code },
-      solid: { label: 'Solid', code: reactToSolid(code) },
-      vue: { label: 'Vue', code: reactToVue(code) },
+      react: { label: 'React', code: codeSnippets.react },
+      solid: { label: 'Solid', code: codeSnippets.solid },
+      vue: { label: 'Vue', code: codeSnippets.vue },
     }}
     client:load
   >
-    <Code code={code} lang="tsx" theme="css-variables" slot="react" />
-    <Code code={reactToSolid(code)} lang="tsx" theme="css-variables" slot="solid" />
-    <Code code={reactToVue(code)} lang="tsx" theme="css-variables" slot="vue" />
+    <Code code={codeSnippets.react} lang="tsx" theme="css-variables" slot="react" />
+    <Code code={codeSnippets.solid} lang="tsx" theme="css-variables" slot="solid" />
+    <Code code={codeSnippets.vue} lang="tsx" theme="css-variables" slot="vue" />
   </CodePreviewTabs>
 </Box>
