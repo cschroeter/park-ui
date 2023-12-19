@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.27.0] - 2023-12-19
+
 ### Added
 
 - Added new `Button` variant `subtle`.
