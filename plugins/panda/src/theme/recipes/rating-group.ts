@@ -44,7 +44,7 @@ export const ratingGroup = defineSlotRecipe({
         control: {
           gap: '0',
         },
-        rating: {
+        item: {
           '& svg': {
             width: '4',
             height: '4',
@@ -58,7 +58,7 @@ export const ratingGroup = defineSlotRecipe({
         control: {
           gap: '0.5',
         },
-        rating: {
+        item: {
           '& svg': {
             width: '5',
             height: '5',
@@ -72,7 +72,7 @@ export const ratingGroup = defineSlotRecipe({
         control: {
           gap: '0.5',
         },
-        rating: {
+        item: {
           '& svg': {
             width: '6',
             height: '6',

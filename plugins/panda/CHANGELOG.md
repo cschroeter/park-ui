@@ -4,6 +4,10 @@
 
 - Added new `Button` variant `subtle`.
 
+### Fixed
+
+- Fixed an issue with `RatingGroup` where the rating icons were not resized correctly.
+
 ## [0.26.2] - 2023-12-15
 
 ### Fixed
