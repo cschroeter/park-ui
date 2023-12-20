@@ -6,6 +6,8 @@
  */
 
 export interface ParkUiConfiguration {
+  $schema?: string
+
   /**
    * The CSS framework to use.
    */

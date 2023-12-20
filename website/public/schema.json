@@ -10,7 +10,7 @@
     },
     "jsFramework": {
       "type": "string",
-      "enum": ["React", "Solid", "Vue"],
+      "enum": ["react", "solid", "vue"],
       "description": "The JavaScript framework to use."
     },
     "importAliases": {
@@ -30,25 +30,12 @@
       "required": ["components", "utils"],
       "additionalProperties": false,
       "description": "Configuration for import aliases."
+    },
+    "useReactServerComponents": {
+      "type": "boolean",
+      "description": "Whether React Server Components are being used."
     }
   },
-  "additionalProperties": false,
-  "required": ["cssFramework", "jsFramework", "importAliases"],
-  "if": {
-    "properties": {
-      "jsFramework": {
-        "const": "React"
-      }
-    },
-    "required": ["jsFramework"]
-  },
-  "then": {
-    "properties": {
-      "useReactServerComponents": {
-        "type": "boolean",
-        "description": "Whether React Server Components are being used."
-      }
-    },
-    "required": ["useReactServerComponents"]
-  }
+  "additionalProperties": true,
+  "required": ["cssFramework", "jsFramework", "importAliases"]
 }

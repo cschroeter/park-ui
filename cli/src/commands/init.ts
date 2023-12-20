@@ -53,6 +53,7 @@ const getInitialConfig = async (): Promise<Config> => {
   )
 
   return {
+    $schema: 'https://park-ui.com/schema.json',
     cssFramework: config.cssFramework as any,
     jsFramework: config.jsFramework as any,
     importAliases: {
