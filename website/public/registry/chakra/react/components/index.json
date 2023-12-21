@@ -9,11 +9,6 @@
       "name": "Avatar",
       "href": "https://park-ui.com/registry/chakra/react/components/avatar.json"
     },
-    { "name": "Badge", "href": "https://park-ui.com/registry/chakra/react/components/badge.json" },
-    {
-      "name": "Button",
-      "href": "https://park-ui.com/registry/chakra/react/components/button.json"
-    },
     { "name": "Card", "href": "https://park-ui.com/registry/chakra/react/components/card.json" },
     {
       "name": "Carousel",
@@ -23,7 +18,6 @@
       "name": "Checkbox",
       "href": "https://park-ui.com/registry/chakra/react/components/checkbox.json"
     },
-    { "name": "Code", "href": "https://park-ui.com/registry/chakra/react/components/code.json" },
     {
       "name": "Color Picker",
       "href": "https://park-ui.com/registry/chakra/react/components/color-picker.json"
@@ -56,14 +50,6 @@
       "name": "Hover Card",
       "href": "https://park-ui.com/registry/chakra/react/components/hover-card.json"
     },
-    {
-      "name": "Icon Button",
-      "href": "https://park-ui.com/registry/chakra/react/components/icon-button.json"
-    },
-    { "name": "Input", "href": "https://park-ui.com/registry/chakra/react/components/input.json" },
-    { "name": "Kbd", "href": "https://park-ui.com/registry/chakra/react/components/kbd.json" },
-    { "name": "Label", "href": "https://park-ui.com/registry/chakra/react/components/label.json" },
-    { "name": "Link", "href": "https://park-ui.com/registry/chakra/react/components/link.json" },
     { "name": "Menu", "href": "https://park-ui.com/registry/chakra/react/components/menu.json" },
     {
       "name": "Number Input",
@@ -118,10 +104,6 @@
     {
       "name": "Tags Input",
       "href": "https://park-ui.com/registry/chakra/react/components/tags-input.json"
-    },
-    {
-      "name": "Textarea",
-      "href": "https://park-ui.com/registry/chakra/react/components/textarea.json"
     },
     { "name": "Toast", "href": "https://park-ui.com/registry/chakra/react/components/toast.json" },
     {
