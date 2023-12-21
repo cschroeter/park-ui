@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "alert.ts",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Alert')\n\nconst Alert = withProvider(chakra(ark.div), 'root')\nconst AlertContent = withContext(chakra(ark.div), 'content')\nconst AlertDescription = withContext(chakra(ark.p), 'description')\nconst AlertIcon = withContext(chakra(ark.svg), 'icon')\nconst AlertTitle = withContext(chakra(ark.h5), 'title')\n\nconst Root = Alert\nconst Content = AlertContent\nconst Description = AlertDescription\nconst Icon = AlertIcon\nconst Title = AlertTitle\n\nexport {\n  Alert,\n  AlertContent,\n  AlertDescription,\n  AlertIcon,\n  AlertTitle,\n  Content,\n  Description,\n  Icon,\n  Root,\n  Title,\n}\n\nexport interface AlertProps extends HTMLChakraProps<typeof Alert> {}\nexport interface AlertContentProps extends HTMLChakraProps<typeof AlertContent> {}\nexport interface AlertDescriptionProps extends HTMLChakraProps<typeof AlertDescription> {}\nexport interface AlertIconProps extends HTMLChakraProps<typeof AlertIcon> {}\nexport interface AlertTitleProps extends HTMLChakraProps<typeof AlertTitle> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

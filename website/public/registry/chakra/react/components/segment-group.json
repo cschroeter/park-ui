@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "segment-group.ts",
+      "content": "import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react/segment-group'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('SegmentGroup')\n\nconst SegmentGroup = withProvider(chakra(ArkSegmentGroup.Root), 'root')\nconst SegmentGroupIndicator = withContext(chakra(ArkSegmentGroup.Indicator), 'indicator')\nconst SegmentGroupItem = withContext(chakra(ArkSegmentGroup.Item), 'item')\nconst SegmentGroupItemControl = withContext(chakra(ArkSegmentGroup.ItemControl), 'itemControl')\nconst SegmentGroupItemText = withContext(chakra(ArkSegmentGroup.ItemText), 'itemText')\nconst SegmentGroupLabel = withContext(chakra(ArkSegmentGroup.Label), 'label')\n\nconst Root = SegmentGroup\nconst Indicator = SegmentGroupIndicator\nconst Item = SegmentGroupItem\nconst ItemControl = SegmentGroupItemControl\nconst ItemText = SegmentGroupItemText\nconst Label = SegmentGroupLabel\n\nexport {\n  Indicator,\n  Item,\n  ItemControl,\n  ItemText,\n  Label,\n  Root,\n  SegmentGroup,\n  SegmentGroupIndicator,\n  SegmentGroupItem,\n  SegmentGroupItemControl,\n  SegmentGroupItemText,\n  SegmentGroupLabel,\n}\n\nexport interface SegmentGroupProps extends HTMLChakraProps<typeof SegmentGroup> {}\nexport interface SegmentGroupIndicatorProps extends HTMLChakraProps<typeof SegmentGroupIndicator> {}\nexport interface SegmentGroupItemProps extends HTMLChakraProps<typeof SegmentGroupItem> {}\nexport interface SegmentGroupItemControlProps\n  extends HTMLChakraProps<typeof SegmentGroupItemControl> {}\nexport interface SegmentGroupItemTextProps extends HTMLChakraProps<typeof SegmentGroupItemText> {}\nexport interface SegmentGroupLabelProps extends HTMLChakraProps<typeof SegmentGroupLabel> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

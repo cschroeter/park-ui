@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "table.ts",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Table')\n\nconst Table = withProvider(chakra(ark.table), 'root')\nconst TableBody = withContext(chakra(ark.tbody), 'body')\nconst TableCaption = withContext(chakra(ark.caption), 'caption')\nconst TableCell = withContext(chakra(ark.td), 'cell')\nconst TableFooter = withContext(chakra(ark.tfoot), 'footer')\nconst TableHead = withContext(chakra(ark.theader), 'header')\nconst TableHeader = withContext(chakra(ark.th), 'head')\nconst TableRow = withContext(chakra(ark.tr), 'row')\n\nconst Root = Table\nconst Body = TableBody\nconst Caption = TableCaption\nconst Cell = TableCell\nconst Footer = TableFooter\nconst Head = TableHead\nconst Header = TableHeader\nconst Row = TableRow\n\nexport {\n  Body,\n  Caption,\n  Cell,\n  Footer,\n  Head,\n  Header,\n  Root,\n  Row,\n  Table,\n  TableBody,\n  TableCaption,\n  TableCell,\n  TableFooter,\n  TableHead,\n  TableHeader,\n  TableRow,\n}\n\nexport interface TableProps extends HTMLChakraProps<typeof Table> {}\nexport interface TableBodyProps extends HTMLChakraProps<typeof TableBody> {}\nexport interface TableCaptionProps extends HTMLChakraProps<typeof TableCaption> {}\nexport interface TableCellProps extends HTMLChakraProps<typeof TableCell> {}\nexport interface TableFooterProps extends HTMLChakraProps<typeof TableFooter> {}\nexport interface TableHeadProps extends HTMLChakraProps<typeof TableHead> {}\nexport interface TableHeaderProps extends HTMLChakraProps<typeof TableHeader> {}\nexport interface TableRowProps extends HTMLChakraProps<typeof TableRow> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

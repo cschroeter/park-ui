@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "checkbox.ts",
+      "content": "import { Checkbox as ArkCheckbox } from '@ark-ui/react/checkbox'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Checkbox')\n\nconst Checkbox = withProvider(chakra(ArkCheckbox.Root), 'root')\nconst CheckboxControl = withContext(chakra(ArkCheckbox.Control), 'control')\nconst CheckboxIndicator = withContext(chakra(ArkCheckbox.Indicator), 'indicator')\nconst CheckboxLabel = withContext(chakra(ArkCheckbox.Label), 'label')\n\nconst Root = Checkbox\nconst Control = CheckboxControl\nconst Indicator = CheckboxIndicator\nconst Label = CheckboxLabel\n\nexport {\n  Checkbox,\n  CheckboxControl,\n  CheckboxIndicator,\n  CheckboxLabel,\n  Control,\n  Indicator,\n  Label,\n  Root,\n}\n\nexport interface CheckboxProps extends HTMLChakraProps<typeof Checkbox> {}\nexport interface CheckboxControlProps extends HTMLChakraProps<typeof CheckboxControl> {}\nexport interface CheckboxIndicatorProps extends HTMLChakraProps<typeof CheckboxIndicator> {}\nexport interface CheckboxLabelProps extends HTMLChakraProps<typeof CheckboxLabel> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

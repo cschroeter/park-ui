@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "pagination.ts",
+      "content": "import { Pagination as ArkPagination } from '@ark-ui/react/pagination'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Pagination')\n\nconst Pagination = withProvider(chakra(ArkPagination.Root), 'root')\nconst PaginationEllipsis = withContext(chakra(ArkPagination.Ellipsis), 'ellipsis')\nconst PaginationItem = withContext(chakra(ArkPagination.Item), 'item')\nconst PaginationNextTrigger = withContext(chakra(ArkPagination.NextTrigger), 'nextTrigger')\nconst PaginationPrevTrigger = withContext(chakra(ArkPagination.PrevTrigger), 'prevTrigger')\n\nconst Root = Pagination\nconst Ellipsis = PaginationEllipsis\nconst Item = PaginationItem\nconst NextTrigger = PaginationNextTrigger\nconst PrevTrigger = PaginationPrevTrigger\n\nexport {\n  Ellipsis,\n  Item,\n  NextTrigger,\n  Pagination,\n  PaginationEllipsis,\n  PaginationItem,\n  PaginationNextTrigger,\n  PaginationPrevTrigger,\n  PrevTrigger,\n  Root,\n}\n\nexport interface PaginationProps extends HTMLChakraProps<typeof Pagination> {}\nexport interface PaginationEllipsisProps extends HTMLChakraProps<typeof PaginationEllipsis> {}\nexport interface PaginationItemProps extends HTMLChakraProps<typeof PaginationItem> {}\nexport interface PaginationNextTriggerProps extends HTMLChakraProps<typeof PaginationNextTrigger> {}\nexport interface PaginationPrevTriggerProps extends HTMLChakraProps<typeof PaginationPrevTrigger> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

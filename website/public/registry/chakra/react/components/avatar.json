@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "avatar.ts",
+      "content": "import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Avatar')\n\nconst Avatar = withProvider(chakra(ArkAvatar.Root), 'root')\nconst AvatarFallback = withContext(chakra(ArkAvatar.Fallback), 'fallback')\nconst AvatarImage = withContext(chakra(ArkAvatar.Image), 'image')\n\nconst Root = Avatar\nconst Fallback = AvatarFallback\nconst Image = AvatarImage\n\nexport { Avatar, AvatarFallback, AvatarImage, Fallback, Image, Root }\n\nexport interface AvatarProps extends HTMLChakraProps<typeof Avatar> {}\nexport interface AvatarFallbackProps extends HTMLChakraProps<typeof AvatarFallback> {}\nexport interface AvatarImageProps extends HTMLChakraProps<typeof AvatarImage> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

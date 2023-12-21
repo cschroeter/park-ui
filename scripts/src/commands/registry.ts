@@ -15,7 +15,7 @@ const data = {
 }
 
 type Options = {
-  cssFramwork: 'panda' | 'tailwind'
+  cssFramwork: 'panda' | 'tailwind' | 'chakra'
   jsFramework: 'react' | 'solid'
 }
 
@@ -133,8 +133,8 @@ const generateComponents = async (options: Options) => {
 }
 
 const generateRegistry = async () => {
-  const jsFrameworks = ['react'] as const
-  const cssFramworks = ['panda'] as const
+  const jsFrameworks = ['react', 'solid'] as const
+  const cssFramworks = ['panda', 'tailwind'] as const
 
   jsFrameworks.forEach((jsFramework) => {
     cssFramworks.forEach((cssFramwork) => {
@@ -142,6 +142,9 @@ const generateRegistry = async () => {
       generateComponents({ cssFramwork, jsFramework })
     })
   })
+
+  generateComponents({ cssFramwork: 'chakra', jsFramework: 'react' })
+  generateIndex({ cssFramwork: 'chakra', jsFramework: 'react' })
 }
 
 export const registryCmd = new Command()

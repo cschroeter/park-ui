@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "switch.ts",
+      "content": "import { Switch as ArkSwitch } from '@ark-ui/react/switch'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Switch')\n\nconst Switch = withProvider(chakra(ArkSwitch.Root), 'root')\nconst SwitchControl = withContext(chakra(ArkSwitch.Control), 'control')\nconst SwitchLabel = withContext(chakra(ArkSwitch.Label), 'label')\nconst SwitchThumb = withContext(chakra(ArkSwitch.Thumb), 'thumb')\n\nconst Root = Switch\nconst Control = SwitchControl\nconst Label = SwitchLabel\nconst Thumb = SwitchThumb\n\nexport { Control, Label, Root, Switch, SwitchControl, SwitchLabel, SwitchThumb, Thumb }\n\nexport interface SwitchProps extends HTMLChakraProps<typeof Switch> {}\nexport interface SwitchControlProps extends HTMLChakraProps<typeof SwitchControl> {}\nexport interface SwitchLabelProps extends HTMLChakraProps<typeof SwitchLabel> {}\nexport interface SwitchThumbProps extends HTMLChakraProps<typeof SwitchThumb> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

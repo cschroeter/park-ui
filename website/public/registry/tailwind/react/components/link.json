@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "link.ts",
-      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype LinkVariantProps = VariantProps<typeof styles>\nexport type LinkProps = LinkVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({ base: 'link', variants: {} })\nexport const Link = styled<LinkProps>(ark.a, styles)\n",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype LinkVariantProps = VariantProps<typeof styles>\nexport type LinkProps = LinkVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({ base: 'link', variants: {} })\nexport const Link = styled<LinkProps>(ark.a, styles)\n",
       "hasMultipleParts": false
     }
   ]
