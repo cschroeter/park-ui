@@ -32,7 +32,7 @@ const showHeroTabs = await hasVariants(Astro.params.slug)
       isComponent && (
         <HStack gap="3">
           {entry.data.ark?.link && (
-            <a href={entry.data.ark.link} target="_blank">
+            <a href={`${entry.data.ark.link}#api-reference`} target="_blank">
               <Badge borderRadius="l2">
                 <FileTextIcon />
                 API Reference
