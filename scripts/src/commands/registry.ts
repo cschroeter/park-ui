@@ -123,7 +123,7 @@ const generateComponents = async (options: Options) => {
           },
         )
 
-        // await fs.outputFile(path.join(`dist/${cssFramwork}/${jsFramework}/${key}.tsx`), code)
+        await fs.outputFile(path.join(`dist/${cssFramwork}/${jsFramework}/${key}.tsx`), code)
         // await fs.outputFile(
         //   path.join(rootDir, 'website', 'src', 'components', 'ui', `${key}.tsx`),
         //   code,
