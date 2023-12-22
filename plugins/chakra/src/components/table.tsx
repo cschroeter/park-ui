@@ -9,7 +9,7 @@ const TableBody = withContext(chakra(ark.tbody), 'body')
 const TableCaption = withContext(chakra(ark.caption), 'caption')
 const TableCell = withContext(chakra(ark.td), 'cell')
 const TableFooter = withContext(chakra(ark.tfoot), 'footer')
-const TableHead = withContext(chakra(ark.theader), 'header')
+const TableHead = withContext(chakra(ark.thead), 'header')
 const TableHeader = withContext(chakra(ark.th), 'head')
 const TableRow = withContext(chakra(ark.tr), 'row')
 
