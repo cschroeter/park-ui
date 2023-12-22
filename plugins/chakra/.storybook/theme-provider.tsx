@@ -1,11 +1,13 @@
 import { ChakraProvider, useColorMode } from '@chakra-ui/react'
 import React, { Fragment, useEffect, type ReactNode } from 'react'
-import { theme } from '../src/theme'
+import { createTheme } from '../src/theme'
 
 type Props = {
   colorMode: 'dark' | 'light'
   children?: ReactNode | undefined
 }
+
+const theme = createTheme({ accentColor: 'amber', grayColor: 'sand', borderRadius: 'sm' })
 
 export const ThemeProvider = (props: Props) => {
   return (

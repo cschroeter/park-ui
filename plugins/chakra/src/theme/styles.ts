@@ -10,6 +10,7 @@ export const styles = {
     body: {
       background: 'bg.canvas',
       color: 'fg.default',
+      fontFamily: 'body',
       _dark: {
         colorScheme: 'dark',
       },
