@@ -1,0 +1,9 @@
+{{#each recipes}}
+import { {{this.name}} } from './{{this.importName}}'
+{{/each}}
+
+export const components = {
+    {{#each recipes}}
+    {{this.name}},
+    {{/each}}
+}

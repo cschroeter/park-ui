@@ -1,0 +1,55 @@
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers([
+  'root',
+  'dropzone',
+  'item',
+  'itemDeleteTrigger',
+  'itemGroup',
+  'itemName',
+  'itemPreview',
+  'itemPreviewImage',
+  'itemSizeText',
+  'label',
+  'trigger',
+])
+
+export const FileUpload = defineMultiStyleConfig({
+  baseStyle: definePartsStyle({
+    root: { display: 'flex', flexDirection: 'column', gap: '4', width: '100%' },
+    label: { fontWeight: 'medium', textStyle: 'sm' },
+    dropzone: {
+      alignItems: 'center',
+      background: 'bg.default',
+      borderRadius: 'l3',
+      borderWidth: '1px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '3',
+      justifyContent: 'center',
+      minHeight: 'xs',
+      px: '6',
+      py: '4',
+    },
+    item: {
+      animation: 'fadeIn 0.25s ease-out',
+      background: 'bg.default',
+      borderRadius: 'l3',
+      borderWidth: '1px',
+      columnGap: '3',
+      display: 'grid',
+      gridTemplateColumns: 'auto 1fr auto',
+      gridTemplateAreas: '\n        "preview name delete"\n        "preview size delete"\n        ',
+      p: '4',
+    },
+    itemGroup: { display: 'flex', flexDirection: 'column', gap: '3' },
+    itemName: { color: 'fg.default', fontWeight: 'medium', gridArea: 'name', textStyle: 'sm' },
+    itemSizeText: { color: 'fg.muted', gridArea: 'size', textStyle: 'sm' },
+    itemDeleteTrigger: { alignSelf: 'start', gridArea: 'delete' },
+    itemPreview: { gridArea: 'preview' },
+    itemPreviewImage: { aspectRatio: '1', height: '10', objectFit: 'scale-down', width: '10' },
+  }),
+  defaultProps: {},
+  sizes: {},
+  variants: {},
+})
