@@ -1,6 +1,6 @@
 import { Command } from 'commander'
-import { componentsJsonCmd } from './commands/components-json'
-import { registryCmd } from './commands/registry'
+import { componentsJsonCmd } from '../commands/components-json'
+import { registryCmd } from '../commands/registry'
 
 const program = new Command()
 

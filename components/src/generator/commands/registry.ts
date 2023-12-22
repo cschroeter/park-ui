@@ -130,6 +130,11 @@ const generateComponents = async (options: Options) => {
       )
     }),
   )
+
+  // generate custom components from templates/react/components
+  // replacers for tailwind react
+
+  // adds second file to registry avatar.json (without use client because no context)
 }
 
 const generateRegistry = async () => {
