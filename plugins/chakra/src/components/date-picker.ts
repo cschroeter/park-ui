@@ -1,85 +1,131 @@
-import { DatePicker as ArkDatePicker } from '@ark-ui/react'
-import { chakra } from '@chakra-ui/system'
+import { DatePicker as ArkDatePicker } from '@ark-ui/react/date-picker'
+import { chakra, type HTMLChakraProps } from '@chakra-ui/react'
 import { createStyleContext } from './create-style-context'
 
 const { withProvider, withContext } = createStyleContext('DatePicker')
 
-export const DatePickerRoot = withProvider(chakra(ArkDatePicker.Root), 'root')
-export const DatePickerClearTrigger = withContext(
-  chakra(ArkDatePicker.ClearTrigger),
-  'clearTrigger',
-)
-export const DatePickerContent = withContext(chakra(ArkDatePicker.Content), 'content')
-export const DatePickerControl = withContext(chakra(ArkDatePicker.Control), 'control')
-export const DatePickerInput = withContext(chakra(ArkDatePicker.Input), 'input')
-export const DatePickerLabel = withContext(chakra(ArkDatePicker.Label), 'label')
-export const DatePickerMonthSelect = withContext(chakra(ArkDatePicker.MonthSelect), 'monthSelect')
-export const DatePickerNextTrigger = withContext(chakra(ArkDatePicker.NextTrigger), 'nextTrigger')
-export const DatePickerPositioner = withContext(chakra(ArkDatePicker.Positioner), 'positioner')
-export const DatePickerPrevTrigger = withContext(chakra(ArkDatePicker.PrevTrigger), 'prevTrigger')
-export const DatePickerRangeText = withContext(chakra(ArkDatePicker.RangeText), 'rangeText')
-export const DatePickerTable = withContext(chakra(ArkDatePicker.Table), 'table')
-export const DatePickerTableBody = withContext(chakra(ArkDatePicker.TableBody), 'tableBody')
-export const DatePickerTableCell = withContext(chakra(ArkDatePicker.TableCell), 'tableCell')
-export const DatePickerTableCellTrigger = withContext(
+const DatePicker = withProvider(chakra(ArkDatePicker.Root), 'root')
+const DatePickerClearTrigger = withContext(chakra(ArkDatePicker.ClearTrigger), 'clearTrigger')
+const DatePickerContent = withContext(chakra(ArkDatePicker.Content), 'content')
+const DatePickerControl = withContext(chakra(ArkDatePicker.Control), 'control')
+const DatePickerInput = withContext(chakra(ArkDatePicker.Input), 'input')
+const DatePickerLabel = withContext(chakra(ArkDatePicker.Label), 'label')
+const DatePickerMonthSelect = withContext(chakra(ArkDatePicker.MonthSelect), 'monthSelect')
+const DatePickerNextTrigger = withContext(chakra(ArkDatePicker.NextTrigger), 'nextTrigger')
+const DatePickerPositioner = withContext(chakra(ArkDatePicker.Positioner), 'positioner')
+const DatePickerPrevTrigger = withContext(chakra(ArkDatePicker.PrevTrigger), 'prevTrigger')
+const DatePickerRangeText = withContext(chakra(ArkDatePicker.RangeText), 'rangeText')
+const DatePickerTable = withContext(chakra(ArkDatePicker.Table), 'table')
+const DatePickerTableBody = withContext(chakra(ArkDatePicker.TableBody), 'tableBody')
+const DatePickerTableCell = withContext(chakra(ArkDatePicker.TableCell), 'tableCell')
+const DatePickerTableCellTrigger = withContext(
   chakra(ArkDatePicker.TableCellTrigger),
   'tableCellTrigger',
 )
-export const DatePickerTableHead = withContext(chakra(ArkDatePicker.TableHead), 'tableHead')
-export const DatePickerTableHeader = withContext(chakra(ArkDatePicker.TableHeader), 'tableHeader')
-export const DatePickerTableRow = withContext(chakra(ArkDatePicker.TableRow), 'tableRow')
-export const DatePickerTrigger = withContext(chakra(ArkDatePicker.Trigger), 'trigger')
-export const DatePickerView = withContext(chakra(ArkDatePicker.View), 'view')
-export const DatePickerViewControl = withContext(chakra(ArkDatePicker.ViewControl), 'viewControl')
-export const DatePickerViewTrigger = withContext(chakra(ArkDatePicker.ViewTrigger), 'viewTrigger')
-export const DatePickerYearSelect = withContext(chakra(ArkDatePicker.YearSelect), 'yearSelect')
+const DatePickerTableHead = withContext(chakra(ArkDatePicker.TableHead), 'tableHead')
+const DatePickerTableHeader = withContext(chakra(ArkDatePicker.TableHeader), 'tableHeader')
+const DatePickerTableRow = withContext(chakra(ArkDatePicker.TableRow), 'tableRow')
+const DatePickerTrigger = withContext(chakra(ArkDatePicker.Trigger), 'trigger')
+const DatePickerView = withContext(chakra(ArkDatePicker.View), 'view')
+const DatePickerViewControl = withContext(chakra(ArkDatePicker.ViewControl), 'viewControl')
+const DatePickerViewTrigger = withContext(chakra(ArkDatePicker.ViewTrigger), 'viewTrigger')
+const DatePickerYearSelect = withContext(chakra(ArkDatePicker.YearSelect), 'yearSelect')
 
-export const DatePicker = Object.assign(DatePickerRoot, {
-  Root: DatePickerRoot,
-  ClearTrigger: DatePickerClearTrigger,
-  Content: DatePickerContent,
-  Control: DatePickerControl,
-  Input: DatePickerInput,
-  Label: DatePickerLabel,
-  MonthSelect: DatePickerMonthSelect,
-  NextTrigger: DatePickerNextTrigger,
-  Positioner: DatePickerPositioner,
-  PrevTrigger: DatePickerPrevTrigger,
-  RangeText: DatePickerRangeText,
-  Table: DatePickerTable,
-  TableBody: DatePickerTableBody,
-  TableCell: DatePickerTableCell,
-  TableCellTrigger: DatePickerTableCellTrigger,
-  TableHead: DatePickerTableHead,
-  TableHeader: DatePickerTableHeader,
-  TableRow: DatePickerTableRow,
-  Trigger: DatePickerTrigger,
-  View: DatePickerView,
-  ViewControl: DatePickerViewControl,
-  ViewTrigger: DatePickerViewTrigger,
-  YearSelect: DatePickerYearSelect,
-})
+const Root = DatePicker
+const ClearTrigger = DatePickerClearTrigger
+const Content = DatePickerContent
+const Control = DatePickerControl
+const Input = DatePickerInput
+const Label = DatePickerLabel
+const MonthSelect = DatePickerMonthSelect
+const NextTrigger = DatePickerNextTrigger
+const Positioner = DatePickerPositioner
+const PrevTrigger = DatePickerPrevTrigger
+const RangeText = DatePickerRangeText
+const Table = DatePickerTable
+const TableBody = DatePickerTableBody
+const TableCell = DatePickerTableCell
+const TableCellTrigger = DatePickerTableCellTrigger
+const TableHead = DatePickerTableHead
+const TableHeader = DatePickerTableHeader
+const TableRow = DatePickerTableRow
+const Trigger = DatePickerTrigger
+const View = DatePickerView
+const ViewControl = DatePickerViewControl
+const ViewTrigger = DatePickerViewTrigger
+const YearSelect = DatePickerYearSelect
 
-export type DatePickerProps = typeof DatePickerRoot
-export type DatePickerClearTriggerProps = typeof DatePickerClearTrigger
-export type DatePickerContentProps = typeof DatePickerContent
-export type DatePickerControlProps = typeof DatePickerControl
-export type DatePickerInputProps = typeof DatePickerInput
-export type DatePickerLabelProps = typeof DatePickerLabel
-export type DatePickerMonthSelectProps = typeof DatePickerMonthSelect
-export type DatePickerNextTriggerProps = typeof DatePickerNextTrigger
-export type DatePickerPositionerProps = typeof DatePickerPositioner
-export type DatePickerPrevTriggerProps = typeof DatePickerPrevTrigger
-export type DatePickerRangeTextProps = typeof DatePickerRangeText
-export type DatePickerTableProps = typeof DatePickerTable
-export type DatePickerTableBodyProps = typeof DatePickerTableBody
-export type DatePickerTableCellProps = typeof DatePickerTableCell
-export type DatePickerTableCellTriggerProps = typeof DatePickerTableCellTrigger
-export type DatePickerTableHeadProps = typeof DatePickerTableHead
-export type DatePickerTableHeaderProps = typeof DatePickerTableHeader
-export type DatePickerTableRowProps = typeof DatePickerTableRow
-export type DatePickerTriggerProps = typeof DatePickerTrigger
-export type DatePickerViewProps = typeof DatePickerView
-export type DatePickerViewControlProps = typeof DatePickerViewControl
-export type DatePickerViewTriggerProps = typeof DatePickerViewTrigger
-export type DatePickerYearSelectProps = typeof DatePickerYearSelect
+export {
+  ClearTrigger,
+  Content,
+  Control,
+  DatePicker,
+  DatePickerClearTrigger,
+  DatePickerContent,
+  DatePickerControl,
+  DatePickerInput,
+  DatePickerLabel,
+  DatePickerMonthSelect,
+  DatePickerNextTrigger,
+  DatePickerPositioner,
+  DatePickerPrevTrigger,
+  DatePickerRangeText,
+  DatePickerTable,
+  DatePickerTableBody,
+  DatePickerTableCell,
+  DatePickerTableCellTrigger,
+  DatePickerTableHead,
+  DatePickerTableHeader,
+  DatePickerTableRow,
+  DatePickerTrigger,
+  DatePickerView,
+  DatePickerViewControl,
+  DatePickerViewTrigger,
+  DatePickerYearSelect,
+  Input,
+  Label,
+  MonthSelect,
+  NextTrigger,
+  Positioner,
+  PrevTrigger,
+  RangeText,
+  Root,
+  Table,
+  TableBody,
+  TableCell,
+  TableCellTrigger,
+  TableHead,
+  TableHeader,
+  TableRow,
+  Trigger,
+  View,
+  ViewControl,
+  ViewTrigger,
+  YearSelect,
+}
+
+export interface DatePickerProps extends HTMLChakraProps<typeof DatePicker> {}
+export interface DatePickerClearTriggerProps
+  extends HTMLChakraProps<typeof DatePickerClearTrigger> {}
+export interface DatePickerContentProps extends HTMLChakraProps<typeof DatePickerContent> {}
+export interface DatePickerControlProps extends HTMLChakraProps<typeof DatePickerControl> {}
+export interface DatePickerInputProps extends HTMLChakraProps<typeof DatePickerInput> {}
+export interface DatePickerLabelProps extends HTMLChakraProps<typeof DatePickerLabel> {}
+export interface DatePickerMonthSelectProps extends HTMLChakraProps<typeof DatePickerMonthSelect> {}
+export interface DatePickerNextTriggerProps extends HTMLChakraProps<typeof DatePickerNextTrigger> {}
+export interface DatePickerPositionerProps extends HTMLChakraProps<typeof DatePickerPositioner> {}
+export interface DatePickerPrevTriggerProps extends HTMLChakraProps<typeof DatePickerPrevTrigger> {}
+export interface DatePickerRangeTextProps extends HTMLChakraProps<typeof DatePickerRangeText> {}
+export interface DatePickerTableProps extends HTMLChakraProps<typeof DatePickerTable> {}
+export interface DatePickerTableBodyProps extends HTMLChakraProps<typeof DatePickerTableBody> {}
+export interface DatePickerTableCellProps extends HTMLChakraProps<typeof DatePickerTableCell> {}
+export interface DatePickerTableCellTriggerProps
+  extends HTMLChakraProps<typeof DatePickerTableCellTrigger> {}
+export interface DatePickerTableHeadProps extends HTMLChakraProps<typeof DatePickerTableHead> {}
+export interface DatePickerTableHeaderProps extends HTMLChakraProps<typeof DatePickerTableHeader> {}
+export interface DatePickerTableRowProps extends HTMLChakraProps<typeof DatePickerTableRow> {}
+export interface DatePickerTriggerProps extends HTMLChakraProps<typeof DatePickerTrigger> {}
+export interface DatePickerViewProps extends HTMLChakraProps<typeof DatePickerView> {}
+export interface DatePickerViewControlProps extends HTMLChakraProps<typeof DatePickerViewControl> {}
+export interface DatePickerViewTriggerProps extends HTMLChakraProps<typeof DatePickerViewTrigger> {}
+export interface DatePickerYearSelectProps extends HTMLChakraProps<typeof DatePickerYearSelect> {}
