@@ -17,7 +17,7 @@ const prefix = ''
 const transformRecipeToTvConfig = (
   recipe: RecipeConfig | SlotRecipeConfig,
 ): Record<string, TailwindClassString> | string => {
-  const { base: baseStyles = {}, className, variants = {}, defaultVariants } = recipe
+  const { className, variants = {}, defaultVariants } = recipe
 
   let result: Record<string, any> = {
     base: `${prefix}${className}`,
@@ -34,31 +34,34 @@ const transformRecipeToTvConfig = (
     })
   }
 
-  result.variants = Object.keys(variants).reduce((acc, variantName) => {
-    const variant = variants[variantName]
-    if (!acc[variantName]) {
-      acc[variantName] = {}
-    }
-    Object.keys(variant).forEach((variantValue) => {
-      // if recipe is SlotRecipeConfig typeguard
-
-      if (isSlotRecipeConfig(recipe)) {
-        recipe.slots.forEach((slot) => {
-          if (!acc[variantName]) {
-            acc[variantName] = {}
-          }
-          if (!acc[variantName][variantValue]) {
-            acc[variantName][variantValue] = {}
-          }
-          acc[variantName][variantValue][slot] =
-            `${prefix}${className}__${slot}--${variantName}_${variantValue}`
-        })
-      } else {
-        acc[variantName][variantValue] = `${prefix}${className}--${variantName}_${variantValue}`
+  result.variants = Object.keys(variants).reduce(
+    (acc, variantName) => {
+      const variant = variants[variantName]
+      if (!acc[variantName]) {
+        acc[variantName] = {}
       }
-    })
-    return acc
-  }, {})
+      Object.keys(variant).forEach((variantValue) => {
+        // if recipe is SlotRecipeConfig typeguard
+
+        if (isSlotRecipeConfig(recipe)) {
+          recipe.slots.forEach((slot) => {
+            if (!acc[variantName]) {
+              acc[variantName] = {}
+            }
+            if (!acc[variantName][variantValue]) {
+              acc[variantName][variantValue] = {}
+            }
+            acc[variantName][variantValue][slot] =
+              `${prefix}${className}__${slot}--${variantName}_${variantValue}`
+          })
+        } else {
+          acc[variantName][variantValue] = `${prefix}${className}--${variantName}_${variantValue}`
+        }
+      })
+      return acc
+    },
+    {} as Record<string, any>,
+  )
 
   return result
 }

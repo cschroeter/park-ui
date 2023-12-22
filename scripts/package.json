@@ -6,11 +6,11 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "1.2.0",
-    "@park-ui/panda-preset": "workspace:*",
     "@pandacss/dev": "0.22.1",
+    "@pandacss/types": "0.22.1",
+    "@park-ui/panda-preset": "workspace:*",
     "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/handlebars": "4.1.0",
     "@types/voca": "1.4.5",
     "commander": "11.1.0",
     "find-up": "7.0.0",
