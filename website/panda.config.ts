@@ -63,6 +63,7 @@ export default defineConfig({
       html: {
         scrollPaddingTop: '6rem',
         minHeight: '100%',
+        scrollBehavior: 'smooth',
       },
       'html, body': {
         display: 'flex',
