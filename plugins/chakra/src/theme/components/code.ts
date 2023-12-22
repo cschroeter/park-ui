@@ -1,4 +1,6 @@
-export const Code = {
+import { defineStyleConfig } from '@chakra-ui/react'
+
+export const Code = defineStyleConfig({
   baseStyle: {
     alignItems: 'center',
     bg: 'bg.subtle',
@@ -13,28 +15,12 @@ export const Code = {
     variant: 'outline',
   },
   sizes: {
-    sm: {
-      minHeight: '5',
-      px: '0.5',
-      textStyle: 'xs',
-    },
-    md: {
-      minHeight: '6',
-      textStyle: 'sm',
-      px: '1',
-      py: '1px',
-    },
-    lg: {
-      minHeight: '7',
-      px: '1.5',
-      py: '1px',
-      textStyle: 'md',
-    },
+    sm: { minHeight: '5', px: '0.5', textStyle: 'xs' },
+    md: { minHeight: '6', textStyle: 'sm', px: '1', py: '1px' },
+    lg: { minHeight: '7', px: '1.5', py: '1px', textStyle: 'md' },
   },
   variants: {
-    outline: {
-      borderWidth: '1px',
-    },
+    outline: { borderWidth: '1px' },
     ghost: {},
   },
-}
+})

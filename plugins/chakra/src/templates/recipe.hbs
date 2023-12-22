@@ -1,0 +1,25 @@
+import { defineStyleConfig } from '@chakra-ui/react'
+
+
+export const {{pascalCase className}} = defineStyleConfig({
+  baseStyle: {
+    {{#each base}}
+      "{{@key}}": {{{json this}}},
+    {{/each}}
+  },
+  defaultProps: {
+    {{#each defaultVariants as |variant|}}
+      "{{@key}}": "{{variant}}",
+    {{/each}}
+  },
+  sizes: {
+    {{#each variants.size as |size|}}
+      "{{@key}}": {{{json this}}},
+    {{/each}}
+  },
+  variants: {
+    {{#each variants.variant as |variant|}}
+      "{{@key}}": {{{json this}}},
+    {{/each}}
+  }
+})

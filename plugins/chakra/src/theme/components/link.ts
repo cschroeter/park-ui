@@ -1,7 +1,10 @@
-export const Link = {
+import { defineStyleConfig } from '@chakra-ui/react'
+
+export const Link = defineStyleConfig({
   baseStyle: {
     alignItems: 'center',
     color: 'fg.default',
+    colorPalette: 'accent',
     cursor: 'pointer',
     display: 'inline-flex',
     fontWeight: 'medium',
@@ -11,12 +14,10 @@ export const Link = {
     transitionDuration: 'normal',
     transitionProperty: 'text-decoration-color',
     transitionTimingFunction: 'default',
-    _hover: {
-      textDecorationColor: 'accent.default',
-    },
-    '& svg': {
-      width: '1em',
-      height: '1em',
-    },
+    _hover: { textDecorationColor: 'colorPalette.default' },
+    '&amp; svg': { width: '1em', height: '1em' },
   },
-}
+  defaultProps: {},
+  sizes: {},
+  variants: {},
+})

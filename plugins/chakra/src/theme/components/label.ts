@@ -1,4 +1,6 @@
-export const Label = {
+import { defineStyleConfig } from '@chakra-ui/react'
+
+export const Label = defineStyleConfig({
   baseStyle: {
     color: 'fg.default',
     fontWeight: 'medium',
@@ -7,17 +9,10 @@ export const Label = {
     size: 'md',
   },
   sizes: {
-    sm: {
-      textStyle: 'sm',
-    },
-    md: {
-      textStyle: 'sm',
-    },
-    lg: {
-      textStyle: 'sm',
-    },
-    xl: {
-      textStyle: 'md',
-    },
+    sm: { textStyle: 'sm' },
+    md: { textStyle: 'sm' },
+    lg: { textStyle: 'sm' },
+    xl: { textStyle: 'md' },
   },
-}
+  variants: {},
+})
