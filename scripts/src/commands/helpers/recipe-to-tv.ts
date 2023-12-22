@@ -45,9 +45,6 @@ const transformRecipeToTvConfig = (
 
         if (isSlotRecipeConfig(recipe)) {
           recipe.slots.forEach((slot) => {
-            if (!acc[variantName]) {
-              acc[variantName] = {}
-            }
             if (!acc[variantName][variantValue]) {
               acc[variantName][variantValue] = {}
             }
