@@ -55,6 +55,8 @@
     "storybook": "7.6.6",
     "tsx": "4.7.0",
     "typescript": "5.3.3",
+    "vite": "5.0.10",
+    "vite-tsconfig-paths": "4.2.2",
     "voca": "1.4.1"
   },
   "peerDependencies": {
