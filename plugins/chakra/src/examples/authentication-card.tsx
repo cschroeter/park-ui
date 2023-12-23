@@ -3,7 +3,7 @@ import { Card } from '~/components/ui'
 
 export const AuthenticationCard = () => {
   return (
-    <Card.Root>
+    <Card.Root maxW="sm">
       <Card.Header>
         <Card.Title textStyle="lg" fontWeight="semibold">
           Sign Up
