@@ -21,6 +21,17 @@ const slotRecipeTemplate = Handlebars.compile(
 
 const pascalCase = (s: string) => v.chain(s).camelCase().capitalize().value().trim()
 
+// const replaceColorPalette = (obj: Record<string, any>) => {
+//   for (const key in obj) {
+//     if (typeof obj[key] === 'object') {
+//       replaceColorPalette(obj[key])
+//     } else if (typeof obj[key] === 'string') {
+//       obj[key] = obj[key].replace(/colorPalette/g, '${props.colorScheme}')
+//     }
+//   }
+//   return obj
+// }
+
 const generateIndex = async () => {
   const prettierConfig = await prettier.resolveConfig('.')
 
@@ -57,11 +68,22 @@ const generateRecipes = async () => {
 
   Object.entries(slotRecipes).forEach(async ([key, recipe]) => {
     const templateString = recipeTemplate(recipe)
-    const code = await prettier.format(templateString, {
-      ...prettierConfig,
-      plugins: ['prettier-plugin-organize-imports'],
-      parser: 'typescript',
-    })
+    if (key === 'button') {
+      console.log(templateString)
+    }
+
+    const code = await prettier.format(
+      // templateString.replaceAll('"colorPalette.text"', '`${props.colorScheme}.text`'),
+      templateString.replace(
+        /"colorPalette\.(\w+)"/g,
+        (match, p1) => '`${props.colorScheme}.' + p1 + '`',
+      ),
+      {
+        ...prettierConfig,
+        plugins: ['prettier-plugin-organize-imports'],
+        parser: 'typescript',
+      },
+    )
 
     fs.writeFileSync(path.join(`src/theme/components/${v.kebabCase(key)}.ts`), code)
   })

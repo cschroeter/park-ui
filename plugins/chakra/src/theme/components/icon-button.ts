@@ -1,7 +1,7 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 export const IconButton = defineStyleConfig({
-  baseStyle: {
+  baseStyle: defineStyle((props) => ({
     alignItems: 'center',
     appearance: 'none',
     borderRadius: 'l2',
@@ -18,7 +18,7 @@ export const IconButton = defineStyleConfig({
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
     _hidden: { display: 'none' },
-  },
+  })),
   defaultProps: {
     variant: 'solid',
     size: 'md',
@@ -74,14 +74,14 @@ export const IconButton = defineStyleConfig({
     },
   },
   variants: {
-    solid: {
-      background: 'colorPalette.default',
-      color: 'colorPalette.fg',
+    solid: defineStyle((props) => ({
+      background: `${props.colorScheme}.default`,
+      color: `${props.colorScheme}.fg`,
       colorPalette: 'accent',
-      _hover: { background: 'colorPalette.emphasized' },
+      _hover: { background: `${props.colorScheme}.emphasized` },
       _focusVisible: {
         outline: '2px solid',
-        outlineColor: 'colorPalette.default',
+        outlineColor: `${props.colorScheme}.default`,
         outlineOffset: '2px',
       },
       _disabled: {
@@ -90,13 +90,13 @@ export const IconButton = defineStyleConfig({
         cursor: 'not-allowed',
         _hover: { color: 'fg.disabled', background: 'bg.disabled' },
       },
-    },
-    outline: {
+    })),
+    outline: defineStyle((props) => ({
       borderWidth: '1px',
-      borderColor: 'colorPalette.a8',
-      color: 'colorPalette.text',
+      borderColor: `${props.colorScheme}.a8`,
+      color: `${props.colorScheme}.text`,
       colorPalette: 'gray',
-      _hover: { background: 'colorPalette.a2' },
+      _hover: { background: `${props.colorScheme}.a2` },
       _disabled: {
         borderColor: 'border.disabled',
         color: 'fg.disabled',
@@ -105,16 +105,16 @@ export const IconButton = defineStyleConfig({
       },
       _focusVisible: {
         outline: '2px solid',
-        outlineColor: 'colorPalette.default',
+        outlineColor: `${props.colorScheme}.default`,
         outlineOffset: '2px',
       },
-      _selected: { background: 'colorPalette.a3' },
-    },
-    ghost: {
-      color: 'colorPalette.text',
+      _selected: { background: `${props.colorScheme}.a3` },
+    })),
+    ghost: defineStyle((props) => ({
+      color: `${props.colorScheme}.text`,
       colorPalette: 'gray',
-      _hover: { background: 'colorPalette.a3' },
-      _selected: { background: 'colorPalette.a3' },
+      _hover: { background: `${props.colorScheme}.a3` },
+      _selected: { background: `${props.colorScheme}.a3` },
       _disabled: {
         color: 'fg.disabled',
         cursor: 'not-allowed',
@@ -122,11 +122,11 @@ export const IconButton = defineStyleConfig({
       },
       _focusVisible: {
         outline: '2px solid',
-        outlineColor: 'colorPalette.default',
+        outlineColor: `${props.colorScheme}.default`,
         outlineOffset: '2px',
       },
-    },
-    link: {
+    })),
+    link: defineStyle((props) => ({
       verticalAlign: 'baseline',
       _disabled: {
         color: 'border.disabled',
@@ -136,15 +136,15 @@ export const IconButton = defineStyleConfig({
       height: 'auto!',
       px: '0!',
       minW: '0!',
-    },
-    subtle: {
-      background: 'colorPalette.a3',
-      color: 'colorPalette.text',
+    })),
+    subtle: defineStyle((props) => ({
+      background: `${props.colorScheme}.a3`,
+      color: `${props.colorScheme}.text`,
       colorPalette: 'gray',
-      _hover: { background: 'colorPalette.a4' },
+      _hover: { background: `${props.colorScheme}.a4` },
       _focusVisible: {
         outline: '2px solid',
-        outlineColor: 'colorPalette.default',
+        outlineColor: `${props.colorScheme}.default`,
         outlineOffset: '2px',
       },
       _disabled: {
@@ -153,6 +153,6 @@ export const IconButton = defineStyleConfig({
         cursor: 'not-allowed',
         _hover: { background: 'bg.disabled', color: 'fg.disabled' },
       },
-    },
+    })),
   },
 })

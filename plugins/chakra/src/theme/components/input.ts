@@ -1,7 +1,7 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 export const Input = defineStyleConfig({
-  baseStyle: {
+  baseStyle: defineStyle((props) => ({
     appearance: 'none',
     background: 'none',
     borderColor: 'border.default',
@@ -17,10 +17,10 @@ export const Input = defineStyleConfig({
     width: 'full',
     _disabled: { opacity: 0.4, cursor: 'not-allowed' },
     _focus: {
-      borderColor: 'colorPalette.default',
+      borderColor: `${props.colorScheme}.default`,
       boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
     },
-  },
+  })),
   defaultProps: {
     size: 'md',
   },

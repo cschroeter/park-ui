@@ -1,7 +1,7 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 export const Badge = defineStyleConfig({
-  baseStyle: {
+  baseStyle: defineStyle((props) => ({
     alignItems: 'center',
     borderRadius: 'full',
     colorPalette: 'accent',
@@ -9,7 +9,7 @@ export const Badge = defineStyleConfig({
     fontWeight: 'medium',
     userSelect: 'none',
     whiteSpace: 'nowrap',
-  },
+  })),
   defaultProps: {
     variant: 'subtle',
     size: 'md',
@@ -20,14 +20,17 @@ export const Badge = defineStyleConfig({
     lg: { textStyle: 'sm', px: '3', h: '7', gap: '1.5', '& svg': { width: '4', height: '4' } },
   },
   variants: {
-    solid: { background: 'colorPalette.default', color: 'colorPalette.fg' },
-    subtle: {
+    solid: defineStyle((props) => ({
+      background: `${props.colorScheme}.default`,
+      color: `${props.colorScheme}.fg`,
+    })),
+    subtle: defineStyle((props) => ({
       background: 'bg.subtle',
       borderColor: 'border.subtle',
       borderWidth: '1px',
       color: 'fg.default',
       '& svg': { color: 'fg.muted' },
-    },
-    outline: { borderWidth: '2px', borderColor: 'border.default' },
+    })),
+    outline: defineStyle((props) => ({ borderWidth: '2px', borderColor: 'border.default' })),
   },
 })

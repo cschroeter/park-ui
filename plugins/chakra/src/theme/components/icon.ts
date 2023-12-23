@@ -1,13 +1,13 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 export const Icon = defineStyleConfig({
-  baseStyle: {
+  baseStyle: defineStyle((props) => ({
     color: 'currentcolor',
     display: 'inline-block',
     flexShrink: '0',
     verticalAlign: 'middle',
     lineHeight: '1em',
-  },
+  })),
   defaultProps: {
     size: 'md',
   },

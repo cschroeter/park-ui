@@ -1,7 +1,7 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 export const Kbd = defineStyleConfig({
-  baseStyle: {
+  baseStyle: defineStyle((props) => ({
     alignItems: 'center',
     bg: 'bg.subtle',
     borderRadius: 'l2',
@@ -11,7 +11,7 @@ export const Kbd = defineStyleConfig({
     display: 'inline-flex',
     fontFamily: 'var(--fonts-code)',
     fontWeight: 'medium',
-  },
+  })),
   defaultProps: {
     size: 'md',
   },
