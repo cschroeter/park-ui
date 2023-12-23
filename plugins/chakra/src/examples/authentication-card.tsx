@@ -42,7 +42,9 @@ export const AuthenticationCard = () => {
         </Stack>
       </Card.Body>
       <Card.Footer>
-        <Button width="full">Create Account</Button>
+        <Button width="full" colorScheme="accent">
+          Create Account
+        </Button>
       </Card.Footer>
     </Card.Root>
   )

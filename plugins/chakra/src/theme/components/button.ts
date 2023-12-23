@@ -21,7 +21,7 @@ export const Button = defineStyleConfig({
   })),
   defaultProps: {
     variant: 'solid',
-    colorScheme: 'accent',
+    colorScheme: 'gray',
     size: 'md',
   },
   sizes: {
@@ -78,7 +78,6 @@ export const Button = defineStyleConfig({
     solid: defineStyle((props) => ({
       background: `${props.colorScheme}.default`,
       color: `${props.colorScheme}.fg`,
-      colorPalette: 'accent',
       _hover: { background: `${props.colorScheme}.emphasized` },
       _focusVisible: {
         outline: '2px solid',

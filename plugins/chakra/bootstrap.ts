@@ -18,19 +18,7 @@ const recipeTemplate = Handlebars.compile(fs.readFileSync(`./src/templates/recip
 const slotRecipeTemplate = Handlebars.compile(
   fs.readFileSync(`./src/templates/slot-recipe.hbs`, 'utf-8'),
 )
-
 const pascalCase = (s: string) => v.chain(s).camelCase().capitalize().value().trim()
-
-// const replaceColorPalette = (obj: Record<string, any>) => {
-//   for (const key in obj) {
-//     if (typeof obj[key] === 'object') {
-//       replaceColorPalette(obj[key])
-//     } else if (typeof obj[key] === 'string') {
-//       obj[key] = obj[key].replace(/colorPalette/g, '${props.colorScheme}')
-//     }
-//   }
-//   return obj
-// }
 
 const generateIndex = async () => {
   const prettierConfig = await prettier.resolveConfig('.')
@@ -73,7 +61,6 @@ const generateRecipes = async () => {
     }
 
     const code = await prettier.format(
-      // templateString.replaceAll('"colorPalette.text"', '`${props.colorScheme}.text`'),
       templateString.replace(
         /"colorPalette\.(\w+)"/g,
         (match, p1) => '`${props.colorScheme}.' + p1 + '`',
