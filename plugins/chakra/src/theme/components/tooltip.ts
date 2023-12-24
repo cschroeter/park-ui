@@ -9,7 +9,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Tooltip = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     content: {
       background: 'gray.a12',
       borderRadius: 'l2',
@@ -23,7 +23,7 @@ export const Tooltip = defineMultiStyleConfig({
       _open: { animation: 'fadeIn 0.25s ease-out' },
       _closed: { animation: 'fadeOut 0.2s ease-out' },
     },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

@@ -8,14 +8,14 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Checkbox = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { alignItems: 'center', colorPalette: 'accent', display: 'flex' },
     label: { color: 'fg.default', fontWeight: 'medium' },
     control: {
       alignItems: 'center',
       borderColor: 'border.default',
       borderWidth: '1px',
-      color: 'colorPalette.fg',
+      color: `${props.colorScheme}.fg`,
       cursor: 'pointer',
       display: 'flex',
       justifyContent: 'center',
@@ -24,23 +24,23 @@ export const Checkbox = defineMultiStyleConfig({
       transitionTimingFunction: 'default',
       _hover: { background: 'bg.subtle' },
       _checked: {
-        background: 'colorPalette.default',
-        borderColor: 'colorPalette.default',
-        _hover: { background: 'colorPalette.default' },
+        background: `${props.colorScheme}.default`,
+        borderColor: `${props.colorScheme}.default`,
+        _hover: { background: `${props.colorScheme}.default` },
       },
       _indeterminate: {
-        background: 'colorPalette.default',
-        borderColor: 'colorPalette.default',
-        _hover: { background: 'colorPalette.default' },
+        background: `${props.colorScheme}.default`,
+        borderColor: `${props.colorScheme}.default`,
+        _hover: { background: `${props.colorScheme}.default` },
       },
       '&:has(+ :focus-visible)': {
         outlineOffset: '2px',
         outline: '2px solid',
         outlineColor: 'border.outline',
-        _checked: { outlineColor: 'colorPalette.default' },
+        _checked: { outlineColor: `${props.colorScheme}.default` },
       },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {

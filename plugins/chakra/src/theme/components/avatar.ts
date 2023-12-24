@@ -7,7 +7,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Avatar = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { borderRadius: 'full', borderWidth: '1px', flexShrink: 0 },
     fallback: {
       alignItems: 'center',
@@ -19,7 +19,7 @@ export const Avatar = defineMultiStyleConfig({
       justifyContent: 'center',
     },
     image: { objectFit: 'cover' },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     xs: { root: { height: '8', width: '8' }, fallback: { textStyle: 'xs' } },

@@ -19,7 +19,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Menu = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     itemGroupLabel: { fontWeight: 'semibold', textStyle: 'sm' },
     content: {
       background: 'bg.default',
@@ -78,7 +78,7 @@ export const Menu = defineMultiStyleConfig({
       _highlighted: { background: 'bg.muted' },
       '& :where(svg)': { color: 'fg.muted' },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     xs: {

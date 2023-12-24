@@ -14,7 +14,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Drawer = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     backdrop: {
       backdropFilter: 'blur(4px)',
       background: { base: 'white.a10', _dark: 'black.a10' },
@@ -74,23 +74,23 @@ export const Drawer = defineMultiStyleConfig({
     },
     title: { color: 'fg.default', fontWeight: 'semibold', textStyle: 'xl' },
     description: { color: 'fg.muted', textStyle: 'sm' },
-  }),
+  })),
   defaultProps: { variant: 'right', colorScheme: 'accent' },
   sizes: {},
   variants: {
-    left: {
+    left: definePartsStyle((props) => ({
       positioner: { left: 0 },
       content: {
         _open: { animation: 'drawer-in-left' },
         _closed: { animation: 'drawer-out-left' },
       },
-    },
-    right: {
+    })),
+    right: definePartsStyle((props) => ({
       positioner: { right: 0 },
       content: {
         _open: { animation: 'drawer-in-right' },
         _closed: { animation: 'drawer-out-right' },
       },
-    },
+    })),
   },
 })

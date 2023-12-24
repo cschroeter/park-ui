@@ -13,10 +13,10 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Editable = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { display: 'flex', flexDirection: 'column', gap: '1.5', width: '100%' },
     control: { display: 'flex', gap: '2' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

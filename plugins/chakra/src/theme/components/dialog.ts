@@ -11,7 +11,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Dialog = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     backdrop: {
       backdropFilter: 'blur(4px)',
       background: { base: 'white.a10', _dark: 'black.a10' },
@@ -47,7 +47,7 @@ export const Dialog = defineMultiStyleConfig({
     },
     title: { fontWeight: 'semibold', textStyle: 'lg' },
     description: { color: 'fg.muted', textStyle: 'sm' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

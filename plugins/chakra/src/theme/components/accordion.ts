@@ -9,7 +9,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Accordion = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { divideY: '1px', width: 'full', borderTopWidth: '1px', borderBottomWidth: '1px' },
     itemTrigger: {
       alignItems: 'center',
@@ -42,7 +42,7 @@ export const Accordion = defineMultiStyleConfig({
       _open: { gridTemplateRows: '1fr' },
       '& > div': { overflow: 'hidden' },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     md: { itemTrigger: { py: '4' }, itemContent: { pb: '6', pr: '8', _closed: { pb: '0' } } },

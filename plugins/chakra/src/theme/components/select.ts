@@ -18,7 +18,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Select = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       colorPalette: 'accent',
       display: 'flex',
@@ -57,7 +57,7 @@ export const Select = defineMultiStyleConfig({
       },
     },
     itemGroupLabel: { fontWeight: 'semibold', textStyle: 'sm' },
-    itemIndicator: { color: 'colorPalette.default' },
+    itemIndicator: { color: `${props.colorScheme}.default` },
     label: { color: 'fg.default', fontWeight: 'medium' },
     trigger: {
       appearance: 'none',
@@ -77,7 +77,7 @@ export const Select = defineMultiStyleConfig({
       _placeholderShown: { color: 'fg.subtle' },
       '& :where(svg)': { color: 'fg.subtle' },
     },
-  }),
+  })),
   defaultProps: { size: 'md', variant: 'outline', colorScheme: 'accent' },
   sizes: {
     sm: {
@@ -127,15 +127,17 @@ export const Select = defineMultiStyleConfig({
     },
   },
   variants: {
-    outline: {
+    outline: definePartsStyle((props) => ({
       trigger: {
         borderWidth: '1px',
         _focus: {
-          borderColor: 'colorPalette.default',
+          borderColor: `${props.colorScheme}.default`,
           boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
         },
       },
-    },
-    ghost: { trigger: { _hover: { background: 'gray.a3' }, _focus: { background: 'gray.a3' } } },
+    })),
+    ghost: definePartsStyle((props) => ({
+      trigger: { _hover: { background: 'gray.a3' }, _focus: { background: 'gray.a3' } },
+    })),
   },
 })

@@ -9,7 +9,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const HoverCard = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     content: {
       '--hover-card-background': 'colors.bg.default',
       background: 'var(--hover-card-background)',
@@ -23,7 +23,7 @@ export const HoverCard = defineMultiStyleConfig({
     },
     arrow: { '--arrow-size': '12px', '--arrow-background': 'var(--hover-card-background)' },
     arrowTip: { borderTopWidth: '1px', borderLeftWidth: '1px' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

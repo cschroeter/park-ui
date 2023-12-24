@@ -11,7 +11,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const NumberInput = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { colorPalette: 'accent', display: 'flex', flexDirection: 'column', gap: '1.5' },
     control: {
       borderColor: 'border.default',
@@ -26,7 +26,7 @@ export const NumberInput = defineMultiStyleConfig({
       transitionProperty: 'border-color, box-shadow',
       transitionTimingFunction: 'default',
       _focusWithin: {
-        borderColor: 'colorPalette.default',
+        borderColor: `${props.colorScheme}.default`,
         boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
     },
@@ -69,7 +69,7 @@ export const NumberInput = defineMultiStyleConfig({
         _hover: { background: 'transparent', color: 'fg.disabled' },
       },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     md: { control: { ps: '3', h: '10', minW: '10', fontSize: 'md' }, label: { textStyle: 'sm' } },

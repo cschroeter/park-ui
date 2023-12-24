@@ -17,7 +17,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Combobox = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { display: 'flex', flexDirection: 'column', gap: '1.5', width: 'full' },
     control: { position: 'relative' },
     label: { color: 'fg.default', fontWeight: 'medium' },
@@ -52,8 +52,8 @@ export const Combobox = defineMultiStyleConfig({
       },
     },
     itemGroupLabel: { fontWeight: 'semibold', textStyle: 'sm' },
-    itemIndicator: { color: 'colorPalette.default' },
-  }),
+    itemIndicator: { color: `${props.colorScheme}.default` },
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {

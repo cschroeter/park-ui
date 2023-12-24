@@ -9,7 +9,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Pagination = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { display: 'flex', justifyContent: 'space-between', gap: '4' },
     item: { fontVariantNumeric: 'tabular-nums' },
     ellipsis: {
@@ -19,7 +19,7 @@ export const Pagination = defineMultiStyleConfig({
       fontWeight: 'semibold',
       px: '2',
     },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

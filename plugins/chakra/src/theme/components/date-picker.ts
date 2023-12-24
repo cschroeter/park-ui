@@ -27,7 +27,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const DatePicker = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { colorPalette: 'accent', display: 'flex', flexDirection: 'column', gap: '1.5' },
     content: {
       background: 'bg.default',
@@ -54,16 +54,16 @@ export const DatePicker = defineMultiStyleConfig({
       _today: {
         _before: {
           content: "'−'",
-          color: 'colorPalette.default',
+          color: `${props.colorScheme}.default`,
           position: 'absolute',
           marginTop: '6',
         },
       },
       '&[data-in-range]': { background: 'bg.muted' },
-      _selected: { _before: { color: 'colorPalette.fg' } },
+      _selected: { _before: { color: `${props.colorScheme}.fg` } },
     },
     view: { display: 'flex', flexDirection: 'column', gap: '3', _hidden: { display: 'none' } },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

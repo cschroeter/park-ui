@@ -13,7 +13,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const TagsInput = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       colorPalette: 'accent',
       display: 'flex',
@@ -33,7 +33,7 @@ export const TagsInput = defineMultiStyleConfig({
       transitionProperty: 'border-color, box-shadow',
       transitionTimingFunction: 'default',
       _focusWithin: {
-        borderColor: 'colorPalette.default',
+        borderColor: `${props.colorScheme}.default`,
         boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
     },
@@ -47,14 +47,14 @@ export const TagsInput = defineMultiStyleConfig({
       display: 'inline-flex',
       fontWeight: 'medium',
       _highlighted: {
-        borderColor: 'colorPalette.default',
+        borderColor: `${props.colorScheme}.default`,
         boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
       _hidden: { display: 'none' },
     },
     itemInput: { background: 'transparent', outline: 'none' },
     label: { color: 'fg.default', fontWeight: 'medium', textStyle: 'sm' },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     md: {

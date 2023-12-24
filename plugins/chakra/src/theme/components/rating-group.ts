@@ -8,7 +8,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const RatingGroup = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { colorPalette: 'accent', display: 'flex', flexDirection: 'column', gap: '1.5' },
     label: { color: 'fg.default', fontWeight: 'medium' },
     control: { display: 'flex' },
@@ -20,9 +20,9 @@ export const RatingGroup = defineMultiStyleConfig({
       color: 'var(--colors-bg-emphasized)',
       fill: 'var(--colors-bg-emphasized)',
       _highlighted: { color: 'var(--colors-accent-default)', fill: 'var(--colors-accent-default)' },
-      _focusVisible: { outline: '2px solid', outlineColor: 'colorPalette.default' },
+      _focusVisible: { outline: '2px solid', outlineColor: `${props.colorScheme}.default` },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {

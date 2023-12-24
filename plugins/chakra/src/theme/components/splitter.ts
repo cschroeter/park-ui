@@ -7,7 +7,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Splitter = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { display: 'flex', gap: '2' },
     panel: {
       borderWidth: '1px',
@@ -30,7 +30,7 @@ export const Splitter = defineMultiStyleConfig({
       _horizontal: { minWidth: '1.5', margin: 'min(1rem, 20%) 0' },
       _vertical: { minHeight: '1.5', margin: '0 min(1rem, 20%)' },
     },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

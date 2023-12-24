@@ -10,7 +10,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Card = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       bg: 'bg.default',
       borderRadius: 'l3',
@@ -24,7 +24,7 @@ export const Card = defineMultiStyleConfig({
     footer: { display: 'flex', justifyContent: 'flex-end', pb: '6', pt: '2', px: '6' },
     title: { color: 'fg.default', textStyle: 'lg', fontWeight: 'semibold' },
     description: { color: 'fg.muted', textStyle: 'sm' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

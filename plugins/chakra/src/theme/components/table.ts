@@ -12,7 +12,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Table = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { captionSide: 'bottom', width: 'full' },
     body: { '& tr:last-child': { borderBottomWidth: '0' } },
     caption: { color: 'fg.subtle' },
@@ -29,7 +29,7 @@ export const Table = defineMultiStyleConfig({
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
     },
-  }),
+  })),
   defaultProps: { size: 'md', variant: 'plain', colorScheme: 'accent' },
   sizes: {
     sm: {
@@ -46,7 +46,12 @@ export const Table = defineMultiStyleConfig({
     },
   },
   variants: {
-    outline: { root: { borderWidth: '1px' }, head: { bg: 'bg.subtle' } },
-    plain: { row: { _hover: { bg: 'bg.subtle' }, _selected: { bg: 'bg.muted' } } },
+    outline: definePartsStyle((props) => ({
+      root: { borderWidth: '1px' },
+      head: { bg: 'bg.subtle' },
+    })),
+    plain: definePartsStyle((props) => ({
+      row: { _hover: { bg: 'bg.subtle' }, _selected: { bg: 'bg.muted' } },
+    })),
   },
 })

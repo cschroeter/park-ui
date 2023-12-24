@@ -9,7 +9,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Alert = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       background: 'bg.default',
       borderWidth: '1px',
@@ -23,7 +23,7 @@ export const Alert = defineMultiStyleConfig({
     description: { color: 'fg.muted', textStyle: 'sm' },
     icon: { color: 'fg.default', flexShrink: '0', width: '5', height: '5' },
     title: { color: 'fg.default', fontWeight: 'semibold', textStyle: 'sm' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

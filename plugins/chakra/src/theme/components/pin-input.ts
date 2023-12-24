@@ -8,11 +8,11 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const PinInput = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { display: 'flex', flexDirection: 'column', gap: '1.5' },
     control: { display: 'flex', gap: '2' },
     label: { color: 'fg.default', fontWeight: 'medium' },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: { label: { textStyle: 'sm' } },

@@ -13,7 +13,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Slider = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       colorPalette: 'accent',
       display: 'flex',
@@ -28,10 +28,10 @@ export const Slider = defineMultiStyleConfig({
       overflow: 'hidden',
       flex: '1',
     },
-    range: { background: 'colorPalette.default' },
+    range: { background: `${props.colorScheme}.default` },
     thumb: {
       background: 'bg.default',
-      borderColor: 'colorPalette.default',
+      borderColor: `${props.colorScheme}.default`,
       borderRadius: 'full',
       borderWidth: '2px',
       boxShadow: 'sm',
@@ -54,7 +54,7 @@ export const Slider = defineMultiStyleConfig({
       },
       _underValue: { _before: { background: 'var(--before-background)' } },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {

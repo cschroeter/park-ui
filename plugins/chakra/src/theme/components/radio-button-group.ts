@@ -10,7 +10,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const RadioButtonGroup = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { colorPalette: 'accent', display: 'flex', flexWrap: 'wrap' },
     item: {
       alignItems: 'center',
@@ -41,7 +41,7 @@ export const RadioButtonGroup = defineMultiStyleConfig({
       },
     },
     itemText: { display: 'inline-flex', alignItems: 'center' },
-  }),
+  })),
   defaultProps: { size: 'md', variant: 'solid', colorScheme: 'accent' },
   sizes: {
     sm: {
@@ -78,24 +78,24 @@ export const RadioButtonGroup = defineMultiStyleConfig({
     },
   },
   variants: {
-    solid: {
+    solid: definePartsStyle((props) => ({
       item: {
         _checked: {
-          background: 'colorPalette.default',
-          borderColor: 'colorPalette.default',
-          color: 'colorPalette.fg',
-          _hover: { color: 'colorPalette.fg', background: 'colorPalette.default' },
+          background: `${props.colorScheme}.default`,
+          borderColor: `${props.colorScheme}.default`,
+          color: `${props.colorScheme}.fg`,
+          _hover: { color: `${props.colorScheme}.fg`, background: `${props.colorScheme}.default` },
         },
       },
-    },
-    outline: {
+    })),
+    outline: definePartsStyle((props) => ({
       item: {
         _checked: {
-          borderColor: 'colorPalette.default',
+          borderColor: `${props.colorScheme}.default`,
           boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
           _hover: { background: 'initial' },
         },
       },
-    },
+    })),
   },
 })

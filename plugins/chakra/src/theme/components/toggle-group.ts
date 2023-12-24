@@ -3,7 +3,7 @@ import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(['root', 'item'])
 
 export const ToggleGroup = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       display: 'flex',
       overflow: 'hidden',
@@ -37,7 +37,7 @@ export const ToggleGroup = defineMultiStyleConfig({
         _hover: { background: 'transparent', borderColor: 'border.disabled', color: 'fg.disabled' },
       },
     },
-  }),
+  })),
   defaultProps: { size: 'md', variant: 'outline', colorScheme: 'accent' },
   sizes: {
     sm: {
@@ -69,7 +69,7 @@ export const ToggleGroup = defineMultiStyleConfig({
     },
   },
   variants: {
-    outline: {
+    outline: definePartsStyle((props) => ({
       root: {
         borderWidth: '1px',
         borderRadius: 'l2',
@@ -81,8 +81,8 @@ export const ToggleGroup = defineMultiStyleConfig({
         borderColor: 'border.default',
         _focusVisible: { color: 'fg.default', background: 'gray.a3' },
       },
-    },
-    ghost: {
+    })),
+    ghost: definePartsStyle((props) => ({
       root: { gap: '1' },
       item: {
         borderRadius: 'l2',
@@ -92,6 +92,6 @@ export const ToggleGroup = defineMultiStyleConfig({
           outlineColor: 'border.outline',
         },
       },
-    },
+    })),
   },
 })

@@ -9,7 +9,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Tabs = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       colorPalette: 'accent',
       display: 'flex',
@@ -45,7 +45,7 @@ export const Tabs = defineMultiStyleConfig({
       _selected: { color: 'fg.default', _hover: { color: 'fg.default' } },
       _vertical: { justifyContent: 'start' },
     },
-  }),
+  })),
   defaultProps: { size: 'md', variant: 'line', colorScheme: 'accent' },
   sizes: {
     sm: { trigger: { '& svg': { width: '4', height: '4' } } },
@@ -53,20 +53,20 @@ export const Tabs = defineMultiStyleConfig({
     lg: { trigger: { '& svg': { width: '5', height: '5' } } },
   },
   variants: {
-    line: {
+    line: definePartsStyle((props) => ({
       list: {
         _horizontal: { boxShadow: '0 -1px 0 0 inset var(--colors-border-default)', gap: '4' },
         _vertical: { boxShadow: '1px 0 0 0 inset var(--colors-border-default)', gap: '1' },
       },
       indicator: {
-        background: 'colorPalette.default',
+        background: `${props.colorScheme}.default`,
         _horizontal: { height: '2px', bottom: '0' },
         _vertical: { width: '2px', left: '0' },
       },
       content: { pt: '4' },
       trigger: { _horizontal: { pb: '2.5' } },
-    },
-    outline: {
+    })),
+    outline: definePartsStyle((props) => ({
       list: { _horizontal: { mb: '-1px' }, _vertical: { mr: '-1px' } },
       trigger: {
         borderColor: 'transparent',
@@ -86,6 +86,6 @@ export const Tabs = defineMultiStyleConfig({
         background: 'bg.default',
         width: 'full',
       },
-    },
+    })),
   },
 })

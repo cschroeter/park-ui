@@ -105,11 +105,17 @@ const generateSlotRecipes = async () => {
       ...recipe,
       defaultVariants: { ...recipe.defaultVariants, colorScheme: 'accent' },
     })
-    const code = await prettier.format(templateString, {
-      ...prettierConfig,
-      plugins: ['prettier-plugin-organize-imports'],
-      parser: 'typescript',
-    })
+    const code = await prettier.format(
+      templateString.replace(
+        /"colorPalette\.(\w+)"/g,
+        (match, p1) => '`${props.colorScheme}.' + p1 + '`',
+      ),
+      {
+        ...prettierConfig,
+        plugins: ['prettier-plugin-organize-imports'],
+        parser: 'typescript',
+      },
+    )
 
     fs.writeFileSync(path.join(`src/theme/components/${v.kebabCase(key)}.ts`), code)
   })

@@ -15,7 +15,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const FileUpload = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { display: 'flex', flexDirection: 'column', gap: '4', width: '100%' },
     label: { fontWeight: 'medium', textStyle: 'sm' },
     dropzone: {
@@ -48,7 +48,7 @@ export const FileUpload = defineMultiStyleConfig({
     itemDeleteTrigger: { alignSelf: 'start', gridArea: 'delete' },
     itemPreview: { gridArea: 'preview' },
     itemPreviewImage: { aspectRatio: '1', height: '10', objectFit: 'scale-down', width: '10' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

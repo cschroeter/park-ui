@@ -3,7 +3,7 @@ import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(['field'])
 
 export const Input = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     field: {
       appearance: 'none',
       background: 'none',
@@ -20,11 +20,11 @@ export const Input = defineMultiStyleConfig({
       width: 'full',
       _disabled: { opacity: 0.4, cursor: 'not-allowed' },
       _focus: {
-        borderColor: 'colorPalette.default',
+        borderColor: `${props.colorScheme}.default`,
         boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     '2xs': { field: { px: '1.5', h: '7', minW: '7', fontSize: 'xs' } },

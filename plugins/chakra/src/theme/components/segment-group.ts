@@ -10,7 +10,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const SegmentGroup = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       alignItems: 'flex-start',
       colorPalette: 'accent',
@@ -23,7 +23,7 @@ export const SegmentGroup = defineMultiStyleConfig({
     indicator: {
       borderBottomWidth: { _horizontal: '2px' },
       borderLeftWidth: { _vertical: '2px' },
-      borderColor: 'colorPalette.default',
+      borderColor: `${props.colorScheme}.default`,
       transform: { _horizontal: 'translateY(1px)', _vertical: 'translateX(-1px)' },
     },
     item: {
@@ -39,7 +39,7 @@ export const SegmentGroup = defineMultiStyleConfig({
       pb: { _horizontal: '3' },
       py: { _vertical: '1.5' },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: { sm: { item: { textStyle: 'sm' } }, md: { item: { textStyle: 'md' } } },
   variants: {},

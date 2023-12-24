@@ -13,7 +13,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Carousel = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { colorPalette: 'accent' },
     viewport: { overflowX: 'hidden', position: 'relative', borderRadius: 'l2' },
     control: {
@@ -31,10 +31,10 @@ export const Carousel = defineMultiStyleConfig({
       borderRadius: 'full',
       background: 'gray.6',
       cursor: 'pointer',
-      _current: { background: 'colorPalette.default' },
+      _current: { background: `${props.colorScheme}.default` },
       _focusVisible: { outlineOffset: '2px', outline: '2px solid', outlineColor: 'border.outline' },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {

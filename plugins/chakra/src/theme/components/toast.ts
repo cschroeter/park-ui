@@ -9,7 +9,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Toast = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       background: 'bg.default',
       borderRadius: 'l3',
@@ -24,7 +24,7 @@ export const Toast = defineMultiStyleConfig({
     title: { color: 'fg.default', fontWeight: 'semibold', textStyle: 'sm' },
     description: { color: 'fg.muted', textStyle: 'sm' },
     closeTrigger: { position: 'absolute', top: '3', right: '3' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

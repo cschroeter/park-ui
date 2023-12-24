@@ -14,7 +14,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const Popover = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     positioner: { position: 'relative' },
     content: {
       background: 'bg.default',
@@ -34,7 +34,7 @@ export const Popover = defineMultiStyleConfig({
     closeTrigger: { color: 'fg.muted' },
     arrow: { '--arrow-size': 'var(--sizes-3)', '--arrow-background': 'var(--colors-bg-default)' },
     arrowTip: { borderTopWidth: '1px', borderLeftWidth: '1px' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},

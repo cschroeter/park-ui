@@ -10,7 +10,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const RadioGroup = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: {
       colorPalette: 'accent',
       display: 'flex',
@@ -26,11 +26,11 @@ export const RadioGroup = defineMultiStyleConfig({
       transitionTimingFunction: 'default',
       _hover: { background: 'bg.subtle' },
       _checked: {
-        background: 'colorPalette.default',
-        borderColor: 'colorPalette.default',
+        background: `${props.colorScheme}.default`,
+        borderColor: `${props.colorScheme}.default`,
         outlineColor: 'bg.default',
         outlineStyle: 'solid',
-        _hover: { background: 'colorPalette.default' },
+        _hover: { background: `${props.colorScheme}.default` },
       },
       _disabled: {
         borderColor: 'border.disabled',
@@ -45,7 +45,7 @@ export const RadioGroup = defineMultiStyleConfig({
       _disabled: { cursor: 'not-allowed' },
     },
     itemText: { color: 'fg.default', fontWeight: 'medium', _disabled: { color: 'fg.disabled' } },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {

@@ -8,7 +8,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const SwitchRecipe = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { alignItems: 'center', colorPalette: 'accent', display: 'flex', position: 'relative' },
     control: {
       alignItems: 'center',
@@ -20,7 +20,7 @@ export const SwitchRecipe = defineMultiStyleConfig({
       transitionDuration: 'normal',
       transitionProperty: 'background',
       transitionTimingFunction: 'default',
-      _checked: { background: 'colorPalette.default' },
+      _checked: { background: `${props.colorScheme}.default` },
     },
     label: { userSelect: 'none', textStyle: 'md', fontWeight: 'medium' },
     thumb: {
@@ -32,10 +32,10 @@ export const SwitchRecipe = defineMultiStyleConfig({
       transitionTimingFunction: 'default',
       _checked: {
         transform: 'translateX(100%)',
-        background: { base: 'bg.default', _dark: 'colorPalette.fg' },
+        background: { base: 'bg.default', _dark: `${props.colorScheme}.fg` },
       },
     },
-  }),
+  })),
   defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {

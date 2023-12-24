@@ -27,7 +27,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const ColorPicker = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
+  baseStyle: definePartsStyle((props) => ({
     root: { display: 'flex', flexDirection: 'column', gap: '1.5' },
     label: { color: 'fg.default', fontWeight: 'medium', textStyle: 'sm' },
     control: { display: 'flex', flexDirection: 'row', gap: '2' },
@@ -77,7 +77,7 @@ export const ColorPicker = defineMultiStyleConfig({
       outline: 'none',
     },
     transparencyGrid: { borderRadius: 'l2' },
-  }),
+  })),
   defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
