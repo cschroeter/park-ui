@@ -1,6 +1,6 @@
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
-export const Label = defineStyleConfig({
+export const FormLabel = defineStyleConfig({
   baseStyle: defineStyle((props) => ({ color: 'fg.default', fontWeight: 'medium' })),
   defaultProps: {
     size: 'md',

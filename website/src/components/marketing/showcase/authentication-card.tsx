@@ -1,6 +1,6 @@
 import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
 import { Divider, HStack, Stack } from 'styled-system/jsx'
-import { Button, Card, Input, Label, Text } from '~/components/ui'
+import { Button, Card, FormLabel, Input, Text } from '~/components/ui'
 
 export const AuthenticationCard = () => {
   return (
@@ -31,11 +31,11 @@ export const AuthenticationCard = () => {
             <Divider />
           </HStack>
           <Stack gap="1.5">
-            <Label htmlFor="email-1">E-Mail</Label>
+            <FormLabel htmlFor="email-1">E-Mail</FormLabel>
             <Input id="email-1" placeholder="Your E-Mail" />
           </Stack>
           <Stack gap="1.5">
-            <Label htmlFor="password-1">Password</Label>
+            <FormLabel htmlFor="password-1">Password</FormLabel>
             <Input id="password-1" type="password" placeholder="Your Password" />
           </Stack>
         </Stack>

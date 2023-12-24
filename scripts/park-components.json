@@ -140,15 +140,15 @@
     },
     "name": "Kbd"
   },
-  "label": {
-    "className": "label",
+  "form-label": {
+    "className": "formLabel",
     "component": "ark.label",
     "imports": {
       "react": ["import { ark } from '@ark-ui/react/factory'"],
       "solid": ["import { ark } from '@ark-ui/solid'"],
       "vue": ["import { ark } from '@ark-ui/vue/factory'"]
     },
-    "name": "Label"
+    "name": "FormLabel"
   },
   "link": {
     "className": "link",

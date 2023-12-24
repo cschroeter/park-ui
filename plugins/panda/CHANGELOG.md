@@ -3,6 +3,7 @@
 ### Changed
 
 - Renamed `placement` prop to `variant` in `Drawer` component for better consistency with other CSS frameworks.
+- Renamed `Label` to `FormLabel`
 
 ## [0.27.0] - 2023-12-19
 

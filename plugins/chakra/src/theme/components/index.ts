@@ -14,13 +14,13 @@ import { Dialog } from './dialog'
 import { Drawer } from './drawer'
 import { Editable } from './editable'
 import { FileUpload } from './file-upload'
+import { FormLabel } from './form-label'
 import { Heading } from './heading'
 import { HoverCard } from './hover-card'
 import { Icon } from './icon'
 import { IconButton } from './icon-button'
 import { Input } from './input'
 import { Kbd } from './kbd'
-import { Label } from './label'
 import { Link } from './link'
 import { Menu } from './menu'
 import { NumberInput } from './number-input'
@@ -60,13 +60,13 @@ export const components = {
   Drawer,
   Editable,
   FileUpload,
+  FormLabel,
   Heading,
   HoverCard,
   Icon,
   IconButton,
   Input,
   Kbd,
-  Label,
   Link,
   Menu,
   NumberInput,
