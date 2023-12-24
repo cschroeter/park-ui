@@ -7,7 +7,7 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
   'thumb',
 ])
 
-export const SwitchRecipe = defineMultiStyleConfig({
+export const Switch = defineMultiStyleConfig({
   baseStyle: definePartsStyle((props) => ({
     root: { alignItems: 'center', colorPalette: 'accent', display: 'flex', position: 'relative' },
     control: {

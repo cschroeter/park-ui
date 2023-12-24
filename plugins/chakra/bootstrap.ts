@@ -32,8 +32,8 @@ const generateIndex = async () => {
     .sort()
     .map((key) => {
       return {
-        name: pascalCase(key),
-        importName: v.kebabCase(key),
+        name: pascalCase(key.replace('Recipe', '')),
+        importName: v.kebabCase(key.replace('Recipe', '')),
       }
     })
 
@@ -103,6 +103,7 @@ const generateSlotRecipes = async () => {
   Object.entries({ ...slotRecipes, input }).forEach(async ([key, recipe]) => {
     const templateString = slotRecipeTemplate({
       ...recipe,
+      className: recipe.className?.replace('Recipe', ''),
       defaultVariants: { ...recipe.defaultVariants, colorScheme: 'accent' },
     })
     const code = await prettier.format(
@@ -117,7 +118,10 @@ const generateSlotRecipes = async () => {
       },
     )
 
-    fs.writeFileSync(path.join(`src/theme/components/${v.kebabCase(key)}.ts`), code)
+    fs.writeFileSync(
+      path.join(`src/theme/components/${v.kebabCase(key.replace('Recipe', ''))}.ts`),
+      code,
+    )
   })
 }
 

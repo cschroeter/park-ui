@@ -34,7 +34,7 @@ import { SegmentGroup } from './segment-group'
 import { Select } from './select'
 import { Slider } from './slider'
 import { Splitter } from './splitter'
-import { SwitchRecipe } from './switch-recipe'
+import { Switch } from './switch'
 import { Table } from './table'
 import { Tabs } from './tabs'
 import { TagsInput } from './tags-input'
@@ -80,7 +80,7 @@ export const components = {
   Select,
   Slider,
   Splitter,
-  SwitchRecipe,
+  Switch,
   Table,
   Tabs,
   TagsInput,
