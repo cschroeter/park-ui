@@ -49,7 +49,7 @@ export const FileUpload = defineMultiStyleConfig({
     itemPreview: { gridArea: 'preview' },
     itemPreviewImage: { aspectRatio: '1', height: '10', objectFit: 'scale-down', width: '10' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

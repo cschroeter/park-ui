@@ -30,10 +30,7 @@ export const Table = defineMultiStyleConfig({
       transitionTimingFunction: 'default',
     },
   }),
-  defaultProps: {
-    size: 'md',
-    variant: 'plain',
-  },
+  defaultProps: { size: 'md', variant: 'plain', colorScheme: 'accent' },
   sizes: {
     sm: {
       root: { textStyle: 'sm' },

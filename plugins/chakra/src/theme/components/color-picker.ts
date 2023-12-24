@@ -78,7 +78,7 @@ export const ColorPicker = defineMultiStyleConfig({
     },
     transparencyGrid: { borderRadius: 'l2' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

@@ -23,9 +23,7 @@ export const RatingGroup = defineMultiStyleConfig({
       _focusVisible: { outline: '2px solid', outlineColor: 'colorPalette.default' },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {
       control: { gap: '0' },

@@ -55,9 +55,7 @@ export const TagsInput = defineMultiStyleConfig({
     itemInput: { background: 'transparent', outline: 'none' },
     label: { color: 'fg.default', fontWeight: 'medium', textStyle: 'sm' },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     md: {
       root: { gap: '1.5' },

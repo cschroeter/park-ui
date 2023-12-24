@@ -43,9 +43,7 @@ export const Accordion = defineMultiStyleConfig({
       '& > div': { overflow: 'hidden' },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     md: { itemTrigger: { py: '4' }, itemContent: { pb: '6', pr: '8', _closed: { pb: '0' } } },
   },

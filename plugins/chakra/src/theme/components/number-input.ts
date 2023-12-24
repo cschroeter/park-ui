@@ -70,9 +70,7 @@ export const NumberInput = defineMultiStyleConfig({
       },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     md: { control: { ps: '3', h: '10', minW: '10', fontSize: 'md' }, label: { textStyle: 'sm' } },
     lg: { control: { ps: '3.5', h: '11', minW: '11', fontSize: 'md' }, label: { textStyle: 'sm' } },

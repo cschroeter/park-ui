@@ -4,6 +4,7 @@ export const Label = defineStyleConfig({
   baseStyle: defineStyle((props) => ({ color: 'fg.default', fontWeight: 'medium' })),
   defaultProps: {
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     sm: { textStyle: 'sm' },

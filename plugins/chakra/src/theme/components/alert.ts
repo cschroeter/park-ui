@@ -24,7 +24,7 @@ export const Alert = defineMultiStyleConfig({
     icon: { color: 'fg.default', flexShrink: '0', width: '5', height: '5' },
     title: { color: 'fg.default', fontWeight: 'semibold', textStyle: 'sm' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

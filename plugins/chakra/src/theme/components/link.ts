@@ -17,7 +17,9 @@ export const Link = defineStyleConfig({
     _hover: { textDecorationColor: `${props.colorScheme}.default` },
     '& svg': { width: '1em', height: '1em' },
   })),
-  defaultProps: {},
+  defaultProps: {
+    colorScheme: 'accent',
+  },
   sizes: {},
   variants: {},
 })

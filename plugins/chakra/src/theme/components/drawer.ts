@@ -75,9 +75,7 @@ export const Drawer = defineMultiStyleConfig({
     title: { color: 'fg.default', fontWeight: 'semibold', textStyle: 'xl' },
     description: { color: 'fg.muted', textStyle: 'sm' },
   }),
-  defaultProps: {
-    variant: 'right',
-  },
+  defaultProps: { variant: 'right', colorScheme: 'accent' },
   sizes: {},
   variants: {
     left: {

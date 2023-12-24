@@ -35,9 +35,7 @@ export const Carousel = defineMultiStyleConfig({
       _focusVisible: { outlineOffset: '2px', outline: '2px solid', outlineColor: 'border.outline' },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {
       control: { gap: '1', p: '1' },

@@ -48,7 +48,7 @@ export const Dialog = defineMultiStyleConfig({
     title: { fontWeight: 'semibold', textStyle: 'lg' },
     description: { color: 'fg.muted', textStyle: 'sm' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

@@ -35,7 +35,7 @@ export const Popover = defineMultiStyleConfig({
     arrow: { '--arrow-size': 'var(--sizes-3)', '--arrow-background': 'var(--colors-bg-default)' },
     arrowTip: { borderTopWidth: '1px', borderLeftWidth: '1px' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

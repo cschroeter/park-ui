@@ -64,7 +64,7 @@ export const DatePicker = defineMultiStyleConfig({
     },
     view: { display: 'flex', flexDirection: 'column', gap: '3', _hidden: { display: 'none' } },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

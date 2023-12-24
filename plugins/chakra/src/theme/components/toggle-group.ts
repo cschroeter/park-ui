@@ -38,10 +38,7 @@ export const ToggleGroup = defineMultiStyleConfig({
       },
     },
   }),
-  defaultProps: {
-    size: 'md',
-    variant: 'outline',
-  },
+  defaultProps: { size: 'md', variant: 'outline', colorScheme: 'accent' },
   sizes: {
     sm: {
       item: {

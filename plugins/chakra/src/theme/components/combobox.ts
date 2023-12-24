@@ -54,9 +54,7 @@ export const Combobox = defineMultiStyleConfig({
     itemGroupLabel: { fontWeight: 'semibold', textStyle: 'sm' },
     itemIndicator: { color: 'colorPalette.default' },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {
       content: { p: '0.5', gap: '1' },

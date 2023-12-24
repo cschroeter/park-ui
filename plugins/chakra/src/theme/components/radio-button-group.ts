@@ -42,10 +42,7 @@ export const RadioButtonGroup = defineMultiStyleConfig({
     },
     itemText: { display: 'inline-flex', alignItems: 'center' },
   }),
-  defaultProps: {
-    size: 'md',
-    variant: 'solid',
-  },
+  defaultProps: { size: 'md', variant: 'solid', colorScheme: 'accent' },
   sizes: {
     sm: {
       root: { gap: '2' },

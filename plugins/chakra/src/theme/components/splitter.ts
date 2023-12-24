@@ -31,7 +31,7 @@ export const Splitter = defineMultiStyleConfig({
       _vertical: { minHeight: '1.5', margin: '0 min(1rem, 20%)' },
     },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

@@ -25,7 +25,7 @@ export const Card = defineMultiStyleConfig({
     title: { color: 'fg.default', textStyle: 'lg', fontWeight: 'semibold' },
     description: { color: 'fg.muted', textStyle: 'sm' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

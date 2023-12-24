@@ -6,7 +6,9 @@ export const Heading = defineStyleConfig({
     fontWeight: 'semibold',
     textStyle: 'xl',
   })),
-  defaultProps: {},
+  defaultProps: {
+    colorScheme: 'accent',
+  },
   sizes: {},
   variants: {},
 })

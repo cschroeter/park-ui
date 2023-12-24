@@ -6,7 +6,7 @@ import prettier from 'prettier'
 import v from 'voca'
 
 Handlebars.registerHelper('json', function (context) {
-  return JSON.stringify(context)
+  return JSON.stringify(context ?? {})
 })
 
 Handlebars.registerHelper('pascalCase', function (context) {
@@ -55,11 +55,10 @@ const generateRecipes = async () => {
   const slotRecipes = preset.theme?.extend?.recipes ?? {}
 
   Object.entries(slotRecipes).forEach(async ([key, recipe]) => {
-    const templateString = recipeTemplate(recipe)
-    if (key === 'button') {
-      console.log(templateString)
-    }
-
+    const templateString = recipeTemplate({
+      ...recipe,
+      defaultVariants: { ...recipe.defaultVariants, colorScheme: 'accent' },
+    })
     const code = await prettier.format(
       templateString.replace(
         /"colorPalette\.(\w+)"/g,
@@ -71,7 +70,6 @@ const generateRecipes = async () => {
         parser: 'typescript',
       },
     )
-
     fs.writeFileSync(path.join(`src/theme/components/${v.kebabCase(key)}.ts`), code)
   })
 }
@@ -80,10 +78,33 @@ const generateSlotRecipes = async () => {
   const prettierConfig = await prettier.resolveConfig('.')
 
   const preset = createPreset()
+
+  const inputRecipe = preset.theme?.extend?.recipes?.input ?? {}
+  const input = {
+    ...inputTemplate,
+    ...inputRecipe,
+    base: {
+      field: inputRecipe.base,
+    },
+    variants: {
+      size: Object.entries(inputRecipe.variants?.size ?? {}).reduce((acc, [key, value]) => {
+        return {
+          ...acc,
+          [key]: {
+            field: value,
+          },
+        }
+      }, {}),
+    },
+  }
+
   const slotRecipes = preset.theme?.extend?.slotRecipes ?? {}
 
-  Object.entries(slotRecipes).forEach(async ([key, recipe]) => {
-    const templateString = slotRecipeTemplate(recipe)
+  Object.entries({ ...slotRecipes, input }).forEach(async ([key, recipe]) => {
+    const templateString = slotRecipeTemplate({
+      ...recipe,
+      defaultVariants: { ...recipe.defaultVariants, colorScheme: 'accent' },
+    })
     const code = await prettier.format(templateString, {
       ...prettierConfig,
       plugins: ['prettier-plugin-organize-imports'],
@@ -104,3 +125,7 @@ main().catch((err) => {
   console.error(err)
   process.exit(1)
 })
+
+const inputTemplate = {
+  slots: ['field'],
+}

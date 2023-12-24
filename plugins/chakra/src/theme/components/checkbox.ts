@@ -41,9 +41,7 @@ export const Checkbox = defineMultiStyleConfig({
       },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {
       root: { gap: '2' },

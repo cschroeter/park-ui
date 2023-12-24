@@ -13,9 +13,7 @@ export const PinInput = defineMultiStyleConfig({
     control: { display: 'flex', gap: '2' },
     label: { color: 'fg.default', fontWeight: 'medium' },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: { label: { textStyle: 'sm' } },
     md: { label: { textStyle: 'sm' } },

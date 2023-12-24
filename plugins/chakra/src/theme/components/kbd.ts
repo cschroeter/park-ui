@@ -14,6 +14,7 @@ export const Kbd = defineStyleConfig({
   })),
   defaultProps: {
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     sm: { minHeight: '5', px: '0.5', textStyle: 'xs' },

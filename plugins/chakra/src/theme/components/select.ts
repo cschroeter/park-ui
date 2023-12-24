@@ -78,10 +78,7 @@ export const Select = defineMultiStyleConfig({
       '& :where(svg)': { color: 'fg.subtle' },
     },
   }),
-  defaultProps: {
-    size: 'md',
-    variant: 'outline',
-  },
+  defaultProps: { size: 'md', variant: 'outline', colorScheme: 'accent' },
   sizes: {
     sm: {
       content: { p: '0.5', gap: '1' },

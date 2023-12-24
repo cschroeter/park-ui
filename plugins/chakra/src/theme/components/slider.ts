@@ -55,9 +55,7 @@ export const Slider = defineMultiStyleConfig({
       _underValue: { _before: { background: 'var(--before-background)' } },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {
       control: { height: '4' },

@@ -25,7 +25,7 @@ export const Toast = defineMultiStyleConfig({
     description: { color: 'fg.muted', textStyle: 'sm' },
     closeTrigger: { position: 'absolute', top: '3', right: '3' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

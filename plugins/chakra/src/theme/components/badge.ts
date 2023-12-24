@@ -13,6 +13,7 @@ export const Badge = defineStyleConfig({
   defaultProps: {
     variant: 'subtle',
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     sm: { textStyle: 'xs', px: '2', h: '5', gap: '1', '& svg': { width: '3', height: '3' } },

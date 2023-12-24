@@ -20,9 +20,7 @@ export const Avatar = defineMultiStyleConfig({
     },
     image: { objectFit: 'cover' },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     xs: { root: { height: '8', width: '8' }, fallback: { textStyle: 'xs' } },
     sm: { root: { height: '9', width: '9' }, fallback: { textStyle: 'sm' } },

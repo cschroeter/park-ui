@@ -24,7 +24,7 @@ export const HoverCard = defineMultiStyleConfig({
     arrow: { '--arrow-size': '12px', '--arrow-background': 'var(--hover-card-background)' },
     arrowTip: { borderTopWidth: '1px', borderLeftWidth: '1px' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

@@ -17,7 +17,7 @@ export const Editable = defineMultiStyleConfig({
     root: { display: 'flex', flexDirection: 'column', gap: '1.5', width: '100%' },
     control: { display: 'flex', gap: '2' },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

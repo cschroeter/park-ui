@@ -22,6 +22,7 @@ export const IconButton = defineStyleConfig({
   defaultProps: {
     variant: 'solid',
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     xs: {

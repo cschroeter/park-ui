@@ -24,7 +24,7 @@ export const Tooltip = defineMultiStyleConfig({
       _closed: { animation: 'fadeOut 0.2s ease-out' },
     },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

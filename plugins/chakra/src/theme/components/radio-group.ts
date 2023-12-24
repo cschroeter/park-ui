@@ -46,9 +46,7 @@ export const RadioGroup = defineMultiStyleConfig({
     },
     itemText: { color: 'fg.default', fontWeight: 'medium', _disabled: { color: 'fg.disabled' } },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     sm: {
       root: { gap: { _vertical: '3', _horizontal: '4' } },

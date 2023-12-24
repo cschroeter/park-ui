@@ -20,7 +20,7 @@ export const Pagination = defineMultiStyleConfig({
       px: '2',
     },
   }),
-  defaultProps: {},
+  defaultProps: { colorScheme: 'accent' },
   sizes: {},
   variants: {},
 })

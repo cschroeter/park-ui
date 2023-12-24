@@ -40,12 +40,7 @@ export const SegmentGroup = defineMultiStyleConfig({
       py: { _vertical: '1.5' },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
-  sizes: {
-    sm: { item: { textStyle: 'sm' } },
-    md: { item: { textStyle: 'md' } },
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
+  sizes: { sm: { item: { textStyle: 'sm' } }, md: { item: { textStyle: 'md' } } },
   variants: {},
 })

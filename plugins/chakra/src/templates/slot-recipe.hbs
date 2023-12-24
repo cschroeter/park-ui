@@ -7,22 +7,10 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 ])
 
 export const {{pascalCase className}} = defineMultiStyleConfig({
-  baseStyle: definePartsStyle({
-    {{#each base}}
-      "{{@key}}": {{{json this}}},
-    {{/each}}
-  }),
-  defaultProps: {
-    {{#each defaultVariants as |variant|}}
-      "{{@key}}": "{{variant}}",
-    {{/each}}
-  },
-  sizes: {
-    {{#each variants.size as |size|}}
-      "{{@key}}": {{{json this}}},
-    {{/each}}
-  },
-  variants: {
+  baseStyle: definePartsStyle({{{json this.base}}}),
+  defaultProps: {{{json this.defaultVariants}}},
+  sizes: {{{json this.variants.size}}},
+   variants: {
     {{#each variants.variant as |variant|}}
       "{{@key}}": {{{json this}}},
     {{/each}}

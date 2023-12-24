@@ -46,10 +46,7 @@ export const Tabs = defineMultiStyleConfig({
       _vertical: { justifyContent: 'start' },
     },
   }),
-  defaultProps: {
-    size: 'md',
-    variant: 'line',
-  },
+  defaultProps: { size: 'md', variant: 'line', colorScheme: 'accent' },
   sizes: {
     sm: { trigger: { '& svg': { width: '4', height: '4' } } },
     md: { trigger: { '& svg': { width: '5', height: '5' } } },

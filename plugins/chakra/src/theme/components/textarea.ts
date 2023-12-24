@@ -22,6 +22,7 @@ export const Textarea = defineStyleConfig({
   })),
   defaultProps: {
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     sm: { p: '2.5', fontSize: 'sm' },

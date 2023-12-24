@@ -13,6 +13,7 @@ export const Code = defineStyleConfig({
   defaultProps: {
     size: 'md',
     variant: 'outline',
+    colorScheme: 'accent',
   },
   sizes: {
     sm: { minHeight: '5', px: '0.5', textStyle: 'xs' },

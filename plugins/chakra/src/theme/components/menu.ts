@@ -79,9 +79,7 @@ export const Menu = defineMultiStyleConfig({
       '& :where(svg)': { color: 'fg.muted' },
     },
   }),
-  defaultProps: {
-    size: 'md',
-  },
+  defaultProps: { size: 'md', colorScheme: 'accent' },
   sizes: {
     xs: {
       itemGroup: { gap: '1' },

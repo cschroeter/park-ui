@@ -10,6 +10,7 @@ export const Icon = defineStyleConfig({
   })),
   defaultProps: {
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     xs: { w: '3', h: '3' },
