@@ -17,7 +17,7 @@ export const RatingGroup = defineMultiStyleConfig({
       transitionDuration: 'normal',
       transitionProperty: 'color, fill',
       transitionTimingFunction: 'default',
-      color: 'var(--colors-bg-emphasized)',
+      color: 'var(--chakra-colors-bg-emphasized)',
       fill: 'var(--colors-bg-emphasized)',
       _highlighted: { color: 'var(--colors-accent-default)', fill: 'var(--colors-accent-default)' },
       _focusVisible: { outline: '2px solid', outlineColor: `${props.colorScheme}.default` },

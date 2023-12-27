@@ -132,7 +132,7 @@ export const Select = defineMultiStyleConfig({
         borderWidth: '1px',
         _focus: {
           borderColor: `${props.colorScheme}.default`,
-          boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+          boxShadow: '0 0 0 1px var(--chakra-colors-accent-default)',
         },
       },
     })),

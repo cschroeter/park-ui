@@ -32,7 +32,10 @@ export const Popover = defineMultiStyleConfig({
     title: { fontWeight: 'medium', textStyle: 'sm' },
     description: { color: 'fg.muted', textStyle: 'sm' },
     closeTrigger: { color: 'fg.muted' },
-    arrow: { '--arrow-size': 'var(--sizes-3)', '--arrow-background': 'var(--colors-bg-default)' },
+    arrow: {
+      '--arrow-size': 'var(--sizes-3)',
+      '--arrow-background': 'var(--chakra-colors-bg-default)',
+    },
     arrowTip: { borderTopWidth: '1px', borderLeftWidth: '1px' },
   })),
   defaultProps: { colorScheme: 'accent' },

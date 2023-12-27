@@ -21,7 +21,7 @@ export const Input = defineMultiStyleConfig({
       _disabled: { opacity: 0.4, cursor: 'not-allowed' },
       _focus: {
         borderColor: `${props.colorScheme}.default`,
-        boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+        boxShadow: '0 0 0 1px var(--chakra-colors-accent-default)',
       },
     },
   })),

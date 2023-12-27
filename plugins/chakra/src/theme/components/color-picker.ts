@@ -66,7 +66,7 @@ export const ColorPicker = defineMultiStyleConfig({
       width: '6',
       borderRadius: 'l2',
       boxShadow:
-        '0 0 0 1px var(--colors-border-emphasized), 0 0 0 2px var(--colors-bg-default) inset',
+        '0 0 0 1px var(--chakra-colors-border-emphasized), 0 0 0 2px var(--colors-bg-default) inset',
     },
     channelSliderThumb: {
       borderRadius: 'full',

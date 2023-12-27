@@ -92,7 +92,7 @@ export const RadioButtonGroup = defineMultiStyleConfig({
       item: {
         _checked: {
           borderColor: `${props.colorScheme}.default`,
-          boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+          boxShadow: '0 0 0 1px var(--chakra-colors-accent-default)',
           _hover: { background: 'initial' },
         },
       },

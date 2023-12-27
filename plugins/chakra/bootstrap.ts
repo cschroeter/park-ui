@@ -60,10 +60,10 @@ const generateRecipes = async () => {
       defaultVariants: { ...recipe.defaultVariants, colorScheme: 'accent' },
     })
     const code = await prettier.format(
-      templateString.replace(
-        /"colorPalette\.(\w+)"/g,
-        (match, p1) => '`${props.colorScheme}.' + p1 + '`',
-      ),
+      templateString
+        .replace(/"colorPalette\.(\w+)"/g, (match, p1) => '`${props.colorScheme}.' + p1 + '`')
+        .replace('--colors-', '--chakra-colors-')
+        .replace('-color-palette-', '-accent-'),
       {
         ...prettierConfig,
         plugins: ['prettier-plugin-organize-imports'],
@@ -107,10 +107,10 @@ const generateSlotRecipes = async () => {
       defaultVariants: { ...recipe.defaultVariants, colorScheme: 'accent' },
     })
     const code = await prettier.format(
-      templateString.replace(
-        /"colorPalette\.(\w+)"/g,
-        (match, p1) => '`${props.colorScheme}.' + p1 + '`',
-      ),
+      templateString
+        .replace(/"colorPalette\.(\w+)"/g, (match, p1) => '`${props.colorScheme}.' + p1 + '`')
+        .replace('--colors-', '--chakra-colors-')
+        .replace('-color-palette-', '-accent-'),
       {
         ...prettierConfig,
         plugins: ['prettier-plugin-organize-imports'],

@@ -27,7 +27,7 @@ export const NumberInput = defineMultiStyleConfig({
       transitionTimingFunction: 'default',
       _focusWithin: {
         borderColor: `${props.colorScheme}.default`,
-        boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+        boxShadow: '0 0 0 1px var(--chakra-colors-accent-default)',
       },
     },
     input: { outline: 'none', background: 'transparent', width: 'full', gridRow: '2' },

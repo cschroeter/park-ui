@@ -55,7 +55,10 @@ export const Tabs = defineMultiStyleConfig({
   variants: {
     line: definePartsStyle((props) => ({
       list: {
-        _horizontal: { boxShadow: '0 -1px 0 0 inset var(--colors-border-default)', gap: '4' },
+        _horizontal: {
+          boxShadow: '0 -1px 0 0 inset var(--chakra-colors-border-default)',
+          gap: '4',
+        },
         _vertical: { boxShadow: '1px 0 0 0 inset var(--colors-border-default)', gap: '1' },
       },
       indicator: {
