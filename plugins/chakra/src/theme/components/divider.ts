@@ -8,13 +8,11 @@ export const Divider = defineStyleConfig({
     variant: 'solid',
   },
   variants: {
-    solid: {
-      solid: defineStyle({
-        borderStyle: 'solid',
-      }),
-      dashed: defineStyle({
-        borderStyle: 'dashed',
-      }),
-    },
+    solid: defineStyle({
+      borderStyle: 'solid',
+    }),
+    dashed: defineStyle({
+      borderStyle: 'dashed',
+    }),
   },
 })
