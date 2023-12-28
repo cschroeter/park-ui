@@ -71,10 +71,41 @@ Copy the following code and paste it into the `~/lib/create-style-context.tsx` f
 
 <StyledContext />
 
-**Please note:** If you use React, be aware that context require adding `'use client'` to the top of the file.
+**Please note:** If you are using Next.js with React Server Components, you may want to add `'use client'` at the top of the file.
 
 </Step>
-<Step number="5" title="Add your first component">
+<Step number="5" title="Path Aliases (Optional)">
+
+For consistent import statements in code examples, we recommend to setup path aliases. 
+While optional, our examples assume their use. Without them, you'll need to modify the import paths in the examples accordingly.
+
+To implement path aliases, extend your `tsconfig.json` as follows:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "styled-system"]
+}
+```
+
+If you are using [Vite](https://vitejs.dev/), it's necessary to include the `vite-tsconfig-paths` plugin in your config file:
+
+```ts
+import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+
+export default defineConfig({
+  plugins: [tsconfigPaths({ root: './' })],
+})
+```
+</Step>
+
+<Step number="6" title="Add your first component">
 
 To add a component, simply copy the code for the desired component and paste it into the appropriate place in your
 project. Let's demonstrate this process using the `Button` component. First, copy the code for the component:
