@@ -1,5 +1,5 @@
 import { ChakraProvider, useColorMode } from '@chakra-ui/react'
-import React, { Fragment, useEffect, type ReactNode } from 'react'
+import { Fragment, useEffect, type ReactNode } from 'react'
 import { createTheme } from '../src/theme'
 
 type Props = {

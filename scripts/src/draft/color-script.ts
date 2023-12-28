@@ -1,5 +1,5 @@
 import colors from '@radix-ui/colors'
-import { outputFileSync } from 'fs-extra/esm'
+import { outputFileSync } from 'fs-extra'
 
 // Object.entries(colors)
 //   .filter(([name]) => !/[A-Z]/.test(name))
@@ -49,6 +49,14 @@ import { outputFileSync } from 'fs-extra/esm'
 // writer.flush()
 // })
 
+interface ColorPalette {
+  [colorName: string]: {
+    [colorValue: string]: string
+  }
+}
+
+const colorPalette = colors as ColorPalette
+
 Object.entries(colors)
   .filter(([name]) => !/[A-Z]/.test(name))
   .map(([name, colorObj]) => {
@@ -60,7 +68,7 @@ Object.entries(colors)
       }
     }, {})
 
-    const lightAlpha = Object.entries(colors[name + 'A']).reduce((acc, [key, value]) => {
+    const lightAlpha = Object.entries(colorPalette[name + 'A']).reduce((acc, [key, value]) => {
       const scale = key.replace(/\D+/g, '')
       return {
         ...acc,
@@ -68,7 +76,7 @@ Object.entries(colors)
       }
     }, {})
 
-    const dark = Object.entries(colors[name + 'Dark']).reduce((acc, [key, value]) => {
+    const dark = Object.entries(colorPalette[name + 'Dark']).reduce((acc, [key, value]) => {
       const scale = key.replace(/\D+/g, '')
       return {
         ...acc,
@@ -76,7 +84,7 @@ Object.entries(colors)
       }
     }, {})
 
-    const darkAlpha = Object.entries(colors[name + 'DarkA']).reduce((acc, [key, value]) => {
+    const darkAlpha = Object.entries(colorPalette[name + 'DarkA']).reduce((acc, [key, value]) => {
       const scale = key.replace(/\D+/g, '')
       return {
         ...acc,

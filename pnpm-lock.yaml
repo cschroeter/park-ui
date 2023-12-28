@@ -280,6 +280,9 @@ importers:
       '@pandacss/dev':
         specifier: 0.23.0
         version: 0.23.0(typescript@5.3.3)
+      '@pandacss/types':
+        specifier: 0.23.0
+        version: 0.23.0
       '@park-ui/panda-preset':
         specifier: workspace:*
         version: link:../plugins/panda
@@ -289,9 +292,6 @@ importers:
       '@types/fs-extra':
         specifier: 11.0.4
         version: 11.0.4
-      '@types/handlebars':
-        specifier: 4.1.0
-        version: 4.1.0
       '@types/voca':
         specifier: 1.4.5
         version: 1.4.5
@@ -6765,13 +6765,6 @@ packages:
     dependencies:
       '@types/node': 20.9.4
     dev: true
-
-  /@types/handlebars@4.1.0:
-    resolution: {integrity: sha512-gq9YweFKNNB1uFK71eRqsd4niVkXrxHugqWFQkeLRJvGjnxsLr16bYtcsG4tOFwmYi0Bax+wCkbf1reUfdl4kA==}
-    deprecated: This is a stub types definition. handlebars provides its own type definitions, so you do not need this installed.
-    dependencies:
-      handlebars: 4.7.8
-    dev: false
 
   /@types/hast@3.0.3:
     resolution: {integrity: sha512-2fYGlaDy/qyLlhidX42wAH0KBi2TCjKMH8CHmBXgRlJ3Y+OXTiqsPQ6IWarZKwF1JoUcAJdPogv1d4b0COTpmQ==}
