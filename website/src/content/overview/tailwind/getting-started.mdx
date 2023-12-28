@@ -65,7 +65,38 @@ alongside the code examples. This approach gives you more control over which com
 However, it will require a bit more effort on your part.
 
 </Step>
-<Step number="4" title="Add your first component">
+<Step number="4" title="Path Aliases (Optional)">
+
+For consistent import statements in code examples, we recommend to setup path aliases. 
+While optional, our examples assume their use. Without them, you'll need to modify the import paths in the examples accordingly.
+
+To implement path aliases, extend your `tsconfig.json` as follows:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "styled-system"]
+}
+```
+
+If you are using [Vite](https://vitejs.dev/), it's necessary to include the `vite-tsconfig-paths` plugin in your config file:
+
+```ts
+import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+
+export default defineConfig({
+  plugins: [tsconfigPaths({ root: './' })],
+})
+```
+</Step>
+
+<Step number="5" title="Add your first component">
 
 To add a component, simply copy the code for the desired component and paste it into the appropriate place in your
 project. Let's demonstrate this process using the `Button` component. First, copy the code for the component:

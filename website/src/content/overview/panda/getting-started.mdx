@@ -71,46 +71,29 @@ Copy the following code and paste it into the `~/lib/create-style-context.tsx` f
 
 <StyledContext />
 
-**Please note:** If you use React, be aware that context require adding `'use client'` to the top of the file.
+**Please note:** If you are using Next.js with React Server Components, you may want to add `'use client'` at the top of the file.
 
 </Step>
-<Step number="5" title="Set up path aliases (optional)">
+<Step number="5" title="Path Aliases (Optional)">
 
-To keep your import code tidy, Park UI recommends using path aliases. This is not required, but the example code assumes these path aliases exist. So if you skip this step, you'll need to adjust the examples' import statements to match your setup.
+For consistent import statements in code examples, we recommend to setup path aliases. 
+While optional, our examples assume their use. Without them, you'll need to modify the import paths in the examples accordingly.
 
-The default Panda CSS setup will create a `styled-system/` directory (add this to your .gitignore) & `panda.config.ts` at the root of your project (which you should commit to git). Assuming you're using Vite with TypeScript, you should have this directory structure:
-
-```shell
-.
-├── src
-├── styled-system
-├── package.json
-├── panda.config.ts
-└── tsconfig.json
-└── vite.config.ts
-```
-
-We want to:
-
-1. Allow importing from the `styled-system` directory without having to reference a relative path back to the root of your repo
-2. Use `~/` as a reference to the base of your `src/` directory. (In other projects, `@` is often used for these import aliases. [Park UI prefers `~`](https://github.com/cschroeter/park-ui/issues/116#issuecomment-1855455410), but there is no technical difference.)
-
-First add the base URL (for styled-system import) and `~` path alias to `compilerOptions` in `tsconfig.json`:
+To implement path aliases, extend your `tsconfig.json` as follows:
 
 ```json
 {
   "compilerOptions": {
-    ...
-    /* Path Aliases */
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
     }
   },
-...
+  "include": ["src", "styled-system"]
 }
+```
 
-Next, let Vite use your path aliases by adding `tsconfigPaths` to your `vite.config.ts`:
+If you are using [Vite](https://vitejs.dev/), it's necessary to include the `vite-tsconfig-paths` plugin in your config file:
 
 ```ts
 import { defineConfig } from 'vite'
@@ -120,10 +103,8 @@ export default defineConfig({
   plugins: [tsconfigPaths({ root: './' })],
 })
 ```
-
-Finally, restart your Vite dev server. (If you get an error, you may need to `npm install tsconfig-paths`)
-
 </Step>
+
 <Step number="6" title="Add your first component">
 
 To add a component, simply copy the code for the desired component and paste it into the appropriate place in your
