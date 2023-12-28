@@ -280,6 +280,9 @@ importers:
       '@pandacss/dev':
         specifier: 0.23.0
         version: 0.23.0(typescript@5.3.3)
+      '@pandacss/types':
+        specifier: 0.23.0
+        version: 0.23.0
       '@park-ui/panda-preset':
         specifier: workspace:*
         version: link:../plugins/panda

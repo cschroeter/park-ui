@@ -7,6 +7,7 @@
   "dependencies": {
     "@ark-ui/anatomy": "1.2.0",
     "@pandacss/dev": "0.23.0",
+    "@pandacss/types": "0.23.0",
     "@park-ui/panda-preset": "workspace:*",
     "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
