@@ -10,8 +10,8 @@ const TableBody = withContext(styled(ark.tbody), 'body')
 const TableCaption = withContext(styled(ark.caption), 'caption')
 const TableCell = withContext(styled(ark.td), 'cell')
 const TableFooter = withContext(styled(ark.tfoot), 'footer')
-const TableHead = withContext(styled(ark.theader), 'header')
-const TableHeader = withContext(styled(ark.th), 'head')
+const TableHead = withContext(styled(ark.thead), 'head')
+const TableHeader = withContext(styled(ark.th), 'header')
 const TableRow = withContext(styled(ark.tr), 'row')
 
 const Root = Table

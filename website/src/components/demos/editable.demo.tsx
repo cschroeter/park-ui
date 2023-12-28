@@ -1,7 +1,7 @@
 import { Button } from '~/components/ui/button'
 import type { EditableProps } from '~/components/ui/editable'
 import * as Editable from '~/components/ui/editable'
-import { Label } from '~/components/ui/label'
+import { FormLabel } from '~/components/ui/form-label'
 
 export const Demo = (props: EditableProps) => {
   return (
@@ -14,7 +14,7 @@ export const Demo = (props: EditableProps) => {
       {(state) => (
         <>
           <Editable.Label asChild>
-            <Label>Framework</Label>
+            <FormLabel>Framework</FormLabel>
           </Editable.Label>
           <Editable.Area>
             <Editable.Input />

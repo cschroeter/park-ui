@@ -14,13 +14,13 @@ import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
 import { fileUpload } from './file-upload'
+import { formLabel } from './form-label'
 import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { iconButton } from './icon-button'
 import { input } from './input'
 import { kbd } from './kbd'
-import { label } from './label'
 import { link } from './link'
 import { menu } from './menu'
 import { numberInput } from './number-input'
@@ -47,12 +47,12 @@ export const recipes = {
   badge,
   button,
   code,
+  formLabel,
   heading,
   icon,
   iconButton,
   input,
   kbd,
-  label,
   link,
   textarea,
 }
@@ -77,16 +77,16 @@ export const slotRecipes = {
   pagination,
   pinInput,
   popover,
-  radioGroup,
   radioButtonGroup,
+  radioGroup,
   ratingGroup,
   segmentGroup,
   select,
   slider,
   splitter,
   switchRecipe,
-  tabs,
   table,
+  tabs,
   tagsInput,
   toast,
   toggleGroup,

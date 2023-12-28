@@ -5,7 +5,7 @@ import { Drawer, IconButton } from '~/components/ui'
 import { Logo } from '../logo'
 
 export const MobileSidebarContainer = (props: PropsWithChildren) => (
-  <Drawer.Root placement="left">
+  <Drawer.Root variant="left">
     <Drawer.Trigger asChild>
       <IconButton aria-label="Open Menu" variant="ghost" size="sm">
         <MenuIcon />

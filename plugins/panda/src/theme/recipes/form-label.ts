@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
-export const label = defineRecipe({
-  className: 'label',
+export const formLabel = defineRecipe({
+  className: 'formLabel',
   base: {
     color: 'fg.default',
     fontWeight: 'medium',

@@ -59,6 +59,10 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/file-upload.json"
     },
     {
+      "name": "Form Label",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/form-label.json"
+    },
+    {
       "name": "Hover Card",
       "href": "https://park-ui.com/registry/tailwind/solid/components/hover-card.json"
     },
@@ -71,10 +75,6 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/input.json"
     },
     { "name": "Kbd", "href": "https://park-ui.com/registry/tailwind/solid/components/kbd.json" },
-    {
-      "name": "Label",
-      "href": "https://park-ui.com/registry/tailwind/solid/components/label.json"
-    },
     { "name": "Link", "href": "https://park-ui.com/registry/tailwind/solid/components/link.json" },
     { "name": "Menu", "href": "https://park-ui.com/registry/tailwind/solid/components/menu.json" },
     {

@@ -26,6 +26,6 @@ export const mint = {
 
   default: 'mint.9',
   emphasized: 'mint.10',
-  fg: 'white',
+  fg: 'sage.light.12',
   text: 'mint.a11',
 }

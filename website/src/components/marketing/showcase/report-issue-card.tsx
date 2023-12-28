@@ -1,6 +1,6 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button, Card, Input, Label, Select, Textarea } from '~/components/ui'
+import { Button, Card, FormLabel, Input, Select, Textarea } from '~/components/ui'
 
 export const ReportIssueCard = () => {
   const frameworks = ['React', 'Solid', 'Vue']
@@ -12,7 +12,7 @@ export const ReportIssueCard = () => {
       </Card.Header>
       <Card.Body gap="4">
         <Stack gap="1.5">
-          <Label htmlFor="title">Title</Label>
+          <FormLabel htmlFor="title">Title</FormLabel>
           <Input id="title" />
         </Stack>
         <Select.Root items={frameworks} positioning={{ sameWidth: true }} multiple>
@@ -37,7 +37,7 @@ export const ReportIssueCard = () => {
           </Select.Positioner>
         </Select.Root>
         <Stack gap="1.5">
-          <Label htmlFor="description">Description</Label>
+          <FormLabel htmlFor="description">Description</FormLabel>
           <Textarea id="description" placeholder="A brief description of the issue" rows={3} />
         </Stack>
       </Card.Body>
