@@ -7,7 +7,7 @@ const meta: Meta<typeof Button> = {
 }
 export default meta
 
-export const Default = () => <Button>Button</Button>
+export const Default = () => <Button colorScheme="accent">Button</Button>
 export const WithColorScheme = () => <Button colorScheme="neutral">Button</Button>
 
 export const WithSizes = () => {

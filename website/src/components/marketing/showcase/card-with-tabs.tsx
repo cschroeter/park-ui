@@ -1,5 +1,5 @@
 import { Stack } from 'styled-system/jsx'
-import { Button, Card, Input, Label, Tabs } from '~/components/ui'
+import { Button, Card, FormLabel, Input, Tabs } from '~/components/ui'
 
 export const CardWithTabs = () => {
   return (
@@ -21,11 +21,11 @@ export const CardWithTabs = () => {
           </Card.Header>
           <Card.Body gap="4">
             <Stack gap="1.5">
-              <Label htmlFor="username">Username</Label>
+              <FormLabel htmlFor="username">Username</FormLabel>
               <Input id="username" defaultValue="grizzly_codes" />
             </Stack>
             <Stack gap="1.5">
-              <Label htmlFor="password-2">Password</Label>
+              <FormLabel htmlFor="password-2">Password</FormLabel>
               <Input id="password-2" type="password" placeholder="*****" />
             </Stack>
           </Card.Body>
@@ -42,19 +42,19 @@ export const CardWithTabs = () => {
           </Card.Header>
           <Card.Body gap="4">
             <Stack gap="1.5">
-              <Label htmlFor="name">Name</Label>
+              <FormLabel htmlFor="name">Name</FormLabel>
               <Input id="name" />
             </Stack>
             <Stack gap="1.5">
-              <Label htmlFor="email">E-Mail</Label>
+              <FormLabel htmlFor="email">E-Mail</FormLabel>
               <Input id="email" />
             </Stack>
             <Stack gap="1.5">
-              <Label htmlFor="password-3">Password</Label>
+              <FormLabel htmlFor="password-3">Password</FormLabel>
               <Input id="password-3" type="password" />
             </Stack>
             <Stack gap="1.5">
-              <Label htmlFor="confirm">Confirm Password</Label>
+              <FormLabel htmlFor="confirm">Confirm Password</FormLabel>
               <Input id="confirm" type="password" />
             </Stack>
           </Card.Body>

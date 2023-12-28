@@ -140,15 +140,15 @@
     },
     "name": "Kbd"
   },
-  "label": {
-    "className": "label",
+  "form-label": {
+    "className": "formLabel",
     "component": "ark.label",
     "imports": {
       "react": ["import { ark } from '@ark-ui/react/factory'"],
       "solid": ["import { ark } from '@ark-ui/solid'"],
       "vue": ["import { ark } from '@ark-ui/vue/factory'"]
     },
-    "name": "Label"
+    "name": "FormLabel"
   },
   "link": {
     "className": "link",
@@ -208,8 +208,8 @@
       "Caption": { "name": "TableCaption", "slot": "caption", "component": "ark.caption" },
       "Cell": { "name": "TableCell", "slot": "cell", "component": "ark.td" },
       "Footer": { "name": "TableFooter", "slot": "footer", "component": "ark.tfoot" },
-      "Head": { "name": "TableHead", "slot": "header", "component": "ark.theader" },
-      "Header": { "name": "TableHeader", "slot": "head", "component": "ark.th" },
+      "Head": { "name": "TableHead", "slot": "head", "component": "ark.thead" },
+      "Header": { "name": "TableHeader", "slot": "header", "component": "ark.th" },
       "Row": { "name": "TableRow", "slot": "row", "component": "ark.tr" }
     },
     "name": "Table",

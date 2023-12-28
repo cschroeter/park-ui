@@ -1,0 +1,18 @@
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers([
+  {{#each slots as |slot|}}
+    "{{slot}}",
+  {{/each}}
+])
+
+export const {{pascalCase className}} = defineMultiStyleConfig({
+  baseStyle: definePartsStyle((props) => ({{{json base}}})),
+  defaultProps: {{{json this.defaultVariants}}},
+  sizes: {{{json this.variants.size}}},
+  variants: {
+    {{#each variants.variant as |variant|}}
+      "{{@key}}": definePartsStyle((props) => ({{{json variant}}})),
+    {{/each}}
+  }
+})

@@ -69,8 +69,8 @@ export const TableBody = withContext(ark.tbody, 'body')
 export const TableCaption = withContext(ark.caption, 'caption')
 export const TableCell = withContext(ark.td, 'cell')
 export const TableFooter = withContext(ark.tfoot, 'footer')
-export const TableHead = withContext(ark.theader, 'header')
-export const TableHeader = withContext(ark.th, 'head')
+export const TableHead = withContext(ark.thead, 'head')
+export const TableHeader = withContext(ark.th, 'header')
 export const TableRow = withContext(ark.tr, 'row')
 
 export const Table = Object.assign(TableRoot, {

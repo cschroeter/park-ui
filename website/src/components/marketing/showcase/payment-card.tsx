@@ -1,7 +1,7 @@
 import { SiApple, SiPaypal } from '@icons-pack/react-simple-icons'
 import { CheckIcon, ChevronsUpDownIcon, CreditCardIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button, Card, Input, Label, RadioButtonGroup, Select } from '~/components/ui'
+import { Button, Card, FormLabel, Input, RadioButtonGroup, Select } from '~/components/ui'
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const years = ['2023', '2024', '2025']
@@ -37,11 +37,11 @@ export const PaymentCard = () => {
           ))}
         </RadioButtonGroup.Root>
         <Stack gap="1.5">
-          <Label htmlFor="owner">Owner</Label>
+          <FormLabel htmlFor="owner">Owner</FormLabel>
           <Input id="owner" />
         </Stack>
         <Stack gap="1.5">
-          <Label htmlFor="card">Card Number</Label>
+          <FormLabel htmlFor="card">Card Number</FormLabel>
           <Input id="card" />
         </Stack>
         <Stack direction="row" gap="3">
@@ -88,7 +88,7 @@ export const PaymentCard = () => {
             </Select.Positioner>
           </Select.Root>
           <Stack gap="1.5">
-            <Label htmlFor="cvc">CVC</Label>
+            <FormLabel htmlFor="cvc">CVC</FormLabel>
             <Input id="cvc" />
           </Stack>
         </Stack>

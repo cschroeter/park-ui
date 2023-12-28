@@ -4,9 +4,6 @@ import { shadows } from './shadows'
 export const semanticTokens = {
   colors: {
     ...colors,
-    gray: colors['sand'],
-    accent: colors['amber'],
-
     'bg.default': { default: 'white', _dark: 'gray.2' },
     'bg.canvas': 'gray.1',
     'bg.subtle': 'gray.2',

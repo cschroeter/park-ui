@@ -1,5 +1,7 @@
-export const IconButton = {
-  baseStyle: {
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+
+export const IconButton = defineStyleConfig({
+  baseStyle: defineStyle((props) => ({
     alignItems: 'center',
     appearance: 'none',
     borderRadius: 'l2',
@@ -15,13 +17,12 @@ export const IconButton = {
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
-    _hidden: {
-      display: 'none',
-    },
-  },
+    _hidden: { display: 'none' },
+  })),
   defaultProps: {
     variant: 'solid',
     size: 'md',
+    colorScheme: 'accent',
   },
   sizes: {
     xs: {
@@ -30,11 +31,7 @@ export const IconButton = {
       textStyle: 'xs',
       px: '0',
       gap: '2',
-      '& svg': {
-        fontSize: 'md',
-        width: '4',
-        height: '4',
-      },
+      '& svg': { fontSize: 'md', width: '4', height: '4' },
     },
     sm: {
       h: '9',
@@ -42,10 +39,7 @@ export const IconButton = {
       textStyle: 'sm',
       px: '0',
       gap: '2',
-      '& svg': {
-        width: '4',
-        height: '4',
-      },
+      '& svg': { width: '4', height: '4' },
     },
     md: {
       h: '10',
@@ -53,10 +47,7 @@ export const IconButton = {
       textStyle: 'sm',
       px: '0',
       gap: '2',
-      '& svg': {
-        width: '5',
-        height: '5',
-      },
+      '& svg': { width: '5', height: '5' },
     },
     lg: {
       h: '11',
@@ -64,10 +55,7 @@ export const IconButton = {
       textStyle: 'md',
       px: '0',
       gap: '2',
-      '& svg': {
-        width: '5',
-        height: '5',
-      },
+      '& svg': { width: '5', height: '5' },
     },
     xl: {
       h: '12',
@@ -75,10 +63,7 @@ export const IconButton = {
       textStyle: 'md',
       px: '0',
       gap: '2.5',
-      '& svg': {
-        width: '5',
-        height: '5',
-      },
+      '& svg': { width: '5', height: '5' },
     },
     '2xl': {
       h: '16',
@@ -86,92 +71,89 @@ export const IconButton = {
       textStyle: 'lg',
       px: '0',
       gap: '3',
-      '& svg': {
-        width: '6',
-        height: '6',
-      },
+      '& svg': { width: '6', height: '6' },
     },
   },
   variants: {
-    solid: {
-      background: 'accent.default',
-      color: 'accent.fg',
-      _hover: {
-        background: 'accent.emphasized',
-      },
+    solid: defineStyle((props) => ({
+      background: `${props.colorScheme}.default`,
+      color: `${props.colorScheme}.fg`,
+      colorPalette: 'accent',
+      _hover: { background: `${props.colorScheme}.emphasized` },
       _focusVisible: {
-        outlineOffset: '2px',
         outline: '2px solid',
-        outlineColor: 'border.accent',
+        outlineColor: `${props.colorScheme}.default`,
+        outlineOffset: '2px',
       },
       _disabled: {
         color: 'fg.disabled',
-        background: 'gray.a3',
+        background: 'bg.disabled',
         cursor: 'not-allowed',
-        _hover: {
-          color: 'fg.disabled',
-          background: 'gray.a3',
-        },
+        _hover: { color: 'fg.disabled', background: 'bg.disabled' },
       },
-    },
-    outline: {
+    })),
+    outline: defineStyle((props) => ({
       borderWidth: '1px',
-      borderColor: 'border.default',
-      _hover: {
-        background: 'gray.a2',
-      },
+      borderColor: `${props.colorScheme}.a8`,
+      color: `${props.colorScheme}.text`,
+      colorPalette: 'gray',
+      _hover: { background: `${props.colorScheme}.a2` },
       _disabled: {
         borderColor: 'border.disabled',
         color: 'fg.disabled',
         cursor: 'not-allowed',
-        _hover: {
-          background: 'transparent',
-          borderColor: 'border.disabled',
-          color: 'fg.disabled',
-        },
+        _hover: { background: 'transparent', borderColor: 'border.disabled', color: 'fg.disabled' },
       },
       _focusVisible: {
-        outlineOffset: '2px',
         outline: '2px solid',
-        outlineColor: 'border.outline',
+        outlineColor: `${props.colorScheme}.default`,
+        outlineOffset: '2px',
       },
-      _selected: {
-        background: 'gray.a3',
-      },
-    },
-    ghost: {
-      color: 'fg.default',
-      _hover: {
-        background: 'gray.a3',
-      },
-      _selected: {
-        background: 'gray.a3',
-      },
+      _selected: { background: `${props.colorScheme}.a3` },
+    })),
+    ghost: defineStyle((props) => ({
+      color: `${props.colorScheme}.text`,
+      colorPalette: 'gray',
+      _hover: { background: `${props.colorScheme}.a3` },
+      _selected: { background: `${props.colorScheme}.a3` },
       _disabled: {
         color: 'fg.disabled',
         cursor: 'not-allowed',
-        _hover: {
-          background: 'transparent',
-          color: 'fg.disabled',
-        },
+        _hover: { background: 'transparent', color: 'fg.disabled' },
       },
       _focusVisible: {
         outline: '2px solid',
-        outlineColor: 'border.outline',
+        outlineColor: `${props.colorScheme}.default`,
+        outlineOffset: '2px',
       },
-    },
-    link: {
+    })),
+    link: defineStyle((props) => ({
       verticalAlign: 'baseline',
       _disabled: {
         color: 'border.disabled',
         cursor: 'not-allowed',
-        _hover: {
-          color: 'border.disabled',
-        },
+        _hover: { color: 'border.disabled' },
       },
       height: 'auto!',
       px: '0!',
       minW: '0!',
-    },
+    })),
+    subtle: defineStyle((props) => ({
+      background: `${props.colorScheme}.a3`,
+      color: `${props.colorScheme}.text`,
+      colorPalette: 'gray',
+      _hover: { background: `${props.colorScheme}.a4` },
+      _focusVisible: {
+        outline: '2px solid',
+        outlineColor: `${props.colorScheme}.default`,
+        outlineOffset: '2px',
+      },
+      _disabled: {
+        background: 'bg.disabled',
+        color: 'fg.disabled',
+        cursor: 'not-allowed',
+        _hover: { background: 'bg.disabled', color: 'fg.disabled' },
+      },
+    })),
   },
-}
+})

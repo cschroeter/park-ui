@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "form-label.ts",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype FormLabelVariantProps = VariantProps<typeof styles>\nexport type FormLabelProps = FormLabelVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({\n  base: 'formLabel',\n  defaultVariants: { size: 'md' },\n  variants: {\n    size: {\n      sm: 'formLabel--size_sm',\n      md: 'formLabel--size_md',\n      lg: 'formLabel--size_lg',\n      xl: 'formLabel--size_xl',\n    },\n  },\n})\nexport const FormLabel = styled<FormLabelProps>(ark.label, styles)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

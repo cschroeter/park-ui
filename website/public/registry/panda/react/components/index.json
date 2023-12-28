@@ -41,6 +41,10 @@
       "href": "https://park-ui.com/registry/panda/react/components/file-upload.json"
     },
     {
+      "name": "Form Label",
+      "href": "https://park-ui.com/registry/panda/react/components/form-label.json"
+    },
+    {
       "name": "Hover Card",
       "href": "https://park-ui.com/registry/panda/react/components/hover-card.json"
     },
@@ -50,7 +54,6 @@
     },
     { "name": "Input", "href": "https://park-ui.com/registry/panda/react/components/input.json" },
     { "name": "Kbd", "href": "https://park-ui.com/registry/panda/react/components/kbd.json" },
-    { "name": "Label", "href": "https://park-ui.com/registry/panda/react/components/label.json" },
     { "name": "Link", "href": "https://park-ui.com/registry/panda/react/components/link.json" },
     { "name": "Menu", "href": "https://park-ui.com/registry/panda/react/components/menu.json" },
     {

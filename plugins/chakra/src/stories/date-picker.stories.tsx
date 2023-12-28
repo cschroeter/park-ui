@@ -1,10 +1,10 @@
 import { Button, IconButton, Input } from '@chakra-ui/react'
 import type { Meta } from '@storybook/react'
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import { DatePicker } from '../components/date-picker'
+import { DatePicker } from '~/components/ui/'
 
 const meta: Meta<typeof DatePicker> = {
-  component: DatePicker,
+  title: 'DatePicker',
 }
 
 export const Default = () => {

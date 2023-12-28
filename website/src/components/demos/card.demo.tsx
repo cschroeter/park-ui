@@ -2,8 +2,8 @@ import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import type { CardProps } from '~/components/ui/card'
 import * as Card from '~/components/ui/card'
+import { FormLabel } from '~/components/ui/form-label'
 import { Input } from '~/components/ui/input'
-import { Label } from '~/components/ui/label'
 
 export const Demo = (props: CardProps) => {
   return (
@@ -15,11 +15,11 @@ export const Demo = (props: CardProps) => {
       <Card.Body>
         <Stack gap="4">
           <Stack gap="1.5">
-            <Label htmlFor="name">Name</Label>
+            <FormLabel htmlFor="name">Name</FormLabel>
             <Input id="name" placeholder="Name" />
           </Stack>
           <Stack gap="1.5">
-            <Label htmlFor="email">Email</Label>
+            <FormLabel htmlFor="email">Email</FormLabel>
             <Input id="email" type="email" placeholder="Email" />
           </Stack>
         </Stack>
