@@ -44,7 +44,7 @@
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/node": "20.8.3",
     "@types/react": "18.2.45",
-    "lucide-react": "0.300.0",
+    "lucide-react": "0.302.0",
     "pandacss-preset-typography": "0.1.5",
     "postcss": "8.4.32",
     "postcss-js": "4.0.1",
