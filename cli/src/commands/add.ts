@@ -15,13 +15,16 @@ const toKebabCase = (str: string) => {
 export const addComponent = async (options: { componentName: string; componentUrl: string }) => {
   const serverComponents = getUseReactServerComponents()
   const { componentName, componentUrl } = options
-  const { componentsImportAlias } = getImportAliases()
+  const { componentsImportAlias, utilsImportAlias } = getImportAliases()
 
   const components = await downloadComponents({
     componentName,
     componentUrl,
   })
   components.forEach(({ filename, content, hasMultipleParts }) => {
+    if (utilsImportAlias !== '~/lib') {
+      content = content.replace(/~\/lib/g, `${utilsImportAlias}/create-style-context`)
+    }
     if (serverComponents && hasMultipleParts) {
       content = `'use client'\n\n${content}`
     }
