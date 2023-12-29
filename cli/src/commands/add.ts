@@ -23,7 +23,7 @@ export const addComponent = async (options: { componentName: string; componentUr
   })
   components.forEach(({ filename, content, hasMultipleParts }) => {
     if (utilsImportAlias !== '~/lib') {
-      content = content.replace(/~\/lib/g, `${utilsImportAlias}/create-style-context`)
+      content = content.replace(/~\/lib/g, utilsImportAlias)
     }
     if (serverComponents && hasMultipleParts) {
       content = `'use client'\n\n${content}`
