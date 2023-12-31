@@ -7,8 +7,9 @@ export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const { name, src, ...rest } = props
-  const styles = avatar()
+  const [variantProps, localProps] = avatar.splitVariantProps(props)
+  const { name, src, ...rest } = localProps
+  const styles = avatar(variantProps)
 
   return (
     <ArkAvatar.Root className={styles.root} {...rest}>

@@ -13,3 +13,11 @@ export const Basic = () => (
 )
 
 export const WithFallback = () => <Avatar name="Christian Schröter" />
+
+export const Size = () => (
+  <Avatar
+    name="Christian Schröter"
+    src="https://avatars.githubusercontent.com/u/1846056?v=4"
+    size="2xl"
+  />
+)
