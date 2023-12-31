@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "noEmit": true,
-    "module": "ESNext",
-    "target": "ESNext",
-    "moduleResolution": "node",
-    "strict": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
     "jsx": "preserve",
     "jsxImportSource": "react",
-    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true
   },
   "include": ["src", "styled-system"]
 }
