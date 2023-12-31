@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "cli": "pnpm --filter=@park-ui/cli",
     "chakra": "pnpm --filter=@park-ui/chakra-theme",
+    "cli": "pnpm --filter=@park-ui/cli",
+    "components": "pnpm --filter=@park-ui/components",
     "panda": "pnpm --filter=@park-ui/panda-preset",
-    "scripts": "pnpm --filter=@park-ui/scripts",
     "tailwind": "pnpm --filter=@park-ui/tailwind-plugin",
     "website": "pnpm --filter=@park-ui/website"
   },

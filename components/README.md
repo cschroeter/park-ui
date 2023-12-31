@@ -1,4 +1,4 @@
-## Scripts
+## Park UI | Components
 
 ```bash
 Usage: park [options] [command]
