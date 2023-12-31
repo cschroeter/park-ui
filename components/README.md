@@ -1,4 +1,6 @@
-## Park UI | Components
+# Park UI | Components
+
+## CLI
 
 ```bash
 Usage: park [options] [command]

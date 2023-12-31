@@ -2,7 +2,7 @@
   "name": "@park-ui/components",
   "private": true,
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "tsx src/scripts/index.ts"
   },
   "dependencies": {
     "@ark-ui/anatomy": "1.2.0",
