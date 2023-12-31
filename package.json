@@ -6,7 +6,7 @@
     "prepare": "husky install",
     "chakra": "pnpm --filter=@park-ui/chakra-theme",
     "cli": "pnpm --filter=@park-ui/cli",
-    "components": "pnpm --filter=@park-ui/components",
+    "scripts": "pnpm --filter=@park-ui/scripts",
     "panda": "pnpm --filter=@park-ui/panda-preset",
     "tailwind": "pnpm --filter=@park-ui/tailwind-plugin",
     "website": "pnpm --filter=@park-ui/website"

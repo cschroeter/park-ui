@@ -1,6 +1,4 @@
-# Park UI | Components
-
-## CLI
+# Park UI Components Script
 
 ```bash
 Usage: park [options] [command]

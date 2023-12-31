@@ -5,8 +5,8 @@ import Handlebars from 'handlebars'
 import path from 'node:path'
 import prettier from 'prettier'
 import v from 'voca'
-import arkComponents from '../../../components.json'
-import parkComponents from '../../../park-components.json'
+import arkComponents from '../../components.json'
+import parkComponents from '../../park-components.json'
 import { transformComponentToTvConfig } from './helpers/recipe-to-tv'
 
 const data = {
@@ -96,10 +96,7 @@ const generateComponents = async (options: Options) => {
         const variant = value.hasOwnProperty('parts') ? 'with-context' : 'without-context'
 
         const template = Handlebars.compile(
-          fs.readFileSync(
-            `./src/scripts/templates/${cssFramwork}/${jsFramework}/${variant}.hbs`,
-            'utf-8',
-          ),
+          fs.readFileSync(`./src/templates/${cssFramwork}/${jsFramework}/${variant}.hbs`, 'utf-8'),
         )
 
         const templateString = template(view)

@@ -1,0 +1,24 @@
+{
+  "name": "@park-ui/components",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen",
+    "storybook": "storybook dev -p 6006"
+  },
+  "dependencies": {
+    "@ark-ui/react": "1.2.1",
+    "@pandacss/dev": "0.23.0",
+    "@park-ui/panda-preset": "workspace:*",
+    "@storybook/addon-a11y": "7.6.6",
+    "@storybook/addon-essentials": "7.6.6",
+    "@storybook/addons": "7.6.6",
+    "@storybook/react": "7.6.6",
+    "@storybook/react-vite": "7.6.6",
+    "@types/react": "18.2.46",
+    "@types/react-dom": "18.2.18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "storybook": "7.6.6",
+    "typescript": "5.3.3"
+  }
+}
