@@ -11,6 +11,10 @@ description: All notable changes to this project will be documented in this file
 - Renamed `placement` prop to `variant` in `Drawer` component for better consistency with other CSS frameworks.
 - Renamed `Label` to `FormLabel`
 
+### Fixed
+
+- Resolved an issue that `Avatar` did not render correctly when no image was provided.
+
 ## [0.27.0] - 2023-12-19
 
 ### Added
@@ -27,7 +31,7 @@ description: All notable changes to this project will be documented in this file
 
 - Declared `@pandacss/dev` and `@pandacss/types` as peer dependencies to avoid TypeScript errors.
 
-### Changed 
+### Changed
 
 - Updated import paths for more precise module referencing to help with tree-shaking.
 
@@ -49,7 +53,8 @@ import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
 ### Changed
 
 - Integrated latest version of Ark UI 1.2.0
-- Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server Components, we've revised the export method for multi-part components.
+- Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server Components, we've
+  revised the export method for multi-part components.
 
 ```tsx
 // before
