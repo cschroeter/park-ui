@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.5.0] - 2024-01-01
+
 ### Added
 
 - Added support for Chakra UI components
