@@ -11,7 +11,7 @@ const getInitialConfig = async (): Promise<Config> => {
           options: [
             { value: 'panda', label: 'Panda' },
             { value: 'tailwind', label: 'Tailwind' },
-            { value: 'chakra', label: 'Chakra' },
+            { value: 'chakra', label: 'Chakra (Beta)' },
           ],
           initialValue: 'panda',
         }),
