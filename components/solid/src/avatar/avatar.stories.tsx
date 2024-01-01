@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react'
+import type { Meta } from 'storybook-solidjs'
 import { Avatar, type AvatarProps } from './avatar'
 
 const meta: Meta<AvatarProps> = {

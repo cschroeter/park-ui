@@ -5,7 +5,7 @@ export default defineConfig({
   preflight: true,
   presets: ['@pandacss/preset-base', createPreset()],
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
-  jsxFramework: 'react',
+  jsxFramework: 'solid',
   outdir: 'styled-system',
   staticCss: {
     recipes: {
