@@ -41,6 +41,10 @@ export const avatar = defineSlotRecipe({
         },
         fallback: {
           textStyle: 'xs',
+          '& svg': {
+            width: '4',
+            height: '4',
+          },
         },
       },
       sm: {
@@ -54,6 +58,10 @@ export const avatar = defineSlotRecipe({
         },
         fallback: {
           textStyle: 'sm',
+          '& svg': {
+            width: '4',
+            height: '4',
+          },
         },
       },
       md: {
@@ -67,6 +75,10 @@ export const avatar = defineSlotRecipe({
         },
         fallback: {
           textStyle: 'md',
+          '& svg': {
+            width: '5',
+            height: '5',
+          },
         },
       },
       lg: {
@@ -80,6 +92,10 @@ export const avatar = defineSlotRecipe({
         },
         fallback: {
           textStyle: 'lg',
+          '& svg': {
+            width: '6',
+            height: '6',
+          },
         },
       },
       xl: {
@@ -93,6 +109,10 @@ export const avatar = defineSlotRecipe({
         },
         fallback: {
           textStyle: 'xl',
+          '& svg': {
+            width: '7',
+            height: '7',
+          },
         },
       },
       '2xl': {
@@ -106,6 +126,10 @@ export const avatar = defineSlotRecipe({
         },
         fallback: {
           textStyle: '2xl',
+          '& svg': {
+            width: '8',
+            height: '8',
+          },
         },
       },
     },
