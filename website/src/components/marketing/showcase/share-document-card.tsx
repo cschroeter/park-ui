@@ -1,5 +1,5 @@
 import { useCopyToClipboard } from '@uidotdev/usehooks'
-import { CheckIcon, ChevronsUpDownIcon, CopyIcon, UserIcon } from 'lucide-react'
+import { CheckIcon, ChevronsUpDownIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { Avatar, Button, Card, Input, Select, Text } from '~/components/ui'
@@ -63,12 +63,7 @@ const Member = (props: Props) => {
   return (
     <Stack direction="row" gap="8" justify="space-between" align="center">
       <Stack direction="row" gap="3">
-        <Avatar.Root>
-          <Avatar.Fallback>
-            <UserIcon />
-          </Avatar.Fallback>
-          <Avatar.Image src={avatar} alt={name} />
-        </Avatar.Root>
+        <Avatar src={avatar} name={name} />
         <Box>
           <Text textStyle="sm" fontWeight="medium">
             {name}

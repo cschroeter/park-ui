@@ -1,6 +1,6 @@
 import { MapPinIcon } from 'lucide-react'
 import { HStack, Stack, styled } from 'styled-system/jsx'
-import * as Avatar from '~/components/ui/avatar'
+import { Avatar } from '~/components/ui'
 import type { HoverCardProps } from '~/components/ui/hover-card'
 import * as HoverCard from '~/components/ui/hover-card'
 import { Icon } from '~/components/ui/icon'
@@ -25,10 +25,7 @@ export const Demo = (props: HoverCardProps) => (
           <HoverCard.ArrowTip />
         </HoverCard.Arrow>
         <Stack gap="4" direction="row">
-          <Avatar.Root>
-            <Avatar.Fallback>CS</Avatar.Fallback>
-            <Avatar.Image src="https://avatars.githubusercontent.com/u/1846056" alt="avatar" />
-          </Avatar.Root>
+          <Avatar name="Christian Schröter" src="https://avatars.githubusercontent.com/u/1846056" />
           <Stack gap="3">
             <Stack gap="1">
               <Text textStyle="sm" fontWeight="semibold">
