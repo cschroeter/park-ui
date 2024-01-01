@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.28.0] - 2024-01-01
+
 ### Changed
 
 - Renamed `placement` prop to `variant` in `Drawer` component for better consistency with other CSS frameworks.
