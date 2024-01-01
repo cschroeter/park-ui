@@ -1,6 +1,6 @@
 export * as Accordion from './accordion'
 export * as Alert from './alert'
-export * as Avatar from './avatar'
+export * from './avatar'
 export * from './badge'
 export * from './button'
 export * as Card from './card'

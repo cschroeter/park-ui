@@ -2,10 +2,10 @@
 id: avatar
 title: Avatar
 category: component
-description:
-  A graphical representation of the user, often used in profile sections.
+description: A graphical representation of the user, often used in profile sections.
 ark:
   link: https://ark-ui.com/docs/components/avatar
+label: Updated
 ---
 
 import ComponentPreview from '~/components/component-preview.astro'
@@ -14,6 +14,24 @@ import InstallationGuide from '~/components/installation-guide.astro'
 ## Usage
 
 <ComponentPreview />
+
+## Examples
+
+### Name Only
+
+When only a name is supplied, the initials are displayed.
+
+```tsx live
+<Avatar name="Christian Schröter" />
+```
+
+### No User Data
+
+Displays a default avatar in the absence of user data.
+
+```tsx live
+<Avatar />
+```
 
 ## Installation
 

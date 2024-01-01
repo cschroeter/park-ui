@@ -1,6 +1,7 @@
 import { Command } from 'commander'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
+import { globby } from 'globby'
 import Handlebars from 'handlebars'
 import path from 'node:path'
 import prettier from 'prettier'
@@ -146,14 +147,60 @@ const generateComponents = async (options: Options) => {
   )
 }
 
+const resolvePremadeComponents = async (options: Options) => {
+  const prettierConfig = await prettier.resolveConfig('.')
+  const { cssFramwork, jsFramework } = options
+  const components = await globby([
+    `../${jsFramework}/src/**/*.tsx`,
+    `!../${jsFramework}/src/**/*stories.tsx`,
+  ])
+
+  await Promise.all(
+    components.map(async (component) => {
+      const key = path.basename(path.dirname(component))
+      const content = fs.readFileSync(component, 'utf-8')
+      const registry = await prettier.format(
+        JSON.stringify({
+          files: [
+            {
+              filename: `${key}.tsx`,
+              content,
+              hasMultipleParts: false,
+            },
+          ],
+        }),
+        {
+          ...prettierConfig,
+          parser: 'json',
+        },
+      )
+
+      await fs.outputFile(
+        path.join(
+          rootDir,
+          'website',
+          'public',
+          'registry',
+          cssFramwork,
+          jsFramework,
+          'components',
+          key + '.json',
+        ),
+        registry,
+      )
+    }),
+  )
+}
+
 const generateRegistry = async () => {
   const jsFrameworks = ['react', 'solid'] as const
   const cssFramworks = ['panda', 'tailwind'] as const
 
   jsFrameworks.forEach((jsFramework) => {
-    cssFramworks.forEach((cssFramwork) => {
-      generateIndex({ cssFramwork, jsFramework })
-      generateComponents({ cssFramwork, jsFramework })
+    cssFramworks.forEach(async (cssFramwork) => {
+      await generateIndex({ cssFramwork, jsFramework })
+      await generateComponents({ cssFramwork, jsFramework })
+      await resolvePremadeComponents({ cssFramwork: 'panda', jsFramework })
     })
   })
 

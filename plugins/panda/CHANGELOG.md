@@ -4,6 +4,7 @@
 
 - Renamed `placement` prop to `variant` in `Drawer` component for better consistency with other CSS frameworks.
 - Renamed `Label` to `FormLabel`
+- Revised `Avatar` component. Check out the [docs](https://park-ui.com/docs/panda/components/avatar) for more details.
 
 ### Fixed
 
