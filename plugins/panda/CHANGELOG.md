@@ -5,6 +5,10 @@
 - Renamed `placement` prop to `variant` in `Drawer` component for better consistency with other CSS frameworks.
 - Renamed `Label` to `FormLabel`
 
+### Fixed
+
+- Resolved an issue that `Avatar` did not render correctly when no image was provided.
+
 ## [0.27.0] - 2023-12-19
 
 ### Added
@@ -21,7 +25,7 @@
 
 - Declared `@pandacss/dev` and `@pandacss/types` as peer dependencies to avoid TypeScript errors.
 
-### Changed 
+### Changed
 
 - Updated import paths for more precise module referencing to help with tree-shaking.
 
@@ -31,7 +35,6 @@ import { Avatar as ArkAvatar } from '@ark-ui/react'
 // after
 import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
 ```
-
 
 ## [0.26.1] - 2023-12-14
 

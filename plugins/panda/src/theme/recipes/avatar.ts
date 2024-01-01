@@ -17,6 +17,9 @@ export const avatar = defineSlotRecipe({
       fontWeight: 'semibold',
       height: 'inherit',
       justifyContent: 'center',
+      _hidden: {
+        display: 'none',
+      },
     },
     image: {
       objectFit: 'cover',
@@ -32,12 +35,20 @@ export const avatar = defineSlotRecipe({
           height: '8',
           width: '8',
         },
+        image: {
+          height: '8',
+          width: '8',
+        },
         fallback: {
           textStyle: 'xs',
         },
       },
       sm: {
         root: {
+          height: '9',
+          width: '9',
+        },
+        image: {
           height: '9',
           width: '9',
         },
@@ -50,12 +61,20 @@ export const avatar = defineSlotRecipe({
           height: '10',
           width: '10',
         },
+        image: {
+          height: '10',
+          width: '10',
+        },
         fallback: {
           textStyle: 'md',
         },
       },
       lg: {
         root: {
+          height: '11',
+          width: '11',
+        },
+        image: {
           height: '11',
           width: '11',
         },
@@ -68,12 +87,20 @@ export const avatar = defineSlotRecipe({
           height: '12',
           width: '12',
         },
+        image: {
+          height: '12',
+          width: '12',
+        },
         fallback: {
           textStyle: 'xl',
         },
       },
       '2xl': {
         root: {
+          height: '16',
+          width: '16',
+        },
+        image: {
           height: '16',
           width: '16',
         },
