@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### Added
+
+- Added support for Chakra UI components
+
+### Fixed
+
+- Resolved an issue with utils paths not being resolved correctly
+
 ## [0.4.3] - 2023-12-15
 
 ### Fixed
