@@ -1,8 +1,13 @@
 import { Checkbox as ArkCheckbox, type CheckboxProps as ArkCheckboxProps } from '@ark-ui/solid'
 import { Show, children, splitProps, type JSX } from 'solid-js'
+import { css, cx } from 'styled-system/css'
 import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
+import type { HTMLStyledProps } from 'styled-system/types'
 
-export interface CheckboxProps extends ArkCheckboxProps, CheckboxVariantProps {
+export interface CheckboxProps
+  extends ArkCheckboxProps,
+    CheckboxVariantProps,
+    Omit<HTMLStyledProps<'label'>, 'defaultChecked' | 'dir' | 'translate' | 'content' | 'color'> {
   children?: JSX.Element
 }
 
@@ -13,7 +18,7 @@ export const Checkbox = (props: CheckboxProps) => {
   const styles = checkbox(variantProps)
 
   return (
-    <ArkCheckbox.Root class={styles.root} {...rootProps}>
+    <ArkCheckbox.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       {(state) => (
         <>
           <ArkCheckbox.Control class={styles.control}>
