@@ -9,7 +9,9 @@
     "scripts": "pnpm --filter=@park-ui/scripts",
     "panda": "pnpm --filter=@park-ui/panda-preset",
     "tailwind": "pnpm --filter=@park-ui/tailwind-plugin",
-    "website": "pnpm --filter=@park-ui/website"
+    "website": "pnpm --filter=@park-ui/website",
+    "react": "pnpm --filter=@park-ui/react-components",
+    "solid": "pnpm --filter=@park-ui/solid-components"
   },
   "dependencies": {
     "@commitlint/cli": "18.4.3",
