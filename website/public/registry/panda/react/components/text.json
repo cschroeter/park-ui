@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "text.tsx",
+      "content": "import { styled, type HTMLStyledProps } from 'styled-system/jsx'\n\ntype As = 'p' | 'span' | 'div' | 'label'\n\nexport type TextProps = {\n  as?: As\n} & HTMLStyledProps<As>\n\nexport const Text = (props: TextProps) => {\n  const { as = 'p', ...localProps } = props\n  const Dynamic = styled(as)\n\n  return <Dynamic {...localProps} />\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}
