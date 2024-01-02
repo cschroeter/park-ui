@@ -17,8 +17,12 @@ export const Checkbox = (props: CheckboxProps) => {
       {(state) => (
         <>
           <ArkCheckbox.Control class={styles.control}>
-            {state().isChecked && <CheckIcon />}
-            {state().isIndeterminate && <MinusIcon />}
+            <Show when={state().isChecked}>
+              <CheckIcon />
+            </Show>
+            <Show when={state().isIndeterminate}>
+              <MinusIcon />
+            </Show>
           </ArkCheckbox.Control>
           <Show when={getChildren()}>
             <ArkCheckbox.Label class={styles.label}>{local.children}</ArkCheckbox.Label>
@@ -28,8 +32,6 @@ export const Checkbox = (props: CheckboxProps) => {
     </ArkCheckbox.Root>
   )
 }
-
-Checkbox.displayName = 'Checkbox'
 
 const CheckIcon = () => (
   <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
