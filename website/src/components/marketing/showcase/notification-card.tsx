@@ -18,11 +18,7 @@ export const NotificationCard = () => {
               Receive a notification if a payment is disputed by a customer.
             </Text>
           </Stack>
-          <Switch.Root defaultChecked>
-            <Switch.Control>
-              <Switch.Thumb />
-            </Switch.Control>
-          </Switch.Root>
+          <Switch defaultChecked />
         </Stack>
         <Stack direction="row" justify="space-between">
           <Stack gap="0.5">
@@ -33,11 +29,7 @@ export const NotificationCard = () => {
               Receive a notification if Radar detects a fraudulent payment on your account.
             </Text>
           </Stack>
-          <Switch.Root defaultChecked>
-            <Switch.Control>
-              <Switch.Thumb />
-            </Switch.Control>
-          </Switch.Root>
+          <Switch defaultChecked />
         </Stack>
         <Stack direction="row" justify="space-between">
           <Stack gap="0.5">
@@ -48,11 +40,7 @@ export const NotificationCard = () => {
               Receive a notification for every successful payment.
             </Text>
           </Stack>
-          <Switch.Root>
-            <Switch.Control>
-              <Switch.Thumb />
-            </Switch.Control>
-          </Switch.Root>
+          <Switch />
         </Stack>
       </Card.Body>
       <Card.Footer>

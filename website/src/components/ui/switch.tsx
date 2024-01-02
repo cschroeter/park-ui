@@ -1,23 +1,24 @@
-import { Switch as ArkSwitch } from '@ark-ui/react/switch'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
-import { switchRecipe } from 'styled-system/recipes'
-import { createStyleContext } from '~/lib/create-style-context'
+import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui/react/switch'
+import { forwardRef, type ReactNode } from 'react'
+import { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'
 
-const { withProvider, withContext } = createStyleContext(switchRecipe)
+export interface SwitchProps extends ArkSwitchProps, SwitchRecipeVariantProps {
+  children?: ReactNode
+}
 
-const Switch = withProvider(styled(ArkSwitch.Root), 'root')
-const SwitchControl = withContext(styled(ArkSwitch.Control), 'control')
-const SwitchLabel = withContext(styled(ArkSwitch.Label), 'label')
-const SwitchThumb = withContext(styled(ArkSwitch.Thumb), 'thumb')
+export const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {
+  const [variantProps, localProps] = switchRecipe.splitVariantProps(props)
+  const { children, checked, ...rootProps } = localProps
+  const styles = switchRecipe(variantProps)
 
-const Root = Switch
-const Control = SwitchControl
-const Label = SwitchLabel
-const Thumb = SwitchThumb
+  return (
+    <ArkSwitch.Root ref={ref} className={styles.root} {...rootProps}>
+      <ArkSwitch.Control className={styles.control}>
+        <ArkSwitch.Thumb className={styles.thumb} />
+      </ArkSwitch.Control>
+      {children && <ArkSwitch.Label className={styles.label}>{children}</ArkSwitch.Label>}
+    </ArkSwitch.Root>
+  )
+})
 
-export { Control, Label, Root, Switch, SwitchControl, SwitchLabel, SwitchThumb, Thumb }
-
-export interface SwitchProps extends HTMLStyledProps<typeof Switch> {}
-export interface SwitchControlProps extends HTMLStyledProps<typeof SwitchControl> {}
-export interface SwitchLabelProps extends HTMLStyledProps<typeof SwitchLabel> {}
-export interface SwitchThumbProps extends HTMLStyledProps<typeof SwitchThumb> {}
+Switch.displayName = 'Switch'

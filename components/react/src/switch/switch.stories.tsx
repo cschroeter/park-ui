@@ -8,4 +8,5 @@ const meta: Meta<SwitchProps> = {
 
 export default meta
 
-export const Base = () => <Switch labelName="Label" />
+export const Base = () => <Switch>Label</Switch>
+export const DefaultChecked = () => <Switch defaultChecked>Label</Switch>
