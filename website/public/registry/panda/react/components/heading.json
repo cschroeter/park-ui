@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "heading.tsx",
+      "content": "import { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { heading } from 'styled-system/recipes'\n\ntype As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'\n\nexport type HeadingProps = {\n  as?: As\n} & HTMLStyledProps<As>\n\nexport const Heading = (props: HeadingProps) => {\n  const { as = 'h2', ...localProps } = props\n  const Dynamic = styled(as, heading)\n\n  return <Dynamic {...localProps} />\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

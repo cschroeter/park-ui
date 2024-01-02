@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "heading.tsx",
+      "content": "import { mergeProps, splitProps } from 'solid-js'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { heading } from 'styled-system/recipes'\n\ntype As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'\n\nexport type HeadingProps = {\n  as?: As\n} & HTMLStyledProps<As>\n\nexport const Heading = (props: HeadingProps) => {\n  const mergedProps = mergeProps({ as: 'h2' }, props)\n  const [local, rootProps] = splitProps(mergedProps, ['as'])\n  const Dynamic = styled(local.as as As, heading)\n\n  return <Dynamic {...rootProps} />\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}
