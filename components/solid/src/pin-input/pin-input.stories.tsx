@@ -18,3 +18,8 @@ export const CustomLength = () => (
     Label
   </PinInput>
 )
+export const DeafultValue = () => (
+  <PinInput value={['1', '2', '3', '4']} placeholder="0">
+    Label
+  </PinInput>
+)
