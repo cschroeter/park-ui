@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@ark-ui/solid": "1.2.0",
-    "@pandacss/dev": "0.23.0",
+    "@pandacss/dev": "0.24.1",
     "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-a11y": "7.6.7",
     "@storybook/addon-essentials": "7.6.7",
