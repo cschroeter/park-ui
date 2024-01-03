@@ -40,8 +40,6 @@ export const RatingGroup = (props: RatingGroupProps) => {
   )
 }
 
-RatingGroup.displayName = 'RatingGroup'
-
 type IconProps = {
   isHalf: boolean
 }

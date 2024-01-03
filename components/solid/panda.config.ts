@@ -7,9 +7,4 @@ export default defineConfig({
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
   jsxFramework: 'solid',
   outdir: 'styled-system',
-  staticCss: {
-    recipes: {
-      avatar: ['*'],
-    },
-  },
 })
