@@ -1,9 +1,9 @@
-import { ark } from '@ark-ui/react/factory'
 import {
   Pagination as ArkPagination,
+  ark,
   type PaginationProps as ArkPaginationProps,
-} from '@ark-ui/react/pagination'
-import { forwardRef } from 'react'
+} from '@ark-ui/solid'
+import { For } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { button, iconButton, pagination, type PaginationVariantProps } from 'styled-system/recipes'
 
@@ -12,32 +12,34 @@ const Button = styled(ark.button, button)
 
 export interface PaginationProps extends ArkPaginationProps, PaginationVariantProps {}
 
-export const Pagination = forwardRef<HTMLLabelElement, PaginationProps>((props, ref) => {
+export const Pagination = (props: PaginationProps) => {
   const [variantProps, localProps] = pagination.splitVariantProps(props)
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root className={styles.root} {...localProps}>
-      {({ pages }) => (
+    <ArkPagination.Root class={styles.root} {...localProps}>
+      {(api) => (
         <>
-          <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>
+          <ArkPagination.PrevTrigger class={styles.prevTrigger}>
             <IconButton variant="ghost" aria-label="Next Page">
               <ChevronLeftIcon />
             </IconButton>
           </ArkPagination.PrevTrigger>
 
-          {pages.map((page, index) =>
-            page.type === 'page' ? (
-              <ArkPagination.Item className={styles.item} key={index} {...page} asChild>
-                <Button variant="outline">{page.value}</Button>
-              </ArkPagination.Item>
-            ) : (
-              <ArkPagination.Ellipsis className={styles.ellipsis} key={index} index={index}>
-                &#8230;
-              </ArkPagination.Ellipsis>
-            ),
-          )}
-          <ArkPagination.NextTrigger className={styles.nextTrigger} asChild>
+          <For each={api().pages}>
+            {(page, index) =>
+              page.type === 'page' ? (
+                <ArkPagination.Item class={styles.item} {...page}>
+                  <Button variant="outline">{page.value}</Button>
+                </ArkPagination.Item>
+              ) : (
+                <ArkPagination.Ellipsis class={styles.ellipsis} index={index()}>
+                  &#8230;
+                </ArkPagination.Ellipsis>
+              )
+            }
+          </For>
+          <ArkPagination.NextTrigger class={styles.nextTrigger}>
             <IconButton variant="ghost" aria-label="Next Page">
               <ChevronRightIcon />
             </IconButton>
@@ -46,7 +48,7 @@ export const Pagination = forwardRef<HTMLLabelElement, PaginationProps>((props, 
       )}
     </ArkPagination.Root>
   )
-})
+}
 
 Pagination.displayName = 'Pagination'
 
