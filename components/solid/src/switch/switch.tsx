@@ -1,8 +1,13 @@
 import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui/solid'
 import { Show, children, splitProps, type JSX } from 'solid-js'
+import { css, cx } from 'styled-system/css'
 import { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'
+import type { HTMLStyledProps } from 'styled-system/types'
 
-export interface SwitchProps extends ArkSwitchProps, SwitchRecipeVariantProps {
+export interface SwitchProps
+  extends ArkSwitchProps,
+    SwitchRecipeVariantProps,
+    Omit<HTMLStyledProps<'label'>, 'defaultChecked' | 'dir' | 'translate' | 'content' | 'color'> {
   children?: JSX.Element
 }
 
@@ -13,7 +18,7 @@ export const Switch = (props: SwitchProps) => {
   const styles = switchRecipe(variantProps)
 
   return (
-    <ArkSwitch.Root class={styles.root} {...rootProps}>
+    <ArkSwitch.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       <ArkSwitch.Control class={styles.control}>
         <ArkSwitch.Thumb class={styles.thumb} />
       </ArkSwitch.Control>
