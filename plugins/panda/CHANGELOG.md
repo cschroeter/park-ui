@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added support to render the `RatingGroup` in a different color.
+
 ## [0.28.0] - 2024-01-01
 
 ### Changed
