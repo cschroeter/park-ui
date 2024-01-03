@@ -10,4 +10,8 @@ export default meta
 
 export const Base = () => <Switch>Label</Switch>
 export const DefaultChecked = () => <Switch checked>Label</Switch>
-export const ColorPlatte = () => <Switch colorPalette="red">Label</Switch>
+export const ColorPalette = () => (
+  <Switch colorPalette="red" checked>
+    Label
+  </Switch>
+)
