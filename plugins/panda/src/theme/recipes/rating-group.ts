@@ -23,15 +23,12 @@ export const ratingGroup = defineSlotRecipe({
       transitionDuration: 'normal',
       transitionProperty: 'color, fill',
       transitionTimingFunction: 'default',
-      color: 'var(--colors-bg-emphasized)',
-      fill: 'var(--colors-bg-emphasized)',
+      fill: 'bg.emphasized',
       _highlighted: {
-        color: 'var(--colors-accent-default)',
-        fill: 'var(--colors-accent-default)',
+        fill: 'colorPalette.default',
       },
       _focusVisible: {
-        outline: '2px solid',
-        outlineColor: 'colorPalette.default',
+        outline: 'none',
       },
     },
   },
@@ -79,7 +76,7 @@ export const ratingGroup = defineSlotRecipe({
           },
         },
         label: {
-          textStyle: 'sm',
+          textStyle: 'md',
         },
       },
     },
