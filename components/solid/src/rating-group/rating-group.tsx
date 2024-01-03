@@ -1,8 +1,8 @@
 import {
   RatingGroup as ArkRatingGroup,
   type RatingGroupProps as ArkRatingGroupProps,
-} from '@ark-ui/react/rating-group'
-import { forwardRef, type ReactNode } from 'react'
+} from '@ark-ui/solid'
+import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -11,31 +11,34 @@ export interface RatingGroupProps
   extends ArkRatingGroupProps,
     RatingGroupVariantProps,
     Omit<HTMLStyledProps<'div'>, 'defaultValue' | 'content' | 'color' | 'dir' | 'translate'> {
-  children?: ReactNode
+  children?: JSX.Element
 }
 
-export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
+export const RatingGroup = (props: RatingGroupProps) => {
   const [variantProps, localProps] = ratingGroup.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [local, rootProps] = splitProps(localProps, ['children'])
+  const getChildren = children(() => local.children)
   const styles = ratingGroup(variantProps)
 
   return (
-    <ArkRatingGroup.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
-      {children && <ArkRatingGroup.Label className={styles.label}>{children}</ArkRatingGroup.Label>}
-      <ArkRatingGroup.Control className={styles.control}>
-        {({ items }) =>
-          items.map((index) => (
-            <ArkRatingGroup.Item className={styles.item} key={index} index={index}>
-              {({ isHalf }) => <Icon isHalf={isHalf} />}
-            </ArkRatingGroup.Item>
-          ))
-        }
+    <ArkRatingGroup.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
+      <Show when={getChildren()}>
+        <ArkRatingGroup.Label class={styles.label}>{local.children}</ArkRatingGroup.Label>
+      </Show>
+      <ArkRatingGroup.Control class={styles.control}>
+        {(api) => (
+          <Index each={api().items}>
+            {(index) => (
+              <ArkRatingGroup.Item class={styles.item} index={index()}>
+                {(api) => <Icon isHalf={api().isHalf} />}
+              </ArkRatingGroup.Item>
+            )}
+          </Index>
+        )}
       </ArkRatingGroup.Control>
     </ArkRatingGroup.Root>
   )
-})
-
-RatingGroup.displayName = 'RatingGroup'
+}
 
 type IconProps = {
   isHalf: boolean
@@ -49,9 +52,9 @@ const Icon = (props: IconProps) => (
     viewBox="0 0 24 24"
     fill="inherit"
     stroke="inherit"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
   >
     <defs>
       <linearGradient id="half">
