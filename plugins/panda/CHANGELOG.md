@@ -1,6 +1,5 @@
 ## [Unreleased]
 
-
 ### Added
 
 - Added support to render the `RatingGroup` in a different color.
