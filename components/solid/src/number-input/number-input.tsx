@@ -1,36 +1,37 @@
 import {
   NumberInput as ArkNumberInput,
   type NumberInputProps as ArkNumberInputProps,
-} from '@ark-ui/react/number-input'
-import { forwardRef, type ReactNode } from 'react'
+} from '@ark-ui/solid'
+import { Show, children, splitProps, type JSX } from 'solid-js'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
 
 export interface NumberInputProps extends ArkNumberInputProps, NumberInputVariantProps {
-  children?: ReactNode
+  children?: JSX.Element
 }
 
-export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
+export const NumberInput = (props: NumberInputProps) => {
   const [variantProps, localProps] = numberInput.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [local, rootProps] = splitProps(localProps, ['children'])
+  const getChildren = children(() => local.children)
   const styles = numberInput(variantProps)
 
   return (
-    <ArkNumberInput.Root ref={ref} className={styles.root} {...rootProps}>
-      {children && <ArkNumberInput.Label className={styles.label}>{children}</ArkNumberInput.Label>}
-      <ArkNumberInput.Control className={styles.control}>
-        <ArkNumberInput.Input className={styles.input} />
-        <ArkNumberInput.IncrementTrigger className={styles.incrementTrigger}>
+    <ArkNumberInput.Root class={styles.root} {...rootProps}>
+      <Show when={getChildren()}>
+        <ArkNumberInput.Label class={styles.label}>{local.children}</ArkNumberInput.Label>
+      </Show>
+      <ArkNumberInput.Control class={styles.control}>
+        <ArkNumberInput.Input class={styles.input} />
+        <ArkNumberInput.IncrementTrigger class={styles.incrementTrigger}>
           <ChevronUpIcon />
         </ArkNumberInput.IncrementTrigger>
-        <ArkNumberInput.DecrementTrigger className={styles.decrementTrigger}>
+        <ArkNumberInput.DecrementTrigger class={styles.decrementTrigger}>
           <ChevronDownIcon />
         </ArkNumberInput.DecrementTrigger>
       </ArkNumberInput.Control>
     </ArkNumberInput.Root>
   )
-})
-
-NumberInput.displayName = 'NumberInput'
+}
 
 const ChevronUpIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
