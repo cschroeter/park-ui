@@ -32,7 +32,7 @@
     "build:styles": "tsx src/cli/styles/bootstrap.ts"
   },
   "dependencies": {
-    "tailwind-variants": "0.1.19",
+    "tailwind-variants": "0.1.20",
     "ts-pattern": "5.0.6"
   },
   "devDependencies": {
