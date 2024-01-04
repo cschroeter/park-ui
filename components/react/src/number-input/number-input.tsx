@@ -6,18 +6,16 @@ import { forwardRef, type ReactNode } from 'react'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
 
 export interface NumberInputProps extends ArkNumberInputProps, NumberInputVariantProps {
-  min?: number
-  max?: number
   children?: ReactNode
 }
 
 export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
   const [variantProps, localProps] = numberInput.splitVariantProps(props)
-  const { children, min, max, ...rootProps } = localProps
+  const { children, ...rootProps } = localProps
   const styles = numberInput(variantProps)
 
   return (
-    <ArkNumberInput.Root className={styles.root} min={min} max={max} {...rootProps}>
+    <ArkNumberInput.Root ref={ref} className={styles.root} {...rootProps}>
       {children && <ArkNumberInput.Label className={styles.label}>{children}</ArkNumberInput.Label>}
       <ArkNumberInput.Control className={styles.control}>
         <ArkNumberInput.Input className={styles.input} />
