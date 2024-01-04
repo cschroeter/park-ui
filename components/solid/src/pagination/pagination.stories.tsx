@@ -8,14 +8,8 @@ const meta: Meta<PaginationProps> = {
 
 export default meta
 
-export const Base = () => <Pagination count={90}>Label</Pagination>
-export const WithPage = () => (
-  <Pagination count={90} page={3}>
-    Label
-  </Pagination>
-)
+export const Base = () => <Pagination count={90} />
+export const InitialPage = () => <Pagination count={90} page={3} />
 export const WithPageSizeAndsiblingCount = () => (
-  <Pagination count={90} pageSize={9} siblingCount={2}>
-    Label
-  </Pagination>
+  <Pagination count={90} pageSize={9} siblingCount={2} />
 )
