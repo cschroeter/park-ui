@@ -152,6 +152,7 @@ const resolvePremadeComponents = async (options: Options) => {
   const { cssFramwork, jsFramework } = options
   const components = await globby([
     `../${jsFramework}/src/**/*.tsx`,
+    `!../${jsFramework}/src/components/ui/**/*`,
     `!../${jsFramework}/src/**/*stories.tsx`,
   ])
 

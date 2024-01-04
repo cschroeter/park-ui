@@ -1,23 +1,20 @@
-import { ark } from '@ark-ui/react/factory'
 import {
   Pagination as ArkPagination,
   type PaginationProps as ArkPaginationProps,
 } from '@ark-ui/react/pagination'
 import { forwardRef } from 'react'
-import { styled } from 'styled-system/jsx'
-import { button, iconButton, pagination, type PaginationVariantProps } from 'styled-system/recipes'
-
-const IconButton = styled(ark.button, iconButton)
-const Button = styled(ark.button, button)
+import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
 
 export interface PaginationProps extends ArkPaginationProps, PaginationVariantProps {}
 
-export const Pagination = forwardRef<HTMLLabelElement, PaginationProps>((props, ref) => {
+export const Pagination = forwardRef<HTMLDivElement, PaginationProps>((props, ref) => {
   const [variantProps, localProps] = pagination.splitVariantProps(props)
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root className={styles.root} {...localProps}>
+    <ArkPagination.Root ref={ref} className={styles.root} {...localProps}>
       {({ pages }) => (
         <>
           <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>
@@ -25,7 +22,6 @@ export const Pagination = forwardRef<HTMLLabelElement, PaginationProps>((props, 
               <ChevronLeftIcon />
             </IconButton>
           </ArkPagination.PrevTrigger>
-
           {pages.map((page, index) =>
             page.type === 'page' ? (
               <ArkPagination.Item className={styles.item} key={index} {...page} asChild>
