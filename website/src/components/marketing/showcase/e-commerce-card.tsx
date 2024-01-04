@@ -1,7 +1,6 @@
 import { HeartIcon, HelpCircleIcon, ShieldIcon, ShoppingBagIcon } from 'lucide-react'
 import { Box, Divider, Grid, HStack, Stack } from 'styled-system/jsx'
-import { Badge, Button, Card, Heading, Icon, Text } from '~/components/ui'
-import { QuantityPicker } from './quantity-picker'
+import { Badge, Button, Card, Heading, Icon, NumberInput, Text } from '~/components/ui'
 import { RatingInfo } from './rating-info'
 import { SizePicker } from './size-picker'
 
@@ -34,7 +33,9 @@ export const ECommerceCard = () => {
         <Divider />
         <SizePicker />
         <Grid columns={2} gap="4">
-          <QuantityPicker />
+          <NumberInput min={1} max={5} defaultValue="1">
+            Quantity
+          </NumberInput>
           <Button variant="outline" alignSelf="end">
             <HeartIcon /> Favourite
           </Button>
