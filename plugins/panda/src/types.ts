@@ -48,3 +48,6 @@ export const accentColors = [
 
 export type GrayColor = (typeof grayColors)[number]
 export const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate'] as const
+
+export type JSXFramework = (typeof jsxFrameworks)[number]
+export const jsxFrameworks = ['React', 'Solid', 'Vue'] as const

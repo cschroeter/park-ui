@@ -7,6 +7,7 @@ import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
 import { FontFamilySelect } from './font-family-select'
 import { GrayColorPicker } from './gray-color-picker'
+import { JsxFrameworkSelect } from './jsx-framework-select'
 import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
@@ -48,6 +49,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
           </Drawer.Header>
           <Drawer.Body>
             <Stack flex="1" gap="5">
+              <JsxFrameworkSelect />
               <FontFamilySelect />
               <GrayColorPicker />
               <AccentColorPicker />

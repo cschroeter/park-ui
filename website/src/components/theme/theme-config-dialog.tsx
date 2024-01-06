@@ -10,8 +10,14 @@ interface Props {
 }
 
 export const ThemeConfigDialog = (props: Props) => {
-  const { currentAccentColor, currentGrayColor, currentBorderRadius, pandaConfig, tailwindConfig } =
-    useThemeGenerator()
+  const {
+    currentAccentColor,
+    currentGrayColor,
+    currentBorderRadius,
+    currentJsxFramework,
+    pandaConfig,
+    tailwindConfig,
+  } = useThemeGenerator()
 
   return (
     <Dialog.Root>
@@ -39,7 +45,8 @@ export const ThemeConfigDialog = (props: Props) => {
                     code: pandaConfig
                       .replace('__ACCENT_COLOR__', currentAccentColor)
                       .replace('__GRAY_COLOR__', currentGrayColor)
-                      .replace('__BORDER_RADIUS__', currentBorderRadius),
+                      .replace('__BORDER_RADIUS__', currentBorderRadius)
+                      .replace('__JSX_FRAMEWORK__', currentJsxFramework.toLowerCase()),
                     children: (
                       <div
                         dangerouslySetInnerHTML={{
@@ -47,7 +54,8 @@ export const ThemeConfigDialog = (props: Props) => {
                           __html: props.panda.props.value
                             .replace('__ACCENT_COLOR__', currentAccentColor)
                             .replace('__GRAY_COLOR__', currentGrayColor)
-                            .replace('__BORDER_RADIUS__', currentBorderRadius),
+                            .replace('__BORDER_RADIUS__', currentBorderRadius)
+                            .replace('__JSX_FRAMEWORK__', currentJsxFramework.toLowerCase()),
                         }}
                       />
                     ),
