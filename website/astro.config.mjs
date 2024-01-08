@@ -1,11 +1,12 @@
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
 import pandacss from '@pandacss/astro'
 import { defineConfig } from 'astro/config'
-import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
   site: 'https://park-ui.com',
+  base: '/docs',
   integrations: [mdx(), pandacss(), react(), sitemap()],
   markdown: {
     syntaxHighlight: false,
