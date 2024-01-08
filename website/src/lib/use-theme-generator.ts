@@ -2,6 +2,7 @@ import {
   accentColors,
   borderRadii,
   grayColors,
+  jsxFrameworks,
   type AccentColor,
   type BorderRadius,
   type GrayColor,
@@ -16,11 +17,13 @@ export const useThemeGenerator = () => {
   const currentGrayColor = useThemeStore((state) => state.grayColor)
   const currentFontFamily = useThemeStore((state) => state.fontFamily)
   const currentBorderRadius = useThemeStore((state) => state.borderRadius)
+  const currentJsxFramework = useThemeStore((state) => state.jsxFramework)
 
   const updateAccentColor = useThemeStore((state) => state.setAccentColor)
   const updateGrayColor = useThemeStore((state) => state.setGrayColor)
   const updateFontFamily = useThemeStore((state) => state.setFontFamily)
   const updateBorderRadius = useThemeStore((state) => state.setBorderRadius)
+  const updateJsxFramework = useThemeStore((state) => state.setJsxFramework)
 
   const reset = useThemeStore((state) => state.reset)
 
@@ -40,21 +43,28 @@ export const useThemeGenerator = () => {
     syncBorderRaius(currentBorderRadius)
   }, [currentBorderRadius])
 
+  useEffect(() => {
+    updateJsxFramework(currentJsxFramework)
+  }, [currentJsxFramework])
+
   return {
     accentColors,
     borderRadii,
     fontFamilies,
     grayColors,
+    jsxFrameworks,
     pandaConfig,
     tailwindConfig,
     currentAccentColor,
     currentBorderRadius,
     currentFontFamily,
     currentGrayColor,
+    currentJsxFramework,
     updateAccentColor,
     updateGrayColor,
     updateFontFamily,
     updateBorderRadius,
+    updateJsxFramework,
     reset,
   }
 }
@@ -205,7 +215,7 @@ export default defineConfig({
     }),
   ],
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
-  jsxFramework: 'react',
+  jsxFramework: '__JSX_FRAMEWORK__',
   outdir: 'styled-system',
 })
 `

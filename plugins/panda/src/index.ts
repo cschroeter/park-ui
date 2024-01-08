@@ -12,9 +12,11 @@ import {
   accentColors,
   borderRadii,
   grayColors,
+  jsxFrameworks,
   type AccentColor,
   type BorderRadius,
   type GrayColor,
+  type JSXFramework,
   type PresetOptions,
 } from './types'
 
@@ -47,5 +49,12 @@ const createPreset = (options: PresetOptions = defaultOptions): Preset => {
 
 const defaultPreset = createPreset()
 
-export { accentColors, borderRadii, createPreset, defaultPreset as default, grayColors }
-export type { AccentColor, BorderRadius, GrayColor, PresetOptions }
+export {
+  accentColors,
+  borderRadii,
+  createPreset,
+  defaultPreset as default,
+  grayColors,
+  jsxFrameworks,
+}
+export type { AccentColor, BorderRadius, GrayColor, JSXFramework, PresetOptions }
