@@ -3,7 +3,8 @@ import { useState, type PropsWithChildren } from 'react'
 import { sva } from 'styled-system/css'
 import { Box, Flex, Stack, styled } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
-import { Select, Slider } from '~/components/ui'
+import { Select } from '~/components/ui'
+import { Slider } from '~/components/ui/slider'
 import * as demos from './demos'
 
 const styles = sva({
@@ -78,7 +79,7 @@ export const Playground = (props: PropsWithChildren<Props>) => {
             {Object.entries(componentProps || {}).map(([key, { options, defaultValue }]) =>
               match(key)
                 .with('size', () => (
-                  <Slider.Root
+                  <Slider
                     key={key}
                     min={0}
                     max={(options?.length ?? 0) - 1}
@@ -86,22 +87,10 @@ export const Playground = (props: PropsWithChildren<Props>) => {
                       setState({ ...state, [key]: options?.[e.value[0]] ?? '' })
                     }
                     defaultValue={[options?.indexOf(defaultValue ?? '') ?? 0]}
+                    marks={options?.map((_, index) => ({ value: index })) ?? []}
                   >
-                    <Slider.Label>
-                      <styled.span textTransform="capitalize">{key}:</styled.span> {state[key]}
-                    </Slider.Label>
-                    <Slider.Control>
-                      <Slider.Track>
-                        <Slider.Range />
-                      </Slider.Track>
-                      <Slider.Thumb index={0} />
-                    </Slider.Control>
-                    <Slider.MarkerGroup>
-                      {options?.map((option, index) => (
-                        <Slider.Marker key={option} value={index} />
-                      ))}
-                    </Slider.MarkerGroup>
-                  </Slider.Root>
+                    <styled.span textTransform="capitalize">{key}:</styled.span> {state[key]}
+                  </Slider>
                 ))
                 .otherwise(() => (
                   <Select.Root
@@ -116,7 +105,7 @@ export const Playground = (props: PropsWithChildren<Props>) => {
                     <Select.Label textTransform="capitalize">{key}</Select.Label>
                     <Select.Control>
                       <Select.Trigger>
-                        <Select.ValueText placeholder="Select a Framework" />
+                        <Select.ValueText />
                         <ChevronsUpDownIcon />
                       </Select.Trigger>
                     </Select.Control>
