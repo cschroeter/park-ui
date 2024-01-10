@@ -1,8 +1,12 @@
 import { Avatar as ArkAvatar, type AvatarProps as ArkAvatarProps } from '@ark-ui/react/avatar'
 import { forwardRef } from 'react'
+import { css, cx } from 'styled-system/css'
 import { avatar, type AvatarVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
-export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
+export interface AvatarProps
+  extends Assign<HTMLStyledProps<'div'>, ArkAvatarProps>,
+    AvatarVariantProps {
   name?: string
   src?: string
 }
@@ -13,7 +17,7 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const styles = avatar(variantProps)
 
   return (
-    <ArkAvatar.Root className={styles.root} {...rootProps}>
+    <ArkAvatar.Root className={cx(styles.root, css(rootProps))} {...rootProps}>
       <ArkAvatar.Fallback className={styles.fallback}>
         {getInitials(name) || <UserIcon />}
       </ArkAvatar.Fallback>

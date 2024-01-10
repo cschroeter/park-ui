@@ -1,5 +1,6 @@
 import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
+import { css, cx } from 'styled-system/css'
 import { slider, type SliderVariantProps } from 'styled-system/recipes'
 import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
@@ -20,7 +21,7 @@ export const Slider = (props: SliderProps) => {
   const styles = slider(variantProps)
 
   return (
-    <ArkSlider.Root class={styles.root} {...rootProps}>
+    <ArkSlider.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       {(api) => (
         <>
           <Show when={getChildren()}>

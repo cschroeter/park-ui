@@ -1,8 +1,12 @@
 import { Avatar as ArkAvatar, type AvatarProps as ArkAvatarProps } from '@ark-ui/solid'
 import { Show, splitProps } from 'solid-js'
+import { css, cx } from 'styled-system/css'
 import { avatar, type AvatarVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
-export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
+export interface AvatarProps
+  extends Assign<HTMLStyledProps<'div'>, ArkAvatarProps>,
+    AvatarVariantProps {
   name?: string
   src?: string
 }
@@ -13,7 +17,7 @@ export const Avatar = (props: AvatarProps) => {
   const styles = avatar(variantProps)
 
   return (
-    <ArkAvatar.Root class={styles.root} {...rootProps}>
+    <ArkAvatar.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       <ArkAvatar.Fallback class={styles.fallback}>
         <Show when={local.name} fallback={<UserIcon />}>
           {getInitials(local.name)}
