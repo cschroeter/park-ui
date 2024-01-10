@@ -18,6 +18,8 @@ const value = slug?.split('/')[0] ?? 'panda'
 const isComponent = entry.collection === 'components'
 
 const showHeroTabs = await hasVariants(Astro.params.slug)
+const pathname = Astro.url.pathname.replace(/\/$/, '')
+
 ---
 
 <Box borderBottomWidth="1px" bg={{ base: 'gray.2', _dark: 'black.a2' }}>
@@ -59,5 +61,5 @@ const showHeroTabs = await hasVariants(Astro.params.slug)
     }
   </Container>
 
-  {showHeroTabs && <DocsHeroTabs pathname={Astro.url.pathname} value={value} client:load />}
+  {showHeroTabs && <DocsHeroTabs pathname={pathname} value={value} client:load />}
 </Box>
