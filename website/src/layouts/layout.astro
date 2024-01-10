@@ -59,22 +59,10 @@ const { title, description } = Astro.props
     <slot />
     <script>
       const setColorMode = () => {
-        const colorMode = (() => {
-          if (typeof localStorage !== 'undefined' && localStorage.getItem('park-ui-color-mode')) {
-            return JSON.parse(localStorage.getItem('park-ui-color-mode'))
-          }
-          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark'
-          }
-          return 'light'
-        })()
-
-        if (colorMode === 'light') {
-          document.documentElement.classList.remove('dark')
-        } else {
+        // @ts-expect-error
+        if (JSON.parse(window.localStorage.getItem('park-ui-color-mode')) === 'dark') {
           document.documentElement.classList.add('dark')
         }
-        window.localStorage.setItem('park-ui-color-mode', JSON.stringify(colorMode))
       }
       setColorMode()
       document.addEventListener('astro:after-swap', setColorMode)
