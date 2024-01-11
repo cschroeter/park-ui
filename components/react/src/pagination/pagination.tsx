@@ -4,12 +4,15 @@ import {
 } from '@ark-ui/react/pagination'
 import { forwardRef } from 'react'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
-export interface PaginationProps extends ArkPaginationProps, PaginationVariantProps {}
+export interface PaginationProps
+  extends Assign<HTMLStyledProps<'nav'>, ArkPaginationProps>,
+    PaginationVariantProps {}
 
-export const Pagination = forwardRef<HTMLDivElement, PaginationProps>((props, ref) => {
+export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
   const [variantProps, localProps] = pagination.splitVariantProps(props)
   const styles = pagination(variantProps)
 

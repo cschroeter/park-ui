@@ -44,6 +44,9 @@ export const segmentGroup = defineSlotRecipe({
       transitionDuration: 'normal',
       transitionProperty: 'color',
       transitionTimingFunction: 'default',
+      _hover: {
+        color: 'fg.default',
+      },
       _checked: {
         fontWeight: 'semibold',
         color: 'fg.default',

@@ -2,12 +2,11 @@ import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui
 import { Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'
-import type { HTMLStyledProps } from 'styled-system/types'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
 export interface SwitchProps
-  extends ArkSwitchProps,
-    SwitchRecipeVariantProps,
-    Omit<HTMLStyledProps<'label'>, 'defaultChecked' | 'dir' | 'translate' | 'content' | 'color'> {
+  extends Assign<HTMLStyledProps<'label'>, ArkSwitchProps>,
+    SwitchRecipeVariantProps {
   children?: JSX.Element
 }
 
