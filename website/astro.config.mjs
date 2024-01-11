@@ -6,8 +6,6 @@ import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   site: 'https://park-ui.com',
-  base: '/docs',
-  trailingSlash: 'never',
   integrations: [mdx(), pandacss(), react(), sitemap()],
   markdown: {
     syntaxHighlight: false,
