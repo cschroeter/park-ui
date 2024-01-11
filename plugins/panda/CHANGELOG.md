@@ -3,6 +3,7 @@
 ### Added
 
 - Added support to render the `RatingGroup` in a different color.
+- Added a hover color to the `SegmentControl` item.
 
 ### Changed
 
