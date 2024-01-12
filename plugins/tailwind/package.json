@@ -43,6 +43,7 @@
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/node": "20.8.3",
+    "@types/postcss-js": "4.0.4",
     "@types/react": "18.2.47",
     "lucide-react": "0.309.0",
     "pandacss-preset-typography": "0.1.5",
