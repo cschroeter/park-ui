@@ -24,33 +24,47 @@ const generateComponents = async (options: Options) => {
   const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
   await Promise.all(
-    Object.entries(data).map(async ([key, value]) => {
-      const view = {
-        key,
-        ...value,
-        imports: value.imports[jsFramework],
-        tvConfig: JSON.stringify(transformComponentToTvConfig(value.className)),
-      }
-
-      const variant = value.hasOwnProperty('parts') ? 'with-context' : 'without-context'
-
-      const template = Handlebars.compile(
-        fs.readFileSync(`./src/templates/${cssFramwork}/${jsFramework}/${variant}.hbs`, 'utf-8'),
+    Object.entries(data)
+      .filter(
+        ([key]) =>
+          ![
+            'avatar',
+            'checkbox',
+            'number-input',
+            'pagination',
+            'pin-input',
+            'rating-group',
+            'slider',
+            'switch',
+          ].includes(key),
       )
+      .map(async ([key, value]) => {
+        const view = {
+          key,
+          ...value,
+          imports: value.imports[jsFramework],
+          tvConfig: JSON.stringify(transformComponentToTvConfig(value.className)),
+        }
 
-      const templateString = template(view)
+        const variant = value.hasOwnProperty('parts') ? 'with-context' : 'without-context'
 
-      const code = await prettier.format(templateString, {
-        ...prettierConfig,
-        plugins: ['prettier-plugin-organize-imports'],
-        parser: 'typescript',
-      })
+        const template = Handlebars.compile(
+          fs.readFileSync(`./src/templates/${cssFramwork}/${jsFramework}/${variant}.hbs`, 'utf-8'),
+        )
 
-      return await fs.writeFile(
-        path.join(rootDir, 'components', jsFramework, 'src', 'components', 'ui', `${key}.tsx`),
-        code,
-      )
-    }),
+        const templateString = template(view)
+
+        const code = await prettier.format(templateString, {
+          ...prettierConfig,
+          plugins: ['prettier-plugin-organize-imports'],
+          parser: 'typescript',
+        })
+
+        return await fs.writeFile(
+          path.join(rootDir, 'components', jsFramework, 'src', 'components', 'ui', `${key}.tsx`),
+          code,
+        )
+      }),
   )
 }
 
