@@ -1,37 +1,76 @@
-import { Pagination as ArkPagination } from '@ark-ui/react/pagination'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
-import { pagination } from 'styled-system/recipes'
-import { createStyleContext } from '~/lib/create-style-context'
+import {
+  Pagination as ArkPagination,
+  type PaginationProps as ArkPaginationProps,
+} from '@ark-ui/react/pagination'
+import { forwardRef } from 'react'
+import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
 
-const { withProvider, withContext } = createStyleContext(pagination)
+export interface PaginationProps
+  extends Assign<HTMLStyledProps<'nav'>, ArkPaginationProps>,
+    PaginationVariantProps {}
 
-const Pagination = withProvider(styled(ArkPagination.Root), 'root')
-const PaginationEllipsis = withContext(styled(ArkPagination.Ellipsis), 'ellipsis')
-const PaginationItem = withContext(styled(ArkPagination.Item), 'item')
-const PaginationNextTrigger = withContext(styled(ArkPagination.NextTrigger), 'nextTrigger')
-const PaginationPrevTrigger = withContext(styled(ArkPagination.PrevTrigger), 'prevTrigger')
+export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
+  const [variantProps, localProps] = pagination.splitVariantProps(props)
+  const styles = pagination(variantProps)
 
-const Root = Pagination
-const Ellipsis = PaginationEllipsis
-const Item = PaginationItem
-const NextTrigger = PaginationNextTrigger
-const PrevTrigger = PaginationPrevTrigger
+  return (
+    <ArkPagination.Root ref={ref} className={styles.root} {...localProps}>
+      {({ pages }) => (
+        <>
+          <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>
+            <IconButton variant="ghost" aria-label="Next Page">
+              <ChevronLeftIcon />
+            </IconButton>
+          </ArkPagination.PrevTrigger>
+          {pages.map((page, index) =>
+            page.type === 'page' ? (
+              <ArkPagination.Item className={styles.item} key={index} {...page} asChild>
+                <Button variant="outline">{page.value}</Button>
+              </ArkPagination.Item>
+            ) : (
+              <ArkPagination.Ellipsis className={styles.ellipsis} key={index} index={index}>
+                &#8230;
+              </ArkPagination.Ellipsis>
+            ),
+          )}
+          <ArkPagination.NextTrigger className={styles.nextTrigger} asChild>
+            <IconButton variant="ghost" aria-label="Next Page">
+              <ChevronRightIcon />
+            </IconButton>
+          </ArkPagination.NextTrigger>
+        </>
+      )}
+    </ArkPagination.Root>
+  )
+})
 
-export {
-  Ellipsis,
-  Item,
-  NextTrigger,
-  Pagination,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationNextTrigger,
-  PaginationPrevTrigger,
-  PrevTrigger,
-  Root,
-}
+Pagination.displayName = 'Pagination'
 
-export interface PaginationProps extends HTMLStyledProps<typeof Pagination> {}
-export interface PaginationEllipsisProps extends HTMLStyledProps<typeof PaginationEllipsis> {}
-export interface PaginationItemProps extends HTMLStyledProps<typeof PaginationItem> {}
-export interface PaginationNextTriggerProps extends HTMLStyledProps<typeof PaginationNextTrigger> {}
-export interface PaginationPrevTriggerProps extends HTMLStyledProps<typeof PaginationPrevTrigger> {}
+const ChevronLeftIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="m15 18l-6-6l6-6"
+    />
+  </svg>
+)
+
+const ChevronRightIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="m9 18l6-6l-6-6"
+    />
+  </svg>
+)

@@ -1,23 +1,44 @@
-import { PinInput as ArkPinInput } from '@ark-ui/react/pin-input'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
-import { pinInput } from 'styled-system/recipes'
-import { createStyleContext } from '~/lib/create-style-context'
+import {
+  PinInput as ArkPinInput,
+  type PinInputProps as ArkPinInputProps,
+} from '@ark-ui/react/pin-input'
+import { forwardRef, type ReactNode } from 'react'
+import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
+import { pinInput, type PinInputVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import { Input } from '~/components/ui/input'
 
-const { withProvider, withContext } = createStyleContext(pinInput)
+export interface PinInputProps
+  extends Assign<ArkPinInputProps, HTMLStyledProps<'div'>>,
+    PinInputVariantProps {
+  children?: ReactNode
+  /**
+   * The number of inputs to render.
+   * @default 4
+   */
+  length?: number
+}
 
-const PinInput = withProvider(styled(ArkPinInput.Root), 'root')
-const PinInputControl = withContext(styled(ArkPinInput.Control), 'control')
-const PinInputInput = withContext(styled(ArkPinInput.Input), 'input')
-const PinInputLabel = withContext(styled(ArkPinInput.Label), 'label')
+export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) => {
+  const { children, length = 4, ...rest } = props
+  const [variantProps] = pinInput.splitVariantProps(rest)
+  const [cssProps, rooProps] = splitCssProps(rest)
+  const styles = pinInput(variantProps)
 
-const Root = PinInput
-const Control = PinInputControl
-const Input = PinInputInput
-const Label = PinInputLabel
+  return (
+    <ArkPinInput.Root ref={ref} className={cx(styles.root, css(cssProps))} {...rooProps}>
+      {children && <ArkPinInput.Label className={styles.label}>{children}</ArkPinInput.Label>}
+      <ArkPinInput.Control className={styles.control}>
+        {Array.from({ length }, (_, index) => index).map((id, index) => (
+          <ArkPinInput.Input className={styles.input} key={id} index={index} asChild>
+            {/* Attention: this only works with static css for inputs */}
+            <Input size={variantProps.size} />
+          </ArkPinInput.Input>
+        ))}
+      </ArkPinInput.Control>
+    </ArkPinInput.Root>
+  )
+})
 
-export { Control, Input, Label, PinInput, PinInputControl, PinInputInput, PinInputLabel, Root }
-
-export interface PinInputProps extends HTMLStyledProps<typeof PinInput> {}
-export interface PinInputControlProps extends HTMLStyledProps<typeof PinInputControl> {}
-export interface PinInputInputProps extends HTMLStyledProps<typeof PinInputInput> {}
-export interface PinInputLabelProps extends HTMLStyledProps<typeof PinInputLabel> {}
+PinInput.displayName = 'PinInput'

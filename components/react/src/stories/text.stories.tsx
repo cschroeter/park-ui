@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Stack } from 'styled-system/jsx'
-import { Text, type TextProps } from './text'
+import { Text, type TextProps } from 'text'
 
 const meta: Meta<TextProps> = {
   title: 'Text',

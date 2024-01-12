@@ -1,20 +1,50 @@
-import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
-import { avatar } from 'styled-system/recipes'
-import { createStyleContext } from '~/lib/create-style-context'
+import { Avatar as ArkAvatar, type AvatarProps as ArkAvatarProps } from '@ark-ui/react/avatar'
+import { forwardRef } from 'react'
+import { css, cx } from 'styled-system/css'
+import { avatar, type AvatarVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
-const { withProvider, withContext } = createStyleContext(avatar)
+export interface AvatarProps
+  extends Assign<HTMLStyledProps<'div'>, ArkAvatarProps>,
+    AvatarVariantProps {
+  name?: string
+  src?: string
+}
 
-const Avatar = withProvider(styled(ArkAvatar.Root), 'root')
-const AvatarFallback = withContext(styled(ArkAvatar.Fallback), 'fallback')
-const AvatarImage = withContext(styled(ArkAvatar.Image), 'image')
+export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
+  const [variantProps, localProps] = avatar.splitVariantProps(props)
+  const { name, src, ...rootProps } = localProps
+  const styles = avatar(variantProps)
 
-const Root = Avatar
-const Fallback = AvatarFallback
-const Image = AvatarImage
+  return (
+    <ArkAvatar.Root className={cx(styles.root, css(rootProps))} {...rootProps}>
+      <ArkAvatar.Fallback className={styles.fallback}>
+        {getInitials(name) || <UserIcon />}
+      </ArkAvatar.Fallback>
+      <ArkAvatar.Image className={styles.image} src={src} alt={name} />
+    </ArkAvatar.Root>
+  )
+})
 
-export { Avatar, AvatarFallback, AvatarImage, Fallback, Image, Root }
+Avatar.displayName = 'Avatar'
 
-export interface AvatarProps extends HTMLStyledProps<typeof Avatar> {}
-export interface AvatarFallbackProps extends HTMLStyledProps<typeof AvatarFallback> {}
-export interface AvatarImageProps extends HTMLStyledProps<typeof AvatarImage> {}
+const UserIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+)
+
+const getInitials = (name = '') =>
+  name
+    .split(' ')
+    .map((part) => part[0])
+    .splice(0, 2)
+    .join('')
+    .toUpperCase()

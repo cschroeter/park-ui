@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { RatingGroup, type RatingGroupProps } from '../rating-group/rating-group'
+import { RatingGroup, type RatingGroupProps } from '~/components/ui/rating-group'
 
 const meta: Meta<RatingGroupProps> = {
   title: 'RatingGroup',
