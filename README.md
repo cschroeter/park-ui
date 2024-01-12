@@ -2,7 +2,7 @@
 
 Beautifully designed components built on [Ark UI](https://ark-ui.com) that work for the JS and CSS frameworks of your choice.
 
-![Park UI OG Image](https://park-ui.com/og.png)
+![Park UI OG Image](https://park-ui.com/opengraph-image.png)
 
 ## Supported Frameworks
 
