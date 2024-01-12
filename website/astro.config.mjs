@@ -10,6 +10,9 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
   },
+  redirects: {
+    '/': '/docs/panda/overview/introduction',
+  },
   vite: {
     server: {
       watch: {
