@@ -1,4 +1,5 @@
 import type { Meta } from '@storybook/react'
+import { Stack } from 'styled-system/jsx'
 import { PinInput, type PinInputProps } from './pin-input'
 
 const meta: Meta<PinInputProps> = {
@@ -8,18 +9,17 @@ const meta: Meta<PinInputProps> = {
 
 export default meta
 
-export const Base = () => (
-  <PinInput placeholder="0" onValueComplete={(e) => alert(e.valueAsString)}>
-    Label
-  </PinInput>
+export const Base = () => <PinInput>Label</PinInput>
+
+export const Sizes = () => (
+  <Stack>
+    <PinInput size="xs">xs</PinInput>
+    <PinInput size="sm">sm</PinInput>
+    <PinInput size="md">md</PinInput>
+    <PinInput size="lg">lg</PinInput>
+    <PinInput size="xl">xl</PinInput>
+    <PinInput size="2xl">2xl</PinInput>
+  </Stack>
 )
-export const CustomLength = () => (
-  <PinInput length={6} placeholder="0" onValueComplete={(e) => alert(e.valueAsString)}>
-    Label
-  </PinInput>
-)
-export const DeafultValue = () => (
-  <PinInput defaultValue={['1', '2', '3', '4']} placeholder="0">
-    Label
-  </PinInput>
-)
+
+export const Length = () => <PinInput length={6}>Label</PinInput>

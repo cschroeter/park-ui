@@ -9,6 +9,10 @@
 
 - Revised `Pagination` component. Check out the [docs](https://park-ui.com/docs/panda/components/pagination) for more details.
 
+### Fixed
+
+- Resolved an issue with the `PinInput` component where the input width was not correct.
+
 ## [0.28.0] - 2024-01-01
 
 ### Changed

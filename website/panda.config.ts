@@ -19,31 +19,7 @@ export default defineConfig({
   jsxFramework: 'react',
   outdir: 'styled-system',
   staticCss: {
-    recipes: {
-      avatar: ['*'],
-      badge: ['*'],
-      button: ['*'],
-      checkbox: ['*'],
-      code: ['*'],
-      drawer: ['*'],
-      icon: ['*'],
-      iconButton: ['*'],
-      input: ['*'],
-      kbd: ['*'],
-      link: ['*'],
-      menu: ['*'],
-      numberInput: ['*'],
-      radioGroup: ['*'],
-      radioButtonGroup: ['*'],
-      ratingGroup: ['*'],
-      segmentGroup: ['*'],
-      select: ['*'],
-      slider: ['*'],
-      switchRecipe: ['*'],
-      table: ['*'],
-      tabs: ['*'],
-      toggleGroup: ['*'],
-    },
+    recipes: '*',
     css: [
       {
         properties: {
