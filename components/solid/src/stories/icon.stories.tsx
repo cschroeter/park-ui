@@ -1,7 +1,7 @@
 import { DiamondIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { Stack } from 'styled-system/jsx'
-import { Icon, type IconProps } from './icon'
+import { Icon, type IconProps } from '~/components/ui/icon'
 
 const meta: Meta<IconProps> = {
   title: 'Icon',

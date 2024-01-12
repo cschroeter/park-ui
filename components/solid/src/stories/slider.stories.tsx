@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Slider, type SliderProps } from './slider'
+import { Slider, type SliderProps } from '~/components/ui/slider'
 
 const meta: Meta<SliderProps> = {
   title: 'Slider',
