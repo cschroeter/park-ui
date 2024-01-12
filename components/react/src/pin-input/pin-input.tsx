@@ -32,6 +32,7 @@ export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) =
       <ArkPinInput.Control className={styles.control}>
         {Array.from({ length }, (_, index) => index).map((id, index) => (
           <ArkPinInput.Input className={styles.input} key={id} index={index} asChild>
+            {/* Attention: this only works with static css for inputs */}
             <Input size={variantProps.size} />
           </ArkPinInput.Input>
         ))}
