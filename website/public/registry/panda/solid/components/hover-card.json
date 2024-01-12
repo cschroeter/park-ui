@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "hover-card.ts",
+      "filename": "hover-card.tsx",
       "content": "import { HoverCard as ArkHoverCard } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { hoverCard } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(hoverCard)\n\nexport const HoverCardRoot = withProvider(ArkHoverCard.Root)\nexport const HoverCardArrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')\nexport const HoverCardArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')\nexport const HoverCardContent = withContext(styled(ArkHoverCard.Content), 'content')\nexport const HoverCardPositioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')\nexport const HoverCardTrigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')\n\nexport const HoverCard = Object.assign(HoverCardRoot, {\n  Root: HoverCardRoot,\n  Arrow: HoverCardArrow,\n  ArrowTip: HoverCardArrowTip,\n  Content: HoverCardContent,\n  Positioner: HoverCardPositioner,\n  Trigger: HoverCardTrigger,\n})\n\nexport type HoverCardProps = typeof HoverCardRoot\nexport type HoverCardArrowProps = typeof HoverCardArrow\nexport type HoverCardArrowTipProps = typeof HoverCardArrowTip\nexport type HoverCardContentProps = typeof HoverCardContent\nexport type HoverCardPositionerProps = typeof HoverCardPositioner\nexport type HoverCardTriggerProps = typeof HoverCardTrigger\n",
       "hasMultipleParts": true
     }

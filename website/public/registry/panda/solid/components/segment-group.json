@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "segment-group.ts",
+      "filename": "segment-group.tsx",
       "content": "import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { segmentGroup } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(segmentGroup)\n\nexport const SegmentGroupRoot = withProvider(styled(ArkSegmentGroup.Root), 'root')\nexport const SegmentGroupIndicator = withContext(styled(ArkSegmentGroup.Indicator), 'indicator')\nexport const SegmentGroupItem = withContext(styled(ArkSegmentGroup.Item), 'item')\nexport const SegmentGroupItemControl = withContext(\n  styled(ArkSegmentGroup.ItemControl),\n  'itemControl',\n)\nexport const SegmentGroupItemText = withContext(styled(ArkSegmentGroup.ItemText), 'itemText')\nexport const SegmentGroupLabel = withContext(styled(ArkSegmentGroup.Label), 'label')\n\nexport const SegmentGroup = Object.assign(SegmentGroupRoot, {\n  Root: SegmentGroupRoot,\n  Indicator: SegmentGroupIndicator,\n  Item: SegmentGroupItem,\n  ItemControl: SegmentGroupItemControl,\n  ItemText: SegmentGroupItemText,\n  Label: SegmentGroupLabel,\n})\n\nexport type SegmentGroupProps = typeof SegmentGroupRoot\nexport type SegmentGroupIndicatorProps = typeof SegmentGroupIndicator\nexport type SegmentGroupItemProps = typeof SegmentGroupItem\nexport type SegmentGroupItemControlProps = typeof SegmentGroupItemControl\nexport type SegmentGroupItemTextProps = typeof SegmentGroupItemText\nexport type SegmentGroupLabelProps = typeof SegmentGroupLabel\n",
       "hasMultipleParts": true
     }

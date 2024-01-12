@@ -1,5 +1,5 @@
 packages:
   - cli
-  - components/*
+  - components/**
   - plugins/*
   - website

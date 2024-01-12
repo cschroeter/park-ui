@@ -1,8 +1,8 @@
 {
   "files": [
     {
-      "filename": "input.ts",
-      "content": "import { ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\n\nexport const Input = styled(ark.input, input)\nexport type InputProps = typeof Input\n",
+      "filename": "input.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\n\nexport const Input = styled(ark.input, input)\nexport interface InputProps extends HTMLStyledProps<typeof Input> {}\n",
       "hasMultipleParts": false
     }
   ]

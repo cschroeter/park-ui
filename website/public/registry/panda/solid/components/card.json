@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "card.ts",
+      "filename": "card.tsx",
       "content": "import { ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { card } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport const CardRoot = withProvider(styled(ark.div), 'root')\nexport const CardBody = withContext(styled(ark.div), 'body')\nexport const CardDescription = withContext(styled(ark.p), 'description')\nexport const CardFooter = withContext(styled(ark.div), 'footer')\nexport const CardHeader = withContext(styled(ark.div), 'header')\nexport const CardTitle = withContext(styled(ark.h3), 'title')\n\nexport const Card = Object.assign(CardRoot, {\n  Root: CardRoot,\n  Body: CardBody,\n  Description: CardDescription,\n  Footer: CardFooter,\n  Header: CardHeader,\n  Title: CardTitle,\n})\n\nexport type CardProps = typeof CardRoot\nexport type CardBodyProps = typeof CardBody\nexport type CardDescriptionProps = typeof CardDescription\nexport type CardFooterProps = typeof CardFooter\nexport type CardHeaderProps = typeof CardHeader\nexport type CardTitleProps = typeof CardTitle\n",
       "hasMultipleParts": true
     }
