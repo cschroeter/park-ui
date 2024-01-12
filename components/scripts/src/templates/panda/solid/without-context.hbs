@@ -1,8 +1,8 @@
 {{#each imports}}
 {{{this}}}
 {{/each}}
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { {{className}} } from 'styled-system/recipes'
 
 export const {{name}} = styled({{component}}, {{className}})
-export type {{name}}Props = typeof {{name}}
+export interface {{this.name}}Props extends HTMLStyledProps<typeof {{this.name}}> {}
