@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { NumberInput, type NumberInputProps } from './number-input'
+import { NumberInput, type NumberInputProps } from '../number-input/number-input'
 
 const meta: Meta<NumberInputProps> = {
   title: 'NumberInput',

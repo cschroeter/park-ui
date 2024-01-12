@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Stack } from 'styled-system/jsx'
-import { PinInput, type PinInputProps } from './pin-input'
+import { PinInput, type PinInputProps } from '../pin-input/pin-input'
 
 const meta: Meta<PinInputProps> = {
   title: 'PinInput',

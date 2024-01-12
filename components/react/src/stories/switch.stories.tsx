@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { Switch, type SwitchProps } from './switch'
+import { Switch, type SwitchProps } from '../switch/switch'
 
 const meta: Meta<SwitchProps> = {
   title: 'Switch',
