@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "code.ts",
+      "filename": "code.tsx",
       "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport const Code = styled(ark.code, code)\nexport interface CodeProps extends HTMLStyledProps<typeof Code> {}\n",
       "hasMultipleParts": false
     }

@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "toggle-group.ts",
+      "filename": "toggle-group.tsx",
       "content": "import { ToggleGroup as ArkToggleGroup } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { toggleGroup } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport const ToggleGroupRoot = withProvider(styled(ArkToggleGroup.Root), 'root')\nexport const ToggleGroupItem = withContext(styled(ArkToggleGroup.Item), 'item')\n\nexport const ToggleGroup = Object.assign(ToggleGroupRoot, {\n  Root: ToggleGroupRoot,\n  Item: ToggleGroupItem,\n})\n\nexport type ToggleGroupProps = typeof ToggleGroupRoot\nexport type ToggleGroupItemProps = typeof ToggleGroupItem\n",
       "hasMultipleParts": true
     }
