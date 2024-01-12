@@ -39,7 +39,7 @@ export const useThemeStore = create<State & Actions>()(
         },
       }),
       {
-        name: 'park-ui-theme-store',
+        name: 'park-ui-store',
         version: 2,
       },
     ),

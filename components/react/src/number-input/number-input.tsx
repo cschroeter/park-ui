@@ -3,9 +3,13 @@ import {
   type NumberInputProps as ArkNumberInputProps,
 } from '@ark-ui/react/number-input'
 import { forwardRef, type ReactNode } from 'react'
+import { css, cx } from 'styled-system/css'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
-export interface NumberInputProps extends ArkNumberInputProps, NumberInputVariantProps {
+export interface NumberInputProps
+  extends Assign<HTMLStyledProps<'div'>, ArkNumberInputProps>,
+    NumberInputVariantProps {
   children?: ReactNode
 }
 
@@ -15,7 +19,7 @@ export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, 
   const styles = numberInput(variantProps)
 
   return (
-    <ArkNumberInput.Root ref={ref} className={styles.root} {...rootProps}>
+    <ArkNumberInput.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
       {children && <ArkNumberInput.Label className={styles.label}>{children}</ArkNumberInput.Label>}
       <ArkNumberInput.Control className={styles.control}>
         <ArkNumberInput.Input className={styles.input} />

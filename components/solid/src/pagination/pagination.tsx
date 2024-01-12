@@ -4,10 +4,13 @@ import {
 } from '@ark-ui/solid'
 import { For } from 'solid-js'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
-export interface PaginationProps extends ArkPaginationProps, PaginationVariantProps {}
+export interface PaginationProps
+  extends Assign<HTMLStyledProps<'nav'>, ArkPaginationProps>,
+    PaginationVariantProps {}
 
 export const Pagination = (props: PaginationProps) => {
   const [variantProps, localProps] = pagination.splitVariantProps(props)

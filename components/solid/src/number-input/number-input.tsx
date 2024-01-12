@@ -3,9 +3,13 @@ import {
   type NumberInputProps as ArkNumberInputProps,
 } from '@ark-ui/solid'
 import { Show, children, splitProps, type JSX } from 'solid-js'
+import { css, cx } from 'styled-system/css'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
-export interface NumberInputProps extends ArkNumberInputProps, NumberInputVariantProps {
+export interface NumberInputProps
+  extends Assign<HTMLStyledProps<'div'>, ArkNumberInputProps>,
+    NumberInputVariantProps {
   children?: JSX.Element
 }
 
@@ -16,7 +20,7 @@ export const NumberInput = (props: NumberInputProps) => {
   const styles = numberInput(variantProps)
 
   return (
-    <ArkNumberInput.Root class={styles.root} {...rootProps}>
+    <ArkNumberInput.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       <Show when={getChildren()}>
         <ArkNumberInput.Label class={styles.label}>{local.children}</ArkNumberInput.Label>
       </Show>

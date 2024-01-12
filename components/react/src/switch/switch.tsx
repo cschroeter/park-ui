@@ -2,18 +2,17 @@ import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
 import { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'
-import type { HTMLStyledProps } from 'styled-system/types'
+import type { Assign, HTMLStyledProps } from 'styled-system/types'
 
 export interface SwitchProps
-  extends ArkSwitchProps,
-    SwitchRecipeVariantProps,
-    Omit<HTMLStyledProps<'label'>, 'defaultChecked' | 'dir' | 'translate' | 'content' | 'color'> {
+  extends Assign<HTMLStyledProps<'label'>, ArkSwitchProps>,
+    SwitchRecipeVariantProps {
   children?: ReactNode
 }
 
 export const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {
   const [variantProps, localProps] = switchRecipe.splitVariantProps(props)
-  const { children, checked, ...rootProps } = localProps
+  const { children, ...rootProps } = localProps
   const styles = switchRecipe(variantProps)
 
   return (
