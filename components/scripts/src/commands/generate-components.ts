@@ -61,7 +61,16 @@ const generateComponents = async (options: Options) => {
         })
 
         return await fs.writeFile(
-          path.join(rootDir, 'components', jsFramework, 'src', 'components', 'ui', `${key}.tsx`),
+          path.join(
+            rootDir,
+            'components',
+            cssFramwork,
+            jsFramework,
+            'src',
+            'components',
+            'ui',
+            `${key}.tsx`,
+          ),
           code,
         )
       }),
