@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "icon.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { forwardRef, type ReactElement } from 'react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { icon, type IconVariantProps } from 'styled-system/recipes'\n\nexport interface IconProps extends IconVariantProps, HTMLStyledProps<'svg'> {\n  children: ReactElement\n}\n\nexport const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {\n  return <StyledIcon ref={ref} asChild {...props} />\n})\n\nconst StyledIcon = styled(ark.svg, icon)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

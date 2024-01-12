@@ -116,6 +116,9 @@ importers:
       '@types/react-dom':
         specifier: 18.2.18
         version: 18.2.18
+      lucide-react:
+        specifier: 0.309.0
+        version: 0.309.0(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -215,6 +218,9 @@ importers:
       '@storybook/addons':
         specifier: 7.6.7
         version: 7.6.7(react-dom@18.2.0)(react@18.2.0)
+      lucide-solid:
+        specifier: 0.309.0
+        version: 0.309.0(solid-js@1.8.10)
       solid-js:
         specifier: 1.8.10
         version: 1.8.10
@@ -12070,6 +12076,14 @@ packages:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
+
+  /lucide-solid@0.309.0(solid-js@1.8.10):
+    resolution: {integrity: sha512-JrXbvMdE9eywW/iEVXTDZvrYXQBIrYcQzB9wGJ8hIZjxY552l1SOsA0NKi1SJlg4pTtHGakmtX3xPKyuwphCfQ==}
+    peerDependencies:
+      solid-js: ^1.4.7
+    dependencies:
+      solid-js: 1.8.10
+    dev: false
 
   /macos-release@3.2.0:
     resolution: {integrity: sha512-fSErXALFNsnowREYZ49XCdOHF8wOPWuFOGQrAhP7x5J/BqQv+B02cNsTykGpDgRVx43EKg++6ANmTaGTtW+hUA==}
