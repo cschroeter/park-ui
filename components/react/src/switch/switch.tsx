@@ -12,7 +12,7 @@ export interface SwitchProps
 
 export const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {
   const [variantProps, localProps] = switchRecipe.splitVariantProps(props)
-  const { children, checked, ...rootProps } = localProps
+  const { children, ...rootProps } = localProps
   const styles = switchRecipe(variantProps)
 
   return (
