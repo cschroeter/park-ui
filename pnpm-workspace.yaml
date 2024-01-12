@@ -2,4 +2,5 @@ packages:
   - cli
   - components/**
   - plugins/*
+  - scripts
   - website

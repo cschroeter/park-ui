@@ -258,66 +258,6 @@ importers:
         specifier: 4.2.3
         version: 4.2.3(typescript@5.3.3)(vite@5.0.11)
 
-  components/scripts:
-    dependencies:
-      '@ark-ui/anatomy':
-        specifier: 1.2.0
-        version: 1.2.0(@internationalized/date@3.5.0)
-      '@pandacss/dev':
-        specifier: 0.26.2
-        version: 0.26.2(typescript@5.3.3)
-      '@pandacss/types':
-        specifier: 0.26.2
-        version: 0.26.2
-      '@park-ui/panda-preset':
-        specifier: workspace:*
-        version: link:../../plugins/panda
-      '@types/fs-extra':
-        specifier: 11.0.4
-        version: 11.0.4
-      '@types/react':
-        specifier: 18.2.47
-        version: 18.2.47
-      '@types/react-dom':
-        specifier: 18.2.18
-        version: 18.2.18
-      '@types/voca':
-        specifier: 1.4.5
-        version: 1.4.5
-      commander:
-        specifier: 11.1.0
-        version: 11.1.0
-      find-up:
-        specifier: 7.0.0
-        version: 7.0.0
-      fs-extra:
-        specifier: 11.2.0
-        version: 11.2.0
-      globby:
-        specifier: 14.0.0
-        version: 14.0.0
-      handlebars:
-        specifier: 4.7.8
-        version: 4.7.8
-      prettier:
-        specifier: 3.2.0
-        version: 3.2.0
-      prettier-plugin-organize-imports:
-        specifier: 3.2.4
-        version: 3.2.4(prettier@3.2.0)(typescript@5.3.3)
-      ts-pattern:
-        specifier: 5.0.6
-        version: 5.0.6
-      tsx:
-        specifier: 4.7.0
-        version: 4.7.0
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
-      voca:
-        specifier: 1.4.1
-        version: 1.4.1
-
   plugins/chakra:
     devDependencies:
       '@chakra-ui/anatomy':
@@ -475,6 +415,66 @@ importers:
       tsx:
         specifier: 4.7.0
         version: 4.7.0
+
+  scripts:
+    dependencies:
+      '@ark-ui/anatomy':
+        specifier: 1.2.0
+        version: 1.2.0(@internationalized/date@3.5.0)
+      '@pandacss/dev':
+        specifier: 0.26.2
+        version: 0.26.2(typescript@5.3.3)
+      '@pandacss/types':
+        specifier: 0.26.2
+        version: 0.26.2
+      '@park-ui/panda-preset':
+        specifier: workspace:*
+        version: link:../plugins/panda
+      '@types/fs-extra':
+        specifier: 11.0.4
+        version: 11.0.4
+      '@types/react':
+        specifier: 18.2.47
+        version: 18.2.47
+      '@types/react-dom':
+        specifier: 18.2.18
+        version: 18.2.18
+      '@types/voca':
+        specifier: 1.4.5
+        version: 1.4.5
+      commander:
+        specifier: 11.1.0
+        version: 11.1.0
+      find-up:
+        specifier: 7.0.0
+        version: 7.0.0
+      fs-extra:
+        specifier: 11.2.0
+        version: 11.2.0
+      globby:
+        specifier: 14.0.0
+        version: 14.0.0
+      handlebars:
+        specifier: 4.7.8
+        version: 4.7.8
+      prettier:
+        specifier: 3.2.0
+        version: 3.2.0
+      prettier-plugin-organize-imports:
+        specifier: 3.2.4
+        version: 3.2.4(prettier@3.2.0)(typescript@5.3.3)
+      ts-pattern:
+        specifier: 5.0.6
+        version: 5.0.6
+      tsx:
+        specifier: 4.7.0
+        version: 4.7.0
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+      voca:
+        specifier: 1.4.1
+        version: 1.4.1
 
   website:
     dependencies:
