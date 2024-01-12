@@ -1,5 +1,5 @@
 {
-  "name": "@park-ui/solid-components",
+  "name": "@park-ui/panda-solid-components",
   "private": true,
   "scripts": {
     "prepare": "panda codegen",

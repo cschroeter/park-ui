@@ -29,7 +29,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@ark-ui/react": "1.2.1",
     "@chakra-ui/anatomy": "2.2.2",
     "@chakra-ui/react": "2.8.2",
     "@chakra-ui/styled-system": "2.9.2",
@@ -37,29 +36,20 @@
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-essentials": "7.6.8",
-    "@storybook/addons": "7.6.8",
-    "@storybook/api": "7.6.8",
-    "@storybook/components": "7.6.8",
-    "@storybook/react": "7.6.8",
-    "@storybook/react-vite": "7.6.8",
     "@types/node": "20.11.0",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
     "@types/voca": "1.4.5",
     "framer-motion": "10.18.0",
     "handlebars": "4.7.8",
-    "lucide-react": "0.309.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.6.8",
     "tsx": "4.7.0",
     "typescript": "5.3.3",
-    "vite": "5.0.11",
-    "vite-tsconfig-paths": "4.2.3",
     "voca": "1.4.1"
   },
   "peerDependencies": {
     "@chakra-ui/react": ">2.8.0"
-  }
+  },
+  "main": "src/index.ts"
 }
