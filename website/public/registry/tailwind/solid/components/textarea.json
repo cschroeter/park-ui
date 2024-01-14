@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "textarea.tsx",
-      "content": "import { ark, type HTMLArkProps } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nexport interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}\n\nexport const Textarea = (props: TextareaProps) => {\n  const [variantProps, textareaProps] = splitProps(props, ['class', 'size'])\n  return <ark.textarea class={styles(variantProps)} {...textareaProps} />\n}\n\ntype TextareaVariantProps = VariantProps<typeof styles>\n\nconst styles = tv({\n  base: 'textarea',\n  defaultVariants: { size: 'md' },\n  variants: {\n    size: {\n      sm: 'textarea--size_sm',\n      md: 'textarea--size_md',\n      lg: 'textarea--size_lg',\n      xl: 'textarea--size_xl',\n    },\n  },\n})\n",
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nexport interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}\n\nexport const Textarea = (props: TextareaProps) => {\n  const [variantProps, textareaProps] = splitProps(props, ['class', 'size'])\n  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145\n  return <ark.textarea class={styles(variantProps)} {...textareaProps} />\n}\n\ntype TextareaVariantProps = VariantProps<typeof styles>\n\nconst styles = tv({\n  base: 'textarea',\n  defaultVariants: { size: 'md' },\n  variants: {\n    size: {\n      sm: 'textarea--size_sm',\n      md: 'textarea--size_md',\n      lg: 'textarea--size_lg',\n      xl: 'textarea--size_xl',\n    },\n  },\n})\n",
       "hasMultipleParts": false
     }
   ]

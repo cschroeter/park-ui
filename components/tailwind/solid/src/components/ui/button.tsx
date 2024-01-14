@@ -6,6 +6,7 @@ export interface ButtonProps extends ButtonVariantProps, HTMLArkProps<'button'> 
 
 export const Button = (props: ButtonProps) => {
   const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.button class={styles(variantProps)} {...buttonProps} />
 }
 

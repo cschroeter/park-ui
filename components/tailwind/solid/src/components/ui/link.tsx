@@ -6,6 +6,7 @@ export interface LinkProps extends LinkVariantProps, HTMLArkProps<'a'> {}
 
 export const Link = (props: LinkProps) => {
   const [variantProps, linkProps] = splitProps(props, ['class'])
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.a class={styles(variantProps)} {...linkProps} />
 }
 

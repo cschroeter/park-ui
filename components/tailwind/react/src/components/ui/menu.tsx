@@ -102,16 +102,10 @@ export const MenuArrow = withContext(ArkMenu.Arrow, 'arrow')
 export const MenuArrowTip = withContext(ArkMenu.ArrowTip, 'arrowTip')
 export const MenuContent = withContext(ArkMenu.Content, 'content')
 export const MenuContextTrigger = withContext(ArkMenu.ContextTrigger, 'contextTrigger')
-export const MenuIndicator = withContext(ArkMenu.Indicator, 'indicator')
 export const MenuItem = withContext(ArkMenu.Item, 'item')
 export const MenuItemGroup = withContext(ArkMenu.ItemGroup, 'itemGroup')
 export const MenuItemGroupLabel = withContext(ArkMenu.ItemGroupLabel, 'itemGroupLabel')
 export const MenuOptionItem = withContext(ArkMenu.OptionItem, 'optionItem')
-export const MenuOptionItemIndicator = withContext(
-  ArkMenu.OptionItemIndicator,
-  'optionItemIndicator',
-)
-export const MenuOptionItemText = withContext(ArkMenu.OptionItemText, 'optionItemText')
 export const MenuPositioner = withContext(ArkMenu.Positioner, 'positioner')
 export const MenuSeparator = withContext(ArkMenu.Separator, 'separator')
 export const MenuTrigger = withContext(ArkMenu.Trigger, 'trigger')
@@ -123,13 +117,10 @@ export const Menu = Object.assign(MenuRoot, {
   ArrowTip: MenuArrowTip,
   Content: MenuContent,
   ContextTrigger: MenuContextTrigger,
-  Indicator: MenuIndicator,
   Item: MenuItem,
   ItemGroup: MenuItemGroup,
   ItemGroupLabel: MenuItemGroupLabel,
   OptionItem: MenuOptionItem,
-  OptionItemIndicator: MenuOptionItemIndicator,
-  OptionItemText: MenuOptionItemText,
   Positioner: MenuPositioner,
   Separator: MenuSeparator,
   Trigger: MenuTrigger,

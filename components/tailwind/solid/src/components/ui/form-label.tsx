@@ -6,6 +6,7 @@ export interface FormLabelProps extends FormLabelVariantProps, HTMLArkProps<'lab
 
 export const FormLabel = (props: FormLabelProps) => {
   const [variantProps, formLabelProps] = splitProps(props, ['class', 'size'])
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.label class={styles(variantProps)} {...formLabelProps} />
 }
 

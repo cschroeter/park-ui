@@ -6,6 +6,7 @@ export interface IconButtonProps extends IconButtonVariantProps, HTMLArkProps<'b
 
 export const IconButton = (props: IconButtonProps) => {
   const [variantProps, iconButtonProps] = splitProps(props, ['class', 'size', 'variant'])
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.button class={styles(variantProps)} {...iconButtonProps} />
 }
 

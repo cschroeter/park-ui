@@ -6,7 +6,7 @@ export interface KbdProps extends KbdVariantProps, HTMLArkProps<'kbd'> {}
 
 export const Kbd = (props: KbdProps) => {
   const [variantProps, kbdProps] = splitProps(props, ['class', 'size'])
-
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.kbd class={styles(variantProps)} {...kbdProps} />
 }
 

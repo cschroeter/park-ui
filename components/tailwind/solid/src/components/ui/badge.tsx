@@ -6,6 +6,7 @@ export interface BadgeProps extends BadgeVariantProps, HTMLArkProps<'div'> {}
 
 export const Badge = (props: BadgeProps) => {
   const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.div class={styles(variantProps)} {...buttonProps} />
 }
 

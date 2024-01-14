@@ -6,6 +6,7 @@ export interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'texta
 
 export const Textarea = (props: TextareaProps) => {
   const [variantProps, textareaProps] = splitProps(props, ['class', 'size'])
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.textarea class={styles(variantProps)} {...textareaProps} />
 }
 

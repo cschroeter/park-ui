@@ -10,6 +10,7 @@ export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
 export const Avatar = (props: AvatarProps) => {
   const [variantProps, avatarProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(avatarProps, ['name', 'src'])
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const { root, fallback, image } = styles(variantProps)
 
   return (
@@ -21,8 +22,6 @@ export const Avatar = (props: AvatarProps) => {
     </ArkAvatar.Root>
   )
 }
-
-Avatar.displayName = 'Avatar'
 
 type AvatarVariantProps = VariantProps<typeof styles>
 
