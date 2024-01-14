@@ -1,9 +1,15 @@
-import { ark } from '@ark-ui/solid'
+import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface CodeProps extends CodeVariantProps, HTMLArkProps<'code'> {}
+
+export const Code = (props: CodeProps) => {
+  const [variantProps, codeProps] = splitProps(props, ['size'])
+  return <ark.code class={styles(variantProps)} {...codeProps} />
+}
 
 type CodeVariantProps = VariantProps<typeof styles>
-export type CodeProps = CodeVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'code',
@@ -13,4 +19,3 @@ const styles = tv({
     size: { sm: 'code--size_sm', md: 'code--size_md', lg: 'code--size_lg' },
   },
 })
-export const Code = styled<CodeProps>(ark.code, styles)

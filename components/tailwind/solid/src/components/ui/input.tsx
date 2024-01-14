@@ -1,9 +1,15 @@
-import { ark } from '@ark-ui/solid'
+import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface InputProps extends InputVariantProps, HTMLArkProps<'div'> {}
+
+export const Input = (props: InputProps) => {
+  const [variantProps, inputProps] = splitProps(props, ['class', 'size'])
+  return <ark.div class={styles(variantProps)} {...inputProps} />
+}
 
 type InputVariantProps = VariantProps<typeof styles>
-export type InputProps = InputVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'input',
@@ -20,4 +26,3 @@ const styles = tv({
     },
   },
 })
-export const Input = styled<InputProps>(ark.input, styles)

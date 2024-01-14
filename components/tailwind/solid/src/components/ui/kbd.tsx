@@ -1,13 +1,19 @@
-import { ark } from '@ark-ui/solid'
+import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface KbdProps extends KbdVariantProps, HTMLArkProps<'kbd'> {}
+
+export const Kbd = (props: KbdProps) => {
+  const [variantProps, kbdProps] = splitProps(props, ['class', 'size'])
+
+  return <ark.kbd class={styles(variantProps)} {...kbdProps} />
+}
 
 type KbdVariantProps = VariantProps<typeof styles>
-export type KbdProps = KbdVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'kbd',
   defaultVariants: { size: 'md' },
   variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },
 })
-export const Kbd = styled<KbdProps>(ark.kbd, styles)

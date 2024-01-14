@@ -1,9 +1,15 @@
-import { ark } from '@ark-ui/solid'
+import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface FormLabelProps extends FormLabelVariantProps, HTMLArkProps<'label'> {}
+
+export const FormLabel = (props: FormLabelProps) => {
+  const [variantProps, formLabelProps] = splitProps(props, ['class', 'size'])
+  return <ark.label class={styles(variantProps)} {...formLabelProps} />
+}
 
 type FormLabelVariantProps = VariantProps<typeof styles>
-export type FormLabelProps = FormLabelVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'formLabel',
@@ -17,4 +23,3 @@ const styles = tv({
     },
   },
 })
-export const FormLabel = styled<FormLabelProps>(ark.label, styles)

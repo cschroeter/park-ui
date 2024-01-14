@@ -9,7 +9,11 @@ const meta: Meta<AvatarProps> = {
 export default meta
 
 export const Base = () => (
-  <Avatar name="Christian Schröter" src="https://avatars.githubusercontent.com/u/1846056?v=4" />
+  <Avatar
+    name="Christian Schröter"
+    src="https://avatars.githubusercontent.com/u/1846056?v=4"
+    class="foo"
+  />
 )
 export const NameOnly = () => <Avatar name="Christian Schröter" />
 export const NoData = () => <Avatar />

@@ -1,9 +1,15 @@
-import { ark } from '@ark-ui/solid'
+import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface IconButtonProps extends IconButtonVariantProps, HTMLArkProps<'button'> {}
+
+export const IconButton = (props: IconButtonProps) => {
+  const [variantProps, iconButtonProps] = splitProps(props, ['class', 'size', 'variant'])
+  return <ark.button class={styles(variantProps)} {...iconButtonProps} />
+}
 
 type IconButtonVariantProps = VariantProps<typeof styles>
-export type IconButtonProps = IconButtonVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'iconButton',
@@ -26,4 +32,3 @@ const styles = tv({
     },
   },
 })
-export const IconButton = styled<IconButtonProps>(ark.button, styles)

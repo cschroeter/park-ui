@@ -1,9 +1,15 @@
-import { ark } from '@ark-ui/solid'
+import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface BadgeProps extends BadgeVariantProps, HTMLArkProps<'div'> {}
+
+export const Badge = (props: BadgeProps) => {
+  const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])
+  return <ark.div class={styles(variantProps)} {...buttonProps} />
+}
 
 type BadgeVariantProps = VariantProps<typeof styles>
-export type BadgeProps = BadgeVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'badge',
@@ -17,4 +23,3 @@ const styles = tv({
     size: { sm: 'badge--size_sm', md: 'badge--size_md', lg: 'badge--size_lg' },
   },
 })
-export const Badge = styled<BadgeProps>(ark.div, styles)

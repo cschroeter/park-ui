@@ -2,6 +2,17 @@ import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
 import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
+export interface BadgeProps extends BadgeVariantProps, HTMLArkProps<'div'> {}
+
+export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
+  const { size, variant, className, ...rest } = props
+  return <ark.div className={styles({ size, variant, className })} ref={ref} {...rest} />
+})
+
+Badge.displayName = 'Badge'
+
+type BadgeVariantProps = VariantProps<typeof styles>
+
 const styles = tv({
   base: 'badge',
   defaultVariants: { variant: 'subtle', size: 'md' },
@@ -14,13 +25,3 @@ const styles = tv({
     size: { sm: 'badge--size_sm', md: 'badge--size_md', lg: 'badge--size_lg' },
   },
 })
-
-type BadgeVariantProps = VariantProps<typeof styles>
-export interface BadgeProps extends BadgeVariantProps, HTMLArkProps<'div'> {}
-
-export const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
-  const { size, variant, className, ...rest } = props
-  return <ark.div className={styles({ size, variant, className })} ref={ref} {...rest} />
-})
-
-Badge.displayName = 'Badge'

@@ -1,9 +1,15 @@
-import { ark } from '@ark-ui/solid'
+import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}
+
+export const Textarea = (props: TextareaProps) => {
+  const [variantProps, textareaProps] = splitProps(props, ['class', 'size'])
+  return <ark.textarea class={styles(variantProps)} {...textareaProps} />
+}
 
 type TextareaVariantProps = VariantProps<typeof styles>
-export type TextareaProps = TextareaVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'textarea',
@@ -17,4 +23,3 @@ const styles = tv({
     },
   },
 })
-export const Textarea = styled<TextareaProps>(ark.textarea, styles)
