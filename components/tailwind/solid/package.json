@@ -1,14 +1,12 @@
 {
-  "name": "@park-ui/panda-solid-components",
+  "name": "@park-ui/tailwind-solid-components",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen --silent",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@ark-ui/solid": "1.2.0",
-    "@pandacss/dev": "0.26.2",
-    "@park-ui/panda-preset": "workspace:*",
+    "@park-ui/tailwind-plugin": "workspace:*",
     "@storybook/addon-essentials": "7.6.8",
     "@storybook/addons": "7.6.8",
     "lucide-solid": "0.309.0",
@@ -16,6 +14,8 @@
     "storybook": "7.6.8",
     "storybook-solidjs": "1.0.0-beta.2",
     "storybook-solidjs-vite": "1.0.0-beta.2",
+    "tailwind-variants": "0.1.20",
+    "tailwindcss": "3.4.1",
     "typescript": "5.3.3",
     "vite": "5.0.11",
     "vite-plugin-solid": "2.8.0",

@@ -7,7 +7,7 @@ import {
   type ComponentProps,
   type ValidComponent,
 } from 'solid-js'
-import { Dynamic, DynamicProps } from 'solid-js/web'
+import { Dynamic, type DynamicProps } from 'solid-js/web'
 
 type Recipe = {
   (props: Record<string, unknown>): Record<string, CallableFunction>

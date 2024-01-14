@@ -218,9 +218,6 @@ importers:
       '@park-ui/panda-preset':
         specifier: workspace:*
         version: link:../../../plugins/panda
-      '@storybook/addon-a11y':
-        specifier: 7.6.8
-        version: 7.6.8
       '@storybook/addon-essentials':
         specifier: 7.6.8
         version: 7.6.8(@types/react-dom@18.2.18)(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)
@@ -311,6 +308,54 @@ importers:
       vite:
         specifier: 5.0.11
         version: 5.0.11(@types/node@20.11.0)
+      vite-tsconfig-paths:
+        specifier: 4.2.3
+        version: 4.2.3(typescript@5.3.3)(vite@5.0.11)
+
+  components/tailwind/solid:
+    dependencies:
+      '@ark-ui/solid':
+        specifier: 1.2.0
+        version: 1.2.0(@internationalized/date@3.5.0)(solid-js@1.8.11)
+      '@park-ui/tailwind-plugin':
+        specifier: workspace:*
+        version: link:../../../plugins/tailwind
+      '@storybook/addon-essentials':
+        specifier: 7.6.8
+        version: 7.6.8(@types/react-dom@18.2.18)(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addons':
+        specifier: 7.6.8
+        version: 7.6.8(react-dom@18.2.0)(react@18.2.0)
+      lucide-solid:
+        specifier: 0.309.0
+        version: 0.309.0(solid-js@1.8.11)
+      solid-js:
+        specifier: 1.8.11
+        version: 1.8.11
+      storybook:
+        specifier: 7.6.8
+        version: 7.6.8
+      storybook-solidjs:
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(babel-preset-solid@1.8.9)(solid-js@1.8.11)
+      storybook-solidjs-vite:
+        specifier: 1.0.0-beta.2
+        version: 1.0.0-beta.2(typescript@5.3.3)(vite@5.0.11)
+      tailwind-variants:
+        specifier: 0.1.20
+        version: 0.1.20(tailwindcss@3.4.1)
+      tailwindcss:
+        specifier: 3.4.1
+        version: 3.4.1
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+      vite:
+        specifier: 5.0.11
+        version: 5.0.11(@types/node@20.11.0)
+      vite-plugin-solid:
+        specifier: 2.8.0
+        version: 2.8.0(solid-js@1.8.11)(vite@5.0.11)
       vite-tsconfig-paths:
         specifier: 4.2.3
         version: 4.2.3(typescript@5.3.3)(vite@5.0.11)
@@ -5774,13 +5819,6 @@ packages:
     resolution: {integrity: sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==}
     engines: {node: '>=18'}
 
-  /@storybook/addon-a11y@7.6.8:
-    resolution: {integrity: sha512-jaBDNQzumA/0DqN1zHM3sq3QeXtMmQDKNE24D6X9nd7FLJQlN9bTHSQJC3/LM4/wt0CUlz2L8iP5Egu5VTxr1w==}
-    dependencies:
-      '@storybook/addon-highlight': 7.6.8
-      axe-core: 4.8.2
-    dev: false
-
   /@storybook/addon-actions@7.6.8:
     resolution: {integrity: sha512-/KQlr/nLsAazJuSVUoMjQdwAeeXkKEtElKdqXrqI1LVOi5a7kMgB+bmn9aKX+7VBQLfQ36Btyty+FaY7bRtehQ==}
     dependencies:
@@ -8089,11 +8127,6 @@ packages:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
 
-  /axe-core@4.8.2:
-    resolution: {integrity: sha512-/dlp0fxyM3R8YW7MFzaHWXrf4zzbr0vaYb23VBFCl83R7nWNPg/yaQw2Dc8jzCMmDVLhSdzH8MjrsuIUuvX+6g==}
-    engines: {node: '>=4'}
-    dev: false
-
   /axobject-query@4.0.0:
     resolution: {integrity: sha512-+60uv1hiVFhHZeO+Lz0RYzsVHy5Wr1ayX0mwda9KPDVLNJgZ1T9Ny7VmFbLDzxsH0D87I86vgj3gFrjTJUYznw==}
     dependencies:
@@ -8537,6 +8570,7 @@ packages:
 
   /chownr@1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
+    requiresBuild: true
     dev: false
 
   /chownr@2.0.0:
@@ -10113,6 +10147,7 @@ packages:
 
   /fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
+    requiresBuild: true
     dev: false
 
   /fs-extra@11.1.1:
@@ -12637,6 +12672,7 @@ packages:
 
   /mkdirp-classic@0.5.3:
     resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
+    requiresBuild: true
     dev: false
 
   /mkdirp@0.5.6:
@@ -15223,6 +15259,7 @@ packages:
   /tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
     engines: {node: '>=6'}
+    requiresBuild: true
     dependencies:
       bl: 4.1.0
       end-of-stream: 1.4.4

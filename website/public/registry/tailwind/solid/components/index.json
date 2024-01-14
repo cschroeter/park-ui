@@ -9,6 +9,10 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/alert.json"
     },
     {
+      "name": "Avatar",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/avatar.json"
+    },
+    {
       "name": "Badge",
       "href": "https://park-ui.com/registry/tailwind/solid/components/badge.json"
     },
