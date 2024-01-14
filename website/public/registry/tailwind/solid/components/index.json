@@ -74,6 +74,18 @@
     { "name": "Link", "href": "https://park-ui.com/registry/tailwind/solid/components/link.json" },
     { "name": "Menu", "href": "https://park-ui.com/registry/tailwind/solid/components/menu.json" },
     {
+      "name": "Number Input",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/number-input.json"
+    },
+    {
+      "name": "Pagination",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/pagination.json"
+    },
+    {
+      "name": "Pin Input",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/pin-input.json"
+    },
+    {
       "name": "Popover",
       "href": "https://park-ui.com/registry/tailwind/solid/components/popover.json"
     },
@@ -86,6 +98,10 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/radio-group.json"
     },
     {
+      "name": "Rating Group",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/rating-group.json"
+    },
+    {
       "name": "Segment Group",
       "href": "https://park-ui.com/registry/tailwind/solid/components/segment-group.json"
     },
@@ -94,8 +110,16 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/select.json"
     },
     {
+      "name": "Slider",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/slider.json"
+    },
+    {
       "name": "Splitter",
       "href": "https://park-ui.com/registry/tailwind/solid/components/splitter.json"
+    },
+    {
+      "name": "Switch",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/switch.json"
     },
     {
       "name": "Table",
