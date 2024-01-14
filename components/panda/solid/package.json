@@ -2,7 +2,7 @@
   "name": "@park-ui/panda-solid-components",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen",
+    "prepare": "panda codegen --silent",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {

@@ -1,16 +1,15 @@
+import type { Meta } from '@storybook/react'
 import { ArrowRightIcon } from 'lucide-react'
-import { useState } from 'react'
 import { Button } from '~/components/ui/button'
 
-export const Demo = () => {
-  const [state, setState] = useState(false)
-  return (
-    <div className="inline-flex flex-col">
-      {state ? 'Active' : 'Inactive'}
-      <Button onClick={() => setState(!state)}>
-        Toggle
-        <ArrowRightIcon />
-      </Button>
-    </div>
-  )
+const meta: Meta<typeof Button> = {
+  title: 'Components/Button',
+  component: Button,
 }
+export default meta
+
+export const Default = () => (
+  <Button>
+    Button <ArrowRightIcon />
+  </Button>
+)

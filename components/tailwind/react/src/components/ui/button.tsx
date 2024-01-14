@@ -1,4 +1,4 @@
-import { ark } from '@ark-ui/react/factory'
+import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { styled } from '~/lib/styled'
 
