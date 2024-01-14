@@ -1,3 +1,11 @@
+import type { Meta } from '@storybook/react'
+
+const meta: Meta = {
+  title: 'Foundation/Tokens',
+}
+
+export default meta
+
 export const Tokens = () => (
   <div className="grid gap-y-8 bg-bg-canvas">
     <div className="grid gap-y-1">

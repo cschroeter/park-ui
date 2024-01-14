@@ -22,7 +22,6 @@
     "access": "public"
   },
   "scripts": {
-    "start": "ladle serve",
     "release-it": "release-it",
     "build": "pnpm prebuild:plugin && pnpm build:plugin",
     "prebuild:plugin": "panda cssgen --outfile src/plugin/css/styles.css",
@@ -37,20 +36,13 @@
   },
   "devDependencies": {
     "@ark-ui/react": "1.2.1",
-    "@fontsource/plus-jakarta-sans": "5.0.18",
-    "@ladle/react": "4.0.2",
     "@pandacss/dev": "0.26.2",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/node": "20.11.0",
     "@types/postcss-js": "4.0.4",
-    "@types/react": "18.2.47",
-    "lucide-react": "0.309.0",
-    "pandacss-preset-typography": "0.1.5",
     "postcss": "8.4.33",
     "postcss-js": "4.0.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "release-it": "17.0.1",
     "tailwindcss": "3.4.1",
     "tsup": "8.0.1",
