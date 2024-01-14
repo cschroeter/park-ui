@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { Switch, type SwitchProps } from '~/components/ui/switch'
 
 const meta: Meta<SwitchProps> = {
-  title: 'Switch',
+  title: 'Components/Switch',
   component: Switch,
 }
 

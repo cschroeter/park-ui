@@ -3,7 +3,7 @@ import { Stack } from 'styled-system/jsx'
 import { PinInput, type PinInputProps } from '~/components/ui/pin-input'
 
 const meta: Meta<PinInputProps> = {
-  title: 'PinInput',
+  title: 'Components/PinInput',
   component: PinInput,
 }
 

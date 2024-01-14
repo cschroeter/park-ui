@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "link.ts",
+      "filename": "link.tsx",
       "content": "import { ark } from '@ark-ui/solid'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype LinkVariantProps = VariantProps<typeof styles>\nexport type LinkProps = LinkVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({ base: 'link', variants: {} })\nexport const Link = styled<LinkProps>(ark.a, styles)\n",
       "hasMultipleParts": false
     }

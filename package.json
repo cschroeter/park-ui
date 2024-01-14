@@ -12,6 +12,8 @@
     "plugin:tailwind": "pnpm --filter=@park-ui/tailwind-plugin",
     "panda:react": "pnpm --filter=@park-ui/panda-react-components",
     "panda:solid": "pnpm --filter=@park-ui/panda-solid-components",
+    "tailwind:react": "pnpm --filter=@park-ui/tailwind-react-components",
+    "tailwind:solid": "pnpm --filter=@park-ui/tailwind-solid-components",
     "chakra:react": "pnpm --filter=@park-ui/chakra-react-components"
   },
   "dependencies": {
@@ -19,7 +21,7 @@
     "@commitlint/config-conventional": "18.4.4",
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
-    "prettier": "3.2.0",
+    "prettier": "3.2.1",
     "prettier-plugin-astro": "0.12.3",
     "prettier-plugin-organize-imports": "3.2.4"
   },

@@ -2,14 +2,13 @@
   "name": "@park-ui/panda-react-components",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen",
+    "prepare": "panda codegen --silent",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@ark-ui/react": "1.2.1",
     "@pandacss/dev": "0.26.2",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-a11y": "7.6.8",
     "@storybook/addon-essentials": "7.6.8",
     "@storybook/addons": "7.6.8",
     "@storybook/react": "7.6.8",

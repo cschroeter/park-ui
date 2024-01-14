@@ -1,8 +1,8 @@
 {
   "files": [
     {
-      "filename": "button.ts",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype ButtonVariantProps = VariantProps<typeof styles>\nexport type ButtonProps = ButtonVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({\n  base: 'button',\n  defaultVariants: { variant: 'solid', size: 'md' },\n  variants: {\n    variant: {\n      solid: 'button--variant_solid',\n      outline: 'button--variant_outline',\n      ghost: 'button--variant_ghost',\n      link: 'button--variant_link',\n      subtle: 'button--variant_subtle',\n    },\n    size: {\n      xs: 'button--size_xs',\n      sm: 'button--size_sm',\n      md: 'button--size_md',\n      lg: 'button--size_lg',\n      xl: 'button--size_xl',\n      '2xl': 'button--size_2xl',\n    },\n  },\n})\nexport const Button = styled<ButtonProps>(ark.button, styles)\n",
+      "filename": "button.tsx",
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nconst styles = tv({\n  base: 'button',\n  defaultVariants: { variant: 'solid', size: 'md' },\n  variants: {\n    variant: {\n      solid: 'button--variant_solid',\n      outline: 'button--variant_outline',\n      ghost: 'button--variant_ghost',\n      link: 'button--variant_link',\n      subtle: 'button--variant_subtle',\n    },\n    size: {\n      xs: 'button--size_xs',\n      sm: 'button--size_sm',\n      md: 'button--size_md',\n      lg: 'button--size_lg',\n      xl: 'button--size_xl',\n      '2xl': 'button--size_2xl',\n    },\n  },\n})\n\ntype ButtonVariantProps = VariantProps<typeof styles>\nexport interface ButtonProps extends ButtonVariantProps, HTMLArkProps<'button'> {}\n\nexport const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {\n  const { size, variant, className, ...rest } = props\n  return <ark.button className={styles({ size, variant, className })} ref={ref} {...rest} />\n})\n\nButton.displayName = 'Button'\n",
       "hasMultipleParts": false
     }
   ]
