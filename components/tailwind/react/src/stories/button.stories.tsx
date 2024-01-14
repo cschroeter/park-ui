@@ -9,7 +9,7 @@ const meta: Meta<typeof Button> = {
 export default meta
 
 export const Default = () => (
-  <Button size="2xl" variant="subtle">
+  <Button>
     Button <ArrowRightIcon />
   </Button>
 )

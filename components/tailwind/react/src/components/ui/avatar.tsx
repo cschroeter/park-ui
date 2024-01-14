@@ -9,10 +9,10 @@ export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { size, className, name, src, ...rootProps } = props
-  const { root, fallback, image } = styles({ size, className })
+  const { root, fallback, image } = styles({ size })
 
   return (
-    <ArkAvatar.Root className={root()} {...rootProps}>
+    <ArkAvatar.Root className={root({ className })} {...rootProps}>
       <ArkAvatar.Fallback className={fallback()}>
         {getInitials(name) || <UserIcon />}
       </ArkAvatar.Fallback>

@@ -2,6 +2,17 @@ import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
 import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
+export interface InputProps extends InputVariantProps, Omit<HTMLArkProps<'input'>, 'size'> {}
+
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { size, className, ...rest } = props
+  return <ark.input className={styles({ size, className })} ref={ref} {...rest} />
+})
+
+Input.displayName = 'Input'
+
+type InputVariantProps = VariantProps<typeof styles>
+
 const styles = tv({
   base: 'input',
   defaultVariants: { size: 'md' },
@@ -17,14 +28,3 @@ const styles = tv({
     },
   },
 })
-
-type InputVariantProps = VariantProps<typeof styles>
-
-export interface InputProps extends InputVariantProps, Omit<HTMLArkProps<'input'>, 'size'> {}
-
-export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { size, className, ...rest } = props
-  return <ark.input className={styles({ size, className })} ref={ref} {...rest} />
-})
-
-Input.displayName = 'Input'
