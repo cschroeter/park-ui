@@ -1,5 +1,5 @@
 {
-  "name": "@park-ui/panda-react-components",
+  "name": "@park-ui/tailwind-react-components",
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
@@ -7,8 +7,6 @@
   },
   "dependencies": {
     "@ark-ui/react": "1.2.1",
-    "@pandacss/dev": "0.26.2",
-    "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-essentials": "7.6.8",
     "@storybook/addons": "7.6.8",
     "@storybook/react": "7.6.8",
@@ -19,6 +17,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "storybook": "7.6.8",
+    "tailwind-variants": "0.1.20",
     "typescript": "5.3.3",
     "vite": "5.0.11",
     "vite-tsconfig-paths": "4.2.3"

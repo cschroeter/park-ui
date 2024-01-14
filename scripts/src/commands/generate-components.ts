@@ -79,7 +79,7 @@ const generateComponents = async (options: Options) => {
 
 const action = async () => {
   const jsFrameworks = ['react', 'solid'] as const
-  const cssFramworks = ['panda'] as const
+  const cssFramworks = ['panda', 'tailwind'] as const
 
   jsFrameworks.forEach((jsFramework) => {
     cssFramworks.forEach(async (cssFramwork) => {
