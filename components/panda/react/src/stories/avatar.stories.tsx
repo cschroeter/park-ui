@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { Avatar, type AvatarProps } from '~/components/ui/avatar'
 
 const meta: Meta<AvatarProps> = {
-  title: 'Avatar',
+  title: 'Components/Avatar',
   component: Avatar,
 }
 

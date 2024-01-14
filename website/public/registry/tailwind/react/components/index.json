@@ -25,6 +25,10 @@
       "name": "Carousel",
       "href": "https://park-ui.com/registry/tailwind/react/components/carousel.json"
     },
+    {
+      "name": "Checkbox",
+      "href": "https://park-ui.com/registry/tailwind/react/components/checkbox.json"
+    },
     { "name": "Code", "href": "https://park-ui.com/registry/tailwind/react/components/code.json" },
     {
       "name": "Color Picker",

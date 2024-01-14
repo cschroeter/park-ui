@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { Slider, type SliderProps } from '~/components/ui/slider'
 
 const meta: Meta<SliderProps> = {
-  title: 'Slider',
+  title: 'Components/Slider',
   component: Slider,
 }
 

@@ -3,7 +3,7 @@ import { Stack } from 'styled-system/jsx'
 import { Heading, type HeadingProps } from '~/components/ui/heading'
 
 const meta: Meta<HeadingProps> = {
-  title: 'Heading',
+  title: 'Components/Heading',
   component: Heading,
 }
 

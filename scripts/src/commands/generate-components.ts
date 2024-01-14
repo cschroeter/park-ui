@@ -25,19 +25,7 @@ const generateComponents = async (options: Options) => {
   const { cssFramwork, jsFramework } = options
   await Promise.all(
     Object.entries(data)
-      .filter(
-        ([key]) =>
-          ![
-            'avatar',
-            'checkbox',
-            'number-input',
-            'pagination',
-            'pin-input',
-            'rating-group',
-            'slider',
-            'switch',
-          ].includes(key),
-      )
+      .filter(([key]) => ['checkbox'].includes(key))
       .map(async ([key, value]) => {
         const view = {
           key,
@@ -78,8 +66,8 @@ const generateComponents = async (options: Options) => {
 }
 
 const action = async () => {
-  const jsFrameworks = ['react', 'solid'] as const
-  const cssFramworks = ['panda', 'tailwind'] as const
+  const jsFrameworks = ['react'] as const
+  const cssFramworks = ['tailwind'] as const
 
   jsFrameworks.forEach((jsFramework) => {
     cssFramworks.forEach(async (cssFramwork) => {

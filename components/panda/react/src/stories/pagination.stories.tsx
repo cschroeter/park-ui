@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { Pagination, type PaginationProps } from '~/components/ui/pagination'
 
 const meta: Meta<PaginationProps> = {
-  title: 'Pagination',
+  title: 'Components/Pagination',
   component: Pagination,
 }
 

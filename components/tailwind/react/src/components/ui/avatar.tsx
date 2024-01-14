@@ -2,6 +2,29 @@ import { Avatar as ArkAvatar, type AvatarProps as ArkAvatarProps } from '@ark-ui
 import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
+export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
+  name?: string
+  src?: string
+}
+
+export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
+  const { size, className, name, src, ...rootProps } = props
+  const { root, fallback, image } = styles({ size, className })
+
+  return (
+    <ArkAvatar.Root className={root()} {...rootProps}>
+      <ArkAvatar.Fallback className={fallback()}>
+        {getInitials(name) || <UserIcon />}
+      </ArkAvatar.Fallback>
+      <ArkAvatar.Image className={image()} src={src} alt={name} />
+    </ArkAvatar.Root>
+  )
+})
+
+Avatar.displayName = 'Avatar'
+
+type AvatarVariantProps = VariantProps<typeof styles>
+
 const styles = tv({
   base: 'avatar',
   defaultVariants: { size: 'md' },
@@ -41,29 +64,6 @@ const styles = tv({
     },
   },
 })
-
-type AvatarVariantProps = VariantProps<typeof styles>
-
-export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
-  name?: string
-  src?: string
-}
-
-export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
-  const { size, className, name, src, ...rootProps } = props
-  const { root, fallback, image } = styles({ size, className })
-
-  return (
-    <ArkAvatar.Root className={root()} {...rootProps}>
-      <ArkAvatar.Fallback className={fallback()}>
-        {getInitials(name) || <UserIcon />}
-      </ArkAvatar.Fallback>
-      <ArkAvatar.Image className={image()} src={src} alt={name} />
-    </ArkAvatar.Root>
-  )
-})
-
-Avatar.displayName = 'Avatar'
 
 const UserIcon = () => (
   <svg
