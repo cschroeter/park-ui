@@ -1,9 +1,6 @@
-import { ark } from '@ark-ui/react/factory'
+import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
-
-type InputVariantProps = VariantProps<typeof styles>
-export type InputProps = InputVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'input',
@@ -20,4 +17,14 @@ const styles = tv({
     },
   },
 })
-export const Input = styled<InputProps>(ark.input, styles)
+
+type InputVariantProps = VariantProps<typeof styles>
+
+export interface InputProps extends InputVariantProps, Omit<HTMLArkProps<'input'>, 'size'> {}
+
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { size, className, ...rest } = props
+  return <ark.input className={styles({ size, className })} ref={ref} {...rest} />
+})
+
+Input.displayName = 'Input'

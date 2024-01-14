@@ -9,10 +9,6 @@
       "href": "https://park-ui.com/registry/tailwind/react/components/alert.json"
     },
     {
-      "name": "Avatar",
-      "href": "https://park-ui.com/registry/tailwind/react/components/avatar.json"
-    },
-    {
       "name": "Badge",
       "href": "https://park-ui.com/registry/tailwind/react/components/badge.json"
     },
@@ -24,10 +20,6 @@
     {
       "name": "Carousel",
       "href": "https://park-ui.com/registry/tailwind/react/components/carousel.json"
-    },
-    {
-      "name": "Checkbox",
-      "href": "https://park-ui.com/registry/tailwind/react/components/checkbox.json"
     },
     { "name": "Code", "href": "https://park-ui.com/registry/tailwind/react/components/code.json" },
     {
@@ -78,18 +70,6 @@
     { "name": "Link", "href": "https://park-ui.com/registry/tailwind/react/components/link.json" },
     { "name": "Menu", "href": "https://park-ui.com/registry/tailwind/react/components/menu.json" },
     {
-      "name": "Number Input",
-      "href": "https://park-ui.com/registry/tailwind/react/components/number-input.json"
-    },
-    {
-      "name": "Pagination",
-      "href": "https://park-ui.com/registry/tailwind/react/components/pagination.json"
-    },
-    {
-      "name": "Pin Input",
-      "href": "https://park-ui.com/registry/tailwind/react/components/pin-input.json"
-    },
-    {
       "name": "Popover",
       "href": "https://park-ui.com/registry/tailwind/react/components/popover.json"
     },
@@ -102,10 +82,6 @@
       "href": "https://park-ui.com/registry/tailwind/react/components/radio-group.json"
     },
     {
-      "name": "Rating Group",
-      "href": "https://park-ui.com/registry/tailwind/react/components/rating-group.json"
-    },
-    {
       "name": "Segment Group",
       "href": "https://park-ui.com/registry/tailwind/react/components/segment-group.json"
     },
@@ -114,16 +90,8 @@
       "href": "https://park-ui.com/registry/tailwind/react/components/select.json"
     },
     {
-      "name": "Slider",
-      "href": "https://park-ui.com/registry/tailwind/react/components/slider.json"
-    },
-    {
       "name": "Splitter",
       "href": "https://park-ui.com/registry/tailwind/react/components/splitter.json"
-    },
-    {
-      "name": "Switch",
-      "href": "https://park-ui.com/registry/tailwind/react/components/switch.json"
     },
     {
       "name": "Table",

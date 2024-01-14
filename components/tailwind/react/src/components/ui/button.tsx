@@ -1,9 +1,6 @@
 import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
-
-type ButtonVariantProps = VariantProps<typeof styles>
-export type ButtonProps = ButtonVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'button',
@@ -26,4 +23,13 @@ const styles = tv({
     },
   },
 })
-export const Button = styled<ButtonProps>(ark.button, styles)
+
+type ButtonVariantProps = VariantProps<typeof styles>
+export interface ButtonProps extends ButtonVariantProps, HTMLArkProps<'button'> {}
+
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const { size, variant, className, ...rest } = props
+  return <ark.button className={styles({ size, variant, className })} ref={ref} {...rest} />
+})
+
+Button.displayName = 'Button'

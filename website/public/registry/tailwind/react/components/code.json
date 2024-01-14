@@ -1,8 +1,8 @@
 {
   "files": [
     {
-      "filename": "code.ts",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype CodeVariantProps = VariantProps<typeof styles>\nexport type CodeProps = CodeVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({\n  base: 'code',\n  defaultVariants: { size: 'md', variant: 'outline' },\n  variants: {\n    variant: { outline: 'code--variant_outline', ghost: 'code--variant_ghost' },\n    size: { sm: 'code--size_sm', md: 'code--size_md', lg: 'code--size_lg' },\n  },\n})\nexport const Code = styled<CodeProps>(ark.code, styles)\n",
+      "filename": "code.tsx",
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nconst styles = tv({\n  base: 'code',\n  defaultVariants: { size: 'md', variant: 'outline' },\n  variants: {\n    variant: { outline: 'code--variant_outline', ghost: 'code--variant_ghost' },\n    size: { sm: 'code--size_sm', md: 'code--size_md', lg: 'code--size_lg' },\n  },\n})\n\ntype CodeVariantProps = VariantProps<typeof styles>\nexport interface CodeProps extends CodeVariantProps, HTMLArkProps<'code'> {}\n\nexport const Code = forwardRef<HTMLElement, CodeProps>((props, ref) => {\n  const { size, variant, className, ...rest } = props\n  return <ark.code className={styles({ size, variant, className })} ref={ref} {...rest} />\n})\n\nCode.displayName = 'Code'\n",
       "hasMultipleParts": false
     }
   ]

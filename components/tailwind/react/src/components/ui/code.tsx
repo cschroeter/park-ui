@@ -1,9 +1,6 @@
-import { ark } from '@ark-ui/react/factory'
+import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
-
-type CodeVariantProps = VariantProps<typeof styles>
-export type CodeProps = CodeVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'code',
@@ -13,4 +10,13 @@ const styles = tv({
     size: { sm: 'code--size_sm', md: 'code--size_md', lg: 'code--size_lg' },
   },
 })
-export const Code = styled<CodeProps>(ark.code, styles)
+
+type CodeVariantProps = VariantProps<typeof styles>
+export interface CodeProps extends CodeVariantProps, HTMLArkProps<'code'> {}
+
+export const Code = forwardRef<HTMLElement, CodeProps>((props, ref) => {
+  const { size, variant, className, ...rest } = props
+  return <ark.code className={styles({ size, variant, className })} ref={ref} {...rest} />
+})
+
+Code.displayName = 'Code'

@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filename": "card.ts",
+      "filename": "card.tsx",
       "content": "import { ark } from '@ark-ui/react/factory'\nimport { tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst styles = tv({\n  base: 'card',\n  slots: {\n    root: 'card__root',\n    header: 'card__header',\n    body: 'card__body',\n    footer: 'card__footer',\n    title: 'card__title',\n    description: 'card__description',\n  },\n  variants: {},\n})\nconst { withProvider, withContext } = createStyleContext(styles)\n\nexport const CardRoot = withProvider(ark.div, 'root')\nexport const CardBody = withContext(ark.div, 'body')\nexport const CardDescription = withContext(ark.p, 'description')\nexport const CardFooter = withContext(ark.div, 'footer')\nexport const CardHeader = withContext(ark.div, 'header')\nexport const CardTitle = withContext(ark.h3, 'title')\n\nexport const Card = Object.assign(CardRoot, {\n  Root: CardRoot,\n  Body: CardBody,\n  Description: CardDescription,\n  Footer: CardFooter,\n  Header: CardHeader,\n  Title: CardTitle,\n})\n",
       "hasMultipleParts": true
     }
