@@ -4,6 +4,7 @@ import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
   preflight: true,
+  lightningcss: true,
   presets: [
     '@pandacss/preset-base',
     createPreset(),

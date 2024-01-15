@@ -17,7 +17,7 @@
     "@storybook/components": "7.6.8",
     "@storybook/react": "7.6.8",
     "@storybook/react-vite": "7.6.8",
-    "@types/node": "20.11.0",
+    "@types/node": "20.11.1",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
     "framer-motion": "10.18.0",
