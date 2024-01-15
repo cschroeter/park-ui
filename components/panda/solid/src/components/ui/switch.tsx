@@ -11,9 +11,9 @@ export interface SwitchProps
 }
 
 export const Switch = (props: SwitchProps) => {
-  const [variantProps, localProps] = switchRecipe.splitVariantProps(props)
-  const [local, rootProps] = splitProps(localProps, ['children'])
-  const getChildren = children(() => local.children)
+  const [variantProps, switchProps] = switchRecipe.splitVariantProps(props)
+  const [localProps, rootProps] = splitProps(switchProps, ['children'])
+  const getChildren = children(() => localProps.children)
   const styles = switchRecipe(variantProps)
 
   return (

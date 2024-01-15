@@ -14,15 +14,15 @@ export interface RatingGroupProps
 }
 
 export const RatingGroup = (props: RatingGroupProps) => {
-  const [variantProps, localProps] = ratingGroup.splitVariantProps(props)
-  const [local, rootProps] = splitProps(localProps, ['children'])
-  const getChildren = children(() => local.children)
+  const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
+  const [localProps, rootProps] = splitProps(ratingGroupProps, ['children'])
+  const getChildren = children(() => localProps.children)
   const styles = ratingGroup(variantProps)
 
   return (
     <ArkRatingGroup.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       <Show when={getChildren()}>
-        <ArkRatingGroup.Label class={styles.label}>{local.children}</ArkRatingGroup.Label>
+        <ArkRatingGroup.Label class={styles.label}>{getChildren()}</ArkRatingGroup.Label>
       </Show>
       <ArkRatingGroup.Control class={styles.control}>
         {(api) => (

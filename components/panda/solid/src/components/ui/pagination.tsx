@@ -13,11 +13,11 @@ export interface PaginationProps
     PaginationVariantProps {}
 
 export const Pagination = (props: PaginationProps) => {
-  const [variantProps, localProps] = pagination.splitVariantProps(props)
+  const [variantProps, paginationProps] = pagination.splitVariantProps(props)
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root class={styles.root} {...localProps}>
+    <ArkPagination.Root class={styles.root} {...paginationProps}>
       {(api) => (
         <>
           <ArkPagination.PrevTrigger class={styles.prevTrigger}>

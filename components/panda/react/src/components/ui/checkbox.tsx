@@ -14,8 +14,8 @@ export interface CheckboxProps
 }
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
-  const [variantProps, localProps] = checkbox.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [variantProps, checkboxProps] = checkbox.splitVariantProps(props)
+  const { children, ...rootProps } = checkboxProps
   const styles = checkbox(variantProps)
 
   return (

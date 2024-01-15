@@ -3,6 +3,7 @@ import {
   type PaginationProps as ArkPaginationProps,
 } from '@ark-ui/react/pagination'
 import { forwardRef } from 'react'
+import { cx } from 'styled-system/css'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
 import type { Assign, HTMLStyledProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
@@ -13,11 +14,11 @@ export interface PaginationProps
     PaginationVariantProps {}
 
 export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
-  const [variantProps, localProps] = pagination.splitVariantProps(props)
+  const [variantProps, rootProps] = pagination.splitVariantProps(props)
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root ref={ref} className={styles.root} {...localProps}>
+    <ArkPagination.Root ref={ref} className={cx(styles.root)} {...rootProps}>
       {({ pages }) => (
         <>
           <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>

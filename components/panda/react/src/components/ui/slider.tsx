@@ -15,8 +15,8 @@ export interface SliderProps
 }
 
 export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
-  const [variantProps, localProps] = slider.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [variantProps, sliderProps] = slider.splitVariantProps(props)
+  const { children, ...rootProps } = sliderProps
   const styles = slider(variantProps)
 
   return (

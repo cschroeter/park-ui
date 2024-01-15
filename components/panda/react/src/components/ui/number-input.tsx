@@ -14,8 +14,8 @@ export interface NumberInputProps
 }
 
 export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
-  const [variantProps, localProps] = numberInput.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)
+  const { children, ...rootProps } = numberInputProps
   const styles = numberInput(variantProps)
 
   return (

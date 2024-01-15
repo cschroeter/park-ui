@@ -11,9 +11,9 @@ export interface CheckboxProps
 }
 
 export const Checkbox = (props: CheckboxProps) => {
-  const [variantProps, localProps] = checkbox.splitVariantProps(props)
-  const [local, rootProps] = splitProps(localProps, ['children'])
-  const getChildren = children(() => local.children)
+  const [variantProps, checkboxProps] = checkbox.splitVariantProps(props)
+  const [localProps, rootProps] = splitProps(checkboxProps, ['children'])
+  const getChildren = children(() => localProps.children)
   const styles = checkbox(variantProps)
 
   return (
@@ -29,7 +29,7 @@ export const Checkbox = (props: CheckboxProps) => {
             </Show>
           </ArkCheckbox.Control>
           <Show when={getChildren()}>
-            <ArkCheckbox.Label class={styles.label}>{local.children}</ArkCheckbox.Label>
+            <ArkCheckbox.Label class={styles.label}>{getChildren()}</ArkCheckbox.Label>
           </Show>
         </>
       )}

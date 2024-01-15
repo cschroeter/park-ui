@@ -12,18 +12,18 @@ export interface AvatarProps
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const [variantProps, localProps] = avatar.splitVariantProps(props)
-  const [local, rootProps] = splitProps(localProps, ['name', 'src'])
+  const [variantProps, avatarProps] = avatar.splitVariantProps(props)
+  const [localProps, rootProps] = splitProps(avatarProps, ['name', 'src'])
   const styles = avatar(variantProps)
 
   return (
     <ArkAvatar.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       <ArkAvatar.Fallback class={styles.fallback}>
-        <Show when={local.name} fallback={<UserIcon />}>
-          {getInitials(local.name)}
+        <Show when={localProps.name} fallback={<UserIcon />}>
+          {getInitials(localProps.name)}
         </Show>
       </ArkAvatar.Fallback>
-      <ArkAvatar.Image class={styles.image} src={local.src} alt={local.name} />
+      <ArkAvatar.Image class={styles.image} src={localProps.src} alt={localProps.name} />
     </ArkAvatar.Root>
   )
 }

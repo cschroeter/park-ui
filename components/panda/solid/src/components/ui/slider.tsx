@@ -15,9 +15,9 @@ export interface SliderProps
 }
 
 export const Slider = (props: SliderProps) => {
-  const [variantProps, localProps] = slider.splitVariantProps(props)
-  const [local, rootProps] = splitProps(localProps, ['children'])
-  const getChildren = children(() => local.children)
+  const [variantProps, sliderProps] = slider.splitVariantProps(props)
+  const [localProps, rootProps] = splitProps(sliderProps, ['children'])
+  const getChildren = children(() => localProps.children)
   const styles = slider(variantProps)
 
   return (

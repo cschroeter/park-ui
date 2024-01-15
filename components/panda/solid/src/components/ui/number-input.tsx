@@ -14,15 +14,15 @@ export interface NumberInputProps
 }
 
 export const NumberInput = (props: NumberInputProps) => {
-  const [variantProps, localProps] = numberInput.splitVariantProps(props)
-  const [local, rootProps] = splitProps(localProps, ['children'])
-  const getChildren = children(() => local.children)
+  const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)
+  const [localProps, rootProps] = splitProps(numberInputProps, ['children'])
+  const getChildren = children(() => localProps.children)
   const styles = numberInput(variantProps)
 
   return (
     <ArkNumberInput.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
       <Show when={getChildren()}>
-        <ArkNumberInput.Label class={styles.label}>{local.children}</ArkNumberInput.Label>
+        <ArkNumberInput.Label class={styles.label}>{getChildren()}</ArkNumberInput.Label>
       </Show>
       <ArkNumberInput.Control class={styles.control}>
         <ArkNumberInput.Input class={styles.input} />

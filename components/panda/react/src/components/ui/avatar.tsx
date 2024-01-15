@@ -12,8 +12,8 @@ export interface AvatarProps
 }
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
-  const [variantProps, localProps] = avatar.splitVariantProps(props)
-  const { name, src, ...rootProps } = localProps
+  const [variantProps, avatarProps] = avatar.splitVariantProps(props)
+  const { name, src, ...rootProps } = avatarProps
   const styles = avatar(variantProps)
 
   return (
