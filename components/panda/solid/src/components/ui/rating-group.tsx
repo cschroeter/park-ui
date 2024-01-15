@@ -29,7 +29,7 @@ export const RatingGroup = (props: RatingGroupProps) => {
           <Index each={api().items}>
             {(index) => (
               <ArkRatingGroup.Item class={styles.item} index={index()}>
-                {(api) => <Icon isHalf={api().isHalf} />}
+                {(api) => <StarIcon isHalf={api().isHalf} />}
               </ArkRatingGroup.Item>
             )}
           </Index>
@@ -39,11 +39,11 @@ export const RatingGroup = (props: RatingGroupProps) => {
   )
 }
 
-type IconProps = {
+interface Props {
   isHalf: boolean
 }
 
-const Icon = (props: IconProps) => (
+const StarIcon = (props: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
