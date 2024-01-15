@@ -1,26 +1,37 @@
 import { Toast as ArkToast } from '@ark-ui/solid'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { toast } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(toast)
 
-export const ToastRoot = withProvider(styled(ArkToast.Root), 'root')
-export const ToastCloseTrigger = withContext(styled(ArkToast.CloseTrigger), 'closeTrigger')
-export const ToastDescription = withContext(styled(ArkToast.Description), 'description')
-export const ToastGroup = withContext(styled(ArkToast.Group), 'group')
-export const ToastTitle = withContext(styled(ArkToast.Title), 'title')
+const Toast = withProvider(styled(ArkToast.Root), 'root')
+const ToastCloseTrigger = withContext(styled(ArkToast.CloseTrigger), 'closeTrigger')
+const ToastDescription = withContext(styled(ArkToast.Description), 'description')
+const ToastGroup = withContext(styled(ArkToast.Group), 'group')
+const ToastTitle = withContext(styled(ArkToast.Title), 'title')
 
-export const Toast = Object.assign(ToastRoot, {
-  Root: ToastRoot,
-  CloseTrigger: ToastCloseTrigger,
-  Description: ToastDescription,
-  Group: ToastGroup,
-  Title: ToastTitle,
-})
+const Root = Toast
+const CloseTrigger = ToastCloseTrigger
+const Description = ToastDescription
+const Group = ToastGroup
+const Title = ToastTitle
 
-export type ToastProps = typeof ToastRoot
-export type ToastCloseTriggerProps = typeof ToastCloseTrigger
-export type ToastDescriptionProps = typeof ToastDescription
-export type ToastGroupProps = typeof ToastGroup
-export type ToastTitleProps = typeof ToastTitle
+export {
+  CloseTrigger,
+  Description,
+  Group,
+  Root,
+  Title,
+  Toast,
+  ToastCloseTrigger,
+  ToastDescription,
+  ToastGroup,
+  ToastTitle,
+}
+
+export interface ToastProps extends HTMLStyledProps<typeof Toast> {}
+export interface ToastCloseTriggerProps extends HTMLStyledProps<typeof ToastCloseTrigger> {}
+export interface ToastDescriptionProps extends HTMLStyledProps<typeof ToastDescription> {}
+export interface ToastGroupProps extends HTMLStyledProps<typeof ToastGroup> {}
+export interface ToastTitleProps extends HTMLStyledProps<typeof ToastTitle> {}

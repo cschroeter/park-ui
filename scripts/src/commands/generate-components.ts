@@ -25,17 +25,18 @@ const generateComponents = async (options: Options) => {
   const { cssFramwork, jsFramework } = options
   await Promise.all(
     Object.entries(data)
-      .filter(([key]) =>
-        [
-          'avatar',
-          'checkbox',
-          'number-input',
-          'pagination',
-          'pin-input',
-          'rating-group',
-          'slider',
-          'switch',
-        ].includes(key),
+      .filter(
+        ([key]) =>
+          ![
+            'avatar',
+            'checkbox',
+            'number-input',
+            'pagination',
+            'pin-input',
+            'rating-group',
+            'slider',
+            'switch',
+          ].includes(key),
       )
       .map(async ([key, value]) => {
         const view = {

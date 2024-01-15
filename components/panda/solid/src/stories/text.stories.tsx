@@ -3,7 +3,7 @@ import { Stack } from 'styled-system/jsx'
 import { Text, type TextProps } from '~/components/ui/text'
 
 const meta: Meta<TextProps> = {
-  title: 'Text',
+  title: 'Components/Text',
   component: Text,
 }
 

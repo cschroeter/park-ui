@@ -4,7 +4,7 @@ import { Stack } from 'styled-system/jsx'
 import { Icon, type IconProps } from '~/components/ui/icon'
 
 const meta: Meta<IconProps> = {
-  title: 'Icon',
+  title: 'Components/Icon',
   component: Icon,
 }
 

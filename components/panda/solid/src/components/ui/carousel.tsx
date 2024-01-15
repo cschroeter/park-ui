@@ -1,41 +1,58 @@
 import { Carousel as ArkCarousel } from '@ark-ui/solid'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { carousel } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(carousel)
 
-export const CarouselRoot = withProvider(styled(ArkCarousel.Root), 'root')
-export const CarouselControl = withContext(styled(ArkCarousel.Control), 'control')
-export const CarouselIndicator = withContext(styled(ArkCarousel.Indicator), 'indicator')
-export const CarouselIndicatorGroup = withContext(
-  styled(ArkCarousel.IndicatorGroup),
-  'indicatorGroup',
-)
-export const CarouselItem = withContext(styled(ArkCarousel.Item), 'item')
-export const CarouselItemGroup = withContext(styled(ArkCarousel.ItemGroup), 'itemGroup')
-export const CarouselNextTrigger = withContext(styled(ArkCarousel.NextTrigger), 'nextTrigger')
-export const CarouselPrevTrigger = withContext(styled(ArkCarousel.PrevTrigger), 'prevTrigger')
-export const CarouselViewport = withContext(styled(ArkCarousel.Viewport), 'viewport')
+const Carousel = withProvider(styled(ArkCarousel.Root), 'root')
+const CarouselControl = withContext(styled(ArkCarousel.Control), 'control')
+const CarouselIndicator = withContext(styled(ArkCarousel.Indicator), 'indicator')
+const CarouselIndicatorGroup = withContext(styled(ArkCarousel.IndicatorGroup), 'indicatorGroup')
+const CarouselItem = withContext(styled(ArkCarousel.Item), 'item')
+const CarouselItemGroup = withContext(styled(ArkCarousel.ItemGroup), 'itemGroup')
+const CarouselNextTrigger = withContext(styled(ArkCarousel.NextTrigger), 'nextTrigger')
+const CarouselPrevTrigger = withContext(styled(ArkCarousel.PrevTrigger), 'prevTrigger')
+const CarouselViewport = withContext(styled(ArkCarousel.Viewport), 'viewport')
 
-export const Carousel = Object.assign(CarouselRoot, {
-  Root: CarouselRoot,
-  Control: CarouselControl,
-  Indicator: CarouselIndicator,
-  IndicatorGroup: CarouselIndicatorGroup,
-  Item: CarouselItem,
-  ItemGroup: CarouselItemGroup,
-  NextTrigger: CarouselNextTrigger,
-  PrevTrigger: CarouselPrevTrigger,
-  Viewport: CarouselViewport,
-})
+const Root = Carousel
+const Control = CarouselControl
+const Indicator = CarouselIndicator
+const IndicatorGroup = CarouselIndicatorGroup
+const Item = CarouselItem
+const ItemGroup = CarouselItemGroup
+const NextTrigger = CarouselNextTrigger
+const PrevTrigger = CarouselPrevTrigger
+const Viewport = CarouselViewport
 
-export type CarouselProps = typeof CarouselRoot
-export type CarouselControlProps = typeof CarouselControl
-export type CarouselIndicatorProps = typeof CarouselIndicator
-export type CarouselIndicatorGroupProps = typeof CarouselIndicatorGroup
-export type CarouselItemProps = typeof CarouselItem
-export type CarouselItemGroupProps = typeof CarouselItemGroup
-export type CarouselNextTriggerProps = typeof CarouselNextTrigger
-export type CarouselPrevTriggerProps = typeof CarouselPrevTrigger
-export type CarouselViewportProps = typeof CarouselViewport
+export {
+  Carousel,
+  CarouselControl,
+  CarouselIndicator,
+  CarouselIndicatorGroup,
+  CarouselItem,
+  CarouselItemGroup,
+  CarouselNextTrigger,
+  CarouselPrevTrigger,
+  CarouselViewport,
+  Control,
+  Indicator,
+  IndicatorGroup,
+  Item,
+  ItemGroup,
+  NextTrigger,
+  PrevTrigger,
+  Root,
+  Viewport,
+}
+
+export interface CarouselProps extends HTMLStyledProps<typeof Carousel> {}
+export interface CarouselControlProps extends HTMLStyledProps<typeof CarouselControl> {}
+export interface CarouselIndicatorProps extends HTMLStyledProps<typeof CarouselIndicator> {}
+export interface CarouselIndicatorGroupProps
+  extends HTMLStyledProps<typeof CarouselIndicatorGroup> {}
+export interface CarouselItemProps extends HTMLStyledProps<typeof CarouselItem> {}
+export interface CarouselItemGroupProps extends HTMLStyledProps<typeof CarouselItemGroup> {}
+export interface CarouselNextTriggerProps extends HTMLStyledProps<typeof CarouselNextTrigger> {}
+export interface CarouselPrevTriggerProps extends HTMLStyledProps<typeof CarouselPrevTrigger> {}
+export interface CarouselViewportProps extends HTMLStyledProps<typeof CarouselViewport> {}

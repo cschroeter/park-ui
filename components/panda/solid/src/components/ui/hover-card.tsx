@@ -1,29 +1,42 @@
 import { HoverCard as ArkHoverCard } from '@ark-ui/solid'
-import { styled } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { hoverCard } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(hoverCard)
 
-export const HoverCardRoot = withProvider(ArkHoverCard.Root)
-export const HoverCardArrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')
-export const HoverCardArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')
-export const HoverCardContent = withContext(styled(ArkHoverCard.Content), 'content')
-export const HoverCardPositioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')
-export const HoverCardTrigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')
+const HoverCard = withProvider(ArkHoverCard.Root)
+const HoverCardArrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')
+const HoverCardArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')
+const HoverCardContent = withContext(styled(ArkHoverCard.Content), 'content')
+const HoverCardPositioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')
+const HoverCardTrigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')
 
-export const HoverCard = Object.assign(HoverCardRoot, {
-  Root: HoverCardRoot,
-  Arrow: HoverCardArrow,
-  ArrowTip: HoverCardArrowTip,
-  Content: HoverCardContent,
-  Positioner: HoverCardPositioner,
-  Trigger: HoverCardTrigger,
-})
+const Root = HoverCard
+const Arrow = HoverCardArrow
+const ArrowTip = HoverCardArrowTip
+const Content = HoverCardContent
+const Positioner = HoverCardPositioner
+const Trigger = HoverCardTrigger
 
-export type HoverCardProps = typeof HoverCardRoot
-export type HoverCardArrowProps = typeof HoverCardArrow
-export type HoverCardArrowTipProps = typeof HoverCardArrowTip
-export type HoverCardContentProps = typeof HoverCardContent
-export type HoverCardPositionerProps = typeof HoverCardPositioner
-export type HoverCardTriggerProps = typeof HoverCardTrigger
+export {
+  Arrow,
+  ArrowTip,
+  Content,
+  HoverCard,
+  HoverCardArrow,
+  HoverCardArrowTip,
+  HoverCardContent,
+  HoverCardPositioner,
+  HoverCardTrigger,
+  Positioner,
+  Root,
+  Trigger,
+}
+
+export interface HoverCardProps extends HTMLStyledProps<typeof HoverCard> {}
+export interface HoverCardArrowProps extends HTMLStyledProps<typeof HoverCardArrow> {}
+export interface HoverCardArrowTipProps extends HTMLStyledProps<typeof HoverCardArrowTip> {}
+export interface HoverCardContentProps extends HTMLStyledProps<typeof HoverCardContent> {}
+export interface HoverCardPositionerProps extends HTMLStyledProps<typeof HoverCardPositioner> {}
+export interface HoverCardTriggerProps extends HTMLStyledProps<typeof HoverCardTrigger> {}

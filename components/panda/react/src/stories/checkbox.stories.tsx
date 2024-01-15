@@ -8,10 +8,6 @@ const meta: Meta = {
 export default meta
 
 export const Base = () => <Checkbox>Label</Checkbox>
-export const DefaultChecked = () => <Checkbox defaultChecked>Label</Checkbox>
-export const ColorPalette = () => (
-  <Checkbox defaultChecked colorPalette="red">
-    Label
-  </Checkbox>
-)
+export const Checked = () => <Checkbox defaultChecked>Label</Checkbox>
+export const ColorPalette = () => <Checkbox colorPalette="red">Label</Checkbox>
 export const Indeterminate = () => <Checkbox checked="indeterminate">Label</Checkbox>
