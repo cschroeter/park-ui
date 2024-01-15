@@ -1,4 +1,45 @@
-import { tv } from 'tailwind-variants'
+import { PinInput as ArkPinInput, type PinInputProps as ArkPinInputProps } from '@ark-ui/solid'
+import { Index, Show, children, splitProps, type JSX } from 'solid-js'
+import { tv, type VariantProps } from 'tailwind-variants'
+import { Input } from '~/components/ui/input'
+
+export interface PinInputProps extends ArkPinInputProps, PinInputVariantProps {
+  children?: JSX.Element
+  /**
+   * The number of inputs to render.
+   * @default 4
+   */
+  length?: number
+}
+
+export const PinInput = (props: PinInputProps) => {
+  const [variantProps, pinInputProps] = splitProps(props, ['size', 'class'])
+  const [localProps, rootProps] = splitProps(pinInputProps, ['children', 'length'])
+  const getChildren = children(() => localProps.children)
+
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
+  const { root, control, label, input } = styles(variantProps)
+
+  return (
+    <ArkPinInput.Root class={root()} {...rootProps}>
+      <Show when={getChildren()}>
+        <ArkPinInput.Label class={label()}>{getChildren()}</ArkPinInput.Label>
+      </Show>
+      <ArkPinInput.Control class={control()}>
+        <Index each={Array.from({ length: localProps.length ?? 4 }, (_, index) => index)}>
+          {(index) => (
+            <ArkPinInput.Input class={input()} index={index()} asChild>
+              {/* Attention: this only works with static css for inputs */}
+              <Input size={variantProps.size} />
+            </ArkPinInput.Input>
+          )}
+        </Index>
+      </ArkPinInput.Control>
+    </ArkPinInput.Root>
+  )
+}
+
+type PinInputVariantProps = VariantProps<typeof styles>
 
 const styles = tv({
   base: 'pinInput',
