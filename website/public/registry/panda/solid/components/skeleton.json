@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "skeleton.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport { Index, Show, children, splitProps, type JSX } from 'solid-js'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { skeleton } from 'styled-system/recipes'\n\nconst StyledSkeleton = styled(ark.div, skeleton)\nexport interface SkeletonProps extends HTMLStyledProps<'div'> {\n  children?: JSX.Element\n  /**\n   * Show loading animation.\n   * @default true\n   */\n  loading?: boolean\n}\n\nexport const Skeleton = (props: SkeletonProps) => {\n  const [localProps, restProps] = splitProps(props, ['children', 'loading'])\n  const getChildren = children(() => localProps.children)\n\n  return localProps.loading ? <StyledSkeleton {...restProps}></StyledSkeleton> : getChildren()\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}
