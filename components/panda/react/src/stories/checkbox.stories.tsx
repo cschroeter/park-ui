@@ -1,9 +1,8 @@
 import type { Meta } from '@storybook/react'
-import { Checkbox, type CheckboxProps } from '~/components/ui/checkbox'
+import { Checkbox } from '~/components/ui/checkbox'
 
-const meta: Meta<CheckboxProps> = {
+const meta: Meta = {
   title: 'Components/Checkbox',
-  component: Checkbox,
 }
 
 export default meta
