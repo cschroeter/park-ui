@@ -1,4 +1,32 @@
-import { tv } from 'tailwind-variants'
+import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui/solid'
+import { Show, children, splitProps, type JSX } from 'solid-js'
+import { tv, type VariantProps } from 'tailwind-variants'
+
+export interface SwitchProps extends ArkSwitchProps, SwitchVariantProps {
+  children?: JSX.Element
+}
+
+export const Switch = (props: SwitchProps) => {
+  const [variantProps, switchProps] = splitProps(props, ['size', 'class'])
+  const [localProps, rootProps] = splitProps(switchProps, ['children'])
+  const getChildren = children(() => localProps.children)
+
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
+  const { root, control, label, thumb } = styles(variantProps)
+
+  return (
+    <ArkSwitch.Root class={root()} {...rootProps}>
+      <ArkSwitch.Control class={control()}>
+        <ArkSwitch.Thumb class={thumb()} />
+      </ArkSwitch.Control>
+      <Show when={getChildren()}>
+        <ArkSwitch.Label class={label()}>{getChildren()}</ArkSwitch.Label>
+      </Show>
+    </ArkSwitch.Root>
+  )
+}
+
+type SwitchVariantProps = VariantProps<typeof styles>
 
 const styles = tv({
   base: 'switchRecipe',
