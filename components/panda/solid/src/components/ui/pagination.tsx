@@ -28,11 +28,13 @@ export const Pagination = (props: PaginationProps) => {
           <For each={api().pages}>
             {(page, index) =>
               page.type === 'page' ? (
-                <ArkPagination.Item {...page} asChild>
+                <ArkPagination.Item {...page} class={styles.item} asChild>
                   <Button variant="outline">{page.value}</Button>
                 </ArkPagination.Item>
               ) : (
-                <ArkPagination.Ellipsis index={index()}>&#8230;</ArkPagination.Ellipsis>
+                <ArkPagination.Ellipsis index={index()} class={styles.ellipsis}>
+                  &#8230;
+                </ArkPagination.Ellipsis>
               )
             }
           </For>
