@@ -1,4 +1,5 @@
 import { Trash2Icon } from 'lucide-solid'
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { Button } from '~/components/ui/button'
 import * as FileUpload from '~/components/ui/file-upload'
@@ -20,22 +21,24 @@ export const Base = () => {
         </FileUpload.Trigger>
       </FileUpload.Dropzone>
       <FileUpload.ItemGroup>
-        {(files) =>
-          files().map((file) => (
-            <FileUpload.Item file={file}>
-              <FileUpload.ItemPreview type="image/*">
-                <FileUpload.ItemPreviewImage />
-              </FileUpload.ItemPreview>
-              <FileUpload.ItemName />
-              <FileUpload.ItemSizeText />
-              <FileUpload.ItemDeleteTrigger asChild>
-                <IconButton variant="link" size="sm">
-                  <Trash2Icon />
-                </IconButton>
-              </FileUpload.ItemDeleteTrigger>
-            </FileUpload.Item>
-          ))
-        }
+        {(files) => (
+          <Index each={files()}>
+            {(file) => (
+              <FileUpload.Item file={file()}>
+                <FileUpload.ItemPreview type="image/*">
+                  <FileUpload.ItemPreviewImage />
+                </FileUpload.ItemPreview>
+                <FileUpload.ItemName />
+                <FileUpload.ItemSizeText />
+                <FileUpload.ItemDeleteTrigger asChild>
+                  <IconButton variant="link" size="sm">
+                    <Trash2Icon />
+                  </IconButton>
+                </FileUpload.ItemDeleteTrigger>
+              </FileUpload.Item>
+            )}
+          </Index>
+        )}
       </FileUpload.ItemGroup>
     </FileUpload.Root>
   )

@@ -1,4 +1,5 @@
 import { PipetteIcon } from 'lucide-solid'
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { HStack, Stack } from 'styled-system/jsx'
 import * as ColorPicker from '~/components/ui/color-picker'
@@ -66,11 +67,13 @@ export const Base = () => {
                     Saved Colors
                   </Text>
                   <ColorPicker.SwatchGroup>
-                    {presets.map((color) => (
-                      <ColorPicker.SwatchTrigger value={color}>
-                        <ColorPicker.Swatch value={color} />
-                      </ColorPicker.SwatchTrigger>
-                    ))}
+                    <Index each={presets}>
+                      {(color) => (
+                        <ColorPicker.SwatchTrigger value={color()}>
+                          <ColorPicker.Swatch value={color()} />
+                        </ColorPicker.SwatchTrigger>
+                      )}
+                    </Index>
                   </ColorPicker.SwatchGroup>
                 </Stack>
               </Stack>

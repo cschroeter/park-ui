@@ -1,3 +1,4 @@
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import * as Tabs from '~/components/ui/tabs'
 
@@ -17,11 +18,13 @@ export const Base = () => {
   return (
     <Tabs.Root value="react">
       <Tabs.List>
-        {options.map((option) => (
-          <Tabs.Trigger value={option.id} disabled={option.disabled}>
-            {option.label}
-          </Tabs.Trigger>
-        ))}
+        <Index each={options}>
+          {(option) => (
+            <Tabs.Trigger value={option().id} disabled={option().disabled}>
+              {option().label}
+            </Tabs.Trigger>
+          )}
+        </Index>
         <Tabs.Indicator />
       </Tabs.List>
       <Tabs.Content value="react">Know React? Check out Solid!</Tabs.Content>

@@ -1,5 +1,5 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
-import { createSignal } from 'solid-js'
+import { For, createSignal } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import * as Combobox from '~/components/ui/combobox'
 import { IconButton } from '~/components/ui/icon-button'
@@ -42,14 +42,16 @@ export const Base = () => {
         <Combobox.Content>
           <Combobox.ItemGroup id="framework">
             <Combobox.ItemGroupLabel for="framework">Frameworks</Combobox.ItemGroupLabel>
-            {items.map((item) => (
-              <Combobox.Item item={item}>
-                <Combobox.ItemText>{item.label}</Combobox.ItemText>
-                <Combobox.ItemIndicator>
-                  <CheckIcon />
-                </Combobox.ItemIndicator>
-              </Combobox.Item>
-            ))}
+            <For each={items()}>
+              {(item) => (
+                <Combobox.Item item={item}>
+                  <Combobox.ItemText>{item.label}</Combobox.ItemText>
+                  <Combobox.ItemIndicator>
+                    <CheckIcon />
+                  </Combobox.ItemIndicator>
+                </Combobox.Item>
+              )}
+            </For>
           </Combobox.ItemGroup>
         </Combobox.Content>
       </Combobox.Positioner>

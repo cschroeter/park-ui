@@ -1,3 +1,4 @@
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import * as RadioButtonGroup from '~/components/ui/radio-button-group'
 
@@ -12,12 +13,14 @@ export const Base = () => {
 
   return (
     <RadioButtonGroup.Root value="M">
-      {options.map((option) => (
-        <RadioButtonGroup.Item value={option.value} disabled={option.disabled} px="0">
-          <RadioButtonGroup.ItemControl />
-          <RadioButtonGroup.ItemText>{option.value}</RadioButtonGroup.ItemText>
-        </RadioButtonGroup.Item>
-      ))}
+      <Index each={options}>
+        {(option) => (
+          <RadioButtonGroup.Item value={option().value} disabled={option().disabled} px="0">
+            <RadioButtonGroup.ItemControl />
+            <RadioButtonGroup.ItemText>{option().value}</RadioButtonGroup.ItemText>
+          </RadioButtonGroup.Item>
+        )}
+      </Index>
     </RadioButtonGroup.Root>
   )
 }

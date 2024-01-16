@@ -1,3 +1,4 @@
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import * as Table from '~/components/ui/table'
 
@@ -20,14 +21,16 @@ export const Base = () => {
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {productData.map((product, index) => (
-          <Table.Row>
-            <Table.Cell fontWeight="medium">{product.id}</Table.Cell>
-            <Table.Cell>{product.name}</Table.Cell>
-            <Table.Cell>{product.stock}</Table.Cell>
-            <Table.Cell textAlign="right">{product.price}</Table.Cell>
-          </Table.Row>
-        ))}
+        <Index each={products}>
+          {(product) => (
+            <Table.Row>
+              <Table.Cell fontWeight="medium">{product().id}</Table.Cell>
+              <Table.Cell>{product().name}</Table.Cell>
+              <Table.Cell>{product().stock}</Table.Cell>
+              <Table.Cell textAlign="right">{product().price}</Table.Cell>
+            </Table.Row>
+          )}
+        </Index>
       </Table.Body>
       <Table.Footer>
         <Table.Row>
@@ -39,7 +42,7 @@ export const Base = () => {
     </Table.Root>
   )
 }
-const productData = [
+const products = [
   { id: 'P001', name: 'MacBook Pro', stock: 12, price: '$1999.00' },
   { id: 'P002', name: 'AirPods Pro', stock: 25, price: '$249.00' },
   { id: 'P003', name: 'Leather Wallet', stock: 50, price: '$79.00' },

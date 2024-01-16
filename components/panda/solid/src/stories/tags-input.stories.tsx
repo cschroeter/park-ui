@@ -1,4 +1,5 @@
 import { XIcon } from 'lucide-solid'
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
@@ -17,17 +18,19 @@ export const Base = () => {
         <>
           <TagsInput.Label>Frameworks</TagsInput.Label>
           <TagsInput.Control>
-            {api().value.map((value, index) => (
-              <TagsInput.Item index={index} value={value}>
-                <TagsInput.ItemText>{value}</TagsInput.ItemText>
-                <TagsInput.ItemDeleteTrigger asChild>
-                  <IconButton variant="link" size="xs">
-                    <XIcon />
-                  </IconButton>
-                </TagsInput.ItemDeleteTrigger>
-                <TagsInput.ItemInput />
-              </TagsInput.Item>
-            ))}
+            <Index each={api().value}>
+              {(value, index) => (
+                <TagsInput.Item index={index} value={value()}>
+                  <TagsInput.ItemText>{value()}</TagsInput.ItemText>
+                  <TagsInput.ItemDeleteTrigger asChild>
+                    <IconButton variant="link" size="xs">
+                      <XIcon />
+                    </IconButton>
+                  </TagsInput.ItemDeleteTrigger>
+                  <TagsInput.ItemInput />
+                </TagsInput.Item>
+              )}
+            </Index>
             <TagsInput.Input placeholder="Add Framework" />
           </TagsInput.Control>
           <TagsInput.ClearTrigger asChild>

@@ -1,4 +1,5 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import * as Select from '~/components/ui/select'
 
@@ -29,14 +30,16 @@ export const Base = () => {
         <Select.Content>
           <Select.ItemGroup id="framework">
             <Select.ItemGroupLabel for="framework">Framework</Select.ItemGroupLabel>
-            {items.map((item) => (
-              <Select.Item item={item}>
-                <Select.ItemText>{item.label}</Select.ItemText>
-                <Select.ItemIndicator>
-                  <CheckIcon />
-                </Select.ItemIndicator>
-              </Select.Item>
-            ))}
+            <Index each={items}>
+              {(item) => (
+                <Select.Item item={item()}>
+                  <Select.ItemText>{item().label}</Select.ItemText>
+                  <Select.ItemIndicator>
+                    <CheckIcon />
+                  </Select.ItemIndicator>
+                </Select.Item>
+              )}
+            </Index>
           </Select.ItemGroup>
         </Select.Content>
       </Select.Positioner>

@@ -1,4 +1,5 @@
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-solid'
+import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { Button } from '~/components/ui/button'
 import * as DatePicker from '~/components/ui/date-picker'
@@ -13,7 +14,7 @@ export default meta
 
 export const Base = () => {
   return (
-    <DatePicker.Root positioning={{ sameWidth: true }} startOfWeek={1} selectionMode="range">
+    <DatePicker.Root positioning={{ sameWidth: true }} startOfWeek={1}>
       <DatePicker.Label>Date Picker</DatePicker.Label>
       <DatePicker.Control>
         <DatePicker.Input asChild>
@@ -50,23 +51,29 @@ export const Base = () => {
                 <DatePicker.Table>
                   <DatePicker.TableHead>
                     <DatePicker.TableRow>
-                      {api().weekDays.map((weekDay) => (
-                        <DatePicker.TableHeader>{weekDay.narrow}</DatePicker.TableHeader>
-                      ))}
+                      <Index each={api().weekDays}>
+                        {(weekDay) => (
+                          <DatePicker.TableHeader>{weekDay().narrow}</DatePicker.TableHeader>
+                        )}
+                      </Index>
                     </DatePicker.TableRow>
                   </DatePicker.TableHead>
                   <DatePicker.TableBody>
-                    {api().weeks.map((week) => (
-                      <DatePicker.TableRow>
-                        {week.map((day) => (
-                          <DatePicker.TableCell value={day}>
-                            <DatePicker.TableCellTrigger asChild>
-                              <IconButton variant="ghost">{day.day}</IconButton>
-                            </DatePicker.TableCellTrigger>
-                          </DatePicker.TableCell>
-                        ))}
-                      </DatePicker.TableRow>
-                    ))}
+                    <Index each={api().weeks}>
+                      {(week) => (
+                        <DatePicker.TableRow>
+                          <Index each={week()}>
+                            {(day) => (
+                              <DatePicker.TableCell value={day()}>
+                                <DatePicker.TableCellTrigger asChild>
+                                  <IconButton variant="ghost">{day().day}</IconButton>
+                                </DatePicker.TableCellTrigger>
+                              </DatePicker.TableCell>
+                            )}
+                          </Index>
+                        </DatePicker.TableRow>
+                      )}
+                    </Index>
                   </DatePicker.TableBody>
                 </DatePicker.Table>
               </>
@@ -94,19 +101,21 @@ export const Base = () => {
                 </DatePicker.ViewControl>
                 <DatePicker.Table>
                   <DatePicker.TableBody>
-                    {api()
-                      .getMonthsGrid({ columns: 4, format: 'short' })
-                      .map((months) => (
+                    <Index each={api().getMonthsGrid({ columns: 4, format: 'short' })}>
+                      {(months) => (
                         <DatePicker.TableRow>
-                          {months.map((month) => (
-                            <DatePicker.TableCell value={month.value}>
-                              <DatePicker.TableCellTrigger asChild>
-                                <Button variant="ghost">{month.label}</Button>
-                              </DatePicker.TableCellTrigger>
-                            </DatePicker.TableCell>
-                          ))}
+                          <Index each={months()}>
+                            {(month) => (
+                              <DatePicker.TableCell value={month().value}>
+                                <DatePicker.TableCellTrigger asChild>
+                                  <Button variant="ghost">{month().label}</Button>
+                                </DatePicker.TableCellTrigger>
+                              </DatePicker.TableCell>
+                            )}
+                          </Index>
                         </DatePicker.TableRow>
-                      ))}
+                      )}
+                    </Index>
                   </DatePicker.TableBody>
                 </DatePicker.Table>
               </>
@@ -134,19 +143,21 @@ export const Base = () => {
                 </DatePicker.ViewControl>
                 <DatePicker.Table>
                   <DatePicker.TableBody>
-                    {api()
-                      .getYearsGrid({ columns: 4 })
-                      .map((years) => (
+                    <Index each={api().getYearsGrid({ columns: 4 })}>
+                      {(years) => (
                         <DatePicker.TableRow>
-                          {years.map((year) => (
-                            <DatePicker.TableCell value={year.value}>
-                              <DatePicker.TableCellTrigger asChild>
-                                <Button variant="ghost">{year.label}</Button>
-                              </DatePicker.TableCellTrigger>
-                            </DatePicker.TableCell>
-                          ))}
+                          <Index each={years()}>
+                            {(year) => (
+                              <DatePicker.TableCell value={year().value}>
+                                <DatePicker.TableCellTrigger asChild>
+                                  <Button variant="ghost">{year().label}</Button>
+                                </DatePicker.TableCellTrigger>
+                              </DatePicker.TableCell>
+                            )}
+                          </Index>
                         </DatePicker.TableRow>
-                      ))}
+                      )}
+                    </Index>
                   </DatePicker.TableBody>
                 </DatePicker.Table>
               </>
