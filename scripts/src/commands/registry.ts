@@ -117,6 +117,50 @@ const resolveComponents = async (options: Options) => {
   )
 }
 
+const resolveHelpers = async (options: Options) => {
+  const prettierConfig = await prettier.resolveConfig('.')
+  const { cssFramwork, jsFramework } = options
+  const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
+
+  const helpers = await globby([
+    path.join(rootDir, 'components', cssFramwork, jsFramework, 'src', 'lib'),
+  ])
+
+  await Promise.all(
+    helpers.map(async (helper) => {
+      const content = fs.readFileSync(helper, 'utf-8')
+      const data = await prettier.format(
+        JSON.stringify({
+          files: [
+            {
+              filename: path.basename(helper),
+              content,
+            },
+          ],
+        }),
+        {
+          ...prettierConfig,
+          parser: 'json',
+        },
+      )
+
+      await fs.outputFile(
+        path.join(
+          rootDir,
+          'website',
+          'public',
+          'registry',
+          cssFramwork,
+          jsFramework,
+          'helpers',
+          'index.json',
+        ),
+        data,
+      )
+    }),
+  )
+}
+
 const action = async () => {
   const jsFrameworks = ['react', 'solid'] as const
   const cssFramworks = ['panda', 'tailwind'] as const
@@ -125,6 +169,7 @@ const action = async () => {
     cssFramworks.forEach(async (cssFramwork) => {
       await generateIndex({ cssFramwork, jsFramework })
       await resolveComponents({ cssFramwork, jsFramework })
+      await resolveHelpers({ cssFramwork, jsFramework })
     })
   })
 
