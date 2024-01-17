@@ -1,5 +1,6 @@
 import { TagsInput as ArkTagsInput } from '@ark-ui/react/tags-input'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { tagsInput } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -49,13 +50,13 @@ export {
   TagsInputLabel,
 }
 
-export interface TagsInputProps extends HTMLStyledProps<typeof TagsInput> {}
-export interface TagsInputClearTriggerProps extends HTMLStyledProps<typeof TagsInputClearTrigger> {}
-export interface TagsInputControlProps extends HTMLStyledProps<typeof TagsInputControl> {}
-export interface TagsInputInputProps extends HTMLStyledProps<typeof TagsInputInput> {}
-export interface TagsInputItemProps extends HTMLStyledProps<typeof TagsInputItem> {}
+export interface TagsInputProps extends ComponentProps<typeof TagsInput> {}
+export interface TagsInputClearTriggerProps extends ComponentProps<typeof TagsInputClearTrigger> {}
+export interface TagsInputControlProps extends ComponentProps<typeof TagsInputControl> {}
+export interface TagsInputInputProps extends ComponentProps<typeof TagsInputInput> {}
+export interface TagsInputItemProps extends ComponentProps<typeof TagsInputItem> {}
 export interface TagsInputItemDeleteTriggerProps
-  extends HTMLStyledProps<typeof TagsInputItemDeleteTrigger> {}
-export interface TagsInputItemInputProps extends HTMLStyledProps<typeof TagsInputItemInput> {}
-export interface TagsInputItemTextProps extends HTMLStyledProps<typeof TagsInputItemText> {}
-export interface TagsInputLabelProps extends HTMLStyledProps<typeof TagsInputLabel> {}
+  extends ComponentProps<typeof TagsInputItemDeleteTrigger> {}
+export interface TagsInputItemInputProps extends ComponentProps<typeof TagsInputItemInput> {}
+export interface TagsInputItemTextProps extends ComponentProps<typeof TagsInputItemText> {}
+export interface TagsInputLabelProps extends ComponentProps<typeof TagsInputLabel> {}

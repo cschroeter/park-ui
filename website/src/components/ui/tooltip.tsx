@@ -1,5 +1,6 @@
 import { Tooltip as ArkTooltip } from '@ark-ui/react/tooltip'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { tooltip } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -34,9 +35,9 @@ export {
   Trigger,
 }
 
-export interface TooltipProps extends HTMLStyledProps<typeof Tooltip> {}
-export interface TooltipArrowProps extends HTMLStyledProps<typeof TooltipArrow> {}
-export interface TooltipArrowTipProps extends HTMLStyledProps<typeof TooltipArrowTip> {}
-export interface TooltipContentProps extends HTMLStyledProps<typeof TooltipContent> {}
-export interface TooltipPositionerProps extends HTMLStyledProps<typeof TooltipPositioner> {}
-export interface TooltipTriggerProps extends HTMLStyledProps<typeof TooltipTrigger> {}
+export interface TooltipProps extends ComponentProps<typeof Tooltip> {}
+export interface TooltipArrowProps extends ComponentProps<typeof TooltipArrow> {}
+export interface TooltipArrowTipProps extends ComponentProps<typeof TooltipArrowTip> {}
+export interface TooltipContentProps extends ComponentProps<typeof TooltipContent> {}
+export interface TooltipPositionerProps extends ComponentProps<typeof TooltipPositioner> {}
+export interface TooltipTriggerProps extends ComponentProps<typeof TooltipTrigger> {}

@@ -1,5 +1,6 @@
 import { HoverCard as ArkHoverCard } from '@ark-ui/react/hover-card'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { hoverCard } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -34,9 +35,9 @@ export {
   Trigger,
 }
 
-export interface HoverCardProps extends HTMLStyledProps<typeof HoverCard> {}
-export interface HoverCardArrowProps extends HTMLStyledProps<typeof HoverCardArrow> {}
-export interface HoverCardArrowTipProps extends HTMLStyledProps<typeof HoverCardArrowTip> {}
-export interface HoverCardContentProps extends HTMLStyledProps<typeof HoverCardContent> {}
-export interface HoverCardPositionerProps extends HTMLStyledProps<typeof HoverCardPositioner> {}
-export interface HoverCardTriggerProps extends HTMLStyledProps<typeof HoverCardTrigger> {}
+export interface HoverCardProps extends ComponentProps<typeof HoverCard> {}
+export interface HoverCardArrowProps extends ComponentProps<typeof HoverCardArrow> {}
+export interface HoverCardArrowTipProps extends ComponentProps<typeof HoverCardArrowTip> {}
+export interface HoverCardContentProps extends ComponentProps<typeof HoverCardContent> {}
+export interface HoverCardPositionerProps extends ComponentProps<typeof HoverCardPositioner> {}
+export interface HoverCardTriggerProps extends ComponentProps<typeof HoverCardTrigger> {}

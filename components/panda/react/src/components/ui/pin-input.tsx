@@ -27,6 +27,7 @@ export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) =
   const styles = pinInput(variantProps)
 
   return (
+    // @ts-expect-error TODO cssProps is to complex to be typed
     <ArkPinInput.Root ref={ref} className={cx(styles.root, css(cssProps))} {...rooProps}>
       {children && <ArkPinInput.Label className={styles.label}>{children}</ArkPinInput.Label>}
       <ArkPinInput.Control className={styles.control}>

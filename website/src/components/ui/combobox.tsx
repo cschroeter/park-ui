@@ -1,5 +1,6 @@
 import { Combobox as ArkCombobox } from '@ark-ui/react/combobox'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { combobox } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -62,17 +63,17 @@ export {
   Trigger,
 }
 
-export interface ComboboxProps extends HTMLStyledProps<typeof Combobox> {}
-export interface ComboboxClearTriggerProps extends HTMLStyledProps<typeof ComboboxClearTrigger> {}
-export interface ComboboxContentProps extends HTMLStyledProps<typeof ComboboxContent> {}
-export interface ComboboxControlProps extends HTMLStyledProps<typeof ComboboxControl> {}
-export interface ComboboxInputProps extends HTMLStyledProps<typeof ComboboxInput> {}
-export interface ComboboxItemProps extends HTMLStyledProps<typeof ComboboxItem> {}
-export interface ComboboxItemGroupProps extends HTMLStyledProps<typeof ComboboxItemGroup> {}
+export interface ComboboxProps extends ComponentProps<typeof Combobox> {}
+export interface ComboboxClearTriggerProps extends ComponentProps<typeof ComboboxClearTrigger> {}
+export interface ComboboxContentProps extends ComponentProps<typeof ComboboxContent> {}
+export interface ComboboxControlProps extends ComponentProps<typeof ComboboxControl> {}
+export interface ComboboxInputProps extends ComponentProps<typeof ComboboxInput> {}
+export interface ComboboxItemProps extends ComponentProps<typeof ComboboxItem> {}
+export interface ComboboxItemGroupProps extends ComponentProps<typeof ComboboxItemGroup> {}
 export interface ComboboxItemGroupLabelProps
-  extends HTMLStyledProps<typeof ComboboxItemGroupLabel> {}
-export interface ComboboxItemIndicatorProps extends HTMLStyledProps<typeof ComboboxItemIndicator> {}
-export interface ComboboxItemTextProps extends HTMLStyledProps<typeof ComboboxItemText> {}
-export interface ComboboxLabelProps extends HTMLStyledProps<typeof ComboboxLabel> {}
-export interface ComboboxPositionerProps extends HTMLStyledProps<typeof ComboboxPositioner> {}
-export interface ComboboxTriggerProps extends HTMLStyledProps<typeof ComboboxTrigger> {}
+  extends ComponentProps<typeof ComboboxItemGroupLabel> {}
+export interface ComboboxItemIndicatorProps extends ComponentProps<typeof ComboboxItemIndicator> {}
+export interface ComboboxItemTextProps extends ComponentProps<typeof ComboboxItemText> {}
+export interface ComboboxLabelProps extends ComponentProps<typeof ComboboxLabel> {}
+export interface ComboboxPositionerProps extends ComponentProps<typeof ComboboxPositioner> {}
+export interface ComboboxTriggerProps extends ComponentProps<typeof ComboboxTrigger> {}

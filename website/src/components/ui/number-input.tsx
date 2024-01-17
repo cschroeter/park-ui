@@ -3,19 +3,23 @@ import {
   type NumberInputProps as ArkNumberInputProps,
 } from '@ark-ui/react/number-input'
 import { forwardRef, type ReactNode } from 'react'
+import { css, cx } from 'styled-system/css'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
-export interface NumberInputProps extends ArkNumberInputProps, NumberInputVariantProps {
+export interface NumberInputProps
+  extends Assign<JsxStyleProps, ArkNumberInputProps>,
+    NumberInputVariantProps {
   children?: ReactNode
 }
 
 export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
-  const [variantProps, localProps] = numberInput.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)
+  const { children, ...rootProps } = numberInputProps
   const styles = numberInput(variantProps)
 
   return (
-    <ArkNumberInput.Root ref={ref} className={styles.root} {...rootProps}>
+    <ArkNumberInput.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
       {children && <ArkNumberInput.Label className={styles.label}>{children}</ArkNumberInput.Label>}
       <ArkNumberInput.Control className={styles.control}>
         <ArkNumberInput.Input className={styles.input} />
@@ -37,9 +41,9 @@ const ChevronUpIcon = () => (
     <path
       fill="none"
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="m18 15l-6-6l-6 6"
     />
   </svg>
@@ -50,9 +54,9 @@ const ChevronDownIcon = () => (
     <path
       fill="none"
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="m6 9l6 6l6-6"
     />
   </svg>

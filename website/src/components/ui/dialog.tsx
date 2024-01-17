@@ -1,5 +1,6 @@
 import { Dialog as ArkDialog } from '@ark-ui/react/dialog'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { dialog } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -42,11 +43,11 @@ export {
   Trigger,
 }
 
-export interface DialogProps extends HTMLStyledProps<typeof Dialog> {}
-export interface DialogBackdropProps extends HTMLStyledProps<typeof DialogBackdrop> {}
-export interface DialogCloseTriggerProps extends HTMLStyledProps<typeof DialogCloseTrigger> {}
-export interface DialogContentProps extends HTMLStyledProps<typeof DialogContent> {}
-export interface DialogDescriptionProps extends HTMLStyledProps<typeof DialogDescription> {}
-export interface DialogPositionerProps extends HTMLStyledProps<typeof DialogPositioner> {}
-export interface DialogTitleProps extends HTMLStyledProps<typeof DialogTitle> {}
-export interface DialogTriggerProps extends HTMLStyledProps<typeof DialogTrigger> {}
+export interface DialogProps extends ComponentProps<typeof Dialog> {}
+export interface DialogBackdropProps extends ComponentProps<typeof DialogBackdrop> {}
+export interface DialogCloseTriggerProps extends ComponentProps<typeof DialogCloseTrigger> {}
+export interface DialogContentProps extends ComponentProps<typeof DialogContent> {}
+export interface DialogDescriptionProps extends ComponentProps<typeof DialogDescription> {}
+export interface DialogPositionerProps extends ComponentProps<typeof DialogPositioner> {}
+export interface DialogTitleProps extends ComponentProps<typeof DialogTitle> {}
+export interface DialogTriggerProps extends ComponentProps<typeof DialogTrigger> {}

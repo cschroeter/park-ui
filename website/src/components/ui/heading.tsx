@@ -8,8 +8,8 @@ export type HeadingProps = {
 } & HTMLStyledProps<As>
 
 export const Heading = (props: HeadingProps) => {
-  const { as = 'h2', ...rest } = props
-  const Component = styled(as, heading)
+  const { as = 'h2', ...localProps } = props
+  const Dynamic = styled(as, heading)
 
-  return <Component {...rest} />
+  return <Dynamic {...localProps} />
 }
