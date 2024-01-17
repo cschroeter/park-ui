@@ -1,5 +1,6 @@
 import { FileUpload as ArkFileUpload } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { fileUpload } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -60,17 +61,17 @@ export {
   Trigger,
 }
 
-export interface FileUploadProps extends HTMLStyledProps<typeof FileUpload> {}
-export interface FileUploadDropzoneProps extends HTMLStyledProps<typeof FileUploadDropzone> {}
-export interface FileUploadItemProps extends HTMLStyledProps<typeof FileUploadItem> {}
+export interface FileUploadProps extends ComponentProps<typeof FileUpload> {}
+export interface FileUploadDropzoneProps extends ComponentProps<typeof FileUploadDropzone> {}
+export interface FileUploadItemProps extends ComponentProps<typeof FileUploadItem> {}
 export interface FileUploadItemDeleteTriggerProps
-  extends HTMLStyledProps<typeof FileUploadItemDeleteTrigger> {}
-export interface FileUploadItemGroupProps extends HTMLStyledProps<typeof FileUploadItemGroup> {}
-export interface FileUploadItemNameProps extends HTMLStyledProps<typeof FileUploadItemName> {}
-export interface FileUploadItemPreviewProps extends HTMLStyledProps<typeof FileUploadItemPreview> {}
+  extends ComponentProps<typeof FileUploadItemDeleteTrigger> {}
+export interface FileUploadItemGroupProps extends ComponentProps<typeof FileUploadItemGroup> {}
+export interface FileUploadItemNameProps extends ComponentProps<typeof FileUploadItemName> {}
+export interface FileUploadItemPreviewProps extends ComponentProps<typeof FileUploadItemPreview> {}
 export interface FileUploadItemPreviewImageProps
-  extends HTMLStyledProps<typeof FileUploadItemPreviewImage> {}
+  extends ComponentProps<typeof FileUploadItemPreviewImage> {}
 export interface FileUploadItemSizeTextProps
-  extends HTMLStyledProps<typeof FileUploadItemSizeText> {}
-export interface FileUploadLabelProps extends HTMLStyledProps<typeof FileUploadLabel> {}
-export interface FileUploadTriggerProps extends HTMLStyledProps<typeof FileUploadTrigger> {}
+  extends ComponentProps<typeof FileUploadItemSizeText> {}
+export interface FileUploadLabelProps extends ComponentProps<typeof FileUploadLabel> {}
+export interface FileUploadTriggerProps extends ComponentProps<typeof FileUploadTrigger> {}

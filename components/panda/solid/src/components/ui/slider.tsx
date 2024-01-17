@@ -2,11 +2,9 @@ import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { slider, type SliderVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
-export interface SliderProps
-  extends Assign<HTMLStyledProps<'div'>, ArkSliderProps>,
-    SliderVariantProps {
+export interface SliderProps extends Assign<JsxStyleProps, ArkSliderProps>, SliderVariantProps {
   children?: JSX.Element
   marks?: {
     value: number

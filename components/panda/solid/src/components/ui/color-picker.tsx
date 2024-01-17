@@ -1,5 +1,6 @@
 import { ColorPicker as ArkColorPicker } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { colorPicker } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -120,38 +121,38 @@ export {
   View,
 }
 
-export interface ColorPickerProps extends HTMLStyledProps<typeof ColorPicker> {}
-export interface ColorPickerAreaProps extends HTMLStyledProps<typeof ColorPickerArea> {}
+export interface ColorPickerProps extends ComponentProps<typeof ColorPicker> {}
+export interface ColorPickerAreaProps extends ComponentProps<typeof ColorPickerArea> {}
 export interface ColorPickerAreaBackgroundProps
-  extends HTMLStyledProps<typeof ColorPickerAreaBackground> {}
-export interface ColorPickerAreaThumbProps extends HTMLStyledProps<typeof ColorPickerAreaThumb> {}
+  extends ComponentProps<typeof ColorPickerAreaBackground> {}
+export interface ColorPickerAreaThumbProps extends ComponentProps<typeof ColorPickerAreaThumb> {}
 export interface ColorPickerChannelInputProps
-  extends HTMLStyledProps<typeof ColorPickerChannelInput> {}
+  extends ComponentProps<typeof ColorPickerChannelInput> {}
 export interface ColorPickerChannelSliderProps
-  extends HTMLStyledProps<typeof ColorPickerChannelSlider> {}
+  extends ComponentProps<typeof ColorPickerChannelSlider> {}
 export interface ColorPickerChannelSliderThumbProps
-  extends HTMLStyledProps<typeof ColorPickerChannelSliderThumb> {}
+  extends ComponentProps<typeof ColorPickerChannelSliderThumb> {}
 export interface ColorPickerChannelSliderTrackProps
-  extends HTMLStyledProps<typeof ColorPickerChannelSliderTrack> {}
-export interface ColorPickerContentProps extends HTMLStyledProps<typeof ColorPickerContent> {}
-export interface ColorPickerControlProps extends HTMLStyledProps<typeof ColorPickerControl> {}
+  extends ComponentProps<typeof ColorPickerChannelSliderTrack> {}
+export interface ColorPickerContentProps extends ComponentProps<typeof ColorPickerContent> {}
+export interface ColorPickerControlProps extends ComponentProps<typeof ColorPickerControl> {}
 export interface ColorPickerEyeDropperTriggerProps
-  extends HTMLStyledProps<typeof ColorPickerEyeDropperTrigger> {}
+  extends ComponentProps<typeof ColorPickerEyeDropperTrigger> {}
 export interface ColorPickerFormatSelectProps
-  extends HTMLStyledProps<typeof ColorPickerFormatSelect> {}
+  extends ComponentProps<typeof ColorPickerFormatSelect> {}
 export interface ColorPickerFormatTriggerProps
-  extends HTMLStyledProps<typeof ColorPickerFormatTrigger> {}
-export interface ColorPickerLabelProps extends HTMLStyledProps<typeof ColorPickerLabel> {}
-export interface ColorPickerPositionerProps extends HTMLStyledProps<typeof ColorPickerPositioner> {}
-export interface ColorPickerSwatchProps extends HTMLStyledProps<typeof ColorPickerSwatch> {}
+  extends ComponentProps<typeof ColorPickerFormatTrigger> {}
+export interface ColorPickerLabelProps extends ComponentProps<typeof ColorPickerLabel> {}
+export interface ColorPickerPositionerProps extends ComponentProps<typeof ColorPickerPositioner> {}
+export interface ColorPickerSwatchProps extends ComponentProps<typeof ColorPickerSwatch> {}
 export interface ColorPickerSwatchGroupProps
-  extends HTMLStyledProps<typeof ColorPickerSwatchGroup> {}
+  extends ComponentProps<typeof ColorPickerSwatchGroup> {}
 export interface ColorPickerSwatchIndicatorProps
-  extends HTMLStyledProps<typeof ColorPickerSwatchIndicator> {}
+  extends ComponentProps<typeof ColorPickerSwatchIndicator> {}
 export interface ColorPickerSwatchTriggerProps
-  extends HTMLStyledProps<typeof ColorPickerSwatchTrigger> {}
+  extends ComponentProps<typeof ColorPickerSwatchTrigger> {}
 export interface ColorPickerTransparencyGridProps
-  extends HTMLStyledProps<typeof ColorPickerTransparencyGrid> {}
-export interface ColorPickerTriggerProps extends HTMLStyledProps<typeof ColorPickerTrigger> {}
-export interface ColorPickerValueTextProps extends HTMLStyledProps<typeof ColorPickerValueText> {}
-export interface ColorPickerViewProps extends HTMLStyledProps<typeof ColorPickerView> {}
+  extends ComponentProps<typeof ColorPickerTransparencyGrid> {}
+export interface ColorPickerTriggerProps extends ComponentProps<typeof ColorPickerTrigger> {}
+export interface ColorPickerValueTextProps extends ComponentProps<typeof ColorPickerValueText> {}
+export interface ColorPickerViewProps extends ComponentProps<typeof ColorPickerView> {}

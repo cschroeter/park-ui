@@ -1,5 +1,6 @@
 import { Toast as ArkToast } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { toast } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -30,8 +31,8 @@ export {
   ToastTitle,
 }
 
-export interface ToastProps extends HTMLStyledProps<typeof Toast> {}
-export interface ToastCloseTriggerProps extends HTMLStyledProps<typeof ToastCloseTrigger> {}
-export interface ToastDescriptionProps extends HTMLStyledProps<typeof ToastDescription> {}
-export interface ToastGroupProps extends HTMLStyledProps<typeof ToastGroup> {}
-export interface ToastTitleProps extends HTMLStyledProps<typeof ToastTitle> {}
+export interface ToastProps extends ComponentProps<typeof Toast> {}
+export interface ToastCloseTriggerProps extends ComponentProps<typeof ToastCloseTrigger> {}
+export interface ToastDescriptionProps extends ComponentProps<typeof ToastDescription> {}
+export interface ToastGroupProps extends ComponentProps<typeof ToastGroup> {}
+export interface ToastTitleProps extends ComponentProps<typeof ToastTitle> {}

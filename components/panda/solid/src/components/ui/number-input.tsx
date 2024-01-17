@@ -5,10 +5,10 @@ import {
 import { Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface NumberInputProps
-  extends Assign<HTMLStyledProps<'div'>, ArkNumberInputProps>,
+  extends Assign<JsxStyleProps, ArkNumberInputProps>,
     NumberInputVariantProps {
   children?: JSX.Element
 }

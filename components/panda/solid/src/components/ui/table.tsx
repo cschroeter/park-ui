@@ -1,5 +1,6 @@
 import { ark } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { table } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -42,11 +43,11 @@ export {
   TableRow,
 }
 
-export interface TableProps extends HTMLStyledProps<typeof Table> {}
-export interface TableBodyProps extends HTMLStyledProps<typeof TableBody> {}
-export interface TableCaptionProps extends HTMLStyledProps<typeof TableCaption> {}
-export interface TableCellProps extends HTMLStyledProps<typeof TableCell> {}
-export interface TableFooterProps extends HTMLStyledProps<typeof TableFooter> {}
-export interface TableHeadProps extends HTMLStyledProps<typeof TableHead> {}
-export interface TableHeaderProps extends HTMLStyledProps<typeof TableHeader> {}
-export interface TableRowProps extends HTMLStyledProps<typeof TableRow> {}
+export interface TableProps extends ComponentProps<typeof Table> {}
+export interface TableBodyProps extends ComponentProps<typeof TableBody> {}
+export interface TableCaptionProps extends ComponentProps<typeof TableCaption> {}
+export interface TableCellProps extends ComponentProps<typeof TableCell> {}
+export interface TableFooterProps extends ComponentProps<typeof TableFooter> {}
+export interface TableHeadProps extends ComponentProps<typeof TableHead> {}
+export interface TableHeaderProps extends ComponentProps<typeof TableHeader> {}
+export interface TableRowProps extends ComponentProps<typeof TableRow> {}

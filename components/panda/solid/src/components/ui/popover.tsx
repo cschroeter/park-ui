@@ -1,5 +1,6 @@
 import { Popover as ArkPopover } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { popover } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -54,14 +55,14 @@ export {
   Trigger,
 }
 
-export interface PopoverProps extends HTMLStyledProps<typeof Popover> {}
-export interface PopoverAnchorProps extends HTMLStyledProps<typeof PopoverAnchor> {}
-export interface PopoverArrowProps extends HTMLStyledProps<typeof PopoverArrow> {}
-export interface PopoverArrowTipProps extends HTMLStyledProps<typeof PopoverArrowTip> {}
-export interface PopoverCloseTriggerProps extends HTMLStyledProps<typeof PopoverCloseTrigger> {}
-export interface PopoverContentProps extends HTMLStyledProps<typeof PopoverContent> {}
-export interface PopoverDescriptionProps extends HTMLStyledProps<typeof PopoverDescription> {}
-export interface PopoverIndicatorProps extends HTMLStyledProps<typeof PopoverIndicator> {}
-export interface PopoverPositionerProps extends HTMLStyledProps<typeof PopoverPositioner> {}
-export interface PopoverTitleProps extends HTMLStyledProps<typeof PopoverTitle> {}
-export interface PopoverTriggerProps extends HTMLStyledProps<typeof PopoverTrigger> {}
+export interface PopoverProps extends ComponentProps<typeof Popover> {}
+export interface PopoverAnchorProps extends ComponentProps<typeof PopoverAnchor> {}
+export interface PopoverArrowProps extends ComponentProps<typeof PopoverArrow> {}
+export interface PopoverArrowTipProps extends ComponentProps<typeof PopoverArrowTip> {}
+export interface PopoverCloseTriggerProps extends ComponentProps<typeof PopoverCloseTrigger> {}
+export interface PopoverContentProps extends ComponentProps<typeof PopoverContent> {}
+export interface PopoverDescriptionProps extends ComponentProps<typeof PopoverDescription> {}
+export interface PopoverIndicatorProps extends ComponentProps<typeof PopoverIndicator> {}
+export interface PopoverPositionerProps extends ComponentProps<typeof PopoverPositioner> {}
+export interface PopoverTitleProps extends ComponentProps<typeof PopoverTitle> {}
+export interface PopoverTriggerProps extends ComponentProps<typeof PopoverTrigger> {}

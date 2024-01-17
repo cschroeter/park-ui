@@ -1,17 +1,14 @@
-import {
-  createComponent,
-  createContext,
-  mergeProps,
-  useContext,
-  type ComponentProps,
-  type ValidComponent,
-} from 'solid-js'
+import { createContext, useContext, type ComponentProps, type ValidComponent } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
 type GenericProps = Record<string, unknown>
 type StyleRecipe = {
   (props: GenericProps): Record<string, string>
   splitVariantProps: (props: GenericProps) => any
+}
+
+type PolymorphicProps<T extends ValidComponent, P = ComponentProps<T>> = {
+  [K in keyof P]: P[K]
 }
 
 export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
@@ -37,17 +34,11 @@ export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
     return StyledComponent
   }
 
-  const withContext = <T extends ValidComponent, P = ComponentProps<T>>(
-    Component: T,
-    slot?: string,
-  ): T => {
+  const withContext = <T extends ValidComponent>(Component: T, slot?: string): T => {
     if (!slot) return Component
-    const StyledComponent = (props: P) => {
-      const styleProperties = useContext(StyleContext)
-      return createComponent(
-        Dynamic,
-        mergeProps(props, { component: Component, class: styleProperties?.[slot ?? ''] }),
-      )
+    const StyledComponent = (props: PolymorphicProps<T>) => {
+      const styles = useContext(StyleContext)
+      return <Dynamic component={Component} {...props} class={styles?.[slot ?? '']} />
     }
     return StyledComponent as T
   }

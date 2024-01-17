@@ -1,5 +1,6 @@
 import { RadioGroup as ArkRadioGroup } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { radioGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -34,9 +35,9 @@ export {
   Root,
 }
 
-export interface RadioGroupProps extends HTMLStyledProps<typeof RadioGroup> {}
-export interface RadioGroupIndicatorProps extends HTMLStyledProps<typeof RadioGroupIndicator> {}
-export interface RadioGroupItemProps extends HTMLStyledProps<typeof RadioGroupItem> {}
-export interface RadioGroupItemControlProps extends HTMLStyledProps<typeof RadioGroupItemControl> {}
-export interface RadioGroupItemTextProps extends HTMLStyledProps<typeof RadioGroupItemText> {}
-export interface RadioGroupLabelProps extends HTMLStyledProps<typeof RadioGroupLabel> {}
+export interface RadioGroupProps extends ComponentProps<typeof RadioGroup> {}
+export interface RadioGroupIndicatorProps extends ComponentProps<typeof RadioGroupIndicator> {}
+export interface RadioGroupItemProps extends ComponentProps<typeof RadioGroupItem> {}
+export interface RadioGroupItemControlProps extends ComponentProps<typeof RadioGroupItemControl> {}
+export interface RadioGroupItemTextProps extends ComponentProps<typeof RadioGroupItemText> {}
+export interface RadioGroupLabelProps extends ComponentProps<typeof RadioGroupLabel> {}

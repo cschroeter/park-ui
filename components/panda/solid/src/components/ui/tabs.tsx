@@ -1,5 +1,6 @@
 import { Tabs as ArkTabs } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { tabs } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -30,8 +31,8 @@ export {
   Trigger,
 }
 
-export interface TabsProps extends HTMLStyledProps<typeof Tabs> {}
-export interface TabsContentProps extends HTMLStyledProps<typeof TabsContent> {}
-export interface TabsIndicatorProps extends HTMLStyledProps<typeof TabsIndicator> {}
-export interface TabsListProps extends HTMLStyledProps<typeof TabsList> {}
-export interface TabsTriggerProps extends HTMLStyledProps<typeof TabsTrigger> {}
+export interface TabsProps extends ComponentProps<typeof Tabs> {}
+export interface TabsContentProps extends ComponentProps<typeof TabsContent> {}
+export interface TabsIndicatorProps extends ComponentProps<typeof TabsIndicator> {}
+export interface TabsListProps extends ComponentProps<typeof TabsList> {}
+export interface TabsTriggerProps extends ComponentProps<typeof TabsTrigger> {}

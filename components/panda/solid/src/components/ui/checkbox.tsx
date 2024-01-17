@@ -2,10 +2,10 @@ import { Checkbox as ArkCheckbox, type CheckboxProps as ArkCheckboxProps } from 
 import { Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface CheckboxProps
-  extends Assign<HTMLStyledProps<'label'>, ArkCheckboxProps>,
+  extends Assign<JsxStyleProps, ArkCheckboxProps>,
     CheckboxVariantProps {
   children?: JSX.Element
 }

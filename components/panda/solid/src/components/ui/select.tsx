@@ -1,5 +1,6 @@
 import { Select as ArkSelect } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { select } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -66,17 +67,17 @@ export {
   ValueText,
 }
 
-export interface SelectProps extends HTMLStyledProps<typeof Select> {}
-export interface SelectClearTriggerProps extends HTMLStyledProps<typeof SelectClearTrigger> {}
-export interface SelectContentProps extends HTMLStyledProps<typeof SelectContent> {}
-export interface SelectControlProps extends HTMLStyledProps<typeof SelectControl> {}
-export interface SelectIndicatorProps extends HTMLStyledProps<typeof SelectIndicator> {}
-export interface SelectItemProps extends HTMLStyledProps<typeof SelectItem> {}
-export interface SelectItemGroupProps extends HTMLStyledProps<typeof SelectItemGroup> {}
-export interface SelectItemGroupLabelProps extends HTMLStyledProps<typeof SelectItemGroupLabel> {}
-export interface SelectItemIndicatorProps extends HTMLStyledProps<typeof SelectItemIndicator> {}
-export interface SelectItemTextProps extends HTMLStyledProps<typeof SelectItemText> {}
-export interface SelectLabelProps extends HTMLStyledProps<typeof SelectLabel> {}
-export interface SelectPositionerProps extends HTMLStyledProps<typeof SelectPositioner> {}
-export interface SelectTriggerProps extends HTMLStyledProps<typeof SelectTrigger> {}
-export interface SelectValueTextProps extends HTMLStyledProps<typeof SelectValueText> {}
+export interface SelectProps extends ComponentProps<typeof Select> {}
+export interface SelectClearTriggerProps extends ComponentProps<typeof SelectClearTrigger> {}
+export interface SelectContentProps extends ComponentProps<typeof SelectContent> {}
+export interface SelectControlProps extends ComponentProps<typeof SelectControl> {}
+export interface SelectIndicatorProps extends ComponentProps<typeof SelectIndicator> {}
+export interface SelectItemProps extends ComponentProps<typeof SelectItem> {}
+export interface SelectItemGroupProps extends ComponentProps<typeof SelectItemGroup> {}
+export interface SelectItemGroupLabelProps extends ComponentProps<typeof SelectItemGroupLabel> {}
+export interface SelectItemIndicatorProps extends ComponentProps<typeof SelectItemIndicator> {}
+export interface SelectItemTextProps extends ComponentProps<typeof SelectItemText> {}
+export interface SelectLabelProps extends ComponentProps<typeof SelectLabel> {}
+export interface SelectPositionerProps extends ComponentProps<typeof SelectPositioner> {}
+export interface SelectTriggerProps extends ComponentProps<typeof SelectTrigger> {}
+export interface SelectValueTextProps extends ComponentProps<typeof SelectValueText> {}

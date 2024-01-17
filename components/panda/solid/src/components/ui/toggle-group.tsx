@@ -1,5 +1,6 @@
 import { ToggleGroup as ArkToggleGroup } from '@ark-ui/solid'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { toggleGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -13,5 +14,5 @@ const Item = ToggleGroupItem
 
 export { Item, Root, ToggleGroup, ToggleGroupItem }
 
-export interface ToggleGroupProps extends HTMLStyledProps<typeof ToggleGroup> {}
-export interface ToggleGroupItemProps extends HTMLStyledProps<typeof ToggleGroupItem> {}
+export interface ToggleGroupProps extends ComponentProps<typeof ToggleGroup> {}
+export interface ToggleGroupItemProps extends ComponentProps<typeof ToggleGroupItem> {}
