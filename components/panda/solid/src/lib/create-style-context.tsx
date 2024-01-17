@@ -14,11 +14,8 @@ type PolymorphicProps<T extends ValidComponent, P = ComponentProps<T>> = {
 export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null)
 
-  const withProvider = <T extends ValidComponent, P = ComponentProps<T>>(
-    Component: T,
-    slot?: string,
-  ) => {
-    const StyledComponent = (props: P & Parameters<R>[0]) => {
+  const withProvider = <T extends ValidComponent>(Component: T, slot?: string) => {
+    const StyledComponent = (props: PolymorphicProps<T> & Parameters<R>[0]) => {
       const [variantProps, componentProps] = recipe.splitVariantProps(props)
       const styleProperties = recipe(variantProps)
       return (

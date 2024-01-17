@@ -15,18 +15,31 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const HoverCardRoot = withProvider(ArkHoverCard.Root)
-export const HoverCardArrow = withContext(ArkHoverCard.Arrow, 'arrow')
-export const HoverCardArrowTip = withContext(ArkHoverCard.ArrowTip, 'arrowTip')
-export const HoverCardContent = withContext(ArkHoverCard.Content, 'content')
-export const HoverCardPositioner = withContext(ArkHoverCard.Positioner, 'positioner')
-export const HoverCardTrigger = withContext(ArkHoverCard.Trigger, 'trigger')
+const HoverCard = withProvider(ArkHoverCard.Root)
+const HoverCardArrow = withContext(ArkHoverCard.Arrow, 'arrow')
+const HoverCardArrowTip = withContext(ArkHoverCard.ArrowTip, 'arrowTip')
+const HoverCardContent = withContext(ArkHoverCard.Content, 'content')
+const HoverCardPositioner = withContext(ArkHoverCard.Positioner, 'positioner')
+const HoverCardTrigger = withContext(ArkHoverCard.Trigger, 'trigger')
 
-export const HoverCard = Object.assign(HoverCardRoot, {
-  Root: HoverCardRoot,
-  Arrow: HoverCardArrow,
-  ArrowTip: HoverCardArrowTip,
-  Content: HoverCardContent,
-  Positioner: HoverCardPositioner,
-  Trigger: HoverCardTrigger,
-})
+const Root = HoverCard
+const Arrow = HoverCardArrow
+const ArrowTip = HoverCardArrowTip
+const Content = HoverCardContent
+const Positioner = HoverCardPositioner
+const Trigger = HoverCardTrigger
+
+export {
+  Arrow,
+  ArrowTip,
+  Content,
+  HoverCard,
+  HoverCardArrow,
+  HoverCardArrowTip,
+  HoverCardContent,
+  HoverCardPositioner,
+  HoverCardTrigger,
+  Positioner,
+  Root,
+  Trigger,
+}

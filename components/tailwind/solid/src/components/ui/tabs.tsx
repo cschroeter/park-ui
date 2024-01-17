@@ -56,16 +56,27 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const TabsRoot = withProvider(ArkTabs.Root, 'root')
-export const TabsContent = withContext(ArkTabs.Content, 'content')
-export const TabsIndicator = withContext(ArkTabs.Indicator, 'indicator')
-export const TabsList = withContext(ArkTabs.List, 'list')
-export const TabsTrigger = withContext(ArkTabs.Trigger, 'trigger')
+const Tabs = withProvider(ArkTabs.Root, 'root')
+const TabsContent = withContext(ArkTabs.Content, 'content')
+const TabsIndicator = withContext(ArkTabs.Indicator, 'indicator')
+const TabsList = withContext(ArkTabs.List, 'list')
+const TabsTrigger = withContext(ArkTabs.Trigger, 'trigger')
 
-export const Tabs = Object.assign(TabsRoot, {
-  Root: TabsRoot,
-  Content: TabsContent,
-  Indicator: TabsIndicator,
-  List: TabsList,
-  Trigger: TabsTrigger,
-})
+const Root = Tabs
+const Content = TabsContent
+const Indicator = TabsIndicator
+const List = TabsList
+const Trigger = TabsTrigger
+
+export {
+  Content,
+  Indicator,
+  List,
+  Root,
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+  Trigger,
+}

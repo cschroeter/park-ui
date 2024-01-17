@@ -33,70 +33,108 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const ColorPickerRoot = withProvider(ArkColorPicker.Root, 'root')
-export const ColorPickerArea = withContext(ArkColorPicker.Area, 'area')
-export const ColorPickerAreaBackground = withContext(
-  ArkColorPicker.AreaBackground,
-  'areaBackground',
-)
-export const ColorPickerAreaThumb = withContext(ArkColorPicker.AreaThumb, 'areaThumb')
-export const ColorPickerChannelInput = withContext(ArkColorPicker.ChannelInput, 'channelInput')
-export const ColorPickerChannelSlider = withContext(ArkColorPicker.ChannelSlider, 'channelSlider')
-export const ColorPickerChannelSliderThumb = withContext(
+const ColorPicker = withProvider(ArkColorPicker.Root, 'root')
+const ColorPickerArea = withContext(ArkColorPicker.Area, 'area')
+const ColorPickerAreaBackground = withContext(ArkColorPicker.AreaBackground, 'areaBackground')
+const ColorPickerAreaThumb = withContext(ArkColorPicker.AreaThumb, 'areaThumb')
+const ColorPickerChannelInput = withContext(ArkColorPicker.ChannelInput, 'channelInput')
+const ColorPickerChannelSlider = withContext(ArkColorPicker.ChannelSlider, 'channelSlider')
+const ColorPickerChannelSliderThumb = withContext(
   ArkColorPicker.ChannelSliderThumb,
   'channelSliderThumb',
 )
-export const ColorPickerChannelSliderTrack = withContext(
+const ColorPickerChannelSliderTrack = withContext(
   ArkColorPicker.ChannelSliderTrack,
   'channelSliderTrack',
 )
-export const ColorPickerContent = withContext(ArkColorPicker.Content, 'content')
-export const ColorPickerControl = withContext(ArkColorPicker.Control, 'control')
-export const ColorPickerEyeDropperTrigger = withContext(
+const ColorPickerContent = withContext(ArkColorPicker.Content, 'content')
+const ColorPickerControl = withContext(ArkColorPicker.Control, 'control')
+const ColorPickerEyeDropperTrigger = withContext(
   ArkColorPicker.EyeDropperTrigger,
   'eyeDropperTrigger',
 )
-export const ColorPickerFormatSelect = withContext(ArkColorPicker.FormatSelect, 'formatSelect')
-export const ColorPickerFormatTrigger = withContext(ArkColorPicker.FormatTrigger, 'formatTrigger')
-export const ColorPickerLabel = withContext(ArkColorPicker.Label, 'label')
-export const ColorPickerPositioner = withContext(ArkColorPicker.Positioner, 'positioner')
-export const ColorPickerSwatch = withContext(ArkColorPicker.Swatch, 'swatch')
-export const ColorPickerSwatchGroup = withContext(ArkColorPicker.SwatchGroup, 'swatchGroup')
-export const ColorPickerSwatchIndicator = withContext(
-  ArkColorPicker.SwatchIndicator,
-  'swatchIndicator',
-)
-export const ColorPickerSwatchTrigger = withContext(ArkColorPicker.SwatchTrigger, 'swatchTrigger')
-export const ColorPickerTransparencyGrid = withContext(
-  ArkColorPicker.TransparencyGrid,
-  'transparencyGrid',
-)
-export const ColorPickerTrigger = withContext(ArkColorPicker.Trigger, 'trigger')
-export const ColorPickerValueText = withContext(ArkColorPicker.ValueText, 'valueText')
-export const ColorPickerView = withContext(ArkColorPicker.View, 'view')
+const ColorPickerFormatSelect = withContext(ArkColorPicker.FormatSelect, 'formatSelect')
+const ColorPickerFormatTrigger = withContext(ArkColorPicker.FormatTrigger, 'formatTrigger')
+const ColorPickerLabel = withContext(ArkColorPicker.Label, 'label')
+const ColorPickerPositioner = withContext(ArkColorPicker.Positioner, 'positioner')
+const ColorPickerSwatch = withContext(ArkColorPicker.Swatch, 'swatch')
+const ColorPickerSwatchGroup = withContext(ArkColorPicker.SwatchGroup, 'swatchGroup')
+const ColorPickerSwatchIndicator = withContext(ArkColorPicker.SwatchIndicator, 'swatchIndicator')
+const ColorPickerSwatchTrigger = withContext(ArkColorPicker.SwatchTrigger, 'swatchTrigger')
+const ColorPickerTransparencyGrid = withContext(ArkColorPicker.TransparencyGrid, 'transparencyGrid')
+const ColorPickerTrigger = withContext(ArkColorPicker.Trigger, 'trigger')
+const ColorPickerValueText = withContext(ArkColorPicker.ValueText, 'valueText')
+const ColorPickerView = withContext(ArkColorPicker.View, 'view')
 
-export const ColorPicker = Object.assign(ColorPickerRoot, {
-  Root: ColorPickerRoot,
-  Area: ColorPickerArea,
-  AreaBackground: ColorPickerAreaBackground,
-  AreaThumb: ColorPickerAreaThumb,
-  ChannelInput: ColorPickerChannelInput,
-  ChannelSlider: ColorPickerChannelSlider,
-  ChannelSliderThumb: ColorPickerChannelSliderThumb,
-  ChannelSliderTrack: ColorPickerChannelSliderTrack,
-  Content: ColorPickerContent,
-  Control: ColorPickerControl,
-  EyeDropperTrigger: ColorPickerEyeDropperTrigger,
-  FormatSelect: ColorPickerFormatSelect,
-  FormatTrigger: ColorPickerFormatTrigger,
-  Label: ColorPickerLabel,
-  Positioner: ColorPickerPositioner,
-  Swatch: ColorPickerSwatch,
-  SwatchGroup: ColorPickerSwatchGroup,
-  SwatchIndicator: ColorPickerSwatchIndicator,
-  SwatchTrigger: ColorPickerSwatchTrigger,
-  TransparencyGrid: ColorPickerTransparencyGrid,
-  Trigger: ColorPickerTrigger,
-  ValueText: ColorPickerValueText,
-  View: ColorPickerView,
-})
+const Root = ColorPicker
+const Area = ColorPickerArea
+const AreaBackground = ColorPickerAreaBackground
+const AreaThumb = ColorPickerAreaThumb
+const ChannelInput = ColorPickerChannelInput
+const ChannelSlider = ColorPickerChannelSlider
+const ChannelSliderThumb = ColorPickerChannelSliderThumb
+const ChannelSliderTrack = ColorPickerChannelSliderTrack
+const Content = ColorPickerContent
+const Control = ColorPickerControl
+const EyeDropperTrigger = ColorPickerEyeDropperTrigger
+const FormatSelect = ColorPickerFormatSelect
+const FormatTrigger = ColorPickerFormatTrigger
+const Label = ColorPickerLabel
+const Positioner = ColorPickerPositioner
+const Swatch = ColorPickerSwatch
+const SwatchGroup = ColorPickerSwatchGroup
+const SwatchIndicator = ColorPickerSwatchIndicator
+const SwatchTrigger = ColorPickerSwatchTrigger
+const TransparencyGrid = ColorPickerTransparencyGrid
+const Trigger = ColorPickerTrigger
+const ValueText = ColorPickerValueText
+const View = ColorPickerView
+
+export {
+  Area,
+  AreaBackground,
+  AreaThumb,
+  ChannelInput,
+  ChannelSlider,
+  ChannelSliderThumb,
+  ChannelSliderTrack,
+  ColorPicker,
+  ColorPickerArea,
+  ColorPickerAreaBackground,
+  ColorPickerAreaThumb,
+  ColorPickerChannelInput,
+  ColorPickerChannelSlider,
+  ColorPickerChannelSliderThumb,
+  ColorPickerChannelSliderTrack,
+  ColorPickerContent,
+  ColorPickerControl,
+  ColorPickerEyeDropperTrigger,
+  ColorPickerFormatSelect,
+  ColorPickerFormatTrigger,
+  ColorPickerLabel,
+  ColorPickerPositioner,
+  ColorPickerSwatch,
+  ColorPickerSwatchGroup,
+  ColorPickerSwatchIndicator,
+  ColorPickerSwatchTrigger,
+  ColorPickerTransparencyGrid,
+  ColorPickerTrigger,
+  ColorPickerValueText,
+  ColorPickerView,
+  Content,
+  Control,
+  EyeDropperTrigger,
+  FormatSelect,
+  FormatTrigger,
+  Label,
+  Positioner,
+  Root,
+  Swatch,
+  SwatchGroup,
+  SwatchIndicator,
+  SwatchTrigger,
+  TransparencyGrid,
+  Trigger,
+  ValueText,
+  View,
+}

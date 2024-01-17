@@ -23,10 +23,10 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const ToggleGroupRoot = withProvider(ArkToggleGroup.Root, 'root')
-export const ToggleGroupItem = withContext(ArkToggleGroup.Item, 'item')
+const ToggleGroup = withProvider(ArkToggleGroup.Root, 'root')
+const ToggleGroupItem = withContext(ArkToggleGroup.Item, 'item')
 
-export const ToggleGroup = Object.assign(ToggleGroupRoot, {
-  Root: ToggleGroupRoot,
-  Item: ToggleGroupItem,
-})
+const Root = ToggleGroup
+const Item = ToggleGroupItem
+
+export { Item, Root, ToggleGroup, ToggleGroupItem }

@@ -15,16 +15,27 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const ToastRoot = withProvider(ArkToast.Root, 'root')
-export const ToastCloseTrigger = withContext(ArkToast.CloseTrigger, 'closeTrigger')
-export const ToastDescription = withContext(ArkToast.Description, 'description')
-export const ToastGroup = withContext(ArkToast.Group, 'group')
-export const ToastTitle = withContext(ArkToast.Title, 'title')
+const Toast = withProvider(ArkToast.Root, 'root')
+const ToastCloseTrigger = withContext(ArkToast.CloseTrigger, 'closeTrigger')
+const ToastDescription = withContext(ArkToast.Description, 'description')
+const ToastGroup = withContext(ArkToast.Group, 'group')
+const ToastTitle = withContext(ArkToast.Title, 'title')
 
-export const Toast = Object.assign(ToastRoot, {
-  Root: ToastRoot,
-  CloseTrigger: ToastCloseTrigger,
-  Description: ToastDescription,
-  Group: ToastGroup,
-  Title: ToastTitle,
-})
+const Root = Toast
+const CloseTrigger = ToastCloseTrigger
+const Description = ToastDescription
+const Group = ToastGroup
+const Title = ToastTitle
+
+export {
+  CloseTrigger,
+  Description,
+  Group,
+  Root,
+  Title,
+  Toast,
+  ToastCloseTrigger,
+  ToastDescription,
+  ToastGroup,
+  ToastTitle,
+}
