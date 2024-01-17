@@ -1,15 +1,10 @@
 import type { Meta } from '@storybook/react'
-import { ArrowRightIcon } from 'lucide-react'
 import { Button } from '~/components/ui/button'
 
-const meta: Meta<typeof Button> = {
+const meta: Meta = {
   title: 'Components/Button',
-  component: Button,
 }
+
 export default meta
 
-export const Default = () => (
-  <Button>
-    Button <ArrowRightIcon />
-  </Button>
-)
+export const Base = () => <Button>Park UI</Button>

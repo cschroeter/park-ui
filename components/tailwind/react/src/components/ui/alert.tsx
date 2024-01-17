@@ -15,16 +15,27 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const AlertRoot = withProvider(ark.div, 'root')
-export const AlertContent = withContext(ark.div, 'content')
-export const AlertDescription = withContext(ark.p, 'description')
-export const AlertIcon = withContext(ark.svg, 'icon')
-export const AlertTitle = withContext(ark.h5, 'title')
+const Alert = withProvider(ark.div, 'root')
+const AlertContent = withContext(ark.div, 'content')
+const AlertDescription = withContext(ark.p, 'description')
+const AlertIcon = withContext(ark.svg, 'icon')
+const AlertTitle = withContext(ark.h5, 'title')
 
-export const Alert = Object.assign(AlertRoot, {
-  Root: AlertRoot,
-  Content: AlertContent,
-  Description: AlertDescription,
-  Icon: AlertIcon,
-  Title: AlertTitle,
-})
+const Root = Alert
+const Content = AlertContent
+const Description = AlertDescription
+const Icon = AlertIcon
+const Title = AlertTitle
+
+export {
+  Alert,
+  AlertContent,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  Content,
+  Description,
+  Icon,
+  Root,
+  Title,
+}

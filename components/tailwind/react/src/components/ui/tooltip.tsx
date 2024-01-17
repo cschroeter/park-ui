@@ -15,18 +15,31 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const TooltipRoot = withProvider(ArkTooltip.Root)
-export const TooltipArrow = withContext(ArkTooltip.Arrow, 'arrow')
-export const TooltipArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')
-export const TooltipContent = withContext(ArkTooltip.Content, 'content')
-export const TooltipPositioner = withContext(ArkTooltip.Positioner, 'positioner')
-export const TooltipTrigger = withContext(ArkTooltip.Trigger, 'trigger')
+const Tooltip = withProvider(ArkTooltip.Root)
+const TooltipArrow = withContext(ArkTooltip.Arrow, 'arrow')
+const TooltipArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')
+const TooltipContent = withContext(ArkTooltip.Content, 'content')
+const TooltipPositioner = withContext(ArkTooltip.Positioner, 'positioner')
+const TooltipTrigger = withContext(ArkTooltip.Trigger, 'trigger')
 
-export const Tooltip = Object.assign(TooltipRoot, {
-  Root: TooltipRoot,
-  Arrow: TooltipArrow,
-  ArrowTip: TooltipArrowTip,
-  Content: TooltipContent,
-  Positioner: TooltipPositioner,
-  Trigger: TooltipTrigger,
-})
+const Root = Tooltip
+const Arrow = TooltipArrow
+const ArrowTip = TooltipArrowTip
+const Content = TooltipContent
+const Positioner = TooltipPositioner
+const Trigger = TooltipTrigger
+
+export {
+  Arrow,
+  ArrowTip,
+  Content,
+  Positioner,
+  Root,
+  Tooltip,
+  TooltipArrow,
+  TooltipArrowTip,
+  TooltipContent,
+  TooltipPositioner,
+  TooltipTrigger,
+  Trigger,
+}

@@ -45,24 +45,43 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const CarouselRoot = withProvider(ArkCarousel.Root, 'root')
-export const CarouselControl = withContext(ArkCarousel.Control, 'control')
-export const CarouselIndicator = withContext(ArkCarousel.Indicator, 'indicator')
-export const CarouselIndicatorGroup = withContext(ArkCarousel.IndicatorGroup, 'indicatorGroup')
-export const CarouselItem = withContext(ArkCarousel.Item, 'item')
-export const CarouselItemGroup = withContext(ArkCarousel.ItemGroup, 'itemGroup')
-export const CarouselNextTrigger = withContext(ArkCarousel.NextTrigger, 'nextTrigger')
-export const CarouselPrevTrigger = withContext(ArkCarousel.PrevTrigger, 'prevTrigger')
-export const CarouselViewport = withContext(ArkCarousel.Viewport, 'viewport')
+const Carousel = withProvider(ArkCarousel.Root, 'root')
+const CarouselControl = withContext(ArkCarousel.Control, 'control')
+const CarouselIndicator = withContext(ArkCarousel.Indicator, 'indicator')
+const CarouselIndicatorGroup = withContext(ArkCarousel.IndicatorGroup, 'indicatorGroup')
+const CarouselItem = withContext(ArkCarousel.Item, 'item')
+const CarouselItemGroup = withContext(ArkCarousel.ItemGroup, 'itemGroup')
+const CarouselNextTrigger = withContext(ArkCarousel.NextTrigger, 'nextTrigger')
+const CarouselPrevTrigger = withContext(ArkCarousel.PrevTrigger, 'prevTrigger')
+const CarouselViewport = withContext(ArkCarousel.Viewport, 'viewport')
 
-export const Carousel = Object.assign(CarouselRoot, {
-  Root: CarouselRoot,
-  Control: CarouselControl,
-  Indicator: CarouselIndicator,
-  IndicatorGroup: CarouselIndicatorGroup,
-  Item: CarouselItem,
-  ItemGroup: CarouselItemGroup,
-  NextTrigger: CarouselNextTrigger,
-  PrevTrigger: CarouselPrevTrigger,
-  Viewport: CarouselViewport,
-})
+const Root = Carousel
+const Control = CarouselControl
+const Indicator = CarouselIndicator
+const IndicatorGroup = CarouselIndicatorGroup
+const Item = CarouselItem
+const ItemGroup = CarouselItemGroup
+const NextTrigger = CarouselNextTrigger
+const PrevTrigger = CarouselPrevTrigger
+const Viewport = CarouselViewport
+
+export {
+  Carousel,
+  CarouselControl,
+  CarouselIndicator,
+  CarouselIndicatorGroup,
+  CarouselItem,
+  CarouselItemGroup,
+  CarouselNextTrigger,
+  CarouselPrevTrigger,
+  CarouselViewport,
+  Control,
+  Indicator,
+  IndicatorGroup,
+  Item,
+  ItemGroup,
+  NextTrigger,
+  PrevTrigger,
+  Root,
+  Viewport,
+}

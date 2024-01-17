@@ -36,18 +36,31 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const SegmentGroupRoot = withProvider(ArkSegmentGroup.Root, 'root')
-export const SegmentGroupIndicator = withContext(ArkSegmentGroup.Indicator, 'indicator')
-export const SegmentGroupItem = withContext(ArkSegmentGroup.Item, 'item')
-export const SegmentGroupItemControl = withContext(ArkSegmentGroup.ItemControl, 'itemControl')
-export const SegmentGroupItemText = withContext(ArkSegmentGroup.ItemText, 'itemText')
-export const SegmentGroupLabel = withContext(ArkSegmentGroup.Label, 'label')
+const SegmentGroup = withProvider(ArkSegmentGroup.Root, 'root')
+const SegmentGroupIndicator = withContext(ArkSegmentGroup.Indicator, 'indicator')
+const SegmentGroupItem = withContext(ArkSegmentGroup.Item, 'item')
+const SegmentGroupItemControl = withContext(ArkSegmentGroup.ItemControl, 'itemControl')
+const SegmentGroupItemText = withContext(ArkSegmentGroup.ItemText, 'itemText')
+const SegmentGroupLabel = withContext(ArkSegmentGroup.Label, 'label')
 
-export const SegmentGroup = Object.assign(SegmentGroupRoot, {
-  Root: SegmentGroupRoot,
-  Indicator: SegmentGroupIndicator,
-  Item: SegmentGroupItem,
-  ItemControl: SegmentGroupItemControl,
-  ItemText: SegmentGroupItemText,
-  Label: SegmentGroupLabel,
-})
+const Root = SegmentGroup
+const Indicator = SegmentGroupIndicator
+const Item = SegmentGroupItem
+const ItemControl = SegmentGroupItemControl
+const ItemText = SegmentGroupItemText
+const Label = SegmentGroupLabel
+
+export {
+  Indicator,
+  Item,
+  ItemControl,
+  ItemText,
+  Label,
+  Root,
+  SegmentGroup,
+  SegmentGroupIndicator,
+  SegmentGroupItem,
+  SegmentGroupItemControl,
+  SegmentGroupItemText,
+  SegmentGroupLabel,
+}

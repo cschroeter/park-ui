@@ -49,28 +49,51 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const DrawerRoot = withProvider(ArkDrawer.Root)
-export const DrawerBackdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
-export const DrawerBody = withContext(ark.div, 'body')
-export const DrawerCloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
-export const DrawerContent = withContext(ArkDrawer.Content, 'content')
-export const DrawerDescription = withContext(ArkDrawer.Description, 'description')
-export const DrawerFooter = withContext(ark.div, 'footer')
-export const DrawerHeader = withContext(ark.div, 'header')
-export const DrawerPositioner = withContext(ArkDrawer.Positioner, 'positioner')
-export const DrawerTitle = withContext(ArkDrawer.Title, 'title')
-export const DrawerTrigger = withContext(ArkDrawer.Trigger, 'trigger')
+const Drawer = withProvider(ArkDrawer.Root)
+const DrawerBackdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
+const DrawerBody = withContext(ark.div, 'body')
+const DrawerCloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
+const DrawerContent = withContext(ArkDrawer.Content, 'content')
+const DrawerDescription = withContext(ArkDrawer.Description, 'description')
+const DrawerFooter = withContext(ark.div, 'footer')
+const DrawerHeader = withContext(ark.div, 'header')
+const DrawerPositioner = withContext(ArkDrawer.Positioner, 'positioner')
+const DrawerTitle = withContext(ArkDrawer.Title, 'title')
+const DrawerTrigger = withContext(ArkDrawer.Trigger, 'trigger')
 
-export const Drawer = Object.assign(DrawerRoot, {
-  Root: DrawerRoot,
-  Backdrop: DrawerBackdrop,
-  Body: DrawerBody,
-  CloseTrigger: DrawerCloseTrigger,
-  Content: DrawerContent,
-  Description: DrawerDescription,
-  Footer: DrawerFooter,
-  Header: DrawerHeader,
-  Positioner: DrawerPositioner,
-  Title: DrawerTitle,
-  Trigger: DrawerTrigger,
-})
+const Root = Drawer
+const Backdrop = DrawerBackdrop
+const Body = DrawerBody
+const CloseTrigger = DrawerCloseTrigger
+const Content = DrawerContent
+const Description = DrawerDescription
+const Footer = DrawerFooter
+const Header = DrawerHeader
+const Positioner = DrawerPositioner
+const Title = DrawerTitle
+const Trigger = DrawerTrigger
+
+export {
+  Backdrop,
+  Body,
+  CloseTrigger,
+  Content,
+  Description,
+  Drawer,
+  DrawerBackdrop,
+  DrawerBody,
+  DrawerCloseTrigger,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerPositioner,
+  DrawerTitle,
+  DrawerTrigger,
+  Footer,
+  Header,
+  Positioner,
+  Root,
+  Title,
+  Trigger,
+}
