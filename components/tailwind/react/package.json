@@ -7,22 +7,22 @@
   "dependencies": {
     "@ark-ui/react": "1.2.1",
     "@park-ui/tailwind-plugin": "workspace:*",
-    "@storybook/addon-essentials": "7.6.8",
-    "@storybook/addons": "7.6.8",
-    "@storybook/react": "7.6.8",
-    "@storybook/react-vite": "7.6.8",
-    "@types/react": "18.2.47",
+    "@storybook/addon-essentials": "7.6.9",
+    "@storybook/addons": "7.6.9",
+    "@storybook/react": "7.6.9",
+    "@storybook/react-vite": "7.6.9",
+    "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "autoprefixer": "10.4.16",
-    "lucide-react": "0.309.0",
+    "lucide-react": "0.311.0",
     "postcss": "8.4.33",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.6.8",
+    "storybook": "7.6.9",
     "tailwind-variants": "0.1.20",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3",
     "vite": "5.0.11",
-    "vite-tsconfig-paths": "4.2.3"
+    "vite-tsconfig-paths": "4.3.1"
   }
 }
