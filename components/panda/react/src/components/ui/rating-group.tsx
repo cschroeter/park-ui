@@ -5,10 +5,10 @@ import {
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
-  extends Assign<HTMLStyledProps<'div'>, ArkRatingGroupProps>,
+  extends Assign<JsxStyleProps, ArkRatingGroupProps>,
     RatingGroupVariantProps {
   children?: ReactNode
 }

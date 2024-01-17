@@ -6,11 +6,11 @@ import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { pinInput, type PinInputVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Input } from '~/components/ui/input'
 
 export interface PinInputProps
-  extends Assign<ArkPinInputProps, HTMLStyledProps<'div'>>,
+  extends Assign<JsxStyleProps, ArkPinInputProps>,
     PinInputVariantProps {
   children?: ReactNode
   /**

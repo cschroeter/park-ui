@@ -5,10 +5,10 @@ import {
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
 import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface CheckboxProps
-  extends Assign<HTMLStyledProps<'label'>, ArkCheckboxProps>,
+  extends Assign<JsxStyleProps, ArkCheckboxProps>,
     CheckboxVariantProps {
   children?: ReactNode
 }

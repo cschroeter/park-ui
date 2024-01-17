@@ -1,5 +1,6 @@
 import { DatePicker as ArkDatePicker } from '@ark-ui/react/date-picker'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { datePicker } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -105,28 +106,28 @@ export {
   YearSelect,
 }
 
-export interface DatePickerProps extends HTMLStyledProps<typeof DatePicker> {}
+export interface DatePickerProps extends ComponentProps<typeof DatePicker> {}
 export interface DatePickerClearTriggerProps
-  extends HTMLStyledProps<typeof DatePickerClearTrigger> {}
-export interface DatePickerContentProps extends HTMLStyledProps<typeof DatePickerContent> {}
-export interface DatePickerControlProps extends HTMLStyledProps<typeof DatePickerControl> {}
-export interface DatePickerInputProps extends HTMLStyledProps<typeof DatePickerInput> {}
-export interface DatePickerLabelProps extends HTMLStyledProps<typeof DatePickerLabel> {}
-export interface DatePickerMonthSelectProps extends HTMLStyledProps<typeof DatePickerMonthSelect> {}
-export interface DatePickerNextTriggerProps extends HTMLStyledProps<typeof DatePickerNextTrigger> {}
-export interface DatePickerPositionerProps extends HTMLStyledProps<typeof DatePickerPositioner> {}
-export interface DatePickerPrevTriggerProps extends HTMLStyledProps<typeof DatePickerPrevTrigger> {}
-export interface DatePickerRangeTextProps extends HTMLStyledProps<typeof DatePickerRangeText> {}
-export interface DatePickerTableProps extends HTMLStyledProps<typeof DatePickerTable> {}
-export interface DatePickerTableBodyProps extends HTMLStyledProps<typeof DatePickerTableBody> {}
-export interface DatePickerTableCellProps extends HTMLStyledProps<typeof DatePickerTableCell> {}
+  extends ComponentProps<typeof DatePickerClearTrigger> {}
+export interface DatePickerContentProps extends ComponentProps<typeof DatePickerContent> {}
+export interface DatePickerControlProps extends ComponentProps<typeof DatePickerControl> {}
+export interface DatePickerInputProps extends ComponentProps<typeof DatePickerInput> {}
+export interface DatePickerLabelProps extends ComponentProps<typeof DatePickerLabel> {}
+export interface DatePickerMonthSelectProps extends ComponentProps<typeof DatePickerMonthSelect> {}
+export interface DatePickerNextTriggerProps extends ComponentProps<typeof DatePickerNextTrigger> {}
+export interface DatePickerPositionerProps extends ComponentProps<typeof DatePickerPositioner> {}
+export interface DatePickerPrevTriggerProps extends ComponentProps<typeof DatePickerPrevTrigger> {}
+export interface DatePickerRangeTextProps extends ComponentProps<typeof DatePickerRangeText> {}
+export interface DatePickerTableProps extends ComponentProps<typeof DatePickerTable> {}
+export interface DatePickerTableBodyProps extends ComponentProps<typeof DatePickerTableBody> {}
+export interface DatePickerTableCellProps extends ComponentProps<typeof DatePickerTableCell> {}
 export interface DatePickerTableCellTriggerProps
-  extends HTMLStyledProps<typeof DatePickerTableCellTrigger> {}
-export interface DatePickerTableHeadProps extends HTMLStyledProps<typeof DatePickerTableHead> {}
-export interface DatePickerTableHeaderProps extends HTMLStyledProps<typeof DatePickerTableHeader> {}
-export interface DatePickerTableRowProps extends HTMLStyledProps<typeof DatePickerTableRow> {}
-export interface DatePickerTriggerProps extends HTMLStyledProps<typeof DatePickerTrigger> {}
-export interface DatePickerViewProps extends HTMLStyledProps<typeof DatePickerView> {}
-export interface DatePickerViewControlProps extends HTMLStyledProps<typeof DatePickerViewControl> {}
-export interface DatePickerViewTriggerProps extends HTMLStyledProps<typeof DatePickerViewTrigger> {}
-export interface DatePickerYearSelectProps extends HTMLStyledProps<typeof DatePickerYearSelect> {}
+  extends ComponentProps<typeof DatePickerTableCellTrigger> {}
+export interface DatePickerTableHeadProps extends ComponentProps<typeof DatePickerTableHead> {}
+export interface DatePickerTableHeaderProps extends ComponentProps<typeof DatePickerTableHeader> {}
+export interface DatePickerTableRowProps extends ComponentProps<typeof DatePickerTableRow> {}
+export interface DatePickerTriggerProps extends ComponentProps<typeof DatePickerTrigger> {}
+export interface DatePickerViewProps extends ComponentProps<typeof DatePickerView> {}
+export interface DatePickerViewControlProps extends ComponentProps<typeof DatePickerViewControl> {}
+export interface DatePickerViewTriggerProps extends ComponentProps<typeof DatePickerViewTrigger> {}
+export interface DatePickerYearSelectProps extends ComponentProps<typeof DatePickerYearSelect> {}

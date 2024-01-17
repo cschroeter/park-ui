@@ -1,5 +1,6 @@
 import { Editable as ArkEditable } from '@ark-ui/react/editable'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { editable } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -46,12 +47,12 @@ export {
   SubmitTrigger,
 }
 
-export interface EditableProps extends HTMLStyledProps<typeof Editable> {}
-export interface EditableAreaProps extends HTMLStyledProps<typeof EditableArea> {}
-export interface EditableCancelTriggerProps extends HTMLStyledProps<typeof EditableCancelTrigger> {}
-export interface EditableControlProps extends HTMLStyledProps<typeof EditableControl> {}
-export interface EditableEditTriggerProps extends HTMLStyledProps<typeof EditableEditTrigger> {}
-export interface EditableInputProps extends HTMLStyledProps<typeof EditableInput> {}
-export interface EditableLabelProps extends HTMLStyledProps<typeof EditableLabel> {}
-export interface EditablePreviewProps extends HTMLStyledProps<typeof EditablePreview> {}
-export interface EditableSubmitTriggerProps extends HTMLStyledProps<typeof EditableSubmitTrigger> {}
+export interface EditableProps extends ComponentProps<typeof Editable> {}
+export interface EditableAreaProps extends ComponentProps<typeof EditableArea> {}
+export interface EditableCancelTriggerProps extends ComponentProps<typeof EditableCancelTrigger> {}
+export interface EditableControlProps extends ComponentProps<typeof EditableControl> {}
+export interface EditableEditTriggerProps extends ComponentProps<typeof EditableEditTrigger> {}
+export interface EditableInputProps extends ComponentProps<typeof EditableInput> {}
+export interface EditableLabelProps extends ComponentProps<typeof EditableLabel> {}
+export interface EditablePreviewProps extends ComponentProps<typeof EditablePreview> {}
+export interface EditableSubmitTriggerProps extends ComponentProps<typeof EditableSubmitTrigger> {}

@@ -1,5 +1,6 @@
 import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { carousel } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -46,13 +47,13 @@ export {
   Viewport,
 }
 
-export interface CarouselProps extends HTMLStyledProps<typeof Carousel> {}
-export interface CarouselControlProps extends HTMLStyledProps<typeof CarouselControl> {}
-export interface CarouselIndicatorProps extends HTMLStyledProps<typeof CarouselIndicator> {}
+export interface CarouselProps extends ComponentProps<typeof Carousel> {}
+export interface CarouselControlProps extends ComponentProps<typeof CarouselControl> {}
+export interface CarouselIndicatorProps extends ComponentProps<typeof CarouselIndicator> {}
 export interface CarouselIndicatorGroupProps
-  extends HTMLStyledProps<typeof CarouselIndicatorGroup> {}
-export interface CarouselItemProps extends HTMLStyledProps<typeof CarouselItem> {}
-export interface CarouselItemGroupProps extends HTMLStyledProps<typeof CarouselItemGroup> {}
-export interface CarouselNextTriggerProps extends HTMLStyledProps<typeof CarouselNextTrigger> {}
-export interface CarouselPrevTriggerProps extends HTMLStyledProps<typeof CarouselPrevTrigger> {}
-export interface CarouselViewportProps extends HTMLStyledProps<typeof CarouselViewport> {}
+  extends ComponentProps<typeof CarouselIndicatorGroup> {}
+export interface CarouselItemProps extends ComponentProps<typeof CarouselItem> {}
+export interface CarouselItemGroupProps extends ComponentProps<typeof CarouselItemGroup> {}
+export interface CarouselNextTriggerProps extends ComponentProps<typeof CarouselNextTrigger> {}
+export interface CarouselPrevTriggerProps extends ComponentProps<typeof CarouselPrevTrigger> {}
+export interface CarouselViewportProps extends ComponentProps<typeof CarouselViewport> {}
