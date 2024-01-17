@@ -35,5 +35,6 @@
     "**/*.{js,jsx,ts,tsx,json}": [
       "prettier --plugin prettier-plugin-organize-imports --write"
     ]
-  }
+  },
+  "packageManager": "pnpm@8.14.1"
 }
