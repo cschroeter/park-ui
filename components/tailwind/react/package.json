@@ -2,7 +2,8 @@
   "name": "@park-ui/tailwind-react-components",
   "private": true,
   "scripts": {
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@ark-ui/react": "1.2.1",

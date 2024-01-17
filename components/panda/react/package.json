@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@ark-ui/react": "1.2.1",

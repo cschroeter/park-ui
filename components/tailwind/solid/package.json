@@ -2,7 +2,8 @@
   "name": "@park-ui/tailwind-solid-components",
   "private": true,
   "scripts": {
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@ark-ui/solid": "1.2.0",
