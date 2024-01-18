@@ -1,10 +1,10 @@
 import { Progress as ArkProgress } from '@ark-ui/react/progress'
 import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
-import { progress } from 'styled-system/recipes'
+import { progressCircle } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withProvider, withContext } = createStyleContext(progress)
+const { withProvider, withContext } = createStyleContext(progressCircle)
 
 const Progress = withProvider(ArkProgress.Root, 'root')
 const ProgressLabel = withContext(styled(ArkProgress.Label), 'label')
