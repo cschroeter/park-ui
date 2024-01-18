@@ -59,6 +59,7 @@ export const select = defineSlotRecipe({
         cursor: 'not-allowed',
         _hover: {
           background: 'transparent',
+          color: 'fg.disabled',
         },
       },
     },
