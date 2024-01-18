@@ -16,11 +16,17 @@ export const progress = defineSlotRecipe({
       color: 'fg.default',
       fontWeight: 'medium',
     },
+    circle: {
+      '--size': '120px',
+      '--thickness': '12px',
+    },
     circleTrack: {
       stroke: 'bg.subtle',
     },
     circleRange: {
       stroke: 'colorPalette.default',
+      transitionProperty: 'stroke-dasharray, stroke',
+      transitionDuration: '0.6s',
     },
   },
 })

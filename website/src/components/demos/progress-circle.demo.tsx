@@ -3,13 +3,15 @@ import * as Progress from '~/components/ui/progress-circle'
 
 export const Demo = (props: ProgressProps) => {
   return (
-    <Progress.Root {...props} defaultValue={20} min={10} max={30}>
-      <Progress.Label>Label</Progress.Label>
-      <Progress.Circle>
-        <Progress.CircleTrack />
-        <Progress.CircleRange />
-      </Progress.Circle>
-      <Progress.ValueText />
-    </Progress.Root>
+    <>
+      <Progress.Root {...props} min={0} max={100} defaultValue={50}>
+        <Progress.Label>Label</Progress.Label>
+        <Progress.ValueText />
+        <Progress.Circle>
+          <Progress.CircleTrack />
+          <Progress.CircleRange />
+        </Progress.Circle>
+      </Progress.Root>
+    </>
   )
 }
