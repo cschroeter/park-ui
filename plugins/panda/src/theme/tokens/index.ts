@@ -29,5 +29,6 @@ export const createTokens = (options: PresetOptions) => {
     sizes,
     spacing,
     zIndex,
+    thickness: { value: '12px' },
   })
 }

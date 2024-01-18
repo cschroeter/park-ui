@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "link.tsx",
-      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nexport interface LinkProps extends LinkVariantProps, HTMLArkProps<'a'> {}\n\nexport const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {\n  const { className, ...rest } = props\n  return <ark.a className={styles({ className })} ref={ref} {...rest} />\n})\n\nLink.displayName = 'Link'\n\ntype LinkVariantProps = VariantProps<typeof styles>\n\nconst styles = tv({ base: 'link', variants: {} })\n",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype LinkVariantProps = VariantProps<typeof styles>\nexport type LinkProps = LinkVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({ base: 'link', variants: {} })\nexport const Link = styled<LinkProps>(ark.a, styles)\n",
       "hasMultipleParts": false
     }
   ]
