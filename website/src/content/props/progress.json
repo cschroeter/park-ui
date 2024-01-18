@@ -1,0 +1,10 @@
+{
+  "type": {
+    "options": ["linear", "circular"],
+    "defaultValue": "linear"
+  },
+  "size": {
+    "options": ["sm", "md", "lg"],
+    "defaultValue": "md"
+  }
+}
