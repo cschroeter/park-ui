@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "progress-linear.tsx",
+      "content": "import { Progress as ArkProgress } from '@ark-ui/react/progress'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { progressLinear } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(progressLinear)\n\nconst Progress = withProvider(ArkProgress.Root, 'root')\nconst ProgressLabel = withContext(styled(ArkProgress.Label), 'label')\nconst ProgressValueText = withContext(styled(ArkProgress.ValueText), 'valueText')\nconst ProgressIndicator = withContext(styled(ArkProgress.Indicator), 'indicator')\nconst ProgressTrack = withContext(styled(ArkProgress.Track), 'track')\nconst ProgressRange = withContext(styled(ArkProgress.Range), 'range')\n\nconst Root = Progress\nconst Label = ProgressLabel\nconst ValueText = ProgressValueText\nconst Indicator = ProgressIndicator\nconst Track = ProgressTrack\nconst Range = ProgressRange\n\nexport { Track, Range, Indicator, Label, Root, ValueText }\n\nexport interface ProgressProps extends ComponentProps<typeof Progress> {}\nexport interface ProgressLabelProps extends ComponentProps<typeof ProgressLabel> {}\nexport interface ProgressValueTextProps extends ComponentProps<typeof ProgressValueText> {}\nexport interface ProgressIndicatorProps extends ComponentProps<typeof ProgressIndicator> {}\nexport interface ProgressTrackProps extends ComponentProps<typeof ProgressTrack> {}\nexport interface ProgressRangeProps extends ComponentProps<typeof ProgressRange> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}
