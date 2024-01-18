@@ -42,5 +42,3 @@ export const PinInput = (props: PinInputProps) => {
     </ArkPinInput.Root>
   )
 }
-
-PinInput.displayName = 'PinInput'

@@ -11,12 +11,16 @@ export interface ProgressProps
   extends Assign<JsxStyleProps, ArkProgressProps>,
     ProgressVariantProps {
   children?: ReactNode
-  type: 'linear' | 'circular'
+  /**
+   * The type of progress to render.
+   * @default linear
+   */
+  type?: 'linear' | 'circular'
 }
 
 export const Progress = forwardRef<HTMLDivElement, ProgressProps>((props, ref) => {
   const [variantProps, progressProps] = progress.splitVariantProps(props)
-  const { children, type, ...rootProps } = progressProps
+  const { children, type = 'linear', ...rootProps } = progressProps
   const styles = progress(variantProps)
 
   return (

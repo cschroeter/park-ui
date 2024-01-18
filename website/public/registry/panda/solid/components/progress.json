@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "progress.tsx",
+      "content": "import { Progress as ArkProgress, type ProgressProps as ArkProgressProps } from '@ark-ui/solid'\nimport { Show, children, splitProps, type JSX } from 'solid-js'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { progress, type ProgressVariantProps } from 'styled-system/recipes'\nimport type { Assign, JsxStyleProps } from 'styled-system/types'\n\nexport interface ProgressProps\n  extends Assign<JsxStyleProps, ArkProgressProps>,\n    ProgressVariantProps {\n  children?: JSX.Element\n  /**\n   * The type of progress to render.\n   * @default linear\n   */\n  type?: 'linear' | 'circular'\n}\n\nexport const Progress = (props: ProgressProps) => {\n  const [localProps, restProps] = splitProps(props, ['children', 'type'])\n  const [variantProps] = progress.splitVariantProps(props)\n  const [cssProps, rootProps] = splitCssProps(restProps)\n  const getChildren = children(() => localProps.children)\n  const styles = progress(variantProps)\n\n  return (\n    <ArkProgress.Root class={cx(styles.root, css(cssProps))} {...rootProps}>\n      <Show when={getChildren()}>\n        <ArkProgress.Label class={styles.label}>{getChildren()}</ArkProgress.Label>\n      </Show>\n      <Show\n        when={localProps.type === 'circular'}\n        fallback={\n          <ArkProgress.Track class={styles.track}>\n            <ArkProgress.Range class={styles.range} />\n          </ArkProgress.Track>\n        }\n      >\n        <ArkProgress.Circle class={styles.circle}>\n          <ArkProgress.CircleTrack class={styles.circleTrack} />\n          <ArkProgress.CircleRange class={styles.circleRange} />\n          <ArkProgress.ValueText class={styles.valueText} />\n        </ArkProgress.Circle>\n      </Show>\n      <ArkProgress.ValueText class={styles.valueText} />\n    </ArkProgress.Root>\n  )\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}
