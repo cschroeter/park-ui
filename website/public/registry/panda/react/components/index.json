@@ -78,12 +78,8 @@
       "href": "https://park-ui.com/registry/panda/react/components/popover.json"
     },
     {
-      "name": "Progress Circle",
-      "href": "https://park-ui.com/registry/panda/react/components/progress-circle.json"
-    },
-    {
-      "name": "Progress Linear",
-      "href": "https://park-ui.com/registry/panda/react/components/progress-linear.json"
+      "name": "Progress",
+      "href": "https://park-ui.com/registry/panda/react/components/progress.json"
     },
     {
       "name": "Radio Button Group",

@@ -1,21 +1,23 @@
 import type { Meta } from '@storybook/react'
-import * as Progress from '~/components/ui/progress-circle'
+import { Stack } from 'styled-system/jsx'
+import { Progress } from '~/components/ui/progress'
 
 const meta: Meta = {
-  title: 'Components/ProgressCircle',
+  title: 'Components/Progress Circular',
 }
 
 export default meta
 
 export const Base = () => {
+  return <Progress type="circular" defaultValue={20} size="md" />
+}
+
+export const Size = () => {
   return (
-    <Progress.Root defaultValue={20} min={10} max={30}>
-      <Progress.Label>Label</Progress.Label>
-      <Progress.Circle>
-        <Progress.CircleTrack />
-        <Progress.CircleRange />
-      </Progress.Circle>
-      <Progress.ValueText />
-    </Progress.Root>
+    <Stack>
+      <Progress type="circular" defaultValue={20} size="sm" />
+      <Progress type="circular" defaultValue={20} size="md" />
+      <Progress type="circular" defaultValue={20} size="lg" />
+    </Stack>
   )
 }
