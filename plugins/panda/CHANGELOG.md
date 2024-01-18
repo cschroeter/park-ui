@@ -12,6 +12,7 @@
 ### Fixed
 
 - Resolved an issue with the `PinInput` component where the input width was not correct.
+- Resolved an issue with the `Select` component where on hover a disabled item would show the hover color.
 
 ## [0.28.0] - 2024-01-01
 

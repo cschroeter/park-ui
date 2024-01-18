@@ -1,8 +1,8 @@
 import { Badge } from '@chakra-ui/react'
 import type { Meta } from '@storybook/react'
 
-const meta: Meta<typeof Badge> = {
-  component: Badge,
+const meta: Meta = {
+  title: 'Components/Badge',
 }
 export default meta
 

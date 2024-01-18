@@ -2,9 +2,10 @@ import { Button, Stack, Text } from '@chakra-ui/react'
 import type { Meta } from '@storybook/react'
 import { ArrowRightIcon } from 'lucide-react'
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta = {
+  title: 'Components/Button',
 }
+
 export default meta
 
 export const Default = () => <Button colorScheme="accent">Button</Button>

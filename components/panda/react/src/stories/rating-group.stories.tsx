@@ -1,9 +1,8 @@
 import type { Meta } from '@storybook/react'
-import { RatingGroup, type RatingGroupProps } from '~/components/ui/rating-group'
+import { RatingGroup } from '~/components/ui/rating-group'
 
-const meta: Meta<RatingGroupProps> = {
-  title: 'Components/RatingGroup',
-  component: RatingGroup,
+const meta: Meta = {
+  title: 'Components/Rating Group',
 }
 
 export default meta
