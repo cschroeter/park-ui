@@ -1,10 +1,9 @@
 import type { Meta } from '@storybook/react'
 import { Stack } from 'styled-system/jsx'
-import { Heading, type HeadingProps } from '~/components/ui/heading'
+import { Heading } from '~/components/ui/heading'
 
-const meta: Meta<HeadingProps> = {
+const meta: Meta = {
   title: 'Components/Heading',
-  component: Heading,
 }
 
 export default meta

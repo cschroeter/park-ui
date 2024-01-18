@@ -1,9 +1,8 @@
 import type { Meta } from 'storybook-solidjs'
-import { Switch, type SwitchProps } from '~/components/ui/switch'
+import { Switch } from '~/components/ui/switch'
 
-const meta: Meta<SwitchProps> = {
+const meta: Meta = {
   title: 'Components/Switch',
-  component: Switch,
 }
 
 export default meta

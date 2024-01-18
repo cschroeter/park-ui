@@ -1,8 +1,8 @@
 import { Textarea } from '@chakra-ui/react'
 import type { Meta } from '@storybook/react'
 
-const meta: Meta<typeof Textarea> = {
-  component: Textarea,
+const meta: Meta = {
+  title: 'Components/Textarea',
 }
 
 export const Default = () => <Textarea />
