@@ -4,8 +4,13 @@ import sitemap from '@astrojs/sitemap'
 import pandacss from '@pandacss/astro'
 import { defineConfig } from 'astro/config'
 
+const VERCEL_PREVIEW_SITE =
+  process.env.VERCEL_ENV !== 'production' &&
+  process.env.VERCEL_URL &&
+  `https://${process.env.VERCEL_URL}`
+
 export default defineConfig({
-  site: 'https://park-ui.com',
+  site: VERCEL_PREVIEW_SITE || 'https://park-ui.com',
   integrations: [mdx(), pandacss(), react(), sitemap()],
   markdown: {
     syntaxHighlight: false,
