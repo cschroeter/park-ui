@@ -18,6 +18,7 @@
     "ci:typecheck": "pnpm run -r typecheck"
   },
   "dependencies": {
+    "@biomejs/biome": "1.5.2",
     "@commitlint/cli": "18.4.4",
     "@commitlint/config-conventional": "18.4.4",
     "husky": "8.0.3",

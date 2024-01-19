@@ -12,8 +12,8 @@ export const Base = () => {
   const items = ['React', 'Solid', 'Svelte', 'Vue']
   return (
     <Accordion.Root defaultValue={['React']}>
-      {items.map((item, id) => (
-        <Accordion.Item key={id} value={item} disabled={item === 'Svelte'}>
+      {items.map((item) => (
+        <Accordion.Item key={item} value={item} disabled={item === 'Svelte'}>
           <Accordion.ItemTrigger>
             {item}
             <Accordion.ItemIndicator>

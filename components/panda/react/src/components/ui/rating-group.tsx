@@ -25,7 +25,7 @@ export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, 
         {({ items }) =>
           items.map((index) => (
             <ArkRatingGroup.Item className={styles.item} key={index} index={index}>
-              {({ isHalf }) => <Icon isHalf={isHalf} />}
+              {({ isHalf }) => <StarIcon isHalf={isHalf} />}
             </ArkRatingGroup.Item>
           ))
         }
@@ -40,7 +40,7 @@ type IconProps = {
   isHalf: boolean
 }
 
-const Icon = (props: IconProps) => (
+const StarIcon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -52,6 +52,7 @@ const Icon = (props: IconProps) => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
+    <title>Star Icon</title>
     <defs>
       <linearGradient id="half">
         <stop offset="50%" stopColor="var(--colors-color-palette-default)" />
