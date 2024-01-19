@@ -6,6 +6,78 @@ description: All notable changes to this project will be documented in this file
 
 ## [Unreleased]
 
+## [0.17.0] - 2024-01-19
+
+We are excited to announce that in this release, we have revised several components to feature a closed Component API:
+
+- `Avatar`
+- `Checkbox`
+- `Number Input`
+- `Pagination`
+- `Pin Input`
+- `Rating Group`
+- `Slider`
+- `Switch`
+
+For more information on the reasoning behind this change, please refer to the
+[GitHub Issue](https://github.com/cschroeter/park-ui/issues/144).
+
+### Added
+
+- Introduced styles for the `Progress` component (Preview).
+- Implemented support to render the `RatingGroup` in various colors.
+- Added a hover color to the items in `SegmentControl`.
+- Launched [Storybooks](https://github.com/cschroeter/park-ui/tree/main/components) for all components across each
+  framework.
+
+### Changed
+
+- Enhanced typings for all components, aiming for an improved TypeScript experience.
+
+### Fixed
+
+- Fixed an issue in the `PinInput` component where the input width was incorrect.
+- Addressed a bug in the `Select` component where a disabled item incorrectly displayed a hover color.
+
+## [0.16.0] - 2023-12-17
+
+- Bumped to @park-ui/panda-preset 0.26.2
+
+## [0.15.0] - 2023-12-02
+
+### Added
+
+- Added `Kbd` component.
+- Added `accent.text` to the list of semantic tokens. This token is used do display text in interactive elements like
+  buttons and links.
+- Added support to render components with different colors. Pass the `colorPalette` prop to the component to change its
+  visual style. See the example below for more details.
+
+```tsx
+<Button colorPalette="red">Danger</Button>
+```
+
+### Changed
+
+- Resolved an issue with `Table` markup where the `thead` element was not rendered correctly.
+
+### Fixed
+
+- Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was scrolled.
+
+### Removed
+
+- Removed `border.accent` from the list of semantic tokens. Use `accent.default` or `colorPalette.default` instead.
+
+## [0.14.0] - 2023-11-16
+
+- ported latest style updates from park-ui panda
+
+## [0.13.0] - 2023-11-06
+
+- Added Header, Footer and Body to Drawer
+- Added sm and lg variants to Slider
+
 ## [0.12.2] - 2023-10-24
 
 ### Added
