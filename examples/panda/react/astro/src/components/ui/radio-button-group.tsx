@@ -1,5 +1,6 @@
-import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/react'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/react/radio-group'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { radioButtonGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -37,12 +38,12 @@ export {
   Root,
 }
 
-export interface RadioButtonGroupProps extends HTMLStyledProps<typeof RadioButtonGroup> {}
+export interface RadioButtonGroupProps extends ComponentProps<typeof RadioButtonGroup> {}
 export interface RadioButtonGroupIndicatorProps
-  extends HTMLStyledProps<typeof RadioButtonGroupIndicator> {}
-export interface RadioButtonGroupItemProps extends HTMLStyledProps<typeof RadioButtonGroupItem> {}
+  extends ComponentProps<typeof RadioButtonGroupIndicator> {}
+export interface RadioButtonGroupItemProps extends ComponentProps<typeof RadioButtonGroupItem> {}
 export interface RadioButtonGroupItemControlProps
-  extends HTMLStyledProps<typeof RadioButtonGroupItemControl> {}
+  extends ComponentProps<typeof RadioButtonGroupItemControl> {}
 export interface RadioButtonGroupItemTextProps
-  extends HTMLStyledProps<typeof RadioButtonGroupItemText> {}
-export interface RadioButtonGroupLabelProps extends HTMLStyledProps<typeof RadioButtonGroupLabel> {}
+  extends ComponentProps<typeof RadioButtonGroupItemText> {}
+export interface RadioButtonGroupLabelProps extends ComponentProps<typeof RadioButtonGroupLabel> {}
