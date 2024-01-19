@@ -1,7 +1,7 @@
 import { Button } from '~/components/ui/button'
-import { Card } from '~/components/ui/card'
+import * as Card from '~/components/ui/card'
+import { FormLabel } from '~/components/ui/form-label'
 import { Input } from '~/components/ui/input'
-import { Label } from '~/components/ui/label'
 import { Divider, HStack, Stack, styled } from '../../../styled-system/jsx'
 
 export const AuthenticationCard = () => {
@@ -31,11 +31,11 @@ export const AuthenticationCard = () => {
             <Divider />
           </HStack>
           <Stack gap="1.5">
-            <Label for="name">E-Mail</Label>
+            <FormLabel for="name">E-Mail</FormLabel>
             <Input id="name" placeholder="Your E-Mail" />
           </Stack>
           <Stack gap="1.5">
-            <Label for="password">Password</Label>
+            <FormLabel for="password">Password</FormLabel>
             <Input id="password" type="password" placeholder="Your Password" />
           </Stack>
         </Stack>
