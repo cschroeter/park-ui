@@ -1,5 +1,36 @@
 ## [Unreleased]
 
+We are excited to announce that in this release, we have revised several components to feature a closed Component API:
+
+- `Avatar`
+- `Checkbox`
+- `Number Input`
+- `Pagination`
+- `Pin Input`
+- `Rating Group`
+- `Slider`
+- `Switch`
+
+For more information on the reasoning behind this change, please refer to the
+[GitHub Issue](https://github.com/cschroeter/park-ui/issues/144).
+
+### Added
+
+- Introduced styles for the `Progress` component (Preview).
+- Implemented support to render the `RatingGroup` in various colors.
+- Added a hover color to the items in `SegmentControl`.
+- Launched [Storybooks](https://github.com/cschroeter/park-ui/tree/main/components) for all components across each
+  framework.
+
+### Changed
+
+- Enhanced typings for all components, aiming for an improved TypeScript experience.
+
+### Fixed
+
+- Fixed an issue in the `PinInput` component where the input width was incorrect.
+- Addressed a bug in the `Select` component where a disabled item incorrectly displayed a hover color.
+
 ## [0.16.0] - 2023-12-17
 
 - Bumped to @park-ui/panda-preset 0.26.2

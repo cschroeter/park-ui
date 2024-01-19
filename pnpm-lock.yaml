@@ -520,6 +520,9 @@ importers:
       '@types/postcss-js':
         specifier: 4.0.4
         version: 4.0.4
+      clean-package:
+        specifier: 2.2.0
+        version: 2.2.0
       postcss:
         specifier: 8.4.33
         version: 8.4.33

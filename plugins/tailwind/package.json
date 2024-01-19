@@ -5,7 +5,8 @@
   "keywords": [
     "Ark UI",
     "Tailwind CSS",
-    "Plugin"
+    "Plugin",
+    "Park UI"
   ],
   "author": "Simon Holzmayer <dev@holzmayer.me>",
   "homepage": "https://park-ui.com",
@@ -26,9 +27,8 @@
     "build": "pnpm prebuild:plugin && pnpm build:plugin",
     "prebuild:plugin": "panda cssgen --outfile src/plugin/css/styles.css",
     "build:plugin": "tsx src/plugin/build.ts && tsup",
-    "build:components": "tsx src/cli/components/bootstrap.ts",
-    "build:stories": "tsx src/cli/stories/bootstrap.ts",
-    "build:styles": "tsx src/cli/styles/bootstrap.ts"
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
   "dependencies": {
     "tailwind-variants": "0.1.20",
@@ -41,6 +41,7 @@
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/node": "20.11.5",
     "@types/postcss-js": "4.0.4",
+    "clean-package": "2.2.0",
     "postcss": "8.4.33",
     "postcss-js": "4.0.1",
     "release-it": "17.0.1",
@@ -49,7 +50,22 @@
     "tsx": "4.7.0"
   },
   "peerDependencies": {
-    "tailwindcss": "^3.0.0"
+    "tailwindcss": "3.x"
+  },
+  "clean-package": {
+    "replace": {
+      "main": "dist/index.js",
+      "module": "dist/index.mjs",
+      "types": "dist/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.mjs",
+          "require": "./dist/index.js"
+        },
+        "./package.json": "./package.json"
+      }
+    }
   },
   "tsup": {
     "entry": [
