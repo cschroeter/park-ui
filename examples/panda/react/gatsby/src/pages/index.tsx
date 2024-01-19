@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Container } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import * as RadioButtonGroup from '~/components/ui/radio-button-group'
-import * as Slider from '~/components/ui/slider'
+import { Slider } from '~/components/ui/slider'
 import * as Tabs from '~/components/ui/tabs'
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -32,19 +32,16 @@ const IndexPage: React.FC<PageProps> = () => {
           </RadioButtonGroup.Root>
         </Tabs.Content>
         <Tabs.Content value="slider">
-          <Slider.Root min={0} max={100} defaultValue={[33]}>
-            <Slider.Control>
-              <Slider.Track>
-                <Slider.Range />
-              </Slider.Track>
-              <Slider.Thumb index={0} />
-            </Slider.Control>
-            <Slider.MarkerGroup>
-              <Slider.Marker value={25}>25</Slider.Marker>
-              <Slider.Marker value={50}>50</Slider.Marker>
-              <Slider.Marker value={75}>75</Slider.Marker>
-            </Slider.MarkerGroup>
-          </Slider.Root>
+          <Slider
+            min={0}
+            max={100}
+            defaultValue={[33]}
+            marks={[
+              { value: 25, label: '25' },
+              { value: 50, label: '50' },
+              { value: 75, label: '75' },
+            ]}
+          />
         </Tabs.Content>
       </Tabs.Root>
     </Container>
