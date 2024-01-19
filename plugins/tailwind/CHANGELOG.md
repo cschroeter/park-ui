@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.17.0] - 2024-01-19
+
 We are excited to announce that in this release, we have revised several components to feature a closed Component API:
 
 - `Avatar`
