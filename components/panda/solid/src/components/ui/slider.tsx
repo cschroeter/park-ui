@@ -1,6 +1,7 @@
 import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { slider, type SliderVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
@@ -13,13 +14,14 @@ export interface SliderProps extends Assign<JsxStyleProps, ArkSliderProps>, Slid
 }
 
 export const Slider = (props: SliderProps) => {
-  const [variantProps, sliderProps] = slider.splitVariantProps(props)
-  const [localProps, rootProps] = splitProps(sliderProps, ['children'])
+  const [variantProps, ratingGroupProps] = slider.splitVariantProps(props)
+  const [cssProps, elementProps] = splitCssProps(ratingGroupProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class', 'marks'])
   const getChildren = children(() => localProps.children)
   const styles = slider(variantProps)
 
   return (
-    <ArkSlider.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkSlider.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       {(api) => (
         <>
           <Show when={getChildren()}>
@@ -33,9 +35,9 @@ export const Slider = (props: SliderProps) => {
               {(_, index) => <ArkSlider.Thumb index={index} class={styles.thumb} />}
             </Index>
           </ArkSlider.Control>
-          <Show when={rootProps.marks}>
+          <Show when={localProps.marks}>
             <ArkSlider.MarkerGroup class={styles.markerGroup}>
-              <Index each={rootProps.marks}>
+              <Index each={localProps.marks}>
                 {(mark) => (
                   <ArkSlider.Marker value={mark().value} class={styles.marker}>
                     {mark().label}

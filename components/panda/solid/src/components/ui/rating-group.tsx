@@ -4,6 +4,7 @@ import {
 } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
@@ -15,12 +16,13 @@ export interface RatingGroupProps
 
 export const RatingGroup = (props: RatingGroupProps) => {
   const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
-  const [localProps, rootProps] = splitProps(ratingGroupProps, ['children'])
+  const [cssProps, elementProps] = splitCssProps(ratingGroupProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
   const getChildren = children(() => localProps.children)
   const styles = ratingGroup(variantProps)
 
   return (
-    <ArkRatingGroup.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkRatingGroup.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       <Show when={getChildren()}>
         <ArkRatingGroup.Label class={styles.label}>{getChildren()}</ArkRatingGroup.Label>
       </Show>
@@ -55,6 +57,7 @@ const StarIcon = (props: Props) => (
     stroke-linecap="round"
     stroke-linejoin="round"
   >
+    <title>Star Icon</title>
     <defs>
       <linearGradient id="half">
         <stop offset="50%" stop-color="var(--colors-color-palette-default)" />

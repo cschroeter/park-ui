@@ -18,14 +18,15 @@ export interface PinInputProps
 }
 
 export const PinInput = (props: PinInputProps) => {
-  const [localProps, restProps] = splitProps(props, ['children', 'length'])
-  const [variantProps] = pinInput.splitVariantProps(props)
-  const [cssProps, rootProps] = splitCssProps(restProps)
+  const [variantProps, pinInputProps] = pinInput.splitVariantProps(props)
+  const [cssProps, elementProps] = splitCssProps(pinInputProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class', 'length'])
   const getChildren = children(() => localProps.children)
   const styles = pinInput(variantProps)
 
   return (
-    <ArkPinInput.Root class={cx(styles.root, css(cssProps))} {...rootProps}>
+    // @ts-expect-error TODO cssProps is to complex to be typed
+    <ArkPinInput.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       <Show when={getChildren()}>
         <ArkPinInput.Label class={styles.label}>{getChildren()}</ArkPinInput.Label>
       </Show>
@@ -33,7 +34,6 @@ export const PinInput = (props: PinInputProps) => {
         <Index each={Array.from({ length: localProps.length ?? 4 }, (_, index) => index)}>
           {(index) => (
             <ArkPinInput.Input class={styles.input} index={index()} asChild>
-              {/* Attention: this only works with static css for inputs */}
               <Input size={variantProps.size} />
             </ArkPinInput.Input>
           )}

@@ -4,6 +4,7 @@ import {
 } from '@ark-ui/react/checkbox'
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
@@ -15,11 +16,16 @@ export interface CheckboxProps
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
   const [variantProps, checkboxProps] = checkbox.splitVariantProps(props)
-  const { children, ...rootProps } = checkboxProps
+  const [cssProps, localProps] = splitCssProps(checkboxProps)
+  const { children, className, ...rootProps } = localProps
   const styles = checkbox(variantProps)
 
   return (
-    <ArkCheckbox.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkCheckbox.Root
+      ref={ref}
+      className={cx(styles.root, css(cssProps), className)}
+      {...rootProps}
+    >
       {(state) => (
         <>
           <ArkCheckbox.Control className={styles.control}>

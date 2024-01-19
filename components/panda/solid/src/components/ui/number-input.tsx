@@ -4,6 +4,7 @@ import {
 } from '@ark-ui/solid'
 import { Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
@@ -15,12 +16,13 @@ export interface NumberInputProps
 
 export const NumberInput = (props: NumberInputProps) => {
   const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)
-  const [localProps, rootProps] = splitProps(numberInputProps, ['children'])
+  const [cssProps, elementProps] = splitCssProps(numberInputProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
   const getChildren = children(() => localProps.children)
   const styles = numberInput(variantProps)
 
   return (
-    <ArkNumberInput.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkNumberInput.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       <Show when={getChildren()}>
         <ArkNumberInput.Label class={styles.label}>{getChildren()}</ArkNumberInput.Label>
       </Show>
@@ -39,6 +41,7 @@ export const NumberInput = (props: NumberInputProps) => {
 
 const ChevronUpIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Up Icon</title>
     <path
       fill="none"
       stroke="currentColor"
@@ -52,6 +55,7 @@ const ChevronUpIcon = () => (
 
 const ChevronDownIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Down Icon</title>
     <path
       fill="none"
       stroke="currentColor"

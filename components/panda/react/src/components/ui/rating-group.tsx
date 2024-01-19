@@ -4,6 +4,7 @@ import {
 } from '@ark-ui/react/rating-group'
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
@@ -14,12 +15,17 @@ export interface RatingGroupProps
 }
 
 export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
-  const [variantProps, localProps] = ratingGroup.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
+  const [cssProps, localProps] = splitCssProps(ratingGroupProps)
+  const { children, className, ...rootProps } = localProps
   const styles = ratingGroup(variantProps)
 
   return (
-    <ArkRatingGroup.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkRatingGroup.Root
+      ref={ref}
+      className={cx(styles.root, css(cssProps), className)}
+      {...rootProps}
+    >
       {children && <ArkRatingGroup.Label className={styles.label}>{children}</ArkRatingGroup.Label>}
       <ArkRatingGroup.Control className={styles.control}>
         {({ items }) =>

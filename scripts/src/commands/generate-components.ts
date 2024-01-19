@@ -33,6 +33,7 @@ const generateComponents = async (options: Options) => {
             'number-input',
             'pagination',
             'pin-input',
+            'progress',
             'rating-group',
             'slider',
             'switch',

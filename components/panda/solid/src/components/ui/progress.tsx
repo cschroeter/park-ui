@@ -17,14 +17,14 @@ export interface ProgressProps
 }
 
 export const Progress = (props: ProgressProps) => {
-  const [localProps, restProps] = splitProps(props, ['children', 'type'])
-  const [variantProps] = progress.splitVariantProps(props)
-  const [cssProps, rootProps] = splitCssProps(restProps)
+  const [variantProps, progressProps] = progress.splitVariantProps(props)
+  const [cssProps, elementProps] = splitCssProps(progressProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class', 'type'])
   const getChildren = children(() => localProps.children)
   const styles = progress(variantProps)
 
   return (
-    <ArkProgress.Root class={cx(styles.root, css(cssProps))} {...rootProps}>
+    <ArkProgress.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       <Show when={getChildren()}>
         <ArkProgress.Label class={styles.label}>{getChildren()}</ArkProgress.Label>
       </Show>

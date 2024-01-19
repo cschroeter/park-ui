@@ -21,19 +21,22 @@ export interface PinInputProps
 }
 
 export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) => {
-  const { children, length = 4, ...rest } = props
-  const [variantProps] = pinInput.splitVariantProps(rest)
-  const [cssProps, rooProps] = splitCssProps(rest)
+  const [variantProps, pinInputProps] = pinInput.splitVariantProps(props)
+  const [cssProps, localProps] = splitCssProps(pinInputProps)
+  const { children, className, length = 4, ...rootProps } = localProps
   const styles = pinInput(variantProps)
 
   return (
-    // @ts-expect-error TODO cssProps is to complex to be typed
-    <ArkPinInput.Root ref={ref} className={cx(styles.root, css(cssProps))} {...rooProps}>
+    <ArkPinInput.Root
+      ref={ref}
+      // @ts-expect-error TODO cssProps is to complex to be typed
+      className={cx(styles.root, css(cssProps), className)}
+      {...rootProps}
+    >
       {children && <ArkPinInput.Label className={styles.label}>{children}</ArkPinInput.Label>}
       <ArkPinInput.Control className={styles.control}>
         {Array.from({ length }, (_, index) => index).map((id, index) => (
           <ArkPinInput.Input className={styles.input} key={id} index={index} asChild>
-            {/* Attention: this only works with static css for inputs */}
             <Input size={variantProps.size} />
           </ArkPinInput.Input>
         ))}

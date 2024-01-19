@@ -2,7 +2,9 @@ import {
   Pagination as ArkPagination,
   type PaginationProps as ArkPaginationProps,
 } from '@ark-ui/solid'
-import { For } from 'solid-js'
+import { For, splitProps } from 'solid-js'
+import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
@@ -13,11 +15,14 @@ export interface PaginationProps
     PaginationVariantProps {}
 
 export const Pagination = (props: PaginationProps) => {
-  const [variantProps, paginationProps] = pagination.splitVariantProps(props)
+  const [variantProps, numberInputProps] = pagination.splitVariantProps(props)
+  const [cssProps, elementProps] = splitCssProps(numberInputProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root class={styles.root} {...paginationProps}>
+    // @ts-expect-error TODO cssProps is to complex to be typed
+    <ArkPagination.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       {(api) => (
         <>
           <ArkPagination.PrevTrigger class={styles.prevTrigger}>
@@ -51,6 +56,7 @@ export const Pagination = (props: PaginationProps) => {
 
 const ChevronLeftIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Left Icon</title>
     <path
       fill="none"
       stroke="currentColor"
@@ -64,6 +70,7 @@ const ChevronLeftIcon = () => (
 
 const ChevronRightIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Right Icon</title>
     <path
       fill="none"
       stroke="currentColor"
