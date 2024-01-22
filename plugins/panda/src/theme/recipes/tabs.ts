@@ -87,6 +87,8 @@ export const tabs = defineSlotRecipe({
           backgroundColor: 'bg.default',
           boxShadow: 'xs',
           borderRadius: 'l2',
+          // TODO this should be easier to change
+          '--transition-duration': '200ms!',
           height: 'var(--height)',
           width: 'var(--width)',
         },
