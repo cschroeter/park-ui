@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.30.0] - 2024-01-22
+
 ### Added
 
 - Added new `enclosed` variant to the `Tabs` component.
