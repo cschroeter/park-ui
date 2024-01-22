@@ -76,13 +76,11 @@ export const tabs = defineSlotRecipe({
       enclosed: {
         list: {
           borderRadius: 'l3',
+          borderWidth: '1px',
+          borderColor: 'border.subtle',
           backgroundColor: {
-            base: 'gray.3',
+            base: 'gray.a2',
             _dark: 'bg.canvas',
-          },
-          _dark: {
-            borderWidth: '1px',
-            borderColor: 'border.subtle',
           },
         },
         indicator: {

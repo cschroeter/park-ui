@@ -4,6 +4,10 @@
 
 - Added new `enclosed` variant to the `Tabs` component.
 
+### Fixed
+
+- Resolved an issue with the `Card` component where the content would overflow the card.
+
 ## [0.29.0] - 2024-01-19
 
 We are excited to announce that in this release, we have revised several components to feature a closed Component API:
