@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added new `enclosed` variant to the `Tabs` component.
+
 ## [0.29.0] - 2024-01-19
 
 We are excited to announce that in this release, we have revised several components to feature a closed Component API:

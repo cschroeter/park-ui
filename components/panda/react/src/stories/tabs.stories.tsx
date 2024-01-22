@@ -1,4 +1,5 @@
 import type { Meta } from '@storybook/react'
+import { Stack } from 'styled-system/jsx'
 import * as Tabs from '~/components/ui/tabs'
 
 const meta: Meta = {
@@ -8,12 +9,6 @@ const meta: Meta = {
 export default meta
 
 export const Base = () => {
-  const options = [
-    { id: 'react', label: 'React' },
-    { id: 'solid', label: 'Solid' },
-    { id: 'svelte', label: 'Svelte', disabled: true },
-    { id: 'vue', label: 'Vue' },
-  ]
   return (
     <Tabs.Root defaultValue="react">
       <Tabs.List>
@@ -31,3 +26,47 @@ export const Base = () => {
     </Tabs.Root>
   )
 }
+
+export const Sizes = () => {
+  return (
+    <Stack gap="3">
+      <Tabs.Root defaultValue="react" variant="enclosed" size="sm">
+        <Tabs.List>
+          {options.map((option) => (
+            <Tabs.Trigger key={option.id} value={option.id} disabled={option.disabled}>
+              {option.label}
+            </Tabs.Trigger>
+          ))}
+          <Tabs.Indicator />
+        </Tabs.List>
+      </Tabs.Root>
+      <Tabs.Root defaultValue="react" variant="enclosed" size="md">
+        <Tabs.List>
+          {options.map((option) => (
+            <Tabs.Trigger key={option.id} value={option.id} disabled={option.disabled}>
+              {option.label}
+            </Tabs.Trigger>
+          ))}
+          <Tabs.Indicator />
+        </Tabs.List>
+      </Tabs.Root>
+      <Tabs.Root defaultValue="react" variant="enclosed" size="lg">
+        <Tabs.List>
+          {options.map((option) => (
+            <Tabs.Trigger key={option.id} value={option.id} disabled={option.disabled}>
+              {option.label}
+            </Tabs.Trigger>
+          ))}
+          <Tabs.Indicator />
+        </Tabs.List>
+      </Tabs.Root>
+    </Stack>
+  )
+}
+
+const options = [
+  { id: 'react', label: 'React' },
+  { id: 'solid', label: 'Solid' },
+  { id: 'svelte', label: 'Svelte', disabled: true },
+  { id: 'vue', label: 'Vue' },
+]

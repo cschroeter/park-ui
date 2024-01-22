@@ -45,6 +45,7 @@ export const tabs = defineSlotRecipe({
       transitionProperty: 'color, background, border-color',
       transitionTimingFunction: 'default',
       whiteSpace: 'nowrap',
+      zIndex: '1',
       _disabled: {
         color: 'fg.disabled',
         cursor: 'not-allowed',
@@ -72,6 +73,19 @@ export const tabs = defineSlotRecipe({
   },
   variants: {
     variant: {
+      enclosed: {
+        list: {
+          backgroundColor: 'bg.muted',
+          borderRadius: 'l3',
+        },
+        indicator: {
+          background: 'bg.default',
+          boxShadow: 'xs',
+          borderRadius: 'l2',
+          height: 'var(--height)',
+          width: 'var(--width)',
+        },
+      },
       line: {
         list: {
           _horizontal: {
@@ -171,6 +185,60 @@ export const tabs = defineSlotRecipe({
     },
   },
   compoundVariants: [
+    {
+      size: 'sm',
+      variant: 'enclosed',
+      css: {
+        list: {
+          p: '1',
+        },
+        trigger: {
+          h: '8',
+          minW: '8',
+          textStyle: 'xs',
+          px: '3',
+        },
+        content: {
+          p: '3.5',
+        },
+      },
+    },
+    {
+      size: 'md',
+      variant: 'enclosed',
+      css: {
+        list: {
+          p: '1',
+        },
+        trigger: {
+          h: '9',
+          minW: '9',
+          textStyle: 'sm',
+          px: '3.5',
+        },
+        content: {
+          p: '4',
+        },
+      },
+    },
+    {
+      size: 'lg',
+      variant: 'enclosed',
+      css: {
+        list: {
+          p: '1',
+        },
+        trigger: {
+          h: '10',
+          minW: '10',
+          textStyle: 'sm',
+          px: '4',
+        },
+        content: {
+          p: '4.5',
+        },
+      },
+    },
     {
       size: 'sm',
       variant: 'outline',
