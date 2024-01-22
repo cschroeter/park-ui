@@ -22,7 +22,7 @@ export const layout = sva({
       overflow: 'auto',
       position: 'fixed',
       px: { base: '4', md: '6' },
-      py: '8',
+      py: '10',
       top: '16',
       width: '64',
     },
