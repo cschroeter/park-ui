@@ -10,19 +10,17 @@ import { GrayColorPicker } from './gray-color-picker'
 import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
-  isHero?: boolean
-  placement?: 'left' | 'right'
   panda?: JSX.Element
   tailwind?: JSX.Element
 }
 
 export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
-  const { placement = 'left', isHero, panda, tailwind } = props
+  const { panda, tailwind } = props
   const { reset } = useThemeGenerator()
   return (
-    <Drawer.Root variant={placement} lazyMount>
+    <Drawer.Root variant="right" lazyMount>
       <Drawer.Trigger asChild>
-        <Button variant="outline" size={isHero ? { base: 'xl', md: '2xl' } : 'md'}>
+        <Button variant="outline">
           <Settings2Icon />
           Make it yours
         </Button>

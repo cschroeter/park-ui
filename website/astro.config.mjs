@@ -1,7 +1,6 @@
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
-import pandacss from '@pandacss/astro'
 import { defineConfig } from 'astro/config'
 
 const VERCEL_PREVIEW_SITE =
@@ -11,18 +10,11 @@ const VERCEL_PREVIEW_SITE =
 
 export default defineConfig({
   site: VERCEL_PREVIEW_SITE || 'https://park-ui.com',
-  integrations: [mdx(), pandacss(), react(), sitemap()],
+  integrations: [mdx(), react(), sitemap()],
   markdown: {
     syntaxHighlight: false,
   },
   redirects: {
     '/': '/docs/panda/overview/introduction',
-  },
-  vite: {
-    server: {
-      watch: {
-        ignored: ['**/styled-system/**/*'],
-      },
-    },
   },
 })
