@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed a problem where the`enclosed` variant of the `Tabs` component was rendered slightly too big
+
 ## [0.30.0] - 2024-01-22
 
 ### Added

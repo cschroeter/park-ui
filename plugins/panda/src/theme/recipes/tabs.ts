@@ -77,17 +77,23 @@ export const tabs = defineSlotRecipe({
         list: {
           borderRadius: 'l3',
           borderWidth: '1px',
-          borderColor: 'border.subtle',
+          px: '1',
           backgroundColor: {
             base: 'gray.a2',
             _dark: 'bg.canvas',
+          },
+          _horizontal: {
+            alignItems: 'center',
+          },
+          _vertical: {
+            height: 'fit-content!',
+            py: '1',
           },
         },
         indicator: {
           backgroundColor: 'bg.default',
           boxShadow: 'xs',
           borderRadius: 'l2',
-          // TODO this should be easier to change
           '--transition-duration': '200ms!',
           height: 'var(--height)',
           width: 'var(--width)',
@@ -197,12 +203,12 @@ export const tabs = defineSlotRecipe({
       variant: 'enclosed',
       css: {
         list: {
-          p: '1',
+          height: '10',
         },
         trigger: {
           h: '8',
           minW: '8',
-          textStyle: 'xs',
+          textStyle: 'sm',
           px: '3',
         },
         content: {
@@ -215,7 +221,7 @@ export const tabs = defineSlotRecipe({
       variant: 'enclosed',
       css: {
         list: {
-          p: '1',
+          height: '11',
         },
         trigger: {
           h: '9',
@@ -233,7 +239,7 @@ export const tabs = defineSlotRecipe({
       variant: 'enclosed',
       css: {
         list: {
-          p: '1',
+          height: '12',
         },
         trigger: {
           h: '10',
