@@ -15,13 +15,13 @@ export const formLabel = defineRecipe({
         textStyle: 'sm',
       },
       md: {
-        textStyle: 'sm',
+        textStyle: 'md',
       },
       lg: {
-        textStyle: 'sm',
+        textStyle: 'lg',
       },
       xl: {
-        textStyle: 'md',
+        textStyle: 'xl',
       },
     },
   },
