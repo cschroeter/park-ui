@@ -91,7 +91,11 @@ export const tabs = defineSlotRecipe({
           },
         },
         indicator: {
-          backgroundColor: 'bg.default',
+          backgroundColor: {
+            base: 'bg.default',
+            _dark: 'bg.subtle',
+          },
+
           boxShadow: 'xs',
           borderRadius: 'l2',
           '--transition-duration': '200ms!',
