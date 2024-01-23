@@ -5,8 +5,10 @@ import { Button, Drawer, IconButton } from '~/components/ui'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
+import { CSSFrameworkTabs } from './css-framework-tabs'
 import { FontFamilySelect } from './font-family-select'
 import { GrayColorPicker } from './gray-color-picker'
+import { JSFrameworkTabs } from './js-framework-tabs'
 import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
@@ -30,7 +32,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
           <Drawer.Header>
             <Drawer.Title>Make it yours</Drawer.Title>
             <Drawer.Description>
-              Customize the theme and copy the configuration to your project.
+              Pick the style you want and copy the configuration to your project.
             </Drawer.Description>
             <Drawer.CloseTrigger asChild>
               <IconButton
@@ -45,7 +47,9 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
             </Drawer.CloseTrigger>
           </Drawer.Header>
           <Drawer.Body>
-            <Stack flex="1" gap="5">
+            <Stack flex="1" gap="4">
+              <JSFrameworkTabs />
+              <CSSFrameworkTabs />
               <FontFamilySelect />
               <GrayColorPicker />
               <AccentColorPicker />

@@ -9,18 +9,35 @@ import {
 import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
 import { match } from 'ts-pattern'
-import { useThemeStore } from './use-theme-store'
+import { cssFrameworks, jsFrameworks, useThemeStore } from './use-theme-store'
 
 export const useThemeGenerator = () => {
   const currentAccentColor = useThemeStore((state) => state.accentColor)
   const currentGrayColor = useThemeStore((state) => state.grayColor)
   const currentFontFamily = useThemeStore((state) => state.fontFamily)
   const currentBorderRadius = useThemeStore((state) => state.borderRadius)
+  const currentCSSFramework = useThemeStore((state) => state.cssFramework)
+  const currentJSFramework = useThemeStore((state) => state.jsFramework)
 
   const updateAccentColor = useThemeStore((state) => state.setAccentColor)
   const updateGrayColor = useThemeStore((state) => state.setGrayColor)
   const updateFontFamily = useThemeStore((state) => state.setFontFamily)
   const updateBorderRadius = useThemeStore((state) => state.setBorderRadius)
+  const updateCSSFramework = useThemeStore((state) => state.setCSSFramework)
+  const updateJSFramework = useThemeStore((state) => state.setJSFramework)
+
+  const getConfig = () => {
+    const configTemplate = match(currentCSSFramework)
+      .with('panda', () => pandaConfig)
+      .with('tailwind', () => tailwindConfig)
+      .exhaustive()
+
+    return configTemplate
+      .replace('__ACCENT_COLOR__', currentAccentColor)
+      .replace('__GRAY_COLOR__', currentGrayColor)
+      .replace('__BORDER_RADIUS__', currentBorderRadius)
+      .replace('__JS_FRAMEWORK__', currentJSFramework)
+  }
 
   const reset = useThemeStore((state) => state.reset)
 
@@ -43,19 +60,24 @@ export const useThemeGenerator = () => {
   return {
     accentColors,
     borderRadii,
-    fontFamilies,
-    grayColors,
-    pandaConfig,
-    tailwindConfig,
+    cssFrameworks,
     currentAccentColor,
     currentBorderRadius,
+    currentCSSFramework,
     currentFontFamily,
     currentGrayColor,
-    updateAccentColor,
-    updateGrayColor,
-    updateFontFamily,
-    updateBorderRadius,
+    currentJSFramework,
+    fontFamilies,
+    getConfig,
+    grayColors,
+    jsFrameworks,
     reset,
+    updateAccentColor,
+    updateBorderRadius,
+    updateCSSFramework,
+    updateFontFamily,
+    updateGrayColor,
+    updateJSFramework,
   }
 }
 
@@ -205,26 +227,27 @@ export default defineConfig({
     }),
   ],
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
-  jsxFramework: 'react',
+  jsxFramework: '__JS_FRAMEWORK__',
   outdir: 'styled-system',
 })
 `
 
-export const tailwindConfig = `const { parkwindPlugin } = require('@park-ui/tailwind-plugin')
+export const tailwindConfig = `import { parkwindPlugin } from '@park-ui/tailwind-plugin'
+import type { Config } from 'tailwindcss'
 
-module.exports = {
+const config: Config = {
   content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {},
   },
   plugins: [parkwindPlugin],
-
   parkUI: {
     accentColor: '__ACCENT_COLOR__',
     grayColor: '__GRAY_COLOR__',
     borderRadius: '__BORDER_RADIUS__',
   },
-  
   darkMode: ['class'],
 }
+
+export default config
 `

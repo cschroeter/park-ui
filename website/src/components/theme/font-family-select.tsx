@@ -23,8 +23,8 @@ export const FontFamilySelect = () => {
       </Select.Control>
       <Select.Positioner>
         <Select.Content>
-          {fontFamilies.map((fontFamily, id) => (
-            <Select.Item key={id} item={fontFamily}>
+          {fontFamilies.map((fontFamily) => (
+            <Select.Item key={fontFamily.label} item={fontFamily}>
               <Select.ItemText>{fontFamily.label}</Select.ItemText>
               <Select.ItemIndicator>
                 <CheckIcon />
