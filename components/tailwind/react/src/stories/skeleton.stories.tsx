@@ -1,6 +1,5 @@
 import type { Meta } from '@storybook/react'
 import { useState } from 'react'
-import { Box } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Skeleton } from '~/components/ui/skeleton'
 
@@ -22,15 +21,11 @@ export const Controlled = () => {
   return (
     <>
       <Button onClick={() => setHasLoaded(!hasLoaded)}>Toggle</Button>
-      <Skeleton isLoaded={hasLoaded} height="8">
-        <Box height="8">Content</Box>
+      <Skeleton isLoaded={hasLoaded} className="h-8">
+        https://park-ui.com
       </Skeleton>
     </>
   )
 }
 
-export const Loaded = () => (
-  <Skeleton isLoaded>
-    <Box>Is loaded</Box>
-  </Skeleton>
-)
+export const Loaded = () => <Skeleton isLoaded>https://park-ui.com</Skeleton>

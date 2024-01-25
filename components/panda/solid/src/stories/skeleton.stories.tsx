@@ -1,16 +1,36 @@
+import { createSignal } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Skeleton, type SkeletonProps } from '~/components/ui/skeleton'
+import { Box } from 'styled-system/jsx'
+import { Button } from '~/components/ui/button'
+import { Skeleton } from '~/components/ui/skeleton'
 
-const meta: Meta<SkeletonProps> = {
-  title: 'Skeleton',
-  component: Skeleton,
+const meta: Meta = {
+  title: 'Components/Skeleton',
 }
 
 export default meta
 
 export const Base = () => (
-  <Skeleton width={'100px'} height={'20px'}>
-    Label
+  <Skeleton>
+    <div>contents wrapped</div>
+    <div>won't be visible</div>
   </Skeleton>
 )
-export const DontShow = () => <Skeleton loading={false}>Label</Skeleton>
+
+export const Controlled = () => {
+  const [hasLoaded, setHasLoaded] = createSignal(false)
+  return (
+    <>
+      <Button onClick={() => setHasLoaded((x) => !x)}>Toggle</Button>
+      <Skeleton isLoaded={hasLoaded()}>
+        <Box height="8">Content</Box>
+      </Skeleton>
+    </>
+  )
+}
+
+export const Loaded = () => (
+  <Skeleton isLoaded>
+    <Box>Is loaded</Box>
+  </Skeleton>
+)

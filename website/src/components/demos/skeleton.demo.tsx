@@ -1,14 +1,16 @@
-import { HStack, Stack } from 'styled-system/jsx'
+import { Circle, HStack, Stack } from 'styled-system/jsx'
 import { Skeleton, type SkeletonProps } from '~/components/ui/skeleton'
 
 export const Demo = (props: SkeletonProps) => {
   return (
-    <HStack>
-      <Skeleton {...props} width={'64px'} height={'64px'} />
-      <Stack>
-        <Skeleton {...props} width={'200px'} height={'12px'} />
-        <Skeleton {...props} width={'180px'} height={'12px'} />
-        <Skeleton {...props} width={'120px'} height={'12px'} />
+    <HStack width="full">
+      <Skeleton borderRadius="full">
+        <Circle size="20" />
+      </Skeleton>
+      <Stack gap="3.5" width="full">
+        <Skeleton h="4" />
+        <Skeleton h="4" width="80%" />
+        <Skeleton h="4" width="60%" />
       </Stack>
     </HStack>
   )

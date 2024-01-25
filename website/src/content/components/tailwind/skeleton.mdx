@@ -13,6 +13,27 @@ import InstallationGuide from '~/components/installation-guide.astro'
 
 <ComponentPreview />
 
+## Examples
+
+You can use it as a standalone component or wrap it around other components.
+
+```tsx live
+<Skeleton>
+  <div>contents wrapped</div>
+  <div>won't be visible</div>
+</Skeleton>
+```
+
+### Skipping the animation
+
+You can prevent the `Skeleton` from rendering using the `isLoaded` prop.
+
+```tsx live
+<Skeleton isLoaded>
+  <span>https://park-ui.com</span>
+</Skeleton>
+```
+
 ## Installation
 
 <InstallationGuide />

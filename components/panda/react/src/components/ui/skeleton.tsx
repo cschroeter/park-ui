@@ -4,17 +4,23 @@ import { styled, type HTMLStyledProps } from 'styled-system/jsx'
 import { skeleton } from 'styled-system/recipes'
 
 const StyledSkeleton = styled(ark.div, skeleton)
+
 export interface SkeletonProps extends HTMLStyledProps<'div'> {
   children?: ReactNode
   /**
-   * Show loading animation.
-   * @default true
+   *
+   * @default false
    */
-  loading?: boolean
+  isLoaded?: boolean
 }
 
 export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {
-  const { children, loading = true, ...rest } = props
+  const { isLoaded, ...rest } = props
 
-  return loading ? <StyledSkeleton ref={ref} {...rest} /> : children
+  if (isLoaded) {
+    return <styled.div animation="skeleton-in" ref={ref} {...rest} />
+  }
+  return <StyledSkeleton ref={ref} {...rest} />
 })
+
+Skeleton.displayName = 'Skeleton'
