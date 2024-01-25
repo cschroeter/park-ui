@@ -10,8 +10,8 @@
     "@park-ui/tailwind-plugin": "workspace:*",
     "@storybook/addon-essentials": "7.6.10",
     "@storybook/addons": "7.6.10",
-    "lucide-solid": "0.314.0",
-    "solid-js": "1.8.11",
+    "lucide-solid": "0.315.0",
+    "solid-js": "1.8.12",
     "storybook": "7.6.10",
     "storybook-solidjs": "1.0.0-beta.2",
     "storybook-solidjs-vite": "1.0.0-beta.2",
@@ -19,7 +19,7 @@
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3",
     "vite": "5.0.12",
-    "vite-plugin-solid": "2.8.2",
+    "vite-plugin-solid": "2.9.1",
     "vite-tsconfig-paths": "4.3.1"
   }
 }
