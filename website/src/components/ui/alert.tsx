@@ -1,5 +1,6 @@
 import { ark } from '@ark-ui/react/factory'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { alert } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -30,8 +31,8 @@ export {
   Title,
 }
 
-export interface AlertProps extends HTMLStyledProps<typeof Alert> {}
-export interface AlertContentProps extends HTMLStyledProps<typeof AlertContent> {}
-export interface AlertDescriptionProps extends HTMLStyledProps<typeof AlertDescription> {}
-export interface AlertIconProps extends HTMLStyledProps<typeof AlertIcon> {}
-export interface AlertTitleProps extends HTMLStyledProps<typeof AlertTitle> {}
+export interface AlertProps extends ComponentProps<typeof Alert> {}
+export interface AlertContentProps extends ComponentProps<typeof AlertContent> {}
+export interface AlertDescriptionProps extends ComponentProps<typeof AlertDescription> {}
+export interface AlertIconProps extends ComponentProps<typeof AlertIcon> {}
+export interface AlertTitleProps extends ComponentProps<typeof AlertTitle> {}

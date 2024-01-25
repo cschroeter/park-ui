@@ -1,14 +1,14 @@
 {
   "variant": {
-    "options": ["line", "outline"],
+    "options": ["line", "outline", "enclosed"],
     "defaultValue": "line"
-  },
-  "size": {
-    "options": ["sm", "md", "lg"],
-    "defaultValue": "md"
   },
   "orientation": {
     "options": ["horizontal", "vertical"],
     "defaultValue": "horizontal"
+  },
+  "size": {
+    "options": ["sm", "md", "lg"],
+    "defaultValue": "md"
   }
 }

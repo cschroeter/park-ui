@@ -3,8 +3,8 @@ import type { Meta } from '@storybook/react'
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { DatePicker } from '~/components/ui'
 
-const meta: Meta<typeof DatePicker> = {
-  title: 'DatePicker',
+const meta: Meta = {
+  title: 'Components/Date Picker',
 }
 
 export const Default = () => {

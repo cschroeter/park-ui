@@ -1,19 +1,21 @@
 import { Avatar as ArkAvatar, type AvatarProps as ArkAvatarProps } from '@ark-ui/react/avatar'
 import { forwardRef } from 'react'
+import { css, cx } from 'styled-system/css'
 import { avatar, type AvatarVariantProps } from 'styled-system/recipes'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
-export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
+export interface AvatarProps extends Assign<JsxStyleProps, ArkAvatarProps>, AvatarVariantProps {
   name?: string
   src?: string
 }
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
-  const [variantProps, localProps] = avatar.splitVariantProps(props)
-  const { name, src, ...rootProps } = localProps
+  const [variantProps, avatarProps] = avatar.splitVariantProps(props)
+  const { name, src, ...rootProps } = avatarProps
   const styles = avatar(variantProps)
 
   return (
-    <ArkAvatar.Root className={styles.root} {...rootProps}>
+    <ArkAvatar.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
       <ArkAvatar.Fallback className={styles.fallback}>
         {getInitials(name) || <UserIcon />}
       </ArkAvatar.Fallback>
@@ -41,5 +43,6 @@ const getInitials = (name = '') =>
   name
     .split(' ')
     .map((part) => part[0])
+    .splice(0, 2)
     .join('')
     .toUpperCase()

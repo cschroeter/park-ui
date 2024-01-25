@@ -4,32 +4,34 @@ import {
 } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
-  extends Assign<HTMLStyledProps<'div'>, ArkRatingGroupProps>,
+  extends Assign<JsxStyleProps, ArkRatingGroupProps>,
     RatingGroupVariantProps {
   children?: JSX.Element
 }
 
 export const RatingGroup = (props: RatingGroupProps) => {
-  const [variantProps, localProps] = ratingGroup.splitVariantProps(props)
-  const [local, rootProps] = splitProps(localProps, ['children'])
-  const getChildren = children(() => local.children)
+  const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
+  const [cssProps, elementProps] = splitCssProps(ratingGroupProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
+  const getChildren = children(() => localProps.children)
   const styles = ratingGroup(variantProps)
 
   return (
-    <ArkRatingGroup.Root class={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkRatingGroup.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       <Show when={getChildren()}>
-        <ArkRatingGroup.Label class={styles.label}>{local.children}</ArkRatingGroup.Label>
+        <ArkRatingGroup.Label class={styles.label}>{getChildren()}</ArkRatingGroup.Label>
       </Show>
       <ArkRatingGroup.Control class={styles.control}>
         {(api) => (
           <Index each={api().items}>
             {(index) => (
               <ArkRatingGroup.Item class={styles.item} index={index()}>
-                {(api) => <Icon isHalf={api().isHalf} />}
+                {(api) => <StarIcon isHalf={api().isHalf} />}
               </ArkRatingGroup.Item>
             )}
           </Index>
@@ -39,11 +41,11 @@ export const RatingGroup = (props: RatingGroupProps) => {
   )
 }
 
-type IconProps = {
+interface Props {
   isHalf: boolean
 }
 
-const Icon = (props: IconProps) => (
+const StarIcon = (props: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -55,6 +57,7 @@ const Icon = (props: IconProps) => (
     stroke-linecap="round"
     stroke-linejoin="round"
   >
+    <title>Star Icon</title>
     <defs>
       <linearGradient id="half">
         <stop offset="50%" stop-color="var(--colors-color-palette-default)" />

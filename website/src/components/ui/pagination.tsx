@@ -3,18 +3,22 @@ import {
   type PaginationProps as ArkPaginationProps,
 } from '@ark-ui/react/pagination'
 import { forwardRef } from 'react'
+import { cx } from 'styled-system/css'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
-export interface PaginationProps extends ArkPaginationProps, PaginationVariantProps {}
+export interface PaginationProps
+  extends Assign<JsxStyleProps, ArkPaginationProps>,
+    PaginationVariantProps {}
 
-export const Pagination = forwardRef<HTMLDivElement, PaginationProps>((props, ref) => {
-  const [variantProps, localProps] = pagination.splitVariantProps(props)
+export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
+  const [variantProps, rootProps] = pagination.splitVariantProps(props)
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root ref={ref} className={styles.root} {...localProps}>
+    <ArkPagination.Root ref={ref} className={cx(styles.root)} {...rootProps}>
       {({ pages }) => (
         <>
           <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>
@@ -51,9 +55,9 @@ const ChevronLeftIcon = () => (
     <path
       fill="none"
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="m15 18l-6-6l6-6"
     />
   </svg>
@@ -64,9 +68,9 @@ const ChevronRightIcon = () => (
     <path
       fill="none"
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="m9 18l6-6l-6-6"
     />
   </svg>

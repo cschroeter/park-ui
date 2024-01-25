@@ -1,4 +1,57 @@
-import { tv } from 'tailwind-variants'
+import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/solid'
+import { Index, Show, children, splitProps, type JSX } from 'solid-js'
+import { tv, type VariantProps } from 'tailwind-variants'
+
+export interface SliderProps extends ArkSliderProps, SliderVariantProps {
+  children?: JSX.Element
+  marks?: {
+    value: number
+    label?: JSX.Element
+  }[]
+}
+
+export const Slider = (props: SliderProps) => {
+  const [variantProps, sliderProps] = splitProps(props, ['size', 'class'])
+  const [localProps, rootProps] = splitProps(sliderProps, ['marks', 'children'])
+  const getChildren = children(() => localProps.children)
+
+  const { root, control, label, marker, markerGroup, range, thumb, track } =
+    // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
+    styles(variantProps)
+
+  return (
+    <ArkSlider.Root class={root()} {...rootProps}>
+      {(api) => (
+        <>
+          <Show when={getChildren()}>
+            <ArkSlider.Label class={label()}>{getChildren()}</ArkSlider.Label>
+          </Show>
+          <ArkSlider.Control class={control()}>
+            <ArkSlider.Track class={track()}>
+              <ArkSlider.Range class={range()} />
+            </ArkSlider.Track>
+            <Index each={api().value}>
+              {(_, index) => <ArkSlider.Thumb index={index} class={thumb()} />}
+            </Index>
+          </ArkSlider.Control>
+          <Show when={localProps.marks}>
+            <ArkSlider.MarkerGroup class={markerGroup()}>
+              <Index each={localProps.marks}>
+                {(mark) => (
+                  <ArkSlider.Marker value={mark().value} class={marker()}>
+                    {mark().label}
+                  </ArkSlider.Marker>
+                )}
+              </Index>
+            </ArkSlider.MarkerGroup>
+          </Show>
+        </>
+      )}
+    </ArkSlider.Root>
+  )
+}
+
+type SliderVariantProps = VariantProps<typeof styles>
 
 const styles = tv({
   base: 'slider',

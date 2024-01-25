@@ -1,0 +1,46 @@
+import {
+  Progress as ArkProgress,
+  type ProgressProps as ArkProgressProps,
+} from '@ark-ui/react/progress'
+import { forwardRef, type ReactNode } from 'react'
+import { css, cx } from 'styled-system/css'
+import { progress, type ProgressVariantProps } from 'styled-system/recipes'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
+
+export interface ProgressProps
+  extends Assign<JsxStyleProps, ArkProgressProps>,
+    ProgressVariantProps {
+  children?: ReactNode
+  /**
+   * The type of progress to render.
+   * @default linear
+   */
+  type?: 'linear' | 'circular'
+}
+
+export const Progress = forwardRef<HTMLDivElement, ProgressProps>((props, ref) => {
+  const [variantProps, progressProps] = progress.splitVariantProps(props)
+  const { children, type = 'linear', ...rootProps } = progressProps
+  const styles = progress(variantProps)
+
+  return (
+    <ArkProgress.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
+      {children && <ArkProgress.Label className={styles.label}>{children}</ArkProgress.Label>}
+      {type === 'linear' && (
+        <ArkProgress.Track className={styles.track}>
+          <ArkProgress.Range className={styles.range} />
+        </ArkProgress.Track>
+      )}
+      {type === 'circular' && (
+        <ArkProgress.Circle className={styles.circle}>
+          <ArkProgress.CircleTrack className={styles.circleTrack} />
+          <ArkProgress.CircleRange className={styles.circleRange} />
+          <ArkProgress.ValueText className={styles.valueText} />
+        </ArkProgress.Circle>
+      )}
+      <ArkProgress.ValueText className={styles.valueText} />
+    </ArkProgress.Root>
+  )
+})
+
+Progress.displayName = 'Progress'

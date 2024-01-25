@@ -1,9 +1,8 @@
 import type { Meta } from 'storybook-solidjs'
-import { RatingGroup, type RatingGroupProps } from '~/components/ui/rating-group'
+import { RatingGroup } from '~/components/ui/rating-group'
 
-const meta: Meta<RatingGroupProps> = {
-  title: 'RatingGroup',
-  component: RatingGroup,
+const meta: Meta = {
+  title: 'Components/RatingGroup',
 }
 
 export default meta

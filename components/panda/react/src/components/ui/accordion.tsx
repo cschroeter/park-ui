@@ -1,5 +1,6 @@
 import { Accordion as ArkAccordion } from '@ark-ui/react/accordion'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { accordion } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -30,9 +31,9 @@ export {
   Root,
 }
 
-export interface AccordionProps extends HTMLStyledProps<typeof Accordion> {}
-export interface AccordionItemProps extends HTMLStyledProps<typeof AccordionItem> {}
-export interface AccordionItemContentProps extends HTMLStyledProps<typeof AccordionItemContent> {}
+export interface AccordionProps extends ComponentProps<typeof Accordion> {}
+export interface AccordionItemProps extends ComponentProps<typeof AccordionItem> {}
+export interface AccordionItemContentProps extends ComponentProps<typeof AccordionItemContent> {}
 export interface AccordionItemIndicatorProps
-  extends HTMLStyledProps<typeof AccordionItemIndicator> {}
-export interface AccordionItemTriggerProps extends HTMLStyledProps<typeof AccordionItemTrigger> {}
+  extends ComponentProps<typeof AccordionItemIndicator> {}
+export interface AccordionItemTriggerProps extends ComponentProps<typeof AccordionItemTrigger> {}

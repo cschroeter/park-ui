@@ -26,16 +26,27 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const AccordionRoot = withProvider(ArkAccordion.Root, 'root')
-export const AccordionItem = withContext(ArkAccordion.Item, 'item')
-export const AccordionItemContent = withContext(ArkAccordion.ItemContent, 'itemContent')
-export const AccordionItemIndicator = withContext(ArkAccordion.ItemIndicator, 'itemIndicator')
-export const AccordionItemTrigger = withContext(ArkAccordion.ItemTrigger, 'itemTrigger')
+const Accordion = withProvider(ArkAccordion.Root, 'root')
+const AccordionItem = withContext(ArkAccordion.Item, 'item')
+const AccordionItemContent = withContext(ArkAccordion.ItemContent, 'itemContent')
+const AccordionItemIndicator = withContext(ArkAccordion.ItemIndicator, 'itemIndicator')
+const AccordionItemTrigger = withContext(ArkAccordion.ItemTrigger, 'itemTrigger')
 
-export const Accordion = Object.assign(AccordionRoot, {
-  Root: AccordionRoot,
-  Item: AccordionItem,
-  ItemContent: AccordionItemContent,
-  ItemIndicator: AccordionItemIndicator,
-  ItemTrigger: AccordionItemTrigger,
-})
+const Root = Accordion
+const Item = AccordionItem
+const ItemContent = AccordionItemContent
+const ItemIndicator = AccordionItemIndicator
+const ItemTrigger = AccordionItemTrigger
+
+export {
+  Accordion,
+  AccordionItem,
+  AccordionItemContent,
+  AccordionItemIndicator,
+  AccordionItemTrigger,
+  Item,
+  ItemContent,
+  ItemIndicator,
+  ItemTrigger,
+  Root,
+}

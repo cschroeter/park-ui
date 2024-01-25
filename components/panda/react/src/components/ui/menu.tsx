@@ -1,5 +1,6 @@
 import { Menu as ArkMenu } from '@ark-ui/react/menu'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { menu } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -62,16 +63,16 @@ export {
   TriggerItem,
 }
 
-export interface MenuProps extends HTMLStyledProps<typeof Menu> {}
-export interface MenuArrowProps extends HTMLStyledProps<typeof MenuArrow> {}
-export interface MenuArrowTipProps extends HTMLStyledProps<typeof MenuArrowTip> {}
-export interface MenuContentProps extends HTMLStyledProps<typeof MenuContent> {}
-export interface MenuContextTriggerProps extends HTMLStyledProps<typeof MenuContextTrigger> {}
-export interface MenuItemProps extends HTMLStyledProps<typeof MenuItem> {}
-export interface MenuItemGroupProps extends HTMLStyledProps<typeof MenuItemGroup> {}
-export interface MenuItemGroupLabelProps extends HTMLStyledProps<typeof MenuItemGroupLabel> {}
-export interface MenuOptionItemProps extends HTMLStyledProps<typeof MenuOptionItem> {}
-export interface MenuPositionerProps extends HTMLStyledProps<typeof MenuPositioner> {}
-export interface MenuSeparatorProps extends HTMLStyledProps<typeof MenuSeparator> {}
-export interface MenuTriggerProps extends HTMLStyledProps<typeof MenuTrigger> {}
-export interface MenuTriggerItemProps extends HTMLStyledProps<typeof MenuTriggerItem> {}
+export interface MenuProps extends ComponentProps<typeof Menu> {}
+export interface MenuArrowProps extends ComponentProps<typeof MenuArrow> {}
+export interface MenuArrowTipProps extends ComponentProps<typeof MenuArrowTip> {}
+export interface MenuContentProps extends ComponentProps<typeof MenuContent> {}
+export interface MenuContextTriggerProps extends ComponentProps<typeof MenuContextTrigger> {}
+export interface MenuItemProps extends ComponentProps<typeof MenuItem> {}
+export interface MenuItemGroupProps extends ComponentProps<typeof MenuItemGroup> {}
+export interface MenuItemGroupLabelProps extends ComponentProps<typeof MenuItemGroupLabel> {}
+export interface MenuOptionItemProps extends ComponentProps<typeof MenuOptionItem> {}
+export interface MenuPositionerProps extends ComponentProps<typeof MenuPositioner> {}
+export interface MenuSeparatorProps extends ComponentProps<typeof MenuSeparator> {}
+export interface MenuTriggerProps extends ComponentProps<typeof MenuTrigger> {}
+export interface MenuTriggerItemProps extends ComponentProps<typeof MenuTriggerItem> {}

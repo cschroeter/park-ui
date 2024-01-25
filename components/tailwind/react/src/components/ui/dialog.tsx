@@ -17,22 +17,39 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const DialogRoot = withProvider(ArkDialog.Root)
-export const DialogBackdrop = withContext(ArkDialog.Backdrop, 'backdrop')
-export const DialogCloseTrigger = withContext(ArkDialog.CloseTrigger, 'closeTrigger')
-export const DialogContent = withContext(ArkDialog.Content, 'content')
-export const DialogDescription = withContext(ArkDialog.Description, 'description')
-export const DialogPositioner = withContext(ArkDialog.Positioner, 'positioner')
-export const DialogTitle = withContext(ArkDialog.Title, 'title')
-export const DialogTrigger = withContext(ArkDialog.Trigger, 'trigger')
+const Dialog = withProvider(ArkDialog.Root)
+const DialogBackdrop = withContext(ArkDialog.Backdrop, 'backdrop')
+const DialogCloseTrigger = withContext(ArkDialog.CloseTrigger, 'closeTrigger')
+const DialogContent = withContext(ArkDialog.Content, 'content')
+const DialogDescription = withContext(ArkDialog.Description, 'description')
+const DialogPositioner = withContext(ArkDialog.Positioner, 'positioner')
+const DialogTitle = withContext(ArkDialog.Title, 'title')
+const DialogTrigger = withContext(ArkDialog.Trigger, 'trigger')
 
-export const Dialog = Object.assign(DialogRoot, {
-  Root: DialogRoot,
-  Backdrop: DialogBackdrop,
-  CloseTrigger: DialogCloseTrigger,
-  Content: DialogContent,
-  Description: DialogDescription,
-  Positioner: DialogPositioner,
-  Title: DialogTitle,
-  Trigger: DialogTrigger,
-})
+const Root = Dialog
+const Backdrop = DialogBackdrop
+const CloseTrigger = DialogCloseTrigger
+const Content = DialogContent
+const Description = DialogDescription
+const Positioner = DialogPositioner
+const Title = DialogTitle
+const Trigger = DialogTrigger
+
+export {
+  Backdrop,
+  CloseTrigger,
+  Content,
+  Description,
+  Dialog,
+  DialogBackdrop,
+  DialogCloseTrigger,
+  DialogContent,
+  DialogDescription,
+  DialogPositioner,
+  DialogTitle,
+  DialogTrigger,
+  Positioner,
+  Root,
+  Title,
+  Trigger,
+}

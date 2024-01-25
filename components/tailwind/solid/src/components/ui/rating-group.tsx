@@ -1,4 +1,43 @@
-import { tv } from 'tailwind-variants'
+import {
+  RatingGroup as ArkRatingGroup,
+  type RatingGroupProps as ArkRatingGroupProps,
+} from '@ark-ui/solid'
+import { Index, Show, children, splitProps, type JSX } from 'solid-js'
+import { tv, type VariantProps } from 'tailwind-variants'
+
+export interface RatingGroupProps extends ArkRatingGroupProps, RatingGroupVariantProps {
+  children?: JSX.Element
+}
+
+export const RatingGroup = (props: RatingGroupProps) => {
+  const [variantProps, ratingGroupProps] = splitProps(props, ['size', 'class'])
+  const [localProps, rootProps] = splitProps(ratingGroupProps, ['children'])
+  const getChildren = children(() => localProps.children)
+
+  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
+  const { root, control, label, item } = styles(variantProps)
+
+  return (
+    <ArkRatingGroup.Root class={root()} {...rootProps}>
+      <Show when={getChildren()}>
+        <ArkRatingGroup.Label class={label()}>{getChildren()}</ArkRatingGroup.Label>
+      </Show>
+      <ArkRatingGroup.Control class={control()}>
+        {(api) => (
+          <Index each={api().items}>
+            {(index) => (
+              <ArkRatingGroup.Item class={item()} index={index()}>
+                {(api) => <StarIcon isHalf={api().isHalf} />}
+              </ArkRatingGroup.Item>
+            )}
+          </Index>
+        )}
+      </ArkRatingGroup.Control>
+    </ArkRatingGroup.Root>
+  )
+}
+
+type RatingGroupVariantProps = VariantProps<typeof styles>
 
 const styles = tv({
   base: 'ratingGroup',
@@ -32,3 +71,32 @@ const styles = tv({
     },
   },
 })
+
+interface Props {
+  isHalf: boolean
+}
+
+const StarIcon = (props: Props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="inherit"
+    stroke="inherit"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <defs>
+      <linearGradient id="half">
+        <stop offset="50%" stop-color="var(--colors-color-palette-default)" />
+        <stop offset="50%" stop-color="var(--colors-bg-emphasized)" />
+      </linearGradient>
+    </defs>
+    <polygon
+      fill={props.isHalf ? 'url(#half)' : 'inherit'}
+      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+    />
+  </svg>
+)

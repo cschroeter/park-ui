@@ -34,27 +34,43 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const TagsInputRoot = withProvider(ArkTagsInput.Root, 'root')
-export const TagsInputClearTrigger = withContext(ArkTagsInput.ClearTrigger, 'clearTrigger')
-export const TagsInputControl = withContext(ArkTagsInput.Control, 'control')
-export const TagsInputInput = withContext(ArkTagsInput.Input, 'input')
-export const TagsInputItem = withContext(ArkTagsInput.Item, 'item')
-export const TagsInputItemDeleteTrigger = withContext(
-  ArkTagsInput.ItemDeleteTrigger,
-  'itemDeleteTrigger',
-)
-export const TagsInputItemInput = withContext(ArkTagsInput.ItemInput, 'itemInput')
-export const TagsInputItemText = withContext(ArkTagsInput.ItemText, 'itemText')
-export const TagsInputLabel = withContext(ArkTagsInput.Label, 'label')
+const TagsInput = withProvider(ArkTagsInput.Root, 'root')
+const TagsInputClearTrigger = withContext(ArkTagsInput.ClearTrigger, 'clearTrigger')
+const TagsInputControl = withContext(ArkTagsInput.Control, 'control')
+const TagsInputInput = withContext(ArkTagsInput.Input, 'input')
+const TagsInputItem = withContext(ArkTagsInput.Item, 'item')
+const TagsInputItemDeleteTrigger = withContext(ArkTagsInput.ItemDeleteTrigger, 'itemDeleteTrigger')
+const TagsInputItemInput = withContext(ArkTagsInput.ItemInput, 'itemInput')
+const TagsInputItemText = withContext(ArkTagsInput.ItemText, 'itemText')
+const TagsInputLabel = withContext(ArkTagsInput.Label, 'label')
 
-export const TagsInput = Object.assign(TagsInputRoot, {
-  Root: TagsInputRoot,
-  ClearTrigger: TagsInputClearTrigger,
-  Control: TagsInputControl,
-  Input: TagsInputInput,
-  Item: TagsInputItem,
-  ItemDeleteTrigger: TagsInputItemDeleteTrigger,
-  ItemInput: TagsInputItemInput,
-  ItemText: TagsInputItemText,
-  Label: TagsInputLabel,
-})
+const Root = TagsInput
+const ClearTrigger = TagsInputClearTrigger
+const Control = TagsInputControl
+const Input = TagsInputInput
+const Item = TagsInputItem
+const ItemDeleteTrigger = TagsInputItemDeleteTrigger
+const ItemInput = TagsInputItemInput
+const ItemText = TagsInputItemText
+const Label = TagsInputLabel
+
+export {
+  ClearTrigger,
+  Control,
+  Input,
+  Item,
+  ItemDeleteTrigger,
+  ItemInput,
+  ItemText,
+  Label,
+  Root,
+  TagsInput,
+  TagsInputClearTrigger,
+  TagsInputControl,
+  TagsInputInput,
+  TagsInputItem,
+  TagsInputItemDeleteTrigger,
+  TagsInputItemInput,
+  TagsInputItemText,
+  TagsInputLabel,
+}

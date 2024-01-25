@@ -1,17 +1,12 @@
 import type { Meta } from 'storybook-solidjs'
-import { Switch, type SwitchProps } from '~/components/ui/switch'
+import { Switch } from '~/components/ui/switch'
 
-const meta: Meta<SwitchProps> = {
-  title: 'Switch',
-  component: Switch,
+const meta: Meta = {
+  title: 'Components/Switch',
 }
 
 export default meta
 
-export const Base = () => <Switch>Label</Switch>
-export const DefaultChecked = () => <Switch checked>Label</Switch>
-export const ColorPalette = () => (
-  <Switch colorPalette="red" checked>
-    Label
-  </Switch>
-)
+export const Base = () => <Switch class="foo">Label</Switch>
+export const Checked = () => <Switch checked>Label</Switch>
+export const ColorPalette = () => <Switch colorPalette="red">Label</Switch>

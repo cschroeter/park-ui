@@ -1,6 +1,7 @@
 import { Dialog as ArkDrawer } from '@ark-ui/react/dialog'
 import { ark } from '@ark-ui/react/factory'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { drawer } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -55,14 +56,14 @@ export {
   Trigger,
 }
 
-export interface DrawerProps extends HTMLStyledProps<typeof Drawer> {}
-export interface DrawerBackdropProps extends HTMLStyledProps<typeof DrawerBackdrop> {}
-export interface DrawerBodyProps extends HTMLStyledProps<typeof DrawerBody> {}
-export interface DrawerCloseTriggerProps extends HTMLStyledProps<typeof DrawerCloseTrigger> {}
-export interface DrawerContentProps extends HTMLStyledProps<typeof DrawerContent> {}
-export interface DrawerDescriptionProps extends HTMLStyledProps<typeof DrawerDescription> {}
-export interface DrawerFooterProps extends HTMLStyledProps<typeof DrawerFooter> {}
-export interface DrawerHeaderProps extends HTMLStyledProps<typeof DrawerHeader> {}
-export interface DrawerPositionerProps extends HTMLStyledProps<typeof DrawerPositioner> {}
-export interface DrawerTitleProps extends HTMLStyledProps<typeof DrawerTitle> {}
-export interface DrawerTriggerProps extends HTMLStyledProps<typeof DrawerTrigger> {}
+export interface DrawerProps extends ComponentProps<typeof Drawer> {}
+export interface DrawerBackdropProps extends ComponentProps<typeof DrawerBackdrop> {}
+export interface DrawerBodyProps extends ComponentProps<typeof DrawerBody> {}
+export interface DrawerCloseTriggerProps extends ComponentProps<typeof DrawerCloseTrigger> {}
+export interface DrawerContentProps extends ComponentProps<typeof DrawerContent> {}
+export interface DrawerDescriptionProps extends ComponentProps<typeof DrawerDescription> {}
+export interface DrawerFooterProps extends ComponentProps<typeof DrawerFooter> {}
+export interface DrawerHeaderProps extends ComponentProps<typeof DrawerHeader> {}
+export interface DrawerPositionerProps extends ComponentProps<typeof DrawerPositioner> {}
+export interface DrawerTitleProps extends ComponentProps<typeof DrawerTitle> {}
+export interface DrawerTriggerProps extends ComponentProps<typeof DrawerTrigger> {}

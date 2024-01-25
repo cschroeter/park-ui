@@ -1,5 +1,6 @@
 import { Splitter as ArkSplitter } from '@ark-ui/react/splitter'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { splitter } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,6 +16,6 @@ const ResizeTrigger = SplitterResizeTrigger
 
 export { Panel, ResizeTrigger, Root, Splitter, SplitterPanel, SplitterResizeTrigger }
 
-export interface SplitterProps extends HTMLStyledProps<typeof Splitter> {}
-export interface SplitterPanelProps extends HTMLStyledProps<typeof SplitterPanel> {}
-export interface SplitterResizeTriggerProps extends HTMLStyledProps<typeof SplitterResizeTrigger> {}
+export interface SplitterProps extends ComponentProps<typeof Splitter> {}
+export interface SplitterPanelProps extends ComponentProps<typeof SplitterPanel> {}
+export interface SplitterResizeTriggerProps extends ComponentProps<typeof SplitterResizeTrigger> {}

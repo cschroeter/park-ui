@@ -1,44 +1,68 @@
 import { Popover as ArkPopover } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { popover } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(popover)
 
-export const PopoverRoot = withProvider(ArkPopover.Root)
-export const PopoverAnchor = withContext(styled(ArkPopover.Anchor), 'anchor')
-export const PopoverArrow = withContext(styled(ArkPopover.Arrow), 'arrow')
-export const PopoverArrowTip = withContext(styled(ArkPopover.ArrowTip), 'arrowTip')
-export const PopoverCloseTrigger = withContext(styled(ArkPopover.CloseTrigger), 'closeTrigger')
-export const PopoverContent = withContext(styled(ArkPopover.Content), 'content')
-export const PopoverDescription = withContext(styled(ArkPopover.Description), 'description')
-export const PopoverIndicator = withContext(styled(ArkPopover.Indicator), 'indicator')
-export const PopoverPositioner = withContext(styled(ArkPopover.Positioner), 'positioner')
-export const PopoverTitle = withContext(styled(ArkPopover.Title), 'title')
-export const PopoverTrigger = withContext(styled(ArkPopover.Trigger), 'trigger')
+const Popover = withProvider(ArkPopover.Root)
+const PopoverAnchor = withContext(styled(ArkPopover.Anchor), 'anchor')
+const PopoverArrow = withContext(styled(ArkPopover.Arrow), 'arrow')
+const PopoverArrowTip = withContext(styled(ArkPopover.ArrowTip), 'arrowTip')
+const PopoverCloseTrigger = withContext(styled(ArkPopover.CloseTrigger), 'closeTrigger')
+const PopoverContent = withContext(styled(ArkPopover.Content), 'content')
+const PopoverDescription = withContext(styled(ArkPopover.Description), 'description')
+const PopoverIndicator = withContext(styled(ArkPopover.Indicator), 'indicator')
+const PopoverPositioner = withContext(styled(ArkPopover.Positioner), 'positioner')
+const PopoverTitle = withContext(styled(ArkPopover.Title), 'title')
+const PopoverTrigger = withContext(styled(ArkPopover.Trigger), 'trigger')
 
-export const Popover = Object.assign(PopoverRoot, {
-  Root: PopoverRoot,
-  Anchor: PopoverAnchor,
-  Arrow: PopoverArrow,
-  ArrowTip: PopoverArrowTip,
-  CloseTrigger: PopoverCloseTrigger,
-  Content: PopoverContent,
-  Description: PopoverDescription,
-  Indicator: PopoverIndicator,
-  Positioner: PopoverPositioner,
-  Title: PopoverTitle,
-  Trigger: PopoverTrigger,
-})
+const Root = Popover
+const Anchor = PopoverAnchor
+const Arrow = PopoverArrow
+const ArrowTip = PopoverArrowTip
+const CloseTrigger = PopoverCloseTrigger
+const Content = PopoverContent
+const Description = PopoverDescription
+const Indicator = PopoverIndicator
+const Positioner = PopoverPositioner
+const Title = PopoverTitle
+const Trigger = PopoverTrigger
 
-export type PopoverProps = typeof PopoverRoot
-export type PopoverAnchorProps = typeof PopoverAnchor
-export type PopoverArrowProps = typeof PopoverArrow
-export type PopoverArrowTipProps = typeof PopoverArrowTip
-export type PopoverCloseTriggerProps = typeof PopoverCloseTrigger
-export type PopoverContentProps = typeof PopoverContent
-export type PopoverDescriptionProps = typeof PopoverDescription
-export type PopoverIndicatorProps = typeof PopoverIndicator
-export type PopoverPositionerProps = typeof PopoverPositioner
-export type PopoverTitleProps = typeof PopoverTitle
-export type PopoverTriggerProps = typeof PopoverTrigger
+export {
+  Anchor,
+  Arrow,
+  ArrowTip,
+  CloseTrigger,
+  Content,
+  Description,
+  Indicator,
+  Popover,
+  PopoverAnchor,
+  PopoverArrow,
+  PopoverArrowTip,
+  PopoverCloseTrigger,
+  PopoverContent,
+  PopoverDescription,
+  PopoverIndicator,
+  PopoverPositioner,
+  PopoverTitle,
+  PopoverTrigger,
+  Positioner,
+  Root,
+  Title,
+  Trigger,
+}
+
+export interface PopoverProps extends ComponentProps<typeof Popover> {}
+export interface PopoverAnchorProps extends ComponentProps<typeof PopoverAnchor> {}
+export interface PopoverArrowProps extends ComponentProps<typeof PopoverArrow> {}
+export interface PopoverArrowTipProps extends ComponentProps<typeof PopoverArrowTip> {}
+export interface PopoverCloseTriggerProps extends ComponentProps<typeof PopoverCloseTrigger> {}
+export interface PopoverContentProps extends ComponentProps<typeof PopoverContent> {}
+export interface PopoverDescriptionProps extends ComponentProps<typeof PopoverDescription> {}
+export interface PopoverIndicatorProps extends ComponentProps<typeof PopoverIndicator> {}
+export interface PopoverPositionerProps extends ComponentProps<typeof PopoverPositioner> {}
+export interface PopoverTitleProps extends ComponentProps<typeof PopoverTitle> {}
+export interface PopoverTriggerProps extends ComponentProps<typeof PopoverTrigger> {}

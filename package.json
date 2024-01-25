@@ -14,15 +14,17 @@
     "panda:solid": "pnpm --filter=@park-ui/panda-solid-components",
     "tailwind:react": "pnpm --filter=@park-ui/tailwind-react-components",
     "tailwind:solid": "pnpm --filter=@park-ui/tailwind-solid-components",
-    "chakra:react": "pnpm --filter=@park-ui/chakra-react-components"
+    "chakra:react": "pnpm --filter=@park-ui/chakra-react-components",
+    "ci:typecheck": "pnpm run -r typecheck"
   },
   "dependencies": {
-    "@commitlint/cli": "18.4.4",
-    "@commitlint/config-conventional": "18.4.4",
+    "@biomejs/biome": "1.5.3",
+    "@commitlint/cli": "18.5.0",
+    "@commitlint/config-conventional": "18.5.0",
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
-    "prettier": "3.2.1",
-    "prettier-plugin-astro": "0.12.3",
+    "prettier": "3.2.4",
+    "prettier-plugin-astro": "0.13.0",
     "prettier-plugin-organize-imports": "3.2.4"
   },
   "commitlint": {
@@ -34,5 +36,6 @@
     "**/*.{js,jsx,ts,tsx,json}": [
       "prettier --plugin prettier-plugin-organize-imports --write"
     ]
-  }
+  },
+  "packageManager": "pnpm@8.14.1"
 }

@@ -5,7 +5,6 @@ category: component
 description: Allows users to rate items using a set of icons.
 ark:
   link: https://ark-ui.com/docs/components/rating-group
-label: Updated
 ---
 
 import ComponentPreview from '~/components/component-preview.astro'
@@ -22,7 +21,9 @@ import InstallationGuide from '~/components/installation-guide.astro'
 Use the `colorPalette` prop to change the color of the rating group.
 
 ```tsx live
-<RatingGroup colorPalette="red" value={3}>Label</RatingGroup>
+<RatingGroup colorPalette="red" value={3}>
+  Label
+</RatingGroup>
 ```
 
 ### Rating count
@@ -38,7 +39,9 @@ Use the `count` prop to render a specific number of stars.
 Use the `allowHalf` prop to enable half star ratings.
 
 ```tsx live
-<RatingGroup value={3.5} allowHalf>Label</RatingGroup>
+<RatingGroup value={3.5} allowHalf>
+  Label
+</RatingGroup>
 ```
 
 ## Installation

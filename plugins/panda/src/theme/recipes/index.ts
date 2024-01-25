@@ -27,6 +27,7 @@ import { numberInput } from './number-input'
 import { pagination } from './pagination'
 import { pinInput } from './pin-input'
 import { popover } from './popover'
+import { progress } from './progress'
 import { radioButtonGroup } from './radio-button-group'
 import { radioGroup } from './radio-group'
 import { ratingGroup } from './rating-group'
@@ -79,6 +80,7 @@ export const slotRecipes = {
   pagination,
   pinInput,
   popover,
+  progress,
   radioButtonGroup,
   radioGroup,
   ratingGroup,

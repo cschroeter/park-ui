@@ -5,7 +5,7 @@ type As = 'p' | 'span' | 'div' | 'label'
 
 export type TextProps = {
   as?: As
-} & HTMLStyledProps<any>
+} & HTMLStyledProps<As>
 
 export const Text = (props: TextProps) => {
   const mergedProps = mergeProps({ as: 'p' }, props)

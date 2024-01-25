@@ -3,7 +3,6 @@
 {{/each}}
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
-import { styled } from '~/lib/styled'
 
 const styles = tv({{{tvConfig}}})
 const { withProvider, withContext } = createStyleContext(styles)
@@ -11,21 +10,26 @@ const { withProvider, withContext } = createStyleContext(styles)
 {{#each parts}}
 {{#if (eq @key "Root")}}
 {{#if this.slot}}
-export const {{this.name}}Root = withProvider({{this.component}}, '{{this.slot}}')
+const {{this.name}} = withProvider({{this.component}}, '{{this.slot}}')
 {{else}}
-export const {{this.name}}Root = withProvider({{this.component}})
+const {{this.name}} = withProvider({{this.component}})
 {{/if}} 
 {{else}}
-export const {{this.name}} = withContext({{this.component}}, '{{this.slot}}')
+const {{this.name}} = withContext({{this.component}}, '{{this.slot}}')
 {{/if}}
 {{/each}}
 
-export const {{name}} = Object.assign({{name}}Root, {
 {{#each parts}}
- {{#if (eq @key "Root")}}
-  {{@key}}: {{this.name}}Root,
-  {{else}}
-  {{@key}}: {{this.name}},
-  {{/if}}
+{{#if (eq @key "Root")}}
+const Root = {{../name}}
+{{else}}
+const {{@key}} = {{this.name}}
+{{/if}}
 {{/each}}
-})
+
+export {
+  {{#each parts}}
+  {{this.name}},
+  {{@key}}
+  {{/each}}
+}

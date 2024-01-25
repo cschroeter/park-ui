@@ -5,12 +5,11 @@ import {
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
-import type { HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
-  extends ArkRatingGroupProps,
-    RatingGroupVariantProps,
-    Omit<HTMLStyledProps<'div'>, 'defaultValue' | 'content' | 'color' | 'dir' | 'translate'> {
+  extends Assign<JsxStyleProps, ArkRatingGroupProps>,
+    RatingGroupVariantProps {
   children?: ReactNode
 }
 
@@ -55,8 +54,8 @@ const Icon = (props: IconProps) => (
   >
     <defs>
       <linearGradient id="half">
-        <stop offset="50%" stopColor="var(--colors-color-palette-default)" />
-        <stop offset="50%" stopColor="var(--colors-bg-emphasized)" />
+        <stop offset="50%" stop-color="var(--colors-color-palette-default)" />
+        <stop offset="50%" stop-color="var(--colors-bg-emphasized)" />
       </linearGradient>
     </defs>
     <polygon

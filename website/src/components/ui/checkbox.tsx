@@ -5,18 +5,17 @@ import {
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
 import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
-import type { HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface CheckboxProps
-  extends ArkCheckboxProps,
-    CheckboxVariantProps,
-    Omit<HTMLStyledProps<'label'>, 'defaultChecked' | 'dir' | 'translate' | 'content' | 'color'> {
+  extends Assign<JsxStyleProps, ArkCheckboxProps>,
+    CheckboxVariantProps {
   children?: ReactNode
 }
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
-  const [variantProps, localProps] = checkbox.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [variantProps, checkboxProps] = checkbox.splitVariantProps(props)
+  const { children, ...rootProps } = checkboxProps
   const styles = checkbox(variantProps)
 
   return (

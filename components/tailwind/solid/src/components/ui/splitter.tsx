@@ -13,12 +13,12 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const SplitterRoot = withProvider(ArkSplitter.Root, 'root')
-export const SplitterPanel = withContext(ArkSplitter.Panel, 'panel')
-export const SplitterResizeTrigger = withContext(ArkSplitter.ResizeTrigger, 'resizeTrigger')
+const Splitter = withProvider(ArkSplitter.Root, 'root')
+const SplitterPanel = withContext(ArkSplitter.Panel, 'panel')
+const SplitterResizeTrigger = withContext(ArkSplitter.ResizeTrigger, 'resizeTrigger')
 
-export const Splitter = Object.assign(SplitterRoot, {
-  Root: SplitterRoot,
-  Panel: SplitterPanel,
-  ResizeTrigger: SplitterResizeTrigger,
-})
+const Root = Splitter
+const Panel = SplitterPanel
+const ResizeTrigger = SplitterResizeTrigger
+
+export { Panel, ResizeTrigger, Root, Splitter, SplitterPanel, SplitterResizeTrigger }

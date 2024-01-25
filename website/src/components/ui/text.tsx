@@ -7,8 +7,8 @@ export type TextProps = {
 } & HTMLStyledProps<As>
 
 export const Text = (props: TextProps) => {
-  const { as = 'p', ...rest } = props
-  const Component = styled(as)
+  const { as = 'p', ...localProps } = props
+  const Dynamic = styled(as)
 
-  return <Component {...rest} />
+  return <Dynamic {...localProps} />
 }

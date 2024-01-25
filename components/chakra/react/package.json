@@ -2,31 +2,32 @@
   "name": "@park-ui/chakra-react-components",
   "private": true,
   "scripts": {
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/react": "1.2.1",
+    "@ark-ui/react": "1.3.0",
     "@chakra-ui/react": "2.8.2",
     "@chakra-ui/system": "2.6.2",
     "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
     "@park-ui/chakra-theme": "workspace:*",
-    "@storybook/addon-essentials": "7.6.8",
-    "@storybook/addons": "7.6.8",
-    "@storybook/api": "7.6.8",
-    "@storybook/components": "7.6.8",
-    "@storybook/react": "7.6.8",
-    "@storybook/react-vite": "7.6.8",
-    "@types/node": "20.11.0",
-    "@types/react": "18.2.47",
+    "@storybook/addon-essentials": "7.6.10",
+    "@storybook/addons": "7.6.10",
+    "@storybook/api": "7.6.10",
+    "@storybook/components": "7.6.10",
+    "@storybook/react": "7.6.10",
+    "@storybook/react-vite": "7.6.10",
+    "@types/node": "20.11.6",
+    "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
-    "framer-motion": "10.18.0",
-    "lucide-react": "0.309.0",
+    "framer-motion": "11.0.3",
+    "lucide-react": "0.315.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.6.8",
+    "storybook": "7.6.10",
     "typescript": "5.3.3",
-    "vite": "5.0.11",
-    "vite-tsconfig-paths": "4.2.3"
+    "vite": "5.0.12",
+    "vite-tsconfig-paths": "4.3.1"
   }
 }

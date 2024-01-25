@@ -1,29 +1,43 @@
 import { Tooltip as ArkTooltip } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { tooltip } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
 
-export const TooltipRoot = withProvider(ArkTooltip.Root)
-export const TooltipArrow = withContext(styled(ArkTooltip.Arrow), 'arrow')
-export const TooltipArrowTip = withContext(styled(ArkTooltip.ArrowTip), 'arrowTip')
-export const TooltipContent = withContext(styled(ArkTooltip.Content), 'content')
-export const TooltipPositioner = withContext(styled(ArkTooltip.Positioner), 'positioner')
-export const TooltipTrigger = withContext(styled(ArkTooltip.Trigger), 'trigger')
+const Tooltip = withProvider(ArkTooltip.Root)
+const TooltipArrow = withContext(styled(ArkTooltip.Arrow), 'arrow')
+const TooltipArrowTip = withContext(styled(ArkTooltip.ArrowTip), 'arrowTip')
+const TooltipContent = withContext(styled(ArkTooltip.Content), 'content')
+const TooltipPositioner = withContext(styled(ArkTooltip.Positioner), 'positioner')
+const TooltipTrigger = withContext(styled(ArkTooltip.Trigger), 'trigger')
 
-export const Tooltip = Object.assign(TooltipRoot, {
-  Root: TooltipRoot,
-  Arrow: TooltipArrow,
-  ArrowTip: TooltipArrowTip,
-  Content: TooltipContent,
-  Positioner: TooltipPositioner,
-  Trigger: TooltipTrigger,
-})
+const Root = Tooltip
+const Arrow = TooltipArrow
+const ArrowTip = TooltipArrowTip
+const Content = TooltipContent
+const Positioner = TooltipPositioner
+const Trigger = TooltipTrigger
 
-export type TooltipProps = typeof TooltipRoot
-export type TooltipArrowProps = typeof TooltipArrow
-export type TooltipArrowTipProps = typeof TooltipArrowTip
-export type TooltipContentProps = typeof TooltipContent
-export type TooltipPositionerProps = typeof TooltipPositioner
-export type TooltipTriggerProps = typeof TooltipTrigger
+export {
+  Arrow,
+  ArrowTip,
+  Content,
+  Positioner,
+  Root,
+  Tooltip,
+  TooltipArrow,
+  TooltipArrowTip,
+  TooltipContent,
+  TooltipPositioner,
+  TooltipTrigger,
+  Trigger,
+}
+
+export interface TooltipProps extends ComponentProps<typeof Tooltip> {}
+export interface TooltipArrowProps extends ComponentProps<typeof TooltipArrow> {}
+export interface TooltipArrowTipProps extends ComponentProps<typeof TooltipArrowTip> {}
+export interface TooltipContentProps extends ComponentProps<typeof TooltipContent> {}
+export interface TooltipPositionerProps extends ComponentProps<typeof TooltipPositioner> {}
+export interface TooltipTriggerProps extends ComponentProps<typeof TooltipTrigger> {}

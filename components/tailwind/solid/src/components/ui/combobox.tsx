@@ -72,32 +72,59 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const ComboboxRoot = withProvider(ArkCombobox.Root, 'root')
-export const ComboboxClearTrigger = withContext(ArkCombobox.ClearTrigger, 'clearTrigger')
-export const ComboboxContent = withContext(ArkCombobox.Content, 'content')
-export const ComboboxControl = withContext(ArkCombobox.Control, 'control')
-export const ComboboxInput = withContext(ArkCombobox.Input, 'input')
-export const ComboboxItem = withContext(ArkCombobox.Item, 'item')
-export const ComboboxItemGroup = withContext(ArkCombobox.ItemGroup, 'itemGroup')
-export const ComboboxItemGroupLabel = withContext(ArkCombobox.ItemGroupLabel, 'itemGroupLabel')
-export const ComboboxItemIndicator = withContext(ArkCombobox.ItemIndicator, 'itemIndicator')
-export const ComboboxItemText = withContext(ArkCombobox.ItemText, 'itemText')
-export const ComboboxLabel = withContext(ArkCombobox.Label, 'label')
-export const ComboboxPositioner = withContext(ArkCombobox.Positioner, 'positioner')
-export const ComboboxTrigger = withContext(ArkCombobox.Trigger, 'trigger')
+const Combobox = withProvider(ArkCombobox.Root, 'root')
+const ComboboxClearTrigger = withContext(ArkCombobox.ClearTrigger, 'clearTrigger')
+const ComboboxContent = withContext(ArkCombobox.Content, 'content')
+const ComboboxControl = withContext(ArkCombobox.Control, 'control')
+const ComboboxInput = withContext(ArkCombobox.Input, 'input')
+const ComboboxItem = withContext(ArkCombobox.Item, 'item')
+const ComboboxItemGroup = withContext(ArkCombobox.ItemGroup, 'itemGroup')
+const ComboboxItemGroupLabel = withContext(ArkCombobox.ItemGroupLabel, 'itemGroupLabel')
+const ComboboxItemIndicator = withContext(ArkCombobox.ItemIndicator, 'itemIndicator')
+const ComboboxItemText = withContext(ArkCombobox.ItemText, 'itemText')
+const ComboboxLabel = withContext(ArkCombobox.Label, 'label')
+const ComboboxPositioner = withContext(ArkCombobox.Positioner, 'positioner')
+const ComboboxTrigger = withContext(ArkCombobox.Trigger, 'trigger')
 
-export const Combobox = Object.assign(ComboboxRoot, {
-  Root: ComboboxRoot,
-  ClearTrigger: ComboboxClearTrigger,
-  Content: ComboboxContent,
-  Control: ComboboxControl,
-  Input: ComboboxInput,
-  Item: ComboboxItem,
-  ItemGroup: ComboboxItemGroup,
-  ItemGroupLabel: ComboboxItemGroupLabel,
-  ItemIndicator: ComboboxItemIndicator,
-  ItemText: ComboboxItemText,
-  Label: ComboboxLabel,
-  Positioner: ComboboxPositioner,
-  Trigger: ComboboxTrigger,
-})
+const Root = Combobox
+const ClearTrigger = ComboboxClearTrigger
+const Content = ComboboxContent
+const Control = ComboboxControl
+const Input = ComboboxInput
+const Item = ComboboxItem
+const ItemGroup = ComboboxItemGroup
+const ItemGroupLabel = ComboboxItemGroupLabel
+const ItemIndicator = ComboboxItemIndicator
+const ItemText = ComboboxItemText
+const Label = ComboboxLabel
+const Positioner = ComboboxPositioner
+const Trigger = ComboboxTrigger
+
+export {
+  ClearTrigger,
+  Combobox,
+  ComboboxClearTrigger,
+  ComboboxContent,
+  ComboboxControl,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxItemGroup,
+  ComboboxItemGroupLabel,
+  ComboboxItemIndicator,
+  ComboboxItemText,
+  ComboboxLabel,
+  ComboboxPositioner,
+  ComboboxTrigger,
+  Content,
+  Control,
+  Input,
+  Item,
+  ItemGroup,
+  ItemGroupLabel,
+  ItemIndicator,
+  ItemText,
+  Label,
+  Positioner,
+  Root,
+  Trigger,
+}

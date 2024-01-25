@@ -16,18 +16,31 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const CardRoot = withProvider(ark.div, 'root')
-export const CardBody = withContext(ark.div, 'body')
-export const CardDescription = withContext(ark.p, 'description')
-export const CardFooter = withContext(ark.div, 'footer')
-export const CardHeader = withContext(ark.div, 'header')
-export const CardTitle = withContext(ark.h3, 'title')
+const Card = withProvider(ark.div, 'root')
+const CardBody = withContext(ark.div, 'body')
+const CardDescription = withContext(ark.p, 'description')
+const CardFooter = withContext(ark.div, 'footer')
+const CardHeader = withContext(ark.div, 'header')
+const CardTitle = withContext(ark.h3, 'title')
 
-export const Card = Object.assign(CardRoot, {
-  Root: CardRoot,
-  Body: CardBody,
-  Description: CardDescription,
-  Footer: CardFooter,
-  Header: CardHeader,
-  Title: CardTitle,
-})
+const Root = Card
+const Body = CardBody
+const Description = CardDescription
+const Footer = CardFooter
+const Header = CardHeader
+const Title = CardTitle
+
+export {
+  Body,
+  Card,
+  CardBody,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Description,
+  Footer,
+  Header,
+  Root,
+  Title,
+}

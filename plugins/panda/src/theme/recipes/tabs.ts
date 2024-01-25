@@ -45,6 +45,7 @@ export const tabs = defineSlotRecipe({
       transitionProperty: 'color, background, border-color',
       transitionTimingFunction: 'default',
       whiteSpace: 'nowrap',
+      zIndex: '1',
       _disabled: {
         color: 'fg.disabled',
         cursor: 'not-allowed',
@@ -72,6 +73,36 @@ export const tabs = defineSlotRecipe({
   },
   variants: {
     variant: {
+      enclosed: {
+        list: {
+          borderRadius: 'l3',
+          borderWidth: '1px',
+          px: '1',
+          backgroundColor: {
+            base: 'gray.a2',
+            _dark: 'bg.canvas',
+          },
+          _horizontal: {
+            alignItems: 'center',
+          },
+          _vertical: {
+            height: 'fit-content!',
+            py: '1',
+          },
+        },
+        indicator: {
+          backgroundColor: {
+            base: 'bg.default',
+            _dark: 'bg.subtle',
+          },
+
+          boxShadow: 'xs',
+          borderRadius: 'l2',
+          '--transition-duration': '200ms!',
+          height: 'var(--height)',
+          width: 'var(--width)',
+        },
+      },
       line: {
         list: {
           _horizontal: {
@@ -86,12 +117,14 @@ export const tabs = defineSlotRecipe({
         indicator: {
           background: 'colorPalette.default',
           _horizontal: {
-            height: '2px',
             bottom: '0',
+            height: '2px',
+            width: 'var(--width)',
           },
           _vertical: {
-            width: '2px',
+            height: 'var(--height)',
             left: '0',
+            width: '2px',
           },
         },
         content: {
@@ -169,6 +202,60 @@ export const tabs = defineSlotRecipe({
     },
   },
   compoundVariants: [
+    {
+      size: 'sm',
+      variant: 'enclosed',
+      css: {
+        list: {
+          height: '10',
+        },
+        trigger: {
+          h: '8',
+          minW: '8',
+          textStyle: 'sm',
+          px: '3',
+        },
+        content: {
+          p: '3.5',
+        },
+      },
+    },
+    {
+      size: 'md',
+      variant: 'enclosed',
+      css: {
+        list: {
+          height: '11',
+        },
+        trigger: {
+          h: '9',
+          minW: '9',
+          textStyle: 'sm',
+          px: '3.5',
+        },
+        content: {
+          p: '4',
+        },
+      },
+    },
+    {
+      size: 'lg',
+      variant: 'enclosed',
+      css: {
+        list: {
+          height: '12',
+        },
+        trigger: {
+          h: '10',
+          minW: '10',
+          textStyle: 'sm',
+          px: '4',
+        },
+        content: {
+          p: '4.5',
+        },
+      },
+    },
     {
       size: 'sm',
       variant: 'outline',

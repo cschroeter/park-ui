@@ -2,22 +2,27 @@ import {
   Pagination as ArkPagination,
   type PaginationProps as ArkPaginationProps,
 } from '@ark-ui/solid'
-import { For } from 'solid-js'
+import { For, splitProps } from 'solid-js'
+import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
 export interface PaginationProps
-  extends Assign<HTMLStyledProps<'nav'>, ArkPaginationProps>,
+  extends Assign<JsxStyleProps, ArkPaginationProps>,
     PaginationVariantProps {}
 
 export const Pagination = (props: PaginationProps) => {
-  const [variantProps, localProps] = pagination.splitVariantProps(props)
+  const [variantProps, numberInputProps] = pagination.splitVariantProps(props)
+  const [cssProps, elementProps] = splitCssProps(numberInputProps)
+  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root class={styles.root} {...localProps}>
+    // @ts-expect-error TODO cssProps is to complex to be typed
+    <ArkPagination.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       {(api) => (
         <>
           <ArkPagination.PrevTrigger class={styles.prevTrigger}>
@@ -28,11 +33,13 @@ export const Pagination = (props: PaginationProps) => {
           <For each={api().pages}>
             {(page, index) =>
               page.type === 'page' ? (
-                <ArkPagination.Item {...page} asChild>
+                <ArkPagination.Item {...page} class={styles.item} asChild>
                   <Button variant="outline">{page.value}</Button>
                 </ArkPagination.Item>
               ) : (
-                <ArkPagination.Ellipsis index={index()}>&#8230;</ArkPagination.Ellipsis>
+                <ArkPagination.Ellipsis index={index()} class={styles.ellipsis}>
+                  &#8230;
+                </ArkPagination.Ellipsis>
               )
             }
           </For>
@@ -49,6 +56,7 @@ export const Pagination = (props: PaginationProps) => {
 
 const ChevronLeftIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Left Icon</title>
     <path
       fill="none"
       stroke="currentColor"
@@ -62,6 +70,7 @@ const ChevronLeftIcon = () => (
 
 const ChevronRightIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Right Icon</title>
     <path
       fill="none"
       stroke="currentColor"

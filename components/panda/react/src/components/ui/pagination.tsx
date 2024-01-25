@@ -3,21 +3,30 @@ import {
   type PaginationProps as ArkPaginationProps,
 } from '@ark-ui/react/pagination'
 import { forwardRef } from 'react'
+import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
-import type { Assign, HTMLStyledProps } from 'styled-system/types'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
 export interface PaginationProps
-  extends Assign<HTMLStyledProps<'nav'>, ArkPaginationProps>,
+  extends Assign<JsxStyleProps, ArkPaginationProps>,
     PaginationVariantProps {}
 
 export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
-  const [variantProps, localProps] = pagination.splitVariantProps(props)
+  const [variantProps, paginationProps] = pagination.splitVariantProps(props)
+  const [cssProps, localProps] = splitCssProps(paginationProps)
+  const { className, ...rootProps } = localProps
   const styles = pagination(variantProps)
 
   return (
-    <ArkPagination.Root ref={ref} className={styles.root} {...localProps}>
+    <ArkPagination.Root
+      ref={ref}
+      // @ts-expect-error TODO cssProps is to complex to be typed
+      className={cx(styles.root, css(cssProps), className)}
+      {...rootProps}
+    >
       {({ pages }) => (
         <>
           <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>
@@ -27,7 +36,7 @@ export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) 
           </ArkPagination.PrevTrigger>
           {pages.map((page, index) =>
             page.type === 'page' ? (
-              <ArkPagination.Item className={styles.item} key={index} {...page} asChild>
+              <ArkPagination.Item className={styles.item} key={page.value} {...page} asChild>
                 <Button variant="outline">{page.value}</Button>
               </ArkPagination.Item>
             ) : (
@@ -51,6 +60,7 @@ Pagination.displayName = 'Pagination'
 
 const ChevronLeftIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Left Icon</title>
     <path
       fill="none"
       stroke="currentColor"
@@ -64,6 +74,7 @@ const ChevronLeftIcon = () => (
 
 const ChevronRightIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Right Icon</title>
     <path
       fill="none"
       stroke="currentColor"

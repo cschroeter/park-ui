@@ -1,0 +1,24 @@
+{
+  "name": "@park-ui/panda-vue-components",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen --silent",
+    "storybook": "histoire dev",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ark-ui/vue": "0.10.0",
+    "@histoire/plugin-vue": "0.17.8",
+    "@pandacss/dev": "0.28.0",
+    "@park-ui/panda-preset": "workspace:*",
+    "@vitejs/plugin-vue": "5.0.3",
+    "@vitejs/plugin-vue-jsx": "3.1.0",
+    "@zag-js/avatar": "0.33.0",
+    "histoire": "0.17.8",
+    "lucide-vue-next": "0.315.0",
+    "radix-vue": "1.3.2",
+    "typescript": "5.3.3",
+    "vite": "5.0.12",
+    "vue": "3.4.15"
+  }
+}

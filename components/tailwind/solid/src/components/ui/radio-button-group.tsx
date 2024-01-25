@@ -70,21 +70,31 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const RadioButtonGroupRoot = withProvider(ArkRadioButtonGroup.Root, 'root')
-export const RadioButtonGroupIndicator = withContext(ArkRadioButtonGroup.Indicator, 'indicator')
-export const RadioButtonGroupItem = withContext(ArkRadioButtonGroup.Item, 'item')
-export const RadioButtonGroupItemControl = withContext(
-  ArkRadioButtonGroup.ItemControl,
-  'itemControl',
-)
-export const RadioButtonGroupItemText = withContext(ArkRadioButtonGroup.ItemText, 'itemText')
-export const RadioButtonGroupLabel = withContext(ArkRadioButtonGroup.Label, 'label')
+const RadioButtonGroup = withProvider(ArkRadioButtonGroup.Root, 'root')
+const RadioButtonGroupIndicator = withContext(ArkRadioButtonGroup.Indicator, 'indicator')
+const RadioButtonGroupItem = withContext(ArkRadioButtonGroup.Item, 'item')
+const RadioButtonGroupItemControl = withContext(ArkRadioButtonGroup.ItemControl, 'itemControl')
+const RadioButtonGroupItemText = withContext(ArkRadioButtonGroup.ItemText, 'itemText')
+const RadioButtonGroupLabel = withContext(ArkRadioButtonGroup.Label, 'label')
 
-export const RadioButtonGroup = Object.assign(RadioButtonGroupRoot, {
-  Root: RadioButtonGroupRoot,
-  Indicator: RadioButtonGroupIndicator,
-  Item: RadioButtonGroupItem,
-  ItemControl: RadioButtonGroupItemControl,
-  ItemText: RadioButtonGroupItemText,
-  Label: RadioButtonGroupLabel,
-})
+const Root = RadioButtonGroup
+const Indicator = RadioButtonGroupIndicator
+const Item = RadioButtonGroupItem
+const ItemControl = RadioButtonGroupItemControl
+const ItemText = RadioButtonGroupItemText
+const Label = RadioButtonGroupLabel
+
+export {
+  Indicator,
+  Item,
+  ItemControl,
+  ItemText,
+  Label,
+  RadioButtonGroup,
+  RadioButtonGroupIndicator,
+  RadioButtonGroupItem,
+  RadioButtonGroupItemControl,
+  RadioButtonGroupItemText,
+  RadioButtonGroupLabel,
+  Root,
+}

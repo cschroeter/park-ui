@@ -12,7 +12,7 @@ const props = Astro.props
 
 <Box divideY="1px" {...props}>
   <Container>
-    <HStack justify="space-between" py="3" gap="8">
+    <HStack justify="space-between" py={{ base: '3', md: '5' }} gap="8">
       <a href="/" aria-label="Go to start page">
         <Logo />
       </a>

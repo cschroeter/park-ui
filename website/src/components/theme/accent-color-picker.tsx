@@ -16,13 +16,14 @@ export const AccentColorPicker = () => {
         size="sm"
         variant="outline"
         display="grid"
+        gap="1.5"
         gridTemplateColumns="repeat(3, 1fr)"
         onValueChange={(e) =>
           updateAccentColor(accentColors.find((accent) => accent === e.value) ?? currentAccentColor)
         }
       >
-        {accentColors.map((accent, id) => (
-          <RadioButtonGroup.Item key={id} value={accent} justifyContent="flex-start">
+        {accentColors.map((accent) => (
+          <RadioButtonGroup.Item key={accent} value={accent} justifyContent="flex-start">
             <RadioButtonGroup.ItemControl />
             <RadioButtonGroup.ItemText textTransform="capitalize">
               <Circle

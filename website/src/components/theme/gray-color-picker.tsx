@@ -16,14 +16,15 @@ export const GrayColorPicker = () => {
         size="sm"
         variant="outline"
         display="grid"
+        gap="1.5"
         gridTemplateColumns="repeat(3, 1fr)"
         onValueChange={(e) =>
           updateGrayColor(grayColors.find((gray) => gray === e.value) ?? currentGrayColor)
         }
       >
-        {grayColors.map((gray, id) => (
+        {grayColors.map((gray) => (
           <RadioButtonGroup.Item
-            key={id}
+            key={gray}
             value={gray}
             _checked={{
               borderColor: 'border.outline',

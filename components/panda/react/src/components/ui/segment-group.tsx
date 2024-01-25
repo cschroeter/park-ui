@@ -1,5 +1,6 @@
 import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react/segment-group'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 import { segmentGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -34,10 +35,10 @@ export {
   SegmentGroupLabel,
 }
 
-export interface SegmentGroupProps extends HTMLStyledProps<typeof SegmentGroup> {}
-export interface SegmentGroupIndicatorProps extends HTMLStyledProps<typeof SegmentGroupIndicator> {}
-export interface SegmentGroupItemProps extends HTMLStyledProps<typeof SegmentGroupItem> {}
+export interface SegmentGroupProps extends ComponentProps<typeof SegmentGroup> {}
+export interface SegmentGroupIndicatorProps extends ComponentProps<typeof SegmentGroupIndicator> {}
+export interface SegmentGroupItemProps extends ComponentProps<typeof SegmentGroupItem> {}
 export interface SegmentGroupItemControlProps
-  extends HTMLStyledProps<typeof SegmentGroupItemControl> {}
-export interface SegmentGroupItemTextProps extends HTMLStyledProps<typeof SegmentGroupItemText> {}
-export interface SegmentGroupLabelProps extends HTMLStyledProps<typeof SegmentGroupLabel> {}
+  extends ComponentProps<typeof SegmentGroupItemControl> {}
+export interface SegmentGroupItemTextProps extends ComponentProps<typeof SegmentGroupItemText> {}
+export interface SegmentGroupLabelProps extends ComponentProps<typeof SegmentGroupLabel> {}

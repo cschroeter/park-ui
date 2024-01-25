@@ -78,6 +78,10 @@
       "href": "https://park-ui.com/registry/panda/solid/components/popover.json"
     },
     {
+      "name": "Progress",
+      "href": "https://park-ui.com/registry/panda/solid/components/progress.json"
+    },
+    {
       "name": "Radio Button Group",
       "href": "https://park-ui.com/registry/panda/solid/components/radio-button-group.json"
     },
