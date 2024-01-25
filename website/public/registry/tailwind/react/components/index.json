@@ -114,6 +114,10 @@
       "href": "https://park-ui.com/registry/tailwind/react/components/select.json"
     },
     {
+      "name": "Skeleton",
+      "href": "https://park-ui.com/registry/tailwind/react/components/skeleton.json"
+    },
+    {
       "name": "Slider",
       "href": "https://park-ui.com/registry/tailwind/react/components/slider.json"
     },

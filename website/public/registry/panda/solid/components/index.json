@@ -98,6 +98,10 @@
       "href": "https://park-ui.com/registry/panda/solid/components/segment-group.json"
     },
     { "name": "Select", "href": "https://park-ui.com/registry/panda/solid/components/select.json" },
+    {
+      "name": "Skeleton",
+      "href": "https://park-ui.com/registry/panda/solid/components/skeleton.json"
+    },
     { "name": "Slider", "href": "https://park-ui.com/registry/panda/solid/components/slider.json" },
     {
       "name": "Splitter",

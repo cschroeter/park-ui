@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "skeleton.tsx",
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react/factory'\nimport { forwardRef, type ReactNode } from 'react'\n\nexport interface SkeletonProps extends HTMLArkProps<'div'> {\n  children?: ReactNode\n  /**\n   *\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {\n  const { isLoaded, ...rest } = props\n\n  if (isLoaded) {\n    return <ark.div animation=\"skeleton-in\" ref={ref} {...rest} />\n  }\n  return <ark.div ref={ref} {...rest} />\n})\n\nSkeleton.displayName = 'Skeleton'\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

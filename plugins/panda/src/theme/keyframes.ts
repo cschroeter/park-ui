@@ -50,4 +50,7 @@ export const keyframes = defineKeyframes({
     '0%': { opacity: '1', transform: 'translateY(0)' },
     '100%': { opacity: '0', transform: 'translateY(4px)' },
   },
+  pulse: {
+    '50%': { opacity: '0.5' },
+  },
 })

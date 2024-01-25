@@ -33,6 +33,7 @@ import { radioGroup } from './radio-group'
 import { ratingGroup } from './rating-group'
 import { segmentGroup } from './segment-group'
 import { select } from './select'
+import { skeleton } from './skeleton'
 import { slider } from './slider'
 import { splitter } from './splitter'
 import { switchRecipe } from './switch'
@@ -55,6 +56,7 @@ export const recipes = {
   input,
   kbd,
   link,
+  skeleton,
   textarea,
 }
 

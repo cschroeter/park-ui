@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added new `Skeleton` component.
+
 ## [0.30.1] - 2024-01-23
 
 ### Fixed

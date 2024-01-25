@@ -2,10 +2,10 @@ import { defineTokens } from '@pandacss/dev'
 
 export const animations = defineTokens.animations({
   'backdrop-in': {
-    value: 'fade-in 250ms {easings.default}',
+    value: 'fade-in 250ms {easings.emphasized-in}',
   },
   'backdrop-out': {
-    value: 'fade-out 200ms {easings.default}',
+    value: 'fade-out 200ms {easings.emphasized-out}',
   },
   'dialog-in': {
     value: 'slide-in 400ms {easings.emphasized-in}',
@@ -24,5 +24,11 @@ export const animations = defineTokens.animations({
   },
   'drawer-out-right': {
     value: 'slide-out-right 200ms {easings.emphasized-out}',
+  },
+  'skeleton-pulse': {
+    value: 'pulse 2s {easings.pulse} infinite',
+  },
+  'skeleton-in': {
+    value: 'fade-in 400ms {easings.emphasized-in}',
   },
 })
