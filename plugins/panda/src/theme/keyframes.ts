@@ -1,6 +1,9 @@
 import { defineKeyframes } from '@pandacss/dev'
 
 export const keyframes = defineKeyframes({
+  shine: {
+    to: { backgroundPositionX: '-200%' },
+  },
   'fade-in': {
     from: { opacity: '0' },
     to: { opacity: '1' },
@@ -49,8 +52,5 @@ export const keyframes = defineKeyframes({
   slideOutToBottom: {
     '0%': { opacity: '1', transform: 'translateY(0)' },
     '100%': { opacity: '0', transform: 'translateY(4px)' },
-  },
-  pulse: {
-    '50%': { opacity: '0.5' },
   },
 })
