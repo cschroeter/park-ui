@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "skeleton.tsx",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport { forwardRef, type ReactNode } from 'react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { skeleton } from 'styled-system/recipes'\n\nconst StyledSkeleton = styled(ark.div, skeleton)\n\nexport interface SkeletonProps extends HTMLStyledProps<'div'> {\n  children?: ReactNode\n  /**\n   *\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {\n  const { isLoaded, ...rest } = props\n\n  if (isLoaded) {\n    return <styled.div animation=\"skeleton-in\" ref={ref} {...rest} />\n  }\n  return <StyledSkeleton ref={ref} {...rest} />\n})\n\nSkeleton.displayName = 'Skeleton'\n",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { forwardRef, type ReactNode } from 'react'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { skeleton } from 'styled-system/recipes'\n\nconst StyledSkeleton = styled(ark.div, skeleton)\n\nexport interface SkeletonProps extends HTMLStyledProps<'div'> {\n  children?: ReactNode\n  /**\n   *\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {\n  const { isLoaded, ...rest } = props\n\n  if (isLoaded) {\n    return <styled.div animation=\"fade-in\" ref={ref} {...rest} />\n  }\n  return <StyledSkeleton ref={ref} {...rest} />\n})\n\nSkeleton.displayName = 'Skeleton'\n",
       "hasMultipleParts": false
     }
   ]

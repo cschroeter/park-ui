@@ -18,7 +18,7 @@ export const Skeleton = (props: SkeletonProps) => {
 
   return (
     <Show when={localProps.isLoaded} fallback={<StyledSkeleton {...skeletonProps} />}>
-      <styled.div animation="skeleton-in" {...skeletonProps} />
+      <styled.div animation="fade-in" {...skeletonProps} />
     </Show>
   )
 }
