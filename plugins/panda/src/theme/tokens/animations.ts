@@ -26,9 +26,9 @@ export const animations = defineTokens.animations({
     value: 'slide-out-right 200ms {easings.emphasized-out}',
   },
   'skeleton-pulse': {
-    value: 'pulse 2s {easings.pulse} infinite',
+    value: 'skeleton-pulse 2s {easings.pulse} infinite',
   },
-  'skeleton-in': {
+  'fade-in': {
     value: 'fade-in 400ms {easings.emphasized-in}',
   },
 })

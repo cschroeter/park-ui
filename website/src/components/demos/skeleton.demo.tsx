@@ -3,7 +3,7 @@ import { Skeleton, type SkeletonProps } from '~/components/ui/skeleton'
 
 export const Demo = (props: SkeletonProps) => {
   return (
-    <HStack width="full">
+    <HStack width="full" gap="4">
       <Skeleton borderRadius="full">
         <Circle size="20" />
       </Skeleton>

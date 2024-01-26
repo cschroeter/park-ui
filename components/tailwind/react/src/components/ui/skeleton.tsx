@@ -14,7 +14,7 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) =
   const { isLoaded, ...rest } = props
 
   if (isLoaded) {
-    return <ark.div animation="skeleton-in" ref={ref} {...rest} />
+    return <ark.div animation="fade-in" ref={ref} {...rest} />
   }
   return <ark.div ref={ref} {...rest} />
 })
