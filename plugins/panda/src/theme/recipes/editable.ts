@@ -15,5 +15,28 @@ export const editable = defineSlotRecipe({
       display: 'flex',
       gap: '2',
     },
+    input: {
+      appearance: 'none',
+      background: 'none',
+      borderColor: 'border.default',
+      borderRadius: 'l2',
+      borderWidth: '1px',
+      colorPalette: 'accent',
+      color: 'fg.default',
+      outline: 0,
+      position: 'relative',
+      transitionDuration: 'normal',
+      transitionProperty: 'box-shadow, border-color',
+      transitionTimingFunction: 'default',
+      width: 'full',
+      _disabled: {
+        opacity: 0.4,
+        cursor: 'not-allowed',
+      },
+      _focus: {
+        borderColor: 'colorPalette.default',
+        boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+      },
+    },
   },
 })
