@@ -4,6 +4,10 @@
 
 - Added new `Skeleton` component.
 
+### Fixed
+
+- Resolved an issue with `SegmentControl` that the `indicator` was sometimes not rendered correctly.
+
 ## [0.30.1] - 2024-01-23
 
 ### Fixed
