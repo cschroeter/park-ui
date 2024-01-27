@@ -63,7 +63,8 @@
           "import": "./dist/index.mjs",
           "require": "./dist/index.js"
         },
-        "./package.json": "./package.json"
+        "./package.json": "./package.json",
+        "./preset.css": "./preset.css"
       }
     }
   },
