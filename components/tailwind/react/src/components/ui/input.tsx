@@ -1,23 +1,27 @@
-import { ark } from '@ark-ui/react/factory'
+import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
 
-type InputVariantProps = VariantProps<typeof styles>
-export type InputProps = InputVariantProps & HTMLArkProps<'button'>
+export interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}
+
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
+  const { size, className, ...rest } = props
+  return <ark.textarea className={styles({ size, className })} ref={ref} {...rest} />
+})
+
+Textarea.displayName = 'Textarea'
+
+type TextareaVariantProps = VariantProps<typeof styles>
 
 const styles = tv({
-  base: 'input',
+  base: 'textarea',
   defaultVariants: { size: 'md' },
   variants: {
     size: {
-      '2xs': 'input--size_2xs',
-      xs: 'input--size_xs',
-      sm: 'input--size_sm',
-      md: 'input--size_md',
-      lg: 'input--size_lg',
-      xl: 'input--size_xl',
-      '2xl': 'input--size_2xl',
+      sm: 'textarea--size_sm',
+      md: 'textarea--size_md',
+      lg: 'textarea--size_lg',
+      xl: 'textarea--size_xl',
     },
   },
 })
-export const Input = styled<InputProps>(ark.input, styles)

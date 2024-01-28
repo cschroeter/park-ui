@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "badge.tsx",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport { tv, type VariantProps } from 'tailwind-variants'\nimport { styled } from '~/lib/styled'\n\ntype BadgeVariantProps = VariantProps<typeof styles>\nexport type BadgeProps = BadgeVariantProps & HTMLArkProps<'button'>\n\nconst styles = tv({\n  base: 'badge',\n  defaultVariants: { variant: 'subtle', size: 'md' },\n  variants: {\n    variant: {\n      solid: 'badge--variant_solid',\n      subtle: 'badge--variant_subtle',\n      outline: 'badge--variant_outline',\n    },\n    size: { sm: 'badge--size_sm', md: 'badge--size_md', lg: 'badge--size_lg' },\n  },\n})\nexport const Badge = styled<BadgeProps>(ark.div, styles)\n",
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nexport interface BadgeProps extends BadgeVariantProps, HTMLArkProps<'div'> {}\n\nexport const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {\n  const { size, variant, className, ...rest } = props\n  return <ark.div className={styles({ size, variant, className })} ref={ref} {...rest} />\n})\n\nBadge.displayName = 'Badge'\n\ntype BadgeVariantProps = VariantProps<typeof styles>\n\nconst styles = tv({\n  base: 'badge',\n  defaultVariants: { variant: 'subtle', size: 'md' },\n  variants: {\n    variant: {\n      solid: 'badge--variant_solid',\n      subtle: 'badge--variant_subtle',\n      outline: 'badge--variant_outline',\n    },\n    size: { sm: 'badge--size_sm', md: 'badge--size_md', lg: 'badge--size_lg' },\n  },\n})\n",
       "hasMultipleParts": false
     }
   ]

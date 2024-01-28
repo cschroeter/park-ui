@@ -1,9 +1,17 @@
-import { ark } from '@ark-ui/react/factory'
+import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface FormLabelProps extends FormLabelVariantProps, HTMLArkProps<'label'> {}
+
+export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>((props, ref) => {
+  const { size, className, ...rest } = props
+  return <ark.label className={styles({ size, className })} ref={ref} {...rest} />
+})
+
+FormLabel.displayName = 'FormLabel'
 
 type FormLabelVariantProps = VariantProps<typeof styles>
-export type FormLabelProps = FormLabelVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'formLabel',
@@ -17,4 +25,3 @@ const styles = tv({
     },
   },
 })
-export const FormLabel = styled<FormLabelProps>(ark.label, styles)

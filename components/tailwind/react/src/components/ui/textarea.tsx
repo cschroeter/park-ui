@@ -1,9 +1,17 @@
-import { ark } from '@ark-ui/react/factory'
+import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
-import { styled } from '~/lib/styled'
+
+export interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}
+
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
+  const { size, className, ...rest } = props
+  return <ark.textarea className={styles({ size, className })} ref={ref} {...rest} />
+})
+
+Textarea.displayName = 'Textarea'
 
 type TextareaVariantProps = VariantProps<typeof styles>
-export type TextareaProps = TextareaVariantProps & HTMLArkProps<'button'>
 
 const styles = tv({
   base: 'textarea',
@@ -17,4 +25,3 @@ const styles = tv({
     },
   },
 })
-export const Textarea = styled<TextareaProps>(ark.textarea, styles)
