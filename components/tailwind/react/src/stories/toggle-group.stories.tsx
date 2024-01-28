@@ -1,6 +1,5 @@
 import type { Meta } from '@storybook/react'
 import { BoldIcon, ItalicIcon, UnderlineIcon } from 'lucide-react'
-import { Stack } from 'styled-system/jsx'
 import * as ToggleGroup from '~/components/ui/toggle-group'
 
 const meta: Meta = {
@@ -11,7 +10,7 @@ export default meta
 
 export const Base = () => {
   return (
-    <Stack direction="row">
+    <div className="flex gap-2.5">
       <ToggleGroup.Root multiple>
         <ToggleGroup.Item value="bold" aria-label="Toggle Bold">
           <BoldIcon />
@@ -23,6 +22,6 @@ export const Base = () => {
           <UnderlineIcon />
         </ToggleGroup.Item>
       </ToggleGroup.Root>
-    </Stack>
+    </div>
   )
 }

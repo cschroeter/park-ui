@@ -12,7 +12,7 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { root, fallback, image } = styles({ size })
 
   return (
-    <ArkAvatar.Root className={root({ className })} {...rootProps}>
+    <ArkAvatar.Root ref={ref} className={root({ className })} {...rootProps}>
       <ArkAvatar.Fallback className={fallback()}>
         {getInitials(name) || <UserIcon />}
       </ArkAvatar.Fallback>

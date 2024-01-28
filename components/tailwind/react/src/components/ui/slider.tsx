@@ -15,7 +15,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
   const { root, label, control, track, range, thumb, marker, markerGroup } = styles({ size })
 
   return (
-    <ArkSlider.Root className={root({ className })} {...rootProps}>
+    <ArkSlider.Root ref={ref} className={root({ className })} {...rootProps}>
       {(api) => (
         <>
           {children && <ArkSlider.Label className={label()}>{children}</ArkSlider.Label>}

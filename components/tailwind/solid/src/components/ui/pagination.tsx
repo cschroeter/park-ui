@@ -63,6 +63,7 @@ const styles = tv({
 
 const ChevronLeftIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Left</title>
     <path
       fill="none"
       stroke="currentColor"
@@ -76,6 +77,7 @@ const ChevronLeftIcon = () => (
 
 const ChevronRightIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Right</title>
     <path
       fill="none"
       stroke="currentColor"
