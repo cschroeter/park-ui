@@ -32,12 +32,12 @@ export const Base = () => {
             <Menu.ItemGroupLabel htmlFor="group-1">My Account</Menu.ItemGroupLabel>
             <Menu.Separator />
             <Menu.Item id="profile">
-              <div className="flex gap-6 justify-between" flex="1">
+              <div className="flex gap-6 justify-between flex-1">
                 <div className="flex gap-2">
                   <UserIcon />
                   Profile
                 </div>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                <Text className="text-fg-subtle" as="span" textStyle="xs">
                   ⇧⌘P
                 </Text>
               </div>
@@ -48,17 +48,17 @@ export const Base = () => {
               </div>
             </Menu.Item>
             <Menu.Item id="settings">
-              <div className="flex gap-6 justify-between" flex="1">
+              <div className="flex gap-6 justify-between flex-1">
                 <div className="flex gap-2">
                   <SettingsIcon /> Settings
                 </div>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                <Text className="text-fg-subtle" as="span" textStyle="xs">
                   ⌘,
                 </Text>
               </div>
             </Menu.Item>
             <Menu.Root positioning={{ placement: 'right-start', gutter: -2 }}>
-              <Menu.TriggerItem justifyContent="space-between">
+              <Menu.TriggerItem className="justify-between">
                 <div className="flex gap-2">
                   <UserPlusIcon />
                   Invite member

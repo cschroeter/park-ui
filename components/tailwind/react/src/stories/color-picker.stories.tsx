@@ -40,7 +40,7 @@ export const Base = () => {
                       <PipetteIcon />
                     </IconButton>
                   </ColorPicker.EyeDropperTrigger>
-                  <div className="flex flex-col gap-2" flex="1">
+                  <div className="flex flex-col gap-2 flex-1">
                     <ColorPicker.ChannelSlider channel="hue">
                       <ColorPicker.ChannelSliderTrack />
                       <ColorPicker.ChannelSliderThumb />
@@ -61,7 +61,7 @@ export const Base = () => {
                   </ColorPicker.ChannelInput>
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <Text className="font-medium" textStyle="xs" color="fg.default">
+                  <Text className="font-medium text-fg-default" textStyle="xs">
                     Saved Colors
                   </Text>
                   <ColorPicker.SwatchGroup>

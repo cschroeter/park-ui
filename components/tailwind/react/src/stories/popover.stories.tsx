@@ -27,7 +27,7 @@ export const Base = () => {
               Tell us what is your favorite framework and why you love to use it.
             </Popover.Description>
           </div>
-          <div position="absolute" top="1" right="1">
+          <div className="absolute top-1 right-1">
             <Popover.CloseTrigger asChild>
               <IconButton aria-label="Close Popover" variant="ghost" size="sm">
                 <XIcon />

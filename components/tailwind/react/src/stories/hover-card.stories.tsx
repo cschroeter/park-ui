@@ -41,11 +41,11 @@ export const Base = () => {
                 <Text className="font-semibold" textStyle="sm">
                   @grizzly_codes
                 </Text>
-                <Text textStyle="sm" color="fg.muted">
+                <Text className="text-fg-muted" textStyle="sm">
                   Staff Software Engineer working at vivenu GmbH
                 </Text>
               </div>
-              <div className="flex gap-1" color="fg.subtle" textStyle="xs">
+              <div className="flex gap-1 text-fg-subtle" textStyle="xs">
                 <Icon>
                   <MapPinIcon />
                 </Icon>

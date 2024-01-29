@@ -33,7 +33,7 @@ export const Base = () => {
             <Menu.ItemGroupLabel htmlFor="group-1">My Account</Menu.ItemGroupLabel>
             <Menu.Separator />
             <Menu.Item id="profile">
-              <HStack gap="6" justify="space-between" flex="1">
+              <HStack gap="6" justifyContent="space-between" flex="1">
                 <HStack gap="2">
                   <UserIcon />
                   Profile
@@ -49,7 +49,7 @@ export const Base = () => {
               </HStack>
             </Menu.Item>
             <Menu.Item id="settings">
-              <HStack gap="6" justify="space-between" flex="1">
+              <HStack gap="6" justifyContent="space-between" flex="1">
                 <HStack gap="2">
                   <SettingsIcon /> Settings
                 </HStack>

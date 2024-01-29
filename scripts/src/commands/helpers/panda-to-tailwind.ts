@@ -7,9 +7,20 @@ const isStyleNode = (tagName: string) =>
 
 const isStyleAtrtribute = (attribute: JsxAttribute) =>
   [
+    'alignItems',
+    'bottom',
+    'bg',
+    'color',
+    'direction',
+    'flex',
     'fontWeight',
     'gap',
+    'h',
+    'height',
+    'justifyContent',
+    'left',
     'm',
+    'maxW',
     'mb',
     'me',
     'ms',
@@ -19,17 +30,15 @@ const isStyleAtrtribute = (attribute: JsxAttribute) =>
     'p',
     'pb',
     'pe',
+    'position',
     'ps',
     'pt',
     'px',
     'py',
-    'maxW',
-    'justify',
-    'h',
-    'height',
-    'width',
-    'direction',
+    'right',
     'textAlign',
+    'top',
+    'width',
   ].includes(attribute.getNameNode().getText())
 
 export const parse = (code: string) => {
@@ -136,7 +145,17 @@ const stylePropToClassName = (propertyName: string, value: string, prefix?: stri
         Match.orElse(() => value),
       ),
     ),
-    Match.when('justify', () =>
+    Match.when('alignItems', () =>
+      Match.value(value).pipe(
+        Match.when('flex-start', () => 'items-start'),
+        Match.when('flex-end', () => 'items-end'),
+        Match.when('center', () => 'items-center'),
+        Match.when('baseline', () => 'items-baseline'),
+        Match.when('stretch', () => 'items-stretch'),
+        Match.orElse(() => value),
+      ),
+    ),
+    Match.when('justifyContent', () =>
       Match.value(value).pipe(
         Match.when('space-between', () => 'justify-between'),
         Match.orElse(() => value),
@@ -148,6 +167,10 @@ const stylePropToClassName = (propertyName: string, value: string, prefix?: stri
     Match.when('height', () => ['h', value].join('-')),
     Match.when('h', () => ['h', value].join('-')),
     Match.when('maxW', () => ['max-w', value].join('-')),
+    Match.when('flex', () => ['flex', value].join('-')),
+    Match.when('color', () => ['text', value.replaceAll('.', '-')].join('-')),
+    Match.when('bg', () => ['bg', value.replaceAll('.', '-')].join('-')),
+    Match.when('position', () => value),
 
     Match.orElse(() => [propertyName, value].join('-')),
   )

@@ -22,7 +22,7 @@ export const Base = () => {
           <Drawer.Header>
             <Drawer.Title>Title</Drawer.Title>
             <Drawer.Description>Description</Drawer.Description>
-            <Drawer.CloseTrigger asChild position="absolute" top="3" right="4">
+            <Drawer.CloseTrigger className="absolute top-3 right-4" asChild>
               <IconButton variant="ghost">
                 <XIcon />
               </IconButton>

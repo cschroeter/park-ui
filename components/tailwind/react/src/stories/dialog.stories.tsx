@@ -33,7 +33,7 @@ export const Base = () => {
               <Button className="w-full">Confirm</Button>
             </div>
           </div>
-          <Dialog.CloseTrigger asChild position="absolute" top="2" right="2">
+          <Dialog.CloseTrigger className="absolute top-2 right-2" asChild>
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
               <XIcon />
             </IconButton>
