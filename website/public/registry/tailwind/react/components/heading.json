@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "heading.tsx",
+      "content": "import { createElement } from 'react'\n\ntype As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'\n\nexport type HeadingProps = {\n  as?: As\n} & JSX.IntrinsicElements[As]\n\nexport const Heading = (props: HeadingProps) => {\n  const { as = 'h2', ...localProps } = props\n  return createElement(as, localProps)\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

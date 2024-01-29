@@ -63,6 +63,10 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/form-label.json"
     },
     {
+      "name": "Heading",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/heading.json"
+    },
+    {
       "name": "Hover Card",
       "href": "https://park-ui.com/registry/tailwind/solid/components/hover-card.json"
     },
@@ -134,6 +138,7 @@
       "name": "Tags Input",
       "href": "https://park-ui.com/registry/tailwind/solid/components/tags-input.json"
     },
+    { "name": "Text", "href": "https://park-ui.com/registry/tailwind/solid/components/text.json" },
     {
       "name": "Textarea",
       "href": "https://park-ui.com/registry/tailwind/solid/components/textarea.json"

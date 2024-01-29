@@ -1,0 +1,58 @@
+---
+id: text
+title: Text
+category: typography
+description: To display text in a variety of sizes and weights.
+---
+
+import { Text } from '~/components/ui'
+import Snippet from '~/components/snippet.astro'
+
+## Usage
+
+```tsx live
+<Text>Sphinx of black quartz, judge my vow.</Text>
+```
+
+## Examples
+
+### As another element
+
+Utilize the `as` property to specify the HTML tag. This changes semantic markup without affecting visual style.
+
+```tsx live
+<>
+  <Text as="p">
+    This is a <Code>p</Code> element.
+  </Text>
+  <Text as="label">
+    This is a <Code>label</Code> element.
+  </Text>
+  <Text as="div">
+    This is a <Code>div</Code> element.
+  </Text>
+  <Text as="span">
+    This is a <Code>span</Code> element.
+  </Text>
+</>
+```
+
+### Font Weight
+
+Use the `fontWeight` prop to set the text weight.
+
+```tsx live
+<>
+  <Text className="font-light">Sphinx of black quartz, judge my vow.</Text>
+  <Text className="font-normal">Sphinx of black quartz, judge my vow.</Text>
+  <Text className="font-medium">Sphinx of black quartz, judge my vow.</Text>
+  <Text className="font-semibold">Sphinx of black quartz, judge my vow.</Text>
+  <Text className="font-bold">Sphinx of black quartz, judge my vow.</Text>
+</>
+```
+
+## Installation
+
+Insert code snippet into your project. Update import paths as needed.
+
+<Snippet />

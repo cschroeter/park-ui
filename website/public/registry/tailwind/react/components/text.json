@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "text.tsx",
+      "content": "import { createElement } from 'react'\n\ntype As = 'p' | 'span' | 'div' | 'label'\n\nexport type TextProps = {\n  as?: As\n} & JSX.IntrinsicElements[As]\n\nexport const Text = (props: TextProps) => {\n  const { as = 'p', ...localProps } = props\n  return createElement(as, localProps)\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

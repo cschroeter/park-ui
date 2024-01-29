@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "heading.tsx",
+      "content": "import { mergeProps, splitProps, type JSX } from 'solid-js'\nimport { Dynamic } from 'solid-js/web'\n\ntype As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'\n\nexport type HeadingProps = {\n  as?: As\n} & JSX.IntrinsicElements[As]\n\nexport const Heading = (props: HeadingProps) => {\n  const mergedProps = mergeProps({ as: 'h2' }, props)\n  const [localProps, rootProps] = splitProps(mergedProps, ['as'])\n\n  return <Dynamic component={localProps.as} {...rootProps} />\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}
