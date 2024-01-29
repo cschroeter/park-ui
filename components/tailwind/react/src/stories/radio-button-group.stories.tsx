@@ -12,10 +12,10 @@ export const Base = () => {
 
   return (
     <RadioButtonGroup.Root defaultValue="M">
-      {options.map((option, id) => (
+      {options.map((option) => (
         <RadioButtonGroup.Item
           className="px-0"
-          key={id}
+          key={option.value}
           value={option.value}
           disabled={option.disabled}
         >
