@@ -20,16 +20,16 @@ export const HTMLTags = () => (
 
 export const Sizes = () => (
   <div className="flex flex-col gap-2.5">
-    <Text textStyle="xs">Ag</Text>
-    <Text textStyle="sm">Ag</Text>
-    <Text textStyle="md">Ag</Text>
-    <Text textStyle="lg">Ag</Text>
-    <Text textStyle="xl">Ag</Text>
-    <Text textStyle="2xl">Ag</Text>
-    <Text textStyle="3xl">Ag</Text>
-    <Text textStyle="4xl">Ag</Text>
-    <Text textStyle="5xl">Ag</Text>
-    <Text textStyle="6xl">Ag</Text>
-    <Text textStyle="7xl">Ag</Text>
+    <Text size="xs">Ag</Text>
+    <Text size="sm">Ag</Text>
+    <Text size="md">Ag</Text>
+    <Text size="lg">Ag</Text>
+    <Text size="xl">Ag</Text>
+    <Text size="2xl">Ag</Text>
+    <Text size="3xl">Ag</Text>
+    <Text size="4xl">Ag</Text>
+    <Text size="5xl">Ag</Text>
+    <Text size="6xl">Ag</Text>
+    <Text size="7xl">Ag</Text>
   </div>
 )

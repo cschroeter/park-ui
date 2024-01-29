@@ -1,16 +1,19 @@
 import { mergeProps, splitProps } from 'solid-js'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import { styled, type HTMLStyledProps, type StyledComponent } from 'styled-system/jsx'
+import { text, type TextVariantProps } from 'styled-system/recipes'
 
 type As = 'p' | 'span' | 'div' | 'label'
 
 export type TextProps = {
   as?: As
-} & HTMLStyledProps<As>
+} & TextVariantProps &
+  HTMLStyledProps<As>
 
 export const Text = (props: TextProps) => {
   const mergedProps = mergeProps({ as: 'p' }, props)
-  const [local, rootProps] = splitProps(mergedProps, ['as'])
-  const Dynamic = styled(local.as as As)
+  const [localProps, rootProps] = splitProps(mergedProps, ['as'])
+
+  const Dynamic = styled(localProps.as as As, text) as StyledComponent<As>
 
   return <Dynamic {...rootProps} />
 }

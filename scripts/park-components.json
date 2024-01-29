@@ -229,5 +229,15 @@
       "vue": ["import { ark } from '@ark-ui/vue/factory'"]
     },
     "name": "Textarea"
+  },
+  "text": {
+    "className": "text",
+    "component": "ark.div",
+    "imports": {
+      "react": ["import { ark } from '@ark-ui/react/factory'"],
+      "solid": ["import { ark } from '@ark-ui/solid'"],
+      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
+    },
+    "name": "Text"
   }
 }
