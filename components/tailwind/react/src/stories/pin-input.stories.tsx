@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { PinInput } from '~/components/ui/pin-input'
 
 const meta: Meta = {
-  title: 'Components/PinInput',
+  title: 'Components/Pin Input',
 }
 
 export default meta

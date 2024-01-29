@@ -29,7 +29,7 @@ export const Base = () => {
             </Drawer.CloseTrigger>
           </Drawer.Header>
           <Drawer.Body>{/* Content */}</Drawer.Body>
-          <Drawer.Footer gap="3">
+          <Drawer.Footer className="gap-3">
             <Drawer.CloseTrigger asChild>
               <Button variant="outline">Cancel</Button>
             </Drawer.CloseTrigger>

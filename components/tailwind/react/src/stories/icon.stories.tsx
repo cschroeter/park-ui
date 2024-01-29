@@ -1,6 +1,5 @@
 import type { Meta } from '@storybook/react'
 import { DiamondIcon } from 'lucide-react'
-import { Stack } from 'styled-system/jsx'
 import { Icon } from '~/components/ui/icon'
 
 const meta: Meta = {
@@ -16,7 +15,7 @@ export const Base = () => (
 )
 
 export const Sizes = () => (
-  <Stack>
+  <div className="flex flex-col gap-2.5">
     <Icon size="xs">
       <DiamondIcon />
     </Icon>
@@ -32,5 +31,5 @@ export const Sizes = () => (
     <Icon size="2xl">
       <DiamondIcon />
     </Icon>
-  </Stack>
+  </div>
 )

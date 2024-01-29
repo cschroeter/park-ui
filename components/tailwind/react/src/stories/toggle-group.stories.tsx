@@ -10,7 +10,7 @@ export default meta
 
 export const Base = () => {
   return (
-    <div className="flex gap-2.5">
+    <div className="flex gap-2.5 flex-row">
       <ToggleGroup.Root multiple>
         <ToggleGroup.Item value="bold" aria-label="Toggle Bold">
           <BoldIcon />

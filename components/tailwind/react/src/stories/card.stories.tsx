@@ -9,7 +9,7 @@ export default meta
 
 export const Base = () => {
   return (
-    <Card.Root>
+    <Card.Root className="w-sm">
       <Card.Header>
         <Card.Title>Team Members</Card.Title>
         <Card.Description>Add new members to your organisation.</Card.Description>

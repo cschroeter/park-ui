@@ -12,13 +12,13 @@ export default meta
 
 export const Base = () => {
   return (
-    <TagsInput.Root defaultValue={['React', 'Solid', 'Vue']} className="max-w-xs">
+    <TagsInput.Root className="max-w-xs" defaultValue={['React', 'Solid', 'Vue']}>
       {(api) => (
         <>
           <TagsInput.Label>Frameworks</TagsInput.Label>
           <TagsInput.Control>
             {api.value.map((value, index) => (
-              <TagsInput.Item key={value} index={index} value={value}>
+              <TagsInput.Item key={index} index={index} value={value}>
                 <TagsInput.ItemText>{value}</TagsInput.ItemText>
                 <TagsInput.ItemDeleteTrigger asChild>
                   <IconButton variant="link" size="xs">

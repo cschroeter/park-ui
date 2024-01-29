@@ -1,6 +1,5 @@
 import type { Meta } from '@storybook/react'
 import { PipetteIcon } from 'lucide-react'
-import { HStack, Stack } from 'styled-system/jsx'
 import * as ColorPicker from '~/components/ui/color-picker'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
@@ -30,18 +29,18 @@ export const Base = () => {
           </ColorPicker.Control>
           <ColorPicker.Positioner>
             <ColorPicker.Content>
-              <Stack gap="3">
+              <div className="flex flex-col gap-3">
                 <ColorPicker.Area>
                   <ColorPicker.AreaBackground />
                   <ColorPicker.AreaThumb />
                 </ColorPicker.Area>
-                <HStack gap="3">
+                <div className="flex gap-3">
                   <ColorPicker.EyeDropperTrigger asChild>
                     <IconButton size="xs" variant="outline" aria-label="Pick a color">
                       <PipetteIcon />
                     </IconButton>
                   </ColorPicker.EyeDropperTrigger>
-                  <Stack gap="2" flex="1">
+                  <div className="flex flex-col gap-2" flex="1">
                     <ColorPicker.ChannelSlider channel="hue">
                       <ColorPicker.ChannelSliderTrack />
                       <ColorPicker.ChannelSliderThumb />
@@ -51,18 +50,18 @@ export const Base = () => {
                       <ColorPicker.ChannelSliderTrack />
                       <ColorPicker.ChannelSliderThumb />
                     </ColorPicker.ChannelSlider>
-                  </Stack>
-                </HStack>
-                <HStack>
+                  </div>
+                </div>
+                <div className="flex gap-2.5">
                   <ColorPicker.ChannelInput channel="hex" asChild>
                     <Input size="2xs" />
                   </ColorPicker.ChannelInput>
                   <ColorPicker.ChannelInput channel="alpha" asChild>
                     <Input size="2xs" />
                   </ColorPicker.ChannelInput>
-                </HStack>
-                <Stack gap="1.5">
-                  <Text textStyle="xs" fontWeight="medium" color="fg.default">
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <Text className="font-medium" textStyle="xs" color="fg.default">
                     Saved Colors
                   </Text>
                   <ColorPicker.SwatchGroup>
@@ -72,8 +71,8 @@ export const Base = () => {
                       </ColorPicker.SwatchTrigger>
                     ))}
                   </ColorPicker.SwatchGroup>
-                </Stack>
-              </Stack>
+                </div>
+              </div>
             </ColorPicker.Content>
           </ColorPicker.Positioner>
         </>

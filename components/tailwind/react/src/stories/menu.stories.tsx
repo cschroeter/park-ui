@@ -10,7 +10,6 @@ import {
   UserIcon,
   UserPlusIcon,
 } from 'lucide-react'
-import { HStack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import * as Menu from '~/components/ui/menu'
 import { Text } from '~/components/ui/text'
@@ -33,67 +32,67 @@ export const Base = () => {
             <Menu.ItemGroupLabel htmlFor="group-1">My Account</Menu.ItemGroupLabel>
             <Menu.Separator />
             <Menu.Item id="profile">
-              <HStack gap="6" justify="space-between" flex="1">
-                <HStack gap="2">
+              <div className="flex gap-6 justify-between" flex="1">
+                <div className="flex gap-2">
                   <UserIcon />
                   Profile
-                </HStack>
+                </div>
                 <Text as="span" color="fg.subtle" textStyle="xs">
                   ⇧⌘P
                 </Text>
-              </HStack>
+              </div>
             </Menu.Item>
             <Menu.Item id="billing">
-              <HStack gap="2">
+              <div className="flex gap-2">
                 <CreditCardIcon /> Billing
-              </HStack>
+              </div>
             </Menu.Item>
             <Menu.Item id="settings">
-              <HStack gap="6" justify="space-between" flex="1">
-                <HStack gap="2">
+              <div className="flex gap-6 justify-between" flex="1">
+                <div className="flex gap-2">
                   <SettingsIcon /> Settings
-                </HStack>
+                </div>
                 <Text as="span" color="fg.subtle" textStyle="xs">
                   ⌘,
                 </Text>
-              </HStack>
+              </div>
             </Menu.Item>
             <Menu.Root positioning={{ placement: 'right-start', gutter: -2 }}>
               <Menu.TriggerItem justifyContent="space-between">
-                <HStack gap="2">
+                <div className="flex gap-2">
                   <UserPlusIcon />
                   Invite member
-                </HStack>
+                </div>
                 <ChevronRightIcon />
               </Menu.TriggerItem>
               <Menu.Positioner>
                 <Menu.Content>
                   <Menu.Item id="email">
-                    <HStack gap="2">
+                    <div className="flex gap-2">
                       <MailIcon /> Email
-                    </HStack>
+                    </div>
                   </Menu.Item>
                   <Menu.Item id="message">
-                    <HStack gap="2">
+                    <div className="flex gap-2">
                       <MessageSquareIcon /> Message
-                    </HStack>
+                    </div>
                   </Menu.Item>
                   <Menu.Separator />
                   <Menu.Item id="other">
-                    <HStack gap="2">
+                    <div className="flex gap-2">
                       <PlusCircleIcon />
                       More Options...
-                    </HStack>
+                    </div>
                   </Menu.Item>
                 </Menu.Content>
               </Menu.Positioner>
             </Menu.Root>
             <Menu.Separator />
             <Menu.Item id="logout">
-              <HStack gap="2">
+              <div className="flex gap-2">
                 <LogOutIcon />
                 Logout
-              </HStack>
+              </div>
             </Menu.Item>
           </Menu.ItemGroup>
         </Menu.Content>

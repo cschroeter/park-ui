@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { NumberInput } from '~/components/ui/number-input'
 
 const meta: Meta = {
-  title: 'Components/NumberInput',
+  title: 'Components/Number Input',
 }
 
 export default meta

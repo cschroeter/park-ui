@@ -21,11 +21,15 @@ export const Controlled = () => {
   return (
     <>
       <Button onClick={() => setHasLoaded(!hasLoaded)}>Toggle</Button>
-      <Skeleton isLoaded={hasLoaded} className="h-8">
-        https://park-ui.com
+      <Skeleton className="h-8" isLoaded={hasLoaded}>
+        <div className="h-8">Content</div>
       </Skeleton>
     </>
   )
 }
 
-export const Loaded = () => <Skeleton isLoaded>https://park-ui.com</Skeleton>
+export const Loaded = () => (
+  <Skeleton isLoaded>
+    <div>Is loaded</div>
+  </Skeleton>
+)

@@ -17,7 +17,7 @@ export const Base = () => {
   ]
 
   return (
-    <Select.Root positioning={{ sameWidth: true }} width="2xs" items={items}>
+    <Select.Root className="w-2xs" positioning={{ sameWidth: true }} items={items}>
       <Select.Label>Framework</Select.Label>
       <Select.Control>
         <Select.Trigger>
