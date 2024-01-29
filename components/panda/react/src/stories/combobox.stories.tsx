@@ -1,3 +1,4 @@
+import type { ComboboxInputValueChangeDetails } from '@ark-ui/react'
 import type { Meta } from '@storybook/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
@@ -20,7 +21,7 @@ export const Base = () => {
   ]
   const [items, setItems] = useState(data)
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ComboboxInputValueChangeDetails) => {
     const filtered = data.filter((item) => item.label.toLowerCase().includes(e.value.toLowerCase()))
     setItems(filtered.length > 0 ? filtered : data)
   }
