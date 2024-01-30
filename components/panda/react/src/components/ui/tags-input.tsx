@@ -1,4 +1,4 @@
-import { TagsInput as ArkTagsInput } from '@ark-ui/react/tags-input'
+import { TagsInput as ArkTagsInput, TagsInputItemPreview } from '@ark-ui/react/tags-input'
 import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { tagsInput } from 'styled-system/recipes'
@@ -26,6 +26,7 @@ const Input = TagsInputInput
 const Item = TagsInputItem
 const ItemDeleteTrigger = TagsInputItemDeleteTrigger
 const ItemInput = TagsInputItemInput
+const ItemPreview = TagsInputItemPreview
 const ItemText = TagsInputItemText
 const Label = TagsInputLabel
 
@@ -36,6 +37,7 @@ export {
   Item,
   ItemDeleteTrigger,
   ItemInput,
+  ItemPreview,
   ItemText,
   Label,
   Root,
@@ -46,6 +48,7 @@ export {
   TagsInputItem,
   TagsInputItemDeleteTrigger,
   TagsInputItemInput,
+  TagsInputItemPreview,
   TagsInputItemText,
   TagsInputLabel,
 }
