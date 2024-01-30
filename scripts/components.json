@@ -394,7 +394,7 @@
   },
   "dialog": {
     "parts": {
-      "Root": { "name": "Dialog", "component": "ArkDialog.Root" },
+      "Root": { "name": "DialogRoot", "component": "ArkDialog.Root" },
       "Backdrop": {
         "name": "DialogBackdrop",
         "slot": "backdrop",
@@ -523,7 +523,7 @@
   },
   "hover-card": {
     "parts": {
-      "Root": { "name": "HoverCard", "component": "ArkHoverCard.Root" },
+      "Root": { "name": "HoverCardRoot", "component": "ArkHoverCard.Root" },
       "Arrow": { "name": "HoverCardArrow", "slot": "arrow", "component": "ArkHoverCard.Arrow" },
       "ArrowTip": {
         "name": "HoverCardArrowTip",
@@ -556,7 +556,7 @@
   },
   "menu": {
     "parts": {
-      "Root": { "name": "Menu", "component": "ArkMenu.Root" },
+      "Root": { "name": "MenuRoot", "component": "ArkMenu.Root" },
       "Arrow": { "name": "MenuArrow", "slot": "arrow", "component": "ArkMenu.Arrow" },
       "ArrowTip": { "name": "MenuArrowTip", "slot": "arrowTip", "component": "ArkMenu.ArrowTip" },
       "Content": { "name": "MenuContent", "slot": "content", "component": "ArkMenu.Content" },
@@ -704,7 +704,7 @@
   },
   "popover": {
     "parts": {
-      "Root": { "name": "Popover", "component": "ArkPopover.Root" },
+      "Root": { "name": "PopoverRoot", "component": "ArkPopover.Root" },
       "Anchor": { "name": "PopoverAnchor", "slot": "anchor", "component": "ArkPopover.Anchor" },
       "Arrow": { "name": "PopoverArrow", "slot": "arrow", "component": "ArkPopover.Arrow" },
       "ArrowTip": {
@@ -1079,7 +1079,7 @@
   },
   "tooltip": {
     "parts": {
-      "Root": { "name": "Tooltip", "component": "ArkTooltip.Root" },
+      "Root": { "name": "TooltipRoot", "component": "ArkTooltip.Root" },
       "Arrow": { "name": "TooltipArrow", "slot": "arrow", "component": "ArkTooltip.Arrow" },
       "ArrowTip": {
         "name": "TooltipArrowTip",

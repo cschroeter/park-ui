@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 import { Trash2Icon } from 'lucide-react'
 import { Button } from '~/components/ui/button'
-import * as FileUpload from '~/components/ui/file-upload'
+import { FileUpload } from '~/components/ui/file-upload'
 import { IconButton } from '~/components/ui/icon-button'
 
 const meta: Meta = {

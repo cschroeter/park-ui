@@ -6,32 +6,21 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tabs)
 
-const Tabs = withProvider(styled(ArkTabs.Root), 'root')
-const TabsContent = withContext(styled(ArkTabs.Content), 'content')
-const TabsIndicator = withContext(styled(ArkTabs.Indicator), 'indicator')
-const TabsList = withContext(styled(ArkTabs.List), 'list')
-const TabsTrigger = withContext(styled(ArkTabs.Trigger), 'trigger')
+export const TabsRoot = withProvider(styled(ArkTabs.Root), 'root')
+export const TabsContent = withContext(styled(ArkTabs.Content), 'content')
+export const TabsIndicator = withContext(styled(ArkTabs.Indicator), 'indicator')
+export const TabsList = withContext(styled(ArkTabs.List), 'list')
+export const TabsTrigger = withContext(styled(ArkTabs.Trigger), 'trigger')
 
-const Root = Tabs
-const Content = TabsContent
-const Indicator = TabsIndicator
-const List = TabsList
-const Trigger = TabsTrigger
-
-export {
-  Content,
-  Indicator,
-  List,
-  Root,
-  Tabs,
-  TabsContent,
-  TabsIndicator,
-  TabsList,
-  TabsTrigger,
-  Trigger,
+export const Tabs = {
+  Root: TabsRoot,
+  Content: TabsContent,
+  Indicator: TabsIndicator,
+  List: TabsList,
+  Trigger: TabsTrigger,
 }
 
-export interface TabsProps extends ComponentProps<typeof Tabs> {}
+export interface TabsRootProps extends ComponentProps<typeof TabsRoot> {}
 export interface TabsContentProps extends ComponentProps<typeof TabsContent> {}
 export interface TabsIndicatorProps extends ComponentProps<typeof TabsIndicator> {}
 export interface TabsListProps extends ComponentProps<typeof TabsList> {}

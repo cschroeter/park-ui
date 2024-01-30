@@ -6,32 +6,21 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(toast)
 
-const Toast = withProvider(styled(ArkToast.Root), 'root')
-const ToastCloseTrigger = withContext(styled(ArkToast.CloseTrigger), 'closeTrigger')
-const ToastDescription = withContext(styled(ArkToast.Description), 'description')
-const ToastGroup = withContext(styled(ArkToast.Group), 'group')
-const ToastTitle = withContext(styled(ArkToast.Title), 'title')
+export const ToastRoot = withProvider(styled(ArkToast.Root), 'root')
+export const ToastCloseTrigger = withContext(styled(ArkToast.CloseTrigger), 'closeTrigger')
+export const ToastDescription = withContext(styled(ArkToast.Description), 'description')
+export const ToastGroup = withContext(styled(ArkToast.Group), 'group')
+export const ToastTitle = withContext(styled(ArkToast.Title), 'title')
 
-const Root = Toast
-const CloseTrigger = ToastCloseTrigger
-const Description = ToastDescription
-const Group = ToastGroup
-const Title = ToastTitle
-
-export {
-  CloseTrigger,
-  Description,
-  Group,
-  Root,
-  Title,
-  Toast,
-  ToastCloseTrigger,
-  ToastDescription,
-  ToastGroup,
-  ToastTitle,
+export const Toast = {
+  Root: ToastRoot,
+  CloseTrigger: ToastCloseTrigger,
+  Description: ToastDescription,
+  Group: ToastGroup,
+  Title: ToastTitle,
 }
 
-export interface ToastProps extends ComponentProps<typeof Toast> {}
+export interface ToastRootProps extends ComponentProps<typeof ToastRoot> {}
 export interface ToastCloseTriggerProps extends ComponentProps<typeof ToastCloseTrigger> {}
 export interface ToastDescriptionProps extends ComponentProps<typeof ToastDescription> {}
 export interface ToastGroupProps extends ComponentProps<typeof ToastGroup> {}

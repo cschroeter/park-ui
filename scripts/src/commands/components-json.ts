@@ -32,7 +32,7 @@ const generateComponentsJson = async () => {
                 return {
                   ...acc,
                   [pascalCase(part)]: {
-                    name: pascalCase(component).concat(part === 'root' ? '' : pascalCase(part)),
+                    name: pascalCase(component).concat(pascalCase(part)),
                     slot: part,
                     component: 'Ark'
                       .concat(pascalCase(component))
@@ -43,7 +43,7 @@ const generateComponentsJson = async () => {
               },
               {
                 Root: {
-                  name: pascalCase(component),
+                  name: pascalCase(component).concat('Root'),
                   component: 'Ark'.concat(pascalCase(component)).concat('.Root'),
                 },
               },

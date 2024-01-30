@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Button } from '~/components/ui/button'
-import * as Editable from '~/components/ui/editable'
+import { Editable } from '~/components/ui/editable'
 import { FormLabel } from '~/components/ui/form-label'
 
 const meta: Meta = {

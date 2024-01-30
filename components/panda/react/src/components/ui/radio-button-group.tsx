@@ -6,39 +6,32 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 
-const RadioButtonGroup = withProvider(styled(ArkRadioButtonGroup.Root), 'root')
-const RadioButtonGroupIndicator = withContext(styled(ArkRadioButtonGroup.Indicator), 'indicator')
-const RadioButtonGroupItem = withContext(styled(ArkRadioButtonGroup.Item), 'item')
-const RadioButtonGroupItemControl = withContext(
+export const RadioButtonGroupRoot = withProvider(styled(ArkRadioButtonGroup.Root), 'root')
+export const RadioButtonGroupIndicator = withContext(
+  styled(ArkRadioButtonGroup.Indicator),
+  'indicator',
+)
+export const RadioButtonGroupItem = withContext(styled(ArkRadioButtonGroup.Item), 'item')
+export const RadioButtonGroupItemControl = withContext(
   styled(ArkRadioButtonGroup.ItemControl),
   'itemControl',
 )
-const RadioButtonGroupItemText = withContext(styled(ArkRadioButtonGroup.ItemText), 'itemText')
-const RadioButtonGroupLabel = withContext(styled(ArkRadioButtonGroup.Label), 'label')
+export const RadioButtonGroupItemText = withContext(
+  styled(ArkRadioButtonGroup.ItemText),
+  'itemText',
+)
+export const RadioButtonGroupLabel = withContext(styled(ArkRadioButtonGroup.Label), 'label')
 
-const Root = RadioButtonGroup
-const Indicator = RadioButtonGroupIndicator
-const Item = RadioButtonGroupItem
-const ItemControl = RadioButtonGroupItemControl
-const ItemText = RadioButtonGroupItemText
-const Label = RadioButtonGroupLabel
-
-export {
-  Indicator,
-  Item,
-  ItemControl,
-  ItemText,
-  Label,
-  RadioButtonGroup,
-  RadioButtonGroupIndicator,
-  RadioButtonGroupItem,
-  RadioButtonGroupItemControl,
-  RadioButtonGroupItemText,
-  RadioButtonGroupLabel,
-  Root,
+export const RadioButtonGroup = {
+  Root: RadioButtonGroupRoot,
+  Indicator: RadioButtonGroupIndicator,
+  Item: RadioButtonGroupItem,
+  ItemControl: RadioButtonGroupItemControl,
+  ItemText: RadioButtonGroupItemText,
+  Label: RadioButtonGroupLabel,
 }
 
-export interface RadioButtonGroupProps extends ComponentProps<typeof RadioButtonGroup> {}
+export interface RadioButtonGroupRootProps extends ComponentProps<typeof RadioButtonGroupRoot> {}
 export interface RadioButtonGroupIndicatorProps
   extends ComponentProps<typeof RadioButtonGroupIndicator> {}
 export interface RadioButtonGroupItemProps extends ComponentProps<typeof RadioButtonGroupItem> {}

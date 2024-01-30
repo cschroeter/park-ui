@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import * as Select from '~/components/ui/select'
+import { Select } from '~/components/ui/select'
 
 const meta: Meta = {
   title: 'Components/Select',

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import * as Menu from '~/components/ui/menu'
+import { Menu } from '~/components/ui/menu'
 import { Text } from '~/components/ui/text'
 
 const meta: Meta = {

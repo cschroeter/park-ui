@@ -13,7 +13,7 @@ const data = {
   ...parkComponents,
 }
 
-const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
+const rootDir = path.dirname(findUpSync('pnpm-lock.yaml') ?? '')
 
 type Options = {
   cssFramwork: 'panda' | 'tailwind' | 'chakra'
@@ -37,6 +37,7 @@ const generateComponents = async (options: Options) => {
             'rating-group',
             'slider',
             'switch',
+            'tree-view', // TODO impl recipe
           ].includes(key),
       )
       .map(async ([key, value]) => {
@@ -80,7 +81,7 @@ const generateComponents = async (options: Options) => {
 
 const action = async () => {
   const jsFrameworks = ['react'] as const
-  const cssFramworks = ['tailwind'] as const
+  const cssFramworks = ['panda'] as const
 
   jsFrameworks.forEach((jsFramework) => {
     cssFramworks.forEach(async (cssFramwork) => {

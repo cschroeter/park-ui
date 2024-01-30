@@ -6,36 +6,23 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
 
-const Tooltip = withProvider(ArkTooltip.Root)
-const TooltipArrow = withContext(styled(ArkTooltip.Arrow), 'arrow')
-const TooltipArrowTip = withContext(styled(ArkTooltip.ArrowTip), 'arrowTip')
-const TooltipContent = withContext(styled(ArkTooltip.Content), 'content')
-const TooltipPositioner = withContext(styled(ArkTooltip.Positioner), 'positioner')
-const TooltipTrigger = withContext(styled(ArkTooltip.Trigger), 'trigger')
+export const TooltipRoot = withProvider(ArkTooltip.Root)
+export const TooltipArrow = withContext(styled(ArkTooltip.Arrow), 'arrow')
+export const TooltipArrowTip = withContext(styled(ArkTooltip.ArrowTip), 'arrowTip')
+export const TooltipContent = withContext(styled(ArkTooltip.Content), 'content')
+export const TooltipPositioner = withContext(styled(ArkTooltip.Positioner), 'positioner')
+export const TooltipTrigger = withContext(styled(ArkTooltip.Trigger), 'trigger')
 
-const Root = Tooltip
-const Arrow = TooltipArrow
-const ArrowTip = TooltipArrowTip
-const Content = TooltipContent
-const Positioner = TooltipPositioner
-const Trigger = TooltipTrigger
-
-export {
-  Arrow,
-  ArrowTip,
-  Content,
-  Positioner,
-  Root,
-  Tooltip,
-  TooltipArrow,
-  TooltipArrowTip,
-  TooltipContent,
-  TooltipPositioner,
-  TooltipTrigger,
-  Trigger,
+export const Tooltip = {
+  Root: TooltipRoot,
+  Arrow: TooltipArrow,
+  ArrowTip: TooltipArrowTip,
+  Content: TooltipContent,
+  Positioner: TooltipPositioner,
+  Trigger: TooltipTrigger,
 }
 
-export interface TooltipProps extends ComponentProps<typeof Tooltip> {}
+export interface TooltipRootProps extends ComponentProps<typeof TooltipRoot> {}
 export interface TooltipArrowProps extends ComponentProps<typeof TooltipArrow> {}
 export interface TooltipArrowTipProps extends ComponentProps<typeof TooltipArrowTip> {}
 export interface TooltipContentProps extends ComponentProps<typeof TooltipContent> {}

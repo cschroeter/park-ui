@@ -6,13 +6,13 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(toggleGroup)
 
-const ToggleGroup = withProvider(styled(ArkToggleGroup.Root), 'root')
-const ToggleGroupItem = withContext(styled(ArkToggleGroup.Item), 'item')
+export const ToggleGroupRoot = withProvider(styled(ArkToggleGroup.Root), 'root')
+export const ToggleGroupItem = withContext(styled(ArkToggleGroup.Item), 'item')
 
-const Root = ToggleGroup
-const Item = ToggleGroupItem
+export const ToggleGroup = {
+  Root: ToggleGroupRoot,
+  Item: ToggleGroupItem,
+}
 
-export { Item, Root, ToggleGroup, ToggleGroupItem }
-
-export interface ToggleGroupProps extends ComponentProps<typeof ToggleGroup> {}
+export interface ToggleGroupRootProps extends ComponentProps<typeof ToggleGroupRoot> {}
 export interface ToggleGroupItemProps extends ComponentProps<typeof ToggleGroupItem> {}

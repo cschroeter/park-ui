@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { XIcon } from 'lucide-react'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
-import * as TagsInput from '~/components/ui/tags-input'
+import { TagsInput } from '~/components/ui/tags-input'
 
 const meta: Meta = {
   title: 'Components/Tags Input',

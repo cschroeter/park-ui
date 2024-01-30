@@ -6,48 +6,32 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(carousel)
 
-const Carousel = withProvider(styled(ArkCarousel.Root), 'root')
-const CarouselControl = withContext(styled(ArkCarousel.Control), 'control')
-const CarouselIndicator = withContext(styled(ArkCarousel.Indicator), 'indicator')
-const CarouselIndicatorGroup = withContext(styled(ArkCarousel.IndicatorGroup), 'indicatorGroup')
-const CarouselItem = withContext(styled(ArkCarousel.Item), 'item')
-const CarouselItemGroup = withContext(styled(ArkCarousel.ItemGroup), 'itemGroup')
-const CarouselNextTrigger = withContext(styled(ArkCarousel.NextTrigger), 'nextTrigger')
-const CarouselPrevTrigger = withContext(styled(ArkCarousel.PrevTrigger), 'prevTrigger')
-const CarouselViewport = withContext(styled(ArkCarousel.Viewport), 'viewport')
+export const CarouselRoot = withProvider(styled(ArkCarousel.Root), 'root')
+export const CarouselControl = withContext(styled(ArkCarousel.Control), 'control')
+export const CarouselIndicator = withContext(styled(ArkCarousel.Indicator), 'indicator')
+export const CarouselIndicatorGroup = withContext(
+  styled(ArkCarousel.IndicatorGroup),
+  'indicatorGroup',
+)
+export const CarouselItem = withContext(styled(ArkCarousel.Item), 'item')
+export const CarouselItemGroup = withContext(styled(ArkCarousel.ItemGroup), 'itemGroup')
+export const CarouselNextTrigger = withContext(styled(ArkCarousel.NextTrigger), 'nextTrigger')
+export const CarouselPrevTrigger = withContext(styled(ArkCarousel.PrevTrigger), 'prevTrigger')
+export const CarouselViewport = withContext(styled(ArkCarousel.Viewport), 'viewport')
 
-const Root = Carousel
-const Control = CarouselControl
-const Indicator = CarouselIndicator
-const IndicatorGroup = CarouselIndicatorGroup
-const Item = CarouselItem
-const ItemGroup = CarouselItemGroup
-const NextTrigger = CarouselNextTrigger
-const PrevTrigger = CarouselPrevTrigger
-const Viewport = CarouselViewport
-
-export {
-  Carousel,
-  CarouselControl,
-  CarouselIndicator,
-  CarouselIndicatorGroup,
-  CarouselItem,
-  CarouselItemGroup,
-  CarouselNextTrigger,
-  CarouselPrevTrigger,
-  CarouselViewport,
-  Control,
-  Indicator,
-  IndicatorGroup,
-  Item,
-  ItemGroup,
-  NextTrigger,
-  PrevTrigger,
-  Root,
-  Viewport,
+export const Carousel = {
+  Root: CarouselRoot,
+  Control: CarouselControl,
+  Indicator: CarouselIndicator,
+  IndicatorGroup: CarouselIndicatorGroup,
+  Item: CarouselItem,
+  ItemGroup: CarouselItemGroup,
+  NextTrigger: CarouselNextTrigger,
+  PrevTrigger: CarouselPrevTrigger,
+  Viewport: CarouselViewport,
 }
 
-export interface CarouselProps extends ComponentProps<typeof Carousel> {}
+export interface CarouselRootProps extends ComponentProps<typeof CarouselRoot> {}
 export interface CarouselControlProps extends ComponentProps<typeof CarouselControl> {}
 export interface CarouselIndicatorProps extends ComponentProps<typeof CarouselIndicator> {}
 export interface CarouselIndicatorGroupProps

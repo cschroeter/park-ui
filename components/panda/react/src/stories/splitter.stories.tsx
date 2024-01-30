@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import * as Splitter from '~/components/ui/splitter'
+import { Splitter } from '~/components/ui/splitter'
 
 const meta: Meta = {
   title: 'Components/Splitter',
