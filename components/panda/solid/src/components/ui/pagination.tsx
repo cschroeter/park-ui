@@ -1,7 +1,4 @@
-import {
-  Pagination as ArkPagination,
-  type PaginationProps as ArkPaginationProps,
-} from '@ark-ui/solid'
+import { Pagination as ArkPagination, type PaginationRootProps } from '@ark-ui/solid'
 import { For, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
@@ -11,7 +8,7 @@ import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
 export interface PaginationProps
-  extends Assign<JsxStyleProps, ArkPaginationProps>,
+  extends Assign<JsxStyleProps, PaginationRootProps>,
     PaginationVariantProps {}
 
 export const Pagination = (props: PaginationProps) => {
@@ -33,8 +30,8 @@ export const Pagination = (props: PaginationProps) => {
           <For each={api().pages}>
             {(page, index) =>
               page.type === 'page' ? (
-                <ArkPagination.Item {...page} class={styles.item} asChild>
-                  <Button variant="outline">{page.value}</Button>
+                <ArkPagination.Item {...page} class={styles.item} as={Button} variant="outline">
+                  {page.value}
                 </ArkPagination.Item>
               ) : (
                 <ArkPagination.Ellipsis index={index()} class={styles.ellipsis}>

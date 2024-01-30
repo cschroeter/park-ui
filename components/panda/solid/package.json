@@ -7,7 +7,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/solid": "2.0.0",
+    "@ark-ui/solid": "2.0.1",
     "@pandacss/dev": "0.29.0",
     "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-essentials": "7.6.10",

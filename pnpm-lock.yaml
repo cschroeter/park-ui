@@ -90,8 +90,8 @@ importers:
   components/chakra/react:
     dependencies:
       '@ark-ui/react':
-        specifier: 2.0.0
-        version: 2.0.0(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.0.1
+        version: 2.0.1(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
       '@chakra-ui/react':
         specifier: 2.8.2
         version: 2.8.2(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.48)(framer-motion@11.0.3)(react-dom@18.2.0)(react@18.2.0)
@@ -162,8 +162,8 @@ importers:
   components/panda/react:
     dependencies:
       '@ark-ui/react':
-        specifier: 2.0.0
-        version: 2.0.0(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.0.1
+        version: 2.0.1(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
       '@pandacss/dev':
         specifier: 0.29.0
         version: 0.29.0(typescript@5.3.3)
@@ -213,8 +213,8 @@ importers:
   components/panda/solid:
     dependencies:
       '@ark-ui/solid':
-        specifier: 2.0.0
-        version: 2.0.0(@internationalized/date@3.5.1)(solid-js@1.8.12)
+        specifier: 2.0.1
+        version: 2.0.1(@internationalized/date@3.5.1)(solid-js@1.8.12)
       '@pandacss/dev':
         specifier: 0.29.0
         version: 0.29.0(typescript@5.3.3)
@@ -300,8 +300,8 @@ importers:
   components/tailwind/react:
     dependencies:
       '@ark-ui/react':
-        specifier: 2.0.0
-        version: 2.0.0(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.0.1
+        version: 2.0.1(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
       '@park-ui/tailwind-plugin':
         specifier: workspace:*
         version: link:../../../plugins/tailwind
@@ -360,8 +360,8 @@ importers:
   components/tailwind/solid:
     dependencies:
       '@ark-ui/solid':
-        specifier: 2.0.0
-        version: 2.0.0(@internationalized/date@3.5.1)(solid-js@1.8.12)
+        specifier: 2.0.1
+        version: 2.0.1(@internationalized/date@3.5.1)(solid-js@1.8.12)
       '@park-ui/tailwind-plugin':
         specifier: workspace:*
         version: link:../../../plugins/tailwind
@@ -506,8 +506,8 @@ importers:
         version: 5.0.6
     devDependencies:
       '@ark-ui/react':
-        specifier: 2.0.0
-        version: 2.0.0(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.0.1
+        version: 2.0.1(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
       '@pandacss/dev':
         specifier: 0.29.0
         version: 0.29.0(typescript@5.3.3)
@@ -617,8 +617,8 @@ importers:
   website:
     dependencies:
       '@ark-ui/react':
-        specifier: 2.0.0
-        version: 2.0.0(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.0.1
+        version: 2.0.1(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0)
       '@astrojs/check':
         specifier: 0.4.1
         version: 0.4.1(prettier-plugin-astro@0.13.0)(prettier@3.2.4)(typescript@5.3.3)
@@ -795,8 +795,8 @@ packages:
     transitivePeerDependencies:
       - '@internationalized/date'
 
-  /@ark-ui/react@2.0.0(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-DP6WOR23aCLAXfe+ekCOebRs2Xb+QDEeOpQ+ZPacHZ1bNz9RffnRcJfiO4jsLhKtgPRMhhNIg6YdZ68MlRyP4g==}
+  /@ark-ui/react@2.0.1(@internationalized/date@3.5.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-TZqkhlAnIFGERb40mhtxW35mawH01cdCRPoVrtrpi9xR6Q8nJEKFdX66L4yPwMW2UPZXEzeNMDOtWGYhusk//g==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -842,8 +842,8 @@ packages:
     transitivePeerDependencies:
       - '@internationalized/date'
 
-  /@ark-ui/solid@2.0.0(@internationalized/date@3.5.1)(solid-js@1.8.12):
-    resolution: {integrity: sha512-rOi84Bflj2A0IW+3JoC5nG7biEES406hI2vguQlAN5qD/kMWE+gPM/Od1URwCvFm/wlRPEkH76OrauzJfNIycg==}
+  /@ark-ui/solid@2.0.1(@internationalized/date@3.5.1)(solid-js@1.8.12):
+    resolution: {integrity: sha512-lTysk2hikuTWgA1YngKdE6DeLwWJs0qW6xVesQMwLjkSROibgARRj54Y8MMjOk/vVAXqIAUl0xTtBS1VHrM42w==}
     peerDependencies:
       solid-js: '>=1.6.0'
     dependencies:

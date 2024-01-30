@@ -6,36 +6,23 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(radioGroup)
 
-const RadioGroup = withProvider(styled(ArkRadioGroup.Root), 'root')
-const RadioGroupIndicator = withContext(styled(ArkRadioGroup.Indicator), 'indicator')
-const RadioGroupItem = withContext(styled(ArkRadioGroup.Item), 'item')
-const RadioGroupItemControl = withContext(styled(ArkRadioGroup.ItemControl), 'itemControl')
-const RadioGroupItemText = withContext(styled(ArkRadioGroup.ItemText), 'itemText')
-const RadioGroupLabel = withContext(styled(ArkRadioGroup.Label), 'label')
+export const RadioGroupRoot = withProvider(styled(ArkRadioGroup.Root), 'root')
+export const RadioGroupIndicator = withContext(styled(ArkRadioGroup.Indicator), 'indicator')
+export const RadioGroupItem = withContext(styled(ArkRadioGroup.Item), 'item')
+export const RadioGroupItemControl = withContext(styled(ArkRadioGroup.ItemControl), 'itemControl')
+export const RadioGroupItemText = withContext(styled(ArkRadioGroup.ItemText), 'itemText')
+export const RadioGroupLabel = withContext(styled(ArkRadioGroup.Label), 'label')
 
-const Root = RadioGroup
-const Indicator = RadioGroupIndicator
-const Item = RadioGroupItem
-const ItemControl = RadioGroupItemControl
-const ItemText = RadioGroupItemText
-const Label = RadioGroupLabel
-
-export {
-  Indicator,
-  Item,
-  ItemControl,
-  ItemText,
-  Label,
-  RadioGroup,
-  RadioGroupIndicator,
-  RadioGroupItem,
-  RadioGroupItemControl,
-  RadioGroupItemText,
-  RadioGroupLabel,
-  Root,
+export const RadioGroup = {
+  Root: RadioGroupRoot,
+  Indicator: RadioGroupIndicator,
+  Item: RadioGroupItem,
+  ItemControl: RadioGroupItemControl,
+  ItemText: RadioGroupItemText,
+  Label: RadioGroupLabel,
 }
 
-export interface RadioGroupProps extends ComponentProps<typeof RadioGroup> {}
+export interface RadioGroupRootProps extends ComponentProps<typeof RadioGroupRoot> {}
 export interface RadioGroupIndicatorProps extends ComponentProps<typeof RadioGroupIndicator> {}
 export interface RadioGroupItemProps extends ComponentProps<typeof RadioGroupItem> {}
 export interface RadioGroupItemControlProps extends ComponentProps<typeof RadioGroupItemControl> {}

@@ -6,7 +6,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/react": "2.0.0",
+    "@ark-ui/react": "2.0.1",
     "@park-ui/tailwind-plugin": "workspace:*",
     "@storybook/addon-essentials": "7.6.10",
     "@storybook/addons": "7.6.10",

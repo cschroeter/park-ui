@@ -3,7 +3,7 @@ import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
-import * as Toast from '~/components/ui/toast'
+import { Toast } from '~/components/ui/toast'
 
 const meta: Meta = {
   title: 'Components/Toast',

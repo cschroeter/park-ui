@@ -1,6 +1,6 @@
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import * as RadioGroup from '~/components/ui/radio-group'
+import { RadioGroup } from '~/components/ui/radio-group'
 
 const meta: Meta = {
   title: 'Components/Radio Group',

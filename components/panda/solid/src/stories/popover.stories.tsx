@@ -3,7 +3,7 @@ import type { Meta } from 'storybook-solidjs'
 import { Box, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
-import * as Popover from '~/components/ui/popover'
+import { Popover } from '~/components/ui/popover'
 
 const meta: Meta = {
   title: 'Components/Popover',

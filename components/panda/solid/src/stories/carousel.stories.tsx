@@ -1,7 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import * as Carousel from '~/components/ui/carousel'
+import { Carousel } from '~/components/ui/carousel'
 import { IconButton } from '~/components/ui/icon-button'
 
 const meta: Meta = {
@@ -35,10 +35,13 @@ export const Base = () => {
           </Index>
         </Carousel.ItemGroup>
         <Carousel.Control>
-          <Carousel.PrevTrigger asChild>
-            <IconButton size="sm" variant="link" aria-label="Previous Slide">
-              <ChevronLeftIcon />
-            </IconButton>
+          <Carousel.PrevTrigger
+            as={IconButton}
+            size="sm"
+            variant="link"
+            aria-label="Previous Slide"
+          >
+            <ChevronLeftIcon />
           </Carousel.PrevTrigger>
           <Carousel.IndicatorGroup>
             <Index each={images}>
@@ -47,10 +50,8 @@ export const Base = () => {
               )}
             </Index>
           </Carousel.IndicatorGroup>
-          <Carousel.NextTrigger asChild>
-            <IconButton size="sm" variant="link" aria-label="Next Slide">
-              <ChevronRightIcon />
-            </IconButton>
+          <Carousel.NextTrigger as={IconButton} size="sm" variant="link" aria-label="Next Slide">
+            <ChevronRightIcon />
           </Carousel.NextTrigger>
         </Carousel.Control>
       </Carousel.Viewport>

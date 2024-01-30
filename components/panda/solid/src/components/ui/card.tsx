@@ -6,36 +6,23 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(card)
 
-const Card = withProvider(styled(ark.div), 'root')
-const CardBody = withContext(styled(ark.div), 'body')
-const CardDescription = withContext(styled(ark.p), 'description')
-const CardFooter = withContext(styled(ark.div), 'footer')
-const CardHeader = withContext(styled(ark.div), 'header')
-const CardTitle = withContext(styled(ark.h3), 'title')
+export const CardRoot = withProvider(styled(ark.div), 'root')
+export const CardBody = withContext(styled(ark.div), 'body')
+export const CardDescription = withContext(styled(ark.p), 'description')
+export const CardFooter = withContext(styled(ark.div), 'footer')
+export const CardHeader = withContext(styled(ark.div), 'header')
+export const CardTitle = withContext(styled(ark.h3), 'title')
 
-const Root = Card
-const Body = CardBody
-const Description = CardDescription
-const Footer = CardFooter
-const Header = CardHeader
-const Title = CardTitle
-
-export {
-  Body,
-  Card,
-  CardBody,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Description,
-  Footer,
-  Header,
-  Root,
-  Title,
+export const Card = {
+  Root: CardRoot,
+  Body: CardBody,
+  Description: CardDescription,
+  Footer: CardFooter,
+  Header: CardHeader,
+  Title: CardTitle,
 }
 
-export interface CardProps extends ComponentProps<typeof Card> {}
+export interface CardRootProps extends ComponentProps<typeof CardRoot> {}
 export interface CardBodyProps extends ComponentProps<typeof CardBody> {}
 export interface CardDescriptionProps extends ComponentProps<typeof CardDescription> {}
 export interface CardFooterProps extends ComponentProps<typeof CardFooter> {}

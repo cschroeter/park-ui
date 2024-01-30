@@ -2,7 +2,7 @@ import { PipetteIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { HStack, Stack } from 'styled-system/jsx'
-import * as ColorPicker from '~/components/ui/color-picker'
+import { ColorPicker } from '~/components/ui/color-picker'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 import { Text } from '~/components/ui/text'
@@ -23,7 +23,7 @@ export const Base = () => {
             <ColorPicker.ChannelInput channel="hex" asChild>
               <Input />
             </ColorPicker.ChannelInput>
-            <ColorPicker.Trigger asChild>
+            <ColorPicker.Trigger>
               <IconButton variant="outline">
                 <ColorPicker.Swatch value={api().value} />
               </IconButton>

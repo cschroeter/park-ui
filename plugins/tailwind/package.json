@@ -35,7 +35,7 @@
     "ts-pattern": "5.0.6"
   },
   "devDependencies": {
-    "@ark-ui/react": "2.0.0",
+    "@ark-ui/react": "2.0.1",
     "@pandacss/dev": "0.29.0",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
