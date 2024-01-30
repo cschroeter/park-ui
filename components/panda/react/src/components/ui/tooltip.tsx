@@ -20,20 +20,7 @@ const Content = TooltipContent
 const Positioner = TooltipPositioner
 const Trigger = TooltipTrigger
 
-export {
-  Arrow,
-  ArrowTip,
-  Content,
-  Positioner,
-  Root,
-  Tooltip,
-  TooltipArrow,
-  TooltipArrowTip,
-  TooltipContent,
-  TooltipPositioner,
-  TooltipTrigger,
-  Trigger,
-}
+export { Arrow, ArrowTip, Content, Positioner, Root, Trigger }
 
 export interface TooltipProps extends ComponentProps<typeof Tooltip> {}
 export interface TooltipArrowProps extends ComponentProps<typeof TooltipArrow> {}
