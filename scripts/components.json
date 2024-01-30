@@ -1,7 +1,7 @@
 {
   "accordion": {
     "parts": {
-      "Root": { "name": "Accordion", "slot": "root", "component": "ArkAccordion.Root" },
+      "Root": { "name": "AccordionRoot", "slot": "root", "component": "ArkAccordion.Root" },
       "Item": { "name": "AccordionItem", "slot": "item", "component": "ArkAccordion.Item" },
       "ItemContent": {
         "name": "AccordionItemContent",
@@ -29,7 +29,7 @@
   },
   "avatar": {
     "parts": {
-      "Root": { "name": "Avatar", "slot": "root", "component": "ArkAvatar.Root" },
+      "Root": { "name": "AvatarRoot", "slot": "root", "component": "ArkAvatar.Root" },
       "Fallback": {
         "name": "AvatarFallback",
         "slot": "fallback",
@@ -47,7 +47,7 @@
   },
   "carousel": {
     "parts": {
-      "Root": { "name": "Carousel", "slot": "root", "component": "ArkCarousel.Root" },
+      "Root": { "name": "CarouselRoot", "slot": "root", "component": "ArkCarousel.Root" },
       "Control": {
         "name": "CarouselControl",
         "slot": "control",
@@ -95,7 +95,7 @@
   },
   "checkbox": {
     "parts": {
-      "Root": { "name": "Checkbox", "slot": "root", "component": "ArkCheckbox.Root" },
+      "Root": { "name": "CheckboxRoot", "slot": "root", "component": "ArkCheckbox.Root" },
       "Control": {
         "name": "CheckboxControl",
         "slot": "control",
@@ -118,7 +118,7 @@
   },
   "color-picker": {
     "parts": {
-      "Root": { "name": "ColorPicker", "slot": "root", "component": "ArkColorPicker.Root" },
+      "Root": { "name": "ColorPickerRoot", "slot": "root", "component": "ArkColorPicker.Root" },
       "Area": { "name": "ColorPickerArea", "slot": "area", "component": "ArkColorPicker.Area" },
       "AreaBackground": {
         "name": "ColorPickerAreaBackground",
@@ -228,7 +228,7 @@
   },
   "combobox": {
     "parts": {
-      "Root": { "name": "Combobox", "slot": "root", "component": "ArkCombobox.Root" },
+      "Root": { "name": "ComboboxRoot", "slot": "root", "component": "ArkCombobox.Root" },
       "ClearTrigger": {
         "name": "ComboboxClearTrigger",
         "slot": "clearTrigger",
@@ -288,7 +288,7 @@
   },
   "date-picker": {
     "parts": {
-      "Root": { "name": "DatePicker", "slot": "root", "component": "ArkDatePicker.Root" },
+      "Root": { "name": "DatePickerRoot", "slot": "root", "component": "ArkDatePicker.Root" },
       "ClearTrigger": {
         "name": "DatePickerClearTrigger",
         "slot": "clearTrigger",
@@ -429,7 +429,7 @@
   },
   "editable": {
     "parts": {
-      "Root": { "name": "Editable", "slot": "root", "component": "ArkEditable.Root" },
+      "Root": { "name": "EditableRoot", "slot": "root", "component": "ArkEditable.Root" },
       "Area": { "name": "EditableArea", "slot": "area", "component": "ArkEditable.Area" },
       "CancelTrigger": {
         "name": "EditableCancelTrigger",
@@ -469,7 +469,7 @@
   },
   "file-upload": {
     "parts": {
-      "Root": { "name": "FileUpload", "slot": "root", "component": "ArkFileUpload.Root" },
+      "Root": { "name": "FileUploadRoot", "slot": "root", "component": "ArkFileUpload.Root" },
       "Dropzone": {
         "name": "FileUploadDropzone",
         "slot": "dropzone",
@@ -623,7 +623,7 @@
   },
   "number-input": {
     "parts": {
-      "Root": { "name": "NumberInput", "slot": "root", "component": "ArkNumberInput.Root" },
+      "Root": { "name": "NumberInputRoot", "slot": "root", "component": "ArkNumberInput.Root" },
       "Control": {
         "name": "NumberInputControl",
         "slot": "control",
@@ -657,7 +657,7 @@
   },
   "pagination": {
     "parts": {
-      "Root": { "name": "Pagination", "slot": "root", "component": "ArkPagination.Root" },
+      "Root": { "name": "PaginationRoot", "slot": "root", "component": "ArkPagination.Root" },
       "Ellipsis": {
         "name": "PaginationEllipsis",
         "slot": "ellipsis",
@@ -685,7 +685,7 @@
   },
   "pin-input": {
     "parts": {
-      "Root": { "name": "PinInput", "slot": "root", "component": "ArkPinInput.Root" },
+      "Root": { "name": "PinInputRoot", "slot": "root", "component": "ArkPinInput.Root" },
       "Control": {
         "name": "PinInputControl",
         "slot": "control",
@@ -744,9 +744,41 @@
     },
     "className": "popover"
   },
+  "progress": {
+    "parts": {
+      "Root": { "name": "ProgressRoot", "slot": "root", "component": "ArkProgress.Root" },
+      "Circle": { "name": "ProgressCircle", "slot": "circle", "component": "ArkProgress.Circle" },
+      "CircleRange": {
+        "name": "ProgressCircleRange",
+        "slot": "circleRange",
+        "component": "ArkProgress.CircleRange"
+      },
+      "CircleTrack": {
+        "name": "ProgressCircleTrack",
+        "slot": "circleTrack",
+        "component": "ArkProgress.CircleTrack"
+      },
+      "Label": { "name": "ProgressLabel", "slot": "label", "component": "ArkProgress.Label" },
+      "Range": { "name": "ProgressRange", "slot": "range", "component": "ArkProgress.Range" },
+      "Track": { "name": "ProgressTrack", "slot": "track", "component": "ArkProgress.Track" },
+      "ValueText": {
+        "name": "ProgressValueText",
+        "slot": "valueText",
+        "component": "ArkProgress.ValueText"
+      },
+      "View": { "name": "ProgressView", "slot": "view", "component": "ArkProgress.View" }
+    },
+    "name": "Progress",
+    "imports": {
+      "react": ["import { Progress as ArkProgress } from '@ark-ui/react/progress'"],
+      "solid": ["import { Progress as ArkProgress } from '@ark-ui/solid'"],
+      "vue": ["import { Progress as ArkProgress } from '@ark-ui/vue/progress'"]
+    },
+    "className": "progress"
+  },
   "radio-group": {
     "parts": {
-      "Root": { "name": "RadioGroup", "slot": "root", "component": "ArkRadioGroup.Root" },
+      "Root": { "name": "RadioGroupRoot", "slot": "root", "component": "ArkRadioGroup.Root" },
       "Indicator": {
         "name": "RadioGroupIndicator",
         "slot": "indicator",
@@ -775,7 +807,7 @@
   },
   "rating-group": {
     "parts": {
-      "Root": { "name": "RatingGroup", "slot": "root", "component": "ArkRatingGroup.Root" },
+      "Root": { "name": "RatingGroupRoot", "slot": "root", "component": "ArkRatingGroup.Root" },
       "Control": {
         "name": "RatingGroupControl",
         "slot": "control",
@@ -794,7 +826,7 @@
   },
   "segment-group": {
     "parts": {
-      "Root": { "name": "SegmentGroup", "slot": "root", "component": "ArkSegmentGroup.Root" },
+      "Root": { "name": "SegmentGroupRoot", "slot": "root", "component": "ArkSegmentGroup.Root" },
       "Indicator": {
         "name": "SegmentGroupIndicator",
         "slot": "indicator",
@@ -827,7 +859,7 @@
   },
   "select": {
     "parts": {
-      "Root": { "name": "Select", "slot": "root", "component": "ArkSelect.Root" },
+      "Root": { "name": "SelectRoot", "slot": "root", "component": "ArkSelect.Root" },
       "ClearTrigger": {
         "name": "SelectClearTrigger",
         "slot": "clearTrigger",
@@ -884,7 +916,7 @@
   },
   "slider": {
     "parts": {
-      "Root": { "name": "Slider", "slot": "root", "component": "ArkSlider.Root" },
+      "Root": { "name": "SliderRoot", "slot": "root", "component": "ArkSlider.Root" },
       "Control": { "name": "SliderControl", "slot": "control", "component": "ArkSlider.Control" },
       "Label": { "name": "SliderLabel", "slot": "label", "component": "ArkSlider.Label" },
       "Marker": { "name": "SliderMarker", "slot": "marker", "component": "ArkSlider.Marker" },
@@ -912,7 +944,7 @@
   },
   "splitter": {
     "parts": {
-      "Root": { "name": "Splitter", "slot": "root", "component": "ArkSplitter.Root" },
+      "Root": { "name": "SplitterRoot", "slot": "root", "component": "ArkSplitter.Root" },
       "Panel": { "name": "SplitterPanel", "slot": "panel", "component": "ArkSplitter.Panel" },
       "ResizeTrigger": {
         "name": "SplitterResizeTrigger",
@@ -930,7 +962,7 @@
   },
   "switch": {
     "parts": {
-      "Root": { "name": "Switch", "slot": "root", "component": "ArkSwitch.Root" },
+      "Root": { "name": "SwitchRoot", "slot": "root", "component": "ArkSwitch.Root" },
       "Control": { "name": "SwitchControl", "slot": "control", "component": "ArkSwitch.Control" },
       "Label": { "name": "SwitchLabel", "slot": "label", "component": "ArkSwitch.Label" },
       "Thumb": { "name": "SwitchThumb", "slot": "thumb", "component": "ArkSwitch.Thumb" }
@@ -945,7 +977,7 @@
   },
   "tabs": {
     "parts": {
-      "Root": { "name": "Tabs", "slot": "root", "component": "ArkTabs.Root" },
+      "Root": { "name": "TabsRoot", "slot": "root", "component": "ArkTabs.Root" },
       "Content": { "name": "TabsContent", "slot": "content", "component": "ArkTabs.Content" },
       "Indicator": {
         "name": "TabsIndicator",
@@ -965,7 +997,7 @@
   },
   "tags-input": {
     "parts": {
-      "Root": { "name": "TagsInput", "slot": "root", "component": "ArkTagsInput.Root" },
+      "Root": { "name": "TagsInputRoot", "slot": "root", "component": "ArkTagsInput.Root" },
       "ClearTrigger": {
         "name": "TagsInputClearTrigger",
         "slot": "clearTrigger",
@@ -988,6 +1020,11 @@
         "slot": "itemInput",
         "component": "ArkTagsInput.ItemInput"
       },
+      "ItemPreview": {
+        "name": "TagsInputItemPreview",
+        "slot": "itemPreview",
+        "component": "ArkTagsInput.ItemPreview"
+      },
       "ItemText": {
         "name": "TagsInputItemText",
         "slot": "itemText",
@@ -1005,7 +1042,7 @@
   },
   "toast": {
     "parts": {
-      "Root": { "name": "Toast", "slot": "root", "component": "ArkToast.Root" },
+      "Root": { "name": "ToastRoot", "slot": "root", "component": "ArkToast.Root" },
       "CloseTrigger": {
         "name": "ToastCloseTrigger",
         "slot": "closeTrigger",
@@ -1029,7 +1066,7 @@
   },
   "toggle-group": {
     "parts": {
-      "Root": { "name": "ToggleGroup", "slot": "root", "component": "ArkToggleGroup.Root" },
+      "Root": { "name": "ToggleGroupRoot", "slot": "root", "component": "ArkToggleGroup.Root" },
       "Item": { "name": "ToggleGroupItem", "slot": "item", "component": "ArkToggleGroup.Item" }
     },
     "name": "ToggleGroup",
@@ -1064,5 +1101,51 @@
       "vue": ["import { Tooltip as ArkTooltip } from '@ark-ui/vue/tooltip'"]
     },
     "className": "tooltip"
+  },
+  "tree-view": {
+    "parts": {
+      "Root": { "name": "TreeViewRoot", "slot": "root", "component": "ArkTreeView.Root" },
+      "Branch": { "name": "TreeViewBranch", "slot": "branch", "component": "ArkTreeView.Branch" },
+      "BranchContent": {
+        "name": "TreeViewBranchContent",
+        "slot": "branchContent",
+        "component": "ArkTreeView.BranchContent"
+      },
+      "BranchControl": {
+        "name": "TreeViewBranchControl",
+        "slot": "branchControl",
+        "component": "ArkTreeView.BranchControl"
+      },
+      "BranchIndicator": {
+        "name": "TreeViewBranchIndicator",
+        "slot": "branchIndicator",
+        "component": "ArkTreeView.BranchIndicator"
+      },
+      "BranchText": {
+        "name": "TreeViewBranchText",
+        "slot": "branchText",
+        "component": "ArkTreeView.BranchText"
+      },
+      "BranchTrigger": {
+        "name": "TreeViewBranchTrigger",
+        "slot": "branchTrigger",
+        "component": "ArkTreeView.BranchTrigger"
+      },
+      "Item": { "name": "TreeViewItem", "slot": "item", "component": "ArkTreeView.Item" },
+      "ItemText": {
+        "name": "TreeViewItemText",
+        "slot": "itemText",
+        "component": "ArkTreeView.ItemText"
+      },
+      "Label": { "name": "TreeViewLabel", "slot": "label", "component": "ArkTreeView.Label" },
+      "Tree": { "name": "TreeViewTree", "slot": "tree", "component": "ArkTreeView.Tree" }
+    },
+    "name": "TreeView",
+    "imports": {
+      "react": ["import { TreeView as ArkTreeView } from '@ark-ui/react/tree-view'"],
+      "solid": ["import { TreeView as ArkTreeView } from '@ark-ui/solid'"],
+      "vue": ["import { TreeView as ArkTreeView } from '@ark-ui/vue/tree-view'"]
+    },
+    "className": "treeView"
   }
 }

@@ -8,7 +8,7 @@
     },
     "name": "Alert",
     "parts": {
-      "Root": { "name": "Alert", "slot": "root", "component": "ark.div" },
+      "Root": { "name": "AlertRoot", "slot": "root", "component": "ark.div" },
       "Content": { "name": "AlertContent", "slot": "content", "component": "ark.div" },
       "Description": { "name": "AlertDescription", "slot": "description", "component": "ark.p" },
       "Icon": { "name": "AlertIcon", "slot": "icon", "component": "ark.svg" },
@@ -37,7 +37,7 @@
   },
   "card": {
     "parts": {
-      "Root": { "name": "Card", "slot": "root", "component": "ark.div" },
+      "Root": { "name": "CardRoot", "slot": "root", "component": "ark.div" },
       "Body": { "name": "CardBody", "slot": "body", "component": "ark.div" },
       "Description": { "name": "CardDescription", "slot": "description", "component": "ark.p" },
       "Footer": { "name": "CardFooter", "slot": "footer", "component": "ark.div" },
@@ -64,7 +64,7 @@
   },
   "drawer": {
     "parts": {
-      "Root": { "name": "Drawer", "component": "ArkDrawer.Root" },
+      "Root": { "name": "DrawerRoot", "component": "ArkDrawer.Root" },
       "Backdrop": {
         "name": "DrawerBackdrop",
         "slot": "backdrop",
@@ -163,7 +163,7 @@
   "radio-button-group": {
     "parts": {
       "Root": {
-        "name": "RadioButtonGroup",
+        "name": "RadioButtonGroupRoot",
         "slot": "root",
         "component": "ArkRadioButtonGroup.Root"
       },
@@ -203,7 +203,7 @@
   },
   "table": {
     "parts": {
-      "Root": { "name": "Table", "slot": "root", "component": "ark.table" },
+      "Root": { "name": "TableRoot", "slot": "root", "component": "ark.table" },
       "Body": { "name": "TableBody", "slot": "body", "component": "ark.tbody" },
       "Caption": { "name": "TableCaption", "slot": "caption", "component": "ark.caption" },
       "Cell": { "name": "TableCell", "slot": "cell", "component": "ark.td" },
