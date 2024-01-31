@@ -1,17 +1,17 @@
-import { Dialog as ArkDialog } from '@ark-ui/react/dialog'
+import { Dialog } from '@ark-ui/react/dialog'
 import { styled } from 'styled-system/jsx'
 import { dialog } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(dialog)
 
-const Root = withProvider(ArkDialog.Root)
-const Backdrop = withContext(styled(ArkDialog.Backdrop), 'backdrop')
-const CloseTrigger = withContext(styled(ArkDialog.CloseTrigger), 'closeTrigger')
-const Content = withContext(styled(ArkDialog.Content), 'content')
-const Description = withContext(styled(ArkDialog.Description), 'description')
-const Positioner = withContext(styled(ArkDialog.Positioner), 'positioner')
-const Title = withContext(styled(ArkDialog.Title), 'title')
-const Trigger = withContext(styled(ArkDialog.Trigger), 'trigger')
+const Root = withProvider(Dialog.Root)
+const Backdrop = withContext(styled(Dialog.Backdrop), 'backdrop')
+const CloseTrigger = withContext(styled(Dialog.CloseTrigger), 'closeTrigger')
+const Content = withContext(styled(Dialog.Content), 'content')
+const Description = withContext(styled(Dialog.Description), 'description')
+const Positioner = withContext(styled(Dialog.Positioner), 'positioner')
+const Title = withContext(styled(Dialog.Title), 'title')
+const Trigger = withContext(styled(Dialog.Trigger), 'trigger')
 
 export { Backdrop, CloseTrigger, Content, Description, Positioner, Root, Title, Trigger }

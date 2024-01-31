@@ -1,1150 +1,1082 @@
 {
   "accordion": {
     "parts": {
-      "Root": { "name": "AccordionRoot", "slot": "root", "component": "ArkAccordion.Root" },
-      "Item": { "name": "AccordionItem", "slot": "item", "component": "ArkAccordion.Item" },
+      "Root": { "name": "AccordionRoot", "slot": "root", "component": "Accordion.Root" },
+      "Item": { "name": "AccordionItem", "slot": "item", "component": "Accordion.Item" },
       "ItemContent": {
         "name": "AccordionItemContent",
         "slot": "itemContent",
-        "component": "ArkAccordion.ItemContent"
+        "component": "Accordion.ItemContent"
       },
       "ItemIndicator": {
         "name": "AccordionItemIndicator",
         "slot": "itemIndicator",
-        "component": "ArkAccordion.ItemIndicator"
+        "component": "Accordion.ItemIndicator"
       },
       "ItemTrigger": {
         "name": "AccordionItemTrigger",
         "slot": "itemTrigger",
-        "component": "ArkAccordion.ItemTrigger"
+        "component": "Accordion.ItemTrigger"
       }
     },
     "name": "Accordion",
     "imports": {
-      "react": ["import { Accordion as ArkAccordion } from '@ark-ui/react/accordion'"],
-      "solid": ["import { Accordion as ArkAccordion } from '@ark-ui/solid'"],
-      "vue": ["import { Accordion as ArkAccordion } from '@ark-ui/vue/accordion'"]
+      "react": ["import { Accordion } from '@ark-ui/react/accordion'"],
+      "solid": ["import { Accordion } from '@ark-ui/solid'"],
+      "vue": ["import { Accordion } from '@ark-ui/vue/accordion'"]
     },
     "className": "accordion"
   },
   "avatar": {
     "parts": {
-      "Root": { "name": "AvatarRoot", "slot": "root", "component": "ArkAvatar.Root" },
-      "Fallback": {
-        "name": "AvatarFallback",
-        "slot": "fallback",
-        "component": "ArkAvatar.Fallback"
-      },
-      "Image": { "name": "AvatarImage", "slot": "image", "component": "ArkAvatar.Image" }
+      "Root": { "name": "AvatarRoot", "slot": "root", "component": "Avatar.Root" },
+      "Fallback": { "name": "AvatarFallback", "slot": "fallback", "component": "Avatar.Fallback" },
+      "Image": { "name": "AvatarImage", "slot": "image", "component": "Avatar.Image" }
     },
     "name": "Avatar",
     "imports": {
-      "react": ["import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'"],
-      "solid": ["import { Avatar as ArkAvatar } from '@ark-ui/solid'"],
-      "vue": ["import { Avatar as ArkAvatar } from '@ark-ui/vue/avatar'"]
+      "react": ["import { Avatar } from '@ark-ui/react/avatar'"],
+      "solid": ["import { Avatar } from '@ark-ui/solid'"],
+      "vue": ["import { Avatar } from '@ark-ui/vue/avatar'"]
     },
     "className": "avatar"
   },
   "carousel": {
     "parts": {
-      "Root": { "name": "CarouselRoot", "slot": "root", "component": "ArkCarousel.Root" },
-      "Control": {
-        "name": "CarouselControl",
-        "slot": "control",
-        "component": "ArkCarousel.Control"
-      },
+      "Root": { "name": "CarouselRoot", "slot": "root", "component": "Carousel.Root" },
+      "Control": { "name": "CarouselControl", "slot": "control", "component": "Carousel.Control" },
       "Indicator": {
         "name": "CarouselIndicator",
         "slot": "indicator",
-        "component": "ArkCarousel.Indicator"
+        "component": "Carousel.Indicator"
       },
       "IndicatorGroup": {
         "name": "CarouselIndicatorGroup",
         "slot": "indicatorGroup",
-        "component": "ArkCarousel.IndicatorGroup"
+        "component": "Carousel.IndicatorGroup"
       },
-      "Item": { "name": "CarouselItem", "slot": "item", "component": "ArkCarousel.Item" },
+      "Item": { "name": "CarouselItem", "slot": "item", "component": "Carousel.Item" },
       "ItemGroup": {
         "name": "CarouselItemGroup",
         "slot": "itemGroup",
-        "component": "ArkCarousel.ItemGroup"
+        "component": "Carousel.ItemGroup"
       },
       "NextTrigger": {
         "name": "CarouselNextTrigger",
         "slot": "nextTrigger",
-        "component": "ArkCarousel.NextTrigger"
+        "component": "Carousel.NextTrigger"
       },
       "PrevTrigger": {
         "name": "CarouselPrevTrigger",
         "slot": "prevTrigger",
-        "component": "ArkCarousel.PrevTrigger"
+        "component": "Carousel.PrevTrigger"
       },
       "Viewport": {
         "name": "CarouselViewport",
         "slot": "viewport",
-        "component": "ArkCarousel.Viewport"
+        "component": "Carousel.Viewport"
       }
     },
     "name": "Carousel",
     "imports": {
-      "react": ["import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'"],
-      "solid": ["import { Carousel as ArkCarousel } from '@ark-ui/solid'"],
-      "vue": ["import { Carousel as ArkCarousel } from '@ark-ui/vue/carousel'"]
+      "react": ["import { Carousel } from '@ark-ui/react/carousel'"],
+      "solid": ["import { Carousel } from '@ark-ui/solid'"],
+      "vue": ["import { Carousel } from '@ark-ui/vue/carousel'"]
     },
     "className": "carousel"
   },
   "checkbox": {
     "parts": {
-      "Root": { "name": "CheckboxRoot", "slot": "root", "component": "ArkCheckbox.Root" },
-      "Control": {
-        "name": "CheckboxControl",
-        "slot": "control",
-        "component": "ArkCheckbox.Control"
-      },
+      "Root": { "name": "CheckboxRoot", "slot": "root", "component": "Checkbox.Root" },
+      "Control": { "name": "CheckboxControl", "slot": "control", "component": "Checkbox.Control" },
       "Indicator": {
         "name": "CheckboxIndicator",
         "slot": "indicator",
-        "component": "ArkCheckbox.Indicator"
+        "component": "Checkbox.Indicator"
       },
-      "Label": { "name": "CheckboxLabel", "slot": "label", "component": "ArkCheckbox.Label" }
+      "Label": { "name": "CheckboxLabel", "slot": "label", "component": "Checkbox.Label" }
     },
     "name": "Checkbox",
     "imports": {
-      "react": ["import { Checkbox as ArkCheckbox } from '@ark-ui/react/checkbox'"],
-      "solid": ["import { Checkbox as ArkCheckbox } from '@ark-ui/solid'"],
-      "vue": ["import { Checkbox as ArkCheckbox } from '@ark-ui/vue/checkbox'"]
+      "react": ["import { Checkbox } from '@ark-ui/react/checkbox'"],
+      "solid": ["import { Checkbox } from '@ark-ui/solid'"],
+      "vue": ["import { Checkbox } from '@ark-ui/vue/checkbox'"]
     },
     "className": "checkbox"
   },
   "color-picker": {
     "parts": {
-      "Root": { "name": "ColorPickerRoot", "slot": "root", "component": "ArkColorPicker.Root" },
-      "Area": { "name": "ColorPickerArea", "slot": "area", "component": "ArkColorPicker.Area" },
+      "Root": { "name": "ColorPickerRoot", "slot": "root", "component": "ColorPicker.Root" },
+      "Area": { "name": "ColorPickerArea", "slot": "area", "component": "ColorPicker.Area" },
       "AreaBackground": {
         "name": "ColorPickerAreaBackground",
         "slot": "areaBackground",
-        "component": "ArkColorPicker.AreaBackground"
+        "component": "ColorPicker.AreaBackground"
       },
       "AreaThumb": {
         "name": "ColorPickerAreaThumb",
         "slot": "areaThumb",
-        "component": "ArkColorPicker.AreaThumb"
+        "component": "ColorPicker.AreaThumb"
       },
       "ChannelInput": {
         "name": "ColorPickerChannelInput",
         "slot": "channelInput",
-        "component": "ArkColorPicker.ChannelInput"
+        "component": "ColorPicker.ChannelInput"
       },
       "ChannelSlider": {
         "name": "ColorPickerChannelSlider",
         "slot": "channelSlider",
-        "component": "ArkColorPicker.ChannelSlider"
+        "component": "ColorPicker.ChannelSlider"
       },
       "ChannelSliderThumb": {
         "name": "ColorPickerChannelSliderThumb",
         "slot": "channelSliderThumb",
-        "component": "ArkColorPicker.ChannelSliderThumb"
+        "component": "ColorPicker.ChannelSliderThumb"
       },
       "ChannelSliderTrack": {
         "name": "ColorPickerChannelSliderTrack",
         "slot": "channelSliderTrack",
-        "component": "ArkColorPicker.ChannelSliderTrack"
+        "component": "ColorPicker.ChannelSliderTrack"
       },
       "Content": {
         "name": "ColorPickerContent",
         "slot": "content",
-        "component": "ArkColorPicker.Content"
+        "component": "ColorPicker.Content"
       },
       "Control": {
         "name": "ColorPickerControl",
         "slot": "control",
-        "component": "ArkColorPicker.Control"
+        "component": "ColorPicker.Control"
       },
       "EyeDropperTrigger": {
         "name": "ColorPickerEyeDropperTrigger",
         "slot": "eyeDropperTrigger",
-        "component": "ArkColorPicker.EyeDropperTrigger"
+        "component": "ColorPicker.EyeDropperTrigger"
       },
       "FormatSelect": {
         "name": "ColorPickerFormatSelect",
         "slot": "formatSelect",
-        "component": "ArkColorPicker.FormatSelect"
+        "component": "ColorPicker.FormatSelect"
       },
       "FormatTrigger": {
         "name": "ColorPickerFormatTrigger",
         "slot": "formatTrigger",
-        "component": "ArkColorPicker.FormatTrigger"
+        "component": "ColorPicker.FormatTrigger"
       },
-      "Label": { "name": "ColorPickerLabel", "slot": "label", "component": "ArkColorPicker.Label" },
+      "Label": { "name": "ColorPickerLabel", "slot": "label", "component": "ColorPicker.Label" },
       "Positioner": {
         "name": "ColorPickerPositioner",
         "slot": "positioner",
-        "component": "ArkColorPicker.Positioner"
+        "component": "ColorPicker.Positioner"
       },
       "Swatch": {
         "name": "ColorPickerSwatch",
         "slot": "swatch",
-        "component": "ArkColorPicker.Swatch"
+        "component": "ColorPicker.Swatch"
       },
       "SwatchGroup": {
         "name": "ColorPickerSwatchGroup",
         "slot": "swatchGroup",
-        "component": "ArkColorPicker.SwatchGroup"
+        "component": "ColorPicker.SwatchGroup"
       },
       "SwatchIndicator": {
         "name": "ColorPickerSwatchIndicator",
         "slot": "swatchIndicator",
-        "component": "ArkColorPicker.SwatchIndicator"
+        "component": "ColorPicker.SwatchIndicator"
       },
       "SwatchTrigger": {
         "name": "ColorPickerSwatchTrigger",
         "slot": "swatchTrigger",
-        "component": "ArkColorPicker.SwatchTrigger"
+        "component": "ColorPicker.SwatchTrigger"
       },
       "TransparencyGrid": {
         "name": "ColorPickerTransparencyGrid",
         "slot": "transparencyGrid",
-        "component": "ArkColorPicker.TransparencyGrid"
+        "component": "ColorPicker.TransparencyGrid"
       },
       "Trigger": {
         "name": "ColorPickerTrigger",
         "slot": "trigger",
-        "component": "ArkColorPicker.Trigger"
+        "component": "ColorPicker.Trigger"
       },
       "ValueText": {
         "name": "ColorPickerValueText",
         "slot": "valueText",
-        "component": "ArkColorPicker.ValueText"
+        "component": "ColorPicker.ValueText"
       },
-      "View": { "name": "ColorPickerView", "slot": "view", "component": "ArkColorPicker.View" }
+      "View": { "name": "ColorPickerView", "slot": "view", "component": "ColorPicker.View" }
     },
     "name": "ColorPicker",
     "imports": {
-      "react": ["import { ColorPicker as ArkColorPicker } from '@ark-ui/react/color-picker'"],
-      "solid": ["import { ColorPicker as ArkColorPicker } from '@ark-ui/solid'"],
-      "vue": ["import { ColorPicker as ArkColorPicker } from '@ark-ui/vue/color-picker'"]
+      "react": ["import { ColorPicker } from '@ark-ui/react/color-picker'"],
+      "solid": ["import { ColorPicker } from '@ark-ui/solid'"],
+      "vue": ["import { ColorPicker } from '@ark-ui/vue/color-picker'"]
     },
     "className": "colorPicker"
   },
   "combobox": {
     "parts": {
-      "Root": { "name": "ComboboxRoot", "slot": "root", "component": "ArkCombobox.Root" },
+      "Root": { "name": "ComboboxRoot", "slot": "root", "component": "Combobox.Root" },
       "ClearTrigger": {
         "name": "ComboboxClearTrigger",
         "slot": "clearTrigger",
-        "component": "ArkCombobox.ClearTrigger"
+        "component": "Combobox.ClearTrigger"
       },
-      "Content": {
-        "name": "ComboboxContent",
-        "slot": "content",
-        "component": "ArkCombobox.Content"
-      },
-      "Control": {
-        "name": "ComboboxControl",
-        "slot": "control",
-        "component": "ArkCombobox.Control"
-      },
-      "Input": { "name": "ComboboxInput", "slot": "input", "component": "ArkCombobox.Input" },
-      "Item": { "name": "ComboboxItem", "slot": "item", "component": "ArkCombobox.Item" },
+      "Content": { "name": "ComboboxContent", "slot": "content", "component": "Combobox.Content" },
+      "Control": { "name": "ComboboxControl", "slot": "control", "component": "Combobox.Control" },
+      "Input": { "name": "ComboboxInput", "slot": "input", "component": "Combobox.Input" },
+      "Item": { "name": "ComboboxItem", "slot": "item", "component": "Combobox.Item" },
       "ItemGroup": {
         "name": "ComboboxItemGroup",
         "slot": "itemGroup",
-        "component": "ArkCombobox.ItemGroup"
+        "component": "Combobox.ItemGroup"
       },
       "ItemGroupLabel": {
         "name": "ComboboxItemGroupLabel",
         "slot": "itemGroupLabel",
-        "component": "ArkCombobox.ItemGroupLabel"
+        "component": "Combobox.ItemGroupLabel"
       },
       "ItemIndicator": {
         "name": "ComboboxItemIndicator",
         "slot": "itemIndicator",
-        "component": "ArkCombobox.ItemIndicator"
+        "component": "Combobox.ItemIndicator"
       },
       "ItemText": {
         "name": "ComboboxItemText",
         "slot": "itemText",
-        "component": "ArkCombobox.ItemText"
+        "component": "Combobox.ItemText"
       },
-      "Label": { "name": "ComboboxLabel", "slot": "label", "component": "ArkCombobox.Label" },
+      "Label": { "name": "ComboboxLabel", "slot": "label", "component": "Combobox.Label" },
       "Positioner": {
         "name": "ComboboxPositioner",
         "slot": "positioner",
-        "component": "ArkCombobox.Positioner"
+        "component": "Combobox.Positioner"
       },
-      "Trigger": {
-        "name": "ComboboxTrigger",
-        "slot": "trigger",
-        "component": "ArkCombobox.Trigger"
-      }
+      "Trigger": { "name": "ComboboxTrigger", "slot": "trigger", "component": "Combobox.Trigger" }
     },
     "name": "Combobox",
     "imports": {
-      "react": ["import { Combobox as ArkCombobox } from '@ark-ui/react/combobox'"],
-      "solid": ["import { Combobox as ArkCombobox } from '@ark-ui/solid'"],
-      "vue": ["import { Combobox as ArkCombobox } from '@ark-ui/vue/combobox'"]
+      "react": ["import { Combobox } from '@ark-ui/react/combobox'"],
+      "solid": ["import { Combobox } from '@ark-ui/solid'"],
+      "vue": ["import { Combobox } from '@ark-ui/vue/combobox'"]
     },
     "className": "combobox"
   },
   "date-picker": {
     "parts": {
-      "Root": { "name": "DatePickerRoot", "slot": "root", "component": "ArkDatePicker.Root" },
+      "Root": { "name": "DatePickerRoot", "slot": "root", "component": "DatePicker.Root" },
       "ClearTrigger": {
         "name": "DatePickerClearTrigger",
         "slot": "clearTrigger",
-        "component": "ArkDatePicker.ClearTrigger"
+        "component": "DatePicker.ClearTrigger"
       },
       "Content": {
         "name": "DatePickerContent",
         "slot": "content",
-        "component": "ArkDatePicker.Content"
+        "component": "DatePicker.Content"
       },
       "Control": {
         "name": "DatePickerControl",
         "slot": "control",
-        "component": "ArkDatePicker.Control"
+        "component": "DatePicker.Control"
       },
-      "Input": { "name": "DatePickerInput", "slot": "input", "component": "ArkDatePicker.Input" },
-      "Label": { "name": "DatePickerLabel", "slot": "label", "component": "ArkDatePicker.Label" },
+      "Input": { "name": "DatePickerInput", "slot": "input", "component": "DatePicker.Input" },
+      "Label": { "name": "DatePickerLabel", "slot": "label", "component": "DatePicker.Label" },
       "MonthSelect": {
         "name": "DatePickerMonthSelect",
         "slot": "monthSelect",
-        "component": "ArkDatePicker.MonthSelect"
+        "component": "DatePicker.MonthSelect"
       },
       "NextTrigger": {
         "name": "DatePickerNextTrigger",
         "slot": "nextTrigger",
-        "component": "ArkDatePicker.NextTrigger"
+        "component": "DatePicker.NextTrigger"
       },
       "Positioner": {
         "name": "DatePickerPositioner",
         "slot": "positioner",
-        "component": "ArkDatePicker.Positioner"
+        "component": "DatePicker.Positioner"
       },
       "PrevTrigger": {
         "name": "DatePickerPrevTrigger",
         "slot": "prevTrigger",
-        "component": "ArkDatePicker.PrevTrigger"
+        "component": "DatePicker.PrevTrigger"
       },
       "RangeText": {
         "name": "DatePickerRangeText",
         "slot": "rangeText",
-        "component": "ArkDatePicker.RangeText"
+        "component": "DatePicker.RangeText"
       },
-      "Table": { "name": "DatePickerTable", "slot": "table", "component": "ArkDatePicker.Table" },
+      "Table": { "name": "DatePickerTable", "slot": "table", "component": "DatePicker.Table" },
       "TableBody": {
         "name": "DatePickerTableBody",
         "slot": "tableBody",
-        "component": "ArkDatePicker.TableBody"
+        "component": "DatePicker.TableBody"
       },
       "TableCell": {
         "name": "DatePickerTableCell",
         "slot": "tableCell",
-        "component": "ArkDatePicker.TableCell"
+        "component": "DatePicker.TableCell"
       },
       "TableCellTrigger": {
         "name": "DatePickerTableCellTrigger",
         "slot": "tableCellTrigger",
-        "component": "ArkDatePicker.TableCellTrigger"
+        "component": "DatePicker.TableCellTrigger"
       },
       "TableHead": {
         "name": "DatePickerTableHead",
         "slot": "tableHead",
-        "component": "ArkDatePicker.TableHead"
+        "component": "DatePicker.TableHead"
       },
       "TableHeader": {
         "name": "DatePickerTableHeader",
         "slot": "tableHeader",
-        "component": "ArkDatePicker.TableHeader"
+        "component": "DatePicker.TableHeader"
       },
       "TableRow": {
         "name": "DatePickerTableRow",
         "slot": "tableRow",
-        "component": "ArkDatePicker.TableRow"
+        "component": "DatePicker.TableRow"
       },
       "Trigger": {
         "name": "DatePickerTrigger",
         "slot": "trigger",
-        "component": "ArkDatePicker.Trigger"
+        "component": "DatePicker.Trigger"
       },
-      "View": { "name": "DatePickerView", "slot": "view", "component": "ArkDatePicker.View" },
+      "View": { "name": "DatePickerView", "slot": "view", "component": "DatePicker.View" },
       "ViewControl": {
         "name": "DatePickerViewControl",
         "slot": "viewControl",
-        "component": "ArkDatePicker.ViewControl"
+        "component": "DatePicker.ViewControl"
       },
       "ViewTrigger": {
         "name": "DatePickerViewTrigger",
         "slot": "viewTrigger",
-        "component": "ArkDatePicker.ViewTrigger"
+        "component": "DatePicker.ViewTrigger"
       },
       "YearSelect": {
         "name": "DatePickerYearSelect",
         "slot": "yearSelect",
-        "component": "ArkDatePicker.YearSelect"
+        "component": "DatePicker.YearSelect"
       }
     },
     "name": "DatePicker",
     "imports": {
-      "react": ["import { DatePicker as ArkDatePicker } from '@ark-ui/react/date-picker'"],
-      "solid": ["import { DatePicker as ArkDatePicker } from '@ark-ui/solid'"],
-      "vue": ["import { DatePicker as ArkDatePicker } from '@ark-ui/vue/date-picker'"]
+      "react": ["import { DatePicker } from '@ark-ui/react/date-picker'"],
+      "solid": ["import { DatePicker } from '@ark-ui/solid'"],
+      "vue": ["import { DatePicker } from '@ark-ui/vue/date-picker'"]
     },
     "className": "datePicker"
   },
   "dialog": {
     "parts": {
-      "Root": { "name": "DialogRoot", "component": "ArkDialog.Root" },
-      "Backdrop": {
-        "name": "DialogBackdrop",
-        "slot": "backdrop",
-        "component": "ArkDialog.Backdrop"
-      },
+      "Root": { "name": "DialogRoot", "component": "Dialog.Root" },
+      "Backdrop": { "name": "DialogBackdrop", "slot": "backdrop", "component": "Dialog.Backdrop" },
       "CloseTrigger": {
         "name": "DialogCloseTrigger",
         "slot": "closeTrigger",
-        "component": "ArkDialog.CloseTrigger"
+        "component": "Dialog.CloseTrigger"
       },
-      "Content": { "name": "DialogContent", "slot": "content", "component": "ArkDialog.Content" },
+      "Content": { "name": "DialogContent", "slot": "content", "component": "Dialog.Content" },
       "Description": {
         "name": "DialogDescription",
         "slot": "description",
-        "component": "ArkDialog.Description"
+        "component": "Dialog.Description"
       },
       "Positioner": {
         "name": "DialogPositioner",
         "slot": "positioner",
-        "component": "ArkDialog.Positioner"
+        "component": "Dialog.Positioner"
       },
-      "Title": { "name": "DialogTitle", "slot": "title", "component": "ArkDialog.Title" },
-      "Trigger": { "name": "DialogTrigger", "slot": "trigger", "component": "ArkDialog.Trigger" }
+      "Title": { "name": "DialogTitle", "slot": "title", "component": "Dialog.Title" },
+      "Trigger": { "name": "DialogTrigger", "slot": "trigger", "component": "Dialog.Trigger" }
     },
     "name": "Dialog",
     "imports": {
-      "react": ["import { Dialog as ArkDialog } from '@ark-ui/react/dialog'"],
-      "solid": ["import { Dialog as ArkDialog } from '@ark-ui/solid'"],
-      "vue": ["import { Dialog as ArkDialog } from '@ark-ui/vue/dialog'"]
+      "react": ["import { Dialog } from '@ark-ui/react/dialog'"],
+      "solid": ["import { Dialog } from '@ark-ui/solid'"],
+      "vue": ["import { Dialog } from '@ark-ui/vue/dialog'"]
     },
     "className": "dialog"
   },
   "editable": {
     "parts": {
-      "Root": { "name": "EditableRoot", "slot": "root", "component": "ArkEditable.Root" },
-      "Area": { "name": "EditableArea", "slot": "area", "component": "ArkEditable.Area" },
+      "Root": { "name": "EditableRoot", "slot": "root", "component": "Editable.Root" },
+      "Area": { "name": "EditableArea", "slot": "area", "component": "Editable.Area" },
       "CancelTrigger": {
         "name": "EditableCancelTrigger",
         "slot": "cancelTrigger",
-        "component": "ArkEditable.CancelTrigger"
+        "component": "Editable.CancelTrigger"
       },
-      "Control": {
-        "name": "EditableControl",
-        "slot": "control",
-        "component": "ArkEditable.Control"
-      },
+      "Control": { "name": "EditableControl", "slot": "control", "component": "Editable.Control" },
       "EditTrigger": {
         "name": "EditableEditTrigger",
         "slot": "editTrigger",
-        "component": "ArkEditable.EditTrigger"
+        "component": "Editable.EditTrigger"
       },
-      "Input": { "name": "EditableInput", "slot": "input", "component": "ArkEditable.Input" },
-      "Label": { "name": "EditableLabel", "slot": "label", "component": "ArkEditable.Label" },
-      "Preview": {
-        "name": "EditablePreview",
-        "slot": "preview",
-        "component": "ArkEditable.Preview"
-      },
+      "Input": { "name": "EditableInput", "slot": "input", "component": "Editable.Input" },
+      "Label": { "name": "EditableLabel", "slot": "label", "component": "Editable.Label" },
+      "Preview": { "name": "EditablePreview", "slot": "preview", "component": "Editable.Preview" },
       "SubmitTrigger": {
         "name": "EditableSubmitTrigger",
         "slot": "submitTrigger",
-        "component": "ArkEditable.SubmitTrigger"
+        "component": "Editable.SubmitTrigger"
       }
     },
     "name": "Editable",
     "imports": {
-      "react": ["import { Editable as ArkEditable } from '@ark-ui/react/editable'"],
-      "solid": ["import { Editable as ArkEditable } from '@ark-ui/solid'"],
-      "vue": ["import { Editable as ArkEditable } from '@ark-ui/vue/editable'"]
+      "react": ["import { Editable } from '@ark-ui/react/editable'"],
+      "solid": ["import { Editable } from '@ark-ui/solid'"],
+      "vue": ["import { Editable } from '@ark-ui/vue/editable'"]
     },
     "className": "editable"
   },
   "file-upload": {
     "parts": {
-      "Root": { "name": "FileUploadRoot", "slot": "root", "component": "ArkFileUpload.Root" },
+      "Root": { "name": "FileUploadRoot", "slot": "root", "component": "FileUpload.Root" },
       "Dropzone": {
         "name": "FileUploadDropzone",
         "slot": "dropzone",
-        "component": "ArkFileUpload.Dropzone"
+        "component": "FileUpload.Dropzone"
       },
-      "Item": { "name": "FileUploadItem", "slot": "item", "component": "ArkFileUpload.Item" },
+      "Item": { "name": "FileUploadItem", "slot": "item", "component": "FileUpload.Item" },
       "ItemDeleteTrigger": {
         "name": "FileUploadItemDeleteTrigger",
         "slot": "itemDeleteTrigger",
-        "component": "ArkFileUpload.ItemDeleteTrigger"
+        "component": "FileUpload.ItemDeleteTrigger"
       },
       "ItemGroup": {
         "name": "FileUploadItemGroup",
         "slot": "itemGroup",
-        "component": "ArkFileUpload.ItemGroup"
+        "component": "FileUpload.ItemGroup"
       },
       "ItemName": {
         "name": "FileUploadItemName",
         "slot": "itemName",
-        "component": "ArkFileUpload.ItemName"
+        "component": "FileUpload.ItemName"
       },
       "ItemPreview": {
         "name": "FileUploadItemPreview",
         "slot": "itemPreview",
-        "component": "ArkFileUpload.ItemPreview"
+        "component": "FileUpload.ItemPreview"
       },
       "ItemPreviewImage": {
         "name": "FileUploadItemPreviewImage",
         "slot": "itemPreviewImage",
-        "component": "ArkFileUpload.ItemPreviewImage"
+        "component": "FileUpload.ItemPreviewImage"
       },
       "ItemSizeText": {
         "name": "FileUploadItemSizeText",
         "slot": "itemSizeText",
-        "component": "ArkFileUpload.ItemSizeText"
+        "component": "FileUpload.ItemSizeText"
       },
-      "Label": { "name": "FileUploadLabel", "slot": "label", "component": "ArkFileUpload.Label" },
+      "Label": { "name": "FileUploadLabel", "slot": "label", "component": "FileUpload.Label" },
       "Trigger": {
         "name": "FileUploadTrigger",
         "slot": "trigger",
-        "component": "ArkFileUpload.Trigger"
+        "component": "FileUpload.Trigger"
       }
     },
     "name": "FileUpload",
     "imports": {
-      "react": ["import { FileUpload as ArkFileUpload } from '@ark-ui/react/file-upload'"],
-      "solid": ["import { FileUpload as ArkFileUpload } from '@ark-ui/solid'"],
-      "vue": ["import { FileUpload as ArkFileUpload } from '@ark-ui/vue/file-upload'"]
+      "react": ["import { FileUpload } from '@ark-ui/react/file-upload'"],
+      "solid": ["import { FileUpload } from '@ark-ui/solid'"],
+      "vue": ["import { FileUpload } from '@ark-ui/vue/file-upload'"]
     },
     "className": "fileUpload"
   },
   "hover-card": {
     "parts": {
-      "Root": { "name": "HoverCardRoot", "component": "ArkHoverCard.Root" },
-      "Arrow": { "name": "HoverCardArrow", "slot": "arrow", "component": "ArkHoverCard.Arrow" },
+      "Root": { "name": "HoverCardRoot", "component": "HoverCard.Root" },
+      "Arrow": { "name": "HoverCardArrow", "slot": "arrow", "component": "HoverCard.Arrow" },
       "ArrowTip": {
         "name": "HoverCardArrowTip",
         "slot": "arrowTip",
-        "component": "ArkHoverCard.ArrowTip"
+        "component": "HoverCard.ArrowTip"
       },
       "Content": {
         "name": "HoverCardContent",
         "slot": "content",
-        "component": "ArkHoverCard.Content"
+        "component": "HoverCard.Content"
       },
       "Positioner": {
         "name": "HoverCardPositioner",
         "slot": "positioner",
-        "component": "ArkHoverCard.Positioner"
+        "component": "HoverCard.Positioner"
       },
-      "Trigger": {
-        "name": "HoverCardTrigger",
-        "slot": "trigger",
-        "component": "ArkHoverCard.Trigger"
-      }
+      "Trigger": { "name": "HoverCardTrigger", "slot": "trigger", "component": "HoverCard.Trigger" }
     },
     "name": "HoverCard",
     "imports": {
-      "react": ["import { HoverCard as ArkHoverCard } from '@ark-ui/react/hover-card'"],
-      "solid": ["import { HoverCard as ArkHoverCard } from '@ark-ui/solid'"],
-      "vue": ["import { HoverCard as ArkHoverCard } from '@ark-ui/vue/hover-card'"]
+      "react": ["import { HoverCard } from '@ark-ui/react/hover-card'"],
+      "solid": ["import { HoverCard } from '@ark-ui/solid'"],
+      "vue": ["import { HoverCard } from '@ark-ui/vue/hover-card'"]
     },
     "className": "hoverCard"
   },
   "menu": {
     "parts": {
-      "Root": { "name": "MenuRoot", "component": "ArkMenu.Root" },
-      "Arrow": { "name": "MenuArrow", "slot": "arrow", "component": "ArkMenu.Arrow" },
-      "ArrowTip": { "name": "MenuArrowTip", "slot": "arrowTip", "component": "ArkMenu.ArrowTip" },
-      "Content": { "name": "MenuContent", "slot": "content", "component": "ArkMenu.Content" },
+      "Root": { "name": "MenuRoot", "component": "Menu.Root" },
+      "Arrow": { "name": "MenuArrow", "slot": "arrow", "component": "Menu.Arrow" },
+      "ArrowTip": { "name": "MenuArrowTip", "slot": "arrowTip", "component": "Menu.ArrowTip" },
+      "Content": { "name": "MenuContent", "slot": "content", "component": "Menu.Content" },
       "ContextTrigger": {
         "name": "MenuContextTrigger",
         "slot": "contextTrigger",
-        "component": "ArkMenu.ContextTrigger"
+        "component": "Menu.ContextTrigger"
       },
-      "Indicator": {
-        "name": "MenuIndicator",
-        "slot": "indicator",
-        "component": "ArkMenu.Indicator"
-      },
-      "Item": { "name": "MenuItem", "slot": "item", "component": "ArkMenu.Item" },
-      "ItemGroup": {
-        "name": "MenuItemGroup",
-        "slot": "itemGroup",
-        "component": "ArkMenu.ItemGroup"
-      },
+      "Indicator": { "name": "MenuIndicator", "slot": "indicator", "component": "Menu.Indicator" },
+      "Item": { "name": "MenuItem", "slot": "item", "component": "Menu.Item" },
+      "ItemGroup": { "name": "MenuItemGroup", "slot": "itemGroup", "component": "Menu.ItemGroup" },
       "ItemGroupLabel": {
         "name": "MenuItemGroupLabel",
         "slot": "itemGroupLabel",
-        "component": "ArkMenu.ItemGroupLabel"
+        "component": "Menu.ItemGroupLabel"
       },
       "OptionItem": {
         "name": "MenuOptionItem",
         "slot": "optionItem",
-        "component": "ArkMenu.OptionItem"
+        "component": "Menu.OptionItem"
       },
       "OptionItemIndicator": {
         "name": "MenuOptionItemIndicator",
         "slot": "optionItemIndicator",
-        "component": "ArkMenu.OptionItemIndicator"
+        "component": "Menu.OptionItemIndicator"
       },
       "OptionItemText": {
         "name": "MenuOptionItemText",
         "slot": "optionItemText",
-        "component": "ArkMenu.OptionItemText"
+        "component": "Menu.OptionItemText"
       },
       "Positioner": {
         "name": "MenuPositioner",
         "slot": "positioner",
-        "component": "ArkMenu.Positioner"
+        "component": "Menu.Positioner"
       },
-      "Separator": {
-        "name": "MenuSeparator",
-        "slot": "separator",
-        "component": "ArkMenu.Separator"
-      },
-      "Trigger": { "name": "MenuTrigger", "slot": "trigger", "component": "ArkMenu.Trigger" },
+      "Separator": { "name": "MenuSeparator", "slot": "separator", "component": "Menu.Separator" },
+      "Trigger": { "name": "MenuTrigger", "slot": "trigger", "component": "Menu.Trigger" },
       "TriggerItem": {
         "name": "MenuTriggerItem",
         "slot": "triggerItem",
-        "component": "ArkMenu.TriggerItem"
+        "component": "Menu.TriggerItem"
       }
     },
     "name": "Menu",
     "imports": {
-      "react": ["import { Menu as ArkMenu } from '@ark-ui/react/menu'"],
-      "solid": ["import { Menu as ArkMenu } from '@ark-ui/solid'"],
-      "vue": ["import { Menu as ArkMenu } from '@ark-ui/vue/menu'"]
+      "react": ["import { Menu } from '@ark-ui/react/menu'"],
+      "solid": ["import { Menu } from '@ark-ui/solid'"],
+      "vue": ["import { Menu } from '@ark-ui/vue/menu'"]
     },
     "className": "menu"
   },
   "number-input": {
     "parts": {
-      "Root": { "name": "NumberInputRoot", "slot": "root", "component": "ArkNumberInput.Root" },
+      "Root": { "name": "NumberInputRoot", "slot": "root", "component": "NumberInput.Root" },
       "Control": {
         "name": "NumberInputControl",
         "slot": "control",
-        "component": "ArkNumberInput.Control"
+        "component": "NumberInput.Control"
       },
       "DecrementTrigger": {
         "name": "NumberInputDecrementTrigger",
         "slot": "decrementTrigger",
-        "component": "ArkNumberInput.DecrementTrigger"
+        "component": "NumberInput.DecrementTrigger"
       },
       "IncrementTrigger": {
         "name": "NumberInputIncrementTrigger",
         "slot": "incrementTrigger",
-        "component": "ArkNumberInput.IncrementTrigger"
+        "component": "NumberInput.IncrementTrigger"
       },
-      "Input": { "name": "NumberInputInput", "slot": "input", "component": "ArkNumberInput.Input" },
-      "Label": { "name": "NumberInputLabel", "slot": "label", "component": "ArkNumberInput.Label" },
+      "Input": { "name": "NumberInputInput", "slot": "input", "component": "NumberInput.Input" },
+      "Label": { "name": "NumberInputLabel", "slot": "label", "component": "NumberInput.Label" },
       "Scrubber": {
         "name": "NumberInputScrubber",
         "slot": "scrubber",
-        "component": "ArkNumberInput.Scrubber"
+        "component": "NumberInput.Scrubber"
       }
     },
     "name": "NumberInput",
     "imports": {
-      "react": ["import { NumberInput as ArkNumberInput } from '@ark-ui/react/number-input'"],
-      "solid": ["import { NumberInput as ArkNumberInput } from '@ark-ui/solid'"],
-      "vue": ["import { NumberInput as ArkNumberInput } from '@ark-ui/vue/number-input'"]
+      "react": ["import { NumberInput } from '@ark-ui/react/number-input'"],
+      "solid": ["import { NumberInput } from '@ark-ui/solid'"],
+      "vue": ["import { NumberInput } from '@ark-ui/vue/number-input'"]
     },
     "className": "numberInput"
   },
   "pagination": {
     "parts": {
-      "Root": { "name": "PaginationRoot", "slot": "root", "component": "ArkPagination.Root" },
+      "Root": { "name": "PaginationRoot", "slot": "root", "component": "Pagination.Root" },
       "Ellipsis": {
         "name": "PaginationEllipsis",
         "slot": "ellipsis",
-        "component": "ArkPagination.Ellipsis"
+        "component": "Pagination.Ellipsis"
       },
-      "Item": { "name": "PaginationItem", "slot": "item", "component": "ArkPagination.Item" },
+      "Item": { "name": "PaginationItem", "slot": "item", "component": "Pagination.Item" },
       "NextTrigger": {
         "name": "PaginationNextTrigger",
         "slot": "nextTrigger",
-        "component": "ArkPagination.NextTrigger"
+        "component": "Pagination.NextTrigger"
       },
       "PrevTrigger": {
         "name": "PaginationPrevTrigger",
         "slot": "prevTrigger",
-        "component": "ArkPagination.PrevTrigger"
+        "component": "Pagination.PrevTrigger"
       }
     },
     "name": "Pagination",
     "imports": {
-      "react": ["import { Pagination as ArkPagination } from '@ark-ui/react/pagination'"],
-      "solid": ["import { Pagination as ArkPagination } from '@ark-ui/solid'"],
-      "vue": ["import { Pagination as ArkPagination } from '@ark-ui/vue/pagination'"]
+      "react": ["import { Pagination } from '@ark-ui/react/pagination'"],
+      "solid": ["import { Pagination } from '@ark-ui/solid'"],
+      "vue": ["import { Pagination } from '@ark-ui/vue/pagination'"]
     },
     "className": "pagination"
   },
   "pin-input": {
     "parts": {
-      "Root": { "name": "PinInputRoot", "slot": "root", "component": "ArkPinInput.Root" },
-      "Control": {
-        "name": "PinInputControl",
-        "slot": "control",
-        "component": "ArkPinInput.Control"
-      },
-      "Input": { "name": "PinInputInput", "slot": "input", "component": "ArkPinInput.Input" },
-      "Label": { "name": "PinInputLabel", "slot": "label", "component": "ArkPinInput.Label" }
+      "Root": { "name": "PinInputRoot", "slot": "root", "component": "PinInput.Root" },
+      "Control": { "name": "PinInputControl", "slot": "control", "component": "PinInput.Control" },
+      "Input": { "name": "PinInputInput", "slot": "input", "component": "PinInput.Input" },
+      "Label": { "name": "PinInputLabel", "slot": "label", "component": "PinInput.Label" }
     },
     "name": "PinInput",
     "imports": {
-      "react": ["import { PinInput as ArkPinInput } from '@ark-ui/react/pin-input'"],
-      "solid": ["import { PinInput as ArkPinInput } from '@ark-ui/solid'"],
-      "vue": ["import { PinInput as ArkPinInput } from '@ark-ui/vue/pin-input'"]
+      "react": ["import { PinInput } from '@ark-ui/react/pin-input'"],
+      "solid": ["import { PinInput } from '@ark-ui/solid'"],
+      "vue": ["import { PinInput } from '@ark-ui/vue/pin-input'"]
     },
     "className": "pinInput"
   },
   "popover": {
     "parts": {
-      "Root": { "name": "PopoverRoot", "component": "ArkPopover.Root" },
-      "Anchor": { "name": "PopoverAnchor", "slot": "anchor", "component": "ArkPopover.Anchor" },
-      "Arrow": { "name": "PopoverArrow", "slot": "arrow", "component": "ArkPopover.Arrow" },
+      "Root": { "name": "PopoverRoot", "component": "Popover.Root" },
+      "Anchor": { "name": "PopoverAnchor", "slot": "anchor", "component": "Popover.Anchor" },
+      "Arrow": { "name": "PopoverArrow", "slot": "arrow", "component": "Popover.Arrow" },
       "ArrowTip": {
         "name": "PopoverArrowTip",
         "slot": "arrowTip",
-        "component": "ArkPopover.ArrowTip"
+        "component": "Popover.ArrowTip"
       },
       "CloseTrigger": {
         "name": "PopoverCloseTrigger",
         "slot": "closeTrigger",
-        "component": "ArkPopover.CloseTrigger"
+        "component": "Popover.CloseTrigger"
       },
-      "Content": { "name": "PopoverContent", "slot": "content", "component": "ArkPopover.Content" },
+      "Content": { "name": "PopoverContent", "slot": "content", "component": "Popover.Content" },
       "Description": {
         "name": "PopoverDescription",
         "slot": "description",
-        "component": "ArkPopover.Description"
+        "component": "Popover.Description"
       },
       "Indicator": {
         "name": "PopoverIndicator",
         "slot": "indicator",
-        "component": "ArkPopover.Indicator"
+        "component": "Popover.Indicator"
       },
       "Positioner": {
         "name": "PopoverPositioner",
         "slot": "positioner",
-        "component": "ArkPopover.Positioner"
+        "component": "Popover.Positioner"
       },
-      "Title": { "name": "PopoverTitle", "slot": "title", "component": "ArkPopover.Title" },
-      "Trigger": { "name": "PopoverTrigger", "slot": "trigger", "component": "ArkPopover.Trigger" }
+      "Title": { "name": "PopoverTitle", "slot": "title", "component": "Popover.Title" },
+      "Trigger": { "name": "PopoverTrigger", "slot": "trigger", "component": "Popover.Trigger" }
     },
     "name": "Popover",
     "imports": {
-      "react": ["import { Popover as ArkPopover } from '@ark-ui/react/popover'"],
-      "solid": ["import { Popover as ArkPopover } from '@ark-ui/solid'"],
-      "vue": ["import { Popover as ArkPopover } from '@ark-ui/vue/popover'"]
+      "react": ["import { Popover } from '@ark-ui/react/popover'"],
+      "solid": ["import { Popover } from '@ark-ui/solid'"],
+      "vue": ["import { Popover } from '@ark-ui/vue/popover'"]
     },
     "className": "popover"
   },
   "progress": {
     "parts": {
-      "Root": { "name": "ProgressRoot", "slot": "root", "component": "ArkProgress.Root" },
-      "Circle": { "name": "ProgressCircle", "slot": "circle", "component": "ArkProgress.Circle" },
+      "Root": { "name": "ProgressRoot", "slot": "root", "component": "Progress.Root" },
+      "Circle": { "name": "ProgressCircle", "slot": "circle", "component": "Progress.Circle" },
       "CircleRange": {
         "name": "ProgressCircleRange",
         "slot": "circleRange",
-        "component": "ArkProgress.CircleRange"
+        "component": "Progress.CircleRange"
       },
       "CircleTrack": {
         "name": "ProgressCircleTrack",
         "slot": "circleTrack",
-        "component": "ArkProgress.CircleTrack"
+        "component": "Progress.CircleTrack"
       },
-      "Label": { "name": "ProgressLabel", "slot": "label", "component": "ArkProgress.Label" },
-      "Range": { "name": "ProgressRange", "slot": "range", "component": "ArkProgress.Range" },
-      "Track": { "name": "ProgressTrack", "slot": "track", "component": "ArkProgress.Track" },
+      "Label": { "name": "ProgressLabel", "slot": "label", "component": "Progress.Label" },
+      "Range": { "name": "ProgressRange", "slot": "range", "component": "Progress.Range" },
+      "Track": { "name": "ProgressTrack", "slot": "track", "component": "Progress.Track" },
       "ValueText": {
         "name": "ProgressValueText",
         "slot": "valueText",
-        "component": "ArkProgress.ValueText"
+        "component": "Progress.ValueText"
       },
-      "View": { "name": "ProgressView", "slot": "view", "component": "ArkProgress.View" }
+      "View": { "name": "ProgressView", "slot": "view", "component": "Progress.View" }
     },
     "name": "Progress",
     "imports": {
-      "react": ["import { Progress as ArkProgress } from '@ark-ui/react/progress'"],
-      "solid": ["import { Progress as ArkProgress } from '@ark-ui/solid'"],
-      "vue": ["import { Progress as ArkProgress } from '@ark-ui/vue/progress'"]
+      "react": ["import { Progress } from '@ark-ui/react/progress'"],
+      "solid": ["import { Progress } from '@ark-ui/solid'"],
+      "vue": ["import { Progress } from '@ark-ui/vue/progress'"]
     },
     "className": "progress"
   },
   "radio-group": {
     "parts": {
-      "Root": { "name": "RadioGroupRoot", "slot": "root", "component": "ArkRadioGroup.Root" },
+      "Root": { "name": "RadioGroupRoot", "slot": "root", "component": "RadioGroup.Root" },
       "Indicator": {
         "name": "RadioGroupIndicator",
         "slot": "indicator",
-        "component": "ArkRadioGroup.Indicator"
+        "component": "RadioGroup.Indicator"
       },
-      "Item": { "name": "RadioGroupItem", "slot": "item", "component": "ArkRadioGroup.Item" },
+      "Item": { "name": "RadioGroupItem", "slot": "item", "component": "RadioGroup.Item" },
       "ItemControl": {
         "name": "RadioGroupItemControl",
         "slot": "itemControl",
-        "component": "ArkRadioGroup.ItemControl"
+        "component": "RadioGroup.ItemControl"
       },
       "ItemText": {
         "name": "RadioGroupItemText",
         "slot": "itemText",
-        "component": "ArkRadioGroup.ItemText"
+        "component": "RadioGroup.ItemText"
       },
-      "Label": { "name": "RadioGroupLabel", "slot": "label", "component": "ArkRadioGroup.Label" }
+      "Label": { "name": "RadioGroupLabel", "slot": "label", "component": "RadioGroup.Label" }
     },
     "name": "RadioGroup",
     "imports": {
-      "react": ["import { RadioGroup as ArkRadioGroup } from '@ark-ui/react/radio-group'"],
-      "solid": ["import { RadioGroup as ArkRadioGroup } from '@ark-ui/solid'"],
-      "vue": ["import { RadioGroup as ArkRadioGroup } from '@ark-ui/vue/radio-group'"]
+      "react": ["import { RadioGroup } from '@ark-ui/react/radio-group'"],
+      "solid": ["import { RadioGroup } from '@ark-ui/solid'"],
+      "vue": ["import { RadioGroup } from '@ark-ui/vue/radio-group'"]
     },
     "className": "radioGroup"
   },
   "rating-group": {
     "parts": {
-      "Root": { "name": "RatingGroupRoot", "slot": "root", "component": "ArkRatingGroup.Root" },
+      "Root": { "name": "RatingGroupRoot", "slot": "root", "component": "RatingGroup.Root" },
       "Control": {
         "name": "RatingGroupControl",
         "slot": "control",
-        "component": "ArkRatingGroup.Control"
+        "component": "RatingGroup.Control"
       },
-      "Item": { "name": "RatingGroupItem", "slot": "item", "component": "ArkRatingGroup.Item" },
-      "Label": { "name": "RatingGroupLabel", "slot": "label", "component": "ArkRatingGroup.Label" }
+      "Item": { "name": "RatingGroupItem", "slot": "item", "component": "RatingGroup.Item" },
+      "Label": { "name": "RatingGroupLabel", "slot": "label", "component": "RatingGroup.Label" }
     },
     "name": "RatingGroup",
     "imports": {
-      "react": ["import { RatingGroup as ArkRatingGroup } from '@ark-ui/react/rating-group'"],
-      "solid": ["import { RatingGroup as ArkRatingGroup } from '@ark-ui/solid'"],
-      "vue": ["import { RatingGroup as ArkRatingGroup } from '@ark-ui/vue/rating-group'"]
+      "react": ["import { RatingGroup } from '@ark-ui/react/rating-group'"],
+      "solid": ["import { RatingGroup } from '@ark-ui/solid'"],
+      "vue": ["import { RatingGroup } from '@ark-ui/vue/rating-group'"]
     },
     "className": "ratingGroup"
   },
   "segment-group": {
     "parts": {
-      "Root": { "name": "SegmentGroupRoot", "slot": "root", "component": "ArkSegmentGroup.Root" },
+      "Root": { "name": "SegmentGroupRoot", "slot": "root", "component": "SegmentGroup.Root" },
       "Indicator": {
         "name": "SegmentGroupIndicator",
         "slot": "indicator",
-        "component": "ArkSegmentGroup.Indicator"
+        "component": "SegmentGroup.Indicator"
       },
-      "Item": { "name": "SegmentGroupItem", "slot": "item", "component": "ArkSegmentGroup.Item" },
+      "Item": { "name": "SegmentGroupItem", "slot": "item", "component": "SegmentGroup.Item" },
       "ItemControl": {
         "name": "SegmentGroupItemControl",
         "slot": "itemControl",
-        "component": "ArkSegmentGroup.ItemControl"
+        "component": "SegmentGroup.ItemControl"
       },
       "ItemText": {
         "name": "SegmentGroupItemText",
         "slot": "itemText",
-        "component": "ArkSegmentGroup.ItemText"
+        "component": "SegmentGroup.ItemText"
       },
-      "Label": {
-        "name": "SegmentGroupLabel",
-        "slot": "label",
-        "component": "ArkSegmentGroup.Label"
-      }
+      "Label": { "name": "SegmentGroupLabel", "slot": "label", "component": "SegmentGroup.Label" }
     },
     "name": "SegmentGroup",
     "imports": {
-      "react": ["import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react/segment-group'"],
-      "solid": ["import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/solid'"],
-      "vue": ["import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/vue/segment-group'"]
+      "react": ["import { SegmentGroup } from '@ark-ui/react/segment-group'"],
+      "solid": ["import { SegmentGroup } from '@ark-ui/solid'"],
+      "vue": ["import { SegmentGroup } from '@ark-ui/vue/segment-group'"]
     },
     "className": "segmentGroup"
   },
   "select": {
     "parts": {
-      "Root": { "name": "SelectRoot", "slot": "root", "component": "ArkSelect.Root" },
+      "Root": { "name": "SelectRoot", "slot": "root", "component": "Select.Root" },
       "ClearTrigger": {
         "name": "SelectClearTrigger",
         "slot": "clearTrigger",
-        "component": "ArkSelect.ClearTrigger"
+        "component": "Select.ClearTrigger"
       },
-      "Content": { "name": "SelectContent", "slot": "content", "component": "ArkSelect.Content" },
-      "Control": { "name": "SelectControl", "slot": "control", "component": "ArkSelect.Control" },
+      "Content": { "name": "SelectContent", "slot": "content", "component": "Select.Content" },
+      "Control": { "name": "SelectControl", "slot": "control", "component": "Select.Control" },
       "Indicator": {
         "name": "SelectIndicator",
         "slot": "indicator",
-        "component": "ArkSelect.Indicator"
+        "component": "Select.Indicator"
       },
-      "Item": { "name": "SelectItem", "slot": "item", "component": "ArkSelect.Item" },
+      "Item": { "name": "SelectItem", "slot": "item", "component": "Select.Item" },
       "ItemGroup": {
         "name": "SelectItemGroup",
         "slot": "itemGroup",
-        "component": "ArkSelect.ItemGroup"
+        "component": "Select.ItemGroup"
       },
       "ItemGroupLabel": {
         "name": "SelectItemGroupLabel",
         "slot": "itemGroupLabel",
-        "component": "ArkSelect.ItemGroupLabel"
+        "component": "Select.ItemGroupLabel"
       },
       "ItemIndicator": {
         "name": "SelectItemIndicator",
         "slot": "itemIndicator",
-        "component": "ArkSelect.ItemIndicator"
+        "component": "Select.ItemIndicator"
       },
-      "ItemText": {
-        "name": "SelectItemText",
-        "slot": "itemText",
-        "component": "ArkSelect.ItemText"
-      },
-      "Label": { "name": "SelectLabel", "slot": "label", "component": "ArkSelect.Label" },
+      "ItemText": { "name": "SelectItemText", "slot": "itemText", "component": "Select.ItemText" },
+      "Label": { "name": "SelectLabel", "slot": "label", "component": "Select.Label" },
       "Positioner": {
         "name": "SelectPositioner",
         "slot": "positioner",
-        "component": "ArkSelect.Positioner"
+        "component": "Select.Positioner"
       },
-      "Trigger": { "name": "SelectTrigger", "slot": "trigger", "component": "ArkSelect.Trigger" },
+      "Trigger": { "name": "SelectTrigger", "slot": "trigger", "component": "Select.Trigger" },
       "ValueText": {
         "name": "SelectValueText",
         "slot": "valueText",
-        "component": "ArkSelect.ValueText"
+        "component": "Select.ValueText"
       }
     },
     "name": "Select",
     "imports": {
-      "react": ["import { Select as ArkSelect } from '@ark-ui/react/select'"],
-      "solid": ["import { Select as ArkSelect } from '@ark-ui/solid'"],
-      "vue": ["import { Select as ArkSelect } from '@ark-ui/vue/select'"]
+      "react": ["import { Select } from '@ark-ui/react/select'"],
+      "solid": ["import { Select } from '@ark-ui/solid'"],
+      "vue": ["import { Select } from '@ark-ui/vue/select'"]
     },
     "className": "select"
   },
   "slider": {
     "parts": {
-      "Root": { "name": "SliderRoot", "slot": "root", "component": "ArkSlider.Root" },
-      "Control": { "name": "SliderControl", "slot": "control", "component": "ArkSlider.Control" },
-      "Label": { "name": "SliderLabel", "slot": "label", "component": "ArkSlider.Label" },
-      "Marker": { "name": "SliderMarker", "slot": "marker", "component": "ArkSlider.Marker" },
+      "Root": { "name": "SliderRoot", "slot": "root", "component": "Slider.Root" },
+      "Control": { "name": "SliderControl", "slot": "control", "component": "Slider.Control" },
+      "Label": { "name": "SliderLabel", "slot": "label", "component": "Slider.Label" },
+      "Marker": { "name": "SliderMarker", "slot": "marker", "component": "Slider.Marker" },
       "MarkerGroup": {
         "name": "SliderMarkerGroup",
         "slot": "markerGroup",
-        "component": "ArkSlider.MarkerGroup"
+        "component": "Slider.MarkerGroup"
       },
-      "Range": { "name": "SliderRange", "slot": "range", "component": "ArkSlider.Range" },
-      "Thumb": { "name": "SliderThumb", "slot": "thumb", "component": "ArkSlider.Thumb" },
-      "Track": { "name": "SliderTrack", "slot": "track", "component": "ArkSlider.Track" },
+      "Range": { "name": "SliderRange", "slot": "range", "component": "Slider.Range" },
+      "Thumb": { "name": "SliderThumb", "slot": "thumb", "component": "Slider.Thumb" },
+      "Track": { "name": "SliderTrack", "slot": "track", "component": "Slider.Track" },
       "ValueText": {
         "name": "SliderValueText",
         "slot": "valueText",
-        "component": "ArkSlider.ValueText"
+        "component": "Slider.ValueText"
       }
     },
     "name": "Slider",
     "imports": {
-      "react": ["import { Slider as ArkSlider } from '@ark-ui/react/slider'"],
-      "solid": ["import { Slider as ArkSlider } from '@ark-ui/solid'"],
-      "vue": ["import { Slider as ArkSlider } from '@ark-ui/vue/slider'"]
+      "react": ["import { Slider } from '@ark-ui/react/slider'"],
+      "solid": ["import { Slider } from '@ark-ui/solid'"],
+      "vue": ["import { Slider } from '@ark-ui/vue/slider'"]
     },
     "className": "slider"
   },
   "splitter": {
     "parts": {
-      "Root": { "name": "SplitterRoot", "slot": "root", "component": "ArkSplitter.Root" },
-      "Panel": { "name": "SplitterPanel", "slot": "panel", "component": "ArkSplitter.Panel" },
+      "Root": { "name": "SplitterRoot", "slot": "root", "component": "Splitter.Root" },
+      "Panel": { "name": "SplitterPanel", "slot": "panel", "component": "Splitter.Panel" },
       "ResizeTrigger": {
         "name": "SplitterResizeTrigger",
         "slot": "resizeTrigger",
-        "component": "ArkSplitter.ResizeTrigger"
+        "component": "Splitter.ResizeTrigger"
       }
     },
     "name": "Splitter",
     "imports": {
-      "react": ["import { Splitter as ArkSplitter } from '@ark-ui/react/splitter'"],
-      "solid": ["import { Splitter as ArkSplitter } from '@ark-ui/solid'"],
-      "vue": ["import { Splitter as ArkSplitter } from '@ark-ui/vue/splitter'"]
+      "react": ["import { Splitter } from '@ark-ui/react/splitter'"],
+      "solid": ["import { Splitter } from '@ark-ui/solid'"],
+      "vue": ["import { Splitter } from '@ark-ui/vue/splitter'"]
     },
     "className": "splitter"
   },
   "switch": {
     "parts": {
-      "Root": { "name": "SwitchRoot", "slot": "root", "component": "ArkSwitch.Root" },
-      "Control": { "name": "SwitchControl", "slot": "control", "component": "ArkSwitch.Control" },
-      "Label": { "name": "SwitchLabel", "slot": "label", "component": "ArkSwitch.Label" },
-      "Thumb": { "name": "SwitchThumb", "slot": "thumb", "component": "ArkSwitch.Thumb" }
+      "Root": { "name": "SwitchRoot", "slot": "root", "component": "Switch.Root" },
+      "Control": { "name": "SwitchControl", "slot": "control", "component": "Switch.Control" },
+      "Label": { "name": "SwitchLabel", "slot": "label", "component": "Switch.Label" },
+      "Thumb": { "name": "SwitchThumb", "slot": "thumb", "component": "Switch.Thumb" }
     },
     "name": "Switch",
     "imports": {
-      "react": ["import { Switch as ArkSwitch } from '@ark-ui/react/switch'"],
-      "solid": ["import { Switch as ArkSwitch } from '@ark-ui/solid'"],
-      "vue": ["import { Switch as ArkSwitch } from '@ark-ui/vue/switch'"]
+      "react": ["import { Switch } from '@ark-ui/react/switch'"],
+      "solid": ["import { Switch } from '@ark-ui/solid'"],
+      "vue": ["import { Switch } from '@ark-ui/vue/switch'"]
     },
     "className": "switchRecipe"
   },
   "tabs": {
     "parts": {
-      "Root": { "name": "TabsRoot", "slot": "root", "component": "ArkTabs.Root" },
-      "Content": { "name": "TabsContent", "slot": "content", "component": "ArkTabs.Content" },
-      "Indicator": {
-        "name": "TabsIndicator",
-        "slot": "indicator",
-        "component": "ArkTabs.Indicator"
-      },
-      "List": { "name": "TabsList", "slot": "list", "component": "ArkTabs.List" },
-      "Trigger": { "name": "TabsTrigger", "slot": "trigger", "component": "ArkTabs.Trigger" }
+      "Root": { "name": "TabsRoot", "slot": "root", "component": "Tabs.Root" },
+      "Content": { "name": "TabsContent", "slot": "content", "component": "Tabs.Content" },
+      "Indicator": { "name": "TabsIndicator", "slot": "indicator", "component": "Tabs.Indicator" },
+      "List": { "name": "TabsList", "slot": "list", "component": "Tabs.List" },
+      "Trigger": { "name": "TabsTrigger", "slot": "trigger", "component": "Tabs.Trigger" }
     },
     "name": "Tabs",
     "imports": {
-      "react": ["import { Tabs as ArkTabs } from '@ark-ui/react/tabs'"],
-      "solid": ["import { Tabs as ArkTabs } from '@ark-ui/solid'"],
-      "vue": ["import { Tabs as ArkTabs } from '@ark-ui/vue/tabs'"]
+      "react": ["import { Tabs } from '@ark-ui/react/tabs'"],
+      "solid": ["import { Tabs } from '@ark-ui/solid'"],
+      "vue": ["import { Tabs } from '@ark-ui/vue/tabs'"]
     },
     "className": "tabs"
   },
   "tags-input": {
     "parts": {
-      "Root": { "name": "TagsInputRoot", "slot": "root", "component": "ArkTagsInput.Root" },
+      "Root": { "name": "TagsInputRoot", "slot": "root", "component": "TagsInput.Root" },
       "ClearTrigger": {
         "name": "TagsInputClearTrigger",
         "slot": "clearTrigger",
-        "component": "ArkTagsInput.ClearTrigger"
+        "component": "TagsInput.ClearTrigger"
       },
       "Control": {
         "name": "TagsInputControl",
         "slot": "control",
-        "component": "ArkTagsInput.Control"
+        "component": "TagsInput.Control"
       },
-      "Input": { "name": "TagsInputInput", "slot": "input", "component": "ArkTagsInput.Input" },
-      "Item": { "name": "TagsInputItem", "slot": "item", "component": "ArkTagsInput.Item" },
+      "Input": { "name": "TagsInputInput", "slot": "input", "component": "TagsInput.Input" },
+      "Item": { "name": "TagsInputItem", "slot": "item", "component": "TagsInput.Item" },
       "ItemDeleteTrigger": {
         "name": "TagsInputItemDeleteTrigger",
         "slot": "itemDeleteTrigger",
-        "component": "ArkTagsInput.ItemDeleteTrigger"
+        "component": "TagsInput.ItemDeleteTrigger"
       },
       "ItemInput": {
         "name": "TagsInputItemInput",
         "slot": "itemInput",
-        "component": "ArkTagsInput.ItemInput"
+        "component": "TagsInput.ItemInput"
       },
       "ItemPreview": {
         "name": "TagsInputItemPreview",
         "slot": "itemPreview",
-        "component": "ArkTagsInput.ItemPreview"
+        "component": "TagsInput.ItemPreview"
       },
       "ItemText": {
         "name": "TagsInputItemText",
         "slot": "itemText",
-        "component": "ArkTagsInput.ItemText"
+        "component": "TagsInput.ItemText"
       },
-      "Label": { "name": "TagsInputLabel", "slot": "label", "component": "ArkTagsInput.Label" }
+      "Label": { "name": "TagsInputLabel", "slot": "label", "component": "TagsInput.Label" }
     },
     "name": "TagsInput",
     "imports": {
-      "react": ["import { TagsInput as ArkTagsInput } from '@ark-ui/react/tags-input'"],
-      "solid": ["import { TagsInput as ArkTagsInput } from '@ark-ui/solid'"],
-      "vue": ["import { TagsInput as ArkTagsInput } from '@ark-ui/vue/tags-input'"]
+      "react": ["import { TagsInput } from '@ark-ui/react/tags-input'"],
+      "solid": ["import { TagsInput } from '@ark-ui/solid'"],
+      "vue": ["import { TagsInput } from '@ark-ui/vue/tags-input'"]
     },
     "className": "tagsInput"
   },
   "toast": {
     "parts": {
-      "Root": { "name": "ToastRoot", "slot": "root", "component": "ArkToast.Root" },
+      "Root": { "name": "ToastRoot", "slot": "root", "component": "Toast.Root" },
       "CloseTrigger": {
         "name": "ToastCloseTrigger",
         "slot": "closeTrigger",
-        "component": "ArkToast.CloseTrigger"
+        "component": "Toast.CloseTrigger"
       },
       "Description": {
         "name": "ToastDescription",
         "slot": "description",
-        "component": "ArkToast.Description"
+        "component": "Toast.Description"
       },
-      "Group": { "name": "ToastGroup", "slot": "group", "component": "ArkToast.Group" },
-      "Title": { "name": "ToastTitle", "slot": "title", "component": "ArkToast.Title" }
+      "Group": { "name": "ToastGroup", "slot": "group", "component": "Toast.Group" },
+      "Title": { "name": "ToastTitle", "slot": "title", "component": "Toast.Title" }
     },
     "name": "Toast",
     "imports": {
-      "react": ["import { Toast as ArkToast } from '@ark-ui/react/toast'"],
-      "solid": ["import { Toast as ArkToast } from '@ark-ui/solid'"],
-      "vue": ["import { Toast as ArkToast } from '@ark-ui/vue/toast'"]
+      "react": ["import { Toast } from '@ark-ui/react/toast'"],
+      "solid": ["import { Toast } from '@ark-ui/solid'"],
+      "vue": ["import { Toast } from '@ark-ui/vue/toast'"]
     },
     "className": "toast"
   },
   "toggle-group": {
     "parts": {
-      "Root": { "name": "ToggleGroupRoot", "slot": "root", "component": "ArkToggleGroup.Root" },
-      "Item": { "name": "ToggleGroupItem", "slot": "item", "component": "ArkToggleGroup.Item" }
+      "Root": { "name": "ToggleGroupRoot", "slot": "root", "component": "ToggleGroup.Root" },
+      "Item": { "name": "ToggleGroupItem", "slot": "item", "component": "ToggleGroup.Item" }
     },
     "name": "ToggleGroup",
     "imports": {
-      "react": ["import { ToggleGroup as ArkToggleGroup } from '@ark-ui/react/toggle-group'"],
-      "solid": ["import { ToggleGroup as ArkToggleGroup } from '@ark-ui/solid'"],
-      "vue": ["import { ToggleGroup as ArkToggleGroup } from '@ark-ui/vue/toggle-group'"]
+      "react": ["import { ToggleGroup } from '@ark-ui/react/toggle-group'"],
+      "solid": ["import { ToggleGroup } from '@ark-ui/solid'"],
+      "vue": ["import { ToggleGroup } from '@ark-ui/vue/toggle-group'"]
     },
     "className": "toggleGroup"
   },
   "tooltip": {
     "parts": {
-      "Root": { "name": "TooltipRoot", "component": "ArkTooltip.Root" },
-      "Arrow": { "name": "TooltipArrow", "slot": "arrow", "component": "ArkTooltip.Arrow" },
+      "Root": { "name": "TooltipRoot", "component": "Tooltip.Root" },
+      "Arrow": { "name": "TooltipArrow", "slot": "arrow", "component": "Tooltip.Arrow" },
       "ArrowTip": {
         "name": "TooltipArrowTip",
         "slot": "arrowTip",
-        "component": "ArkTooltip.ArrowTip"
+        "component": "Tooltip.ArrowTip"
       },
-      "Content": { "name": "TooltipContent", "slot": "content", "component": "ArkTooltip.Content" },
+      "Content": { "name": "TooltipContent", "slot": "content", "component": "Tooltip.Content" },
       "Positioner": {
         "name": "TooltipPositioner",
         "slot": "positioner",
-        "component": "ArkTooltip.Positioner"
+        "component": "Tooltip.Positioner"
       },
-      "Trigger": { "name": "TooltipTrigger", "slot": "trigger", "component": "ArkTooltip.Trigger" }
+      "Trigger": { "name": "TooltipTrigger", "slot": "trigger", "component": "Tooltip.Trigger" }
     },
     "name": "Tooltip",
     "imports": {
-      "react": ["import { Tooltip as ArkTooltip } from '@ark-ui/react/tooltip'"],
-      "solid": ["import { Tooltip as ArkTooltip } from '@ark-ui/solid'"],
-      "vue": ["import { Tooltip as ArkTooltip } from '@ark-ui/vue/tooltip'"]
+      "react": ["import { Tooltip } from '@ark-ui/react/tooltip'"],
+      "solid": ["import { Tooltip } from '@ark-ui/solid'"],
+      "vue": ["import { Tooltip } from '@ark-ui/vue/tooltip'"]
     },
     "className": "tooltip"
   },
   "tree-view": {
     "parts": {
-      "Root": { "name": "TreeViewRoot", "slot": "root", "component": "ArkTreeView.Root" },
-      "Branch": { "name": "TreeViewBranch", "slot": "branch", "component": "ArkTreeView.Branch" },
+      "Root": { "name": "TreeViewRoot", "slot": "root", "component": "TreeView.Root" },
+      "Branch": { "name": "TreeViewBranch", "slot": "branch", "component": "TreeView.Branch" },
       "BranchContent": {
         "name": "TreeViewBranchContent",
         "slot": "branchContent",
-        "component": "ArkTreeView.BranchContent"
+        "component": "TreeView.BranchContent"
       },
       "BranchControl": {
         "name": "TreeViewBranchControl",
         "slot": "branchControl",
-        "component": "ArkTreeView.BranchControl"
+        "component": "TreeView.BranchControl"
       },
       "BranchIndicator": {
         "name": "TreeViewBranchIndicator",
         "slot": "branchIndicator",
-        "component": "ArkTreeView.BranchIndicator"
+        "component": "TreeView.BranchIndicator"
       },
       "BranchText": {
         "name": "TreeViewBranchText",
         "slot": "branchText",
-        "component": "ArkTreeView.BranchText"
+        "component": "TreeView.BranchText"
       },
       "BranchTrigger": {
         "name": "TreeViewBranchTrigger",
         "slot": "branchTrigger",
-        "component": "ArkTreeView.BranchTrigger"
+        "component": "TreeView.BranchTrigger"
       },
-      "Item": { "name": "TreeViewItem", "slot": "item", "component": "ArkTreeView.Item" },
+      "Item": { "name": "TreeViewItem", "slot": "item", "component": "TreeView.Item" },
       "ItemText": {
         "name": "TreeViewItemText",
         "slot": "itemText",
-        "component": "ArkTreeView.ItemText"
+        "component": "TreeView.ItemText"
       },
-      "Label": { "name": "TreeViewLabel", "slot": "label", "component": "ArkTreeView.Label" },
-      "Tree": { "name": "TreeViewTree", "slot": "tree", "component": "ArkTreeView.Tree" }
+      "Label": { "name": "TreeViewLabel", "slot": "label", "component": "TreeView.Label" },
+      "Tree": { "name": "TreeViewTree", "slot": "tree", "component": "TreeView.Tree" }
     },
     "name": "TreeView",
     "imports": {
-      "react": ["import { TreeView as ArkTreeView } from '@ark-ui/react/tree-view'"],
-      "solid": ["import { TreeView as ArkTreeView } from '@ark-ui/solid'"],
-      "vue": ["import { TreeView as ArkTreeView } from '@ark-ui/vue/tree-view'"]
+      "react": ["import { TreeView } from '@ark-ui/react/tree-view'"],
+      "solid": ["import { TreeView } from '@ark-ui/solid'"],
+      "vue": ["import { TreeView } from '@ark-ui/vue/tree-view'"]
     },
     "className": "treeView"
   }
