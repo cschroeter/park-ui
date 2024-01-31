@@ -1,10 +1,7 @@
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
-import * as DatePicker from '~/components/ui/date-picker'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
+import { Button, DatePicker, IconButton, Input } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Date Picker',

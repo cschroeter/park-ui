@@ -1,4 +1,4 @@
-import { RadioGroup as ArkRadioGroup } from '@ark-ui/solid'
+import { RadioGroup } from '@ark-ui/solid'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -44,31 +44,11 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const RadioGroup = withProvider(ArkRadioGroup.Root, 'root')
-const RadioGroupIndicator = withContext(ArkRadioGroup.Indicator, 'indicator')
-const RadioGroupItem = withContext(ArkRadioGroup.Item, 'item')
-const RadioGroupItemControl = withContext(ArkRadioGroup.ItemControl, 'itemControl')
-const RadioGroupItemText = withContext(ArkRadioGroup.ItemText, 'itemText')
-const RadioGroupLabel = withContext(ArkRadioGroup.Label, 'label')
+const Root = withProvider(RadioGroup.Root, 'root')
+const Indicator = withContext(RadioGroup.Indicator, 'indicator')
+const Item = withContext(RadioGroup.Item, 'item')
+const ItemControl = withContext(RadioGroup.ItemControl, 'itemControl')
+const ItemText = withContext(RadioGroup.ItemText, 'itemText')
+const Label = withContext(RadioGroup.Label, 'label')
 
-const Root = RadioGroup
-const Indicator = RadioGroupIndicator
-const Item = RadioGroupItem
-const ItemControl = RadioGroupItemControl
-const ItemText = RadioGroupItemText
-const Label = RadioGroupLabel
-
-export {
-  Indicator,
-  Item,
-  ItemControl,
-  ItemText,
-  Label,
-  RadioGroup,
-  RadioGroupIndicator,
-  RadioGroupItem,
-  RadioGroupItemControl,
-  RadioGroupItemText,
-  RadioGroupLabel,
-  Root,
-}
+export { Indicator, Item, ItemControl, ItemText, Label, Root }

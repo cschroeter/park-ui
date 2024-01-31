@@ -1,4 +1,4 @@
-import { ToggleGroup as ArkToggleGroup } from '@ark-ui/solid'
+import { ToggleGroup } from '@ark-ui/solid'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -23,10 +23,7 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const ToggleGroup = withProvider(ArkToggleGroup.Root, 'root')
-const ToggleGroupItem = withContext(ArkToggleGroup.Item, 'item')
+const Root = withProvider(ToggleGroup.Root, 'root')
+const Item = withContext(ToggleGroup.Item, 'item')
 
-const Root = ToggleGroup
-const Item = ToggleGroupItem
-
-export { Item, Root, ToggleGroup, ToggleGroupItem }
+export { Item, Root }

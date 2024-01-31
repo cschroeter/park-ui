@@ -1,9 +1,7 @@
 import { XIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import * as TagsInput from '~/components/ui/tags-input'
+import { Button, IconButton, TagsInput } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Tags Input',
@@ -13,7 +11,7 @@ export default meta
 
 export const Base = () => {
   return (
-    <TagsInput.Root value={['React', 'Solid', 'Vue']} maxW="xs">
+    <TagsInput.Root className="max-w-xs" value={['React', 'Solid', 'Vue']}>
       {(api) => (
         <>
           <TagsInput.Label>Frameworks</TagsInput.Label>

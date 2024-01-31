@@ -1,4 +1,4 @@
-import { Select as ArkSelect } from '@ark-ui/solid'
+import { Select } from '@ark-ui/solid'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -110,35 +110,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Select = withProvider(ArkSelect.Root, 'root')
-const SelectClearTrigger = withContext(ArkSelect.ClearTrigger, 'clearTrigger')
-const SelectContent = withContext(ArkSelect.Content, 'content')
-const SelectControl = withContext(ArkSelect.Control, 'control')
-const SelectIndicator = withContext(ArkSelect.Indicator, 'indicator')
-const SelectItem = withContext(ArkSelect.Item, 'item')
-const SelectItemGroup = withContext(ArkSelect.ItemGroup, 'itemGroup')
-const SelectItemGroupLabel = withContext(ArkSelect.ItemGroupLabel, 'itemGroupLabel')
-const SelectItemIndicator = withContext(ArkSelect.ItemIndicator, 'itemIndicator')
-const SelectItemText = withContext(ArkSelect.ItemText, 'itemText')
-const SelectLabel = withContext(ArkSelect.Label, 'label')
-const SelectPositioner = withContext(ArkSelect.Positioner, 'positioner')
-const SelectTrigger = withContext(ArkSelect.Trigger, 'trigger')
-const SelectValueText = withContext(ArkSelect.ValueText, 'valueText')
-
-const Root = Select
-const ClearTrigger = SelectClearTrigger
-const Content = SelectContent
-const Control = SelectControl
-const Indicator = SelectIndicator
-const Item = SelectItem
-const ItemGroup = SelectItemGroup
-const ItemGroupLabel = SelectItemGroupLabel
-const ItemIndicator = SelectItemIndicator
-const ItemText = SelectItemText
-const Label = SelectLabel
-const Positioner = SelectPositioner
-const Trigger = SelectTrigger
-const ValueText = SelectValueText
+const Root = withProvider(Select.Root, 'root')
+const ClearTrigger = withContext(Select.ClearTrigger, 'clearTrigger')
+const Content = withContext(Select.Content, 'content')
+const Control = withContext(Select.Control, 'control')
+const Indicator = withContext(Select.Indicator, 'indicator')
+const Item = withContext(Select.Item, 'item')
+const ItemGroup = withContext(Select.ItemGroup, 'itemGroup')
+const ItemGroupLabel = withContext(Select.ItemGroupLabel, 'itemGroupLabel')
+const ItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator')
+const ItemText = withContext(Select.ItemText, 'itemText')
+const Label = withContext(Select.Label, 'label')
+const Positioner = withContext(Select.Positioner, 'positioner')
+const Trigger = withContext(Select.Trigger, 'trigger')
+const ValueText = withContext(Select.ValueText, 'valueText')
 
 export {
   ClearTrigger,
@@ -153,20 +138,6 @@ export {
   Label,
   Positioner,
   Root,
-  Select,
-  SelectClearTrigger,
-  SelectContent,
-  SelectControl,
-  SelectIndicator,
-  SelectItem,
-  SelectItemGroup,
-  SelectItemGroupLabel,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValueText,
   Trigger,
   ValueText,
 }

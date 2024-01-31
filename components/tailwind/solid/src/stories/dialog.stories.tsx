@@ -1,8 +1,6 @@
 import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
-import * as Dialog from '~/components/ui/dialog'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, Dialog, IconButton } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Dialog',
@@ -19,19 +17,21 @@ export const Base = () => {
       <Dialog.Backdrop />
       <Dialog.Positioner>
         <Dialog.Content>
-          <Stack gap="8" p="6">
-            <Stack gap="1">
+          <div className="flex flex-col gap-8 p-6">
+            <div className="flex flex-col gap-1">
               <Dialog.Title>Dialog Title</Dialog.Title>
               <Dialog.Description>Dialog Description</Dialog.Description>
-            </Stack>
-            <Stack gap="3" direction="row" width="full">
+            </div>
+            <div className="flex gap-3 flex-row w-full">
               <Dialog.CloseTrigger asChild>
-                <Button variant="outline">Cancel</Button>
+                <Button className="w-full" variant="outline">
+                  Cancel
+                </Button>
               </Dialog.CloseTrigger>
-              <Button>Confirm</Button>
-            </Stack>
-          </Stack>
-          <Dialog.CloseTrigger asChild>
+              <Button className="w-full">Confirm</Button>
+            </div>
+          </div>
+          <Dialog.CloseTrigger className="absolute top-2 right-2" asChild>
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
               <XIcon />
             </IconButton>

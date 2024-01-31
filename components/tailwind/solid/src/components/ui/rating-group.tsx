@@ -1,11 +1,8 @@
-import {
-  RatingGroup as ArkRatingGroup,
-  type RatingGroupProps as ArkRatingGroupProps,
-} from '@ark-ui/solid'
+import { RatingGroup as ArkRatingGroup, type RatingGroupRootProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface RatingGroupProps extends ArkRatingGroupProps, RatingGroupVariantProps {
+export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {
   children?: JSX.Element
 }
 
@@ -88,6 +85,7 @@ const StarIcon = (props: Props) => (
     stroke-linecap="round"
     stroke-linejoin="round"
   >
+    <title>Star</title>
     <defs>
       <linearGradient id="half">
         <stop offset="50%" stop-color="var(--colors-color-palette-default)" />

@@ -1,9 +1,7 @@
 import { Trash2Icon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
-import * as FileUpload from '~/components/ui/file-upload'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, FileUpload, IconButton } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/File Upload',

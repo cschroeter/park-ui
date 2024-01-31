@@ -1,11 +1,6 @@
 import { MapPinIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { HStack, Stack } from 'styled-system/jsx'
-import { Avatar } from '~/components/ui/avatar'
-import * as HoverCard from '~/components/ui/hover-card'
-import { Icon } from '~/components/ui/icon'
-import { Link } from '~/components/ui/link'
-import { Text } from '~/components/ui/text'
+import { Avatar, HoverCard, Icon, Link, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Hover Card',
@@ -18,10 +13,10 @@ export const Base = () => {
     <HoverCard.Root>
       <HoverCard.Trigger asChild>
         <Link
+          className="font-medium"
           href="https://twitter.com/grizzly_codes/"
           target="_blank"
           textStyle="sm"
-          fontWeight="medium"
         >
           @grizzly_codes
         </Link>
@@ -32,28 +27,28 @@ export const Base = () => {
           <HoverCard.Arrow>
             <HoverCard.ArrowTip />
           </HoverCard.Arrow>
-          <Stack gap="4" direction="row">
+          <div className="flex gap-4 flex-row">
             <Avatar
               name="Christian Schröter"
               src="https://avatars.githubusercontent.com/u/1846056"
             />
-            <Stack gap="3">
-              <Stack gap="1">
-                <Text textStyle="sm" fontWeight="semibold">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-1">
+                <Text className="font-semibold" textStyle="sm">
                   @grizzly_codes
                 </Text>
-                <Text textStyle="sm" color="fg.muted">
+                <Text className="text-fg-muted" textStyle="sm">
                   Staff Software Engineer working at vivenu GmbH
                 </Text>
-              </Stack>
-              <HStack gap="1" color="fg.subtle" textStyle="xs">
+              </div>
+              <div className="flex gap-1 text-fg-subtle" textStyle="xs">
                 <Icon>
                   <MapPinIcon />
                 </Icon>
                 <Text>Joined Dezember 2011</Text>
-              </HStack>
-            </Stack>
-          </Stack>
+              </div>
+            </div>
+          </div>
         </HoverCard.Content>
       </HoverCard.Positioner>
     </HoverCard.Root>

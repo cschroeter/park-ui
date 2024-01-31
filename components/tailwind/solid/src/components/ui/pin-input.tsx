@@ -1,9 +1,9 @@
-import { PinInput as ArkPinInput, type PinInputProps as ArkPinInputProps } from '@ark-ui/solid'
+import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { Input } from '~/components/ui/input'
 
-export interface PinInputProps extends ArkPinInputProps, PinInputVariantProps {
+export interface PinInputProps extends PinInputRootProps, PinInputVariantProps {
   children?: JSX.Element
   /**
    * The number of inputs to render.

@@ -1,6 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Stack } from 'styled-system/jsx'
-import { Text } from '~/components/ui/text'
+import { Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Text',
@@ -11,16 +10,16 @@ export default meta
 export const Base = () => <Text>Sphinx of black quartz, judge my vow.</Text>
 
 export const HTMLTags = () => (
-  <Stack>
+  <div className="flex flex-col gap-2.5">
     <Text as="p">This is a p element.</Text>
     <Text as="label">This is a label element.</Text>
     <Text as="div">This is a div element.</Text>
     <Text as="span">This is a span element</Text>
-  </Stack>
+  </div>
 )
 
 export const Sizes = () => (
-  <Stack>
+  <div className="flex flex-col gap-2.5">
     <Text textStyle="xs">Ag</Text>
     <Text textStyle="sm">Ag</Text>
     <Text textStyle="md">Ag</Text>
@@ -32,5 +31,5 @@ export const Sizes = () => (
     <Text textStyle="5xl">Ag</Text>
     <Text textStyle="6xl">Ag</Text>
     <Text textStyle="7xl">Ag</Text>
-  </Stack>
+  </div>
 )

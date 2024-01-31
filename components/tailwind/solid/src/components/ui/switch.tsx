@@ -1,8 +1,8 @@
-import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui/solid'
+import { Switch as ArkSwitch, type SwitchRootProps } from '@ark-ui/solid'
 import { Show, children, splitProps, type JSX } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface SwitchProps extends ArkSwitchProps, SwitchVariantProps {
+export interface SwitchProps extends SwitchRootProps, SwitchVariantProps {
   children?: JSX.Element
 }
 
