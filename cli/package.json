@@ -23,7 +23,7 @@
     "@clack/core": "0.3.3",
     "@clack/prompts": "0.7.0",
     "@release-it/keep-a-changelog": "5.0.0",
-    "@types/node": "20.11.10",
+    "@types/node": "20.11.13",
     "@types/yargs": "17.0.32",
     "json-schema-to-typescript": "13.1.2",
     "node-fetch": "3.3.2",

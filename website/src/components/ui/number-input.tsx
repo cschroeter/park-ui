@@ -1,25 +1,31 @@
 import {
   NumberInput as ArkNumberInput,
-  type NumberInputProps as ArkNumberInputProps,
+  type NumberInputRootProps,
 } from '@ark-ui/react/number-input'
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface NumberInputProps
-  extends Assign<JsxStyleProps, ArkNumberInputProps>,
+  extends Assign<JsxStyleProps, NumberInputRootProps>,
     NumberInputVariantProps {
   children?: ReactNode
 }
 
 export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
   const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)
-  const { children, ...rootProps } = numberInputProps
+  const [cssProps, localProps] = splitCssProps(numberInputProps)
+  const { children, className, ...rootProps } = localProps
   const styles = numberInput(variantProps)
 
   return (
-    <ArkNumberInput.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkNumberInput.Root
+      ref={ref}
+      className={cx(styles.root, css(cssProps), className)}
+      {...rootProps}
+    >
       {children && <ArkNumberInput.Label className={styles.label}>{children}</ArkNumberInput.Label>}
       <ArkNumberInput.Control className={styles.control}>
         <ArkNumberInput.Input className={styles.input} />
@@ -38,6 +44,7 @@ NumberInput.displayName = 'NumberInput'
 
 const ChevronUpIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Up Icon</title>
     <path
       fill="none"
       stroke="currentColor"
@@ -51,6 +58,7 @@ const ChevronUpIcon = () => (
 
 const ChevronDownIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Down Icon</title>
     <path
       fill="none"
       stroke="currentColor"

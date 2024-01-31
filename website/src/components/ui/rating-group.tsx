@@ -1,31 +1,37 @@
 import {
   RatingGroup as ArkRatingGroup,
-  type RatingGroupProps as ArkRatingGroupProps,
+  type RatingGroupRootProps,
 } from '@ark-ui/react/rating-group'
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
-  extends Assign<JsxStyleProps, ArkRatingGroupProps>,
+  extends Assign<JsxStyleProps, RatingGroupRootProps>,
     RatingGroupVariantProps {
   children?: ReactNode
 }
 
 export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
-  const [variantProps, localProps] = ratingGroup.splitVariantProps(props)
-  const { children, ...rootProps } = localProps
+  const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
+  const [cssProps, localProps] = splitCssProps(ratingGroupProps)
+  const { children, className, ...rootProps } = localProps
   const styles = ratingGroup(variantProps)
 
   return (
-    <ArkRatingGroup.Root ref={ref} className={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkRatingGroup.Root
+      ref={ref}
+      className={cx(styles.root, css(cssProps), className)}
+      {...rootProps}
+    >
       {children && <ArkRatingGroup.Label className={styles.label}>{children}</ArkRatingGroup.Label>}
       <ArkRatingGroup.Control className={styles.control}>
         {({ items }) =>
           items.map((index) => (
             <ArkRatingGroup.Item className={styles.item} key={index} index={index}>
-              {({ isHalf }) => <Icon isHalf={isHalf} />}
+              {({ isHalf }) => <StarIcon isHalf={isHalf} />}
             </ArkRatingGroup.Item>
           ))
         }
@@ -40,7 +46,7 @@ type IconProps = {
   isHalf: boolean
 }
 
-const Icon = (props: IconProps) => (
+const StarIcon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -52,10 +58,11 @@ const Icon = (props: IconProps) => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
+    <title>Star Icon</title>
     <defs>
       <linearGradient id="half">
-        <stop offset="50%" stop-color="var(--colors-color-palette-default)" />
-        <stop offset="50%" stop-color="var(--colors-bg-emphasized)" />
+        <stop offset="50%" stopColor="var(--colors-color-palette-default)" />
+        <stop offset="50%" stopColor="var(--colors-bg-emphasized)" />
       </linearGradient>
     </defs>
     <polygon

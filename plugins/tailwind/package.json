@@ -36,10 +36,10 @@
   },
   "devDependencies": {
     "@ark-ui/react": "2.0.1",
-    "@pandacss/dev": "0.29.0",
+    "@pandacss/dev": "0.29.1",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
-    "@types/node": "20.11.10",
+    "@types/node": "20.11.13",
     "@types/postcss-js": "4.0.4",
     "clean-package": "2.2.0",
     "postcss": "8.4.33",

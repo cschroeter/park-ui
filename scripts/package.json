@@ -6,8 +6,8 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "2.1.0",
-    "@pandacss/dev": "0.29.0",
-    "@pandacss/types": "0.29.0",
+    "@pandacss/dev": "0.29.1",
+    "@pandacss/types": "0.29.1",
     "@park-ui/panda-preset": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "@types/react": "18.2.48",
