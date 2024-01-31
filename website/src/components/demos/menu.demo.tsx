@@ -11,11 +11,10 @@ import {
 } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import type { MenuProps } from '~/components/ui/menu'
 import * as Menu from '~/components/ui/menu'
 import { Text } from '~/components/ui/text'
 
-export const Demo = (props: MenuProps) => {
+export const Demo = (props: Menu.RootProps) => {
   return (
     <Menu.Root {...props}>
       <Menu.Trigger asChild>

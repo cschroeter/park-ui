@@ -1,10 +1,9 @@
 import { XIcon } from 'lucide-react'
 import { Button } from '~/components/ui/button'
-import type { DrawerProps } from '~/components/ui/drawer'
 import * as Drawer from '~/components/ui/drawer'
 import { IconButton } from '~/components/ui/icon-button'
 
-export const Demo = (props: DrawerProps) => {
+export const Demo = (props: Drawer.RootProps) => {
   return (
     <Drawer.Root {...props}>
       <Drawer.Trigger asChild>

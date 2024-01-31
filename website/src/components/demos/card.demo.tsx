@@ -1,11 +1,10 @@
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import type { CardProps } from '~/components/ui/card'
 import * as Card from '~/components/ui/card'
 import { FormLabel } from '~/components/ui/form-label'
 import { Input } from '~/components/ui/input'
 
-export const Demo = (props: CardProps) => {
+export const Demo = (props: Card.RootProps) => {
   return (
     <Card.Root width="sm" {...props}>
       <Card.Header>

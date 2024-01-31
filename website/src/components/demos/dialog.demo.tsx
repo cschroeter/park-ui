@@ -1,11 +1,10 @@
 import { XIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
-import type { DialogProps } from '~/components/ui/dialog'
 import * as Dialog from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 
-export const Demo = (props: DialogProps) => {
+export const Demo = (props: Dialog.RootProps) => {
   return (
     <Dialog.Root {...props}>
       <Dialog.Trigger asChild>

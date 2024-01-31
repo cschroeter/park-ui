@@ -1,6 +1,6 @@
+import type { ComboboxInputValueChangeDetails } from '@ark-ui/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import type { ComboboxProps } from '~/components/ui/combobox'
 import * as Combobox from '~/components/ui/combobox'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
@@ -12,10 +12,10 @@ const data = [
   { label: 'Vue', value: 'vue' },
 ]
 
-export const Demo = (props: ComboboxProps) => {
+export const Demo = (props: Combobox.RootProps) => {
   const [items, setItems] = useState(data)
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ComboboxInputValueChangeDetails) => {
     const filtered = data.filter((item) => item.label.toLowerCase().includes(e.value.toLowerCase()))
     setItems(filtered.length > 0 ? filtered : data)
   }
