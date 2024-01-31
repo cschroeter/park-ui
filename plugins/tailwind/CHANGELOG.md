@@ -1,5 +1,25 @@
 ## [Unreleased]
 
+This release marks an important milestone for Park UI as we have upgraded to the new major version 2.0 of Ark UI. Please
+update your dependencies accordingly.
+
+### Added
+
+- Added new `Skeleton` component.
+- Added new `enclosed` variant to the `Tabs` component.
+
+### Changed
+
+- Updated all code snippets to match the new Ark UI 2.0.0 API.
+- Updated the `TagsInput` recipe to use the new `ItemPreview` part.
+
+### Fixed
+
+- Fixed a problem where the`enclosed` variant of the `Tabs` component was rendered slightly too big
+- Resolved an issue with the `Card` component where the content would overflow the card.
+- Resolved an issue with `SegmentControl` that the `indicator` was sometimes not rendered correctly.
+- Fixed an issue that the initials in `Avatar` were not centered correctly.
+
 ## [0.17.0] - 2024-01-19
 
 We are excited to announce that in this release, we have revised several components to feature a closed Component API:
