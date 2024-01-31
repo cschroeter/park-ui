@@ -1,5 +1,4 @@
 import { Combobox as ArkCombobox } from '@ark-ui/react/combobox'
-import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { combobox } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -35,17 +34,3 @@ export {
   Root,
   Trigger,
 }
-
-export interface ComboboxRootProps extends ComponentProps<typeof Root> {}
-export interface ComboboxClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
-export interface ComboboxContentProps extends ComponentProps<typeof Content> {}
-export interface ComboboxControlProps extends ComponentProps<typeof Control> {}
-export interface ComboboxInputProps extends ComponentProps<typeof Input> {}
-export interface ComboboxItemProps extends ComponentProps<typeof Item> {}
-export interface ComboboxItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface ComboboxItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
-export interface ComboboxItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
-export interface ComboboxItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface ComboboxLabelProps extends ComponentProps<typeof Label> {}
-export interface ComboboxPositionerProps extends ComponentProps<typeof Positioner> {}
-export interface ComboboxTriggerProps extends ComponentProps<typeof Trigger> {}

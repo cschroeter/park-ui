@@ -1,11 +1,7 @@
 import type { Meta } from '@storybook/react'
 import { MapPinIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
-import { Avatar } from '~/components/ui/avatar'
-import { HoverCard } from '~/components/ui/hover-card'
-import { Icon } from '~/components/ui/icon'
-import { Link } from '~/components/ui/link'
-import { Text } from '~/components/ui/text'
+import { Avatar, HoverCard, Icon, Link, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Hover Card',

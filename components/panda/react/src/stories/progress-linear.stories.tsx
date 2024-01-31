@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Stack } from 'styled-system/jsx'
-import { Progress } from '~/components/ui/progress'
+import { Progress } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Progress Linear',

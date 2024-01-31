@@ -1,5 +1,4 @@
 import { ColorPicker as ArkColorPicker } from '@ark-ui/react/color-picker'
-import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { colorPicker } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -61,30 +60,3 @@ export {
   ValueText,
   View,
 }
-
-export interface ColorPickerRootProps extends ComponentProps<typeof Root> {}
-export interface ColorPickerAreaProps extends ComponentProps<typeof Area> {}
-export interface ColorPickerAreaBackgroundProps extends ComponentProps<typeof AreaBackground> {}
-export interface ColorPickerAreaThumbProps extends ComponentProps<typeof AreaThumb> {}
-export interface ColorPickerChannelInputProps extends ComponentProps<typeof ChannelInput> {}
-export interface ColorPickerChannelSliderProps extends ComponentProps<typeof ChannelSlider> {}
-export interface ColorPickerChannelSliderThumbProps
-  extends ComponentProps<typeof ChannelSliderThumb> {}
-export interface ColorPickerChannelSliderTrackProps
-  extends ComponentProps<typeof ChannelSliderTrack> {}
-export interface ColorPickerContentProps extends ComponentProps<typeof Content> {}
-export interface ColorPickerControlProps extends ComponentProps<typeof Control> {}
-export interface ColorPickerEyeDropperTriggerProps
-  extends ComponentProps<typeof EyeDropperTrigger> {}
-export interface ColorPickerFormatSelectProps extends ComponentProps<typeof FormatSelect> {}
-export interface ColorPickerFormatTriggerProps extends ComponentProps<typeof FormatTrigger> {}
-export interface ColorPickerLabelProps extends ComponentProps<typeof Label> {}
-export interface ColorPickerPositionerProps extends ComponentProps<typeof Positioner> {}
-export interface ColorPickerSwatchProps extends ComponentProps<typeof Swatch> {}
-export interface ColorPickerSwatchGroupProps extends ComponentProps<typeof SwatchGroup> {}
-export interface ColorPickerSwatchIndicatorProps extends ComponentProps<typeof SwatchIndicator> {}
-export interface ColorPickerSwatchTriggerProps extends ComponentProps<typeof SwatchTrigger> {}
-export interface ColorPickerTransparencyGridProps extends ComponentProps<typeof TransparencyGrid> {}
-export interface ColorPickerTriggerProps extends ComponentProps<typeof Trigger> {}
-export interface ColorPickerValueTextProps extends ComponentProps<typeof ValueText> {}
-export interface ColorPickerViewProps extends ComponentProps<typeof View> {}

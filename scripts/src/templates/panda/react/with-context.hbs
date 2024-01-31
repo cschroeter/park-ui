@@ -25,7 +25,3 @@ export {
   {{@key}}
   {{/each}}
 }
-
-{{#each parts}}
-export interface {{this.name}}Props extends ComponentProps<typeof {{@key}}> {}
-{{/each}}

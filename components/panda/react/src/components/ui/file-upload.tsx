@@ -1,5 +1,4 @@
 import { FileUpload as ArkFileUpload } from '@ark-ui/react/file-upload'
-import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { fileUpload } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -31,16 +30,3 @@ export {
   Root,
   Trigger,
 }
-
-export interface FileUploadRootProps extends ComponentProps<typeof Root> {}
-export interface FileUploadDropzoneProps extends ComponentProps<typeof Dropzone> {}
-export interface FileUploadItemProps extends ComponentProps<typeof Item> {}
-export interface FileUploadItemDeleteTriggerProps
-  extends ComponentProps<typeof ItemDeleteTrigger> {}
-export interface FileUploadItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface FileUploadItemNameProps extends ComponentProps<typeof ItemName> {}
-export interface FileUploadItemPreviewProps extends ComponentProps<typeof ItemPreview> {}
-export interface FileUploadItemPreviewImageProps extends ComponentProps<typeof ItemPreviewImage> {}
-export interface FileUploadItemSizeTextProps extends ComponentProps<typeof ItemSizeText> {}
-export interface FileUploadLabelProps extends ComponentProps<typeof Label> {}
-export interface FileUploadTriggerProps extends ComponentProps<typeof Trigger> {}

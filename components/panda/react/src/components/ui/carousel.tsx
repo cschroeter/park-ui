@@ -1,5 +1,4 @@
 import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'
-import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { carousel } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -27,13 +26,3 @@ export {
   Root,
   Viewport,
 }
-
-export interface CarouselRootProps extends ComponentProps<typeof Root> {}
-export interface CarouselControlProps extends ComponentProps<typeof Control> {}
-export interface CarouselIndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface CarouselIndicatorGroupProps extends ComponentProps<typeof IndicatorGroup> {}
-export interface CarouselItemProps extends ComponentProps<typeof Item> {}
-export interface CarouselItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface CarouselNextTriggerProps extends ComponentProps<typeof NextTrigger> {}
-export interface CarouselPrevTriggerProps extends ComponentProps<typeof PrevTrigger> {}
-export interface CarouselViewportProps extends ComponentProps<typeof Viewport> {}

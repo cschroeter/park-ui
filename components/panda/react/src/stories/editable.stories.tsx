@@ -1,7 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { Button } from '~/components/ui/button'
-import { Editable } from '~/components/ui/editable'
-import { FormLabel } from '~/components/ui/form-label'
+import { Button, Editable, FormLabel } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Editable',

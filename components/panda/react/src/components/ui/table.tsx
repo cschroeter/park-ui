@@ -1,5 +1,4 @@
 import { ark } from '@ark-ui/react/factory'
-import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { table } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -16,12 +15,3 @@ const Header = withContext(styled(ark.th), 'header')
 const Row = withContext(styled(ark.tr), 'row')
 
 export { Body, Caption, Cell, Footer, Head, Header, Root, Row }
-
-export interface TableRootProps extends ComponentProps<typeof Root> {}
-export interface TableBodyProps extends ComponentProps<typeof Body> {}
-export interface TableCaptionProps extends ComponentProps<typeof Caption> {}
-export interface TableCellProps extends ComponentProps<typeof Cell> {}
-export interface TableFooterProps extends ComponentProps<typeof Footer> {}
-export interface TableHeadProps extends ComponentProps<typeof Head> {}
-export interface TableHeaderProps extends ComponentProps<typeof Header> {}
-export interface TableRowProps extends ComponentProps<typeof Row> {}

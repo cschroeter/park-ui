@@ -1,5 +1,4 @@
 import { TagsInput as ArkTagsInput } from '@ark-ui/react/tags-input'
-import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { tagsInput } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -29,14 +28,3 @@ export {
   Label,
   Root,
 }
-
-export interface TagsInputRootProps extends ComponentProps<typeof Root> {}
-export interface TagsInputClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
-export interface TagsInputControlProps extends ComponentProps<typeof Control> {}
-export interface TagsInputInputProps extends ComponentProps<typeof Input> {}
-export interface TagsInputItemProps extends ComponentProps<typeof Item> {}
-export interface TagsInputItemDeleteTriggerProps extends ComponentProps<typeof ItemDeleteTrigger> {}
-export interface TagsInputItemInputProps extends ComponentProps<typeof ItemInput> {}
-export interface TagsInputItemPreviewProps extends ComponentProps<typeof ItemPreview> {}
-export interface TagsInputItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface TagsInputLabelProps extends ComponentProps<typeof Label> {}

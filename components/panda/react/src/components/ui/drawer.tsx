@@ -1,6 +1,5 @@
 import { Dialog as ArkDrawer } from '@ark-ui/react/dialog'
 import { ark } from '@ark-ui/react/factory'
-import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { drawer } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
@@ -32,15 +31,3 @@ export {
   Title,
   Trigger,
 }
-
-export interface DrawerRootProps extends ComponentProps<typeof Root> {}
-export interface DrawerBackdropProps extends ComponentProps<typeof Backdrop> {}
-export interface DrawerBodyProps extends ComponentProps<typeof Body> {}
-export interface DrawerCloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
-export interface DrawerContentProps extends ComponentProps<typeof Content> {}
-export interface DrawerDescriptionProps extends ComponentProps<typeof Description> {}
-export interface DrawerFooterProps extends ComponentProps<typeof Footer> {}
-export interface DrawerHeaderProps extends ComponentProps<typeof Header> {}
-export interface DrawerPositionerProps extends ComponentProps<typeof Positioner> {}
-export interface DrawerTitleProps extends ComponentProps<typeof Title> {}
-export interface DrawerTriggerProps extends ComponentProps<typeof Trigger> {}

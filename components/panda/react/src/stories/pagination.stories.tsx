@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { Pagination } from '~/components/ui/pagination'
+import { Pagination } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Pagination',
