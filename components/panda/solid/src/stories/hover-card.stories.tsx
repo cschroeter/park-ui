@@ -12,13 +12,7 @@ export default meta
 export const Base = () => {
   return (
     <HoverCard.Root>
-      <HoverCard.Trigger
-        as={Link}
-        href="https://twitter.com/grizzly_codes/"
-        target="_blank"
-        textStyle="sm"
-        fontWeight="medium"
-      >
+      <HoverCard.Trigger as={Link} href="https://twitter.com/grizzly_codes/" target="_blank">
         @grizzly_codes
       </HoverCard.Trigger>
 
@@ -34,18 +28,18 @@ export const Base = () => {
             />
             <Stack gap="3">
               <Stack gap="1">
-                <Text textStyle="sm" fontWeight="semibold">
+                <Text size="sm" fontWeight="semibold">
                   @grizzly_codes
                 </Text>
-                <Text textStyle="sm" color="fg.muted">
+                <Text size="sm" color="fg.muted">
                   Staff Software Engineer working at vivenu GmbH
                 </Text>
               </Stack>
-              <HStack gap="1" color="fg.subtle" textStyle="xs">
-                <Icon>
+              <HStack gap="1" color="fg.subtle">
+                <Icon size="sm">
                   <MapPinIcon />
                 </Icon>
-                <Text>Joined Dezember 2011</Text>
+                <Text size="xs">Joined Dezember 2011</Text>
               </HStack>
             </Stack>
           </Stack>

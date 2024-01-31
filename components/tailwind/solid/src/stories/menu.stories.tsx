@@ -30,12 +30,12 @@ export const Base = () => {
             <Menu.ItemGroupLabel for="group-1">My Account</Menu.ItemGroupLabel>
             <Menu.Separator />
             <Menu.Item id="profile">
-              <div class="flex gap-6 flex-1" justify="space-between">
+              <div class="flex gap-6 justify-between flex-1">
                 <div class="flex gap-2">
                   <UserIcon />
                   Profile
                 </div>
-                <Text class="text-fg-subtle" as="span" textStyle="xs">
+                <Text class="text-fg-subtle" as="span" size="sm">
                   ⇧⌘P
                 </Text>
               </div>
@@ -46,11 +46,11 @@ export const Base = () => {
               </div>
             </Menu.Item>
             <Menu.Item id="settings">
-              <div class="flex gap-6 flex-1" justify="space-between">
+              <div class="flex gap-6 justify-between flex-1">
                 <div class="flex gap-2">
                   <SettingsIcon /> Settings
                 </div>
-                <Text class="text-fg-subtle" as="span" textStyle="xs">
+                <Text class="text-fg-subtle" as="span" size="sm">
                   ⌘,
                 </Text>
               </div>
