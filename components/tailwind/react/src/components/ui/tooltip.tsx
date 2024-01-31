@@ -1,4 +1,5 @@
 import { Tooltip } from '@ark-ui/react/tooltip'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,11 +16,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(Tooltip.Root)
-const Arrow = withContext(Tooltip.Arrow, 'arrow')
-const ArrowTip = withContext(Tooltip.ArrowTip, 'arrowTip')
-const Content = withContext(Tooltip.Content, 'content')
-const Positioner = withContext(Tooltip.Positioner, 'positioner')
-const Trigger = withContext(Tooltip.Trigger, 'trigger')
+export const Root = withProvider(Tooltip.Root)
+export const Arrow = withContext(Tooltip.Arrow, 'arrow')
+export const ArrowTip = withContext(Tooltip.ArrowTip, 'arrowTip')
+export const Content = withContext(Tooltip.Content, 'content')
+export const Positioner = withContext(Tooltip.Positioner, 'positioner')
+export const Trigger = withContext(Tooltip.Trigger, 'trigger')
 
-export { Arrow, ArrowTip, Content, Positioner, Root, Trigger }
+export type RootProps = ComponentProps<typeof Root>
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

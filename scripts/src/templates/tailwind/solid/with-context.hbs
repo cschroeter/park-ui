@@ -2,6 +2,7 @@
 {{{this}}}
 {{/each}}
 import { tv } from 'tailwind-variants'
+import type { ComponentProps } from 'solid-js'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const styles = tv({{{tvConfig}}})
@@ -10,18 +11,19 @@ const { withProvider, withContext } = createStyleContext(styles)
 {{#each parts}}
 {{#if (eq @key "Root")}}
 {{#if this.slot}}
-const {{@key}} = withProvider({{this.component}}, '{{this.slot}}')
+export const {{@key}} = withProvider({{this.component}}, '{{this.slot}}')
 {{else}}
-const {{@key}} = withProvider({{this.component}})
+export const {{@key}} = withProvider({{this.component}})
 {{/if}} 
 {{else}}
-const {{@key}} = withContext({{this.component}}, '{{this.slot}}')
+export const {{@key}} = withContext({{this.component}}, '{{this.slot}}')
 {{/if}}
 {{/each}}
 
-
-export {
-  {{#each parts}}
-  {{@key}}
-  {{/each}}
-}
+{{#each parts}}
+{{#if (eq @key "Root")}}
+export type {{@key}}Props = ComponentProps<typeof {{@key}}>
+{{else}}
+export interface {{@key}}Props extends ComponentProps<typeof {{@key}}> {}
+{{/if}}
+{{/each}}

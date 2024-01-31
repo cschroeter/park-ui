@@ -1,4 +1,5 @@
 import { Dialog } from '@ark-ui/react/dialog'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -17,13 +18,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(Dialog.Root)
-const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
-const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')
-const Content = withContext(Dialog.Content, 'content')
-const Description = withContext(Dialog.Description, 'description')
-const Positioner = withContext(Dialog.Positioner, 'positioner')
-const Title = withContext(Dialog.Title, 'title')
-const Trigger = withContext(Dialog.Trigger, 'trigger')
+export const Root = withProvider(Dialog.Root)
+export const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
+export const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')
+export const Content = withContext(Dialog.Content, 'content')
+export const Description = withContext(Dialog.Description, 'description')
+export const Positioner = withContext(Dialog.Positioner, 'positioner')
+export const Title = withContext(Dialog.Title, 'title')
+export const Trigger = withContext(Dialog.Trigger, 'trigger')
 
-export { Backdrop, CloseTrigger, Content, Description, Positioner, Root, Title, Trigger }
+export type RootProps = ComponentProps<typeof Root>
+export interface BackdropProps extends ComponentProps<typeof Backdrop> {}
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

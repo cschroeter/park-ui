@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "splitter.tsx",
-      "content": "import { Splitter } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { splitter } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nconst Root = withProvider(styled(Splitter.Root), 'root')\nconst Panel = withContext(styled(Splitter.Panel), 'panel')\nconst ResizeTrigger = withContext(styled(Splitter.ResizeTrigger), 'resizeTrigger')\n\nexport { Panel, ResizeTrigger, Root }\n",
+      "content": "import { Splitter } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { splitter } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport const Root = withProvider(styled(Splitter.Root), 'root')\nexport const Panel = withContext(styled(Splitter.Panel), 'panel')\nexport const ResizeTrigger = withContext(styled(Splitter.ResizeTrigger), 'resizeTrigger')\n\nexport interface RootProps extends ComponentProps<typeof Root> {}\nexport interface PanelProps extends ComponentProps<typeof Panel> {}\nexport interface ResizeTriggerProps extends ComponentProps<typeof ResizeTrigger> {}\n",
       "hasMultipleParts": true
     }
   ]

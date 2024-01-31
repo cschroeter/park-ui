@@ -1,4 +1,5 @@
 import { Combobox } from '@ark-ui/react/combobox'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -72,32 +73,30 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(Combobox.Root, 'root')
-const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger')
-const Content = withContext(Combobox.Content, 'content')
-const Control = withContext(Combobox.Control, 'control')
-const Input = withContext(Combobox.Input, 'input')
-const Item = withContext(Combobox.Item, 'item')
-const ItemGroup = withContext(Combobox.ItemGroup, 'itemGroup')
-const ItemGroupLabel = withContext(Combobox.ItemGroupLabel, 'itemGroupLabel')
-const ItemIndicator = withContext(Combobox.ItemIndicator, 'itemIndicator')
-const ItemText = withContext(Combobox.ItemText, 'itemText')
-const Label = withContext(Combobox.Label, 'label')
-const Positioner = withContext(Combobox.Positioner, 'positioner')
-const Trigger = withContext(Combobox.Trigger, 'trigger')
+export const Root = withProvider(Combobox.Root, 'root')
+export const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger')
+export const Content = withContext(Combobox.Content, 'content')
+export const Control = withContext(Combobox.Control, 'control')
+export const Input = withContext(Combobox.Input, 'input')
+export const Item = withContext(Combobox.Item, 'item')
+export const ItemGroup = withContext(Combobox.ItemGroup, 'itemGroup')
+export const ItemGroupLabel = withContext(Combobox.ItemGroupLabel, 'itemGroupLabel')
+export const ItemIndicator = withContext(Combobox.ItemIndicator, 'itemIndicator')
+export const ItemText = withContext(Combobox.ItemText, 'itemText')
+export const Label = withContext(Combobox.Label, 'label')
+export const Positioner = withContext(Combobox.Positioner, 'positioner')
+export const Trigger = withContext(Combobox.Trigger, 'trigger')
 
-export {
-  ClearTrigger,
-  Content,
-  Control,
-  Input,
-  Item,
-  ItemGroup,
-  ItemGroupLabel,
-  ItemIndicator,
-  ItemText,
-  Label,
-  Positioner,
-  Root,
-  Trigger,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface InputProps extends ComponentProps<typeof Input> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
+export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
+export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

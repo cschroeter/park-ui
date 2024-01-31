@@ -1,5 +1,6 @@
 import { Dialog as ArkDrawer } from '@ark-ui/react/dialog'
 import { ark } from '@ark-ui/react/factory'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -49,28 +50,26 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkDrawer.Root)
-const Backdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
-const Body = withContext(ark.div, 'body')
-const CloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
-const Content = withContext(ArkDrawer.Content, 'content')
-const Description = withContext(ArkDrawer.Description, 'description')
-const Footer = withContext(ark.div, 'footer')
-const Header = withContext(ark.div, 'header')
-const Positioner = withContext(ArkDrawer.Positioner, 'positioner')
-const Title = withContext(ArkDrawer.Title, 'title')
-const Trigger = withContext(ArkDrawer.Trigger, 'trigger')
+export const Root = withProvider(ArkDrawer.Root)
+export const Backdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
+export const Body = withContext(ark.div, 'body')
+export const CloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
+export const Content = withContext(ArkDrawer.Content, 'content')
+export const Description = withContext(ArkDrawer.Description, 'description')
+export const Footer = withContext(ark.div, 'footer')
+export const Header = withContext(ark.div, 'header')
+export const Positioner = withContext(ArkDrawer.Positioner, 'positioner')
+export const Title = withContext(ArkDrawer.Title, 'title')
+export const Trigger = withContext(ArkDrawer.Trigger, 'trigger')
 
-export {
-  Backdrop,
-  Body,
-  CloseTrigger,
-  Content,
-  Description,
-  Footer,
-  Header,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface BackdropProps extends ComponentProps<typeof Backdrop> {}
+export interface BodyProps extends ComponentProps<typeof Body> {}
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface FooterProps extends ComponentProps<typeof Footer> {}
+export interface HeaderProps extends ComponentProps<typeof Header> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

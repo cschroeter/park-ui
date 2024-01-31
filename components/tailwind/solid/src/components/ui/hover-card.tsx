@@ -1,4 +1,5 @@
 import { HoverCard } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,11 +16,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(HoverCard.Root)
-const Arrow = withContext(HoverCard.Arrow, 'arrow')
-const ArrowTip = withContext(HoverCard.ArrowTip, 'arrowTip')
-const Content = withContext(HoverCard.Content, 'content')
-const Positioner = withContext(HoverCard.Positioner, 'positioner')
-const Trigger = withContext(HoverCard.Trigger, 'trigger')
+export const Root = withProvider(HoverCard.Root)
+export const Arrow = withContext(HoverCard.Arrow, 'arrow')
+export const ArrowTip = withContext(HoverCard.ArrowTip, 'arrowTip')
+export const Content = withContext(HoverCard.Content, 'content')
+export const Positioner = withContext(HoverCard.Positioner, 'positioner')
+export const Trigger = withContext(HoverCard.Trigger, 'trigger')
 
-export { Arrow, ArrowTip, Content, Positioner, Root, Trigger }
+export type RootProps = ComponentProps<typeof Root>
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

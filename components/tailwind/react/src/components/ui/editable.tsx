@@ -1,4 +1,5 @@
 import { Editable } from '@ark-ui/react/editable'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -19,14 +20,22 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(Editable.Root, 'root')
-const Area = withContext(Editable.Area, 'area')
-const CancelTrigger = withContext(Editable.CancelTrigger, 'cancelTrigger')
-const Control = withContext(Editable.Control, 'control')
-const EditTrigger = withContext(Editable.EditTrigger, 'editTrigger')
-const Input = withContext(Editable.Input, 'input')
-const Label = withContext(Editable.Label, 'label')
-const Preview = withContext(Editable.Preview, 'preview')
-const SubmitTrigger = withContext(Editable.SubmitTrigger, 'submitTrigger')
+export const Root = withProvider(Editable.Root, 'root')
+export const Area = withContext(Editable.Area, 'area')
+export const CancelTrigger = withContext(Editable.CancelTrigger, 'cancelTrigger')
+export const Control = withContext(Editable.Control, 'control')
+export const EditTrigger = withContext(Editable.EditTrigger, 'editTrigger')
+export const Input = withContext(Editable.Input, 'input')
+export const Label = withContext(Editable.Label, 'label')
+export const Preview = withContext(Editable.Preview, 'preview')
+export const SubmitTrigger = withContext(Editable.SubmitTrigger, 'submitTrigger')
 
-export { Area, CancelTrigger, Control, EditTrigger, Input, Label, Preview, Root, SubmitTrigger }
+export type RootProps = ComponentProps<typeof Root>
+export interface AreaProps extends ComponentProps<typeof Area> {}
+export interface CancelTriggerProps extends ComponentProps<typeof CancelTrigger> {}
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface EditTriggerProps extends ComponentProps<typeof EditTrigger> {}
+export interface InputProps extends ComponentProps<typeof Input> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}
+export interface PreviewProps extends ComponentProps<typeof Preview> {}
+export interface SubmitTriggerProps extends ComponentProps<typeof SubmitTrigger> {}

@@ -1,4 +1,5 @@
 import { SegmentGroup } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -36,11 +37,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(SegmentGroup.Root, 'root')
-const Indicator = withContext(SegmentGroup.Indicator, 'indicator')
-const Item = withContext(SegmentGroup.Item, 'item')
-const ItemControl = withContext(SegmentGroup.ItemControl, 'itemControl')
-const ItemText = withContext(SegmentGroup.ItemText, 'itemText')
-const Label = withContext(SegmentGroup.Label, 'label')
+export const Root = withProvider(SegmentGroup.Root, 'root')
+export const Indicator = withContext(SegmentGroup.Indicator, 'indicator')
+export const Item = withContext(SegmentGroup.Item, 'item')
+export const ItemControl = withContext(SegmentGroup.ItemControl, 'itemControl')
+export const ItemText = withContext(SegmentGroup.ItemText, 'itemText')
+export const Label = withContext(SegmentGroup.Label, 'label')
 
-export { Indicator, Item, ItemControl, ItemText, Label, Root }
+export type RootProps = ComponentProps<typeof Root>
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}

@@ -1,15 +1,21 @@
 import { SegmentGroup } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { segmentGroup } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(segmentGroup)
 
-const Root = withProvider(styled(SegmentGroup.Root), 'root')
-const Indicator = withContext(styled(SegmentGroup.Indicator), 'indicator')
-const Item = withContext(styled(SegmentGroup.Item), 'item')
-const ItemControl = withContext(styled(SegmentGroup.ItemControl), 'itemControl')
-const ItemText = withContext(styled(SegmentGroup.ItemText), 'itemText')
-const Label = withContext(styled(SegmentGroup.Label), 'label')
+export const Root = withProvider(styled(SegmentGroup.Root), 'root')
+export const Indicator = withContext(styled(SegmentGroup.Indicator), 'indicator')
+export const Item = withContext(styled(SegmentGroup.Item), 'item')
+export const ItemControl = withContext(styled(SegmentGroup.ItemControl), 'itemControl')
+export const ItemText = withContext(styled(SegmentGroup.ItemText), 'itemText')
+export const Label = withContext(styled(SegmentGroup.Label), 'label')
 
-export { Indicator, Item, ItemControl, ItemText, Label, Root }
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}

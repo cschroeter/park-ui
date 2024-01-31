@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "toggle-group.tsx",
-      "content": "import { ToggleGroup } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { toggleGroup } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nconst Root = withProvider(styled(ToggleGroup.Root), 'root')\nconst Item = withContext(styled(ToggleGroup.Item), 'item')\n\nexport { Item, Root }\n",
+      "content": "import { ToggleGroup } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { toggleGroup } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport const Root = withProvider(styled(ToggleGroup.Root), 'root')\nexport const Item = withContext(styled(ToggleGroup.Item), 'item')\n\nexport interface RootProps extends ComponentProps<typeof Root> {}\nexport interface ItemProps extends ComponentProps<typeof Item> {}\n",
       "hasMultipleParts": true
     }
   ]

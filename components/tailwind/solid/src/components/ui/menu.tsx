@@ -1,4 +1,5 @@
 import { Menu } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -97,32 +98,30 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(Menu.Root)
-const Arrow = withContext(Menu.Arrow, 'arrow')
-const ArrowTip = withContext(Menu.ArrowTip, 'arrowTip')
-const Content = withContext(Menu.Content, 'content')
-const ContextTrigger = withContext(Menu.ContextTrigger, 'contextTrigger')
-const Item = withContext(Menu.Item, 'item')
-const ItemGroup = withContext(Menu.ItemGroup, 'itemGroup')
-const ItemGroupLabel = withContext(Menu.ItemGroupLabel, 'itemGroupLabel')
-const OptionItem = withContext(Menu.OptionItem, 'optionItem')
-const Positioner = withContext(Menu.Positioner, 'positioner')
-const Separator = withContext(Menu.Separator, 'separator')
-const Trigger = withContext(Menu.Trigger, 'trigger')
-const TriggerItem = withContext(Menu.TriggerItem, 'triggerItem')
+export const Root = withProvider(Menu.Root)
+export const Arrow = withContext(Menu.Arrow, 'arrow')
+export const ArrowTip = withContext(Menu.ArrowTip, 'arrowTip')
+export const Content = withContext(Menu.Content, 'content')
+export const ContextTrigger = withContext(Menu.ContextTrigger, 'contextTrigger')
+export const Item = withContext(Menu.Item, 'item')
+export const ItemGroup = withContext(Menu.ItemGroup, 'itemGroup')
+export const ItemGroupLabel = withContext(Menu.ItemGroupLabel, 'itemGroupLabel')
+export const OptionItem = withContext(Menu.OptionItem, 'optionItem')
+export const Positioner = withContext(Menu.Positioner, 'positioner')
+export const Separator = withContext(Menu.Separator, 'separator')
+export const Trigger = withContext(Menu.Trigger, 'trigger')
+export const TriggerItem = withContext(Menu.TriggerItem, 'triggerItem')
 
-export {
-  Arrow,
-  ArrowTip,
-  Content,
-  ContextTrigger,
-  Item,
-  ItemGroup,
-  ItemGroupLabel,
-  OptionItem,
-  Positioner,
-  Root,
-  Separator,
-  Trigger,
-  TriggerItem,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface ContextTriggerProps extends ComponentProps<typeof ContextTrigger> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
+export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
+export interface OptionItemProps extends ComponentProps<typeof OptionItem> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface SeparatorProps extends ComponentProps<typeof Separator> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface TriggerItemProps extends ComponentProps<typeof TriggerItem> {}

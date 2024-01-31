@@ -11,17 +11,15 @@ const { withProvider, withContext } = createStyleContext({{className}})
 {{#each parts}}
 {{#if (eq @key "Root")}}
 {{#if this.slot}}
-const {{@key}} = withProvider(styled({{this.component}}), '{{this.slot}}')
+export const {{@key}} = withProvider(styled({{this.component}}), '{{this.slot}}')
 {{else}}
-const {{@key}} = withProvider({{this.component}})
+export const {{@key}} = withProvider({{this.component}})
 {{/if}} 
 {{else}}
-const {{@key}} = withContext(styled({{this.component}}), '{{this.slot}}')
+export const {{@key}} = withContext(styled({{this.component}}), '{{this.slot}}')
 {{/if}}
 {{/each}}
 
-export {
-  {{#each parts}}
-  {{@key}}
-  {{/each}}
-}
+{{#each parts}}
+export interface {{@key}}Props extends ComponentProps<typeof {{@key}}> {}
+{{/each}}

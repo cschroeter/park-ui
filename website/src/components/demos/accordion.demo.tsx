@@ -1,8 +1,7 @@
 import { ChevronDownIcon } from 'lucide-react'
-import type { AccordionProps } from '~/components/ui/accordion'
 import * as Accordion from '~/components/ui/accordion'
 
-export const Demo = (props: AccordionProps) => {
+export const Demo = (props: Accordion.RootProps) => {
   const items = ['React', 'Solid', 'Svelte', 'Vue']
   return (
     <Accordion.Root defaultValue={['React']} multiple {...props}>

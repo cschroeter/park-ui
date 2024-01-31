@@ -1,28 +1,27 @@
 import { Carousel } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { carousel } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(carousel)
 
-const Root = withProvider(styled(Carousel.Root), 'root')
-const Control = withContext(styled(Carousel.Control), 'control')
-const Indicator = withContext(styled(Carousel.Indicator), 'indicator')
-const IndicatorGroup = withContext(styled(Carousel.IndicatorGroup), 'indicatorGroup')
-const Item = withContext(styled(Carousel.Item), 'item')
-const ItemGroup = withContext(styled(Carousel.ItemGroup), 'itemGroup')
-const NextTrigger = withContext(styled(Carousel.NextTrigger), 'nextTrigger')
-const PrevTrigger = withContext(styled(Carousel.PrevTrigger), 'prevTrigger')
-const Viewport = withContext(styled(Carousel.Viewport), 'viewport')
+export const Root = withProvider(styled(Carousel.Root), 'root')
+export const Control = withContext(styled(Carousel.Control), 'control')
+export const Indicator = withContext(styled(Carousel.Indicator), 'indicator')
+export const IndicatorGroup = withContext(styled(Carousel.IndicatorGroup), 'indicatorGroup')
+export const Item = withContext(styled(Carousel.Item), 'item')
+export const ItemGroup = withContext(styled(Carousel.ItemGroup), 'itemGroup')
+export const NextTrigger = withContext(styled(Carousel.NextTrigger), 'nextTrigger')
+export const PrevTrigger = withContext(styled(Carousel.PrevTrigger), 'prevTrigger')
+export const Viewport = withContext(styled(Carousel.Viewport), 'viewport')
 
-export {
-  Control,
-  Indicator,
-  IndicatorGroup,
-  Item,
-  ItemGroup,
-  NextTrigger,
-  PrevTrigger,
-  Root,
-  Viewport,
-}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface IndicatorGroupProps extends ComponentProps<typeof IndicatorGroup> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
+export interface NextTriggerProps extends ComponentProps<typeof NextTrigger> {}
+export interface PrevTriggerProps extends ComponentProps<typeof PrevTrigger> {}
+export interface ViewportProps extends ComponentProps<typeof Viewport> {}

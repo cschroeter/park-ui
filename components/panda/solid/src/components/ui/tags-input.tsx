@@ -1,30 +1,32 @@
 import { TagsInput } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { tagsInput } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tagsInput)
 
-const Root = withProvider(styled(TagsInput.Root), 'root')
-const ClearTrigger = withContext(styled(TagsInput.ClearTrigger), 'clearTrigger')
-const Control = withContext(styled(TagsInput.Control), 'control')
-const Input = withContext(styled(TagsInput.Input), 'input')
-const Item = withContext(styled(TagsInput.Item), 'item')
-const ItemDeleteTrigger = withContext(styled(TagsInput.ItemDeleteTrigger), 'itemDeleteTrigger')
-const ItemInput = withContext(styled(TagsInput.ItemInput), 'itemInput')
-const ItemPreview = withContext(styled(TagsInput.ItemPreview), 'itemPreview')
-const ItemText = withContext(styled(TagsInput.ItemText), 'itemText')
-const Label = withContext(styled(TagsInput.Label), 'label')
+export const Root = withProvider(styled(TagsInput.Root), 'root')
+export const ClearTrigger = withContext(styled(TagsInput.ClearTrigger), 'clearTrigger')
+export const Control = withContext(styled(TagsInput.Control), 'control')
+export const Input = withContext(styled(TagsInput.Input), 'input')
+export const Item = withContext(styled(TagsInput.Item), 'item')
+export const ItemDeleteTrigger = withContext(
+  styled(TagsInput.ItemDeleteTrigger),
+  'itemDeleteTrigger',
+)
+export const ItemInput = withContext(styled(TagsInput.ItemInput), 'itemInput')
+export const ItemPreview = withContext(styled(TagsInput.ItemPreview), 'itemPreview')
+export const ItemText = withContext(styled(TagsInput.ItemText), 'itemText')
+export const Label = withContext(styled(TagsInput.Label), 'label')
 
-export {
-  ClearTrigger,
-  Control,
-  Input,
-  Item,
-  ItemDeleteTrigger,
-  ItemInput,
-  ItemPreview,
-  ItemText,
-  Label,
-  Root,
-}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface InputProps extends ComponentProps<typeof Input> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemDeleteTriggerProps extends ComponentProps<typeof ItemDeleteTrigger> {}
+export interface ItemInputProps extends ComponentProps<typeof ItemInput> {}
+export interface ItemPreviewProps extends ComponentProps<typeof ItemPreview> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}
