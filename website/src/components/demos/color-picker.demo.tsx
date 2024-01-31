@@ -55,7 +55,7 @@ export const Demo = (props: ColorPicker.RootProps) => {
                   </ColorPicker.ChannelInput>
                 </HStack>
                 <Stack gap="1.5">
-                  <Text textStyle="xs" fontWeight="medium" color="fg.default">
+                  <Text size="xs" fontWeight="medium" color="fg.default">
                     Saved Colors
                   </Text>
                   <ColorPicker.SwatchGroup>

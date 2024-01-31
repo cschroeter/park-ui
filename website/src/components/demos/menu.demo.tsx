@@ -33,7 +33,7 @@ export const Demo = (props: Menu.RootProps) => {
                   <UserIcon />
                   Profile
                 </HStack>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                <Text as="span" color="fg.subtle" size="sm">
                   ⇧⌘P
                 </Text>
               </HStack>
@@ -48,7 +48,7 @@ export const Demo = (props: Menu.RootProps) => {
                 <HStack gap="2">
                   <SettingsIcon /> Settings
                 </HStack>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                <Text as="span" color="fg.subtle" size="sm">
                   ⌘,
                 </Text>
               </HStack>
