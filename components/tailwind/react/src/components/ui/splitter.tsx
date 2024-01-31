@@ -1,4 +1,4 @@
-import { Splitter as ArkSplitter } from '@ark-ui/react/splitter'
+import { Splitter } from '@ark-ui/react/splitter'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -13,8 +13,8 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkSplitter.Root, 'root')
-const Panel = withContext(ArkSplitter.Panel, 'panel')
-const ResizeTrigger = withContext(ArkSplitter.ResizeTrigger, 'resizeTrigger')
+const Root = withProvider(Splitter.Root, 'root')
+const Panel = withContext(Splitter.Panel, 'panel')
+const ResizeTrigger = withContext(Splitter.ResizeTrigger, 'resizeTrigger')
 
 export { Panel, ResizeTrigger, Root }

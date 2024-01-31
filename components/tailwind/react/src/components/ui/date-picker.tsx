@@ -1,4 +1,4 @@
-import { DatePicker as ArkDatePicker } from '@ark-ui/react/date-picker'
+import { DatePicker } from '@ark-ui/react/date-picker'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -33,29 +33,29 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkDatePicker.Root, 'root')
-const ClearTrigger = withContext(ArkDatePicker.ClearTrigger, 'clearTrigger')
-const Content = withContext(ArkDatePicker.Content, 'content')
-const Control = withContext(ArkDatePicker.Control, 'control')
-const Input = withContext(ArkDatePicker.Input, 'input')
-const Label = withContext(ArkDatePicker.Label, 'label')
-const MonthSelect = withContext(ArkDatePicker.MonthSelect, 'monthSelect')
-const NextTrigger = withContext(ArkDatePicker.NextTrigger, 'nextTrigger')
-const Positioner = withContext(ArkDatePicker.Positioner, 'positioner')
-const PrevTrigger = withContext(ArkDatePicker.PrevTrigger, 'prevTrigger')
-const RangeText = withContext(ArkDatePicker.RangeText, 'rangeText')
-const Table = withContext(ArkDatePicker.Table, 'table')
-const TableBody = withContext(ArkDatePicker.TableBody, 'tableBody')
-const TableCell = withContext(ArkDatePicker.TableCell, 'tableCell')
-const TableCellTrigger = withContext(ArkDatePicker.TableCellTrigger, 'tableCellTrigger')
-const TableHead = withContext(ArkDatePicker.TableHead, 'tableHead')
-const TableHeader = withContext(ArkDatePicker.TableHeader, 'tableHeader')
-const TableRow = withContext(ArkDatePicker.TableRow, 'tableRow')
-const Trigger = withContext(ArkDatePicker.Trigger, 'trigger')
-const View = withContext(ArkDatePicker.View, 'view')
-const ViewControl = withContext(ArkDatePicker.ViewControl, 'viewControl')
-const ViewTrigger = withContext(ArkDatePicker.ViewTrigger, 'viewTrigger')
-const YearSelect = withContext(ArkDatePicker.YearSelect, 'yearSelect')
+const Root = withProvider(DatePicker.Root, 'root')
+const ClearTrigger = withContext(DatePicker.ClearTrigger, 'clearTrigger')
+const Content = withContext(DatePicker.Content, 'content')
+const Control = withContext(DatePicker.Control, 'control')
+const Input = withContext(DatePicker.Input, 'input')
+const Label = withContext(DatePicker.Label, 'label')
+const MonthSelect = withContext(DatePicker.MonthSelect, 'monthSelect')
+const NextTrigger = withContext(DatePicker.NextTrigger, 'nextTrigger')
+const Positioner = withContext(DatePicker.Positioner, 'positioner')
+const PrevTrigger = withContext(DatePicker.PrevTrigger, 'prevTrigger')
+const RangeText = withContext(DatePicker.RangeText, 'rangeText')
+const Table = withContext(DatePicker.Table, 'table')
+const TableBody = withContext(DatePicker.TableBody, 'tableBody')
+const TableCell = withContext(DatePicker.TableCell, 'tableCell')
+const TableCellTrigger = withContext(DatePicker.TableCellTrigger, 'tableCellTrigger')
+const TableHead = withContext(DatePicker.TableHead, 'tableHead')
+const TableHeader = withContext(DatePicker.TableHeader, 'tableHeader')
+const TableRow = withContext(DatePicker.TableRow, 'tableRow')
+const Trigger = withContext(DatePicker.Trigger, 'trigger')
+const View = withContext(DatePicker.View, 'view')
+const ViewControl = withContext(DatePicker.ViewControl, 'viewControl')
+const ViewTrigger = withContext(DatePicker.ViewTrigger, 'viewTrigger')
+const YearSelect = withContext(DatePicker.YearSelect, 'yearSelect')
 
 export {
   ClearTrigger,

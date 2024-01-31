@@ -1,4 +1,4 @@
-import { RadioGroup as ArkRadioGroup } from '@ark-ui/react/radio-group'
+import { RadioGroup } from '@ark-ui/react/radio-group'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -44,11 +44,11 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkRadioGroup.Root, 'root')
-const Indicator = withContext(ArkRadioGroup.Indicator, 'indicator')
-const Item = withContext(ArkRadioGroup.Item, 'item')
-const ItemControl = withContext(ArkRadioGroup.ItemControl, 'itemControl')
-const ItemText = withContext(ArkRadioGroup.ItemText, 'itemText')
-const Label = withContext(ArkRadioGroup.Label, 'label')
+const Root = withProvider(RadioGroup.Root, 'root')
+const Indicator = withContext(RadioGroup.Indicator, 'indicator')
+const Item = withContext(RadioGroup.Item, 'item')
+const ItemControl = withContext(RadioGroup.ItemControl, 'itemControl')
+const ItemText = withContext(RadioGroup.ItemText, 'itemText')
+const Label = withContext(RadioGroup.Label, 'label')
 
 export { Indicator, Item, ItemControl, ItemText, Label, Root }

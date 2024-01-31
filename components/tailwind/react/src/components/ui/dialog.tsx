@@ -1,4 +1,4 @@
-import { Dialog as ArkDialog } from '@ark-ui/react/dialog'
+import { Dialog } from '@ark-ui/react/dialog'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -17,13 +17,13 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkDialog.Root)
-const Backdrop = withContext(ArkDialog.Backdrop, 'backdrop')
-const CloseTrigger = withContext(ArkDialog.CloseTrigger, 'closeTrigger')
-const Content = withContext(ArkDialog.Content, 'content')
-const Description = withContext(ArkDialog.Description, 'description')
-const Positioner = withContext(ArkDialog.Positioner, 'positioner')
-const Title = withContext(ArkDialog.Title, 'title')
-const Trigger = withContext(ArkDialog.Trigger, 'trigger')
+const Root = withProvider(Dialog.Root)
+const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
+const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')
+const Content = withContext(Dialog.Content, 'content')
+const Description = withContext(Dialog.Description, 'description')
+const Positioner = withContext(Dialog.Positioner, 'positioner')
+const Title = withContext(Dialog.Title, 'title')
+const Trigger = withContext(Dialog.Trigger, 'trigger')
 
 export { Backdrop, CloseTrigger, Content, Description, Positioner, Root, Title, Trigger }

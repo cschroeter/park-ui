@@ -1,4 +1,4 @@
-import { Combobox as ArkCombobox } from '@ark-ui/react/combobox'
+import { Combobox } from '@ark-ui/react/combobox'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -72,19 +72,19 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkCombobox.Root, 'root')
-const ClearTrigger = withContext(ArkCombobox.ClearTrigger, 'clearTrigger')
-const Content = withContext(ArkCombobox.Content, 'content')
-const Control = withContext(ArkCombobox.Control, 'control')
-const Input = withContext(ArkCombobox.Input, 'input')
-const Item = withContext(ArkCombobox.Item, 'item')
-const ItemGroup = withContext(ArkCombobox.ItemGroup, 'itemGroup')
-const ItemGroupLabel = withContext(ArkCombobox.ItemGroupLabel, 'itemGroupLabel')
-const ItemIndicator = withContext(ArkCombobox.ItemIndicator, 'itemIndicator')
-const ItemText = withContext(ArkCombobox.ItemText, 'itemText')
-const Label = withContext(ArkCombobox.Label, 'label')
-const Positioner = withContext(ArkCombobox.Positioner, 'positioner')
-const Trigger = withContext(ArkCombobox.Trigger, 'trigger')
+const Root = withProvider(Combobox.Root, 'root')
+const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger')
+const Content = withContext(Combobox.Content, 'content')
+const Control = withContext(Combobox.Control, 'control')
+const Input = withContext(Combobox.Input, 'input')
+const Item = withContext(Combobox.Item, 'item')
+const ItemGroup = withContext(Combobox.ItemGroup, 'itemGroup')
+const ItemGroupLabel = withContext(Combobox.ItemGroupLabel, 'itemGroupLabel')
+const ItemIndicator = withContext(Combobox.ItemIndicator, 'itemIndicator')
+const ItemText = withContext(Combobox.ItemText, 'itemText')
+const Label = withContext(Combobox.Label, 'label')
+const Positioner = withContext(Combobox.Positioner, 'positioner')
+const Trigger = withContext(Combobox.Trigger, 'trigger')
 
 export {
   ClearTrigger,

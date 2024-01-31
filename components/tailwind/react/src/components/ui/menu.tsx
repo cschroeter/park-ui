@@ -1,4 +1,4 @@
-import { Menu as ArkMenu } from '@ark-ui/react/menu'
+import { Menu } from '@ark-ui/react/menu'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -97,19 +97,19 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkMenu.Root)
-const Arrow = withContext(ArkMenu.Arrow, 'arrow')
-const ArrowTip = withContext(ArkMenu.ArrowTip, 'arrowTip')
-const Content = withContext(ArkMenu.Content, 'content')
-const ContextTrigger = withContext(ArkMenu.ContextTrigger, 'contextTrigger')
-const Item = withContext(ArkMenu.Item, 'item')
-const ItemGroup = withContext(ArkMenu.ItemGroup, 'itemGroup')
-const ItemGroupLabel = withContext(ArkMenu.ItemGroupLabel, 'itemGroupLabel')
-const OptionItem = withContext(ArkMenu.OptionItem, 'optionItem')
-const Positioner = withContext(ArkMenu.Positioner, 'positioner')
-const Separator = withContext(ArkMenu.Separator, 'separator')
-const Trigger = withContext(ArkMenu.Trigger, 'trigger')
-const TriggerItem = withContext(ArkMenu.TriggerItem, 'triggerItem')
+const Root = withProvider(Menu.Root)
+const Arrow = withContext(Menu.Arrow, 'arrow')
+const ArrowTip = withContext(Menu.ArrowTip, 'arrowTip')
+const Content = withContext(Menu.Content, 'content')
+const ContextTrigger = withContext(Menu.ContextTrigger, 'contextTrigger')
+const Item = withContext(Menu.Item, 'item')
+const ItemGroup = withContext(Menu.ItemGroup, 'itemGroup')
+const ItemGroupLabel = withContext(Menu.ItemGroupLabel, 'itemGroupLabel')
+const OptionItem = withContext(Menu.OptionItem, 'optionItem')
+const Positioner = withContext(Menu.Positioner, 'positioner')
+const Separator = withContext(Menu.Separator, 'separator')
+const Trigger = withContext(Menu.Trigger, 'trigger')
+const TriggerItem = withContext(Menu.TriggerItem, 'triggerItem')
 
 export {
   Arrow,

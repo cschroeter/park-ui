@@ -1,4 +1,4 @@
-import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'
+import { Carousel } from '@ark-ui/react/carousel'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -45,15 +45,15 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkCarousel.Root, 'root')
-const Control = withContext(ArkCarousel.Control, 'control')
-const Indicator = withContext(ArkCarousel.Indicator, 'indicator')
-const IndicatorGroup = withContext(ArkCarousel.IndicatorGroup, 'indicatorGroup')
-const Item = withContext(ArkCarousel.Item, 'item')
-const ItemGroup = withContext(ArkCarousel.ItemGroup, 'itemGroup')
-const NextTrigger = withContext(ArkCarousel.NextTrigger, 'nextTrigger')
-const PrevTrigger = withContext(ArkCarousel.PrevTrigger, 'prevTrigger')
-const Viewport = withContext(ArkCarousel.Viewport, 'viewport')
+const Root = withProvider(Carousel.Root, 'root')
+const Control = withContext(Carousel.Control, 'control')
+const Indicator = withContext(Carousel.Indicator, 'indicator')
+const IndicatorGroup = withContext(Carousel.IndicatorGroup, 'indicatorGroup')
+const Item = withContext(Carousel.Item, 'item')
+const ItemGroup = withContext(Carousel.ItemGroup, 'itemGroup')
+const NextTrigger = withContext(Carousel.NextTrigger, 'nextTrigger')
+const PrevTrigger = withContext(Carousel.PrevTrigger, 'prevTrigger')
+const Viewport = withContext(Carousel.Viewport, 'viewport')
 
 export {
   Control,

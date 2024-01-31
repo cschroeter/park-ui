@@ -1,4 +1,4 @@
-import { FileUpload as ArkFileUpload } from '@ark-ui/react/file-upload'
+import { FileUpload } from '@ark-ui/react/file-upload'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -21,17 +21,17 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkFileUpload.Root, 'root')
-const Dropzone = withContext(ArkFileUpload.Dropzone, 'dropzone')
-const Item = withContext(ArkFileUpload.Item, 'item')
-const ItemDeleteTrigger = withContext(ArkFileUpload.ItemDeleteTrigger, 'itemDeleteTrigger')
-const ItemGroup = withContext(ArkFileUpload.ItemGroup, 'itemGroup')
-const ItemName = withContext(ArkFileUpload.ItemName, 'itemName')
-const ItemPreview = withContext(ArkFileUpload.ItemPreview, 'itemPreview')
-const ItemPreviewImage = withContext(ArkFileUpload.ItemPreviewImage, 'itemPreviewImage')
-const ItemSizeText = withContext(ArkFileUpload.ItemSizeText, 'itemSizeText')
-const Label = withContext(ArkFileUpload.Label, 'label')
-const Trigger = withContext(ArkFileUpload.Trigger, 'trigger')
+const Root = withProvider(FileUpload.Root, 'root')
+const Dropzone = withContext(FileUpload.Dropzone, 'dropzone')
+const Item = withContext(FileUpload.Item, 'item')
+const ItemDeleteTrigger = withContext(FileUpload.ItemDeleteTrigger, 'itemDeleteTrigger')
+const ItemGroup = withContext(FileUpload.ItemGroup, 'itemGroup')
+const ItemName = withContext(FileUpload.ItemName, 'itemName')
+const ItemPreview = withContext(FileUpload.ItemPreview, 'itemPreview')
+const ItemPreviewImage = withContext(FileUpload.ItemPreviewImage, 'itemPreviewImage')
+const ItemSizeText = withContext(FileUpload.ItemSizeText, 'itemSizeText')
+const Label = withContext(FileUpload.Label, 'label')
+const Trigger = withContext(FileUpload.Trigger, 'trigger')
 
 export {
   Dropzone,

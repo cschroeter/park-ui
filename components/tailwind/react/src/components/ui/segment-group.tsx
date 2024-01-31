@@ -1,4 +1,4 @@
-import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react/segment-group'
+import { SegmentGroup } from '@ark-ui/react/segment-group'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -36,11 +36,11 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkSegmentGroup.Root, 'root')
-const Indicator = withContext(ArkSegmentGroup.Indicator, 'indicator')
-const Item = withContext(ArkSegmentGroup.Item, 'item')
-const ItemControl = withContext(ArkSegmentGroup.ItemControl, 'itemControl')
-const ItemText = withContext(ArkSegmentGroup.ItemText, 'itemText')
-const Label = withContext(ArkSegmentGroup.Label, 'label')
+const Root = withProvider(SegmentGroup.Root, 'root')
+const Indicator = withContext(SegmentGroup.Indicator, 'indicator')
+const Item = withContext(SegmentGroup.Item, 'item')
+const ItemControl = withContext(SegmentGroup.ItemControl, 'itemControl')
+const ItemText = withContext(SegmentGroup.ItemText, 'itemText')
+const Label = withContext(SegmentGroup.Label, 'label')
 
 export { Indicator, Item, ItemControl, ItemText, Label, Root }

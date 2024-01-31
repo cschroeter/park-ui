@@ -1,4 +1,4 @@
-import { Editable as ArkEditable } from '@ark-ui/react/editable'
+import { Editable } from '@ark-ui/react/editable'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -19,14 +19,14 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkEditable.Root, 'root')
-const Area = withContext(ArkEditable.Area, 'area')
-const CancelTrigger = withContext(ArkEditable.CancelTrigger, 'cancelTrigger')
-const Control = withContext(ArkEditable.Control, 'control')
-const EditTrigger = withContext(ArkEditable.EditTrigger, 'editTrigger')
-const Input = withContext(ArkEditable.Input, 'input')
-const Label = withContext(ArkEditable.Label, 'label')
-const Preview = withContext(ArkEditable.Preview, 'preview')
-const SubmitTrigger = withContext(ArkEditable.SubmitTrigger, 'submitTrigger')
+const Root = withProvider(Editable.Root, 'root')
+const Area = withContext(Editable.Area, 'area')
+const CancelTrigger = withContext(Editable.CancelTrigger, 'cancelTrigger')
+const Control = withContext(Editable.Control, 'control')
+const EditTrigger = withContext(Editable.EditTrigger, 'editTrigger')
+const Input = withContext(Editable.Input, 'input')
+const Label = withContext(Editable.Label, 'label')
+const Preview = withContext(Editable.Preview, 'preview')
+const SubmitTrigger = withContext(Editable.SubmitTrigger, 'submitTrigger')
 
 export { Area, CancelTrigger, Control, EditTrigger, Input, Label, Preview, Root, SubmitTrigger }

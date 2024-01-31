@@ -1,4 +1,4 @@
-import { Popover as ArkPopover } from '@ark-ui/react/popover'
+import { Popover } from '@ark-ui/react/popover'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -20,17 +20,17 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkPopover.Root)
-const Anchor = withContext(ArkPopover.Anchor, 'anchor')
-const Arrow = withContext(ArkPopover.Arrow, 'arrow')
-const ArrowTip = withContext(ArkPopover.ArrowTip, 'arrowTip')
-const CloseTrigger = withContext(ArkPopover.CloseTrigger, 'closeTrigger')
-const Content = withContext(ArkPopover.Content, 'content')
-const Description = withContext(ArkPopover.Description, 'description')
-const Indicator = withContext(ArkPopover.Indicator, 'indicator')
-const Positioner = withContext(ArkPopover.Positioner, 'positioner')
-const Title = withContext(ArkPopover.Title, 'title')
-const Trigger = withContext(ArkPopover.Trigger, 'trigger')
+const Root = withProvider(Popover.Root)
+const Anchor = withContext(Popover.Anchor, 'anchor')
+const Arrow = withContext(Popover.Arrow, 'arrow')
+const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')
+const CloseTrigger = withContext(Popover.CloseTrigger, 'closeTrigger')
+const Content = withContext(Popover.Content, 'content')
+const Description = withContext(Popover.Description, 'description')
+const Indicator = withContext(Popover.Indicator, 'indicator')
+const Positioner = withContext(Popover.Positioner, 'positioner')
+const Title = withContext(Popover.Title, 'title')
+const Trigger = withContext(Popover.Trigger, 'trigger')
 
 export {
   Anchor,

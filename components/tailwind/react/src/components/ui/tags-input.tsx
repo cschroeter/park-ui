@@ -1,4 +1,4 @@
-import { TagsInput as ArkTagsInput } from '@ark-ui/react/tags-input'
+import { TagsInput } from '@ark-ui/react/tags-input'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -36,16 +36,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkTagsInput.Root, 'root')
-const ClearTrigger = withContext(ArkTagsInput.ClearTrigger, 'clearTrigger')
-const Control = withContext(ArkTagsInput.Control, 'control')
-const Input = withContext(ArkTagsInput.Input, 'input')
-const Item = withContext(ArkTagsInput.Item, 'item')
-const ItemDeleteTrigger = withContext(ArkTagsInput.ItemDeleteTrigger, 'itemDeleteTrigger')
-const ItemInput = withContext(ArkTagsInput.ItemInput, 'itemInput')
-const ItemPreview = withContext(ArkTagsInput.ItemPreview, 'itemPreview')
-const ItemText = withContext(ArkTagsInput.ItemText, 'itemText')
-const Label = withContext(ArkTagsInput.Label, 'label')
+const Root = withProvider(TagsInput.Root, 'root')
+const ClearTrigger = withContext(TagsInput.ClearTrigger, 'clearTrigger')
+const Control = withContext(TagsInput.Control, 'control')
+const Input = withContext(TagsInput.Input, 'input')
+const Item = withContext(TagsInput.Item, 'item')
+const ItemDeleteTrigger = withContext(TagsInput.ItemDeleteTrigger, 'itemDeleteTrigger')
+const ItemInput = withContext(TagsInput.ItemInput, 'itemInput')
+const ItemPreview = withContext(TagsInput.ItemPreview, 'itemPreview')
+const ItemText = withContext(TagsInput.ItemText, 'itemText')
+const Label = withContext(TagsInput.Label, 'label')
 
 export {
   ClearTrigger,

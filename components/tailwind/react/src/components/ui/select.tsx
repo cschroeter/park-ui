@@ -1,4 +1,4 @@
-import { Select as ArkSelect } from '@ark-ui/react/select'
+import { Select } from '@ark-ui/react/select'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -110,20 +110,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkSelect.Root, 'root')
-const ClearTrigger = withContext(ArkSelect.ClearTrigger, 'clearTrigger')
-const Content = withContext(ArkSelect.Content, 'content')
-const Control = withContext(ArkSelect.Control, 'control')
-const Indicator = withContext(ArkSelect.Indicator, 'indicator')
-const Item = withContext(ArkSelect.Item, 'item')
-const ItemGroup = withContext(ArkSelect.ItemGroup, 'itemGroup')
-const ItemGroupLabel = withContext(ArkSelect.ItemGroupLabel, 'itemGroupLabel')
-const ItemIndicator = withContext(ArkSelect.ItemIndicator, 'itemIndicator')
-const ItemText = withContext(ArkSelect.ItemText, 'itemText')
-const Label = withContext(ArkSelect.Label, 'label')
-const Positioner = withContext(ArkSelect.Positioner, 'positioner')
-const Trigger = withContext(ArkSelect.Trigger, 'trigger')
-const ValueText = withContext(ArkSelect.ValueText, 'valueText')
+const Root = withProvider(Select.Root, 'root')
+const ClearTrigger = withContext(Select.ClearTrigger, 'clearTrigger')
+const Content = withContext(Select.Content, 'content')
+const Control = withContext(Select.Control, 'control')
+const Indicator = withContext(Select.Indicator, 'indicator')
+const Item = withContext(Select.Item, 'item')
+const ItemGroup = withContext(Select.ItemGroup, 'itemGroup')
+const ItemGroupLabel = withContext(Select.ItemGroupLabel, 'itemGroupLabel')
+const ItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator')
+const ItemText = withContext(Select.ItemText, 'itemText')
+const Label = withContext(Select.Label, 'label')
+const Positioner = withContext(Select.Positioner, 'positioner')
+const Trigger = withContext(Select.Trigger, 'trigger')
+const ValueText = withContext(Select.ValueText, 'valueText')
 
 export {
   ClearTrigger,

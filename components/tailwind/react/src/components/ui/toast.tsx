@@ -1,4 +1,4 @@
-import { Toast as ArkToast } from '@ark-ui/react/toast'
+import { Toast } from '@ark-ui/react/toast'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,10 +15,10 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkToast.Root, 'root')
-const CloseTrigger = withContext(ArkToast.CloseTrigger, 'closeTrigger')
-const Description = withContext(ArkToast.Description, 'description')
-const Group = withContext(ArkToast.Group, 'group')
-const Title = withContext(ArkToast.Title, 'title')
+const Root = withProvider(Toast.Root, 'root')
+const CloseTrigger = withContext(Toast.CloseTrigger, 'closeTrigger')
+const Description = withContext(Toast.Description, 'description')
+const Group = withContext(Toast.Group, 'group')
+const Title = withContext(Toast.Title, 'title')
 
 export { CloseTrigger, Description, Group, Root, Title }

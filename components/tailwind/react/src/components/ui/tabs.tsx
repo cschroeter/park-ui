@@ -1,4 +1,4 @@
-import { Tabs as ArkTabs } from '@ark-ui/react/tabs'
+import { Tabs } from '@ark-ui/react/tabs'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -63,10 +63,10 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkTabs.Root, 'root')
-const Content = withContext(ArkTabs.Content, 'content')
-const Indicator = withContext(ArkTabs.Indicator, 'indicator')
-const List = withContext(ArkTabs.List, 'list')
-const Trigger = withContext(ArkTabs.Trigger, 'trigger')
+const Root = withProvider(Tabs.Root, 'root')
+const Content = withContext(Tabs.Content, 'content')
+const Indicator = withContext(Tabs.Indicator, 'indicator')
+const List = withContext(Tabs.List, 'list')
+const Trigger = withContext(Tabs.Trigger, 'trigger')
 
 export { Content, Indicator, List, Root, Trigger }

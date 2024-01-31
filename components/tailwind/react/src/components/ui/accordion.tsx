@@ -1,4 +1,4 @@
-import { Accordion as ArkAccordion } from '@ark-ui/react/accordion'
+import { Accordion } from '@ark-ui/react/accordion'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -26,10 +26,10 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkAccordion.Root, 'root')
-const Item = withContext(ArkAccordion.Item, 'item')
-const ItemContent = withContext(ArkAccordion.ItemContent, 'itemContent')
-const ItemIndicator = withContext(ArkAccordion.ItemIndicator, 'itemIndicator')
-const ItemTrigger = withContext(ArkAccordion.ItemTrigger, 'itemTrigger')
+const Root = withProvider(Accordion.Root, 'root')
+const Item = withContext(Accordion.Item, 'item')
+const ItemContent = withContext(Accordion.ItemContent, 'itemContent')
+const ItemIndicator = withContext(Accordion.ItemIndicator, 'itemIndicator')
+const ItemTrigger = withContext(Accordion.ItemTrigger, 'itemTrigger')
 
 export { Item, ItemContent, ItemIndicator, ItemTrigger, Root }

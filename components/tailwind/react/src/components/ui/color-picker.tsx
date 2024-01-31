@@ -1,4 +1,4 @@
-import { ColorPicker as ArkColorPicker } from '@ark-ui/react/color-picker'
+import { ColorPicker } from '@ark-ui/react/color-picker'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -33,29 +33,29 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Root = withProvider(ArkColorPicker.Root, 'root')
-const Area = withContext(ArkColorPicker.Area, 'area')
-const AreaBackground = withContext(ArkColorPicker.AreaBackground, 'areaBackground')
-const AreaThumb = withContext(ArkColorPicker.AreaThumb, 'areaThumb')
-const ChannelInput = withContext(ArkColorPicker.ChannelInput, 'channelInput')
-const ChannelSlider = withContext(ArkColorPicker.ChannelSlider, 'channelSlider')
-const ChannelSliderThumb = withContext(ArkColorPicker.ChannelSliderThumb, 'channelSliderThumb')
-const ChannelSliderTrack = withContext(ArkColorPicker.ChannelSliderTrack, 'channelSliderTrack')
-const Content = withContext(ArkColorPicker.Content, 'content')
-const Control = withContext(ArkColorPicker.Control, 'control')
-const EyeDropperTrigger = withContext(ArkColorPicker.EyeDropperTrigger, 'eyeDropperTrigger')
-const FormatSelect = withContext(ArkColorPicker.FormatSelect, 'formatSelect')
-const FormatTrigger = withContext(ArkColorPicker.FormatTrigger, 'formatTrigger')
-const Label = withContext(ArkColorPicker.Label, 'label')
-const Positioner = withContext(ArkColorPicker.Positioner, 'positioner')
-const Swatch = withContext(ArkColorPicker.Swatch, 'swatch')
-const SwatchGroup = withContext(ArkColorPicker.SwatchGroup, 'swatchGroup')
-const SwatchIndicator = withContext(ArkColorPicker.SwatchIndicator, 'swatchIndicator')
-const SwatchTrigger = withContext(ArkColorPicker.SwatchTrigger, 'swatchTrigger')
-const TransparencyGrid = withContext(ArkColorPicker.TransparencyGrid, 'transparencyGrid')
-const Trigger = withContext(ArkColorPicker.Trigger, 'trigger')
-const ValueText = withContext(ArkColorPicker.ValueText, 'valueText')
-const View = withContext(ArkColorPicker.View, 'view')
+const Root = withProvider(ColorPicker.Root, 'root')
+const Area = withContext(ColorPicker.Area, 'area')
+const AreaBackground = withContext(ColorPicker.AreaBackground, 'areaBackground')
+const AreaThumb = withContext(ColorPicker.AreaThumb, 'areaThumb')
+const ChannelInput = withContext(ColorPicker.ChannelInput, 'channelInput')
+const ChannelSlider = withContext(ColorPicker.ChannelSlider, 'channelSlider')
+const ChannelSliderThumb = withContext(ColorPicker.ChannelSliderThumb, 'channelSliderThumb')
+const ChannelSliderTrack = withContext(ColorPicker.ChannelSliderTrack, 'channelSliderTrack')
+const Content = withContext(ColorPicker.Content, 'content')
+const Control = withContext(ColorPicker.Control, 'control')
+const EyeDropperTrigger = withContext(ColorPicker.EyeDropperTrigger, 'eyeDropperTrigger')
+const FormatSelect = withContext(ColorPicker.FormatSelect, 'formatSelect')
+const FormatTrigger = withContext(ColorPicker.FormatTrigger, 'formatTrigger')
+const Label = withContext(ColorPicker.Label, 'label')
+const Positioner = withContext(ColorPicker.Positioner, 'positioner')
+const Swatch = withContext(ColorPicker.Swatch, 'swatch')
+const SwatchGroup = withContext(ColorPicker.SwatchGroup, 'swatchGroup')
+const SwatchIndicator = withContext(ColorPicker.SwatchIndicator, 'swatchIndicator')
+const SwatchTrigger = withContext(ColorPicker.SwatchTrigger, 'swatchTrigger')
+const TransparencyGrid = withContext(ColorPicker.TransparencyGrid, 'transparencyGrid')
+const Trigger = withContext(ColorPicker.Trigger, 'trigger')
+const ValueText = withContext(ColorPicker.ValueText, 'valueText')
+const View = withContext(ColorPicker.View, 'view')
 
 export {
   Area,
