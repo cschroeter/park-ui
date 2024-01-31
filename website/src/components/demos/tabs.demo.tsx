@@ -1,7 +1,6 @@
-import type { TabsProps } from '~/components/ui/tabs'
 import * as Tabs from '~/components/ui/tabs'
 
-export const Demo = (props: TabsProps) => {
+export const Demo = (props: Tabs.RootProps) => {
   const options = [
     { id: 'react', label: 'React' },
     { id: 'solid', label: 'Solid' },

@@ -1,4 +1,5 @@
-import { SegmentGroup as ArkSegmentGroup } from '@ark-ui/react/segment-group'
+import { SegmentGroup } from '@ark-ui/react/segment-group'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -36,31 +37,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const SegmentGroup = withProvider(ArkSegmentGroup.Root, 'root')
-const SegmentGroupIndicator = withContext(ArkSegmentGroup.Indicator, 'indicator')
-const SegmentGroupItem = withContext(ArkSegmentGroup.Item, 'item')
-const SegmentGroupItemControl = withContext(ArkSegmentGroup.ItemControl, 'itemControl')
-const SegmentGroupItemText = withContext(ArkSegmentGroup.ItemText, 'itemText')
-const SegmentGroupLabel = withContext(ArkSegmentGroup.Label, 'label')
+export const Root = withProvider(SegmentGroup.Root, 'root')
+export const Indicator = withContext(SegmentGroup.Indicator, 'indicator')
+export const Item = withContext(SegmentGroup.Item, 'item')
+export const ItemControl = withContext(SegmentGroup.ItemControl, 'itemControl')
+export const ItemText = withContext(SegmentGroup.ItemText, 'itemText')
+export const Label = withContext(SegmentGroup.Label, 'label')
 
-const Root = SegmentGroup
-const Indicator = SegmentGroupIndicator
-const Item = SegmentGroupItem
-const ItemControl = SegmentGroupItemControl
-const ItemText = SegmentGroupItemText
-const Label = SegmentGroupLabel
-
-export {
-  Indicator,
-  Item,
-  ItemControl,
-  ItemText,
-  Label,
-  Root,
-  SegmentGroup,
-  SegmentGroupIndicator,
-  SegmentGroupItem,
-  SegmentGroupItemControl,
-  SegmentGroupItemText,
-  SegmentGroupLabel,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}

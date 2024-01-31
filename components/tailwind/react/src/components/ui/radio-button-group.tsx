@@ -1,4 +1,5 @@
 import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/react/radio-group'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -70,31 +71,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const RadioButtonGroup = withProvider(ArkRadioButtonGroup.Root, 'root')
-const RadioButtonGroupIndicator = withContext(ArkRadioButtonGroup.Indicator, 'indicator')
-const RadioButtonGroupItem = withContext(ArkRadioButtonGroup.Item, 'item')
-const RadioButtonGroupItemControl = withContext(ArkRadioButtonGroup.ItemControl, 'itemControl')
-const RadioButtonGroupItemText = withContext(ArkRadioButtonGroup.ItemText, 'itemText')
-const RadioButtonGroupLabel = withContext(ArkRadioButtonGroup.Label, 'label')
+export const Root = withProvider(ArkRadioButtonGroup.Root, 'root')
+export const Indicator = withContext(ArkRadioButtonGroup.Indicator, 'indicator')
+export const Item = withContext(ArkRadioButtonGroup.Item, 'item')
+export const ItemControl = withContext(ArkRadioButtonGroup.ItemControl, 'itemControl')
+export const ItemText = withContext(ArkRadioButtonGroup.ItemText, 'itemText')
+export const Label = withContext(ArkRadioButtonGroup.Label, 'label')
 
-const Root = RadioButtonGroup
-const Indicator = RadioButtonGroupIndicator
-const Item = RadioButtonGroupItem
-const ItemControl = RadioButtonGroupItemControl
-const ItemText = RadioButtonGroupItemText
-const Label = RadioButtonGroupLabel
-
-export {
-  Indicator,
-  Item,
-  ItemControl,
-  ItemText,
-  Label,
-  RadioButtonGroup,
-  RadioButtonGroupIndicator,
-  RadioButtonGroupItem,
-  RadioButtonGroupItemControl,
-  RadioButtonGroupItemText,
-  RadioButtonGroupLabel,
-  Root,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}

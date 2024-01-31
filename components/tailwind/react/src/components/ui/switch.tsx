@@ -1,8 +1,8 @@
-import { Switch as ArkSwitch, type SwitchProps as ArkSwitchProps } from '@ark-ui/react/switch'
+import { Switch as ArkSwitch, type SwitchRootProps } from '@ark-ui/react/switch'
 import { forwardRef, type ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface SwitchProps extends ArkSwitchProps, SwitchRecipeVariantProps {
+export interface SwitchProps extends SwitchRootProps, SwitchRecipeVariantProps {
   children?: ReactNode
 }
 

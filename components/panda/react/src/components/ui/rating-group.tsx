@@ -1,6 +1,6 @@
 import {
   RatingGroup as ArkRatingGroup,
-  type RatingGroupProps as ArkRatingGroupProps,
+  type RatingGroupRootProps,
 } from '@ark-ui/react/rating-group'
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
@@ -9,7 +9,7 @@ import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
-  extends Assign<JsxStyleProps, ArkRatingGroupProps>,
+  extends Assign<JsxStyleProps, RatingGroupRootProps>,
     RatingGroupVariantProps {
   children?: ReactNode
 }

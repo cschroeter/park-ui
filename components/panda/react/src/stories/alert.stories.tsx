@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { InfoIcon } from 'lucide-react'
-import * as Alert from '~/components/ui/alert'
+import { Alert } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Alert',

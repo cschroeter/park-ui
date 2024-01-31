@@ -43,6 +43,7 @@ const generateIndex = async (options: Options) => {
         //   }
         //   return true
         // })
+        .filter((component) => !component.includes('index.ts'))
         .map((component) => ({
           name: pascalCase(path.parse(component).name),
           href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${
@@ -81,39 +82,41 @@ const resolveComponents = async (options: Options) => {
   ])
 
   await Promise.all(
-    components.map(async (component) => {
-      const componentName = path.parse(component).name
-      const content = fs.readFileSync(component, 'utf-8')
-      const registry = await prettier.format(
-        JSON.stringify({
-          files: [
-            {
-              filename: `${componentName}.tsx`,
-              content,
-              hasMultipleParts: content.includes('createStyleContext'),
-            },
-          ],
-        }),
-        {
-          ...prettierConfig,
-          parser: 'json',
-        },
-      )
+    components
+      .filter((component) => !component.includes('index.ts'))
+      .map(async (component) => {
+        const componentName = path.parse(component).name
+        const content = fs.readFileSync(component, 'utf-8')
+        const registry = await prettier.format(
+          JSON.stringify({
+            files: [
+              {
+                filename: `${componentName}.tsx`,
+                content,
+                hasMultipleParts: content.includes('createStyleContext'),
+              },
+            ],
+          }),
+          {
+            ...prettierConfig,
+            parser: 'json',
+          },
+        )
 
-      await fs.outputFile(
-        path.join(
-          rootDir,
-          'website',
-          'public',
-          'registry',
-          cssFramwork,
-          jsFramework,
-          'components',
-          componentName + '.json',
-        ),
-        registry,
-      )
-    }),
+        await fs.outputFile(
+          path.join(
+            rootDir,
+            'website',
+            'public',
+            'registry',
+            cssFramwork,
+            jsFramework,
+            'components',
+            componentName + '.json',
+          ),
+          registry,
+        )
+      }),
   )
 }
 

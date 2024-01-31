@@ -1,10 +1,9 @@
 import { XIcon } from 'lucide-react'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
-import type { TagsInputProps } from '~/components/ui/tags-input'
 import * as TagsInput from '~/components/ui/tags-input'
 
-export const Demo = (props: TagsInputProps) => {
+export const Demo = (props: TagsInput.RootProps) => {
   return (
     <TagsInput.Root defaultValue={['React', 'Solid', 'Vue']} maxW="xs" {...props}>
       {(api) => (
@@ -13,12 +12,14 @@ export const Demo = (props: TagsInputProps) => {
           <TagsInput.Control>
             {api.value.map((value, index) => (
               <TagsInput.Item key={index} index={index} value={value}>
-                <TagsInput.ItemText>{value}</TagsInput.ItemText>
-                <TagsInput.ItemDeleteTrigger asChild>
-                  <IconButton variant="link" size="xs">
-                    <XIcon />
-                  </IconButton>
-                </TagsInput.ItemDeleteTrigger>
+                <TagsInput.ItemPreview>
+                  <TagsInput.ItemText>{value}</TagsInput.ItemText>
+                  <TagsInput.ItemDeleteTrigger asChild>
+                    <IconButton variant="link" size="xs">
+                      <XIcon />
+                    </IconButton>
+                  </TagsInput.ItemDeleteTrigger>
+                </TagsInput.ItemPreview>
                 <TagsInput.ItemInput />
               </TagsInput.Item>
             ))}

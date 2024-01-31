@@ -11,9 +11,7 @@ import {
 } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { HStack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import * as Menu from '~/components/ui/menu'
-import { Text } from '~/components/ui/text'
+import { Button, Menu, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Menu',
@@ -24,8 +22,8 @@ export default meta
 export const Base = () => {
   return (
     <Menu.Root>
-      <Menu.Trigger asChild>
-        <Button variant="outline">Open Menu</Button>
+      <Menu.Trigger as={Button} variant="outline">
+        Open Menu
       </Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>

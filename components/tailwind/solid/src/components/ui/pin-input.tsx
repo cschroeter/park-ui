@@ -1,9 +1,9 @@
-import { PinInput as ArkPinInput, type PinInputProps as ArkPinInputProps } from '@ark-ui/solid'
+import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { Input } from '~/components/ui/input'
 
-export interface PinInputProps extends ArkPinInputProps, PinInputVariantProps {
+export interface PinInputProps extends PinInputRootProps, PinInputVariantProps {
   children?: JSX.Element
   /**
    * The number of inputs to render.
@@ -28,10 +28,12 @@ export const PinInput = (props: PinInputProps) => {
       <ArkPinInput.Control class={control()}>
         <Index each={Array.from({ length: localProps.length ?? 4 }, (_, index) => index)}>
           {(index) => (
-            <ArkPinInput.Input class={input()} index={index()} asChild>
-              {/* Attention: this only works with static css for inputs */}
-              <Input size={variantProps.size} />
-            </ArkPinInput.Input>
+            <ArkPinInput.Input
+              class={input()}
+              index={index()}
+              as={Input}
+              size={variantProps.size}
+            />
           )}
         </Index>
       </ArkPinInput.Control>

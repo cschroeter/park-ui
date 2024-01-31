@@ -1,9 +1,8 @@
 import { Button } from '~/components/ui/button'
-import type { EditableProps } from '~/components/ui/editable'
 import * as Editable from '~/components/ui/editable'
 import { FormLabel } from '~/components/ui/form-label'
 
-export const Demo = (props: EditableProps) => {
+export const Demo = (props: Editable.RootProps) => {
   return (
     <Editable.Root
       placeholder="Your favorite Framework"

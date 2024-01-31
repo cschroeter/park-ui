@@ -1,6 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Stack } from 'styled-system/jsx'
-import { Heading } from '~/components/ui/heading'
+import { Heading } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Heading',
@@ -11,15 +10,15 @@ export default meta
 export const Base = () => <Heading>Sphinx of black quartz, judge my vow.</Heading>
 
 export const HTMLTags = () => (
-  <Stack>
+  <div class="flex flex-col gap-2.5">
     <Heading as="h1">Level 1</Heading>
     <Heading as="h2">Level 2</Heading>
     <Heading as="h3">Level 3</Heading>
-  </Stack>
+  </div>
 )
 
 export const Sizes = () => (
-  <Stack>
+  <div class="flex flex-col gap-2.5">
     <Heading textStyle="xs">Ag</Heading>
     <Heading textStyle="sm">Ag</Heading>
     <Heading textStyle="md">Ag</Heading>
@@ -31,5 +30,5 @@ export const Sizes = () => (
     <Heading textStyle="5xl">Ag</Heading>
     <Heading textStyle="6xl">Ag</Heading>
     <Heading textStyle="7xl">Ag</Heading>
-  </Stack>
+  </div>
 )

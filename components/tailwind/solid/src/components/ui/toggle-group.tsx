@@ -1,4 +1,5 @@
-import { ToggleGroup as ArkToggleGroup } from '@ark-ui/solid'
+import { ToggleGroup } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -23,10 +24,8 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const ToggleGroup = withProvider(ArkToggleGroup.Root, 'root')
-const ToggleGroupItem = withContext(ArkToggleGroup.Item, 'item')
+export const Root = withProvider(ToggleGroup.Root, 'root')
+export const Item = withContext(ToggleGroup.Item, 'item')
 
-const Root = ToggleGroup
-const Item = ToggleGroupItem
-
-export { Item, Root, ToggleGroup, ToggleGroupItem }
+export type RootProps = ComponentProps<typeof Root>
+export interface ItemProps extends ComponentProps<typeof Item> {}

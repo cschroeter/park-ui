@@ -1,8 +1,7 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import type { SelectProps } from '~/components/ui/select'
 import * as Select from '~/components/ui/select'
 
-export const Demo = (props: SelectProps) => {
+export const Demo = (props: Select.RootProps) => {
   const items = [
     { label: 'React', value: 'react' },
     { label: 'Solid', value: 'solid' },

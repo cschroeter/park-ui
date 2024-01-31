@@ -1,6 +1,6 @@
 import type { Meta } from 'storybook-solidjs'
 import { Stack } from 'styled-system/jsx'
-import { PinInput } from '~/components/ui/pin-input'
+import { PinInput } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/PinInput',

@@ -1,4 +1,4 @@
-import { TagsInput as ArkTagsInput } from '@ark-ui/solid'
+import { TagsInput } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { tagsInput } from 'styled-system/recipes'
@@ -6,57 +6,27 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tagsInput)
 
-const TagsInput = withProvider(styled(ArkTagsInput.Root), 'root')
-const TagsInputClearTrigger = withContext(styled(ArkTagsInput.ClearTrigger), 'clearTrigger')
-const TagsInputControl = withContext(styled(ArkTagsInput.Control), 'control')
-const TagsInputInput = withContext(styled(ArkTagsInput.Input), 'input')
-const TagsInputItem = withContext(styled(ArkTagsInput.Item), 'item')
-const TagsInputItemDeleteTrigger = withContext(
-  styled(ArkTagsInput.ItemDeleteTrigger),
+export const Root = withProvider(styled(TagsInput.Root), 'root')
+export const ClearTrigger = withContext(styled(TagsInput.ClearTrigger), 'clearTrigger')
+export const Control = withContext(styled(TagsInput.Control), 'control')
+export const Input = withContext(styled(TagsInput.Input), 'input')
+export const Item = withContext(styled(TagsInput.Item), 'item')
+export const ItemDeleteTrigger = withContext(
+  styled(TagsInput.ItemDeleteTrigger),
   'itemDeleteTrigger',
 )
-const TagsInputItemInput = withContext(styled(ArkTagsInput.ItemInput), 'itemInput')
-const TagsInputItemText = withContext(styled(ArkTagsInput.ItemText), 'itemText')
-const TagsInputLabel = withContext(styled(ArkTagsInput.Label), 'label')
+export const ItemInput = withContext(styled(TagsInput.ItemInput), 'itemInput')
+export const ItemPreview = withContext(styled(TagsInput.ItemPreview), 'itemPreview')
+export const ItemText = withContext(styled(TagsInput.ItemText), 'itemText')
+export const Label = withContext(styled(TagsInput.Label), 'label')
 
-const Root = TagsInput
-const ClearTrigger = TagsInputClearTrigger
-const Control = TagsInputControl
-const Input = TagsInputInput
-const Item = TagsInputItem
-const ItemDeleteTrigger = TagsInputItemDeleteTrigger
-const ItemInput = TagsInputItemInput
-const ItemText = TagsInputItemText
-const Label = TagsInputLabel
-
-export {
-  ClearTrigger,
-  Control,
-  Input,
-  Item,
-  ItemDeleteTrigger,
-  ItemInput,
-  ItemText,
-  Label,
-  Root,
-  TagsInput,
-  TagsInputClearTrigger,
-  TagsInputControl,
-  TagsInputInput,
-  TagsInputItem,
-  TagsInputItemDeleteTrigger,
-  TagsInputItemInput,
-  TagsInputItemText,
-  TagsInputLabel,
-}
-
-export interface TagsInputProps extends ComponentProps<typeof TagsInput> {}
-export interface TagsInputClearTriggerProps extends ComponentProps<typeof TagsInputClearTrigger> {}
-export interface TagsInputControlProps extends ComponentProps<typeof TagsInputControl> {}
-export interface TagsInputInputProps extends ComponentProps<typeof TagsInputInput> {}
-export interface TagsInputItemProps extends ComponentProps<typeof TagsInputItem> {}
-export interface TagsInputItemDeleteTriggerProps
-  extends ComponentProps<typeof TagsInputItemDeleteTrigger> {}
-export interface TagsInputItemInputProps extends ComponentProps<typeof TagsInputItemInput> {}
-export interface TagsInputItemTextProps extends ComponentProps<typeof TagsInputItemText> {}
-export interface TagsInputLabelProps extends ComponentProps<typeof TagsInputLabel> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface InputProps extends ComponentProps<typeof Input> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemDeleteTriggerProps extends ComponentProps<typeof ItemDeleteTrigger> {}
+export interface ItemInputProps extends ComponentProps<typeof ItemInput> {}
+export interface ItemPreviewProps extends ComponentProps<typeof ItemPreview> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}

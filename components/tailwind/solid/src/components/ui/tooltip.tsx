@@ -1,4 +1,5 @@
-import { Tooltip as ArkTooltip } from '@ark-ui/solid'
+import { Tooltip } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,31 +16,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Tooltip = withProvider(ArkTooltip.Root)
-const TooltipArrow = withContext(ArkTooltip.Arrow, 'arrow')
-const TooltipArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')
-const TooltipContent = withContext(ArkTooltip.Content, 'content')
-const TooltipPositioner = withContext(ArkTooltip.Positioner, 'positioner')
-const TooltipTrigger = withContext(ArkTooltip.Trigger, 'trigger')
+export const Root = withProvider(Tooltip.Root)
+export const Arrow = withContext(Tooltip.Arrow, 'arrow')
+export const ArrowTip = withContext(Tooltip.ArrowTip, 'arrowTip')
+export const Content = withContext(Tooltip.Content, 'content')
+export const Positioner = withContext(Tooltip.Positioner, 'positioner')
+export const Trigger = withContext(Tooltip.Trigger, 'trigger')
 
-const Root = Tooltip
-const Arrow = TooltipArrow
-const ArrowTip = TooltipArrowTip
-const Content = TooltipContent
-const Positioner = TooltipPositioner
-const Trigger = TooltipTrigger
-
-export {
-  Arrow,
-  ArrowTip,
-  Content,
-  Positioner,
-  Root,
-  Tooltip,
-  TooltipArrow,
-  TooltipArrowTip,
-  TooltipContent,
-  TooltipPositioner,
-  TooltipTrigger,
-  Trigger,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

@@ -6,63 +6,26 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(drawer)
 
-const Drawer = withProvider(ArkDrawer.Root)
-const DrawerBackdrop = withContext(styled(ArkDrawer.Backdrop), 'backdrop')
-const DrawerBody = withContext(styled(ark.div), 'body')
-const DrawerCloseTrigger = withContext(styled(ArkDrawer.CloseTrigger), 'closeTrigger')
-const DrawerContent = withContext(styled(ArkDrawer.Content), 'content')
-const DrawerDescription = withContext(styled(ArkDrawer.Description), 'description')
-const DrawerFooter = withContext(styled(ark.div), 'footer')
-const DrawerHeader = withContext(styled(ark.div), 'header')
-const DrawerPositioner = withContext(styled(ArkDrawer.Positioner), 'positioner')
-const DrawerTitle = withContext(styled(ArkDrawer.Title), 'title')
-const DrawerTrigger = withContext(styled(ArkDrawer.Trigger), 'trigger')
+export const Root = withProvider(ArkDrawer.Root)
+export const Backdrop = withContext(styled(ArkDrawer.Backdrop), 'backdrop')
+export const Body = withContext(styled(ark.div), 'body')
+export const CloseTrigger = withContext(styled(ArkDrawer.CloseTrigger), 'closeTrigger')
+export const Content = withContext(styled(ArkDrawer.Content), 'content')
+export const Description = withContext(styled(ArkDrawer.Description), 'description')
+export const Footer = withContext(styled(ark.div), 'footer')
+export const Header = withContext(styled(ark.div), 'header')
+export const Positioner = withContext(styled(ArkDrawer.Positioner), 'positioner')
+export const Title = withContext(styled(ArkDrawer.Title), 'title')
+export const Trigger = withContext(styled(ArkDrawer.Trigger), 'trigger')
 
-const Root = Drawer
-const Backdrop = DrawerBackdrop
-const Body = DrawerBody
-const CloseTrigger = DrawerCloseTrigger
-const Content = DrawerContent
-const Description = DrawerDescription
-const Footer = DrawerFooter
-const Header = DrawerHeader
-const Positioner = DrawerPositioner
-const Title = DrawerTitle
-const Trigger = DrawerTrigger
-
-export {
-  Backdrop,
-  Body,
-  CloseTrigger,
-  Content,
-  Description,
-  Drawer,
-  DrawerBackdrop,
-  DrawerBody,
-  DrawerCloseTrigger,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerPositioner,
-  DrawerTitle,
-  DrawerTrigger,
-  Footer,
-  Header,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
-}
-
-export interface DrawerProps extends ComponentProps<typeof Drawer> {}
-export interface DrawerBackdropProps extends ComponentProps<typeof DrawerBackdrop> {}
-export interface DrawerBodyProps extends ComponentProps<typeof DrawerBody> {}
-export interface DrawerCloseTriggerProps extends ComponentProps<typeof DrawerCloseTrigger> {}
-export interface DrawerContentProps extends ComponentProps<typeof DrawerContent> {}
-export interface DrawerDescriptionProps extends ComponentProps<typeof DrawerDescription> {}
-export interface DrawerFooterProps extends ComponentProps<typeof DrawerFooter> {}
-export interface DrawerHeaderProps extends ComponentProps<typeof DrawerHeader> {}
-export interface DrawerPositionerProps extends ComponentProps<typeof DrawerPositioner> {}
-export interface DrawerTitleProps extends ComponentProps<typeof DrawerTitle> {}
-export interface DrawerTriggerProps extends ComponentProps<typeof DrawerTrigger> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface BackdropProps extends ComponentProps<typeof Backdrop> {}
+export interface BodyProps extends ComponentProps<typeof Body> {}
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface FooterProps extends ComponentProps<typeof Footer> {}
+export interface HeaderProps extends ComponentProps<typeof Header> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

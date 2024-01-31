@@ -1,8 +1,8 @@
-import { Avatar as ArkAvatar, type AvatarProps as ArkAvatarProps } from '@ark-ui/solid'
+import { Avatar as ArkAvatar, type AvatarRootProps } from '@ark-ui/solid'
 import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
+export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
   name?: string
   src?: string
 }
@@ -73,6 +73,7 @@ const UserIcon = () => (
     stroke="currentColor"
     stroke-width="2"
   >
+    <title>User</title>
     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
     <circle cx="12" cy="7" r="4" />
   </svg>

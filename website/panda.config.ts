@@ -15,6 +15,7 @@ export default defineConfig({
       },
     }),
   ],
+  validation: 'none',
   include: ['./src/**/*.{ts,tsx,js,jsx,astro}'],
   exclude: [],
   jsxFramework: 'react',

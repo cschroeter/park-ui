@@ -1,4 +1,5 @@
-import { HoverCard as ArkHoverCard } from '@ark-ui/solid'
+import { HoverCard } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,31 +16,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const HoverCard = withProvider(ArkHoverCard.Root)
-const HoverCardArrow = withContext(ArkHoverCard.Arrow, 'arrow')
-const HoverCardArrowTip = withContext(ArkHoverCard.ArrowTip, 'arrowTip')
-const HoverCardContent = withContext(ArkHoverCard.Content, 'content')
-const HoverCardPositioner = withContext(ArkHoverCard.Positioner, 'positioner')
-const HoverCardTrigger = withContext(ArkHoverCard.Trigger, 'trigger')
+export const Root = withProvider(HoverCard.Root)
+export const Arrow = withContext(HoverCard.Arrow, 'arrow')
+export const ArrowTip = withContext(HoverCard.ArrowTip, 'arrowTip')
+export const Content = withContext(HoverCard.Content, 'content')
+export const Positioner = withContext(HoverCard.Positioner, 'positioner')
+export const Trigger = withContext(HoverCard.Trigger, 'trigger')
 
-const Root = HoverCard
-const Arrow = HoverCardArrow
-const ArrowTip = HoverCardArrowTip
-const Content = HoverCardContent
-const Positioner = HoverCardPositioner
-const Trigger = HoverCardTrigger
-
-export {
-  Arrow,
-  ArrowTip,
-  Content,
-  HoverCard,
-  HoverCardArrow,
-  HoverCardArrowTip,
-  HoverCardContent,
-  HoverCardPositioner,
-  HoverCardTrigger,
-  Positioner,
-  Root,
-  Trigger,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

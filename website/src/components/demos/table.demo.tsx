@@ -1,7 +1,6 @@
-import type { TableProps } from '~/components/ui/table'
 import * as Table from '~/components/ui/table'
 
-export const Demo = (props: TableProps) => {
+export const Demo = (props: Table.RootProps) => {
   return (
     <Table.Root {...props}>
       <Table.Caption>Product Inventory</Table.Caption>

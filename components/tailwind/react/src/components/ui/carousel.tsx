@@ -1,4 +1,5 @@
-import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'
+import { Carousel } from '@ark-ui/react/carousel'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -45,43 +46,22 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Carousel = withProvider(ArkCarousel.Root, 'root')
-const CarouselControl = withContext(ArkCarousel.Control, 'control')
-const CarouselIndicator = withContext(ArkCarousel.Indicator, 'indicator')
-const CarouselIndicatorGroup = withContext(ArkCarousel.IndicatorGroup, 'indicatorGroup')
-const CarouselItem = withContext(ArkCarousel.Item, 'item')
-const CarouselItemGroup = withContext(ArkCarousel.ItemGroup, 'itemGroup')
-const CarouselNextTrigger = withContext(ArkCarousel.NextTrigger, 'nextTrigger')
-const CarouselPrevTrigger = withContext(ArkCarousel.PrevTrigger, 'prevTrigger')
-const CarouselViewport = withContext(ArkCarousel.Viewport, 'viewport')
+export const Root = withProvider(Carousel.Root, 'root')
+export const Control = withContext(Carousel.Control, 'control')
+export const Indicator = withContext(Carousel.Indicator, 'indicator')
+export const IndicatorGroup = withContext(Carousel.IndicatorGroup, 'indicatorGroup')
+export const Item = withContext(Carousel.Item, 'item')
+export const ItemGroup = withContext(Carousel.ItemGroup, 'itemGroup')
+export const NextTrigger = withContext(Carousel.NextTrigger, 'nextTrigger')
+export const PrevTrigger = withContext(Carousel.PrevTrigger, 'prevTrigger')
+export const Viewport = withContext(Carousel.Viewport, 'viewport')
 
-const Root = Carousel
-const Control = CarouselControl
-const Indicator = CarouselIndicator
-const IndicatorGroup = CarouselIndicatorGroup
-const Item = CarouselItem
-const ItemGroup = CarouselItemGroup
-const NextTrigger = CarouselNextTrigger
-const PrevTrigger = CarouselPrevTrigger
-const Viewport = CarouselViewport
-
-export {
-  Carousel,
-  CarouselControl,
-  CarouselIndicator,
-  CarouselIndicatorGroup,
-  CarouselItem,
-  CarouselItemGroup,
-  CarouselNextTrigger,
-  CarouselPrevTrigger,
-  CarouselViewport,
-  Control,
-  Indicator,
-  IndicatorGroup,
-  Item,
-  ItemGroup,
-  NextTrigger,
-  PrevTrigger,
-  Root,
-  Viewport,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface IndicatorGroupProps extends ComponentProps<typeof IndicatorGroup> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
+export interface NextTriggerProps extends ComponentProps<typeof NextTrigger> {}
+export interface PrevTriggerProps extends ComponentProps<typeof PrevTrigger> {}
+export interface ViewportProps extends ComponentProps<typeof Viewport> {}

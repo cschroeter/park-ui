@@ -1,4 +1,5 @@
-import { RadioGroup as ArkRadioGroup } from '@ark-ui/react/radio-group'
+import { RadioGroup } from '@ark-ui/react/radio-group'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -44,31 +45,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const RadioGroup = withProvider(ArkRadioGroup.Root, 'root')
-const RadioGroupIndicator = withContext(ArkRadioGroup.Indicator, 'indicator')
-const RadioGroupItem = withContext(ArkRadioGroup.Item, 'item')
-const RadioGroupItemControl = withContext(ArkRadioGroup.ItemControl, 'itemControl')
-const RadioGroupItemText = withContext(ArkRadioGroup.ItemText, 'itemText')
-const RadioGroupLabel = withContext(ArkRadioGroup.Label, 'label')
+export const Root = withProvider(RadioGroup.Root, 'root')
+export const Indicator = withContext(RadioGroup.Indicator, 'indicator')
+export const Item = withContext(RadioGroup.Item, 'item')
+export const ItemControl = withContext(RadioGroup.ItemControl, 'itemControl')
+export const ItemText = withContext(RadioGroup.ItemText, 'itemText')
+export const Label = withContext(RadioGroup.Label, 'label')
 
-const Root = RadioGroup
-const Indicator = RadioGroupIndicator
-const Item = RadioGroupItem
-const ItemControl = RadioGroupItemControl
-const ItemText = RadioGroupItemText
-const Label = RadioGroupLabel
-
-export {
-  Indicator,
-  Item,
-  ItemControl,
-  ItemText,
-  Label,
-  RadioGroup,
-  RadioGroupIndicator,
-  RadioGroupItem,
-  RadioGroupItemControl,
-  RadioGroupItemText,
-  RadioGroupLabel,
-  Root,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}

@@ -1,8 +1,7 @@
 import { InfoIcon } from 'lucide-react'
-import type { AlertProps } from '~/components/ui/alert'
 import * as Alert from '~/components/ui/alert'
 
-export const Demo = (props: AlertProps) => {
+export const Demo = (props: Alert.RootProps) => {
   return (
     <Alert.Root {...props}>
       <Alert.Icon asChild>

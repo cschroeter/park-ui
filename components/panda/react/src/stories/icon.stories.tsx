@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 import { DiamondIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Icon } from '~/components/ui/icon'
+import { Icon } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Icon',

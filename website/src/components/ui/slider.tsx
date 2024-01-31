@@ -1,10 +1,11 @@
-import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/react/slider'
+import { Slider as ArkSlider, type SliderRootProps } from '@ark-ui/react/slider'
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
+import { splitCssProps } from 'styled-system/jsx'
 import { slider, type SliderVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
-export interface SliderProps extends Assign<JsxStyleProps, ArkSliderProps>, SliderVariantProps {
+export interface SliderProps extends Assign<JsxStyleProps, SliderRootProps>, SliderVariantProps {
   children?: ReactNode
   marks?: {
     value: number
@@ -14,11 +15,12 @@ export interface SliderProps extends Assign<JsxStyleProps, ArkSliderProps>, Slid
 
 export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
   const [variantProps, sliderProps] = slider.splitVariantProps(props)
-  const { children, ...rootProps } = sliderProps
+  const [cssProps, localProps] = splitCssProps(sliderProps)
+  const { children, className, ...rootProps } = localProps
   const styles = slider(variantProps)
 
   return (
-    <ArkSlider.Root className={cx(styles.root, css(rootProps))} {...rootProps}>
+    <ArkSlider.Root ref={ref} className={cx(styles.root, css(cssProps), className)} {...rootProps}>
       {(api) => (
         <>
           {children && <ArkSlider.Label className={styles.label}>{children}</ArkSlider.Label>}

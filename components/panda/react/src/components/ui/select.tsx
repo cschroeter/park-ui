@@ -1,4 +1,4 @@
-import { Select as ArkSelect } from '@ark-ui/react/select'
+import { Select } from '@ark-ui/react/select'
 import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { select } from 'styled-system/recipes'
@@ -6,78 +6,32 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(select)
 
-const Select = withProvider(styled(ArkSelect.Root), 'root')
-const SelectClearTrigger = withContext(styled(ArkSelect.ClearTrigger), 'clearTrigger')
-const SelectContent = withContext(styled(ArkSelect.Content), 'content')
-const SelectControl = withContext(styled(ArkSelect.Control), 'control')
-const SelectIndicator = withContext(styled(ArkSelect.Indicator), 'indicator')
-const SelectItem = withContext(styled(ArkSelect.Item), 'item')
-const SelectItemGroup = withContext(styled(ArkSelect.ItemGroup), 'itemGroup')
-const SelectItemGroupLabel = withContext(styled(ArkSelect.ItemGroupLabel), 'itemGroupLabel')
-const SelectItemIndicator = withContext(styled(ArkSelect.ItemIndicator), 'itemIndicator')
-const SelectItemText = withContext(styled(ArkSelect.ItemText), 'itemText')
-const SelectLabel = withContext(styled(ArkSelect.Label), 'label')
-const SelectPositioner = withContext(styled(ArkSelect.Positioner), 'positioner')
-const SelectTrigger = withContext(styled(ArkSelect.Trigger), 'trigger')
-const SelectValueText = withContext(styled(ArkSelect.ValueText), 'valueText')
+export const Root = withProvider(styled(Select.Root), 'root')
+export const ClearTrigger = withContext(styled(Select.ClearTrigger), 'clearTrigger')
+export const Content = withContext(styled(Select.Content), 'content')
+export const Control = withContext(styled(Select.Control), 'control')
+export const Indicator = withContext(styled(Select.Indicator), 'indicator')
+export const Item = withContext(styled(Select.Item), 'item')
+export const ItemGroup = withContext(styled(Select.ItemGroup), 'itemGroup')
+export const ItemGroupLabel = withContext(styled(Select.ItemGroupLabel), 'itemGroupLabel')
+export const ItemIndicator = withContext(styled(Select.ItemIndicator), 'itemIndicator')
+export const ItemText = withContext(styled(Select.ItemText), 'itemText')
+export const Label = withContext(styled(Select.Label), 'label')
+export const Positioner = withContext(styled(Select.Positioner), 'positioner')
+export const Trigger = withContext(styled(Select.Trigger), 'trigger')
+export const ValueText = withContext(styled(Select.ValueText), 'valueText')
 
-const Root = Select
-const ClearTrigger = SelectClearTrigger
-const Content = SelectContent
-const Control = SelectControl
-const Indicator = SelectIndicator
-const Item = SelectItem
-const ItemGroup = SelectItemGroup
-const ItemGroupLabel = SelectItemGroupLabel
-const ItemIndicator = SelectItemIndicator
-const ItemText = SelectItemText
-const Label = SelectLabel
-const Positioner = SelectPositioner
-const Trigger = SelectTrigger
-const ValueText = SelectValueText
-
-export {
-  ClearTrigger,
-  Content,
-  Control,
-  Indicator,
-  Item,
-  ItemGroup,
-  ItemGroupLabel,
-  ItemIndicator,
-  ItemText,
-  Label,
-  Positioner,
-  Root,
-  Select,
-  SelectClearTrigger,
-  SelectContent,
-  SelectControl,
-  SelectIndicator,
-  SelectItem,
-  SelectItemGroup,
-  SelectItemGroupLabel,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValueText,
-  Trigger,
-  ValueText,
-}
-
-export interface SelectProps extends ComponentProps<typeof Select> {}
-export interface SelectClearTriggerProps extends ComponentProps<typeof SelectClearTrigger> {}
-export interface SelectContentProps extends ComponentProps<typeof SelectContent> {}
-export interface SelectControlProps extends ComponentProps<typeof SelectControl> {}
-export interface SelectIndicatorProps extends ComponentProps<typeof SelectIndicator> {}
-export interface SelectItemProps extends ComponentProps<typeof SelectItem> {}
-export interface SelectItemGroupProps extends ComponentProps<typeof SelectItemGroup> {}
-export interface SelectItemGroupLabelProps extends ComponentProps<typeof SelectItemGroupLabel> {}
-export interface SelectItemIndicatorProps extends ComponentProps<typeof SelectItemIndicator> {}
-export interface SelectItemTextProps extends ComponentProps<typeof SelectItemText> {}
-export interface SelectLabelProps extends ComponentProps<typeof SelectLabel> {}
-export interface SelectPositionerProps extends ComponentProps<typeof SelectPositioner> {}
-export interface SelectTriggerProps extends ComponentProps<typeof SelectTrigger> {}
-export interface SelectValueTextProps extends ComponentProps<typeof SelectValueText> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
+export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
+export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface ValueTextProps extends ComponentProps<typeof ValueText> {}

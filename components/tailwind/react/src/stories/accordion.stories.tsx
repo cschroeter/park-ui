@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { ChevronDownIcon } from 'lucide-react'
-import * as Accordion from '~/components/ui/accordion'
+import { Accordion } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Accordion',

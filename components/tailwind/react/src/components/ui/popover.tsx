@@ -1,4 +1,5 @@
-import { Popover as ArkPopover } from '@ark-ui/react/popover'
+import { Popover } from '@ark-ui/react/popover'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -20,51 +21,26 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Popover = withProvider(ArkPopover.Root)
-const PopoverAnchor = withContext(ArkPopover.Anchor, 'anchor')
-const PopoverArrow = withContext(ArkPopover.Arrow, 'arrow')
-const PopoverArrowTip = withContext(ArkPopover.ArrowTip, 'arrowTip')
-const PopoverCloseTrigger = withContext(ArkPopover.CloseTrigger, 'closeTrigger')
-const PopoverContent = withContext(ArkPopover.Content, 'content')
-const PopoverDescription = withContext(ArkPopover.Description, 'description')
-const PopoverIndicator = withContext(ArkPopover.Indicator, 'indicator')
-const PopoverPositioner = withContext(ArkPopover.Positioner, 'positioner')
-const PopoverTitle = withContext(ArkPopover.Title, 'title')
-const PopoverTrigger = withContext(ArkPopover.Trigger, 'trigger')
+export const Root = withProvider(Popover.Root)
+export const Anchor = withContext(Popover.Anchor, 'anchor')
+export const Arrow = withContext(Popover.Arrow, 'arrow')
+export const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')
+export const CloseTrigger = withContext(Popover.CloseTrigger, 'closeTrigger')
+export const Content = withContext(Popover.Content, 'content')
+export const Description = withContext(Popover.Description, 'description')
+export const Indicator = withContext(Popover.Indicator, 'indicator')
+export const Positioner = withContext(Popover.Positioner, 'positioner')
+export const Title = withContext(Popover.Title, 'title')
+export const Trigger = withContext(Popover.Trigger, 'trigger')
 
-const Root = Popover
-const Anchor = PopoverAnchor
-const Arrow = PopoverArrow
-const ArrowTip = PopoverArrowTip
-const CloseTrigger = PopoverCloseTrigger
-const Content = PopoverContent
-const Description = PopoverDescription
-const Indicator = PopoverIndicator
-const Positioner = PopoverPositioner
-const Title = PopoverTitle
-const Trigger = PopoverTrigger
-
-export {
-  Anchor,
-  Arrow,
-  ArrowTip,
-  CloseTrigger,
-  Content,
-  Description,
-  Indicator,
-  Popover,
-  PopoverAnchor,
-  PopoverArrow,
-  PopoverArrowTip,
-  PopoverCloseTrigger,
-  PopoverContent,
-  PopoverDescription,
-  PopoverIndicator,
-  PopoverPositioner,
-  PopoverTitle,
-  PopoverTrigger,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface AnchorProps extends ComponentProps<typeof Anchor> {}
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

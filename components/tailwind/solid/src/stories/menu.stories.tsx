@@ -10,10 +10,7 @@ import {
   UserPlusIcon,
 } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { HStack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import * as Menu from '~/components/ui/menu'
-import { Text } from '~/components/ui/text'
+import { Button, Menu, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Menu',
@@ -24,8 +21,8 @@ export default meta
 export const Base = () => {
   return (
     <Menu.Root>
-      <Menu.Trigger asChild>
-        <Button variant="outline">Open Menu</Button>
+      <Menu.Trigger as={Button} variant="outline">
+        Open Menu
       </Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>
@@ -33,67 +30,67 @@ export const Base = () => {
             <Menu.ItemGroupLabel for="group-1">My Account</Menu.ItemGroupLabel>
             <Menu.Separator />
             <Menu.Item id="profile">
-              <HStack gap="6" justify="space-between" flex="1">
-                <HStack gap="2">
+              <div class="flex gap-6 flex-1" justify="space-between">
+                <div class="flex gap-2">
                   <UserIcon />
                   Profile
-                </HStack>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                </div>
+                <Text class="text-fg-subtle" as="span" textStyle="xs">
                   ⇧⌘P
                 </Text>
-              </HStack>
+              </div>
             </Menu.Item>
             <Menu.Item id="billing">
-              <HStack gap="2">
+              <div class="flex gap-2">
                 <CreditCardIcon /> Billing
-              </HStack>
+              </div>
             </Menu.Item>
             <Menu.Item id="settings">
-              <HStack gap="6" justify="space-between" flex="1">
-                <HStack gap="2">
+              <div class="flex gap-6 flex-1" justify="space-between">
+                <div class="flex gap-2">
                   <SettingsIcon /> Settings
-                </HStack>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                </div>
+                <Text class="text-fg-subtle" as="span" textStyle="xs">
                   ⌘,
                 </Text>
-              </HStack>
+              </div>
             </Menu.Item>
             <Menu.Root positioning={{ placement: 'right-start', gutter: -2 }}>
-              <Menu.TriggerItem justifyContent="space-between">
-                <HStack gap="2">
+              <Menu.TriggerItem class="justify-between">
+                <div class="flex gap-2">
                   <UserPlusIcon />
                   Invite member
-                </HStack>
+                </div>
                 <ChevronRightIcon />
               </Menu.TriggerItem>
               <Menu.Positioner>
                 <Menu.Content>
                   <Menu.Item id="email">
-                    <HStack gap="2">
+                    <div class="flex gap-2">
                       <MailIcon /> Email
-                    </HStack>
+                    </div>
                   </Menu.Item>
                   <Menu.Item id="message">
-                    <HStack gap="2">
+                    <div class="flex gap-2">
                       <MessageSquareIcon /> Message
-                    </HStack>
+                    </div>
                   </Menu.Item>
                   <Menu.Separator />
                   <Menu.Item id="other">
-                    <HStack gap="2">
+                    <div class="flex gap-2">
                       <PlusCircleIcon />
                       More Options...
-                    </HStack>
+                    </div>
                   </Menu.Item>
                 </Menu.Content>
               </Menu.Positioner>
             </Menu.Root>
             <Menu.Separator />
             <Menu.Item id="logout">
-              <HStack gap="2">
+              <div class="flex gap-2">
                 <LogOutIcon />
                 Logout
-              </HStack>
+              </div>
             </Menu.Item>
           </Menu.ItemGroup>
         </Menu.Content>

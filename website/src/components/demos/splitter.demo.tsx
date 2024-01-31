@@ -1,7 +1,6 @@
-import type { SplitterProps } from '~/components/ui/splitter'
 import * as Splitter from '~/components/ui/splitter'
 
-export const Demo = (props: SplitterProps) => {
+export const Demo = (props: Splitter.RootProps) => {
   return (
     <Splitter.Root
       size={[

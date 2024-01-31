@@ -1,6 +1,6 @@
 import {
   NumberInput as ArkNumberInput,
-  type NumberInputProps as ArkNumberInputProps,
+  type NumberInputRootProps,
 } from '@ark-ui/react/number-input'
 import { forwardRef, type ReactNode } from 'react'
 import { css, cx } from 'styled-system/css'
@@ -9,7 +9,7 @@ import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface NumberInputProps
-  extends Assign<JsxStyleProps, ArkNumberInputProps>,
+  extends Assign<JsxStyleProps, NumberInputRootProps>,
     NumberInputVariantProps {
   children?: ReactNode
 }

@@ -1,4 +1,5 @@
 import { ark } from '@ark-ui/react/factory'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -64,39 +65,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Table = withProvider(ark.table, 'root')
-const TableBody = withContext(ark.tbody, 'body')
-const TableCaption = withContext(ark.caption, 'caption')
-const TableCell = withContext(ark.td, 'cell')
-const TableFooter = withContext(ark.tfoot, 'footer')
-const TableHead = withContext(ark.thead, 'head')
-const TableHeader = withContext(ark.th, 'header')
-const TableRow = withContext(ark.tr, 'row')
+export const Root = withProvider(ark.table, 'root')
+export const Body = withContext(ark.tbody, 'body')
+export const Caption = withContext(ark.caption, 'caption')
+export const Cell = withContext(ark.td, 'cell')
+export const Footer = withContext(ark.tfoot, 'footer')
+export const Head = withContext(ark.thead, 'head')
+export const Header = withContext(ark.th, 'header')
+export const Row = withContext(ark.tr, 'row')
 
-const Root = Table
-const Body = TableBody
-const Caption = TableCaption
-const Cell = TableCell
-const Footer = TableFooter
-const Head = TableHead
-const Header = TableHeader
-const Row = TableRow
-
-export {
-  Body,
-  Caption,
-  Cell,
-  Footer,
-  Head,
-  Header,
-  Root,
-  Row,
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface BodyProps extends ComponentProps<typeof Body> {}
+export interface CaptionProps extends ComponentProps<typeof Caption> {}
+export interface CellProps extends ComponentProps<typeof Cell> {}
+export interface FooterProps extends ComponentProps<typeof Footer> {}
+export interface HeadProps extends ComponentProps<typeof Head> {}
+export interface HeaderProps extends ComponentProps<typeof Header> {}
+export interface RowProps extends ComponentProps<typeof Row> {}

@@ -1,8 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { XIcon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import * as Dialog from '~/components/ui/dialog'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, Dialog, IconButton } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Dialog',

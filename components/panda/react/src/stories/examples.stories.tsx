@@ -1,7 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Box, Container, Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import { Text } from '~/components/ui/text'
+import { Button, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Examples',

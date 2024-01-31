@@ -1,11 +1,11 @@
-import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/solid'
+import { Slider as ArkSlider, type SliderRootProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { slider, type SliderVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
-export interface SliderProps extends Assign<JsxStyleProps, ArkSliderProps>, SliderVariantProps {
+export interface SliderProps extends Assign<JsxStyleProps, SliderRootProps>, SliderVariantProps {
   children?: JSX.Element
   marks?: {
     value: number

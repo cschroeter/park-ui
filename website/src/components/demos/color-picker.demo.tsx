@@ -5,9 +5,9 @@ import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 import { Text } from '~/components/ui/text'
 
-export const Demo = () => {
+export const Demo = (props: ColorPicker.RootProps) => {
   return (
-    <ColorPicker.Root>
+    <ColorPicker.Root {...props}>
       {(api) => (
         <>
           <ColorPicker.Label>Color Picker</ColorPicker.Label>

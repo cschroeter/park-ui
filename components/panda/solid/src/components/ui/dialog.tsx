@@ -1,4 +1,4 @@
-import { Dialog as ArkDialog } from '@ark-ui/solid'
+import { Dialog } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { dialog } from 'styled-system/recipes'
@@ -6,48 +6,20 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(dialog)
 
-const Dialog = withProvider(ArkDialog.Root)
-const DialogBackdrop = withContext(styled(ArkDialog.Backdrop), 'backdrop')
-const DialogCloseTrigger = withContext(styled(ArkDialog.CloseTrigger), 'closeTrigger')
-const DialogContent = withContext(styled(ArkDialog.Content), 'content')
-const DialogDescription = withContext(styled(ArkDialog.Description), 'description')
-const DialogPositioner = withContext(styled(ArkDialog.Positioner), 'positioner')
-const DialogTitle = withContext(styled(ArkDialog.Title), 'title')
-const DialogTrigger = withContext(styled(ArkDialog.Trigger), 'trigger')
+export const Root = withProvider(Dialog.Root)
+export const Backdrop = withContext(styled(Dialog.Backdrop), 'backdrop')
+export const CloseTrigger = withContext(styled(Dialog.CloseTrigger), 'closeTrigger')
+export const Content = withContext(styled(Dialog.Content), 'content')
+export const Description = withContext(styled(Dialog.Description), 'description')
+export const Positioner = withContext(styled(Dialog.Positioner), 'positioner')
+export const Title = withContext(styled(Dialog.Title), 'title')
+export const Trigger = withContext(styled(Dialog.Trigger), 'trigger')
 
-const Root = Dialog
-const Backdrop = DialogBackdrop
-const CloseTrigger = DialogCloseTrigger
-const Content = DialogContent
-const Description = DialogDescription
-const Positioner = DialogPositioner
-const Title = DialogTitle
-const Trigger = DialogTrigger
-
-export {
-  Backdrop,
-  CloseTrigger,
-  Content,
-  Description,
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContent,
-  DialogDescription,
-  DialogPositioner,
-  DialogTitle,
-  DialogTrigger,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
-}
-
-export interface DialogProps extends ComponentProps<typeof Dialog> {}
-export interface DialogBackdropProps extends ComponentProps<typeof DialogBackdrop> {}
-export interface DialogCloseTriggerProps extends ComponentProps<typeof DialogCloseTrigger> {}
-export interface DialogContentProps extends ComponentProps<typeof DialogContent> {}
-export interface DialogDescriptionProps extends ComponentProps<typeof DialogDescription> {}
-export interface DialogPositionerProps extends ComponentProps<typeof DialogPositioner> {}
-export interface DialogTitleProps extends ComponentProps<typeof DialogTitle> {}
-export interface DialogTriggerProps extends ComponentProps<typeof DialogTrigger> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface BackdropProps extends ComponentProps<typeof Backdrop> {}
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

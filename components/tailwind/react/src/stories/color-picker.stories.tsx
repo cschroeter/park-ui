@@ -1,9 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { PipetteIcon } from 'lucide-react'
-import * as ColorPicker from '~/components/ui/color-picker'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
-import { Text } from '~/components/ui/text'
+import { ColorPicker, IconButton, Input, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Color Picker',

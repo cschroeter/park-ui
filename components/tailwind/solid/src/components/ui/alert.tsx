@@ -1,4 +1,5 @@
 import { ark } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,27 +16,14 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Alert = withProvider(ark.div, 'root')
-const AlertContent = withContext(ark.div, 'content')
-const AlertDescription = withContext(ark.p, 'description')
-const AlertIcon = withContext(ark.svg, 'icon')
-const AlertTitle = withContext(ark.h5, 'title')
+export const Root = withProvider(ark.div, 'root')
+export const Content = withContext(ark.div, 'content')
+export const Description = withContext(ark.p, 'description')
+export const Icon = withContext(ark.svg, 'icon')
+export const Title = withContext(ark.h5, 'title')
 
-const Root = Alert
-const Content = AlertContent
-const Description = AlertDescription
-const Icon = AlertIcon
-const Title = AlertTitle
-
-export {
-  Alert,
-  AlertContent,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-  Content,
-  Description,
-  Icon,
-  Root,
-  Title,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface IconProps extends ComponentProps<typeof Icon> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}

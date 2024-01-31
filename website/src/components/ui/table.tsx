@@ -6,48 +6,20 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(table)
 
-const Table = withProvider(styled(ark.table), 'root')
-const TableBody = withContext(styled(ark.tbody), 'body')
-const TableCaption = withContext(styled(ark.caption), 'caption')
-const TableCell = withContext(styled(ark.td), 'cell')
-const TableFooter = withContext(styled(ark.tfoot), 'footer')
-const TableHead = withContext(styled(ark.thead), 'head')
-const TableHeader = withContext(styled(ark.th), 'header')
-const TableRow = withContext(styled(ark.tr), 'row')
+export const Root = withProvider(styled(ark.table), 'root')
+export const Body = withContext(styled(ark.tbody), 'body')
+export const Caption = withContext(styled(ark.caption), 'caption')
+export const Cell = withContext(styled(ark.td), 'cell')
+export const Footer = withContext(styled(ark.tfoot), 'footer')
+export const Head = withContext(styled(ark.thead), 'head')
+export const Header = withContext(styled(ark.th), 'header')
+export const Row = withContext(styled(ark.tr), 'row')
 
-const Root = Table
-const Body = TableBody
-const Caption = TableCaption
-const Cell = TableCell
-const Footer = TableFooter
-const Head = TableHead
-const Header = TableHeader
-const Row = TableRow
-
-export {
-  Body,
-  Caption,
-  Cell,
-  Footer,
-  Head,
-  Header,
-  Root,
-  Row,
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-}
-
-export interface TableProps extends ComponentProps<typeof Table> {}
-export interface TableBodyProps extends ComponentProps<typeof TableBody> {}
-export interface TableCaptionProps extends ComponentProps<typeof TableCaption> {}
-export interface TableCellProps extends ComponentProps<typeof TableCell> {}
-export interface TableFooterProps extends ComponentProps<typeof TableFooter> {}
-export interface TableHeadProps extends ComponentProps<typeof TableHead> {}
-export interface TableHeaderProps extends ComponentProps<typeof TableHeader> {}
-export interface TableRowProps extends ComponentProps<typeof TableRow> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface BodyProps extends ComponentProps<typeof Body> {}
+export interface CaptionProps extends ComponentProps<typeof Caption> {}
+export interface CellProps extends ComponentProps<typeof Cell> {}
+export interface FooterProps extends ComponentProps<typeof Footer> {}
+export interface HeadProps extends ComponentProps<typeof Head> {}
+export interface HeaderProps extends ComponentProps<typeof Header> {}
+export interface RowProps extends ComponentProps<typeof Row> {}

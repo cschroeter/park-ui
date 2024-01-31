@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Slider } from '~/components/ui/slider'
+import { Slider } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Slider',

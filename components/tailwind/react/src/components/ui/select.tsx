@@ -1,4 +1,5 @@
-import { Select as ArkSelect } from '@ark-ui/react/select'
+import { Select } from '@ark-ui/react/select'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -110,63 +111,32 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Select = withProvider(ArkSelect.Root, 'root')
-const SelectClearTrigger = withContext(ArkSelect.ClearTrigger, 'clearTrigger')
-const SelectContent = withContext(ArkSelect.Content, 'content')
-const SelectControl = withContext(ArkSelect.Control, 'control')
-const SelectIndicator = withContext(ArkSelect.Indicator, 'indicator')
-const SelectItem = withContext(ArkSelect.Item, 'item')
-const SelectItemGroup = withContext(ArkSelect.ItemGroup, 'itemGroup')
-const SelectItemGroupLabel = withContext(ArkSelect.ItemGroupLabel, 'itemGroupLabel')
-const SelectItemIndicator = withContext(ArkSelect.ItemIndicator, 'itemIndicator')
-const SelectItemText = withContext(ArkSelect.ItemText, 'itemText')
-const SelectLabel = withContext(ArkSelect.Label, 'label')
-const SelectPositioner = withContext(ArkSelect.Positioner, 'positioner')
-const SelectTrigger = withContext(ArkSelect.Trigger, 'trigger')
-const SelectValueText = withContext(ArkSelect.ValueText, 'valueText')
+export const Root = withProvider(Select.Root, 'root')
+export const ClearTrigger = withContext(Select.ClearTrigger, 'clearTrigger')
+export const Content = withContext(Select.Content, 'content')
+export const Control = withContext(Select.Control, 'control')
+export const Indicator = withContext(Select.Indicator, 'indicator')
+export const Item = withContext(Select.Item, 'item')
+export const ItemGroup = withContext(Select.ItemGroup, 'itemGroup')
+export const ItemGroupLabel = withContext(Select.ItemGroupLabel, 'itemGroupLabel')
+export const ItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator')
+export const ItemText = withContext(Select.ItemText, 'itemText')
+export const Label = withContext(Select.Label, 'label')
+export const Positioner = withContext(Select.Positioner, 'positioner')
+export const Trigger = withContext(Select.Trigger, 'trigger')
+export const ValueText = withContext(Select.ValueText, 'valueText')
 
-const Root = Select
-const ClearTrigger = SelectClearTrigger
-const Content = SelectContent
-const Control = SelectControl
-const Indicator = SelectIndicator
-const Item = SelectItem
-const ItemGroup = SelectItemGroup
-const ItemGroupLabel = SelectItemGroupLabel
-const ItemIndicator = SelectItemIndicator
-const ItemText = SelectItemText
-const Label = SelectLabel
-const Positioner = SelectPositioner
-const Trigger = SelectTrigger
-const ValueText = SelectValueText
-
-export {
-  ClearTrigger,
-  Content,
-  Control,
-  Indicator,
-  Item,
-  ItemGroup,
-  ItemGroupLabel,
-  ItemIndicator,
-  ItemText,
-  Label,
-  Positioner,
-  Root,
-  Select,
-  SelectClearTrigger,
-  SelectContent,
-  SelectControl,
-  SelectIndicator,
-  SelectItem,
-  SelectItemGroup,
-  SelectItemGroupLabel,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValueText,
-  Trigger,
-  ValueText,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface ControlProps extends ComponentProps<typeof Control> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
+export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
+export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
+export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface LabelProps extends ComponentProps<typeof Label> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface ValueTextProps extends ComponentProps<typeof ValueText> {}

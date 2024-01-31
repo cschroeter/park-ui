@@ -1,7 +1,6 @@
 import { DiamondIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { Stack } from 'styled-system/jsx'
-import { Icon } from '~/components/ui/icon'
+import { Icon } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Icon',
@@ -16,7 +15,7 @@ export const Base = () => (
 )
 
 export const Sizes = () => (
-  <Stack>
+  <div class="flex flex-col gap-2.5">
     <Icon size="xs">
       <DiamondIcon />
     </Icon>
@@ -32,5 +31,5 @@ export const Sizes = () => (
     <Icon size="2xl">
       <DiamondIcon />
     </Icon>
-  </Stack>
+  </div>
 )

@@ -1,4 +1,5 @@
-import { Dialog as ArkDialog } from '@ark-ui/solid'
+import { Dialog } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -17,39 +18,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Dialog = withProvider(ArkDialog.Root)
-const DialogBackdrop = withContext(ArkDialog.Backdrop, 'backdrop')
-const DialogCloseTrigger = withContext(ArkDialog.CloseTrigger, 'closeTrigger')
-const DialogContent = withContext(ArkDialog.Content, 'content')
-const DialogDescription = withContext(ArkDialog.Description, 'description')
-const DialogPositioner = withContext(ArkDialog.Positioner, 'positioner')
-const DialogTitle = withContext(ArkDialog.Title, 'title')
-const DialogTrigger = withContext(ArkDialog.Trigger, 'trigger')
+export const Root = withProvider(Dialog.Root)
+export const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
+export const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')
+export const Content = withContext(Dialog.Content, 'content')
+export const Description = withContext(Dialog.Description, 'description')
+export const Positioner = withContext(Dialog.Positioner, 'positioner')
+export const Title = withContext(Dialog.Title, 'title')
+export const Trigger = withContext(Dialog.Trigger, 'trigger')
 
-const Root = Dialog
-const Backdrop = DialogBackdrop
-const CloseTrigger = DialogCloseTrigger
-const Content = DialogContent
-const Description = DialogDescription
-const Positioner = DialogPositioner
-const Title = DialogTitle
-const Trigger = DialogTrigger
-
-export {
-  Backdrop,
-  CloseTrigger,
-  Content,
-  Description,
-  Dialog,
-  DialogBackdrop,
-  DialogCloseTrigger,
-  DialogContent,
-  DialogDescription,
-  DialogPositioner,
-  DialogTitle,
-  DialogTrigger,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface BackdropProps extends ComponentProps<typeof Backdrop> {}
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

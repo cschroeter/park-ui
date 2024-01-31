@@ -1,6 +1,6 @@
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import * as Table from '~/components/ui/table'
+import { Table } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Table',
@@ -17,17 +17,17 @@ export const Base = () => {
           <Table.Header>ID</Table.Header>
           <Table.Header>Name</Table.Header>
           <Table.Header>Stock</Table.Header>
-          <Table.Header>Price</Table.Header>
+          <Table.Header class="text-right">Price</Table.Header>
         </Table.Row>
       </Table.Head>
       <Table.Body>
         <Index each={products}>
           {(product) => (
             <Table.Row>
-              <Table.Cell>{product().id}</Table.Cell>
+              <Table.Cell class="font-medium">{product().id}</Table.Cell>
               <Table.Cell>{product().name}</Table.Cell>
               <Table.Cell>{product().stock}</Table.Cell>
-              <Table.Cell>{product().price}</Table.Cell>
+              <Table.Cell class="text-right">{product().price}</Table.Cell>
             </Table.Row>
           )}
         </Index>
@@ -36,7 +36,7 @@ export const Base = () => {
         <Table.Row>
           <Table.Cell colSpan={2}>Totals</Table.Cell>
           <Table.Cell>87</Table.Cell>
-          <Table.Cell>$34,163.00</Table.Cell>
+          <Table.Cell class="text-right">$34,163.00</Table.Cell>
         </Table.Row>
       </Table.Footer>
     </Table.Root>

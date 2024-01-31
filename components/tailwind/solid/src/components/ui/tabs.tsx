@@ -1,4 +1,5 @@
-import { Tabs as ArkTabs } from '@ark-ui/solid'
+import { Tabs } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -14,6 +15,13 @@ const styles = tv({
   },
   variants: {
     variant: {
+      enclosed: {
+        root: 'tabs__root--variant_enclosed',
+        list: 'tabs__list--variant_enclosed',
+        trigger: 'tabs__trigger--variant_enclosed',
+        content: 'tabs__content--variant_enclosed',
+        indicator: 'tabs__indicator--variant_enclosed',
+      },
       line: {
         root: 'tabs__root--variant_line',
         list: 'tabs__list--variant_line',
@@ -56,27 +64,14 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Tabs = withProvider(ArkTabs.Root, 'root')
-const TabsContent = withContext(ArkTabs.Content, 'content')
-const TabsIndicator = withContext(ArkTabs.Indicator, 'indicator')
-const TabsList = withContext(ArkTabs.List, 'list')
-const TabsTrigger = withContext(ArkTabs.Trigger, 'trigger')
+export const Root = withProvider(Tabs.Root, 'root')
+export const Content = withContext(Tabs.Content, 'content')
+export const Indicator = withContext(Tabs.Indicator, 'indicator')
+export const List = withContext(Tabs.List, 'list')
+export const Trigger = withContext(Tabs.Trigger, 'trigger')
 
-const Root = Tabs
-const Content = TabsContent
-const Indicator = TabsIndicator
-const List = TabsList
-const Trigger = TabsTrigger
-
-export {
-  Content,
-  Indicator,
-  List,
-  Root,
-  Tabs,
-  TabsContent,
-  TabsIndicator,
-  TabsList,
-  TabsTrigger,
-  Trigger,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface ListProps extends ComponentProps<typeof List> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

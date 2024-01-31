@@ -1,9 +1,7 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
 import { For, createSignal } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import * as Combobox from '~/components/ui/combobox'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
+import { Combobox, IconButton, Input } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Combobox',
@@ -29,13 +27,9 @@ export const Base = () => {
     <Combobox.Root width="2xs" onInputValueChange={handleChange} items={items()}>
       <Combobox.Label>Framework</Combobox.Label>
       <Combobox.Control>
-        <Combobox.Input placeholder="Select a Framework" asChild>
-          <Input />
-        </Combobox.Input>
-        <Combobox.Trigger asChild>
-          <IconButton variant="link" aria-label="open" size="xs">
-            <ChevronsUpDownIcon />
-          </IconButton>
+        <Combobox.Input placeholder="Select a Framework" as={Input} />
+        <Combobox.Trigger as={IconButton} variant="link" aria-label="open" size="xs">
+          <ChevronsUpDownIcon />
         </Combobox.Trigger>
       </Combobox.Control>
       <Combobox.Positioner>

@@ -1,7 +1,7 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import * as Select from '~/components/ui/select'
+import { Select } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Select',
@@ -18,7 +18,7 @@ export const Base = () => {
   ]
 
   return (
-    <Select.Root positioning={{ sameWidth: true }} items={items}>
+    <Select.Root class="w-2xs" positioning={{ sameWidth: true }} items={items}>
       <Select.Label>Framework</Select.Label>
       <Select.Control>
         <Select.Trigger>

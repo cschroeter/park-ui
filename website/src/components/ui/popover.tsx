@@ -1,4 +1,4 @@
-import { Popover as ArkPopover } from '@ark-ui/react/popover'
+import { Popover } from '@ark-ui/react/popover'
 import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { popover } from 'styled-system/recipes'
@@ -6,63 +6,26 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(popover)
 
-const Popover = withProvider(ArkPopover.Root)
-const PopoverAnchor = withContext(styled(ArkPopover.Anchor), 'anchor')
-const PopoverArrow = withContext(styled(ArkPopover.Arrow), 'arrow')
-const PopoverArrowTip = withContext(styled(ArkPopover.ArrowTip), 'arrowTip')
-const PopoverCloseTrigger = withContext(styled(ArkPopover.CloseTrigger), 'closeTrigger')
-const PopoverContent = withContext(styled(ArkPopover.Content), 'content')
-const PopoverDescription = withContext(styled(ArkPopover.Description), 'description')
-const PopoverIndicator = withContext(styled(ArkPopover.Indicator), 'indicator')
-const PopoverPositioner = withContext(styled(ArkPopover.Positioner), 'positioner')
-const PopoverTitle = withContext(styled(ArkPopover.Title), 'title')
-const PopoverTrigger = withContext(styled(ArkPopover.Trigger), 'trigger')
+export const Root = withProvider(Popover.Root)
+export const Anchor = withContext(styled(Popover.Anchor), 'anchor')
+export const Arrow = withContext(styled(Popover.Arrow), 'arrow')
+export const ArrowTip = withContext(styled(Popover.ArrowTip), 'arrowTip')
+export const CloseTrigger = withContext(styled(Popover.CloseTrigger), 'closeTrigger')
+export const Content = withContext(styled(Popover.Content), 'content')
+export const Description = withContext(styled(Popover.Description), 'description')
+export const Indicator = withContext(styled(Popover.Indicator), 'indicator')
+export const Positioner = withContext(styled(Popover.Positioner), 'positioner')
+export const Title = withContext(styled(Popover.Title), 'title')
+export const Trigger = withContext(styled(Popover.Trigger), 'trigger')
 
-const Root = Popover
-const Anchor = PopoverAnchor
-const Arrow = PopoverArrow
-const ArrowTip = PopoverArrowTip
-const CloseTrigger = PopoverCloseTrigger
-const Content = PopoverContent
-const Description = PopoverDescription
-const Indicator = PopoverIndicator
-const Positioner = PopoverPositioner
-const Title = PopoverTitle
-const Trigger = PopoverTrigger
-
-export {
-  Anchor,
-  Arrow,
-  ArrowTip,
-  CloseTrigger,
-  Content,
-  Description,
-  Indicator,
-  Popover,
-  PopoverAnchor,
-  PopoverArrow,
-  PopoverArrowTip,
-  PopoverCloseTrigger,
-  PopoverContent,
-  PopoverDescription,
-  PopoverIndicator,
-  PopoverPositioner,
-  PopoverTitle,
-  PopoverTrigger,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
-}
-
-export interface PopoverProps extends ComponentProps<typeof Popover> {}
-export interface PopoverAnchorProps extends ComponentProps<typeof PopoverAnchor> {}
-export interface PopoverArrowProps extends ComponentProps<typeof PopoverArrow> {}
-export interface PopoverArrowTipProps extends ComponentProps<typeof PopoverArrowTip> {}
-export interface PopoverCloseTriggerProps extends ComponentProps<typeof PopoverCloseTrigger> {}
-export interface PopoverContentProps extends ComponentProps<typeof PopoverContent> {}
-export interface PopoverDescriptionProps extends ComponentProps<typeof PopoverDescription> {}
-export interface PopoverIndicatorProps extends ComponentProps<typeof PopoverIndicator> {}
-export interface PopoverPositionerProps extends ComponentProps<typeof PopoverPositioner> {}
-export interface PopoverTitleProps extends ComponentProps<typeof PopoverTitle> {}
-export interface PopoverTriggerProps extends ComponentProps<typeof PopoverTrigger> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface AnchorProps extends ComponentProps<typeof Anchor> {}
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}

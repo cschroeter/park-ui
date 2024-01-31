@@ -1,4 +1,5 @@
-import { Accordion as ArkAccordion } from '@ark-ui/react/accordion'
+import { Accordion } from '@ark-ui/react/accordion'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -26,27 +27,14 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Accordion = withProvider(ArkAccordion.Root, 'root')
-const AccordionItem = withContext(ArkAccordion.Item, 'item')
-const AccordionItemContent = withContext(ArkAccordion.ItemContent, 'itemContent')
-const AccordionItemIndicator = withContext(ArkAccordion.ItemIndicator, 'itemIndicator')
-const AccordionItemTrigger = withContext(ArkAccordion.ItemTrigger, 'itemTrigger')
+export const Root = withProvider(Accordion.Root, 'root')
+export const Item = withContext(Accordion.Item, 'item')
+export const ItemContent = withContext(Accordion.ItemContent, 'itemContent')
+export const ItemIndicator = withContext(Accordion.ItemIndicator, 'itemIndicator')
+export const ItemTrigger = withContext(Accordion.ItemTrigger, 'itemTrigger')
 
-const Root = Accordion
-const Item = AccordionItem
-const ItemContent = AccordionItemContent
-const ItemIndicator = AccordionItemIndicator
-const ItemTrigger = AccordionItemTrigger
-
-export {
-  Accordion,
-  AccordionItem,
-  AccordionItemContent,
-  AccordionItemIndicator,
-  AccordionItemTrigger,
-  Item,
-  ItemContent,
-  ItemIndicator,
-  ItemTrigger,
-  Root,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemContentProps extends ComponentProps<typeof ItemContent> {}
+export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
+export interface ItemTriggerProps extends ComponentProps<typeof ItemTrigger> {}

@@ -1,4 +1,5 @@
 import { ark } from '@ark-ui/react/factory'
+import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -16,31 +17,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Card = withProvider(ark.div, 'root')
-const CardBody = withContext(ark.div, 'body')
-const CardDescription = withContext(ark.p, 'description')
-const CardFooter = withContext(ark.div, 'footer')
-const CardHeader = withContext(ark.div, 'header')
-const CardTitle = withContext(ark.h3, 'title')
+export const Root = withProvider(ark.div, 'root')
+export const Body = withContext(ark.div, 'body')
+export const Description = withContext(ark.p, 'description')
+export const Footer = withContext(ark.div, 'footer')
+export const Header = withContext(ark.div, 'header')
+export const Title = withContext(ark.h3, 'title')
 
-const Root = Card
-const Body = CardBody
-const Description = CardDescription
-const Footer = CardFooter
-const Header = CardHeader
-const Title = CardTitle
-
-export {
-  Body,
-  Card,
-  CardBody,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Description,
-  Footer,
-  Header,
-  Root,
-  Title,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface BodyProps extends ComponentProps<typeof Body> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface FooterProps extends ComponentProps<typeof Footer> {}
+export interface HeaderProps extends ComponentProps<typeof Header> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}

@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Badge } from '~/components/ui/badge'
+import { Badge } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Badge',

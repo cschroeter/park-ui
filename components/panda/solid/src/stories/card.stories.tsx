@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import * as Card from '~/components/ui/card'
+import { Card } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Card',

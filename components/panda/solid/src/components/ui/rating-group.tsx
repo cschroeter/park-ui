@@ -1,7 +1,4 @@
-import {
-  RatingGroup as ArkRatingGroup,
-  type RatingGroupProps as ArkRatingGroupProps,
-} from '@ark-ui/solid'
+import { RatingGroup as ArkRatingGroup, type RatingGroupRootProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
@@ -9,7 +6,7 @@ import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
-  extends Assign<JsxStyleProps, ArkRatingGroupProps>,
+  extends Assign<JsxStyleProps, RatingGroupRootProps>,
     RatingGroupVariantProps {
   children?: JSX.Element
 }

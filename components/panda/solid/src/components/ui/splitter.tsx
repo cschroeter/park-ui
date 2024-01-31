@@ -1,4 +1,4 @@
-import { Splitter as ArkSplitter } from '@ark-ui/solid'
+import { Splitter } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { splitter } from 'styled-system/recipes'
@@ -6,16 +6,10 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(splitter)
 
-const Splitter = withProvider(styled(ArkSplitter.Root), 'root')
-const SplitterPanel = withContext(styled(ArkSplitter.Panel), 'panel')
-const SplitterResizeTrigger = withContext(styled(ArkSplitter.ResizeTrigger), 'resizeTrigger')
+export const Root = withProvider(styled(Splitter.Root), 'root')
+export const Panel = withContext(styled(Splitter.Panel), 'panel')
+export const ResizeTrigger = withContext(styled(Splitter.ResizeTrigger), 'resizeTrigger')
 
-const Root = Splitter
-const Panel = SplitterPanel
-const ResizeTrigger = SplitterResizeTrigger
-
-export { Panel, ResizeTrigger, Root, Splitter, SplitterPanel, SplitterResizeTrigger }
-
-export interface SplitterProps extends ComponentProps<typeof Splitter> {}
-export interface SplitterPanelProps extends ComponentProps<typeof SplitterPanel> {}
-export interface SplitterResizeTriggerProps extends ComponentProps<typeof SplitterResizeTrigger> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface PanelProps extends ComponentProps<typeof Panel> {}
+export interface ResizeTriggerProps extends ComponentProps<typeof ResizeTrigger> {}

@@ -1,4 +1,5 @@
-import { Toast as ArkToast } from '@ark-ui/solid'
+import { Toast } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -15,27 +16,14 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Toast = withProvider(ArkToast.Root, 'root')
-const ToastCloseTrigger = withContext(ArkToast.CloseTrigger, 'closeTrigger')
-const ToastDescription = withContext(ArkToast.Description, 'description')
-const ToastGroup = withContext(ArkToast.Group, 'group')
-const ToastTitle = withContext(ArkToast.Title, 'title')
+export const Root = withProvider(Toast.Root, 'root')
+export const CloseTrigger = withContext(Toast.CloseTrigger, 'closeTrigger')
+export const Description = withContext(Toast.Description, 'description')
+export const Group = withContext(Toast.Group, 'group')
+export const Title = withContext(Toast.Title, 'title')
 
-const Root = Toast
-const CloseTrigger = ToastCloseTrigger
-const Description = ToastDescription
-const Group = ToastGroup
-const Title = ToastTitle
-
-export {
-  CloseTrigger,
-  Description,
-  Group,
-  Root,
-  Title,
-  Toast,
-  ToastCloseTrigger,
-  ToastDescription,
-  ToastGroup,
-  ToastTitle,
-}
+export type RootProps = ComponentProps<typeof Root>
+export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface GroupProps extends ComponentProps<typeof Group> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}

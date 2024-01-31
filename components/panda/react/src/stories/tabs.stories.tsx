@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Stack } from 'styled-system/jsx'
-import * as Tabs from '~/components/ui/tabs'
+import { Tabs } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Tabs',

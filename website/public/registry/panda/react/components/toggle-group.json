@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "toggle-group.tsx",
-      "content": "import { ToggleGroup as ArkToggleGroup } from '@ark-ui/react/toggle-group'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { toggleGroup } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nconst ToggleGroup = withProvider(styled(ArkToggleGroup.Root), 'root')\nconst ToggleGroupItem = withContext(styled(ArkToggleGroup.Item), 'item')\n\nconst Root = ToggleGroup\nconst Item = ToggleGroupItem\n\nexport { Item, Root, ToggleGroup, ToggleGroupItem }\n\nexport interface ToggleGroupProps extends ComponentProps<typeof ToggleGroup> {}\nexport interface ToggleGroupItemProps extends ComponentProps<typeof ToggleGroupItem> {}\n",
+      "content": "import { ToggleGroup } from '@ark-ui/react/toggle-group'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { toggleGroup } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport const Root = withProvider(styled(ToggleGroup.Root), 'root')\nexport const Item = withContext(styled(ToggleGroup.Item), 'item')\n\nexport interface RootProps extends ComponentProps<typeof Root> {}\nexport interface ItemProps extends ComponentProps<typeof Item> {}\n",
       "hasMultipleParts": true
     }
   ]

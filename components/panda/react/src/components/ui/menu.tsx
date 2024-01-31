@@ -1,4 +1,4 @@
-import { Menu as ArkMenu } from '@ark-ui/react/menu'
+import { Menu } from '@ark-ui/react/menu'
 import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { menu } from 'styled-system/recipes'
@@ -6,73 +6,30 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(menu)
 
-const Menu = withProvider(ArkMenu.Root)
-const MenuArrow = withContext(styled(ArkMenu.Arrow), 'arrow')
-const MenuArrowTip = withContext(styled(ArkMenu.ArrowTip), 'arrowTip')
-const MenuContent = withContext(styled(ArkMenu.Content), 'content')
-const MenuContextTrigger = withContext(styled(ArkMenu.ContextTrigger), 'contextTrigger')
-const MenuItem = withContext(styled(ArkMenu.Item), 'item')
-const MenuItemGroup = withContext(styled(ArkMenu.ItemGroup), 'itemGroup')
-const MenuItemGroupLabel = withContext(styled(ArkMenu.ItemGroupLabel), 'itemGroupLabel')
-const MenuOptionItem = withContext(styled(ArkMenu.OptionItem), 'optionItem')
-const MenuPositioner = withContext(styled(ArkMenu.Positioner), 'positioner')
-const MenuSeparator = withContext(styled(ArkMenu.Separator), 'separator')
-const MenuTrigger = withContext(styled(ArkMenu.Trigger), 'trigger')
-const MenuTriggerItem = withContext(styled(ArkMenu.TriggerItem), 'triggerItem')
+export const Root = withProvider(Menu.Root)
+export const Arrow = withContext(styled(Menu.Arrow), 'arrow')
+export const ArrowTip = withContext(styled(Menu.ArrowTip), 'arrowTip')
+export const Content = withContext(styled(Menu.Content), 'content')
+export const ContextTrigger = withContext(styled(Menu.ContextTrigger), 'contextTrigger')
+export const Item = withContext(styled(Menu.Item), 'item')
+export const ItemGroup = withContext(styled(Menu.ItemGroup), 'itemGroup')
+export const ItemGroupLabel = withContext(styled(Menu.ItemGroupLabel), 'itemGroupLabel')
+export const OptionItem = withContext(styled(Menu.OptionItem), 'optionItem')
+export const Positioner = withContext(styled(Menu.Positioner), 'positioner')
+export const Separator = withContext(styled(Menu.Separator), 'separator')
+export const Trigger = withContext(styled(Menu.Trigger), 'trigger')
+export const TriggerItem = withContext(styled(Menu.TriggerItem), 'triggerItem')
 
-const Root = Menu
-const Arrow = MenuArrow
-const ArrowTip = MenuArrowTip
-const Content = MenuContent
-const ContextTrigger = MenuContextTrigger
-const Item = MenuItem
-const ItemGroup = MenuItemGroup
-const ItemGroupLabel = MenuItemGroupLabel
-const OptionItem = MenuOptionItem
-const Positioner = MenuPositioner
-const Separator = MenuSeparator
-const Trigger = MenuTrigger
-const TriggerItem = MenuTriggerItem
-
-export {
-  Arrow,
-  ArrowTip,
-  Content,
-  ContextTrigger,
-  Item,
-  ItemGroup,
-  ItemGroupLabel,
-  Menu,
-  MenuArrow,
-  MenuArrowTip,
-  MenuContent,
-  MenuContextTrigger,
-  MenuItem,
-  MenuItemGroup,
-  MenuItemGroupLabel,
-  MenuOptionItem,
-  MenuPositioner,
-  MenuSeparator,
-  MenuTrigger,
-  MenuTriggerItem,
-  OptionItem,
-  Positioner,
-  Root,
-  Separator,
-  Trigger,
-  TriggerItem,
-}
-
-export interface MenuProps extends ComponentProps<typeof Menu> {}
-export interface MenuArrowProps extends ComponentProps<typeof MenuArrow> {}
-export interface MenuArrowTipProps extends ComponentProps<typeof MenuArrowTip> {}
-export interface MenuContentProps extends ComponentProps<typeof MenuContent> {}
-export interface MenuContextTriggerProps extends ComponentProps<typeof MenuContextTrigger> {}
-export interface MenuItemProps extends ComponentProps<typeof MenuItem> {}
-export interface MenuItemGroupProps extends ComponentProps<typeof MenuItemGroup> {}
-export interface MenuItemGroupLabelProps extends ComponentProps<typeof MenuItemGroupLabel> {}
-export interface MenuOptionItemProps extends ComponentProps<typeof MenuOptionItem> {}
-export interface MenuPositionerProps extends ComponentProps<typeof MenuPositioner> {}
-export interface MenuSeparatorProps extends ComponentProps<typeof MenuSeparator> {}
-export interface MenuTriggerProps extends ComponentProps<typeof MenuTrigger> {}
-export interface MenuTriggerItemProps extends ComponentProps<typeof MenuTriggerItem> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface ArrowProps extends ComponentProps<typeof Arrow> {}
+export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface ContentProps extends ComponentProps<typeof Content> {}
+export interface ContextTriggerProps extends ComponentProps<typeof ContextTrigger> {}
+export interface ItemProps extends ComponentProps<typeof Item> {}
+export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
+export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
+export interface OptionItemProps extends ComponentProps<typeof OptionItem> {}
+export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface SeparatorProps extends ComponentProps<typeof Separator> {}
+export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface TriggerItemProps extends ComponentProps<typeof TriggerItem> {}

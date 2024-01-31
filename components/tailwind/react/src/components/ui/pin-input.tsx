@@ -1,12 +1,9 @@
-import {
-  PinInput as ArkPinInput,
-  type PinInputProps as ArkPinInputProps,
-} from '@ark-ui/react/pin-input'
+import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/react/pin-input'
 import { forwardRef, type ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { Input } from '~/components/ui/input'
 
-export interface PinInputProps extends ArkPinInputProps, PinInputVariantProps {
+export interface PinInputProps extends PinInputRootProps, PinInputVariantProps {
   children?: ReactNode
   /**
    * The number of inputs to render.

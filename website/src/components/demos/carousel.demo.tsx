@@ -1,9 +1,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import type { CarouselProps } from '~/components/ui/carousel'
 import * as Carousel from '~/components/ui/carousel'
 import { IconButton } from '~/components/ui/icon-button'
 
-export const Demo = (props: CarouselProps) => {
+export const Demo = (props: Carousel.RootProps) => {
   const images = [
     'https://tinyurl.com/5b6ka8jd',
     'https://tinyurl.com/7rmccdn5',
@@ -19,7 +18,7 @@ export const Demo = (props: CarouselProps) => {
             <Carousel.Item key={index} index={index}>
               <img
                 src={image}
-                alt={`Slide Image ${index}`}
+                alt={`Slide ${index}`}
                 style={{ height: '398px', width: '100%', objectFit: 'cover' }}
               />
             </Carousel.Item>
