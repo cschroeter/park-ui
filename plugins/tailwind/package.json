@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/tailwind-plugin",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "Tailwind CSS plugin for Ark UI components",
   "keywords": [
     "Ark UI",
