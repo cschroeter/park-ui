@@ -28,10 +28,12 @@ export const PinInput = (props: PinInputProps) => {
       <ArkPinInput.Control class={control()}>
         <Index each={Array.from({ length: localProps.length ?? 4 }, (_, index) => index)}>
           {(index) => (
-            <ArkPinInput.Input class={input()} index={index()} asChild>
-              {/* Attention: this only works with static css for inputs */}
-              <Input size={variantProps.size} />
-            </ArkPinInput.Input>
+            <ArkPinInput.Input
+              class={input()}
+              index={index()}
+              as={Input}
+              size={variantProps.size}
+            />
           )}
         </Index>
       </ArkPinInput.Control>

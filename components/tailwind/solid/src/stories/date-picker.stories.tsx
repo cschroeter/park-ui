@@ -14,13 +14,9 @@ export const Base = () => {
     <DatePicker.Root positioning={{ sameWidth: true }} startOfWeek={1}>
       <DatePicker.Label>Date Picker</DatePicker.Label>
       <DatePicker.Control>
-        <DatePicker.Input asChild>
-          <Input />
-        </DatePicker.Input>
-        <DatePicker.Trigger asChild>
-          <IconButton variant="outline" aria-label="Open date picker">
-            <CalendarIcon />
-          </IconButton>
+        <DatePicker.Input as={Input} />
+        <DatePicker.Trigger as={IconButton} variant="outline">
+          <CalendarIcon />
         </DatePicker.Trigger>
       </DatePicker.Control>
       <DatePicker.Positioner>
@@ -29,20 +25,14 @@ export const Base = () => {
             {(api) => (
               <>
                 <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronLeftIcon />
-                    </IconButton>
+                  <DatePicker.PrevTrigger as={IconButton} variant="ghost" size="sm">
+                    <ChevronLeftIcon />
                   </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                      <DatePicker.RangeText />
-                    </Button>
+                  <DatePicker.ViewTrigger as={IconButton} variant="ghost" size="sm">
+                    <DatePicker.RangeText />
                   </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronRightIcon />
-                    </IconButton>
+                  <DatePicker.NextTrigger as={IconButton} variant="ghost" size="sm">
+                    <ChevronRightIcon />
                   </DatePicker.NextTrigger>
                 </DatePicker.ViewControl>
                 <DatePicker.Table>
@@ -62,8 +52,8 @@ export const Base = () => {
                           <Index each={week()}>
                             {(day) => (
                               <DatePicker.TableCell value={day()}>
-                                <DatePicker.TableCellTrigger asChild>
-                                  <IconButton variant="ghost">{day().day}</IconButton>
+                                <DatePicker.TableCellTrigger as={IconButton} variant="ghost">
+                                  {day().day}
                                 </DatePicker.TableCellTrigger>
                               </DatePicker.TableCell>
                             )}
@@ -80,20 +70,14 @@ export const Base = () => {
             {(api) => (
               <>
                 <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronLeftIcon />
-                    </IconButton>
+                  <DatePicker.PrevTrigger as={IconButton} variant="ghost" size="sm">
+                    <ChevronLeftIcon />
                   </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                      <DatePicker.RangeText />
-                    </Button>
+                  <DatePicker.ViewTrigger as={Button} variant="ghost" size="sm">
+                    <DatePicker.RangeText />
                   </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronRightIcon />
-                    </IconButton>
+                  <DatePicker.NextTrigger as={IconButton} variant="ghost" size="sm">
+                    <ChevronRightIcon />
                   </DatePicker.NextTrigger>
                 </DatePicker.ViewControl>
                 <DatePicker.Table>
@@ -104,8 +88,8 @@ export const Base = () => {
                           <Index each={months()}>
                             {(month) => (
                               <DatePicker.TableCell value={month().value}>
-                                <DatePicker.TableCellTrigger asChild>
-                                  <Button variant="ghost">{month().label}</Button>
+                                <DatePicker.TableCellTrigger as={Button} variant="ghost">
+                                  {month().label}
                                 </DatePicker.TableCellTrigger>
                               </DatePicker.TableCell>
                             )}
@@ -122,20 +106,16 @@ export const Base = () => {
             {(api) => (
               <>
                 <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
+                  <DatePicker.PrevTrigger as={IconButton} variant="ghost" size="sm">
+                    <IconButton>
                       <ChevronLeftIcon />
                     </IconButton>
                   </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                      <DatePicker.RangeText />
-                    </Button>
+                  <DatePicker.ViewTrigger as={Button} variant="ghost" size="sm">
+                    <DatePicker.RangeText />
                   </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronRightIcon />
-                    </IconButton>
+                  <DatePicker.NextTrigger as={IconButton} variant="ghost" size="sm">
+                    <ChevronRightIcon />
                   </DatePicker.NextTrigger>
                 </DatePicker.ViewControl>
                 <DatePicker.Table>
@@ -146,8 +126,8 @@ export const Base = () => {
                           <Index each={years()}>
                             {(year) => (
                               <DatePicker.TableCell value={year().value}>
-                                <DatePicker.TableCellTrigger asChild>
-                                  <Button variant="ghost">{year().label}</Button>
+                                <DatePicker.TableCellTrigger as={Button} variant="ghost">
+                                  {year().label}
                                 </DatePicker.TableCellTrigger>
                               </DatePicker.TableCell>
                             )}

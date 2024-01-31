@@ -24,7 +24,7 @@ export const Base = () => {
   }
 
   return (
-    <Combobox.Root className="w-2xs" onInputValueChange={handleChange} items={items()}>
+    <Combobox.Root class="w-2xs" onInputValueChange={handleChange} items={items()}>
       <Combobox.Label>Framework</Combobox.Label>
       <Combobox.Control>
         <Combobox.Input placeholder="Select a Framework" as={Input} />

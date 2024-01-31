@@ -11,30 +11,29 @@ export default meta
 export const Base = () => {
   return (
     <Dialog.Root>
-      <Dialog.Trigger asChild>
-        <Button>Open Dialog</Button>
-      </Dialog.Trigger>
+      <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
       <Dialog.Backdrop />
       <Dialog.Positioner>
         <Dialog.Content>
-          <div className="flex flex-col gap-8 p-6">
-            <div className="flex flex-col gap-1">
+          <div class="flex flex-col gap-8 p-6">
+            <div class="flex flex-col gap-1">
               <Dialog.Title>Dialog Title</Dialog.Title>
               <Dialog.Description>Dialog Description</Dialog.Description>
             </div>
-            <div className="flex gap-3 flex-row w-full">
-              <Dialog.CloseTrigger asChild>
-                <Button className="w-full" variant="outline">
-                  Cancel
-                </Button>
+            <div class="flex gap-3 flex-row w-full">
+              <Dialog.CloseTrigger class="w-full" as={Button} variant="outline">
+                Cancel
               </Dialog.CloseTrigger>
-              <Button className="w-full">Confirm</Button>
+              <Button class="w-full">Confirm</Button>
             </div>
           </div>
-          <Dialog.CloseTrigger className="absolute top-2 right-2" asChild>
-            <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
-              <XIcon />
-            </IconButton>
+          <Dialog.CloseTrigger
+            class="absolute top-2 right-2"
+            as={IconButton}
+            variant="ghost"
+            size="sm"
+          >
+            <XIcon />
           </Dialog.CloseTrigger>
         </Dialog.Content>
       </Dialog.Positioner>

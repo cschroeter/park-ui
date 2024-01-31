@@ -12,15 +12,14 @@ export default meta
 export const Base = () => {
   return (
     <HoverCard.Root>
-      <HoverCard.Trigger asChild>
-        <Link
-          href="https://twitter.com/grizzly_codes/"
-          target="_blank"
-          textStyle="sm"
-          fontWeight="medium"
-        >
-          @grizzly_codes
-        </Link>
+      <HoverCard.Trigger
+        as={Link}
+        href="https://twitter.com/grizzly_codes/"
+        target="_blank"
+        textStyle="sm"
+        fontWeight="medium"
+      >
+        @grizzly_codes
       </HoverCard.Trigger>
 
       <HoverCard.Positioner>

@@ -11,7 +11,7 @@ export default meta
 
 export const Base = () => {
   return (
-    <TagsInput.Root className="max-w-xs" value={['React', 'Solid', 'Vue']}>
+    <TagsInput.Root class="max-w-xs" value={['React', 'Solid', 'Vue']}>
       {(api) => (
         <>
           <TagsInput.Label>Frameworks</TagsInput.Label>
@@ -19,20 +19,20 @@ export const Base = () => {
             <Index each={api().value}>
               {(value, index) => (
                 <TagsInput.Item index={index} value={value()}>
-                  <TagsInput.ItemText>{value()}</TagsInput.ItemText>
-                  <TagsInput.ItemDeleteTrigger asChild>
-                    <IconButton variant="link" size="xs">
+                  <TagsInput.ItemPreview>
+                    <TagsInput.ItemText>{value()}</TagsInput.ItemText>
+                    <TagsInput.ItemDeleteTrigger as={IconButton} variant="link" size="xs">
                       <XIcon />
-                    </IconButton>
-                  </TagsInput.ItemDeleteTrigger>
+                    </TagsInput.ItemDeleteTrigger>
+                  </TagsInput.ItemPreview>
                   <TagsInput.ItemInput />
                 </TagsInput.Item>
               )}
             </Index>
             <TagsInput.Input placeholder="Add Framework" />
           </TagsInput.Control>
-          <TagsInput.ClearTrigger asChild>
-            <Button variant="outline">Clear</Button>
+          <TagsInput.ClearTrigger as={Button} variant="outline">
+            Clear
           </TagsInput.ClearTrigger>
         </>
       )}

@@ -16,9 +16,7 @@ export const Base = () => {
         <>
           <ColorPicker.Label>Color Picker</ColorPicker.Label>
           <ColorPicker.Control>
-            <ColorPicker.ChannelInput channel="hex" asChild>
-              <Input />
-            </ColorPicker.ChannelInput>
+            <ColorPicker.ChannelInput channel="hex" as={Input} />
             <ColorPicker.Trigger>
               <IconButton variant="outline">
                 <ColorPicker.Swatch value={api().value} />
@@ -27,18 +25,16 @@ export const Base = () => {
           </ColorPicker.Control>
           <ColorPicker.Positioner>
             <ColorPicker.Content>
-              <div className="flex flex-col gap-3">
+              <div class="flex flex-col gap-3">
                 <ColorPicker.Area>
                   <ColorPicker.AreaBackground />
                   <ColorPicker.AreaThumb />
                 </ColorPicker.Area>
-                <div className="flex gap-3">
-                  <ColorPicker.EyeDropperTrigger asChild>
-                    <IconButton size="xs" variant="outline" aria-label="Pick a color">
-                      <PipetteIcon />
-                    </IconButton>
+                <div class="flex gap-3">
+                  <ColorPicker.EyeDropperTrigger as={IconButton} size="xs" variant="outline">
+                    <PipetteIcon />
                   </ColorPicker.EyeDropperTrigger>
-                  <div className="flex flex-col gap-2 flex-1">
+                  <div class="flex flex-col gap-2 flex-1">
                     <ColorPicker.ChannelSlider channel="hue">
                       <ColorPicker.ChannelSliderTrack />
                       <ColorPicker.ChannelSliderThumb />
@@ -50,18 +46,12 @@ export const Base = () => {
                     </ColorPicker.ChannelSlider>
                   </div>
                 </div>
-                <div className="flex gap-2.5">
-                  <ColorPicker.ChannelInput channel="hex" asChild>
-                    <Input size="2xs" />
-                  </ColorPicker.ChannelInput>
-                  <ColorPicker.ChannelInput channel="alpha" asChild>
-                    <Input size="2xs" />
-                  </ColorPicker.ChannelInput>
+                <div class="flex gap-2.5">
+                  <ColorPicker.ChannelInput channel="hex" as={Input} size="2xs" />
+                  <ColorPicker.ChannelInput channel="alpha" as={Input} size="2xs" />
                 </div>
-                <div className="flex flex-col gap-1.5">
-                  <Text className="font-medium text-fg-default" textStyle="xs">
-                    Saved Colors
-                  </Text>
+                <div class="flex flex-col gap-1.5">
+                  <Text class="font-medium text-fg-default">Saved Colors</Text>
                   <ColorPicker.SwatchGroup>
                     <Index each={presets}>
                       {(color) => (

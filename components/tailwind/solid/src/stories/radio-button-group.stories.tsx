@@ -15,11 +15,7 @@ export const Base = () => {
     <RadioButtonGroup.Root value="M">
       <Index each={options}>
         {(option) => (
-          <RadioButtonGroup.Item
-            className="px-0"
-            value={option().value}
-            disabled={option().disabled}
-          >
+          <RadioButtonGroup.Item class="px-0" value={option().value} disabled={option().disabled}>
             <RadioButtonGroup.ItemControl />
             <RadioButtonGroup.ItemText>{option().value}</RadioButtonGroup.ItemText>
           </RadioButtonGroup.Item>

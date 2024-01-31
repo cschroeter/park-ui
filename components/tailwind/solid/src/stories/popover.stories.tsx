@@ -11,25 +11,21 @@ export default meta
 export const Base = () => {
   return (
     <Popover.Root>
-      <Popover.Trigger asChild>
-        <Button>Open Popover</Button>
-      </Popover.Trigger>
+      <Popover.Trigger as={Button}>Open Popover</Popover.Trigger>
       <Popover.Positioner>
         <Popover.Content>
           <Popover.Arrow>
             <Popover.ArrowTip />
           </Popover.Arrow>
-          <div className="flex flex-col gap-1">
+          <div class="flex flex-col gap-1">
             <Popover.Title>Favorite Framework</Popover.Title>
             <Popover.Description>
               Tell us what is your favorite framework and why you love to use it.
             </Popover.Description>
           </div>
-          <div className="absolute top-1 right-1">
-            <Popover.CloseTrigger asChild>
-              <IconButton aria-label="Close Popover" variant="ghost" size="sm">
-                <XIcon />
-              </IconButton>
+          <div class="absolute top-1 right-1">
+            <Popover.CloseTrigger as={IconButton} variant="ghost" size="sm">
+              <XIcon />
             </Popover.CloseTrigger>
           </div>
         </Popover.Content>

@@ -15,7 +15,7 @@ export const Base = () => (
 )
 
 export const Sizes = () => (
-  <div className="flex flex-col gap-2.5">
+  <div class="flex flex-col gap-2.5">
     <Icon size="xs">
       <DiamondIcon />
     </Icon>

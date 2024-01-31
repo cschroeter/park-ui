@@ -16,9 +16,7 @@ export const Base = () => {
     >
       {(api) => (
         <>
-          <Editable.Label asChild>
-            <FormLabel>Framework</FormLabel>
-          </Editable.Label>
+          <Editable.Label as={FormLabel}>Framework</Editable.Label>
           <Editable.Area>
             <Editable.Input />
             <Editable.Preview />
@@ -26,16 +24,16 @@ export const Base = () => {
           <Editable.Control>
             {api().isEditing ? (
               <>
-                <Editable.SubmitTrigger asChild>
-                  <Button variant="link">Save</Button>
+                <Editable.SubmitTrigger as={Button} variant="link">
+                  Save
                 </Editable.SubmitTrigger>
-                <Editable.CancelTrigger asChild>
-                  <Button variant="link">Cancel</Button>
+                <Editable.CancelTrigger as={Button} variant="link">
+                  Cancel
                 </Editable.CancelTrigger>
               </>
             ) : (
-              <Editable.EditTrigger asChild>
-                <Button variant="link">Edit</Button>
+              <Editable.EditTrigger as={Button} variant="link">
+                Edit
               </Editable.EditTrigger>
             )}
           </Editable.Control>

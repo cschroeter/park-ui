@@ -8,7 +8,7 @@ export interface IconProps extends IconVariantProps, HTMLStyledProps<'svg'> {
 }
 
 export const Icon = (props: IconProps) => {
-  return <StyledIcon asChild {...props} />
+  return <StyledIcon {...props} />
 }
 
 const StyledIcon = styled(ark.svg, icon)

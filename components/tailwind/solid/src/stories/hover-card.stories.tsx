@@ -11,15 +11,14 @@ export default meta
 export const Base = () => {
   return (
     <HoverCard.Root>
-      <HoverCard.Trigger asChild>
-        <Link
-          className="font-medium"
-          href="https://twitter.com/grizzly_codes/"
-          target="_blank"
-          textStyle="sm"
-        >
-          @grizzly_codes
-        </Link>
+      <HoverCard.Trigger
+        class="font-medium"
+        as={Link}
+        href="https://twitter.com/grizzly_codes/"
+        target="_blank"
+        textStyle="sm"
+      >
+        @grizzly_codes
       </HoverCard.Trigger>
 
       <HoverCard.Positioner>
@@ -27,21 +26,21 @@ export const Base = () => {
           <HoverCard.Arrow>
             <HoverCard.ArrowTip />
           </HoverCard.Arrow>
-          <div className="flex gap-4 flex-row">
+          <div class="flex gap-4 flex-row">
             <Avatar
               name="Christian Schröter"
               src="https://avatars.githubusercontent.com/u/1846056"
             />
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-1">
-                <Text className="font-semibold" textStyle="sm">
+            <div class="flex flex-col gap-3">
+              <div class="flex flex-col gap-1">
+                <Text class="font-semibold" textStyle="sm">
                   @grizzly_codes
                 </Text>
-                <Text className="text-fg-muted" textStyle="sm">
+                <Text class="text-fg-muted" textStyle="sm">
                   Staff Software Engineer working at vivenu GmbH
                 </Text>
               </div>
-              <div className="flex gap-1 text-fg-subtle" textStyle="xs">
+              <div class="flex gap-1 text-fg-subtle" textStyle="xs">
                 <Icon>
                   <MapPinIcon />
                 </Icon>

@@ -10,7 +10,7 @@ export default meta
 export const Base = () => <PinInput>Label</PinInput>
 
 export const Sizes = () => (
-  <div className="flex flex-col gap-2.5">
+  <div class="flex flex-col gap-2.5">
     <PinInput size="xs">xs</PinInput>
     <PinInput size="sm">sm</PinInput>
     <PinInput size="md">md</PinInput>

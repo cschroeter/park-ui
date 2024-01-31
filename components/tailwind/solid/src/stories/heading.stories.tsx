@@ -10,7 +10,7 @@ export default meta
 export const Base = () => <Heading>Sphinx of black quartz, judge my vow.</Heading>
 
 export const HTMLTags = () => (
-  <div className="flex flex-col gap-2.5">
+  <div class="flex flex-col gap-2.5">
     <Heading as="h1">Level 1</Heading>
     <Heading as="h2">Level 2</Heading>
     <Heading as="h3">Level 3</Heading>
@@ -18,7 +18,7 @@ export const HTMLTags = () => (
 )
 
 export const Sizes = () => (
-  <div className="flex flex-col gap-2.5">
+  <div class="flex flex-col gap-2.5">
     <Heading textStyle="xs">Ag</Heading>
     <Heading textStyle="sm">Ag</Heading>
     <Heading textStyle="md">Ag</Heading>
