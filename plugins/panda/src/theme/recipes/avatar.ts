@@ -7,7 +7,6 @@ export const avatar = defineSlotRecipe({
   base: {
     root: {
       borderRadius: 'full',
-      borderWidth: '1px',
       flexShrink: 0,
     },
     fallback: {
