@@ -1,23 +1,23 @@
-import { Combobox as ArkCombobox } from '@ark-ui/solid'
+import { Combobox } from '@ark-ui/solid'
 import { styled } from 'styled-system/jsx'
 import { combobox } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(combobox)
 
-const Root = withProvider(styled(ArkCombobox.Root), 'root')
-const ClearTrigger = withContext(styled(ArkCombobox.ClearTrigger), 'clearTrigger')
-const Content = withContext(styled(ArkCombobox.Content), 'content')
-const Control = withContext(styled(ArkCombobox.Control), 'control')
-const Input = withContext(styled(ArkCombobox.Input), 'input')
-const Item = withContext(styled(ArkCombobox.Item), 'item')
-const ItemGroup = withContext(styled(ArkCombobox.ItemGroup), 'itemGroup')
-const ItemGroupLabel = withContext(styled(ArkCombobox.ItemGroupLabel), 'itemGroupLabel')
-const ItemIndicator = withContext(styled(ArkCombobox.ItemIndicator), 'itemIndicator')
-const ItemText = withContext(styled(ArkCombobox.ItemText), 'itemText')
-const Label = withContext(styled(ArkCombobox.Label), 'label')
-const Positioner = withContext(styled(ArkCombobox.Positioner), 'positioner')
-const Trigger = withContext(styled(ArkCombobox.Trigger), 'trigger')
+const Root = withProvider(styled(Combobox.Root), 'root')
+const ClearTrigger = withContext(styled(Combobox.ClearTrigger), 'clearTrigger')
+const Content = withContext(styled(Combobox.Content), 'content')
+const Control = withContext(styled(Combobox.Control), 'control')
+const Input = withContext(styled(Combobox.Input), 'input')
+const Item = withContext(styled(Combobox.Item), 'item')
+const ItemGroup = withContext(styled(Combobox.ItemGroup), 'itemGroup')
+const ItemGroupLabel = withContext(styled(Combobox.ItemGroupLabel), 'itemGroupLabel')
+const ItemIndicator = withContext(styled(Combobox.ItemIndicator), 'itemIndicator')
+const ItemText = withContext(styled(Combobox.ItemText), 'itemText')
+const Label = withContext(styled(Combobox.Label), 'label')
+const Positioner = withContext(styled(Combobox.Positioner), 'positioner')
+const Trigger = withContext(styled(Combobox.Trigger), 'trigger')
 
 export {
   ClearTrigger,

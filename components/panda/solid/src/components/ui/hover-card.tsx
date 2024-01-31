@@ -1,15 +1,15 @@
-import { HoverCard as ArkHoverCard } from '@ark-ui/solid'
+import { HoverCard } from '@ark-ui/solid'
 import { styled } from 'styled-system/jsx'
 import { hoverCard } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(hoverCard)
 
-const Root = withProvider(ArkHoverCard.Root)
-const Arrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')
-const ArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')
-const Content = withContext(styled(ArkHoverCard.Content), 'content')
-const Positioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')
-const Trigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')
+const Root = withProvider(HoverCard.Root)
+const Arrow = withContext(styled(HoverCard.Arrow), 'arrow')
+const ArrowTip = withContext(styled(HoverCard.ArrowTip), 'arrowTip')
+const Content = withContext(styled(HoverCard.Content), 'content')
+const Positioner = withContext(styled(HoverCard.Positioner), 'positioner')
+const Trigger = withContext(styled(HoverCard.Trigger), 'trigger')
 
 export { Arrow, ArrowTip, Content, Positioner, Root, Trigger }
