@@ -57,7 +57,6 @@
       "href": "https://park-ui.com/registry/panda/solid/components/icon-button.json"
     },
     { "name": "Icon", "href": "https://park-ui.com/registry/panda/solid/components/icon.json" },
-    { "name": "Index", "href": "https://park-ui.com/registry/panda/solid/components/index.json" },
     { "name": "Input", "href": "https://park-ui.com/registry/panda/solid/components/input.json" },
     { "name": "Kbd", "href": "https://park-ui.com/registry/panda/solid/components/kbd.json" },
     { "name": "Link", "href": "https://park-ui.com/registry/panda/solid/components/link.json" },

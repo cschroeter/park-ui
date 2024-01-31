@@ -43,7 +43,7 @@ const generateIndex = async (options: Options) => {
         //   }
         //   return true
         // })
-        // filter index.tsx files
+        .filter((component) => !component.includes('index.ts'))
         .map((component) => ({
           name: pascalCase(path.parse(component).name),
           href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${
