@@ -29,10 +29,11 @@ export const tagsInput = defineSlotRecipe({
       },
     },
     input: {
-      outline: 'none',
       background: 'transparent',
+      color: 'fg.default',
+      outline: 'none',
     },
-    item: {
+    itemPreview: {
       alignItems: 'center',
       borderColor: 'border.default',
       borderRadius: 'l1',
@@ -50,6 +51,7 @@ export const tagsInput = defineSlotRecipe({
     },
     itemInput: {
       background: 'transparent',
+      color: 'fg.default',
       outline: 'none',
     },
     label: {
@@ -74,7 +76,7 @@ export const tagsInput = defineSlotRecipe({
           px: '3',
           py: '7px', // TODO line break
         },
-        item: {
+        itemPreview: {
           gap: '1',
           h: '6',
           pe: '1',

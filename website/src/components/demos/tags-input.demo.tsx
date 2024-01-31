@@ -12,12 +12,14 @@ export const Demo = (props: TagsInput.RootProps) => {
           <TagsInput.Control>
             {api.value.map((value, index) => (
               <TagsInput.Item key={index} index={index} value={value}>
-                <TagsInput.ItemText>{value}</TagsInput.ItemText>
-                <TagsInput.ItemDeleteTrigger asChild>
-                  <IconButton variant="link" size="xs">
-                    <XIcon />
-                  </IconButton>
-                </TagsInput.ItemDeleteTrigger>
+                <TagsInput.ItemPreview>
+                  <TagsInput.ItemText>{value}</TagsInput.ItemText>
+                  <TagsInput.ItemDeleteTrigger asChild>
+                    <IconButton variant="link" size="xs">
+                      <XIcon />
+                    </IconButton>
+                  </TagsInput.ItemDeleteTrigger>
+                </TagsInput.ItemPreview>
                 <TagsInput.ItemInput />
               </TagsInput.Item>
             ))}
