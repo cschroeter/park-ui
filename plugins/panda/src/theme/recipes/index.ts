@@ -15,7 +15,6 @@ import { drawer } from './drawer'
 import { editable } from './editable'
 import { fileUpload } from './file-upload'
 import { formLabel } from './form-label'
-import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { iconButton } from './icon-button'
@@ -40,6 +39,7 @@ import { switchRecipe } from './switch'
 import { table } from './table'
 import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
+import { text } from './text'
 import { textarea } from './textarea'
 import { toast } from './toast'
 import { toggleGroup } from './toggle-group'
@@ -50,7 +50,6 @@ export const recipes = {
   button,
   code,
   formLabel,
-  heading,
   icon,
   iconButton,
   input,
@@ -58,6 +57,7 @@ export const recipes = {
   link,
   skeleton,
   textarea,
+  text,
 }
 
 export const slotRecipes = {

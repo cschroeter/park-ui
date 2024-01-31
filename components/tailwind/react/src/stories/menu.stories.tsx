@@ -35,7 +35,7 @@ export const Base = () => {
                   <UserIcon />
                   Profile
                 </div>
-                <Text className="text-fg-subtle" as="span" textStyle="xs">
+                <Text className="text-fg-subtle" as="span" size="sm">
                   ⇧⌘P
                 </Text>
               </div>
@@ -50,7 +50,7 @@ export const Base = () => {
                 <div className="flex gap-2">
                   <SettingsIcon /> Settings
                 </div>
-                <Text className="text-fg-subtle" as="span" textStyle="xs">
+                <Text className="text-fg-subtle" as="span" size="sm">
                   ⌘,
                 </Text>
               </div>

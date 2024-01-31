@@ -51,7 +51,9 @@ export const Base = () => {
                   <ColorPicker.ChannelInput channel="alpha" as={Input} size="2xs" />
                 </div>
                 <div class="flex flex-col gap-1.5">
-                  <Text class="font-medium text-fg-default">Saved Colors</Text>
+                  <Text class="font-medium text-fg-default" size="xs">
+                    Saved Colors
+                  </Text>
                   <ColorPicker.SwatchGroup>
                     <Index each={presets}>
                       {(color) => (

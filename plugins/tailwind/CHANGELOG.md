@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Replaced `heading` recipe in favor of `text` recipe. Please update your code snippets accordingly.
+
 ## [0.18.0] - 2024-01-31
 
 This release marks an important milestone for Park UI as we have upgraded to the new major version 2.0 of Ark UI. Please

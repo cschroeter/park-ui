@@ -1,6 +1,6 @@
 import { MapPinIcon } from 'lucide-react'
-import { HStack, Stack, styled } from 'styled-system/jsx'
-import { Avatar } from '~/components/ui'
+import { HStack, Stack } from 'styled-system/jsx'
+import { Avatar, Link } from '~/components/ui'
 import * as HoverCard from '~/components/ui/hover-card'
 import { Icon } from '~/components/ui/icon'
 import { Text } from '~/components/ui/text'
@@ -9,9 +9,7 @@ export const Demo = (props: HoverCard.RootProps) => {
   return (
     <HoverCard.Root {...props}>
       <HoverCard.Trigger asChild>
-        <styled.a href="https://twitter.com/grizzly_codes/" textStyle="sm" fontWeight="medium">
-          @grizzly_codes
-        </styled.a>
+        <Link href="https://twitter.com/grizzly_codes/">@grizzly_codes</Link>
       </HoverCard.Trigger>
 
       <HoverCard.Positioner>
@@ -26,18 +24,18 @@ export const Demo = (props: HoverCard.RootProps) => {
             />
             <Stack gap="3">
               <Stack gap="1">
-                <Text textStyle="sm" fontWeight="semibold">
+                <Text size="sm" fontWeight="semibold">
                   @grizzly_codes
                 </Text>
-                <Text textStyle="sm" color="fg.muted">
+                <Text size="sm" color="fg.muted">
                   Staff Software Engineer working at vivenu GmbH
                 </Text>
               </Stack>
-              <HStack gap="1" color="fg.subtle" textStyle="xs">
-                <Icon>
+              <HStack gap="1" color="fg.subtle">
+                <Icon size="sm">
                   <MapPinIcon />
                 </Icon>
-                <Text>Joined Dezember 2011</Text>
+                <Text size="xs">Joined Dezember 2011</Text>
               </HStack>
             </Stack>
           </Stack>

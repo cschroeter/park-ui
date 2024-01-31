@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "text.tsx",
-      "content": "import { mergeProps, splitProps } from 'solid-js'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\n\ntype As = 'p' | 'span' | 'div' | 'label'\n\nexport type TextProps = {\n  as?: As\n} & HTMLStyledProps<As>\n\nexport const Text = (props: TextProps) => {\n  const mergedProps = mergeProps({ as: 'p' }, props)\n  const [local, rootProps] = splitProps(mergedProps, ['as'])\n  const Dynamic = styled(local.as as As)\n\n  return <Dynamic {...rootProps} />\n}\n",
+      "content": "import { mergeProps, splitProps } from 'solid-js'\nimport { styled, type HTMLStyledProps, type StyledComponent } from 'styled-system/jsx'\nimport { text, type TextVariantProps } from 'styled-system/recipes'\n\ntype As = 'p' | 'span' | 'div' | 'label'\n\nexport type TextProps = {\n  as?: As\n} & TextVariantProps &\n  HTMLStyledProps<As>\n\nexport const Text = (props: TextProps) => {\n  const mergedProps = mergeProps({ as: 'p' }, props)\n  const [localProps, rootProps] = splitProps(mergedProps, ['as'])\n\n  const Dynamic = styled(localProps.as as As, text) as StyledComponent<As>\n\n  return <Dynamic {...rootProps} />\n}\n",
       "hasMultipleParts": false
     }
   ]

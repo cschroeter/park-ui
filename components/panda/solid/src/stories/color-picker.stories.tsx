@@ -52,7 +52,7 @@ export const Base = () => {
                   <ColorPicker.ChannelInput channel="alpha" as={Input} size="2xs" />
                 </HStack>
                 <Stack gap="1.5">
-                  <Text textStyle="xs" fontWeight="medium" color="fg.default">
+                  <Text size="xs" fontWeight="medium" color="fg.default">
                     Saved Colors
                   </Text>
                   <ColorPicker.SwatchGroup>

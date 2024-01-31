@@ -58,7 +58,7 @@ export const Base = () => {
                   </ColorPicker.ChannelInput>
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <Text className="font-medium text-fg-default" textStyle="xs">
+                  <Text className="font-medium text-fg-default" size="xs">
                     Saved Colors
                   </Text>
                   <ColorPicker.SwatchGroup>
