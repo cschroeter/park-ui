@@ -10,9 +10,7 @@ import {
   UserIcon,
   UserPlusIcon,
 } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import * as Menu from '~/components/ui/menu'
-import { Text } from '~/components/ui/text'
+import { Button, Menu, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Menu',

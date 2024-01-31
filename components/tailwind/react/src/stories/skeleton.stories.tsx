@@ -1,7 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { useState } from 'react'
-import { Button } from '~/components/ui/button'
-import { Skeleton } from '~/components/ui/skeleton'
+import { Button, Skeleton } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Skeleton',

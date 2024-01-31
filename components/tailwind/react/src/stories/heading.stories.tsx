@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { Heading } from '~/components/ui/heading'
+import { Heading } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Heading',

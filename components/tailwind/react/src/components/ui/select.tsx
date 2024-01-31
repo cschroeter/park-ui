@@ -110,35 +110,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Select = withProvider(ArkSelect.Root, 'root')
-const SelectClearTrigger = withContext(ArkSelect.ClearTrigger, 'clearTrigger')
-const SelectContent = withContext(ArkSelect.Content, 'content')
-const SelectControl = withContext(ArkSelect.Control, 'control')
-const SelectIndicator = withContext(ArkSelect.Indicator, 'indicator')
-const SelectItem = withContext(ArkSelect.Item, 'item')
-const SelectItemGroup = withContext(ArkSelect.ItemGroup, 'itemGroup')
-const SelectItemGroupLabel = withContext(ArkSelect.ItemGroupLabel, 'itemGroupLabel')
-const SelectItemIndicator = withContext(ArkSelect.ItemIndicator, 'itemIndicator')
-const SelectItemText = withContext(ArkSelect.ItemText, 'itemText')
-const SelectLabel = withContext(ArkSelect.Label, 'label')
-const SelectPositioner = withContext(ArkSelect.Positioner, 'positioner')
-const SelectTrigger = withContext(ArkSelect.Trigger, 'trigger')
-const SelectValueText = withContext(ArkSelect.ValueText, 'valueText')
-
-const Root = Select
-const ClearTrigger = SelectClearTrigger
-const Content = SelectContent
-const Control = SelectControl
-const Indicator = SelectIndicator
-const Item = SelectItem
-const ItemGroup = SelectItemGroup
-const ItemGroupLabel = SelectItemGroupLabel
-const ItemIndicator = SelectItemIndicator
-const ItemText = SelectItemText
-const Label = SelectLabel
-const Positioner = SelectPositioner
-const Trigger = SelectTrigger
-const ValueText = SelectValueText
+const Root = withProvider(ArkSelect.Root, 'root')
+const ClearTrigger = withContext(ArkSelect.ClearTrigger, 'clearTrigger')
+const Content = withContext(ArkSelect.Content, 'content')
+const Control = withContext(ArkSelect.Control, 'control')
+const Indicator = withContext(ArkSelect.Indicator, 'indicator')
+const Item = withContext(ArkSelect.Item, 'item')
+const ItemGroup = withContext(ArkSelect.ItemGroup, 'itemGroup')
+const ItemGroupLabel = withContext(ArkSelect.ItemGroupLabel, 'itemGroupLabel')
+const ItemIndicator = withContext(ArkSelect.ItemIndicator, 'itemIndicator')
+const ItemText = withContext(ArkSelect.ItemText, 'itemText')
+const Label = withContext(ArkSelect.Label, 'label')
+const Positioner = withContext(ArkSelect.Positioner, 'positioner')
+const Trigger = withContext(ArkSelect.Trigger, 'trigger')
+const ValueText = withContext(ArkSelect.ValueText, 'valueText')
 
 export {
   ClearTrigger,
@@ -153,20 +138,6 @@ export {
   Label,
   Positioner,
   Root,
-  Select,
-  SelectClearTrigger,
-  SelectContent,
-  SelectControl,
-  SelectIndicator,
-  SelectItem,
-  SelectItemGroup,
-  SelectItemGroupLabel,
-  SelectItemIndicator,
-  SelectItemText,
-  SelectLabel,
-  SelectPositioner,
-  SelectTrigger,
-  SelectValueText,
   Trigger,
   ValueText,
 }

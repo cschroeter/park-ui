@@ -20,29 +20,17 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Popover = withProvider(ArkPopover.Root)
-const PopoverAnchor = withContext(ArkPopover.Anchor, 'anchor')
-const PopoverArrow = withContext(ArkPopover.Arrow, 'arrow')
-const PopoverArrowTip = withContext(ArkPopover.ArrowTip, 'arrowTip')
-const PopoverCloseTrigger = withContext(ArkPopover.CloseTrigger, 'closeTrigger')
-const PopoverContent = withContext(ArkPopover.Content, 'content')
-const PopoverDescription = withContext(ArkPopover.Description, 'description')
-const PopoverIndicator = withContext(ArkPopover.Indicator, 'indicator')
-const PopoverPositioner = withContext(ArkPopover.Positioner, 'positioner')
-const PopoverTitle = withContext(ArkPopover.Title, 'title')
-const PopoverTrigger = withContext(ArkPopover.Trigger, 'trigger')
-
-const Root = Popover
-const Anchor = PopoverAnchor
-const Arrow = PopoverArrow
-const ArrowTip = PopoverArrowTip
-const CloseTrigger = PopoverCloseTrigger
-const Content = PopoverContent
-const Description = PopoverDescription
-const Indicator = PopoverIndicator
-const Positioner = PopoverPositioner
-const Title = PopoverTitle
-const Trigger = PopoverTrigger
+const Root = withProvider(ArkPopover.Root)
+const Anchor = withContext(ArkPopover.Anchor, 'anchor')
+const Arrow = withContext(ArkPopover.Arrow, 'arrow')
+const ArrowTip = withContext(ArkPopover.ArrowTip, 'arrowTip')
+const CloseTrigger = withContext(ArkPopover.CloseTrigger, 'closeTrigger')
+const Content = withContext(ArkPopover.Content, 'content')
+const Description = withContext(ArkPopover.Description, 'description')
+const Indicator = withContext(ArkPopover.Indicator, 'indicator')
+const Positioner = withContext(ArkPopover.Positioner, 'positioner')
+const Title = withContext(ArkPopover.Title, 'title')
+const Trigger = withContext(ArkPopover.Trigger, 'trigger')
 
 export {
   Anchor,
@@ -52,17 +40,6 @@ export {
   Content,
   Description,
   Indicator,
-  Popover,
-  PopoverAnchor,
-  PopoverArrow,
-  PopoverArrowTip,
-  PopoverCloseTrigger,
-  PopoverContent,
-  PopoverDescription,
-  PopoverIndicator,
-  PopoverPositioner,
-  PopoverTitle,
-  PopoverTrigger,
   Positioner,
   Root,
   Title,

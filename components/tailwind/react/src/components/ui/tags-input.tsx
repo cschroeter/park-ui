@@ -12,6 +12,7 @@ const styles = tv({
     input: 'tagsInput__input',
     clearTrigger: 'tagsInput__clearTrigger',
     item: 'tagsInput__item',
+    itemPreview: 'tagsInput__itemPreview',
     itemInput: 'tagsInput__itemInput',
     itemText: 'tagsInput__itemText',
     itemDeleteTrigger: 'tagsInput__itemDeleteTrigger',
@@ -25,6 +26,7 @@ const styles = tv({
         input: 'tagsInput__input--size_md',
         clearTrigger: 'tagsInput__clearTrigger--size_md',
         item: 'tagsInput__item--size_md',
+        itemPreview: 'tagsInput__itemPreview--size_md',
         itemInput: 'tagsInput__itemInput--size_md',
         itemText: 'tagsInput__itemText--size_md',
         itemDeleteTrigger: 'tagsInput__itemDeleteTrigger--size_md',
@@ -34,25 +36,16 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const TagsInput = withProvider(ArkTagsInput.Root, 'root')
-const TagsInputClearTrigger = withContext(ArkTagsInput.ClearTrigger, 'clearTrigger')
-const TagsInputControl = withContext(ArkTagsInput.Control, 'control')
-const TagsInputInput = withContext(ArkTagsInput.Input, 'input')
-const TagsInputItem = withContext(ArkTagsInput.Item, 'item')
-const TagsInputItemDeleteTrigger = withContext(ArkTagsInput.ItemDeleteTrigger, 'itemDeleteTrigger')
-const TagsInputItemInput = withContext(ArkTagsInput.ItemInput, 'itemInput')
-const TagsInputItemText = withContext(ArkTagsInput.ItemText, 'itemText')
-const TagsInputLabel = withContext(ArkTagsInput.Label, 'label')
-
-const Root = TagsInput
-const ClearTrigger = TagsInputClearTrigger
-const Control = TagsInputControl
-const Input = TagsInputInput
-const Item = TagsInputItem
-const ItemDeleteTrigger = TagsInputItemDeleteTrigger
-const ItemInput = TagsInputItemInput
-const ItemText = TagsInputItemText
-const Label = TagsInputLabel
+const Root = withProvider(ArkTagsInput.Root, 'root')
+const ClearTrigger = withContext(ArkTagsInput.ClearTrigger, 'clearTrigger')
+const Control = withContext(ArkTagsInput.Control, 'control')
+const Input = withContext(ArkTagsInput.Input, 'input')
+const Item = withContext(ArkTagsInput.Item, 'item')
+const ItemDeleteTrigger = withContext(ArkTagsInput.ItemDeleteTrigger, 'itemDeleteTrigger')
+const ItemInput = withContext(ArkTagsInput.ItemInput, 'itemInput')
+const ItemPreview = withContext(ArkTagsInput.ItemPreview, 'itemPreview')
+const ItemText = withContext(ArkTagsInput.ItemText, 'itemText')
+const Label = withContext(ArkTagsInput.Label, 'label')
 
 export {
   ClearTrigger,
@@ -61,16 +54,8 @@ export {
   Item,
   ItemDeleteTrigger,
   ItemInput,
+  ItemPreview,
   ItemText,
   Label,
   Root,
-  TagsInput,
-  TagsInputClearTrigger,
-  TagsInputControl,
-  TagsInputInput,
-  TagsInputItem,
-  TagsInputItemDeleteTrigger,
-  TagsInputItemInput,
-  TagsInputItemText,
-  TagsInputLabel,
 }

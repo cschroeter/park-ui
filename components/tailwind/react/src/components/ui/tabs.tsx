@@ -14,6 +14,13 @@ const styles = tv({
   },
   variants: {
     variant: {
+      enclosed: {
+        root: 'tabs__root--variant_enclosed',
+        list: 'tabs__list--variant_enclosed',
+        trigger: 'tabs__trigger--variant_enclosed',
+        content: 'tabs__content--variant_enclosed',
+        indicator: 'tabs__indicator--variant_enclosed',
+      },
       line: {
         root: 'tabs__root--variant_line',
         list: 'tabs__list--variant_line',
@@ -56,27 +63,10 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Tabs = withProvider(ArkTabs.Root, 'root')
-const TabsContent = withContext(ArkTabs.Content, 'content')
-const TabsIndicator = withContext(ArkTabs.Indicator, 'indicator')
-const TabsList = withContext(ArkTabs.List, 'list')
-const TabsTrigger = withContext(ArkTabs.Trigger, 'trigger')
+const Root = withProvider(ArkTabs.Root, 'root')
+const Content = withContext(ArkTabs.Content, 'content')
+const Indicator = withContext(ArkTabs.Indicator, 'indicator')
+const List = withContext(ArkTabs.List, 'list')
+const Trigger = withContext(ArkTabs.Trigger, 'trigger')
 
-const Root = Tabs
-const Content = TabsContent
-const Indicator = TabsIndicator
-const List = TabsList
-const Trigger = TabsTrigger
-
-export {
-  Content,
-  Indicator,
-  List,
-  Root,
-  Tabs,
-  TabsContent,
-  TabsIndicator,
-  TabsList,
-  TabsTrigger,
-  Trigger,
-}
+export { Content, Indicator, List, Root, Trigger }

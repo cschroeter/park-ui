@@ -1,11 +1,11 @@
 import {
   RatingGroup as ArkRatingGroup,
-  type RatingGroupProps as ArkRatingGroupProps,
+  type RatingGroupRootProps,
 } from '@ark-ui/react/rating-group'
 import { forwardRef, type ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface RatingGroupProps extends ArkRatingGroupProps, RatingGroupVariantProps {
+export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {
   children?: ReactNode
 }
 
@@ -82,6 +82,7 @@ const Icon = (props: IconProps) => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
+    <title>Star</title>
     <defs>
       <linearGradient id="half">
         <stop offset="50%" stop-color="var(--colors-color-palette-default)" />

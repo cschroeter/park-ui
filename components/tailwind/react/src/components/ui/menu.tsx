@@ -97,33 +97,19 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Menu = withProvider(ArkMenu.Root)
-const MenuArrow = withContext(ArkMenu.Arrow, 'arrow')
-const MenuArrowTip = withContext(ArkMenu.ArrowTip, 'arrowTip')
-const MenuContent = withContext(ArkMenu.Content, 'content')
-const MenuContextTrigger = withContext(ArkMenu.ContextTrigger, 'contextTrigger')
-const MenuItem = withContext(ArkMenu.Item, 'item')
-const MenuItemGroup = withContext(ArkMenu.ItemGroup, 'itemGroup')
-const MenuItemGroupLabel = withContext(ArkMenu.ItemGroupLabel, 'itemGroupLabel')
-const MenuOptionItem = withContext(ArkMenu.OptionItem, 'optionItem')
-const MenuPositioner = withContext(ArkMenu.Positioner, 'positioner')
-const MenuSeparator = withContext(ArkMenu.Separator, 'separator')
-const MenuTrigger = withContext(ArkMenu.Trigger, 'trigger')
-const MenuTriggerItem = withContext(ArkMenu.TriggerItem, 'triggerItem')
-
-const Root = Menu
-const Arrow = MenuArrow
-const ArrowTip = MenuArrowTip
-const Content = MenuContent
-const ContextTrigger = MenuContextTrigger
-const Item = MenuItem
-const ItemGroup = MenuItemGroup
-const ItemGroupLabel = MenuItemGroupLabel
-const OptionItem = MenuOptionItem
-const Positioner = MenuPositioner
-const Separator = MenuSeparator
-const Trigger = MenuTrigger
-const TriggerItem = MenuTriggerItem
+const Root = withProvider(ArkMenu.Root)
+const Arrow = withContext(ArkMenu.Arrow, 'arrow')
+const ArrowTip = withContext(ArkMenu.ArrowTip, 'arrowTip')
+const Content = withContext(ArkMenu.Content, 'content')
+const ContextTrigger = withContext(ArkMenu.ContextTrigger, 'contextTrigger')
+const Item = withContext(ArkMenu.Item, 'item')
+const ItemGroup = withContext(ArkMenu.ItemGroup, 'itemGroup')
+const ItemGroupLabel = withContext(ArkMenu.ItemGroupLabel, 'itemGroupLabel')
+const OptionItem = withContext(ArkMenu.OptionItem, 'optionItem')
+const Positioner = withContext(ArkMenu.Positioner, 'positioner')
+const Separator = withContext(ArkMenu.Separator, 'separator')
+const Trigger = withContext(ArkMenu.Trigger, 'trigger')
+const TriggerItem = withContext(ArkMenu.TriggerItem, 'triggerItem')
 
 export {
   Arrow,
@@ -133,19 +119,6 @@ export {
   Item,
   ItemGroup,
   ItemGroupLabel,
-  Menu,
-  MenuArrow,
-  MenuArrowTip,
-  MenuContent,
-  MenuContextTrigger,
-  MenuItem,
-  MenuItemGroup,
-  MenuItemGroupLabel,
-  MenuOptionItem,
-  MenuPositioner,
-  MenuSeparator,
-  MenuTrigger,
-  MenuTriggerItem,
   OptionItem,
   Positioner,
   Root,

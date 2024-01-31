@@ -72,49 +72,22 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Combobox = withProvider(ArkCombobox.Root, 'root')
-const ComboboxClearTrigger = withContext(ArkCombobox.ClearTrigger, 'clearTrigger')
-const ComboboxContent = withContext(ArkCombobox.Content, 'content')
-const ComboboxControl = withContext(ArkCombobox.Control, 'control')
-const ComboboxInput = withContext(ArkCombobox.Input, 'input')
-const ComboboxItem = withContext(ArkCombobox.Item, 'item')
-const ComboboxItemGroup = withContext(ArkCombobox.ItemGroup, 'itemGroup')
-const ComboboxItemGroupLabel = withContext(ArkCombobox.ItemGroupLabel, 'itemGroupLabel')
-const ComboboxItemIndicator = withContext(ArkCombobox.ItemIndicator, 'itemIndicator')
-const ComboboxItemText = withContext(ArkCombobox.ItemText, 'itemText')
-const ComboboxLabel = withContext(ArkCombobox.Label, 'label')
-const ComboboxPositioner = withContext(ArkCombobox.Positioner, 'positioner')
-const ComboboxTrigger = withContext(ArkCombobox.Trigger, 'trigger')
-
-const Root = Combobox
-const ClearTrigger = ComboboxClearTrigger
-const Content = ComboboxContent
-const Control = ComboboxControl
-const Input = ComboboxInput
-const Item = ComboboxItem
-const ItemGroup = ComboboxItemGroup
-const ItemGroupLabel = ComboboxItemGroupLabel
-const ItemIndicator = ComboboxItemIndicator
-const ItemText = ComboboxItemText
-const Label = ComboboxLabel
-const Positioner = ComboboxPositioner
-const Trigger = ComboboxTrigger
+const Root = withProvider(ArkCombobox.Root, 'root')
+const ClearTrigger = withContext(ArkCombobox.ClearTrigger, 'clearTrigger')
+const Content = withContext(ArkCombobox.Content, 'content')
+const Control = withContext(ArkCombobox.Control, 'control')
+const Input = withContext(ArkCombobox.Input, 'input')
+const Item = withContext(ArkCombobox.Item, 'item')
+const ItemGroup = withContext(ArkCombobox.ItemGroup, 'itemGroup')
+const ItemGroupLabel = withContext(ArkCombobox.ItemGroupLabel, 'itemGroupLabel')
+const ItemIndicator = withContext(ArkCombobox.ItemIndicator, 'itemIndicator')
+const ItemText = withContext(ArkCombobox.ItemText, 'itemText')
+const Label = withContext(ArkCombobox.Label, 'label')
+const Positioner = withContext(ArkCombobox.Positioner, 'positioner')
+const Trigger = withContext(ArkCombobox.Trigger, 'trigger')
 
 export {
   ClearTrigger,
-  Combobox,
-  ComboboxClearTrigger,
-  ComboboxContent,
-  ComboboxControl,
-  ComboboxInput,
-  ComboboxItem,
-  ComboboxItemGroup,
-  ComboboxItemGroupLabel,
-  ComboboxItemIndicator,
-  ComboboxItemText,
-  ComboboxLabel,
-  ComboboxPositioner,
-  ComboboxTrigger,
   Content,
   Control,
   Input,

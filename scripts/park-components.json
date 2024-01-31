@@ -15,26 +15,6 @@
       "Title": { "name": "AlertTitle", "slot": "title", "component": "ark.h5" }
     }
   },
-  "badge": {
-    "className": "badge",
-    "component": "ark.div",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Badge"
-  },
-  "button": {
-    "className": "button",
-    "component": "ark.button",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Button"
-  },
   "card": {
     "parts": {
       "Root": { "name": "CardRoot", "slot": "root", "component": "ark.div" },
@@ -51,16 +31,6 @@
       "vue": ["import { ark } from '@ark-ui/vue/factory'"]
     },
     "className": "card"
-  },
-  "code": {
-    "className": "code",
-    "component": "ark.code",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Code"
   },
   "drawer": {
     "parts": {
@@ -109,56 +79,6 @@
       ]
     },
     "className": "drawer"
-  },
-  "icon-button": {
-    "className": "iconButton",
-    "component": "ark.button",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "IconButton"
-  },
-  "input": {
-    "className": "input",
-    "component": "ark.input",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Input"
-  },
-  "kbd": {
-    "className": "kbd",
-    "component": "ark.kbd",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Kbd"
-  },
-  "form-label": {
-    "className": "formLabel",
-    "component": "ark.label",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "FormLabel"
-  },
-  "link": {
-    "className": "link",
-    "component": "ark.a",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Link"
   },
   "radio-button-group": {
     "parts": {
@@ -219,15 +139,5 @@
       "vue": ["import { ark } from '@ark-ui/vue/factory'"]
     },
     "className": "table"
-  },
-  "textarea": {
-    "className": "textarea",
-    "component": "ark.textarea",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Textarea"
   }
 }

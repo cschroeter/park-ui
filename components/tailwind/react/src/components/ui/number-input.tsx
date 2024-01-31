@@ -1,11 +1,11 @@
 import {
   NumberInput as ArkNumberInput,
-  type NumberInputProps as ArkNumberInputProps,
+  type NumberInputRootProps,
 } from '@ark-ui/react/number-input'
 import { forwardRef, type ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface NumberInputProps extends ArkNumberInputProps, NumberInputVariantProps {
+export interface NumberInputProps extends NumberInputRootProps, NumberInputVariantProps {
   children?: ReactNode
 }
 
@@ -80,6 +80,7 @@ const styles = tv({
 
 const ChevronUpIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Up</title>
     <path
       fill="none"
       stroke="currentColor"
@@ -93,6 +94,7 @@ const ChevronUpIcon = () => (
 
 const ChevronDownIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Down</title>
     <path
       fill="none"
       stroke="currentColor"

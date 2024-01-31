@@ -45,36 +45,17 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Carousel = withProvider(ArkCarousel.Root, 'root')
-const CarouselControl = withContext(ArkCarousel.Control, 'control')
-const CarouselIndicator = withContext(ArkCarousel.Indicator, 'indicator')
-const CarouselIndicatorGroup = withContext(ArkCarousel.IndicatorGroup, 'indicatorGroup')
-const CarouselItem = withContext(ArkCarousel.Item, 'item')
-const CarouselItemGroup = withContext(ArkCarousel.ItemGroup, 'itemGroup')
-const CarouselNextTrigger = withContext(ArkCarousel.NextTrigger, 'nextTrigger')
-const CarouselPrevTrigger = withContext(ArkCarousel.PrevTrigger, 'prevTrigger')
-const CarouselViewport = withContext(ArkCarousel.Viewport, 'viewport')
-
-const Root = Carousel
-const Control = CarouselControl
-const Indicator = CarouselIndicator
-const IndicatorGroup = CarouselIndicatorGroup
-const Item = CarouselItem
-const ItemGroup = CarouselItemGroup
-const NextTrigger = CarouselNextTrigger
-const PrevTrigger = CarouselPrevTrigger
-const Viewport = CarouselViewport
+const Root = withProvider(ArkCarousel.Root, 'root')
+const Control = withContext(ArkCarousel.Control, 'control')
+const Indicator = withContext(ArkCarousel.Indicator, 'indicator')
+const IndicatorGroup = withContext(ArkCarousel.IndicatorGroup, 'indicatorGroup')
+const Item = withContext(ArkCarousel.Item, 'item')
+const ItemGroup = withContext(ArkCarousel.ItemGroup, 'itemGroup')
+const NextTrigger = withContext(ArkCarousel.NextTrigger, 'nextTrigger')
+const PrevTrigger = withContext(ArkCarousel.PrevTrigger, 'prevTrigger')
+const Viewport = withContext(ArkCarousel.Viewport, 'viewport')
 
 export {
-  Carousel,
-  CarouselControl,
-  CarouselIndicator,
-  CarouselIndicatorGroup,
-  CarouselItem,
-  CarouselItemGroup,
-  CarouselNextTrigger,
-  CarouselPrevTrigger,
-  CarouselViewport,
   Control,
   Indicator,
   IndicatorGroup,

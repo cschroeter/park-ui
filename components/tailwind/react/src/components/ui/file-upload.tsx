@@ -21,46 +21,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const FileUpload = withProvider(ArkFileUpload.Root, 'root')
-const FileUploadDropzone = withContext(ArkFileUpload.Dropzone, 'dropzone')
-const FileUploadItem = withContext(ArkFileUpload.Item, 'item')
-const FileUploadItemDeleteTrigger = withContext(
-  ArkFileUpload.ItemDeleteTrigger,
-  'itemDeleteTrigger',
-)
-const FileUploadItemGroup = withContext(ArkFileUpload.ItemGroup, 'itemGroup')
-const FileUploadItemName = withContext(ArkFileUpload.ItemName, 'itemName')
-const FileUploadItemPreview = withContext(ArkFileUpload.ItemPreview, 'itemPreview')
-const FileUploadItemPreviewImage = withContext(ArkFileUpload.ItemPreviewImage, 'itemPreviewImage')
-const FileUploadItemSizeText = withContext(ArkFileUpload.ItemSizeText, 'itemSizeText')
-const FileUploadLabel = withContext(ArkFileUpload.Label, 'label')
-const FileUploadTrigger = withContext(ArkFileUpload.Trigger, 'trigger')
-
-const Root = FileUpload
-const Dropzone = FileUploadDropzone
-const Item = FileUploadItem
-const ItemDeleteTrigger = FileUploadItemDeleteTrigger
-const ItemGroup = FileUploadItemGroup
-const ItemName = FileUploadItemName
-const ItemPreview = FileUploadItemPreview
-const ItemPreviewImage = FileUploadItemPreviewImage
-const ItemSizeText = FileUploadItemSizeText
-const Label = FileUploadLabel
-const Trigger = FileUploadTrigger
+const Root = withProvider(ArkFileUpload.Root, 'root')
+const Dropzone = withContext(ArkFileUpload.Dropzone, 'dropzone')
+const Item = withContext(ArkFileUpload.Item, 'item')
+const ItemDeleteTrigger = withContext(ArkFileUpload.ItemDeleteTrigger, 'itemDeleteTrigger')
+const ItemGroup = withContext(ArkFileUpload.ItemGroup, 'itemGroup')
+const ItemName = withContext(ArkFileUpload.ItemName, 'itemName')
+const ItemPreview = withContext(ArkFileUpload.ItemPreview, 'itemPreview')
+const ItemPreviewImage = withContext(ArkFileUpload.ItemPreviewImage, 'itemPreviewImage')
+const ItemSizeText = withContext(ArkFileUpload.ItemSizeText, 'itemSizeText')
+const Label = withContext(ArkFileUpload.Label, 'label')
+const Trigger = withContext(ArkFileUpload.Trigger, 'trigger')
 
 export {
   Dropzone,
-  FileUpload,
-  FileUploadDropzone,
-  FileUploadItem,
-  FileUploadItemDeleteTrigger,
-  FileUploadItemGroup,
-  FileUploadItemName,
-  FileUploadItemPreview,
-  FileUploadItemPreviewImage,
-  FileUploadItemSizeText,
-  FileUploadLabel,
-  FileUploadTrigger,
   Item,
   ItemDeleteTrigger,
   ItemGroup,
