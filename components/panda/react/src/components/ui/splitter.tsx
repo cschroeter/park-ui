@@ -6,16 +6,12 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(splitter)
 
-export const SplitterRoot = withProvider(styled(ArkSplitter.Root), 'root')
-export const SplitterPanel = withContext(styled(ArkSplitter.Panel), 'panel')
-export const SplitterResizeTrigger = withContext(styled(ArkSplitter.ResizeTrigger), 'resizeTrigger')
+const Root = withProvider(styled(ArkSplitter.Root), 'root')
+const Panel = withContext(styled(ArkSplitter.Panel), 'panel')
+const ResizeTrigger = withContext(styled(ArkSplitter.ResizeTrigger), 'resizeTrigger')
 
-export const Splitter = {
-  Root: SplitterRoot,
-  Panel: SplitterPanel,
-  ResizeTrigger: SplitterResizeTrigger,
-}
+export { Panel, ResizeTrigger, Root }
 
-export interface SplitterRootProps extends ComponentProps<typeof SplitterRoot> {}
-export interface SplitterPanelProps extends ComponentProps<typeof SplitterPanel> {}
-export interface SplitterResizeTriggerProps extends ComponentProps<typeof SplitterResizeTrigger> {}
+export interface SplitterRootProps extends ComponentProps<typeof Root> {}
+export interface SplitterPanelProps extends ComponentProps<typeof Panel> {}
+export interface SplitterResizeTriggerProps extends ComponentProps<typeof ResizeTrigger> {}

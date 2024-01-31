@@ -6,22 +6,16 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(alert)
 
-export const AlertRoot = withProvider(styled(ark.div), 'root')
-export const AlertContent = withContext(styled(ark.div), 'content')
-export const AlertDescription = withContext(styled(ark.p), 'description')
-export const AlertIcon = withContext(styled(ark.svg), 'icon')
-export const AlertTitle = withContext(styled(ark.h5), 'title')
+const Root = withProvider(styled(ark.div), 'root')
+const Content = withContext(styled(ark.div), 'content')
+const Description = withContext(styled(ark.p), 'description')
+const Icon = withContext(styled(ark.svg), 'icon')
+const Title = withContext(styled(ark.h5), 'title')
 
-export const Alert = {
-  Root: AlertRoot,
-  Content: AlertContent,
-  Description: AlertDescription,
-  Icon: AlertIcon,
-  Title: AlertTitle,
-}
+export { Content, Description, Icon, Root, Title }
 
-export interface AlertRootProps extends ComponentProps<typeof AlertRoot> {}
-export interface AlertContentProps extends ComponentProps<typeof AlertContent> {}
-export interface AlertDescriptionProps extends ComponentProps<typeof AlertDescription> {}
-export interface AlertIconProps extends ComponentProps<typeof AlertIcon> {}
-export interface AlertTitleProps extends ComponentProps<typeof AlertTitle> {}
+export interface AlertRootProps extends ComponentProps<typeof Root> {}
+export interface AlertContentProps extends ComponentProps<typeof Content> {}
+export interface AlertDescriptionProps extends ComponentProps<typeof Description> {}
+export interface AlertIconProps extends ComponentProps<typeof Icon> {}
+export interface AlertTitleProps extends ComponentProps<typeof Title> {}

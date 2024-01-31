@@ -6,41 +6,37 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tagsInput)
 
-export const TagsInputRoot = withProvider(styled(ArkTagsInput.Root), 'root')
-export const TagsInputClearTrigger = withContext(styled(ArkTagsInput.ClearTrigger), 'clearTrigger')
-export const TagsInputControl = withContext(styled(ArkTagsInput.Control), 'control')
-export const TagsInputInput = withContext(styled(ArkTagsInput.Input), 'input')
-export const TagsInputItem = withContext(styled(ArkTagsInput.Item), 'item')
-export const TagsInputItemDeleteTrigger = withContext(
-  styled(ArkTagsInput.ItemDeleteTrigger),
-  'itemDeleteTrigger',
-)
-export const TagsInputItemInput = withContext(styled(ArkTagsInput.ItemInput), 'itemInput')
-export const TagsInputItemPreview = withContext(styled(ArkTagsInput.ItemPreview), 'itemPreview')
-export const TagsInputItemText = withContext(styled(ArkTagsInput.ItemText), 'itemText')
-export const TagsInputLabel = withContext(styled(ArkTagsInput.Label), 'label')
+const Root = withProvider(styled(ArkTagsInput.Root), 'root')
+const ClearTrigger = withContext(styled(ArkTagsInput.ClearTrigger), 'clearTrigger')
+const Control = withContext(styled(ArkTagsInput.Control), 'control')
+const Input = withContext(styled(ArkTagsInput.Input), 'input')
+const Item = withContext(styled(ArkTagsInput.Item), 'item')
+const ItemDeleteTrigger = withContext(styled(ArkTagsInput.ItemDeleteTrigger), 'itemDeleteTrigger')
+const ItemInput = withContext(styled(ArkTagsInput.ItemInput), 'itemInput')
+const ItemPreview = withContext(styled(ArkTagsInput.ItemPreview), 'itemPreview')
+const ItemText = withContext(styled(ArkTagsInput.ItemText), 'itemText')
+const Label = withContext(styled(ArkTagsInput.Label), 'label')
 
-export const TagsInput = {
-  Root: TagsInputRoot,
-  ClearTrigger: TagsInputClearTrigger,
-  Control: TagsInputControl,
-  Input: TagsInputInput,
-  Item: TagsInputItem,
-  ItemDeleteTrigger: TagsInputItemDeleteTrigger,
-  ItemInput: TagsInputItemInput,
-  ItemPreview: TagsInputItemPreview,
-  ItemText: TagsInputItemText,
-  Label: TagsInputLabel,
+export {
+  ClearTrigger,
+  Control,
+  Input,
+  Item,
+  ItemDeleteTrigger,
+  ItemInput,
+  ItemPreview,
+  ItemText,
+  Label,
+  Root,
 }
 
-export interface TagsInputRootProps extends ComponentProps<typeof TagsInputRoot> {}
-export interface TagsInputClearTriggerProps extends ComponentProps<typeof TagsInputClearTrigger> {}
-export interface TagsInputControlProps extends ComponentProps<typeof TagsInputControl> {}
-export interface TagsInputInputProps extends ComponentProps<typeof TagsInputInput> {}
-export interface TagsInputItemProps extends ComponentProps<typeof TagsInputItem> {}
-export interface TagsInputItemDeleteTriggerProps
-  extends ComponentProps<typeof TagsInputItemDeleteTrigger> {}
-export interface TagsInputItemInputProps extends ComponentProps<typeof TagsInputItemInput> {}
-export interface TagsInputItemPreviewProps extends ComponentProps<typeof TagsInputItemPreview> {}
-export interface TagsInputItemTextProps extends ComponentProps<typeof TagsInputItemText> {}
-export interface TagsInputLabelProps extends ComponentProps<typeof TagsInputLabel> {}
+export interface TagsInputRootProps extends ComponentProps<typeof Root> {}
+export interface TagsInputClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
+export interface TagsInputControlProps extends ComponentProps<typeof Control> {}
+export interface TagsInputInputProps extends ComponentProps<typeof Input> {}
+export interface TagsInputItemProps extends ComponentProps<typeof Item> {}
+export interface TagsInputItemDeleteTriggerProps extends ComponentProps<typeof ItemDeleteTrigger> {}
+export interface TagsInputItemInputProps extends ComponentProps<typeof ItemInput> {}
+export interface TagsInputItemPreviewProps extends ComponentProps<typeof ItemPreview> {}
+export interface TagsInputItemTextProps extends ComponentProps<typeof ItemText> {}
+export interface TagsInputLabelProps extends ComponentProps<typeof Label> {}

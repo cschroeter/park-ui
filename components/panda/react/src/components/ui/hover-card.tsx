@@ -6,25 +6,18 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(hoverCard)
 
-export const HoverCardRoot = withProvider(ArkHoverCard.Root)
-export const HoverCardArrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')
-export const HoverCardArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')
-export const HoverCardContent = withContext(styled(ArkHoverCard.Content), 'content')
-export const HoverCardPositioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')
-export const HoverCardTrigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')
+const Root = withProvider(ArkHoverCard.Root)
+const Arrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')
+const ArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')
+const Content = withContext(styled(ArkHoverCard.Content), 'content')
+const Positioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')
+const Trigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')
 
-export const HoverCard = {
-  Root: HoverCardRoot,
-  Arrow: HoverCardArrow,
-  ArrowTip: HoverCardArrowTip,
-  Content: HoverCardContent,
-  Positioner: HoverCardPositioner,
-  Trigger: HoverCardTrigger,
-}
+export { Arrow, ArrowTip, Content, Positioner, Root, Trigger }
 
-export interface HoverCardRootProps extends ComponentProps<typeof HoverCardRoot> {}
-export interface HoverCardArrowProps extends ComponentProps<typeof HoverCardArrow> {}
-export interface HoverCardArrowTipProps extends ComponentProps<typeof HoverCardArrowTip> {}
-export interface HoverCardContentProps extends ComponentProps<typeof HoverCardContent> {}
-export interface HoverCardPositionerProps extends ComponentProps<typeof HoverCardPositioner> {}
-export interface HoverCardTriggerProps extends ComponentProps<typeof HoverCardTrigger> {}
+export interface HoverCardRootProps extends ComponentProps<typeof Root> {}
+export interface HoverCardArrowProps extends ComponentProps<typeof Arrow> {}
+export interface HoverCardArrowTipProps extends ComponentProps<typeof ArrowTip> {}
+export interface HoverCardContentProps extends ComponentProps<typeof Content> {}
+export interface HoverCardPositionerProps extends ComponentProps<typeof Positioner> {}
+export interface HoverCardTriggerProps extends ComponentProps<typeof Trigger> {}
