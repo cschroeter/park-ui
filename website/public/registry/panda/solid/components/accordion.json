@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "accordion.tsx",
-      "content": "import { Accordion as ArkAccordion } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { accordion } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(accordion)\n\nconst Root = withProvider(styled(ArkAccordion.Root), 'root')\nconst Item = withContext(styled(ArkAccordion.Item), 'item')\nconst ItemContent = withContext(styled(ArkAccordion.ItemContent), 'itemContent')\nconst ItemIndicator = withContext(styled(ArkAccordion.ItemIndicator), 'itemIndicator')\nconst ItemTrigger = withContext(styled(ArkAccordion.ItemTrigger), 'itemTrigger')\n\nexport { Item, ItemContent, ItemIndicator, ItemTrigger, Root }\n",
+      "content": "import { Accordion } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { accordion } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(accordion)\n\nconst Root = withProvider(styled(Accordion.Root), 'root')\nconst Item = withContext(styled(Accordion.Item), 'item')\nconst ItemContent = withContext(styled(Accordion.ItemContent), 'itemContent')\nconst ItemIndicator = withContext(styled(Accordion.ItemIndicator), 'itemIndicator')\nconst ItemTrigger = withContext(styled(Accordion.ItemTrigger), 'itemTrigger')\n\nexport { Item, ItemContent, ItemIndicator, ItemTrigger, Root }\n",
       "hasMultipleParts": true
     }
   ]

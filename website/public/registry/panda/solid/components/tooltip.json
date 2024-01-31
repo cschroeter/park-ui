@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "tooltip.tsx",
-      "content": "import { Tooltip as ArkTooltip } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { tooltip } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tooltip)\n\nconst Root = withProvider(ArkTooltip.Root)\nconst Arrow = withContext(styled(ArkTooltip.Arrow), 'arrow')\nconst ArrowTip = withContext(styled(ArkTooltip.ArrowTip), 'arrowTip')\nconst Content = withContext(styled(ArkTooltip.Content), 'content')\nconst Positioner = withContext(styled(ArkTooltip.Positioner), 'positioner')\nconst Trigger = withContext(styled(ArkTooltip.Trigger), 'trigger')\n\nexport { Arrow, ArrowTip, Content, Positioner, Root, Trigger }\n",
+      "content": "import { Tooltip } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { tooltip } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tooltip)\n\nconst Root = withProvider(Tooltip.Root)\nconst Arrow = withContext(styled(Tooltip.Arrow), 'arrow')\nconst ArrowTip = withContext(styled(Tooltip.ArrowTip), 'arrowTip')\nconst Content = withContext(styled(Tooltip.Content), 'content')\nconst Positioner = withContext(styled(Tooltip.Positioner), 'positioner')\nconst Trigger = withContext(styled(Tooltip.Trigger), 'trigger')\n\nexport { Arrow, ArrowTip, Content, Positioner, Root, Trigger }\n",
       "hasMultipleParts": true
     }
   ]

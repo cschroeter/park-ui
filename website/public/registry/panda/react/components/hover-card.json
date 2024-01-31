@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "hover-card.tsx",
-      "content": "import { HoverCard as ArkHoverCard } from '@ark-ui/react/hover-card'\nimport { styled } from 'styled-system/jsx'\nimport { hoverCard } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(hoverCard)\n\nconst Root = withProvider(ArkHoverCard.Root)\nconst Arrow = withContext(styled(ArkHoverCard.Arrow), 'arrow')\nconst ArrowTip = withContext(styled(ArkHoverCard.ArrowTip), 'arrowTip')\nconst Content = withContext(styled(ArkHoverCard.Content), 'content')\nconst Positioner = withContext(styled(ArkHoverCard.Positioner), 'positioner')\nconst Trigger = withContext(styled(ArkHoverCard.Trigger), 'trigger')\n\nexport { Arrow, ArrowTip, Content, Positioner, Root, Trigger }\n",
+      "content": "import { HoverCard } from '@ark-ui/react/hover-card'\nimport { styled } from 'styled-system/jsx'\nimport { hoverCard } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(hoverCard)\n\nconst Root = withProvider(HoverCard.Root)\nconst Arrow = withContext(styled(HoverCard.Arrow), 'arrow')\nconst ArrowTip = withContext(styled(HoverCard.ArrowTip), 'arrowTip')\nconst Content = withContext(styled(HoverCard.Content), 'content')\nconst Positioner = withContext(styled(HoverCard.Positioner), 'positioner')\nconst Trigger = withContext(styled(HoverCard.Trigger), 'trigger')\n\nexport { Arrow, ArrowTip, Content, Positioner, Root, Trigger }\n",
       "hasMultipleParts": true
     }
   ]

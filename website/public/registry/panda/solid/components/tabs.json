@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "tabs.tsx",
-      "content": "import { Tabs as ArkTabs } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { tabs } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nconst Root = withProvider(styled(ArkTabs.Root), 'root')\nconst Content = withContext(styled(ArkTabs.Content), 'content')\nconst Indicator = withContext(styled(ArkTabs.Indicator), 'indicator')\nconst List = withContext(styled(ArkTabs.List), 'list')\nconst Trigger = withContext(styled(ArkTabs.Trigger), 'trigger')\n\nexport { Content, Indicator, List, Root, Trigger }\n",
+      "content": "import { Tabs } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { tabs } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nconst Root = withProvider(styled(Tabs.Root), 'root')\nconst Content = withContext(styled(Tabs.Content), 'content')\nconst Indicator = withContext(styled(Tabs.Indicator), 'indicator')\nconst List = withContext(styled(Tabs.List), 'list')\nconst Trigger = withContext(styled(Tabs.Trigger), 'trigger')\n\nexport { Content, Indicator, List, Root, Trigger }\n",
       "hasMultipleParts": true
     }
   ]
