@@ -1,8 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { XIcon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import * as TagsInput from '~/components/ui/tags-input'
+import { Button, IconButton, TagsInput } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Tags Input',
@@ -19,12 +17,14 @@ export const Base = () => {
           <TagsInput.Control>
             {api.value.map((value, index) => (
               <TagsInput.Item key={index} index={index} value={value}>
-                <TagsInput.ItemText>{value}</TagsInput.ItemText>
-                <TagsInput.ItemDeleteTrigger asChild>
-                  <IconButton variant="link" size="xs">
-                    <XIcon />
-                  </IconButton>
-                </TagsInput.ItemDeleteTrigger>
+                <TagsInput.ItemPreview>
+                  <TagsInput.ItemText>{value}</TagsInput.ItemText>
+                  <TagsInput.ItemDeleteTrigger asChild>
+                    <IconButton variant="link" size="xs">
+                      <XIcon />
+                    </IconButton>
+                  </TagsInput.ItemDeleteTrigger>
+                </TagsInput.ItemPreview>
                 <TagsInput.ItemInput />
               </TagsInput.Item>
             ))}

@@ -1,8 +1,8 @@
-import { Avatar as ArkAvatar, type AvatarProps as ArkAvatarProps } from '@ark-ui/react/avatar'
+import { Avatar as ArkAvatar, type AvatarRootProps } from '@ark-ui/react/avatar'
 import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface AvatarProps extends ArkAvatarProps, AvatarVariantProps {
+export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
   name?: string
   src?: string
 }

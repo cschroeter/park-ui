@@ -48,29 +48,17 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Drawer = withProvider(ArkDrawer.Root)
-const DrawerBackdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
-const DrawerBody = withContext(ark.div, 'body')
-const DrawerCloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
-const DrawerContent = withContext(ArkDrawer.Content, 'content')
-const DrawerDescription = withContext(ArkDrawer.Description, 'description')
-const DrawerFooter = withContext(ark.div, 'footer')
-const DrawerHeader = withContext(ark.div, 'header')
-const DrawerPositioner = withContext(ArkDrawer.Positioner, 'positioner')
-const DrawerTitle = withContext(ArkDrawer.Title, 'title')
-const DrawerTrigger = withContext(ArkDrawer.Trigger, 'trigger')
-
-const Root = Drawer
-const Backdrop = DrawerBackdrop
-const Body = DrawerBody
-const CloseTrigger = DrawerCloseTrigger
-const Content = DrawerContent
-const Description = DrawerDescription
-const Footer = DrawerFooter
-const Header = DrawerHeader
-const Positioner = DrawerPositioner
-const Title = DrawerTitle
-const Trigger = DrawerTrigger
+const Root = withProvider(ArkDrawer.Root)
+const Backdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
+const Body = withContext(ark.div, 'body')
+const CloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
+const Content = withContext(ArkDrawer.Content, 'content')
+const Description = withContext(ArkDrawer.Description, 'description')
+const Footer = withContext(ark.div, 'footer')
+const Header = withContext(ark.div, 'header')
+const Positioner = withContext(ArkDrawer.Positioner, 'positioner')
+const Title = withContext(ArkDrawer.Title, 'title')
+const Trigger = withContext(ArkDrawer.Trigger, 'trigger')
 
 export {
   Backdrop,
@@ -78,17 +66,6 @@ export {
   CloseTrigger,
   Content,
   Description,
-  Drawer,
-  DrawerBackdrop,
-  DrawerBody,
-  DrawerCloseTrigger,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerPositioner,
-  DrawerTitle,
-  DrawerTrigger,
   Footer,
   Header,
   Positioner,

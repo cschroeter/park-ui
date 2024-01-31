@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Kbd } from '~/components/ui/kbd'
+import { Kbd } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Kbd',

@@ -1,6 +1,6 @@
 import { ArrowRightIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { IconButton } from '~/components/ui/icon-button'
+import { IconButton } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Icon Button',

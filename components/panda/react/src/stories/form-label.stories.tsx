@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { FormLabel } from '~/components/ui/form-label'
+import { FormLabel } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Form Label',

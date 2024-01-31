@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import * as SegmentGroup from '~/components/ui/segment-group'
+import { SegmentGroup } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Segment Group',

@@ -1,11 +1,7 @@
 import { MapPinIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { HStack, Stack } from 'styled-system/jsx'
-import { Avatar } from '~/components/ui/avatar'
-import * as HoverCard from '~/components/ui/hover-card'
-import { Icon } from '~/components/ui/icon'
-import { Link } from '~/components/ui/link'
-import { Text } from '~/components/ui/text'
+import { Avatar, HoverCard, Icon, Link, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Hover Card',
@@ -16,15 +12,14 @@ export default meta
 export const Base = () => {
   return (
     <HoverCard.Root>
-      <HoverCard.Trigger asChild>
-        <Link
-          href="https://twitter.com/grizzly_codes/"
-          target="_blank"
-          textStyle="sm"
-          fontWeight="medium"
-        >
-          @grizzly_codes
-        </Link>
+      <HoverCard.Trigger
+        as={Link}
+        href="https://twitter.com/grizzly_codes/"
+        target="_blank"
+        textStyle="sm"
+        fontWeight="medium"
+      >
+        @grizzly_codes
       </HoverCard.Trigger>
 
       <HoverCard.Positioner>

@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
+import { Button } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Button',

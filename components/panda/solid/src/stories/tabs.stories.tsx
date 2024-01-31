@@ -1,6 +1,6 @@
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import * as Tabs from '~/components/ui/tabs'
+import { Tabs } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Tabs',

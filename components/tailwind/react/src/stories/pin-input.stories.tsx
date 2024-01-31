@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { PinInput } from '~/components/ui/pin-input'
+import { PinInput } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Pin Input',

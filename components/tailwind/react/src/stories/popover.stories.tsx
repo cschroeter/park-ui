@@ -1,8 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { XIcon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import * as Popover from '~/components/ui/popover'
+import { Button, IconButton, Popover } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Popover',

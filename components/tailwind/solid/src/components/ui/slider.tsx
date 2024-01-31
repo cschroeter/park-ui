@@ -1,8 +1,8 @@
-import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/solid'
+import { Slider as ArkSlider, type SliderRootProps } from '@ark-ui/solid'
 import { Index, Show, children, splitProps, type JSX } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface SliderProps extends ArkSliderProps, SliderVariantProps {
+export interface SliderProps extends SliderRootProps, SliderVariantProps {
   children?: JSX.Element
   marks?: {
     value: number

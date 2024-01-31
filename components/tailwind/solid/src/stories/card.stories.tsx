@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import * as Card from '~/components/ui/card'
+import { Card } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Card',
@@ -9,7 +9,7 @@ export default meta
 
 export const Base = () => {
   return (
-    <Card.Root>
+    <Card.Root class="w-sm">
       <Card.Header>
         <Card.Title>Team Members</Card.Title>
         <Card.Description>Add new members to your organisation.</Card.Description>

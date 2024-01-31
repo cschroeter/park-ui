@@ -1,13 +1,10 @@
-import {
-  Pagination as ArkPagination,
-  type PaginationProps as ArkPaginationProps,
-} from '@ark-ui/react/pagination'
+import { Pagination as ArkPagination, type PaginationRootProps } from '@ark-ui/react/pagination'
 import { forwardRef } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
-export interface PaginationProps extends ArkPaginationProps, PaginationVariantProps {}
+export interface PaginationProps extends PaginationRootProps, PaginationVariantProps {}
 
 export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
   const { className, ...rootProps } = props

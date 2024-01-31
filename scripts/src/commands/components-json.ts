@@ -32,10 +32,9 @@ const generateComponentsJson = async () => {
                 return {
                   ...acc,
                   [pascalCase(part)]: {
-                    name: pascalCase(component).concat(part === 'root' ? '' : pascalCase(part)),
+                    name: pascalCase(component).concat(pascalCase(part)),
                     slot: part,
-                    component: 'Ark'
-                      .concat(pascalCase(component))
+                    component: pascalCase(component)
                       .concat('.')
                       .concat(part === 'root' ? 'Root' : pascalCase(part)),
                   },
@@ -43,28 +42,16 @@ const generateComponentsJson = async () => {
               },
               {
                 Root: {
-                  name: pascalCase(component),
-                  component: 'Ark'.concat(pascalCase(component)).concat('.Root'),
+                  name: pascalCase(component).concat('Root'),
+                  component: pascalCase(component).concat('.Root'),
                 },
               },
             ),
           name: pascalCase(component),
           imports: {
-            react: [
-              `import { ${pascalCase(component)} as Ark${pascalCase(
-                component,
-              )} } from '@ark-ui/react/${component}'`,
-            ],
-            solid: [
-              `import { ${pascalCase(component)} as Ark${pascalCase(
-                component,
-              )} } from '@ark-ui/solid'`,
-            ],
-            vue: [
-              `import { ${pascalCase(component)} as Ark${pascalCase(
-                component,
-              )} } from '@ark-ui/vue/${component}'`,
-            ],
+            react: [`import { ${pascalCase(component)} } from '@ark-ui/react/${component}'`],
+            solid: [`import { ${pascalCase(component)} } from '@ark-ui/solid'`],
+            vue: [`import { ${pascalCase(component)} } from '@ark-ui/vue/${component}'`],
           },
 
           className: match(component)

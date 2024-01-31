@@ -1,4 +1,4 @@
-import { FileUpload as ArkFileUpload } from '@ark-ui/react/file-upload'
+import { FileUpload } from '@ark-ui/react/file-upload'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -21,46 +21,20 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const FileUpload = withProvider(ArkFileUpload.Root, 'root')
-const FileUploadDropzone = withContext(ArkFileUpload.Dropzone, 'dropzone')
-const FileUploadItem = withContext(ArkFileUpload.Item, 'item')
-const FileUploadItemDeleteTrigger = withContext(
-  ArkFileUpload.ItemDeleteTrigger,
-  'itemDeleteTrigger',
-)
-const FileUploadItemGroup = withContext(ArkFileUpload.ItemGroup, 'itemGroup')
-const FileUploadItemName = withContext(ArkFileUpload.ItemName, 'itemName')
-const FileUploadItemPreview = withContext(ArkFileUpload.ItemPreview, 'itemPreview')
-const FileUploadItemPreviewImage = withContext(ArkFileUpload.ItemPreviewImage, 'itemPreviewImage')
-const FileUploadItemSizeText = withContext(ArkFileUpload.ItemSizeText, 'itemSizeText')
-const FileUploadLabel = withContext(ArkFileUpload.Label, 'label')
-const FileUploadTrigger = withContext(ArkFileUpload.Trigger, 'trigger')
-
-const Root = FileUpload
-const Dropzone = FileUploadDropzone
-const Item = FileUploadItem
-const ItemDeleteTrigger = FileUploadItemDeleteTrigger
-const ItemGroup = FileUploadItemGroup
-const ItemName = FileUploadItemName
-const ItemPreview = FileUploadItemPreview
-const ItemPreviewImage = FileUploadItemPreviewImage
-const ItemSizeText = FileUploadItemSizeText
-const Label = FileUploadLabel
-const Trigger = FileUploadTrigger
+const Root = withProvider(FileUpload.Root, 'root')
+const Dropzone = withContext(FileUpload.Dropzone, 'dropzone')
+const Item = withContext(FileUpload.Item, 'item')
+const ItemDeleteTrigger = withContext(FileUpload.ItemDeleteTrigger, 'itemDeleteTrigger')
+const ItemGroup = withContext(FileUpload.ItemGroup, 'itemGroup')
+const ItemName = withContext(FileUpload.ItemName, 'itemName')
+const ItemPreview = withContext(FileUpload.ItemPreview, 'itemPreview')
+const ItemPreviewImage = withContext(FileUpload.ItemPreviewImage, 'itemPreviewImage')
+const ItemSizeText = withContext(FileUpload.ItemSizeText, 'itemSizeText')
+const Label = withContext(FileUpload.Label, 'label')
+const Trigger = withContext(FileUpload.Trigger, 'trigger')
 
 export {
   Dropzone,
-  FileUpload,
-  FileUploadDropzone,
-  FileUploadItem,
-  FileUploadItemDeleteTrigger,
-  FileUploadItemGroup,
-  FileUploadItemName,
-  FileUploadItemPreview,
-  FileUploadItemPreviewImage,
-  FileUploadItemSizeText,
-  FileUploadLabel,
-  FileUploadTrigger,
   Item,
   ItemDeleteTrigger,
   ItemGroup,

@@ -2,10 +2,7 @@ import { PipetteIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { HStack, Stack } from 'styled-system/jsx'
-import * as ColorPicker from '~/components/ui/color-picker'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
-import { Text } from '~/components/ui/text'
+import { ColorPicker, IconButton, Input, Text } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Color Picker',
@@ -20,10 +17,8 @@ export const Base = () => {
         <>
           <ColorPicker.Label>Color Picker</ColorPicker.Label>
           <ColorPicker.Control>
-            <ColorPicker.ChannelInput channel="hex" asChild>
-              <Input />
-            </ColorPicker.ChannelInput>
-            <ColorPicker.Trigger asChild>
+            <ColorPicker.ChannelInput channel="hex" as={Input} />
+            <ColorPicker.Trigger>
               <IconButton variant="outline">
                 <ColorPicker.Swatch value={api().value} />
               </IconButton>
@@ -37,10 +32,8 @@ export const Base = () => {
                   <ColorPicker.AreaThumb />
                 </ColorPicker.Area>
                 <HStack gap="3">
-                  <ColorPicker.EyeDropperTrigger asChild>
-                    <IconButton size="xs" variant="outline" aria-label="Pick a color">
-                      <PipetteIcon />
-                    </IconButton>
+                  <ColorPicker.EyeDropperTrigger as={IconButton} size="xs" variant="outline">
+                    <PipetteIcon />
                   </ColorPicker.EyeDropperTrigger>
                   <Stack gap="2" flex="1">
                     <ColorPicker.ChannelSlider channel="hue">
@@ -55,12 +48,8 @@ export const Base = () => {
                   </Stack>
                 </HStack>
                 <HStack>
-                  <ColorPicker.ChannelInput channel="hex" asChild>
-                    <Input size="2xs" />
-                  </ColorPicker.ChannelInput>
-                  <ColorPicker.ChannelInput channel="alpha" asChild>
-                    <Input size="2xs" />
-                  </ColorPicker.ChannelInput>
+                  <ColorPicker.ChannelInput channel="hex" as={Input} size="2xs" />
+                  <ColorPicker.ChannelInput channel="alpha" as={Input} size="2xs" />
                 </HStack>
                 <Stack gap="1.5">
                   <Text textStyle="xs" fontWeight="medium" color="fg.default">

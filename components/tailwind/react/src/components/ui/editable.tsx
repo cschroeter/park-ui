@@ -1,4 +1,4 @@
-import { Editable as ArkEditable } from '@ark-ui/react/editable'
+import { Editable } from '@ark-ui/react/editable'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -19,43 +19,14 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Editable = withProvider(ArkEditable.Root, 'root')
-const EditableArea = withContext(ArkEditable.Area, 'area')
-const EditableCancelTrigger = withContext(ArkEditable.CancelTrigger, 'cancelTrigger')
-const EditableControl = withContext(ArkEditable.Control, 'control')
-const EditableEditTrigger = withContext(ArkEditable.EditTrigger, 'editTrigger')
-const EditableInput = withContext(ArkEditable.Input, 'input')
-const EditableLabel = withContext(ArkEditable.Label, 'label')
-const EditablePreview = withContext(ArkEditable.Preview, 'preview')
-const EditableSubmitTrigger = withContext(ArkEditable.SubmitTrigger, 'submitTrigger')
+const Root = withProvider(Editable.Root, 'root')
+const Area = withContext(Editable.Area, 'area')
+const CancelTrigger = withContext(Editable.CancelTrigger, 'cancelTrigger')
+const Control = withContext(Editable.Control, 'control')
+const EditTrigger = withContext(Editable.EditTrigger, 'editTrigger')
+const Input = withContext(Editable.Input, 'input')
+const Label = withContext(Editable.Label, 'label')
+const Preview = withContext(Editable.Preview, 'preview')
+const SubmitTrigger = withContext(Editable.SubmitTrigger, 'submitTrigger')
 
-const Root = Editable
-const Area = EditableArea
-const CancelTrigger = EditableCancelTrigger
-const Control = EditableControl
-const EditTrigger = EditableEditTrigger
-const Input = EditableInput
-const Label = EditableLabel
-const Preview = EditablePreview
-const SubmitTrigger = EditableSubmitTrigger
-
-export {
-  Area,
-  CancelTrigger,
-  Control,
-  EditTrigger,
-  Editable,
-  EditableArea,
-  EditableCancelTrigger,
-  EditableControl,
-  EditableEditTrigger,
-  EditableInput,
-  EditableLabel,
-  EditablePreview,
-  EditableSubmitTrigger,
-  Input,
-  Label,
-  Preview,
-  Root,
-  SubmitTrigger,
-}
+export { Area, CancelTrigger, Control, EditTrigger, Input, Label, Preview, Root, SubmitTrigger }

@@ -8,36 +8,16 @@
     },
     "name": "Alert",
     "parts": {
-      "Root": { "name": "Alert", "slot": "root", "component": "ark.div" },
+      "Root": { "name": "AlertRoot", "slot": "root", "component": "ark.div" },
       "Content": { "name": "AlertContent", "slot": "content", "component": "ark.div" },
       "Description": { "name": "AlertDescription", "slot": "description", "component": "ark.p" },
       "Icon": { "name": "AlertIcon", "slot": "icon", "component": "ark.svg" },
       "Title": { "name": "AlertTitle", "slot": "title", "component": "ark.h5" }
     }
   },
-  "badge": {
-    "className": "badge",
-    "component": "ark.div",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Badge"
-  },
-  "button": {
-    "className": "button",
-    "component": "ark.button",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Button"
-  },
   "card": {
     "parts": {
-      "Root": { "name": "Card", "slot": "root", "component": "ark.div" },
+      "Root": { "name": "CardRoot", "slot": "root", "component": "ark.div" },
       "Body": { "name": "CardBody", "slot": "body", "component": "ark.div" },
       "Description": { "name": "CardDescription", "slot": "description", "component": "ark.p" },
       "Footer": { "name": "CardFooter", "slot": "footer", "component": "ark.div" },
@@ -52,19 +32,9 @@
     },
     "className": "card"
   },
-  "code": {
-    "className": "code",
-    "component": "ark.code",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Code"
-  },
   "drawer": {
     "parts": {
-      "Root": { "name": "Drawer", "component": "ArkDrawer.Root" },
+      "Root": { "name": "DrawerRoot", "component": "ArkDrawer.Root" },
       "Backdrop": {
         "name": "DrawerBackdrop",
         "slot": "backdrop",
@@ -110,60 +80,10 @@
     },
     "className": "drawer"
   },
-  "icon-button": {
-    "className": "iconButton",
-    "component": "ark.button",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "IconButton"
-  },
-  "input": {
-    "className": "input",
-    "component": "ark.input",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Input"
-  },
-  "kbd": {
-    "className": "kbd",
-    "component": "ark.kbd",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Kbd"
-  },
-  "form-label": {
-    "className": "formLabel",
-    "component": "ark.label",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "FormLabel"
-  },
-  "link": {
-    "className": "link",
-    "component": "ark.a",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Link"
-  },
   "radio-button-group": {
     "parts": {
       "Root": {
-        "name": "RadioButtonGroup",
+        "name": "RadioButtonGroupRoot",
         "slot": "root",
         "component": "ArkRadioButtonGroup.Root"
       },
@@ -203,7 +123,7 @@
   },
   "table": {
     "parts": {
-      "Root": { "name": "Table", "slot": "root", "component": "ark.table" },
+      "Root": { "name": "TableRoot", "slot": "root", "component": "ark.table" },
       "Body": { "name": "TableBody", "slot": "body", "component": "ark.tbody" },
       "Caption": { "name": "TableCaption", "slot": "caption", "component": "ark.caption" },
       "Cell": { "name": "TableCell", "slot": "cell", "component": "ark.td" },
@@ -219,15 +139,5 @@
       "vue": ["import { ark } from '@ark-ui/vue/factory'"]
     },
     "className": "table"
-  },
-  "textarea": {
-    "className": "textarea",
-    "component": "ark.textarea",
-    "imports": {
-      "react": ["import { ark } from '@ark-ui/react/factory'"],
-      "solid": ["import { ark } from '@ark-ui/solid'"],
-      "vue": ["import { ark } from '@ark-ui/vue/factory'"]
-    },
-    "name": "Textarea"
   }
 }

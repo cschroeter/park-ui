@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { Textarea } from '~/components/ui/textarea'
+import { Textarea } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Textarea',

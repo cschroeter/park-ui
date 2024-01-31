@@ -1,4 +1,4 @@
-import { Checkbox as ArkCheckbox, type CheckboxProps as ArkCheckboxProps } from '@ark-ui/solid'
+import { Checkbox as ArkCheckbox, type CheckboxRootProps } from '@ark-ui/solid'
 import { Show, children, splitProps, type JSX } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
@@ -6,7 +6,7 @@ import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface CheckboxProps
-  extends Assign<JsxStyleProps, ArkCheckboxProps>,
+  extends Assign<JsxStyleProps, CheckboxRootProps>,
     CheckboxVariantProps {
   children?: JSX.Element
 }

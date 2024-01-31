@@ -1,9 +1,7 @@
 import { createToaster } from '@ark-ui/react/toast'
 import type { Meta } from '@storybook/react'
 import { XIcon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import * as Toast from '~/components/ui/toast'
+import { Button, IconButton, Toast } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Toast',

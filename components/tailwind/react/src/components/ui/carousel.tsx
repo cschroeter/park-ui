@@ -1,4 +1,4 @@
-import { Carousel as ArkCarousel } from '@ark-ui/react/carousel'
+import { Carousel } from '@ark-ui/react/carousel'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -45,36 +45,17 @@ const styles = tv({
 })
 const { withProvider, withContext } = createStyleContext(styles)
 
-const Carousel = withProvider(ArkCarousel.Root, 'root')
-const CarouselControl = withContext(ArkCarousel.Control, 'control')
-const CarouselIndicator = withContext(ArkCarousel.Indicator, 'indicator')
-const CarouselIndicatorGroup = withContext(ArkCarousel.IndicatorGroup, 'indicatorGroup')
-const CarouselItem = withContext(ArkCarousel.Item, 'item')
-const CarouselItemGroup = withContext(ArkCarousel.ItemGroup, 'itemGroup')
-const CarouselNextTrigger = withContext(ArkCarousel.NextTrigger, 'nextTrigger')
-const CarouselPrevTrigger = withContext(ArkCarousel.PrevTrigger, 'prevTrigger')
-const CarouselViewport = withContext(ArkCarousel.Viewport, 'viewport')
-
-const Root = Carousel
-const Control = CarouselControl
-const Indicator = CarouselIndicator
-const IndicatorGroup = CarouselIndicatorGroup
-const Item = CarouselItem
-const ItemGroup = CarouselItemGroup
-const NextTrigger = CarouselNextTrigger
-const PrevTrigger = CarouselPrevTrigger
-const Viewport = CarouselViewport
+const Root = withProvider(Carousel.Root, 'root')
+const Control = withContext(Carousel.Control, 'control')
+const Indicator = withContext(Carousel.Indicator, 'indicator')
+const IndicatorGroup = withContext(Carousel.IndicatorGroup, 'indicatorGroup')
+const Item = withContext(Carousel.Item, 'item')
+const ItemGroup = withContext(Carousel.ItemGroup, 'itemGroup')
+const NextTrigger = withContext(Carousel.NextTrigger, 'nextTrigger')
+const PrevTrigger = withContext(Carousel.PrevTrigger, 'prevTrigger')
+const Viewport = withContext(Carousel.Viewport, 'viewport')
 
 export {
-  Carousel,
-  CarouselControl,
-  CarouselIndicator,
-  CarouselIndicatorGroup,
-  CarouselItem,
-  CarouselItemGroup,
-  CarouselNextTrigger,
-  CarouselPrevTrigger,
-  CarouselViewport,
   Control,
   Indicator,
   IndicatorGroup,

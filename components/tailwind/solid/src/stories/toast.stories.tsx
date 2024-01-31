@@ -1,9 +1,7 @@
 import { createToaster } from '@ark-ui/solid'
 import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import * as Toast from '~/components/ui/toast'
+import { Button, IconButton, Toast } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Toast',
@@ -18,10 +16,8 @@ const [Toaster, toast] = createToaster({
       <Toast.Root>
         <Toast.Title>{toast().title}</Toast.Title>
         <Toast.Description>{toast().description}</Toast.Description>
-        <Toast.CloseTrigger asChild>
-          <IconButton size="sm" variant="link">
-            <XIcon />
-          </IconButton>
+        <Toast.CloseTrigger as={IconButton} size="sm" variant="link">
+          <XIcon />
         </Toast.CloseTrigger>
       </Toast.Root>
     )

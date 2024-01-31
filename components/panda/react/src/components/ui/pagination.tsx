@@ -1,7 +1,4 @@
-import {
-  Pagination as ArkPagination,
-  type PaginationProps as ArkPaginationProps,
-} from '@ark-ui/react/pagination'
+import { Pagination as ArkPagination, type PaginationRootProps } from '@ark-ui/react/pagination'
 import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
@@ -11,7 +8,7 @@ import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
 export interface PaginationProps
-  extends Assign<JsxStyleProps, ArkPaginationProps>,
+  extends Assign<JsxStyleProps, PaginationRootProps>,
     PaginationVariantProps {}
 
 export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {

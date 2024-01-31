@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import * as RadioButtonGroup from '~/components/ui/radio-button-group'
+import { RadioButtonGroup } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Radio Button Group',

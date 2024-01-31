@@ -1,13 +1,10 @@
-import {
-  Pagination as ArkPagination,
-  type PaginationProps as ArkPaginationProps,
-} from '@ark-ui/solid'
+import { Pagination as ArkPagination, type PaginationRootProps } from '@ark-ui/solid'
 import { For, splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
-export interface PaginationProps extends ArkPaginationProps, PaginationVariantProps {}
+export interface PaginationProps extends PaginationRootProps, PaginationVariantProps {}
 
 export const Pagination = (props: PaginationProps) => {
   const [variantProps, rootProps] = splitProps(props, ['class'])
@@ -26,8 +23,8 @@ export const Pagination = (props: PaginationProps) => {
           <For each={api().pages}>
             {(page, index) =>
               page.type === 'page' ? (
-                <ArkPagination.Item {...page} asChild class={item()}>
-                  <Button variant="outline">{page.value}</Button>
+                <ArkPagination.Item {...page} as={Button} variant="outline" class={item()}>
+                  {page.value}
                 </ArkPagination.Item>
               ) : (
                 <ArkPagination.Ellipsis index={index()} class={ellipsis()}>

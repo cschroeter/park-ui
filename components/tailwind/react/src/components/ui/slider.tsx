@@ -1,8 +1,8 @@
-import { Slider as ArkSlider, type SliderProps as ArkSliderProps } from '@ark-ui/react/slider'
+import { Slider as ArkSlider, type SliderRootProps } from '@ark-ui/react/slider'
 import { forwardRef, type ReactNode } from 'react'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface SliderProps extends ArkSliderProps, SliderVariantProps {
+export interface SliderProps extends SliderRootProps, SliderVariantProps {
   children?: ReactNode
   marks?: {
     value: number
