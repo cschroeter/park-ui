@@ -9,7 +9,7 @@ export type TextProps = {
   JSX.IntrinsicElements[As]
 
 export const Text = (props: TextProps) => {
-  const { as = 'h2', size, className, ...elementProps } = props
+  const { as = 'p', size, className, ...elementProps } = props
   const classes = styles({ size, className })
 
   return createElement(as, {

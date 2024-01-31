@@ -36,7 +36,7 @@ export const Base = () => {
                   <UserIcon />
                   Profile
                 </HStack>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                <Text as="span" color="fg.subtle" size="sm">
                   ⇧⌘P
                 </Text>
               </HStack>
@@ -51,7 +51,7 @@ export const Base = () => {
                 <HStack gap="2">
                   <SettingsIcon /> Settings
                 </HStack>
-                <Text as="span" color="fg.subtle" textStyle="xs">
+                <Text as="span" color="fg.subtle" size="sm">
                   ⌘,
                 </Text>
               </HStack>
