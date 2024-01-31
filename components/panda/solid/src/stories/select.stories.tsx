@@ -1,7 +1,7 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Select } from '~/components/ui/select'
+import { Select } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Select',

@@ -1,9 +1,7 @@
 import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import { Dialog } from '~/components/ui/dialog'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, Dialog, IconButton } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Dialog',

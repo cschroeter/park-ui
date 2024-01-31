@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Link } from '~/components/ui/link'
+import { Link } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Link',

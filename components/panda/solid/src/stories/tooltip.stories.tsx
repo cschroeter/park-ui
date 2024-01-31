@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Tooltip } from '~/components/ui/tooltip'
+import { Tooltip } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Tooltip',

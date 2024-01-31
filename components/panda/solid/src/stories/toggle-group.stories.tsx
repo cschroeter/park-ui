@@ -1,7 +1,7 @@
 import { BoldIcon, ItalicIcon, UnderlineIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { Stack } from 'styled-system/jsx'
-import { ToggleGroup } from '~/components/ui/toggle-group'
+import { ToggleGroup } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Toggle Group',

@@ -1,57 +1,32 @@
 import { FileUpload as ArkFileUpload } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { fileUpload } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(fileUpload)
 
-export const FileUploadRoot = withProvider(styled(ArkFileUpload.Root), 'root')
-export const FileUploadDropzone = withContext(styled(ArkFileUpload.Dropzone), 'dropzone')
-export const FileUploadItem = withContext(styled(ArkFileUpload.Item), 'item')
-export const FileUploadItemDeleteTrigger = withContext(
-  styled(ArkFileUpload.ItemDeleteTrigger),
-  'itemDeleteTrigger',
-)
-export const FileUploadItemGroup = withContext(styled(ArkFileUpload.ItemGroup), 'itemGroup')
-export const FileUploadItemName = withContext(styled(ArkFileUpload.ItemName), 'itemName')
-export const FileUploadItemPreview = withContext(styled(ArkFileUpload.ItemPreview), 'itemPreview')
-export const FileUploadItemPreviewImage = withContext(
-  styled(ArkFileUpload.ItemPreviewImage),
-  'itemPreviewImage',
-)
-export const FileUploadItemSizeText = withContext(
-  styled(ArkFileUpload.ItemSizeText),
-  'itemSizeText',
-)
-export const FileUploadLabel = withContext(styled(ArkFileUpload.Label), 'label')
-export const FileUploadTrigger = withContext(styled(ArkFileUpload.Trigger), 'trigger')
+const Root = withProvider(styled(ArkFileUpload.Root), 'root')
+const Dropzone = withContext(styled(ArkFileUpload.Dropzone), 'dropzone')
+const Item = withContext(styled(ArkFileUpload.Item), 'item')
+const ItemDeleteTrigger = withContext(styled(ArkFileUpload.ItemDeleteTrigger), 'itemDeleteTrigger')
+const ItemGroup = withContext(styled(ArkFileUpload.ItemGroup), 'itemGroup')
+const ItemName = withContext(styled(ArkFileUpload.ItemName), 'itemName')
+const ItemPreview = withContext(styled(ArkFileUpload.ItemPreview), 'itemPreview')
+const ItemPreviewImage = withContext(styled(ArkFileUpload.ItemPreviewImage), 'itemPreviewImage')
+const ItemSizeText = withContext(styled(ArkFileUpload.ItemSizeText), 'itemSizeText')
+const Label = withContext(styled(ArkFileUpload.Label), 'label')
+const Trigger = withContext(styled(ArkFileUpload.Trigger), 'trigger')
 
-export const FileUpload = {
-  Root: FileUploadRoot,
-  Dropzone: FileUploadDropzone,
-  Item: FileUploadItem,
-  ItemDeleteTrigger: FileUploadItemDeleteTrigger,
-  ItemGroup: FileUploadItemGroup,
-  ItemName: FileUploadItemName,
-  ItemPreview: FileUploadItemPreview,
-  ItemPreviewImage: FileUploadItemPreviewImage,
-  ItemSizeText: FileUploadItemSizeText,
-  Label: FileUploadLabel,
-  Trigger: FileUploadTrigger,
+export {
+  Dropzone,
+  Item,
+  ItemDeleteTrigger,
+  ItemGroup,
+  ItemName,
+  ItemPreview,
+  ItemPreviewImage,
+  ItemSizeText,
+  Label,
+  Root,
+  Trigger,
 }
-
-export interface FileUploadRootProps extends ComponentProps<typeof FileUploadRoot> {}
-export interface FileUploadDropzoneProps extends ComponentProps<typeof FileUploadDropzone> {}
-export interface FileUploadItemProps extends ComponentProps<typeof FileUploadItem> {}
-export interface FileUploadItemDeleteTriggerProps
-  extends ComponentProps<typeof FileUploadItemDeleteTrigger> {}
-export interface FileUploadItemGroupProps extends ComponentProps<typeof FileUploadItemGroup> {}
-export interface FileUploadItemNameProps extends ComponentProps<typeof FileUploadItemName> {}
-export interface FileUploadItemPreviewProps extends ComponentProps<typeof FileUploadItemPreview> {}
-export interface FileUploadItemPreviewImageProps
-  extends ComponentProps<typeof FileUploadItemPreviewImage> {}
-export interface FileUploadItemSizeTextProps
-  extends ComponentProps<typeof FileUploadItemSizeText> {}
-export interface FileUploadLabelProps extends ComponentProps<typeof FileUploadLabel> {}
-export interface FileUploadTriggerProps extends ComponentProps<typeof FileUploadTrigger> {}

@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Switch } from '~/components/ui/switch'
+import { Switch } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Switch',

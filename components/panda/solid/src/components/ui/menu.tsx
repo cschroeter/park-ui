@@ -1,51 +1,36 @@
 import { Menu as ArkMenu } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { menu } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(menu)
 
-export const MenuRoot = withProvider(ArkMenu.Root)
-export const MenuArrow = withContext(styled(ArkMenu.Arrow), 'arrow')
-export const MenuArrowTip = withContext(styled(ArkMenu.ArrowTip), 'arrowTip')
-export const MenuContent = withContext(styled(ArkMenu.Content), 'content')
-export const MenuContextTrigger = withContext(styled(ArkMenu.ContextTrigger), 'contextTrigger')
-export const MenuItem = withContext(styled(ArkMenu.Item), 'item')
-export const MenuItemGroup = withContext(styled(ArkMenu.ItemGroup), 'itemGroup')
-export const MenuItemGroupLabel = withContext(styled(ArkMenu.ItemGroupLabel), 'itemGroupLabel')
-export const MenuOptionItem = withContext(styled(ArkMenu.OptionItem), 'optionItem')
-export const MenuPositioner = withContext(styled(ArkMenu.Positioner), 'positioner')
-export const MenuSeparator = withContext(styled(ArkMenu.Separator), 'separator')
-export const MenuTrigger = withContext(styled(ArkMenu.Trigger), 'trigger')
-export const MenuTriggerItem = withContext(styled(ArkMenu.TriggerItem), 'triggerItem')
+const Root = withProvider(ArkMenu.Root)
+const Arrow = withContext(styled(ArkMenu.Arrow), 'arrow')
+const ArrowTip = withContext(styled(ArkMenu.ArrowTip), 'arrowTip')
+const Content = withContext(styled(ArkMenu.Content), 'content')
+const ContextTrigger = withContext(styled(ArkMenu.ContextTrigger), 'contextTrigger')
+const Item = withContext(styled(ArkMenu.Item), 'item')
+const ItemGroup = withContext(styled(ArkMenu.ItemGroup), 'itemGroup')
+const ItemGroupLabel = withContext(styled(ArkMenu.ItemGroupLabel), 'itemGroupLabel')
+const OptionItem = withContext(styled(ArkMenu.OptionItem), 'optionItem')
+const Positioner = withContext(styled(ArkMenu.Positioner), 'positioner')
+const Separator = withContext(styled(ArkMenu.Separator), 'separator')
+const Trigger = withContext(styled(ArkMenu.Trigger), 'trigger')
+const TriggerItem = withContext(styled(ArkMenu.TriggerItem), 'triggerItem')
 
-export const Menu = {
-  Root: MenuRoot,
-  Arrow: MenuArrow,
-  ArrowTip: MenuArrowTip,
-  Content: MenuContent,
-  ContextTrigger: MenuContextTrigger,
-  Item: MenuItem,
-  ItemGroup: MenuItemGroup,
-  ItemGroupLabel: MenuItemGroupLabel,
-  OptionItem: MenuOptionItem,
-  Positioner: MenuPositioner,
-  Separator: MenuSeparator,
-  Trigger: MenuTrigger,
-  TriggerItem: MenuTriggerItem,
+export {
+  Arrow,
+  ArrowTip,
+  Content,
+  ContextTrigger,
+  Item,
+  ItemGroup,
+  ItemGroupLabel,
+  OptionItem,
+  Positioner,
+  Root,
+  Separator,
+  Trigger,
+  TriggerItem,
 }
-
-export interface MenuRootProps extends ComponentProps<typeof MenuRoot> {}
-export interface MenuArrowProps extends ComponentProps<typeof MenuArrow> {}
-export interface MenuArrowTipProps extends ComponentProps<typeof MenuArrowTip> {}
-export interface MenuContentProps extends ComponentProps<typeof MenuContent> {}
-export interface MenuContextTriggerProps extends ComponentProps<typeof MenuContextTrigger> {}
-export interface MenuItemProps extends ComponentProps<typeof MenuItem> {}
-export interface MenuItemGroupProps extends ComponentProps<typeof MenuItemGroup> {}
-export interface MenuItemGroupLabelProps extends ComponentProps<typeof MenuItemGroupLabel> {}
-export interface MenuOptionItemProps extends ComponentProps<typeof MenuOptionItem> {}
-export interface MenuPositionerProps extends ComponentProps<typeof MenuPositioner> {}
-export interface MenuSeparatorProps extends ComponentProps<typeof MenuSeparator> {}
-export interface MenuTriggerProps extends ComponentProps<typeof MenuTrigger> {}
-export interface MenuTriggerItemProps extends ComponentProps<typeof MenuTriggerItem> {}

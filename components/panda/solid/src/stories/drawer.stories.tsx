@@ -1,8 +1,6 @@
 import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
-import { Drawer } from '~/components/ui/drawer'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, Drawer, IconButton } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Drawer',

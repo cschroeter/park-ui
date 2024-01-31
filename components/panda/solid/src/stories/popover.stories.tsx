@@ -1,9 +1,7 @@
 import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { Box, Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import { Popover } from '~/components/ui/popover'
+import { Button, IconButton, Popover } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Popover',

@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Splitter } from '~/components/ui/splitter'
+import { Splitter } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Splitter',

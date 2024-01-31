@@ -1,9 +1,7 @@
 import { XIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import { TagsInput } from '~/components/ui/tags-input'
+import { Button, IconButton, TagsInput } from '~/components/ui'
 
 const meta: Meta = {
   title: 'Components/Tags Input',
