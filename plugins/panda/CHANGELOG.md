@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.33.0] - 2024-02-01
+
 ### Changed
 
 - Replaced `heading` recipe in favor of `text` recipe. Please update your code snippets accordingly.
