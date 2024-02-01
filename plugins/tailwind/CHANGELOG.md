@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.19.0] - 2024-02-01
+
 ### Added
 
 - Added `Icon` and `Progress` components.
