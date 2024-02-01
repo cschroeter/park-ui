@@ -10,7 +10,7 @@ export default meta
 export const Banner = () => {
   return (
     <div className="pb-12 md:pb-24">
-      <div className="bg-bg-default" borderBottomWidth="1px">
+      <div className="bg-bg-default border-b">
         <div className="py-4 md:py-3.5 px-4">
           <div className="flex gap-4 flex-col md:flex-row flex-start md:justify-between">
             <div className="pe-4 md:pe-0">

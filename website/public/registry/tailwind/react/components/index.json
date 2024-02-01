@@ -74,6 +74,7 @@
       "name": "Icon Button",
       "href": "https://park-ui.com/registry/tailwind/react/components/icon-button.json"
     },
+    { "name": "Icon", "href": "https://park-ui.com/registry/tailwind/react/components/icon.json" },
     {
       "name": "Input",
       "href": "https://park-ui.com/registry/tailwind/react/components/input.json"
