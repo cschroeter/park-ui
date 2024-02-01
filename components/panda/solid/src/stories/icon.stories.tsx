@@ -9,28 +9,14 @@ const meta: Meta = {
 
 export default meta
 
-export const Base = () => (
-  <Icon>
-    <DiamondIcon />
-  </Icon>
-)
+export const Base = () => <Icon as={DiamondIcon} />
 
 export const Sizes = () => (
   <Stack>
-    <Icon size="xs">
-      <DiamondIcon />
-    </Icon>
-    <Icon size="sm">
-      <DiamondIcon />
-    </Icon>
-    <Icon size="md">
-      <DiamondIcon />
-    </Icon>
-    <Icon size="xl">
-      <DiamondIcon />
-    </Icon>
-    <Icon size="2xl">
-      <DiamondIcon />
-    </Icon>
+    <Icon size="xs" as={DiamondIcon} />
+    <Icon size="sm" as={DiamondIcon} />
+    <Icon size="md" as={DiamondIcon} />
+    <Icon size="lg" as={DiamondIcon} />
+    <Icon size="xl" as={DiamondIcon} />
   </Stack>
 )
