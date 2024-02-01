@@ -99,6 +99,10 @@
       "href": "https://park-ui.com/registry/tailwind/react/components/popover.json"
     },
     {
+      "name": "Progress",
+      "href": "https://park-ui.com/registry/tailwind/react/components/progress.json"
+    },
+    {
       "name": "Radio Button Group",
       "href": "https://park-ui.com/registry/tailwind/react/components/radio-button-group.json"
     },
