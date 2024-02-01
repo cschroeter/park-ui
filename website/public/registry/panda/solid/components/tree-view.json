@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "tree-view.tsx",
+      "content": "import { TreeView } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { treeView } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(treeView)\n\nexport const Root = withProvider(styled(TreeView.Root), 'root')\nexport const Item = withContext(styled(TreeView.Item), 'item')\nexport const Tree = withContext(styled(TreeView.Tree), 'tree')\nexport const Label = withContext(styled(TreeView.Label), 'label')\nexport const Branch = withContext(styled(TreeView.Branch), 'branch')\nexport const BranchControl = withContext(styled(TreeView.BranchControl), 'branchControl')\nexport const BranchContent = withContext(styled(TreeView.BranchContent), 'branchContent')\nexport const BranchText = withContext(styled(TreeView.BranchText), 'branchText')\n\nexport interface RootProps extends ComponentProps<typeof Root> {}\nexport interface ItemProps extends ComponentProps<typeof Item> {}\nexport interface TreeProps extends ComponentProps<typeof Tree> {}\nexport interface LabelProps extends ComponentProps<typeof Label> {}export interface BranchProps extends ComponentProps<typeof Branch> {}\nexport interface BranchControlProps extends ComponentProps<typeof BranchControl> {}\nexport interface BranchContentProps extends ComponentProps<typeof BranchContent> {}\nexport interface BranchTextProps extends ComponentProps<typeof BranchText> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}
