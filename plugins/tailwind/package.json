@@ -31,11 +31,9 @@
     "postpack": "clean-package restore"
   },
   "dependencies": {
-    "tailwind-variants": "0.1.20",
     "ts-pattern": "5.0.6"
   },
   "devDependencies": {
-    "@ark-ui/react": "2.0.1",
     "@pandacss/dev": "0.29.1",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",

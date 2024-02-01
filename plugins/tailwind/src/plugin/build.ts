@@ -29,11 +29,12 @@ function readStylesToCssInJs() {
 function getPandaLayerContent(cssInJs: any) {
   return {
     ...cssInJs['@layer base'],
-    ...cssInJs['@layer utilities']['@layer compositions'],
-    ...cssInJs['@layer utilities'],
+    ...cssInJs['@layer tokens'],
+    ...cssInJs['@layer recipes']['@layer _base'],
+    ...cssInJs['@layer recipes'],
     ...cssInJs['@layer recipes.slots']['@layer _base'],
     ...cssInJs['@layer recipes.slots'],
-    ...cssInJs['@layer recipes'],
-    ...cssInJs['@layer tokens'],
+    ...cssInJs['@layer utilities']['@layer compositions'],
+    ...cssInJs['@layer utilities'],
   }
 }

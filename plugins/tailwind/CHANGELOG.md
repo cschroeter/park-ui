@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Resolved an issue that the layers in the generated CSS file were not sorted correctly.
+
 ## [0.19.0] - 2024-02-01
 
 ### Added
