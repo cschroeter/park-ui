@@ -19,6 +19,7 @@ export const Base = () => {
         </FileUpload.Trigger>
       </FileUpload.Dropzone>
       <FileUpload.ItemGroup>
+        {/* @ts-expect-error TODO resolve issue with Panda styled */}
         {(files) => (
           <Index each={files()}>
             {(file) => (

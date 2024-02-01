@@ -13,6 +13,7 @@ export default meta
 export const Base = () => {
   return (
     <ColorPicker.Root>
+      {/* @ts-expect-error TODO resolve issue with Panda styled */}
       {(api) => (
         <>
           <ColorPicker.Label>Color Picker</ColorPicker.Label>

@@ -15,7 +15,7 @@
     "tailwind:react": "pnpm --filter=@park-ui/tailwind-react-components",
     "tailwind:solid": "pnpm --filter=@park-ui/tailwind-solid-components",
     "chakra:react": "pnpm --filter=@park-ui/chakra-react-components",
-    "ci:typecheck": "pnpm run -r typecheck"
+    "ci:typecheck": "turbo run typecheck"
   },
   "dependencies": {
     "@biomejs/biome": "1.5.3",
@@ -25,7 +25,8 @@
     "lint-staged": "15.2.1",
     "prettier": "3.2.4",
     "prettier-plugin-astro": "0.13.0",
-    "prettier-plugin-organize-imports": "3.2.4"
+    "prettier-plugin-organize-imports": "3.2.4",
+    "turbo": "1.11.3"
   },
   "commitlint": {
     "extends": [

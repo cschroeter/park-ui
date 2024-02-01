@@ -22,6 +22,7 @@ export const Base = () => {
       <DatePicker.Positioner>
         <DatePicker.Content>
           <DatePicker.View view="day">
+            {/* @ts-expect-error TODO resolve issue with Panda styled */}
             {(api) => (
               <>
                 <DatePicker.ViewControl>
@@ -67,6 +68,7 @@ export const Base = () => {
             )}
           </DatePicker.View>
           <DatePicker.View view="month">
+            {/* @ts-expect-error TODO resolve issue with Panda styled */}
             {(api) => (
               <>
                 <DatePicker.ViewControl>
@@ -103,6 +105,7 @@ export const Base = () => {
             )}
           </DatePicker.View>
           <DatePicker.View view="year">
+            {/* @ts-expect-error TODO resolve issue with Panda styled */}
             {(api) => (
               <>
                 <DatePicker.ViewControl>

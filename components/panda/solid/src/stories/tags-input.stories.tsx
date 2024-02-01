@@ -12,6 +12,7 @@ export default meta
 export const Base = () => {
   return (
     <TagsInput.Root value={['React', 'Solid', 'Vue']} maxW="xs">
+      {/* @ts-expect-error TODO resolve issue with Panda styled */}
       {(api) => (
         <>
           <TagsInput.Label>Frameworks</TagsInput.Label>

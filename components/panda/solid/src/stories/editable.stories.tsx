@@ -14,6 +14,7 @@ export const Base = () => {
       value="Double click to edit"
       activationMode="dblclick"
     >
+      {/* @ts-expect-error TODO resolve issue with Panda styled */}
       {(api) => (
         <>
           <Editable.Label as={FormLabel}>Framework</Editable.Label>

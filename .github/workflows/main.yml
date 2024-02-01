@@ -19,5 +19,5 @@ jobs:
       - name: Install
         uses: ./.github/composite-actions/install
 
-      # - name: Run typecheck
-      #   run: pnpm typecheck
+      - name: Run typecheck
+        run: pnpm ci:typecheck
