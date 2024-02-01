@@ -2,7 +2,7 @@ import { ark, type HTMLArkProps } from '@ark-ui/solid'
 import { splitProps } from 'solid-js'
 import { tv, type VariantProps } from 'tailwind-variants'
 
-export interface BadgeProps extends BadgeVariantProps, HTMLArkProps<'div'> {}
+export interface BadgeProps extends HTMLArkProps<'div'>, BadgeVariantProps {}
 
 export const Badge = (props: BadgeProps) => {
   const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])
