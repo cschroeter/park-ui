@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added `Icon` and `Progress` components.
+
 ### Changed
 
 - Replaced `heading` recipe in favor of `text` recipe. Please update your code snippets accordingly.
