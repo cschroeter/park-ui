@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.19.1] - 2024-02-01
+
 ### Fixed
 
 - Resolved an issue that the layers in the generated CSS file were not sorted correctly.
