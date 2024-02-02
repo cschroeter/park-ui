@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants'
 import type { ComponentProps } from 'solid-js'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({{{tvConfig}}})
+const styles = tv({{{tvConfig}}}, { twMerge: false })
 const { withProvider, withContext } = createStyleContext(styles)
 
 {{#each parts}}

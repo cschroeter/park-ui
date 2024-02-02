@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "icon.tsx",
-      "content": "import { ark } from '@ark-ui/solid'\nimport { type JSX } from 'solid-js'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { icon, type IconVariantProps } from 'styled-system/recipes'\n\nexport interface IconProps extends IconVariantProps, HTMLStyledProps<'svg'> {\n  children: JSX.Element\n}\n\nexport const Icon = (props: IconProps) => {\n  return <StyledIcon {...props} />\n}\n\nconst StyledIcon = styled(ark.svg, icon)\n",
+      "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { icon } from 'styled-system/recipes'\n\nexport const Icon = styled(ark.div, icon)\nexport interface IconProps extends ComponentProps<typeof Icon> {}\n",
       "hasMultipleParts": false
     }
   ]

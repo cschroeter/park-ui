@@ -3,17 +3,20 @@ import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'toast',
-  slots: {
-    group: 'toast__group',
-    root: 'toast__root',
-    title: 'toast__title',
-    description: 'toast__description',
-    closeTrigger: 'toast__closeTrigger',
+const styles = tv(
+  {
+    base: 'toast',
+    slots: {
+      group: 'toast__group',
+      root: 'toast__root',
+      title: 'toast__title',
+      description: 'toast__description',
+      closeTrigger: 'toast__closeTrigger',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(Toast.Root, 'root')

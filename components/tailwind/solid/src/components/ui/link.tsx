@@ -12,4 +12,4 @@ export const Link = (props: LinkProps) => {
 
 type LinkVariantProps = VariantProps<typeof styles>
 
-const styles = tv({ base: 'link', variants: {} })
+const styles = tv({ base: 'link', variants: {} }, { twMerge: false })

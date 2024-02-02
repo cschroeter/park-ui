@@ -3,18 +3,21 @@ import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'card',
-  slots: {
-    root: 'card__root',
-    header: 'card__header',
-    body: 'card__body',
-    footer: 'card__footer',
-    title: 'card__title',
-    description: 'card__description',
+const styles = tv(
+  {
+    base: 'card',
+    slots: {
+      root: 'card__root',
+      header: 'card__header',
+      body: 'card__body',
+      footer: 'card__footer',
+      title: 'card__title',
+      description: 'card__description',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(ark.div, 'root')

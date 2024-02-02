@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "kbd.tsx",
-      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nexport interface KbdProps extends KbdVariantProps, HTMLArkProps<'kbd'> {}\n\nexport const Kbd = forwardRef<HTMLElement, KbdProps>((props, ref) => {\n  const { size, className, ...rest } = props\n  return <ark.kbd className={styles({ size, className })} ref={ref} {...rest} />\n})\n\nKbd.displayName = 'Kbd'\n\ntype KbdVariantProps = VariantProps<typeof styles>\n\nconst styles = tv({\n  base: 'kbd',\n  defaultVariants: { size: 'md' },\n  variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },\n})\n",
+      "content": "import { ark, type HTMLArkProps } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { tv, type VariantProps } from 'tailwind-variants'\n\nexport interface KbdProps extends KbdVariantProps, HTMLArkProps<'kbd'> {}\n\nexport const Kbd = forwardRef<HTMLElement, KbdProps>((props, ref) => {\n  const { size, className, ...rest } = props\n  return <ark.kbd className={styles({ size, className })} ref={ref} {...rest} />\n})\n\nKbd.displayName = 'Kbd'\n\ntype KbdVariantProps = VariantProps<typeof styles>\n\nconst styles = tv(\n  {\n    base: 'kbd',\n    defaultVariants: { size: 'md' },\n    variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },\n  },\n  { twMerge: false },\n)\n",
       "hasMultipleParts": false
     }
   ]

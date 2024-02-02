@@ -12,15 +12,18 @@ export const Textarea = (props: TextareaProps) => {
 
 type TextareaVariantProps = VariantProps<typeof styles>
 
-const styles = tv({
-  base: 'textarea',
-  defaultVariants: { size: 'md' },
-  variants: {
-    size: {
-      sm: 'textarea--size_sm',
-      md: 'textarea--size_md',
-      lg: 'textarea--size_lg',
-      xl: 'textarea--size_xl',
+const styles = tv(
+  {
+    base: 'textarea',
+    defaultVariants: { size: 'md' },
+    variants: {
+      size: {
+        sm: 'textarea--size_sm',
+        md: 'textarea--size_md',
+        lg: 'textarea--size_lg',
+        xl: 'textarea--size_xl',
+      },
     },
   },
-})
+  { twMerge: false },
+)

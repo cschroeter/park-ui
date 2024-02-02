@@ -45,17 +45,20 @@ Pagination.displayName = 'Pagination'
 
 type PaginationVariantProps = VariantProps<typeof styles>
 
-const styles = tv({
-  base: 'pagination',
-  slots: {
-    root: 'pagination__root',
-    item: 'pagination__item',
-    ellipsis: 'pagination__ellipsis',
-    prevTrigger: 'pagination__prevTrigger',
-    nextTrigger: 'pagination__nextTrigger',
+const styles = tv(
+  {
+    base: 'pagination',
+    slots: {
+      root: 'pagination__root',
+      item: 'pagination__item',
+      ellipsis: 'pagination__ellipsis',
+      prevTrigger: 'pagination__prevTrigger',
+      nextTrigger: 'pagination__nextTrigger',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 
 const ChevronLeftIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

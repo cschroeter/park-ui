@@ -3,23 +3,26 @@ import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'fileUpload',
-  slots: {
-    root: 'fileUpload__root',
-    dropzone: 'fileUpload__dropzone',
-    item: 'fileUpload__item',
-    itemDeleteTrigger: 'fileUpload__itemDeleteTrigger',
-    itemGroup: 'fileUpload__itemGroup',
-    itemName: 'fileUpload__itemName',
-    itemPreview: 'fileUpload__itemPreview',
-    itemPreviewImage: 'fileUpload__itemPreviewImage',
-    itemSizeText: 'fileUpload__itemSizeText',
-    label: 'fileUpload__label',
-    trigger: 'fileUpload__trigger',
+const styles = tv(
+  {
+    base: 'fileUpload',
+    slots: {
+      root: 'fileUpload__root',
+      dropzone: 'fileUpload__dropzone',
+      item: 'fileUpload__item',
+      itemDeleteTrigger: 'fileUpload__itemDeleteTrigger',
+      itemGroup: 'fileUpload__itemGroup',
+      itemName: 'fileUpload__itemName',
+      itemPreview: 'fileUpload__itemPreview',
+      itemPreviewImage: 'fileUpload__itemPreviewImage',
+      itemSizeText: 'fileUpload__itemSizeText',
+      label: 'fileUpload__label',
+      trigger: 'fileUpload__trigger',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(FileUpload.Root, 'root')

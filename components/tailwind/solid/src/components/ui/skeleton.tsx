@@ -25,4 +25,4 @@ export const Skeleton = (props: SkeletonProps) => {
 
 type SkeletonVariantProps = VariantProps<typeof styles>
 
-const styles = tv({ base: 'skeleton', variants: {} })
+const styles = tv({ base: 'skeleton', variants: {} }, { twMerge: false })

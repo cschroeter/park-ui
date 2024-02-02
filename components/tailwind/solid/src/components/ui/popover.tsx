@@ -3,22 +3,25 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'popover',
-  slots: {
-    arrow: 'popover__arrow',
-    arrowTip: 'popover__arrowTip',
-    anchor: 'popover__anchor',
-    trigger: 'popover__trigger',
-    indicator: 'popover__indicator',
-    positioner: 'popover__positioner',
-    content: 'popover__content',
-    title: 'popover__title',
-    description: 'popover__description',
-    closeTrigger: 'popover__closeTrigger',
+const styles = tv(
+  {
+    base: 'popover',
+    slots: {
+      arrow: 'popover__arrow',
+      arrowTip: 'popover__arrowTip',
+      anchor: 'popover__anchor',
+      trigger: 'popover__trigger',
+      indicator: 'popover__indicator',
+      positioner: 'popover__positioner',
+      content: 'popover__content',
+      title: 'popover__title',
+      description: 'popover__description',
+      closeTrigger: 'popover__closeTrigger',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(Popover.Root)

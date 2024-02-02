@@ -3,35 +3,38 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'datePicker',
-  slots: {
-    root: 'datePicker__root',
-    label: 'datePicker__label',
-    clearTrigger: 'datePicker__clearTrigger',
-    content: 'datePicker__content',
-    control: 'datePicker__control',
-    input: 'datePicker__input',
-    monthSelect: 'datePicker__monthSelect',
-    nextTrigger: 'datePicker__nextTrigger',
-    positioner: 'datePicker__positioner',
-    prevTrigger: 'datePicker__prevTrigger',
-    rangeText: 'datePicker__rangeText',
-    table: 'datePicker__table',
-    tableBody: 'datePicker__tableBody',
-    tableCell: 'datePicker__tableCell',
-    tableCellTrigger: 'datePicker__tableCellTrigger',
-    tableHead: 'datePicker__tableHead',
-    tableHeader: 'datePicker__tableHeader',
-    tableRow: 'datePicker__tableRow',
-    trigger: 'datePicker__trigger',
-    viewTrigger: 'datePicker__viewTrigger',
-    viewControl: 'datePicker__viewControl',
-    yearSelect: 'datePicker__yearSelect',
-    view: 'datePicker__view',
+const styles = tv(
+  {
+    base: 'datePicker',
+    slots: {
+      root: 'datePicker__root',
+      label: 'datePicker__label',
+      clearTrigger: 'datePicker__clearTrigger',
+      content: 'datePicker__content',
+      control: 'datePicker__control',
+      input: 'datePicker__input',
+      monthSelect: 'datePicker__monthSelect',
+      nextTrigger: 'datePicker__nextTrigger',
+      positioner: 'datePicker__positioner',
+      prevTrigger: 'datePicker__prevTrigger',
+      rangeText: 'datePicker__rangeText',
+      table: 'datePicker__table',
+      tableBody: 'datePicker__tableBody',
+      tableCell: 'datePicker__tableCell',
+      tableCellTrigger: 'datePicker__tableCellTrigger',
+      tableHead: 'datePicker__tableHead',
+      tableHeader: 'datePicker__tableHeader',
+      tableRow: 'datePicker__tableRow',
+      trigger: 'datePicker__trigger',
+      viewTrigger: 'datePicker__viewTrigger',
+      viewControl: 'datePicker__viewControl',
+      yearSelect: 'datePicker__yearSelect',
+      view: 'datePicker__view',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(DatePicker.Root, 'root')

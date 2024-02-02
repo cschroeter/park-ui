@@ -3,19 +3,22 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'dialog',
-  slots: {
-    trigger: 'dialog__trigger',
-    backdrop: 'dialog__backdrop',
-    positioner: 'dialog__positioner',
-    content: 'dialog__content',
-    title: 'dialog__title',
-    description: 'dialog__description',
-    closeTrigger: 'dialog__closeTrigger',
+const styles = tv(
+  {
+    base: 'dialog',
+    slots: {
+      trigger: 'dialog__trigger',
+      backdrop: 'dialog__backdrop',
+      positioner: 'dialog__positioner',
+      content: 'dialog__content',
+      title: 'dialog__title',
+      description: 'dialog__description',
+      closeTrigger: 'dialog__closeTrigger',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(Dialog.Root)

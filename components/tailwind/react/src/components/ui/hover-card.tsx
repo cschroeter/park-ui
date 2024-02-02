@@ -3,17 +3,20 @@ import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'hoverCard',
-  slots: {
-    arrow: 'hoverCard__arrow',
-    arrowTip: 'hoverCard__arrowTip',
-    trigger: 'hoverCard__trigger',
-    positioner: 'hoverCard__positioner',
-    content: 'hoverCard__content',
+const styles = tv(
+  {
+    base: 'hoverCard',
+    slots: {
+      arrow: 'hoverCard__arrow',
+      arrowTip: 'hoverCard__arrowTip',
+      trigger: 'hoverCard__trigger',
+      positioner: 'hoverCard__positioner',
+      content: 'hoverCard__content',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(HoverCard.Root)

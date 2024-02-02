@@ -3,15 +3,18 @@ import type { ComponentProps } from 'react'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv({
-  base: 'splitter',
-  slots: {
-    root: 'splitter__root',
-    panel: 'splitter__panel',
-    resizeTrigger: 'splitter__resizeTrigger',
+const styles = tv(
+  {
+    base: 'splitter',
+    slots: {
+      root: 'splitter__root',
+      panel: 'splitter__panel',
+      resizeTrigger: 'splitter__resizeTrigger',
+    },
+    variants: {},
   },
-  variants: {},
-})
+  { twMerge: false },
+)
 const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(Splitter.Root, 'root')

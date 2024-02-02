@@ -13,11 +13,14 @@ Code.displayName = 'Code'
 
 type CodeVariantProps = VariantProps<typeof styles>
 
-const styles = tv({
-  base: 'code',
-  defaultVariants: { size: 'md', variant: 'outline' },
-  variants: {
-    variant: { outline: 'code--variant_outline', ghost: 'code--variant_ghost' },
-    size: { sm: 'code--size_sm', md: 'code--size_md', lg: 'code--size_lg' },
+const styles = tv(
+  {
+    base: 'code',
+    defaultVariants: { size: 'md', variant: 'outline' },
+    variants: {
+      variant: { outline: 'code--variant_outline', ghost: 'code--variant_ghost' },
+      size: { sm: 'code--size_sm', md: 'code--size_md', lg: 'code--size_lg' },
+    },
   },
-})
+  { twMerge: false },
+)

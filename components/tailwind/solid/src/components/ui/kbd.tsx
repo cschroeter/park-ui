@@ -12,8 +12,11 @@ export const Kbd = (props: KbdProps) => {
 
 type KbdVariantProps = VariantProps<typeof styles>
 
-const styles = tv({
-  base: 'kbd',
-  defaultVariants: { size: 'md' },
-  variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },
-})
+const styles = tv(
+  {
+    base: 'kbd',
+    defaultVariants: { size: 'md' },
+    variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },
+  },
+  { twMerge: false },
+)

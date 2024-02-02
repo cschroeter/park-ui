@@ -13,15 +13,18 @@ FormLabel.displayName = 'FormLabel'
 
 type FormLabelVariantProps = VariantProps<typeof styles>
 
-const styles = tv({
-  base: 'formLabel',
-  defaultVariants: { size: 'md' },
-  variants: {
-    size: {
-      sm: 'formLabel--size_sm',
-      md: 'formLabel--size_md',
-      lg: 'formLabel--size_lg',
-      xl: 'formLabel--size_xl',
+const styles = tv(
+  {
+    base: 'formLabel',
+    defaultVariants: { size: 'md' },
+    variants: {
+      size: {
+        sm: 'formLabel--size_sm',
+        md: 'formLabel--size_md',
+        lg: 'formLabel--size_lg',
+        xl: 'formLabel--size_xl',
+      },
     },
   },
-})
+  { twMerge: false },
+)

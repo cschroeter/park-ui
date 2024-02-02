@@ -74,6 +74,7 @@
       "name": "Icon Button",
       "href": "https://park-ui.com/registry/tailwind/solid/components/icon-button.json"
     },
+    { "name": "Icon", "href": "https://park-ui.com/registry/tailwind/solid/components/icon.json" },
     {
       "name": "Input",
       "href": "https://park-ui.com/registry/tailwind/solid/components/input.json"
@@ -98,6 +99,10 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/popover.json"
     },
     {
+      "name": "Progress",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/progress.json"
+    },
+    {
       "name": "Radio Button Group",
       "href": "https://park-ui.com/registry/tailwind/solid/components/radio-button-group.json"
     },
@@ -116,6 +121,10 @@
     {
       "name": "Select",
       "href": "https://park-ui.com/registry/tailwind/solid/components/select.json"
+    },
+    {
+      "name": "Skeleton",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/skeleton.json"
     },
     {
       "name": "Slider",
