@@ -10,7 +10,7 @@
     "@pandacss/types": "0.29.1",
     "@park-ui/panda-preset": "workspace:*",
     "@types/fs-extra": "11.0.4",
-    "@types/react": "18.2.48",
+    "@types/react": "18.2.51",
     "@types/react-dom": "18.2.18",
     "@types/voca": "1.4.5",
     "commander": "11.1.0",
