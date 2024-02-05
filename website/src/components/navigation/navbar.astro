@@ -7,17 +7,30 @@ import ColorModeButton from '~/components/color-mode-button.astro'
 import { Logo } from '~/components/logo'
 
 interface Props extends BoxProps {}
+
+const styles = css({
+  color: 'fg.muted',
+  fontWeight: 'medium',
+  _hover: { color: 'fg.default' },
+})
+
 const props = Astro.props
 ---
 
 <Box divideY="1px" {...props}>
   <Container>
     <HStack justify="space-between" py={{ base: '3', md: '5' }} gap="8">
-      <a href="/" aria-label="Go to start page">
-        <Logo />
-      </a>
+      <HStack gap="10">
+        <a href="/" aria-label="Go to start page">
+          <Logo />
+        </a>
+        <HStack gap="8" display={{ base: 'none', md: 'flex' }}>
+          <a href="/docs/panda/overview/introduction" class={styles}>Docs</a>
+          <a href="/docs/panda/components/accordion" class={styles}>Components</a>
+          <a href="/examples" class={styles}>Examples</a>
+        </HStack>
+      </HStack>
       <HStack gap={{ base: '2', md: '4' }}>
-        <slot name="action" />
         <HStack gap="0.5">
           <a
             href="https://twitter.com/grizzly_codes"
@@ -41,6 +54,7 @@ const props = Astro.props
           </a>
           <ColorModeButton />
         </HStack>
+        <slot name="action" />
       </HStack>
     </HStack>
   </Container>
