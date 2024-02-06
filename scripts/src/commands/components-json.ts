@@ -2,7 +2,6 @@ import * as components from '@ark-ui/anatomy'
 import { AnatomyInstance } from '@ark-ui/anatomy'
 import { Command } from 'commander'
 import fs from 'fs-extra'
-import prettier from 'prettier'
 import { match } from 'ts-pattern'
 import v from 'voca'
 
@@ -10,8 +9,6 @@ const pascalCase = (s: string) => v.chain(s).camelCase().capitalize().value()
 const camelCase = (s: string) => v.chain(s).camelCase().value()
 
 const generateComponentsJson = async () => {
-  const prettierConfig = await prettier.resolveConfig('.')
-
   const result = Object.entries(components)
     .filter(([key]) => !['createAnatomy'].includes(key))
     .filter(([key]) => key !== 'default')

@@ -12,7 +12,6 @@
     "components/tailwind/*"
   ],
   "scripts": {
-    "prepare": "husky install",
     "cli": "bun run --cwd cli",
     "scripts": "bun run --cwd scripts",
     "website": "bun run --cwd website",
@@ -28,24 +27,8 @@
   },
   "dependencies": {
     "@biomejs/biome": "1.5.3",
-    "@commitlint/cli": "18.6.0",
-    "@commitlint/config-conventional": "18.6.0",
-    "husky": "8.0.3",
-    "lint-staged": "15.2.2",
-    "prettier": "3.2.5",
-    "prettier-plugin-astro": "0.13.0",
-    "prettier-plugin-organize-imports": "3.2.4",
-    "turbo": "1.12.2"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json}": [
-      "prettier --plugin prettier-plugin-organize-imports --write"
-    ]
+    "turbo": "1.12.2",
+    "typescript": "5.3.3"
   },
   "packageManager": "bun@1.0.26"
 }
