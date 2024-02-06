@@ -9,8 +9,16 @@
     "name": "Alert",
     "parts": {
       "Root": { "name": "AlertRoot", "slot": "root", "component": "ark.div" },
-      "Content": { "name": "AlertContent", "slot": "content", "component": "ark.div" },
-      "Description": { "name": "AlertDescription", "slot": "description", "component": "ark.p" },
+      "Content": {
+        "name": "AlertContent",
+        "slot": "content",
+        "component": "ark.div"
+      },
+      "Description": {
+        "name": "AlertDescription",
+        "slot": "description",
+        "component": "ark.p"
+      },
       "Icon": { "name": "AlertIcon", "slot": "icon", "component": "ark.svg" },
       "Title": { "name": "AlertTitle", "slot": "title", "component": "ark.h5" }
     }
@@ -19,9 +27,21 @@
     "parts": {
       "Root": { "name": "CardRoot", "slot": "root", "component": "ark.div" },
       "Body": { "name": "CardBody", "slot": "body", "component": "ark.div" },
-      "Description": { "name": "CardDescription", "slot": "description", "component": "ark.p" },
-      "Footer": { "name": "CardFooter", "slot": "footer", "component": "ark.div" },
-      "Header": { "name": "CardHeader", "slot": "header", "component": "ark.div" },
+      "Description": {
+        "name": "CardDescription",
+        "slot": "description",
+        "component": "ark.p"
+      },
+      "Footer": {
+        "name": "CardFooter",
+        "slot": "footer",
+        "component": "ark.div"
+      },
+      "Header": {
+        "name": "CardHeader",
+        "slot": "header",
+        "component": "ark.div"
+      },
       "Title": { "name": "CardTitle", "slot": "title", "component": "ark.h3" }
     },
     "name": "Card",
@@ -46,13 +66,21 @@
         "slot": "closeTrigger",
         "component": "ArkDrawer.CloseTrigger"
       },
-      "Content": { "name": "DrawerContent", "slot": "content", "component": "ArkDrawer.Content" },
+      "Content": {
+        "name": "DrawerContent",
+        "slot": "content",
+        "component": "ArkDrawer.Content"
+      },
       "Description": {
         "name": "DrawerDescription",
         "slot": "description",
         "component": "ArkDrawer.Description"
       },
-      "Footer": { "name": "DrawerFooter", "slot": "footer", "component": "ark.div" },
+      "Footer": {
+        "name": "DrawerFooter",
+        "slot": "footer",
+        "component": "ark.div"
+      },
       "Header": {
         "name": "DrawerHeader",
         "slot": "header",
@@ -63,8 +91,16 @@
         "slot": "positioner",
         "component": "ArkDrawer.Positioner"
       },
-      "Title": { "name": "DrawerTitle", "slot": "title", "component": "ArkDrawer.Title" },
-      "Trigger": { "name": "DrawerTrigger", "slot": "trigger", "component": "ArkDrawer.Trigger" }
+      "Title": {
+        "name": "DrawerTitle",
+        "slot": "title",
+        "component": "ArkDrawer.Title"
+      },
+      "Trigger": {
+        "name": "DrawerTrigger",
+        "slot": "trigger",
+        "component": "ArkDrawer.Trigger"
+      }
     },
     "name": "Drawer",
     "imports": {
@@ -115,9 +151,15 @@
     },
     "name": "RadioButtonGroup",
     "imports": {
-      "react": ["import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/react/radio-group'"],
-      "solid": ["import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/solid'"],
-      "vue": ["import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/vue/radio-group'"]
+      "react": [
+        "import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/react/radio-group'"
+      ],
+      "solid": [
+        "import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/solid'"
+      ],
+      "vue": [
+        "import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/vue/radio-group'"
+      ]
     },
     "className": "radioButtonGroup"
   },
@@ -125,11 +167,23 @@
     "parts": {
       "Root": { "name": "TableRoot", "slot": "root", "component": "ark.table" },
       "Body": { "name": "TableBody", "slot": "body", "component": "ark.tbody" },
-      "Caption": { "name": "TableCaption", "slot": "caption", "component": "ark.caption" },
+      "Caption": {
+        "name": "TableCaption",
+        "slot": "caption",
+        "component": "ark.caption"
+      },
       "Cell": { "name": "TableCell", "slot": "cell", "component": "ark.td" },
-      "Footer": { "name": "TableFooter", "slot": "footer", "component": "ark.tfoot" },
+      "Footer": {
+        "name": "TableFooter",
+        "slot": "footer",
+        "component": "ark.tfoot"
+      },
       "Head": { "name": "TableHead", "slot": "head", "component": "ark.thead" },
-      "Header": { "name": "TableHeader", "slot": "header", "component": "ark.th" },
+      "Header": {
+        "name": "TableHeader",
+        "slot": "header",
+        "component": "ark.th"
+      },
       "Row": { "name": "TableRow", "slot": "row", "component": "ark.tr" }
     },
     "name": "Table",

@@ -2,7 +2,6 @@ import { createPreset } from '@park-ui/panda-preset'
 import Handlebars from 'handlebars'
 import fs from 'node:fs'
 import path from 'node:path'
-import prettier from 'prettier'
 import v from 'voca'
 
 Handlebars.registerHelper('json', function (context) {
@@ -21,8 +20,6 @@ const slotRecipeTemplate = Handlebars.compile(
 const pascalCase = (s: string) => v.chain(s).camelCase().capitalize().value().trim()
 
 const generateIndex = async () => {
-  const prettierConfig = await prettier.resolveConfig('.')
-
   const preset = createPreset()
 
   const slotRecipes = preset.theme?.extend?.slotRecipes ?? {}

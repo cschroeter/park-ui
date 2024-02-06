@@ -1,10 +1,8 @@
-import { Command } from 'commander'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import { globby } from 'globby'
 import Handlebars from 'handlebars'
 import path from 'node:path'
-import prettier from 'prettier'
 import v from 'voca'
 
 type Options = {
@@ -15,7 +13,7 @@ type Options = {
 Handlebars.registerHelper('eq', (a, b) => a === b)
 Handlebars.registerHelper('titleCase', v.titleCase)
 
-const rootDir = path.dirname(findUpSync('bun.lockb')!)
+const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 const pascalCase = (s: string) =>
   v
     .chain(s)
@@ -26,38 +24,23 @@ const pascalCase = (s: string) =>
     .trim()
 
 const generateIndex = async (options: Options) => {
-  const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
 
   const components = await globby([
     path.join(rootDir, 'components', cssFramwork, jsFramework, 'src', 'components', 'ui'),
   ])
 
-  const content = await prettier.format(
-    JSON.stringify({
-      components: components
-        // // if the css framework is chakra, we only want to show components that are not using the parts api
-        // .filter(([_, value]) => {
-        //   if (cssFramwork === 'chakra') {
-        //     return value.hasOwnProperty('parts')
-        //   }
-        //   return true
-        // })
-        .filter((component) => !component.includes('index.ts'))
-        // sort alphabetically
-        .sort()
-        .map((component) => ({
-          name: pascalCase(path.parse(component).name),
-          href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${
-            path.parse(component).name
-          }.json`,
-        })),
-    }),
-    {
-      ...prettierConfig,
-      parser: 'json',
-    },
-  )
+  const content = JSON.stringify({
+    components: components
+      .filter((component) => !component.includes('index.ts'))
+      .sort()
+      .map((component) => ({
+        name: pascalCase(path.parse(component).name),
+        href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${
+          path.parse(component).name
+        }.json`,
+      })),
+  })
 
   await fs.outputFile(
     path.join(
@@ -75,9 +58,8 @@ const generateIndex = async (options: Options) => {
 }
 
 const resolveComponents = async (options: Options) => {
-  const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
-  const rootDir = path.dirname(findUpSync('bun.lockb')!)
+  const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
   const components = await globby([
     path.join(rootDir, 'components', cssFramwork, jsFramework, 'src', 'components', 'ui'),
@@ -89,21 +71,15 @@ const resolveComponents = async (options: Options) => {
       .map(async (component) => {
         const componentName = path.parse(component).name
         const content = fs.readFileSync(component, 'utf-8')
-        const registry = await prettier.format(
-          JSON.stringify({
-            files: [
-              {
-                filename: `${componentName}.tsx`,
-                content,
-                hasMultipleParts: content.includes('createStyleContext'),
-              },
-            ],
-          }),
-          {
-            ...prettierConfig,
-            parser: 'json',
-          },
-        )
+        const registry = JSON.stringify({
+          files: [
+            {
+              filename: `${componentName}.tsx`,
+              content,
+              hasMultipleParts: content.includes('createStyleContext'),
+            },
+          ],
+        })
 
         await fs.outputFile(
           path.join(
@@ -114,7 +90,7 @@ const resolveComponents = async (options: Options) => {
             cssFramwork,
             jsFramework,
             'components',
-            componentName + '.json',
+            componentName.concat('.json'),
           ),
           registry,
         )
@@ -123,9 +99,8 @@ const resolveComponents = async (options: Options) => {
 }
 
 const resolveHelpers = async (options: Options) => {
-  const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
-  const rootDir = path.dirname(findUpSync('bun.lockb')!)
+  const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
   const helpers = await globby([
     path.join(rootDir, 'components', cssFramwork, jsFramework, 'src', 'lib'),
@@ -134,20 +109,14 @@ const resolveHelpers = async (options: Options) => {
   await Promise.all(
     helpers.map(async (helper) => {
       const content = fs.readFileSync(helper, 'utf-8')
-      const data = await prettier.format(
-        JSON.stringify({
-          files: [
-            {
-              filename: path.basename(helper),
-              content,
-            },
-          ],
-        }),
-        {
-          ...prettierConfig,
-          parser: 'json',
-        },
-      )
+      const data = JSON.stringify({
+        files: [
+          {
+            filename: path.basename(helper),
+            content,
+          },
+        ],
+      })
 
       await fs.outputFile(
         path.join(
@@ -166,7 +135,7 @@ const resolveHelpers = async (options: Options) => {
   )
 }
 
-const action = async () => {
+const main = async () => {
   const jsFrameworks = ['react', 'solid'] as const
   const cssFramworks = ['panda', 'tailwind'] as const
 
@@ -177,12 +146,6 @@ const action = async () => {
       await resolveHelpers({ cssFramwork, jsFramework })
     })
   })
-
-  // generateComponents({ cssFramwork: 'chakra', jsFramework: 'react' })
-  // generateIndex({ cssFramwork: 'chakra', jsFramework: 'react' })
 }
 
-export const registryCmd = new Command()
-  .name('registry')
-  .description('Updates the registry using the components.json file')
-  .action(action)
+main()

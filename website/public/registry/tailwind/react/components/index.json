@@ -20,7 +20,10 @@
       "name": "Button",
       "href": "https://park-ui.com/registry/tailwind/react/components/button.json"
     },
-    { "name": "Card", "href": "https://park-ui.com/registry/tailwind/react/components/card.json" },
+    {
+      "name": "Card",
+      "href": "https://park-ui.com/registry/tailwind/react/components/card.json"
+    },
     {
       "name": "Carousel",
       "href": "https://park-ui.com/registry/tailwind/react/components/carousel.json"
@@ -29,7 +32,10 @@
       "name": "Checkbox",
       "href": "https://park-ui.com/registry/tailwind/react/components/checkbox.json"
     },
-    { "name": "Code", "href": "https://park-ui.com/registry/tailwind/react/components/code.json" },
+    {
+      "name": "Code",
+      "href": "https://park-ui.com/registry/tailwind/react/components/code.json"
+    },
     {
       "name": "Color Picker",
       "href": "https://park-ui.com/registry/tailwind/react/components/color-picker.json"
@@ -74,14 +80,26 @@
       "name": "Icon Button",
       "href": "https://park-ui.com/registry/tailwind/react/components/icon-button.json"
     },
-    { "name": "Icon", "href": "https://park-ui.com/registry/tailwind/react/components/icon.json" },
+    {
+      "name": "Icon",
+      "href": "https://park-ui.com/registry/tailwind/react/components/icon.json"
+    },
     {
       "name": "Input",
       "href": "https://park-ui.com/registry/tailwind/react/components/input.json"
     },
-    { "name": "Kbd", "href": "https://park-ui.com/registry/tailwind/react/components/kbd.json" },
-    { "name": "Link", "href": "https://park-ui.com/registry/tailwind/react/components/link.json" },
-    { "name": "Menu", "href": "https://park-ui.com/registry/tailwind/react/components/menu.json" },
+    {
+      "name": "Kbd",
+      "href": "https://park-ui.com/registry/tailwind/react/components/kbd.json"
+    },
+    {
+      "name": "Link",
+      "href": "https://park-ui.com/registry/tailwind/react/components/link.json"
+    },
+    {
+      "name": "Menu",
+      "href": "https://park-ui.com/registry/tailwind/react/components/menu.json"
+    },
     {
       "name": "Number Input",
       "href": "https://park-ui.com/registry/tailwind/react/components/number-input.json"
@@ -142,12 +160,18 @@
       "name": "Table",
       "href": "https://park-ui.com/registry/tailwind/react/components/table.json"
     },
-    { "name": "Tabs", "href": "https://park-ui.com/registry/tailwind/react/components/tabs.json" },
+    {
+      "name": "Tabs",
+      "href": "https://park-ui.com/registry/tailwind/react/components/tabs.json"
+    },
     {
       "name": "Tags Input",
       "href": "https://park-ui.com/registry/tailwind/react/components/tags-input.json"
     },
-    { "name": "Text", "href": "https://park-ui.com/registry/tailwind/react/components/text.json" },
+    {
+      "name": "Text",
+      "href": "https://park-ui.com/registry/tailwind/react/components/text.json"
+    },
     {
       "name": "Textarea",
       "href": "https://park-ui.com/registry/tailwind/react/components/textarea.json"

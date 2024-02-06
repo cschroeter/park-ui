@@ -1,17 +1,13 @@
 import * as components from '@ark-ui/anatomy'
 import { AnatomyInstance } from '@ark-ui/anatomy'
-import { Command } from 'commander'
 import fs from 'fs-extra'
-import prettier from 'prettier'
 import { match } from 'ts-pattern'
 import v from 'voca'
 
 const pascalCase = (s: string) => v.chain(s).camelCase().capitalize().value()
 const camelCase = (s: string) => v.chain(s).camelCase().value()
 
-const generateComponentsJson = async () => {
-  const prettierConfig = await prettier.resolveConfig('.')
-
+const main = async () => {
   const result = Object.entries(components)
     .filter(([key]) => !['createAnatomy'].includes(key))
     .filter(([key]) => key !== 'default')
@@ -61,15 +57,9 @@ const generateComponentsJson = async () => {
       }
     })
 
-  const content = await prettier.format(
-    JSON.stringify(result.reduce((acc, item) => ({ ...acc, ...item }))),
-    { ...prettierConfig, parser: 'json' },
-  )
+  const content = JSON.stringify(result.reduce((acc, item) => ({ ...acc, ...item })))
 
   fs.outputFileSync('./components.json', content)
 }
 
-export const componentsJsonCmd = new Command()
-  .name('json')
-  .description('Generates the components.json')
-  .action(generateComponentsJson)
+main()
