@@ -1,4 +1,3 @@
-import { Command } from 'commander'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import Handlebars from 'handlebars'
@@ -70,7 +69,7 @@ const generateComponents = async (options: Options) => {
   )
 }
 
-const action = async () => {
+const main = async () => {
   const jsFrameworks = ['solid'] as const
   const cssFramworks = ['tailwind'] as const
 
@@ -81,7 +80,4 @@ const action = async () => {
   })
 }
 
-export const command = new Command()
-  .name('generate')
-  .description('Generate components')
-  .action(action)
+main()

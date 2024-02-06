@@ -3,9 +3,13 @@
   "private": true,
   "scripts": {
     "components": "bun ./src/components.ts",
-    "postcomponents": "bun biome format --write ../components",
+    "json": "bun ./src/json.ts",
     "registry": "bun ./src/registry.ts",
-    "postregistry": "bun biome format --write ../website/public/registry"
+    "stories": "bun ./src/stories.ts",
+    "postcomponents": "bun biome format --write ../components",
+    "postjson": "bun biome format --write ../scripts",
+    "postregistry": "bun biome format --write ../website/public/registry",
+    "poststories": "bun biome format --write ../components"
   },
   "dependencies": {
     "@ark-ui/anatomy": "2.1.0",

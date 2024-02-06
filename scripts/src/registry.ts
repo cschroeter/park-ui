@@ -1,9 +1,8 @@
-import path from 'node:path'
-import { Command } from 'commander'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import { globby } from 'globby'
 import Handlebars from 'handlebars'
+import path from 'node:path'
 import v from 'voca'
 
 type Options = {
@@ -136,7 +135,7 @@ const resolveHelpers = async (options: Options) => {
   )
 }
 
-const action = async () => {
+const main = async () => {
   const jsFrameworks = ['react', 'solid'] as const
   const cssFramworks = ['panda', 'tailwind'] as const
 
@@ -149,7 +148,4 @@ const action = async () => {
   })
 }
 
-export const registryCmd = new Command()
-  .name('registry')
-  .description('Updates the registry using the components.json file')
-  .action(action)
+main()
