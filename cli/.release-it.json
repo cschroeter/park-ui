@@ -17,6 +17,6 @@
     "versionArgs": ["--workspaces-update=false"]
   },
   "hooks": {
-    "before:init": ["pnpm run build"]
+    "before:init": ["bun run build"]
   }
 }

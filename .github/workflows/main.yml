@@ -9,15 +9,12 @@ on:
       - main
 
 jobs:
-  typecheck:
-    name: Typecheck
+  main:
+    name: main
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
 
-      - name: Install
-        uses: ./.github/composite-actions/install
-
-      - name: Run typecheck
-        run: pnpm ci:typecheck
+      - run: bun install
+      - run: bun ci:typecheck

@@ -13,7 +13,7 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "tsx src/index.ts",
+    "dev": "bun run ./src/index.ts",
     "release-it": "release-it",
     "build": "tsup",
     "schema": "json2ts ../../website/public/schema.json > schema.d.ts"
@@ -33,7 +33,6 @@
     "ts-pattern": "5.0.6",
     "tsconfig-resolver": "3.0.1",
     "tsup": "8.0.1",
-    "tsx": "4.7.0",
     "typescript": "5.3.3",
     "voca": "1.4.1",
     "yargs": "17.7.2"

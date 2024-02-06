@@ -24,9 +24,9 @@
   },
   "scripts": {
     "release-it": "release-it",
-    "build": "pnpm prebuild:plugin && pnpm build:plugin",
+    "build": "bun prebuild:plugin && bun build:plugin",
     "prebuild:plugin": "panda cssgen --outfile src/plugin/css/styles.css",
-    "build:plugin": "tsx src/plugin/build.ts && tsup",
+    "build:plugin": "bun run ./src/plugin/build.ts && tsup",
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
@@ -44,8 +44,7 @@
     "postcss-js": "4.0.1",
     "release-it": "17.0.3",
     "tailwindcss": "3.4.1",
-    "tsup": "8.0.1",
-    "tsx": "4.7.0"
+    "tsup": "8.0.1"
   },
   "peerDependencies": {
     "tailwindcss": "3.x"

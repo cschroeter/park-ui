@@ -2,7 +2,7 @@
   "name": "@park-ui/scripts",
   "private": true,
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "bun ./src/index.ts"
   },
   "dependencies": {
     "@ark-ui/anatomy": "2.1.0",
@@ -24,7 +24,6 @@
     "tailwind-merge": "2.2.1",
     "ts-morph": "21.0.1",
     "ts-pattern": "5.0.6",
-    "tsx": "4.7.0",
     "typescript": "5.3.3",
     "voca": "1.4.1"
   }

@@ -5,7 +5,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { parse } from './helpers/panda-to-tailwind'
 
-const rootDir = path.dirname(findUpSync('pnpm-lock.yaml') ?? '')
+const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
 const main = async () => {
   const components = await globby([
