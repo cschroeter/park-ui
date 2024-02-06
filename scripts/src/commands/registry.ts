@@ -100,9 +100,8 @@ const resolveComponents = async (options: Options) => {
 }
 
 const resolveHelpers = async (options: Options) => {
-  const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
-  const rootDir = path.dirname(findUpSync('bun.lockb')!)
+  const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
   const helpers = await globby([
     path.join(rootDir, 'components', cssFramwork, jsFramework, 'src', 'lib'),
@@ -111,20 +110,14 @@ const resolveHelpers = async (options: Options) => {
   await Promise.all(
     helpers.map(async (helper) => {
       const content = fs.readFileSync(helper, 'utf-8')
-      const data = await prettier.format(
-        JSON.stringify({
-          files: [
-            {
-              filename: path.basename(helper),
-              content,
-            },
-          ],
-        }),
-        {
-          ...prettierConfig,
-          parser: 'json',
-        },
-      )
+      const data = JSON.stringify({
+        files: [
+          {
+            filename: path.basename(helper),
+            content,
+          },
+        ],
+      })
 
       await fs.outputFile(
         path.join(
@@ -154,9 +147,6 @@ const action = async () => {
       await resolveHelpers({ cssFramwork, jsFramework })
     })
   })
-
-  // generateComponents({ cssFramwork: 'chakra', jsFramework: 'react' })
-  // generateIndex({ cssFramwork: 'chakra', jsFramework: 'react' })
 }
 
 export const registryCmd = new Command()

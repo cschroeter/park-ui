@@ -4,12 +4,18 @@
       "name": "Accordion",
       "href": "https://park-ui.com/registry/chakra/react/components/accordion.json"
     },
-    { "name": "Alert", "href": "https://park-ui.com/registry/chakra/react/components/alert.json" },
+    {
+      "name": "Alert",
+      "href": "https://park-ui.com/registry/chakra/react/components/alert.json"
+    },
     {
       "name": "Avatar",
       "href": "https://park-ui.com/registry/chakra/react/components/avatar.json"
     },
-    { "name": "Card", "href": "https://park-ui.com/registry/chakra/react/components/card.json" },
+    {
+      "name": "Card",
+      "href": "https://park-ui.com/registry/chakra/react/components/card.json"
+    },
     {
       "name": "Carousel",
       "href": "https://park-ui.com/registry/chakra/react/components/carousel.json"
@@ -50,7 +56,10 @@
       "name": "Hover Card",
       "href": "https://park-ui.com/registry/chakra/react/components/hover-card.json"
     },
-    { "name": "Menu", "href": "https://park-ui.com/registry/chakra/react/components/menu.json" },
+    {
+      "name": "Menu",
+      "href": "https://park-ui.com/registry/chakra/react/components/menu.json"
+    },
     {
       "name": "Number Input",
       "href": "https://park-ui.com/registry/chakra/react/components/number-input.json"
@@ -99,13 +108,22 @@
       "name": "Switch",
       "href": "https://park-ui.com/registry/chakra/react/components/switch.json"
     },
-    { "name": "Table", "href": "https://park-ui.com/registry/chakra/react/components/table.json" },
-    { "name": "Tabs", "href": "https://park-ui.com/registry/chakra/react/components/tabs.json" },
+    {
+      "name": "Table",
+      "href": "https://park-ui.com/registry/chakra/react/components/table.json"
+    },
+    {
+      "name": "Tabs",
+      "href": "https://park-ui.com/registry/chakra/react/components/tabs.json"
+    },
     {
       "name": "Tags Input",
       "href": "https://park-ui.com/registry/chakra/react/components/tags-input.json"
     },
-    { "name": "Toast", "href": "https://park-ui.com/registry/chakra/react/components/toast.json" },
+    {
+      "name": "Toast",
+      "href": "https://park-ui.com/registry/chakra/react/components/toast.json"
+    },
     {
       "name": "Toggle Group",
       "href": "https://park-ui.com/registry/chakra/react/components/toggle-group.json"

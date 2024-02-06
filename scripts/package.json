@@ -2,7 +2,8 @@
   "name": "@park-ui/scripts",
   "private": true,
   "scripts": {
-    "start": "bun ./src/index.ts"
+    "start": "bun ./src/index.ts",
+    "poststart": "bun biome format --write ../website/public/registry"
   },
   "dependencies": {
     "@ark-ui/anatomy": "2.1.0",

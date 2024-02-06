@@ -4,11 +4,26 @@
       "name": "Accordion",
       "href": "https://park-ui.com/registry/panda/react/components/accordion.json"
     },
-    { "name": "Alert", "href": "https://park-ui.com/registry/panda/react/components/alert.json" },
-    { "name": "Avatar", "href": "https://park-ui.com/registry/panda/react/components/avatar.json" },
-    { "name": "Badge", "href": "https://park-ui.com/registry/panda/react/components/badge.json" },
-    { "name": "Button", "href": "https://park-ui.com/registry/panda/react/components/button.json" },
-    { "name": "Card", "href": "https://park-ui.com/registry/panda/react/components/card.json" },
+    {
+      "name": "Alert",
+      "href": "https://park-ui.com/registry/panda/react/components/alert.json"
+    },
+    {
+      "name": "Avatar",
+      "href": "https://park-ui.com/registry/panda/react/components/avatar.json"
+    },
+    {
+      "name": "Badge",
+      "href": "https://park-ui.com/registry/panda/react/components/badge.json"
+    },
+    {
+      "name": "Button",
+      "href": "https://park-ui.com/registry/panda/react/components/button.json"
+    },
+    {
+      "name": "Card",
+      "href": "https://park-ui.com/registry/panda/react/components/card.json"
+    },
     {
       "name": "Carousel",
       "href": "https://park-ui.com/registry/panda/react/components/carousel.json"
@@ -17,7 +32,10 @@
       "name": "Checkbox",
       "href": "https://park-ui.com/registry/panda/react/components/checkbox.json"
     },
-    { "name": "Code", "href": "https://park-ui.com/registry/panda/react/components/code.json" },
+    {
+      "name": "Code",
+      "href": "https://park-ui.com/registry/panda/react/components/code.json"
+    },
     {
       "name": "Color Picker",
       "href": "https://park-ui.com/registry/panda/react/components/color-picker.json"
@@ -30,8 +48,14 @@
       "name": "Date Picker",
       "href": "https://park-ui.com/registry/panda/react/components/date-picker.json"
     },
-    { "name": "Dialog", "href": "https://park-ui.com/registry/panda/react/components/dialog.json" },
-    { "name": "Drawer", "href": "https://park-ui.com/registry/panda/react/components/drawer.json" },
+    {
+      "name": "Dialog",
+      "href": "https://park-ui.com/registry/panda/react/components/dialog.json"
+    },
+    {
+      "name": "Drawer",
+      "href": "https://park-ui.com/registry/panda/react/components/drawer.json"
+    },
     {
       "name": "Editable",
       "href": "https://park-ui.com/registry/panda/react/components/editable.json"
@@ -56,11 +80,26 @@
       "name": "Icon Button",
       "href": "https://park-ui.com/registry/panda/react/components/icon-button.json"
     },
-    { "name": "Icon", "href": "https://park-ui.com/registry/panda/react/components/icon.json" },
-    { "name": "Input", "href": "https://park-ui.com/registry/panda/react/components/input.json" },
-    { "name": "Kbd", "href": "https://park-ui.com/registry/panda/react/components/kbd.json" },
-    { "name": "Link", "href": "https://park-ui.com/registry/panda/react/components/link.json" },
-    { "name": "Menu", "href": "https://park-ui.com/registry/panda/react/components/menu.json" },
+    {
+      "name": "Icon",
+      "href": "https://park-ui.com/registry/panda/react/components/icon.json"
+    },
+    {
+      "name": "Input",
+      "href": "https://park-ui.com/registry/panda/react/components/input.json"
+    },
+    {
+      "name": "Kbd",
+      "href": "https://park-ui.com/registry/panda/react/components/kbd.json"
+    },
+    {
+      "name": "Link",
+      "href": "https://park-ui.com/registry/panda/react/components/link.json"
+    },
+    {
+      "name": "Menu",
+      "href": "https://park-ui.com/registry/panda/react/components/menu.json"
+    },
     {
       "name": "Number Input",
       "href": "https://park-ui.com/registry/panda/react/components/number-input.json"
@@ -97,29 +136,50 @@
       "name": "Segment Group",
       "href": "https://park-ui.com/registry/panda/react/components/segment-group.json"
     },
-    { "name": "Select", "href": "https://park-ui.com/registry/panda/react/components/select.json" },
+    {
+      "name": "Select",
+      "href": "https://park-ui.com/registry/panda/react/components/select.json"
+    },
     {
       "name": "Skeleton",
       "href": "https://park-ui.com/registry/panda/react/components/skeleton.json"
     },
-    { "name": "Slider", "href": "https://park-ui.com/registry/panda/react/components/slider.json" },
+    {
+      "name": "Slider",
+      "href": "https://park-ui.com/registry/panda/react/components/slider.json"
+    },
     {
       "name": "Splitter",
       "href": "https://park-ui.com/registry/panda/react/components/splitter.json"
     },
-    { "name": "Switch", "href": "https://park-ui.com/registry/panda/react/components/switch.json" },
-    { "name": "Table", "href": "https://park-ui.com/registry/panda/react/components/table.json" },
-    { "name": "Tabs", "href": "https://park-ui.com/registry/panda/react/components/tabs.json" },
+    {
+      "name": "Switch",
+      "href": "https://park-ui.com/registry/panda/react/components/switch.json"
+    },
+    {
+      "name": "Table",
+      "href": "https://park-ui.com/registry/panda/react/components/table.json"
+    },
+    {
+      "name": "Tabs",
+      "href": "https://park-ui.com/registry/panda/react/components/tabs.json"
+    },
     {
       "name": "Tags Input",
       "href": "https://park-ui.com/registry/panda/react/components/tags-input.json"
     },
-    { "name": "Text", "href": "https://park-ui.com/registry/panda/react/components/text.json" },
+    {
+      "name": "Text",
+      "href": "https://park-ui.com/registry/panda/react/components/text.json"
+    },
     {
       "name": "Textarea",
       "href": "https://park-ui.com/registry/panda/react/components/textarea.json"
     },
-    { "name": "Toast", "href": "https://park-ui.com/registry/panda/react/components/toast.json" },
+    {
+      "name": "Toast",
+      "href": "https://park-ui.com/registry/panda/react/components/toast.json"
+    },
     {
       "name": "Toggle Group",
       "href": "https://park-ui.com/registry/panda/react/components/toggle-group.json"
