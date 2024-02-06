@@ -24,7 +24,7 @@
   },
   "scripts": {
     "bootstrap": "tsx ./bootstrap.ts",
-    "dev": "pnpm run storybook",
+    "dev": "bun run storybook",
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {},

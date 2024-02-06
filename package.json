@@ -4,17 +4,17 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "cli": "pnpm --filter=@park-ui/cli",
-    "scripts": "pnpm --filter=@park-ui/scripts",
-    "website": "pnpm --filter=@park-ui/website",
-    "plugin:chakra": "pnpm --filter=@park-ui/chakra-theme",
-    "plugin:panda": "pnpm --filter=@park-ui/panda-preset",
-    "plugin:tailwind": "pnpm --filter=@park-ui/tailwind-plugin",
-    "panda:react": "pnpm --filter=@park-ui/panda-react-components",
-    "panda:solid": "pnpm --filter=@park-ui/panda-solid-components",
-    "tailwind:react": "pnpm --filter=@park-ui/tailwind-react-components",
-    "tailwind:solid": "pnpm --filter=@park-ui/tailwind-solid-components",
-    "chakra:react": "pnpm --filter=@park-ui/chakra-react-components",
+    "cli": "bun run --cwd cli",
+    "scripts": "bun run --cwd scripts",
+    "website": "bun run --cwd wesbite",
+    "plugin:chakra": "bun run --cwd plugins/chakra",
+    "plugin:panda": "bun run --cwd plugins/panda",
+    "plugin:tailwind": "bun run --cwd plugins/tailwind",
+    "panda:react": "bun run --cwd components/panda/react",
+    "panda:solid": "bun run --cwd components/panda/solid",
+    "tailwind:react": "bun run --cwd components/tailwind/react",
+    "tailwind:solid": "bun run --cwd components/tailwind/solid",
+    "chakra:react": "bun run --cwd components/chakra/react",
     "ci:typecheck": "turbo run typecheck"
   },
   "dependencies": {
@@ -38,5 +38,5 @@
       "prettier --plugin prettier-plugin-organize-imports --write"
     ]
   },
-  "packageManager": "pnpm@8.14.1"
+  "packageManager": "bun@1.0.26"
 }
