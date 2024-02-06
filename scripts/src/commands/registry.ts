@@ -44,6 +44,8 @@ const generateIndex = async (options: Options) => {
         //   return true
         // })
         .filter((component) => !component.includes('index.ts'))
+        // sort alphabetically
+        .sort()
         .map((component) => ({
           name: pascalCase(path.parse(component).name),
           href: `https://park-ui.com/registry/${cssFramwork}/${jsFramework}/components/${
