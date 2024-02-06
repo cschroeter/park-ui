@@ -13,7 +13,7 @@ const data = {
   ...parkComponents,
 }
 
-const rootDir = path.dirname(findUpSync('pnpm-lock.yaml') ?? '')
+const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
 type Options = {
   cssFramwork: 'panda' | 'tailwind' | 'chakra'

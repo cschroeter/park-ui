@@ -15,7 +15,7 @@ type Options = {
 Handlebars.registerHelper('eq', (a, b) => a === b)
 Handlebars.registerHelper('titleCase', v.titleCase)
 
-const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
+const rootDir = path.dirname(findUpSync('bun.lockb')!)
 const pascalCase = (s: string) =>
   v
     .chain(s)
@@ -75,7 +75,7 @@ const generateIndex = async (options: Options) => {
 const resolveComponents = async (options: Options) => {
   const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
-  const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
+  const rootDir = path.dirname(findUpSync('bun.lockb')!)
 
   const components = await globby([
     path.join(rootDir, 'components', cssFramwork, jsFramework, 'src', 'components', 'ui'),
@@ -123,7 +123,7 @@ const resolveComponents = async (options: Options) => {
 const resolveHelpers = async (options: Options) => {
   const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
-  const rootDir = path.dirname(findUpSync('pnpm-lock.yaml')!)
+  const rootDir = path.dirname(findUpSync('bun.lockb')!)
 
   const helpers = await globby([
     path.join(rootDir, 'components', cssFramwork, jsFramework, 'src', 'lib'),
