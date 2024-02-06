@@ -1,5 +1,9 @@
 {
   "search.exclude": {
     "**/examples": true
+  },
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "always",
+    "source.organizeImports.biome": "explicit"
   }
 }

@@ -1301,7 +1301,7 @@
       "solid": ["import { Switch } from '@ark-ui/solid'"],
       "vue": ["import { Switch } from '@ark-ui/vue/switch'"]
     },
-    "className": "switch"
+    "className": "switchRecipe"
   },
   "tabs": {
     "parts": {
