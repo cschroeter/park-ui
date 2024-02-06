@@ -3,9 +3,8 @@ import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import Handlebars from 'handlebars'
 import path from 'node:path'
-import prettier from 'prettier'
-import arkComponents from '../../components.json'
-import parkComponents from '../../park-components.json'
+import arkComponents from '../components.json'
+import parkComponents from '../park-components.json'
 import { transformComponentToTvConfig } from './helpers/recipe-to-tv'
 
 const data = {
@@ -21,7 +20,6 @@ type Options = {
 }
 
 const generateComponents = async (options: Options) => {
-  const prettierConfig = await prettier.resolveConfig('.')
   const { cssFramwork, jsFramework } = options
   await Promise.all(
     Object.entries(data)
@@ -54,14 +52,7 @@ const generateComponents = async (options: Options) => {
           fs.readFileSync(`./src/templates/${cssFramwork}/${jsFramework}/${variant}.hbs`, 'utf-8'),
         )
 
-        const templateString = template(view)
-
-        const code = await prettier.format(templateString, {
-          ...prettierConfig,
-          plugins: ['prettier-plugin-organize-imports'],
-          parser: 'typescript',
-        })
-
+        const code = template(view)
         return await fs.writeFile(
           path.join(
             rootDir,
