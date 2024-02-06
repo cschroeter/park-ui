@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(alert)
 
 export const Root = withProvider(styled(ark.div), 'root')
 export const Content = withContext(styled(ark.div), 'content')
-export const Description = withContext(styled(ark.p), 'description')
+export const Description = withContext(styled(ark.div), 'description')
 export const Icon = withContext(styled(ark.svg), 'icon')
 export const Title = withContext(styled(ark.h5), 'title')
 

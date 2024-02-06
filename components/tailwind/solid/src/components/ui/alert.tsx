@@ -21,7 +21,7 @@ const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(ark.div, 'root')
 export const Content = withContext(ark.div, 'content')
-export const Description = withContext(ark.p, 'description')
+export const Description = withContext(ark.div, 'description')
 export const Icon = withContext(ark.svg, 'icon')
 export const Title = withContext(ark.h5, 'title')
 

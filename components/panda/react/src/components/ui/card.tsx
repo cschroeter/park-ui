@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(card)
 
 export const Root = withProvider(styled(ark.div), 'root')
 export const Body = withContext(styled(ark.div), 'body')
-export const Description = withContext(styled(ark.p), 'description')
+export const Description = withContext(styled(ark.div), 'description')
 export const Footer = withContext(styled(ark.div), 'footer')
 export const Header = withContext(styled(ark.div), 'header')
 export const Title = withContext(styled(ark.h3), 'title')

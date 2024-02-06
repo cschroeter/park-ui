@@ -22,7 +22,7 @@ const { withProvider, withContext } = createStyleContext(styles)
 
 export const Root = withProvider(ark.div, 'root')
 export const Body = withContext(ark.div, 'body')
-export const Description = withContext(ark.p, 'description')
+export const Description = withContext(ark.div, 'description')
 export const Footer = withContext(ark.div, 'footer')
 export const Header = withContext(ark.div, 'header')
 export const Title = withContext(ark.h3, 'title')

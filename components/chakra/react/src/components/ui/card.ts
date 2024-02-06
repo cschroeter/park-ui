@@ -1,12 +1,12 @@
 import { ark } from '@ark-ui/react/factory'
-import { chakra, type HTMLChakraProps } from '@chakra-ui/react'
+import { type HTMLChakraProps, chakra } from '@chakra-ui/react'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext('Card')
 
 const Card = withProvider(chakra(ark.div), 'root')
 const CardBody = withContext(chakra(ark.div), 'body')
-const CardDescription = withContext(chakra(ark.p), 'description')
+const CardDescription = withContext(chakra(ark.div), 'description')
 const CardFooter = withContext(chakra(ark.div), 'footer')
 const CardHeader = withContext(chakra(ark.div), 'header')
 const CardTitle = withContext(chakra(ark.h3), 'title')
