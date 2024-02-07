@@ -44,6 +44,7 @@ import { textarea } from './textarea'
 import { toast } from './toast'
 import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
+import { treeView } from './tree-view'
 
 export const recipes = {
   badge,
@@ -95,4 +96,5 @@ export const slotRecipes = {
   toast,
   toggleGroup,
   tooltip,
+  treeView,
 }
