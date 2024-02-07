@@ -1,48 +1,50 @@
-import { Button } from '~/components/ui/button'
-import * as Card from '~/components/ui/card'
-import { FormLabel } from '~/components/ui/form-label'
-import { Input } from '~/components/ui/input'
-import { Divider, HStack, Stack, styled } from '../../../styled-system/jsx'
+import { SiGithub, SiGoogle } from 'solid-icons/si'
+import { Container, Divider, HStack, Stack } from 'styled-system/jsx'
+import { Button, Card, FormLabel, Input, Text } from '~/components/ui'
 
 export const AuthenticationCard = () => {
   return (
-    <Card.Root maxW="sm">
-      <Card.Header>
-        <Card.Title>Sign Up</Card.Title>
-        <Card.Description>
-          Create an account and discover the worlds' best UI component framework.
-        </Card.Description>
-      </Card.Header>
-      <Card.Body>
-        <Stack gap="4">
-          <Stack direction="row" gap="3">
-            <Button variant="outline" width="full">
-              Google
-            </Button>
-            <Button variant="outline" width="full">
-              GitHub
-            </Button>
+    <Container maxW="md" py="6">
+      <Card.Root boxShadow="xs">
+        <Card.Header>
+          <Card.Title>Sign Up</Card.Title>
+          <Card.Description>
+            Create an account and discover the worlds' best UI component framework.
+          </Card.Description>
+        </Card.Header>
+        <Card.Body>
+          <Stack gap="4">
+            <Stack direction="row" gap="3">
+              <Button variant="outline" width="full">
+                <SiGoogle />
+                Google
+              </Button>
+              <Button variant="outline" width="full">
+                <SiGithub />
+                GitHub
+              </Button>
+            </Stack>
+            <HStack gap="2">
+              <Divider />
+              <Text color="fg.subtle" size="sm" whiteSpace="nowrap">
+                or sign up with
+              </Text>
+              <Divider />
+            </HStack>
+            <Stack gap="1.5">
+              <FormLabel for="email-1">E-Mail</FormLabel>
+              <Input id="email-1" placeholder="Your E-Mail" />
+            </Stack>
+            <Stack gap="1.5">
+              <FormLabel for="password-1">Password</FormLabel>
+              <Input id="password-1" type="password" placeholder="Your Password" />
+            </Stack>
           </Stack>
-          <HStack gap="2">
-            <Divider />
-            <styled.p color="fg.subtle" textStyle="sm" whiteSpace="nowrap">
-              or sign up with
-            </styled.p>
-            <Divider />
-          </HStack>
-          <Stack gap="1.5">
-            <FormLabel for="name">E-Mail</FormLabel>
-            <Input id="name" placeholder="Your E-Mail" />
-          </Stack>
-          <Stack gap="1.5">
-            <FormLabel for="password">Password</FormLabel>
-            <Input id="password" type="password" placeholder="Your Password" />
-          </Stack>
-        </Stack>
-      </Card.Body>
-      <Card.Footer>
-        <Button width="full">Create Account</Button>
-      </Card.Footer>
-    </Card.Root>
+        </Card.Body>
+        <Card.Footer>
+          <Button width="full">Create Account</Button>
+        </Card.Footer>
+      </Card.Root>
+    </Container>
   )
 }

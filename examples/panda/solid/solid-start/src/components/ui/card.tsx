@@ -6,38 +6,16 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(card)
 
-const Card = withProvider(styled(ark.div), 'root')
-const CardBody = withContext(styled(ark.div), 'body')
-const CardDescription = withContext(styled(ark.p), 'description')
-const CardFooter = withContext(styled(ark.div), 'footer')
-const CardHeader = withContext(styled(ark.div), 'header')
-const CardTitle = withContext(styled(ark.h3), 'title')
+export const Root = withProvider(styled(ark.div), 'root')
+export const Body = withContext(styled(ark.div), 'body')
+export const Description = withContext(styled(ark.div), 'description')
+export const Footer = withContext(styled(ark.div), 'footer')
+export const Header = withContext(styled(ark.div), 'header')
+export const Title = withContext(styled(ark.h3), 'title')
 
-const Root = Card
-const Body = CardBody
-const Description = CardDescription
-const Footer = CardFooter
-const Header = CardHeader
-const Title = CardTitle
-
-export {
-  Body,
-  Card,
-  CardBody,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Description,
-  Footer,
-  Header,
-  Root,
-  Title,
-}
-
-export interface CardProps extends ComponentProps<typeof Card> {}
-export interface CardBodyProps extends ComponentProps<typeof CardBody> {}
-export interface CardDescriptionProps extends ComponentProps<typeof CardDescription> {}
-export interface CardFooterProps extends ComponentProps<typeof CardFooter> {}
-export interface CardHeaderProps extends ComponentProps<typeof CardHeader> {}
-export interface CardTitleProps extends ComponentProps<typeof CardTitle> {}
+export interface RootProps extends ComponentProps<typeof Root> {}
+export interface BodyProps extends ComponentProps<typeof Body> {}
+export interface DescriptionProps extends ComponentProps<typeof Description> {}
+export interface FooterProps extends ComponentProps<typeof Footer> {}
+export interface HeaderProps extends ComponentProps<typeof Header> {}
+export interface TitleProps extends ComponentProps<typeof Title> {}

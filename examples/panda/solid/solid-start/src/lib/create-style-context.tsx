@@ -1,9 +1,10 @@
-import { createContext, useContext, type ComponentProps, type ValidComponent } from 'solid-js'
+import { type ComponentProps, type ValidComponent, createContext, useContext } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
 type GenericProps = Record<string, unknown>
 type StyleRecipe = {
   (props: GenericProps): Record<string, string>
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   splitVariantProps: (props: GenericProps) => any
 }
 

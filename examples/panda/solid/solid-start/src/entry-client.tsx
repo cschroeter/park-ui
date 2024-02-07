@@ -1,3 +1,3 @@
-import { mount, StartClient } from 'solid-start/entry-client'
+import { StartClient, mount } from '@solidjs/start/client'
 
-mount(() => <StartClient />, document)
+mount(() => <StartClient />, document.getElementById('app'))
