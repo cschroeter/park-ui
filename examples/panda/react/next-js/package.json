@@ -15,11 +15,11 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.29.1",
-    "@park-ui/panda-preset": "0.32.0",
-    "@types/node": "20.11.13",
-    "@types/react": "18.2.48",
-    "@types/react-dom": "18.2.18",
+    "@pandacss/dev": "0.30.1",
+    "@park-ui/panda-preset": "0.34.0",
+    "@types/node": "20.11.16",
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
     "eslint": "8.56.0",
     "eslint-config-next": "13.5.1",
     "typescript": "5.3.3"
