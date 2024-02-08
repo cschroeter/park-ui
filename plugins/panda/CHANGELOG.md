@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.34.0] - 2024-02-08
+
 ### Added
 
 Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle size effectively. By default, the preset includes only the `gray` and `accent` colors. 
