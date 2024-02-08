@@ -27,5 +27,5 @@ export const sand = {
   default: { value: '{colors.sand.9}' },
   emphasized: { value: '{colors.sand.10}' },
   fg: { value: '{colors.white}' },
-  text: { value: '{colors.sand.a11}' },
+  text: { value: '{colors.sand.12}' },
 }

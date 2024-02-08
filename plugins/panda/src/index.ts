@@ -9,17 +9,18 @@ import { createSemanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
 import { createTokens } from './theme/tokens'
 import {
-  accentColors,
-  borderRadii,
-  grayColors,
   type AccentColor,
   type BorderRadius,
   type GrayColor,
   type PresetOptions,
+  accentColors,
+  borderRadii,
+  grayColors,
 } from './types'
 
 const defaultOptions: PresetOptions = {
   accentColor: 'neutral',
+  additionalColors: [],
   borderRadius: 'sm',
   grayColor: 'neutral',
 }

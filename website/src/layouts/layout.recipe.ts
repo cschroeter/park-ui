@@ -30,7 +30,7 @@ export const layout = sva({
       background: 'bg.surface',
       display: 'flex',
       flexDirection: 'column',
-      pt: { base: '110px', md: '16' },
+      pt: { base: '110px', md: '20' },
       ps: { base: '0', md: '64' },
     },
   },

@@ -27,5 +27,5 @@ export const mauve = {
   default: { value: '{colors.mauve.9}' },
   emphasized: { value: '{colors.mauve.10}' },
   fg: { value: '{colors.white}' },
-  text: { value: '{colors.mauve.a11}' },
+  text: { value: '{colors.mauve.12}' },
 }

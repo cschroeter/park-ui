@@ -5,11 +5,14 @@ import { match } from 'ts-pattern'
 import type { PresetOptions } from '../../../types'
 
 export const defineColorPalettes = (options: PresetOptions) => {
-  const { grayColor = 'neutral' } = options
+  const { grayColor = 'neutral', accentColor = 'neutral', additionalColors = [] } = options
+  const availableColors = ['gray', grayColor, accentColor, ...additionalColors]
+
   return Object.fromEntries(
     [...Object.keys(radixColors), 'neutral']
       .filter((color) => !/[A-Z]/.test(color))
       .filter((color) => color !== 'default')
+      .filter((color) => additionalColors.includes('*') || availableColors.includes(color))
       .map((color) =>
         match(color)
           .with('gray', () => [

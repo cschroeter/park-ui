@@ -5,11 +5,22 @@ import { createRadiiTokens } from './radii'
 import { shadows } from './shadows'
 
 export const createSemanticTokens = (options: PresetOptions) => {
-  const { accentColor = 'neutral', grayColor = 'neutral', borderRadius = 'sm' } = options
+  const {
+    accentColor = 'neutral',
+    additionalColors = [],
+    borderRadius = 'sm',
+    grayColor = 'neutral',
+  } = options
+
+  const extraColors = Object.fromEntries(
+    Object.entries(colors).filter(
+      ([color]) => additionalColors.includes('*') || additionalColors.includes(color),
+    ),
+  )
 
   return defineSemanticTokens({
     colors: {
-      ...colors,
+      ...extraColors,
       gray: colors[grayColor],
       accent: colors[accentColor],
       bg: {
