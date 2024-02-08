@@ -2,7 +2,8 @@
 
 ### Added
 
-- Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle size effectively. By default, the preset includes only the `gray` and `accent` colors. To use all available colors, utilize `*`. This maybe a breaking change for some users, so please update your configuration accordingly.
+Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle size effectively. By default, the preset includes only the `gray` and `accent` colors. 
+This maybe a breaking change for some users, so please update your configuration accordingly.
 
 Example configuration:
 
@@ -21,6 +22,14 @@ export default defineConfig({
   ],
   // Additional configuration...
 })
+```
+
+To add all available colors, use this wildcard:
+
+```tsx
+createPreset({
+  additionalColors: ['*'],
+}),
 ```
 
 ## [0.33.0] - 2024-02-01
