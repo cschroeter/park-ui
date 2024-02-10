@@ -1,10 +1,14 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed an issue that the `ValueText` in circular `Progress` was rendered twice.
+
 ## [0.34.0] - 2024-02-08
 
 ### Added
 
-Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle size effectively. By default, the preset includes only the `gray` and `accent` colors. 
+Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle size effectively. By default, the preset includes only the `gray` and `accent` colors.
 This maybe a breaking change for some users, so please update your configuration accordingly.
 
 Example configuration:
@@ -23,7 +27,7 @@ export default defineConfig({
     }),
   ],
   // Additional configuration...
-})
+});
 ```
 
 To add all available colors, use this wildcard:
@@ -145,9 +149,9 @@ For more information on the reasoning behind this change, please refer to the [G
 
 ```tsx
 // before
-import { Avatar as ArkAvatar } from '@ark-ui/react'
+import { Avatar as ArkAvatar } from '@ark-ui/react';
 // after
-import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
+import { Avatar as ArkAvatar } from '@ark-ui/react/avatar';
 ```
 
 ## [0.26.1] - 2023-12-14
@@ -165,9 +169,9 @@ import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
 
 ```tsx
 // before
-import { Avatar } from '~/components/ui/avatar'
+import { Avatar } from '~/components/ui/avatar';
 // after
-import * as Avatar from '~/components/ui/avatar'
+import * as Avatar from '~/components/ui/avatar';
 
 function MyAvatar() {
   return (
@@ -175,7 +179,7 @@ function MyAvatar() {
       <Avatar.Fallback>PA</Avatar.Fallback>
       <Avatar.Image src="https://i.pravatar.cc/300" alt="avatar" />
     </Avatar.Root>
-  )
+  );
 }
 ```
 
@@ -185,9 +189,9 @@ function MyAvatar() {
 
 ```tsx
 // before
-export type ButtonProps = typeof Button
+export type ButtonProps = typeof Button;
 // after
-export type ButtonProps = HTMLStyledProps<typeof Button>
+export type ButtonProps = HTMLStyledProps<typeof Button>;
 ```
 
 ## [0.25.0] - 2023-12-01
@@ -269,19 +273,19 @@ With the introduction of Ark UI 1.0 support, this version implements significant
 - Added a default export to `@park-ui/panda-preset` for easier configuration. This will use `neutral` as accent and gray color with `borderRadius` of `sm`.
 
 ```jsx
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig } from '@pandacss/dev';
 
 export default defineConfig({
   presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
   // ...
-})
+});
 ```
 
 To customize the Park UI preset, use the `createPreset` function as shown below:
 
 ```jsx
-import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/panda-preset'
+import { defineConfig } from '@pandacss/dev';
+import { createPreset } from '@park-ui/panda-preset';
 
 export default defineConfig({
   presets: [
@@ -293,7 +297,7 @@ export default defineConfig({
     }),
   ],
   // ...
-})
+});
 ```
 
 ### Changed
@@ -333,7 +337,7 @@ package name.
 **Before**: Extending Theme
 
 ```tsx
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig } from '@pandacss/dev';
 
 export default defineConfig({
   presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
@@ -350,7 +354,12 @@ export default defineConfig({
       semanticTokens: {
         colors: {
           accent: {
-            default: { value: { base: '{colors.indigo.500}', _dark: '{colors.indigo.200}' } },
+            default: {
+              value: {
+                base: '{colors.indigo.500}',
+                _dark: '{colors.indigo.200}',
+              },
+            },
             // etc ..
           },
         },
@@ -358,14 +367,14 @@ export default defineConfig({
     },
   },
   // ...
-})
+});
 ```
 
 **After**: Using `createPreset`
 
 ```tsx
-import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/panda-preset'
+import { defineConfig } from '@pandacss/dev';
+import { createPreset } from '@park-ui/panda-preset';
 
 export default defineConfig({
   presets: [
@@ -377,7 +386,7 @@ export default defineConfig({
     }),
   ],
   // ...
-})
+});
 ```
 
 ## [0.18.0] - 2023-10-12

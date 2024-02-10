@@ -29,7 +29,6 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>((props, ref) =
         <ArkProgress.Circle className={circle()}>
           <ArkProgress.CircleTrack className={circleTrack()} />
           <ArkProgress.CircleRange className={circleRange()} />
-          <ArkProgress.ValueText className={valueText()} />
         </ArkProgress.Circle>
       )}
       <ArkProgress.ValueText className={valueText()} />
