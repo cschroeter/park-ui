@@ -39,7 +39,6 @@ export const Progress = (props: ProgressProps) => {
         <ArkProgress.Circle class={styles.circle}>
           <ArkProgress.CircleTrack class={styles.circleTrack} />
           <ArkProgress.CircleRange class={styles.circleRange} />
-          <ArkProgress.ValueText class={styles.valueText} />
         </ArkProgress.Circle>
       </Show>
       <ArkProgress.ValueText class={styles.valueText} />
