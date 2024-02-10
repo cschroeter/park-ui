@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### Changed
+
+- Changed `Card.Description` and `Alert.Description` from `p` to `div` to allow for multiple paragraphs.
+
+### Fixed
+
+- Fixed an issue that the `ValueText` in circular `Progress` was rendered twice.
+
 ## [0.19.1] - 2024-02-01
 
 ### Fixed
@@ -133,7 +141,7 @@ it easier to customize the theme to your needs. We've also replaced the default 
 The tailwind config respects now to configure the preset colors:
 
 ```js
-const { parkwindPlugin } = require('./dist')
+const { parkwindPlugin } = require('./dist');
 
 module.exports = {
   plugins: [parkwindPlugin],
@@ -143,7 +151,7 @@ module.exports = {
     borderRadius: '2xl',
   },
   // ...rest of your config
-}
+};
 ```
 
 ## [0.11.3] - 2023-10-20
