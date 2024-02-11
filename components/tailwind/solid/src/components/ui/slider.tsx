@@ -1,6 +1,6 @@
 import { Slider as ArkSlider, type SliderRootProps } from '@ark-ui/solid'
-import { Index, Show, children, splitProps, type JSX } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { Index, type JSX, Show, children, splitProps } from 'solid-js'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface SliderProps extends SliderRootProps, SliderVariantProps {
   children?: JSX.Element
@@ -14,10 +14,7 @@ export const Slider = (props: SliderProps) => {
   const [variantProps, sliderProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(sliderProps, ['marks', 'children'])
   const getChildren = children(() => localProps.children)
-
-  const { root, control, label, marker, markerGroup, range, thumb, track } =
-    // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
-    styles(variantProps)
+  const { root, control, label, marker, markerGroup, range, thumb, track } = styles(variantProps)
 
   return (
     <ArkSlider.Root class={root()} {...rootProps}>

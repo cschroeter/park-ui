@@ -7,18 +7,18 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/vue": "0.10.0",
+    "@ark-ui/vue": "0.11.0",
     "@histoire/plugin-vue": "0.17.11",
     "@pandacss/dev": "0.30.2",
     "@park-ui/panda-preset": "workspace:*",
-    "@vitejs/plugin-vue": "5.0.3",
+    "@vitejs/plugin-vue": "5.0.4",
     "@vitejs/plugin-vue-jsx": "3.1.0",
     "@zag-js/avatar": "0.34.0",
     "histoire": "0.17.9",
     "lucide-vue-next": "0.323.0",
-    "radix-vue": "1.4.2",
+    "radix-vue": "1.4.3",
     "typescript": "5.3.3",
-    "vite": "5.0.12",
-    "vue": "3.4.16"
+    "vite": "5.1.1",
+    "vue": "3.4.18"
   }
 }

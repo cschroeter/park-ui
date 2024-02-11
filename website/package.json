@@ -13,8 +13,8 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@ark-ui/react": "2.0.1",
-    "@astrojs/check": "0.4.1",
+    "@ark-ui/react": "2.0.2",
+    "@astrojs/check": "0.5.2",
     "@astrojs/mdx": "2.1.1",
     "@astrojs/react": "3.0.10",
     "@astrojs/sitemap": "3.0.5",

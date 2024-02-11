@@ -1,6 +1,6 @@
 import { Checkbox as ArkCheckbox, type CheckboxRootProps as ArkCheckboxProps } from '@ark-ui/solid'
-import { Show, children, splitProps, type JSX } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type JSX, Show, children, splitProps } from 'solid-js'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface CheckboxProps extends ArkCheckboxProps, CheckboxVariantProps {
   children?: JSX.Element
@@ -9,7 +9,6 @@ export interface CheckboxProps extends ArkCheckboxProps, CheckboxVariantProps {
 export const Checkbox = (props: CheckboxProps) => {
   const [variantProps, avatarProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(avatarProps, ['children'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const { root, control, label } = styles(variantProps)
   const getChildren = children(() => localProps.children)
 

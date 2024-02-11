@@ -1,6 +1,6 @@
 import { Progress as ArkProgress, type ProgressRootProps } from '@ark-ui/solid'
-import { Show, children, splitProps, type JSX } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type JSX, Show, children, splitProps } from 'solid-js'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface ProgressProps extends ProgressRootProps, ProgressVariantProps {
   children?: JSX.Element
@@ -15,9 +15,7 @@ export const Progress = (props: ProgressProps) => {
   const [variantProps, progressProps] = splitProps(props, ['class', 'size'])
   const [localProps, rootProps] = splitProps(progressProps, ['children', 'type'])
   const getChildren = children(() => localProps.children)
-
   const { root, label, track, range, circle, circleRange, circleTrack, valueText } =
-    // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
     styles(variantProps)
 
   return (

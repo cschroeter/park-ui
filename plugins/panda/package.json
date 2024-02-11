@@ -41,7 +41,7 @@
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
     "release-it": "17.0.3",
-    "tsup": "8.0.1"
+    "tsup": "8.0.2"
   },
   "peerDependencies": {
     "@pandacss/dev": ">0.22.0",

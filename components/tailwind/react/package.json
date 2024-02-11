@@ -6,12 +6,12 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/react": "2.0.1",
+    "@ark-ui/react": "2.0.2",
     "@park-ui/tailwind-plugin": "workspace:*",
-    "@storybook/addon-essentials": "7.6.13",
-    "@storybook/addons": "7.6.13",
-    "@storybook/react": "7.6.13",
-    "@storybook/react-vite": "7.6.13",
+    "@storybook/addon-essentials": "7.6.14",
+    "@storybook/addons": "7.6.14",
+    "@storybook/react": "7.6.14",
+    "@storybook/react-vite": "7.6.14",
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
     "autoprefixer": "10.4.17",
@@ -19,11 +19,11 @@
     "postcss": "8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.6.13",
-    "tailwind-variants": "0.1.20",
+    "storybook": "7.6.14",
+    "tailwind-variants": "0.2.0",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3",
-    "vite": "5.0.12",
+    "vite": "5.1.1",
     "vite-tsconfig-paths": "4.3.1"
   }
 }

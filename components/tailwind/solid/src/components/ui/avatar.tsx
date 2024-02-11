@@ -1,6 +1,6 @@
 import { Avatar as ArkAvatar, type AvatarRootProps } from '@ark-ui/solid'
 import { splitProps } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
   name?: string
@@ -10,7 +10,6 @@ export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
 export const Avatar = (props: AvatarProps) => {
   const [variantProps, avatarProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(avatarProps, ['name', 'src'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const { root, fallback, image } = styles(variantProps)
 
   return (

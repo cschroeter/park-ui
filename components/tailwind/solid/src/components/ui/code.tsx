@@ -1,12 +1,11 @@
-import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { type HTMLArkProps, ark } from '@ark-ui/solid'
 import { splitProps } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface CodeProps extends CodeVariantProps, HTMLArkProps<'code'> {}
 
 export const Code = (props: CodeProps) => {
   const [variantProps, codeProps] = splitProps(props, ['class', 'size'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.code class={styles(variantProps)} {...codeProps} />
 }
 

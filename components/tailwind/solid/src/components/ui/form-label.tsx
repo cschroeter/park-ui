@@ -1,12 +1,11 @@
-import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { type HTMLArkProps, ark } from '@ark-ui/solid'
 import { splitProps } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface FormLabelProps extends FormLabelVariantProps, HTMLArkProps<'label'> {}
 
 export const FormLabel = (props: FormLabelProps) => {
   const [variantProps, formLabelProps] = splitProps(props, ['class', 'size'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.label class={styles(variantProps)} {...formLabelProps} />
 }
 

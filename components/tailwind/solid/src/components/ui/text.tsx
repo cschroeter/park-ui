@@ -1,6 +1,6 @@
-import { mergeProps, splitProps, type JSX } from 'solid-js'
+import { type JSX, mergeProps, splitProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 type As = 'p' | 'span' | 'div' | 'label'
 
@@ -13,7 +13,6 @@ export const Text = (props: TextProps) => {
   const mergedProps = mergeProps({ as: 'p' }, props)
   const [variantProps, textProps] = splitProps(mergedProps, ['size', 'class'])
   const [localProps, rootProps] = splitProps(textProps, ['as'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const className = styles(variantProps)
 
   return <Dynamic component={localProps.as} class={className} {...rootProps} />

@@ -1,14 +1,13 @@
 import type { HTMLArkProps } from '@ark-ui/solid'
 import { splitProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface IconProps extends IconVariantProps, HTMLArkProps<'svg'> {}
 
 export const Icon = (props: IconProps) => {
   const [variantProps, iconProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(iconProps, ['as'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const className = styles(variantProps)
 
   return <Dynamic component={localProps.as} class={className} {...rootProps} />
