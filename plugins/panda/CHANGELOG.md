@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.34.1] - 2024-02-12
+
 ### Fixed
 
 - Resolved an issue that you had to add the `accent` and `gray` colors to the `additionalColors` option in the `createPreset` function to make them available in the CSS bundle.
