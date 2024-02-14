@@ -6,6 +6,7 @@ import { button } from './button'
 import { card } from './card'
 import { carousel } from './carousel'
 import { checkbox } from './checkbox'
+import { clipboard } from './clipboard'
 import { code } from './code'
 import { colorPicker } from './color-picker'
 import { combobox } from './combobox'
@@ -44,6 +45,7 @@ import { textarea } from './textarea'
 import { toast } from './toast'
 import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
+import { treeView } from './tree-view'
 
 export const recipes = {
   badge,
@@ -67,6 +69,7 @@ export const slotRecipes = {
   card,
   carousel,
   checkbox,
+  clipboard,
   colorPicker,
   combobox,
   datePicker,
@@ -95,4 +98,5 @@ export const slotRecipes = {
   toast,
   toggleGroup,
   tooltip,
+  treeView,
 }

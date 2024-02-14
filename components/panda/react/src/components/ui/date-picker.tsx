@@ -15,6 +15,7 @@ export const Label = withContext(styled(DatePicker.Label), 'label')
 export const MonthSelect = withContext(styled(DatePicker.MonthSelect), 'monthSelect')
 export const NextTrigger = withContext(styled(DatePicker.NextTrigger), 'nextTrigger')
 export const Positioner = withContext(styled(DatePicker.Positioner), 'positioner')
+export const PresetTrigger = withContext(styled(DatePicker.PresetTrigger), 'presetTrigger')
 export const PrevTrigger = withContext(styled(DatePicker.PrevTrigger), 'prevTrigger')
 export const RangeText = withContext(styled(DatePicker.RangeText), 'rangeText')
 export const Table = withContext(styled(DatePicker.Table), 'table')
@@ -39,6 +40,7 @@ export interface LabelProps extends ComponentProps<typeof Label> {}
 export interface MonthSelectProps extends ComponentProps<typeof MonthSelect> {}
 export interface NextTriggerProps extends ComponentProps<typeof NextTrigger> {}
 export interface PositionerProps extends ComponentProps<typeof Positioner> {}
+export interface PresetTriggerProps extends ComponentProps<typeof PresetTrigger> {}
 export interface PrevTriggerProps extends ComponentProps<typeof PrevTrigger> {}
 export interface RangeTextProps extends ComponentProps<typeof RangeText> {}
 export interface TableProps extends ComponentProps<typeof Table> {}

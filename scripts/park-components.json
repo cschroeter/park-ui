@@ -8,7 +8,11 @@
     },
     "name": "Alert",
     "parts": {
-      "Root": { "name": "AlertRoot", "slot": "root", "component": "ark.div" },
+      "Root": {
+        "name": "AlertRoot",
+        "slot": "root",
+        "component": "ark.div"
+      },
       "Content": {
         "name": "AlertContent",
         "slot": "content",
@@ -17,20 +21,36 @@
       "Description": {
         "name": "AlertDescription",
         "slot": "description",
-        "component": "ark.p"
+        "component": "ark.div"
       },
-      "Icon": { "name": "AlertIcon", "slot": "icon", "component": "ark.svg" },
-      "Title": { "name": "AlertTitle", "slot": "title", "component": "ark.h5" }
+      "Icon": {
+        "name": "AlertIcon",
+        "slot": "icon",
+        "component": "ark.svg"
+      },
+      "Title": {
+        "name": "AlertTitle",
+        "slot": "title",
+        "component": "ark.h5"
+      }
     }
   },
   "card": {
     "parts": {
-      "Root": { "name": "CardRoot", "slot": "root", "component": "ark.div" },
-      "Body": { "name": "CardBody", "slot": "body", "component": "ark.div" },
+      "Root": {
+        "name": "CardRoot",
+        "slot": "root",
+        "component": "ark.div"
+      },
+      "Body": {
+        "name": "CardBody",
+        "slot": "body",
+        "component": "ark.div"
+      },
       "Description": {
         "name": "CardDescription",
         "slot": "description",
-        "component": "ark.p"
+        "component": "ark.div"
       },
       "Footer": {
         "name": "CardFooter",
@@ -42,7 +62,11 @@
         "slot": "header",
         "component": "ark.div"
       },
-      "Title": { "name": "CardTitle", "slot": "title", "component": "ark.h3" }
+      "Title": {
+        "name": "CardTitle",
+        "slot": "title",
+        "component": "ark.h3"
+      }
     },
     "name": "Card",
     "imports": {
@@ -54,13 +78,20 @@
   },
   "drawer": {
     "parts": {
-      "Root": { "name": "DrawerRoot", "component": "ArkDrawer.Root" },
+      "Root": {
+        "name": "DrawerRoot",
+        "component": "ArkDrawer.Root"
+      },
       "Backdrop": {
         "name": "DrawerBackdrop",
         "slot": "backdrop",
         "component": "ArkDrawer.Backdrop"
       },
-      "Body": { "name": "DrawerBody", "slot": "body", "component": "ark.div" },
+      "Body": {
+        "name": "DrawerBody",
+        "slot": "body",
+        "component": "ark.div"
+      },
       "CloseTrigger": {
         "name": "DrawerCloseTrigger",
         "slot": "closeTrigger",
@@ -165,26 +196,46 @@
   },
   "table": {
     "parts": {
-      "Root": { "name": "TableRoot", "slot": "root", "component": "ark.table" },
-      "Body": { "name": "TableBody", "slot": "body", "component": "ark.tbody" },
+      "Root": {
+        "name": "TableRoot",
+        "slot": "root",
+        "component": "ark.table"
+      },
+      "Body": {
+        "name": "TableBody",
+        "slot": "body",
+        "component": "ark.tbody"
+      },
       "Caption": {
         "name": "TableCaption",
         "slot": "caption",
         "component": "ark.caption"
       },
-      "Cell": { "name": "TableCell", "slot": "cell", "component": "ark.td" },
+      "Cell": {
+        "name": "TableCell",
+        "slot": "cell",
+        "component": "ark.td"
+      },
       "Footer": {
         "name": "TableFooter",
         "slot": "footer",
         "component": "ark.tfoot"
       },
-      "Head": { "name": "TableHead", "slot": "head", "component": "ark.thead" },
+      "Head": {
+        "name": "TableHead",
+        "slot": "head",
+        "component": "ark.thead"
+      },
       "Header": {
         "name": "TableHeader",
         "slot": "header",
         "component": "ark.th"
       },
-      "Row": { "name": "TableRow", "slot": "row", "component": "ark.tr" }
+      "Row": {
+        "name": "TableRow",
+        "slot": "row",
+        "component": "ark.tr"
+      }
     },
     "name": "Table",
     "imports": {

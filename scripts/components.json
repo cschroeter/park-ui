@@ -148,6 +148,73 @@
     },
     "className": "checkbox"
   },
+  "clipboard": {
+    "parts": {
+      "Root": {
+        "name": "ClipboardRoot",
+        "slot": "root",
+        "component": "Clipboard.Root"
+      },
+      "Control": {
+        "name": "ClipboardControl",
+        "slot": "control",
+        "component": "Clipboard.Control"
+      },
+      "Indicator": {
+        "name": "ClipboardIndicator",
+        "slot": "indicator",
+        "component": "Clipboard.Indicator"
+      },
+      "Input": {
+        "name": "ClipboardInput",
+        "slot": "input",
+        "component": "Clipboard.Input"
+      },
+      "Label": {
+        "name": "ClipboardLabel",
+        "slot": "label",
+        "component": "Clipboard.Label"
+      },
+      "Trigger": {
+        "name": "ClipboardTrigger",
+        "slot": "trigger",
+        "component": "Clipboard.Trigger"
+      }
+    },
+    "name": "Clipboard",
+    "imports": {
+      "react": ["import { Clipboard } from '@ark-ui/react/clipboard'"],
+      "solid": ["import { Clipboard } from '@ark-ui/solid'"],
+      "vue": ["import { Clipboard } from '@ark-ui/vue/clipboard'"]
+    },
+    "className": "clipboard"
+  },
+  "collapsible": {
+    "parts": {
+      "Root": {
+        "name": "CollapsibleRoot",
+        "slot": "root",
+        "component": "Collapsible.Root"
+      },
+      "Content": {
+        "name": "CollapsibleContent",
+        "slot": "content",
+        "component": "Collapsible.Content"
+      },
+      "Trigger": {
+        "name": "CollapsibleTrigger",
+        "slot": "trigger",
+        "component": "Collapsible.Trigger"
+      }
+    },
+    "name": "Collapsible",
+    "imports": {
+      "react": ["import { Collapsible } from '@ark-ui/react/collapsible'"],
+      "solid": ["import { Collapsible } from '@ark-ui/solid'"],
+      "vue": ["import { Collapsible } from '@ark-ui/vue/collapsible'"]
+    },
+    "className": "collapsible"
+  },
   "color-picker": {
     "parts": {
       "Root": {
@@ -396,6 +463,11 @@
         "name": "DatePickerPositioner",
         "slot": "positioner",
         "component": "DatePicker.Positioner"
+      },
+      "PresetTrigger": {
+        "name": "DatePickerPresetTrigger",
+        "slot": "presetTrigger",
+        "component": "DatePicker.PresetTrigger"
       },
       "PrevTrigger": {
         "name": "DatePickerPrevTrigger",
@@ -1527,6 +1599,11 @@
         "name": "TreeViewItem",
         "slot": "item",
         "component": "TreeView.Item"
+      },
+      "ItemIndicator": {
+        "name": "TreeViewItemIndicator",
+        "slot": "itemIndicator",
+        "component": "TreeView.ItemIndicator"
       },
       "ItemText": {
         "name": "TreeViewItemText",
