@@ -1,6 +1,6 @@
 import { RatingGroup as ArkRatingGroup, type RatingGroupRootProps } from '@ark-ui/solid'
-import { Index, Show, children, splitProps, type JSX } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { Index, type JSX, Show, children, splitProps } from 'solid-js'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {
   children?: JSX.Element
@@ -10,8 +10,6 @@ export const RatingGroup = (props: RatingGroupProps) => {
   const [variantProps, ratingGroupProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(ratingGroupProps, ['children'])
   const getChildren = children(() => localProps.children)
-
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const { root, control, label, item } = styles(variantProps)
 
   return (

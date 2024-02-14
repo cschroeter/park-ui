@@ -23,7 +23,7 @@
     "@clack/core": "0.3.3",
     "@clack/prompts": "0.7.0",
     "@release-it/keep-a-changelog": "5.0.0",
-    "@types/node": "20.11.16",
+    "@types/node": "20.11.17",
     "@types/yargs": "17.0.32",
     "json-schema-to-typescript": "13.1.2",
     "node-fetch": "3.3.2",
@@ -32,7 +32,7 @@
     "release-it": "17.0.3",
     "ts-pattern": "5.0.6",
     "tsconfig-resolver": "3.0.1",
-    "tsup": "8.0.1",
+    "tsup": "8.0.2",
     "typescript": "5.3.3",
     "voca": "1.4.1",
     "yargs": "17.7.2"

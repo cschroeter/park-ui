@@ -1,6 +1,6 @@
 import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/solid'
-import { Index, Show, children, splitProps, type JSX } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { Index, type JSX, Show, children, splitProps } from 'solid-js'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { Input } from '~/components/ui/input'
 
 export interface PinInputProps extends PinInputRootProps, PinInputVariantProps {
@@ -16,8 +16,6 @@ export const PinInput = (props: PinInputProps) => {
   const [variantProps, pinInputProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(pinInputProps, ['children', 'length'])
   const getChildren = children(() => localProps.children)
-
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const { root, control, label, input } = styles(variantProps)
 
   return (

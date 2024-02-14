@@ -1,6 +1,6 @@
 import { Pagination as ArkPagination, type PaginationRootProps } from '@ark-ui/solid'
 import { For, splitProps } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
 
@@ -8,7 +8,6 @@ export interface PaginationProps extends PaginationRootProps, PaginationVariantP
 
 export const Pagination = (props: PaginationProps) => {
   const [variantProps, rootProps] = splitProps(props, ['class'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   const { root, ellipsis, item, prevTrigger, nextTrigger } = styles(variantProps)
 
   return (

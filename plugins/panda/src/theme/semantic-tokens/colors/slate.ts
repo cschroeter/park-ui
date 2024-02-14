@@ -27,5 +27,5 @@ export const slate = {
   default: { value: '{colors.slate.9}' },
   emphasized: { value: '{colors.slate.10}' },
   fg: { value: '{colors.white}' },
-  text: { value: '{colors.slate.a11}' },
+  text: { value: '{colors.slate.12}' },
 }

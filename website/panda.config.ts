@@ -7,7 +7,9 @@ export default defineConfig({
   lightningcss: true,
   presets: [
     '@pandacss/preset-base',
-    createPreset(),
+    createPreset({
+      additionalColors: ['*'],
+    }),
     typographyPreset({
       recipe: {
         sizes: ['base'],

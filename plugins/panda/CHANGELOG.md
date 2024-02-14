@@ -1,5 +1,45 @@
 ## [Unreleased]
 
+## [0.34.1] - 2024-02-12
+
+### Fixed
+
+- Resolved an issue that you had to add the `accent` and `gray` colors to the `additionalColors` option in the `createPreset` function to make them available in the CSS bundle.
+
+## [0.34.0] - 2024-02-08
+
+### Added
+
+Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle size effectively. By default, the preset includes only the `gray` and `accent` colors. 
+This maybe a breaking change for some users, so please update your configuration accordingly.
+
+Example configuration:
+
+```tsx
+import { defineConfig } from '@pandacss/dev';
+import { createPreset } from '@park-ui/panda-preset';
+
+export default defineConfig({
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: 'amber',
+      grayColor: 'sand',
+      additionalColors: ['red', 'green'],
+    }),
+  ],
+  // Additional configuration...
+})
+```
+
+To add all available colors, use this wildcard:
+
+```tsx
+createPreset({
+  additionalColors: ['*'],
+}),
+```
+
 ## [0.33.0] - 2024-02-01
 
 ### Changed

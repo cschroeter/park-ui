@@ -1,12 +1,11 @@
-import { ark, type HTMLArkProps } from '@ark-ui/solid'
+import { type HTMLArkProps, ark } from '@ark-ui/solid'
 import { splitProps } from 'solid-js'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface ButtonProps extends ButtonVariantProps, HTMLArkProps<'button'> {}
 
 export const Button = (props: ButtonProps) => {
   const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])
-  // @ts-expect-error https://github.com/nextui-org/tailwind-variants/issues/145
   return <ark.button class={styles(variantProps)} {...buttonProps} />
 }
 
