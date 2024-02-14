@@ -34,7 +34,7 @@
     "ts-pattern": "5.0.6"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.30.2",
+    "@pandacss/dev": "0.31.0",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/node": "20.11.17",
