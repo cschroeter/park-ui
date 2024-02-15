@@ -1,5 +1,5 @@
-import { getCollection } from 'astro:content'
 import path from 'path'
+import { getCollection } from 'astro:content'
 
 const getOverviewPages = async () => {
   const priority = ['introduction', 'getting-started', 'cli', 'figma', 'changelog', 'about']
@@ -99,7 +99,7 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
     .sort((a, b) => priority.indexOf(a) - priority.indexOf(b))
     .filter((value, index, self) => self.indexOf(value) === index)
     .map((category) => ({
-      title: category,
+      title: category === 'typography' ? 'Typography' : 'Components',
       items: componentPages
         .filter((item) => item.slug.startsWith(cssFramework))
         .filter((item) => item.data.category === category)
