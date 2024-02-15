@@ -1,6 +1,8 @@
 ---
+import { Stack } from 'styled-system/jsx'
+import { Text } from '~/components/ui/text'
 import { getSitemap } from '~/lib/page-control'
-import { SidebarNavigation } from './sidebar-navigation'
+import { SidebarGroup } from './sidebar-group'
 
 const { slug } = Astro.params
 const cssFramework = slug?.split('/')[0] ?? 'panda'
@@ -9,4 +11,15 @@ const cssFramework = slug?.split('/')[0] ?? 'panda'
 const sitemap = await getSitemap({ cssFramework })
 ---
 
-<SidebarNavigation data={sitemap} client:load />
+<Stack gap="8">
+  {
+    sitemap.map((entry) => (
+      <Stack gap="3">
+        <Text textStyle={{ md: 'sm' }} fontWeight="semibold" textTransform="capitalize">
+          {entry.title}
+        </Text>
+        <SidebarGroup items={entry.items} client:load />
+      </Stack>
+    ))
+  }
+</Stack>

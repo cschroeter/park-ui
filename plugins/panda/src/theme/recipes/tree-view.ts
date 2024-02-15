@@ -50,6 +50,7 @@ export const treeView = defineSlotRecipe({
       },
     },
     branchIndicator: {
+      color: 'accent.default',
       transformOrigin: 'center',
       transitionDuration: 'normal',
       transitionProperty: 'transform',
@@ -68,6 +69,7 @@ export const treeView = defineSlotRecipe({
       color: 'fg.muted',
       cursor: 'pointer',
       fontWeight: 'medium',
+      position: 'relative',
       ps: 'calc(((var(--depth) - 1) * 22px) + 22px)',
       py: '1.5',
       textStyle: 'sm',
@@ -82,6 +84,24 @@ export const treeView = defineSlotRecipe({
       _hover: {
         background: 'gray.a2',
         color: 'fg.default',
+      },
+      _selected: {
+        background: 'accent.a2',
+        color: 'accent.text',
+        _hover: {
+          background: 'accent.a2',
+          color: 'accent.text',
+        },
+        _before: {
+          content: '""',
+          position: 'absolute',
+          left: '3',
+          top: '0',
+          width: '0.5',
+          height: 'full',
+          bg: 'accent.default',
+          zIndex: '1',
+        },
       },
     },
     tree: {
