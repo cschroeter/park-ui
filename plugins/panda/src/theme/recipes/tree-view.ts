@@ -97,7 +97,7 @@ export const treeView = defineSlotRecipe({
           position: 'absolute',
           left: '3',
           top: '0',
-          width: '0.5',
+          width: '1px',
           height: 'full',
           bg: 'accent.default',
           zIndex: '1',
