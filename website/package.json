@@ -13,7 +13,7 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@ark-ui/react": "2.1.0",
+    "@ark-ui/react": "2.1.1",
     "@astrojs/check": "0.5.4",
     "@astrojs/mdx": "2.1.1",
     "@astrojs/react": "3.0.10",
@@ -30,14 +30,14 @@
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
     "@uidotdev/usehooks": "2.4.1",
-    "astro": "4.3.7",
+    "astro": "4.4.0",
     "cheerio": "1.0.0-rc.12",
-    "lucide-react": "0.330.0",
+    "lucide-react": "0.331.0",
     "pandacss-preset-typography": "0.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-live": "4.1.6",
-    "ts-pattern": "5.0.6",
+    "ts-pattern": "5.0.8",
     "typescript": "5.3.3",
     "zustand": "4.5.0"
   }
