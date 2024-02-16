@@ -1,7 +1,7 @@
-import { findUpSync } from 'find-up'
-import { globby } from 'globby'
 import fs from 'node:fs'
 import path from 'node:path'
+import { findUpSync } from 'find-up'
+import { globby } from 'globby'
 import { parse } from './helpers/panda-to-tailwind'
 
 const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
@@ -15,7 +15,7 @@ const main = async () => {
     const content = fs.readFileSync(component, 'utf-8')
     const code = parse(content)
     return fs.writeFileSync(
-      path.join(rootDir, '/components/tailwind/react/src/stories/', path.basename(component)),
+      path.join(rootDir, '/components/panda/solid/src/stories/', path.basename(component)),
       code,
     )
   })

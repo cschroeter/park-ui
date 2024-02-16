@@ -1,13 +1,6 @@
-import type { Meta } from '@storybook/react'
 import { TreeView, type TreeViewData } from '~/components/ui'
 
-const meta: Meta = {
-  title: 'Components/Tree View',
-}
-
-export default meta
-
-export const Base = () => {
+export const Demo = () => {
   return <TreeView data={data} maxW="2xs" />
 }
 

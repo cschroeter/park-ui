@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Added `TreeView` component.
+
 ## [0.34.1] - 2024-02-12
 
 ### Fixed

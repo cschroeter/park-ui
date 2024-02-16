@@ -55,7 +55,17 @@ export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>((props, ref) =
       className={cx(styles.root, css(cssProps), className)}
       {...rootProps}
     >
-      <ArkTreeView.Tree className={styles.tree}>{data.children.map(renderChild)}</ArkTreeView.Tree>
+      <ArkTreeView.Tree className={styles.tree}>
+        {data.children.map((child) =>
+          child.children ? (
+            renderChild(child)
+          ) : (
+            <ArkTreeView.Item key={child.id} id={child.id} className={styles.item}>
+              <ArkTreeView.ItemText className={styles.itemText}>{child.name}</ArkTreeView.ItemText>
+            </ArkTreeView.Item>
+          ),
+        )}
+      </ArkTreeView.Tree>
     </ArkTreeView.Root>
   )
 })

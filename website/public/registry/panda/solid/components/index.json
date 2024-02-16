@@ -187,6 +187,10 @@
     {
       "name": "Tooltip",
       "href": "https://park-ui.com/registry/panda/solid/components/tooltip.json"
+    },
+    {
+      "name": "Tree View",
+      "href": "https://park-ui.com/registry/panda/solid/components/tree-view.json"
     }
   ]
 }
