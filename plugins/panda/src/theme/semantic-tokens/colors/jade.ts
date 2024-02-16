@@ -26,6 +26,6 @@ export const jade = {
 
   default: { value: '{colors.jade.9}' },
   emphasized: { value: '{colors.jade.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.jade.a11}' },
 }

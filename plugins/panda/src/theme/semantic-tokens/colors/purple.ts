@@ -26,6 +26,6 @@ export const purple = {
 
   default: { value: '{colors.purple.9}' },
   emphasized: { value: '{colors.purple.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.purple.a11}' },
 }

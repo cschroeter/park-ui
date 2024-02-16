@@ -26,6 +26,6 @@ export const crimson = {
 
   default: { value: '{colors.crimson.9}' },
   emphasized: { value: '{colors.crimson.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.crimson.a11}' },
 }

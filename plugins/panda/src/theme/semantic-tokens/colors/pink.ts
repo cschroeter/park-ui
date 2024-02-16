@@ -26,6 +26,6 @@ export const pink = {
 
   default: { value: '{colors.pink.9}' },
   emphasized: { value: '{colors.pink.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.pink.a11}' },
 }

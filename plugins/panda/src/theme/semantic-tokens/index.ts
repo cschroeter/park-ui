@@ -26,7 +26,7 @@ export const createSemanticTokens = (options: PresetOptions) => {
       accent: colors[accentColor],
       bg: {
         canvas: { value: '{colors.gray.1}' },
-        default: { value: { base: '{colors.white}', _dark: '{colors.gray.2}' } },
+        default: { value: { base: 'white', _dark: '{colors.gray.2}' } },
         subtle: { value: { base: '{colors.gray.2}', _dark: '{colors.gray.3}' } },
         muted: { value: { base: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
         emphasized: { value: { base: '{colors.gray.4}', _dark: '{colors.gray.5}' } },

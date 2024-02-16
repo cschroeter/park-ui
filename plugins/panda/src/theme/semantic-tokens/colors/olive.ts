@@ -26,6 +26,6 @@ export const olive = {
 
   default: { value: '{colors.olive.9}' },
   emphasized: { value: '{colors.olive.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.olive.12}' },
 }

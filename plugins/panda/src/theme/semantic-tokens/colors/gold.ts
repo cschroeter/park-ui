@@ -26,6 +26,6 @@ export const gold = {
 
   default: { value: '{colors.gold.9}' },
   emphasized: { value: '{colors.gold.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.gold.a11}' },
 }

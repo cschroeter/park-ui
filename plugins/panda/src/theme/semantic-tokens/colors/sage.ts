@@ -26,6 +26,6 @@ export const sage = {
 
   default: { value: '{colors.sage.9}' },
   emphasized: { value: '{colors.sage.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.sage.12}' },
 }

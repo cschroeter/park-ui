@@ -26,6 +26,6 @@ export const blue = {
 
   default: { value: '{colors.blue.9}' },
   emphasized: { value: '{colors.blue.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.blue.a11}' },
 }

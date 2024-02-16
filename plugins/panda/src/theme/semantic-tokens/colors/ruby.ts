@@ -26,6 +26,6 @@ export const ruby = {
 
   default: { value: '{colors.ruby.9}' },
   emphasized: { value: '{colors.ruby.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.ruby.a11}' },
 }

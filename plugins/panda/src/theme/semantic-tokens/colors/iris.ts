@@ -26,6 +26,6 @@ export const iris = {
 
   default: { value: '{colors.iris.9}' },
   emphasized: { value: '{colors.iris.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.iris.a11}' },
 }

@@ -26,6 +26,6 @@ export const grass = {
 
   default: { value: '{colors.grass.9}' },
   emphasized: { value: '{colors.grass.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.grass.a11}' },
 }

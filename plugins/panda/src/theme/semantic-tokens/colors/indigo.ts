@@ -26,6 +26,6 @@ export const indigo = {
 
   default: { value: '{colors.indigo.9}' },
   emphasized: { value: '{colors.indigo.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.indigo.a11}' },
 }

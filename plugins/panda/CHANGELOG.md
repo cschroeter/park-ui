@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+
+### Fixed
+
+- Replaced `{colors.white}` and `{colors.black}` with `black` and `white` in color references to prevent false positive error messages.
+
 ## [0.35.0] - 2024-02-16
 
 ### Added

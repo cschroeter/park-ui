@@ -26,6 +26,6 @@ export const teal = {
 
   default: { value: '{colors.teal.9}' },
   emphasized: { value: '{colors.teal.10}' },
-  fg: { value: '{colors.white}' },
+  fg: { value: 'white' },
   text: { value: '{colors.teal.a11}' },
 }
