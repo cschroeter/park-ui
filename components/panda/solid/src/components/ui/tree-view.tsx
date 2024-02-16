@@ -1,6 +1,6 @@
 import { TreeView as ArkTreeView, type TreeViewRootProps } from '@ark-ui/solid'
 import { ChevronRightIcon } from 'lucide-solid'
-import { type Accessor, Index, Show, splitProps } from 'solid-js'
+import { For, Show, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { treeView } from 'styled-system/recipes'
@@ -26,8 +26,8 @@ export const TreeView = (props: TreeViewProps) => {
   const [localProps, rootProps] = splitProps(treeViewProps, ['data', 'class'])
   const styles = treeView()
 
-  const renderChild = (child: Accessor<Child>) => (
-    <ArkTreeView.Branch id={child().id} class={styles.branch}>
+  const renderChild = (child: Child) => (
+    <ArkTreeView.Branch id={child.id} class={styles.branch}>
       <ArkTreeView.BranchControl class={styles.branchControl}>
         <ArkTreeView.BranchIndicator class={styles.branchIndicator}>
           <ChevronRightIcon />
@@ -36,14 +36,14 @@ export const TreeView = (props: TreeViewProps) => {
       </ArkTreeView.BranchControl>
       <ArkTreeView.BranchContent class={styles.branchContent}>
         <Show
-          when={child().children}
+          when={child.children}
           fallback={
-            <ArkTreeView.Item id={child().id} class={styles.item}>
+            <ArkTreeView.Item id={child.id} class={styles.item}>
               <ArkTreeView.ItemText class={styles.itemText}>{child.name}</ArkTreeView.ItemText>
             </ArkTreeView.Item>
           }
         >
-          <Index each={child().children}>{(child) => renderChild(child)}</Index>
+          <For each={child.children}>{(child) => renderChild(child)}</For>
         </Show>
       </ArkTreeView.BranchContent>
     </ArkTreeView.Branch>
@@ -56,7 +56,7 @@ export const TreeView = (props: TreeViewProps) => {
       {...rootProps}
     >
       <ArkTreeView.Tree class={styles.tree}>
-        <Index each={localProps.data.children}>{(child) => renderChild(child)}</Index>
+        <For each={localProps.data.children}>{(child) => renderChild(child)}</For>
       </ArkTreeView.Tree>
     </ArkTreeView.Root>
   )

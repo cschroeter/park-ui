@@ -33,6 +33,10 @@
       "href": "https://park-ui.com/registry/panda/react/components/checkbox.json"
     },
     {
+      "name": "Clipboard",
+      "href": "https://park-ui.com/registry/panda/react/components/clipboard.json"
+    },
+    {
       "name": "Code",
       "href": "https://park-ui.com/registry/panda/react/components/code.json"
     },
