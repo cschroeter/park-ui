@@ -3,6 +3,7 @@
 ### Added
 
 - Added `TreeView` component.
+- Added `Clipboard` component.
 
 ## [0.34.1] - 2024-02-12
 
