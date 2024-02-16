@@ -1,7 +1,7 @@
 import { TreeView, type TreeViewData } from '~/components/ui'
 
 export const Demo = () => {
-  return <TreeView data={data} expandedIds={new Set('1')} selectedIds={new Set('1.1')} maxW="2xs" />
+  return <TreeView data={data} maxW="2xs" />
 }
 
 const data: TreeViewData = {

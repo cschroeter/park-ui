@@ -51,10 +51,10 @@ export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>((props, ref) =
   return (
     <ArkTreeView.Root
       ref={ref}
+      aria-label={data.label}
       className={cx(styles.root, css(cssProps), className)}
       {...rootProps}
     >
-      <ArkTreeView.Label className={styles.label}>{data.label}</ArkTreeView.Label>
       <ArkTreeView.Tree className={styles.tree}>{data.children.map(renderChild)}</ArkTreeView.Tree>
     </ArkTreeView.Root>
   )
