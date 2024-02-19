@@ -1,7 +1,10 @@
 ## [Unreleased]
 
-## [0.35.1] - 2024-02-16
+### Fixed
 
+- Fixed an issue with the `Switch` not being rendered correctly when a size was specified.
+
+## [0.35.1] - 2024-02-16
 
 ### Fixed
 

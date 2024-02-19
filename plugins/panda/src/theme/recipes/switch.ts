@@ -3,6 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const switchRecipe = defineSlotRecipe({
   className: 'switchRecipe',
+  jsx: ['Switch', /Switch\.+/],
   slots: switchAnatomy.keys(),
   base: {
     root: {
