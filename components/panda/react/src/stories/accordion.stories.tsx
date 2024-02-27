@@ -21,10 +21,8 @@ export const Base = () => {
             </Accordion.ItemIndicator>
           </Accordion.ItemTrigger>
           <Accordion.ItemContent>
-            <div>
-              Pudding donut gummies chupa chups oat cake marzipan biscuit tart. Dessert macaroon ice
-              cream bonbon jelly. Jelly topping tiramisu halvah lollipop.
-            </div>
+            Pudding donut gummies chupa chups oat cake marzipan biscuit tart. Dessert macaroon ice
+            cream bonbon jelly. Jelly topping tiramisu halvah lollipop.
           </Accordion.ItemContent>
         </Accordion.Item>
       ))}

@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "@biomejs/biome": "1.5.3",
-    "@types/bun": "1.0.5",
-    "lefthook": "1.6.1",
+    "@types/bun": "1.0.7",
+    "lefthook": "1.6.2",
     "turbo": "1.12.4",
     "typescript": "5.3.3"
   },

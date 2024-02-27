@@ -22,7 +22,7 @@ export const Base = () => {
               </Accordion.ItemIndicator>
             </Accordion.ItemTrigger>
             <Accordion.ItemContent>
-              <div>{item()} is a JavaScript library for building user interfaces.</div>
+              {item()} is a JavaScript library for building user interfaces.
             </Accordion.ItemContent>
           </Accordion.Item>
         )}

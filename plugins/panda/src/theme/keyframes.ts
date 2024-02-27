@@ -33,7 +33,14 @@ export const keyframes = defineKeyframes({
     '0%': { transform: 'translateX(0%)' },
     '100%': { transform: 'translateX(100%)' },
   },
-
+  'collapse-in': {
+    '0%': { height: '0', opacity: '0' },
+    '100%': { height: 'var(--height)', opacity: '1' },
+  },
+  'collapse-out': {
+    '0%': { height: 'var(--height)', opacity: '1' },
+    '100%': { height: '0', opacity: '0' },
+  },
   fadeIn: {
     '0%': { opacity: '0', transform: 'translateY(-4px)' },
     '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -41,14 +48,6 @@ export const keyframes = defineKeyframes({
   fadeOut: {
     '0%': { opacity: '1', transform: 'translateY(0)' },
     '100%': { opacity: '0', transform: 'translateY(-4px)' },
-  },
-  slideInFromBottom: {
-    '0%': { opacity: '0', transform: 'translateY(4px)' },
-    '100%': { opacity: '1', transform: 'translateY(0)' },
-  },
-  slideOutToBottom: {
-    '0%': { opacity: '1', transform: 'translateY(0)' },
-    '100%': { opacity: '0', transform: 'translateY(4px)' },
   },
   'skeleton-pulse': {
     '50%': { opacity: '0.5' },

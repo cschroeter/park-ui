@@ -39,16 +39,15 @@ export const accordion = defineSlotRecipe({
     },
     itemContent: {
       color: 'fg.muted',
-      display: 'grid',
-      gridTemplateRows: '0fr',
-      transitionProperty: 'grid-template-rows, padding-bottom',
+      overflow: 'hidden',
+      transitionProperty: 'padding-bottom',
       transitionDuration: 'normal',
       transitionTimingFunction: 'default',
       _open: {
-        gridTemplateRows: '1fr',
+        animation: 'collapse-in',
       },
-      '& > div': {
-        overflow: 'hidden',
+      _closed: {
+        animation: 'collapse-out',
       },
     },
   },
