@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.36.0] - 2024-02-27
+
 ### Added
 
 - Introduced the `Collapsible` component.
