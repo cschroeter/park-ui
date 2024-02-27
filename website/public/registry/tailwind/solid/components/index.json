@@ -37,6 +37,10 @@
       "href": "https://park-ui.com/registry/tailwind/solid/components/code.json"
     },
     {
+      "name": "Collapsible",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/collapsible.json"
+    },
+    {
       "name": "Color Picker",
       "href": "https://park-ui.com/registry/tailwind/solid/components/color-picker.json"
     },

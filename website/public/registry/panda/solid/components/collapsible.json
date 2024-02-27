@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "collapsible.tsx",
+      "content": "import { Collapsible } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { collapsible } from 'styled-system/recipes'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(collapsible)\n\nexport const Root = withProvider(styled(Collapsible.Root), 'root')\nexport const Content = withContext(styled(Collapsible.Content), 'content')\nexport const Trigger = withContext(styled(Collapsible.Trigger), 'trigger')\n\nexport interface RootProps extends ComponentProps<typeof Root> {}\nexport interface ContentProps extends ComponentProps<typeof Content> {}\nexport interface TriggerProps extends ComponentProps<typeof Trigger> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

@@ -8,14 +8,14 @@ const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
 const main = async () => {
   const components = await globby([
-    path.join(rootDir, '/components/panda/react/src/**/*stories.tsx'),
+    path.join(rootDir, '/components/panda/react/src/**/collapsible.stories.tsx'),
   ])
 
   components.map((component) => {
     const content = fs.readFileSync(component, 'utf-8')
     const code = parse(content)
     return fs.writeFileSync(
-      path.join(rootDir, '/components/panda/solid/src/stories/', path.basename(component)),
+      path.join(rootDir, '/components/tailwind/solid/src/stories/', path.basename(component)),
       code,
     )
   })

@@ -41,6 +41,10 @@
       "href": "https://park-ui.com/registry/panda/solid/components/code.json"
     },
     {
+      "name": "Collapsible",
+      "href": "https://park-ui.com/registry/panda/solid/components/collapsible.json"
+    },
+    {
       "name": "Color Picker",
       "href": "https://park-ui.com/registry/panda/solid/components/color-picker.json"
     },

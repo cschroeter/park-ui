@@ -8,6 +8,7 @@ import { carousel } from './carousel'
 import { checkbox } from './checkbox'
 import { clipboard } from './clipboard'
 import { code } from './code'
+import { collapsible } from './collapsible'
 import { colorPicker } from './color-picker'
 import { combobox } from './combobox'
 import { datePicker } from './date-picker'
@@ -70,6 +71,7 @@ export const slotRecipes = {
   carousel,
   checkbox,
   clipboard,
+  collapsible,
   colorPicker,
   combobox,
   datePicker,

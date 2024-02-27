@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### Added
+
+- Introduced the `Collapsible` component.
+
+### Changed
+
+- Updated the `Accordion` to leverage the new `Collapsible` component from Ark UI (version 2.20+).
+
 ## [0.35.2] - 2024-02-19
 
 ### Fixed

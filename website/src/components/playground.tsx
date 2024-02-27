@@ -1,5 +1,5 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import { useState, type PropsWithChildren } from 'react'
+import { type PropsWithChildren, useState } from 'react'
 import { sva } from 'styled-system/css'
 import { Box, Flex, Stack, styled } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
@@ -19,7 +19,7 @@ const styles = sva({
     },
     preview: {
       p: { base: '4', md: '6' },
-      minH: '32',
+      minH: '40',
       flex: '1',
       justifyContent: 'center',
       alignItems: 'center',

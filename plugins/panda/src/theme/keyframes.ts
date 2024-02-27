@@ -34,12 +34,12 @@ export const keyframes = defineKeyframes({
     '100%': { transform: 'translateX(100%)' },
   },
   'collapse-in': {
-    '0%': { height: '0', opacity: '0' },
-    '100%': { height: 'var(--height)', opacity: '1' },
+    '0%': { height: '0' },
+    '100%': { height: 'var(--height)' },
   },
   'collapse-out': {
-    '0%': { height: 'var(--height)', opacity: '1' },
-    '100%': { height: '0', opacity: '0' },
+    '0%': { height: 'var(--height)' },
+    '100%': { height: '0' },
   },
   fadeIn: {
     '0%': { opacity: '0', transform: 'translateY(-4px)' },
