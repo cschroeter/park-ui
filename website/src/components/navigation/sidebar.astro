@@ -7,6 +7,7 @@ const cssFramework = slug?.split('/')[0] ?? 'panda'
 
 //@ts-expect-error improve later
 const sitemap = await getSitemap({ cssFramework })
+const pathName = Astro.url.pathname.replace(/\/$/, '')   
 ---
 
-<SidebarNavigation pathname={Astro.url.pathname} items={sitemap} client:load transition:persist />
+<SidebarNavigation pathname={pathName} items={sitemap} client:load transition:persist />
