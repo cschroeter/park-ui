@@ -14,7 +14,10 @@ export const Demo = (props: DatePicker.RootProps) => {
     >
       <DatePicker.Label>Date Picker</DatePicker.Label>
       <DatePicker.Control>
-        <DatePicker.Input asChild>
+        <DatePicker.Input index={0} asChild>
+          <Input />
+        </DatePicker.Input>
+        <DatePicker.Input index={1} asChild>
           <Input />
         </DatePicker.Input>
         <DatePicker.Trigger asChild>
