@@ -71,14 +71,12 @@ export const getNextPage = async (pathname?: string) => {
     : null
 }
 
-type Sitemap = {
-  title: string
-  items: {
-    title: string
-    href: string
-    label?: string
-  }[]
-}[]
+interface Item {
+  id: string
+  name: string
+  href?: string
+  items?: Item[]
+}
 
 type CSSFramework = 'panda' | 'tailwind'
 
@@ -86,7 +84,7 @@ type Props = {
   cssFramework: CSSFramework
 }
 
-export const getSitemap = async (props: Props): Promise<Sitemap> => {
+export const getSitemap = async (props: Props): Promise<Item[]> => {
   const { cssFramework } = props
   const overviewPages = await getOverviewPages()
   const themePages = await getThemePages()
@@ -99,13 +97,14 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
     .sort((a, b) => priority.indexOf(a) - priority.indexOf(b))
     .filter((value, index, self) => self.indexOf(value) === index)
     .map((category) => ({
-      title: category === 'typography' ? 'Typography' : 'Components',
+      id: category === 'typography' ? 'typography' : 'components',
+      name: category === 'typography' ? 'Typography' : 'Components',
       items: componentPages
         .filter((item) => item.slug.startsWith(cssFramework))
         .filter((item) => item.data.category === category)
-
         .map((item) => ({
-          title: item.data.title,
+          id: `component:${item.data.id}`,
+          name: item.data.title,
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
           label: item.data.label,
         })),
@@ -113,28 +112,32 @@ export const getSitemap = async (props: Props): Promise<Sitemap> => {
 
   return [
     {
-      title: 'Overview',
+      id: 'overview',
+      name: 'Overview',
       items: overviewPages
         .filter((item) => item.collection === 'overview')
         .filter((item) => item.slug.startsWith(cssFramework))
         .map((item) => ({
-          title: item.data.title,
+          id: `overview:${item.data.id}`,
+          name: item.data.title,
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
           label: item.data.label,
         })),
     },
     {
-      title: 'Theme',
+      id: 'theme',
+      name: 'Theme',
       items: themePages
         .filter((item) => item.collection === 'theme')
         .filter((item) => item.slug.startsWith(cssFramework))
         .map((item) => ({
-          title: item.data.title,
+          id: `theme:${item.data.id}`,
+          name: item.data.title,
           href: path.join('/docs', cssFramework, item.collection, item.data.id),
         })),
     },
     ...componentPagesGroupByCategory,
-  ].filter(Boolean) as Sitemap
+  ].filter(Boolean)
 }
 
 // a very primitive appraoch but it works
