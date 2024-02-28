@@ -62,28 +62,15 @@ export default defineConfig({
 Make sure to run `panda codegen` after you've added the presets to your Panda configuration file.
 
 </Step>
-<Step number="4" title="Styled Context">
+<Step number="4" title="Path Aliases">
 
-Using a context provider allows for consistent styling across nested components without prop drilling, keeping your code
-clean and maintainable.
-
-Copy the following code and paste it into the `~/lib/create-style-context.tsx` file within your project:
-
-<StyledContext />
-
-**Please note:** If you are using Next.js with React Server Components, you may want to add `'use client'` at the top of the file.
-
-</Step>
-<Step number="5" title="Path Aliases (Optional)">
-
-For consistent import statements in code examples, we recommend to setup path aliases. 
-While optional, our examples assume their use. Without them, you'll need to modify the import paths in the examples accordingly.
-
-To implement path aliases, extend your `tsconfig.json` as follows:
+To streamline the integration of code snippets without the need to update import statements, we recommend setting up path aliases. <br />
+To implement path aliases, modify your `tsconfig.json` file as follows:
 
 ```json
 {
   "compilerOptions": {
+    // Your other options...
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
@@ -93,7 +80,7 @@ To implement path aliases, extend your `tsconfig.json` as follows:
 }
 ```
 
-If you are using [Vite](https://vitejs.dev/), it's necessary to include the `vite-tsconfig-paths` plugin in your config file:
+If you are using [Vite](https://vitejs.dev/), it is necessary to include the `vite-tsconfig-paths` plugin in your config file:
 
 ```ts
 import { defineConfig } from 'vite'
@@ -105,29 +92,37 @@ export default defineConfig({
 ```
 </Step>
 
-<Step number="6" title="Add your first component">
+<Step number="5" title="Add your first component">
 
-To add a component, simply copy the code for the desired component and paste it into the appropriate place in your
-project. Let's demonstrate this process using the `Button` component. First, copy the code for the component:
+The easiest way to add components to your project is by using the Park UI CLI. Execute the following command to initialize the CLI:
 
-```tsx multi
-import { ark } from '@ark-ui/react'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
-import { button } from 'styled-system/recipes'
-
-export const Button = styled(ark.button, button)
-export interface ButtonProps extends HTMLStyledProps<typeof Button> {}
+```bash
+npx @park-ui/cli init
 ```
 
-and paste it into your `components/button.tsx` file. Now you can import and use the button like so:
+You will be prompted to answer a few questions to configure `park-ui.json`:
 
-```tsx
-import { Button } from '~/components/button'
-
-const App = () => <Button>Click me</Button>
+```txt
+- Which CSS framework do you use?: [Panda / Tailwind]
+- Which JavaScript framework do you use?: [React / Solid / Vue]
+- What is your import alias for components?: [~/components/ui]
+- What is your import alias for utilities?: [~/lib]
+- Would you like to write the configuration to park-ui.json?: [Yes / No]
 ```
 
-And that's it! You're now ready to start using Park UI in your Panda project.
+Now you can start adding components to your project like shown below:
+
+```bash
+npx @park-ui/cli add button
+```
+
+To add all components at once, use the `--all` flag:
+
+```bash
+npx @park-ui/cli add --all
+```
+
+And that's it! Happy Hacking ✌️
 
 </Step>
 </Steps>
