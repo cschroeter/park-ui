@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+### Added
+
+- Added `Collapsible` component.
+- Added `TreeView` component.
+- Added `Clipboard` component.
+
+### Changed
+
+- Updated the `Accordion` to leverage the new `Collapsible` component from Ark UI (version 2.20+).
+
 ## [0.19.1] - 2024-02-01
 
 ### Fixed
