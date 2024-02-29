@@ -80,6 +80,11 @@ export const treeView = defineSlotRecipe({
         ps: '6',
         fontWeight: 'semibold',
         color: 'fg.default',
+        _selected: {
+          _before: {
+            bg: 'transparent',
+          },
+        },
       },
       _hover: {
         background: 'gray.a2',
