@@ -1,0 +1,33 @@
+---
+id: breadcrumb
+title: Breadcrumb
+category: component
+description: Breadcrumbs is a navigation pattern that helps users understand the hierarchy of a website.
+label: New
+---
+
+import ComponentPreview from '~/components/component-preview.astro'
+import InstallationGuide from '~/components/installation-guide.astro'
+
+## Usage
+
+<ComponentPreview />
+
+## Examples
+
+### Different Separator
+
+```tsx live
+<Breadcrumb
+  items={[
+    { href: '#', title: 'Home' },
+    { href: '#', title: 'About' },
+    { href: '#', title: 'Contact' },
+  ]}
+  separator={'>'}
+/>
+```
+
+## Installation
+
+<InstallationGuide />
