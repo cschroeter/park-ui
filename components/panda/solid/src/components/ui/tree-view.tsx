@@ -1,5 +1,4 @@
 import { TreeView as ArkTreeView, type TreeViewRootProps } from '@ark-ui/solid'
-import { ChevronRightIcon } from 'lucide-solid'
 import { For, Show, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
@@ -27,26 +26,26 @@ export const TreeView = (props: TreeViewProps) => {
   const styles = treeView()
 
   const renderChild = (child: Child) => (
-    <ArkTreeView.Branch id={child.id} class={styles.branch}>
-      <ArkTreeView.BranchControl class={styles.branchControl}>
-        <ArkTreeView.BranchIndicator class={styles.branchIndicator}>
-          <ChevronRightIcon />
-        </ArkTreeView.BranchIndicator>
-        <ArkTreeView.BranchText class={styles.branchText}>{child.name}</ArkTreeView.BranchText>
-      </ArkTreeView.BranchControl>
-      <ArkTreeView.BranchContent class={styles.branchContent}>
-        <Show
-          when={child.children}
-          fallback={
-            <ArkTreeView.Item id={child.id} class={styles.item}>
-              <ArkTreeView.ItemText class={styles.itemText}>{child.name}</ArkTreeView.ItemText>
-            </ArkTreeView.Item>
-          }
-        >
+    <Show
+      when={child.children}
+      fallback={
+        <ArkTreeView.Item id={child.id} class={styles.item}>
+          <ArkTreeView.ItemText class={styles.itemText}>{child.name}</ArkTreeView.ItemText>
+        </ArkTreeView.Item>
+      }
+    >
+      <ArkTreeView.Branch id={child.id} class={styles.branch}>
+        <ArkTreeView.BranchControl class={styles.branchControl}>
+          <ArkTreeView.BranchIndicator class={styles.branchIndicator}>
+            <ChevronRightIcon />
+          </ArkTreeView.BranchIndicator>
+          <ArkTreeView.BranchText class={styles.branchText}>{child.name}</ArkTreeView.BranchText>
+        </ArkTreeView.BranchControl>
+        <ArkTreeView.BranchContent class={styles.branchContent}>
           <For each={child.children}>{(child) => renderChild(child)}</For>
-        </Show>
-      </ArkTreeView.BranchContent>
-    </ArkTreeView.Branch>
+        </ArkTreeView.BranchContent>
+      </ArkTreeView.Branch>
+    </Show>
   )
 
   return (
@@ -61,3 +60,17 @@ export const TreeView = (props: TreeViewProps) => {
     </ArkTreeView.Root>
   )
 }
+
+const ChevronRightIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>Chevron Right Icon</title>
+    <path
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="m9 18l6-6l-6-6"
+    />
+  </svg>
+)
