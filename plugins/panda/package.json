@@ -36,8 +36,8 @@
     "ts-pattern": "5.0.8"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.32.1",
-    "@pandacss/types": "0.32.1",
+    "@pandacss/dev": "0.33.0",
+    "@pandacss/types": "0.33.0",
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
     "release-it": "17.1.1",

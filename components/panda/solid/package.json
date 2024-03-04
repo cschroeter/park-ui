@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "@ark-ui/solid": "2.2.0",
-    "@pandacss/dev": "0.32.1",
+    "@pandacss/dev": "0.33.0",
     "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/addons": "7.6.17",
-    "lucide-solid": "0.341.0",
+    "lucide-solid": "0.344.0",
     "solid-js": "1.8.15",
     "storybook": "7.6.17",
     "storybook-solidjs": "1.0.0-beta.2",
