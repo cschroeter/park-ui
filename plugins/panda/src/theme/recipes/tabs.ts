@@ -63,7 +63,7 @@ export const tabs = defineSlotRecipe({
         },
       },
       _vertical: {
-        justifyContent: 'start',
+        justifyContent: 'flex-start',
       },
     },
   },

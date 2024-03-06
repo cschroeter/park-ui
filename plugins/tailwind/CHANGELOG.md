@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Replaced `start` with `flex-start` due to mixed support in some browsers.
+
 ## [0.20.0] - 2024-02-28
 
 ### Added
