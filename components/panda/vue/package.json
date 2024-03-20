@@ -9,7 +9,7 @@
   "dependencies": {
     "@ark-ui/vue": "0.11.0",
     "@histoire/plugin-vue": "0.17.14",
-    "@pandacss/dev": "0.33.0",
+    "@pandacss/dev": "0.36.0",
     "@park-ui/panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitejs/plugin-vue-jsx": "3.1.0",
