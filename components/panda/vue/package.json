@@ -17,7 +17,7 @@
     "histoire": "0.17.9",
     "lucide-vue-next": "0.344.0",
     "radix-vue": "1.4.9",
-    "typescript": "5.3.3",
+    "typescript": "5.4.2",
     "vite": "5.1.4",
     "vue": "3.4.21"
   }

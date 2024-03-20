@@ -27,6 +27,6 @@
     "gatsby-plugin-alias-imports": "1.0.5",
     "gatsby-plugin-postcss": "6.13.0",
     "postcss": "8.4.33",
-    "typescript": "5.3.3"
+    "typescript": "5.4.2"
   }
 }

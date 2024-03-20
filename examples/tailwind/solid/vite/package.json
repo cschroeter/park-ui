@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@park-ui/tailwind-plugin": "0.15.0",
-    "typescript": "5.3.3",
+    "typescript": "5.4.2",
     "vite": "^4",
     "vite-plugin-solid": "2.7.2",
     "vite-tsconfig-paths": "4.2.1"

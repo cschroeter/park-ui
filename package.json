@@ -31,7 +31,7 @@
     "@types/bun": "1.0.8",
     "lefthook": "1.6.5",
     "turbo": "1.12.4",
-    "typescript": "5.3.3"
+    "typescript": "5.4.2"
   },
   "packageManager": "bun@1.0.30"
 }
