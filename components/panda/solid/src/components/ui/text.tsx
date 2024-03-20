@@ -1,8 +1,8 @@
 import { mergeProps, splitProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 import { css, cx } from 'styled-system/css'
-import { splitCssProps, type HTMLStyledProps } from 'styled-system/jsx'
-import { text, type TextVariantProps } from 'styled-system/recipes'
+import { type HTMLStyledProps, splitCssProps } from 'styled-system/jsx'
+import { type TextVariantProps, text } from 'styled-system/recipes'
 
 type As = 'p' | 'span' | 'div' | 'label'
 
@@ -12,6 +12,7 @@ export type TextProps = TextVariantProps & {
 
 export const Text = (props: TextProps) => {
   const mergedProps = mergeProps({ as: 'p' }, props)
+  // @ts-expect-error
   const [variantProps, textProps] = splitProps(mergedProps, ['size', 'variant'])
   const [cssProps, elementProps] = splitCssProps(textProps)
   const [localProps, rootProps] = splitProps(elementProps, ['as', 'class'])

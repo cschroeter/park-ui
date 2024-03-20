@@ -1,8 +1,8 @@
 import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/solid'
-import { Index, Show, children, splitProps, type JSX } from 'solid-js'
+import { Index, type JSX, Show, children, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { pinInput, type PinInputVariantProps } from 'styled-system/recipes'
+import { type PinInputVariantProps, pinInput } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Input } from '~/components/ui/input'
 
@@ -25,7 +25,6 @@ export const PinInput = (props: PinInputProps) => {
   const styles = pinInput(variantProps)
 
   return (
-    // @ts-expect-error TODO cssProps is to complex to be typed
     <ArkPinInput.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       <Show when={getChildren()}>
         <ArkPinInput.Label class={styles.label}>{getChildren()}</ArkPinInput.Label>

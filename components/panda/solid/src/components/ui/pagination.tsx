@@ -2,7 +2,7 @@ import { Pagination as ArkPagination, type PaginationRootProps } from '@ark-ui/s
 import { For, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { pagination, type PaginationVariantProps } from 'styled-system/recipes'
+import { type PaginationVariantProps, pagination } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Button } from '~/components/ui/button'
 import { IconButton } from '~/components/ui/icon-button'
@@ -18,7 +18,6 @@ export const Pagination = (props: PaginationProps) => {
   const styles = pagination(variantProps)
 
   return (
-    // @ts-expect-error TODO cssProps is to complex to be typed
     <ArkPagination.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       {(api) => (
         <>

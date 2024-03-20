@@ -1,8 +1,8 @@
 import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/react/pin-input'
-import { forwardRef, type ReactNode } from 'react'
+import { type ReactNode, forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { pinInput, type PinInputVariantProps } from 'styled-system/recipes'
+import { type PinInputVariantProps, pinInput } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { Input } from '~/components/ui/input'
 
@@ -26,7 +26,6 @@ export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) =
   return (
     <ArkPinInput.Root
       ref={ref}
-      // @ts-expect-error TODO cssProps is to complex to be typed
       className={cx(styles.root, css(cssProps), className)}
       {...rootProps}
     >
