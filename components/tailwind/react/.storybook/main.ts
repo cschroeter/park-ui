@@ -3,16 +3,24 @@ import { mergeConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/stories/*.tsx'],
   addons: [
     {
       name: '@storybook/addon-essentials',
-      options: { backgrounds: false, outline: false, actions: false },
+      options: { backgrounds: false, actions: false },
     },
+    '@storybook/addon-a11y',
+    '@storybook/addon-themes',
   ],
   framework: {
     name: '@storybook/react-vite',
     options: {},
+  },
+  core: {
+    disableTelemetry: true,
+  },
+  typescript: {
+    reactDocgen: false,
   },
   async viteFinal(config) {
     return mergeConfig(config, {
@@ -20,4 +28,5 @@ const config: StorybookConfig = {
     })
   },
 }
+
 export default config

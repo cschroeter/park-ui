@@ -7,5 +7,6 @@
     },
     "jsx": "preserve"
   },
-  "include": ["src", "styled-system"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

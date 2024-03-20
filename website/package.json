@@ -13,7 +13,7 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@ark-ui/react": "2.2.2",
+    "@ark-ui/react": "2.2.3",
     "@astrojs/check": "0.5.6",
     "@astrojs/mdx": "2.1.1",
     "@astrojs/react": "3.0.10",
@@ -24,7 +24,7 @@
     "@fontsource-variable/plus-jakarta-sans": "5.0.20",
     "@fontsource-variable/raleway": "5.0.18",
     "@fontsource-variable/roboto-mono": "5.0.18",
-    "@icons-pack/react-simple-icons": "9.3.0",
+    "@icons-pack/react-simple-icons": "9.4.0",
     "@pandacss/dev": "0.33.0",
     "@park-ui/panda-preset": "workspace:*",
     "@types/react": "18.2.67",
@@ -32,7 +32,7 @@
     "@uidotdev/usehooks": "2.4.1",
     "astro": "4.4.10",
     "cheerio": "1.0.0-rc.12",
-    "lucide-react": "0.344.0",
+    "lucide-react": "0.359.0",
     "pandacss-preset-typography": "0.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",

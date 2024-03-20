@@ -3,24 +3,30 @@ import { mergeConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.tsx'],
+  stories: ['../src/stories/*.tsx'],
   addons: [
     {
       name: '@storybook/addon-essentials',
-      options: { backgrounds: false, outline: false, actions: false },
+      options: { backgrounds: false, controls: false, actions: false },
     },
+    '@storybook/addon-a11y',
+    '@storybook/addon-themes',
   ],
   framework: {
     name: '@storybook/react-vite',
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
+  core: {
+    disableTelemetry: true,
   },
-  viteFinal(config) {
+  typescript: {
+    reactDocgen: false,
+  },
+  async viteFinal(config) {
     return mergeConfig(config, {
-      plugins: [tsconfigPaths()],
+      plugins: [tsconfigPaths({ root: './' })],
     })
   },
 }
+
 export default config

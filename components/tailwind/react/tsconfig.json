@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "jsxImportSource": "react",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -17,5 +17,6 @@
     "target": "ESNext",
     "verbatimModuleSyntax": true
   },
-  "include": ["src", "styled-system"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

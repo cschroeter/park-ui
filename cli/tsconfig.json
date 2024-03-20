@@ -15,5 +15,6 @@
       "~/*": ["src/*"]
     }
   },
-  "include": ["src", "schema.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

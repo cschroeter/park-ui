@@ -1,31 +1,33 @@
-import type { Preview } from '@storybook/react'
-import { ThemeProvider } from './theme-provider'
+import { ChakraProvider } from '@chakra-ui/react'
+import { createTheme } from '@park-ui/chakra-theme'
+import { withThemeByClassName } from '@storybook/addon-themes'
+import type { Preview, ReactRenderer } from '@storybook/react'
 import React from 'react'
+
+const theme = createTheme({ accentColor: 'amber', grayColor: 'sand', borderRadius: 'sm' })
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
+    options: {
+      storySort: {
+        method: 'alphabetical',
       },
     },
   },
   decorators: [
-    (Story, context) => (
-      <ThemeProvider colorMode={context.globals.isDarkMode ? 'dark' : 'light'}>
+    withThemeByClassName<ReactRenderer>({
+      defaultTheme: 'light',
+      themes: {
+        light: '',
+        dark: 'dark',
+      },
+    }),
+    (Story) => (
+      <ChakraProvider theme={theme}>
         <Story />
-      </ThemeProvider>
+      </ChakraProvider>
     ),
   ],
-  globalTypes: {
-    isDarkMode: {
-      name: 'Theme',
-      description: 'Global theme for components',
-      defaultValue: 'light',
-    },
-  },
 }
 
 export default preview

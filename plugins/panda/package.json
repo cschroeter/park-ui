@@ -2,12 +2,7 @@
   "name": "@park-ui/panda-preset",
   "version": "0.36.1",
   "description": "Panda CSS Preset for Park UI",
-  "keywords": [
-    "Ark UI",
-    "Panda CSS",
-    "Preset",
-    "Park UI"
-  ],
+  "keywords": ["Ark UI", "Panda CSS", "Preset", "Park UI"],
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
   "homepage": "https://park-ui.com",
   "license": "MIT",
@@ -15,10 +10,7 @@
   "bugs": {
     "url": "https://github.com/cschroeter/park-ui/issues"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "publishConfig": {
     "access": "public"
   },
@@ -63,16 +55,11 @@
     }
   },
   "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
+    "entry": ["src/index.ts"],
     "clean": true,
     "dts": true,
     "sourcemap": true,
-    "format": [
-      "esm",
-      "cjs"
-    ]
+    "format": ["esm", "cjs"]
   },
   "main": "src/index.ts"
 }
