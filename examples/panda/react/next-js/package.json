@@ -18,8 +18,8 @@
     "@pandacss/dev": "0.30.2",
     "@park-ui/panda-preset": "0.34.1",
     "@types/node": "20.11.17",
-    "@types/react": "18.2.55",
-    "@types/react-dom": "18.2.19",
+    "@types/react": "18.2.67",
+    "@types/react-dom": "18.2.22",
     "eslint": "8.56.0",
     "eslint-config-next": "13.5.1",
     "typescript": "5.4.2"
