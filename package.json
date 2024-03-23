@@ -33,5 +33,6 @@
     "turbo": "1.13.0",
     "typescript": "5.4.3"
   },
-  "packageManager": "bun@1.0.35"
+  "packageManager": "bun@1.0.35",
+  "trustedDependencies": ["@park-ui/website"]
 }
