@@ -9,16 +9,16 @@
   "dependencies": {
     "@ark-ui/vue": "0.11.0",
     "@histoire/plugin-vue": "0.17.14",
-    "@pandacss/dev": "0.36.0",
+    "@pandacss/dev": "0.36.1",
     "@park-ui/panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitejs/plugin-vue-jsx": "3.1.0",
     "@zag-js/avatar": "0.39.0",
     "histoire": "0.17.14",
-    "lucide-vue-next": "0.359.0",
+    "lucide-vue-next": "0.363.0",
     "radix-vue": "1.5.3",
-    "typescript": "5.4.2",
-    "vite": "5.2.0",
+    "typescript": "5.4.3",
+    "vite": "5.2.4",
     "vue": "3.4.21"
   }
 }

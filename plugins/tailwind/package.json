@@ -26,13 +26,13 @@
     "ts-pattern": "5.0.8"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.36.0",
+    "@pandacss/dev": "0.36.1",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/node": "20.11.30",
     "@types/postcss-js": "4.0.4",
     "clean-package": "2.2.0",
-    "postcss": "8.4.37",
+    "postcss": "8.4.38",
     "postcss-js": "4.0.1",
     "release-it": "17.1.1",
     "tailwindcss": "3.4.1",

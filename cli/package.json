@@ -33,7 +33,7 @@
     "ts-pattern": "5.0.8",
     "tsconfig-resolver": "3.0.1",
     "tsup": "8.0.2",
-    "typescript": "5.4.2",
+    "typescript": "5.4.3",
     "voca": "1.4.1",
     "yargs": "17.7.2"
   },

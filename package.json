@@ -27,11 +27,11 @@
     "ci:typecheck": "turbo run typecheck"
   },
   "dependencies": {
-    "@biomejs/biome": "1.6.1",
+    "@biomejs/biome": "1.6.2",
     "@types/bun": "1.0.10",
     "lefthook": "1.6.7",
-    "turbo": "1.12.5",
-    "typescript": "5.4.2"
+    "turbo": "1.13.0",
+    "typescript": "5.4.3"
   },
   "packageManager": "bun@1.0.35"
 }

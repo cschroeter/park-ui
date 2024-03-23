@@ -8,18 +8,18 @@
   },
   "dependencies": {
     "@ark-ui/solid": "2.2.0",
-    "@pandacss/dev": "0.36.0",
+    "@pandacss/dev": "0.36.1",
     "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-a11y": "8.0.4",
     "@storybook/addon-essentials": "8.0.4",
     "@storybook/addon-themes": "8.0.4",
-    "lucide-solid": "0.359.0",
+    "lucide-solid": "0.363.0",
     "solid-js": "1.8.16",
     "storybook": "8.0.4",
     "storybook-solidjs": "1.0.0-beta.2",
     "storybook-solidjs-vite": "1.0.0-beta.2",
-    "typescript": "5.4.2",
-    "vite": "5.2.0",
+    "typescript": "5.4.3",
+    "vite": "5.2.4",
     "vite-plugin-solid": "2.10.2",
     "vite-tsconfig-paths": "4.3.2"
   }
