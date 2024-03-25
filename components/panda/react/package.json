@@ -16,14 +16,14 @@
     "@storybook/addon-themes": "8.0.4",
     "@storybook/react-vite": "8.0.4",
     "@storybook/react": "8.0.4",
-    "@types/react": "18.2.69",
+    "@types/react": "18.2.70",
     "@types/react-dom": "18.2.22",
     "lucide-react": "0.363.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "storybook": "8.0.4",
     "typescript": "5.4.3",
-    "vite": "5.2.4",
+    "vite": "5.2.6",
     "vite-tsconfig-paths": "4.3.2"
   }
 }
