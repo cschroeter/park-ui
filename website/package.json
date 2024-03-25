@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "panda codegen",
+    "postinstall": "panda codegen",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "bun upgrade && panda codegen && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check"
