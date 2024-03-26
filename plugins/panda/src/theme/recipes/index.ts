@@ -2,6 +2,7 @@ import { accordion } from './accordion'
 import { alert } from './alert'
 import { avatar } from './avatar'
 import { badge } from './badge'
+import { breadcrumb } from './breadcrumb'
 import { button } from './button'
 import { card } from './card'
 import { carousel } from './carousel'
@@ -67,6 +68,7 @@ export const slotRecipes = {
   accordion,
   alert,
   avatar,
+  breadcrumb,
   card,
   carousel,
   checkbox,
