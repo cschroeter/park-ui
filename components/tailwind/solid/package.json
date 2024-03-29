@@ -8,17 +8,17 @@
   "dependencies": {
     "@ark-ui/solid": "2.2.0",
     "@park-ui/tailwind-plugin": "workspace:*",
-    "@storybook/addon-essentials": "8.0.4",
+    "@storybook/addon-essentials": "8.0.5",
     "@storybook/addons": "7.6.17",
     "lucide-solid": "0.363.0",
     "solid-js": "1.8.16",
-    "storybook": "8.0.4",
+    "storybook": "8.0.5",
     "storybook-solidjs": "1.0.0-beta.2",
     "storybook-solidjs-vite": "1.0.0-beta.2",
     "tailwind-variants": "0.2.1",
-    "tailwindcss": "3.4.1",
+    "tailwindcss": "3.4.3",
     "typescript": "5.4.3",
-    "vite": "5.2.6",
+    "vite": "5.2.7",
     "vite-plugin-solid": "2.10.2",
     "vite-tsconfig-paths": "4.3.2"
   }
