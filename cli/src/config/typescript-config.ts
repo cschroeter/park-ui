@@ -1,10 +1,10 @@
-import path from 'path'
-import { tsconfigResolverSync } from 'tsconfig-resolver'
+import path from 'node:path'
+import { getTsconfig } from 'get-tsconfig'
 
 const getTsConfigPath = () => {
-  const tsconfigPath = tsconfigResolverSync()
+  const tsconfigPath = getTsconfig()
 
-  if (!tsconfigPath.exists) {
+  if (!tsconfigPath) {
     throw new Error('Could not find tsconfig.json')
   }
 
