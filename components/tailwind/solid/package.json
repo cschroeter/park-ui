@@ -10,7 +10,7 @@
     "@park-ui/tailwind-plugin": "workspace:*",
     "@storybook/addon-essentials": "8.0.5",
     "@storybook/addons": "7.6.17",
-    "lucide-solid": "0.363.0",
+    "lucide-solid": "0.364.0",
     "solid-js": "1.8.16",
     "storybook": "8.0.5",
     "storybook-solidjs": "1.0.0-beta.2",
