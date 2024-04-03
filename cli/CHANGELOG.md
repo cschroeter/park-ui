@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.6.0] - 2024-04-03
+
 ### Added
 
 - Added support for multiple configuration files in `tsconfig.json`
