@@ -23,13 +23,13 @@
     "postpack": "clean-package restore"
   },
   "dependencies": {
-    "ts-pattern": "5.0.8"
+    "ts-pattern": "5.1.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.36.1",
+    "@pandacss/dev": "0.37.1",
     "@park-ui/panda-preset": "workspace:*",
     "@release-it/keep-a-changelog": "5.0.0",
-    "@types/node": "20.11.30",
+    "@types/node": "20.12.3",
     "@types/postcss-js": "4.0.4",
     "clean-package": "2.2.0",
     "postcss": "8.4.38",

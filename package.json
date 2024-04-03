@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "@biomejs/biome": "1.6.3",
-    "@types/bun": "1.0.11",
-    "lefthook": "1.6.7",
-    "turbo": "1.13.0",
+    "@types/bun": "1.0.12",
+    "lefthook": "1.6.8",
+    "turbo": "1.13.2",
     "typescript": "5.4.3"
   },
   "packageManager": "bun@1.0.35",
