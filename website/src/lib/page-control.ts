@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import { getCollection } from 'astro:content'
 
 const getOverviewPages = async () => {

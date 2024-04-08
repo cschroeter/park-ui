@@ -1,7 +1,7 @@
-import { readFileSync, writeFileSync } from 'fs'
-import { resolve } from 'path'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { packageDirectorySync } from 'pkg-dir'
-import { ParkUiConfiguration } from '../../schema'
+import type { ParkUiConfiguration } from '../../schema'
 
 export type Config = ParkUiConfiguration
 
@@ -57,7 +57,10 @@ export const getJsFramework = (): Config['jsFramework'] => {
   return config.jsFramework
 }
 
-export const getImportAliases = (): { componentsImportAlias: string; utilsImportAlias: string } => {
+export const getImportAliases = (): {
+  componentsImportAlias: string
+  utilsImportAlias: string
+} => {
   const config = getConfig()
   const { components, utils } = config.importAliases
   return { componentsImportAlias: components, utilsImportAlias: utils }

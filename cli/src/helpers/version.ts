@@ -1,6 +1,6 @@
+import path from 'node:path'
 import * as p from '@clack/prompts'
 import fetch from 'node-fetch'
-import path from 'path'
 import { readPackageUpSync } from 'read-package-up'
 
 const getCwd = () => {
@@ -15,7 +15,7 @@ const getCwd = () => {
 export const getVersion = (): string => {
   const cwd = getCwd()
   const result = readPackageUpSync({ cwd })
-  if (result && result.packageJson && result.packageJson.version) {
+  if (result?.packageJson?.version) {
     return result.packageJson.version
   }
   return 'unknown'
@@ -29,11 +29,14 @@ async function getLatestVersion(): Promise<string> {
       throw new Error(`Failed to fetch latest version. Status: ${response.status}`)
     }
 
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     const responseData: any = await response.json()
     const latestVersion = responseData.version
 
     return latestVersion
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   } catch (error: any) {
+    console.log('Failed to fetch latest version', error.message)
     throw error
   }
 }

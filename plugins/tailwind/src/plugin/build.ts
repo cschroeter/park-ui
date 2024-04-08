@@ -1,8 +1,8 @@
-import { readFileSync, writeFileSync } from 'fs'
-import { dirname } from 'path'
+import { readFileSync, writeFileSync } from 'node:fs'
+import { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import postcss from 'postcss'
 import postcssJs from 'postcss-js'
-import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -10,14 +10,15 @@ const cssInJs = readStylesToCssInJs()
 const cssInJsWithoutLayers = getPandaLayerContent(cssInJs)
 writeFormattedStylesJson(cssInJsWithoutLayers)
 
-function writeFormattedStylesJson(cssInJs: any) {
-  writeFileSync(__dirname + '/css/styles.json', JSON.stringify(cssInJs, null, 2))
+function writeFormattedStylesJson(cssInJs: Record<string, unknown>) {
+  writeFileSync(`${__dirname}/css/styles.json`, JSON.stringify(cssInJs, null, 2))
 }
 
 function readStylesToCssInJs() {
-  const css = readFileSync(__dirname + '/css/styles.css').toString()
+  const css = readFileSync(`${__dirname}/css/styles.css`).toString()
 
   const root = postcss.parse(css)
+  // @ts-expect-error postcssJs is not typed
   const cssInJs = postcssJs.objectify(root)
   return cssInJs
 }
@@ -26,6 +27,8 @@ function readStylesToCssInJs() {
  * The panda theme has a lot of layers that we don't need in the plugin.
  * They also cause problems with the tailwind setup.
  */
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 function getPandaLayerContent(cssInJs: any) {
   return {
     ...cssInJs['@layer base'],
