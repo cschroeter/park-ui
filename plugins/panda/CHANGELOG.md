@@ -1,8 +1,17 @@
 ## [Unreleased]
 
+### Added
+
+- Added `on` and `off` to the list of supported conditions.
+
+### Changed
+
+- Improved the `hover` conditions to only activate on non-touch devices.
+
 ### Fixed
 
-- Fixed an issue with the `NumberInput` component rendering a border.
+- Fixed an issue where the `NumberInput` component rendered a border incorrectly.
+- Fixed an issue where the `ToggleGroup` component did not appear to work correctly on touch devices.
 
 ## [0.36.1] - 2024-03-06
 

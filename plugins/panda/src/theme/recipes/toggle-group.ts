@@ -30,17 +30,15 @@ export const toggleGroup = defineSlotRecipe({
       userSelect: 'none',
       verticalAlign: 'middle',
       whiteSpace: 'nowrap',
+      _on: {
+        background: 'gray.a3',
+        color: 'fg.default',
+        _hover: {
+          background: 'gray.a3',
+        },
+      },
       _hover: {
-        color: 'fg.default',
-        background: 'gray.a3',
-      },
-      _checked: {
-        background: 'gray.a3',
-        color: 'fg.default',
-      },
-      _pressed: {
-        background: 'gray.a3',
-        color: 'fg.default',
+        background: 'gray.a2',
       },
       _disabled: {
         borderColor: 'border.disabled',
