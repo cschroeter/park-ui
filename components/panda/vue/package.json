@@ -8,17 +8,17 @@
   },
   "dependencies": {
     "@ark-ui/vue": "0.11.0",
-    "@histoire/plugin-vue": "0.17.15",
-    "@pandacss/dev": "0.37.1",
+    "@histoire/plugin-vue": "0.17.17",
+    "@pandacss/dev": "0.37.2",
     "@park-ui/panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitejs/plugin-vue-jsx": "3.1.0",
-    "@zag-js/avatar": "0.43.0",
-    "histoire": "0.17.15",
-    "lucide-vue-next": "0.364.0",
-    "radix-vue": "1.6.1",
-    "typescript": "5.4.3",
-    "vite": "5.2.7",
+    "@zag-js/avatar": "0.45.0",
+    "histoire": "0.17.17",
+    "lucide-vue-next": "0.367.0",
+    "radix-vue": "1.6.2",
+    "typescript": "5.4.4",
+    "vite": "5.2.8",
     "vue": "3.4.21"
   }
 }
