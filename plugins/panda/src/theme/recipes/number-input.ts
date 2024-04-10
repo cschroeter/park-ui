@@ -58,10 +58,11 @@ export const numberInput = defineSlotRecipe({
       },
     },
     input: {
-      outline: 'none',
       background: 'transparent',
-      width: 'full',
+      border: 'none',
       gridRow: '2',
+      outline: 'none',
+      width: 'full',
     },
     label: {
       color: 'fg.default',

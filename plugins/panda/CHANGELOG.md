@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed an issue with the `NumberInput` component rendering a border.
+
 ## [0.36.1] - 2024-03-06
 
 ### Changed
