@@ -1,5 +1,5 @@
+import type { AnatomyInstance } from '@ark-ui/anatomy'
 import * as components from '@ark-ui/anatomy'
-import { AnatomyInstance } from '@ark-ui/anatomy'
 import fs from 'fs-extra'
 import { match } from 'ts-pattern'
 import v from 'voca'
@@ -26,6 +26,7 @@ const main = async () => {
             .reduce(
               (acc, part) => {
                 return {
+                  // biome-ignore lint/performance/noAccumulatingSpread: only used internally
                   ...acc,
                   [pascalCase(part)]: {
                     name: pascalCase(component).concat(pascalCase(part)),
@@ -51,12 +52,13 @@ const main = async () => {
           },
 
           className: match(component)
-            .with('switch', () => 'switchRecipe') // resvered word
+            .with('switch', () => 'switchRecipe') // switch is a resvered keyword
             .otherwise(() => camelCase(component)),
         },
       }
     })
 
+  // biome-ignore lint/performance/noAccumulatingSpread: only used internally
   const content = JSON.stringify(result.reduce((acc, item) => ({ ...acc, ...item })))
 
   fs.outputFileSync('./components.json', content)

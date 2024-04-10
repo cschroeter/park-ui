@@ -6,6 +6,7 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(colorPicker)
 
+export const Context = ColorPicker.Context
 export const Root = withProvider(styled(ColorPicker.Root), 'root')
 export const Area = withContext(styled(ColorPicker.Area), 'area')
 export const AreaBackground = withContext(styled(ColorPicker.AreaBackground), 'areaBackground')

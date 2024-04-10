@@ -1,8 +1,8 @@
+import path from 'node:path'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import { globby } from 'globby'
 import Handlebars from 'handlebars'
-import path from 'node:path'
 import v from 'voca'
 
 type Options = {
@@ -139,7 +139,9 @@ const main = async () => {
   const jsFrameworks = ['react', 'solid'] as const
   const cssFramworks = ['panda', 'tailwind'] as const
 
+  // biome-ignore lint/complexity/noForEach: <explanation>
   jsFrameworks.forEach((jsFramework) => {
+    // biome-ignore lint/complexity/noForEach: <explanation>
     cssFramworks.forEach(async (cssFramwork) => {
       await generateIndex({ cssFramwork, jsFramework })
       await resolveComponents({ cssFramwork, jsFramework })

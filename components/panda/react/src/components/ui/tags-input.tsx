@@ -20,6 +20,8 @@ export const ItemPreview = withContext(styled(TagsInput.ItemPreview), 'itemPrevi
 export const ItemText = withContext(styled(TagsInput.ItemText), 'itemText')
 export const Label = withContext(styled(TagsInput.Label), 'label')
 
+export const Context = TagsInput.Context
+
 export interface RootProps extends ComponentProps<typeof Root> {}
 export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
 export interface ControlProps extends ComponentProps<typeof Control> {}

@@ -31,6 +31,8 @@ export const ViewControl = withContext(styled(DatePicker.ViewControl), 'viewCont
 export const ViewTrigger = withContext(styled(DatePicker.ViewTrigger), 'viewTrigger')
 export const YearSelect = withContext(styled(DatePicker.YearSelect), 'yearSelect')
 
+export const Context = DatePicker.Context
+
 export interface RootProps extends ComponentProps<typeof Root> {}
 export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
 export interface ContentProps extends ComponentProps<typeof Content> {}

@@ -23,14 +23,14 @@ export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) 
       ref={ref}
       {...rootProps}
     >
-      {({ pages }) => (
-        <>
-          <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>
-            <IconButton variant="ghost" aria-label="Next Page">
-              <ChevronLeftIcon />
-            </IconButton>
-          </ArkPagination.PrevTrigger>
-          {pages.map((page, index) =>
+      <ArkPagination.PrevTrigger className={styles.prevTrigger} asChild>
+        <IconButton variant="ghost" aria-label="Next Page">
+          <ChevronLeftIcon />
+        </IconButton>
+      </ArkPagination.PrevTrigger>
+      <ArkPagination.Context>
+        {(pagination) =>
+          pagination.pages.map((page, index) =>
             page.type === 'page' ? (
               <ArkPagination.Item className={styles.item} key={index} {...page} asChild>
                 <Button variant="outline">{page.value}</Button>
@@ -40,14 +40,14 @@ export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) 
                 &#8230;
               </ArkPagination.Ellipsis>
             ),
-          )}
-          <ArkPagination.NextTrigger className={styles.nextTrigger} asChild>
-            <IconButton variant="ghost" aria-label="Next Page">
-              <ChevronRightIcon />
-            </IconButton>
-          </ArkPagination.NextTrigger>
-        </>
-      )}
+          )
+        }
+      </ArkPagination.Context>
+      <ArkPagination.NextTrigger className={styles.nextTrigger} asChild>
+        <IconButton variant="ghost" aria-label="Next Page">
+          <ChevronRightIcon />
+        </IconButton>
+      </ArkPagination.NextTrigger>
     </ArkPagination.Root>
   )
 })

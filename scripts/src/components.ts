@@ -1,7 +1,7 @@
+import path from 'node:path'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import Handlebars from 'handlebars'
-import path from 'node:path'
 import arkComponents from '../components.json'
 import parkComponents from '../park-components.json'
 import { transformComponentToTvConfig } from './helpers/recipe-to-tv'
@@ -10,6 +10,8 @@ const data = {
   ...arkComponents,
   ...parkComponents,
 }
+
+Handlebars.registerHelper('eq', (a, b) => a === b)
 
 const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
@@ -45,6 +47,7 @@ const generateComponents = async (options: Options) => {
           tvConfig: JSON.stringify(transformComponentToTvConfig(value.className)),
         }
 
+        // biome-ignore lint/suspicious/noPrototypeBuiltins: <explanation>
         const variant = value.hasOwnProperty('parts') ? 'with-context' : 'without-context'
 
         const template = Handlebars.compile(
@@ -70,10 +73,12 @@ const generateComponents = async (options: Options) => {
 }
 
 const main = async () => {
-  const jsFrameworks = ['solid'] as const
-  const cssFramworks = ['tailwind'] as const
+  const jsFrameworks = ['react'] as const
+  const cssFramworks = ['panda'] as const
 
+  // biome-ignore lint/complexity/noForEach: <explanation>
   jsFrameworks.forEach((jsFramework) => {
+    // biome-ignore lint/complexity/noForEach: <explanation>
     cssFramworks.forEach(async (cssFramwork) => {
       await generateComponents({ cssFramwork, jsFramework })
     })

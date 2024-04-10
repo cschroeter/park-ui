@@ -16,6 +16,8 @@ export const Label = withContext(styled(Editable.Label), 'label')
 export const Preview = withContext(styled(Editable.Preview), 'preview')
 export const SubmitTrigger = withContext(styled(Editable.SubmitTrigger), 'submitTrigger')
 
+export const Context = Editable.Context
+
 export interface RootProps extends ComponentProps<typeof Root> {}
 export interface AreaProps extends ComponentProps<typeof Area> {}
 export interface CancelTriggerProps extends ComponentProps<typeof CancelTrigger> {}
