@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.37.0] - 2024-04-10
+
 ### Added
 
 - Added `on` and `off` to the list of supported conditions.
