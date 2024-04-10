@@ -767,6 +767,11 @@
         "slot": "arrowTip",
         "component": "Menu.ArrowTip"
       },
+      "CheckboxItem": {
+        "name": "MenuCheckboxItem",
+        "slot": "item",
+        "component": "Menu.CheckboxItem"
+      },
       "Content": {
         "name": "MenuContent",
         "slot": "content",
@@ -793,25 +798,30 @@
         "slot": "itemGroupLabel",
         "component": "Menu.ItemGroupLabel"
       },
-      "OptionItem": {
-        "name": "MenuOptionItem",
-        "slot": "optionItem",
-        "component": "Menu.OptionItem"
+      "ItemIndicator": {
+        "name": "MenuItemIndicator",
+        "slot": "itemIndicator",
+        "component": "Menu.ItemIndicator"
       },
-      "OptionItemIndicator": {
-        "name": "MenuOptionItemIndicator",
-        "slot": "optionItemIndicator",
-        "component": "Menu.OptionItemIndicator"
-      },
-      "OptionItemText": {
-        "name": "MenuOptionItemText",
-        "slot": "optionItemText",
-        "component": "Menu.OptionItemText"
+      "ItemText": {
+        "name": "MenuItemText",
+        "slot": "itemText",
+        "component": "Menu.ItemText"
       },
       "Positioner": {
         "name": "MenuPositioner",
         "slot": "positioner",
         "component": "Menu.Positioner"
+      },
+      "RadioItemGroup": {
+        "name": "MenuRadioItemGroup",
+        "slot": "itemGroup",
+        "component": "Menu.RadioItemGroup"
+      },
+      "RadioItem": {
+        "name": "MenuRadioItem",
+        "slot": "item",
+        "component": "Menu.RadioItem"
       },
       "Separator": {
         "name": "MenuSeparator",
