@@ -58,6 +58,7 @@ export const numberInput = defineSlotRecipe({
       },
     },
     input: {
+      border: 'none',
       outline: 'none',
       background: 'transparent',
       width: 'full',
