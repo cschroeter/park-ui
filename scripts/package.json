@@ -12,7 +12,7 @@
     "poststories": "bun biome format --write ../components"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "2.3.1",
+    "@ark-ui/anatomy": "3.0.0",
     "@pandacss/dev": "0.37.2",
     "@pandacss/types": "0.37.2",
     "@park-ui/panda-preset": "workspace:*",
