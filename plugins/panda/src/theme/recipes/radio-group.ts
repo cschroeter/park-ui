@@ -41,6 +41,14 @@ export const radioGroup = defineSlotRecipe({
           color: 'fg.disabled',
         },
       },
+      '&:has(+ :focus-visible)': {
+        borderColor: 'border.outline',
+        boxShadow: '0 0 0 1px var(--colors-border-outline)',
+        _checked: {
+          borderColor: 'colorPalette.default',
+          boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+        },
+      },
     },
     item: {
       alignItems: 'center',

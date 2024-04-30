@@ -37,6 +37,14 @@ export const RadioGroup = defineMultiStyleConfig({
         color: 'fg.disabled',
         _hover: { bg: 'initial', color: 'fg.disabled' },
       },
+      '&:has(+ :focus-visible)': {
+        borderColor: 'border.outline',
+        boxShadow: '0 0 0 1px var(--chakra-colors-border-outline)',
+        _checked: {
+          borderColor: `${props.colorScheme}.default`,
+          boxShadow: '0 0 0 1px var(--chakra-colors-accent-default)',
+        },
+      },
     },
     item: {
       alignItems: 'center',
