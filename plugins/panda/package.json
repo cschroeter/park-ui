@@ -28,11 +28,11 @@
     "ts-pattern": "5.1.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.37.2",
-    "@pandacss/types": "0.37.2",
+    "@pandacss/dev": "0.39.0",
+    "@pandacss/types": "0.39.0",
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
-    "release-it": "17.1.1",
+    "release-it": "17.2.1",
     "tsup": "8.0.2"
   },
   "peerDependencies": {
