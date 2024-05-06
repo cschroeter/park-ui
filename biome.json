@@ -27,6 +27,9 @@
       "recommended": true,
       "suspicious": {
         "noArrayIndexKey": "off"
+      },
+      "complexity": {
+        "noBannedTypes": "off"
       }
     }
   }
