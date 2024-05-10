@@ -55,10 +55,9 @@ const { title, description } = Astro.props
     <!-- Tracking -->
     <script defer data-domain="park-ui.com" src="https://plausible.io/js/script.js"></script>
     <ViewTransitions />
-  </head>
-  <body>
-    <slot />
-    <script>
+
+    <!-- Inlined to avoid FOUC. -->
+    <script is:inline>
       const setColorMode = () => {
         // @ts-expect-error
         if (JSON.parse(window.localStorage.getItem('park-ui-color-mode')) === 'dark') {
@@ -68,5 +67,8 @@ const { title, description } = Astro.props
       setColorMode()
       document.addEventListener('astro:after-swap', setColorMode)
     </script>
+  </head>
+  <body>
+    <slot />
   </body>
 </html>
