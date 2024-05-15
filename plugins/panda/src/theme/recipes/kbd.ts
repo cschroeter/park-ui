@@ -12,6 +12,7 @@ export const kbd = defineRecipe({
     display: 'inline-flex',
     fontFamily: 'var(--fonts-code)',
     fontWeight: 'medium',
+    whiteSpace: 'pre',
   },
   defaultVariants: {
     size: 'md',
