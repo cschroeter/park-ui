@@ -2,7 +2,7 @@
 
 ### Fixed
 
-- Set `white-space: pre` for the `Code` component to prevent text wrapping.
+- Set `white-space: pre` for the `Code` and `Kb` component to prevent text wrapping.
 
 ## [0.37.0] - 2024-04-10
 
