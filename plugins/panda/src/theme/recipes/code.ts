@@ -10,6 +10,7 @@ export const code = defineRecipe({
     display: 'inline-flex',
     fontWeight: 'medium!',
     fontFamily: 'var(--fonts-code)',
+    whiteSpace: 'pre',
   },
   defaultVariants: {
     size: 'md',
