@@ -8,11 +8,11 @@
   "dependencies": {
     "@ark-ui/solid": "2.2.0",
     "@park-ui/tailwind-plugin": "workspace:*",
-    "@storybook/addon-essentials": "8.0.10",
+    "@storybook/addon-essentials": "8.1.1",
     "@storybook/addons": "7.6.17",
     "lucide-solid": "0.378.0",
     "solid-js": "1.8.17",
-    "storybook": "8.0.10",
+    "storybook": "8.1.1",
     "storybook-solidjs": "1.0.0-beta.2",
     "storybook-solidjs-vite": "1.0.0-beta.2",
     "tailwind-variants": "0.2.1",
