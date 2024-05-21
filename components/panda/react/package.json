@@ -1,5 +1,6 @@
 {
   "name": "@park-ui/panda-react-components",
+  "type": "module",
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
@@ -8,7 +9,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/react": "2.2.3",
+    "@ark-ui/react": "3.0.0-2",
     "@pandacss/dev": "0.39.1",
     "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-a11y": "8.1.1",
