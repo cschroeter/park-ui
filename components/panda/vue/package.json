@@ -16,7 +16,6 @@
     "@zag-js/avatar": "0.50.0",
     "histoire": "0.17.17",
     "lucide-vue-next": "0.378.0",
-    "radix-vue": "1.8.0",
     "typescript": "5.4.5",
     "vite": "5.2.11",
     "vue": "3.4.27"
