@@ -4,9 +4,9 @@ import { styled } from 'styled-system/jsx'
 import { menu } from 'styled-system/recipes'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withProvider, withContext } = createStyleContext(menu)
+const { withRootProvider, withContext } = createStyleContext(menu)
 
-export const Root = withProvider(Menu.Root)
+export const Root = withRootProvider(Menu.Root)
 export const Arrow = withContext(styled(Menu.Arrow), 'arrow')
 export const ArrowTip = withContext(styled(Menu.ArrowTip), 'arrowTip')
 export const Content = withContext(styled(Menu.Content), 'content')
@@ -14,7 +14,7 @@ export const ContextTrigger = withContext(styled(Menu.ContextTrigger), 'contextT
 export const Item = withContext(styled(Menu.Item), 'item')
 export const ItemGroup = withContext(styled(Menu.ItemGroup), 'itemGroup')
 export const ItemGroupLabel = withContext(styled(Menu.ItemGroupLabel), 'itemGroupLabel')
-export const OptionItem = withContext(styled(Menu.OptionItem), 'optionItem')
+export const OptionItem = withContext(styled(Menu.Item), 'optionItem')
 export const Positioner = withContext(styled(Menu.Positioner), 'positioner')
 export const Separator = withContext(styled(Menu.Separator), 'separator')
 export const Trigger = withContext(styled(Menu.Trigger), 'trigger')

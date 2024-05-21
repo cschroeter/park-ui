@@ -1,31 +1,39 @@
 import { Popover } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { popover } from 'styled-system/recipes'
+import { type PopoverVariantProps, popover } from 'styled-system/recipes'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withProvider, withContext } = createStyleContext(popover)
+const { withRootProvider, withContext } = createStyleContext(popover)
 
-export const Root = withProvider(Popover.Root)
-export const Anchor = withContext(styled(Popover.Anchor), 'anchor')
-export const Arrow = withContext(styled(Popover.Arrow), 'arrow')
-export const ArrowTip = withContext(styled(Popover.ArrowTip), 'arrowTip')
-export const CloseTrigger = withContext(styled(Popover.CloseTrigger), 'closeTrigger')
-export const Content = withContext(styled(Popover.Content), 'content')
-export const Description = withContext(styled(Popover.Description), 'description')
-export const Indicator = withContext(styled(Popover.Indicator), 'indicator')
-export const Positioner = withContext(styled(Popover.Positioner), 'positioner')
-export const Title = withContext(styled(Popover.Title), 'title')
-export const Trigger = withContext(styled(Popover.Trigger), 'trigger')
+export interface RootProps extends Popover.RootProps, PopoverVariantProps {}
+export const Root = withRootProvider<RootProps>(Popover.Root)
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface AnchorProps extends ComponentProps<typeof Anchor> {}
-export interface ArrowProps extends ComponentProps<typeof Arrow> {}
-export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
-export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface TriggerProps extends Assign<JsxStyleProps, Popover.TriggerProps> {}
+export const Trigger = withContext<TriggerProps>(Popover.Trigger, 'trigger')
+
+export interface AnchorProps extends Assign<JsxStyleProps, Popover.AnchorProps> {}
+export const Anchor = withContext<AnchorProps>(Popover.Anchor, 'anchor')
+
+export interface ArrowProps extends Assign<JsxStyleProps, Popover.ArrowProps> {}
+export const Arrow = withContext<ArrowProps>(Popover.Arrow, 'arrow')
+
+export interface ArrowTipProps extends Assign<JsxStyleProps, Popover.ArrowTipProps> {}
+export const ArrowTip = withContext<ArrowTipProps>(Popover.ArrowTip, 'arrowTip')
+
+export interface CloseTriggerProps extends Assign<JsxStyleProps, Popover.CloseTriggerProps> {}
+export const CloseTrigger = withContext<CloseTriggerProps>(Popover.CloseTrigger, 'closeTrigger')
+
+export interface ContentProps extends Assign<JsxStyleProps, Popover.ContentProps> {}
+export const Content = withContext<ContentProps>(Popover.Content, 'content')
+
+export interface DescriptionProps extends Assign<JsxStyleProps, Popover.DescriptionProps> {}
+export const Description = withContext<DescriptionProps>(Popover.Description, 'description')
+
+export interface IndicatorProps extends Assign<JsxStyleProps, Popover.IndicatorProps> {}
+export const Indicator = withContext<IndicatorProps>(Popover.Indicator, 'indicator')
+
+export interface PositionerProps extends Assign<JsxStyleProps, Popover.PositionerProps> {}
+export const Positioner = withContext<PositionerProps>(Popover.Positioner, 'positioner')
+
+export interface TitleProps extends Assign<JsxStyleProps, Popover.TitleProps> {}
+export const Title = withContext<TitleProps>(Popover.Title, 'title')
