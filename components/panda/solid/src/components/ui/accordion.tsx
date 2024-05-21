@@ -28,9 +28,9 @@ export const ItemContent = withContext<ItemContentProps>(Accordion.ItemContent, 
 export {
   AccordionContext as Context,
   type AccordionContextProps as ContextProps,
-} from '@ark-ui/react/accordion'
+} from '@ark-ui/solid'
 
 export type {
   AccordionFocusChangeDetails as FocusChangeDetails,
   AccordionValueChangeDetails as ValueChangeDetails,
-} from '@ark-ui/react/accordion'
+} from '@ark-ui/solid'

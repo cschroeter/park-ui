@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Avatar from '../components/ui/Avatar.vue'
+import { Avatar } from '../components/ui'
 </script>
 
 <template>

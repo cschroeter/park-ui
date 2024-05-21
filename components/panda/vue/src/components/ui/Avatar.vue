@@ -1,16 +1,37 @@
 <script setup lang="ts">
-import { Avatar as AvatarRoot, AvatarFallback, AvatarImage } from '@ark-ui/vue/avatar'
+import {
+  Avatar,
+  type AvatarRootEmits,
+  type AvatarRootProps,
+  useForwardPropsEmits,
+} from '@ark-ui/vue'
+import { computed } from 'vue'
 import { avatar } from '../../../styled-system/recipes'
-import { avatarProps, type AvatarEmits } from './foo'
 
+export interface AvatarProps extends AvatarRootProps {
+  src?: string
+  name: string
+}
+
+const props = defineProps<AvatarProps>()
+const emits = defineEmits<AvatarRootEmits>()
+
+const forwarded = useForwardPropsEmits(props, emits)
 const styles = avatar()
-const { src, name, ...rest } = defineProps({ ...avatarProps, src: String, name: String })
-const emit = defineEmits<AvatarEmits>()
+
+const getInitials = computed(() =>
+  props.name
+    .split(' ')
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase(),
+)
 </script>
 
 <template>
-  <AvatarRoot :class="styles.root" v-bind="rest">
-    <AvatarFallback :class="styles.fallback">PA</AvatarFallback>
-    <AvatarImage :src="src" :alt="name" :class="styles.image" />
-  </AvatarRoot>
+  <Avatar.Root :class="styles.root" v-bind="forwarded">
+    <Avatar.Fallback :class="styles.fallback">{{ getInitials }}</Avatar.Fallback>
+    <Avatar.Image :src="props.src" :alt="props.name" :class="styles.image" />
+  </Avatar.Root>
 </template>

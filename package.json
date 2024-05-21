@@ -20,6 +20,7 @@
     "panda": "bun run --cwd plugins/panda",
     "panda:react": "bun run --cwd components/panda/react",
     "panda:solid": "bun run --cwd components/panda/solid",
+    "panda:vue": "bun run --cwd components/panda/vue",
     "tailwind": "bun run --cwd plugins/tailwind",
     "tailwind:react": "bun run --cwd components/tailwind/react",
     "tailwind:solid": "bun run --cwd components/tailwind/solid",
