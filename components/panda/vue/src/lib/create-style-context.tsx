@@ -36,7 +36,6 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
   }
 
   const withContext = <P,>(Component: ElementType, slot: Slot<R>) => {
-    console.log('Component', Component)
     const StyledComponent = styled(Component)
 
     return defineComponent<P>({

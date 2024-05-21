@@ -6,18 +6,23 @@ import {
   useForwardPropsEmits,
 } from '@ark-ui/vue'
 import { computed } from 'vue'
-import { avatar } from '../../../styled-system/recipes'
+import { css, cx } from '../../../styled-system/css'
+import { splitCssProps } from '../../../styled-system/jsx'
+import { type AvatarVariantProps, avatar } from '../../../styled-system/recipes'
 
-export interface AvatarProps extends AvatarRootProps {
+export interface AvatarProps extends AvatarRootProps, /* @vue-ignore */ AvatarVariantProps {
   src?: string
   name: string
 }
 
 const props = defineProps<AvatarProps>()
+const [variantProps, avatarProps] = avatar.splitVariantProps(props)
+const [cssProps, localProps] = splitCssProps(avatarProps)
 const emits = defineEmits<AvatarRootEmits>()
+const { name, src, ...rootProps } = localProps
 
-const forwarded = useForwardPropsEmits(props, emits)
-const styles = avatar()
+const forwarded = useForwardPropsEmits(rootProps, emits)
+const styles = avatar(variantProps)
 
 const getInitials = computed(() =>
   props.name
@@ -30,7 +35,7 @@ const getInitials = computed(() =>
 </script>
 
 <template>
-  <Avatar.Root :class="styles.root" v-bind="forwarded">
+  <Avatar.Root :class="cx(styles.root, css(cssProps))" v-bind="forwarded">
     <Avatar.Fallback :class="styles.fallback">{{ getInitials }}</Avatar.Fallback>
     <Avatar.Image :src="props.src" :alt="props.name" :class="styles.image" />
   </Avatar.Root>
