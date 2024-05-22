@@ -1,15 +1,26 @@
+import type { Assign } from '@ark-ui/react'
 import { Splitter } from '@ark-ui/react/splitter'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
-import { splitter } from 'styled-system/recipes'
+import { type SplitterVariantProps, splitter } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(splitter)
 
-export const Root = withProvider(styled(Splitter.Root), 'root')
-export const Panel = withContext(styled(Splitter.Panel), 'panel')
-export const ResizeTrigger = withContext(styled(Splitter.ResizeTrigger), 'resizeTrigger')
+export interface RootProps
+  extends Assign<JsxStyleProps, Splitter.RootProps>,
+    SplitterVariantProps {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Splitter.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface PanelProps extends ComponentProps<typeof Panel> {}
-export interface ResizeTriggerProps extends ComponentProps<typeof ResizeTrigger> {}
+export interface PanelProps extends Assign<JsxStyleProps, Splitter.PanelProps> {}
+export const Panel = withContext<HTMLDivElement, PanelProps>(Splitter.Panel, 'panel')
+
+export interface ResizeTriggerProps extends Assign<JsxStyleProps, Splitter.ResizeTriggerProps> {}
+export const ResizeTrigger = withContext<HTMLButtonElement, ResizeTriggerProps>(
+  Splitter.ResizeTrigger,
+  'resizeTrigger',
+)
+
+export {
+  SplitterContext as Context,
+  type SplitterContextProps as ContextProps,
+} from '@ark-ui/react/splitter'

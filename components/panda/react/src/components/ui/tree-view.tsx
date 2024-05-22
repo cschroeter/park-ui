@@ -1,9 +1,10 @@
+import type { Assign } from '@ark-ui/react'
 import { TreeView as ArkTreeView, type TreeViewRootProps } from '@ark-ui/react/tree-view'
 import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { treeView } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 
 interface Child {
   id: string

@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { type IconVariantProps, icon } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface IconProps extends Assign<JsxStyleProps, HTMLArkProps<'svg'>>, IconVariantProps {}
 

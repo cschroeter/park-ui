@@ -1,6 +1,7 @@
+import type { Assign } from '@ark-ui/react'
 import { Accordion } from '@ark-ui/react/accordion'
 import { type AccordionVariantProps, accordion } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(accordion)

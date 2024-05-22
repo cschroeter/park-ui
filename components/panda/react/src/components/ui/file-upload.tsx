@@ -1,34 +1,66 @@
+import type { Assign } from '@ark-ui/react'
 import { FileUpload } from '@ark-ui/react/file-upload'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
-import { fileUpload } from 'styled-system/recipes'
+import { type FileUploadVariantProps, fileUpload } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(fileUpload)
 
-export const Root = withProvider(styled(FileUpload.Root), 'root')
-export const Dropzone = withContext(styled(FileUpload.Dropzone), 'dropzone')
-export const Item = withContext(styled(FileUpload.Item), 'item')
-export const ItemDeleteTrigger = withContext(
-  styled(FileUpload.ItemDeleteTrigger),
+export interface RootProps
+  extends Assign<JsxStyleProps, FileUpload.RootProps>,
+    FileUploadVariantProps {}
+export const Root = withProvider<HTMLDivElement, RootProps>(FileUpload.Root, 'root')
+
+export interface DropzoneProps extends Assign<JsxStyleProps, FileUpload.DropzoneProps> {}
+export const Dropzone = withContext<HTMLDivElement, DropzoneProps>(FileUpload.Dropzone, 'dropzone')
+
+export interface ItemDeleteTriggerProps
+  extends Assign<JsxStyleProps, FileUpload.ItemDeleteTriggerProps> {}
+export const ItemDeleteTrigger = withContext<HTMLButtonElement, ItemDeleteTriggerProps>(
+  FileUpload.ItemDeleteTrigger,
   'itemDeleteTrigger',
 )
-export const ItemGroup = withContext(styled(FileUpload.ItemGroup), 'itemGroup')
-export const ItemName = withContext(styled(FileUpload.ItemName), 'itemName')
-export const ItemPreview = withContext(styled(FileUpload.ItemPreview), 'itemPreview')
-export const ItemPreviewImage = withContext(styled(FileUpload.ItemPreviewImage), 'itemPreviewImage')
-export const ItemSizeText = withContext(styled(FileUpload.ItemSizeText), 'itemSizeText')
-export const Label = withContext(styled(FileUpload.Label), 'label')
-export const Trigger = withContext(styled(FileUpload.Trigger), 'trigger')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface DropzoneProps extends ComponentProps<typeof Dropzone> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemDeleteTriggerProps extends ComponentProps<typeof ItemDeleteTrigger> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface ItemNameProps extends ComponentProps<typeof ItemName> {}
-export interface ItemPreviewProps extends ComponentProps<typeof ItemPreview> {}
-export interface ItemPreviewImageProps extends ComponentProps<typeof ItemPreviewImage> {}
-export interface ItemSizeTextProps extends ComponentProps<typeof ItemSizeText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface ItemGroupProps extends Assign<JsxStyleProps, FileUpload.ItemGroupProps> {}
+export const ItemGroup = withContext<HTMLUListElement, ItemGroupProps>(
+  FileUpload.ItemGroup,
+  'itemGroup',
+)
+
+export interface ItemNameProps extends Assign<JsxStyleProps, FileUpload.ItemNameProps> {}
+export const ItemName = withContext<HTMLDivElement, ItemNameProps>(FileUpload.ItemName, 'itemName')
+
+export interface ItemPreviewImageProps
+  extends Assign<JsxStyleProps, FileUpload.ItemPreviewImageProps> {}
+export const ItemPreviewImage = withContext<HTMLImageElement, ItemPreviewImageProps>(
+  FileUpload.ItemPreviewImage,
+  'itemPreviewImage',
+)
+
+export interface ItemPreviewProps extends Assign<JsxStyleProps, FileUpload.ItemPreviewProps> {}
+export const ItemPreview = withContext<HTMLImageElement, ItemPreviewProps>(
+  FileUpload.ItemPreview,
+  'itemPreview',
+)
+
+export interface ItemProps extends Assign<JsxStyleProps, FileUpload.ItemProps> {}
+export const Item = withContext<HTMLLIElement, ItemProps>(FileUpload.Item, 'item')
+
+export interface ItemSizeTextProps extends Assign<JsxStyleProps, FileUpload.ItemSizeTextProps> {}
+export const ItemSizeText = withContext<HTMLDivElement, ItemSizeTextProps>(
+  FileUpload.ItemSizeText,
+  'itemSizeText',
+)
+
+export interface LabelProps extends Assign<JsxStyleProps, FileUpload.LabelProps> {}
+export const Label = withContext<HTMLLabelElement, LabelProps>(FileUpload.Label, 'label')
+
+export interface TriggerProps extends Assign<JsxStyleProps, FileUpload.TriggerProps> {}
+export const Trigger = withContext<HTMLButtonElement, TriggerProps>(FileUpload.Trigger, 'trigger')
+
+export {
+  FileUploadContext as Context,
+  FileUploadHiddenInput as HiddenInput,
+  type FileUploadContextProps as ContextProps,
+  type FileUploadHiddenInputProps as HiddenInputProps,
+} from '@ark-ui/react/file-upload'

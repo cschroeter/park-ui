@@ -1,21 +1,38 @@
+import type { Assign } from '@ark-ui/react'
 import { RadioGroup } from '@ark-ui/react/radio-group'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
-import { radioGroup } from 'styled-system/recipes'
+import { type RadioGroupVariantProps, radioGroup } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(radioGroup)
 
-export const Root = withProvider(styled(RadioGroup.Root), 'root')
-export const Indicator = withContext(styled(RadioGroup.Indicator), 'indicator')
-export const Item = withContext(styled(RadioGroup.Item), 'item')
-export const ItemControl = withContext(styled(RadioGroup.ItemControl), 'itemControl')
-export const ItemText = withContext(styled(RadioGroup.ItemText), 'itemText')
-export const Label = withContext(styled(RadioGroup.Label), 'label')
+export interface RootProps
+  extends Assign<JsxStyleProps, RadioGroup.RootProps>,
+    RadioGroupVariantProps {}
+export const Root = withProvider<HTMLDivElement, RootProps>(RadioGroup.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
-export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
+export interface IndicatorProps extends Assign<JsxStyleProps, RadioGroup.IndicatorProps> {}
+export const Indicator = withContext<HTMLDivElement, IndicatorProps>(
+  RadioGroup.Indicator,
+  'indicator',
+)
+
+export interface ItemControlProps extends Assign<JsxStyleProps, RadioGroup.ItemControlProps> {}
+export const ItemControl = withContext<HTMLDivElement, ItemControlProps>(
+  RadioGroup.ItemControl,
+  'itemControl',
+)
+
+export interface ItemProps extends Assign<JsxStyleProps, RadioGroup.ItemProps> {}
+export const Item = withContext<HTMLLabelElement, ItemProps>(RadioGroup.Item, 'item')
+
+export interface ItemTextProps extends Assign<JsxStyleProps, RadioGroup.ItemTextProps> {}
+export const ItemText = withContext<HTMLSpanElement, ItemTextProps>(RadioGroup.ItemText, 'itemText')
+
+export interface LabelProps extends Assign<JsxStyleProps, RadioGroup.LabelProps> {}
+export const Label = withContext<HTMLLabelElement, LabelProps>(RadioGroup.Label, 'label')
+
+export {
+  RadioGroupContext as Context,
+  type RadioGroupContextProps as ContextProps,
+} from '@ark-ui/react/radio-group'

@@ -1,13 +1,14 @@
-import { Collapsible, type CollapsibleRootProps } from '@ark-ui/react/collapsible'
-import { collapsible } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { Assign } from '@ark-ui/react'
+import { Collapsible } from '@ark-ui/react/collapsible'
+import { type CollapsibleVariantProps, collapsible } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(collapsible)
 
 export interface RootProps
   extends Assign<JsxStyleProps, Collapsible.RootProps>,
-    CollapsibleRootProps {}
+    CollapsibleVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(Collapsible.Root, 'root')
 
 export interface ContentProps extends Assign<JsxStyleProps, Collapsible.ContentProps> {}

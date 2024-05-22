@@ -1,6 +1,7 @@
+import type { Assign } from '@ark-ui/react'
 import { Carousel } from '@ark-ui/react/carousel'
 import { type CarouselVariantProps, carousel } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(carousel)

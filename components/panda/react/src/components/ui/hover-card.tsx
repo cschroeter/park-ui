@@ -1,21 +1,35 @@
+import type { Assign } from '@ark-ui/react'
 import { HoverCard } from '@ark-ui/react/hover-card'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
-import { hoverCard } from 'styled-system/recipes'
+import { type HoverCardVariantProps, hoverCard } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withProvider, withContext } = createStyleContext(hoverCard)
+const { withRootProvider, withContext } = createStyleContext(hoverCard)
 
-export const Root = withProvider(HoverCard.Root)
-export const Arrow = withContext(styled(HoverCard.Arrow), 'arrow')
-export const ArrowTip = withContext(styled(HoverCard.ArrowTip), 'arrowTip')
-export const Content = withContext(styled(HoverCard.Content), 'content')
-export const Positioner = withContext(styled(HoverCard.Positioner), 'positioner')
-export const Trigger = withContext(styled(HoverCard.Trigger), 'trigger')
+export interface RootProps
+  extends Assign<JsxStyleProps, HoverCard.RootProps>,
+    HoverCardVariantProps {}
+export const Root = withRootProvider<RootProps>(HoverCard.Root)
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ArrowProps extends ComponentProps<typeof Arrow> {}
-export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface ArrowProps extends Assign<JsxStyleProps, HoverCard.ArrowProps> {}
+export const Arrow = withContext<HTMLDivElement, ArrowProps>(HoverCard.Arrow, 'arrow')
+
+export interface ArrowTipProps extends Assign<JsxStyleProps, HoverCard.ArrowTipProps> {}
+export const ArrowTip = withContext<HTMLDivElement, ArrowTipProps>(HoverCard.ArrowTip, 'arrowTip')
+
+export interface ContentProps extends Assign<JsxStyleProps, HoverCard.ContentProps> {}
+export const Content = withContext<HTMLDivElement, ContentProps>(HoverCard.Content, 'content')
+
+export interface PositionerProps extends Assign<JsxStyleProps, HoverCard.PositionerProps> {}
+export const Positioner = withContext<HTMLDivElement, PositionerProps>(
+  HoverCard.Positioner,
+  'positioner',
+)
+
+export interface TriggerProps extends Assign<JsxStyleProps, HoverCard.TriggerProps> {}
+export const Trigger = withContext<HTMLButtonElement, TriggerProps>(HoverCard.Trigger, 'trigger')
+
+export {
+  HoverCardContext as Context,
+  type HoverCardContextProps as ContextProps,
+} from '@ark-ui/react/hover-card'

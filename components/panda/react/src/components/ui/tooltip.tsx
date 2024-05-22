@@ -1,21 +1,33 @@
+import type { Assign } from '@ark-ui/react'
 import { Tooltip } from '@ark-ui/react/tooltip'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
-import { tooltip } from 'styled-system/recipes'
+import { type TooltipVariantProps, tooltip } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withProvider, withContext } = createStyleContext(tooltip)
+const { withRootProvider, withContext } = createStyleContext(tooltip)
 
-export const Root = withProvider(Tooltip.Root)
-export const Arrow = withContext(styled(Tooltip.Arrow), 'arrow')
-export const ArrowTip = withContext(styled(Tooltip.ArrowTip), 'arrowTip')
-export const Content = withContext(styled(Tooltip.Content), 'content')
-export const Positioner = withContext(styled(Tooltip.Positioner), 'positioner')
-export const Trigger = withContext(styled(Tooltip.Trigger), 'trigger')
+export interface RootProps extends Assign<JsxStyleProps, Tooltip.RootProps>, TooltipVariantProps {}
+export const Root = withRootProvider<RootProps>(Tooltip.Root)
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ArrowProps extends ComponentProps<typeof Arrow> {}
-export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface ArrowProps extends Assign<JsxStyleProps, Tooltip.ArrowProps> {}
+export const Arrow = withContext<HTMLDivElement, ArrowProps>(Tooltip.Arrow, 'arrow')
+
+export interface ArrowTipProps extends Assign<JsxStyleProps, Tooltip.ArrowTipProps> {}
+export const ArrowTip = withContext<HTMLDivElement, ArrowTipProps>(Tooltip.ArrowTip, 'arrowTip')
+
+export interface ContentProps extends Assign<JsxStyleProps, Tooltip.ContentProps> {}
+export const Content = withContext<HTMLDivElement, ContentProps>(Tooltip.Content, 'content')
+
+export interface PositionerProps extends Assign<JsxStyleProps, Tooltip.PositionerProps> {}
+export const Positioner = withContext<HTMLDivElement, PositionerProps>(
+  Tooltip.Positioner,
+  'positioner',
+)
+
+export interface TriggerProps extends Assign<JsxStyleProps, Tooltip.TriggerProps> {}
+export const Trigger = withContext<HTMLButtonElement, TriggerProps>(Tooltip.Trigger, 'trigger')
+
+export {
+  TooltipContext as Context,
+  type TooltipContextProps as ContextProps,
+} from '@ark-ui/react/tooltip'

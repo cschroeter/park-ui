@@ -1,19 +1,27 @@
+import type { Assign } from '@ark-ui/react'
 import { Tabs } from '@ark-ui/react/tabs'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
-import { tabs } from 'styled-system/recipes'
+import { type TabsVariantProps, tabs } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(tabs)
 
-export const Root = withProvider(styled(Tabs.Root), 'root')
-export const Content = withContext(styled(Tabs.Content), 'content')
-export const Indicator = withContext(styled(Tabs.Indicator), 'indicator')
-export const List = withContext(styled(Tabs.List), 'list')
-export const Trigger = withContext(styled(Tabs.Trigger), 'trigger')
+export interface RootProps extends Assign<JsxStyleProps, Tabs.RootProps>, TabsVariantProps {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Tabs.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface ListProps extends ComponentProps<typeof List> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export interface TabContentProps extends Assign<JsxStyleProps, Tabs.ContentProps> {}
+export const TabContent = withContext<HTMLDivElement, TabContentProps>(Tabs.Content, 'content')
+
+export interface TabIndicatorProps extends Assign<JsxStyleProps, Tabs.IndicatorProps> {}
+export const TabIndicator = withContext<HTMLDivElement, TabIndicatorProps>(
+  Tabs.Indicator,
+  'indicator',
+)
+
+export interface TabListProps extends Assign<JsxStyleProps, Tabs.ListProps> {}
+export const TabList = withContext<HTMLDivElement, TabListProps>(Tabs.List, 'list')
+
+export interface TabTriggerProps extends Assign<JsxStyleProps, Tabs.TriggerProps> {}
+export const TabTrigger = withContext<HTMLButtonElement, TabTriggerProps>(Tabs.Trigger, 'trigger')
+
+export { TabsContext as Context, type TabsContextProps as ContextProps } from '@ark-ui/react/tabs'
