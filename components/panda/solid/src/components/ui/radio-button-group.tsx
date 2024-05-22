@@ -1,21 +1,41 @@
-import { RadioGroup as ArkRadioButtonGroup } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { radioButtonGroup } from 'styled-system/recipes'
+import { type Assign, RadioGroup } from '@ark-ui/solid'
+import { type RadioGroupVariantProps, radioButtonGroup } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 
-export const Root = withProvider(styled(ArkRadioButtonGroup.Root), 'root')
-export const Indicator = withContext(styled(ArkRadioButtonGroup.Indicator), 'indicator')
-export const Item = withContext(styled(ArkRadioButtonGroup.Item), 'item')
-export const ItemControl = withContext(styled(ArkRadioButtonGroup.ItemControl), 'itemControl')
-export const ItemText = withContext(styled(ArkRadioButtonGroup.ItemText), 'itemText')
-export const Label = withContext(styled(ArkRadioButtonGroup.Label), 'label')
+export interface RootProps
+  extends Assign<JsxStyleProps, RadioGroup.RootProps>,
+    RadioGroupVariantProps {}
+export const Root = withProvider<RootProps>(RadioGroup.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
-export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
+export const Indicator = withContext<Assign<JsxStyleProps, RadioGroup.IndicatorProps>>(
+  RadioGroup.Indicator,
+  'indicator',
+)
+
+export const ItemControl = withContext<Assign<JsxStyleProps, RadioGroup.ItemControlProps>>(
+  RadioGroup.ItemControl,
+  'itemControl',
+)
+
+export const Item = withContext<Assign<JsxStyleProps, RadioGroup.ItemProps>>(
+  RadioGroup.Item,
+  'item',
+)
+
+export const ItemText = withContext<Assign<JsxStyleProps, RadioGroup.ItemTextProps>>(
+  RadioGroup.ItemText,
+  'itemText',
+)
+
+export const Label = withContext<Assign<JsxStyleProps, RadioGroup.LabelProps>>(
+  RadioGroup.Label,
+  'label',
+)
+
+export {
+  RadioGroupContext as Context,
+  type RadioGroupContextProps as ContextProps,
+} from '@ark-ui/react/radio-group'

@@ -1,39 +1,55 @@
-import { Popover } from '@ark-ui/solid'
+import { type Assign, Popover } from '@ark-ui/solid'
 import { type PopoverVariantProps, popover } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(popover)
 
-export interface RootProps extends Popover.RootProps, PopoverVariantProps {}
+export interface RootProps extends Assign<JsxStyleProps, Popover.RootProps>, PopoverVariantProps {}
 export const Root = withRootProvider<RootProps>(Popover.Root)
 
-export interface TriggerProps extends Assign<JsxStyleProps, Popover.TriggerProps> {}
-export const Trigger = withContext<TriggerProps>(Popover.Trigger, 'trigger')
+export const Anchor = withContext<Assign<JsxStyleProps, Popover.AnchorProps>>(
+  Popover.Anchor,
+  'anchor',
+)
 
-export interface AnchorProps extends Assign<JsxStyleProps, Popover.AnchorProps> {}
-export const Anchor = withContext<AnchorProps>(Popover.Anchor, 'anchor')
+export const Arrow = withContext<Assign<JsxStyleProps, Popover.ArrowProps>>(Popover.Arrow, 'arrow')
 
-export interface ArrowProps extends Assign<JsxStyleProps, Popover.ArrowProps> {}
-export const Arrow = withContext<ArrowProps>(Popover.Arrow, 'arrow')
+export const ArrowTip = withContext<Assign<JsxStyleProps, Popover.ArrowTipProps>>(
+  Popover.ArrowTip,
+  'arrowTip',
+)
 
-export interface ArrowTipProps extends Assign<JsxStyleProps, Popover.ArrowTipProps> {}
-export const ArrowTip = withContext<ArrowTipProps>(Popover.ArrowTip, 'arrowTip')
+export const CloseTrigger = withContext<Assign<JsxStyleProps, Popover.CloseTriggerProps>>(
+  Popover.CloseTrigger,
+  'closeTrigger',
+)
 
-export interface CloseTriggerProps extends Assign<JsxStyleProps, Popover.CloseTriggerProps> {}
-export const CloseTrigger = withContext<CloseTriggerProps>(Popover.CloseTrigger, 'closeTrigger')
+export const Content = withContext<Assign<JsxStyleProps, Popover.ContentProps>>(
+  Popover.Content,
+  'content',
+)
 
-export interface ContentProps extends Assign<JsxStyleProps, Popover.ContentProps> {}
-export const Content = withContext<ContentProps>(Popover.Content, 'content')
+export const Description = withContext<Assign<JsxStyleProps, Popover.DescriptionProps>>(
+  Popover.Description,
+  'description',
+)
 
-export interface DescriptionProps extends Assign<JsxStyleProps, Popover.DescriptionProps> {}
-export const Description = withContext<DescriptionProps>(Popover.Description, 'description')
+export const Indicator = withContext<Assign<JsxStyleProps, Popover.IndicatorProps>>(
+  Popover.Indicator,
+  'indicator',
+)
 
-export interface IndicatorProps extends Assign<JsxStyleProps, Popover.IndicatorProps> {}
-export const Indicator = withContext<IndicatorProps>(Popover.Indicator, 'indicator')
+export const Positioner = withContext<Assign<JsxStyleProps, Popover.PositionerProps>>(
+  Popover.Positioner,
+  'positioner',
+)
 
-export interface PositionerProps extends Assign<JsxStyleProps, Popover.PositionerProps> {}
-export const Positioner = withContext<PositionerProps>(Popover.Positioner, 'positioner')
+export const Title = withContext<Assign<JsxStyleProps, Popover.TitleProps>>(Popover.Title, 'title')
 
-export interface TitleProps extends Assign<JsxStyleProps, Popover.TitleProps> {}
-export const Title = withContext<TitleProps>(Popover.Title, 'title')
+export const Trigger = withContext<Assign<JsxStyleProps, Popover.TriggerProps>>(
+  Popover.Trigger,
+  'trigger',
+)
+
+export { PopoverContext as Context, type PopoverContextProps as ContextProps } from '@ark-ui/solid'

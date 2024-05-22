@@ -20,15 +20,13 @@ const main = async () => {
           )}.${name}Props>, ${pascalCase(component)}VariantProps {}`,
         )
         console.log(
-          // @ts-expect-error
-          `export const ${name} = withProvider<${value.element}, ${name}Props>(${pascalCase(
+          `export const ${name} = withProvider<RootProps>(${pascalCase(
             component,
           )}.${name}, '${camelCase(name)}')\n`,
         )
       } else {
         console.log(
-          // @ts-expect-error
-          `export const ${name} = withContext<${value.element}, Assign<JsxStyleProps, ${pascalCase(
+          `export const ${name} = withContext<Assign<JsxStyleProps, ${pascalCase(
             component,
           )}.${name}Props>>(${pascalCase(component)}.${name}, '${camelCase(name)}')\n`,
         )
@@ -37,7 +35,7 @@ const main = async () => {
   console.log(
     `export { ${pascalCase(component)}Context as Context, type ${pascalCase(
       component,
-    )}ContextProps as ContextProps, } from '@ark-ui/react/${component}'\n`,
+    )}ContextProps as ContextProps, } from '@ark-ui/solid'\n`,
   )
 }
 

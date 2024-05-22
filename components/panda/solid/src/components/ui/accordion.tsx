@@ -1,6 +1,6 @@
-import { Accordion } from '@ark-ui/solid'
+import { Accordion, type Assign } from '@ark-ui/solid'
 import { type AccordionVariantProps, accordion } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(accordion)
@@ -10,20 +10,22 @@ export interface RootProps
     AccordionVariantProps {}
 export const Root = withProvider<RootProps>(Accordion.Root, 'root')
 
-export interface ItemProps extends Assign<JsxStyleProps, Accordion.ItemProps> {}
-export const Item = withContext<ItemProps>(Accordion.Item, 'item')
+export const ItemContent = withContext<Assign<JsxStyleProps, Accordion.ItemContentProps>>(
+  Accordion.ItemContent,
+  'itemContent',
+)
 
-export interface ItemTriggerProps extends Assign<JsxStyleProps, Accordion.ItemTriggerProps> {}
-export const ItemTrigger = withContext<ItemTriggerProps>(Accordion.ItemTrigger, 'itemTrigger')
-
-export interface ItemIndicatorProps extends Assign<JsxStyleProps, Accordion.ItemIndicatorProps> {}
-export const ItemIndicator = withContext<ItemIndicatorProps>(
+export const ItemIndicator = withContext<Assign<JsxStyleProps, Accordion.ItemIndicatorProps>>(
   Accordion.ItemIndicator,
   'itemIndicator',
 )
 
-export interface ItemContentProps extends Assign<JsxStyleProps, Accordion.ItemContentProps> {}
-export const ItemContent = withContext<ItemContentProps>(Accordion.ItemContent, 'itemContent')
+export const Item = withContext<Assign<JsxStyleProps, Accordion.ItemProps>>(Accordion.Item, 'item')
+
+export const ItemTrigger = withContext<Assign<JsxStyleProps, Accordion.ItemTriggerProps>>(
+  Accordion.ItemTrigger,
+  'itemTrigger',
+)
 
 export {
   AccordionContext as Context,

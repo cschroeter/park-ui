@@ -11,10 +11,12 @@ export default meta
 export const Base = () => {
   return (
     <Clipboard.Root value="https://park-ui.com">
-      <Clipboard.Label as={FormLabel}>Copy this link</Clipboard.Label>
+      <Clipboard.Label asChild={(props) => <FormLabel {...props()} />}>
+        Copy this link
+      </Clipboard.Label>
       <Clipboard.Control>
-        <Clipboard.Input as={Input} />
-        <Clipboard.Trigger as={IconButton} variant="outline">
+        <Clipboard.Input asChild={(props) => <Input {...props()} />} />
+        <Clipboard.Trigger asChild={(props) => <IconButton {...props()} variant="outline" />}>
           <Clipboard.Indicator copied={<CheckIcon />}>
             <ClipboardCopyIcon />
           </Clipboard.Indicator>

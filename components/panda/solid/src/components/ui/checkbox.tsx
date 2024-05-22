@@ -1,15 +1,13 @@
-import { Checkbox as ArkCheckbox, type CheckboxRootProps } from '@ark-ui/solid'
-import { Show, children, splitProps, type JSX } from 'solid-js'
+import { Checkbox as ArkCheckbox, type Assign, type CheckboxRootProps } from '@ark-ui/solid'
+import { Show, children, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type CheckboxVariantProps, checkbox } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface CheckboxProps
   extends Assign<JsxStyleProps, CheckboxRootProps>,
-    CheckboxVariantProps {
-  children?: JSX.Element
-}
+    CheckboxVariantProps {}
 
 export const Checkbox = (props: CheckboxProps) => {
   const [variantProps, checkboxProps] = checkbox.splitVariantProps(props)
@@ -20,21 +18,17 @@ export const Checkbox = (props: CheckboxProps) => {
 
   return (
     <ArkCheckbox.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
-      {(state) => (
-        <>
-          <ArkCheckbox.Control class={styles.control}>
-            <Show when={state().isChecked}>
-              <CheckIcon />
-            </Show>
-            <Show when={state().isIndeterminate}>
-              <MinusIcon />
-            </Show>
-          </ArkCheckbox.Control>
-          <Show when={getChildren()}>
-            <ArkCheckbox.Label class={styles.label}>{getChildren()}</ArkCheckbox.Label>
-          </Show>
-        </>
-      )}
+      <ArkCheckbox.Control class={styles.control}>
+        <ArkCheckbox.Indicator>
+          <CheckIcon />
+        </ArkCheckbox.Indicator>
+        <ArkCheckbox.Indicator indeterminate>
+          <MinusIcon />
+        </ArkCheckbox.Indicator>
+      </ArkCheckbox.Control>
+      <Show when={getChildren()}>
+        <ArkCheckbox.Label class={styles.label}>{getChildren()}</ArkCheckbox.Label>
+      </Show>
     </ArkCheckbox.Root>
   )
 }

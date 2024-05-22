@@ -1,35 +1,80 @@
-import { Combobox } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { combobox } from 'styled-system/recipes'
+import { type Assign, Combobox } from '@ark-ui/solid'
+import { type ComboboxVariantProps, combobox } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(combobox)
 
-export const Root = withProvider(styled(Combobox.Root), 'root')
-export const ClearTrigger = withContext(styled(Combobox.ClearTrigger), 'clearTrigger')
-export const Content = withContext(styled(Combobox.Content), 'content')
-export const Control = withContext(styled(Combobox.Control), 'control')
-export const Input = withContext(styled(Combobox.Input), 'input')
-export const Item = withContext(styled(Combobox.Item), 'item')
-export const ItemGroup = withContext(styled(Combobox.ItemGroup), 'itemGroup')
-export const ItemGroupLabel = withContext(styled(Combobox.ItemGroupLabel), 'itemGroupLabel')
-export const ItemIndicator = withContext(styled(Combobox.ItemIndicator), 'itemIndicator')
-export const ItemText = withContext(styled(Combobox.ItemText), 'itemText')
-export const Label = withContext(styled(Combobox.Label), 'label')
-export const Positioner = withContext(styled(Combobox.Positioner), 'positioner')
-export const Trigger = withContext(styled(Combobox.Trigger), 'trigger')
+export interface RootProps
+  extends Assign<JsxStyleProps, Combobox.RootProps<Combobox.CollectionItem>>,
+    ComboboxVariantProps {}
+export const Root = withProvider<RootProps>(Combobox.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface ControlProps extends ComponentProps<typeof Control> {}
-export interface InputProps extends ComponentProps<typeof Input> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
-export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
-export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const ClearTrigger = withContext<Assign<JsxStyleProps, Combobox.ClearTriggerProps>>(
+  Combobox.ClearTrigger,
+  'clearTrigger',
+)
+
+export const Content = withContext<Assign<JsxStyleProps, Combobox.ContentProps>>(
+  Combobox.Content,
+  'content',
+)
+
+export const Control = withContext<Assign<JsxStyleProps, Combobox.ControlProps>>(
+  Combobox.Control,
+  'control',
+)
+
+export const Input = withContext<Assign<JsxStyleProps, Combobox.InputProps>>(
+  Combobox.Input,
+  'input',
+)
+
+export const ItemGroupLabel = withContext<Assign<JsxStyleProps, Combobox.ItemGroupLabelProps>>(
+  Combobox.ItemGroupLabel,
+  'itemGroupLabel',
+)
+
+export const ItemGroup = withContext<Assign<JsxStyleProps, Combobox.ItemGroupProps>>(
+  Combobox.ItemGroup,
+  'itemGroup',
+)
+
+export const ItemIndicator = withContext<Assign<JsxStyleProps, Combobox.ItemIndicatorProps>>(
+  Combobox.ItemIndicator,
+  'itemIndicator',
+)
+
+export const Item = withContext<Assign<JsxStyleProps, Combobox.ItemProps>>(Combobox.Item, 'item')
+
+export const ItemText = withContext<Assign<JsxStyleProps, Combobox.ItemTextProps>>(
+  Combobox.ItemText,
+  'itemText',
+)
+
+export const Label = withContext<Assign<JsxStyleProps, Combobox.LabelProps>>(
+  Combobox.Label,
+  'label',
+)
+
+export const Positioner = withContext<Assign<JsxStyleProps, Combobox.PositionerProps>>(
+  Combobox.Positioner,
+  'positioner',
+)
+
+export const Trigger = withContext<Assign<JsxStyleProps, Combobox.TriggerProps>>(
+  Combobox.Trigger,
+  'trigger',
+)
+
+export {
+  ComboboxContext as Context,
+  type ComboboxContextProps as ContextProps,
+} from '@ark-ui/solid'
+
+export type {
+  ComboboxHighlightChangeDetails as HighlightChangeDetails,
+  ComboboxInputValueChangeDetails as InputValueChangeDetails,
+  ComboboxOpenChangeDetails as OpenChangeDetails,
+  ComboboxValueChangeDetails as ValueChangeDetails,
+} from '@ark-ui/solid'

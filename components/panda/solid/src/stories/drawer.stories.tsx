@@ -11,7 +11,7 @@ export default meta
 export const Base = () => {
   return (
     <Drawer.Root>
-      <Drawer.Trigger as={Button}>Open Drawer</Drawer.Trigger>
+      <Drawer.Trigger asChild={(props) => <Button {...props()} />}>Open Drawer</Drawer.Trigger>
       <Drawer.Backdrop />
       <Drawer.Positioner>
         <Drawer.Content>

@@ -14,134 +14,163 @@ export const Base = () => {
     <DatePicker.Root positioning={{ sameWidth: true }} startOfWeek={1}>
       <DatePicker.Label>Date Picker</DatePicker.Label>
       <DatePicker.Control>
-        <DatePicker.Input as={Input} />
-        <DatePicker.Trigger as={IconButton} variant="outline">
+        <DatePicker.Input asChild={(props) => <Input {...props} />} />
+        <DatePicker.Trigger asChild={(props) => <Button {...props} variant="outline" />}>
           <CalendarIcon />
         </DatePicker.Trigger>
       </DatePicker.Control>
       <DatePicker.Positioner>
         <DatePicker.Content>
           <DatePicker.View view="day">
-            {/* @ts-expect-error TODO resolve issue with Panda styled */}
-            {(api) => (
-              <>
-                <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger as={IconButton} variant="ghost" size="sm">
-                    <ChevronLeftIcon />
-                  </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger as={IconButton} variant="ghost" size="sm">
-                    <DatePicker.RangeText />
-                  </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger as={IconButton} variant="ghost" size="sm">
-                    <ChevronRightIcon />
-                  </DatePicker.NextTrigger>
-                </DatePicker.ViewControl>
-                <DatePicker.Table>
-                  <DatePicker.TableHead>
-                    <DatePicker.TableRow>
-                      <Index each={api().weekDays}>
-                        {(weekDay) => (
-                          <DatePicker.TableHeader>{weekDay().narrow}</DatePicker.TableHeader>
+            <DatePicker.Context>
+              {(api) => (
+                <>
+                  <DatePicker.ViewControl>
+                    <DatePicker.PrevTrigger
+                      asChild={(props) => <IconButton {...props} variant="ghost" size="sm" />}
+                    >
+                      <ChevronLeftIcon />
+                    </DatePicker.PrevTrigger>
+                    <DatePicker.ViewTrigger
+                      asChild={(props) => <Button {...props} variant="ghost" size="sm" />}
+                    >
+                      <DatePicker.RangeText />
+                    </DatePicker.ViewTrigger>
+                    <DatePicker.NextTrigger
+                      asChild={(props) => <IconButton {...props} variant="ghost" size="sm" />}
+                    >
+                      <ChevronRightIcon />
+                    </DatePicker.NextTrigger>
+                  </DatePicker.ViewControl>
+                  <DatePicker.Table>
+                    <DatePicker.TableHead>
+                      <DatePicker.TableRow>
+                        <Index each={api().weekDays}>
+                          {(weekDay) => (
+                            <DatePicker.TableHeader>{weekDay().narrow}</DatePicker.TableHeader>
+                          )}
+                        </Index>
+                      </DatePicker.TableRow>
+                    </DatePicker.TableHead>
+                    <DatePicker.TableBody>
+                      <Index each={api().weeks}>
+                        {(week) => (
+                          <DatePicker.TableRow>
+                            <Index each={week()}>
+                              {(day) => (
+                                <DatePicker.TableCell value={day()}>
+                                  <DatePicker.TableCellTrigger
+                                    asChild={(props) => (
+                                      <IconButton {...props} variant="ghost" size="sm" />
+                                    )}
+                                  >
+                                    {day().day}
+                                  </DatePicker.TableCellTrigger>
+                                </DatePicker.TableCell>
+                              )}
+                            </Index>
+                          </DatePicker.TableRow>
                         )}
                       </Index>
-                    </DatePicker.TableRow>
-                  </DatePicker.TableHead>
-                  <DatePicker.TableBody>
-                    <Index each={api().weeks}>
-                      {(week) => (
-                        <DatePicker.TableRow>
-                          <Index each={week()}>
-                            {(day) => (
-                              <DatePicker.TableCell value={day()}>
-                                <DatePicker.TableCellTrigger as={IconButton} variant="ghost">
-                                  {day().day}
-                                </DatePicker.TableCellTrigger>
-                              </DatePicker.TableCell>
-                            )}
-                          </Index>
-                        </DatePicker.TableRow>
-                      )}
-                    </Index>
-                  </DatePicker.TableBody>
-                </DatePicker.Table>
-              </>
-            )}
+                    </DatePicker.TableBody>
+                  </DatePicker.Table>
+                </>
+              )}
+            </DatePicker.Context>
           </DatePicker.View>
           <DatePicker.View view="month">
-            {/* @ts-expect-error TODO resolve issue with Panda styled */}
-            {(api) => (
-              <>
-                <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger as={IconButton} variant="ghost" size="sm">
-                    <ChevronLeftIcon />
-                  </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger as={Button} variant="ghost" size="sm">
-                    <DatePicker.RangeText />
-                  </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger as={IconButton} variant="ghost" size="sm">
-                    <ChevronRightIcon />
-                  </DatePicker.NextTrigger>
-                </DatePicker.ViewControl>
-                <DatePicker.Table>
-                  <DatePicker.TableBody>
-                    <Index each={api().getMonthsGrid({ columns: 4, format: 'short' })}>
-                      {(months) => (
-                        <DatePicker.TableRow>
-                          <Index each={months()}>
-                            {(month) => (
-                              <DatePicker.TableCell value={month().value}>
-                                <DatePicker.TableCellTrigger as={Button} variant="ghost">
-                                  {month().label}
-                                </DatePicker.TableCellTrigger>
-                              </DatePicker.TableCell>
-                            )}
-                          </Index>
-                        </DatePicker.TableRow>
-                      )}
-                    </Index>
-                  </DatePicker.TableBody>
-                </DatePicker.Table>
-              </>
-            )}
+            <DatePicker.Context>
+              {(api) => (
+                <>
+                  <DatePicker.ViewControl>
+                    <DatePicker.PrevTrigger
+                      asChild={(props) => <IconButton {...props} variant="ghost" size="sm" />}
+                    >
+                      <ChevronLeftIcon />
+                    </DatePicker.PrevTrigger>
+                    <DatePicker.ViewTrigger
+                      asChild={(props) => <Button {...props} variant="ghost" size="sm" />}
+                    >
+                      <DatePicker.RangeText />
+                    </DatePicker.ViewTrigger>
+                    <DatePicker.NextTrigger
+                      asChild={(props) => <IconButton {...props} variant="ghost" size="sm" />}
+                    >
+                      <ChevronRightIcon />
+                    </DatePicker.NextTrigger>
+                  </DatePicker.ViewControl>
+                  <DatePicker.Table>
+                    <DatePicker.TableBody>
+                      <Index each={api().getMonthsGrid({ columns: 4, format: 'short' })}>
+                        {(months) => (
+                          <DatePicker.TableRow>
+                            <Index each={months()}>
+                              {(month) => (
+                                <DatePicker.TableCell value={month().value}>
+                                  <DatePicker.TableCellTrigger
+                                    asChild={(props) => <Button {...props} variant="ghost" />}
+                                  >
+                                    {month().label}
+                                  </DatePicker.TableCellTrigger>
+                                </DatePicker.TableCell>
+                              )}
+                            </Index>
+                          </DatePicker.TableRow>
+                        )}
+                      </Index>
+                    </DatePicker.TableBody>
+                  </DatePicker.Table>
+                </>
+              )}
+            </DatePicker.Context>
           </DatePicker.View>
           <DatePicker.View view="year">
-            {/* @ts-expect-error TODO resolve issue with Panda styled */}
-            {(api) => (
-              <>
-                <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger as={IconButton} variant="ghost" size="sm">
-                    <IconButton>
-                      <ChevronLeftIcon />
-                    </IconButton>
-                  </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger as={Button} variant="ghost" size="sm">
-                    <DatePicker.RangeText />
-                  </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger as={IconButton} variant="ghost" size="sm">
-                    <ChevronRightIcon />
-                  </DatePicker.NextTrigger>
-                </DatePicker.ViewControl>
-                <DatePicker.Table>
-                  <DatePicker.TableBody>
-                    <Index each={api().getYearsGrid({ columns: 4 })}>
-                      {(years) => (
-                        <DatePicker.TableRow>
-                          <Index each={years()}>
-                            {(year) => (
-                              <DatePicker.TableCell value={year().value}>
-                                <DatePicker.TableCellTrigger as={Button} variant="ghost">
-                                  {year().label}
-                                </DatePicker.TableCellTrigger>
-                              </DatePicker.TableCell>
-                            )}
-                          </Index>
-                        </DatePicker.TableRow>
-                      )}
-                    </Index>
-                  </DatePicker.TableBody>
-                </DatePicker.Table>
-              </>
-            )}
+            <DatePicker.Context>
+              {(api) => (
+                <>
+                  <DatePicker.ViewControl>
+                    <DatePicker.PrevTrigger
+                      asChild={(props) => <IconButton {...props} variant="ghost" size="sm" />}
+                    >
+                      <IconButton>
+                        <ChevronLeftIcon />
+                      </IconButton>
+                    </DatePicker.PrevTrigger>
+                    <DatePicker.ViewTrigger
+                      asChild={(props) => <Button {...props} variant="ghost" size="sm" />}
+                    >
+                      <DatePicker.RangeText />
+                    </DatePicker.ViewTrigger>
+                    <DatePicker.NextTrigger
+                      asChild={(props) => <IconButton {...props} variant="ghost" size="sm" />}
+                    >
+                      <ChevronRightIcon />
+                    </DatePicker.NextTrigger>
+                  </DatePicker.ViewControl>
+                  <DatePicker.Table>
+                    <DatePicker.TableBody>
+                      <Index each={api().getYearsGrid({ columns: 4 })}>
+                        {(years) => (
+                          <DatePicker.TableRow>
+                            <Index each={years()}>
+                              {(year) => (
+                                <DatePicker.TableCell value={year().value}>
+                                  <DatePicker.TableCellTrigger
+                                    asChild={(props) => <Button {...props} variant="ghost" />}
+                                  >
+                                    {year().label}
+                                  </DatePicker.TableCellTrigger>
+                                </DatePicker.TableCell>
+                              )}
+                            </Index>
+                          </DatePicker.TableRow>
+                        )}
+                      </Index>
+                    </DatePicker.TableBody>
+                  </DatePicker.Table>
+                </>
+              )}
+            </DatePicker.Context>
           </DatePicker.View>
         </DatePicker.Content>
       </DatePicker.Positioner>

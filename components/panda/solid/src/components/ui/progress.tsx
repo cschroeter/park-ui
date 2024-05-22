@@ -1,14 +1,13 @@
-import { Progress as ArkProgress, type ProgressRootProps } from '@ark-ui/solid'
-import { Show, children, splitProps, type JSX } from 'solid-js'
+import { Progress as ArkProgress, type Assign, type ProgressRootProps } from '@ark-ui/solid'
+import { Show, children, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { progress, type ProgressVariantProps } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type ProgressVariantProps, progress } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface ProgressProps
   extends Assign<JsxStyleProps, ProgressRootProps>,
     ProgressVariantProps {
-  children?: JSX.Element
   /**
    * The type of progress to render.
    * @default linear

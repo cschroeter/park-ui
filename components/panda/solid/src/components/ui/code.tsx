@@ -1,7 +1,7 @@
-import { ark } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
+import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'
 import { styled } from 'styled-system/jsx'
-import { code } from 'styled-system/recipes'
+import { type CodeVariantProps, code } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
+export interface CodeProps extends Assign<JsxStyleProps, HTMLArkProps<'code'>>, CodeVariantProps {}
 export const Code = styled(ark.code, code)
-export interface CodeProps extends ComponentProps<typeof Code> {}

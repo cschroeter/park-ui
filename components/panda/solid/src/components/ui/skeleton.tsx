@@ -1,9 +1,8 @@
-import { ark } from '@ark-ui/solid'
-import { Show, splitProps, type JSX } from 'solid-js'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
+import { type JSX, Show, splitProps } from 'solid-js'
+import { type HTMLStyledProps, styled } from 'styled-system/jsx'
 import { skeleton } from 'styled-system/recipes'
 
-const StyledSkeleton = styled(ark.div, skeleton)
+const StyledSkeleton = styled('div', skeleton)
 
 export interface SkeletonProps extends HTMLStyledProps<'div'> {
   children?: JSX.Element

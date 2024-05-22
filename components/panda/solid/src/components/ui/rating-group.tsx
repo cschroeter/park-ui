@@ -1,15 +1,17 @@
-import { RatingGroup as ArkRatingGroup, type RatingGroupRootProps } from '@ark-ui/solid'
-import { Index, Show, children, splitProps, type JSX } from 'solid-js'
+import {
+  RatingGroup as ArkRatingGroup,
+  type Assign,
+  type RatingGroupRootProps,
+} from '@ark-ui/solid'
+import { Index, Show, children, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
   extends Assign<JsxStyleProps, RatingGroupRootProps>,
-    RatingGroupVariantProps {
-  children?: JSX.Element
-}
+    RatingGroupVariantProps {}
 
 export const RatingGroup = (props: RatingGroupProps) => {
   const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
@@ -24,22 +26,30 @@ export const RatingGroup = (props: RatingGroupProps) => {
         <ArkRatingGroup.Label class={styles.label}>{getChildren()}</ArkRatingGroup.Label>
       </Show>
       <ArkRatingGroup.Control class={styles.control}>
-        {(api) => (
-          <Index each={api().items}>
-            {(index) => (
-              <ArkRatingGroup.Item class={styles.item} index={index()}>
-                {(api) => <StarIcon isHalf={api().isHalf} />}
-              </ArkRatingGroup.Item>
-            )}
-          </Index>
-        )}
+        <ArkRatingGroup.Context>
+          {(context) => (
+            <Index each={context().items}>
+              {(index) => (
+                <ArkRatingGroup.Item index={index()}>
+                  <ArkRatingGroup.ItemContext>
+                    {(context) => (
+                      <Show when={context().highlighted} fallback={<StarIcon />}>
+                        <StarIcon isHalf={context().half} />
+                      </Show>
+                    )}
+                  </ArkRatingGroup.ItemContext>
+                </ArkRatingGroup.Item>
+              )}
+            </Index>
+          )}
+        </ArkRatingGroup.Context>
       </ArkRatingGroup.Control>
     </ArkRatingGroup.Root>
   )
 }
 
 interface Props {
-  isHalf: boolean
+  isHalf?: boolean
 }
 
 const StarIcon = (props: Props) => (
