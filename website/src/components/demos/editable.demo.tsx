@@ -10,17 +10,17 @@ export const Demo = (props: Editable.RootProps) => {
       activationMode="dblclick"
       {...props}
     >
-      {(state) => (
-        <>
-          <Editable.Label asChild>
-            <FormLabel>Framework</FormLabel>
-          </Editable.Label>
-          <Editable.Area>
-            <Editable.Input />
-            <Editable.Preview />
-          </Editable.Area>
+      <Editable.Label asChild>
+        <FormLabel>Framework</FormLabel>
+      </Editable.Label>
+      <Editable.Area>
+        <Editable.Input />
+        <Editable.Preview />
+      </Editable.Area>
+      <Editable.Context>
+        {(editable) => (
           <Editable.Control>
-            {state.isEditing ? (
+            {editable.editing ? (
               <>
                 <Editable.SubmitTrigger asChild>
                   <Button variant="link">Save</Button>
@@ -35,8 +35,8 @@ export const Demo = (props: Editable.RootProps) => {
               </Editable.EditTrigger>
             )}
           </Editable.Control>
-        </>
-      )}
+        )}
+      </Editable.Context>
     </Editable.Root>
   )
 }

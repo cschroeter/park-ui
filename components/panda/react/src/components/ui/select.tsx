@@ -4,10 +4,12 @@ import { type SelectVariantProps, select } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withRootProvider, withContext } = createStyleContext(select)
+const { withProvider, withContext } = createStyleContext(select)
 
-export interface RootProps extends Select.RootProps<Select.CollectionItem>, SelectVariantProps {}
-export const Root = withRootProvider<RootProps>(Select.Root)
+export interface RootProps
+  extends Assign<JsxStyleProps, Select.RootProps<Select.CollectionItem>>,
+    SelectVariantProps {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Select.Root, 'root')
 
 export const ClearTrigger = withContext<
   HTMLButtonElement,

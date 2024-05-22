@@ -1,5 +1,5 @@
 import { type Assign, RadioGroup } from '@ark-ui/solid'
-import { type RadioGroupVariantProps, radioButtonGroup } from 'styled-system/recipes'
+import { type RadioButtonGroupVariantProps, radioButtonGroup } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -7,7 +7,7 @@ const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 
 export interface RootProps
   extends Assign<JsxStyleProps, RadioGroup.RootProps>,
-    RadioGroupVariantProps {}
+    RadioButtonGroupVariantProps {}
 export const Root = withProvider<RootProps>(RadioGroup.Root, 'root')
 
 export const Indicator = withContext<Assign<JsxStyleProps, RadioGroup.IndicatorProps>>(

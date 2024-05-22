@@ -24,10 +24,10 @@ export const Demo = (props: Menu.RootProps) => {
       </Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>
-          <Menu.ItemGroup id="group-1">
-            <Menu.ItemGroupLabel htmlFor="group-1">My Account</Menu.ItemGroupLabel>
+          <Menu.ItemGroup>
+            <Menu.ItemGroupLabel>My Account</Menu.ItemGroupLabel>
             <Menu.Separator />
-            <Menu.Item id="profile">
+            <Menu.Item value="profile">
               <HStack gap="6" justify="space-between" flex="1">
                 <HStack gap="2">
                   <UserIcon />
@@ -38,12 +38,12 @@ export const Demo = (props: Menu.RootProps) => {
                 </Text>
               </HStack>
             </Menu.Item>
-            <Menu.Item id="billing">
+            <Menu.Item value="billing">
               <HStack gap="2">
                 <CreditCardIcon /> Billing
               </HStack>
             </Menu.Item>
-            <Menu.Item id="settings">
+            <Menu.Item value="settings">
               <HStack gap="6" justify="space-between" flex="1">
                 <HStack gap="2">
                   <SettingsIcon /> Settings
@@ -63,18 +63,18 @@ export const Demo = (props: Menu.RootProps) => {
               </Menu.TriggerItem>
               <Menu.Positioner>
                 <Menu.Content>
-                  <Menu.Item id="email">
+                  <Menu.Item value="email">
                     <HStack gap="2">
                       <MailIcon /> Email
                     </HStack>
                   </Menu.Item>
-                  <Menu.Item id="message">
+                  <Menu.Item value="message">
                     <HStack gap="2">
                       <MessageSquareIcon /> Message
                     </HStack>
                   </Menu.Item>
                   <Menu.Separator />
-                  <Menu.Item id="other">
+                  <Menu.Item value="other">
                     <HStack gap="2">
                       <PlusCircleIcon />
                       More Options...
@@ -84,7 +84,7 @@ export const Demo = (props: Menu.RootProps) => {
               </Menu.Positioner>
             </Menu.Root>
             <Menu.Separator />
-            <Menu.Item id="logout">
+            <Menu.Item value="logout">
               <HStack gap="2">
                 <LogOutIcon />
                 Logout
