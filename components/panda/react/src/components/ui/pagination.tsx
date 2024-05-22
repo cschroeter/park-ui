@@ -37,7 +37,7 @@ export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) 
                 <Button variant="outline">{page.value}</Button>
               </ArkPagination.Item>
             ) : (
-              <ArkPagination.Ellipsis key={index} index={index}>
+              <ArkPagination.Ellipsis key={index} index={index} className={styles.ellipsis}>
                 &#8230;
               </ArkPagination.Ellipsis>
             ),

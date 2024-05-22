@@ -37,6 +37,7 @@ export const Base = () => {
           }
         </FileUpload.Context>
       </FileUpload.ItemGroup>
+      <FileUpload.HiddenInput />
     </FileUpload.Root>
   )
 }
