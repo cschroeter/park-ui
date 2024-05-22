@@ -1,15 +1,13 @@
 import { Checkbox as ArkCheckbox, type CheckboxRootProps } from '@ark-ui/react/checkbox'
-import { forwardRef, type ReactNode } from 'react'
+import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { checkbox, type CheckboxVariantProps } from 'styled-system/recipes'
+import { type CheckboxVariantProps, checkbox } from 'styled-system/recipes'
 import type { Assign, JsxStyleProps } from 'styled-system/types'
 
 export interface CheckboxProps
   extends Assign<JsxStyleProps, CheckboxRootProps>,
-    CheckboxVariantProps {
-  children?: ReactNode
-}
+    CheckboxVariantProps {}
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
   const [variantProps, checkboxProps] = checkbox.splitVariantProps(props)
@@ -23,15 +21,16 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref)
       className={cx(styles.root, css(cssProps), className)}
       {...rootProps}
     >
-      {(state) => (
-        <>
-          <ArkCheckbox.Control className={styles.control}>
-            {state.isChecked && <CheckIcon />}
-            {state.isIndeterminate && <MinusIcon />}
-          </ArkCheckbox.Control>
-          {children && <ArkCheckbox.Label className={styles.label}>{children}</ArkCheckbox.Label>}
-        </>
-      )}
+      <ArkCheckbox.Control className={styles.control}>
+        <ArkCheckbox.Indicator>
+          <CheckIcon />
+        </ArkCheckbox.Indicator>
+        <ArkCheckbox.Indicator indeterminate>
+          <MinusIcon />
+        </ArkCheckbox.Indicator>
+      </ArkCheckbox.Control>
+      {children && <ArkCheckbox.Label className={styles.label}>{children}</ArkCheckbox.Label>}
+      <ArkCheckbox.HiddenInput />
     </ArkCheckbox.Root>
   )
 })

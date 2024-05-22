@@ -1,19 +1,21 @@
-import { ark } from '@ark-ui/react/factory'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
 import { alert } from 'styled-system/recipes'
+import type { Assign, JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(alert)
 
-export const Root = withProvider(styled(ark.div), 'root')
-export const Content = withContext(styled(ark.div), 'content')
-export const Description = withContext(styled(ark.div), 'description')
-export const Icon = withContext(styled(ark.svg), 'icon')
-export const Title = withContext(styled(ark.h5), 'title')
+export interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(ark.div, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface IconProps extends ComponentProps<typeof Icon> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
+export interface ContentProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
+export const Content = withContext<HTMLDivElement, ContentProps>(ark.div, 'content')
+
+export interface DescriptionProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
+export const Description = withContext<HTMLDivElement, DescriptionProps>(ark.div, 'description')
+
+export interface IconProps extends Assign<JsxStyleProps, HTMLArkProps<'svg'>> {}
+export const Icon = withContext<HTMLOrSVGElement, IconProps>(ark.svg, 'icon')
+
+export interface TitleProps extends Assign<JsxStyleProps, HTMLArkProps<'h5'>> {}
+export const Title = withContext<HTMLHeadingElement, TitleProps>(ark.h5, 'title')

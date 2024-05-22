@@ -2,6 +2,7 @@
   "name": "@park-ui/scripts",
   "private": true,
   "scripts": {
+    "api": "bun ./src/api.ts",
     "components": "bun ./src/components.ts",
     "json": "bun ./src/json.ts",
     "registry": "bun ./src/registry.ts",
