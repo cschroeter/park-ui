@@ -1,12 +1,12 @@
 import type { Assign } from '@ark-ui/react'
 import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
-import { alert } from 'styled-system/recipes'
+import { type AlertVariantProps, alert } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(alert)
 
-export interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
+export interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>>, AlertVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(ark.div, 'root')
 
 export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, HTMLArkProps<'div'>>>(

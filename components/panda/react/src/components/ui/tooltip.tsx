@@ -6,7 +6,7 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(tooltip)
 
-export interface RootProps extends Assign<JsxStyleProps, Tooltip.RootProps>, TooltipVariantProps {}
+export interface RootProps extends Tooltip.RootProps, TooltipVariantProps {}
 export const Root = withRootProvider<RootProps>(Tooltip.Root)
 
 export const Arrow = withContext<HTMLDivElement, Assign<JsxStyleProps, Tooltip.ArrowProps>>(

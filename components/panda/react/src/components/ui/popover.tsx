@@ -6,7 +6,7 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(popover)
 
-export interface RootProps extends Assign<JsxStyleProps, Popover.RootProps>, PopoverVariantProps {}
+export interface RootProps extends Popover.RootProps, PopoverVariantProps {}
 export const Root = withRootProvider<RootProps>(Popover.Root)
 
 export const Anchor = withContext<HTMLDivElement, Assign<JsxStyleProps, Popover.AnchorProps>>(

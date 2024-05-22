@@ -6,7 +6,7 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(dialog)
 
-export interface RootProps extends Assign<JsxStyleProps, Dialog.RootProps>, DialogVariantProps {}
+export interface RootProps extends Dialog.RootProps, DialogVariantProps {}
 export const Root = withRootProvider<RootProps>(Dialog.Root)
 
 export const Backdrop = withContext<HTMLDivElement, Assign<JsxStyleProps, Dialog.BackdropProps>>(

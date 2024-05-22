@@ -1,13 +1,13 @@
-import type { Assign, Dialog, HTMLArkProps } from '@ark-ui/react'
+import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import { Dialog as Drawer } from '@ark-ui/react/dialog'
 import { ark } from '@ark-ui/react/factory'
-import { type DialogVariantProps, drawer } from 'styled-system/recipes'
+import { type DrawerVariantProps, drawer } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(drawer)
 
-export interface RootProps extends Assign<JsxStyleProps, Dialog.RootProps>, DialogVariantProps {}
+export interface RootProps extends Drawer.RootProps, DrawerVariantProps {}
 export const Root = withRootProvider<RootProps>(Drawer.Root)
 
 export const Backdrop = withContext<HTMLDivElement, Assign<JsxStyleProps, Drawer.BackdropProps>>(

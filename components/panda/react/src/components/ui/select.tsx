@@ -6,9 +6,7 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(select)
 
-export interface RootProps
-  extends Assign<JsxStyleProps, Select.RootProps<Select.CollectionItem>>,
-    SelectVariantProps {}
+export interface RootProps extends Select.RootProps<Select.CollectionItem>, SelectVariantProps {}
 export const Root = withRootProvider<RootProps>(Select.Root)
 
 export const ClearTrigger = withContext<

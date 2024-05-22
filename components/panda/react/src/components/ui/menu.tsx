@@ -6,7 +6,7 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(menu)
 
-export interface RootProps extends Assign<JsxStyleProps, Menu.RootProps>, MenuVariantProps {}
+export interface RootProps extends Menu.RootProps, MenuVariantProps {}
 export const Root = withRootProvider<RootProps>(Menu.Root)
 
 export const Arrow = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.ArrowProps>>(

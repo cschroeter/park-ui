@@ -4,12 +4,12 @@ import { type ComboboxVariantProps, combobox } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withRootProvider, withContext } = createStyleContext(combobox)
+const { withProvider, withContext } = createStyleContext(combobox)
 
 export interface RootProps
   extends Assign<JsxStyleProps, Combobox.RootProps<Combobox.CollectionItem>>,
     ComboboxVariantProps {}
-export const Root = withRootProvider<RootProps>(Combobox.Root)
+export const Root = withProvider<HTMLDivElement, RootProps>(Combobox.Root, 'root')
 
 export const ClearTrigger = withContext<
   HTMLButtonElement,

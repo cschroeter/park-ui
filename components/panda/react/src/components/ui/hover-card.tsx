@@ -6,9 +6,7 @@ import { createStyleContext } from '~/lib/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(hoverCard)
 
-export interface RootProps
-  extends Assign<JsxStyleProps, HoverCard.RootProps>,
-    HoverCardVariantProps {}
+export interface RootProps extends HoverCard.RootProps, HoverCardVariantProps {}
 export const Root = withRootProvider<RootProps>(HoverCard.Root)
 
 export const Arrow = withContext<HTMLDivElement, Assign<JsxStyleProps, HoverCard.ArrowProps>>(
