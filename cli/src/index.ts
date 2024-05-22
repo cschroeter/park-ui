@@ -7,7 +7,7 @@ import { initCommand } from './commands/init'
 import { getVersion, getVersions, showUpgradeNoteWhenNeeded } from './helpers/version'
 
 const main = async () => {
-  const versions = getVersions()
+
   await yargs(hideBin(process.argv))
     .scriptName('park-ui')
     .command('init', 'Initialize a new Park UI project', initCommand)
@@ -19,6 +19,7 @@ const main = async () => {
     .version(getVersion())
     .demandCommand(1).argv
 
+  const versions = getVersions()
   await versions.then(showUpgradeNoteWhenNeeded)
 }
 main()

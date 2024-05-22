@@ -1,8 +1,8 @@
 import path from 'node:path'
 import { getTsconfig } from 'get-tsconfig'
 
-const getTsConfigPath = () => {
-  const tsconfigPath = getTsconfig()
+const getTsConfigPath = ({ searchPath, configName }: {searchPath?: string, configName?: string, } = {}) => {
+  const tsconfigPath = getTsconfig(searchPath, configName);
 
   if (!tsconfigPath) {
     throw new Error('Could not find tsconfig.json')
@@ -20,8 +20,16 @@ const getTsConfigPath = () => {
   return { baseFolder, tsconfigPath }
 }
 
-export const resolveTypescriptPath = (pathToResolve: string): string => {
-  const { tsconfigPath } = getTsConfigPath()
+export const resolveTypescriptPath = ({
+                                          pathToResolve,
+                                          searchPath,
+                                          configName
+} : {
+    pathToResolve: string,
+    searchPath?: string,
+    configName?: string
+}): string => {
+  const { tsconfigPath } = getTsConfigPath({searchPath, configName});
   const paths = tsconfigPath.config.compilerOptions?.paths ?? {}
 
   for (const [key, value] of Object.entries(paths)) {
