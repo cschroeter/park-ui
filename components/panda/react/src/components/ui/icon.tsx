@@ -1,3 +1,4 @@
+import type { Assign } from '@ark-ui/react'
 import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
 import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'

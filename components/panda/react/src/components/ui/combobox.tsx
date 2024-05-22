@@ -66,3 +66,10 @@ export {
   ComboboxContext as Context,
   type ComboboxContextProps as ContextProps,
 } from '@ark-ui/react/combobox'
+
+export type {
+  ComboboxHighlightChangeDetails as HighlightChangeDetails,
+  ComboboxInputValueChangeDetails as InputValueChangeDetails,
+  ComboboxOpenChangeDetails as OpenChangeDetails,
+  ComboboxValueChangeDetails as ValueChangeDetails,
+} from '@ark-ui/react/combobox'

@@ -19,7 +19,9 @@ export const Base = () => {
         </ColorPicker.ChannelInput>
         <ColorPicker.Trigger asChild>
           <IconButton variant="outline">
-            <ColorPicker.Swatch value={api.value} />
+            <ColorPicker.Context>
+              {(colorPicker) => <ColorPicker.Swatch value={colorPicker.value} />}
+            </ColorPicker.Context>
           </IconButton>
         </ColorPicker.Trigger>
       </ColorPicker.Control>

@@ -39,6 +39,11 @@ const main = async () => {
         )
       }
     })
+  console.log(
+    `export { ${pascalCase(component)}Context as Context, type ${pascalCase(
+      component,
+    )}ContextProps as ContextProps, } from '@ark-ui/react/${component}'\n`,
+  )
 }
 
 main()

@@ -14,17 +14,18 @@ export const Base = () => {
       defaultValue="Double click to edit"
       activationMode="dblclick"
     >
-      {(state) => (
-        <>
-          <Editable.Label asChild>
-            <FormLabel>Framework</FormLabel>
-          </Editable.Label>
-          <Editable.Area>
-            <Editable.Input />
-            <Editable.Preview />
-          </Editable.Area>
+      <Editable.Label asChild>
+        <FormLabel>Framework</FormLabel>
+      </Editable.Label>
+      <Editable.Area>
+        <Editable.Input />
+        <Editable.Preview />
+      </Editable.Area>
+
+      <Editable.Context>
+        {(editable) => (
           <Editable.Control>
-            {state.isEditing ? (
+            {editable.editing ? (
               <>
                 <Editable.SubmitTrigger asChild>
                   <Button variant="link">Save</Button>
@@ -39,8 +40,8 @@ export const Base = () => {
               </Editable.EditTrigger>
             )}
           </Editable.Control>
-        </>
-      )}
+        )}
+      </Editable.Context>
     </Editable.Root>
   )
 }

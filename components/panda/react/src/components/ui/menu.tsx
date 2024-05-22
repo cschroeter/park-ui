@@ -18,7 +18,7 @@ export const ArrowTip = withContext<HTMLDivElement, ArrowTipProps>(Menu.ArrowTip
 export interface CheckboxItemProps extends Assign<JsxStyleProps, Menu.CheckboxItemProps> {}
 export const CheckboxItem = withContext<HTMLDivElement, CheckboxItemProps>(
   Menu.CheckboxItem,
-  'checkboxItem',
+  'item',
 )
 
 export interface ContentProps extends Assign<JsxStyleProps, Menu.ContentProps> {}
@@ -63,11 +63,11 @@ export const Positioner = withContext<HTMLDivElement, PositionerProps>(
 export interface RadioItemGroupProps extends Assign<JsxStyleProps, Menu.RadioItemGroupProps> {}
 export const RadioItemGroup = withContext<HTMLDivElement, RadioItemGroupProps>(
   Menu.RadioItemGroup,
-  'radioItemGroup',
+  'itemGroup',
 )
 
 export interface RadioItemProps extends Assign<JsxStyleProps, Menu.RadioItemProps> {}
-export const RadioItem = withContext<HTMLDivElement, RadioItemProps>(Menu.RadioItem, 'radioItem')
+export const RadioItem = withContext<HTMLDivElement, RadioItemProps>(Menu.RadioItem, 'item')
 
 export interface SeparatorProps extends Assign<JsxStyleProps, Menu.SeparatorProps> {}
 export const Separator = withContext<HTMLHRElement, SeparatorProps>(Menu.Separator, 'separator')
