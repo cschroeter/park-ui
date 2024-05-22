@@ -9,76 +9,89 @@ const { withRootProvider, withContext } = createStyleContext(menu)
 export interface RootProps extends Assign<JsxStyleProps, Menu.RootProps>, MenuVariantProps {}
 export const Root = withRootProvider<RootProps>(Menu.Root)
 
-export interface ArrowProps extends Assign<JsxStyleProps, Menu.ArrowProps> {}
-export const Arrow = withContext<HTMLDivElement, ArrowProps>(Menu.Arrow, 'arrow')
+export const Arrow = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.ArrowProps>>(
+  Menu.Arrow,
+  'arrow',
+)
 
-export interface ArrowTipProps extends Assign<JsxStyleProps, Menu.ArrowTipProps> {}
-export const ArrowTip = withContext<HTMLDivElement, ArrowTipProps>(Menu.ArrowTip, 'arrowTip')
+export const ArrowTip = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.ArrowTipProps>>(
+  Menu.ArrowTip,
+  'arrowTip',
+)
 
-export interface CheckboxItemProps extends Assign<JsxStyleProps, Menu.CheckboxItemProps> {}
-export const CheckboxItem = withContext<HTMLDivElement, CheckboxItemProps>(
-  Menu.CheckboxItem,
+export const CheckboxItem = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Menu.CheckboxItemProps>
+>(Menu.CheckboxItem, 'item')
+
+export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.ContentProps>>(
+  Menu.Content,
+  'content',
+)
+
+export const ContextTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Menu.ContextTriggerProps>
+>(Menu.ContextTrigger, 'contextTrigger')
+
+export const Indicator = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.IndicatorProps>>(
+  Menu.Indicator,
+  'indicator',
+)
+
+export const ItemGroupLabel = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Menu.ItemGroupLabelProps>
+>(Menu.ItemGroupLabel, 'itemGroupLabel')
+
+export const ItemGroup = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.ItemGroupProps>>(
+  Menu.ItemGroup,
+  'itemGroup',
+)
+
+export const ItemIndicator = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Menu.ItemIndicatorProps>
+>(Menu.ItemIndicator, 'itemIndicator')
+
+export const Item = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.ItemProps>>(
+  Menu.Item,
   'item',
 )
 
-export interface ContentProps extends Assign<JsxStyleProps, Menu.ContentProps> {}
-export const Content = withContext<HTMLDivElement, ContentProps>(Menu.Content, 'content')
-
-export interface ContextTriggerProps extends Assign<JsxStyleProps, Menu.ContextTriggerProps> {}
-export const ContextTrigger = withContext<HTMLButtonElement, ContextTriggerProps>(
-  Menu.ContextTrigger,
-  'contextTrigger',
+export const ItemText = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.ItemTextProps>>(
+  Menu.ItemText,
+  'itemText',
 )
 
-export interface IndicatorProps extends Assign<JsxStyleProps, Menu.IndicatorProps> {}
-export const Indicator = withContext<HTMLDivElement, IndicatorProps>(Menu.Indicator, 'indicator')
-
-export interface ItemGroupLabelProps extends Assign<JsxStyleProps, Menu.ItemGroupLabelProps> {}
-export const ItemGroupLabel = withContext<HTMLDivElement, ItemGroupLabelProps>(
-  Menu.ItemGroupLabel,
-  'itemGroupLabel',
-)
-
-export interface ItemGroupProps extends Assign<JsxStyleProps, Menu.ItemGroupProps> {}
-export const ItemGroup = withContext<HTMLDivElement, ItemGroupProps>(Menu.ItemGroup, 'itemGroup')
-
-export interface ItemIndicatorProps extends Assign<JsxStyleProps, Menu.ItemIndicatorProps> {}
-export const ItemIndicator = withContext<HTMLDivElement, ItemIndicatorProps>(
-  Menu.ItemIndicator,
-  'itemIndicator',
-)
-
-export interface ItemProps extends Assign<JsxStyleProps, Menu.ItemProps> {}
-export const Item = withContext<HTMLDivElement, ItemProps>(Menu.Item, 'item')
-
-export interface ItemTextProps extends Assign<JsxStyleProps, Menu.ItemTextProps> {}
-export const ItemText = withContext<HTMLDivElement, ItemTextProps>(Menu.ItemText, 'itemText')
-
-export interface PositionerProps extends Assign<JsxStyleProps, Menu.PositionerProps> {}
-export const Positioner = withContext<HTMLDivElement, PositionerProps>(
+export const Positioner = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.PositionerProps>>(
   Menu.Positioner,
   'positioner',
 )
 
-export interface RadioItemGroupProps extends Assign<JsxStyleProps, Menu.RadioItemGroupProps> {}
-export const RadioItemGroup = withContext<HTMLDivElement, RadioItemGroupProps>(
-  Menu.RadioItemGroup,
-  'itemGroup',
+export const RadioItemGroup = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Menu.RadioItemGroupProps>
+>(Menu.RadioItemGroup, 'itemGroup')
+
+export const RadioItem = withContext<HTMLDivElement, Assign<JsxStyleProps, Menu.RadioItemProps>>(
+  Menu.RadioItem,
+  'item',
 )
 
-export interface RadioItemProps extends Assign<JsxStyleProps, Menu.RadioItemProps> {}
-export const RadioItem = withContext<HTMLDivElement, RadioItemProps>(Menu.RadioItem, 'item')
-
-export interface SeparatorProps extends Assign<JsxStyleProps, Menu.SeparatorProps> {}
-export const Separator = withContext<HTMLHRElement, SeparatorProps>(Menu.Separator, 'separator')
-
-export interface TriggerItemProps extends Assign<JsxStyleProps, Menu.TriggerItemProps> {}
-export const TriggerItem = withContext<HTMLDivElement, TriggerItemProps>(
-  Menu.TriggerItem,
-  'triggerItem',
+export const Separator = withContext<HTMLHRElement, Assign<JsxStyleProps, Menu.SeparatorProps>>(
+  Menu.Separator,
+  'separator',
 )
 
-export interface TriggerProps extends Assign<JsxStyleProps, Menu.TriggerProps> {}
-export const Trigger = withContext<HTMLButtonElement, TriggerProps>(Menu.Trigger, 'trigger')
+export const TriggerItem = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Menu.TriggerItemProps>
+>(Menu.TriggerItem, 'triggerItem')
+
+export const Trigger = withContext<HTMLButtonElement, Assign<JsxStyleProps, Menu.TriggerProps>>(
+  Menu.Trigger,
+  'trigger',
+)
 
 export { MenuContext as Context, type MenuContextProps as ContextProps } from '@ark-ui/react/menu'

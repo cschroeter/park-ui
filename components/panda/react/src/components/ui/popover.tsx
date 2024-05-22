@@ -9,44 +9,55 @@ const { withRootProvider, withContext } = createStyleContext(popover)
 export interface RootProps extends Assign<JsxStyleProps, Popover.RootProps>, PopoverVariantProps {}
 export const Root = withRootProvider<RootProps>(Popover.Root)
 
-export interface AnchorProps extends Assign<JsxStyleProps, Popover.AnchorProps> {}
-export const Anchor = withContext<HTMLDivElement, AnchorProps>(Popover.Anchor, 'anchor')
-
-export interface ArrowProps extends Assign<JsxStyleProps, Popover.ArrowProps> {}
-export const Arrow = withContext<HTMLDivElement, ArrowProps>(Popover.Arrow, 'arrow')
-
-export interface ArrowTipProps extends Assign<JsxStyleProps, Popover.ArrowTipProps> {}
-export const ArrowTip = withContext<HTMLDivElement, ArrowTipProps>(Popover.ArrowTip, 'arrowTip')
-
-export interface CloseTriggerProps extends Assign<JsxStyleProps, Popover.CloseTriggerProps> {}
-export const CloseTrigger = withContext<HTMLButtonElement, CloseTriggerProps>(
-  Popover.CloseTrigger,
-  'closeTrigger',
+export const Anchor = withContext<HTMLDivElement, Assign<JsxStyleProps, Popover.AnchorProps>>(
+  Popover.Anchor,
+  'anchor',
 )
 
-export interface ContentProps extends Assign<JsxStyleProps, Popover.ContentProps> {}
-export const Content = withContext<HTMLDivElement, ContentProps>(Popover.Content, 'content')
-
-export interface DescriptionProps extends Assign<JsxStyleProps, Popover.DescriptionProps> {}
-export const Description = withContext<HTMLParagraphElement, DescriptionProps>(
-  Popover.Description,
-  'description',
+export const Arrow = withContext<HTMLDivElement, Assign<JsxStyleProps, Popover.ArrowProps>>(
+  Popover.Arrow,
+  'arrow',
 )
 
-export interface IndicatorProps extends Assign<JsxStyleProps, Popover.IndicatorProps> {}
-export const Indicator = withContext<HTMLDivElement, IndicatorProps>(Popover.Indicator, 'indicator')
-
-export interface PositionerProps extends Assign<JsxStyleProps, Popover.PositionerProps> {}
-export const Positioner = withContext<HTMLDivElement, PositionerProps>(
-  Popover.Positioner,
-  'positioner',
+export const ArrowTip = withContext<HTMLDivElement, Assign<JsxStyleProps, Popover.ArrowTipProps>>(
+  Popover.ArrowTip,
+  'arrowTip',
 )
 
-export interface TitleProps extends Assign<JsxStyleProps, Popover.TitleProps> {}
-export const Title = withContext<HTMLDivElement, TitleProps>(Popover.Title, 'title')
+export const CloseTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Popover.CloseTriggerProps>
+>(Popover.CloseTrigger, 'closeTrigger')
 
-export interface TriggerProps extends Assign<JsxStyleProps, Popover.TriggerProps> {}
-export const Trigger = withContext<HTMLButtonElement, TriggerProps>(Popover.Trigger, 'trigger')
+export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, Popover.ContentProps>>(
+  Popover.Content,
+  'content',
+)
+
+export const Description = withContext<
+  HTMLParagraphElement,
+  Assign<JsxStyleProps, Popover.DescriptionProps>
+>(Popover.Description, 'description')
+
+export const Indicator = withContext<HTMLDivElement, Assign<JsxStyleProps, Popover.IndicatorProps>>(
+  Popover.Indicator,
+  'indicator',
+)
+
+export const Positioner = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Popover.PositionerProps>
+>(Popover.Positioner, 'positioner')
+
+export const Title = withContext<HTMLDivElement, Assign<JsxStyleProps, Popover.TitleProps>>(
+  Popover.Title,
+  'title',
+)
+
+export const Trigger = withContext<HTMLButtonElement, Assign<JsxStyleProps, Popover.TriggerProps>>(
+  Popover.Trigger,
+  'trigger',
+)
 
 export {
   PopoverContext as Context,

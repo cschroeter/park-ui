@@ -11,56 +11,65 @@ export interface RootProps
     ComboboxVariantProps {}
 export const Root = withRootProvider<RootProps>(Combobox.Root)
 
-export interface ClearTriggerProps extends Assign<JsxStyleProps, Combobox.ClearTriggerProps> {}
-export const ClearTrigger = withContext<HTMLButtonElement, ClearTriggerProps>(
-  Combobox.ClearTrigger,
-  'clearTrigger',
+export const ClearTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Combobox.ClearTriggerProps>
+>(Combobox.ClearTrigger, 'clearTrigger')
+
+export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, Combobox.ContentProps>>(
+  Combobox.Content,
+  'content',
 )
 
-export interface ContentProps extends Assign<JsxStyleProps, Combobox.ContentProps> {}
-export const Content = withContext<HTMLDivElement, ContentProps>(Combobox.Content, 'content')
-
-export interface ControlProps extends Assign<JsxStyleProps, Combobox.ControlProps> {}
-export const Control = withContext<HTMLDivElement, ControlProps>(Combobox.Control, 'control')
-
-export interface InputProps extends Assign<JsxStyleProps, Combobox.InputProps> {}
-export const Input = withContext<HTMLInputElement, InputProps>(Combobox.Input, 'input')
-
-export interface ItemGroupLabelProps extends Assign<JsxStyleProps, Combobox.ItemGroupLabelProps> {}
-export const ItemGroupLabel = withContext<HTMLDivElement, ItemGroupLabelProps>(
-  Combobox.ItemGroupLabel,
-  'itemGroupLabel',
+export const Control = withContext<HTMLDivElement, Assign<JsxStyleProps, Combobox.ControlProps>>(
+  Combobox.Control,
+  'control',
 )
 
-export interface ItemGroupProps extends Assign<JsxStyleProps, Combobox.ItemGroupProps> {}
-export const ItemGroup = withContext<HTMLDivElement, ItemGroupProps>(
-  Combobox.ItemGroup,
-  'itemGroup',
+export const Input = withContext<HTMLInputElement, Assign<JsxStyleProps, Combobox.InputProps>>(
+  Combobox.Input,
+  'input',
 )
 
-export interface ItemIndicatorProps extends Assign<JsxStyleProps, Combobox.ItemIndicatorProps> {}
-export const ItemIndicator = withContext<HTMLDivElement, ItemIndicatorProps>(
-  Combobox.ItemIndicator,
-  'itemIndicator',
+export const ItemGroupLabel = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Combobox.ItemGroupLabelProps>
+>(Combobox.ItemGroupLabel, 'itemGroupLabel')
+
+export const ItemGroup = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Combobox.ItemGroupProps>
+>(Combobox.ItemGroup, 'itemGroup')
+
+export const ItemIndicator = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Combobox.ItemIndicatorProps>
+>(Combobox.ItemIndicator, 'itemIndicator')
+
+export const Item = withContext<HTMLDivElement, Assign<JsxStyleProps, Combobox.ItemProps>>(
+  Combobox.Item,
+  'item',
 )
 
-export interface ItemProps extends Assign<JsxStyleProps, Combobox.ItemProps> {}
-export const Item = withContext<HTMLDivElement, ItemProps>(Combobox.Item, 'item')
-
-export interface ItemTextProps extends Assign<JsxStyleProps, Combobox.ItemTextProps> {}
-export const ItemText = withContext<HTMLDivElement, ItemTextProps>(Combobox.ItemText, 'itemText')
-
-export interface LabelProps extends Assign<JsxStyleProps, Combobox.LabelProps> {}
-export const Label = withContext<HTMLLabelElement, LabelProps>(Combobox.Label, 'label')
-
-export interface PositionerProps extends Assign<JsxStyleProps, Combobox.PositionerProps> {}
-export const Positioner = withContext<HTMLDivElement, PositionerProps>(
-  Combobox.Positioner,
-  'positioner',
+export const ItemText = withContext<HTMLDivElement, Assign<JsxStyleProps, Combobox.ItemTextProps>>(
+  Combobox.ItemText,
+  'itemText',
 )
 
-export interface TriggerProps extends Assign<JsxStyleProps, Combobox.TriggerProps> {}
-export const Trigger = withContext<HTMLButtonElement, TriggerProps>(Combobox.Trigger, 'trigger')
+export const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, Combobox.LabelProps>>(
+  Combobox.Label,
+  'label',
+)
+
+export const Positioner = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Combobox.PositionerProps>
+>(Combobox.Positioner, 'positioner')
+
+export const Trigger = withContext<HTMLButtonElement, Assign<JsxStyleProps, Combobox.TriggerProps>>(
+  Combobox.Trigger,
+  'trigger',
+)
 
 export {
   ComboboxContext as Context,

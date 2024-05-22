@@ -10,44 +10,55 @@ const { withRootProvider, withContext } = createStyleContext(drawer)
 export interface RootProps extends Assign<JsxStyleProps, Dialog.RootProps>, DialogVariantProps {}
 export const Root = withRootProvider<RootProps>(Drawer.Root)
 
-export interface BackdropProps extends Assign<JsxStyleProps, Drawer.BackdropProps> {}
-export const Backdrop = withContext<HTMLDivElement, BackdropProps>(Drawer.Backdrop, 'backdrop')
-
-export interface BodyProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
-export const Body = withContext<HTMLDivElement, BodyProps>(ark.div, 'body')
-
-export interface CloseTriggerProps extends Assign<JsxStyleProps, Drawer.CloseTriggerProps> {}
-export const CloseTrigger = withContext<HTMLButtonElement, CloseTriggerProps>(
-  Drawer.CloseTrigger,
-  'closeTrigger',
+export const Backdrop = withContext<HTMLDivElement, Assign<JsxStyleProps, Drawer.BackdropProps>>(
+  Drawer.Backdrop,
+  'backdrop',
 )
 
-export interface ContentProps extends Assign<JsxStyleProps, Drawer.ContentProps> {}
-export const Content = withContext<HTMLDivElement, ContentProps>(Drawer.Content, 'content')
-
-export interface DescriptionProps extends Assign<JsxStyleProps, Drawer.DescriptionProps> {}
-export const Description = withContext<HTMLParagraphElement, DescriptionProps>(
-  Drawer.Description,
-  'description',
+export const Body = withContext<HTMLDivElement, Assign<JsxStyleProps, HTMLArkProps<'div'>>>(
+  ark.div,
+  'body',
 )
 
-export interface FooterProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
-export const Footer = withContext<HTMLDivElement, FooterProps>(ark.div, 'footer')
+export const CloseTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Drawer.CloseTriggerProps>
+>(Drawer.CloseTrigger, 'closeTrigger')
 
-export interface HeaderProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
-export const Header = withContext<HTMLDivElement, HeaderProps>(ark.div, 'header')
-
-export interface PositionerProps extends Assign<JsxStyleProps, Drawer.PositionerProps> {}
-export const Positioner = withContext<HTMLDivElement, PositionerProps>(
-  Drawer.Positioner,
-  'positioner',
+export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, Drawer.ContentProps>>(
+  Drawer.Content,
+  'content',
 )
 
-export interface TitleProps extends Assign<JsxStyleProps, Drawer.TitleProps> {}
-export const Title = withContext<HTMLHeadingElement, TitleProps>(Drawer.Title, 'title')
+export const Description = withContext<
+  HTMLParagraphElement,
+  Assign<JsxStyleProps, Drawer.DescriptionProps>
+>(Drawer.Description, 'description')
 
-export interface TriggerProps extends Assign<JsxStyleProps, Drawer.TriggerProps> {}
-export const Trigger = withContext<HTMLButtonElement, TriggerProps>(Drawer.Trigger, 'trigger')
+export const Footer = withContext<HTMLDivElement, Assign<JsxStyleProps, HTMLArkProps<'div'>>>(
+  ark.div,
+  'footer',
+)
+
+export const Header = withContext<HTMLDivElement, Assign<JsxStyleProps, HTMLArkProps<'div'>>>(
+  ark.div,
+  'header',
+)
+
+export const Positioner = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Drawer.PositionerProps>
+>(Drawer.Positioner, 'positioner')
+
+export const Title = withContext<HTMLHeadingElement, Assign<JsxStyleProps, Drawer.TitleProps>>(
+  Drawer.Title,
+  'title',
+)
+
+export const Trigger = withContext<HTMLButtonElement, Assign<JsxStyleProps, Drawer.TriggerProps>>(
+  Drawer.Trigger,
+  'trigger',
+)
 
 export {
   DialogContext as Context,

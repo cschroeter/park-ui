@@ -11,38 +11,45 @@ export interface RootProps
     EditableVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(Editable.Root, 'root')
 
-export interface AreaProps extends Assign<JsxStyleProps, Editable.AreaProps> {}
-export const Area = withContext<HTMLDivElement, AreaProps>(Editable.Area, 'area')
-
-export interface CancelTriggerProps extends Assign<JsxStyleProps, Editable.CancelTriggerProps> {}
-export const CancelTrigger = withContext<HTMLButtonElement, CancelTriggerProps>(
-  Editable.CancelTrigger,
-  'cancelTrigger',
+export const Area = withContext<HTMLDivElement, Assign<JsxStyleProps, Editable.AreaProps>>(
+  Editable.Area,
+  'area',
 )
 
-export interface ControlProps extends Assign<JsxStyleProps, Editable.ControlProps> {}
-export const Control = withContext<HTMLDivElement, ControlProps>(Editable.Control, 'control')
+export const CancelTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Editable.CancelTriggerProps>
+>(Editable.CancelTrigger, 'cancelTrigger')
 
-export interface EditTriggerProps extends Assign<JsxStyleProps, Editable.EditTriggerProps> {}
-export const EditTrigger = withContext<HTMLButtonElement, EditTriggerProps>(
-  Editable.EditTrigger,
-  'editTrigger',
+export const Control = withContext<HTMLDivElement, Assign<JsxStyleProps, Editable.ControlProps>>(
+  Editable.Control,
+  'control',
 )
 
-export interface InputProps extends Assign<JsxStyleProps, Editable.InputProps> {}
-export const Input = withContext<HTMLInputElement, InputProps>(Editable.Input, 'input')
+export const EditTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Editable.EditTriggerProps>
+>(Editable.EditTrigger, 'editTrigger')
 
-export interface LabelProps extends Assign<JsxStyleProps, Editable.LabelProps> {}
-export const Label = withContext<HTMLLabelElement, LabelProps>(Editable.Label, 'label')
-
-export interface PreviewProps extends Assign<JsxStyleProps, Editable.PreviewProps> {}
-export const Preview = withContext<HTMLSpanElement, PreviewProps>(Editable.Preview, 'preview')
-
-export interface SubmitTriggerProps extends Assign<JsxStyleProps, Editable.SubmitTriggerProps> {}
-export const SubmitTrigger = withContext<HTMLButtonElement, SubmitTriggerProps>(
-  Editable.SubmitTrigger,
-  'submitTrigger',
+export const Input = withContext<HTMLInputElement, Assign<JsxStyleProps, Editable.InputProps>>(
+  Editable.Input,
+  'input',
 )
+
+export const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, Editable.LabelProps>>(
+  Editable.Label,
+  'label',
+)
+
+export const Preview = withContext<HTMLSpanElement, Assign<JsxStyleProps, Editable.PreviewProps>>(
+  Editable.Preview,
+  'preview',
+)
+
+export const SubmitTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Editable.SubmitTriggerProps>
+>(Editable.SubmitTrigger, 'submitTrigger')
 
 export {
   EditableContext as Context,

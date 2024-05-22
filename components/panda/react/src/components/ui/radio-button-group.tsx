@@ -11,26 +11,30 @@ export interface RootProps
     RadioGroupVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(RadioGroup.Root, 'root')
 
-export interface IndicatorProps extends Assign<JsxStyleProps, RadioGroup.IndicatorProps> {}
-export const Indicator = withContext<HTMLDivElement, IndicatorProps>(
-  RadioGroup.Indicator,
-  'indicator',
+export const Indicator = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, RadioGroup.IndicatorProps>
+>(RadioGroup.Indicator, 'indicator')
+
+export const ItemControl = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, RadioGroup.ItemControlProps>
+>(RadioGroup.ItemControl, 'itemControl')
+
+export const Item = withContext<HTMLLabelElement, Assign<JsxStyleProps, RadioGroup.ItemProps>>(
+  RadioGroup.Item,
+  'item',
 )
 
-export interface ItemControlProps extends Assign<JsxStyleProps, RadioGroup.ItemControlProps> {}
-export const ItemControl = withContext<HTMLDivElement, ItemControlProps>(
-  RadioGroup.ItemControl,
-  'itemControl',
+export const ItemText = withContext<
+  HTMLSpanElement,
+  Assign<JsxStyleProps, RadioGroup.ItemTextProps>
+>(RadioGroup.ItemText, 'itemText')
+
+export const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, RadioGroup.LabelProps>>(
+  RadioGroup.Label,
+  'label',
 )
-
-export interface ItemProps extends Assign<JsxStyleProps, RadioGroup.ItemProps> {}
-export const Item = withContext<HTMLLabelElement, ItemProps>(RadioGroup.Item, 'item')
-
-export interface ItemTextProps extends Assign<JsxStyleProps, RadioGroup.ItemTextProps> {}
-export const ItemText = withContext<HTMLSpanElement, ItemTextProps>(RadioGroup.ItemText, 'itemText')
-
-export interface LabelProps extends Assign<JsxStyleProps, RadioGroup.LabelProps> {}
-export const Label = withContext<HTMLLabelElement, LabelProps>(RadioGroup.Label, 'label')
 
 export {
   RadioGroupContext as Context,

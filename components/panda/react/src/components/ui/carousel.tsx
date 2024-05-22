@@ -11,44 +11,45 @@ export interface RootProps
     CarouselVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(Carousel.Root, 'root')
 
-export interface ControlProps extends Assign<JsxStyleProps, Carousel.ControlProps> {}
-export const Control = withContext<HTMLDivElement, ControlProps>(Carousel.Control, 'control')
-
-export interface IndicatorGroupProps extends Assign<JsxStyleProps, Carousel.IndicatorGroupProps> {}
-export const IndicatorGroup = withContext<HTMLDivElement, IndicatorGroupProps>(
-  Carousel.IndicatorGroup,
-  'indicatorGroup',
+export const Control = withContext<HTMLDivElement, Assign<JsxStyleProps, Carousel.ControlProps>>(
+  Carousel.Control,
+  'control',
 )
 
-export interface IndicatorProps extends Assign<JsxStyleProps, Carousel.IndicatorProps> {}
-export const Indicator = withContext<HTMLButtonElement, IndicatorProps>(
-  Carousel.Indicator,
-  'indicator',
+export const IndicatorGroup = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Carousel.IndicatorGroupProps>
+>(Carousel.IndicatorGroup, 'indicatorGroup')
+
+export const Indicator = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Carousel.IndicatorProps>
+>(Carousel.Indicator, 'indicator')
+
+export const ItemGroup = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Carousel.ItemGroupProps>
+>(Carousel.ItemGroup, 'itemGroup')
+
+export const Item = withContext<HTMLDivElement, Assign<JsxStyleProps, Carousel.ItemProps>>(
+  Carousel.Item,
+  'item',
 )
 
-export interface ItemGroupProps extends Assign<JsxStyleProps, Carousel.ItemGroupProps> {}
-export const ItemGroup = withContext<HTMLDivElement, ItemGroupProps>(
-  Carousel.ItemGroup,
-  'itemGroup',
+export const NextTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Carousel.NextTriggerProps>
+>(Carousel.NextTrigger, 'nextTrigger')
+
+export const PrevTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Carousel.PrevTriggerProps>
+>(Carousel.PrevTrigger, 'prevTrigger')
+
+export const Viewport = withContext<HTMLDivElement, Assign<JsxStyleProps, Carousel.ViewportProps>>(
+  Carousel.Viewport,
+  'viewport',
 )
-
-export interface ItemProps extends Assign<JsxStyleProps, Carousel.ItemProps> {}
-export const Item = withContext<HTMLDivElement, ItemProps>(Carousel.Item, 'item')
-
-export interface NextTriggerProps extends Assign<JsxStyleProps, Carousel.NextTriggerProps> {}
-export const NextTrigger = withContext<HTMLButtonElement, NextTriggerProps>(
-  Carousel.NextTrigger,
-  'nextTrigger',
-)
-
-export interface PrevTriggerProps extends Assign<JsxStyleProps, Carousel.PrevTriggerProps> {}
-export const PrevTrigger = withContext<HTMLButtonElement, PrevTriggerProps>(
-  Carousel.PrevTrigger,
-  'prevTrigger',
-)
-
-export interface ViewportProps extends Assign<JsxStyleProps, Carousel.ViewportProps> {}
-export const Viewport = withContext<HTMLDivElement, ViewportProps>(Carousel.Viewport, 'viewport')
 
 export {
   CarouselContext as Context,

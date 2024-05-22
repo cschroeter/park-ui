@@ -11,11 +11,15 @@ export interface RootProps
     CollapsibleVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(Collapsible.Root, 'root')
 
-export interface ContentProps extends Assign<JsxStyleProps, Collapsible.ContentProps> {}
-export const Content = withContext<HTMLDivElement, ContentProps>(Collapsible.Content, 'content')
+export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, Collapsible.ContentProps>>(
+  Collapsible.Content,
+  'content',
+)
 
-export interface TriggerProps extends Assign<JsxStyleProps, Collapsible.TriggerProps> {}
-export const Trigger = withContext<HTMLButtonElement, TriggerProps>(Collapsible.Trigger, 'trigger')
+export const Trigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Collapsible.TriggerProps>
+>(Collapsible.Trigger, 'trigger')
 
 export {
   CollapsibleContext as Context,

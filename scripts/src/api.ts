@@ -27,15 +27,10 @@ const main = async () => {
         )
       } else {
         console.log(
-          `export interface ${name}Props extends Assign<JsxStyleProps, ${pascalCase(
-            component,
-          )}.${name}Props> {}`,
-        )
-        console.log(
           // @ts-expect-error
-          `export const ${name} = withContext<${value.element}, ${name}Props>(${pascalCase(
+          `export const ${name} = withContext<${value.element}, Assign<JsxStyleProps, ${pascalCase(
             component,
-          )}.${name}, '${camelCase(name)}')\n`,
+          )}.${name}Props>>(${pascalCase(component)}.${name}, '${camelCase(name)}')\n`,
         )
       }
     })

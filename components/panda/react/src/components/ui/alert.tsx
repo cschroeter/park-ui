@@ -9,14 +9,22 @@ const { withProvider, withContext } = createStyleContext(alert)
 export interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
 export const Root = withProvider<HTMLDivElement, RootProps>(ark.div, 'root')
 
-export interface ContentProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
-export const Content = withContext<HTMLDivElement, ContentProps>(ark.div, 'content')
+export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, HTMLArkProps<'div'>>>(
+  ark.div,
+  'content',
+)
 
-export interface DescriptionProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>> {}
-export const Description = withContext<HTMLDivElement, DescriptionProps>(ark.div, 'description')
+export const Description = withContext<HTMLDivElement, Assign<JsxStyleProps, HTMLArkProps<'div'>>>(
+  ark.div,
+  'description',
+)
 
-export interface IconProps extends Assign<JsxStyleProps, HTMLArkProps<'svg'>> {}
-export const Icon = withContext<HTMLOrSVGElement, IconProps>(ark.svg, 'icon')
+export const Icon = withContext<HTMLOrSVGElement, Assign<JsxStyleProps, HTMLArkProps<'svg'>>>(
+  ark.svg,
+  'icon',
+)
 
-export interface TitleProps extends Assign<JsxStyleProps, HTMLArkProps<'h5'>> {}
-export const Title = withContext<HTMLHeadingElement, TitleProps>(ark.h5, 'title')
+export const Title = withContext<HTMLHeadingElement, Assign<JsxStyleProps, HTMLArkProps<'h5'>>>(
+  ark.h5,
+  'title',
+)

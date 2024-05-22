@@ -11,23 +11,30 @@ export interface RootProps
     HoverCardVariantProps {}
 export const Root = withRootProvider<RootProps>(HoverCard.Root)
 
-export interface ArrowProps extends Assign<JsxStyleProps, HoverCard.ArrowProps> {}
-export const Arrow = withContext<HTMLDivElement, ArrowProps>(HoverCard.Arrow, 'arrow')
-
-export interface ArrowTipProps extends Assign<JsxStyleProps, HoverCard.ArrowTipProps> {}
-export const ArrowTip = withContext<HTMLDivElement, ArrowTipProps>(HoverCard.ArrowTip, 'arrowTip')
-
-export interface ContentProps extends Assign<JsxStyleProps, HoverCard.ContentProps> {}
-export const Content = withContext<HTMLDivElement, ContentProps>(HoverCard.Content, 'content')
-
-export interface PositionerProps extends Assign<JsxStyleProps, HoverCard.PositionerProps> {}
-export const Positioner = withContext<HTMLDivElement, PositionerProps>(
-  HoverCard.Positioner,
-  'positioner',
+export const Arrow = withContext<HTMLDivElement, Assign<JsxStyleProps, HoverCard.ArrowProps>>(
+  HoverCard.Arrow,
+  'arrow',
 )
 
-export interface TriggerProps extends Assign<JsxStyleProps, HoverCard.TriggerProps> {}
-export const Trigger = withContext<HTMLButtonElement, TriggerProps>(HoverCard.Trigger, 'trigger')
+export const ArrowTip = withContext<HTMLDivElement, Assign<JsxStyleProps, HoverCard.ArrowTipProps>>(
+  HoverCard.ArrowTip,
+  'arrowTip',
+)
+
+export const Content = withContext<HTMLDivElement, Assign<JsxStyleProps, HoverCard.ContentProps>>(
+  HoverCard.Content,
+  'content',
+)
+
+export const Positioner = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, HoverCard.PositionerProps>
+>(HoverCard.Positioner, 'positioner')
+
+export const Trigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, HoverCard.TriggerProps>
+>(HoverCard.Trigger, 'trigger')
 
 export {
   HoverCardContext as Context,

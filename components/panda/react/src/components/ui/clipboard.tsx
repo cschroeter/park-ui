@@ -11,23 +11,30 @@ export interface RootProps
     ClipboardVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(Clipboard.Root, 'root')
 
-export interface ControlProps extends Assign<JsxStyleProps, Clipboard.ControlProps> {}
-export const Control = withContext<HTMLDivElement, ControlProps>(Clipboard.Control, 'control')
-
-export interface IndicatorProps extends Assign<JsxStyleProps, Clipboard.IndicatorProps> {}
-export const Indicator = withContext<HTMLDivElement, IndicatorProps>(
-  Clipboard.Indicator,
-  'indicator',
+export const Control = withContext<HTMLDivElement, Assign<JsxStyleProps, Clipboard.ControlProps>>(
+  Clipboard.Control,
+  'control',
 )
 
-export interface InputProps extends Assign<JsxStyleProps, Clipboard.InputProps> {}
-export const Input = withContext<HTMLInputElement, InputProps>(Clipboard.Input, 'input')
+export const Indicator = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Clipboard.IndicatorProps>
+>(Clipboard.Indicator, 'indicator')
 
-export interface LabelProps extends Assign<JsxStyleProps, Clipboard.LabelProps> {}
-export const Label = withContext<HTMLLabelElement, LabelProps>(Clipboard.Label, 'label')
+export const Input = withContext<HTMLInputElement, Assign<JsxStyleProps, Clipboard.InputProps>>(
+  Clipboard.Input,
+  'input',
+)
 
-export interface TriggerProps extends Assign<JsxStyleProps, Clipboard.TriggerProps> {}
-export const Trigger = withContext<HTMLButtonElement, TriggerProps>(Clipboard.Trigger, 'trigger')
+export const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, Clipboard.LabelProps>>(
+  Clipboard.Label,
+  'label',
+)
+
+export const Trigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Clipboard.TriggerProps>
+>(Clipboard.Trigger, 'trigger')
 
 export {
   ClipboardContext as Context,

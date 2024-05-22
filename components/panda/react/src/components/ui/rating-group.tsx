@@ -3,7 +3,7 @@ import {
   RatingGroup as ArkRatingGroup,
   type RatingGroupRootProps,
 } from '@ark-ui/react/rating-group'
-import { type ReactNode, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { type RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'
@@ -11,9 +11,7 @@ import type { JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
   extends Assign<JsxStyleProps, RatingGroupRootProps>,
-    RatingGroupVariantProps {
-  children?: ReactNode
-}
+    RatingGroupVariantProps {}
 
 export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
   const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)

@@ -11,29 +11,30 @@ export interface RootProps
     SegmentGroupVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(SegmentGroup.Root, 'root')
 
-export interface IndicatorProps extends Assign<JsxStyleProps, SegmentGroup.IndicatorProps> {}
-export const Indicator = withContext<HTMLDivElement, IndicatorProps>(
-  SegmentGroup.Indicator,
-  'indicator',
+export const Indicator = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, SegmentGroup.IndicatorProps>
+>(SegmentGroup.Indicator, 'indicator')
+
+export const ItemControl = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, SegmentGroup.ItemControlProps>
+>(SegmentGroup.ItemControl, 'itemControl')
+
+export const Item = withContext<HTMLLabelElement, Assign<JsxStyleProps, SegmentGroup.ItemProps>>(
+  SegmentGroup.Item,
+  'item',
 )
 
-export interface ItemControlProps extends Assign<JsxStyleProps, SegmentGroup.ItemControlProps> {}
-export const ItemControl = withContext<HTMLDivElement, ItemControlProps>(
-  SegmentGroup.ItemControl,
-  'itemControl',
+export const ItemText = withContext<
+  HTMLSpanElement,
+  Assign<JsxStyleProps, SegmentGroup.ItemTextProps>
+>(SegmentGroup.ItemText, 'itemText')
+
+export const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, SegmentGroup.LabelProps>>(
+  SegmentGroup.Label,
+  'label',
 )
-
-export interface ItemProps extends Assign<JsxStyleProps, SegmentGroup.ItemProps> {}
-export const Item = withContext<HTMLLabelElement, ItemProps>(SegmentGroup.Item, 'item')
-
-export interface ItemTextProps extends Assign<JsxStyleProps, SegmentGroup.ItemTextProps> {}
-export const ItemText = withContext<HTMLSpanElement, ItemTextProps>(
-  SegmentGroup.ItemText,
-  'itemText',
-)
-
-export interface LabelProps extends Assign<JsxStyleProps, SegmentGroup.LabelProps> {}
-export const Label = withContext<HTMLLabelElement, LabelProps>(SegmentGroup.Label, 'label')
 
 export {
   SegmentGroupContext as Context,

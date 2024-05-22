@@ -11,45 +11,50 @@ export interface RootProps
     TagsInputVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(TagsInput.Root, 'root')
 
-export interface ClearTriggerProps extends Assign<JsxStyleProps, TagsInput.ClearTriggerProps> {}
-export const ClearTrigger = withContext<HTMLButtonElement, ClearTriggerProps>(
-  TagsInput.ClearTrigger,
-  'clearTrigger',
+export const ClearTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, TagsInput.ClearTriggerProps>
+>(TagsInput.ClearTrigger, 'clearTrigger')
+
+export const Control = withContext<HTMLDivElement, Assign<JsxStyleProps, TagsInput.ControlProps>>(
+  TagsInput.Control,
+  'control',
 )
 
-export interface ControlProps extends Assign<JsxStyleProps, TagsInput.ControlProps> {}
-export const Control = withContext<HTMLDivElement, ControlProps>(TagsInput.Control, 'control')
-
-export interface InputProps extends Assign<JsxStyleProps, TagsInput.InputProps> {}
-export const Input = withContext<HTMLInputElement, InputProps>(TagsInput.Input, 'input')
-
-export interface ItemDeleteTriggerProps
-  extends Assign<JsxStyleProps, TagsInput.ItemDeleteTriggerProps> {}
-export const ItemDeleteTrigger = withContext<HTMLButtonElement, ItemDeleteTriggerProps>(
-  TagsInput.ItemDeleteTrigger,
-  'itemDeleteTrigger',
+export const Input = withContext<HTMLInputElement, Assign<JsxStyleProps, TagsInput.InputProps>>(
+  TagsInput.Input,
+  'input',
 )
 
-export interface ItemInputProps extends Assign<JsxStyleProps, TagsInput.ItemInputProps> {}
-export const ItemInput = withContext<HTMLInputElement, ItemInputProps>(
-  TagsInput.ItemInput,
-  'itemInput',
+export const ItemDeleteTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, TagsInput.ItemDeleteTriggerProps>
+>(TagsInput.ItemDeleteTrigger, 'itemDeleteTrigger')
+
+export const ItemInput = withContext<
+  HTMLInputElement,
+  Assign<JsxStyleProps, TagsInput.ItemInputProps>
+>(TagsInput.ItemInput, 'itemInput')
+
+export const ItemPreview = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, TagsInput.ItemPreviewProps>
+>(TagsInput.ItemPreview, 'itemPreview')
+
+export const Item = withContext<HTMLDivElement, Assign<JsxStyleProps, TagsInput.ItemProps>>(
+  TagsInput.Item,
+  'item',
 )
 
-export interface ItemPreviewProps extends Assign<JsxStyleProps, TagsInput.ItemPreviewProps> {}
-export const ItemPreview = withContext<HTMLDivElement, ItemPreviewProps>(
-  TagsInput.ItemPreview,
-  'itemPreview',
+export const ItemText = withContext<
+  HTMLSpanElement,
+  Assign<JsxStyleProps, TagsInput.ItemTextProps>
+>(TagsInput.ItemText, 'itemText')
+
+export const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, TagsInput.LabelProps>>(
+  TagsInput.Label,
+  'label',
 )
-
-export interface ItemProps extends Assign<JsxStyleProps, TagsInput.ItemProps> {}
-export const Item = withContext<HTMLDivElement, ItemProps>(TagsInput.Item, 'item')
-
-export interface ItemTextProps extends Assign<JsxStyleProps, TagsInput.ItemTextProps> {}
-export const ItemText = withContext<HTMLSpanElement, ItemTextProps>(TagsInput.ItemText, 'itemText')
-
-export interface LabelProps extends Assign<JsxStyleProps, TagsInput.LabelProps> {}
-export const Label = withContext<HTMLLabelElement, LabelProps>(TagsInput.Label, 'label')
 
 export {
   TagsInputContext as Context,

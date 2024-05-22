@@ -9,23 +9,37 @@ const { withProvider, withContext } = createStyleContext(table)
 export interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'table'>> {}
 export const Root = withProvider<HTMLTableElement, RootProps>(ark.table, 'root')
 
-export interface BodyProps extends Assign<JsxStyleProps, HTMLArkProps<'tbody'>> {}
-export const Body = withContext<HTMLTableSectionElement, BodyProps>(ark.tbody, 'body')
+export const Body = withContext<
+  HTMLTableSectionElement,
+  Assign<JsxStyleProps, HTMLArkProps<'tbody'>>
+>(ark.tbody, 'body')
 
-export interface CaptionProps extends Assign<JsxStyleProps, HTMLArkProps<'caption'>> {}
-export const Caption = withContext<HTMLTableCaptionElement, CaptionProps>(ark.caption, 'caption')
+export const Caption = withContext<
+  HTMLTableCaptionElement,
+  Assign<JsxStyleProps, HTMLArkProps<'caption'>>
+>(ark.caption, 'caption')
 
-export interface CellProps extends Assign<JsxStyleProps, HTMLArkProps<'td'>> {}
-export const Cell = withContext<HTMLTableCellElement, CellProps>(ark.td, 'cell')
+export const Cell = withContext<HTMLTableCellElement, Assign<JsxStyleProps, HTMLArkProps<'td'>>>(
+  ark.td,
+  'cell',
+)
 
-export interface FootProps extends Assign<JsxStyleProps, HTMLArkProps<'tfoot'>> {}
-export const Foot = withContext<HTMLTableSectionElement, FootProps>(ark.tfoot, 'footer')
+export const Foot = withContext<
+  HTMLTableSectionElement,
+  Assign<JsxStyleProps, HTMLArkProps<'tfoot'>>
+>(ark.tfoot, 'footer')
 
-export interface HeadProps extends Assign<JsxStyleProps, HTMLArkProps<'thead'>> {}
-export const Head = withContext<HTMLTableSectionElement, HeadProps>(ark.thead, 'head')
+export const Head = withContext<
+  HTMLTableSectionElement,
+  Assign<JsxStyleProps, HTMLArkProps<'thead'>>
+>(ark.thead, 'head')
 
-export interface HeaderProps extends Assign<JsxStyleProps, HTMLArkProps<'th'>> {}
-export const Header = withContext<HTMLTableCellElement, HeaderProps>(ark.th, 'header')
+export const Header = withContext<HTMLTableCellElement, Assign<JsxStyleProps, HTMLArkProps<'th'>>>(
+  ark.th,
+  'header',
+)
 
-export interface RowProps extends Assign<JsxStyleProps, HTMLArkProps<'tr'>> {}
-export const Row = withContext<HTMLTableRowElement, RowProps>(ark.tr, 'row')
+export const Row = withContext<HTMLTableRowElement, Assign<JsxStyleProps, HTMLArkProps<'tr'>>>(
+  ark.tr,
+  'row',
+)

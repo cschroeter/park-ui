@@ -11,26 +11,25 @@ export interface RootProps
     AccordionVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(Accordion.Root, 'root')
 
-export interface ItemContentProps extends Assign<JsxStyleProps, Accordion.ItemContentProps> {}
-export const ItemContent = withContext<HTMLDivElement, ItemContentProps>(
-  Accordion.ItemContent,
-  'itemContent',
+export const ItemContent = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Accordion.ItemContentProps>
+>(Accordion.ItemContent, 'itemContent')
+
+export const ItemIndicator = withContext<
+  HTMLDivElement,
+  Assign<JsxStyleProps, Accordion.ItemIndicatorProps>
+>(Accordion.ItemIndicator, 'itemIndicator')
+
+export const Item = withContext<HTMLDivElement, Assign<JsxStyleProps, Accordion.ItemProps>>(
+  Accordion.Item,
+  'item',
 )
 
-export interface ItemIndicatorProps extends Assign<JsxStyleProps, Accordion.ItemIndicatorProps> {}
-export const ItemIndicator = withContext<HTMLDivElement, ItemIndicatorProps>(
-  Accordion.ItemIndicator,
-  'itemIndicator',
-)
-
-export interface ItemProps extends Assign<JsxStyleProps, Accordion.ItemProps> {}
-export const Item = withContext<HTMLDivElement, ItemProps>(Accordion.Item, 'item')
-
-export interface ItemTriggerProps extends Assign<JsxStyleProps, Accordion.ItemTriggerProps> {}
-export const ItemTrigger = withContext<HTMLButtonElement, ItemTriggerProps>(
-  Accordion.ItemTrigger,
-  'itemTrigger',
-)
+export const ItemTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Accordion.ItemTriggerProps>
+>(Accordion.ItemTrigger, 'itemTrigger')
 
 export {
   AccordionContext as Context,

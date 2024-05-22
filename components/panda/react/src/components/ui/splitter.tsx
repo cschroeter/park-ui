@@ -11,14 +11,15 @@ export interface RootProps
     SplitterVariantProps {}
 export const Root = withProvider<HTMLDivElement, RootProps>(Splitter.Root, 'root')
 
-export interface PanelProps extends Assign<JsxStyleProps, Splitter.PanelProps> {}
-export const Panel = withContext<HTMLDivElement, PanelProps>(Splitter.Panel, 'panel')
-
-export interface ResizeTriggerProps extends Assign<JsxStyleProps, Splitter.ResizeTriggerProps> {}
-export const ResizeTrigger = withContext<HTMLButtonElement, ResizeTriggerProps>(
-  Splitter.ResizeTrigger,
-  'resizeTrigger',
+export const Panel = withContext<HTMLDivElement, Assign<JsxStyleProps, Splitter.PanelProps>>(
+  Splitter.Panel,
+  'panel',
 )
+
+export const ResizeTrigger = withContext<
+  HTMLButtonElement,
+  Assign<JsxStyleProps, Splitter.ResizeTriggerProps>
+>(Splitter.ResizeTrigger, 'resizeTrigger')
 
 export {
   SplitterContext as Context,
