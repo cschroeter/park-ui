@@ -1,11 +1,15 @@
+import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { forwardRef, type ReactNode } from 'react'
-import { styled, type HTMLStyledProps } from 'styled-system/jsx'
-import { skeleton } from 'styled-system/recipes'
+import { type ReactNode, forwardRef } from 'react'
+import { styled } from 'styled-system/jsx'
+import { type SkeletonVariantProps, skeleton } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 const StyledSkeleton = styled(ark.div, skeleton)
 
-export interface SkeletonProps extends HTMLStyledProps<'div'> {
+export interface SkeletonProps
+  extends Assign<JsxStyleProps, HTMLArkProps<'div'>>,
+    SkeletonVariantProps {
   children?: ReactNode
   /**
    *

@@ -1,12 +1,14 @@
 import type { Assign } from '@ark-ui/react'
 import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
-import { table } from 'styled-system/recipes'
+import { type TableVariantProps, table } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(table)
 
-export interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'table'>> {}
+export interface RootProps
+  extends Assign<JsxStyleProps, HTMLArkProps<'table'>>,
+    TableVariantProps {}
 export const Root = withProvider<HTMLTableElement, RootProps>(ark.table, 'root')
 
 export const Body = withContext<
