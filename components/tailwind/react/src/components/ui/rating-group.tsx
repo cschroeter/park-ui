@@ -2,8 +2,8 @@ import {
   RatingGroup as ArkRatingGroup,
   type RatingGroupRootProps,
 } from '@ark-ui/react/rating-group'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type ReactNode, forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {
   children?: ReactNode
@@ -11,19 +11,23 @@ export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVaria
 
 export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
   const { children, className, size, ...rootProps } = props
-  const { root, label, control, item } = styles({ size })
+  const { root, label, control, item } = ratingGroup({ size })
 
   return (
     <ArkRatingGroup.Root ref={ref} className={root({ className })} {...rootProps}>
       {children && <ArkRatingGroup.Label className={label()}>{children}</ArkRatingGroup.Label>}
       <ArkRatingGroup.Control className={control()}>
-        {({ items }) =>
-          items.map((index) => (
-            <ArkRatingGroup.Item className={item()} key={index} index={index}>
-              {({ isHalf }) => <Icon isHalf={isHalf} />}
-            </ArkRatingGroup.Item>
-          ))
-        }
+        <ArkRatingGroup.Context>
+          {({ items }) =>
+            items.map((index) => (
+              <ArkRatingGroup.Item className={item()} key={index} index={index}>
+                <ArkRatingGroup.ItemContext>
+                  {(item) => <StarIcon half={item.half} />}
+                </ArkRatingGroup.ItemContext>
+              </ArkRatingGroup.Item>
+            ))
+          }
+        </ArkRatingGroup.Context>
       </ArkRatingGroup.Control>
     </ArkRatingGroup.Root>
   )
@@ -31,9 +35,9 @@ export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, 
 
 RatingGroup.displayName = 'RatingGroup'
 
-type RatingGroupVariantProps = VariantProps<typeof styles>
+type RatingGroupVariantProps = VariantProps<typeof ratingGroup>
 
-const styles = tv(
+const ratingGroup = tv(
   {
     base: 'ratingGroup',
     defaultVariants: { size: 'md' },
@@ -70,10 +74,10 @@ const styles = tv(
 )
 
 type IconProps = {
-  isHalf: boolean
+  half: boolean
 }
 
-const Icon = (props: IconProps) => (
+const StarIcon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -85,7 +89,7 @@ const Icon = (props: IconProps) => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <title>Star</title>
+    <title>Star Icon</title>
     <defs>
       <linearGradient id="half">
         <stop offset="50%" stop-color="var(--colors-color-palette-default)" />
@@ -93,7 +97,7 @@ const Icon = (props: IconProps) => (
       </linearGradient>
     </defs>
     <polygon
-      fill={props.isHalf ? 'url(#half)' : 'inherit'}
+      fill={props.half ? 'url(#half)' : 'inherit'}
       points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
     />
   </svg>

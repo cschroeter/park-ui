@@ -1,9 +1,8 @@
 import { Progress as ArkProgress, type ProgressRootProps } from '@ark-ui/react/progress'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface ProgressProps extends ProgressRootProps, ProgressVariantProps {
-  children?: ReactNode
   /**
    * The type of progress to render.
    * @default linear

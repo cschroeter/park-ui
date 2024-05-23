@@ -14,28 +14,31 @@ const main = async () => {
     .sort(([key]) => (key === 'Root' ? -1 : 1))
     .map(([name, value]) => {
       if (name === 'Root') {
+        // export interface RootProps extends Accordion.RootProps, VariantProps<typeof accordion> {}
         console.log(
-          `export interface ${name}Props extends Assign<JsxStyleProps, ${pascalCase(
+          `export interface ${name}Props extends ${pascalCase(
             component,
-          )}.${name}Props>, ${pascalCase(component)}VariantProps {}`,
+          )}.${name}Props, VariantProps<typeof ${component}> {}`,
         )
         console.log(
-          `export const ${name} = withProvider<RootProps>(${pascalCase(
+          //@ts-expect-error
+          `export const ${name} = withProvider<${value.element},RootProps>(${pascalCase(
             component,
           )}.${name}, '${camelCase(name)}')\n`,
         )
       } else {
         console.log(
-          `export const ${name} = withContext<Assign<JsxStyleProps, ${pascalCase(
+          // @ts-expect-error
+          `export const ${name} = withContext<${value.element}, ${pascalCase(
             component,
-          )}.${name}Props>>(${pascalCase(component)}.${name}, '${camelCase(name)}')\n`,
+          )}.${name}Props>(${pascalCase(component)}.${name}, '${camelCase(name)}')\n`,
         )
       }
     })
   console.log(
     `export { ${pascalCase(component)}Context as Context, type ${pascalCase(
       component,
-    )}ContextProps as ContextProps, } from '@ark-ui/solid'\n`,
+    )}ContextProps as ContextProps, } from '@ark-ui/react'\n`,
   )
 }
 

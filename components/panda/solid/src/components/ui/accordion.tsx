@@ -29,7 +29,9 @@ export const ItemTrigger = withContext<Assign<JsxStyleProps, Accordion.ItemTrigg
 
 export {
   AccordionContext as Context,
+  AccordionItemContext as ItemContext,
   type AccordionContextProps as ContextProps,
+  type AccordionItemContextProps as ItemContextProps,
 } from '@ark-ui/solid'
 
 export type {

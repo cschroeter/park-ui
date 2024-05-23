@@ -15,36 +15,32 @@ export const Base = () => {
       value="Double click to edit"
       activationMode="dblclick"
     >
-      <Editable.Context>
-        {(api) => (
-          <>
-            <Editable.Label asChild={(props) => <FormLabel {...props()} />}>
-              Framework
-            </Editable.Label>
-            <Editable.Area>
-              <Editable.Input />
-              <Editable.Preview />
-            </Editable.Area>
-            <Editable.Control>
-              <Show
-                when={api().editing}
-                fallback={
-                  <Editable.EditTrigger asChild={(props) => <Button {...props()} variant="link" />}>
-                    Edit
-                  </Editable.EditTrigger>
-                }
-              >
-                <Editable.SubmitTrigger asChild={(props) => <Button {...props()} variant="link" />}>
-                  Save
-                </Editable.SubmitTrigger>
-                <Editable.CancelTrigger asChild={(props) => <Button {...props()} variant="link" />}>
-                  Cancel
-                </Editable.CancelTrigger>
-              </Show>
-            </Editable.Control>
-          </>
-        )}
-      </Editable.Context>
+      <Editable.Label asChild={(props) => <FormLabel {...props()} />}>Framework</Editable.Label>
+      <Editable.Area>
+        <Editable.Input />
+        <Editable.Preview />
+      </Editable.Area>
+      <Editable.Control>
+        <Editable.Context>
+          {(api) => (
+            <Show
+              when={api().editing}
+              fallback={
+                <Editable.EditTrigger asChild={(props) => <Button {...props()} variant="link" />}>
+                  Edit
+                </Editable.EditTrigger>
+              }
+            >
+              <Editable.SubmitTrigger asChild={(props) => <Button {...props()} variant="link" />}>
+                Save
+              </Editable.SubmitTrigger>
+              <Editable.CancelTrigger asChild={(props) => <Button {...props()} variant="link" />}>
+                Cancel
+              </Editable.CancelTrigger>
+            </Show>
+          )}
+        </Editable.Context>
+      </Editable.Control>
     </Editable.Root>
   )
 }

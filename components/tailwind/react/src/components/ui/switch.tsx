@@ -1,10 +1,8 @@
 import { Switch as ArkSwitch, type SwitchRootProps } from '@ark-ui/react/switch'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface SwitchProps extends SwitchRootProps, SwitchRecipeVariantProps {
-  children?: ReactNode
-}
+export interface SwitchProps extends SwitchRootProps, SwitchRecipeVariantProps {}
 
 export const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {
   const { children, className, size, ...rootProps } = props
@@ -16,6 +14,7 @@ export const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => 
         <ArkSwitch.Thumb className={thumb()} />
       </ArkSwitch.Control>
       {children && <ArkSwitch.Label className={label()}>{children}</ArkSwitch.Label>}
+      <ArkSwitch.HiddenInput />
     </ArkSwitch.Root>
   )
 })

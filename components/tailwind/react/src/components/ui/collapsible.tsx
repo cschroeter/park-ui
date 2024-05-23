@@ -1,9 +1,8 @@
 import { Collapsible } from '@ark-ui/react/collapsible'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const collapsible = tv(
   {
     base: 'collapsible',
     slots: {
@@ -15,12 +14,22 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(collapsible)
 
-export const Root = withProvider(Collapsible.Root, 'root')
-export const Content = withContext(Collapsible.Content, 'content')
-export const Trigger = withContext(Collapsible.Trigger, 'trigger')
+export interface RootProps extends Collapsible.RootProps, VariantProps<typeof collapsible> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Collapsible.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Content = withContext<HTMLDivElement, Collapsible.ContentProps>(
+  Collapsible.Content,
+  'content',
+)
+
+export const Trigger = withContext<HTMLButtonElement, Collapsible.TriggerProps>(
+  Collapsible.Trigger,
+  'trigger',
+)
+
+export {
+  CollapsibleContext as Context,
+  type CollapsibleContextProps as ContextProps,
+} from '@ark-ui/react'

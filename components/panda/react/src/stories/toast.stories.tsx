@@ -35,7 +35,7 @@ export const Basic = () => {
             <Toast.Title>{toast.title}</Toast.Title>
             <Toast.Description>{toast.description}</Toast.Description>
             <Toast.ActionTrigger asChild>
-              <Button variant="link" size="sm" mt="2">
+              <Button variant="link" size="sm">
                 Action
               </Button>
             </Toast.ActionTrigger>

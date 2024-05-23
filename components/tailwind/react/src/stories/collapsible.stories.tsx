@@ -8,7 +8,7 @@ const meta: Meta = {
 export default meta
 
 export const Basic = () => (
-  <Collapsible.Root class="gap-3">
+  <Collapsible.Root className="gap-3">
     <Collapsible.Trigger asChild>
       <Button variant="outline">Toggle</Button>
     </Collapsible.Trigger>

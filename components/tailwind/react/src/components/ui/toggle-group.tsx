@@ -1,9 +1,8 @@
 import { ToggleGroup } from '@ark-ui/react/toggle-group'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const toggleGroup = tv(
   {
     base: 'toggleGroup',
     defaultVariants: { size: 'md', variant: 'outline' },
@@ -28,10 +27,14 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(toggleGroup)
 
-export const Root = withProvider(ToggleGroup.Root, 'root')
-export const Item = withContext(ToggleGroup.Item, 'item')
+export interface RootProps extends ToggleGroup.RootProps, VariantProps<typeof toggleGroup> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(ToggleGroup.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ItemProps extends ComponentProps<typeof Item> {}
+export const Item = withContext<HTMLButtonElement, ToggleGroup.ItemProps>(ToggleGroup.Item, 'item')
+
+export {
+  ToggleGroupContext as Context,
+  type ToggleGroupContextProps as ContextProps,
+} from '@ark-ui/react'

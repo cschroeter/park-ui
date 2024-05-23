@@ -1,9 +1,8 @@
-import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface SkeletonProps extends HTMLArkProps<'div'>, SkeletonVariantProps {
-  children?: ReactNode
   /**
    *
    * @default false

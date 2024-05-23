@@ -1,9 +1,8 @@
 import { Menu } from '@ark-ui/react/menu'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const menu = tv(
   {
     base: 'menu',
     defaultVariants: { size: 'md' },
@@ -99,32 +98,76 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withRootProvider, withContext } = createStyleContext(menu)
 
-export const Root = withProvider(Menu.Root)
-export const Arrow = withContext(Menu.Arrow, 'arrow')
-export const ArrowTip = withContext(Menu.ArrowTip, 'arrowTip')
-export const Content = withContext(Menu.Content, 'content')
-export const ContextTrigger = withContext(Menu.ContextTrigger, 'contextTrigger')
-export const Item = withContext(Menu.Item, 'item')
-export const ItemGroup = withContext(Menu.ItemGroup, 'itemGroup')
-export const ItemGroupLabel = withContext(Menu.ItemGroupLabel, 'itemGroupLabel')
-export const OptionItem = withContext(Menu.OptionItem, 'optionItem')
-export const Positioner = withContext(Menu.Positioner, 'positioner')
-export const Separator = withContext(Menu.Separator, 'separator')
-export const Trigger = withContext(Menu.Trigger, 'trigger')
-export const TriggerItem = withContext(Menu.TriggerItem, 'triggerItem')
+export interface RootProps extends Menu.RootProps, VariantProps<typeof menu> {}
+export const Root = withRootProvider<RootProps>(Menu.Root)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ArrowProps extends ComponentProps<typeof Arrow> {}
-export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface ContextTriggerProps extends ComponentProps<typeof ContextTrigger> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
-export interface OptionItemProps extends ComponentProps<typeof OptionItem> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface SeparatorProps extends ComponentProps<typeof Separator> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
-export interface TriggerItemProps extends ComponentProps<typeof TriggerItem> {}
+export const Arrow = withContext<HTMLDivElement, Menu.ArrowProps>(Menu.Arrow, 'arrow')
+
+export const ArrowTip = withContext<HTMLDivElement, Menu.ArrowTipProps>(Menu.ArrowTip, 'arrowTip')
+
+export const CheckboxItem = withContext<HTMLDivElement, Menu.CheckboxItemProps>(
+  Menu.CheckboxItem,
+  'item',
+)
+
+export const Content = withContext<HTMLDivElement, Menu.ContentProps>(Menu.Content, 'content')
+
+export const ContextTrigger = withContext<HTMLButtonElement, Menu.ContextTriggerProps>(
+  Menu.ContextTrigger,
+  'contextTrigger',
+)
+
+export const Indicator = withContext<HTMLDivElement, Menu.IndicatorProps>(
+  Menu.Indicator,
+  'indicator',
+)
+
+export const ItemGroupLabel = withContext<HTMLDivElement, Menu.ItemGroupLabelProps>(
+  Menu.ItemGroupLabel,
+  'itemGroupLabel',
+)
+
+export const ItemGroup = withContext<HTMLDivElement, Menu.ItemGroupProps>(
+  Menu.ItemGroup,
+  'itemGroup',
+)
+
+export const ItemIndicator = withContext<HTMLDivElement, Menu.ItemIndicatorProps>(
+  Menu.ItemIndicator,
+  'optionItemIndicator',
+)
+
+export const Item = withContext<HTMLDivElement, Menu.ItemProps>(Menu.Item, 'item')
+
+export const ItemText = withContext<HTMLDivElement, Menu.ItemTextProps>(
+  Menu.ItemText,
+  'optionItemText',
+)
+
+export const Positioner = withContext<HTMLDivElement, Menu.PositionerProps>(
+  Menu.Positioner,
+  'positioner',
+)
+
+export const RadioItemGroup = withContext<HTMLDivElement, Menu.RadioItemGroupProps>(
+  Menu.RadioItemGroup,
+  'itemGroup',
+)
+
+export const RadioItem = withContext<HTMLDivElement, Menu.RadioItemProps>(Menu.RadioItem, 'item')
+
+export const Separator = withContext<HTMLHRElement, Menu.SeparatorProps>(
+  Menu.Separator,
+  'separator',
+)
+
+export const TriggerItem = withContext<HTMLDivElement, Menu.TriggerItemProps>(
+  Menu.TriggerItem,
+  'triggerItem',
+)
+
+export const Trigger = withContext<HTMLButtonElement, Menu.TriggerProps>(Menu.Trigger, 'trigger')
+
+export { MenuContext as Context, type MenuContextProps as ContextProps } from '@ark-ui/react'

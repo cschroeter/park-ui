@@ -1,9 +1,8 @@
 import { Tooltip } from '@ark-ui/react/tooltip'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const tooltip = tv(
   {
     base: 'tooltip',
     slots: {
@@ -17,18 +16,28 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withRootProvider, withContext } = createStyleContext(tooltip)
 
-export const Root = withProvider(Tooltip.Root)
-export const Arrow = withContext(Tooltip.Arrow, 'arrow')
-export const ArrowTip = withContext(Tooltip.ArrowTip, 'arrowTip')
-export const Content = withContext(Tooltip.Content, 'content')
-export const Positioner = withContext(Tooltip.Positioner, 'positioner')
-export const Trigger = withContext(Tooltip.Trigger, 'trigger')
+export interface RootProps extends Tooltip.RootProps, VariantProps<typeof tooltip> {}
+export const Root = withRootProvider<RootProps>(Tooltip.Root)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ArrowProps extends ComponentProps<typeof Arrow> {}
-export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Arrow = withContext<HTMLDivElement, Tooltip.ArrowProps>(Tooltip.Arrow, 'arrow')
+
+export const ArrowTip = withContext<HTMLDivElement, Tooltip.ArrowTipProps>(
+  Tooltip.ArrowTip,
+  'arrowTip',
+)
+
+export const Content = withContext<HTMLDivElement, Tooltip.ContentProps>(Tooltip.Content, 'content')
+
+export const Positioner = withContext<HTMLDivElement, Tooltip.PositionerProps>(
+  Tooltip.Positioner,
+  'positioner',
+)
+
+export const Trigger = withContext<HTMLButtonElement, Tooltip.TriggerProps>(
+  Tooltip.Trigger,
+  'trigger',
+)
+
+export { TooltipContext as Context, type TooltipContextProps as ContextProps } from '@ark-ui/react'

@@ -19,10 +19,10 @@ export const Checkbox = (props: CheckboxProps) => {
   return (
     <ArkCheckbox.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
       <ArkCheckbox.Control class={styles.control}>
-        <ArkCheckbox.Indicator>
+        <ArkCheckbox.Indicator class={styles.indicator}>
           <CheckIcon />
         </ArkCheckbox.Indicator>
-        <ArkCheckbox.Indicator indeterminate>
+        <ArkCheckbox.Indicator indeterminate class={styles.indicator}>
           <MinusIcon />
         </ArkCheckbox.Indicator>
       </ArkCheckbox.Control>

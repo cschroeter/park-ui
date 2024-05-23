@@ -29,13 +29,13 @@ export const Base = () => {
           </Table.Row>
         ))}
       </Table.Body>
-      <Table.Footer>
+      <Table.Foot>
         <Table.Row>
           <Table.Cell colSpan={2}>Totals</Table.Cell>
           <Table.Cell>87</Table.Cell>
           <Table.Cell className="text-right">$34,163.00</Table.Cell>
         </Table.Row>
-      </Table.Footer>
+      </Table.Foot>
     </Table.Root>
   )
 }

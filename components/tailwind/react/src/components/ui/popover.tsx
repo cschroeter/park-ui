@@ -1,9 +1,8 @@
 import { Popover } from '@ark-ui/react/popover'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const popover = tv(
   {
     base: 'popover',
     slots: {
@@ -22,28 +21,47 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withRootProvider, withContext } = createStyleContext(popover)
 
-export const Root = withProvider(Popover.Root)
-export const Anchor = withContext(Popover.Anchor, 'anchor')
-export const Arrow = withContext(Popover.Arrow, 'arrow')
-export const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')
-export const CloseTrigger = withContext(Popover.CloseTrigger, 'closeTrigger')
-export const Content = withContext(Popover.Content, 'content')
-export const Description = withContext(Popover.Description, 'description')
-export const Indicator = withContext(Popover.Indicator, 'indicator')
-export const Positioner = withContext(Popover.Positioner, 'positioner')
-export const Title = withContext(Popover.Title, 'title')
-export const Trigger = withContext(Popover.Trigger, 'trigger')
+export interface RootProps extends Popover.RootProps, VariantProps<typeof popover> {}
+export const Root = withRootProvider<RootProps>(Popover.Root)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface AnchorProps extends ComponentProps<typeof Anchor> {}
-export interface ArrowProps extends ComponentProps<typeof Arrow> {}
-export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
-export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Anchor = withContext<HTMLDivElement, Popover.AnchorProps>(Popover.Anchor, 'anchor')
+
+export const Arrow = withContext<HTMLDivElement, Popover.ArrowProps>(Popover.Arrow, 'arrow')
+
+export const ArrowTip = withContext<HTMLDivElement, Popover.ArrowTipProps>(
+  Popover.ArrowTip,
+  'arrowTip',
+)
+
+export const CloseTrigger = withContext<HTMLButtonElement, Popover.CloseTriggerProps>(
+  Popover.CloseTrigger,
+  'closeTrigger',
+)
+
+export const Content = withContext<HTMLDivElement, Popover.ContentProps>(Popover.Content, 'content')
+
+export const Description = withContext<HTMLParagraphElement, Popover.DescriptionProps>(
+  Popover.Description,
+  'description',
+)
+
+export const Indicator = withContext<HTMLDivElement, Popover.IndicatorProps>(
+  Popover.Indicator,
+  'indicator',
+)
+
+export const Positioner = withContext<HTMLDivElement, Popover.PositionerProps>(
+  Popover.Positioner,
+  'positioner',
+)
+
+export const Title = withContext<HTMLDivElement, Popover.TitleProps>(Popover.Title, 'title')
+
+export const Trigger = withContext<HTMLButtonElement, Popover.TriggerProps>(
+  Popover.Trigger,
+  'trigger',
+)
+
+export { PopoverContext as Context, type PopoverContextProps as ContextProps } from '@ark-ui/react'

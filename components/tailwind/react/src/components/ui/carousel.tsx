@@ -1,9 +1,8 @@
 import { Carousel } from '@ark-ui/react/carousel'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const carousel = tv(
   {
     base: 'carousel',
     defaultVariants: { size: 'md' },
@@ -47,24 +46,50 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
 
-export const Root = withProvider(Carousel.Root, 'root')
-export const Control = withContext(Carousel.Control, 'control')
-export const Indicator = withContext(Carousel.Indicator, 'indicator')
-export const IndicatorGroup = withContext(Carousel.IndicatorGroup, 'indicatorGroup')
-export const Item = withContext(Carousel.Item, 'item')
-export const ItemGroup = withContext(Carousel.ItemGroup, 'itemGroup')
-export const NextTrigger = withContext(Carousel.NextTrigger, 'nextTrigger')
-export const PrevTrigger = withContext(Carousel.PrevTrigger, 'prevTrigger')
-export const Viewport = withContext(Carousel.Viewport, 'viewport')
+const { withProvider, withContext } = createStyleContext(carousel)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ControlProps extends ComponentProps<typeof Control> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface IndicatorGroupProps extends ComponentProps<typeof IndicatorGroup> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface NextTriggerProps extends ComponentProps<typeof NextTrigger> {}
-export interface PrevTriggerProps extends ComponentProps<typeof PrevTrigger> {}
-export interface ViewportProps extends ComponentProps<typeof Viewport> {}
+export interface RootProps extends Carousel.RootProps, VariantProps<typeof carousel> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Carousel.Root, 'root')
+
+export const Control = withContext<HTMLDivElement, Carousel.ControlProps>(
+  Carousel.Control,
+  'control',
+)
+
+export const IndicatorGroup = withContext<HTMLDivElement, Carousel.IndicatorGroupProps>(
+  Carousel.IndicatorGroup,
+  'indicatorGroup',
+)
+
+export const Indicator = withContext<HTMLButtonElement, Carousel.IndicatorProps>(
+  Carousel.Indicator,
+  'indicator',
+)
+
+export const ItemGroup = withContext<HTMLDivElement, Carousel.ItemGroupProps>(
+  Carousel.ItemGroup,
+  'itemGroup',
+)
+
+export const Item = withContext<HTMLDivElement, Carousel.ItemProps>(Carousel.Item, 'item')
+
+export const NextTrigger = withContext<HTMLButtonElement, Carousel.NextTriggerProps>(
+  Carousel.NextTrigger,
+  'nextTrigger',
+)
+
+export const PrevTrigger = withContext<HTMLButtonElement, Carousel.PrevTriggerProps>(
+  Carousel.PrevTrigger,
+  'prevTrigger',
+)
+
+export const Viewport = withContext<HTMLDivElement, Carousel.ViewportProps>(
+  Carousel.Viewport,
+  'viewport',
+)
+
+export {
+  CarouselContext as Context,
+  type CarouselContextProps as ContextProps,
+} from '@ark-ui/react'

@@ -21,11 +21,10 @@ export const Base = () => {
         <Editable.Input />
         <Editable.Preview />
       </Editable.Area>
-
-      <Editable.Context>
-        {(editable) => (
-          <Editable.Control>
-            {editable.editing ? (
+      <Editable.Control>
+        <Editable.Context>
+          {(editable) =>
+            editable.editing ? (
               <>
                 <Editable.SubmitTrigger asChild>
                   <Button variant="link">Save</Button>
@@ -38,10 +37,10 @@ export const Base = () => {
               <Editable.EditTrigger asChild>
                 <Button variant="link">Edit</Button>
               </Editable.EditTrigger>
-            )}
-          </Editable.Control>
-        )}
-      </Editable.Context>
+            )
+          }
+        </Editable.Context>
+      </Editable.Control>
     </Editable.Root>
   )
 }

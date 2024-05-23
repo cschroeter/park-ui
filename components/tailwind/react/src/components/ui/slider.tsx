@@ -1,6 +1,6 @@
 import { Slider as ArkSlider, type SliderRootProps } from '@ark-ui/react/slider'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type ReactNode, forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface SliderProps extends SliderRootProps, SliderVariantProps {
   children?: ReactNode
@@ -16,28 +16,30 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
 
   return (
     <ArkSlider.Root ref={ref} className={root({ className })} {...rootProps}>
-      {(api) => (
-        <>
-          {children && <ArkSlider.Label className={label()}>{children}</ArkSlider.Label>}
-          <ArkSlider.Control className={control()}>
-            <ArkSlider.Track className={track()}>
-              <ArkSlider.Range className={range()} />
-            </ArkSlider.Track>
-            {api.value.map((_, index) => (
-              <ArkSlider.Thumb key={index} index={index} className={thumb()} />
-            ))}
-          </ArkSlider.Control>
-          {props.marks && (
-            <ArkSlider.MarkerGroup className={markerGroup()}>
-              {props.marks.map((mark) => (
-                <ArkSlider.Marker key={mark.value} value={mark.value} className={marker()}>
-                  {mark.label}
-                </ArkSlider.Marker>
+      <ArkSlider.Context>
+        {(api) => (
+          <>
+            {children && <ArkSlider.Label className={label()}>{children}</ArkSlider.Label>}
+            <ArkSlider.Control className={control()}>
+              <ArkSlider.Track className={track()}>
+                <ArkSlider.Range className={range()} />
+              </ArkSlider.Track>
+              {api.value.map((_, index) => (
+                <ArkSlider.Thumb key={index} index={index} className={thumb()} />
               ))}
-            </ArkSlider.MarkerGroup>
-          )}
-        </>
-      )}
+            </ArkSlider.Control>
+            {props.marks && (
+              <ArkSlider.MarkerGroup className={markerGroup()}>
+                {props.marks.map((mark) => (
+                  <ArkSlider.Marker key={mark.value} value={mark.value} className={marker()}>
+                    {mark.label}
+                  </ArkSlider.Marker>
+                ))}
+              </ArkSlider.MarkerGroup>
+            )}
+          </>
+        )}
+      </ArkSlider.Context>
     </ArkSlider.Root>
   )
 })

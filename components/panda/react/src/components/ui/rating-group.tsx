@@ -32,7 +32,7 @@ export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, 
             items.map((index) => (
               <ArkRatingGroup.Item className={styles.item} key={index} index={index}>
                 <ArkRatingGroup.ItemContext>
-                  {(item) => <StarIcon isHalf={item.half} />}
+                  {(item) => <StarIcon half={item.half} />}
                 </ArkRatingGroup.ItemContext>
               </ArkRatingGroup.Item>
             ))
@@ -46,7 +46,7 @@ export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, 
 RatingGroup.displayName = 'RatingGroup'
 
 type IconProps = {
-  isHalf: boolean
+  half: boolean
 }
 
 const StarIcon = (props: IconProps) => (
@@ -69,7 +69,7 @@ const StarIcon = (props: IconProps) => (
       </linearGradient>
     </defs>
     <polygon
-      fill={props.isHalf ? 'url(#half)' : 'inherit'}
+      fill={props.half ? 'url(#half)' : 'inherit'}
       points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
     />
   </svg>

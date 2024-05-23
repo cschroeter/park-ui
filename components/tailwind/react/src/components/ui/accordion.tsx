@@ -52,7 +52,9 @@ export const ItemTrigger = withContext<HTMLButtonElement, Accordion.ItemTriggerP
 
 export {
   AccordionContext as Context,
+  AccordionItemContext as ItemContext,
   type AccordionContextProps as ContextProps,
+  type AccordionItemContextProps as ItemContextProps,
 } from '@ark-ui/react/accordion'
 
 export type {

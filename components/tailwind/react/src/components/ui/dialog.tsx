@@ -1,9 +1,8 @@
 import { Dialog } from '@ark-ui/react/dialog'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const dialog = tv(
   {
     base: 'dialog',
     slots: {
@@ -19,22 +18,38 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withRootProvider, withContext } = createStyleContext(dialog)
 
-export const Root = withProvider(Dialog.Root)
-export const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
-export const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')
-export const Content = withContext(Dialog.Content, 'content')
-export const Description = withContext(Dialog.Description, 'description')
-export const Positioner = withContext(Dialog.Positioner, 'positioner')
-export const Title = withContext(Dialog.Title, 'title')
-export const Trigger = withContext(Dialog.Trigger, 'trigger')
+export interface RootProps extends Dialog.RootProps, VariantProps<typeof dialog> {}
+export const Root = withRootProvider<RootProps>(Dialog.Root)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface BackdropProps extends ComponentProps<typeof Backdrop> {}
-export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Backdrop = withContext<HTMLDivElement, Dialog.BackdropProps>(
+  Dialog.Backdrop,
+  'backdrop',
+)
+
+export const CloseTrigger = withContext<HTMLButtonElement, Dialog.CloseTriggerProps>(
+  Dialog.CloseTrigger,
+  'closeTrigger',
+)
+
+export const Content = withContext<HTMLDivElement, Dialog.ContentProps>(Dialog.Content, 'content')
+
+export const Description = withContext<HTMLParagraphElement, Dialog.DescriptionProps>(
+  Dialog.Description,
+  'description',
+)
+
+export const Positioner = withContext<HTMLDivElement, Dialog.PositionerProps>(
+  Dialog.Positioner,
+  'positioner',
+)
+
+export const Title = withContext<HTMLHeadingElement, Dialog.TitleProps>(Dialog.Title, 'title')
+
+export const Trigger = withContext<HTMLButtonElement, Dialog.TriggerProps>(
+  Dialog.Trigger,
+  'trigger',
+)
+
+export { DialogContext as Context, type DialogContextProps as ContextProps } from '@ark-ui/react'
