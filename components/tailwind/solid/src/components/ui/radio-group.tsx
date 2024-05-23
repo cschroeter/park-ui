@@ -1,9 +1,9 @@
 import { RadioGroup } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const radioGroup = tv(
   {
     base: 'radioGroup',
     defaultVariants: { size: 'md' },
@@ -46,18 +46,26 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
 
-export const Root = withProvider(RadioGroup.Root, 'root')
-export const Indicator = withContext(RadioGroup.Indicator, 'indicator')
-export const Item = withContext(RadioGroup.Item, 'item')
-export const ItemControl = withContext(RadioGroup.ItemControl, 'itemControl')
-export const ItemText = withContext(RadioGroup.ItemText, 'itemText')
-export const Label = withContext(RadioGroup.Label, 'label')
+const { withProvider, withContext } = createStyleContext(radioGroup)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
-export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
+export interface RootProps extends RadioGroup.RootProps, VariantProps<typeof radioGroup> {}
+export const Root = withProvider<RootProps>(RadioGroup.Root, 'root')
+
+export const Indicator = withContext<RadioGroup.IndicatorProps>(RadioGroup.Indicator, 'indicator')
+
+export const ItemControl = withContext<RadioGroup.ItemControlProps>(
+  RadioGroup.ItemControl,
+  'itemControl',
+)
+
+export const Item = withContext<RadioGroup.ItemProps>(RadioGroup.Item, 'item')
+
+export const ItemText = withContext<RadioGroup.ItemTextProps>(RadioGroup.ItemText, 'itemText')
+
+export const Label = withContext<RadioGroup.LabelProps>(RadioGroup.Label, 'label')
+
+export {
+  RadioGroupContext as Context,
+  type RadioGroupContextProps as ContextProps,
+} from '@ark-ui/react/radio-group'

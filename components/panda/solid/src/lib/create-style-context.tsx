@@ -9,6 +9,7 @@ type Recipe = {
   (props?: Props): Props
   splitVariantProps: (props: Props) => [Props, Props]
 }
+
 type Slot<R extends Recipe> = keyof ReturnType<R>
 
 export const createStyleContext = <R extends Recipe>(recipe: R) => {

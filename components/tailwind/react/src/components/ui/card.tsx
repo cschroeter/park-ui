@@ -26,7 +26,7 @@ export const Body = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'b
 
 export const Description = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'description')
 
-export const Footer = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.footer, 'footer')
+export const Footer = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'footer')
 
 export const Header = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'header')
 

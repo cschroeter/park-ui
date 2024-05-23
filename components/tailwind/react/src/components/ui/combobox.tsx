@@ -78,7 +78,7 @@ const { withProvider, withContext } = createStyleContext(combobox)
 export interface RootProps
   extends Combobox.RootProps<Combobox.CollectionItem>,
     VariantProps<typeof combobox> {}
-export const Root = withProvider<undefined, RootProps>(Combobox.Root, 'root')
+export const Root = withProvider<HTMLDivElement, RootProps>(Combobox.Root, 'root')
 
 export const ClearTrigger = withContext<HTMLButtonElement, Combobox.ClearTriggerProps>(
   Combobox.ClearTrigger,

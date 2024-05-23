@@ -9,33 +9,29 @@ export interface CheckboxProps extends ArkCheckboxProps, CheckboxVariantProps {
 export const Checkbox = (props: CheckboxProps) => {
   const [variantProps, avatarProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(avatarProps, ['children'])
-  const { root, control, label } = styles(variantProps)
+  const { root, control, label, indicator } = checkbox(variantProps)
   const getChildren = children(() => localProps.children)
 
   return (
     <ArkCheckbox.Root class={root()} {...rootProps}>
-      {(state) => (
-        <>
-          <ArkCheckbox.Control class={control()}>
-            <Show when={state().isChecked}>
-              <CheckIcon />
-            </Show>
-            <Show when={state().isIndeterminate}>
-              <MinusIcon />
-            </Show>
-          </ArkCheckbox.Control>
-          <Show when={getChildren()}>
-            <ArkCheckbox.Label class={label()}>{getChildren()}</ArkCheckbox.Label>
-          </Show>
-        </>
-      )}
+      <ArkCheckbox.Control class={control()}>
+        <ArkCheckbox.Indicator class={indicator()}>
+          <CheckIcon />
+        </ArkCheckbox.Indicator>
+        <ArkCheckbox.Indicator indeterminate class={indicator()}>
+          <MinusIcon />
+        </ArkCheckbox.Indicator>
+      </ArkCheckbox.Control>
+      <Show when={getChildren()}>
+        <ArkCheckbox.Label class={label()}>{getChildren()}</ArkCheckbox.Label>
+      </Show>
     </ArkCheckbox.Root>
   )
 }
 
-type CheckboxVariantProps = VariantProps<typeof styles>
+type CheckboxVariantProps = VariantProps<typeof checkbox>
 
-const styles = tv(
+const checkbox = tv(
   {
     base: 'checkbox',
     defaultVariants: { size: 'md' },

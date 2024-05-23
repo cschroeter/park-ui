@@ -1,6 +1,5 @@
-import { ark } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { tv } from 'tailwind-variants'
+import { type HTMLArkProps, ark } from '@ark-ui/solid'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const styles = tv(
@@ -19,14 +18,14 @@ const styles = tv(
 )
 const { withProvider, withContext } = createStyleContext(styles)
 
-export const Root = withProvider(ark.div, 'root')
-export const Content = withContext(ark.div, 'content')
-export const Description = withContext(ark.div, 'description')
-export const Icon = withContext(ark.svg, 'icon')
-export const Title = withContext(ark.h5, 'title')
+export interface RootProps extends HTMLArkProps<'div'>, VariantProps<typeof alert> {}
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface IconProps extends ComponentProps<typeof Icon> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
+export const Root = withProvider<RootProps>(ark.div, 'root')
+
+export const Content = withContext<HTMLArkProps<'div'>>(ark.div, 'content')
+
+export const Description = withContext<HTMLArkProps<'div'>>(ark.div, 'description')
+
+export const Icon = withContext<HTMLArkProps<'svg'>>(ark.svg, 'icon')
+
+export const Title = withContext<HTMLArkProps<'h5'>>(ark.h5, 'title')
