@@ -2,7 +2,7 @@ import { TreeView as ArkTreeView, type Assign, type TreeViewRootProps } from '@a
 import { For, Show, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { treeView } from 'styled-system/recipes'
+import { type TreeViewVariantProps, treeView } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 
 interface Child {
@@ -16,7 +16,9 @@ export interface TreeViewData {
   children: Child[]
 }
 
-export interface TreeViewProps extends Assign<JsxStyleProps, TreeViewRootProps> {
+export interface TreeViewProps
+  extends Assign<JsxStyleProps, TreeViewRootProps>,
+    TreeViewVariantProps {
   data: TreeViewData
 }
 
