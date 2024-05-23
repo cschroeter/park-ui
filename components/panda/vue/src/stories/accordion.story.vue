@@ -5,7 +5,7 @@ import { Accordion } from '../components/ui'
 <template>
   <Story title="Accordion">
     <Variant title="Basic">
-      <Accordion.Root>
+      <Accordion.Root mt="10">
         <Accordion.Item value="react">
           <Accordion.ItemTrigger>What is React?
             <Accordion.ItemIndicator>

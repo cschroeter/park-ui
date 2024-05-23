@@ -5,23 +5,27 @@ import { createStyleContext } from '../../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(accordion)
 
-export interface RootProps extends JsxStyleProps, Accordion.RootProps, AccordionVariantProps {}
+export interface RootProps
+  extends Assign<JsxStyleProps, Accordion.RootProps>,
+    AccordionVariantProps {}
 export const Root = withProvider<RootProps>(Accordion.Root, 'root')
 
-export interface ItemProps extends JsxStyleProps, Accordion.ItemProps {}
-export const Item = withContext<ItemProps>(Accordion.Item, 'item')
+export const ItemContent = withContext<Assign<JsxStyleProps, Accordion.ItemContentProps>>(
+  Accordion.ItemContent,
+  'itemContent',
+)
 
-export interface ItemTriggerProps extends JsxStyleProps, Accordion.ItemTriggerProps {}
-export const ItemTrigger = withContext<ItemTriggerProps>(Accordion.ItemTrigger, 'itemTrigger')
-
-export interface ItemIndicatorProps extends JsxStyleProps, Accordion.ItemIndicatorProps {}
-export const ItemIndicator = withContext<ItemIndicatorProps>(
+export const ItemIndicator = withContext<Assign<JsxStyleProps, Accordion.ItemIndicatorProps>>(
   Accordion.ItemIndicator,
   'itemIndicator',
 )
 
-export interface ItemContentProps extends JsxStyleProps, Accordion.ItemContentProps {}
-export const ItemContent = withContext<ItemContentProps>(Accordion.ItemContent, 'itemContent')
+export const Item = withContext<Assign<JsxStyleProps, Accordion.ItemProps>>(Accordion.Item, 'item')
+
+export const ItemTrigger = withContext<Assign<JsxStyleProps, Accordion.ItemTriggerProps>>(
+  Accordion.ItemTrigger,
+  'itemTrigger',
+)
 
 export {
   AccordionContext as Context,

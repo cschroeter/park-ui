@@ -1,9 +1,9 @@
 import type { AvatarRootProps } from '@ark-ui/vue/avatar'
 import { Avatar as ArkAvatar } from '@ark-ui/vue/avatar'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type AvatarVariantProps, avatar } from 'styled-system/recipes'
 import { defineComponent } from 'vue'
+import { css, cx } from '../../../styled-system/css'
+import { splitCssProps } from '../../../styled-system/jsx'
+import { type AvatarVariantProps, avatar } from '../../../styled-system/recipes'
 
 export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
   src?: string
