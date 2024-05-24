@@ -13,9 +13,9 @@
     "@park-ui/panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitejs/plugin-vue-jsx": "3.1.0",
-    "@zag-js/avatar": "0.50.0",
+    "@zag-js/avatar": "0.51.1",
     "histoire": "0.17.17",
-    "lucide-vue-next": "0.378.0",
+    "lucide-vue-next": "0.379.0",
     "typescript": "5.4.5",
     "vite": "5.2.11",
     "vue": "3.4.27"
