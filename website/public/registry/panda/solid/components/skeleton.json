@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "skeleton.tsx",
-      "content": "import { ark } from '@ark-ui/solid'\nimport { Show, splitProps, type JSX } from 'solid-js'\nimport { styled, type HTMLStyledProps } from 'styled-system/jsx'\nimport { skeleton } from 'styled-system/recipes'\n\nconst StyledSkeleton = styled(ark.div, skeleton)\n\nexport interface SkeletonProps extends HTMLStyledProps<'div'> {\n  children?: JSX.Element\n  /**\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = (props: SkeletonProps) => {\n  const [localProps, skeletonProps] = splitProps(props, ['isLoaded'])\n\n  return (\n    <Show when={localProps.isLoaded} fallback={<StyledSkeleton {...skeletonProps} />}>\n      <styled.div animation=\"fade-in\" {...skeletonProps} />\n    </Show>\n  )\n}\n",
+      "content": "import type { Assign, HTMLArkProps } from '@ark-ui/solid'\nimport { Show, splitProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { type SkeletonVariantProps, skeleton } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nconst StyledSkeleton = styled('div', skeleton)\n\nexport interface SkeletonProps\n  extends Assign<JsxStyleProps, HTMLArkProps<'div'>>,\n    SkeletonVariantProps {\n  /**\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = (props: SkeletonProps) => {\n  const [localProps, otherProps] = splitProps(props, ['isLoaded'])\n\n  return (\n    <Show when={localProps.isLoaded} fallback={<StyledSkeleton {...otherProps} />}>\n      <styled.div animation=\"fade-in\" {...otherProps} />\n    </Show>\n  )\n}\n",
       "hasMultipleParts": false
     }
   ]
