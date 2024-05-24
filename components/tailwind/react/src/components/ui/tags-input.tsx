@@ -83,4 +83,4 @@ export {
   TagsInputHiddenInput as HiddenInput,
   type TagsInputContextProps as ContextProps,
   type TagsInputHiddenInputProps as HiddenInputProps,
-} from '@ark-ui/react'
+} from '@ark-ui/react/tags-input'

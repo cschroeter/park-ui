@@ -37,4 +37,4 @@ export const Item = withContext<HTMLButtonElement, ToggleGroup.ItemProps>(Toggle
 export {
   ToggleGroupContext as Context,
   type ToggleGroupContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/react/toggle-group'

@@ -64,4 +64,7 @@ export const Trigger = withContext<HTMLButtonElement, Popover.TriggerProps>(
   'trigger',
 )
 
-export { PopoverContext as Context, type PopoverContextProps as ContextProps } from '@ark-ui/react'
+export {
+  PopoverContext as Context,
+  type PopoverContextProps as ContextProps,
+} from '@ark-ui/react/popover'

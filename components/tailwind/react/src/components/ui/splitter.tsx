@@ -30,4 +30,4 @@ export const ResizeTrigger = withContext<HTMLButtonElement, Splitter.ResizeTrigg
 export {
   SplitterContext as Context,
   type SplitterContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/react/splitter'

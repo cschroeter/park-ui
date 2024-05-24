@@ -59,4 +59,4 @@ export const SubmitTrigger = withContext<HTMLButtonElement, Editable.SubmitTrigg
 export {
   EditableContext as Context,
   type EditableContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/react/editable'

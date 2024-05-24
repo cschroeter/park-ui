@@ -148,4 +148,4 @@ export {
   ColorPickerHiddenInput as HiddenInput,
   type ColorPickerContextProps as ContextProps,
   type ColorPickerHiddenInputProps as HiddenInputProps,
-} from '@ark-ui/react'
+} from '@ark-ui/react/color-picker'

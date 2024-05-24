@@ -46,4 +46,4 @@ export const Trigger = withContext<HTMLButtonElement, HoverCard.TriggerProps>(
 export {
   HoverCardContext as Context,
   type HoverCardContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/react/hover-card'

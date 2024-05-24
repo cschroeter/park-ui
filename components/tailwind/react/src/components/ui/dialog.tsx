@@ -52,4 +52,7 @@ export const Trigger = withContext<HTMLButtonElement, Dialog.TriggerProps>(
   'trigger',
 )
 
-export { DialogContext as Context, type DialogContextProps as ContextProps } from '@ark-ui/react'
+export {
+  DialogContext as Context,
+  type DialogContextProps as ContextProps,
+} from '@ark-ui/react/dialog'
