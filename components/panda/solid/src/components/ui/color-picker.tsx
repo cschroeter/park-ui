@@ -111,7 +111,6 @@ export const ValueText = withContext<Assign<JsxStyleProps, ColorPicker.ValueText
   'valueText',
 )
 
-// @ts-expect-error fix with 3.0
 export const View = withContext<Assign<JsxStyleProps, ColorPicker.ViewProps>>(
   ColorPicker.View,
   'view',

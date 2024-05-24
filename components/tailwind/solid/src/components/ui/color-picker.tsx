@@ -121,7 +121,6 @@ export const Trigger = withContext<ColorPicker.TriggerProps>(ColorPicker.Trigger
 
 export const ValueText = withContext<ColorPicker.ValueTextProps>(ColorPicker.ValueText, 'valueText')
 
-// @ts-expect-error works with v3
 export const View = withContext<ColorPicker.ViewProps>(ColorPicker.View, 'view')
 
 export {
