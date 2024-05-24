@@ -1,41 +1,52 @@
-import { createToaster } from '@ark-ui/react/toast'
 import type { Meta } from '@storybook/react'
 import { XIcon } from 'lucide-react'
 import { Button, IconButton, Toast } from '~/components/ui'
 
 const meta: Meta = {
-  title: 'Components/Toast',
+  title: 'Components / Toast',
 }
 
 export default meta
 
-export const Base = () => {
+const toaster = Toast.createToaster({
+  placement: 'bottom-end',
+  overlap: true,
+  gap: 16,
+})
+
+export const Basic = () => {
   return (
     <>
       <Button
         variant="outline"
-        onClick={() => toast.create({ title: 'Title', description: 'Description' })}
+        onClick={() =>
+          toaster.create({
+            title: 'Toast Title',
+            description: 'Toast Description',
+            type: 'info',
+          })
+        }
       >
-        Create Toast
+        Add Toast
       </Button>
-      <Toaster />
+      <Toast.Toaster toaster={toaster}>
+        {(toast) => (
+          <Toast.Root key={toast.id}>
+            <Toast.Title>{toast.title}</Toast.Title>
+            <Toast.Description>{toast.description}</Toast.Description>
+            <Toast.ActionTrigger asChild>
+              <Button variant="link" size="sm">
+                Action
+              </Button>
+            </Toast.ActionTrigger>
+            <Toast.CloseTrigger asChild>
+              <IconButton size="sm" variant="link">
+                <XIcon />
+              </IconButton>
+            </Toast.CloseTrigger>
+          </Toast.Root>
+        )}
+      </Toast.Toaster>
     </>
   )
 }
-
-const [Toaster, toast] = createToaster({
-  placement: 'top-end',
-  render(toast) {
-    return (
-      <Toast.Root>
-        <Toast.Title>{toast.title}</Toast.Title>
-        <Toast.Description>{toast.description}</Toast.Description>
-        <Toast.CloseTrigger asChild>
-          <IconButton size="sm" variant="link">
-            <XIcon />
-          </IconButton>
-        </Toast.CloseTrigger>
-      </Toast.Root>
-    )
-  },
-})

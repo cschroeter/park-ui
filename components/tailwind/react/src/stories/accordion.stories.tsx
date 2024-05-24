@@ -11,7 +11,7 @@ export default meta
 export const Base = () => {
   const items = ['React', 'Solid', 'Svelte', 'Vue']
   return (
-    <Accordion.Root defaultValue={['React']}>
+    <Accordion.Root defaultValue={['React']} size="md">
       {items.map((item) => (
         <Accordion.Item key={item} value={item} disabled={item === 'Svelte'}>
           <Accordion.ItemTrigger>
@@ -23,7 +23,7 @@ export const Base = () => {
           <Accordion.ItemContent>
             <div>
               Pudding donut gummies chupa chups oat cake marzipan biscuit tart. Dessert macaroon ice
-              cream bonbon jelly. Jelly topping tiramisu halvah lollipop.
+              cream bonbon jelly. Jelly topping tiramisu halvah lollipop.!!!!!!!!
             </div>
           </Accordion.ItemContent>
         </Accordion.Item>

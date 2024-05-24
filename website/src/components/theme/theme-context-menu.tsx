@@ -18,13 +18,13 @@ export const ThemeContextMenu = (props: Props) => {
       </Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content minW="48">
-          <Menu.Item id="copy" onClick={() => onCopy()}>
+          <Menu.Item value="copy" onClick={() => onCopy()}>
             <HStack gap="2">
               <CopyIcon />
               Copy Config
             </HStack>
           </Menu.Item>
-          <Menu.Item id="reset" onClick={() => onReset()}>
+          <Menu.Item value="reset" onClick={() => onReset()}>
             <HStack gap="2">
               <RotateCcwIcon />
               Restore Defaults

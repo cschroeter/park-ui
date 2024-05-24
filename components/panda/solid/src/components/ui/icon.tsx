@@ -1,7 +1,7 @@
-import { ark } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
+import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'
 import { styled } from 'styled-system/jsx'
-import { icon } from 'styled-system/recipes'
+import { type IconVariantProps, icon } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
+export interface IconProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>>, IconVariantProps {}
 export const Icon = styled(ark.div, icon)
-export interface IconProps extends ComponentProps<typeof Icon> {}

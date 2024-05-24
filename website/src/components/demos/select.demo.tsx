@@ -20,8 +20,8 @@ export const Demo = (props: Select.RootProps) => {
       </Select.Control>
       <Select.Positioner>
         <Select.Content>
-          <Select.ItemGroup id="framework">
-            <Select.ItemGroupLabel htmlFor="framework">Framework</Select.ItemGroupLabel>
+          <Select.ItemGroup>
+            <Select.ItemGroupLabel>Framework</Select.ItemGroupLabel>
             {items.map((item) => (
               <Select.Item key={item.value} item={item}>
                 <Select.ItemText>{item.label}</Select.ItemText>

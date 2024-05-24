@@ -12,7 +12,7 @@ export default meta
 export const Base = () => {
   return (
     <Dialog.Root>
-      <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
+      <Dialog.Trigger asChild={(props) => <Button {...props()} />}>Open Dialog</Dialog.Trigger>
       <Dialog.Backdrop />
       <Dialog.Positioner>
         <Dialog.Content>
@@ -22,16 +22,16 @@ export const Base = () => {
               <Dialog.Description>Dialog Description</Dialog.Description>
             </Stack>
             <Stack gap="3" direction="row" width="full">
-              <Dialog.CloseTrigger as={Button} variant="outline" width="full">
+              <Dialog.CloseTrigger
+                asChild={(props) => <Button {...props()} variant="outline" width="full" />}
+              >
                 Cancel
               </Dialog.CloseTrigger>
               <Button width="full">Confirm</Button>
             </Stack>
           </Stack>
           <Dialog.CloseTrigger
-            as={IconButton}
-            variant="ghost"
-            size="sm"
+            asChild={(props) => <IconButton {...props()} variant="ghost" size="sm" />}
             position="absolute"
             top="2"
             right="2"

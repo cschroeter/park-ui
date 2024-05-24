@@ -1,7 +1,9 @@
-import { ark } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
+import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'
 import { styled } from 'styled-system/jsx'
-import { formLabel } from 'styled-system/recipes'
+import { type FormLabelVariantProps, formLabel } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
+export interface FormLabelProps
+  extends Assign<JsxStyleProps, HTMLArkProps<'label'>>,
+    FormLabelVariantProps {}
 export const FormLabel = styled(ark.label, formLabel)
-export interface FormLabelProps extends ComponentProps<typeof FormLabel> {}

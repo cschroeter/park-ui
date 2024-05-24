@@ -1,9 +1,8 @@
-import { ark } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { tv } from 'tailwind-variants'
+import { type HTMLArkProps, ark } from '@ark-ui/solid'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const card = tv(
   {
     base: 'card',
     slots: {
@@ -18,18 +17,17 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(card)
 
-export const Root = withProvider(ark.div, 'root')
-export const Body = withContext(ark.div, 'body')
-export const Description = withContext(ark.div, 'description')
-export const Footer = withContext(ark.div, 'footer')
-export const Header = withContext(ark.div, 'header')
-export const Title = withContext(ark.h3, 'title')
+export interface RootProps extends HTMLArkProps<'div'>, VariantProps<typeof card> {}
+export const Root = withProvider<RootProps>(ark.div, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface BodyProps extends ComponentProps<typeof Body> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface FooterProps extends ComponentProps<typeof Footer> {}
-export interface HeaderProps extends ComponentProps<typeof Header> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
+export const Body = withContext<HTMLArkProps<'div'>>(ark.div, 'body')
+
+export const Description = withContext<HTMLArkProps<'div'>>(ark.div, 'description')
+
+export const Footer = withContext<HTMLArkProps<'div'>>(ark.div, 'footer')
+
+export const Header = withContext<HTMLArkProps<'div'>>(ark.div, 'header')
+
+export const Title = withContext<HTMLArkProps<'h3'>>(ark.h3, 'title')

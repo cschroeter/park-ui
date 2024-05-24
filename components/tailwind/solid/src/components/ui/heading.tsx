@@ -1,6 +1,6 @@
-import { mergeProps, splitProps, type JSX } from 'solid-js'
+import { type JSX, mergeProps, splitProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 type As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
@@ -10,18 +10,17 @@ export type HeadingProps = {
   JSX.IntrinsicElements[As]
 
 export const Heading = (props: HeadingProps) => {
-  const mergedProps = mergeProps({ as: 'h2', variant: 'heading' }, props)
+  const mergedProps = mergeProps({ as: 'h2', variant: 'heading', size: 'md' }, props)
   const [variantProps, headingProps] = splitProps(mergedProps, ['size', 'class', 'variant'])
   const [localProps, rootProps] = splitProps(headingProps, ['as'])
-  const className = styles({ size: 'sm', variant: 'heading' })
-  console.log(className)
+  const className = text(variantProps as TextVariantProps)
 
   return <Dynamic component={localProps.as} class={className} {...rootProps} />
 }
 
-type TextVariantProps = VariantProps<typeof styles>
+type TextVariantProps = VariantProps<typeof text>
 
-const styles = tv(
+const text = tv(
   {
     base: 'text',
     variants: {

@@ -5,13 +5,13 @@ import { type VariantProps, tv } from 'tailwind-variants'
 export interface CodeProps extends CodeVariantProps, HTMLArkProps<'code'> {}
 
 export const Code = (props: CodeProps) => {
-  const [variantProps, codeProps] = splitProps(props, ['class', 'size'])
-  return <ark.code class={styles(variantProps)} {...codeProps} />
+  const [variantProps, codeProps] = splitProps(props, ['class', 'size', 'variant'])
+  return <ark.code class={code(variantProps)} {...codeProps} />
 }
 
-type CodeVariantProps = VariantProps<typeof styles>
+type CodeVariantProps = VariantProps<typeof code>
 
-const styles = tv(
+const code = tv(
   {
     base: 'code',
     defaultVariants: { size: 'md', variant: 'outline' },

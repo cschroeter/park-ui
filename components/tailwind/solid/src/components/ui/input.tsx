@@ -6,12 +6,12 @@ export interface InputProps extends Omit<HTMLArkProps<'input'>, 'size'>, InputVa
 
 export const Input = (props: InputProps) => {
   const [variantProps, inputProps] = splitProps(props, ['class', 'size'])
-  return <ark.input class={styles(variantProps)} {...inputProps} />
+  return <ark.input class={input(variantProps)} {...inputProps} />
 }
 
-type InputVariantProps = VariantProps<typeof styles>
+type InputVariantProps = VariantProps<typeof input>
 
-const styles = tv(
+const input = tv(
   {
     base: 'input',
     defaultVariants: { size: 'md' },

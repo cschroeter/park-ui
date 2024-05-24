@@ -2,9 +2,7 @@ import { Switch as ArkSwitch, type SwitchRootProps } from '@ark-ui/solid'
 import { type JSX, Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface SwitchProps extends SwitchRootProps, SwitchVariantProps {
-  children?: JSX.Element
-}
+export interface SwitchProps extends SwitchRootProps, SwitchVariantProps {}
 
 export const Switch = (props: SwitchProps) => {
   const [variantProps, switchProps] = splitProps(props, ['size', 'class'])

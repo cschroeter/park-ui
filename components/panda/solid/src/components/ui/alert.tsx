@@ -1,19 +1,20 @@
-import { ark } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { alert } from 'styled-system/recipes'
+import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'
+import { type AlertVariantProps, alert } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(alert)
 
-export const Root = withProvider(styled(ark.div), 'root')
-export const Content = withContext(styled(ark.div), 'content')
-export const Description = withContext(styled(ark.div), 'description')
-export const Icon = withContext(styled(ark.svg), 'icon')
-export const Title = withContext(styled(ark.h5), 'title')
+export interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>>, AlertVariantProps {}
+export const Root = withProvider<RootProps>(ark.div, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface IconProps extends ComponentProps<typeof Icon> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
+export const Content = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(ark.div, 'content')
+
+export const Description = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(
+  ark.div,
+  'description',
+)
+
+export const Icon = withContext<Assign<JsxStyleProps, HTMLArkProps<'svg'>>>(ark.svg, 'icon')
+
+export const Title = withContext<Assign<JsxStyleProps, HTMLArkProps<'h5'>>>(ark.h5, 'title')

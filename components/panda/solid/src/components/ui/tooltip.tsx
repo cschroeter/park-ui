@@ -1,21 +1,33 @@
-import { Tooltip } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { tooltip } from 'styled-system/recipes'
+import { type Assign, Tooltip } from '@ark-ui/solid'
+import { type TooltipVariantProps, tooltip } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const { withProvider, withContext } = createStyleContext(tooltip)
+const { withRootProvider, withContext } = createStyleContext(tooltip)
 
-export const Root = withProvider(Tooltip.Root)
-export const Arrow = withContext(styled(Tooltip.Arrow), 'arrow')
-export const ArrowTip = withContext(styled(Tooltip.ArrowTip), 'arrowTip')
-export const Content = withContext(styled(Tooltip.Content), 'content')
-export const Positioner = withContext(styled(Tooltip.Positioner), 'positioner')
-export const Trigger = withContext(styled(Tooltip.Trigger), 'trigger')
+export interface RootProps extends Assign<JsxStyleProps, Tooltip.RootProps>, TooltipVariantProps {}
+export const Root = withRootProvider<RootProps>(Tooltip.Root)
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ArrowProps extends ComponentProps<typeof Arrow> {}
-export interface ArrowTipProps extends ComponentProps<typeof ArrowTip> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Arrow = withContext<Assign<JsxStyleProps, Tooltip.ArrowProps>>(Tooltip.Arrow, 'arrow')
+
+export const ArrowTip = withContext<Assign<JsxStyleProps, Tooltip.ArrowTipProps>>(
+  Tooltip.ArrowTip,
+  'arrowTip',
+)
+
+export const Content = withContext<Assign<JsxStyleProps, Tooltip.ContentProps>>(
+  Tooltip.Content,
+  'content',
+)
+
+export const Positioner = withContext<Assign<JsxStyleProps, Tooltip.PositionerProps>>(
+  Tooltip.Positioner,
+  'positioner',
+)
+
+export const Trigger = withContext<Assign<JsxStyleProps, Tooltip.TriggerProps>>(
+  Tooltip.Trigger,
+  'trigger',
+)
+
+export { TooltipContext as Context, type TooltipContextProps as ContextProps } from '@ark-ui/solid'

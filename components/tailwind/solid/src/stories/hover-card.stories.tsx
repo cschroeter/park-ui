@@ -11,7 +11,11 @@ export default meta
 export const Base = () => {
   return (
     <HoverCard.Root>
-      <HoverCard.Trigger as={Link} href="https://twitter.com/grizzly_codes/" target="_blank">
+      <HoverCard.Trigger
+        asChild={(props) => (
+          <Link {...props()} href="https://twitter.com/grizzly_codes/" target="_blank" />
+        )}
+      >
         @grizzly_codes
       </HoverCard.Trigger>
 

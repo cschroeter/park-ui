@@ -6,12 +6,12 @@ export interface BadgeProps extends HTMLArkProps<'div'>, BadgeVariantProps {}
 
 export const Badge = (props: BadgeProps) => {
   const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])
-  return <ark.div class={styles(variantProps)} {...buttonProps} />
+  return <ark.div class={badge(variantProps)} {...buttonProps} />
 }
 
-type BadgeVariantProps = VariantProps<typeof styles>
+type BadgeVariantProps = VariantProps<typeof badge>
 
-const styles = tv(
+const badge = tv(
   {
     base: 'badge',
     defaultVariants: { variant: 'subtle', size: 'md' },

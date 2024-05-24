@@ -10,17 +10,18 @@ export const toast = defineSlotRecipe({
       borderRadius: 'l3',
       boxShadow: 'lg',
       minWidth: 'xs',
+      height: 'var(--height)',
+      opacity: 'var(--opacity)',
+      overflowWrap: 'anywhere',
       p: '4',
       position: 'relative',
-      _open: {
-        animation: 'slideInFromBottom 0.2s ease-out',
-      },
-      _closed: {
-        animation: 'slideOutFromBottom 0.2s ease-out',
-      },
-    },
-    group: {
-      p: '4',
+      scale: 'var(--scale)',
+      translate: 'var(--x) var(--y) 0',
+      willChange: 'translate, opacity, scale',
+      zIndex: 'var(--z-index)',
+      transitionDuration: 'slow',
+      transitionProperty: 'translate, scale, opacity, height',
+      transitionTimingFunction: 'default',
     },
     title: {
       color: 'fg.default',
@@ -30,6 +31,9 @@ export const toast = defineSlotRecipe({
     description: {
       color: 'fg.muted',
       textStyle: 'sm',
+    },
+    actionTrigger: {
+      mt: '2',
     },
     closeTrigger: {
       position: 'absolute',

@@ -8,14 +8,28 @@ const meta: Meta = {
 
 export default meta
 
-export const Base = () => <Icon as={DiamondIcon} />
+export const Base = () => (
+  <Icon>
+    <DiamondIcon />
+  </Icon>
+)
 
 export const Sizes = () => (
   <div class="flex flex-col gap-2.5">
-    <Icon size="xs" as={DiamondIcon} />
-    <Icon size="sm" as={DiamondIcon} />
-    <Icon size="md" as={DiamondIcon} />
-    <Icon size="lg" as={DiamondIcon} />
-    <Icon size="xl" as={DiamondIcon} />
+    <Icon size="xs">
+      <DiamondIcon />
+    </Icon>
+    <Icon size="sm">
+      <DiamondIcon />
+    </Icon>
+    <Icon size="md">
+      <DiamondIcon />
+    </Icon>
+    <Icon size="lg">
+      <DiamondIcon />
+    </Icon>
+    <Icon size="xl">
+      <DiamondIcon />
+    </Icon>
   </div>
 )

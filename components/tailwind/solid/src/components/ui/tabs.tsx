@@ -3,7 +3,7 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const tabs = tv(
   {
     base: 'tabs',
     defaultVariants: { size: 'md', variant: 'line' },
@@ -65,7 +65,7 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(tabs)
 
 export const Root = withProvider(Tabs.Root, 'root')
 export const Content = withContext(Tabs.Content, 'content')

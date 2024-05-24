@@ -3,7 +3,7 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const splitter = tv(
   {
     base: 'splitter',
     slots: {
@@ -15,7 +15,7 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(splitter)
 
 export const Root = withProvider(Splitter.Root, 'root')
 export const Panel = withContext(Splitter.Panel, 'panel')

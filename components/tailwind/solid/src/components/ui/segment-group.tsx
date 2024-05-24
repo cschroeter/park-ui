@@ -1,9 +1,9 @@
 import { SegmentGroup } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const segmentGroup = tv(
   {
     base: 'segmentGroup',
     defaultVariants: { size: 'md' },
@@ -38,18 +38,28 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(segmentGroup)
 
-export const Root = withProvider(SegmentGroup.Root, 'root')
-export const Indicator = withContext(SegmentGroup.Indicator, 'indicator')
-export const Item = withContext(SegmentGroup.Item, 'item')
-export const ItemControl = withContext(SegmentGroup.ItemControl, 'itemControl')
-export const ItemText = withContext(SegmentGroup.ItemText, 'itemText')
-export const Label = withContext(SegmentGroup.Label, 'label')
+export interface RootProps extends SegmentGroup.RootProps, VariantProps<typeof segmentGroup> {}
+export const Root = withProvider<RootProps>(SegmentGroup.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemControlProps extends ComponentProps<typeof ItemControl> {}
-export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
+export const Indicator = withContext<SegmentGroup.IndicatorProps>(
+  SegmentGroup.Indicator,
+  'indicator',
+)
+
+export const ItemControl = withContext<SegmentGroup.ItemControlProps>(
+  SegmentGroup.ItemControl,
+  'itemControl',
+)
+
+export const Item = withContext<SegmentGroup.ItemProps>(SegmentGroup.Item, 'item')
+
+export const ItemText = withContext<SegmentGroup.ItemTextProps>(SegmentGroup.ItemText, 'itemText')
+
+export const Label = withContext<SegmentGroup.LabelProps>(SegmentGroup.Label, 'label')
+
+export {
+  SegmentGroupContext as Context,
+  type SegmentGroupContextProps as ContextProps,
+} from '@ark-ui/solid'

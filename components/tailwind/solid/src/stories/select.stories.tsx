@@ -28,8 +28,8 @@ export const Base = () => {
       </Select.Control>
       <Select.Positioner>
         <Select.Content>
-          <Select.ItemGroup id="framework">
-            <Select.ItemGroupLabel for="framework">Framework</Select.ItemGroupLabel>
+          <Select.ItemGroup>
+            <Select.ItemGroupLabel>Framework</Select.ItemGroupLabel>
             <Index each={items}>
               {(item) => (
                 <Select.Item item={item()}>

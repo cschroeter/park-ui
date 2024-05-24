@@ -3,7 +3,7 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const table = tv(
   {
     base: 'table',
     defaultVariants: { size: 'md', variant: 'plain' },
@@ -66,7 +66,7 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(table)
 
 export const Root = withProvider(ark.table, 'root')
 export const Body = withContext(ark.tbody, 'body')

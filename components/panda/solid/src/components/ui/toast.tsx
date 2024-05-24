@@ -1,19 +1,34 @@
-import { Toast } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { toast } from 'styled-system/recipes'
+import { type Assign, Toast } from '@ark-ui/solid'
+import { type ToastVariantProps, toast } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(toast)
 
-export const Root = withProvider(styled(Toast.Root), 'root')
-export const CloseTrigger = withContext(styled(Toast.CloseTrigger), 'closeTrigger')
-export const Description = withContext(styled(Toast.Description), 'description')
-export const Group = withContext(styled(Toast.Group), 'group')
-export const Title = withContext(styled(Toast.Title), 'title')
+export interface RootProps extends Assign<JsxStyleProps, Toast.RootProps>, ToastVariantProps {}
+export const Root = withProvider<RootProps>(Toast.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface GroupProps extends ComponentProps<typeof Group> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
+export const ActionTrigger = withContext<Assign<JsxStyleProps, Toast.ActionTriggerProps>>(
+  Toast.ActionTrigger,
+  'actionTrigger',
+)
+
+export const CloseTrigger = withContext<Assign<JsxStyleProps, Toast.CloseTriggerProps>>(
+  Toast.CloseTrigger,
+  'closeTrigger',
+)
+
+export const Description = withContext<Assign<JsxStyleProps, Toast.DescriptionProps>>(
+  Toast.Description,
+  'description',
+)
+
+export const Title = withContext<Assign<JsxStyleProps, Toast.TitleProps>>(Toast.Title, 'title')
+
+export {
+  ToastContext as Context,
+  Toaster,
+  createToaster,
+  type ToastContextProps as ContextProps,
+  type ToasterProps,
+} from '@ark-ui/solid'

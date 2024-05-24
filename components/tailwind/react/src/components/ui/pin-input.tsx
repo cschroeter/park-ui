@@ -1,10 +1,9 @@
 import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/react/pin-input'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { Input } from '~/components/ui/input'
 
 export interface PinInputProps extends PinInputRootProps, PinInputVariantProps {
-  children?: ReactNode
   /**
    * The number of inputs to render.
    * @default 4
@@ -14,7 +13,7 @@ export interface PinInputProps extends PinInputRootProps, PinInputVariantProps {
 
 export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) => {
   const { children, className, size, length = 4, ...rootProps } = props
-  const { root, control, input, label } = styles({ size })
+  const { root, control, input, label } = pinInput({ size })
 
   return (
     <ArkPinInput.Root ref={ref} className={root({ className })} {...rootProps}>
@@ -32,9 +31,9 @@ export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) =
 
 PinInput.displayName = 'PinInput'
 
-type PinInputVariantProps = VariantProps<typeof styles>
+type PinInputVariantProps = VariantProps<typeof pinInput>
 
-const styles = tv(
+const pinInput = tv(
   {
     base: 'pinInput',
     defaultVariants: { size: 'md' },

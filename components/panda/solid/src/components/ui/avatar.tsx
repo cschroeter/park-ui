@@ -1,9 +1,9 @@
-import { Avatar as ArkAvatar, type AvatarRootProps } from '@ark-ui/solid'
+import { Avatar as ArkAvatar, type Assign, type AvatarRootProps } from '@ark-ui/solid'
 import { Show, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { avatar, type AvatarVariantProps } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type AvatarVariantProps, avatar } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface AvatarProps extends Assign<JsxStyleProps, AvatarRootProps>, AvatarVariantProps {
   name?: string

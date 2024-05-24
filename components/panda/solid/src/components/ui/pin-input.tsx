@@ -1,15 +1,14 @@
-import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/solid'
-import { Index, type JSX, Show, children, splitProps } from 'solid-js'
+import { PinInput as ArkPinInput, type Assign, type PinInputRootProps } from '@ark-ui/solid'
+import { Index, Show, children, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { type PinInputVariantProps, pinInput } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 import { Input } from '~/components/ui/input'
 
 export interface PinInputProps
   extends Assign<JsxStyleProps, PinInputRootProps>,
     PinInputVariantProps {
-  children?: JSX.Element
   /**
    * The number of inputs to render.
    * @default 4
@@ -35,8 +34,7 @@ export const PinInput = (props: PinInputProps) => {
             <ArkPinInput.Input
               class={styles.input}
               index={index()}
-              as={Input}
-              size={variantProps.size}
+              asChild={(props) => <Input {...props()} size={variantProps.size} />}
             />
           )}
         </Index>

@@ -1,9 +1,8 @@
-import { ark } from '@ark-ui/react/factory'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const alert = tv(
   {
     base: 'alert',
     slots: {
@@ -17,16 +16,16 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(alert)
 
-export const Root = withProvider(ark.div, 'root')
-export const Content = withContext(ark.div, 'content')
-export const Description = withContext(ark.div, 'description')
-export const Icon = withContext(ark.svg, 'icon')
-export const Title = withContext(ark.h5, 'title')
+export interface RootProps extends HTMLArkProps<'div'>, VariantProps<typeof alert> {}
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface IconProps extends ComponentProps<typeof Icon> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(ark.div, 'root')
+
+export const Content = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'content')
+
+export const Description = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'description')
+
+export const Icon = withContext<HTMLOrSVGElement, HTMLArkProps<'svg'>>(ark.svg, 'icon')
+
+export const Title = withContext<HTMLHeadingElement, HTMLArkProps<'h5'>>(ark.h5, 'title')

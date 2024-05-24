@@ -1,9 +1,8 @@
 import { Select } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const select = tv(
   {
     base: 'select',
     defaultVariants: { size: 'md', variant: 'outline' },
@@ -112,34 +111,51 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(select)
 
-export const Root = withProvider(Select.Root, 'root')
-export const ClearTrigger = withContext(Select.ClearTrigger, 'clearTrigger')
-export const Content = withContext(Select.Content, 'content')
-export const Control = withContext(Select.Control, 'control')
-export const Indicator = withContext(Select.Indicator, 'indicator')
-export const Item = withContext(Select.Item, 'item')
-export const ItemGroup = withContext(Select.ItemGroup, 'itemGroup')
-export const ItemGroupLabel = withContext(Select.ItemGroupLabel, 'itemGroupLabel')
-export const ItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator')
-export const ItemText = withContext(Select.ItemText, 'itemText')
-export const Label = withContext(Select.Label, 'label')
-export const Positioner = withContext(Select.Positioner, 'positioner')
-export const Trigger = withContext(Select.Trigger, 'trigger')
-export const ValueText = withContext(Select.ValueText, 'valueText')
+export interface RootProps
+  extends Select.RootProps<Select.CollectionItem>,
+    VariantProps<typeof select> {}
+export const Root = withProvider<RootProps>(Select.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface ControlProps extends ComponentProps<typeof Control> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
-export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
-export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
-export interface ValueTextProps extends ComponentProps<typeof ValueText> {}
+export const ClearTrigger = withContext<Select.ClearTriggerProps>(
+  Select.ClearTrigger,
+  'clearTrigger',
+)
+
+export const Content = withContext<Select.ContentProps>(Select.Content, 'content')
+
+export const Control = withContext<Select.ControlProps>(Select.Control, 'control')
+
+export const Indicator = withContext<Select.IndicatorProps>(Select.Indicator, 'indicator')
+
+export const ItemGroupLabel = withContext<Select.ItemGroupLabelProps>(
+  Select.ItemGroupLabel,
+  'itemGroupLabel',
+)
+
+export const ItemGroup = withContext<Select.ItemGroupProps>(Select.ItemGroup, 'itemGroup')
+
+export const ItemIndicator = withContext<Select.ItemIndicatorProps>(
+  Select.ItemIndicator,
+  'itemIndicator',
+)
+
+export const Item = withContext<Select.ItemProps>(Select.Item, 'item')
+
+export const ItemText = withContext<Select.ItemTextProps>(Select.ItemText, 'itemText')
+
+export const Label = withContext<Select.LabelProps>(Select.Label, 'label')
+
+export const Positioner = withContext<Select.PositionerProps>(Select.Positioner, 'positioner')
+
+export const Trigger = withContext<Select.TriggerProps>(Select.Trigger, 'trigger')
+
+export const ValueText = withContext<Select.ValueTextProps>(Select.ValueText, 'valueText')
+
+export {
+  SelectContext as Context,
+  SelectHiddenSelect as HiddenSelect,
+  type SelectContextProps as ContextProps,
+  type SelectHiddenSelectProps as HiddenSelectProps,
+} from '@ark-ui/solid'

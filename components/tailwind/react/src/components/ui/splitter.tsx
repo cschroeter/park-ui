@@ -1,9 +1,9 @@
 import { Splitter } from '@ark-ui/react/splitter'
 import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const splitter = tv(
   {
     base: 'splitter',
     slots: {
@@ -15,12 +15,19 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(splitter)
 
-export const Root = withProvider(Splitter.Root, 'root')
-export const Panel = withContext(Splitter.Panel, 'panel')
-export const ResizeTrigger = withContext(Splitter.ResizeTrigger, 'resizeTrigger')
+export interface RootProps extends Splitter.RootProps, VariantProps<typeof splitter> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Splitter.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface PanelProps extends ComponentProps<typeof Panel> {}
-export interface ResizeTriggerProps extends ComponentProps<typeof ResizeTrigger> {}
+export const Panel = withContext<HTMLDivElement, Splitter.PanelProps>(Splitter.Panel, 'panel')
+
+export const ResizeTrigger = withContext<HTMLButtonElement, Splitter.ResizeTriggerProps>(
+  Splitter.ResizeTrigger,
+  'resizeTrigger',
+)
+
+export {
+  SplitterContext as Context,
+  type SplitterContextProps as ContextProps,
+} from '@ark-ui/react/splitter'

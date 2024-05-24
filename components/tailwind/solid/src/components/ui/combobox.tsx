@@ -1,9 +1,8 @@
 import { Combobox } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const combobox = tv(
   {
     base: 'combobox',
     defaultVariants: { size: 'md' },
@@ -74,32 +73,54 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(combobox)
 
-export const Root = withProvider(Combobox.Root, 'root')
-export const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger')
-export const Content = withContext(Combobox.Content, 'content')
-export const Control = withContext(Combobox.Control, 'control')
-export const Input = withContext(Combobox.Input, 'input')
-export const Item = withContext(Combobox.Item, 'item')
-export const ItemGroup = withContext(Combobox.ItemGroup, 'itemGroup')
-export const ItemGroupLabel = withContext(Combobox.ItemGroupLabel, 'itemGroupLabel')
-export const ItemIndicator = withContext(Combobox.ItemIndicator, 'itemIndicator')
-export const ItemText = withContext(Combobox.ItemText, 'itemText')
-export const Label = withContext(Combobox.Label, 'label')
-export const Positioner = withContext(Combobox.Positioner, 'positioner')
-export const Trigger = withContext(Combobox.Trigger, 'trigger')
+export interface RootProps
+  extends Combobox.RootProps<Combobox.CollectionItem>,
+    VariantProps<typeof combobox> {}
+export const Root = withProvider<RootProps>(Combobox.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ClearTriggerProps extends ComponentProps<typeof ClearTrigger> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface ControlProps extends ComponentProps<typeof Control> {}
-export interface InputProps extends ComponentProps<typeof Input> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface ItemGroupLabelProps extends ComponentProps<typeof ItemGroupLabel> {}
-export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
-export interface ItemTextProps extends ComponentProps<typeof ItemText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const ClearTrigger = withContext<Combobox.ClearTriggerProps>(
+  Combobox.ClearTrigger,
+  'clearTrigger',
+)
+
+export const Content = withContext<Combobox.ContentProps>(Combobox.Content, 'content')
+
+export const Control = withContext<Combobox.ControlProps>(Combobox.Control, 'control')
+
+export const Input = withContext<Combobox.InputProps>(Combobox.Input, 'input')
+
+export const ItemGroupLabel = withContext<Combobox.ItemGroupLabelProps>(
+  Combobox.ItemGroupLabel,
+  'itemGroupLabel',
+)
+
+export const ItemGroup = withContext<Combobox.ItemGroupProps>(Combobox.ItemGroup, 'itemGroup')
+
+export const ItemIndicator = withContext<Combobox.ItemIndicatorProps>(
+  Combobox.ItemIndicator,
+  'itemIndicator',
+)
+
+export const Item = withContext<Combobox.ItemProps>(Combobox.Item, 'item')
+
+export const ItemText = withContext<Combobox.ItemTextProps>(Combobox.ItemText, 'itemText')
+
+export const Label = withContext<Combobox.LabelProps>(Combobox.Label, 'label')
+
+export const Positioner = withContext<Combobox.PositionerProps>(Combobox.Positioner, 'positioner')
+
+export const Trigger = withContext<Combobox.TriggerProps>(Combobox.Trigger, 'trigger')
+
+export {
+  ComboboxContext as Context,
+  type ComboboxContextProps as ContextProps,
+} from '@ark-ui/solid'
+
+export type {
+  ComboboxHighlightChangeDetails as HighlightChangeDetails,
+  ComboboxInputValueChangeDetails as InputValueChangeDetails,
+  ComboboxOpenChangeDetails as OpenChangeDetails,
+  ComboboxValueChangeDetails as ValueChangeDetails,
+} from '@ark-ui/solid'

@@ -6,12 +6,12 @@ export interface ButtonProps extends ButtonVariantProps, HTMLArkProps<'button'> 
 
 export const Button = (props: ButtonProps) => {
   const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])
-  return <ark.button class={styles(variantProps)} {...buttonProps} />
+  return <ark.button class={button(variantProps)} {...buttonProps} />
 }
 
-type ButtonVariantProps = VariantProps<typeof styles>
+type ButtonVariantProps = VariantProps<typeof button>
 
-const styles = tv(
+const button = tv(
   {
     base: 'button',
     defaultVariants: { variant: 'solid', size: 'md' },

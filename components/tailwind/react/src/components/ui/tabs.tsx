@@ -1,9 +1,8 @@
 import { Tabs } from '@ark-ui/react/tabs'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const tabs = tv(
   {
     base: 'tabs',
     defaultVariants: { size: 'md', variant: 'line' },
@@ -65,16 +64,20 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(tabs)
 
-export const Root = withProvider(Tabs.Root, 'root')
-export const Content = withContext(Tabs.Content, 'content')
-export const Indicator = withContext(Tabs.Indicator, 'indicator')
-export const List = withContext(Tabs.List, 'list')
-export const Trigger = withContext(Tabs.Trigger, 'trigger')
+export interface RootProps extends Tabs.RootProps, VariantProps<typeof tabs> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Tabs.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface ListProps extends ComponentProps<typeof List> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Content = withContext<HTMLDivElement, Tabs.ContentProps>(Tabs.Content, 'content')
+
+export const Indicator = withContext<HTMLDivElement, Tabs.IndicatorProps>(
+  Tabs.Indicator,
+  'indicator',
+)
+
+export const List = withContext<HTMLDivElement, Tabs.ListProps>(Tabs.List, 'list')
+
+export const Trigger = withContext<HTMLButtonElement, Tabs.TriggerProps>(Tabs.Trigger, 'trigger')
+
+export { TabsContext as Context, type TabsContextProps as ContextProps } from '@ark-ui/react/tabs'
