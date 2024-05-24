@@ -5,7 +5,10 @@ import { Avatar } from '../components/ui'
 <template>
   <Story title="Test">
     <Variant title="Basic">
-      <Avatar mt="10" name="Christian Schröter" src="https://avatars.githubusercontent.com/u/1846056?v=4" />
+      <Avatar.Root>
+    <Avatar.Fallback>PA</Avatar.Fallback>
+    <Avatar.Image src="https://i.pravatar.cc/3000" alt="avatar" />
+  </Avatar.Root>
     </Variant>
   </Story>
 </template>

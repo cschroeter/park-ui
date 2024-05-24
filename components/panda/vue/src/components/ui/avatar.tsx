@@ -1,27 +1,21 @@
-import type { AvatarRootProps } from '@ark-ui/vue/avatar'
-import { Avatar as ArkAvatar } from '@ark-ui/vue/avatar'
-import { defineComponent } from 'vue'
-import { css, cx } from '../../../styled-system/css'
-import { splitCssProps } from '../../../styled-system/jsx'
-import { type AvatarVariantProps, avatar } from '../../../styled-system/recipes'
+import { Avatar } from '@ark-ui/vue/avatar'
+import { type AccordionVariantProps, avatar } from '../../../styled-system/recipes'
+import type { Assign, JsxStyleProps } from '../../../styled-system/types'
+import { createStyleContext } from '../../lib/create-style-context'
 
-export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
-  src?: string
-  name: string
-}
+const { withProvider, withContext } = createStyleContext(avatar)
 
-export const Avatar = defineComponent<AvatarProps>({
-  setup(props) {
-    const [variantProps, avatarProps] = avatar.splitVariantProps(props)
-    const [cssProps, localProps] = splitCssProps(avatarProps)
-    const { name, src, ...rootProps } = localProps
-    const styles = avatar(variantProps)
+export interface RootProps extends Assign<JsxStyleProps, Avatar.RootProps>, AccordionVariantProps {}
+export const Root = withProvider<RootProps>(Avatar.Root, 'root')
 
-    return (
-      <ArkAvatar.Root {...rootProps} class={cx(styles.root, css(cssProps))}>
-        <ArkAvatar.Fallback>CS</ArkAvatar.Fallback>
-        <ArkAvatar.Image src={src} alt="CS" />
-      </ArkAvatar.Root>
-    )
-  },
-})
+export const Fallback = withContext<Assign<JsxStyleProps, Avatar.FallbackProps>>(
+  Avatar.Fallback,
+  'fallback',
+)
+export const Image = withContext<Assign<JsxStyleProps, Avatar.ImageProps>>(Avatar.Image, 'image')
+
+export {
+  AvatarContext as Context,
+  type AvatarContextProps as ContextProps,
+  type AvatarRootEmits as RootEmits,
+} from '@ark-ui/vue/avatar'

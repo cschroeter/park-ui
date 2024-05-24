@@ -1,2 +1,2 @@
 export * as Accordion from './accordion'
-export { Avatar } from './avatar'
+export * as Avatar from './avatar'
