@@ -13,14 +13,14 @@ export const Text = (props: TextProps) => {
   const mergedProps = mergeProps({ as: 'p' }, props)
   const [variantProps, textProps] = splitProps(mergedProps, ['size', 'class'])
   const [localProps, rootProps] = splitProps(textProps, ['as'])
-  const className = styles(variantProps)
+  const className = text(variantProps)
 
   return <Dynamic component={localProps.as} class={className} {...rootProps} />
 }
 
-type TextVariantProps = VariantProps<typeof styles>
+type TextVariantProps = VariantProps<typeof text>
 
-const styles = tv(
+const text = tv(
   {
     base: 'text',
     variants: {

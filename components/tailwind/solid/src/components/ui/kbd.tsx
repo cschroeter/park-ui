@@ -6,12 +6,12 @@ export interface KbdProps extends KbdVariantProps, HTMLArkProps<'kbd'> {}
 
 export const Kbd = (props: KbdProps) => {
   const [variantProps, kbdProps] = splitProps(props, ['class', 'size'])
-  return <ark.kbd class={styles(variantProps)} {...kbdProps} />
+  return <ark.kbd class={kbd(variantProps)} {...kbdProps} />
 }
 
-type KbdVariantProps = VariantProps<typeof styles>
+type KbdVariantProps = VariantProps<typeof kbd>
 
-const styles = tv(
+const kbd = tv(
   {
     base: 'kbd',
     defaultVariants: { size: 'md' },

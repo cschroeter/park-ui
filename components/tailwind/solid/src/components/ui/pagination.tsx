@@ -8,7 +8,7 @@ export interface PaginationProps extends PaginationRootProps, PaginationVariantP
 
 export const Pagination = (props: PaginationProps) => {
   const [variantProps, rootProps] = splitProps(props, ['class'])
-  const { root, ellipsis, item, prevTrigger, nextTrigger } = styles(variantProps)
+  const { root, ellipsis, item, prevTrigger, nextTrigger } = pagination(variantProps)
 
   return (
     <ArkPagination.Root class={root()} {...rootProps}>
@@ -47,9 +47,9 @@ export const Pagination = (props: PaginationProps) => {
   )
 }
 
-type PaginationVariantProps = VariantProps<typeof styles>
+type PaginationVariantProps = VariantProps<typeof pagination>
 
-const styles = tv(
+const pagination = tv(
   {
     base: 'pagination',
     slots: {

@@ -6,7 +6,7 @@ export interface CheckboxProps extends CheckboxRootProps, CheckboxVariantProps {
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
   const { className, size, children, ...rootProps } = props
-  const { root, control, label, indicator } = styles({ size })
+  const { root, control, label, indicator } = checkbox({ size })
 
   return (
     <ArkCheckbox.Root ref={ref} className={root({ className })} {...rootProps}>
@@ -26,9 +26,9 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref)
 
 Checkbox.displayName = 'Checkbox'
 
-type CheckboxVariantProps = VariantProps<typeof styles>
+type CheckboxVariantProps = VariantProps<typeof checkbox>
 
-const styles = tv(
+const checkbox = tv(
   {
     base: 'checkbox',
     defaultVariants: { size: 'md' },

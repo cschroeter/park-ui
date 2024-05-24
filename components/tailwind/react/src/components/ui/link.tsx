@@ -1,16 +1,16 @@
-import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
 import { forwardRef } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface LinkProps extends LinkVariantProps, HTMLArkProps<'a'> {}
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
-  const { className, ...rest } = props
-  return <ark.a className={styles({ className })} ref={ref} {...rest} />
+  const { className, ...otherProps } = props
+  return <ark.a className={link({ className })} ref={ref} {...otherProps} />
 })
 
 Link.displayName = 'Link'
 
-type LinkVariantProps = VariantProps<typeof styles>
+type LinkVariantProps = VariantProps<typeof link>
 
-const styles = tv({ base: 'link', variants: {} }, { twMerge: false })
+const link = tv({ base: 'link', variants: {} }, { twMerge: false })

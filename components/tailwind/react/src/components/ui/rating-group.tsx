@@ -2,12 +2,10 @@ import {
   RatingGroup as ArkRatingGroup,
   type RatingGroupRootProps,
 } from '@ark-ui/react/rating-group'
-import { type ReactNode, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {
-  children?: ReactNode
-}
+export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {}
 
 export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
   const { children, className, size, ...rootProps } = props

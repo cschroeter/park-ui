@@ -1,16 +1,13 @@
 import { NumberInput as ArkNumberInput, type NumberInputRootProps } from '@ark-ui/solid'
-import { type JSX, Show, children, splitProps } from 'solid-js'
+import { Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface NumberInputProps
-  extends Omit<NumberInputRootProps, 'children'>,
-    NumberInputVariantProps {
-  children?: JSX.Element
-}
+export interface NumberInputProps extends NumberInputRootProps, NumberInputVariantProps {}
 
 export const NumberInput = (props: NumberInputProps) => {
   const [variantProps, numberInputProps] = splitProps(props, ['size', 'class'])
-  const { root, control, label, input, incrementTrigger, decrementTrigger } = styles(variantProps)
+  const { root, control, label, input, incrementTrigger, decrementTrigger } =
+    numberInput(variantProps)
   const getChildren = children(() => numberInputProps.children)
 
   return (
@@ -31,9 +28,9 @@ export const NumberInput = (props: NumberInputProps) => {
   )
 }
 
-type NumberInputVariantProps = VariantProps<typeof styles>
+type NumberInputVariantProps = VariantProps<typeof numberInput>
 
-const styles = tv(
+const numberInput = tv(
   {
     base: 'numberInput',
     defaultVariants: { size: 'md' },

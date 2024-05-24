@@ -12,7 +12,7 @@ export interface ProgressProps extends ProgressRootProps, ProgressVariantProps {
 
 export const Progress = forwardRef<HTMLDivElement, ProgressProps>((props, ref) => {
   const { children, className, size, type = 'linear', ...rootProps } = props
-  const { root, label, track, range, circle, circleRange, circleTrack, valueText } = styles({
+  const { root, label, track, range, circle, circleRange, circleTrack, valueText } = progress({
     size,
   })
 
@@ -38,9 +38,9 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>((props, ref) =
 
 Progress.displayName = 'Progress'
 
-type ProgressVariantProps = VariantProps<typeof styles>
+type ProgressVariantProps = VariantProps<typeof progress>
 
-const styles = tv(
+const progress = tv(
   {
     base: 'progress',
     defaultVariants: { size: 'md' },

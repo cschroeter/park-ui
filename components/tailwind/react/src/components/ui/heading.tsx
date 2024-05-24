@@ -1,5 +1,5 @@
 import { createElement } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 type As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
@@ -10,7 +10,7 @@ export type HeadingProps = {
 
 export const Heading = (props: HeadingProps) => {
   const { as = 'h2', size, className, ...elementProps } = props
-  const classes = styles({ size, variant: 'heading', className })
+  const classes = text({ size, variant: 'heading', className })
 
   return createElement(as, {
     className: classes,
@@ -18,9 +18,9 @@ export const Heading = (props: HeadingProps) => {
   })
 }
 
-type TextVariantProps = VariantProps<typeof styles>
+type TextVariantProps = VariantProps<typeof text>
 
-const styles = tv(
+const text = tv(
   {
     base: 'text',
     variants: {

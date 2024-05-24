@@ -9,7 +9,6 @@ import type { JsxStyleProps } from 'styled-system/types'
 export interface ProgressProps
   extends Assign<JsxStyleProps, ProgressRootProps>,
     ProgressVariantProps {
-  children?: ReactNode
   /**
    * The type of progress to render.
    * @default linear

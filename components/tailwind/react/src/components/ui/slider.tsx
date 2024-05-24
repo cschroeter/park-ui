@@ -3,7 +3,6 @@ import { type ReactNode, forwardRef } from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface SliderProps extends SliderRootProps, SliderVariantProps {
-  children?: ReactNode
   marks?: {
     value: number
     label?: ReactNode
@@ -12,7 +11,7 @@ export interface SliderProps extends SliderRootProps, SliderVariantProps {
 
 export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
   const { children, className, size, ...rootProps } = props
-  const { root, label, control, track, range, thumb, marker, markerGroup } = styles({ size })
+  const { root, label, control, track, range, thumb, marker, markerGroup } = slider({ size })
 
   return (
     <ArkSlider.Root ref={ref} className={root({ className })} {...rootProps}>
@@ -46,9 +45,9 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
 
 Slider.displayName = 'Slider'
 
-type SliderVariantProps = VariantProps<typeof styles>
+type SliderVariantProps = VariantProps<typeof slider>
 
-const styles = tv(
+const slider = tv(
   {
     base: 'slider',
     defaultVariants: { size: 'md' },

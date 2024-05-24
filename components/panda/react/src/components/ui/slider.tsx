@@ -7,7 +7,6 @@ import { type SliderVariantProps, slider } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 
 export interface SliderProps extends Assign<JsxStyleProps, SliderRootProps>, SliderVariantProps {
-  children?: ReactNode
   marks?: {
     value: number
     label?: ReactNode

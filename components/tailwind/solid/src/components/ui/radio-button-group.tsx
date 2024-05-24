@@ -3,7 +3,7 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const radioButtonGroup = tv(
   {
     base: 'radioButtonGroup',
     defaultVariants: { size: 'md', variant: 'solid' },
@@ -72,7 +72,7 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 
 export const Root = withProvider(ArkRadioButtonGroup.Root, 'root')
 export const Indicator = withContext(ArkRadioButtonGroup.Indicator, 'indicator')

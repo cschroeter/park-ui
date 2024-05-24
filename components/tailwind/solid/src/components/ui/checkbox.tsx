@@ -1,10 +1,8 @@
 import { Checkbox as ArkCheckbox, type CheckboxRootProps as ArkCheckboxProps } from '@ark-ui/solid'
-import { type JSX, Show, children, splitProps } from 'solid-js'
+import { Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface CheckboxProps extends ArkCheckboxProps, CheckboxVariantProps {
-  children?: JSX.Element
-}
+export interface CheckboxProps extends ArkCheckboxProps, CheckboxVariantProps {}
 
 export const Checkbox = (props: CheckboxProps) => {
   const [variantProps, avatarProps] = splitProps(props, ['size', 'class'])

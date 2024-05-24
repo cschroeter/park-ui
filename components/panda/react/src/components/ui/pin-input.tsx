@@ -10,7 +10,6 @@ import { Input } from '~/components/ui/input'
 export interface PinInputProps
   extends Assign<JsxStyleProps, PinInputRootProps>,
     PinInputVariantProps {
-  children?: ReactNode
   /**
    * The number of inputs to render.
    * @default 4

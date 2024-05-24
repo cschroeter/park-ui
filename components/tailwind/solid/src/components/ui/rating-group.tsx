@@ -2,15 +2,13 @@ import { RatingGroup as ArkRatingGroup, type RatingGroupRootProps } from '@ark-u
 import { Index, type JSX, Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {
-  children?: JSX.Element
-}
+export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {}
 
 export const RatingGroup = (props: RatingGroupProps) => {
   const [variantProps, ratingGroupProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(ratingGroupProps, ['children'])
   const getChildren = children(() => localProps.children)
-  const { root, control, label, item } = styles(variantProps)
+  const { root, control, label, item } = ratingGroup(variantProps)
 
   return (
     <ArkRatingGroup.Root class={root()} {...rootProps}>
@@ -40,9 +38,9 @@ export const RatingGroup = (props: RatingGroupProps) => {
   )
 }
 
-type RatingGroupVariantProps = VariantProps<typeof styles>
+type RatingGroupVariantProps = VariantProps<typeof ratingGroup>
 
-const styles = tv(
+const ratingGroup = tv(
   {
     base: 'ratingGroup',
     defaultVariants: { size: 'md' },

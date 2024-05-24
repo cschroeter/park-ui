@@ -1,10 +1,9 @@
 import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/solid'
-import { Index, type JSX, Show, children, splitProps } from 'solid-js'
+import { Index, Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 import { Input } from '~/components/ui/input'
 
 export interface PinInputProps extends PinInputRootProps, PinInputVariantProps {
-  children?: JSX.Element
   /**
    * The number of inputs to render.
    * @default 4
@@ -16,7 +15,7 @@ export const PinInput = (props: PinInputProps) => {
   const [variantProps, pinInputProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(pinInputProps, ['children', 'length'])
   const getChildren = children(() => localProps.children)
-  const { root, control, label, input } = styles(variantProps)
+  const { root, control, label, input } = pinInput(variantProps)
 
   return (
     <ArkPinInput.Root class={root()} {...rootProps}>
@@ -38,9 +37,9 @@ export const PinInput = (props: PinInputProps) => {
   )
 }
 
-type PinInputVariantProps = VariantProps<typeof styles>
+type PinInputVariantProps = VariantProps<typeof pinInput>
 
-const styles = tv(
+const pinInput = tv(
   {
     base: 'pinInput',
     defaultVariants: { size: 'md' },

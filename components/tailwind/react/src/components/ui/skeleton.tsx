@@ -16,11 +16,11 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) =
   if (isLoaded) {
     return <ark.div className="animate-fade-in" ref={ref} {...rest} />
   }
-  return <ark.div ref={ref} className={styles({ className })} {...rest} />
+  return <ark.div ref={ref} className={skeleton({ className })} {...rest} />
 })
 
 Skeleton.displayName = 'Skeleton'
 
-type SkeletonVariantProps = VariantProps<typeof styles>
+type SkeletonVariantProps = VariantProps<typeof skeleton>
 
-const styles = tv({ base: 'skeleton', variants: {} }, { twMerge: false })
+const skeleton = tv({ base: 'skeleton', variants: {} }, { twMerge: false })

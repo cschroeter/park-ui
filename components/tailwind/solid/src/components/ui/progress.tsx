@@ -1,9 +1,8 @@
 import { Progress as ArkProgress, type ProgressRootProps } from '@ark-ui/solid'
-import { type JSX, Show, children, splitProps } from 'solid-js'
+import { Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface ProgressProps extends ProgressRootProps, ProgressVariantProps {
-  children?: JSX.Element
   /**
    * The type of progress to render.
    * @default linear
@@ -16,7 +15,7 @@ export const Progress = (props: ProgressProps) => {
   const [localProps, rootProps] = splitProps(progressProps, ['children', 'type'])
   const getChildren = children(() => localProps.children)
   const { root, label, track, range, circle, circleRange, circleTrack, valueText } =
-    styles(variantProps)
+    progress(variantProps)
 
   return (
     <ArkProgress.Root class={root({ class: variantProps.class })} {...rootProps}>
@@ -42,9 +41,9 @@ export const Progress = (props: ProgressProps) => {
   )
 }
 
-type ProgressVariantProps = VariantProps<typeof styles>
+type ProgressVariantProps = VariantProps<typeof progress>
 
-const styles = tv(
+const progress = tv(
   {
     base: 'progress',
     defaultVariants: { size: 'md' },
