@@ -79,4 +79,4 @@ export const Trigger = withContext<Drawer.TriggerProps>(Drawer.Trigger, 'trigger
 export {
   DialogContext as Context,
   type DialogContextProps as ContextProps,
-} from '@ark-ui/react/dialog'
+} from '@ark-ui/solid'

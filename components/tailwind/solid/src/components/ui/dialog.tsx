@@ -41,4 +41,4 @@ export const Title = withContext<Dialog.TitleProps>(Dialog.Title, 'title')
 
 export const Trigger = withContext<Dialog.TriggerProps>(Dialog.Trigger, 'trigger')
 
-export { DialogContext as Context, type DialogContextProps as ContextProps } from '@ark-ui/react'
+export { DialogContext as Context, type DialogContextProps as ContextProps } from '@ark-ui/solid'

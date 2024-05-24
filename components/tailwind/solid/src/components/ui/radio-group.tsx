@@ -68,4 +68,4 @@ export const Label = withContext<RadioGroup.LabelProps>(RadioGroup.Label, 'label
 export {
   RadioGroupContext as Context,
   type RadioGroupContextProps as ContextProps,
-} from '@ark-ui/react/radio-group'
+} from '@ark-ui/solid'

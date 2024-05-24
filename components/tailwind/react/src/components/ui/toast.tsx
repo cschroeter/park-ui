@@ -45,4 +45,4 @@ export {
   createToaster,
   type ToastContextProps as ContextProps,
   type ToasterProps,
-} from '@ark-ui/react/toast'
+} from '@ark-ui/solid'

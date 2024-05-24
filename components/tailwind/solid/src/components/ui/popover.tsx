@@ -49,4 +49,4 @@ export const Title = withContext<Popover.TitleProps>(Popover.Title, 'title')
 
 export const Trigger = withContext<Popover.TriggerProps>(Popover.Trigger, 'trigger')
 
-export { PopoverContext as Context, type PopoverContextProps as ContextProps } from '@ark-ui/react'
+export { PopoverContext as Context, type PopoverContextProps as ContextProps } from '@ark-ui/solid'

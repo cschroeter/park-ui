@@ -149,4 +149,4 @@ export const TriggerItem = withContext<Menu.TriggerItemProps>(Menu.TriggerItem, 
 
 export const Trigger = withContext<Menu.TriggerProps>(Menu.Trigger, 'trigger')
 
-export { MenuContext as Context, type MenuContextProps as ContextProps } from '@ark-ui/react'
+export { MenuContext as Context, type MenuContextProps as ContextProps } from '@ark-ui/solid'

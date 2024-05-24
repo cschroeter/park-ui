@@ -13,73 +13,69 @@ export default meta
 export const Base = () => {
   return (
     <ColorPicker.Root>
-      <ColorPicker.Context>
-        {(api) => (
-          <>
-            <ColorPicker.Label>Color Picker</ColorPicker.Label>
-            <ColorPicker.Control>
-              <ColorPicker.ChannelInput channel="hex" asChild={(props) => <Input {...props} />} />
-              <ColorPicker.Trigger>
-                <IconButton variant="outline">
-                  <ColorPicker.Swatch value={api().value} />
-                </IconButton>
-              </ColorPicker.Trigger>
-            </ColorPicker.Control>
-            <ColorPicker.Positioner>
-              <ColorPicker.Content>
-                <Stack gap="3">
-                  <ColorPicker.Area>
-                    <ColorPicker.AreaBackground />
-                    <ColorPicker.AreaThumb />
-                  </ColorPicker.Area>
-                  <HStack gap="3">
-                    <ColorPicker.EyeDropperTrigger
-                      asChild={(props) => <IconButton {...props()} size="xs" variant="outline" />}
-                    >
-                      <PipetteIcon />
-                    </ColorPicker.EyeDropperTrigger>
-                    <Stack gap="2" flex="1">
-                      <ColorPicker.ChannelSlider channel="hue">
-                        <ColorPicker.ChannelSliderTrack />
-                        <ColorPicker.ChannelSliderThumb />
-                      </ColorPicker.ChannelSlider>
-                      <ColorPicker.ChannelSlider channel="alpha">
-                        <ColorPicker.TransparencyGrid size="8px" />
-                        <ColorPicker.ChannelSliderTrack />
-                        <ColorPicker.ChannelSliderThumb />
-                      </ColorPicker.ChannelSlider>
-                    </Stack>
-                  </HStack>
-                  <HStack>
-                    <ColorPicker.ChannelInput
-                      channel="hex"
-                      asChild={(props) => <Input {...props()} size="2xs" />}
-                    />
-                    <ColorPicker.ChannelInput
-                      channel="alpha"
-                      asChild={(props) => <Input {...props()} size="2xs" />}
-                    />
-                  </HStack>
-                  <Stack gap="1.5">
-                    <Text size="xs" fontWeight="medium" color="fg.default">
-                      Saved Colors
-                    </Text>
-                    <ColorPicker.SwatchGroup>
-                      <Index each={presets}>
-                        {(color) => (
-                          <ColorPicker.SwatchTrigger value={color()}>
-                            <ColorPicker.Swatch value={color()} />
-                          </ColorPicker.SwatchTrigger>
-                        )}
-                      </Index>
-                    </ColorPicker.SwatchGroup>
-                  </Stack>
-                </Stack>
-              </ColorPicker.Content>
-            </ColorPicker.Positioner>
-          </>
-        )}
-      </ColorPicker.Context>
+      <ColorPicker.Label>Color Picker</ColorPicker.Label>
+      <ColorPicker.Control>
+        <ColorPicker.ChannelInput channel="hex" asChild={(props) => <Input {...props} />} />
+        <ColorPicker.Trigger>
+          <IconButton variant="outline">
+            <ColorPicker.Context>
+              {(api) => <ColorPicker.Swatch value={api().value} />}
+            </ColorPicker.Context>
+          </IconButton>
+        </ColorPicker.Trigger>
+      </ColorPicker.Control>
+      <ColorPicker.Positioner>
+        <ColorPicker.Content>
+          <Stack gap="3">
+            <ColorPicker.Area>
+              <ColorPicker.AreaBackground />
+              <ColorPicker.AreaThumb />
+            </ColorPicker.Area>
+            <HStack gap="3">
+              <ColorPicker.EyeDropperTrigger
+                asChild={(props) => <IconButton {...props()} size="xs" variant="outline" />}
+              >
+                <PipetteIcon />
+              </ColorPicker.EyeDropperTrigger>
+              <Stack gap="2" flex="1">
+                <ColorPicker.ChannelSlider channel="hue">
+                  <ColorPicker.ChannelSliderTrack />
+                  <ColorPicker.ChannelSliderThumb />
+                </ColorPicker.ChannelSlider>
+                <ColorPicker.ChannelSlider channel="alpha">
+                  <ColorPicker.TransparencyGrid size="8px" />
+                  <ColorPicker.ChannelSliderTrack />
+                  <ColorPicker.ChannelSliderThumb />
+                </ColorPicker.ChannelSlider>
+              </Stack>
+            </HStack>
+            <HStack>
+              <ColorPicker.ChannelInput
+                channel="hex"
+                asChild={(props) => <Input {...props()} size="2xs" />}
+              />
+              <ColorPicker.ChannelInput
+                channel="alpha"
+                asChild={(props) => <Input {...props()} size="2xs" />}
+              />
+            </HStack>
+            <Stack gap="1.5">
+              <Text size="xs" fontWeight="medium" color="fg.default">
+                Saved Colors
+              </Text>
+              <ColorPicker.SwatchGroup>
+                <Index each={presets}>
+                  {(color) => (
+                    <ColorPicker.SwatchTrigger value={color()}>
+                      <ColorPicker.Swatch value={color()} />
+                    </ColorPicker.SwatchTrigger>
+                  )}
+                </Index>
+              </ColorPicker.SwatchGroup>
+            </Stack>
+          </Stack>
+        </ColorPicker.Content>
+      </ColorPicker.Positioner>
     </ColorPicker.Root>
   )
 }

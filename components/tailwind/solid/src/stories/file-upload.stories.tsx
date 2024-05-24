@@ -1,5 +1,5 @@
 import { Trash2Icon } from 'lucide-solid'
-import { Index } from 'solid-js'
+import { For } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { Button, FileUpload, IconButton } from '~/components/ui'
 
@@ -14,27 +14,31 @@ export const Base = () => {
     <FileUpload.Root maxFiles={3}>
       <FileUpload.Dropzone>
         <FileUpload.Label>Drop your files here</FileUpload.Label>
-        <FileUpload.Trigger as={Button} size="sm">
+        <FileUpload.Trigger asChild={(props) => <Button {...props()} size="sm" />}>
           Open Dialog
         </FileUpload.Trigger>
       </FileUpload.Dropzone>
       <FileUpload.ItemGroup>
-        {(files) => (
-          <Index each={files()}>
-            {(file) => (
-              <FileUpload.Item file={file()}>
-                <FileUpload.ItemPreview type="image/*">
-                  <FileUpload.ItemPreviewImage />
-                </FileUpload.ItemPreview>
-                <FileUpload.ItemName />
-                <FileUpload.ItemSizeText />
-                <FileUpload.ItemDeleteTrigger as={IconButton} variant="link" size="sm">
-                  <Trash2Icon />
-                </FileUpload.ItemDeleteTrigger>
-              </FileUpload.Item>
-            )}
-          </Index>
-        )}
+        <FileUpload.Context>
+          {(context) => (
+            <For each={context().acceptedFiles}>
+              {(file) => (
+                <FileUpload.Item file={file}>
+                  <FileUpload.ItemPreview type="image/*">
+                    <FileUpload.ItemPreviewImage />
+                  </FileUpload.ItemPreview>
+                  <FileUpload.ItemName />
+                  <FileUpload.ItemSizeText />
+                  <FileUpload.ItemDeleteTrigger
+                    asChild={(props) => <IconButton {...props()} variant="link" size="sm" />}
+                  >
+                    <Trash2Icon />
+                  </FileUpload.ItemDeleteTrigger>
+                </FileUpload.Item>
+              )}
+            </For>
+          )}
+        </FileUpload.Context>
       </FileUpload.ItemGroup>
     </FileUpload.Root>
   )

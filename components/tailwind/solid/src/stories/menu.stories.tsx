@@ -21,15 +21,13 @@ export default meta
 export const Base = () => {
   return (
     <Menu.Root>
-      <Menu.Trigger as={Button} variant="outline">
-        Open Menu
-      </Menu.Trigger>
+      <Menu.Trigger asChild={() => <Button variant="outline" />}>Open Menu</Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>
-          <Menu.ItemGroup id="group-1">
-            <Menu.ItemGroupLabel for="group-1">My Account</Menu.ItemGroupLabel>
+          <Menu.ItemGroup>
+            <Menu.ItemGroupLabel>My Account</Menu.ItemGroupLabel>
             <Menu.Separator />
-            <Menu.Item id="profile">
+            <Menu.Item value="profile">
               <div class="flex gap-6 justify-between flex-1">
                 <div class="flex gap-2">
                   <UserIcon />
@@ -40,12 +38,12 @@ export const Base = () => {
                 </Text>
               </div>
             </Menu.Item>
-            <Menu.Item id="billing">
+            <Menu.Item value="billing">
               <div class="flex gap-2">
                 <CreditCardIcon /> Billing
               </div>
             </Menu.Item>
-            <Menu.Item id="settings">
+            <Menu.Item value="settings">
               <div class="flex gap-6 justify-between flex-1">
                 <div class="flex gap-2">
                   <SettingsIcon /> Settings
@@ -65,18 +63,18 @@ export const Base = () => {
               </Menu.TriggerItem>
               <Menu.Positioner>
                 <Menu.Content>
-                  <Menu.Item id="email">
+                  <Menu.Item value="email">
                     <div class="flex gap-2">
                       <MailIcon /> Email
                     </div>
                   </Menu.Item>
-                  <Menu.Item id="message">
+                  <Menu.Item value="message">
                     <div class="flex gap-2">
                       <MessageSquareIcon /> Message
                     </div>
                   </Menu.Item>
                   <Menu.Separator />
-                  <Menu.Item id="other">
+                  <Menu.Item value="other">
                     <div class="flex gap-2">
                       <PlusCircleIcon />
                       More Options...
@@ -86,7 +84,7 @@ export const Base = () => {
               </Menu.Positioner>
             </Menu.Root>
             <Menu.Separator />
-            <Menu.Item id="logout">
+            <Menu.Item value="logout">
               <div class="flex gap-2">
                 <LogOutIcon />
                 Logout

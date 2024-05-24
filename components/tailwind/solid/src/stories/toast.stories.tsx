@@ -1,4 +1,3 @@
-import { createToaster } from '@ark-ui/solid'
 import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
 import { Button, IconButton, Toast } from '~/components/ui'
@@ -9,31 +8,45 @@ const meta: Meta = {
 
 export default meta
 
-const [Toaster, toast] = createToaster({
-  placement: 'top-end',
-  render(toast) {
-    return (
-      <Toast.Root>
-        <Toast.Title>{toast().title}</Toast.Title>
-        <Toast.Description>{toast().description}</Toast.Description>
-        <Toast.CloseTrigger as={IconButton} size="sm" variant="link">
-          <XIcon />
-        </Toast.CloseTrigger>
-      </Toast.Root>
-    )
-  },
+const toaster = Toast.createToaster({
+  placement: 'bottom-end',
+  overlap: true,
+  gap: 16,
 })
 
-export const Base = () => {
+export const Basic = () => {
   return (
     <>
       <Button
         variant="outline"
-        onClick={() => toast().create({ title: 'Title', description: 'Description' })}
+        onClick={() =>
+          toaster.create({
+            title: 'Toast Title',
+            description: 'Toast Description',
+            type: 'info',
+          })
+        }
       >
-        Create Toast
+        Add Toast
       </Button>
-      <Toaster />
+      <Toast.Toaster toaster={toaster}>
+        {(toast) => (
+          <Toast.Root>
+            <Toast.Title>{toast().title}</Toast.Title>
+            <Toast.Description>{toast().description}</Toast.Description>
+            <Toast.ActionTrigger
+              asChild={(props) => <Button {...props()} variant="link" size="sm" />}
+            >
+              Action
+            </Toast.ActionTrigger>
+            <Toast.CloseTrigger
+              asChild={(props) => <IconButton {...props()} size="sm" variant="link" />}
+            >
+              <XIcon />
+            </Toast.CloseTrigger>
+          </Toast.Root>
+        )}
+      </Toast.Toaster>
     </>
   )
 }

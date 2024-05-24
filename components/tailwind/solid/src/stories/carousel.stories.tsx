@@ -26,7 +26,7 @@ export const Base = () => {
               <Carousel.Item index={index}>
                 <img
                   src={image()}
-                  alt={`Slide Image ${index}`}
+                  alt={`Slide ${index}`}
                   style={{ height: '398px', width: '100%', 'object-fit': 'cover' }}
                 />
               </Carousel.Item>
@@ -35,9 +35,7 @@ export const Base = () => {
         </Carousel.ItemGroup>
         <Carousel.Control>
           <Carousel.PrevTrigger
-            as={IconButton}
-            size="sm"
-            variant="link"
+            asChild={(props) => <IconButton {...props()} size="sm" variant="link" />}
             aria-label="Previous Slide"
           >
             <ChevronLeftIcon />
@@ -49,7 +47,10 @@ export const Base = () => {
               )}
             </Index>
           </Carousel.IndicatorGroup>
-          <Carousel.NextTrigger as={IconButton} size="sm" variant="link" aria-label="Next Slide">
+          <Carousel.NextTrigger
+            asChild={(props) => <IconButton {...props()} size="sm" variant="link" />}
+            aria-label="Next Slide"
+          >
             <ChevronRightIcon />
           </Carousel.NextTrigger>
         </Carousel.Control>

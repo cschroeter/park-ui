@@ -122,4 +122,4 @@ export const YearSelect = withContext<DatePicker.YearSelectProps>(
 export {
   DatePickerContext as Context,
   type DatePickerContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/solid'

@@ -62,4 +62,4 @@ export const Label = withContext<SegmentGroup.LabelProps>(SegmentGroup.Label, 'l
 export {
   SegmentGroupContext as Context,
   type SegmentGroupContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/solid'

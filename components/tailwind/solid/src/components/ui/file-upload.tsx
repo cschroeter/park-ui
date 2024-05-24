@@ -64,4 +64,4 @@ export {
   FileUploadHiddenInput as HiddenInput,
   type FileUploadContextProps as ContextProps,
   type FileUploadHiddenInputProps as HiddenInputProps,
-} from '@ark-ui/react'
+} from '@ark-ui/solid'

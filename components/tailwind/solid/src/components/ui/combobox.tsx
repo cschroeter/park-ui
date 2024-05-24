@@ -116,11 +116,11 @@ export const Trigger = withContext<Combobox.TriggerProps>(Combobox.Trigger, 'tri
 export {
   ComboboxContext as Context,
   type ComboboxContextProps as ContextProps,
-} from '@ark-ui/react/combobox'
+} from '@ark-ui/solid'
 
 export type {
   ComboboxHighlightChangeDetails as HighlightChangeDetails,
   ComboboxInputValueChangeDetails as InputValueChangeDetails,
   ComboboxOpenChangeDetails as OpenChangeDetails,
   ComboboxValueChangeDetails as ValueChangeDetails,
-} from '@ark-ui/react/combobox'
+} from '@ark-ui/solid'

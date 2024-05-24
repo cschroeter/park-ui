@@ -29,8 +29,7 @@ export const PinInput = (props: PinInputProps) => {
             <ArkPinInput.Input
               class={input()}
               index={index()}
-              as={Input}
-              size={variantProps.size}
+              asChild={(props) => <Input {...props()} size={variantProps.size} />}
             />
           )}
         </Index>

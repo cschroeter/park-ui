@@ -2,7 +2,7 @@ import { type HTMLArkProps, ark } from '@ark-ui/solid'
 import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const alert = tv(
   {
     base: 'alert',
     slots: {
@@ -16,10 +16,9 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(alert)
 
 export interface RootProps extends HTMLArkProps<'div'>, VariantProps<typeof alert> {}
-
 export const Root = withProvider<RootProps>(ark.div, 'root')
 
 export const Content = withContext<HTMLArkProps<'div'>>(ark.div, 'content')

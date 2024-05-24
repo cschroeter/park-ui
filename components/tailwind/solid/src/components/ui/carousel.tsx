@@ -79,4 +79,4 @@ export const Viewport = withContext<Carousel.ViewportProps>(Carousel.Viewport, '
 export {
   CarouselContext as Context,
   type CarouselContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/solid'

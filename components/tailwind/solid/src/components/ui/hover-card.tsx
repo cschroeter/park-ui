@@ -34,4 +34,4 @@ export const Trigger = withContext<HoverCard.TriggerProps>(HoverCard.Trigger, 't
 export {
   HoverCardContext as Context,
   type HoverCardContextProps as ContextProps,
-} from '@ark-ui/react'
+} from '@ark-ui/solid'

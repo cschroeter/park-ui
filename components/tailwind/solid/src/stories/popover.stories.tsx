@@ -11,7 +11,7 @@ export default meta
 export const Base = () => {
   return (
     <Popover.Root>
-      <Popover.Trigger as={Button}>Open Popover</Popover.Trigger>
+      <Popover.Trigger asChild={(props) => <Button {...props()} />}>Open Popover</Popover.Trigger>
       <Popover.Positioner>
         <Popover.Content>
           <Popover.Arrow>
@@ -24,7 +24,9 @@ export const Base = () => {
             </Popover.Description>
           </div>
           <div class="absolute top-1 right-1">
-            <Popover.CloseTrigger as={IconButton} variant="ghost" size="sm">
+            <Popover.CloseTrigger
+              asChild={(props) => <IconButton {...props()} variant="ghost" size="sm" />}
+            >
               <XIcon />
             </Popover.CloseTrigger>
           </div>
