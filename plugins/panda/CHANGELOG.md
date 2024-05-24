@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### Changed
+
+- Optimized type checking for `Heading`, `Icon` and `Text` components for faster performance.
+
+### Fixed
+
+- Resolved an issue with the `Avatar` component where the image did not display as round after loading.
+
 ## [0.38.0-0] - 2024-05-22
 
 ### Changed
