@@ -1,3 +1,4 @@
+// import { TabsRoot } from '@ark-ui/solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { Tabs } from '~/components/ui'

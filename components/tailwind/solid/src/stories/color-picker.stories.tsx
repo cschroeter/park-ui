@@ -14,7 +14,7 @@ export const Base = () => {
     <ColorPicker.Root>
       <ColorPicker.Label>Color Picker</ColorPicker.Label>
       <ColorPicker.Control>
-        <ColorPicker.ChannelInput channel="hex" asChild={(props) => <Input {...props} />} />
+        <ColorPicker.ChannelInput channel="hex" asChild={(props) => <Input {...props()} />} />
         <ColorPicker.Trigger>
           <IconButton variant="outline">
             <ColorPicker.Context>
