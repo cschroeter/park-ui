@@ -5,7 +5,7 @@ import '@fontsource-variable/plus-jakarta-sans'
 import '@fontsource-variable/raleway'
 import '@fontsource-variable/roboto-mono'
 import { ViewTransitions } from 'astro:transitions'
-import "../index.css"
+import '../index.css'
 
 interface Props {
   title: string
@@ -53,7 +53,7 @@ const { title, description } = Astro.props
     <meta name="twitter:image" content="https://park-ui.com/twitter-image.png" />
 
     <!-- Tracking -->
-    <script defer data-domain="park-ui.com" src="https://plausible.io/js/script.js"></script>
+    <script is:inline defer data-domain="park-ui.com" src="https://plausible.io/js/script.js" />
     <ViewTransitions />
   </head>
   <body>

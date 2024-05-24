@@ -1,9 +1,8 @@
 import { FileUpload } from '@ark-ui/react/file-upload'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const fileUpload = tv(
   {
     base: 'fileUpload',
     slots: {
@@ -23,28 +22,58 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(fileUpload)
 
-export const Root = withProvider(FileUpload.Root, 'root')
-export const Dropzone = withContext(FileUpload.Dropzone, 'dropzone')
-export const Item = withContext(FileUpload.Item, 'item')
-export const ItemDeleteTrigger = withContext(FileUpload.ItemDeleteTrigger, 'itemDeleteTrigger')
-export const ItemGroup = withContext(FileUpload.ItemGroup, 'itemGroup')
-export const ItemName = withContext(FileUpload.ItemName, 'itemName')
-export const ItemPreview = withContext(FileUpload.ItemPreview, 'itemPreview')
-export const ItemPreviewImage = withContext(FileUpload.ItemPreviewImage, 'itemPreviewImage')
-export const ItemSizeText = withContext(FileUpload.ItemSizeText, 'itemSizeText')
-export const Label = withContext(FileUpload.Label, 'label')
-export const Trigger = withContext(FileUpload.Trigger, 'trigger')
+export interface RootProps extends FileUpload.RootProps, VariantProps<typeof fileUpload> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(FileUpload.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface DropzoneProps extends ComponentProps<typeof Dropzone> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemDeleteTriggerProps extends ComponentProps<typeof ItemDeleteTrigger> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface ItemNameProps extends ComponentProps<typeof ItemName> {}
-export interface ItemPreviewProps extends ComponentProps<typeof ItemPreview> {}
-export interface ItemPreviewImageProps extends ComponentProps<typeof ItemPreviewImage> {}
-export interface ItemSizeTextProps extends ComponentProps<typeof ItemSizeText> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Dropzone = withContext<HTMLDivElement, FileUpload.DropzoneProps>(
+  FileUpload.Dropzone,
+  'dropzone',
+)
+
+export const ItemDeleteTrigger = withContext<HTMLButtonElement, FileUpload.ItemDeleteTriggerProps>(
+  FileUpload.ItemDeleteTrigger,
+  'itemDeleteTrigger',
+)
+
+export const ItemGroup = withContext<HTMLUListElement, FileUpload.ItemGroupProps>(
+  FileUpload.ItemGroup,
+  'itemGroup',
+)
+
+export const ItemName = withContext<HTMLDivElement, FileUpload.ItemNameProps>(
+  FileUpload.ItemName,
+  'itemName',
+)
+
+export const ItemPreviewImage = withContext<HTMLImageElement, FileUpload.ItemPreviewImageProps>(
+  FileUpload.ItemPreviewImage,
+  'itemPreviewImage',
+)
+
+export const ItemPreview = withContext<HTMLImageElement, FileUpload.ItemPreviewProps>(
+  FileUpload.ItemPreview,
+  'itemPreview',
+)
+
+export const Item = withContext<HTMLLIElement, FileUpload.ItemProps>(FileUpload.Item, 'item')
+
+export const ItemSizeText = withContext<HTMLDivElement, FileUpload.ItemSizeTextProps>(
+  FileUpload.ItemSizeText,
+  'itemSizeText',
+)
+
+export const Label = withContext<HTMLLabelElement, FileUpload.LabelProps>(FileUpload.Label, 'label')
+
+export const Trigger = withContext<HTMLButtonElement, FileUpload.TriggerProps>(
+  FileUpload.Trigger,
+  'trigger',
+)
+
+export {
+  FileUploadContext as Context,
+  FileUploadHiddenInput as HiddenInput,
+  type FileUploadContextProps as ContextProps,
+  type FileUploadHiddenInputProps as HiddenInputProps,
+} from '@ark-ui/react/file-upload'

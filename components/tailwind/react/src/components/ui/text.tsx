@@ -1,5 +1,5 @@
 import { createElement } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 type As = 'p' | 'span' | 'div' | 'label'
 
@@ -10,7 +10,7 @@ export type TextProps = {
 
 export const Text = (props: TextProps) => {
   const { as = 'p', size, className, ...elementProps } = props
-  const classes = styles({ size, className })
+  const classes = text({ size, className })
 
   return createElement(as, {
     className: classes,
@@ -18,9 +18,9 @@ export const Text = (props: TextProps) => {
   })
 }
 
-type TextVariantProps = VariantProps<typeof styles>
+type TextVariantProps = VariantProps<typeof text>
 
-const styles = tv(
+const text = tv(
   {
     base: 'text',
     variants: {

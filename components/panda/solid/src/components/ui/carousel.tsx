@@ -1,27 +1,52 @@
-import { Carousel } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { carousel } from 'styled-system/recipes'
+import { type Assign, Carousel } from '@ark-ui/solid'
+import { type CarouselVariantProps, carousel } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(carousel)
 
-export const Root = withProvider(styled(Carousel.Root), 'root')
-export const Control = withContext(styled(Carousel.Control), 'control')
-export const Indicator = withContext(styled(Carousel.Indicator), 'indicator')
-export const IndicatorGroup = withContext(styled(Carousel.IndicatorGroup), 'indicatorGroup')
-export const Item = withContext(styled(Carousel.Item), 'item')
-export const ItemGroup = withContext(styled(Carousel.ItemGroup), 'itemGroup')
-export const NextTrigger = withContext(styled(Carousel.NextTrigger), 'nextTrigger')
-export const PrevTrigger = withContext(styled(Carousel.PrevTrigger), 'prevTrigger')
-export const Viewport = withContext(styled(Carousel.Viewport), 'viewport')
+export interface RootProps
+  extends Assign<JsxStyleProps, Carousel.RootProps>,
+    CarouselVariantProps {}
+export const Root = withProvider<RootProps>(Carousel.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ControlProps extends ComponentProps<typeof Control> {}
-export interface IndicatorProps extends ComponentProps<typeof Indicator> {}
-export interface IndicatorGroupProps extends ComponentProps<typeof IndicatorGroup> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemGroupProps extends ComponentProps<typeof ItemGroup> {}
-export interface NextTriggerProps extends ComponentProps<typeof NextTrigger> {}
-export interface PrevTriggerProps extends ComponentProps<typeof PrevTrigger> {}
-export interface ViewportProps extends ComponentProps<typeof Viewport> {}
+export const Control = withContext<Assign<JsxStyleProps, Carousel.ControlProps>>(
+  Carousel.Control,
+  'control',
+)
+
+export const IndicatorGroup = withContext<Assign<JsxStyleProps, Carousel.IndicatorGroupProps>>(
+  Carousel.IndicatorGroup,
+  'indicatorGroup',
+)
+
+export const Indicator = withContext<Assign<JsxStyleProps, Carousel.IndicatorProps>>(
+  Carousel.Indicator,
+  'indicator',
+)
+
+export const ItemGroup = withContext<Assign<JsxStyleProps, Carousel.ItemGroupProps>>(
+  Carousel.ItemGroup,
+  'itemGroup',
+)
+
+export const Item = withContext<Assign<JsxStyleProps, Carousel.ItemProps>>(Carousel.Item, 'item')
+
+export const NextTrigger = withContext<Assign<JsxStyleProps, Carousel.NextTriggerProps>>(
+  Carousel.NextTrigger,
+  'nextTrigger',
+)
+
+export const PrevTrigger = withContext<Assign<JsxStyleProps, Carousel.PrevTriggerProps>>(
+  Carousel.PrevTrigger,
+  'prevTrigger',
+)
+
+export const Viewport = withContext<Assign<JsxStyleProps, Carousel.ViewportProps>>(
+  Carousel.Viewport,
+  'viewport',
+)
+export {
+  CarouselContext as Context,
+  type CarouselContextProps as ContextProps,
+} from '@ark-ui/solid'

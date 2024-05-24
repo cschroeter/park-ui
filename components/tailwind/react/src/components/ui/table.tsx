@@ -1,9 +1,8 @@
-import { ark } from '@ark-ui/react/factory'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const table = tv(
   {
     base: 'table',
     defaultVariants: { size: 'md', variant: 'plain' },
@@ -66,22 +65,24 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(table)
 
-export const Root = withProvider(ark.table, 'root')
-export const Body = withContext(ark.tbody, 'body')
-export const Caption = withContext(ark.caption, 'caption')
-export const Cell = withContext(ark.td, 'cell')
-export const Footer = withContext(ark.tfoot, 'footer')
-export const Head = withContext(ark.thead, 'head')
-export const Header = withContext(ark.th, 'header')
-export const Row = withContext(ark.tr, 'row')
+export interface RootProps extends HTMLArkProps<'table'>, VariantProps<typeof table> {}
+export const Root = withProvider<HTMLTableElement, RootProps>(ark.table, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface BodyProps extends ComponentProps<typeof Body> {}
-export interface CaptionProps extends ComponentProps<typeof Caption> {}
-export interface CellProps extends ComponentProps<typeof Cell> {}
-export interface FooterProps extends ComponentProps<typeof Footer> {}
-export interface HeadProps extends ComponentProps<typeof Head> {}
-export interface HeaderProps extends ComponentProps<typeof Header> {}
-export interface RowProps extends ComponentProps<typeof Row> {}
+export const Body = withContext<HTMLTableSectionElement, HTMLArkProps<'tbody'>>(ark.tbody, 'body')
+
+export const Caption = withContext<HTMLTableCaptionElement, HTMLArkProps<'caption'>>(
+  ark.caption,
+  'caption',
+)
+
+export const Cell = withContext<HTMLTableCellElement, HTMLArkProps<'td'>>(ark.td, 'cell')
+
+export const Foot = withContext<HTMLTableSectionElement, HTMLArkProps<'tfoot'>>(ark.tfoot, 'footer')
+
+export const Head = withContext<HTMLTableSectionElement, HTMLArkProps<'thead'>>(ark.thead, 'head')
+
+export const Header = withContext<HTMLTableCellElement, HTMLArkProps<'th'>>(ark.th, 'header')
+
+export const Row = withContext<HTMLTableRowElement, HTMLArkProps<'tr'>>(ark.tr, 'row')

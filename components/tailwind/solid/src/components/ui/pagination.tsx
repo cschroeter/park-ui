@@ -8,21 +8,25 @@ export interface PaginationProps extends PaginationRootProps, PaginationVariantP
 
 export const Pagination = (props: PaginationProps) => {
   const [variantProps, rootProps] = splitProps(props, ['class'])
-  const { root, ellipsis, item, prevTrigger, nextTrigger } = styles(variantProps)
+  const { root, ellipsis, item, prevTrigger, nextTrigger } = pagination(variantProps)
 
   return (
     <ArkPagination.Root class={root()} {...rootProps}>
-      {(api) => (
-        <>
-          <ArkPagination.PrevTrigger class={prevTrigger()}>
-            <IconButton variant="ghost" aria-label="Next Page">
-              <ChevronLeftIcon />
-            </IconButton>
-          </ArkPagination.PrevTrigger>
-          <For each={api().pages}>
+      <ArkPagination.PrevTrigger class={prevTrigger()}>
+        <IconButton variant="ghost" aria-label="Next Page">
+          <ChevronLeftIcon />
+        </IconButton>
+      </ArkPagination.PrevTrigger>
+      <ArkPagination.Context>
+        {(pagiation) => (
+          <For each={pagiation().pages}>
             {(page, index) =>
               page.type === 'page' ? (
-                <ArkPagination.Item {...page} as={Button} variant="outline" class={item()}>
+                <ArkPagination.Item
+                  {...page}
+                  asChild={(props) => <Button {...props} variant="outline" />}
+                  class={item()}
+                >
                   {page.value}
                 </ArkPagination.Item>
               ) : (
@@ -32,20 +36,20 @@ export const Pagination = (props: PaginationProps) => {
               )
             }
           </For>
-          <ArkPagination.NextTrigger class={nextTrigger()}>
-            <IconButton variant="ghost" aria-label="Next Page">
-              <ChevronRightIcon />
-            </IconButton>
-          </ArkPagination.NextTrigger>
-        </>
-      )}
+        )}
+      </ArkPagination.Context>
+      <ArkPagination.NextTrigger class={nextTrigger()}>
+        <IconButton variant="ghost" aria-label="Next Page">
+          <ChevronRightIcon />
+        </IconButton>
+      </ArkPagination.NextTrigger>
     </ArkPagination.Root>
   )
 }
 
-type PaginationVariantProps = VariantProps<typeof styles>
+type PaginationVariantProps = VariantProps<typeof pagination>
 
-const styles = tv(
+const pagination = tv(
   {
     base: 'pagination',
     slots: {

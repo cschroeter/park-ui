@@ -1,9 +1,8 @@
-import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
+import { forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface SkeletonProps extends HTMLArkProps<'div'>, SkeletonVariantProps {
-  children?: ReactNode
   /**
    *
    * @default false
@@ -17,11 +16,11 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) =
   if (isLoaded) {
     return <ark.div className="animate-fade-in" ref={ref} {...rest} />
   }
-  return <ark.div ref={ref} className={styles({ className })} {...rest} />
+  return <ark.div ref={ref} className={skeleton({ className })} {...rest} />
 })
 
 Skeleton.displayName = 'Skeleton'
 
-type SkeletonVariantProps = VariantProps<typeof styles>
+type SkeletonVariantProps = VariantProps<typeof skeleton>
 
-const styles = tv({ base: 'skeleton', variants: {} }, { twMerge: false })
+const skeleton = tv({ base: 'skeleton', variants: {} }, { twMerge: false })

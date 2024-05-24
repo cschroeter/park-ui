@@ -1,6 +1,6 @@
 import { Avatar as ArkAvatar, type AvatarRootProps } from '@ark-ui/react/avatar'
 import { forwardRef } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
   name?: string
@@ -9,7 +9,7 @@ export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { size, className, name, src, ...rootProps } = props
-  const { root, fallback, image } = styles({ size })
+  const { root, fallback, image } = avatar({ size })
 
   return (
     <ArkAvatar.Root ref={ref} className={root({ className })} {...rootProps}>
@@ -23,9 +23,9 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
 
 Avatar.displayName = 'Avatar'
 
-type AvatarVariantProps = VariantProps<typeof styles>
+type AvatarVariantProps = VariantProps<typeof avatar>
 
-const styles = tv(
+const avatar = tv(
   {
     base: 'avatar',
     defaultVariants: { size: 'md' },

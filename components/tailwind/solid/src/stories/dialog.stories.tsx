@@ -11,7 +11,7 @@ export default meta
 export const Base = () => {
   return (
     <Dialog.Root>
-      <Dialog.Trigger as={Button}>Open Dialog</Dialog.Trigger>
+      <Dialog.Trigger asChild={(props) => <Button {...props()} />}>Open Dialog</Dialog.Trigger>
       <Dialog.Backdrop />
       <Dialog.Positioner>
         <Dialog.Content>
@@ -21,7 +21,10 @@ export const Base = () => {
               <Dialog.Description>Dialog Description</Dialog.Description>
             </div>
             <div class="flex gap-3 flex-row w-full">
-              <Dialog.CloseTrigger class="w-full" as={Button} variant="outline">
+              <Dialog.CloseTrigger
+                class="w-full"
+                asChild={(props) => <Button {...props()} variant="outline" />}
+              >
                 Cancel
               </Dialog.CloseTrigger>
               <Button class="w-full">Confirm</Button>
@@ -29,9 +32,7 @@ export const Base = () => {
           </div>
           <Dialog.CloseTrigger
             class="absolute top-2 right-2"
-            as={IconButton}
-            variant="ghost"
-            size="sm"
+            asChild={(props) => <IconButton {...props()} variant="ghost" size="sm" />}
           >
             <XIcon />
           </Dialog.CloseTrigger>

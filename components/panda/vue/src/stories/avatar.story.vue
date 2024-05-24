@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import Avatar from '../components/ui/Avatar.vue'
+import { Avatar } from '../components/ui'
 </script>
 
 <template>
   <Story title="Test">
     <Variant title="Basic">
-      <Avatar name="Christian Schröter" src="https://avatars.githubusercontent.com/u/1846056?v=4" />
+      <Avatar.Root>
+    <Avatar.Fallback>PA</Avatar.Fallback>
+    <Avatar.Image src="https://i.pravatar.cc/3000" alt="avatar" />
+  </Avatar.Root>
     </Variant>
   </Story>
 </template>

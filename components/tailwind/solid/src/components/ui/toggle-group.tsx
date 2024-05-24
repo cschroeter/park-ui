@@ -3,7 +3,7 @@ import type { ComponentProps } from 'solid-js'
 import { tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const toggleGroup = tv(
   {
     base: 'toggleGroup',
     defaultVariants: { size: 'md', variant: 'outline' },
@@ -28,7 +28,7 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(toggleGroup)
 
 export const Root = withProvider(ToggleGroup.Root, 'root')
 export const Item = withContext(ToggleGroup.Item, 'item')

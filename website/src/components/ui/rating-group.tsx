@@ -1,18 +1,17 @@
+import type { Assign } from '@ark-ui/react'
 import {
   RatingGroup as ArkRatingGroup,
   type RatingGroupRootProps,
 } from '@ark-ui/react/rating-group'
-import { forwardRef, type ReactNode } from 'react'
+import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { ratingGroup, type RatingGroupVariantProps } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface RatingGroupProps
   extends Assign<JsxStyleProps, RatingGroupRootProps>,
-    RatingGroupVariantProps {
-  children?: ReactNode
-}
+    RatingGroupVariantProps {}
 
 export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
   const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
@@ -28,13 +27,17 @@ export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, 
     >
       {children && <ArkRatingGroup.Label className={styles.label}>{children}</ArkRatingGroup.Label>}
       <ArkRatingGroup.Control className={styles.control}>
-        {({ items }) =>
-          items.map((index) => (
-            <ArkRatingGroup.Item className={styles.item} key={index} index={index}>
-              {({ isHalf }) => <StarIcon isHalf={isHalf} />}
-            </ArkRatingGroup.Item>
-          ))
-        }
+        <ArkRatingGroup.Context>
+          {({ items }) =>
+            items.map((index) => (
+              <ArkRatingGroup.Item className={styles.item} key={index} index={index}>
+                <ArkRatingGroup.ItemContext>
+                  {(item) => <StarIcon isHalf={item.half} />}
+                </ArkRatingGroup.ItemContext>
+              </ArkRatingGroup.Item>
+            ))
+          }
+        </ArkRatingGroup.Context>
       </ArkRatingGroup.Control>
     </ArkRatingGroup.Root>
   )

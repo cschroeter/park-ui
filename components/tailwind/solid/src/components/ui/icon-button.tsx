@@ -6,12 +6,12 @@ export interface IconButtonProps extends IconButtonVariantProps, HTMLArkProps<'b
 
 export const IconButton = (props: IconButtonProps) => {
   const [variantProps, iconButtonProps] = splitProps(props, ['class', 'size', 'variant'])
-  return <ark.button class={styles(variantProps)} {...iconButtonProps} />
+  return <ark.button class={iconButton(variantProps)} {...iconButtonProps} />
 }
 
-type IconButtonVariantProps = VariantProps<typeof styles>
+type IconButtonVariantProps = VariantProps<typeof iconButton>
 
-const styles = tv(
+const iconButton = tv(
   {
     base: 'iconButton',
     defaultVariants: { variant: 'solid', size: 'md' },

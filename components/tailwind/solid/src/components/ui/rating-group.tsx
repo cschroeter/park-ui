@@ -2,15 +2,13 @@ import { RatingGroup as ArkRatingGroup, type RatingGroupRootProps } from '@ark-u
 import { Index, type JSX, Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {
-  children?: JSX.Element
-}
+export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {}
 
 export const RatingGroup = (props: RatingGroupProps) => {
   const [variantProps, ratingGroupProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(ratingGroupProps, ['children'])
   const getChildren = children(() => localProps.children)
-  const { root, control, label, item } = styles(variantProps)
+  const { root, control, label, item } = ratingGroup(variantProps)
 
   return (
     <ArkRatingGroup.Root class={root()} {...rootProps}>
@@ -18,23 +16,31 @@ export const RatingGroup = (props: RatingGroupProps) => {
         <ArkRatingGroup.Label class={label()}>{getChildren()}</ArkRatingGroup.Label>
       </Show>
       <ArkRatingGroup.Control class={control()}>
-        {(api) => (
-          <Index each={api().items}>
-            {(index) => (
-              <ArkRatingGroup.Item class={item()} index={index()}>
-                {(api) => <StarIcon isHalf={api().isHalf} />}
-              </ArkRatingGroup.Item>
-            )}
-          </Index>
-        )}
+        <ArkRatingGroup.Context>
+          {(context) => (
+            <Index each={context().items}>
+              {(index) => (
+                <ArkRatingGroup.Item class={item()} index={index()}>
+                  <ArkRatingGroup.ItemContext>
+                    {(item) => (
+                      <Show when={item().highlighted} fallback={<StarIcon />}>
+                        <StarIcon half={item().half} />
+                      </Show>
+                    )}
+                  </ArkRatingGroup.ItemContext>
+                </ArkRatingGroup.Item>
+              )}
+            </Index>
+          )}
+        </ArkRatingGroup.Context>
       </ArkRatingGroup.Control>
     </ArkRatingGroup.Root>
   )
 }
 
-type RatingGroupVariantProps = VariantProps<typeof styles>
+type RatingGroupVariantProps = VariantProps<typeof ratingGroup>
 
-const styles = tv(
+const ratingGroup = tv(
   {
     base: 'ratingGroup',
     defaultVariants: { size: 'md' },
@@ -71,7 +77,7 @@ const styles = tv(
 )
 
 interface Props {
-  isHalf: boolean
+  half?: boolean
 }
 
 const StarIcon = (props: Props) => (
@@ -94,7 +100,7 @@ const StarIcon = (props: Props) => (
       </linearGradient>
     </defs>
     <polygon
-      fill={props.isHalf ? 'url(#half)' : 'inherit'}
+      fill={props.half ? 'url(#half)' : 'inherit'}
       points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
     />
   </svg>

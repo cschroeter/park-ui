@@ -6,12 +6,12 @@ export interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'texta
 
 export const Textarea = (props: TextareaProps) => {
   const [variantProps, textareaProps] = splitProps(props, ['class', 'size'])
-  return <ark.textarea class={styles(variantProps)} {...textareaProps} />
+  return <ark.textarea class={textarea(variantProps)} {...textareaProps} />
 }
 
-type TextareaVariantProps = VariantProps<typeof styles>
+type TextareaVariantProps = VariantProps<typeof textarea>
 
-const styles = tv(
+const textarea = tv(
   {
     base: 'textarea',
     defaultVariants: { size: 'md' },

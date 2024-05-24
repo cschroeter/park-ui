@@ -25,125 +25,133 @@ export const Base = () => {
       <DatePicker.Positioner>
         <DatePicker.Content>
           <DatePicker.View view="day">
-            {(api) => (
-              <>
-                <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronLeftIcon />
-                    </IconButton>
-                  </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                      <DatePicker.RangeText />
-                    </Button>
-                  </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronRightIcon />
-                    </IconButton>
-                  </DatePicker.NextTrigger>
-                </DatePicker.ViewControl>
-                <DatePicker.Table>
-                  <DatePicker.TableHead>
-                    <DatePicker.TableRow>
-                      {api.weekDays.map((weekDay, id) => (
-                        <DatePicker.TableHeader key={id}>{weekDay.narrow}</DatePicker.TableHeader>
-                      ))}
-                    </DatePicker.TableRow>
-                  </DatePicker.TableHead>
-                  <DatePicker.TableBody>
-                    {api.weeks.map((week, id) => (
-                      <DatePicker.TableRow key={id}>
-                        {week.map((day, id) => (
-                          <DatePicker.TableCell key={id} value={day}>
-                            <DatePicker.TableCellTrigger asChild>
-                              <IconButton variant="ghost">{day.day}</IconButton>
-                            </DatePicker.TableCellTrigger>
-                          </DatePicker.TableCell>
+            <DatePicker.Context>
+              {(datePicker) => (
+                <>
+                  <DatePicker.ViewControl>
+                    <DatePicker.PrevTrigger asChild>
+                      <IconButton variant="ghost" size="sm">
+                        <ChevronLeftIcon />
+                      </IconButton>
+                    </DatePicker.PrevTrigger>
+                    <DatePicker.ViewTrigger asChild>
+                      <Button variant="ghost" size="sm">
+                        <DatePicker.RangeText />
+                      </Button>
+                    </DatePicker.ViewTrigger>
+                    <DatePicker.NextTrigger asChild>
+                      <IconButton variant="ghost" size="sm">
+                        <ChevronRightIcon />
+                      </IconButton>
+                    </DatePicker.NextTrigger>
+                  </DatePicker.ViewControl>
+                  <DatePicker.Table>
+                    <DatePicker.TableHead>
+                      <DatePicker.TableRow>
+                        {datePicker.weekDays.map((weekDay, id) => (
+                          <DatePicker.TableHeader key={id}>{weekDay.narrow}</DatePicker.TableHeader>
                         ))}
                       </DatePicker.TableRow>
-                    ))}
-                  </DatePicker.TableBody>
-                </DatePicker.Table>
-              </>
-            )}
+                    </DatePicker.TableHead>
+                    <DatePicker.TableBody>
+                      {datePicker.weeks.map((week, id) => (
+                        <DatePicker.TableRow key={id}>
+                          {week.map((day, id) => (
+                            <DatePicker.TableCell key={id} value={day}>
+                              <DatePicker.TableCellTrigger asChild>
+                                <IconButton variant="ghost">{day.day}</IconButton>
+                              </DatePicker.TableCellTrigger>
+                            </DatePicker.TableCell>
+                          ))}
+                        </DatePicker.TableRow>
+                      ))}
+                    </DatePicker.TableBody>
+                  </DatePicker.Table>
+                </>
+              )}
+            </DatePicker.Context>
           </DatePicker.View>
           <DatePicker.View view="month">
-            {(api) => (
-              <>
-                <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronLeftIcon />
-                    </IconButton>
-                  </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                      <DatePicker.RangeText />
-                    </Button>
-                  </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronRightIcon />
-                    </IconButton>
-                  </DatePicker.NextTrigger>
-                </DatePicker.ViewControl>
-                <DatePicker.Table>
-                  <DatePicker.TableBody>
-                    {api.getMonthsGrid({ columns: 4, format: 'short' }).map((months, id) => (
-                      <DatePicker.TableRow key={id}>
-                        {months.map((month, id) => (
-                          <DatePicker.TableCell key={id} value={month.value}>
-                            <DatePicker.TableCellTrigger asChild>
-                              <Button variant="ghost">{month.label}</Button>
-                            </DatePicker.TableCellTrigger>
-                          </DatePicker.TableCell>
+            <DatePicker.Context>
+              {(datePicker) => (
+                <>
+                  <DatePicker.ViewControl>
+                    <DatePicker.PrevTrigger asChild>
+                      <IconButton variant="ghost" size="sm">
+                        <ChevronLeftIcon />
+                      </IconButton>
+                    </DatePicker.PrevTrigger>
+                    <DatePicker.ViewTrigger asChild>
+                      <Button variant="ghost" size="sm">
+                        <DatePicker.RangeText />
+                      </Button>
+                    </DatePicker.ViewTrigger>
+                    <DatePicker.NextTrigger asChild>
+                      <IconButton variant="ghost" size="sm">
+                        <ChevronRightIcon />
+                      </IconButton>
+                    </DatePicker.NextTrigger>
+                  </DatePicker.ViewControl>
+                  <DatePicker.Table>
+                    <DatePicker.TableBody>
+                      {datePicker
+                        .getMonthsGrid({ columns: 4, format: 'short' })
+                        .map((months, id) => (
+                          <DatePicker.TableRow key={id}>
+                            {months.map((month, id) => (
+                              <DatePicker.TableCell key={id} value={month.value}>
+                                <DatePicker.TableCellTrigger asChild>
+                                  <Button variant="ghost">{month.label}</Button>
+                                </DatePicker.TableCellTrigger>
+                              </DatePicker.TableCell>
+                            ))}
+                          </DatePicker.TableRow>
                         ))}
-                      </DatePicker.TableRow>
-                    ))}
-                  </DatePicker.TableBody>
-                </DatePicker.Table>
-              </>
-            )}
+                    </DatePicker.TableBody>
+                  </DatePicker.Table>
+                </>
+              )}
+            </DatePicker.Context>
           </DatePicker.View>
           <DatePicker.View view="year">
-            {(api) => (
-              <>
-                <DatePicker.ViewControl>
-                  <DatePicker.PrevTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronLeftIcon />
-                    </IconButton>
-                  </DatePicker.PrevTrigger>
-                  <DatePicker.ViewTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                      <DatePicker.RangeText />
-                    </Button>
-                  </DatePicker.ViewTrigger>
-                  <DatePicker.NextTrigger asChild>
-                    <IconButton variant="ghost" size="sm">
-                      <ChevronRightIcon />
-                    </IconButton>
-                  </DatePicker.NextTrigger>
-                </DatePicker.ViewControl>
-                <DatePicker.Table>
-                  <DatePicker.TableBody>
-                    {api.getYearsGrid({ columns: 4 }).map((years, id) => (
-                      <DatePicker.TableRow key={id}>
-                        {years.map((year, id) => (
-                          <DatePicker.TableCell key={id} value={year.value}>
-                            <DatePicker.TableCellTrigger asChild>
-                              <Button variant="ghost">{year.label}</Button>
-                            </DatePicker.TableCellTrigger>
-                          </DatePicker.TableCell>
-                        ))}
-                      </DatePicker.TableRow>
-                    ))}
-                  </DatePicker.TableBody>
-                </DatePicker.Table>
-              </>
-            )}
+            <DatePicker.Context>
+              {(datePicker) => (
+                <>
+                  <DatePicker.ViewControl>
+                    <DatePicker.PrevTrigger asChild>
+                      <IconButton variant="ghost" size="sm">
+                        <ChevronLeftIcon />
+                      </IconButton>
+                    </DatePicker.PrevTrigger>
+                    <DatePicker.ViewTrigger asChild>
+                      <Button variant="ghost" size="sm">
+                        <DatePicker.RangeText />
+                      </Button>
+                    </DatePicker.ViewTrigger>
+                    <DatePicker.NextTrigger asChild>
+                      <IconButton variant="ghost" size="sm">
+                        <ChevronRightIcon />
+                      </IconButton>
+                    </DatePicker.NextTrigger>
+                  </DatePicker.ViewControl>
+                  <DatePicker.Table>
+                    <DatePicker.TableBody>
+                      {datePicker.getYearsGrid({ columns: 4 }).map((years, id) => (
+                        <DatePicker.TableRow key={id}>
+                          {years.map((year, id) => (
+                            <DatePicker.TableCell key={id} value={year.value}>
+                              <DatePicker.TableCellTrigger asChild>
+                                <Button variant="ghost">{year.label}</Button>
+                              </DatePicker.TableCellTrigger>
+                            </DatePicker.TableCell>
+                          ))}
+                        </DatePicker.TableRow>
+                      ))}
+                    </DatePicker.TableBody>
+                  </DatePicker.Table>
+                </>
+              )}
+            </DatePicker.Context>
           </DatePicker.View>
         </DatePicker.Content>
       </DatePicker.Positioner>

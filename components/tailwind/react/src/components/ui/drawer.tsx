@@ -1,10 +1,9 @@
-import { Dialog as ArkDrawer } from '@ark-ui/react/dialog'
-import { ark } from '@ark-ui/react/factory'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { Dialog as Drawer } from '@ark-ui/react/dialog'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const drawer = tv(
   {
     base: 'drawer',
     defaultVariants: { variant: 'right' },
@@ -51,28 +50,47 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withRootProvider, withContext } = createStyleContext(drawer)
 
-export const Root = withProvider(ArkDrawer.Root)
-export const Backdrop = withContext(ArkDrawer.Backdrop, 'backdrop')
-export const Body = withContext(ark.div, 'body')
-export const CloseTrigger = withContext(ArkDrawer.CloseTrigger, 'closeTrigger')
-export const Content = withContext(ArkDrawer.Content, 'content')
-export const Description = withContext(ArkDrawer.Description, 'description')
-export const Footer = withContext(ark.div, 'footer')
-export const Header = withContext(ark.div, 'header')
-export const Positioner = withContext(ArkDrawer.Positioner, 'positioner')
-export const Title = withContext(ArkDrawer.Title, 'title')
-export const Trigger = withContext(ArkDrawer.Trigger, 'trigger')
+export interface RootProps extends Drawer.RootProps, VariantProps<typeof drawer> {}
+export const Root = withRootProvider<RootProps>(Drawer.Root)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface BackdropProps extends ComponentProps<typeof Backdrop> {}
-export interface BodyProps extends ComponentProps<typeof Body> {}
-export interface CloseTriggerProps extends ComponentProps<typeof CloseTrigger> {}
-export interface ContentProps extends ComponentProps<typeof Content> {}
-export interface DescriptionProps extends ComponentProps<typeof Description> {}
-export interface FooterProps extends ComponentProps<typeof Footer> {}
-export interface HeaderProps extends ComponentProps<typeof Header> {}
-export interface PositionerProps extends ComponentProps<typeof Positioner> {}
-export interface TitleProps extends ComponentProps<typeof Title> {}
-export interface TriggerProps extends ComponentProps<typeof Trigger> {}
+export const Backdrop = withContext<HTMLDivElement, Drawer.BackdropProps>(
+  Drawer.Backdrop,
+  'backdrop',
+)
+
+export const Body = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'body')
+
+export const CloseTrigger = withContext<HTMLButtonElement, Drawer.CloseTriggerProps>(
+  Drawer.CloseTrigger,
+  'closeTrigger',
+)
+
+export const Content = withContext<HTMLDivElement, Drawer.ContentProps>(Drawer.Content, 'content')
+
+export const Description = withContext<HTMLParagraphElement, Drawer.DescriptionProps>(
+  Drawer.Description,
+  'description',
+)
+
+export const Footer = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'footer')
+
+export const Header = withContext<HTMLDivElement, HTMLArkProps<'div'>>(ark.div, 'header')
+
+export const Positioner = withContext<HTMLDivElement, Drawer.PositionerProps>(
+  Drawer.Positioner,
+  'positioner',
+)
+
+export const Title = withContext<HTMLHeadingElement, Drawer.TitleProps>(Drawer.Title, 'title')
+
+export const Trigger = withContext<HTMLButtonElement, Drawer.TriggerProps>(
+  Drawer.Trigger,
+  'trigger',
+)
+
+export {
+  DialogContext as Context,
+  type DialogContextProps as ContextProps,
+} from '@ark-ui/react/dialog'

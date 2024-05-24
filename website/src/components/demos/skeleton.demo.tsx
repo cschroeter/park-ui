@@ -1,7 +1,7 @@
 import { Circle, HStack, Stack } from 'styled-system/jsx'
-import { Skeleton, type SkeletonProps } from '~/components/ui/skeleton'
+import { Skeleton } from '~/components/ui/skeleton'
 
-export const Demo = (props: SkeletonProps) => {
+export const Demo = () => {
   return (
     <HStack width="full" gap="4">
       <Skeleton borderRadius="full">

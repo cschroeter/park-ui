@@ -10,7 +10,7 @@ export interface AvatarProps extends AvatarRootProps, AvatarVariantProps {
 export const Avatar = (props: AvatarProps) => {
   const [variantProps, avatarProps] = splitProps(props, ['size', 'class'])
   const [localProps, rootProps] = splitProps(avatarProps, ['name', 'src'])
-  const { root, fallback, image } = styles(variantProps)
+  const { root, fallback, image } = avatar(variantProps)
 
   return (
     <ArkAvatar.Root class={root({ class: variantProps.class })} {...rootProps}>
@@ -22,9 +22,9 @@ export const Avatar = (props: AvatarProps) => {
   )
 }
 
-type AvatarVariantProps = VariantProps<typeof styles>
+type AvatarVariantProps = VariantProps<typeof avatar>
 
-const styles = tv(
+const avatar = tv(
   {
     base: 'avatar',
     defaultVariants: { size: 'md' },

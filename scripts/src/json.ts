@@ -1,5 +1,5 @@
 import * as components from '@ark-ui/anatomy'
-import { AnatomyInstance } from '@ark-ui/anatomy'
+import type { AnatomyInstance } from '@ark-ui/anatomy'
 import fs from 'fs-extra'
 import { match } from 'ts-pattern'
 import v from 'voca'

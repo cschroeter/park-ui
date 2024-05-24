@@ -1,15 +1,17 @@
-import { NumberInput as ArkNumberInput, type NumberInputRootProps } from '@ark-ui/solid'
-import { Show, children, splitProps, type JSX } from 'solid-js'
+import {
+  NumberInput as ArkNumberInput,
+  type Assign,
+  type NumberInputRootProps,
+} from '@ark-ui/solid'
+import { Show, children, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { numberInput, type NumberInputVariantProps } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type NumberInputVariantProps, numberInput } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface NumberInputProps
   extends Assign<JsxStyleProps, NumberInputRootProps>,
-    NumberInputVariantProps {
-  children?: JSX.Element
-}
+    NumberInputVariantProps {}
 
 export const NumberInput = (props: NumberInputProps) => {
   const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)

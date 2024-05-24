@@ -9,7 +9,7 @@ export default meta
 
 export const Basic = () => (
   <Collapsible.Root class="gap-3">
-    <Collapsible.Trigger as={Button} variant="outline">
+    <Collapsible.Trigger asChild={(props) => <Button variant="outline" {...props()} />}>
       Toggle
     </Collapsible.Trigger>
     <Collapsible.Content>

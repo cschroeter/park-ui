@@ -12,63 +12,69 @@ export default meta
 export const Base = () => {
   return (
     <ColorPicker.Root>
-      {(api) => (
-        <>
-          <ColorPicker.Label>Color Picker</ColorPicker.Label>
-          <ColorPicker.Control>
-            <ColorPicker.ChannelInput channel="hex" as={Input} />
-            <ColorPicker.Trigger>
-              <IconButton variant="outline">
-                <ColorPicker.Swatch value={api().value} />
-              </IconButton>
-            </ColorPicker.Trigger>
-          </ColorPicker.Control>
-          <ColorPicker.Positioner>
-            <ColorPicker.Content>
-              <div class="flex flex-col gap-3">
-                <ColorPicker.Area>
-                  <ColorPicker.AreaBackground />
-                  <ColorPicker.AreaThumb />
-                </ColorPicker.Area>
-                <div class="flex gap-3">
-                  <ColorPicker.EyeDropperTrigger as={IconButton} size="xs" variant="outline">
-                    <PipetteIcon />
-                  </ColorPicker.EyeDropperTrigger>
-                  <div class="flex flex-col gap-2 flex-1">
-                    <ColorPicker.ChannelSlider channel="hue">
-                      <ColorPicker.ChannelSliderTrack />
-                      <ColorPicker.ChannelSliderThumb />
-                    </ColorPicker.ChannelSlider>
-                    <ColorPicker.ChannelSlider channel="alpha">
-                      <ColorPicker.TransparencyGrid size="8px" />
-                      <ColorPicker.ChannelSliderTrack />
-                      <ColorPicker.ChannelSliderThumb />
-                    </ColorPicker.ChannelSlider>
-                  </div>
-                </div>
-                <div class="flex gap-2.5">
-                  <ColorPicker.ChannelInput channel="hex" as={Input} size="2xs" />
-                  <ColorPicker.ChannelInput channel="alpha" as={Input} size="2xs" />
-                </div>
-                <div class="flex flex-col gap-1.5">
-                  <Text class="font-medium text-fg-default" size="xs">
-                    Saved Colors
-                  </Text>
-                  <ColorPicker.SwatchGroup>
-                    <Index each={presets}>
-                      {(color) => (
-                        <ColorPicker.SwatchTrigger value={color()}>
-                          <ColorPicker.Swatch value={color()} />
-                        </ColorPicker.SwatchTrigger>
-                      )}
-                    </Index>
-                  </ColorPicker.SwatchGroup>
-                </div>
+      <ColorPicker.Label>Color Picker</ColorPicker.Label>
+      <ColorPicker.Control>
+        <ColorPicker.ChannelInput channel="hex" asChild={(props) => <Input {...props} />} />
+        <ColorPicker.Trigger>
+          <IconButton variant="outline">
+            <ColorPicker.Context>
+              {(api) => <ColorPicker.Swatch value={api().value} />}
+            </ColorPicker.Context>
+          </IconButton>
+        </ColorPicker.Trigger>
+      </ColorPicker.Control>
+      <ColorPicker.Positioner>
+        <ColorPicker.Content>
+          <div class="flex flex-col gap-3">
+            <ColorPicker.Area>
+              <ColorPicker.AreaBackground />
+              <ColorPicker.AreaThumb />
+            </ColorPicker.Area>
+            <div class="flex gap-3">
+              <ColorPicker.EyeDropperTrigger
+                asChild={(props) => <IconButton {...props()} size="xs" variant="outline" />}
+              >
+                <PipetteIcon />
+              </ColorPicker.EyeDropperTrigger>
+              <div class="flex flex-col gap-2 flex-1">
+                <ColorPicker.ChannelSlider channel="hue">
+                  <ColorPicker.ChannelSliderTrack />
+                  <ColorPicker.ChannelSliderThumb />
+                </ColorPicker.ChannelSlider>
+                <ColorPicker.ChannelSlider channel="alpha">
+                  <ColorPicker.TransparencyGrid size="8px" />
+                  <ColorPicker.ChannelSliderTrack />
+                  <ColorPicker.ChannelSliderThumb />
+                </ColorPicker.ChannelSlider>
               </div>
-            </ColorPicker.Content>
-          </ColorPicker.Positioner>
-        </>
-      )}
+            </div>
+            <div class="flex gap-2.5">
+              <ColorPicker.ChannelInput
+                channel="hex"
+                asChild={(props) => <Input {...props()} size="2xs" />}
+              />
+              <ColorPicker.ChannelInput
+                channel="alpha"
+                asChild={(props) => <Input {...props()} size="2xs" />}
+              />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <Text class="font-medium text-fg-default" size="xs">
+                Saved Colors
+              </Text>
+              <ColorPicker.SwatchGroup>
+                <Index each={presets}>
+                  {(color) => (
+                    <ColorPicker.SwatchTrigger value={color()}>
+                      <ColorPicker.Swatch value={color()} />
+                    </ColorPicker.SwatchTrigger>
+                  )}
+                </Index>
+              </ColorPicker.SwatchGroup>
+            </div>
+          </div>
+        </ColorPicker.Content>
+      </ColorPicker.Positioner>
     </ColorPicker.Root>
   )
 }

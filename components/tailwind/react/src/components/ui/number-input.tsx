@@ -2,16 +2,14 @@ import {
   NumberInput as ArkNumberInput,
   type NumberInputRootProps,
 } from '@ark-ui/react/number-input'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface NumberInputProps extends NumberInputRootProps, NumberInputVariantProps {
-  children?: ReactNode
-}
+export interface NumberInputProps extends NumberInputRootProps, NumberInputVariantProps {}
 
 export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
-  const { children, className, ...rootProps } = props
-  const { root, control, label, input, incrementTrigger, decrementTrigger } = styles({})
+  const { children, size, className, ...rootProps } = props
+  const { root, control, label, input, incrementTrigger, decrementTrigger } = numberInput({ size })
 
   return (
     <ArkNumberInput.Root ref={ref} className={root({ className })} {...rootProps}>
@@ -31,9 +29,9 @@ export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, 
 
 NumberInput.displayName = 'NumberInput'
 
-type NumberInputVariantProps = VariantProps<typeof styles>
+type NumberInputVariantProps = VariantProps<typeof numberInput>
 
-const styles = tv(
+const numberInput = tv(
   {
     base: 'numberInput',
     defaultVariants: { size: 'md' },

@@ -1,23 +1,12 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
     "jsxImportSource": "vue",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noImplicitThis": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ESNext",
-    "verbatimModuleSyntax": true,
     "paths": {
-      "~/*": ["./src/*"],
-    },
+      "~/*": ["./src/*"]
+    }
   },
-  "include": ["src", "styled-system"],
+  "include": ["src"]
 }

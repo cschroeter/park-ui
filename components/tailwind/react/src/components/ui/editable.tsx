@@ -1,9 +1,8 @@
 import { Editable } from '@ark-ui/react/editable'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const editable = tv(
   {
     base: 'editable',
     slots: {
@@ -21,24 +20,43 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
+const { withProvider, withContext } = createStyleContext(editable)
 
-export const Root = withProvider(Editable.Root, 'root')
-export const Area = withContext(Editable.Area, 'area')
-export const CancelTrigger = withContext(Editable.CancelTrigger, 'cancelTrigger')
-export const Control = withContext(Editable.Control, 'control')
-export const EditTrigger = withContext(Editable.EditTrigger, 'editTrigger')
-export const Input = withContext(Editable.Input, 'input')
-export const Label = withContext(Editable.Label, 'label')
-export const Preview = withContext(Editable.Preview, 'preview')
-export const SubmitTrigger = withContext(Editable.SubmitTrigger, 'submitTrigger')
+export interface RootProps extends Editable.RootProps, VariantProps<typeof editable> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Editable.Root, 'root')
 
-export type RootProps = ComponentProps<typeof Root>
-export interface AreaProps extends ComponentProps<typeof Area> {}
-export interface CancelTriggerProps extends ComponentProps<typeof CancelTrigger> {}
-export interface ControlProps extends ComponentProps<typeof Control> {}
-export interface EditTriggerProps extends ComponentProps<typeof EditTrigger> {}
-export interface InputProps extends ComponentProps<typeof Input> {}
-export interface LabelProps extends ComponentProps<typeof Label> {}
-export interface PreviewProps extends ComponentProps<typeof Preview> {}
-export interface SubmitTriggerProps extends ComponentProps<typeof SubmitTrigger> {}
+export const Area = withContext<HTMLDivElement, Editable.AreaProps>(Editable.Area, 'area')
+
+export const CancelTrigger = withContext<HTMLButtonElement, Editable.CancelTriggerProps>(
+  Editable.CancelTrigger,
+  'cancelTrigger',
+)
+
+export const Control = withContext<HTMLDivElement, Editable.ControlProps>(
+  Editable.Control,
+  'control',
+)
+
+export const EditTrigger = withContext<HTMLButtonElement, Editable.EditTriggerProps>(
+  Editable.EditTrigger,
+  'editTrigger',
+)
+
+export const Input = withContext<HTMLInputElement, Editable.InputProps>(Editable.Input, 'input')
+
+export const Label = withContext<HTMLLabelElement, Editable.LabelProps>(Editable.Label, 'label')
+
+export const Preview = withContext<HTMLSpanElement, Editable.PreviewProps>(
+  Editable.Preview,
+  'preview',
+)
+
+export const SubmitTrigger = withContext<HTMLButtonElement, Editable.SubmitTriggerProps>(
+  Editable.SubmitTrigger,
+  'submitTrigger',
+)
+
+export {
+  EditableContext as Context,
+  type EditableContextProps as ContextProps,
+} from '@ark-ui/react/editable'

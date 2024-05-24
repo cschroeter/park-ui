@@ -1,19 +1,19 @@
-import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
 import { forwardRef } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const { size, className, ...rest } = props
-  return <ark.textarea className={styles({ size, className })} ref={ref} {...rest} />
+  return <ark.textarea className={textarea({ size, className })} ref={ref} {...rest} />
 })
 
 Textarea.displayName = 'Textarea'
 
-type TextareaVariantProps = VariantProps<typeof styles>
+type TextareaVariantProps = VariantProps<typeof textarea>
 
-const styles = tv(
+const textarea = tv(
   {
     base: 'textarea',
     defaultVariants: { size: 'md' },

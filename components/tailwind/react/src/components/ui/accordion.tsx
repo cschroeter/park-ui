@@ -1,9 +1,8 @@
 import { Accordion } from '@ark-ui/react/accordion'
-import type { ComponentProps } from 'react'
-import { tv } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
-const styles = tv(
+const accordion = tv(
   {
     base: 'accordion',
     defaultVariants: { size: 'md' },
@@ -28,16 +27,37 @@ const styles = tv(
   },
   { twMerge: false },
 )
-const { withProvider, withContext } = createStyleContext(styles)
 
-export const Root = withProvider(Accordion.Root, 'root')
-export const Item = withContext(Accordion.Item, 'item')
-export const ItemContent = withContext(Accordion.ItemContent, 'itemContent')
-export const ItemIndicator = withContext(Accordion.ItemIndicator, 'itemIndicator')
-export const ItemTrigger = withContext(Accordion.ItemTrigger, 'itemTrigger')
+const { withProvider, withContext } = createStyleContext(accordion)
 
-export type RootProps = ComponentProps<typeof Root>
-export interface ItemProps extends ComponentProps<typeof Item> {}
-export interface ItemContentProps extends ComponentProps<typeof ItemContent> {}
-export interface ItemIndicatorProps extends ComponentProps<typeof ItemIndicator> {}
-export interface ItemTriggerProps extends ComponentProps<typeof ItemTrigger> {}
+export interface RootProps extends Accordion.RootProps, VariantProps<typeof accordion> {}
+export const Root = withProvider<HTMLDivElement, RootProps>(Accordion.Root, 'root')
+
+export const ItemContent = withContext<HTMLDivElement, Accordion.ItemContentProps>(
+  Accordion.ItemContent,
+  'itemContent',
+)
+
+export const ItemIndicator = withContext<HTMLDivElement, Accordion.ItemIndicatorProps>(
+  Accordion.ItemIndicator,
+  'itemIndicator',
+)
+
+export const Item = withContext<HTMLDivElement, Accordion.ItemProps>(Accordion.Item, 'item')
+
+export const ItemTrigger = withContext<HTMLButtonElement, Accordion.ItemTriggerProps>(
+  Accordion.ItemTrigger,
+  'itemTrigger',
+)
+
+export {
+  AccordionContext as Context,
+  AccordionItemContext as ItemContext,
+  type AccordionContextProps as ContextProps,
+  type AccordionItemContextProps as ItemContextProps,
+} from '@ark-ui/react/accordion'
+
+export type {
+  AccordionFocusChangeDetails as FocusChangeDetails,
+  AccordionValueChangeDetails as ValueChangeDetails,
+} from '@ark-ui/react/accordion'

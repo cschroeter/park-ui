@@ -1,13 +1,21 @@
-import { ToggleGroup } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { toggleGroup } from 'styled-system/recipes'
+import { type Assign, ToggleGroup } from '@ark-ui/solid'
+import { type ToggleGroupVariantProps, toggleGroup } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(toggleGroup)
 
-export const Root = withProvider(styled(ToggleGroup.Root), 'root')
-export const Item = withContext(styled(ToggleGroup.Item), 'item')
+export interface RootProps
+  extends Assign<JsxStyleProps, ToggleGroup.RootProps>,
+    ToggleGroupVariantProps {}
+export const Root = withProvider<RootProps>(ToggleGroup.Root, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface ItemProps extends ComponentProps<typeof Item> {}
+export const Item = withContext<Assign<JsxStyleProps, ToggleGroup.ItemProps>>(
+  ToggleGroup.Item,
+  'item',
+)
+
+export {
+  ToggleGroupContext as Context,
+  type ToggleGroupContextProps as ContextProps,
+} from '@ark-ui/solid'

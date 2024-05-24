@@ -1,19 +1,19 @@
-import { ark, type HTMLArkProps } from '@ark-ui/react/factory'
+import { type HTMLArkProps, ark } from '@ark-ui/react/factory'
 import { forwardRef } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface IconProps extends IconVariantProps, HTMLArkProps<'svg'> {}
 
 export const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
-  const { size, className, ...buttonProps } = props
-  return <ark.svg asChild className={styles({ size, className })} ref={ref} {...buttonProps} />
+  const { size, className, ...otherProps } = props
+  return <ark.svg asChild className={icon({ size, className })} ref={ref} {...otherProps} />
 })
 
 Icon.displayName = 'Icon'
 
-type IconVariantProps = VariantProps<typeof styles>
+type IconVariantProps = VariantProps<typeof icon>
 
-const styles = tv(
+const icon = tv(
   {
     base: 'icon',
     defaultVariants: { size: 'md' },

@@ -1,12 +1,12 @@
-import { TreeView as ArkTreeView, type TreeViewRootProps } from '@ark-ui/solid'
+import { TreeView as ArkTreeView, type Assign, type TreeViewRootProps } from '@ark-ui/solid'
 import { For, Show, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { treeView } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type TreeViewVariantProps, treeView } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 interface Child {
-  id: string
+  value: string
   name: string
   children?: Child[]
 }
@@ -16,7 +16,9 @@ export interface TreeViewData {
   children: Child[]
 }
 
-export interface TreeViewProps extends Assign<JsxStyleProps, TreeViewRootProps> {
+export interface TreeViewProps
+  extends Assign<JsxStyleProps, TreeViewRootProps>,
+    TreeViewVariantProps {
   data: TreeViewData
 }
 
@@ -29,12 +31,12 @@ export const TreeView = (props: TreeViewProps) => {
     <Show
       when={child.children}
       fallback={
-        <ArkTreeView.Item id={child.id} class={styles.item}>
+        <ArkTreeView.Item value={child.value} class={styles.item}>
           <ArkTreeView.ItemText class={styles.itemText}>{child.name}</ArkTreeView.ItemText>
         </ArkTreeView.Item>
       }
     >
-      <ArkTreeView.Branch id={child.id} class={styles.branch}>
+      <ArkTreeView.Branch value={child.value} class={styles.branch}>
         <ArkTreeView.BranchControl class={styles.branchControl}>
           <ArkTreeView.BranchIndicator class={styles.branchIndicator}>
             <ChevronRightIcon />

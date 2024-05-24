@@ -1,15 +1,13 @@
-import { Switch as ArkSwitch, type SwitchRootProps } from '@ark-ui/solid'
-import { Show, children, splitProps, type JSX } from 'solid-js'
+import { Switch as ArkSwitch, type Assign, type SwitchRootProps } from '@ark-ui/solid'
+import { Show, children, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
-import { switchRecipe, type SwitchRecipeVariantProps } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import { type SwitchRecipeVariantProps, switchRecipe } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface SwitchProps
   extends Assign<JsxStyleProps, SwitchRootProps>,
-    SwitchRecipeVariantProps {
-  children?: JSX.Element
-}
+    SwitchRecipeVariantProps {}
 
 export const Switch = (props: SwitchProps) => {
   const [variantProps, switchProps] = switchRecipe.splitVariantProps(props)
@@ -26,6 +24,7 @@ export const Switch = (props: SwitchProps) => {
       <Show when={getChildren()}>
         <ArkSwitch.Label class={styles.label}>{getChildren()}</ArkSwitch.Label>
       </Show>
+      <ArkSwitch.HiddenInput />
     </ArkSwitch.Root>
   )
 }

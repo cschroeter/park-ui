@@ -1,25 +1,28 @@
-import { ark } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
-import { styled } from 'styled-system/jsx'
-import { table } from 'styled-system/recipes'
+import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'
+import { type TableVariantProps, table } from 'styled-system/recipes'
+import type { JsxStyleProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(table)
 
-export const Root = withProvider(styled(ark.table), 'root')
-export const Body = withContext(styled(ark.tbody), 'body')
-export const Caption = withContext(styled(ark.caption), 'caption')
-export const Cell = withContext(styled(ark.td), 'cell')
-export const Footer = withContext(styled(ark.tfoot), 'footer')
-export const Head = withContext(styled(ark.thead), 'head')
-export const Header = withContext(styled(ark.th), 'header')
-export const Row = withContext(styled(ark.tr), 'row')
+export interface RootProps
+  extends Assign<JsxStyleProps, HTMLArkProps<'table'>>,
+    TableVariantProps {}
+export const Root = withProvider<RootProps>(ark.table, 'root')
 
-export interface RootProps extends ComponentProps<typeof Root> {}
-export interface BodyProps extends ComponentProps<typeof Body> {}
-export interface CaptionProps extends ComponentProps<typeof Caption> {}
-export interface CellProps extends ComponentProps<typeof Cell> {}
-export interface FooterProps extends ComponentProps<typeof Footer> {}
-export interface HeadProps extends ComponentProps<typeof Head> {}
-export interface HeaderProps extends ComponentProps<typeof Header> {}
-export interface RowProps extends ComponentProps<typeof Row> {}
+export const Body = withContext<Assign<JsxStyleProps, HTMLArkProps<'tbody'>>>(ark.tbody, 'body')
+
+export const Caption = withContext<Assign<JsxStyleProps, HTMLArkProps<'caption'>>>(
+  ark.caption,
+  'caption',
+)
+
+export const Cell = withContext<Assign<JsxStyleProps, HTMLArkProps<'td'>>>(ark.td, 'cell')
+
+export const Foot = withContext<Assign<JsxStyleProps, HTMLArkProps<'tfoot'>>>(ark.tfoot, 'footer')
+
+export const Head = withContext<Assign<JsxStyleProps, HTMLArkProps<'thead'>>>(ark.thead, 'head')
+
+export const Header = withContext<Assign<JsxStyleProps, HTMLArkProps<'th'>>>(ark.th, 'header')
+
+export const Row = withContext<Assign<JsxStyleProps, HTMLArkProps<'tr'>>>(ark.tr, 'row')

@@ -6,12 +6,12 @@ export interface FormLabelProps extends FormLabelVariantProps, HTMLArkProps<'lab
 
 export const FormLabel = (props: FormLabelProps) => {
   const [variantProps, formLabelProps] = splitProps(props, ['class', 'size'])
-  return <ark.label class={styles(variantProps)} {...formLabelProps} />
+  return <ark.label class={formLabel(variantProps)} {...formLabelProps} />
 }
 
-type FormLabelVariantProps = VariantProps<typeof styles>
+type FormLabelVariantProps = VariantProps<typeof formLabel>
 
-const styles = tv(
+const formLabel = tv(
   {
     base: 'formLabel',
     defaultVariants: { size: 'md' },

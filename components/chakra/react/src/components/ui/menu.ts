@@ -1,5 +1,5 @@
 import { Menu as ArkMenu } from '@ark-ui/react/menu'
-import { chakra, type HTMLChakraProps } from '@chakra-ui/react'
+import { type HTMLChakraProps, chakra } from '@chakra-ui/react'
 import { createStyleContext } from '~/lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext('Menu')
@@ -12,7 +12,7 @@ const MenuContextTrigger = withContext(chakra(ArkMenu.ContextTrigger), 'contextT
 const MenuItem = withContext(chakra(ArkMenu.Item), 'item')
 const MenuItemGroup = withContext(chakra(ArkMenu.ItemGroup), 'itemGroup')
 const MenuItemGroupLabel = withContext(chakra(ArkMenu.ItemGroupLabel), 'itemGroupLabel')
-const MenuOptionItem = withContext(chakra(ArkMenu.OptionItem), 'optionItem')
+const MenuOptionItem = withContext(chakra(ArkMenu.Item), 'optionItem')
 const MenuPositioner = withContext(chakra(ArkMenu.Positioner), 'positioner')
 const MenuSeparator = withContext(chakra(ArkMenu.Separator), 'separator')
 const MenuTrigger = withContext(chakra(ArkMenu.Trigger), 'trigger')

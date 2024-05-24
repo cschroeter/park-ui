@@ -1,35 +1,34 @@
 import { Checkbox as ArkCheckbox, type CheckboxRootProps } from '@ark-ui/react/checkbox'
-import { forwardRef, type ReactNode } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import { forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
-export interface CheckboxProps extends CheckboxRootProps, CheckboxVariantProps {
-  children?: ReactNode
-}
+export interface CheckboxProps extends CheckboxRootProps, CheckboxVariantProps {}
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
   const { className, size, children, ...rootProps } = props
-  const { root, control, label } = styles({ size })
+  const { root, control, label, indicator } = checkbox({ size })
 
   return (
     <ArkCheckbox.Root ref={ref} className={root({ className })} {...rootProps}>
-      {(state) => (
-        <>
-          <ArkCheckbox.Control className={control()}>
-            {state.isChecked && <CheckIcon />}
-            {state.isIndeterminate && <MinusIcon />}
-          </ArkCheckbox.Control>
-          {children && <ArkCheckbox.Label className={label()}>{children}</ArkCheckbox.Label>}
-        </>
-      )}
+      <ArkCheckbox.Control className={control()}>
+        <ArkCheckbox.Indicator className={indicator()}>
+          <CheckIcon />
+        </ArkCheckbox.Indicator>
+        <ArkCheckbox.Indicator indeterminate className={indicator()}>
+          <MinusIcon />
+        </ArkCheckbox.Indicator>
+      </ArkCheckbox.Control>
+      {children && <ArkCheckbox.Label className={label()}>{children}</ArkCheckbox.Label>}
+      <ArkCheckbox.HiddenInput />
     </ArkCheckbox.Root>
   )
 })
 
 Checkbox.displayName = 'Checkbox'
 
-type CheckboxVariantProps = VariantProps<typeof styles>
+type CheckboxVariantProps = VariantProps<typeof checkbox>
 
-const styles = tv(
+const checkbox = tv(
   {
     base: 'checkbox',
     defaultVariants: { size: 'md' },
