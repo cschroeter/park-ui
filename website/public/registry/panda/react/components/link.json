@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "link.tsx",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\n\nexport const Link = styled(ark.a, link)\nexport interface LinkProps extends ComponentProps<typeof Link> {}\n",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type LinkVariantProps, link } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface LinkProps extends Assign<JsxStyleProps, HTMLArkProps<'a'>>, LinkVariantProps {}\nexport const Link = styled(ark.a, link)\n",
       "hasMultipleParts": false
     }
   ]

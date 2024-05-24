@@ -2,7 +2,7 @@
   "files": [
     {
       "filename": "kbd.tsx",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { kbd } from 'styled-system/recipes'\n\nexport const Kbd = styled(ark.kbd, kbd)\nexport interface KbdProps extends ComponentProps<typeof Kbd> {}\n",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type KbdVariantProps, kbd } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface KbdProps extends Assign<JsxStyleProps, HTMLArkProps<'kbd'>>, KbdVariantProps {}\nexport const Kbd = styled(ark.kbd, kbd)\n",
       "hasMultipleParts": false
     }
   ]
