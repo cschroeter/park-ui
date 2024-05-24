@@ -1,7 +1,10 @@
-import { type Component, type JSX, createContext, useContext } from 'solid-js'
+import { type Component, type JSX, createContext, splitProps, useContext } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
-type Recipe = (props: Record<string, unknown>) => Record<string, () => string>
+type Recipe = {
+  (props: Record<string, unknown>): Record<string, CallableFunction>
+  variantKeys: string[]
+}
 type Slot<R extends Recipe> = keyof ReturnType<R>
 type ElementType<P = {}> = keyof JSX.IntrinsicElements | Component<P>
 
@@ -30,10 +33,19 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     slot: Slot<R>,
   ): ((props: P) => JSX.Element) => {
     const StyledComponent = (props: P) => {
-      const slotStyles = recipe(props) as Record<Slot<R>, () => string>
+      const [variantProps, componentProps] = splitProps(props, [
+        'class',
+        ...(recipe.variantKeys as Array<keyof P>),
+      ])
+      const slotStyles = recipe(variantProps) as Record<Slot<R>, () => string>
+
       return (
         <StyleContext.Provider value={slotStyles}>
-          <Dynamic component={Component} {...props} class={cx(slotStyles?.[slot](), props.class)} />
+          <Dynamic
+            component={Component}
+            {...componentProps}
+            class={cx(slotStyles?.[slot](), props.class)}
+          />
         </StyleContext.Provider>
       )
     }
