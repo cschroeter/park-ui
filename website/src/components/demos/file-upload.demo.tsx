@@ -32,6 +32,7 @@ export const Demo = (props: FileUpload.RootProps) => {
           }
         </FileUpload.Context>
       </FileUpload.ItemGroup>
+      <FileUpload.HiddenInput />
     </FileUpload.Root>
   )
 }
