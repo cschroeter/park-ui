@@ -74,4 +74,4 @@ export {
   SelectHiddenSelect as HiddenSelect,
   type SelectContextProps as ContextProps,
   type SelectHiddenSelectProps as HiddenSelectProps,
-} from '@ark-ui/react/select'
+} from '@ark-ui/solid'
