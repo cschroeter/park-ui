@@ -25,4 +25,4 @@ export const Trigger = withContext<Assign<JsxStyleProps, Tabs.TriggerProps>>(
   'trigger',
 )
 
-export { TabsContext as Context, type TabsContextProps as ContextProps } from '@ark-ui/react/tabs'
+export { TabsContext as Context, type TabsContextProps as ContextProps } from '@ark-ui/solid'
