@@ -19,21 +19,22 @@
     "release-it": "release-it",
     "test": "bun test",
     "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "postpack": "clean-package restore",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "3.1.0",
+    "@ark-ui/anatomy": "3.2.0",
     "@radix-ui/colors": "3.0.0",
     "deepmerge": "4.3.1",
     "ts-pattern": "5.1.2"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.39.1",
-    "@pandacss/types": "0.39.1",
+    "@pandacss/dev": "0.40.1",
+    "@pandacss/types": "0.40.1",
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
     "release-it": "17.3.0",
-    "tsup": "8.0.2"
+    "tsup": "8.1.0"
   },
   "peerDependencies": {
     "@pandacss/dev": ">0.22.0",
