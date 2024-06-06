@@ -1,6 +1,6 @@
 import type { Assign } from '@ark-ui/react'
 import { PinInput as ArkPinInput, type PinInputRootProps } from '@ark-ui/react/pin-input'
-import { type ReactNode, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { type PinInputVariantProps, pinInput } from 'styled-system/recipes'

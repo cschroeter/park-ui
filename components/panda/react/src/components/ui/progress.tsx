@@ -1,6 +1,6 @@
 import type { Assign } from '@ark-ui/react'
 import { Progress as ArkProgress, type ProgressRootProps } from '@ark-ui/react/progress'
-import { type ReactNode, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { type ProgressVariantProps, progress } from 'styled-system/recipes'

@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "jsxImportSource": "vue",
+    "noPropertyAccessFromIndexSignature": false,
     "paths": {
       "~/*": ["./src/*"]
     }
