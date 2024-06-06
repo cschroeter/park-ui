@@ -25,7 +25,7 @@
     "@fontsource-variable/raleway": "5.0.20",
     "@fontsource-variable/roboto-mono": "5.0.19",
     "@icons-pack/react-simple-icons": "9.5.0",
-    "@pandacss/dev": "0.39.1",
+    "@pandacss/dev": "0.40.1",
     "@park-ui/panda-preset": "workspace:*",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
