@@ -1,5 +1,5 @@
 import * as p from '@clack/prompts'
-import { CONFIG_FILE_NAME, Config, writeConfig } from '../config/park-ui-config'
+import { CONFIG_FILE_NAME, type Config, writeConfig } from '../config/park-ui-config'
 import { addUtils } from '../helpers/add-utils'
 
 const getInitialConfig = async (): Promise<Config> => {
@@ -11,7 +11,6 @@ const getInitialConfig = async (): Promise<Config> => {
           options: [
             { value: 'panda', label: 'Panda' },
             { value: 'tailwind', label: 'Tailwind' },
-            { value: 'chakra', label: 'Chakra (Beta)' },
           ],
           initialValue: 'panda',
         }),
@@ -68,20 +67,20 @@ const getInitialConfig = async (): Promise<Config> => {
 
 const getUtils = async () => {
   const spinner = p.spinner()
-  spinner.start(`Start to add helpers...`)
+  spinner.start('Start to add helpers...')
   await addUtils()
     .catch((error) => {
       spinner.stop(`Failed to download utils. ${error.message}`)
       process.exit(1)
     })
     .then(() => {
-      spinner.stop(`Done.`)
+      spinner.stop('Done')
       process.exit(0)
     })
 }
 
 export const initCommand = async () => {
-  p.intro(`Welcome to Park UI!`)
+  p.intro('Welcome to Park UI!')
   const config = await getInitialConfig()
   writeConfig(config)
 

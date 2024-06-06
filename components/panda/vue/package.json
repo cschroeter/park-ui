@@ -7,17 +7,17 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/vue": "3.0.0",
+    "@ark-ui/vue": "3.3.0",
     "@histoire/plugin-vue": "0.17.17",
-    "@pandacss/dev": "0.39.1",
+    "@pandacss/dev": "0.40.1",
     "@park-ui/panda-preset": "workspace:*",
-    "@vitejs/plugin-vue": "5.0.4",
-    "@vitejs/plugin-vue-jsx": "3.1.0",
-    "@zag-js/avatar": "0.51.1",
+    "@vitejs/plugin-vue": "5.0.5",
+    "@vitejs/plugin-vue-jsx": "4.0.0",
+    "@zag-js/avatar": "0.54.0",
     "histoire": "0.17.17",
-    "lucide-vue-next": "0.379.0",
+    "lucide-vue-next": "0.390.0",
     "typescript": "5.4.5",
-    "vite": "5.2.11",
+    "vite": "5.2.12",
     "vue": "3.4.27"
   }
 }

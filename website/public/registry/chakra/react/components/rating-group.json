@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "rating-group.ts",
-      "content": "import { RatingGroup as ArkRatingGroup } from '@ark-ui/react/rating-group'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('RatingGroup')\n\nconst RatingGroup = withProvider(chakra(ArkRatingGroup.Root), 'root')\nconst RatingGroupControl = withContext(chakra(ArkRatingGroup.Control), 'control')\nconst RatingGroupItem = withContext(chakra(ArkRatingGroup.Item), 'item')\nconst RatingGroupLabel = withContext(chakra(ArkRatingGroup.Label), 'label')\n\nconst Root = RatingGroup\nconst Control = RatingGroupControl\nconst Item = RatingGroupItem\nconst Label = RatingGroupLabel\n\nexport {\n  Control,\n  Item,\n  Label,\n  RatingGroup,\n  RatingGroupControl,\n  RatingGroupItem,\n  RatingGroupLabel,\n  Root,\n}\n\nexport interface RatingGroupProps extends HTMLChakraProps<typeof RatingGroup> {}\nexport interface RatingGroupControlProps extends HTMLChakraProps<typeof RatingGroupControl> {}\nexport interface RatingGroupItemProps extends HTMLChakraProps<typeof RatingGroupItem> {}\nexport interface RatingGroupLabelProps extends HTMLChakraProps<typeof RatingGroupLabel> {}\n",
-      "hasMultipleParts": true
-    }
-  ]
-}

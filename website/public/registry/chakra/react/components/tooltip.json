@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "tooltip.ts",
-      "content": "import { Tooltip as ArkTooltip } from '@ark-ui/react/tooltip'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Tooltip')\n\nconst Tooltip = withProvider(ArkTooltip.Root)\nconst TooltipArrow = withContext(chakra(ArkTooltip.Arrow), 'arrow')\nconst TooltipArrowTip = withContext(chakra(ArkTooltip.ArrowTip), 'arrowTip')\nconst TooltipContent = withContext(chakra(ArkTooltip.Content), 'content')\nconst TooltipPositioner = withContext(chakra(ArkTooltip.Positioner), 'positioner')\nconst TooltipTrigger = withContext(chakra(ArkTooltip.Trigger), 'trigger')\n\nconst Root = Tooltip\nconst Arrow = TooltipArrow\nconst ArrowTip = TooltipArrowTip\nconst Content = TooltipContent\nconst Positioner = TooltipPositioner\nconst Trigger = TooltipTrigger\n\nexport {\n  Arrow,\n  ArrowTip,\n  Content,\n  Positioner,\n  Root,\n  Tooltip,\n  TooltipArrow,\n  TooltipArrowTip,\n  TooltipContent,\n  TooltipPositioner,\n  TooltipTrigger,\n  Trigger,\n}\n\nexport interface TooltipProps extends HTMLChakraProps<typeof Tooltip> {}\nexport interface TooltipArrowProps extends HTMLChakraProps<typeof TooltipArrow> {}\nexport interface TooltipArrowTipProps extends HTMLChakraProps<typeof TooltipArrowTip> {}\nexport interface TooltipContentProps extends HTMLChakraProps<typeof TooltipContent> {}\nexport interface TooltipPositionerProps extends HTMLChakraProps<typeof TooltipPositioner> {}\nexport interface TooltipTriggerProps extends HTMLChakraProps<typeof TooltipTrigger> {}\n",
-      "hasMultipleParts": true
-    }
-  ]
-}
