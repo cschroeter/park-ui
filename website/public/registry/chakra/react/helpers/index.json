@@ -1,8 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "create-style-context.tsx",
-      "content": "import { omitThemingProps, useMultiStyleConfig, type SystemStyleObject } from '@chakra-ui/system'\nimport {\n  createContext,\n  createElement,\n  forwardRef,\n  useContext,\n  type ComponentProps,\n  type ElementType,\n  type JSX,\n} from 'react'\n\nexport interface ComponentVariants<T extends ElementType> {\n  (props: ComponentProps<T>): JSX.Element\n}\n\nexport const createStyleContext = (themeKey: string) => {\n  const StyleContext = createContext<Record<string, SystemStyleObject> | null>(null)\n\n  const withProvider = <T extends ElementType>(\n    Component: T,\n    slot?: string,\n  ): ComponentVariants<T> => {\n    const StyledComponent = forwardRef((props: ComponentProps<T>, ref) => {\n      const styles = useMultiStyleConfig(themeKey, props)\n      const ownProps = omitThemingProps(props)\n\n      return (\n        <StyleContext.Provider value={styles}>\n          {/* @ts-expect-error  fix later*/}\n          <Component ref={ref} {...ownProps} __css={styles?.[slot ?? '']} />\n        </StyleContext.Provider>\n      )\n    })\n    return StyledComponent as unknown as ComponentVariants<T>\n  }\n\n  const withContext = <T extends ElementType>(Component: T, slot: string): T => {\n    const StyledComponent = forwardRef((props: ComponentProps<T>, ref) => {\n      const styles = useContext(StyleContext)\n      return createElement(Component, {\n        ...props,\n        __css: styles?.[slot],\n        ref,\n      })\n    })\n    return StyledComponent as unknown as T\n  }\n\n  return {\n    withProvider,\n    withContext,\n  }\n}\n"
-    }
-  ]
-}

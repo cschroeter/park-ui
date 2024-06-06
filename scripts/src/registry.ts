@@ -1,12 +1,12 @@
+import path from 'node:path'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import { globby } from 'globby'
 import Handlebars from 'handlebars'
-import path from 'node:path'
 import v from 'voca'
 
 type Options = {
-  cssFramwork: 'panda' | 'tailwind' | 'chakra'
+  cssFramwork: 'panda' | 'tailwind'
   jsFramework: 'react' | 'solid'
 }
 

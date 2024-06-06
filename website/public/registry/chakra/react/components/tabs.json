@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "tabs.ts",
-      "content": "import { Tabs as ArkTabs } from '@ark-ui/react/tabs'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Tabs')\n\nconst Tabs = withProvider(chakra(ArkTabs.Root), 'root')\nconst TabsContent = withContext(chakra(ArkTabs.Content), 'content')\nconst TabsIndicator = withContext(chakra(ArkTabs.Indicator), 'indicator')\nconst TabsList = withContext(chakra(ArkTabs.List), 'list')\nconst TabsTrigger = withContext(chakra(ArkTabs.Trigger), 'trigger')\n\nconst Root = Tabs\nconst Content = TabsContent\nconst Indicator = TabsIndicator\nconst List = TabsList\nconst Trigger = TabsTrigger\n\nexport {\n  Content,\n  Indicator,\n  List,\n  Root,\n  Tabs,\n  TabsContent,\n  TabsIndicator,\n  TabsList,\n  TabsTrigger,\n  Trigger,\n}\n\nexport interface TabsProps extends HTMLChakraProps<typeof Tabs> {}\nexport interface TabsContentProps extends HTMLChakraProps<typeof TabsContent> {}\nexport interface TabsIndicatorProps extends HTMLChakraProps<typeof TabsIndicator> {}\nexport interface TabsListProps extends HTMLChakraProps<typeof TabsList> {}\nexport interface TabsTriggerProps extends HTMLChakraProps<typeof TabsTrigger> {}\n",
-      "hasMultipleParts": true
-    }
-  ]
-}

@@ -22,7 +22,9 @@ export default meta
 export const Base = () => {
   return (
     <Menu.Root>
-      <Menu.Trigger asChild={() => <Button variant="outline" />}>Open Menu</Menu.Trigger>
+      <Menu.Trigger asChild={(props) => <Button variant="outline" {...props()} />}>
+        Open Menu
+      </Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>
           <Menu.ItemGroup>

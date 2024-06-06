@@ -1,7 +1,7 @@
+import path from 'node:path'
 import { findUpSync } from 'find-up'
 import fs from 'fs-extra'
 import Handlebars from 'handlebars'
-import path from 'node:path'
 import arkComponents from '../components.json'
 import parkComponents from '../park-components.json'
 import { transformComponentToTvConfig } from './helpers/recipe-to-tv'
@@ -14,7 +14,7 @@ const data = {
 const rootDir = path.dirname(findUpSync('bun.lockb') ?? '')
 
 type Options = {
-  cssFramwork: 'panda' | 'tailwind' | 'chakra'
+  cssFramwork: 'panda' | 'tailwind'
   jsFramework: 'react' | 'solid'
 }
 

@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "splitter.ts",
-      "content": "import { Splitter as ArkSplitter } from '@ark-ui/react/splitter'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('Splitter')\n\nconst Splitter = withProvider(chakra(ArkSplitter.Root), 'root')\nconst SplitterPanel = withContext(chakra(ArkSplitter.Panel), 'panel')\nconst SplitterResizeTrigger = withContext(chakra(ArkSplitter.ResizeTrigger), 'resizeTrigger')\n\nconst Root = Splitter\nconst Panel = SplitterPanel\nconst ResizeTrigger = SplitterResizeTrigger\n\nexport { Panel, ResizeTrigger, Root, Splitter, SplitterPanel, SplitterResizeTrigger }\n\nexport interface SplitterProps extends HTMLChakraProps<typeof Splitter> {}\nexport interface SplitterPanelProps extends HTMLChakraProps<typeof SplitterPanel> {}\nexport interface SplitterResizeTriggerProps extends HTMLChakraProps<typeof SplitterResizeTrigger> {}\n",
-      "hasMultipleParts": true
-    }
-  ]
-}

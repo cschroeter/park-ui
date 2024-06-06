@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "pin-input.ts",
-      "content": "import { PinInput as ArkPinInput } from '@ark-ui/react/pin-input'\nimport { chakra, type HTMLChakraProps } from '@chakra-ui/react'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext('PinInput')\n\nconst PinInput = withProvider(chakra(ArkPinInput.Root), 'root')\nconst PinInputControl = withContext(chakra(ArkPinInput.Control), 'control')\nconst PinInputInput = withContext(chakra(ArkPinInput.Input), 'input')\nconst PinInputLabel = withContext(chakra(ArkPinInput.Label), 'label')\n\nconst Root = PinInput\nconst Control = PinInputControl\nconst Input = PinInputInput\nconst Label = PinInputLabel\n\nexport { Control, Input, Label, PinInput, PinInputControl, PinInputInput, PinInputLabel, Root }\n\nexport interface PinInputProps extends HTMLChakraProps<typeof PinInput> {}\nexport interface PinInputControlProps extends HTMLChakraProps<typeof PinInputControl> {}\nexport interface PinInputInputProps extends HTMLChakraProps<typeof PinInputInput> {}\nexport interface PinInputLabelProps extends HTMLChakraProps<typeof PinInputLabel> {}\n",
-      "hasMultipleParts": true
-    }
-  ]
-}
