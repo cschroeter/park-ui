@@ -1,8 +1,8 @@
-import { defineRecipe } from '@pandacss/dev'
+import { type RecipeConfig, defineRecipe } from '@pandacss/dev'
 import deepmerge from 'deepmerge'
 import { button } from './button'
 
-export const iconButton = deepmerge(
+export const iconButton: RecipeConfig = deepmerge(
   button,
   defineRecipe({
     className: 'iconButton',
