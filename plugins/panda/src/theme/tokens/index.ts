@@ -1,4 +1,4 @@
-import { defineTokens } from '@pandacss/dev'
+import { type Tokens, defineTokens } from '@pandacss/dev'
 import type { PresetOptions } from '../../types'
 import { animations } from './animations'
 import { blurs } from './blurs'
@@ -12,7 +12,7 @@ import { spacing } from './spacing'
 import { fontSizes, fontWeights, fonts, letterSpacings, lineHeights } from './typography'
 import { zIndex } from './z-index'
 
-export const createTokens = (options: PresetOptions) => {
+export const createTokens = (options: PresetOptions): Tokens => {
   return defineTokens({
     animations,
     blurs,
