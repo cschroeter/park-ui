@@ -13,12 +13,6 @@ This update includes several breaking changes, so please make sure to update you
 
 - Resolved an issue with the `Avatar` component where the image did not display as round after loading.
 
-## [0.38.0-0] - 2024-05-22
-
-### Changed
-
-- Revised `Toast` recipe to match v3.0.0 of Ark UI.
-
 ## [0.37.1] - 2024-05-19
 
 ### Fixed
