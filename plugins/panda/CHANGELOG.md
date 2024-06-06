@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.38.0] - 2024-06-06
+
 We are excited to announce that in this release, we have migrated all components to the new Ark UI 3.0.0 API. 
 This update includes several breaking changes, so please make sure to update your code snippets accordingly.
 
