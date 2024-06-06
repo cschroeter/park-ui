@@ -1,5 +1,4 @@
-import { definePreset } from '@pandacss/dev'
-import type { Preset } from '@pandacss/types'
+import { type Preset, definePreset } from '@pandacss/dev'
 import { conditions } from './conditions'
 import { globalCss } from './global-css'
 import { breakpoints } from './theme/breakpoints'
