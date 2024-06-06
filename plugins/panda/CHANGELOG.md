@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+We are excited to announce that in this release, we have migrated all components to the new Ark UI 3.0.0 API. 
+This update includes several breaking changes, so please make sure to update your code snippets accordingly.
+
 ### Changed
 
 - Optimized type checking for `Heading`, `Icon` and `Text` components for faster performance.
