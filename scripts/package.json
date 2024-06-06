@@ -13,9 +13,8 @@
     "poststories": "bun biome format --write ../components"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "3.1.0",
-    "@pandacss/dev": "0.39.1",
-    "@pandacss/types": "0.39.1",
+    "@ark-ui/anatomy": "3.2.0",
+    "@pandacss/dev": "0.40.1",
     "@park-ui/panda-preset": "workspace:*",
     "@types/handlebars-helpers": "0.5.6",
     "@types/fs-extra": "11.0.4",
@@ -23,7 +22,7 @@
     "@types/react-dom": "18.3.0",
     "@types/voca": "1.4.5",
     "commander": "12.1.0",
-    "effect": "3.2.5",
+    "effect": "3.3.0",
     "find-up": "7.0.0",
     "fs-extra": "11.2.0",
     "globby": "14.0.1",

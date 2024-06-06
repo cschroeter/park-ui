@@ -1,4 +1,4 @@
-import { RecipeConfig, SlotRecipeConfig } from '@pandacss/types'
+import type { RecipeConfig, SlotRecipeConfig } from '@pandacss/dev'
 import { recipes, slotRecipes } from '@park-ui/panda-preset/src/theme/recipes'
 export type TailwindClassString = string
 
@@ -19,7 +19,7 @@ const transformRecipeToTvConfig = (
 ): Record<string, TailwindClassString> | string => {
   const { className, variants = {}, defaultVariants } = recipe
 
-  let result: Record<string, any> = {
+  const result: Record<string, any> = {
     base: `${prefix}${className}`,
   }
 

@@ -1,5 +1,4 @@
 import { defineTokens } from '@pandacss/dev'
-import type { Token } from '@pandacss/types'
 import * as radixColors from '@radix-ui/colors'
 import { match } from 'ts-pattern'
 import type { PresetOptions } from '../../../types'
@@ -47,6 +46,11 @@ const defineColorPalette = (color: string) => {
       { light: {}, dark: {} },
     ),
   )
+}
+
+interface Token<T> {
+  value: T
+  description?: string
 }
 
 const toColorTokens = (
