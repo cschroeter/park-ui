@@ -1,5 +1,4 @@
 import { SegmentGroup } from '@ark-ui/solid'
-import type { ComponentProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 

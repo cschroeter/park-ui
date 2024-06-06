@@ -1,5 +1,5 @@
 import { RatingGroup as ArkRatingGroup, type RatingGroupRootProps } from '@ark-ui/solid'
-import { Index, type JSX, Show, children, splitProps } from 'solid-js'
+import { Index, Show, children, splitProps } from 'solid-js'
 import { type VariantProps, tv } from 'tailwind-variants'
 
 export interface RatingGroupProps extends RatingGroupRootProps, RatingGroupVariantProps {}

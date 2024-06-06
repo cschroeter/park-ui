@@ -1,5 +1,4 @@
 import { Splitter } from '@ark-ui/react/splitter'
-import type { ComponentProps } from 'react'
 import { type VariantProps, tv } from 'tailwind-variants'
 import { createStyleContext } from '~/lib/create-style-context'
 
