@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.38.1] - 2024-06-25
+
 ### Fixed
 
 - Prepared recipes for `QrCode`, `SignaturePad` and `Field` components.
