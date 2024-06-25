@@ -16,6 +16,7 @@ import { datePicker } from './date-picker'
 import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
+import { field } from './field'
 import { fileUpload } from './file-upload'
 import { formLabel } from './form-label'
 import { hoverCard } from './hover-card'
@@ -30,11 +31,13 @@ import { pagination } from './pagination'
 import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { progress } from './progress'
+import { qrCode } from './qr-code'
 import { radioButtonGroup } from './radio-button-group'
 import { radioGroup } from './radio-group'
 import { ratingGroup } from './rating-group'
 import { segmentGroup } from './segment-group'
 import { select } from './select'
+import { signaturePad } from './signature-pad'
 import { skeleton } from './skeleton'
 import { slider } from './slider'
 import { splitter } from './splitter'
@@ -79,6 +82,7 @@ export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   dialog,
   drawer,
   editable,
+  field,
   fileUpload,
   hoverCard,
   menu,
@@ -92,6 +96,7 @@ export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   ratingGroup,
   segmentGroup,
   select,
+  signaturePad,
   slider,
   splitter,
   switchRecipe,
@@ -102,4 +107,5 @@ export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   toggleGroup,
   tooltip,
   treeView,
+  qrCode,
 }
