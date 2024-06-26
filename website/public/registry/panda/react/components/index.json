@@ -17,6 +17,10 @@
       "href": "https://park-ui.com/registry/panda/react/components/badge.json"
     },
     {
+      "name": "Breadcrumb",
+      "href": "https://park-ui.com/registry/panda/react/components/breadcrumb.json"
+    },
+    {
       "name": "Button",
       "href": "https://park-ui.com/registry/panda/react/components/button.json"
     },
