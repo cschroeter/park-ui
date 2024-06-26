@@ -36,7 +36,7 @@ export const input = defineRecipe({
       md: { px: '3', h: '10', minW: '10', fontSize: 'md' },
       lg: { px: '3.5', h: '11', minW: '11', fontSize: 'md' },
       xl: { px: '4', h: '12', minW: '12', fontSize: 'lg' },
-      '2xl': { px: '2', h: '16', minW: '16', textStyle: '3xl' },
+      '2xl': { px: '4.5', h: '16', minW: '16', textStyle: '3xl' },
     },
   },
 })
