@@ -35,8 +35,8 @@ async function getLatestVersion(): Promise<string> {
 
     return latestVersion
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  } catch (error: any) {
-    console.log('Failed to fetch latest version', error.message)
+  } catch (error) {
+    console.error('Failed to fetch latest version', error)
     throw error
   }
 }
@@ -55,11 +55,8 @@ export const showUpgradeNoteWhenNeeded = async (options: {
   latestVersion: string | undefined
 }) => {
   const { currentVersion, latestVersion } = options
-  if (!latestVersion) {
-    return
-  }
 
-  if (currentVersion !== latestVersion) {
+  if (currentVersion !== latestVersion && !!latestVersion) {
     p.note(
       `Your installed Park UI CLI version is ${currentVersion}.\nRun "npm install -g @park-ui/cli" to update.`,
       `New Version ${latestVersion} available`,

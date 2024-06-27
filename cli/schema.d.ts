@@ -28,5 +28,20 @@ export interface ParkUiConfiguration {
      * The import alias for utilities.
      */
     utils: string
+  },
+
+  /**
+   * Configuration for location of the tsconfig.json file.
+   */
+  tsConfig?: {
+    /**
+     * The search path for the tsconfig.json file.
+     */
+    searchPath?: string,
+
+    /*
+     * The name of the tsconfig.json file.
+     */
+    configName?: string
   }
 }

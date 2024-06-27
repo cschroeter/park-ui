@@ -1,7 +1,7 @@
 import * as p from '@clack/prompts'
 
 import { select } from '@clack/prompts'
-import { getImportAliases, getUseReactServerComponents } from '../config/park-ui-config'
+import { getConfig, getImportAliases, getUseReactServerComponents } from '../config/park-ui-config'
 import { downloadComponents, getComponents } from '../helpers/park-api'
 import { saveToFile } from '../helpers/save-file'
 
@@ -16,6 +16,7 @@ export const addComponent = async (options: { componentName: string; componentUr
   const serverComponents = getUseReactServerComponents()
   const { componentName, componentUrl } = options
   const { componentsImportAlias, utilsImportAlias } = getImportAliases()
+  const { tsConfig } = getConfig();
 
   const components = await downloadComponents({
     componentName,
@@ -28,7 +29,12 @@ export const addComponent = async (options: { componentName: string; componentUr
     if (serverComponents && hasMultipleParts) {
       content = `'use client'\n\n${content}`
     }
-    saveToFile(componentsImportAlias, filename, content)
+    saveToFile({
+        content,
+        filename,
+        importAlias: componentsImportAlias,
+        tsConfig,
+    });
   })
 }
 

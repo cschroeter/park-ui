@@ -32,13 +32,15 @@ export const getConfig = (): Config => {
   try {
     const config = readFileSync(configPath, 'utf8')
     cachedConfig = JSON.parse(config)
-    if (!cachedConfig) {
-      throw new Error('Could not parse config file.')
-    }
-    return cachedConfig
   } catch (e) {
     throw new Error(`Could not find config file at ${configPath}.\nPlease run init first.`)
   }
+
+  if (!cachedConfig) {
+    throw new Error('Could not parse config file.')
+  }
+
+  return cachedConfig
 }
 
 export const writeConfig = (config: Config): void => {
@@ -67,8 +69,10 @@ export const getImportAliases = (): {
 }
 
 export const getUseReactServerComponents = (): boolean => {
-  const config = getConfig()
+  const config: ParkUiConfiguration & {
+    // the field is only available for react and is not generated from json2ts
+    useReactServerComponents?: boolean
+  } = getConfig()
 
-  // @ts-expect-error ts(2339) - the field is only available for react and is not generated from json2ts
-  return config.useReactServerComponents ?? false
+  return config.useReactServerComponents === true;
 }
