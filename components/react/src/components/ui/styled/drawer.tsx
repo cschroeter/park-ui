@@ -13,7 +13,7 @@ export const RootProvider = withRootProvider<
 >(Dialog.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<Dialog.RootBaseProps, DrawerVariantProps>>(Dialog.Root)
+export const Root = withRootProvider<Assign<Dialog.RootProps, DrawerVariantProps>>(Dialog.Root)
 
 export const Backdrop = withContext<
   HTMLDivElement,
