@@ -2,47 +2,21 @@
   "name": "@park-ui/cli",
   "version": "0.6.0",
   "type": "module",
-  "description": "",
-  "main": "src/index.ts",
-  "keywords": [],
-  "author": "",
-  "bin": {
-    "park-ui": "dist/index.cjs"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "dev": "bun run ./src/index.ts",
-    "release-it": "release-it",
-    "build": "tsup",
-    "schema": "json2ts ../../website/public/schema.json > schema.d.ts"
+    "start": "bun run ./src/index.ts"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "@clack/core": "0.3.4",
-    "@clack/prompts": "0.7.0",
-    "@release-it/keep-a-changelog": "5.0.0",
-    "@types/node": "20.14.9",
-    "@types/yargs": "17.0.32",
+  "dependencies": {
+    "@effect/cli": "0.36.72",
+    "@effect/platform-node": "0.53.18",
+    "effect": "3.4.6",
+    "fs-extra": "11.2.0",
     "get-tsconfig": "4.7.5",
-    "json-schema-to-typescript": "14.1.0",
-    "node-fetch": "3.3.2",
-    "pkg-dir": "8.0.0",
-    "read-package-up": "11.0.0",
-    "release-it": "17.4.1",
-    "ts-pattern": "5.2.0",
-    "tsconfig-resolver": "3.0.1",
-    "tsup": "8.1.0",
-    "typescript": "5.5.3",
-    "voca": "1.4.1",
-    "yargs": "17.7.2"
+    "ora": "8.0.1"
   },
-  "tsup": {
-    "entry": ["src/index.ts"],
-    "clean": true,
-    "dts": true,
-    "minify": true,
-    "formats": ["cjs"]
+  "devDependencies": {
+    "@types/fs-extra": "11.0.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
