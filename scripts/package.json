@@ -22,16 +22,16 @@
     "@types/react-dom": "18.3.0",
     "@types/voca": "1.4.5",
     "commander": "12.1.0",
-    "effect": "3.3.0",
+    "effect": "3.4.7",
     "find-up": "7.0.0",
     "fs-extra": "11.2.0",
-    "globby": "14.0.1",
+    "globby": "14.0.2",
     "handlebars": "4.7.8",
     "handlebars-helpers": "0.10.0",
     "tailwind-merge": "2.3.0",
-    "ts-morph": "22.0.0",
-    "ts-pattern": "5.1.2",
-    "typescript": "5.4.5",
+    "ts-morph": "23.0.0",
+    "ts-pattern": "5.2.0",
+    "typescript": "5.5.3",
     "voca": "1.4.1"
   }
 }
