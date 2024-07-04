@@ -29,6 +29,7 @@ export const Checkbox = (props: CheckboxProps) => {
       <Show when={getChildren()}>
         <ArkCheckbox.Label class={styles.label}>{getChildren()}</ArkCheckbox.Label>
       </Show>
+      <ArkCheckbox.HiddenInput />
     </ArkCheckbox.Root>
   )
 }
