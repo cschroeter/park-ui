@@ -1,16 +1,10 @@
 ## Park UI
 
-Beautifully designed components built on [Ark UI](https://ark-ui.com) that work for the JS and CSS frameworks of your choice.
+Beautifully designed components built with [Ark UI](https://ark-ui.com) and [Panda CSS](https://panda-css.com) that work with a variety of JS frameworks.
+
 
 ![Park UI OG Image](https://park-ui.com/opengraph-image.png)
 
-## Supported Frameworks
-
-|                                   | [Chakra UI](https://chakra-ui.com) | [Panda CSS](https://panda-css.com/) | [Tailwind CSS](https://tailwindcss.com/) | [UnoCSS](https://unocss.dev/) |
-| --------------------------------- | ---------------------------------- | ----------------------------------- | ---------------------------------------- | ----------------------------- |
-| [React](https://react.dev/)       | In Progress                        | ✓                                   | ✓                                        | Planned                       |
-| [Solid](https://www.solidjs.com/) | -                                  | ✓                                   | ✓                                        | Planned                       |
-| [Vue](https://vuejs.org/)         | -                                  | ✓                                   | ✓                                        | Planned                       |
 
 ## Documentation
 
