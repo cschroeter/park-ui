@@ -1,5 +1,6 @@
 {
-  "name": "@park-ui/panda-vue-components",
+  "name": "@park-ui/vue",
+  "type": "module",
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
@@ -13,11 +14,11 @@
     "@park-ui/panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.0.5",
     "@vitejs/plugin-vue-jsx": "4.0.0",
-    "@zag-js/avatar": "0.59.0",
     "histoire": "0.17.17",
     "lucide-vue-next": "0.400.0",
     "typescript": "5.5.3",
     "vite": "5.3.3",
+    "vite-tsconfig-paths": "4.3.2",
     "vue": "3.4.31"
   }
 }
