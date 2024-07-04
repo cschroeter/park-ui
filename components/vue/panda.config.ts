@@ -9,6 +9,7 @@ export default defineConfig({
   outdir: 'styled-system',
   staticCss: {
     recipes: {
+      avatar: ['*'],
       input: ['*'],
     },
   },

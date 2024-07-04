@@ -1,5 +1,6 @@
 {
-  "name": "@park-ui/panda-solid-components",
+  "name": "@park-ui/solid",
+  "type": "module",
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",

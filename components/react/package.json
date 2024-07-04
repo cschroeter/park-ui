@@ -1,5 +1,5 @@
 {
-  "name": "@park-ui/panda-react-components",
+  "name": "@park-ui/react",
   "type": "module",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "@storybook/react": "8.1.11",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "4.3.1",
     "lucide-react": "0.400.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
