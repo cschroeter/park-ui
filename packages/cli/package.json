@@ -6,9 +6,9 @@
     "start": "bun run ./src/index.ts"
   },
   "dependencies": {
-    "@effect/cli": "0.36.72",
-    "@effect/platform-node": "0.53.18",
-    "effect": "3.4.6",
+    "@effect/cli": "0.37.3",
+    "@effect/platform-node": "0.53.19",
+    "effect": "3.4.7",
     "fs-extra": "11.2.0",
     "get-tsconfig": "4.7.5",
     "ora": "8.0.1"

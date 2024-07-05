@@ -1,29 +1,17 @@
-import { Avatar as ArkAvatar, type Assign, type AvatarRootProps } from '@ark-ui/solid'
-import { Show, splitProps } from 'solid-js'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type AvatarVariantProps, avatar } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
+import { Avatar as ArkAvatar } from '~/components/ui/primitives'
 
-export interface AvatarProps extends Assign<JsxStyleProps, AvatarRootProps>, AvatarVariantProps {
+export interface AvatarProps extends ArkAvatar.RootProps {
   name?: string
   src?: string
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const [variantProps, avatarProps] = avatar.splitVariantProps(props)
-  const [cssProps, elementProps] = splitCssProps(avatarProps)
-  const [localProps, rootProps] = splitProps(elementProps, ['name', 'src', 'class'])
-  const styles = avatar(variantProps)
+  const { name, src, ...rootProps } = props
 
   return (
-    <ArkAvatar.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
-      <ArkAvatar.Fallback class={styles.fallback}>
-        <Show when={localProps.name} fallback={<UserIcon />}>
-          {getInitials(localProps.name)}
-        </Show>
-      </ArkAvatar.Fallback>
-      <ArkAvatar.Image class={styles.image} src={localProps.src} alt={localProps.name} />
+    <ArkAvatar.Root {...rootProps}>
+      <ArkAvatar.Fallback>{getInitials(name) || <UserIcon />}</ArkAvatar.Fallback>
+      <ArkAvatar.Image src={src} alt={name} />
     </ArkAvatar.Root>
   )
 }

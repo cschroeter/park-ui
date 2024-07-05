@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
-import { Pagination as ArkPagination } from '~/components/ui/styled'
-import { Button } from '~/components/ui/styled'
-import { IconButton } from '~/components/ui/styled'
+import { Pagination as ArkPagination } from '~/components/ui/primitives'
+import { Button } from '~/components/ui/primitives'
+import { IconButton } from '~/components/ui/primitives'
 
 export interface PaginationProps extends ArkPagination.RootProps {}
 

@@ -1,0 +1,53 @@
+import { type Assign, NumberInput } from '@ark-ui/solid'
+import type { ComponentProps } from 'solid-js'
+import { type NumberInputVariantProps, numberInput } from 'styled-system/recipes'
+import type { HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from '~/lib/create-style-context'
+
+const { withProvider, withContext } = createStyleContext(numberInput)
+
+export type RootProviderProps = ComponentProps<typeof RootProvider>
+export const RootProvider = withProvider<
+  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootProviderProps>, NumberInputVariantProps>
+>(NumberInput.RootProvider, 'root')
+
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider<
+  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootProps>, NumberInputVariantProps>
+>(NumberInput.Root, 'root')
+
+export const Control = withContext<Assign<HTMLStyledProps<'div'>, NumberInput.ControlProps>>(
+  NumberInput.Control,
+  'control',
+)
+
+export const DecrementTrigger = withContext<
+  Assign<HTMLStyledProps<'button'>, NumberInput.DecrementTriggerProps>
+>(NumberInput.DecrementTrigger, 'decrementTrigger')
+
+export const IncrementTrigger = withContext<
+  Assign<HTMLStyledProps<'button'>, NumberInput.IncrementTriggerProps>
+>(NumberInput.IncrementTrigger, 'incrementTrigger')
+
+export const Input = withContext<Assign<HTMLStyledProps<'input'>, NumberInput.InputProps>>(
+  NumberInput.Input,
+  'input',
+)
+
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, NumberInput.LabelProps>>(
+  NumberInput.Label,
+  'label',
+)
+
+export const Scrubber = withContext<Assign<HTMLStyledProps<'div'>, NumberInput.ScrubberProps>>(
+  NumberInput.Scrubber,
+  'scrubber',
+)
+
+export const ValueText = withContext<Assign<HTMLStyledProps<'span'>, NumberInput.ValueTextProps>>(
+  NumberInput.ValueText,
+  // @ts-expect-error
+  'valueText',
+)
+
+export { NumberInputContext as Context } from '@ark-ui/solid'

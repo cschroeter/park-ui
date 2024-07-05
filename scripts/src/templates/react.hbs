@@ -33,11 +33,9 @@ export const {{this.name}} = withContext<
 {{/each}}
 export {
   {{pascalcase component}}Context as Context,
-  type {{pascalcase component}}ContextProps as ContextProps,
 {{#each parts}}
 {{#not this.slot}}
   {{pascalcase ../component}}{{this.name}} as {{this.name}},
-  type {{pascalcase ../component}}{{this.name}}Props as {{this.name}}Props,
 {{/not}}
 {{/each}}
 } from '@ark-ui/react/{{component}}'

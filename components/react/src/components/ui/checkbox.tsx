@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { Checkbox as ArkCheckbox } from '~/components/ui/styled'
+import { Checkbox as ArkCheckbox } from '~/components/ui/primitives'
 
 export interface CheckboxProps extends ArkCheckbox.RootProps {}
 
