@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "qr-code.tsx",
+      "hasMultipleParts": true,
+      "content": "import { type Assign, QrCode } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { qrCode } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(qrCode)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<Assign<HTMLStyledProps<'div'>, QrCode.RootProviderProps>>(\n  QrCode.RootProvider,\n  'root',\n)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, QrCode.RootProps>>(\n  QrCode.Root,\n  'root',\n)\n\nexport type FrameProps = ComponentProps<typeof Frame>\nexport const Frame = withContext<Assign<HTMLStyledProps<'svg'>, QrCode.FrameProps>>(\n  QrCode.Frame,\n  'frame',\n)\n\nexport type OverlayProps = ComponentProps<typeof Overlay>\nexport const Overlay = withContext<Assign<HTMLStyledProps<'div'>, QrCode.OverlayProps>>(\n  QrCode.Overlay,\n  'overlay',\n)\n\nexport type PatternProps = ComponentProps<typeof Pattern>\nexport const Pattern = withContext<Assign<HTMLStyledProps<'path'>, QrCode.PatternProps>>(\n  QrCode.Pattern,\n  'pattern',\n)\n\nexport {\n  QrCodeContext as Context,\n  type QrCodeContextProps as ContextProps,\n} from '@ark-ui/solid'\n"
+    }
+  ]
+}

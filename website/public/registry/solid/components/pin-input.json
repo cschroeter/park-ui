@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "pin-input.tsx",
+      "hasMultipleParts": true,
+      "content": "import { type Assign, PinInput } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { pinInput } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(pinInput)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<HTMLStyledProps<'div'>, PinInput.RootProviderProps>\n>(PinInput.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, PinInput.RootProps>>(\n  PinInput.Root,\n  'root',\n)\n\nexport type ControlProps = ComponentProps<typeof Control>\nexport const Control = withContext<Assign<HTMLStyledProps<'div'>, PinInput.ControlProps>>(\n  PinInput.Control,\n  'control',\n)\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = withContext<Assign<HTMLStyledProps<'input'>, PinInput.InputProps>>(\n  PinInput.Input,\n  'input',\n)\n\nexport type LabelProps = ComponentProps<typeof Label>\nexport const Label = withContext<Assign<HTMLStyledProps<'label'>, PinInput.LabelProps>>(\n  PinInput.Label,\n  'label',\n)\n\nexport {\n  PinInputContext as Context,\n  type PinInputContextProps as ContextProps,\n  PinInputHiddenInput as HiddenInput,\n  type PinInputHiddenInputProps as HiddenInputProps,\n} from '@ark-ui/solid'\n"
+    }
+  ]
+}

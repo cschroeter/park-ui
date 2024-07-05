@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Slider as ArkSlider, type SliderRootProps } from '@ark-ui/react/slider'
 import { type ReactNode, forwardRef } from 'react'
@@ -7,7 +8,6 @@ import { type SliderVariantProps, slider } from 'styled-system/recipes'
 import type { JsxStyleProps } from 'styled-system/types'
 
 export interface SliderProps extends Assign<JsxStyleProps, SliderRootProps>, SliderVariantProps {
-  children?: ReactNode
   marks?: {
     value: number
     label?: ReactNode

@@ -1,3 +1,5 @@
+'use client'
+
 import type { Assign } from '@ark-ui/react'
 import { RadioGroup } from '@ark-ui/react/radio-group'
 import { type RadioButtonGroupVariantProps, radioButtonGroup } from 'styled-system/recipes'
@@ -38,5 +40,6 @@ export const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, RadioGr
 
 export {
   RadioGroupContext as Context,
+  RadioGroupItemHiddenInput as ItemHiddenInput,
   type RadioGroupContextProps as ContextProps,
 } from '@ark-ui/react/radio-group'

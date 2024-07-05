@@ -1,64 +1,59 @@
-import { Tabs } from '@ark-ui/react/tabs'
-import { useState, type PropsWithChildren } from 'react'
-import { HStack } from 'styled-system/jsx'
-import { Button } from '~/components/ui'
+'use client'
+import { Tabs } from '~/components/ui'
 import { CodePreview } from './code-preview'
 
-interface Props {
-  code?: string
-  tabs: Record<
-    string,
-    { label: string; disabled?: boolean; code: string; children?: React.ReactElement }
-  >
-  expandable?: boolean
+interface CodeExample {
+  label: string
+  value: string
+  code: string
+  html: string
 }
 
-export const CodePreviewTabs = (props: PropsWithChildren<Props>) => {
-  const { expandable } = props
-  const [collapsed, setCollapsed] = useState(expandable)
-  const tabs = Object.entries(props.tabs)
-  const [value, setValue] = useState(tabs[0][0])
+interface Props extends Tabs.RootProps {
+  defaultValue: string
+  examples: CodeExample[]
+}
+
+export const CodePreviewTabs = (props: Props) => {
+  const { examples, ...rootProps } = props
 
   return (
-    <Tabs.Root value={value} onValueChange={(e) => setValue(e.value)}>
-      <HStack justifyContent="space-between" p="1">
-        <Tabs.List>
-          {Object.entries(props.tabs).map(([key, value]) => (
-            <Tabs.Trigger key={key} value={key} disabled={value.disabled} asChild>
-              <Button
-                variant="ghost"
-                size="sm"
-                color="fg.muted"
-                me="1"
-                px="3"
-                _selected={{ color: 'fg.default', background: 'gray.a3' }}
-                _disabled={{ color: 'fg.disabled' }}
-                display={collapsed ? 'none' : 'inline-flex'}
-              >
-                {value.label}
-              </Button>
-            </Tabs.Trigger>
-          ))}
-        </Tabs.List>
-        <HStack gap="1">
-          {expandable && (
-            <Button variant="ghost" size="sm" onClick={() => setCollapsed(!collapsed)}>
-              {collapsed ? 'Show Code' : 'Hide Code'}
-            </Button>
-          )}
-        </HStack>
-      </HStack>
-      {Object.entries(props.tabs).map(([key, value]) => (
-        <Tabs.Content key={key} value={key} asChild>
-          <CodePreview
-            code={value.code}
-            borderTopWidth="1px"
-            data-state={collapsed ? 'collapsed' : 'expanded'}
-            _collapsed={{ display: 'none' }}
+    <Tabs.Root
+      variant="line"
+      borderWidth="1px"
+      borderRadius="l3"
+      overflow="hidden"
+      bg="gray.dark.2"
+      size="sm"
+      className="not-prose"
+      {...rootProps}
+    >
+      <Tabs.List
+        bg="gray.dark.a2"
+        boxShadow="none"
+        borderBottomWidth="1px"
+        borderBottomColor="gray.dark.5"
+        px="4"
+        alignItems="center"
+      >
+        {examples.map((example) => (
+          <Tabs.Trigger
+            key={example.value}
+            value={example.value}
+            color="gray.dark.11"
+            _selected={{ color: 'white' }}
+            pb="0"
+            h="39px"
+            textTransform="capitalize"
           >
-            {/* @ts-expect-error */}
-            {props[key] ?? value.children}
-          </CodePreview>
+            {example.label}
+          </Tabs.Trigger>
+        ))}
+        <Tabs.Indicator />
+      </Tabs.List>
+      {examples.map((example) => (
+        <Tabs.Content key={example.value} value={example.value} pt="0">
+          <CodePreview code={example.code} html={example.html} />
         </Tabs.Content>
       ))}
     </Tabs.Root>

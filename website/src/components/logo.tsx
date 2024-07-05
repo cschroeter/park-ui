@@ -3,6 +3,7 @@ import { styled } from 'styled-system/jsx'
 export const Logo = () => {
   return (
     <styled.svg height="8" viewBox="0 0 43 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <title>Park UI</title>
       <styled.path
         d="M18 0H0L4.5 8H18C20.21 8 22 9.79 22 12C22 14.21 20.21 16 18 16H9L18 32V24C24.63 24 30 18.63 30 12C30 5.37 24.63 0 18 0Z"
         fill="currentColor"

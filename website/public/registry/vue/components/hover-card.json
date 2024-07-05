@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "hover-card.tsx",
+      "hasMultipleParts": true,
+      "content": "import type { Assign } from '@ark-ui/vue'\nimport { HoverCard } from '@ark-ui/vue/hover-card'\nimport { hoverCard } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport type { Component } from 'vue'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withRootProvider, withContext } = createStyleContext(hoverCard)\n\nexport type RootProviderProps = Component<typeof RootProvider>\nexport const RootProvider = withRootProvider<HoverCard.RootProviderBaseProps>(\n  HoverCard.RootProvider,\n)\n\nexport type RootProps = Component<typeof Root>\nexport const Root = withRootProvider<HoverCard.RootBaseProps>(HoverCard.Root)\n\nexport type ArrowProps = Component<typeof Arrow>\nexport const Arrow = withContext<Assign<HTMLStyledProps<'div'>, HoverCard.ArrowBaseProps>>(\n  HoverCard.Arrow,\n  'arrow',\n)\n\nexport type ArrowTipProps = Component<typeof ArrowTip>\nexport const ArrowTip = withContext<Assign<HTMLStyledProps<'div'>, HoverCard.ArrowTipBaseProps>>(\n  HoverCard.ArrowTip,\n  'arrowTip',\n)\n\nexport type ContentProps = Component<typeof Content>\nexport const Content = withContext<Assign<HTMLStyledProps<'div'>, HoverCard.ContentBaseProps>>(\n  HoverCard.Content,\n  'content',\n)\n\nexport type PositionerProps = Component<typeof Positioner>\nexport const Positioner = withContext<\n  Assign<HTMLStyledProps<'div'>, HoverCard.PositionerBaseProps>\n>(HoverCard.Positioner, 'positioner')\n\nexport type TriggerProps = Component<typeof Trigger>\nexport const Trigger = withContext<Assign<HTMLStyledProps<'button'>, HoverCard.TriggerBaseProps>>(\n  HoverCard.Trigger,\n  'trigger',\n)\n\nexport {\n  HoverCardContext as Context,\n  type HoverCardContextProps as ContextProps,\n} from '@ark-ui/vue/hover-card'\n"
+    }
+  ]
+}
