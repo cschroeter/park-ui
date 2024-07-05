@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
-import { PinInput as ArkPinInput } from '~/components/ui/styled'
-import { Input } from '~/components/ui/styled'
+import { PinInput as ArkPinInput } from '~/components/ui/primitives'
+import { Input } from '~/components/ui/primitives'
 
 export interface PinInputProps extends ArkPinInput.RootProps {
   /**

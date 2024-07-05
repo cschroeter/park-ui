@@ -112,7 +112,7 @@ const programm = () =>
               ),
               Effect.map((html) =>
                 fs.writeFileSync(
-                  `../components/${framework}/src/components/ui/${component}.tsx`,
+                  `../components/${framework}/src/components/ui/primitives/${component}.tsx`,
                   html,
                 ),
               ),

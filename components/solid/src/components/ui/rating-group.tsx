@@ -1,31 +1,17 @@
-import {
-  RatingGroup as ArkRatingGroup,
-  type Assign,
-  type RatingGroupRootProps,
-} from '@ark-ui/solid'
-import { Index, Show, children, splitProps } from 'solid-js'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
+import { Index, Show, children } from 'solid-js'
+import { RatingGroup as ArkRatingGroup } from '~/components/ui/primitives'
 
-export interface RatingGroupProps
-  extends Assign<JsxStyleProps, RatingGroupRootProps>,
-    RatingGroupVariantProps {}
+export interface RatingGroupProps extends ArkRatingGroup.RootProps {}
 
 export const RatingGroup = (props: RatingGroupProps) => {
-  const [variantProps, ratingGroupProps] = ratingGroup.splitVariantProps(props)
-  const [cssProps, elementProps] = splitCssProps(ratingGroupProps)
-  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
-  const getChildren = children(() => localProps.children)
-  const styles = ratingGroup(variantProps)
+  const getChildren = children(() => props.children)
 
   return (
-    <ArkRatingGroup.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
+    <ArkRatingGroup.Root {...props}>
       <Show when={getChildren()}>
-        <ArkRatingGroup.Label class={styles.label}>{getChildren()}</ArkRatingGroup.Label>
+        <ArkRatingGroup.Label>{getChildren()}</ArkRatingGroup.Label>
       </Show>
-      <ArkRatingGroup.Control class={styles.control}>
+      <ArkRatingGroup.Control>
         <ArkRatingGroup.Context>
           {(context) => (
             <Index each={context().items}>

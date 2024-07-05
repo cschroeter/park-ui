@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { TreeView as ArkTreeView } from '~/components/ui/styled'
+import { TreeView as ArkTreeView } from '~/components/ui/primitives'
 
 interface Child {
   value: string

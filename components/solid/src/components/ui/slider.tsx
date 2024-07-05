@@ -1,11 +1,7 @@
-import { Slider as ArkSlider, type Assign, type SliderRootProps } from '@ark-ui/solid'
 import { Index, type JSX, Show, children, splitProps } from 'solid-js'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type SliderVariantProps, slider } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
+import { Slider as ArkSlider } from '~/components/ui/primitives'
 
-export interface SliderProps extends Assign<JsxStyleProps, SliderRootProps>, SliderVariantProps {
+export interface SliderProps extends ArkSlider.RootProps {
   marks?: {
     value: number
     label?: JSX.Element
@@ -13,35 +9,28 @@ export interface SliderProps extends Assign<JsxStyleProps, SliderRootProps>, Sli
 }
 
 export const Slider = (props: SliderProps) => {
-  const [variantProps, ratingGroupProps] = slider.splitVariantProps(props)
-  const [cssProps, elementProps] = splitCssProps(ratingGroupProps)
-  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class', 'marks'])
+  const [localProps, rootProps] = splitProps(props, ['children', 'marks'])
   const getChildren = children(() => localProps.children)
-  const styles = slider(variantProps)
 
   return (
-    <ArkSlider.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
+    <ArkSlider.Root {...rootProps}>
       <ArkSlider.Context>
-        {(api) => (
+        {(slider) => (
           <>
             <Show when={getChildren()}>
-              <ArkSlider.Label class={styles.label}>{getChildren()}</ArkSlider.Label>
+              <ArkSlider.Label>{getChildren()}</ArkSlider.Label>
             </Show>
-            <ArkSlider.Control class={styles.control}>
-              <ArkSlider.Track class={styles.track}>
-                <ArkSlider.Range class={styles.range} />
+            <ArkSlider.Control>
+              <ArkSlider.Track>
+                <ArkSlider.Range />
               </ArkSlider.Track>
-              <Index each={api().value}>
-                {(_, index) => <ArkSlider.Thumb index={index} class={styles.thumb} />}
-              </Index>
+              <Index each={slider().value}>{(_, index) => <ArkSlider.Thumb index={index} />}</Index>
             </ArkSlider.Control>
             <Show when={localProps.marks}>
-              <ArkSlider.MarkerGroup class={styles.markerGroup}>
+              <ArkSlider.MarkerGroup>
                 <Index each={localProps.marks}>
                   {(mark) => (
-                    <ArkSlider.Marker value={mark().value} class={styles.marker}>
-                      {mark().label}
-                    </ArkSlider.Marker>
+                    <ArkSlider.Marker value={mark().value}>{mark().label}</ArkSlider.Marker>
                   )}
                 </Index>
               </ArkSlider.MarkerGroup>

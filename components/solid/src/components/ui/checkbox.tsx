@@ -1,34 +1,25 @@
-import { Checkbox as ArkCheckbox, type Assign, type CheckboxRootProps } from '@ark-ui/solid'
-import { Show, children, splitProps } from 'solid-js'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type CheckboxVariantProps, checkbox } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
+import { Show, children } from 'solid-js'
+import { Checkbox as ArkCheckbox } from '~/components/ui/primitives'
 
-export interface CheckboxProps
-  extends Assign<JsxStyleProps, CheckboxRootProps>,
-    CheckboxVariantProps {}
+export interface CheckboxProps extends ArkCheckbox.RootProps {}
 
 export const Checkbox = (props: CheckboxProps) => {
-  const [variantProps, checkboxProps] = checkbox.splitVariantProps(props)
-  const [cssProps, elementProps] = splitCssProps(checkboxProps)
-  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
-  const getChildren = children(() => localProps.children)
-  const styles = checkbox(variantProps)
+  const getChildren = children(() => props.children)
 
   return (
-    <ArkCheckbox.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
-      <ArkCheckbox.Control class={styles.control}>
-        <ArkCheckbox.Indicator class={styles.indicator}>
+    <ArkCheckbox.Root {...props}>
+      <ArkCheckbox.Control>
+        <ArkCheckbox.Indicator>
           <CheckIcon />
         </ArkCheckbox.Indicator>
-        <ArkCheckbox.Indicator indeterminate class={styles.indicator}>
+        <ArkCheckbox.Indicator indeterminate>
           <MinusIcon />
         </ArkCheckbox.Indicator>
       </ArkCheckbox.Control>
       <Show when={getChildren()}>
-        <ArkCheckbox.Label class={styles.label}>{getChildren()}</ArkCheckbox.Label>
+        <ArkCheckbox.Label>{getChildren()}</ArkCheckbox.Label>
       </Show>
+      <ArkCheckbox.HiddenInput />
     </ArkCheckbox.Root>
   )
 }

@@ -1,4 +1,4 @@
-export * from './styled'
+export * from './primitives'
 export { Avatar, type AvatarProps } from './avatar'
 export { Checkbox, type CheckboxProps } from './checkbox'
 export { NumberInput, type NumberInputProps } from './number-input'

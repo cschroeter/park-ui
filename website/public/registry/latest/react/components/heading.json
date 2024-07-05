@@ -1,0 +1,6 @@
+[
+  {
+    "filename": "./primitives/heading.tsx",
+    "content": "import { forwardRef } from 'react'\nimport { Text, type TextProps } from './text'\n\nexport interface HeadingProps extends TextProps<React.ElementType> {}\n\nexport const Heading = forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => (\n  <Text as=\"h2\" variant=\"heading\" ref={ref} {...props} />\n))\n\nHeading.displayName = 'Heading'\n"
+  }
+]

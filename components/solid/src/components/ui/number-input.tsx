@@ -1,36 +1,22 @@
-import {
-  NumberInput as ArkNumberInput,
-  type Assign,
-  type NumberInputRootProps,
-} from '@ark-ui/solid'
-import { Show, children, splitProps } from 'solid-js'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type NumberInputVariantProps, numberInput } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
+import { Show, children } from 'solid-js'
+import { NumberInput as ArkNumberInput } from '~/components/ui/primitives'
 
-export interface NumberInputProps
-  extends Assign<JsxStyleProps, NumberInputRootProps>,
-    NumberInputVariantProps {}
+export interface NumberInputProps extends ArkNumberInput.RootProps {}
 
 export const NumberInput = (props: NumberInputProps) => {
-  const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)
-  const [cssProps, elementProps] = splitCssProps(numberInputProps)
-  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])
-  const getChildren = children(() => localProps.children)
-  const styles = numberInput(variantProps)
+  const getChildren = children(() => props.children)
 
   return (
-    <ArkNumberInput.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>
+    <ArkNumberInput.Root {...props}>
       <Show when={getChildren()}>
-        <ArkNumberInput.Label class={styles.label}>{getChildren()}</ArkNumberInput.Label>
+        <ArkNumberInput.Label>{getChildren()}</ArkNumberInput.Label>
       </Show>
-      <ArkNumberInput.Control class={styles.control}>
-        <ArkNumberInput.Input class={styles.input} />
-        <ArkNumberInput.IncrementTrigger class={styles.incrementTrigger}>
+      <ArkNumberInput.Control>
+        <ArkNumberInput.Input />
+        <ArkNumberInput.IncrementTrigger>
           <ChevronUpIcon />
         </ArkNumberInput.IncrementTrigger>
-        <ArkNumberInput.DecrementTrigger class={styles.decrementTrigger}>
+        <ArkNumberInput.DecrementTrigger>
           <ChevronDownIcon />
         </ArkNumberInput.DecrementTrigger>
       </ArkNumberInput.Control>

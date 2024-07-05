@@ -1,9 +1,5 @@
-import { TreeView as ArkTreeView, type Assign, type TreeViewRootProps } from '@ark-ui/solid'
 import { For, Show, splitProps } from 'solid-js'
-import { css, cx } from 'styled-system/css'
-import { splitCssProps } from 'styled-system/jsx'
-import { type TreeViewVariantProps, treeView } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
+import { TreeView as ArkTreeView } from '~/components/ui/primitives'
 
 interface Child {
   value: string
@@ -16,34 +12,29 @@ export interface TreeViewData {
   children: Child[]
 }
 
-export interface TreeViewProps
-  extends Assign<JsxStyleProps, TreeViewRootProps>,
-    TreeViewVariantProps {
+export interface TreeViewProps extends ArkTreeView.RootProps {
   data: TreeViewData
 }
-
 export const TreeView = (props: TreeViewProps) => {
-  const [cssProps, treeViewProps] = splitCssProps(props)
-  const [localProps, rootProps] = splitProps(treeViewProps, ['data', 'class'])
-  const styles = treeView()
+  const [localProps, rootProps] = splitProps(props, ['data'])
 
   const renderChild = (child: Child) => (
     <Show
       when={child.children}
       fallback={
-        <ArkTreeView.Item value={child.value} class={styles.item}>
-          <ArkTreeView.ItemText class={styles.itemText}>{child.name}</ArkTreeView.ItemText>
+        <ArkTreeView.Item value={child.value}>
+          <ArkTreeView.ItemText>{child.name}</ArkTreeView.ItemText>
         </ArkTreeView.Item>
       }
     >
-      <ArkTreeView.Branch value={child.value} class={styles.branch}>
-        <ArkTreeView.BranchControl class={styles.branchControl}>
-          <ArkTreeView.BranchIndicator class={styles.branchIndicator}>
+      <ArkTreeView.Branch value={child.value}>
+        <ArkTreeView.BranchControl>
+          <ArkTreeView.BranchIndicator>
             <ChevronRightIcon />
           </ArkTreeView.BranchIndicator>
-          <ArkTreeView.BranchText class={styles.branchText}>{child.name}</ArkTreeView.BranchText>
+          <ArkTreeView.BranchText>{child.name}</ArkTreeView.BranchText>
         </ArkTreeView.BranchControl>
-        <ArkTreeView.BranchContent class={styles.branchContent}>
+        <ArkTreeView.BranchContent>
           <For each={child.children}>{(child) => renderChild(child)}</For>
         </ArkTreeView.BranchContent>
       </ArkTreeView.Branch>
@@ -51,12 +42,8 @@ export const TreeView = (props: TreeViewProps) => {
   )
 
   return (
-    <ArkTreeView.Root
-      aria-label={localProps.data.label}
-      class={cx(styles.root, css(cssProps), localProps.class)}
-      {...rootProps}
-    >
-      <ArkTreeView.Tree class={styles.tree}>
+    <ArkTreeView.Root aria-label={localProps.data.label} {...rootProps}>
+      <ArkTreeView.Tree>
         <For each={localProps.data.children}>{(child) => renderChild(child)}</For>
       </ArkTreeView.Tree>
     </ArkTreeView.Root>
