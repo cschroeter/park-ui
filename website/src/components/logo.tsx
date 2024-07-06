@@ -1,5 +1,3 @@
-import { styled } from 'styled-system/jsx'
-
 export const Logo = () => {
   return (
     <svg height="28" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">

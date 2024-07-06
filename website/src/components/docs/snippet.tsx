@@ -12,7 +12,7 @@ export const Snippet = async () => {
     Effect.forEach(['react', 'solid', 'vue'], (framework) =>
       pipe(
         Effect.succeed(
-          join(process.cwd(), `./public/registry/${framework}/components/${component}.json`),
+          join(process.cwd(), `./public/registry/latest/${framework}/components/${component}.json`),
         ),
         Effect.flatMap((path) =>
           Effect.tryPromise({
@@ -20,8 +20,8 @@ export const Snippet = async () => {
             catch: () => new Error('Snippet not found'),
           }),
         ),
-        Effect.catchAll(() => Effect.succeed({ files: [{ content: 'Not yet available' }] })),
-        Effect.map((files) => files.files[0].content),
+        Effect.catchAll(() => Effect.succeed([{ content: 'Not yet available' }])),
+        Effect.map((files) => files[0].content),
         Effect.flatMap((code) =>
           Effect.promise(() => highlight(code)).pipe(
             Effect.map((html) => ({
