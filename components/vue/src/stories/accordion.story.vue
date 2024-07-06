@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Accordion } from '../components/ui'
+import { Accordion } from '../components/ui/primitives'
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Avatar } from '../components/ui'
+import { Avatar } from '../components/ui/primitives'
 </script>
 
 <template>

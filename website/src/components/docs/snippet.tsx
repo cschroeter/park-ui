@@ -1,5 +1,5 @@
 import { join } from 'node:path'
-import { Effect, pipe } from 'effect'
+import { Console, Effect, pipe } from 'effect'
 import { readJson } from 'fs-extra'
 import { CodePreviewTabs } from '~/components/code-preview-tabs'
 import { getServerContext } from '~/lib/server-context'
@@ -20,8 +20,8 @@ export const Snippet = async () => {
             catch: () => new Error('Snippet not found'),
           }),
         ),
-        Effect.catchAll(() => Effect.succeed([{ content: 'Not yet available' }])),
-        Effect.map((files) => files[0].content),
+        Effect.catchAll(() => Effect.succeed({ primitive: 'Not yet available' })),
+        Effect.map((component) => component.primitive),
         Effect.flatMap((code) =>
           Effect.promise(() => highlight(code)).pipe(
             Effect.map((html) => ({

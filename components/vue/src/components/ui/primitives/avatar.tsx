@@ -1,7 +1,7 @@
 import { Avatar } from '@ark-ui/vue/avatar'
-import { type AccordionVariantProps, avatar } from '../../../styled-system/recipes'
-import type { Assign, JsxStyleProps } from '../../../styled-system/types'
-import { createStyleContext } from '../../lib/create-style-context'
+import { type AccordionVariantProps, avatar } from '../../../../styled-system/recipes'
+import type { Assign, JsxStyleProps } from '../../../../styled-system/types'
+import { createStyleContext } from '../../../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(avatar)
 

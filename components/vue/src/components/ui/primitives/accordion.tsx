@@ -1,7 +1,7 @@
 import { Accordion } from '@ark-ui/vue'
-import { type AccordionVariantProps, accordion } from '../../../styled-system/recipes'
-import type { Assign, JsxStyleProps } from '../../../styled-system/types'
-import { createStyleContext } from '../../lib/create-style-context'
+import { type AccordionVariantProps, accordion } from '../../../../styled-system/recipes'
+import type { Assign, JsxStyleProps } from '../../../../styled-system/types'
+import { createStyleContext } from '../../../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(accordion)
 

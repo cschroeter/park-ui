@@ -1,6 +1,3 @@
-[
-  {
-    "filename": "./primitives/code.tsx",
-    "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.code, code)\n"
-  }
-]
+{
+  "primitive": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.code, code)\n"
+}
