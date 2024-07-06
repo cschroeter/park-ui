@@ -16,7 +16,7 @@ export const GitHubLink = () => {
         },
       }}
     >
-      <a href="https://github.com/chakra-ui/ark" target="_blank" rel="noreferrer">
+      <a href="https://github.com/cschroeter/park-ui" target="_blank" rel="noreferrer">
         <SiGithub />
       </a>
     </IconButton>

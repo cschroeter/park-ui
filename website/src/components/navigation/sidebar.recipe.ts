@@ -43,12 +43,12 @@ export const recipe = sva({
       transitionProperty: 'color',
       transitionTimingFunction: 'default',
       _hover: {
-        color: 'fg.default',
+        color: 'accent.text',
       },
       _currentPage: {
-        color: 'accent.default',
+        color: 'accent.text',
         _hover: {
-          color: 'accent.default',
+          color: 'accent.text',
         },
       },
     },
