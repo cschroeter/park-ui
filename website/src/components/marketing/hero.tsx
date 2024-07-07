@@ -1,4 +1,4 @@
-import { SiFigma, SiReact, SiSvelte, SiVuedotjs } from '@icons-pack/react-simple-icons'
+import { SiFigma, SiReact, SiVuedotjs } from '@icons-pack/react-simple-icons'
 import { ArrowRightIcon } from 'lucide-react'
 import NextLink from 'next/link'
 import { Box, HStack, Stack } from 'styled-system/jsx'
