@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Box, Container, Stack } from 'styled-system/jsx'
+import { Container, Stack } from 'styled-system/jsx'
 import { PricingCard } from '~/components/marketing/pricing-card'
 import { PageHeader } from '~/components/page-header'
 

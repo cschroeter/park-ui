@@ -1,27 +1,19 @@
 'use client'
 import { CopyIcon, XIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button, Dialog, IconButton } from '~/components/ui'
-// import { pandaConfigPre } from '~/configs/panda-config'
-// import { tailwindConfigPre } from '~/configs/tailwind-config'
+import { Button, Code, Dialog, IconButton } from '~/components/ui'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
-// import { CodePreview } from '../code-preview'
+import { CodePreview } from '../code-preview'
+import { pandaConfigPre } from './panda-config'
 
 export const ThemeConfigDialog = () => {
-  const {
-    currentAccentColor,
-    currentBorderRadius,
-    currentCSSFramework,
-    currentGrayColor,
-    currentJSFramework,
-    getConfig,
-  } = useThemeGenerator()
+  const { currentAccentColor, currentBorderRadius, currentGrayColor, getConfig } =
+    useThemeGenerator()
 
-  const html = (currentCSSFramework === 'panda' ? 'panda' : 'tw')
+  const html = pandaConfigPre
     .replace('__ACCENT_COLOR__', currentAccentColor)
     .replace('__GRAY_COLOR__', currentGrayColor)
     .replace('__BORDER_RADIUS__', currentBorderRadius)
-    .replace('__JS_FRAMEWORK__', currentJSFramework)
 
   return (
     <Dialog.Root>
@@ -33,15 +25,16 @@ export const ThemeConfigDialog = () => {
       </Dialog.Trigger>
       <Dialog.Backdrop />
       <Dialog.Positioner>
-        <Dialog.Content bg={{ base: 'white', _dark: 'gray.1' }} width="fit-content">
+        <Dialog.Content bg={{ base: 'white', _dark: 'gray.1' }} width="fit-content" maxW="lg">
           <Stack gap="6" p="6">
             <Stack gap="1">
               <Dialog.Title>Make it yours</Dialog.Title>
               <Dialog.Description>
-                Copy and paste the following code into your config file.
+                Copy and paste the following code into your <Code size="sm">panda.config.ts</Code>{' '}
+                and update if needed.
               </Dialog.Description>
             </Stack>
-            {/* <CodePreview code={getConfig()} html={html} /> */}
+            <CodePreview code={getConfig()} html={html} />
           </Stack>
           <Dialog.CloseTrigger asChild position="absolute" top="2" right="2">
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">

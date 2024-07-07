@@ -9,8 +9,6 @@ import {
 import { Match } from 'effect'
 import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
-// import { pandaConfig } from '~/configs/panda-config'
-// import { tailwindConfig } from '~/configs/tailwind-config'
 import { cssFrameworks, jsFrameworks, useThemeStore } from './use-theme-store'
 
 type Context = {
@@ -22,8 +20,6 @@ export const useThemeGenerator = (context?: Context) => {
   const currentGrayColor = useThemeStore((state) => state.grayColor)
   const currentFontFamily = useThemeStore((state) => state.fontFamily)
   const currentBorderRadius = useThemeStore((state) => state.borderRadius)
-  const currentCSSFramework = useThemeStore((state) => state.cssFramework)
-  const currentJSFramework = useThemeStore((state) => state.jsFramework)
 
   const updateAccentColor = useThemeStore((state) => state.setAccentColor)
   const updateGrayColor = useThemeStore((state) => state.setGrayColor)
@@ -34,16 +30,10 @@ export const useThemeGenerator = (context?: Context) => {
   const reset = useThemeStore((state) => state.reset)
 
   const getConfig = () =>
-    Match.value(currentCSSFramework)
-      .pipe(
-        Match.when('panda', () => ''),
-        Match.when('tailwind', () => ''),
-        Match.exhaustive,
-      )
+    baseConfig
       .replace('__ACCENT_COLOR__', currentAccentColor)
       .replace('__GRAY_COLOR__', currentGrayColor)
       .replace('__BORDER_RADIUS__', currentBorderRadius)
-      .replace('__JS_FRAMEWORK__', currentJSFramework)
 
   useEffect(() => {
     syncAccentColor(currentAccentColor, context)
@@ -67,10 +57,8 @@ export const useThemeGenerator = (context?: Context) => {
     cssFrameworks,
     currentAccentColor,
     currentBorderRadius,
-    currentCSSFramework,
     currentFontFamily,
     currentGrayColor,
-    currentJSFramework,
     fontFamilies,
     getConfig,
     grayColors,
@@ -229,3 +217,22 @@ const syncFontFamily = (fontFamily: FontFamily, context?: Context) => {
     root.style.setProperty('--fonts-body', fontFamily.value)
   }
 }
+
+const baseConfig = `import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
+
+export default defineConfig({
+  preflight: true,
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: '__ACCENT_COLOR__',
+      grayColor: '__GRAY_COLOR__',
+      borderRadius: '__BORDER_RADIUS__',
+    }),
+  ],
+  include: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
+  jsxFramework: '__JS_FRAMEWORK__',
+  outdir: 'styled-system',
+})
+`
