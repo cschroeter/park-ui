@@ -39,13 +39,13 @@ export const MobileNavbarLinks = (props: Props) => {
       >
         Docs
       </NextLink>
-      <NextLink
+      {/* <NextLink
         href={`/${framework}/examples`}
         className={link}
         aria-current={pathname.startsWith(`/${framework}/examples`) ? 'page' : undefined}
       >
         Examples
-      </NextLink>
+      </NextLink> */}
     </>
   )
 }
