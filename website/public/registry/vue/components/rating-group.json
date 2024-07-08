@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "rating-group.tsx",
-      "hasMultipleParts": true,
-      "content": "import type { Assign } from '@ark-ui/vue'\nimport { RatingGroup } from '@ark-ui/vue/rating-group'\nimport { ratingGroup } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport type { Component } from 'vue'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(ratingGroup)\n\nexport type RootProviderProps = Component<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<HTMLStyledProps<'div'>, RatingGroup.RootProviderBaseProps>\n>(RatingGroup.RootProvider, 'root')\n\nexport type RootProps = Component<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, RatingGroup.RootBaseProps>>(\n  RatingGroup.Root,\n  'root',\n)\n\nexport type ControlProps = Component<typeof Control>\nexport const Control = withContext<Assign<HTMLStyledProps<'div'>, RatingGroup.ControlBaseProps>>(\n  RatingGroup.Control,\n  'control',\n)\n\nexport type ItemProps = Component<typeof Item>\nexport const Item = withContext<Assign<HTMLStyledProps<'span'>, RatingGroup.ItemBaseProps>>(\n  RatingGroup.Item,\n  'item',\n)\n\nexport type LabelProps = Component<typeof Label>\nexport const Label = withContext<Assign<HTMLStyledProps<'label'>, RatingGroup.LabelBaseProps>>(\n  RatingGroup.Label,\n  'label',\n)\n\nexport {\n  RatingGroupContext as Context,\n  type RatingGroupContextProps as ContextProps,\n  RatingGroupHiddenInput as HiddenInput,\n  type RatingGroupHiddenInputProps as HiddenInputProps,\n} from '@ark-ui/vue/rating-group'\n"
-    }
-  ]
-}

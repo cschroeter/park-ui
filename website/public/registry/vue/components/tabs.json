@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "tabs.tsx",
-      "hasMultipleParts": true,
-      "content": "import type { Assign } from '@ark-ui/vue'\nimport { Tabs } from '@ark-ui/vue/tabs'\nimport { tabs } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport type { Component } from 'vue'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport type RootProviderProps = Component<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<HTMLStyledProps<'div'>, Tabs.RootProviderBaseProps>\n>(Tabs.RootProvider, 'root')\n\nexport type RootProps = Component<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, Tabs.RootBaseProps>>(\n  Tabs.Root,\n  'root',\n)\n\nexport type ContentProps = Component<typeof Content>\nexport const Content = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ContentBaseProps>>(\n  Tabs.Content,\n  'content',\n)\n\nexport type IndicatorProps = Component<typeof Indicator>\nexport const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Tabs.IndicatorBaseProps>>(\n  Tabs.Indicator,\n  'indicator',\n)\n\nexport type ListProps = Component<typeof List>\nexport const List = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ListBaseProps>>(\n  Tabs.List,\n  'list',\n)\n\nexport type TriggerProps = Component<typeof Trigger>\nexport const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Tabs.TriggerBaseProps>>(\n  Tabs.Trigger,\n  'trigger',\n)\n\nexport {\n  TabsContext as Context,\n  type TabsContextProps as ContextProps,\n} from '@ark-ui/vue/tabs'\n"
-    }
-  ]
-}

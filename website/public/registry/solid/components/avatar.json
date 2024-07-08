@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "avatar.tsx",
-      "hasMultipleParts": true,
-      "content": "import { type Assign, Avatar } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { avatar } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(avatar)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<Assign<HTMLStyledProps<'div'>, Avatar.RootProviderProps>>(\n  Avatar.RootProvider,\n  'root',\n)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, Avatar.RootProps>>(\n  Avatar.Root,\n  'root',\n)\n\nexport type FallbackProps = ComponentProps<typeof Fallback>\nexport const Fallback = withContext<Assign<HTMLStyledProps<'span'>, Avatar.FallbackProps>>(\n  Avatar.Fallback,\n  'fallback',\n)\n\nexport type ImageProps = ComponentProps<typeof Image>\nexport const Image = withContext<Assign<HTMLStyledProps<'img'>, Avatar.ImageProps>>(\n  Avatar.Image,\n  'image',\n)\n\nexport {\n  AvatarContext as Context,\n  type AvatarContextProps as ContextProps,\n} from '@ark-ui/solid'\n"
-    }
-  ]
-}

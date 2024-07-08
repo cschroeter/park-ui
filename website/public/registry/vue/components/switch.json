@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "switch.tsx",
-      "hasMultipleParts": true,
-      "content": "import type { Assign } from '@ark-ui/vue'\nimport { Switch } from '@ark-ui/vue/switch'\nimport { switchRecipe } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport type { Component } from 'vue'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(switchRecipe)\n\nexport type RootProviderProps = Component<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<HTMLStyledProps<'label'>, Switch.RootProviderBaseProps>\n>(Switch.RootProvider, 'root')\n\nexport type RootProps = Component<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'label'>, Switch.RootBaseProps>>(\n  Switch.Root,\n  'root',\n)\n\nexport type ControlProps = Component<typeof Control>\nexport const Control = withContext<Assign<HTMLStyledProps<'span'>, Switch.ControlBaseProps>>(\n  Switch.Control,\n  'control',\n)\n\nexport type LabelProps = Component<typeof Label>\nexport const Label = withContext<Assign<HTMLStyledProps<'span'>, Switch.LabelBaseProps>>(\n  Switch.Label,\n  'label',\n)\n\nexport type ThumbProps = Component<typeof Thumb>\nexport const Thumb = withContext<Assign<HTMLStyledProps<'span'>, Switch.ThumbBaseProps>>(\n  Switch.Thumb,\n  'thumb',\n)\n\nexport {\n  SwitchContext as Context,\n  type SwitchContextProps as ContextProps,\n  SwitchHiddenInput as HiddenInput,\n  type SwitchHiddenInputProps as HiddenInputProps,\n} from '@ark-ui/vue/switch'\n"
-    }
-  ]
-}

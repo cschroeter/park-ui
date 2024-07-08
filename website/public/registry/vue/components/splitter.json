@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "splitter.tsx",
-      "hasMultipleParts": true,
-      "content": "import type { Assign } from '@ark-ui/vue'\nimport { Splitter } from '@ark-ui/vue/splitter'\nimport { splitter } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport type { Component } from 'vue'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport type RootProviderProps = Component<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<HTMLStyledProps<'div'>, Splitter.RootProviderBaseProps>\n>(Splitter.RootProvider, 'root')\n\nexport type RootProps = Component<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, Splitter.RootBaseProps>>(\n  Splitter.Root,\n  'root',\n)\n\nexport type PanelProps = Component<typeof Panel>\nexport const Panel = withContext<Assign<HTMLStyledProps<'div'>, Splitter.PanelBaseProps>>(\n  Splitter.Panel,\n  'panel',\n)\n\nexport type ResizeTriggerProps = Component<typeof ResizeTrigger>\nexport const ResizeTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Splitter.ResizeTriggerBaseProps>\n>(Splitter.ResizeTrigger, 'resizeTrigger')\n\nexport {\n  SplitterContext as Context,\n  type SplitterContextProps as ContextProps,\n} from '@ark-ui/vue/splitter'\n"
-    }
-  ]
-}

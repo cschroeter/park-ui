@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "checkbox.tsx",
-      "hasMultipleParts": true,
-      "content": "import type { Assign } from '@ark-ui/vue'\nimport { Checkbox } from '@ark-ui/vue/checkbox'\nimport { checkbox } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport type { Component } from 'vue'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(checkbox)\n\nexport type RootProviderProps = Component<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<HTMLStyledProps<'label'>, Checkbox.RootProviderBaseProps>\n>(Checkbox.RootProvider, 'root')\n\nexport type RootProps = Component<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'label'>, Checkbox.RootBaseProps>>(\n  Checkbox.Root,\n  'root',\n)\n\nexport type ControlProps = Component<typeof Control>\nexport const Control = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.ControlBaseProps>>(\n  Checkbox.Control,\n  'control',\n)\n\nexport type GroupProps = Component<typeof Group>\nexport const Group = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.GroupBaseProps>>(\n  Checkbox.Group,\n  'group',\n)\n\nexport type IndicatorProps = Component<typeof Indicator>\nexport const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.IndicatorBaseProps>>(\n  Checkbox.Indicator,\n  'indicator',\n)\n\nexport type LabelProps = Component<typeof Label>\nexport const Label = withContext<Assign<HTMLStyledProps<'span'>, Checkbox.LabelBaseProps>>(\n  Checkbox.Label,\n  'label',\n)\n\nexport {\n  CheckboxContext as Context,\n  type CheckboxContextProps as ContextProps,\n  CheckboxHiddenInput as HiddenInput,\n  type CheckboxHiddenInputProps as HiddenInputProps,\n} from '@ark-ui/vue/checkbox'\n"
-    }
-  ]
-}

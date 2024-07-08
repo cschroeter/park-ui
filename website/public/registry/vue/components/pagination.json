@@ -1,9 +1,0 @@
-{
-  "files": [
-    {
-      "filename": "pagination.tsx",
-      "hasMultipleParts": true,
-      "content": "import type { Assign } from '@ark-ui/vue'\nimport { Pagination } from '@ark-ui/vue/pagination'\nimport { pagination } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport type { Component } from 'vue'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(pagination)\n\nexport type RootProviderProps = Component<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<HTMLStyledProps<'nav'>, Pagination.RootProviderBaseProps>\n>(Pagination.RootProvider, 'root')\n\nexport type RootProps = Component<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'nav'>, Pagination.RootBaseProps>>(\n  Pagination.Root,\n  'root',\n)\n\nexport type EllipsisProps = Component<typeof Ellipsis>\nexport const Ellipsis = withContext<Assign<HTMLStyledProps<'div'>, Pagination.EllipsisBaseProps>>(\n  Pagination.Ellipsis,\n  'ellipsis',\n)\n\nexport type ItemProps = Component<typeof Item>\nexport const Item = withContext<Assign<HTMLStyledProps<'button'>, Pagination.ItemBaseProps>>(\n  Pagination.Item,\n  'item',\n)\n\nexport type NextTriggerProps = Component<typeof NextTrigger>\nexport const NextTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Pagination.NextTriggerBaseProps>\n>(Pagination.NextTrigger, 'nextTrigger')\n\nexport type PrevTriggerProps = Component<typeof PrevTrigger>\nexport const PrevTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Pagination.PrevTriggerBaseProps>\n>(Pagination.PrevTrigger, 'prevTrigger')\n\nexport {\n  PaginationContext as Context,\n  type PaginationContextProps as ContextProps,\n} from '@ark-ui/vue/pagination'\n"
-    }
-  ]
-}
