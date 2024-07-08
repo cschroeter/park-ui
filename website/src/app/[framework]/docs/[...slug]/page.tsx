@@ -4,11 +4,9 @@ import { Box, Container, Stack } from 'styled-system/jsx'
 import { MDXContent } from '~/components/mdx-content'
 import { DocsFooter } from '~/components/navigation/docs/docs-footer'
 import { TableOfContent } from '~/components/navigation/table-of-content'
-// import { TableOfContent } from '~/components/table-of-content'
 import { Heading, Prose, Text } from '~/components/ui'
 import { getSidebarGroups } from '~/lib/docs'
 import { getServerContext } from '~/lib/server-context'
-// import { MDXContent } from '~/mdx-content'
 
 interface Props {
   params: { framework: string; slug: string[] }
