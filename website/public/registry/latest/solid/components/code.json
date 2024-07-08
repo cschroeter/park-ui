@@ -1,3 +1,8 @@
 {
-  "primitive": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.code, code)\n"
+  "id": "code",
+  "name": "Code",
+  "filename": "code.tsx",
+  "variants": {
+    "primitive": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.code, code)\n"
+  }
 }

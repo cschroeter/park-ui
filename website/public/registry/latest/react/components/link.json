@@ -1,3 +1,8 @@
 {
-  "primitive": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type LinkProps = ComponentProps<typeof Link>\nexport const Link = styled(ark.a, link)\n"
+  "id": "link",
+  "name": "Link",
+  "filename": "link.tsx",
+  "variants": {
+    "primitive": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type LinkProps = ComponentProps<typeof Link>\nexport const Link = styled(ark.a, link)\n"
+  }
 }

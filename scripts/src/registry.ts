@@ -1,5 +1,5 @@
 import { parse } from 'node:path'
-import { Console, Effect, pipe } from 'effect'
+import { Effect, pipe } from 'effect'
 import fs from 'fs-extra'
 import { globby } from 'globby'
 
@@ -33,8 +33,10 @@ const programm = pipe(
                       fs.outputJSON(
                         `../website/public/registry/latest/${framework}/components/${component}.json`,
                         {
-                          primitive,
-                          composition,
+                          id: parse(file).name,
+                          name: toTitleCase(parse(file).name),
+                          filename: parse(file).base,
+                          variants: { primitive, composition },
                         },
                       ),
                     ),
@@ -46,9 +48,7 @@ const programm = pipe(
                   `../website/public/registry/latest/${framework}/components/index.json`,
                   files.sort().map((file) => ({
                     id: parse(file).name,
-                    name: parse(file)
-                      .name.replace(/-/g, ' ')
-                      .replace(/\b\w/g, (l) => l.toUpperCase()),
+                    name: toTitleCase(parse(file).name),
                   })),
                 ),
               ),
@@ -70,7 +70,7 @@ const programm = pipe(
                 Effect.promise(() =>
                   fs.outputJSON(
                     `../website/public/registry/latest/${framework}/helpers/index.json`,
-                    data,
+                    [data],
                   ),
                 ),
               ),
@@ -83,3 +83,5 @@ const programm = pipe(
 )
 
 Effect.runPromise(programm)
+
+const toTitleCase = (str: string) => str.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())

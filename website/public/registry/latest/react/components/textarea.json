@@ -1,3 +1,8 @@
 {
-  "primitive": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { textarea } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type TextareaProps = ComponentProps<typeof Textarea>\nexport const Textarea = styled(ark.textarea, textarea)\n"
+  "id": "textarea",
+  "name": "Textarea",
+  "filename": "textarea.tsx",
+  "variants": {
+    "primitive": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { textarea } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type TextareaProps = ComponentProps<typeof Textarea>\nexport const Textarea = styled(ark.textarea, textarea)\n"
+  }
 }

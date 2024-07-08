@@ -50,12 +50,12 @@ export default defineConfig({
   presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
   exclude: [],
-  jsxFramework: 'react',
+  jsxFramework: 'react', // or 'solid' or 'vue'
   outdir: 'styled-system',
 })
 ```
 
-Make sure to run `panda codegen` after you've added the presets to your Panda configuration file.
+> Ensure you run `panda codegen` after adding the presets to your Panda configuration file.
 
 </Step>
 <Step number="4" title="Path Aliases">

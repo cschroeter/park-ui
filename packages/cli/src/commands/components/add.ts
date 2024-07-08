@@ -32,20 +32,36 @@ export const add = Command.make('add', args, ({ component, componentsDir, libDir
     Effect.flatMap(([components, basePath]) =>
       Effect.all([
         Effect.forEach(components, (component) =>
-          Effect.forEach(component.files, (file) =>
-            Effect.tryPromise({
-              try: () => fs.outputFile(path.join(basePath, file.filename), file.content),
-              catch: () => new Error(`Failed to write file ${file.filename}`),
-            }),
-          ),
+          Effect.tryPromise({
+            try: () =>
+              fs.outputFile(
+                path.join(basePath, 'primitives', component.filename),
+                component.variants.primitive,
+              ),
+            catch: () => new Error(`Failed to write file ${component}.tsx`),
+          }),
+        ),
+        Effect.forEach(components, (component) =>
+          Effect.if(component.variants.composition !== undefined, {
+            onTrue: () =>
+              Effect.tryPromise({
+                try: () =>
+                  fs.outputFile(
+                    path.join(basePath, component.filename),
+                    component.variants.composition ?? '',
+                  ),
+                catch: () => new Error(`Failed to write file ${component}.tsx`),
+              }),
+            onFalse: () => Effect.succeed(undefined),
+          }),
         ),
         pipe(
           Effect.all([resolveBasePath(libDir), fetchHelpers()]),
           Effect.flatMap(([basePath, helpers]) =>
-            Effect.forEach(helpers.files, (file) =>
+            Effect.forEach(helpers, (helper) =>
               Effect.tryPromise({
-                try: () => fs.outputFile(path.join(basePath, file.filename), file.content),
-                catch: () => new Error(`Failed to write file ${file.filename}`),
+                try: () => fs.outputFile(path.join(basePath, helper.filename), helper.content),
+                catch: () => new Error(`Failed to write file ${helper.filename}`),
               }),
             ),
           ),
