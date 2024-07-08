@@ -3,7 +3,7 @@ import { Schema } from '@effect/schema'
 import { Effect, Schedule } from 'effect'
 
 const API_URL =
-  'https://park-ui-docs-wd6obtel3-christian-schrters-projects.vercel.app/registry/latest/react/components'
+  'https://park-ui-docs-r3e438y2g-christian-schrters-projects.vercel.app/registry/latest/react/components'
 
 const Components = Schema.Struct({
   components: Schema.Array(
@@ -59,7 +59,9 @@ export const fetchComponentByUrl = (url: string) =>
   )
 
 export const fetchHelpers = () =>
-  HttpClientRequest.get('https://park-ui.com/registry/panda/react/helpers').pipe(
+  HttpClientRequest.get(
+    'https://park-ui-docs-r3e438y2g-christian-schrters-projects.vercel.app/registry/latest/react/helpers',
+  ).pipe(
     HttpClient.fetchOk,
     HttpClientResponse.schemaBodyJsonScoped(Helpers),
     Effect.timeout('1 seconds'),
