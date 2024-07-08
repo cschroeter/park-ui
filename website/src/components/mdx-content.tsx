@@ -6,7 +6,6 @@ import { ComponentPreview } from './docs/component-preview'
 import { FigmaKitPreview } from './docs/figma-kit-preview'
 import { InstallationGuide } from './docs/installation-guide'
 import { Quickstart } from './docs/quickstart'
-import { Snippet } from './docs/snippet'
 import { ColorGrid } from './theming/color-grid'
 import { ColorPairings } from './theming/color-pairings'
 import { ColorPalette } from './theming/color-palette'
@@ -18,8 +17,6 @@ import { Step, Steps } from './ui/stepper'
 const sharedComponents = {
   a: Link,
   code: Code,
-  //   ComponentPreview,
-  //   Example,
   ColorPalette,
   ColorGrid,
   ColorPairings,
@@ -29,13 +26,11 @@ const sharedComponents = {
   Faq,
   FigmaKitPreview,
   InstallationGuide,
-  //   InstallCmd,
   kbd: Kbd,
   pre: Pre,
   Quickstart,
   RadiusTokens,
   ShadowTokens,
-  Snippet,
   Step,
   Steps,
 }
