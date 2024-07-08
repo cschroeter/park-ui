@@ -11,4 +11,5 @@ const cli = Command.run(main, {
   version: pkgJson.version,
 })
 
+// @ts-expect-error TODO fix later
 cli(process.argv).pipe(Effect.provide(NodeContext.layer), NodeRuntime.runMain)

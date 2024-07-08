@@ -1,0 +1,16 @@
+{
+  "git": {
+    "commitMessage": "chore: release ${npm.name} v${version}",
+    "tagName": "${npm.name}@${version}"
+  },
+  "github": {
+    "release": false,
+    "releaseName": "${npm.name}@${version}"
+  },
+  "npm": {
+    "versionArgs": ["--workspaces-update=false"]
+  },
+  "hooks": {
+    "before:init": ["bun run build"]
+  }
+}
