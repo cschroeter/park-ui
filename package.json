@@ -11,7 +11,8 @@
     "panda": "bun run --cwd packages/panda",
     "react": "bun run --cwd components/react",
     "solid": "bun run --cwd components/solid",
-    "vue": "bun run --cwd components/vue"
+    "vue": "bun run --cwd components/vue",
+    "demos:sync": "rsync -av --delete ./components/react/src/demos ./website/src/"
   },
   "dependencies": {
     "@biomejs/biome": "1.8.3",
