@@ -1,32 +1,20 @@
 {
   "compilerOptions": {
-    // Enable latest features
-    "lib": ["ESNext"],
-    "target": "ESNext",
-    "module": "CommonJS",
-    "moduleDetection": "force",
-    "allowJs": true,
-
-    // Bundler mode
-    "moduleResolution": "Node",
-    "allowImportingTsExtensions": true,
     "noEmit": true,
-
-    // Best practices
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
     "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noPropertyAccessFromIndexSignature": true,
     "esModuleInterop": true,
-
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
-
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
