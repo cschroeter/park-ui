@@ -2,8 +2,7 @@ import { HttpClient, HttpClientRequest, HttpClientResponse } from '@effect/platf
 import { Schema } from '@effect/schema'
 import { Effect, Schedule } from 'effect'
 
-const API_URL =
-  'https://park-ui-docs-r3e438y2g-christian-schrters-projects.vercel.app/registry/latest/react/components'
+const API_URL = 'https://park-ui.com/registry/latest/react/components'
 
 const Components = Schema.Struct({
   components: Schema.Array(
@@ -31,8 +30,6 @@ const Helpers = Schema.Array(
   }),
 )
 
-// TODO Could need some refactoring
-
 export const fetchComponents = () =>
   HttpClientRequest.get(API_URL).pipe(
     HttpClient.fetchOk,
@@ -59,9 +56,7 @@ export const fetchComponentByUrl = (url: string) =>
   )
 
 export const fetchHelpers = () =>
-  HttpClientRequest.get(
-    'https://park-ui-docs-r3e438y2g-christian-schrters-projects.vercel.app/registry/latest/react/helpers',
-  ).pipe(
+  HttpClientRequest.get('https://park-ui.com/registry/latest/react/helpers').pipe(
     HttpClient.fetchOk,
     HttpClientResponse.schemaBodyJsonScoped(Helpers),
     Effect.timeout('1 seconds'),
