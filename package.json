@@ -16,7 +16,7 @@
   "dependencies": {
     "@biomejs/biome": "1.8.3",
     "@types/bun": "1.1.6",
-    "lefthook": "1.6.18",
+    "lefthook": "1.7.1",
     "typescript": "5.5.3"
   },
   "packageManager": "bun@1.1.18",
