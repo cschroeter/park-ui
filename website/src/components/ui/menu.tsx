@@ -1,3 +1,5 @@
+'use client'
+
 import type { Assign } from '@ark-ui/react'
 import { Menu } from '@ark-ui/react/menu'
 import { type MenuVariantProps, menu } from 'styled-system/recipes'

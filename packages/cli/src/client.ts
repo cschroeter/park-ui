@@ -2,7 +2,8 @@ import { HttpClient, HttpClientRequest, HttpClientResponse } from '@effect/platf
 import { Schema } from '@effect/schema'
 import { Effect, Schedule } from 'effect'
 
-const API_URL = 'https://park-ui.com/registry/panda/react/components'
+const API_URL =
+  'https://park-ui-docs-r3e438y2g-christian-schrters-projects.vercel.app/registry/latest/react/components'
 
 const Components = Schema.Struct({
   components: Schema.Array(
@@ -13,14 +14,22 @@ const Components = Schema.Struct({
   ),
 })
 
-const SourceFiles = Schema.Struct({
-  files: Schema.Array(
-    Schema.Struct({
-      filename: Schema.String,
-      content: Schema.String,
-    }),
-  ),
+const Component = Schema.Struct({
+  id: Schema.String,
+  name: Schema.String,
+  filename: Schema.String,
+  variants: Schema.Struct({
+    primitive: Schema.String,
+    composition: Schema.optional(Schema.String),
+  }),
 })
+
+const Helpers = Schema.Array(
+  Schema.Struct({
+    filename: Schema.String,
+    content: Schema.String,
+  }),
+)
 
 // TODO Could need some refactoring
 
@@ -36,7 +45,7 @@ export const fetchComponents = () =>
 export const fetchComponentById = (id: string) =>
   HttpClientRequest.get(`${API_URL}/${id}.json`).pipe(
     HttpClient.fetchOk,
-    HttpClientResponse.schemaBodyJsonScoped(SourceFiles),
+    HttpClientResponse.schemaBodyJsonScoped(Component),
     Effect.timeout('1 seconds'),
     Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
   )
@@ -44,15 +53,17 @@ export const fetchComponentById = (id: string) =>
 export const fetchComponentByUrl = (url: string) =>
   HttpClientRequest.get(url).pipe(
     HttpClient.fetchOk,
-    HttpClientResponse.schemaBodyJsonScoped(SourceFiles),
+    HttpClientResponse.schemaBodyJsonScoped(Component),
     Effect.timeout('1 seconds'),
     Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
   )
 
 export const fetchHelpers = () =>
-  HttpClientRequest.get('https://park-ui.com/registry/panda/react/helpers').pipe(
+  HttpClientRequest.get(
+    'https://park-ui-docs-r3e438y2g-christian-schrters-projects.vercel.app/registry/latest/react/helpers',
+  ).pipe(
     HttpClient.fetchOk,
-    HttpClientResponse.schemaBodyJsonScoped(SourceFiles),
+    HttpClientResponse.schemaBodyJsonScoped(Helpers),
     Effect.timeout('1 seconds'),
     Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
   )

@@ -1,10 +1,30 @@
+'use client'
 import { ExternalLinkIcon, InfoIcon } from 'lucide-react'
-import { generateElement } from 'react-live'
+import { Runner } from 'react-runner'
 import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
-import * as components from '~/components/ui'
+import { Alert, Avatar, Button, Checkbox, Code, Heading, Link } from '~/components/ui'
+import { Skeleton } from '~/components/ui/skeleton'
+import { Slider } from '~/components/ui/slider'
+import { Text } from '~/components/ui/text'
 
 const icons = { InfoIcon, ExternalLinkIcon }
-const scope = { ...components, ...icons, Stack, HStack, Box, Flex }
+const scope = {
+  Alert,
+  Avatar,
+  Box,
+  Button,
+  Checkbox,
+  Code,
+  Flex,
+  Heading,
+  HStack,
+  Link,
+  Skeleton,
+  Slider,
+  Stack,
+  Text,
+  ...icons,
+}
 
 type Props = {
   code: string
@@ -12,9 +32,5 @@ type Props = {
 
 export const LivePreview = (props: Props) => {
   const { code } = props
-  const Element = generateElement({ code, scope, enableTypeScript: true }, () =>
-    console.log('rendered'),
-  )
-
-  return <Element />
+  return <Runner code={code} scope={scope} />
 }

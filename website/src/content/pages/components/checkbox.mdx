@@ -1,0 +1,37 @@
+---
+id: checkbox
+title: Checkbox
+category: component
+description: A control element that allows for multiple selections within a set.
+ark:
+  link: https://ark-ui.com/docs/components/checkbox
+---
+
+## Usage
+
+<ComponentPlayground />
+
+## Examples
+
+### Indeterminate
+
+The `indeterminate` state signifies a checkbox with only some of its related options selected.
+
+```tsx
+// live
+<Checkbox checked="indeterminate" />
+```
+
+### With a different color
+
+By default, the checkbox uses the `accent` color from the theme. To render a checkbox with a different color, use the
+`colorPalette` prop.
+
+```tsx
+// live
+<Checkbox colorPalette="red" defaultChecked />
+```
+
+## Installation
+
+<InstallationGuide />

@@ -9,52 +9,51 @@ const programm = pipe(
   Effect.forEach(frameworks, (framework) =>
     Effect.all([
       pipe(
-        Effect.promise(() => globby([`../components/${framework}/src/components/ui/**/*.tsx`])),
-        Effect.map(
-          (components) =>
-            components.reduce((acc, component) => {
-              const name = parse(component).name
-              if (!acc[name]) {
-                acc[name] = []
-              }
-              acc[name].push(component)
-              return acc
-            }, {}) as Record<string, string[]>,
+        Effect.promise(() =>
+          globby([`../components/${framework}/src/components/ui/primitives/*.tsx`]),
         ),
-        Effect.flatMap((components) =>
-          Effect.all([
-            Effect.forEach(Object.entries(components), ([component, files]) =>
-              pipe(
-                Effect.forEach(files, (file) =>
-                  pipe(
+        Effect.flatMap((files) =>
+          pipe(
+            Effect.all([
+              Effect.forEach(files, (file) =>
+                pipe(
+                  Effect.all([
+                    Effect.succeed(parse(file).name),
                     Effect.promise(() => fs.readFile(file, 'utf-8')),
-                    Effect.map((content) => ({
-                      filename: `./${file.replace(`../components/${framework}/src/components/ui/`, '')}`,
-                      content,
-                    })),
-                  ),
-                ),
-                Effect.flatMap((data) =>
-                  Effect.promise(() =>
-                    fs.outputJSON(
-                      `../website/public/registry/latest/${framework}/components/${component}.json`,
-                      data,
+                    pipe(
+                      Effect.tryPromise({
+                        try: () => fs.readFile(file.replace('/primitives', ''), 'utf-8'),
+                        catch: () => new Error('No composition file found'),
+                      }),
+                      Effect.catchAll(() => Effect.succeed(undefined)),
+                    ),
+                  ]),
+                  Effect.flatMap(([component, primitive, composition]) =>
+                    Effect.promise(() =>
+                      fs.outputJSON(
+                        `../website/public/registry/latest/${framework}/components/${component}.json`,
+                        {
+                          id: parse(file).name,
+                          name: toTitleCase(parse(file).name),
+                          filename: parse(file).base,
+                          variants: { primitive, composition },
+                        },
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Effect.promise(() =>
-              fs.outputJSON(
-                `../website/public/registry/latest/${framework}/components/index.json`,
-                Object.keys(components)
-                  .sort()
-                  .map((component) => ({
-                    id: component,
+              Effect.promise(() =>
+                fs.outputJSON(
+                  `../website/public/registry/latest/${framework}/components/index.json`,
+                  files.sort().map((file) => ({
+                    id: parse(file).name,
+                    name: toTitleCase(parse(file).name),
                   })),
+                ),
               ),
-            ),
-          ]),
+            ]),
+          ),
         ),
       ),
       pipe(
@@ -71,7 +70,7 @@ const programm = pipe(
                 Effect.promise(() =>
                   fs.outputJSON(
                     `../website/public/registry/latest/${framework}/helpers/index.json`,
-                    data,
+                    [data],
                   ),
                 ),
               ),
@@ -84,3 +83,5 @@ const programm = pipe(
 )
 
 Effect.runPromise(programm)
+
+const toTitleCase = (str: string) => str.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())

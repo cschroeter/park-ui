@@ -1,3 +1,5 @@
+'use client'
+
 import type { Assign } from '@ark-ui/react'
 import { Accordion } from '@ark-ui/react/accordion'
 import { type AccordionVariantProps, accordion } from 'styled-system/recipes'
@@ -33,7 +35,9 @@ export const ItemTrigger = withContext<
 
 export {
   AccordionContext as Context,
+  AccordionItemContext as ItemContext,
   type AccordionContextProps as ContextProps,
+  type AccordionItemContextProps as ItemContextProps,
 } from '@ark-ui/react/accordion'
 
 export type {

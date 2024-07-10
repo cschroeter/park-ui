@@ -1,6 +1,8 @@
-[
-  {
-    "filename": "./tabs.tsx",
-    "content": "import { type Assign, Tabs } from '@ark-ui/solid'\nimport { type TabsVariantProps, tabs } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport interface RootProps extends Assign<JsxStyleProps, Tabs.RootProps>, TabsVariantProps {}\nexport const Root = withProvider<RootProps>(Tabs.Root, 'root')\n\nexport const Content = withContext<Assign<JsxStyleProps, Tabs.ContentProps>>(\n  Tabs.Content,\n  'content',\n)\n\nexport const Indicator = withContext<Assign<JsxStyleProps, Tabs.IndicatorProps>>(\n  Tabs.Indicator,\n  'indicator',\n)\n\nexport const List = withContext<Assign<JsxStyleProps, Tabs.ListProps>>(Tabs.List, 'list')\n\nexport const Trigger = withContext<Assign<JsxStyleProps, Tabs.TriggerProps>>(\n  Tabs.Trigger,\n  'trigger',\n)\n\nexport { TabsContext as Context, type TabsContextProps as ContextProps } from '@ark-ui/solid'\n"
+{
+  "id": "tabs",
+  "name": "Tabs",
+  "filename": "tabs.tsx",
+  "variants": {
+    "primitive": "import { Tabs, type Assign } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type TabsVariantProps, tabs } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Tabs.RootProviderProps>, TabsVariantProps>\n>(Tabs.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Tabs.RootProps>, TabsVariantProps>\n>(Tabs.Root, 'root')\n\nexport const Content = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ContentProps>>(\n  Tabs.Content,\n  'content',\n)\n\nexport const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Tabs.IndicatorProps>>(\n  Tabs.Indicator,\n  'indicator',\n)\n\nexport const List = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ListProps>>(Tabs.List, 'list')\n\nexport const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Tabs.TriggerProps>>(\n  Tabs.Trigger,\n  'trigger',\n)\n\nexport { TabsContext as Context } from '@ark-ui/solid'\n"
   }
-]
+}

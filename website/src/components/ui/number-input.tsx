@@ -1,18 +1,17 @@
+import type { Assign } from '@ark-ui/react'
 import {
   NumberInput as ArkNumberInput,
   type NumberInputRootProps,
 } from '@ark-ui/react/number-input'
-import { type ReactNode, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { type NumberInputVariantProps, numberInput } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 
 export interface NumberInputProps
   extends Assign<JsxStyleProps, NumberInputRootProps>,
-    NumberInputVariantProps {
-  children?: ReactNode
-}
+    NumberInputVariantProps {}
 
 export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
   const [variantProps, numberInputProps] = numberInput.splitVariantProps(props)
