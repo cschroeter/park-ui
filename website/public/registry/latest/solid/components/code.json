@@ -1,6 +1,8 @@
-[
-  {
-    "filename": "./code.tsx",
-    "content": "import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { type CodeVariantProps, code } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface CodeProps extends Assign<JsxStyleProps, HTMLArkProps<'code'>>, CodeVariantProps {}\nexport const Code = styled(ark.code, code)\n"
+{
+  "id": "code",
+  "name": "Code",
+  "filename": "code.tsx",
+  "variants": {
+    "primitive": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.code, code)\n"
   }
-]
+}

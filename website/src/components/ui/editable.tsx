@@ -1,3 +1,5 @@
+'use client'
+
 import type { Assign } from '@ark-ui/react'
 import { Editable } from '@ark-ui/react/editable'
 import { type EditableVariantProps, editable } from 'styled-system/recipes'

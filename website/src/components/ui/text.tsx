@@ -1,9 +1,9 @@
-import type { HTMLArkProps } from '@ark-ui/react'
+import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import React from 'react'
 import { css, cx } from 'styled-system/css'
 import { splitCssProps } from 'styled-system/jsx'
 import { type TextVariantProps, text } from 'styled-system/recipes'
-import type { Assign, JsxStyleProps } from 'styled-system/types'
+import type { JsxStyleProps } from 'styled-system/types'
 
 type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref']
 

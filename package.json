@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "lefthook install",
     "scripts": "bun run --cwd scripts",
-    "website": "bun run --cwd website",
+    "web": "bun run --cwd website",
     "cli": "bun run --cwd packages/cli",
     "panda": "bun run --cwd packages/panda",
     "react": "bun run --cwd components/react",

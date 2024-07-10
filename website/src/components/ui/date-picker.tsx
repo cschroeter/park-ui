@@ -1,3 +1,5 @@
+'use client'
+
 import type { Assign } from '@ark-ui/react'
 import { DatePicker } from '@ark-ui/react/date-picker'
 import { type DatePickerVariantProps, datePicker } from 'styled-system/recipes'

@@ -1,3 +1,5 @@
+'use client'
+
 import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import { Dialog as Drawer } from '@ark-ui/react/dialog'
 import { ark } from '@ark-ui/react/factory'

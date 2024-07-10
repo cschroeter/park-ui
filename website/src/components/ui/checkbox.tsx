@@ -23,10 +23,10 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref)
       {...rootProps}
     >
       <ArkCheckbox.Control className={styles.control}>
-        <ArkCheckbox.Indicator>
+        <ArkCheckbox.Indicator className={styles.indicator}>
           <CheckIcon />
         </ArkCheckbox.Indicator>
-        <ArkCheckbox.Indicator indeterminate>
+        <ArkCheckbox.Indicator indeterminate className={styles.indicator}>
           <MinusIcon />
         </ArkCheckbox.Indicator>
       </ArkCheckbox.Control>

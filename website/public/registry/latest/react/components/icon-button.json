@@ -1,6 +1,8 @@
-[
-  {
-    "filename": "./primitives/icon-button.tsx",
-    "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { iconButton } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type IconButtonProps = ComponentProps<typeof IconButton>\nexport const IconButton = styled(ark.button, iconButton)\n"
+{
+  "id": "icon-button",
+  "name": "Icon Button",
+  "filename": "icon-button.tsx",
+  "variants": {
+    "primitive": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { iconButton } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type IconButtonProps = ComponentProps<typeof IconButton>\nexport const IconButton = styled(ark.button, iconButton)\n"
   }
-]
+}

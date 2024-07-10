@@ -1,3 +1,5 @@
+'use client'
+
 import type { Assign } from '@ark-ui/react'
 import { RadioGroup } from '@ark-ui/react/radio-group'
 import { type RadioGroupVariantProps, radioGroup } from 'styled-system/recipes'

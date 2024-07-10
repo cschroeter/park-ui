@@ -7,13 +7,20 @@ const TsconfigJson = Schema.Struct({
   compilerOptions: Schema.Struct({
     baseUrl: Schema.String,
     paths: Schema.Record(Schema.String, Schema.Array(Schema.String)),
+    jsxImportSource: Schema.optional(Schema.Literal('react', 'solid-js', 'vue'), {
+      default: () => 'react',
+    }),
   }),
 })
 
-export const resolveBasePath = (outDir: string) =>
+export const getTsconfigPath = () =>
   pipe(
     Effect.fromNullable(getTsconfig()),
     Effect.flatMap(({ config }) => Schema.decodeUnknown(TsconfigJson)(config)),
+  )
+
+export const resolveBasePath = (outDir: string) =>
+  getTsconfigPath().pipe(
     Effect.map((config) => {
       const [alias] = outDir.split('/')
       const key = path.join(alias, '*')
