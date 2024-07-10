@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/cli",
-  "version": "0.7.0-5",
+  "version": "0.7.0-6",
   "type": "module",
   "bin": {
     "park-ui": "dist/index.cjs"
@@ -29,7 +29,7 @@
     "entry": ["src/index.ts"],
     "clean": true,
     "dts": true,
-    "minify": true,
+    "minify": false,
     "formats": ["cjs"]
   }
 }
