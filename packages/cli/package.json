@@ -3,7 +3,7 @@
   "version": "0.7.0-4",
   "type": "module",
   "bin": {
-    "park-ui": "dist/index.js"
+    "park-ui": "dist/index.cjs"
   },
   "scripts": {
     "start": "bun run ./src/index.ts",
@@ -26,14 +26,10 @@
     "typescript": "^5.0.0"
   },
   "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
+    "entry": ["src/index.ts"],
     "clean": true,
     "dts": true,
     "minify": false,
-    "format": [
-      "esm"
-    ]
+    "format": ["cjs"]
   }
 }
