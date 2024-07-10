@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "alert.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst alert = tv(\n  {\n    base: 'alert',\n    slots: {\n      root: 'alert__root',\n      content: 'alert__content',\n      description: 'alert__description',\n      icon: 'alert__icon',\n      title: 'alert__title',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withProvider, withContext } = createStyleContext(alert)\n\nexport interface RootProps extends HTMLArkProps<'div'>, VariantProps<typeof alert> {}\nexport const Root = withProvider<RootProps>(ark.div, 'root')\n\nexport const Content = withContext<HTMLArkProps<'div'>>(ark.div, 'content')\n\nexport const Description = withContext<HTMLArkProps<'div'>>(ark.div, 'description')\n\nexport const Icon = withContext<HTMLArkProps<'svg'>>(ark.svg, 'icon')\n\nexport const Title = withContext<HTMLArkProps<'h5'>>(ark.h5, 'title')\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

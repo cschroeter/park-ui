@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "hover-card.tsx",
+      "content": "import { type Assign, HoverCard } from '@ark-ui/solid'\nimport { type HoverCardVariantProps, hoverCard } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withRootProvider, withContext } = createStyleContext(hoverCard)\n\nexport interface RootProps extends HoverCard.RootProps, HoverCardVariantProps {}\nexport const Root = withRootProvider<RootProps>(HoverCard.Root)\n\nexport const Arrow = withContext<Assign<JsxStyleProps, HoverCard.ArrowProps>>(\n  HoverCard.Arrow,\n  'arrow',\n)\n\nexport const ArrowTip = withContext<Assign<JsxStyleProps, HoverCard.ArrowTipProps>>(\n  HoverCard.ArrowTip,\n  'arrowTip',\n)\n\nexport const Content = withContext<Assign<JsxStyleProps, HoverCard.ContentProps>>(\n  HoverCard.Content,\n  'content',\n)\n\nexport const Positioner = withContext<Assign<JsxStyleProps, HoverCard.PositionerProps>>(\n  HoverCard.Positioner,\n  'positioner',\n)\n\nexport const Trigger = withContext<Assign<JsxStyleProps, HoverCard.TriggerProps>>(\n  HoverCard.Trigger,\n  'trigger',\n)\n\nexport {\n  HoverCardContext as Context,\n  type HoverCardContextProps as ContextProps,\n} from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "splitter.tsx",
+      "content": "import { Splitter } from '@ark-ui/react/splitter'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst splitter = tv(\n  {\n    base: 'splitter',\n    slots: {\n      root: 'splitter__root',\n      panel: 'splitter__panel',\n      resizeTrigger: 'splitter__resizeTrigger',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport interface RootProps extends Splitter.RootProps, VariantProps<typeof splitter> {}\nexport const Root = withProvider<HTMLDivElement, RootProps>(Splitter.Root, 'root')\n\nexport const Panel = withContext<HTMLDivElement, Splitter.PanelProps>(Splitter.Panel, 'panel')\n\nexport const ResizeTrigger = withContext<HTMLButtonElement, Splitter.ResizeTriggerProps>(\n  Splitter.ResizeTrigger,\n  'resizeTrigger',\n)\n\nexport {\n  SplitterContext as Context,\n  type SplitterContextProps as ContextProps,\n} from '@ark-ui/react/splitter'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

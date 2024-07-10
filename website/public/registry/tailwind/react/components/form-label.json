@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "form-label.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface FormLabelProps extends FormLabelVariantProps, HTMLArkProps<'label'> {}\n\nexport const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>((props, ref) => {\n  const { size, className, ...rest } = props\n  return <ark.label className={formLabel({ size, className })} ref={ref} {...rest} />\n})\n\nFormLabel.displayName = 'FormLabel'\n\ntype FormLabelVariantProps = VariantProps<typeof formLabel>\n\nconst formLabel = tv(\n  {\n    base: 'formLabel',\n    defaultVariants: { size: 'md' },\n    variants: {\n      size: {\n        sm: 'formLabel--size_sm',\n        md: 'formLabel--size_md',\n        lg: 'formLabel--size_lg',\n        xl: 'formLabel--size_xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

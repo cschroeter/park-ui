@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "text.tsx",
+      "content": "import type { Assign, HTMLArkProps } from '@ark-ui/react'\nimport React from 'react'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\ntype PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref']\n\ntype AsProp<C extends React.ElementType> = {\n  as?: C\n}\n\ntype PropsToOmit<C extends React.ElementType, P> = keyof (AsProp<C> & P)\n\ntype PolymorphicComponentProp<C extends React.ElementType, Props = {}> = React.PropsWithChildren<\n  Props & AsProp<C>\n> &\n  Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>\n\ntype PolymorphicComponentPropWithRef<\n  C extends React.ElementType,\n  Props = {},\n> = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> }\n\nexport type TextProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<\n  C,\n  Assign<JsxStyleProps, HTMLArkProps<'p'>> & TextVariantProps\n>\n\ntype PolymorphicComponent = <C extends React.ElementType = 'p'>(\n  props: TextProps<C>,\n) => React.ReactNode | null\n\nexport const Text: PolymorphicComponent = React.forwardRef(\n  <C extends React.ElementType = 'p'>(props: TextProps<C>, ref?: PolymorphicRef<C>) => {\n    const [variantProps, textProps] = text.splitVariantProps(props)\n    const [cssProps, localProps] = splitCssProps(textProps)\n    const { className, as, ...otherProps } = localProps\n    const styles = text(variantProps)\n    const Component = props.as || 'p'\n\n    return <Component ref={ref} className={cx(styles, css(cssProps), className)} {...otherProps} />\n  },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "code.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface CodeProps extends CodeVariantProps, HTMLArkProps<'code'> {}\n\nexport const Code = forwardRef<HTMLElement, CodeProps>((props, ref) => {\n  const { size, variant, className, ...rest } = props\n  return <ark.code className={code({ size, variant, className })} ref={ref} {...rest} />\n})\n\nCode.displayName = 'Code'\n\ntype CodeVariantProps = VariantProps<typeof code>\n\nconst code = tv(\n  {\n    base: 'code',\n    defaultVariants: { size: 'md', variant: 'outline' },\n    variants: {\n      variant: { outline: 'code--variant_outline', ghost: 'code--variant_ghost' },\n      size: { sm: 'code--size_sm', md: 'code--size_md', lg: 'code--size_lg' },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

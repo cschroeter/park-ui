@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "skeleton.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface SkeletonProps extends HTMLArkProps<'div'>, SkeletonVariantProps {\n  /**\n   *\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {\n  const { isLoaded, className, ...rest } = props\n\n  if (isLoaded) {\n    return <ark.div className=\"animate-fade-in\" ref={ref} {...rest} />\n  }\n  return <ark.div ref={ref} className={skeleton({ className })} {...rest} />\n})\n\nSkeleton.displayName = 'Skeleton'\n\ntype SkeletonVariantProps = VariantProps<typeof skeleton>\n\nconst skeleton = tv({ base: 'skeleton', variants: {} }, { twMerge: false })\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

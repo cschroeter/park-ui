@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "icon.tsx",
+      "content": "import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { type IconVariantProps, icon } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface IconProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>>, IconVariantProps {}\nexport const Icon = styled(ark.div, icon)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

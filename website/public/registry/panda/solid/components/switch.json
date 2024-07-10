@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "switch.tsx",
+      "content": "import { Switch as ArkSwitch, type Assign, type SwitchRootProps } from '@ark-ui/solid'\nimport { Show, children, splitProps } from 'solid-js'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { type SwitchRecipeVariantProps, switchRecipe } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface SwitchProps\n  extends Assign<JsxStyleProps, SwitchRootProps>,\n    SwitchRecipeVariantProps {}\n\nexport const Switch = (props: SwitchProps) => {\n  const [variantProps, switchProps] = switchRecipe.splitVariantProps(props)\n  const [cssProps, elementProps] = splitCssProps(switchProps)\n  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class'])\n  const getChildren = children(() => localProps.children)\n  const styles = switchRecipe(variantProps)\n\n  return (\n    <ArkSwitch.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>\n      <ArkSwitch.Control class={styles.control}>\n        <ArkSwitch.Thumb class={styles.thumb} />\n      </ArkSwitch.Control>\n      <Show when={getChildren()}>\n        <ArkSwitch.Label class={styles.label}>{getChildren()}</ArkSwitch.Label>\n      </Show>\n      <ArkSwitch.HiddenInput />\n    </ArkSwitch.Root>\n  )\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

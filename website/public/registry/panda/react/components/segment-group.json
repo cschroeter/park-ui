@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "segment-group.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { SegmentGroup } from '@ark-ui/react/segment-group'\nimport { type SegmentGroupVariantProps, segmentGroup } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(segmentGroup)\n\nexport interface RootProps\n  extends Assign<JsxStyleProps, SegmentGroup.RootProps>,\n    SegmentGroupVariantProps {}\nexport const Root = withProvider<HTMLDivElement, RootProps>(SegmentGroup.Root, 'root')\n\nexport const Indicator = withContext<\n  HTMLDivElement,\n  Assign<JsxStyleProps, SegmentGroup.IndicatorProps>\n>(SegmentGroup.Indicator, 'indicator')\n\nexport const ItemControl = withContext<\n  HTMLDivElement,\n  Assign<JsxStyleProps, SegmentGroup.ItemControlProps>\n>(SegmentGroup.ItemControl, 'itemControl')\n\nexport const Item = withContext<HTMLLabelElement, Assign<JsxStyleProps, SegmentGroup.ItemProps>>(\n  SegmentGroup.Item,\n  'item',\n)\n\nexport const ItemText = withContext<\n  HTMLSpanElement,\n  Assign<JsxStyleProps, SegmentGroup.ItemTextProps>\n>(SegmentGroup.ItemText, 'itemText')\n\nexport const Label = withContext<HTMLLabelElement, Assign<JsxStyleProps, SegmentGroup.LabelProps>>(\n  SegmentGroup.Label,\n  'label',\n)\n\nexport {\n  SegmentGroupContext as Context,\n  type SegmentGroupContextProps as ContextProps,\n} from '@ark-ui/react/segment-group'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

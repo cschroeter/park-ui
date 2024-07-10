@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "textarea.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type TextareaVariantProps, textarea } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface TextareaProps\n  extends Assign<JsxStyleProps, HTMLArkProps<'textarea'>>,\n    TextareaVariantProps {}\nexport const Textarea = styled(ark.textarea, textarea)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

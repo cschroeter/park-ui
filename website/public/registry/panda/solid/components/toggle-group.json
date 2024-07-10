@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "toggle-group.tsx",
+      "content": "import { type Assign, ToggleGroup } from '@ark-ui/solid'\nimport { type ToggleGroupVariantProps, toggleGroup } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport interface RootProps\n  extends Assign<JsxStyleProps, ToggleGroup.RootProps>,\n    ToggleGroupVariantProps {}\nexport const Root = withProvider<RootProps>(ToggleGroup.Root, 'root')\n\nexport const Item = withContext<Assign<JsxStyleProps, ToggleGroup.ItemProps>>(\n  ToggleGroup.Item,\n  'item',\n)\n\nexport {\n  ToggleGroupContext as Context,\n  type ToggleGroupContextProps as ContextProps,\n} from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

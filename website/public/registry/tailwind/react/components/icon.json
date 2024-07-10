@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "icon.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface IconProps extends IconVariantProps, HTMLArkProps<'svg'> {}\n\nexport const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {\n  const { size, className, ...otherProps } = props\n  return <ark.svg asChild className={icon({ size, className })} ref={ref} {...otherProps} />\n})\n\nIcon.displayName = 'Icon'\n\ntype IconVariantProps = VariantProps<typeof icon>\n\nconst icon = tv(\n  {\n    base: 'icon',\n    defaultVariants: { size: 'md' },\n    variants: {\n      size: {\n        xs: 'icon--size_xs',\n        sm: 'icon--size_sm',\n        md: 'icon--size_md',\n        lg: 'icon--size_lg',\n        xl: 'icon--size_xl',\n        '2xl': 'icon--size_2xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

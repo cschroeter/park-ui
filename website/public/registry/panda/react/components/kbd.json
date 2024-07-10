@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "kbd.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type KbdVariantProps, kbd } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface KbdProps extends Assign<JsxStyleProps, HTMLArkProps<'kbd'>>, KbdVariantProps {}\nexport const Kbd = styled(ark.kbd, kbd)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

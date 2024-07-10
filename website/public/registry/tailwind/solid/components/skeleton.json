@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "skeleton.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { Show, splitProps } from 'solid-js'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface SkeletonProps extends HTMLArkProps<'div'>, SkeletonVariantProps {\n  /**\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = (props: SkeletonProps) => {\n  const [localProps, skeletonProps] = splitProps(props, ['class', 'isLoaded'])\n\n  return (\n    <Show\n      when={localProps.isLoaded}\n      fallback={<ark.div class={skeleton({ class: localProps.class })} {...skeletonProps} />}\n    >\n      <ark.div class=\"animate-fade-in\" {...skeletonProps} />\n    </Show>\n  )\n}\n\ntype SkeletonVariantProps = VariantProps<typeof skeleton>\n\nconst skeleton = tv({ base: 'skeleton', variants: {} }, { twMerge: false })\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "textarea.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}\n\nexport const Textarea = (props: TextareaProps) => {\n  const [variantProps, textareaProps] = splitProps(props, ['class', 'size'])\n  return <ark.textarea class={textarea(variantProps)} {...textareaProps} />\n}\n\ntype TextareaVariantProps = VariantProps<typeof textarea>\n\nconst textarea = tv(\n  {\n    base: 'textarea',\n    defaultVariants: { size: 'md' },\n    variants: {\n      size: {\n        sm: 'textarea--size_sm',\n        md: 'textarea--size_md',\n        lg: 'textarea--size_lg',\n        xl: 'textarea--size_xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

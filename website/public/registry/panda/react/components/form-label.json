@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "form-label.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type FormLabelVariantProps, formLabel } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface FormLabelProps\n  extends Assign<JsxStyleProps, HTMLArkProps<'label'>>,\n    FormLabelVariantProps {}\nexport const FormLabel = styled(ark.label, formLabel)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

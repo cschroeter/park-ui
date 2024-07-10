@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "editable.tsx",
+      "content": "import { type Assign, Editable } from '@ark-ui/solid'\nimport { type EditableVariantProps, editable } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(editable)\n\nexport interface RootProps\n  extends Assign<JsxStyleProps, Editable.RootProps>,\n    EditableVariantProps {}\nexport const Root = withProvider<RootProps>(Editable.Root, 'root')\n\nexport const Area = withContext<Assign<JsxStyleProps, Editable.AreaProps>>(Editable.Area, 'area')\n\nexport const CancelTrigger = withContext<Assign<JsxStyleProps, Editable.CancelTriggerProps>>(\n  Editable.CancelTrigger,\n  'cancelTrigger',\n)\n\nexport const Control = withContext<Assign<JsxStyleProps, Editable.ControlProps>>(\n  Editable.Control,\n  'control',\n)\n\nexport const EditTrigger = withContext<Assign<JsxStyleProps, Editable.EditTriggerProps>>(\n  Editable.EditTrigger,\n  'editTrigger',\n)\n\nexport const Input = withContext<Assign<JsxStyleProps, Editable.InputProps>>(\n  Editable.Input,\n  'input',\n)\n\nexport const Label = withContext<Assign<JsxStyleProps, Editable.LabelProps>>(\n  Editable.Label,\n  'label',\n)\n\nexport const Preview = withContext<Assign<JsxStyleProps, Editable.PreviewProps>>(\n  Editable.Preview,\n  'preview',\n)\n\nexport const SubmitTrigger = withContext<Assign<JsxStyleProps, Editable.SubmitTriggerProps>>(\n  Editable.SubmitTrigger,\n  'submitTrigger',\n)\n\nexport {\n  EditableContext as Context,\n  type EditableContextProps as ContextProps,\n} from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

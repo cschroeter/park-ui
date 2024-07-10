@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "kbd.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface KbdProps extends KbdVariantProps, HTMLArkProps<'kbd'> {}\n\nexport const Kbd = (props: KbdProps) => {\n  const [variantProps, kbdProps] = splitProps(props, ['class', 'size'])\n  return <ark.kbd class={kbd(variantProps)} {...kbdProps} />\n}\n\ntype KbdVariantProps = VariantProps<typeof kbd>\n\nconst kbd = tv(\n  {\n    base: 'kbd',\n    defaultVariants: { size: 'md' },\n    variants: { size: { sm: 'kbd--size_sm', md: 'kbd--size_md', lg: 'kbd--size_lg' } },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

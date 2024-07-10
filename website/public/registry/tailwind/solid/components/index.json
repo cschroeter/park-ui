@@ -1,0 +1,196 @@
+{
+  "components": [
+    {
+      "name": "Accordion",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/accordion.json"
+    },
+    {
+      "name": "Alert",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/alert.json"
+    },
+    {
+      "name": "Avatar",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/avatar.json"
+    },
+    {
+      "name": "Badge",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/badge.json"
+    },
+    {
+      "name": "Button",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/button.json"
+    },
+    {
+      "name": "Card",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/card.json"
+    },
+    {
+      "name": "Carousel",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/carousel.json"
+    },
+    {
+      "name": "Checkbox",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/checkbox.json"
+    },
+    {
+      "name": "Code",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/code.json"
+    },
+    {
+      "name": "Collapsible",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/collapsible.json"
+    },
+    {
+      "name": "Color Picker",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/color-picker.json"
+    },
+    {
+      "name": "Combobox",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/combobox.json"
+    },
+    {
+      "name": "Date Picker",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/date-picker.json"
+    },
+    {
+      "name": "Dialog",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/dialog.json"
+    },
+    {
+      "name": "Drawer",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/drawer.json"
+    },
+    {
+      "name": "Editable",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/editable.json"
+    },
+    {
+      "name": "File Upload",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/file-upload.json"
+    },
+    {
+      "name": "Form Label",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/form-label.json"
+    },
+    {
+      "name": "Heading",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/heading.json"
+    },
+    {
+      "name": "Hover Card",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/hover-card.json"
+    },
+    {
+      "name": "Icon Button",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/icon-button.json"
+    },
+    {
+      "name": "Icon",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/icon.json"
+    },
+    {
+      "name": "Input",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/input.json"
+    },
+    {
+      "name": "Kbd",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/kbd.json"
+    },
+    {
+      "name": "Link",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/link.json"
+    },
+    {
+      "name": "Menu",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/menu.json"
+    },
+    {
+      "name": "Number Input",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/number-input.json"
+    },
+    {
+      "name": "Pagination",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/pagination.json"
+    },
+    {
+      "name": "Pin Input",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/pin-input.json"
+    },
+    {
+      "name": "Popover",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/popover.json"
+    },
+    {
+      "name": "Progress",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/progress.json"
+    },
+    {
+      "name": "Radio Button Group",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/radio-button-group.json"
+    },
+    {
+      "name": "Radio Group",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/radio-group.json"
+    },
+    {
+      "name": "Rating Group",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/rating-group.json"
+    },
+    {
+      "name": "Segment Group",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/segment-group.json"
+    },
+    {
+      "name": "Select",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/select.json"
+    },
+    {
+      "name": "Skeleton",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/skeleton.json"
+    },
+    {
+      "name": "Slider",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/slider.json"
+    },
+    {
+      "name": "Splitter",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/splitter.json"
+    },
+    {
+      "name": "Switch",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/switch.json"
+    },
+    {
+      "name": "Table",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/table.json"
+    },
+    {
+      "name": "Tabs",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/tabs.json"
+    },
+    {
+      "name": "Tags Input",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/tags-input.json"
+    },
+    {
+      "name": "Text",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/text.json"
+    },
+    {
+      "name": "Textarea",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/textarea.json"
+    },
+    {
+      "name": "Toast",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/toast.json"
+    },
+    {
+      "name": "Toggle Group",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/toggle-group.json"
+    },
+    {
+      "name": "Tooltip",
+      "href": "https://park-ui.com/registry/tailwind/solid/components/tooltip.json"
+    }
+  ]
+}

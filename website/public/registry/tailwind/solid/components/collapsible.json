@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "collapsible.tsx",
+      "content": "import { Collapsible } from '@ark-ui/solid'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst collapsible = tv(\n  {\n    base: 'collapsible',\n    slots: {\n      root: 'collapsible__root',\n      trigger: 'collapsible__trigger',\n      content: 'collapsible__content',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withProvider, withContext } = createStyleContext(collapsible)\n\nexport interface RootProps extends Collapsible.RootProps, VariantProps<typeof collapsible> {}\nexport const Root = withProvider<RootProps>(Collapsible.Root, 'root')\n\nexport const Content = withContext<Collapsible.ContentProps>(Collapsible.Content, 'content')\n\nexport const Trigger = withContext<Collapsible.TriggerProps>(Collapsible.Trigger, 'trigger')\n\nexport {\n  CollapsibleContext as Context,\n  type CollapsibleContextProps as ContextProps,\n} from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

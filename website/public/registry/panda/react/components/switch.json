@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "switch.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { Switch as ArkSwitch, type SwitchRootProps } from '@ark-ui/react/switch'\nimport { forwardRef } from 'react'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { type SwitchRecipeVariantProps, switchRecipe } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface SwitchProps\n  extends Assign<JsxStyleProps, SwitchRootProps>,\n    SwitchRecipeVariantProps {}\n\nexport const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {\n  const [variantProps, switchProps] = switchRecipe.splitVariantProps(props)\n  const [cssProps, localProps] = splitCssProps(switchProps)\n  const { children, className, ...rootProps } = localProps\n  const styles = switchRecipe(variantProps)\n\n  return (\n    <ArkSwitch.Root ref={ref} className={cx(styles.root, css(cssProps), className)} {...rootProps}>\n      <ArkSwitch.Control className={styles.control}>\n        <ArkSwitch.Thumb className={styles.thumb} />\n      </ArkSwitch.Control>\n      {children && <ArkSwitch.Label className={styles.label}>{children}</ArkSwitch.Label>}\n      <ArkSwitch.HiddenInput />\n    </ArkSwitch.Root>\n  )\n})\n\nSwitch.displayName = 'Switch'\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "hover-card.tsx",
+      "content": "import { HoverCard } from '@ark-ui/solid'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst hoverCard = tv(\n  {\n    base: 'hoverCard',\n    slots: {\n      arrow: 'hoverCard__arrow',\n      arrowTip: 'hoverCard__arrowTip',\n      trigger: 'hoverCard__trigger',\n      positioner: 'hoverCard__positioner',\n      content: 'hoverCard__content',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withRootProvider, withContext } = createStyleContext(hoverCard)\n\nexport interface RootProps extends HoverCard.RootProps, VariantProps<typeof hoverCard> {}\nexport const Root = withRootProvider<RootProps>(HoverCard.Root)\n\nexport const Arrow = withContext<HoverCard.ArrowProps>(HoverCard.Arrow, 'arrow')\n\nexport const ArrowTip = withContext<HoverCard.ArrowTipProps>(HoverCard.ArrowTip, 'arrowTip')\n\nexport const Content = withContext<HoverCard.ContentProps>(HoverCard.Content, 'content')\n\nexport const Positioner = withContext<HoverCard.PositionerProps>(HoverCard.Positioner, 'positioner')\n\nexport const Trigger = withContext<HoverCard.TriggerProps>(HoverCard.Trigger, 'trigger')\n\nexport {\n  HoverCardContext as Context,\n  type HoverCardContextProps as ContextProps,\n} from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

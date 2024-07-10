@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "pin-input.tsx",
+      "content": "import { PinInput as ArkPinInput, type Assign, type PinInputRootProps } from '@ark-ui/solid'\nimport { Index, Show, children, splitProps } from 'solid-js'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { type PinInputVariantProps, pinInput } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { Input } from '~/components/ui/input'\n\nexport interface PinInputProps\n  extends Assign<JsxStyleProps, PinInputRootProps>,\n    PinInputVariantProps {\n  /**\n   * The number of inputs to render.\n   * @default 4\n   */\n  length?: number\n}\n\nexport const PinInput = (props: PinInputProps) => {\n  const [variantProps, pinInputProps] = pinInput.splitVariantProps(props)\n  const [cssProps, elementProps] = splitCssProps(pinInputProps)\n  const [localProps, rootProps] = splitProps(elementProps, ['children', 'class', 'length'])\n  const getChildren = children(() => localProps.children)\n  const styles = pinInput(variantProps)\n\n  return (\n    <ArkPinInput.Root class={cx(styles.root, css(cssProps), localProps.class)} {...rootProps}>\n      <Show when={getChildren()}>\n        <ArkPinInput.Label class={styles.label}>{getChildren()}</ArkPinInput.Label>\n      </Show>\n      <ArkPinInput.Control class={styles.control}>\n        <Index each={Array.from({ length: localProps.length ?? 4 }, (_, index) => index)}>\n          {(index) => (\n            <ArkPinInput.Input\n              class={styles.input}\n              index={index()}\n              asChild={(props) => <Input {...props()} size={variantProps.size} />}\n            />\n          )}\n        </Index>\n      </ArkPinInput.Control>\n    </ArkPinInput.Root>\n  )\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

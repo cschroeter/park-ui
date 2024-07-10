@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "tooltip.tsx",
+      "content": "import { type Assign, Tooltip } from '@ark-ui/solid'\nimport { type TooltipVariantProps, tooltip } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withRootProvider, withContext } = createStyleContext(tooltip)\n\nexport interface RootProps extends Assign<JsxStyleProps, Tooltip.RootProps>, TooltipVariantProps {}\nexport const Root = withRootProvider<RootProps>(Tooltip.Root)\n\nexport const Arrow = withContext<Assign<JsxStyleProps, Tooltip.ArrowProps>>(Tooltip.Arrow, 'arrow')\n\nexport const ArrowTip = withContext<Assign<JsxStyleProps, Tooltip.ArrowTipProps>>(\n  Tooltip.ArrowTip,\n  'arrowTip',\n)\n\nexport const Content = withContext<Assign<JsxStyleProps, Tooltip.ContentProps>>(\n  Tooltip.Content,\n  'content',\n)\n\nexport const Positioner = withContext<Assign<JsxStyleProps, Tooltip.PositionerProps>>(\n  Tooltip.Positioner,\n  'positioner',\n)\n\nexport const Trigger = withContext<Assign<JsxStyleProps, Tooltip.TriggerProps>>(\n  Tooltip.Trigger,\n  'trigger',\n)\n\nexport { TooltipContext as Context, type TooltipContextProps as ContextProps } from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

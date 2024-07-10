@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "tooltip.tsx",
+      "content": "import { Tooltip } from '@ark-ui/react/tooltip'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst tooltip = tv(\n  {\n    base: 'tooltip',\n    slots: {\n      trigger: 'tooltip__trigger',\n      arrow: 'tooltip__arrow',\n      arrowTip: 'tooltip__arrowTip',\n      positioner: 'tooltip__positioner',\n      content: 'tooltip__content',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withRootProvider, withContext } = createStyleContext(tooltip)\n\nexport interface RootProps extends Tooltip.RootProps, VariantProps<typeof tooltip> {}\nexport const Root = withRootProvider<RootProps>(Tooltip.Root)\n\nexport const Arrow = withContext<HTMLDivElement, Tooltip.ArrowProps>(Tooltip.Arrow, 'arrow')\n\nexport const ArrowTip = withContext<HTMLDivElement, Tooltip.ArrowTipProps>(\n  Tooltip.ArrowTip,\n  'arrowTip',\n)\n\nexport const Content = withContext<HTMLDivElement, Tooltip.ContentProps>(Tooltip.Content, 'content')\n\nexport const Positioner = withContext<HTMLDivElement, Tooltip.PositionerProps>(\n  Tooltip.Positioner,\n  'positioner',\n)\n\nexport const Trigger = withContext<HTMLButtonElement, Tooltip.TriggerProps>(\n  Tooltip.Trigger,\n  'trigger',\n)\n\nexport {\n  TooltipContext as Context,\n  type TooltipContextProps as ContextProps,\n} from '@ark-ui/react/tooltip'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

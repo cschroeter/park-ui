@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "toast.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { Toast } from '@ark-ui/react/toast'\nimport { type ToastVariantProps, toast } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toast)\n\nexport interface RootProps extends Assign<JsxStyleProps, Toast.RootProps>, ToastVariantProps {}\nexport const Root = withProvider<HTMLDivElement, RootProps>(Toast.Root, 'root')\n\nexport const ActionTrigger = withContext<\n  HTMLButtonElement,\n  Assign<JsxStyleProps, Toast.ActionTriggerProps>\n>(Toast.ActionTrigger, 'actionTrigger')\n\nexport const CloseTrigger = withContext<\n  HTMLDivElement,\n  Assign<JsxStyleProps, Toast.CloseTriggerProps>\n>(Toast.CloseTrigger, 'closeTrigger')\n\nexport const Description = withContext<\n  HTMLDivElement,\n  Assign<JsxStyleProps, Toast.DescriptionProps>\n>(Toast.Description, 'description')\n\nexport const Title = withContext<HTMLDivElement, Assign<JsxStyleProps, Toast.TitleProps>>(\n  Toast.Title,\n  'title',\n)\n\nexport {\n  createToaster,\n  ToastContext as Context,\n  Toaster,\n  type ToastContextProps as ContextProps,\n  type ToasterProps,\n} from '@ark-ui/react/toast'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

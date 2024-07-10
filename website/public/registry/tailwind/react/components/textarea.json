@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "textarea.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface TextareaProps extends TextareaVariantProps, HTMLArkProps<'textarea'> {}\n\nexport const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {\n  const { size, className, ...rest } = props\n  return <ark.textarea className={textarea({ size, className })} ref={ref} {...rest} />\n})\n\nTextarea.displayName = 'Textarea'\n\ntype TextareaVariantProps = VariantProps<typeof textarea>\n\nconst textarea = tv(\n  {\n    base: 'textarea',\n    defaultVariants: { size: 'md' },\n    variants: {\n      size: {\n        sm: 'textarea--size_sm',\n        md: 'textarea--size_md',\n        lg: 'textarea--size_lg',\n        xl: 'textarea--size_xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

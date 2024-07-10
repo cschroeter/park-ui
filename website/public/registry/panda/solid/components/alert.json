@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "alert.tsx",
+      "content": "import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { type AlertVariantProps, alert } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(alert)\n\nexport interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>>, AlertVariantProps {}\nexport const Root = withProvider<RootProps>(ark.div, 'root')\n\nexport const Content = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(ark.div, 'content')\n\nexport const Description = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(\n  ark.div,\n  'description',\n)\n\nexport const Icon = withContext<Assign<JsxStyleProps, HTMLArkProps<'svg'>>>(ark.svg, 'icon')\n\nexport const Title = withContext<Assign<JsxStyleProps, HTMLArkProps<'h5'>>>(ark.h5, 'title')\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

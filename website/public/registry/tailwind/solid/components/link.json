@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "link.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface LinkProps extends LinkVariantProps, HTMLArkProps<'a'> {}\n\nexport const Link = (props: LinkProps) => {\n  const [variantProps, linkProps] = splitProps(props, ['class'])\n  return <ark.a class={link(variantProps)} {...linkProps} />\n}\n\ntype LinkVariantProps = VariantProps<typeof link>\n\nconst link = tv({ base: 'link', variants: {} }, { twMerge: false })\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "avatar.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { Avatar as ArkAvatar } from '@ark-ui/react/avatar'\nimport { forwardRef } from 'react'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { type AvatarVariantProps, avatar } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface AvatarProps\n  extends Assign<JsxStyleProps, ArkAvatar.RootProps>,\n    AvatarVariantProps {\n  name?: string\n  src?: string\n}\n\nexport const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {\n  const [variantProps, avatarProps] = avatar.splitVariantProps(props)\n  const [cssProps, localProps] = splitCssProps(avatarProps)\n  const { name, src, className, ...rootProps } = localProps\n  const styles = avatar(variantProps)\n\n  return (\n    <ArkAvatar.Root ref={ref} className={cx(styles.root, css(cssProps), className)} {...rootProps}>\n      <ArkAvatar.Fallback className={styles.fallback}>\n        {getInitials(name) || <UserIcon />}\n      </ArkAvatar.Fallback>\n      <ArkAvatar.Image className={styles.image} src={src} alt={name} />\n    </ArkAvatar.Root>\n  )\n})\n\nAvatar.displayName = 'Avatar'\n\nconst UserIcon = () => (\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    stroke=\"currentColor\"\n    strokeWidth=\"2\"\n  >\n    <title>User Icon</title>\n    <path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\" />\n    <circle cx=\"12\" cy=\"7\" r=\"4\" />\n  </svg>\n)\n\nconst getInitials = (name = '') =>\n  name\n    .split(' ')\n    .map((part) => part[0])\n    .splice(0, 2)\n    .join('')\n    .toUpperCase()\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

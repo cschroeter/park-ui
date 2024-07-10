@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "tooltip.tsx",
+      "content": "import { Tooltip } from '@ark-ui/solid'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst tooltip = tv(\n  {\n    base: 'tooltip',\n    slots: {\n      trigger: 'tooltip__trigger',\n      arrow: 'tooltip__arrow',\n      arrowTip: 'tooltip__arrowTip',\n      positioner: 'tooltip__positioner',\n      content: 'tooltip__content',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withRootProvider, withContext } = createStyleContext(tooltip)\n\nexport interface RootProps extends Tooltip.RootProps, VariantProps<typeof tooltip> {}\nexport const Root = withRootProvider<RootProps>(Tooltip.Root)\n\nexport const Arrow = withContext<Tooltip.ArrowProps>(Tooltip.Arrow, 'arrow')\n\nexport const ArrowTip = withContext<Tooltip.ArrowTipProps>(Tooltip.ArrowTip, 'arrowTip')\n\nexport const Content = withContext<Tooltip.ContentProps>(Tooltip.Content, 'content')\n\nexport const Positioner = withContext<Tooltip.PositionerProps>(Tooltip.Positioner, 'positioner')\n\nexport const Trigger = withContext<Tooltip.TriggerProps>(Tooltip.Trigger, 'trigger')\n\nexport { TooltipContext as Context, type TooltipContextProps as ContextProps } from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

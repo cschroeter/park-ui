@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "splitter.tsx",
+      "content": "import { Splitter } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst splitter = tv(\n  {\n    base: 'splitter',\n    slots: {\n      root: 'splitter__root',\n      panel: 'splitter__panel',\n      resizeTrigger: 'splitter__resizeTrigger',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport const Root = withProvider(Splitter.Root, 'root')\nexport const Panel = withContext(Splitter.Panel, 'panel')\nexport const ResizeTrigger = withContext(Splitter.ResizeTrigger, 'resizeTrigger')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport interface PanelProps extends ComponentProps<typeof Panel> {}\nexport interface ResizeTriggerProps extends ComponentProps<typeof ResizeTrigger> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

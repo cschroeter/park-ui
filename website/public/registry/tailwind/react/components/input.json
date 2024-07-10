@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "input.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface InputProps extends InputVariantProps, Omit<HTMLArkProps<'input'>, 'size'> {}\n\nexport const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {\n  const { size, className, ...rest } = props\n  return <ark.input className={input({ size, className })} ref={ref} {...rest} />\n})\n\nInput.displayName = 'Input'\n\ntype InputVariantProps = VariantProps<typeof input>\n\nconst input = tv(\n  {\n    base: 'input',\n    defaultVariants: { size: 'md' },\n    variants: {\n      size: {\n        '2xs': 'input--size_2xs',\n        xs: 'input--size_xs',\n        sm: 'input--size_sm',\n        md: 'input--size_md',\n        lg: 'input--size_lg',\n        xl: 'input--size_xl',\n        '2xl': 'input--size_2xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

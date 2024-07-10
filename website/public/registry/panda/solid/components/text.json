@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "text.tsx",
+      "content": "import type { Assign, HTMLArkProps } from '@ark-ui/solid'\nimport { mergeProps, splitProps } from 'solid-js'\nimport { Dynamic } from 'solid-js/web'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface TextProps extends Assign<JsxStyleProps, HTMLArkProps<'p'>>, TextVariantProps {\n  as?: 'p' | 'label' | 'div' | 'span'\n}\n\nexport const Text = (props: TextProps) => {\n  const mergedProps = mergeProps({ as: 'p' }, props)\n  const [variantProps, textProps] = splitProps(mergedProps, ['size', 'variant'])\n  const [cssProps, elementProps] = splitCssProps(textProps)\n  const [localProps, rootProps] = splitProps(elementProps, ['as', 'class'])\n  const className = text(variantProps)\n\n  return (\n    <Dynamic\n      component={localProps.as}\n      class={cx(className, css(cssProps), localProps.class)}\n      {...rootProps}\n    />\n  )\n}\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

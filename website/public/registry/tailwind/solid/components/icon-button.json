@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "icon-button.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface IconButtonProps extends IconButtonVariantProps, HTMLArkProps<'button'> {}\n\nexport const IconButton = (props: IconButtonProps) => {\n  const [variantProps, iconButtonProps] = splitProps(props, ['class', 'size', 'variant'])\n  return <ark.button class={iconButton(variantProps)} {...iconButtonProps} />\n}\n\ntype IconButtonVariantProps = VariantProps<typeof iconButton>\n\nconst iconButton = tv(\n  {\n    base: 'iconButton',\n    defaultVariants: { variant: 'solid', size: 'md' },\n    variants: {\n      variant: {\n        solid: 'iconButton--variant_solid',\n        outline: 'iconButton--variant_outline',\n        ghost: 'iconButton--variant_ghost',\n        link: 'iconButton--variant_link',\n        subtle: 'iconButton--variant_subtle',\n      },\n      size: {\n        xs: 'iconButton--size_xs',\n        sm: 'iconButton--size_sm',\n        md: 'iconButton--size_md',\n        lg: 'iconButton--size_lg',\n        xl: 'iconButton--size_xl',\n        '2xl': 'iconButton--size_2xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

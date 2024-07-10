@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "text.tsx",
+      "content": "import { type JSX, mergeProps, splitProps } from 'solid-js'\nimport { Dynamic } from 'solid-js/web'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\ntype As = 'p' | 'span' | 'div' | 'label'\n\nexport type TextProps = {\n  as?: As\n} & TextVariantProps &\n  JSX.IntrinsicElements[As]\n\nexport const Text = (props: TextProps) => {\n  const mergedProps = mergeProps({ as: 'p' }, props)\n  const [variantProps, textProps] = splitProps(mergedProps, ['size', 'class'])\n  const [localProps, rootProps] = splitProps(textProps, ['as'])\n  const className = text(variantProps)\n\n  return <Dynamic component={localProps.as} class={className} {...rootProps} />\n}\n\ntype TextVariantProps = VariantProps<typeof text>\n\nconst text = tv(\n  {\n    base: 'text',\n    variants: {\n      variant: { heading: 'text--variant_heading' },\n      size: {\n        xs: 'text--size_xs',\n        sm: 'text--size_sm',\n        md: 'text--size_md',\n        lg: 'text--size_lg',\n        xl: 'text--size_xl',\n        '2xl': 'text--size_2xl',\n        '3xl': 'text--size_3xl',\n        '4xl': 'text--size_4xl',\n        '5xl': 'text--size_5xl',\n        '6xl': 'text--size_6xl',\n        '7xl': 'text--size_7xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

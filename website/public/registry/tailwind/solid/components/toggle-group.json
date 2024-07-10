@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "toggle-group.tsx",
+      "content": "import { ToggleGroup } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst toggleGroup = tv(\n  {\n    base: 'toggleGroup',\n    defaultVariants: { size: 'md', variant: 'outline' },\n    slots: { root: 'toggleGroup__root', item: 'toggleGroup__item' },\n    variants: {\n      variant: {\n        outline: {\n          root: 'toggleGroup__root--variant_outline',\n          item: 'toggleGroup__item--variant_outline',\n        },\n        ghost: {\n          root: 'toggleGroup__root--variant_ghost',\n          item: 'toggleGroup__item--variant_ghost',\n        },\n      },\n      size: {\n        sm: { root: 'toggleGroup__root--size_sm', item: 'toggleGroup__item--size_sm' },\n        md: { root: 'toggleGroup__root--size_md', item: 'toggleGroup__item--size_md' },\n        lg: { root: 'toggleGroup__root--size_lg', item: 'toggleGroup__item--size_lg' },\n      },\n    },\n  },\n  { twMerge: false },\n)\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport const Root = withProvider(ToggleGroup.Root, 'root')\nexport const Item = withContext(ToggleGroup.Item, 'item')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport interface ItemProps extends ComponentProps<typeof Item> {}\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

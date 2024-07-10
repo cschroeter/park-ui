@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "input.tsx",
+      "content": "import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { styled } from 'styled-system/jsx'\nimport { type InputVariantProps, input } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface InputProps\n  extends Assign<Assign<JsxStyleProps, HTMLArkProps<'input'>>, InputVariantProps> {}\nexport const Input = styled(ark.input, input)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

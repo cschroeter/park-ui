@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "dialog.tsx",
+      "content": "import { Dialog } from '@ark-ui/solid'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst dialog = tv(\n  {\n    base: 'dialog',\n    slots: {\n      trigger: 'dialog__trigger',\n      backdrop: 'dialog__backdrop',\n      positioner: 'dialog__positioner',\n      content: 'dialog__content',\n      title: 'dialog__title',\n      description: 'dialog__description',\n      closeTrigger: 'dialog__closeTrigger',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\n\nconst { withRootProvider, withContext } = createStyleContext(dialog)\n\nexport interface RootProps extends Dialog.RootProps, VariantProps<typeof dialog> {}\nexport const Root = withRootProvider<RootProps>(Dialog.Root)\n\nexport const Backdrop = withContext<Dialog.BackdropProps>(Dialog.Backdrop, 'backdrop')\n\nexport const CloseTrigger = withContext<Dialog.CloseTriggerProps>(\n  Dialog.CloseTrigger,\n  'closeTrigger',\n)\n\nexport const Content = withContext<Dialog.ContentProps>(Dialog.Content, 'content')\n\nexport const Description = withContext<Dialog.DescriptionProps>(Dialog.Description, 'description')\n\nexport const Positioner = withContext<Dialog.PositionerProps>(Dialog.Positioner, 'positioner')\n\nexport const Title = withContext<Dialog.TitleProps>(Dialog.Title, 'title')\n\nexport const Trigger = withContext<Dialog.TriggerProps>(Dialog.Trigger, 'trigger')\n\nexport { DialogContext as Context, type DialogContextProps as ContextProps } from '@ark-ui/solid'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

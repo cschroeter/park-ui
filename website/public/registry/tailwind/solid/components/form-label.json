@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "form-label.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface FormLabelProps extends FormLabelVariantProps, HTMLArkProps<'label'> {}\n\nexport const FormLabel = (props: FormLabelProps) => {\n  const [variantProps, formLabelProps] = splitProps(props, ['class', 'size'])\n  return <ark.label class={formLabel(variantProps)} {...formLabelProps} />\n}\n\ntype FormLabelVariantProps = VariantProps<typeof formLabel>\n\nconst formLabel = tv(\n  {\n    base: 'formLabel',\n    defaultVariants: { size: 'md' },\n    variants: {\n      size: {\n        sm: 'formLabel--size_sm',\n        md: 'formLabel--size_md',\n        lg: 'formLabel--size_lg',\n        xl: 'formLabel--size_xl',\n      },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

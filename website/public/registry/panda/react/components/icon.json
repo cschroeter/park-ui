@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "icon.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { css, cx } from 'styled-system/css'\nimport { splitCssProps } from 'styled-system/jsx'\nimport { type IconVariantProps, icon } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface IconProps extends Assign<JsxStyleProps, HTMLArkProps<'svg'>>, IconVariantProps {}\n\nexport const Icon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {\n  const [variantProps, iconProps] = icon.splitVariantProps(props)\n  const [cssProps, localProps] = splitCssProps(iconProps)\n  const { className, ...otherProps } = localProps\n  const styles = icon(variantProps)\n\n  return (\n    <ark.svg ref={ref} asChild className={cx(styles, css(cssProps), className)} {...otherProps} />\n  )\n})\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

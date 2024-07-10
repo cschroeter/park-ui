@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "card.tsx",
+      "content": "import { type Assign, type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { type CardVariantProps, card } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport interface RootProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>>, CardVariantProps {}\nexport const Root = withProvider<RootProps>(ark.div, 'root')\n\nexport const Body = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(ark.div, 'body')\n\nexport const Description = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(\n  ark.div,\n  'description',\n)\n\nexport const Footer = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(ark.footer, 'footer')\n\nexport const Header = withContext<Assign<JsxStyleProps, HTMLArkProps<'div'>>>(ark.div, 'header')\n\nexport const Title = withContext<Assign<JsxStyleProps, HTMLArkProps<'h3'>>>(ark.h3, 'title')\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

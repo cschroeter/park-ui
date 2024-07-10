@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "toast.tsx",
+      "content": "import { Toast } from '@ark-ui/react/toast'\nimport { type VariantProps, tv } from 'tailwind-variants'\nimport { createStyleContext } from '~/lib/create-style-context'\n\nconst toast = tv(\n  {\n    base: 'toast',\n    slots: {\n      actionTrigger: 'toast__actionTrigger',\n      closeTrigger: 'toast__closeTrigger',\n      group: 'toast__group',\n      root: 'toast__root',\n      title: 'toast__title',\n      description: 'toast__description',\n    },\n    variants: {},\n  },\n  { twMerge: false },\n)\nconst { withProvider, withContext } = createStyleContext(toast)\n\nexport interface RootProps extends Toast.RootProps, VariantProps<typeof toast> {}\nexport const Root = withProvider<HTMLDivElement, RootProps>(Toast.Root, 'root')\n\nexport const ActionTrigger = withContext<HTMLButtonElement, Toast.ActionTriggerProps>(\n  Toast.ActionTrigger,\n  'actionTrigger',\n)\n\nexport const CloseTrigger = withContext<HTMLButtonElement, Toast.CloseTriggerProps>(\n  Toast.CloseTrigger,\n  'closeTrigger',\n)\n\nexport const Description = withContext<HTMLDivElement, Toast.DescriptionProps>(\n  Toast.Description,\n  'description',\n)\n\nexport const Title = withContext<HTMLDivElement, Toast.TitleProps>(Toast.Title, 'title')\n\nexport {\n  ToastContext as Context,\n  Toaster,\n  createToaster,\n  type ToastContextProps as ContextProps,\n  type ToasterProps,\n} from '@ark-ui/react/toast'\n",
+      "hasMultipleParts": true
+    }
+  ]
+}

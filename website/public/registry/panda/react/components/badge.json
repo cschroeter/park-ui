@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "badge.tsx",
+      "content": "import type { Assign } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type BadgeVariantProps, badge } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface BadgeProps extends Assign<JsxStyleProps, HTMLArkProps<'div'>>, BadgeVariantProps {}\nexport const Badge = styled(ark.div, badge)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "icon-button.tsx",
+      "content": "import type { Assign, HTMLArkProps } from '@ark-ui/react'\nimport { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type IconButtonVariantProps, iconButton } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nexport interface IconButtonProps\n  extends Assign<JsxStyleProps, HTMLArkProps<'button'>>,\n    IconButtonVariantProps {}\nexport const IconButton = styled(ark.button, iconButton)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

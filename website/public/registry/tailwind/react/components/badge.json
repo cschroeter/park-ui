@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "badge.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface BadgeProps extends BadgeVariantProps, HTMLArkProps<'div'> {}\n\nexport const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {\n  const { size, variant, className, ...rest } = props\n  return <ark.div className={badge({ size, variant, className })} ref={ref} {...rest} />\n})\n\nBadge.displayName = 'Badge'\n\ntype BadgeVariantProps = VariantProps<typeof badge>\n\nconst badge = tv(\n  {\n    base: 'badge',\n    defaultVariants: { variant: 'subtle', size: 'md' },\n    variants: {\n      variant: {\n        solid: 'badge--variant_solid',\n        subtle: 'badge--variant_subtle',\n        outline: 'badge--variant_outline',\n      },\n      size: { sm: 'badge--size_sm', md: 'badge--size_md', lg: 'badge--size_lg' },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "link.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface LinkProps extends LinkVariantProps, HTMLArkProps<'a'> {}\n\nexport const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {\n  const { className, ...otherProps } = props\n  return <ark.a className={link({ className })} ref={ref} {...otherProps} />\n})\n\nLink.displayName = 'Link'\n\ntype LinkVariantProps = VariantProps<typeof link>\n\nconst link = tv({ base: 'link', variants: {} }, { twMerge: false })\n",
+      "hasMultipleParts": false
+    }
+  ]
+}

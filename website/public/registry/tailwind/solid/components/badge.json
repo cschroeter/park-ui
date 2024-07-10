@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "filename": "badge.tsx",
+      "content": "import { type HTMLArkProps, ark } from '@ark-ui/solid'\nimport { splitProps } from 'solid-js'\nimport { type VariantProps, tv } from 'tailwind-variants'\n\nexport interface BadgeProps extends HTMLArkProps<'div'>, BadgeVariantProps {}\n\nexport const Badge = (props: BadgeProps) => {\n  const [variantProps, buttonProps] = splitProps(props, ['class', 'size', 'variant'])\n  return <ark.div class={badge(variantProps)} {...buttonProps} />\n}\n\ntype BadgeVariantProps = VariantProps<typeof badge>\n\nconst badge = tv(\n  {\n    base: 'badge',\n    defaultVariants: { variant: 'subtle', size: 'md' },\n    variants: {\n      variant: {\n        solid: 'badge--variant_solid',\n        subtle: 'badge--variant_subtle',\n        outline: 'badge--variant_outline',\n      },\n      size: { sm: 'badge--size_sm', md: 'badge--size_md', lg: 'badge--size_lg' },\n    },\n  },\n  { twMerge: false },\n)\n",
+      "hasMultipleParts": false
+    }
+  ]
+}
