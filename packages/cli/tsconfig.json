@@ -1,19 +1,30 @@
 {
   "compilerOptions": {
-    "noEmit": true,
-    "module": "ESNext",
+    // Enable latest features
+    "lib": ["ESNext"],
     "target": "ESNext",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "allowJs": true,
+
+    // Bundler mode
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    // Best practices
     "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true,
+
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
