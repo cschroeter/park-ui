@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/cli",
-  "version": "0.7.0-2",
+  "version": "0.7.0-3",
   "type": "module",
   "bin": {
     "park-ui": "dist/index.cjs"
