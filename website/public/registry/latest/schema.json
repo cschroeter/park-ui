@@ -2,6 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Schema version",
+      "default": "https://park-ui.com/registry/latest/schema.json"
+    },
     "importAlias": {
       "type": "string",
       "description": "Alias used for imports",
