@@ -1,35 +1,27 @@
 {
   "name": "@park-ui/cli",
-  "version": "0.7.0-6",
+  "version": "0.7.0-12",
   "type": "module",
   "bin": {
-    "park-ui": "dist/index.cjs"
+    "park-ui": "dist/index.js"
   },
   "scripts": {
     "start": "bun run ./src/index.ts",
-    "build": "tsup",
+    "build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
     "release-it": "release-it"
   },
   "dependencies": {
-    "@effect/cli": "0.37.4",
-    "@effect/platform-node": "0.53.20",
     "effect": "3.4.8",
     "fs-extra": "11.2.0",
     "get-tsconfig": "4.7.5",
-    "ora": "8.0.1"
+    "pkg-dir": "8.0.0",
+    "yargs": "17.7.2"
   },
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
-    "tsup": "8.1.0"
+    "@types/yargs": "17.0.32"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "tsup": {
-    "entry": ["src/index.ts"],
-    "clean": true,
-    "dts": true,
-    "minify": false,
-    "formats": ["cjs"]
   }
 }
