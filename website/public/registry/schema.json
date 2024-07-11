@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "importAlias": {
+      "type": "string",
+      "description": "Alias used for imports",
+      "default": "~/*"
+    },
+    "jsFramework": {
+      "type": "string",
+      "enum": ["react", "solid", "vue"],
+      "description": "JavaScript framework to be used",
+      "default": "react"
+    },
+    "outputPaths": {
+      "type": "object",
+      "properties": {
+        "componentsDir": {
+          "type": "string",
+          "description": "Directory for component output",
+          "default": " ~/components/ui"
+        },
+        "libDir": {
+          "type": "string",
+          "description": "Directory for library output",
+          "default": "~/lib"
+        }
+      },
+      "required": ["componentsDir", "libDir"],
+      "additionalProperties": false,
+      "description": "Output directories for components and library"
+    }
+  },
+  "required": ["importAlias", "jsFramework", "outputPaths"],
+  "additionalProperties": false
+}
