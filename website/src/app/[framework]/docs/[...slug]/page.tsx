@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Box, Container, Stack } from 'styled-system/jsx'
+import { DocumentationBadges } from '~/components/docs/documentation-badges'
 import { MDXContent } from '~/components/mdx-content'
 import { DocsFooter } from '~/components/navigation/docs/docs-footer'
 import { TableOfContent } from '~/components/navigation/table-of-content'
@@ -32,6 +33,7 @@ export default function Page(props: Props) {
             <Text className="lead" color="fg.muted" mb="6">
               {currentPage.description}
             </Text>
+            <DocumentationBadges framework={props.params.framework} href={currentPage.docs} />
             <MDXContent code={currentPage.code} />
           </Prose>
           <DocsFooter nextPage={nextPage} prevPage={prevPage} />
