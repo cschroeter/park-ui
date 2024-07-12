@@ -2,7 +2,11 @@
   "id": "heading",
   "name": "Heading",
   "filename": "heading.tsx",
-  "variants": {
-    "primitive": "import { mergeProps, splitProps } from 'solid-js'\nimport { Dynamic } from 'solid-js/web'\nimport { css, cx } from 'styled-system/css'\nimport { type HTMLStyledProps, splitCssProps } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\n\ntype As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'\n\nexport type HeadingProps = TextVariantProps & {\n  as?: As\n} & HTMLStyledProps<As>\n\nexport const Heading = (props: HeadingProps) => {\n  const mergedProps = mergeProps({ as: 'h2' }, props)\n  const [variantProps, headingProps] = splitProps(mergedProps, ['size'])\n  const [cssProps, elementProps] = splitCssProps(headingProps)\n  const [localProps, rootProps] = splitProps(elementProps, ['as', 'class'])\n  const className = text({ variant: 'heading', size: variantProps.size })\n\n  return (\n    <Dynamic\n      component={localProps.as}\n      class={cx(className, css(cssProps), localProps.class)}\n      {...rootProps}\n    />\n  )\n}\n"
-  }
+  "variants": [
+    {
+      "file": "primitives/heading.tsx",
+      "content": "import { mergeProps, splitProps } from 'solid-js'\nimport { Dynamic } from 'solid-js/web'\nimport { css, cx } from 'styled-system/css'\nimport { type HTMLStyledProps, splitCssProps } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\n\ntype As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'\n\nexport type HeadingProps = TextVariantProps & {\n  as?: As\n} & HTMLStyledProps<As>\n\nexport const Heading = (props: HeadingProps) => {\n  const mergedProps = mergeProps({ as: 'h2' }, props)\n  const [variantProps, headingProps] = splitProps(mergedProps, ['size'])\n  const [cssProps, elementProps] = splitCssProps(headingProps)\n  const [localProps, rootProps] = splitProps(elementProps, ['as', 'class'])\n  const className = text({ variant: 'heading', size: variantProps.size })\n\n  return (\n    <Dynamic\n      component={localProps.as}\n      class={cx(className, css(cssProps), localProps.class)}\n      {...rootProps}\n    />\n  )\n}\n",
+      "exports": "export { Heading, type HeadingProps } from './heading'"
+    }
+  ]
 }

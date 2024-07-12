@@ -8,14 +8,17 @@ import { toPascalCase } from '~/lib/string-utils'
 import { CodePreviewTabs } from '../code-preview-tabs'
 import { Recipe } from './recipe'
 
+interface Variant {
+  file: string
+  content: string
+  exports: string
+}
+
 interface Component {
   id: string
   name: string
   filename: string
-  variants: {
-    primitive: string
-    composition?: string
-  }
+  variants: Variant[]
 }
 
 export const InstallationGuide = async () => {
@@ -35,18 +38,22 @@ export const InstallationGuide = async () => {
             ) as Promise<Component>,
           catch: () => new Error('Snippet not found'),
         }),
-        Effect.catchAll(() => Effect.succeed({ variants: { primitive: 'Not yet available' } })),
+        Effect.catchAll(() =>
+          Effect.succeed({
+            variants: [{ file: 'primitives', content: 'No snippet found' }],
+          }),
+        ),
         Effect.flatMap((component) =>
           pipe(
-            Effect.forEach(Object.entries(component.variants), ([name, code]) =>
+            Effect.forEach(component.variants, (variant) =>
               pipe(
-                Effect.promise(() => highlight(code)),
+                Effect.promise(() => highlight(variant.content)),
                 Effect.map((html) => ({
                   label: framework,
                   value: framework,
-                  _variant: name,
-                  code,
+                  code: variant.content,
                   html,
+                  _tag: variant.file.startsWith('primitives') ? 'primitive' : 'composition',
                 })),
               ),
             ),
@@ -55,9 +62,10 @@ export const InstallationGuide = async () => {
       ),
     ),
     Effect.map(Array.flatten),
-    Effect.map((examples) => Array.groupBy(examples, (example) => example._variant)),
+    Effect.map((examples) => Array.groupBy(examples, (example) => example._tag)),
   )
   const { primitive, composition } = await Effect.runPromise(programm)
+
   return (
     <Steps>
       <Step number="1" title="Styled Primitive">
