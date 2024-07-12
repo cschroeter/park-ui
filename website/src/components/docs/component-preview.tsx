@@ -36,7 +36,7 @@ export const ComponentPreview = ({ controls }: Props) => {
       width="full"
       overflow="hidden"
       className="not-prose"
-      my="12"
+      my="6"
     >
       <Flex justify="center" align="center" flex="1" p={{ base: '4', md: '6' }}>
         <Demo {...state} />

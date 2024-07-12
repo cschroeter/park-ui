@@ -17,6 +17,7 @@ const pages = defineCollection({
       status: s.string().optional(),
       toc: s.toc(),
       code: s.mdx(),
+      docs: s.string().optional(),
     })
     .transform((data, { meta }) => {
       if (data.id === 'changelog') {
