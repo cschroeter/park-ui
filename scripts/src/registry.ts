@@ -1,5 +1,6 @@
 import { parse } from 'node:path'
-import { Effect, pipe } from 'effect'
+import path from 'node:path'
+import { Console, Effect, pipe } from 'effect'
 import fs from 'fs-extra'
 import { globby } from 'globby'
 
@@ -19,13 +20,63 @@ const programm = pipe(
                 pipe(
                   Effect.all([
                     Effect.succeed(parse(file).name),
-                    Effect.promise(() => fs.readFile(file, 'utf-8')),
+                    // resolve primitives
                     pipe(
-                      Effect.tryPromise({
-                        try: () => fs.readFile(file.replace('/primitives', ''), 'utf-8'),
-                        catch: () => new Error('No composition file found'),
+                      Effect.all([
+                        Effect.promise(() => fs.readFile(file, 'utf-8')),
+                        Effect.promise(() =>
+                          fs
+                            .readFile(path.join(parse(file).dir, 'index.ts'), 'utf-8')
+                            .then((content) =>
+                              content
+                                .split('\n')
+                                .find((line) => line.toLowerCase().includes(parse(file).name)),
+                            ),
+                        ),
+                      ]),
+                      Effect.map(([content, exports]) => {
+                        if (!exports) {
+                          console.log('No exports found for', parse(file).name)
+                        }
+                        return {
+                          file: path.join('primitives', parse(file).base),
+                          content,
+                          exports,
+                        }
                       }),
-                      Effect.catchAll(() => Effect.succeed(undefined)),
+                    ),
+                    // resolve compositions
+                    pipe(
+                      Effect.all([
+                        pipe(
+                          Effect.tryPromise({
+                            try: () => fs.readFile(file.replace('/primitives', ''), 'utf-8'),
+                            catch: () => new Error('No composition file found'),
+                          }),
+                          Effect.catchAll(() => Effect.succeed(undefined)),
+                        ),
+                        Effect.promise(() =>
+                          fs
+                            .readFile(
+                              path.join(parse(file.replace('primitives', '')).dir, 'index.ts'),
+                              'utf-8',
+                            )
+                            .then((content) =>
+                              content
+                                .split('\n')
+                                .find((line) => line.toLowerCase().includes(parse(file).name)),
+                            ),
+                        ),
+                      ]),
+                      Effect.map(([content, exports]) =>
+                        content
+                          ? {
+                              file: parse(file).base,
+                              content,
+                              exports,
+                            }
+                          : undefined,
+                      ),
                     ),
                   ]),
                   Effect.flatMap(([component, primitive, composition]) =>
@@ -36,7 +87,7 @@ const programm = pipe(
                           id: parse(file).name,
                           name: toTitleCase(parse(file).name),
                           filename: parse(file).base,
-                          variants: { primitive, composition },
+                          variants: [primitive, composition].filter(Boolean),
                         },
                       ),
                     ),
