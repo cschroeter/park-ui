@@ -2,7 +2,11 @@
   "id": "input",
   "name": "Input",
   "filename": "input.tsx",
-  "variants": {
-    "primitive": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = styled(ark.input, input)\n"
-  }
+  "variants": [
+    {
+      "file": "primitives/input.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = styled(ark.input, input)\n",
+      "exports": "export { Input, type InputProps } from './input'"
+    }
+  ]
 }
