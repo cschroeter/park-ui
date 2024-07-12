@@ -3,9 +3,7 @@ import { ExternalLinkIcon, InfoIcon } from 'lucide-react'
 import { Runner } from 'react-runner'
 import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
 import { Alert, Avatar, Button, Checkbox, Code, Heading, Link } from '~/components/ui'
-import { Skeleton } from '~/components/ui/skeleton'
-import { Slider } from '~/components/ui/slider'
-import { Text } from '~/components/ui/text'
+import { Skeleton, Slider, Text } from '~/components/ui'
 
 const icons = { InfoIcon, ExternalLinkIcon }
 const scope = {
