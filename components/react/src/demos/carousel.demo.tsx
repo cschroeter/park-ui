@@ -1,6 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import * as Carousel from '~/components/ui/carousel'
-import { IconButton } from '~/components/ui/icon-button'
+import { Carousel, IconButton } from '~/components/ui'
 
 export const Demo = (props: Carousel.RootProps) => {
   const images = [

@@ -1,10 +1,7 @@
 'use client'
 import { PipetteIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
-import * as ColorPicker from '~/components/ui/color-picker'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
-import { Text } from '~/components/ui/text'
+import { ColorPicker, IconButton, Input, Text } from '~/components/ui'
 
 export const Demo = (props: ColorPicker.RootProps) => {
   return (

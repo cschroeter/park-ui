@@ -1,8 +1,6 @@
 'use client'
 import { XIcon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import { IconButton } from '~/components/ui/icon-button'
-import * as TagsInput from '~/components/ui/tags-input'
+import { Button, IconButton, TagsInput } from '~/components/ui'
 
 export const Demo = (props: TagsInput.RootProps) => {
   return (
