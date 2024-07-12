@@ -1,9 +1,6 @@
 'use client'
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import * as DatePicker from '~/components/ui/date-picker'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
+import { Button, DatePicker, IconButton, Input } from '~/components/ui'
 
 export const Demo = (props: DatePicker.RootProps) => {
   return (

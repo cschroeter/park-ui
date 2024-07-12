@@ -8,7 +8,7 @@ import {
   UnderlineIcon,
 } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import * as ToggleGroup from '~/components/ui/toggle-group'
+import { ToggleGroup } from '~/components/ui'
 
 export const Demo = (props: ToggleGroup.RootProps) => {
   return (

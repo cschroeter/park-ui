@@ -1,8 +1,5 @@
 import { CheckIcon, ClipboardCopyIcon } from 'lucide-react'
-import * as Clipboard from '~/components/ui/clipboard'
-import { FormLabel } from '~/components/ui/form-label'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
+import { Clipboard, FormLabel, IconButton, Input } from '~/components/ui'
 
 export const Demo = (props: Clipboard.RootProps) => {
   return (

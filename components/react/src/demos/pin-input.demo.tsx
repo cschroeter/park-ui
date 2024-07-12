@@ -1,5 +1,4 @@
-'use client'
-import { PinInput, type PinInputProps } from '~/components/ui/pin-input'
+import { PinInput, type PinInputProps } from '~/components/ui'
 
 export const Demo = (props: PinInputProps) => {
   return (

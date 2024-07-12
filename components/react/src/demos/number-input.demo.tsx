@@ -1,4 +1,4 @@
-import { NumberInput, type NumberInputProps } from '~/components/ui/number-input'
+import { NumberInput, type NumberInputProps } from '~/components/ui'
 
 export const Demo = (props: NumberInputProps) => {
   return (

@@ -1,4 +1,4 @@
-import * as Splitter from '~/components/ui/splitter'
+import { Splitter } from '~/components/ui'
 
 export const Demo = (props: Splitter.RootProps) => {
   return (

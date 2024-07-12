@@ -1,10 +1,7 @@
 'use client'
-
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import * as Combobox from '~/components/ui/combobox'
-import { IconButton } from '~/components/ui/icon-button'
-import { Input } from '~/components/ui/input'
+import { Combobox, IconButton, Input } from '~/components/ui'
 
 const data = [
   { label: 'React', value: 'react' },
