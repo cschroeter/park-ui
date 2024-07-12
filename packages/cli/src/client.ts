@@ -15,7 +15,6 @@ const Components = Schema.Array(
 const Component = Schema.Struct({
   id: Schema.String,
   name: Schema.String,
-  filename: Schema.String,
   variants: Schema.Array(
     Schema.Struct({
       file: Schema.String,
