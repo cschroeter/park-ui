@@ -1,7 +1,6 @@
 {
   "id": "card",
   "name": "Card",
-  "filename": "card.tsx",
   "variants": [
     {
       "file": "primitives/card.tsx",

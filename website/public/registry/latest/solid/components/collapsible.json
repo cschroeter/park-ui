@@ -1,7 +1,6 @@
 {
   "id": "collapsible",
   "name": "Collapsible",
-  "filename": "collapsible.tsx",
   "variants": [
     {
       "file": "primitives/collapsible.tsx",

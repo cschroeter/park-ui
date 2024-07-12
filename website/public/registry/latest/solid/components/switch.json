@@ -1,7 +1,6 @@
 {
   "id": "switch",
   "name": "Switch",
-  "filename": "switch.tsx",
   "variants": [
     {
       "file": "primitives/switch.tsx",

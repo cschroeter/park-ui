@@ -1,7 +1,6 @@
 {
   "id": "link",
   "name": "Link",
-  "filename": "link.tsx",
   "variants": [
     {
       "file": "primitives/link.tsx",

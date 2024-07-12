@@ -1,7 +1,6 @@
 {
   "id": "file-upload",
   "name": "File Upload",
-  "filename": "file-upload.tsx",
   "variants": [
     {
       "file": "primitives/file-upload.tsx",

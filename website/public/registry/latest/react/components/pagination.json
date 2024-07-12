@@ -1,7 +1,6 @@
 {
   "id": "pagination",
   "name": "Pagination",
-  "filename": "pagination.tsx",
   "variants": [
     {
       "file": "primitives/pagination.tsx",

@@ -1,7 +1,6 @@
 {
   "id": "avatar",
   "name": "Avatar",
-  "filename": "avatar.tsx",
   "variants": [
     {
       "file": "primitives/avatar.tsx",

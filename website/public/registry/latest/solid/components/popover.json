@@ -1,7 +1,6 @@
 {
   "id": "popover",
   "name": "Popover",
-  "filename": "popover.tsx",
   "variants": [
     {
       "file": "primitives/popover.tsx",

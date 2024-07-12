@@ -1,7 +1,6 @@
 {
   "id": "kbd",
   "name": "Kbd",
-  "filename": "kbd.tsx",
   "variants": [
     {
       "file": "primitives/kbd.tsx",

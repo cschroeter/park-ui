@@ -1,7 +1,6 @@
 {
   "id": "slider",
   "name": "Slider",
-  "filename": "slider.tsx",
   "variants": [
     {
       "file": "primitives/slider.tsx",

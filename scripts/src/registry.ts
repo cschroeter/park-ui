@@ -1,6 +1,5 @@
-import { parse } from 'node:path'
-import path from 'node:path'
-import { Console, Effect, pipe } from 'effect'
+import path, { parse } from 'node:path'
+import { Effect, pipe } from 'effect'
 import fs from 'fs-extra'
 import { globby } from 'globby'
 
@@ -30,7 +29,9 @@ const programm = pipe(
                             .then((content) =>
                               content
                                 .split('\n')
-                                .find((line) => line.toLowerCase().includes(parse(file).name)),
+                                .find((line) =>
+                                  line.toLowerCase().includes(`./${parse(file).name}`),
+                                ),
                             ),
                         ),
                       ]),
@@ -86,7 +87,6 @@ const programm = pipe(
                         {
                           id: parse(file).name,
                           name: toTitleCase(parse(file).name),
-                          filename: parse(file).base,
                           variants: [primitive, composition].filter(Boolean),
                         },
                       ),

@@ -1,7 +1,6 @@
 {
   "id": "radio-group",
   "name": "Radio Group",
-  "filename": "radio-group.tsx",
   "variants": [
     {
       "file": "primitives/radio-group.tsx",

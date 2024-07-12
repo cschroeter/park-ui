@@ -1,7 +1,6 @@
 {
   "id": "editable",
   "name": "Editable",
-  "filename": "editable.tsx",
   "variants": [
     {
       "file": "primitives/editable.tsx",

@@ -16,10 +16,13 @@ const Component = Schema.Struct({
   id: Schema.String,
   name: Schema.String,
   filename: Schema.String,
-  variants: Schema.Struct({
-    primitive: Schema.String,
-    composition: Schema.optional(Schema.String),
-  }),
+  variants: Schema.Array(
+    Schema.Struct({
+      file: Schema.String,
+      content: Schema.String,
+      exports: Schema.String,
+    }),
+  ),
 })
 
 export type Component = Schema.Schema.Type<typeof Component>

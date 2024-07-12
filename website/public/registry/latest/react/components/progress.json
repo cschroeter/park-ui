@@ -1,7 +1,6 @@
 {
   "id": "progress",
   "name": "Progress",
-  "filename": "progress.tsx",
   "variants": [
     {
       "file": "primitives/progress.tsx",

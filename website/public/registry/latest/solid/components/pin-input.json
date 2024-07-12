@@ -1,7 +1,6 @@
 {
   "id": "pin-input",
   "name": "Pin Input",
-  "filename": "pin-input.tsx",
   "variants": [
     {
       "file": "primitives/pin-input.tsx",

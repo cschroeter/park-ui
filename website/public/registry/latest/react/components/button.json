@@ -1,7 +1,6 @@
 {
   "id": "button",
   "name": "Button",
-  "filename": "button.tsx",
   "variants": [
     {
       "file": "primitives/button.tsx",

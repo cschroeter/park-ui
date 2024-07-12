@@ -1,7 +1,6 @@
 {
   "id": "number-input",
   "name": "Number Input",
-  "filename": "number-input.tsx",
   "variants": [
     {
       "file": "primitives/number-input.tsx",

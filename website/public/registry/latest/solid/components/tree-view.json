@@ -1,7 +1,6 @@
 {
   "id": "tree-view",
   "name": "Tree View",
-  "filename": "tree-view.tsx",
   "variants": [
     {
       "file": "primitives/tree-view.tsx",

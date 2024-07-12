@@ -1,7 +1,6 @@
 {
   "id": "segment-group",
   "name": "Segment Group",
-  "filename": "segment-group.tsx",
   "variants": [
     {
       "file": "primitives/segment-group.tsx",

@@ -1,7 +1,6 @@
 {
   "id": "heading",
   "name": "Heading",
-  "filename": "heading.tsx",
   "variants": [
     {
       "file": "primitives/heading.tsx",

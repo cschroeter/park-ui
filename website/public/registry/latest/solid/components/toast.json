@@ -1,7 +1,6 @@
 {
   "id": "toast",
   "name": "Toast",
-  "filename": "toast.tsx",
   "variants": [
     {
       "file": "primitives/toast.tsx",

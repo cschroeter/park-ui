@@ -1,7 +1,6 @@
 {
   "id": "qr-code",
   "name": "Qr Code",
-  "filename": "qr-code.tsx",
   "variants": [
     {
       "file": "primitives/qr-code.tsx",

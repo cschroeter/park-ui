@@ -73,21 +73,66 @@ const main = async () => {
               ),
               Effect.flatMap(([components, componentsDir, libDir]) =>
                 Effect.all([
-                  Effect.forEach(components, (component) =>
-                    Effect.promise(() =>
-                      fs.outputFile(
-                        path.join(componentsDir, 'primitives', component.filename),
-                        component.variants.primitive,
+                  pipe(
+                    Effect.succeed(path.join(componentsDir, 'index.ts')),
+                    Effect.flatMap((indexFile) =>
+                      pipe(
+                        Effect.promise(() => fs.ensureFile(indexFile)),
+                        Effect.flatMap(() => Effect.promise(() => fs.readFile(indexFile, 'utf-8'))),
+                        Effect.flatMap((content) =>
+                          Effect.if(content.includes('./primitives'), {
+                            onTrue: () => Effect.succeed(''),
+                            onFalse: () =>
+                              Effect.promise(() =>
+                                fs.appendFile(indexFile, "export * from './primitives'\n"),
+                              ),
+                          }),
+                        ),
                       ),
-                    ).pipe(
-                      Effect.tap(() => {
-                        if (component.variants.composition) {
-                          fs.outputFile(
-                            path.join(componentsDir, component.filename),
-                            component.variants.composition,
-                          )
-                        }
-                      }),
+                    ),
+                  ),
+                  Effect.forEach(components, (component) =>
+                    pipe(
+                      Effect.forEach(component.variants, (variant) =>
+                        pipe(
+                          Effect.all([
+                            Effect.promise(() =>
+                              fs.outputFile(
+                                path.join(componentsDir, variant.file),
+                                variant.content.replace(
+                                  /~\/components\/ui/g,
+                                  config.outputPaths.componentsDir,
+                                ),
+                              ),
+                            ),
+                            pipe(
+                              Effect.succeed(
+                                path.join(
+                                  path.parse(path.join(componentsDir, variant.file)).dir,
+                                  'index.ts',
+                                ),
+                              ),
+                              Effect.flatMap((indexFile) =>
+                                pipe(
+                                  Effect.promise(() => fs.ensureFile(indexFile)),
+                                  Effect.flatMap(() =>
+                                    Effect.promise(() => fs.readFile(indexFile, 'utf-8')),
+                                  ),
+                                  Effect.flatMap((content) =>
+                                    Effect.if(content.includes(`./${component.id}`), {
+                                      onTrue: () => Effect.succeed(''),
+                                      onFalse: () =>
+                                        Effect.promise(() =>
+                                          fs.appendFile(indexFile, `${variant.exports}\n`),
+                                        ),
+                                    }),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                      ),
                     ),
                   ),
                   pipe(

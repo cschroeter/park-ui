@@ -1,7 +1,6 @@
 {
   "id": "checkbox",
   "name": "Checkbox",
-  "filename": "checkbox.tsx",
   "variants": [
     {
       "file": "primitives/checkbox.tsx",
