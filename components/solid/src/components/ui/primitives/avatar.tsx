@@ -1,4 +1,4 @@
-import { Avatar, type Assign } from '@ark-ui/solid'
+import { type Assign, Avatar } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { type AvatarVariantProps, avatar } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -27,3 +27,4 @@ export const Image = withContext<Assign<HTMLStyledProps<'img'>, Avatar.ImageProp
 )
 
 export { AvatarContext as Context } from '@ark-ui/solid'
+export type { AvatarStatusChangeDetails as StatusChangeDetails } from '@ark-ui/solid'

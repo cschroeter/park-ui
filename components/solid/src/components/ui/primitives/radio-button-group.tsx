@@ -38,5 +38,5 @@ export const Label = withContext<Assign<HTMLStyledProps<'label'>, RadioGroup.Lab
 
 export {
   RadioGroupContext as Context,
-  type RadioGroupContextProps as ContextProps,
+  RadioGroupItemHiddenInput as ItemHiddenInput,
 } from '@ark-ui/solid'

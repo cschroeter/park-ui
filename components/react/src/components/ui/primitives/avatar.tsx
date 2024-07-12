@@ -29,3 +29,4 @@ export const Image = withContext<
 >(Avatar.Image, 'image')
 
 export { AvatarContext as Context } from '@ark-ui/react/avatar'
+export type { AvatarStatusChangeDetails as StatusChangeDetails } from '@ark-ui/react/avatar'
