@@ -9,7 +9,7 @@
       "exports": "export * as Switch from './switch'"
     },
     {
-      "file": "compositions/switch.tsx",
+      "file": "switch.tsx",
       "content": "import { Show, children } from 'solid-js'\nimport { Switch as ArkSwitch } from '~/components/ui/primitives'\n\nexport interface SwitchProps extends ArkSwitch.RootProps {}\n\nexport const Switch = (props: SwitchProps) => {\n  const getChildren = children(() => props.children)\n\n  return (\n    <ArkSwitch.Root {...props}>\n      <ArkSwitch.Control>\n        <ArkSwitch.Thumb />\n      </ArkSwitch.Control>\n      <Show when={getChildren()}>\n        <ArkSwitch.Label>{getChildren()}</ArkSwitch.Label>\n      </Show>\n      <ArkSwitch.HiddenInput />\n    </ArkSwitch.Root>\n  )\n}\n",
       "exports": "export { Switch, type SwitchProps } from './switch'"
     }

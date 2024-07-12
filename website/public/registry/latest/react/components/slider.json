@@ -9,7 +9,7 @@
       "exports": "export * as Slider from './slider'"
     },
     {
-      "file": "compositions/slider.tsx",
+      "file": "slider.tsx",
       "content": "import { type ReactNode, forwardRef } from 'react'\nimport { Slider as ArkSlider } from '~/components/ui/primitives'\n\nexport interface SliderProps extends ArkSlider.RootProps {\n  children?: ReactNode\n  marks?: {\n    value: number\n    label?: ReactNode\n  }[]\n}\n\nexport const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {\n  const { children, marks, ...rootProps } = props\n\n  return (\n    <ArkSlider.Root ref={ref} {...rootProps}>\n      <ArkSlider.Context>\n        {(api) => (\n          <>\n            {children && <ArkSlider.Label>{children}</ArkSlider.Label>}\n            <ArkSlider.Control>\n              <ArkSlider.Track>\n                <ArkSlider.Range />\n              </ArkSlider.Track>\n              {api.value.map((_, index) => (\n                <ArkSlider.Thumb key={index} index={index} />\n              ))}\n            </ArkSlider.Control>\n            {props.marks && (\n              <ArkSlider.MarkerGroup>\n                {props.marks.map((mark) => (\n                  <ArkSlider.Marker key={mark.value} value={mark.value}>\n                    {mark.label}\n                  </ArkSlider.Marker>\n                ))}\n              </ArkSlider.MarkerGroup>\n            )}\n          </>\n        )}\n      </ArkSlider.Context>\n    </ArkSlider.Root>\n  )\n})\n\nSlider.displayName = 'Slider'\n",
       "exports": "export { Slider, type SliderProps } from './slider'"
     }

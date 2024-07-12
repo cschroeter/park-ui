@@ -9,7 +9,7 @@
       "exports": "export * as Checkbox from './checkbox'"
     },
     {
-      "file": "compositions/checkbox.tsx",
+      "file": "checkbox.tsx",
       "content": "import { Show, children } from 'solid-js'\nimport { Checkbox as ArkCheckbox } from '~/components/ui/primitives'\n\nexport interface CheckboxProps extends ArkCheckbox.RootProps {}\n\nexport const Checkbox = (props: CheckboxProps) => {\n  const getChildren = children(() => props.children)\n\n  return (\n    <ArkCheckbox.Root {...props}>\n      <ArkCheckbox.Control>\n        <ArkCheckbox.Indicator>\n          <CheckIcon />\n        </ArkCheckbox.Indicator>\n        <ArkCheckbox.Indicator indeterminate>\n          <MinusIcon />\n        </ArkCheckbox.Indicator>\n      </ArkCheckbox.Control>\n      <Show when={getChildren()}>\n        <ArkCheckbox.Label>{getChildren()}</ArkCheckbox.Label>\n      </Show>\n      <ArkCheckbox.HiddenInput />\n    </ArkCheckbox.Root>\n  )\n}\n\nconst CheckIcon = () => (\n  <svg viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <title>Check Icon</title>\n    <path\n      d=\"M11.6666 3.5L5.24992 9.91667L2.33325 7\"\n      stroke=\"currentColor\"\n      stroke-width=\"2\"\n      stroke-linecap=\"round\"\n      stroke-linejoin=\"round\"\n    />\n  </svg>\n)\n\nconst MinusIcon = () => (\n  <svg viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <title>Minus Icon</title>\n    <path\n      d=\"M2.91675 7H11.0834\"\n      stroke=\"currentColor\"\n      stroke-width=\"2\"\n      stroke-linecap=\"round\"\n      stroke-linejoin=\"round\"\n    />\n  </svg>\n)\n",
       "exports": "export { Checkbox, type CheckboxProps } from './checkbox'"
     }
