@@ -5,6 +5,7 @@ import { NextJsIcon, NuxtIcon, SolidStartIcon } from './icons'
 
 const link = cva({
   base: {
+    background: 'bg.default',
     borderRadius: 'lg',
     borderWidth: '1px',
     color: 'fg.default',

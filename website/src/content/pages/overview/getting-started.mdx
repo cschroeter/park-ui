@@ -88,37 +88,38 @@ export default defineConfig({
 ```
 </Step>
 
-<Step number="5" title="Add your first component">
+<Step number="5" title="Adding Components to Your Project">
 
-The easiest way to add components to your project is by using the Park UI CLI. Execute the following command to initialize the CLI:
+
+Although you can manually add components, we recommend using the Park UI CLI for efficiency.
+To add a single component, run:
 
 ```bash
-npx @park-ui/cli init
+npx @park-ui/cli components add button
 ```
 
-You will be prompted to answer a few questions to configure `park-ui.json`:
+If a `park-ui.json` file is not found in your project, the CLI will prompt you to set up the configuration by asking:
 
 ```txt
-- Which CSS framework do you use?: [Panda / Tailwind]
-- Which JavaScript framework do you use?: [React / Solid / Vue]
-- What is your import alias for components?: [~/components/ui]
-- What is your import alias for utilities?: [~/lib]
-- Would you like to write the configuration to park-ui.json?: [Yes / No]
+- Which JS framework do you use? [React / Solid / Vue]
+- Would you like to customize the default import alias? [~/*]
+- Where would you like to store your components? [~/components/ui]
+- Where would you like to store helper functions? [~/lib]
 ```
 
-Now you can start adding components to your project like shown below:
+To add multiple components at once, separate their names with spaces:
 
 ```bash
-npx @park-ui/cli add button
+npx @park-ui/cli add avatar button card
 ```
 
-To add all components at once, use the `--all` flag:
+To add all available components at once, use the `--all` flag:
 
 ```bash
 npx @park-ui/cli add --all
 ```
 
-And that's it! Happy Hacking ✌️
+And that's it! Happy hacking! ✌️
 
 </Step>
 </Steps>
