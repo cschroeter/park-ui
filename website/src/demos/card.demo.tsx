@@ -1,8 +1,5 @@
 import { Stack } from 'styled-system/jsx'
-import { Button } from '~/components/ui/button'
-import * as Card from '~/components/ui/card'
-import { FormLabel } from '~/components/ui/form-label'
-import { Input } from '~/components/ui/input'
+import { Button, Card, FormLabel, Input } from '~/components/ui'
 
 export const Demo = (props: Card.RootProps) => {
   return (

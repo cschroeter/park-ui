@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { Progress, type ProgressProps } from '~/components/ui/progress'
+import { Progress, type ProgressProps } from '~/components/ui'
 
 export const Demo = (props: ProgressProps) => {
   const [value, setValue] = useState(0)

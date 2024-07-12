@@ -1,8 +1,6 @@
 'use client'
 import { Trash2Icon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
-import * as FileUpload from '~/components/ui/file-upload'
-import { IconButton } from '~/components/ui/icon-button'
+import { Button, FileUpload, IconButton } from '~/components/ui'
 
 export const Demo = (props: FileUpload.RootProps) => {
   return (

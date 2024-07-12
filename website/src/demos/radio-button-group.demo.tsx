@@ -1,4 +1,4 @@
-import * as RadioButtonGroup from '~/components/ui/radio-button-group'
+import { RadioButtonGroup } from '~/components/ui'
 
 export const Demo = (props: RadioButtonGroup.RootProps) => {
   const options = [{ value: 'S' }, { value: 'M' }, { value: 'L' }, { value: 'XL' }]
