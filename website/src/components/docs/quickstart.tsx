@@ -1,38 +1,53 @@
-import { SiNextdotjs, SiNuxtdotjs, SiSolid } from '@icons-pack/react-simple-icons'
-import { Flex, Grid, Stack } from 'styled-system/jsx'
+import { cva } from 'styled-system/css'
+import { Grid } from 'styled-system/jsx'
 import { Text } from '~/components/ui'
+import { NextJsIcon, NuxtIcon, SolidStartIcon } from './icons'
+
+const link = cva({
+  base: {
+    borderRadius: 'lg',
+    borderWidth: '1px',
+    color: 'fg.default',
+    display: 'flex',
+    flexDirection: 'column',
+    fontWeight: 'medium',
+    gap: '3',
+    p: '4',
+    transitionDuration: 'normal',
+    transitionProperty: 'border-color, box-shadow',
+    transitionTimingFunction: 'default',
+    _hover: {
+      borderColor: 'accent.default',
+      boxShadow: '0 0 0 1px var(--colors-accent-default)',
+    },
+    _focusVisible: {
+      outline: 'none',
+      borderColor: 'accent.default',
+      boxShadow: '0 0 0 1px var(--colors-accent-default)',
+    },
+  },
+})()
 
 export const Quickstart = () => {
   const frameworks = [
-    { name: 'Next.js', icon: SiNextdotjs, slug: 'templates/react/next-js' },
-    { name: 'Solid Start', icon: SiSolid, slug: 'templates/solid/solid-start' },
-    { name: 'Nuxt', icon: SiNuxtdotjs, slug: 'templates/vue/nuxt' },
+    { name: 'Next.js', icon: NextJsIcon, slug: 'templates/react/next-js' },
+    { name: 'Solid Start', icon: SolidStartIcon, slug: 'templates/solid/solid-start' },
+    { name: 'Nuxt', icon: NuxtIcon, slug: 'templates/vue/nuxt' },
   ]
   return (
     <Grid gap={{ base: '4', md: '6' }} columns={{ base: 2, sm: 3, xl: 5 }} className="not-prose">
       {frameworks.map(({ name, icon: Icon, slug }) => (
         <a
           key={name}
-          href={`https://stackblitz.com/github/chakra-ui/ark/tree/main/${slug}`}
+          href={`https://stackblitz.com/github/cschroeter/park-ui/tree/main/${slug}`}
           target="_blank"
           rel="noreferrer"
+          className={link}
         >
-          <Flex
-            borderRadius="l3"
-            borderWidth="1px"
-            p="4"
-            bg="bg.default"
-            color="fg.default"
-            align="center"
-            justify="center"
-          >
-            <Stack gap="2.5">
-              <Icon height="48" />
-              <Text textStyle="sm" textAlign="center">
-                {name}
-              </Text>
-            </Stack>
-          </Flex>
+          <Icon height="48" width="auto" />
+          <Text textStyle="sm" textAlign="center">
+            {name}
+          </Text>
         </a>
       ))}
     </Grid>
