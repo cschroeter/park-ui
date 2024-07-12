@@ -29,6 +29,9 @@ importers:
       vinxi:
         specifier: 0.3.14
         version: 0.3.14(@types/node@20.14.10)(ioredis@5.4.1)(lightningcss@1.25.1)(terser@5.31.2)
+      vite-tsconfig-paths:
+        specifier: 4.3.2
+        version: 4.3.2(vite@5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)(terser@5.31.2))
 
 packages:
 
@@ -1619,6 +1622,9 @@ packages:
     resolution: {integrity: sha512-s3Fq41ZVh7vbbe2PN3nrW7yC7U7MFVc5c98/iTl9c2GawNMKx/J648KQRW6WKkuU8GIbbh2IXfIRQjOZnXcTnw==}
     engines: {node: '>=18'}
 
+  globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
@@ -2514,6 +2520,16 @@ packages:
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
+  tsconfck@3.1.1:
+    resolution: {integrity: sha512-00eoI6WY57SvZEVjm13stEVE90VkEdJAFGgpFLTsZbJyW/LwFQ7uQxJHWpZ2hzSWgCPKc9AnBnNP+0X7o3hAmQ==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
@@ -2654,6 +2670,14 @@ packages:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
       '@testing-library/jest-dom':
+        optional: true
+
+  vite-tsconfig-paths@4.3.2:
+    resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
         optional: true
 
   vite@5.3.3:
@@ -4604,6 +4628,8 @@ snapshots:
       slash: 5.1.0
       unicorn-magic: 0.1.0
 
+  globrex@0.1.2: {}
+
   graceful-fs@4.2.11: {}
 
   gzip-size@7.0.0:
@@ -5557,6 +5583,8 @@ snapshots:
 
   tr46@0.0.3: {}
 
+  tsconfck@3.1.1: {}
+
   tslib@2.6.3: {}
 
   type-fest@2.19.0: {}
@@ -5759,6 +5787,17 @@ snapshots:
       vitefu: 0.2.5(vite@5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)(terser@5.31.2))
     transitivePeerDependencies:
       - supports-color
+
+  vite-tsconfig-paths@4.3.2(vite@5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)(terser@5.31.2)):
+    dependencies:
+      debug: 4.3.5
+      globrex: 0.1.2
+      tsconfck: 3.1.1
+    optionalDependencies:
+      vite: 5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)(terser@5.31.2)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   vite@5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)(terser@5.31.2):
     dependencies:

@@ -10,7 +10,9 @@ export default defineConfig({
     typographyPreset({
       recipe: {
         sizes: ['base'],
-        notProse: true,
+        notProse: {
+          className: 'not-prose',
+        },
       },
     }),
   ],

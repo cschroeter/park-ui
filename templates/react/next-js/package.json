@@ -1,5 +1,5 @@
 {
-  "name": "@park-ui/examples-react-next-js",
+  "name": "@park-ui/next-js",
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
