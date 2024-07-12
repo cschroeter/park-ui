@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Tooltip } from '@ark-ui/react/tooltip'
 import { type TooltipVariantProps, tooltip } from 'styled-system/recipes'

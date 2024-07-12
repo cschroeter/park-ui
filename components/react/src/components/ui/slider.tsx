@@ -1,3 +1,4 @@
+'use client'
 import { type ReactNode, forwardRef } from 'react'
 import { Slider as ArkSlider } from '~/components/ui/primitives'
 

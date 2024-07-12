@@ -1,3 +1,4 @@
+'use client'
 import { forwardRef } from 'react'
 import { Pagination as ArkPagination } from '~/components/ui/primitives'
 import { Button } from '~/components/ui/primitives'

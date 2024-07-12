@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { QrCode } from '@ark-ui/react/qr-code'
 import { type QrCodeVariantProps, qrCode } from 'styled-system/recipes'

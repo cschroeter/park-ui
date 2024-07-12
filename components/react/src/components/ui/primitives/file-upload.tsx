@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { FileUpload } from '@ark-ui/react/file-upload'
 import { type FileUploadVariantProps, fileUpload } from 'styled-system/recipes'

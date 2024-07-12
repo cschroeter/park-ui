@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Avatar } from '@ark-ui/react/avatar'
 import { type AvatarVariantProps, avatar } from 'styled-system/recipes'

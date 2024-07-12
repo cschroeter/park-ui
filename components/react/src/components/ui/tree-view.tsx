@@ -1,3 +1,4 @@
+'use client'
 import { forwardRef } from 'react'
 import { TreeView as ArkTreeView } from '~/components/ui/primitives'
 

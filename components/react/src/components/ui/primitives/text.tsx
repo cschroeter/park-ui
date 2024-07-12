@@ -1,3 +1,4 @@
+'use client'
 import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import React from 'react'
 import { css, cx } from 'styled-system/css'

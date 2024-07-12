@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { SignaturePad } from '@ark-ui/react/signature-pad'
 import { type SignaturePadVariantProps, signaturePad } from 'styled-system/recipes'

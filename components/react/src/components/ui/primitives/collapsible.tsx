@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Collapsible } from '@ark-ui/react/collapsible'
 import { type CollapsibleVariantProps, collapsible } from 'styled-system/recipes'
