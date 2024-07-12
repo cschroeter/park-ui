@@ -1,10 +1,11 @@
 import { join } from 'node:path'
 import { Array, Effect, pipe } from 'effect'
 import { readJson } from 'fs-extra'
+import { Box } from 'styled-system/jsx'
 import { Code, Step, Steps, Text } from '~/components/ui'
 import { getServerContext } from '~/lib/server-context'
 import { highlight } from '~/lib/shiki'
-import { toPascalCase } from '~/lib/string-utils'
+import { CodePreview } from '../code-preview'
 import { CodePreviewTabs } from '../code-preview-tabs'
 import { Recipe } from './recipe'
 
@@ -17,7 +18,6 @@ interface Variant {
 interface Component {
   id: string
   name: string
-  filename: string
   variants: Variant[]
 }
 
@@ -40,7 +40,7 @@ export const ManualIntallationGuide = async () => {
         }),
         Effect.catchAll(() =>
           Effect.succeed({
-            variants: [{ file: 'primitives', content: 'No snippet found' }],
+            variants: [{ file: 'primitives', content: 'No snippet found', exports: '' }],
           }),
         ),
         Effect.flatMap((component) =>
@@ -49,6 +49,8 @@ export const ManualIntallationGuide = async () => {
               pipe(
                 Effect.promise(() => highlight(variant.content)),
                 Effect.map((html) => ({
+                  file: variant.file,
+                  exports: variant.exports,
                   label: framework,
                   value: framework,
                   code: variant.content,
@@ -66,22 +68,37 @@ export const ManualIntallationGuide = async () => {
   )
   const { primitive, composition } = await Effect.runPromise(programm)
 
+  const primitiveExport = await highlight(primitive[0].exports)
+  const compositionExport = composition
+    ? await highlight(`export * from './primitives'\n${composition[0].exports}`)
+    : ''
+
   return (
     <Steps>
       <Step number="1" title="Styled Primitive">
         <Text>
-          To use the {toPascalCase(component)} component, add it to your
-          <Code>~/components/ui/primitives</Code> directory:
+          Copy the code snippet below into <Code>~/components/ui/{primitive[0].file}</Code>
         </Text>
         <CodePreviewTabs defaultValue={framework} examples={primitive} />
+        <Text>
+          Extend <Code>~/components/ui/primitives/index.ts</Code> with the following line:
+        </Text>
+        <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
+          <CodePreview html={primitiveExport} code={primitive[0].exports} />
+        </Box>
       </Step>
       {composition && (
         <Step number="2" title="Add Composition">
           <Text>
-            For easier usage of {toPascalCase(component)}, copy this composition file to
-            <Code>~/components/ui</Code> directory:
+            Copy the code snippet below into <Code>~/components/ui/{composition[0].file}</Code>
           </Text>
           <CodePreviewTabs defaultValue={framework} examples={composition} />
+          <Text>
+            Extend <Code>~/components/ui/index.ts</Code> with the following line:
+          </Text>
+          <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
+            <CodePreview html={compositionExport} code={composition[0].exports} />
+          </Box>
         </Step>
       )}
       <Step number={composition ? '3' : '2'} title="Integrate Recipe">
