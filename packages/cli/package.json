@@ -20,8 +20,10 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
+    "@release-it/keep-a-changelog": "5.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/yargs": "17.0.32",
+    "release-it": "17.5.0",
     "typescript": "5.5.3"
   },
   "peerDependencies": {
