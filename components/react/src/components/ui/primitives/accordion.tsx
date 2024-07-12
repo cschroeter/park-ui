@@ -42,6 +42,7 @@ export {
   AccordionContext as Context,
   AccordionItemContext as ItemContext,
 } from '@ark-ui/react/accordion'
+
 export type {
   AccordionFocusChangeDetails as FocusChangeDetails,
   AccordionValueChangeDetails as ValueChangeDetails,

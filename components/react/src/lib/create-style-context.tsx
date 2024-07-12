@@ -34,7 +34,7 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     return StyledComponent
   }
 
-  const withProvider = <T, P extends { className?: string }>(
+  const withProvider = <T, P extends { className?: string | undefined }>(
     Component: ElementType,
     slot: Slot<R>,
   ): ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<T>> => {
@@ -55,7 +55,7 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     })
   }
 
-  const withContext = <T, P extends { className?: string }>(
+  const withContext = <T, P extends { className?: string | undefined }>(
     Component: ElementType,
     slot: Slot<R>,
   ): ForwardRefExoticComponent<PropsWithoutRef<P> & RefAttributes<T>> => {

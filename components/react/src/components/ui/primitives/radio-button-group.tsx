@@ -38,5 +38,5 @@ export const Label = withContext<
 
 export {
   RadioGroupContext as Context,
-  type RadioGroupContextProps as ContextProps,
+  RadioGroupItemHiddenInput as ItemHiddenInput,
 } from '@ark-ui/react/radio-group'

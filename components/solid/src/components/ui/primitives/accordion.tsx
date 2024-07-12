@@ -34,4 +34,9 @@ export const ItemTrigger = withContext<
   Assign<HTMLStyledProps<'button'>, Accordion.ItemTriggerProps>
 >(Accordion.ItemTrigger, 'itemTrigger')
 
-export { AccordionContext as Context } from '@ark-ui/solid'
+export { AccordionContext as Context, AccordionItemContext as ItemContext } from '@ark-ui/solid'
+
+export type {
+  AccordionFocusChangeDetails as FocusChangeDetails,
+  AccordionValueChangeDetails as ValueChangeDetails,
+} from '@ark-ui/solid'
