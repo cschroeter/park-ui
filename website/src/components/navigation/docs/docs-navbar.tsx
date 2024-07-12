@@ -20,7 +20,7 @@ export const DocsNavbar = () => {
       right="0"
       top="16"
       bg="bg.canvas"
-      zIndex="1"
+      zIndex="sticky"
     >
       <MobileSidebarContainer>
         <DocsSidebar groups={groups} />

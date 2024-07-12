@@ -11,7 +11,7 @@ export const NavbarContainer = (props: BoxProps) => {
       top="0"
       width="full"
       background="bg.canvas"
-      zIndex="1"
+      zIndex="sticky"
       borderBottomWidth={pathname === '/' ? '0' : '1px'}
       borderColor={{ base: 'border.subtle', _dark: 'black' }}
     >

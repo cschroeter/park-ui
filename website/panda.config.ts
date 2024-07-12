@@ -77,7 +77,7 @@ export default defineConfig({
         '--colors-prose-heading': 'colors.fg.default',
         '--colors-prose-bold': 'colors.fg.default',
         '--colors-prose-link': 'colors.fg.default',
-        '--colors-prose-code': 'colors.fg.muted',
+        '--colors-prose-code': 'colors.fg.default',
         '--colors-prose-td-border': 'colors.border.subtle',
         '--colors-prose-th-border': 'colors.border.subtle',
         '--colors-prose-hr-border': 'colors.border.subtle',
@@ -133,7 +133,7 @@ export default defineConfig({
                 base: '272px',
                 lg: 'calc((100vw - (1440px - 64px)) / 2 + 272px - 32px)',
               },
-              zIndex: '2',
+              zIndex: 'overlay',
             },
             main: {
               minWidth: '0',
