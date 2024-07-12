@@ -1,3 +1,4 @@
+'use client'
 import type { Assign, PolymorphicProps } from '@ark-ui/react'
 import { Dialog } from '@ark-ui/react/dialog'
 import { ark } from '@ark-ui/react/factory'

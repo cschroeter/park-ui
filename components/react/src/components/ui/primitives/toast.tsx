@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Toast } from '@ark-ui/react/toast'
 import { toast } from 'styled-system/recipes'

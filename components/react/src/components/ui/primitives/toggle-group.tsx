@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { ToggleGroup } from '@ark-ui/react/toggle-group'
 import { type ToggleGroupVariantProps, toggleGroup } from 'styled-system/recipes'

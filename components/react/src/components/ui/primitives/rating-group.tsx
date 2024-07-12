@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { RatingGroup } from '@ark-ui/react/rating-group'
 import { type RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'

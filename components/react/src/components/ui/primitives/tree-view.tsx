@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { TreeView } from '@ark-ui/react/tree-view'
 import { type TreeViewVariantProps, treeView } from 'styled-system/recipes'

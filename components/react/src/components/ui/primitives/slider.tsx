@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Slider } from '@ark-ui/react/slider'
 import { type SliderVariantProps, slider } from 'styled-system/recipes'

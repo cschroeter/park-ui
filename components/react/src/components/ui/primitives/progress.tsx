@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Progress } from '@ark-ui/react/progress'
 import { type ProgressVariantProps, progress } from 'styled-system/recipes'

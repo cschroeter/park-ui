@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Clipboard } from '@ark-ui/react/clipboard'
 import { type ClipboardVariantProps, clipboard } from 'styled-system/recipes'

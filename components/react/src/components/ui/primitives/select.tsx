@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Select } from '@ark-ui/react/select'
 import { type SelectVariantProps, select } from 'styled-system/recipes'

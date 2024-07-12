@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Popover } from '@ark-ui/react/popover'
 import { type PopoverVariantProps, popover } from 'styled-system/recipes'

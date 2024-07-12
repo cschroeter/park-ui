@@ -1,3 +1,4 @@
+'use client'
 import { forwardRef } from 'react'
 import { RatingGroup as ArkRatingGroup } from '~/components/ui/primitives'
 

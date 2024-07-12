@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { Pagination } from '@ark-ui/react/pagination'
 import { type PaginationVariantProps, pagination } from 'styled-system/recipes'
