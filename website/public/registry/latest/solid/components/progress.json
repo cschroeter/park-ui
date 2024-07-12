@@ -9,7 +9,7 @@
       "exports": "export * as Progress from './progress'"
     },
     {
-      "file": "compositions/progress.tsx",
+      "file": "progress.tsx",
       "content": "import { Show, children, splitProps } from 'solid-js'\nimport { Progress as ArkProgress } from '~/components/ui/primitives'\n\nexport interface ProgressProps extends ArkProgress.RootProps {\n  /**\n   * The type of progress to render.\n   * @default linear\n   */\n  type?: 'linear' | 'circular'\n}\n\nexport const Progress = (props: ProgressProps) => {\n  const [localProps, rootProps] = splitProps(props, ['children', 'type'])\n  const getChildren = children(() => localProps.children)\n\n  return (\n    <ArkProgress.Root {...rootProps}>\n      <Show when={getChildren()}>\n        <ArkProgress.Label>{getChildren()}</ArkProgress.Label>\n      </Show>\n      <Show\n        when={localProps.type === 'circular'}\n        fallback={\n          <ArkProgress.Track>\n            <ArkProgress.Range />\n          </ArkProgress.Track>\n        }\n      >\n        <ArkProgress.Circle>\n          <ArkProgress.CircleTrack />\n          <ArkProgress.CircleRange />\n          <ArkProgress.ValueText />\n        </ArkProgress.Circle>\n      </Show>\n      <ArkProgress.ValueText />\n    </ArkProgress.Root>\n  )\n}\n",
       "exports": "export { Progress, type ProgressProps } from './progress'"
     }

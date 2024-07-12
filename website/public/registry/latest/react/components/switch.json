@@ -9,7 +9,7 @@
       "exports": "export * as Switch from './switch'"
     },
     {
-      "file": "compositions/switch.tsx",
+      "file": "switch.tsx",
       "content": "import { forwardRef } from 'react'\nimport { Switch as ArkSwitch } from '~/components/ui/primitives'\n\nexport interface SwitchProps extends ArkSwitch.RootProps {}\n\nexport const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {\n  const { children, ...rootProps } = props\n\n  return (\n    <ArkSwitch.Root ref={ref} {...rootProps}>\n      <ArkSwitch.Control>\n        <ArkSwitch.Thumb />\n      </ArkSwitch.Control>\n      {children && <ArkSwitch.Label>{children}</ArkSwitch.Label>}\n      <ArkSwitch.HiddenInput />\n    </ArkSwitch.Root>\n  )\n})\n\nSwitch.displayName = 'Switch'\n",
       "exports": "export { Switch, type SwitchProps } from './switch'"
     }

@@ -9,7 +9,7 @@
       "exports": "export * as PinInput from './pin-input'"
     },
     {
-      "file": "compositions/pin-input.tsx",
+      "file": "pin-input.tsx",
       "content": "import { forwardRef } from 'react'\nimport { PinInput as ArkPinInput } from '~/components/ui/primitives'\nimport { Input } from '~/components/ui/primitives'\n\nexport interface PinInputProps extends ArkPinInput.RootProps {\n  /**\n   * The number of inputs to render.\n   * @default 4\n   */\n  length?: number\n}\n\nexport const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) => {\n  const { children, length = 4, ...rootProps } = props\n\n  return (\n    <ArkPinInput.Root ref={ref} {...rootProps}>\n      {children && <ArkPinInput.Label>{children}</ArkPinInput.Label>}\n      <ArkPinInput.Control>\n        {Array.from({ length }, (_, index) => index).map((id, index) => (\n          <ArkPinInput.Input key={id} index={index} asChild>\n            <Input size={rootProps.size} />\n          </ArkPinInput.Input>\n        ))}\n      </ArkPinInput.Control>\n    </ArkPinInput.Root>\n  )\n})\n\nPinInput.displayName = 'PinInput'\n",
       "exports": "export { PinInput, type PinInputProps } from './pin-input'"
     }

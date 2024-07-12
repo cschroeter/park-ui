@@ -9,7 +9,7 @@
       "exports": "export * as Slider from './slider'"
     },
     {
-      "file": "compositions/slider.tsx",
+      "file": "slider.tsx",
       "content": "import { Index, type JSX, Show, children, splitProps } from 'solid-js'\nimport { Slider as ArkSlider } from '~/components/ui/primitives'\n\nexport interface SliderProps extends ArkSlider.RootProps {\n  marks?: {\n    value: number\n    label?: JSX.Element\n  }[]\n}\n\nexport const Slider = (props: SliderProps) => {\n  const [localProps, rootProps] = splitProps(props, ['children', 'marks'])\n  const getChildren = children(() => localProps.children)\n\n  return (\n    <ArkSlider.Root {...rootProps}>\n      <ArkSlider.Context>\n        {(slider) => (\n          <>\n            <Show when={getChildren()}>\n              <ArkSlider.Label>{getChildren()}</ArkSlider.Label>\n            </Show>\n            <ArkSlider.Control>\n              <ArkSlider.Track>\n                <ArkSlider.Range />\n              </ArkSlider.Track>\n              <Index each={slider().value}>{(_, index) => <ArkSlider.Thumb index={index} />}</Index>\n            </ArkSlider.Control>\n            <Show when={localProps.marks}>\n              <ArkSlider.MarkerGroup>\n                <Index each={localProps.marks}>\n                  {(mark) => (\n                    <ArkSlider.Marker value={mark().value}>{mark().label}</ArkSlider.Marker>\n                  )}\n                </Index>\n              </ArkSlider.MarkerGroup>\n            </Show>\n          </>\n        )}\n      </ArkSlider.Context>\n    </ArkSlider.Root>\n  )\n}\n",
       "exports": "export { Slider, type SliderProps } from './slider'"
     }
