@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.7.0] - 2024-07-12
+
 ### Added
 
 - Support for custom import aliases.
@@ -9,10 +11,6 @@
 ### Removed
 
 - Removed the `init` command. A configuration file will be created automatically if none is found.
-
-## [0.7.0-13] - 2024-07-12
-
-- Things are happening
 
 ## [0.6.0] - 2024-04-03
 
