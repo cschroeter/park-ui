@@ -11,7 +11,9 @@
     "release-it": "release-it"
   },
   "dependencies": {
-    "effect": "3.4.8",
+    "@effect/schema": "0.68.23",
+    "@effect/platform": "0.58.27",
+    "effect": "3.5.3",
     "fs-extra": "11.2.0",
     "get-tsconfig": "4.7.5",
     "pkg-dir": "8.0.0",
@@ -19,7 +21,8 @@
   },
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
-    "@types/yargs": "17.0.32"
+    "@types/yargs": "17.0.32",
+    "typescript": "5.5.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

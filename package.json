@@ -2,7 +2,7 @@
   "name": "root",
   "type": "module",
   "private": true,
-  "workspaces": ["components/*", "packages/*", "templates/*", "scripts", "website"],
+  "workspaces": ["components/*", "packages/*", "scripts", "website"],
   "scripts": {
     "postinstall": "lefthook install",
     "scripts": "bun run --cwd scripts",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@biomejs/biome": "1.8.3",
     "@types/bun": "1.1.6",
-    "lefthook": "1.7.1",
+    "lefthook": "1.7.2",
     "typescript": "5.5.3"
   },
   "packageManager": "bun@1.1.18",
