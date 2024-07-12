@@ -5,7 +5,7 @@ import { defineCollection, defineConfig, s } from 'velite'
 
 const pages = defineCollection({
   name: 'Pages',
-  pattern: ['src/content/pages/**/*.mdx', 'packages/*/CHANGELOG.md'],
+  pattern: ['website/src/content/pages/**/*.mdx', 'packages/panda/CHANGELOG.md'],
   schema: s
     .object({
       id: s.string(),
@@ -25,7 +25,7 @@ const pages = defineCollection({
           ...data,
           slug: 'overview/changelog',
           category: 'overview',
-          framework: meta.path.replace(/.*\/packages\//, '').replace(/\/[^/]*$/, ''),
+          framework: '*',
           toc: data.toc.map((entry) => ({ ...entry, items: [] })),
         }
       }
@@ -39,7 +39,7 @@ const pages = defineCollection({
 
 const controls = defineCollection({
   name: 'Controls',
-  pattern: ['src/content/controls/*.json'],
+  pattern: ['website/src/content/controls/*.json'],
   schema: s
     .record(
       s.string(),
@@ -58,7 +58,7 @@ const controls = defineCollection({
 })
 
 export default defineConfig({
-  root: path.join(process.cwd()),
+  root: path.join(process.cwd(), '../'),
   collections: { pages, controls },
   mdx: {
     rehypePlugins: [

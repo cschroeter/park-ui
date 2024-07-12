@@ -7,7 +7,6 @@ export default {
     return config
   },
   typescript: {
-    // TODO remove before launch
     ignoreBuildErrors: true,
   },
   transpilePackages: ['shiki'],
