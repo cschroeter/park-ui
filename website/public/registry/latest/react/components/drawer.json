@@ -1,7 +1,6 @@
 {
   "id": "drawer",
   "name": "Drawer",
-  "filename": "drawer.tsx",
   "variants": [
     {
       "file": "primitives/drawer.tsx",

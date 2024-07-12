@@ -1,7 +1,6 @@
 {
   "id": "tooltip",
   "name": "Tooltip",
-  "filename": "tooltip.tsx",
   "variants": [
     {
       "file": "primitives/tooltip.tsx",

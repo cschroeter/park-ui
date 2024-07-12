@@ -1,7 +1,6 @@
 {
   "id": "badge",
   "name": "Badge",
-  "filename": "badge.tsx",
   "variants": [
     {
       "file": "primitives/badge.tsx",

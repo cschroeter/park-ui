@@ -1,7 +1,6 @@
 {
   "id": "textarea",
   "name": "Textarea",
-  "filename": "textarea.tsx",
   "variants": [
     {
       "file": "primitives/textarea.tsx",

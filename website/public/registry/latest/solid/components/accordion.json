@@ -1,7 +1,6 @@
 {
   "id": "accordion",
   "name": "Accordion",
-  "filename": "accordion.tsx",
   "variants": [
     {
       "file": "primitives/accordion.tsx",

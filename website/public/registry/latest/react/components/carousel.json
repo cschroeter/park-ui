@@ -1,7 +1,6 @@
 {
   "id": "carousel",
   "name": "Carousel",
-  "filename": "carousel.tsx",
   "variants": [
     {
       "file": "primitives/carousel.tsx",

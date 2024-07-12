@@ -1,7 +1,6 @@
 {
   "id": "text",
   "name": "Text",
-  "filename": "text.tsx",
   "variants": [
     {
       "file": "primitives/text.tsx",

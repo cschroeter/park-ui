@@ -1,7 +1,6 @@
 {
   "id": "select",
   "name": "Select",
-  "filename": "select.tsx",
   "variants": [
     {
       "file": "primitives/select.tsx",

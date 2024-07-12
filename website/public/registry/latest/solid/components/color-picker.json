@@ -1,7 +1,6 @@
 {
   "id": "color-picker",
   "name": "Color Picker",
-  "filename": "color-picker.tsx",
   "variants": [
     {
       "file": "primitives/color-picker.tsx",

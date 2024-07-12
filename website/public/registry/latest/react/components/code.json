@@ -1,7 +1,6 @@
 {
   "id": "code",
   "name": "Code",
-  "filename": "code.tsx",
   "variants": [
     {
       "file": "primitives/code.tsx",

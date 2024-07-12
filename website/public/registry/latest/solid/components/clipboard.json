@@ -1,7 +1,6 @@
 {
   "id": "clipboard",
   "name": "Clipboard",
-  "filename": "clipboard.tsx",
   "variants": [
     {
       "file": "primitives/clipboard.tsx",

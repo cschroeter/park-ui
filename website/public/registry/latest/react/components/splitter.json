@@ -1,7 +1,6 @@
 {
   "id": "splitter",
   "name": "Splitter",
-  "filename": "splitter.tsx",
   "variants": [
     {
       "file": "primitives/splitter.tsx",

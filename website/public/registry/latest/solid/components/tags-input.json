@@ -1,7 +1,6 @@
 {
   "id": "tags-input",
   "name": "Tags Input",
-  "filename": "tags-input.tsx",
   "variants": [
     {
       "file": "primitives/tags-input.tsx",

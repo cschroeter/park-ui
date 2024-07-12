@@ -1,7 +1,6 @@
 {
   "id": "alert",
   "name": "Alert",
-  "filename": "alert.tsx",
   "variants": [
     {
       "file": "primitives/alert.tsx",

@@ -1,7 +1,6 @@
 {
   "id": "tabs",
   "name": "Tabs",
-  "filename": "tabs.tsx",
   "variants": [
     {
       "file": "primitives/tabs.tsx",

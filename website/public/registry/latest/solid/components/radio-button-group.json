@@ -1,7 +1,6 @@
 {
   "id": "radio-button-group",
   "name": "Radio Button Group",
-  "filename": "radio-button-group.tsx",
   "variants": [
     {
       "file": "primitives/radio-button-group.tsx",

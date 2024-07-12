@@ -1,7 +1,6 @@
 {
   "id": "combobox",
   "name": "Combobox",
-  "filename": "combobox.tsx",
   "variants": [
     {
       "file": "primitives/combobox.tsx",

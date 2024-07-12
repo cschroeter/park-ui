@@ -1,7 +1,6 @@
 {
   "id": "signature-pad",
   "name": "Signature Pad",
-  "filename": "signature-pad.tsx",
   "variants": [
     {
       "file": "primitives/signature-pad.tsx",

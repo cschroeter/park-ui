@@ -1,7 +1,6 @@
 {
   "id": "skeleton",
   "name": "Skeleton",
-  "filename": "skeleton.tsx",
   "variants": [
     {
       "file": "primitives/skeleton.tsx",

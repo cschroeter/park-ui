@@ -1,7 +1,6 @@
 {
   "id": "dialog",
   "name": "Dialog",
-  "filename": "dialog.tsx",
   "variants": [
     {
       "file": "primitives/dialog.tsx",

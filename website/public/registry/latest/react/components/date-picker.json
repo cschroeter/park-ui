@@ -1,7 +1,6 @@
 {
   "id": "date-picker",
   "name": "Date Picker",
-  "filename": "date-picker.tsx",
   "variants": [
     {
       "file": "primitives/date-picker.tsx",

@@ -1,7 +1,6 @@
 {
   "id": "icon",
   "name": "Icon",
-  "filename": "icon.tsx",
   "variants": [
     {
       "file": "primitives/icon.tsx",

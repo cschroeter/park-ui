@@ -1,7 +1,6 @@
 {
   "id": "menu",
   "name": "Menu",
-  "filename": "menu.tsx",
   "variants": [
     {
       "file": "primitives/menu.tsx",

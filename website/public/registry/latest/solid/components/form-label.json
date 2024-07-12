@@ -1,7 +1,6 @@
 {
   "id": "form-label",
   "name": "Form Label",
-  "filename": "form-label.tsx",
   "variants": [
     {
       "file": "primitives/form-label.tsx",

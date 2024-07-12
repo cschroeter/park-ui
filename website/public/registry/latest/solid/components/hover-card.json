@@ -1,7 +1,6 @@
 {
   "id": "hover-card",
   "name": "Hover Card",
-  "filename": "hover-card.tsx",
   "variants": [
     {
       "file": "primitives/hover-card.tsx",

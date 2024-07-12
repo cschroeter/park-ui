@@ -1,7 +1,6 @@
 {
   "id": "rating-group",
   "name": "Rating Group",
-  "filename": "rating-group.tsx",
   "variants": [
     {
       "file": "primitives/rating-group.tsx",

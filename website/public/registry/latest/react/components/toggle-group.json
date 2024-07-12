@@ -1,7 +1,6 @@
 {
   "id": "toggle-group",
   "name": "Toggle Group",
-  "filename": "toggle-group.tsx",
   "variants": [
     {
       "file": "primitives/toggle-group.tsx",
