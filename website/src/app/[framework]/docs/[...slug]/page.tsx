@@ -8,6 +8,7 @@ import { TableOfContent } from '~/components/navigation/table-of-content'
 import { Heading, Prose, Text } from '~/components/ui'
 import { getSidebarGroups } from '~/lib/docs'
 import { getServerContext } from '~/lib/server-context'
+import { capitalize } from '~/lib/string-utils'
 
 interface Props {
   params: { framework: string; slug: string[] }
@@ -22,16 +23,20 @@ export default function Page(props: Props) {
   serverContext.framework = props.params.framework
   serverContext.component = props.params.slug[1]
 
+  const framework = capitalize(props.params.framework)
+
   if (currentPage) {
     return (
       <Container display="flex" py="12" gap="8" justifyContent="center">
         <Stack gap="16" px={{ base: '0', xl: '8' }} width="full">
           <Prose css={{ maxWidth: '45rem', mx: 'auto', width: '100%' }}>
             <Heading as="h1" fontWeight="bold">
-              {currentPage.title === 'Introduction' ? 'Welcome to Park UI' : currentPage.title}
+              {currentPage.id === 'introduction' ? 'Welcome to Park UI' : currentPage.title}
             </Heading>
             <Text className="lead" color="fg.muted" mb="6">
-              {currentPage.description}
+              {currentPage.id === 'introduction'
+                ? `A ${framework} Component Library built on Ark UI and Panda CSS.`
+                : currentPage.description}
             </Text>
             <DocumentationBadges framework={props.params.framework} href={currentPage.docs} />
             <MDXContent code={currentPage.code} />
@@ -51,9 +56,14 @@ export default function Page(props: Props) {
 
 export const generateMetadata = (props: Props): Metadata => {
   const page = getPageBySlug(props.params.slug)
+  const framework = capitalize(props.params.framework)
 
   if (page) {
-    return { title: page.title, description: page.description }
+    const description =
+      page.id === 'introduction'
+        ? `A ${framework} Component Library built on Ark UI and Panda CSS.`
+        : page.description
+    return { title: page.title, description }
   }
   return {}
 }
