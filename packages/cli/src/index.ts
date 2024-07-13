@@ -99,10 +99,9 @@ const main = async () => {
                             Effect.promise(() =>
                               fs.outputFile(
                                 path.join(componentsDir, variant.file),
-                                variant.content.replace(
-                                  /~\/components\/ui/g,
-                                  config.outputPaths.componentsDir,
-                                ),
+                                variant.content
+                                  .replaceAll('~/components/ui', config.outputPaths.componentsDir)
+                                  .replaceAll('~/lib', config.outputPaths.libDir),
                               ),
                             ),
                             pipe(

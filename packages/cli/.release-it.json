@@ -17,6 +17,6 @@
     "versionArgs": ["--workspaces-update=false"]
   },
   "hooks": {
-    "before:init": ["bun run build"]
+    "before:init": ["bun rimraf dist && bun run build"]
   }
 }

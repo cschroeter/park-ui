@@ -11,6 +11,8 @@
     "verbatimModuleSyntax": true,
     "noEmit": true,
 
+    "jsx": "preserve",
+
     "strict": true,
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
@@ -20,7 +22,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@/*": ["dist/*"]
     }
   }
 }
