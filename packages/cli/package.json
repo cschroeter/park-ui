@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/cli",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "type": "module",
   "bin": {
     "park-ui": "dist/index.js"
