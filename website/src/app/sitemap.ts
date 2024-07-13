@@ -11,11 +11,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     {
-      url: 'https://park-ui.com/react/solid/overview/introduction',
+      url: 'https://park-ui.com/solid/overview/introduction',
       lastModified: new Date(),
     },
     {
-      url: 'https://park-ui.com/react/vue/overview/introduction',
+      url: 'https://park-ui.com/vue/overview/introduction',
       lastModified: new Date(),
     },
   ]
