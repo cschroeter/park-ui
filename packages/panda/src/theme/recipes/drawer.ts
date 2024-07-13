@@ -10,7 +10,7 @@ export const drawer = defineSlotRecipe({
     backdrop: {
       backdropFilter: 'blur(4px)',
       background: {
-        base: 'white.a10',
+        _light: 'white.a10',
         _dark: 'black.a10',
       },
       height: '100vh',

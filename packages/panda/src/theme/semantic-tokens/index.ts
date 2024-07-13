@@ -26,11 +26,11 @@ export const createSemanticTokens = (options: PresetOptions) => {
       accent: colors[accentColor],
       bg: {
         canvas: { value: '{colors.gray.1}' },
-        default: { value: { base: 'white', _dark: '{colors.gray.2}' } },
-        subtle: { value: { base: '{colors.gray.2}', _dark: '{colors.gray.3}' } },
-        muted: { value: { base: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
-        emphasized: { value: { base: '{colors.gray.4}', _dark: '{colors.gray.5}' } },
-        disabled: { value: { base: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
+        default: { value: { _light: 'white', _dark: '{colors.gray.2}' } },
+        subtle: { value: { _light: '{colors.gray.2}', _dark: '{colors.gray.3}' } },
+        muted: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
+        emphasized: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.5}' } },
+        disabled: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
       },
       fg: {
         default: { value: '{colors.gray.12}' },
