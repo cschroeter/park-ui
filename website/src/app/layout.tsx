@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     'Beautifully designed components built with Ark UI and Panda CSS that work with a variety of JS frameworks.',
   manifest: '/site.webmanifest',
-  keywords: ['Panda', 'Tailwind', 'CSS', 'Ark UI', 'Components', 'React', 'Solid', 'Vue'],
+  keywords: ['Panda', 'CSS', 'Ark UI', 'Components', 'React', 'Solid', 'Vue'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -46,7 +46,7 @@ export default function RootLayout(props: PropsWithChildren) {
         <Script src="https://plausible.io/js/plausible.js" data-domain="park-ui.com" />
       </head>
       <body>
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" disableTransitionOnChange>
           <Navbar />
           {props.children}
         </ThemeProvider>
