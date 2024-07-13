@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Resolved an issue where `libDir` was not correctly resolved based on the user's configuration in `park-ui.json`.
+
 ## [0.7.0] - 2024-07-12
 
 ### Added
