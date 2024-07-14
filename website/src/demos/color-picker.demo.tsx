@@ -71,6 +71,7 @@ export const Demo = (props: ColorPicker.RootProps) => {
           </>
         )}
       </ColorPicker.Context>
+      <ColorPicker.HiddenInput />
     </ColorPicker.Root>
   )
 }

@@ -30,6 +30,7 @@ export const RatingGroup = (props: RatingGroupProps) => {
           )}
         </ArkRatingGroup.Context>
       </ArkRatingGroup.Control>
+      <ArkRatingGroup.HiddenInput />
     </ArkRatingGroup.Root>
   )
 }
