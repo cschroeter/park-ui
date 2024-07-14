@@ -1,6 +1,7 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "prepare": "panda codegen",
     "build": "nuxt build",
@@ -11,16 +12,10 @@
   },
   "dependencies": {
     "@ark-ui/vue": "3.6.0",
-    "@nuxt/ui-templates": "1.3.4",
-    "nuxt": "3.12.3",
-    "unctx": "2.3.1",
-    "vue": "3.4.31"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "1.3.9",
     "@pandacss/dev": "0.42.0",
     "@park-ui/panda-preset": "0.38.1",
-    "@types/node": "20.14.10",
-    "@types/vue": "2.0.0"
+    "@nuxt/kit": "3.12.3",
+    "nuxt": "3.12.3",
+    "vue": "3.4.31"
   }
 }
