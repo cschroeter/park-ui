@@ -1,3 +1,4 @@
+'use client'
 import type { Assign } from '@ark-ui/react'
 import { {{pascalcase component}} } from '@ark-ui/react/{{component}}'
 import { type {{pascalcase component}}VariantProps, {{recipe}} } from 'styled-system/recipes'
@@ -19,7 +20,7 @@ export const {{this.name}} = withProvider<
   Assign<Assign<HTMLStyledProps<'{{this.tag}}'>, {{pascalcase ../component}}.{{this.name}}BaseProps>, {{pascalcase ../component}}VariantProps>
 >({{pascalcase ../component}}.{{this.name}}, '{{this.slot}}')
 {{else}}
-export const {{this.name}} = withRootProvider<Assign<{{pascalcase ../component}}.{{this.name}}BaseProps, {{pascalcase ../component}}VariantProps>>({{pascalcase ../component}}.{{this.name}})
+export const {{this.name}} = withRootProvider<Assign<{{pascalcase ../component}}.{{this.name}}Props, {{pascalcase ../component}}VariantProps>>({{pascalcase ../component}}.{{this.name}})
 {{/if}}
 {{else}}
 {{#if this.slot}}
