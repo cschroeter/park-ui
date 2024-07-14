@@ -6,7 +6,6 @@ import fs from 'fs-extra'
 import color from 'picocolors'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import pkg from '../package.json'
 import { fetchComponents, fetchHelpers } from './client'
 import { getConfig } from './get-config'
 import { getImportAliasPath } from './tsconfig'
@@ -35,7 +34,16 @@ const main = async () => {
       async (argv) => {
         console.clear()
         const spinner = p.spinner()
-        p.intro(`${color.bgCyan(color.black(` Park UI v${pkg.version}`))}`)
+        p.intro(
+          `${color.bgCyan(
+            color.black(
+              ` Park UI v${
+                // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+                process.env['npm_package_version']
+              }`,
+            ),
+          )}`,
+        )
 
         if (isEmpty(argv.components) && !argv.all) {
           p.note('You need to specify at least one component or use the --all flag', 'Error')
