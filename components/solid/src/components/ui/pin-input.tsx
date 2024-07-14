@@ -27,6 +27,7 @@ export const PinInput = (props: PinInputProps) => {
           )}
         </Index>
       </ArkPinInput.Control>
+      <ArkPinInput.HiddenInput />
     </ArkPinInput.Root>
   )
 }

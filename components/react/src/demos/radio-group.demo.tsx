@@ -13,6 +13,7 @@ export const Demo = (props: RadioGroup.RootProps) => {
         <RadioGroup.Item key={option.id} value={option.id} disabled={option.id === 'svelte'}>
           <RadioGroup.ItemControl />
           <RadioGroup.ItemText>{option.label}</RadioGroup.ItemText>
+          <RadioGroup.ItemHiddenInput />
         </RadioGroup.Item>
       ))}
     </RadioGroup.Root>
