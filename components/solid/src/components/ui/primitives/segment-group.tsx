@@ -1,4 +1,4 @@
-import { SegmentGroup, type Assign } from '@ark-ui/solid'
+import { type Assign, SegmentGroup } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { type SegmentGroupVariantProps, segmentGroup } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -8,34 +8,35 @@ const { withProvider, withContext } = createStyleContext(segmentGroup)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, SegmentGroup.RootProviderProps>, SegmentGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, SegmentGroup.RootProviderBaseProps>,
+    SegmentGroupVariantProps
+  >
 >(SegmentGroup.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, SegmentGroup.RootProps>, SegmentGroupVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, SegmentGroup.RootBaseProps>, SegmentGroupVariantProps>
 >(SegmentGroup.Root, 'root')
 
-export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, SegmentGroup.IndicatorProps>>(
-  SegmentGroup.Indicator,
-  'indicator',
-)
+export const Indicator = withContext<
+  Assign<HTMLStyledProps<'div'>, SegmentGroup.IndicatorBaseProps>
+>(SegmentGroup.Indicator, 'indicator')
 
 export const ItemControl = withContext<
-  Assign<HTMLStyledProps<'div'>, SegmentGroup.ItemControlProps>
+  Assign<HTMLStyledProps<'div'>, SegmentGroup.ItemControlBaseProps>
 >(SegmentGroup.ItemControl, 'itemControl')
 
-export const Item = withContext<Assign<HTMLStyledProps<'label'>, SegmentGroup.ItemProps>>(
+export const Item = withContext<Assign<HTMLStyledProps<'label'>, SegmentGroup.ItemBaseProps>>(
   SegmentGroup.Item,
   'item',
 )
 
-export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, SegmentGroup.ItemTextProps>>(
-  SegmentGroup.ItemText,
-  'itemText',
-)
+export const ItemText = withContext<
+  Assign<HTMLStyledProps<'span'>, SegmentGroup.ItemTextBaseProps>
+>(SegmentGroup.ItemText, 'itemText')
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, SegmentGroup.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, SegmentGroup.LabelBaseProps>>(
   SegmentGroup.Label,
   'label',
 )

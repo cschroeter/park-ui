@@ -54,7 +54,7 @@ const fetchComponent = (component: string) =>
 
 const programm = () =>
   pipe(
-    Effect.forEach(['react'], (framework) =>
+    Effect.forEach(['solid'], (framework) =>
       pipe(
         fetchAllComponents(framework),
         Effect.map((components) =>

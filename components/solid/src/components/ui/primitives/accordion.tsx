@@ -8,30 +8,29 @@ const { withProvider, withContext } = createStyleContext(accordion)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootProviderProps>, AccordionVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootProviderBaseProps>, AccordionVariantProps>
 >(Accordion.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootProps>, AccordionVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootBaseProps>, AccordionVariantProps>
 >(Accordion.Root, 'root')
 
-export const ItemContent = withContext<Assign<HTMLStyledProps<'div'>, Accordion.ItemContentProps>>(
-  Accordion.ItemContent,
-  'itemContent',
-)
+export const ItemContent = withContext<
+  Assign<HTMLStyledProps<'div'>, Accordion.ItemContentBaseProps>
+>(Accordion.ItemContent, 'itemContent')
 
 export const ItemIndicator = withContext<
-  Assign<HTMLStyledProps<'div'>, Accordion.ItemIndicatorProps>
+  Assign<HTMLStyledProps<'div'>, Accordion.ItemIndicatorBaseProps>
 >(Accordion.ItemIndicator, 'itemIndicator')
 
-export const Item = withContext<Assign<HTMLStyledProps<'div'>, Accordion.ItemProps>>(
+export const Item = withContext<Assign<HTMLStyledProps<'div'>, Accordion.ItemBaseProps>>(
   Accordion.Item,
   'item',
 )
 
 export const ItemTrigger = withContext<
-  Assign<HTMLStyledProps<'button'>, Accordion.ItemTriggerProps>
+  Assign<HTMLStyledProps<'button'>, Accordion.ItemTriggerBaseProps>
 >(Accordion.ItemTrigger, 'itemTrigger')
 
 export { AccordionContext as Context, AccordionItemContext as ItemContext } from '@ark-ui/solid'

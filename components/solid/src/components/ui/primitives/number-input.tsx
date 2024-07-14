@@ -8,38 +8,38 @@ const { withProvider, withContext } = createStyleContext(numberInput)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootProviderProps>, NumberInputVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootProviderBaseProps>, NumberInputVariantProps>
 >(NumberInput.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootProps>, NumberInputVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootBaseProps>, NumberInputVariantProps>
 >(NumberInput.Root, 'root')
 
-export const Control = withContext<Assign<HTMLStyledProps<'div'>, NumberInput.ControlProps>>(
+export const Control = withContext<Assign<HTMLStyledProps<'div'>, NumberInput.ControlBaseProps>>(
   NumberInput.Control,
   'control',
 )
 
 export const DecrementTrigger = withContext<
-  Assign<HTMLStyledProps<'button'>, NumberInput.DecrementTriggerProps>
+  Assign<HTMLStyledProps<'button'>, NumberInput.DecrementTriggerBaseProps>
 >(NumberInput.DecrementTrigger, 'decrementTrigger')
 
 export const IncrementTrigger = withContext<
-  Assign<HTMLStyledProps<'button'>, NumberInput.IncrementTriggerProps>
+  Assign<HTMLStyledProps<'button'>, NumberInput.IncrementTriggerBaseProps>
 >(NumberInput.IncrementTrigger, 'incrementTrigger')
 
-export const Input = withContext<Assign<HTMLStyledProps<'input'>, NumberInput.InputProps>>(
+export const Input = withContext<Assign<HTMLStyledProps<'input'>, NumberInput.InputBaseProps>>(
   NumberInput.Input,
   'input',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, NumberInput.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, NumberInput.LabelBaseProps>>(
   NumberInput.Label,
   'label',
 )
 
-export const Scrubber = withContext<Assign<HTMLStyledProps<'div'>, NumberInput.ScrubberProps>>(
+export const Scrubber = withContext<Assign<HTMLStyledProps<'div'>, NumberInput.ScrubberBaseProps>>(
   NumberInput.Scrubber,
   'scrubber',
 )

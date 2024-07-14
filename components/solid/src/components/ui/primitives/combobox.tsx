@@ -23,63 +23,63 @@ export const Root = withRootProvider<
 >(Combobox.Root)
 
 export const ClearTrigger = withContext<
-  Assign<HTMLStyledProps<'button'>, Combobox.ClearTriggerProps>
+  Assign<HTMLStyledProps<'button'>, Combobox.ClearTriggerBaseProps>
 >(Combobox.ClearTrigger, 'clearTrigger')
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ContentProps>>(
+export const Content = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ContentBaseProps>>(
   Combobox.Content,
   'content',
 )
 
-export const Control = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ControlProps>>(
+export const Control = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ControlBaseProps>>(
   Combobox.Control,
   'control',
 )
 
-export const Input = withContext<Assign<HTMLStyledProps<'input'>, Combobox.InputProps>>(
+export const Input = withContext<Assign<HTMLStyledProps<'input'>, Combobox.InputBaseProps>>(
   Combobox.Input,
   'input',
 )
 
 export const ItemGroupLabel = withContext<
-  Assign<HTMLStyledProps<'div'>, Combobox.ItemGroupLabelProps>
+  Assign<HTMLStyledProps<'div'>, Combobox.ItemGroupLabelBaseProps>
 >(Combobox.ItemGroupLabel, 'itemGroupLabel')
 
-export const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ItemGroupProps>>(
+export const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ItemGroupBaseProps>>(
   Combobox.ItemGroup,
   'itemGroup',
 )
 
 export const ItemIndicator = withContext<
-  Assign<HTMLStyledProps<'div'>, Combobox.ItemIndicatorProps>
+  Assign<HTMLStyledProps<'div'>, Combobox.ItemIndicatorBaseProps>
 >(Combobox.ItemIndicator, 'itemIndicator')
 
-export const Item = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ItemProps>>(
+export const Item = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ItemBaseProps>>(
   Combobox.Item,
   'item',
 )
 
-export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, Combobox.ItemTextProps>>(
+export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, Combobox.ItemTextBaseProps>>(
   Combobox.ItemText,
   'itemText',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, Combobox.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, Combobox.LabelBaseProps>>(
   Combobox.Label,
   'label',
 )
 
-export const List = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ListProps>>(
+export const List = withContext<Assign<HTMLStyledProps<'div'>, Combobox.ListBaseProps>>(
   Combobox.List,
   'list',
 )
 
-export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Combobox.PositionerProps>>(
+export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Combobox.PositionerBaseProps>>(
   Combobox.Positioner,
   'positioner',
 )
 
-export const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Combobox.TriggerProps>>(
+export const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Combobox.TriggerBaseProps>>(
   Combobox.Trigger,
   'trigger',
 )
