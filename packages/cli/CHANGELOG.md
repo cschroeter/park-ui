@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Removed the requirement for `baseUrl` schema validation in `tsconfig.json`, as it is unnecessary for the CLI functionality.
+
 ## [0.7.1] - 2024-07-13
 
 ### Fixed
