@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed an issue where the incorrect version was shown in the banner.
+#
 ## [0.7.2] - 2024-07-14
 
 ### Changed
