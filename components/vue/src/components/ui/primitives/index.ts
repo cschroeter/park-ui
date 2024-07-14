@@ -1,2 +1,1 @@
-export * as Accordion from './accordion'
-export * as Avatar from './avatar'
+export { Button, type ButtonProps } from './button'

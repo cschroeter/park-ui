@@ -1,8 +1,11 @@
 import { codeToHtml } from 'shiki'
 
-export const highlight = async (code: string) => {
+type Framework = 'react' | 'solid' | 'vue'
+
+export const highlight = async (code: string, framework?: Framework) => {
+  const lang = framework === 'vue' ? 'vue' : 'tsx'
   return codeToHtml(code, {
-    lang: 'tsx',
+    lang,
     theme: 'github-dark-default',
   })
 }

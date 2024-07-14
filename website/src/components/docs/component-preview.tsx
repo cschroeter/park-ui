@@ -29,7 +29,7 @@ export const ComponentPreview = ({ controls }: Props) => {
 
   return (
     <Flex
-      minH="40"
+      minH="44"
       bg={{ base: 'white', _dark: 'gray.1' }}
       width="full"
       overflow="hidden"
