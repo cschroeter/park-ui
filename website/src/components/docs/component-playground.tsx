@@ -16,10 +16,13 @@ export const ComponentPlayground = async () => {
     controls.filter((control) => control.component === component)[0] || defaultControls
 
   const programm = pipe(
-    Effect.forEach(['react', 'solid', 'vue'], (framework) =>
+    Effect.forEach(['react', 'solid', 'vue'] as const, (framework) =>
       pipe(
         Effect.succeed(
-          path.join(process.cwd(), `../components/${framework}/src/demos/${component}.demo.tsx`),
+          path.join(
+            process.cwd(),
+            `../components/${framework}/src/demos/${component}.demo.${framework === 'vue' ? 'vue' : 'tsx'}`,
+          ),
         ),
         Effect.flatMap((demoFile) =>
           Effect.tryPromise({
@@ -28,7 +31,7 @@ export const ComponentPlayground = async () => {
           }),
         ),
         Effect.flatMap((code) =>
-          Effect.promise(() => highlight(code)).pipe(
+          Effect.promise(() => highlight(code, framework)).pipe(
             Effect.map((html) => ({
               code,
               html,
