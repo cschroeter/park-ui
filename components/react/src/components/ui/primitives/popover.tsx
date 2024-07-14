@@ -9,13 +9,11 @@ const { withRootProvider, withContext } = createStyleContext(popover)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withRootProvider<
-  Assign<Popover.RootProviderBaseProps, PopoverVariantProps>
+  Assign<Popover.RootProviderProps, PopoverVariantProps>
 >(Popover.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<Popover.RootBaseProps, PopoverVariantProps>>(
-  Popover.Root,
-)
+export const Root = withRootProvider<Assign<Popover.RootProps, PopoverVariantProps>>(Popover.Root)
 
 export const Anchor = withContext<
   HTMLDivElement,
