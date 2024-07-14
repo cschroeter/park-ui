@@ -15,7 +15,7 @@ const { withProvider, withContext } = createStyleContext({{recipe}})
 export type {{this.name}}Props = ComponentProps<typeof {{this.name}}>
 {{#if this.html}}
 export const {{this.name}} = withProvider<
-  Assign<Assign<HTMLStyledProps<'{{this.tag}}'>, {{pascalcase ../component}}.{{this.name}}Props>, {{pascalcase ../component}}VariantProps>
+  Assign<Assign<HTMLStyledProps<'{{this.tag}}'>, {{pascalcase ../component}}.{{this.name}}BaseProps>, {{pascalcase ../component}}VariantProps>
 >({{pascalcase ../component}}.{{this.name}}, '{{this.slot}}')
 {{else}}
 export const {{this.name}} = withRootProvider<Assign<{{pascalcase ../component}}.{{this.name}}Props,  {{pascalcase ../component}}VariantProps>>({{pascalcase ../component}}.{{this.name}})
@@ -23,7 +23,7 @@ export const {{this.name}} = withRootProvider<Assign<{{pascalcase ../component}}
 {{else}}
 {{#if this.slot}}
 export const {{this.name}} = withContext<
-  Assign<HTMLStyledProps<'{{this.tag}}'>, {{pascalcase ../component}}.{{this.name}}Props>
+  Assign<HTMLStyledProps<'{{this.tag}}'>, {{pascalcase ../component}}.{{this.name}}BaseProps>
 >({{pascalcase ../component}}.{{this.name}}, '{{this.slot}}')
 {{/if}}
 {{/if}}

@@ -1,4 +1,4 @@
-import { RadioGroup, type Assign } from '@ark-ui/solid'
+import { type Assign, RadioGroup } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { type RadioGroupVariantProps, radioGroup } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -8,35 +8,34 @@ const { withProvider, withContext } = createStyleContext(radioGroup)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootProviderProps>, RadioGroupVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootProviderBaseProps>, RadioGroupVariantProps>
 >(RadioGroup.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootProps>, RadioGroupVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootBaseProps>, RadioGroupVariantProps>
 >(RadioGroup.Root, 'root')
 
-export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, RadioGroup.IndicatorProps>>(
+export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, RadioGroup.IndicatorBaseProps>>(
   RadioGroup.Indicator,
   'indicator',
 )
 
-export const ItemControl = withContext<Assign<HTMLStyledProps<'div'>, RadioGroup.ItemControlProps>>(
-  RadioGroup.ItemControl,
-  'itemControl',
-)
+export const ItemControl = withContext<
+  Assign<HTMLStyledProps<'div'>, RadioGroup.ItemControlBaseProps>
+>(RadioGroup.ItemControl, 'itemControl')
 
-export const Item = withContext<Assign<HTMLStyledProps<'label'>, RadioGroup.ItemProps>>(
+export const Item = withContext<Assign<HTMLStyledProps<'label'>, RadioGroup.ItemBaseProps>>(
   RadioGroup.Item,
   'item',
 )
 
-export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, RadioGroup.ItemTextProps>>(
+export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, RadioGroup.ItemTextBaseProps>>(
   RadioGroup.ItemText,
   'itemText',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, RadioGroup.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, RadioGroup.LabelBaseProps>>(
   RadioGroup.Label,
   'label',
 )

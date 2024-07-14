@@ -8,25 +8,25 @@ const { withProvider, withContext } = createStyleContext(ratingGroup)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, RatingGroup.RootProviderProps>, RatingGroupVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, RatingGroup.RootProviderBaseProps>, RatingGroupVariantProps>
 >(RatingGroup.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, RatingGroup.RootProps>, RatingGroupVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, RatingGroup.RootBaseProps>, RatingGroupVariantProps>
 >(RatingGroup.Root, 'root')
 
-export const Control = withContext<Assign<HTMLStyledProps<'div'>, RatingGroup.ControlProps>>(
+export const Control = withContext<Assign<HTMLStyledProps<'div'>, RatingGroup.ControlBaseProps>>(
   RatingGroup.Control,
   'control',
 )
 
-export const Item = withContext<Assign<HTMLStyledProps<'span'>, RatingGroup.ItemProps>>(
+export const Item = withContext<Assign<HTMLStyledProps<'span'>, RatingGroup.ItemBaseProps>>(
   RatingGroup.Item,
   'item',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, RatingGroup.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, RatingGroup.LabelBaseProps>>(
   RatingGroup.Label,
   'label',
 )

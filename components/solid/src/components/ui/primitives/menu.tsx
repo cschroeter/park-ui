@@ -14,83 +14,83 @@ export const RootProvider = withRootProvider<Assign<Menu.RootProviderProps, Menu
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withRootProvider<Assign<Menu.RootProps, MenuVariantProps>>(Menu.Root)
 
-export const Arrow = withContext<Assign<HTMLStyledProps<'div'>, Menu.ArrowProps>>(
+export const Arrow = withContext<Assign<HTMLStyledProps<'div'>, Menu.ArrowBaseProps>>(
   Menu.Arrow,
   'arrow',
 )
 
-export const ArrowTip = withContext<Assign<HTMLStyledProps<'div'>, Menu.ArrowTipProps>>(
+export const ArrowTip = withContext<Assign<HTMLStyledProps<'div'>, Menu.ArrowTipBaseProps>>(
   Menu.ArrowTip,
   'arrowTip',
 )
 
-export const CheckboxItem = withContext<Assign<HTMLStyledProps<'div'>, Menu.CheckboxItemProps>>(
+export const CheckboxItem = withContext<Assign<HTMLStyledProps<'div'>, Menu.CheckboxItemBaseProps>>(
   Menu.CheckboxItem,
   'item',
 )
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, Menu.ContentProps>>(
+export const Content = withContext<Assign<HTMLStyledProps<'div'>, Menu.ContentBaseProps>>(
   Menu.Content,
   'content',
 )
 
 export const ContextTrigger = withContext<
-  Assign<HTMLStyledProps<'button'>, Menu.ContextTriggerProps>
+  Assign<HTMLStyledProps<'button'>, Menu.ContextTriggerBaseProps>
 >(Menu.ContextTrigger, 'contextTrigger')
 
-export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Menu.IndicatorProps>>(
+export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Menu.IndicatorBaseProps>>(
   Menu.Indicator,
   'indicator',
 )
 
-export const ItemGroupLabel = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemGroupLabelProps>>(
-  Menu.ItemGroupLabel,
-  'itemGroupLabel',
-)
+export const ItemGroupLabel = withContext<
+  Assign<HTMLStyledProps<'div'>, Menu.ItemGroupLabelBaseProps>
+>(Menu.ItemGroupLabel, 'itemGroupLabel')
 
-export const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemGroupProps>>(
+export const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemGroupBaseProps>>(
   Menu.ItemGroup,
   'itemGroup',
 )
 
-export const ItemIndicator = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemIndicatorProps>>(
-  Menu.ItemIndicator,
-  'itemIndicator',
+export const ItemIndicator = withContext<
+  Assign<HTMLStyledProps<'div'>, Menu.ItemIndicatorBaseProps>
+>(Menu.ItemIndicator, 'itemIndicator')
+
+export const Item = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemBaseProps>>(
+  Menu.Item,
+  'item',
 )
 
-export const Item = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemProps>>(Menu.Item, 'item')
-
-export const ItemText = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemTextProps>>(
+export const ItemText = withContext<Assign<HTMLStyledProps<'div'>, Menu.ItemTextBaseProps>>(
   Menu.ItemText,
   'itemText',
 )
 
-export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Menu.PositionerProps>>(
+export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Menu.PositionerBaseProps>>(
   Menu.Positioner,
   'positioner',
 )
 
-export const RadioItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Menu.RadioItemGroupProps>>(
-  Menu.RadioItemGroup,
-  'itemGroup',
-)
+export const RadioItemGroup = withContext<
+  Assign<HTMLStyledProps<'div'>, Menu.RadioItemGroupBaseProps>
+>(Menu.RadioItemGroup, 'itemGroup')
 
-export const RadioItem = withContext<Assign<HTMLStyledProps<'div'>, Menu.RadioItemProps>>(
+export const RadioItem = withContext<Assign<HTMLStyledProps<'div'>, Menu.RadioItemBaseProps>>(
   Menu.RadioItem,
   'item',
 )
 
-export const Separator = withContext<Assign<HTMLStyledProps<'hr'>, Menu.SeparatorProps>>(
+export const Separator = withContext<Assign<HTMLStyledProps<'hr'>, Menu.SeparatorBaseProps>>(
   Menu.Separator,
   'separator',
 )
 
-export const TriggerItem = withContext<Assign<HTMLStyledProps<'div'>, Menu.TriggerItemProps>>(
+export const TriggerItem = withContext<Assign<HTMLStyledProps<'div'>, Menu.TriggerItemBaseProps>>(
   Menu.TriggerItem,
   'triggerItem',
 )
 
-export const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Menu.TriggerProps>>(
+export const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Menu.TriggerBaseProps>>(
   Menu.Trigger,
   'trigger',
 )

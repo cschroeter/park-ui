@@ -1,4 +1,4 @@
-import { Checkbox, type Assign } from '@ark-ui/solid'
+import { type Assign, Checkbox } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { type CheckboxVariantProps, checkbox } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -8,30 +8,30 @@ const { withProvider, withContext } = createStyleContext(checkbox)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'label'>, Checkbox.RootProviderProps>, CheckboxVariantProps>
+  Assign<Assign<HTMLStyledProps<'label'>, Checkbox.RootProviderBaseProps>, CheckboxVariantProps>
 >(Checkbox.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'label'>, Checkbox.RootProps>, CheckboxVariantProps>
+  Assign<Assign<HTMLStyledProps<'label'>, Checkbox.RootBaseProps>, CheckboxVariantProps>
 >(Checkbox.Root, 'root')
 
-export const Control = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.ControlProps>>(
+export const Control = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.ControlBaseProps>>(
   Checkbox.Control,
   'control',
 )
 
-export const Group = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.GroupProps>>(
+export const Group = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.GroupBaseProps>>(
   Checkbox.Group,
   'group',
 )
 
-export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.IndicatorProps>>(
+export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Checkbox.IndicatorBaseProps>>(
   Checkbox.Indicator,
   'indicator',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'span'>, Checkbox.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'span'>, Checkbox.LabelBaseProps>>(
   Checkbox.Label,
   'label',
 )
