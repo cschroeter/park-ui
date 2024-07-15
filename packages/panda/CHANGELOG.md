@@ -6,6 +6,8 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+## [0.39.0] - 2024-07-15
+
 ### Added
 
 - Added support for forcing all components to render in either dark or light mode.
