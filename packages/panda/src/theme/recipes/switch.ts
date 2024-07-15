@@ -39,7 +39,7 @@ export const switchRecipe = defineSlotRecipe({
       transitionTimingFunction: 'default',
       _checked: {
         transform: 'translateX(100%)',
-        background: { base: 'bg.default', _dark: 'colorPalette.fg' },
+        background: { _light: 'bg.default', _dark: 'colorPalette.fg' },
       },
     },
   },

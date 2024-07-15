@@ -31,6 +31,7 @@ export const badge = defineRecipe({
         },
       },
       outline: {
+        color: 'fg.default',
         borderWidth: '2px',
         borderColor: 'border.default',
       },

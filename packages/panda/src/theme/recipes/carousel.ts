@@ -15,7 +15,7 @@ export const carousel = defineSlotRecipe({
     },
     control: {
       alignItems: 'center',
-      background: { base: 'gray.dark.a12', _dark: 'gray.light.a12' },
+      background: { _light: 'gray.dark.a12', _dark: 'gray.light.a12' },
       borderRadius: 'l2',
       bottom: '4',
       display: 'flex',
