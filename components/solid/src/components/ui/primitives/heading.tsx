@@ -1,27 +1,11 @@
-import { mergeProps, splitProps } from 'solid-js'
-import { Dynamic } from 'solid-js/web'
-import { css, cx } from 'styled-system/css'
-import { type HTMLStyledProps, splitCssProps } from 'styled-system/jsx'
+import type { ComponentProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
 import { type TextVariantProps, text } from 'styled-system/recipes'
+import type { StyledComponent } from 'styled-system/types'
 
-type As = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+type TextProps = TextVariantProps & { as?: React.ElementType }
 
-export type HeadingProps = TextVariantProps & {
-  as?: As
-} & HTMLStyledProps<As>
-
-export const Heading = (props: HeadingProps) => {
-  const mergedProps = mergeProps({ as: 'h2' }, props)
-  const [variantProps, headingProps] = splitProps(mergedProps, ['size'])
-  const [cssProps, elementProps] = splitCssProps(headingProps)
-  const [localProps, rootProps] = splitProps(elementProps, ['as', 'class'])
-  const className = text({ variant: 'heading', size: variantProps.size })
-
-  return (
-    <Dynamic
-      component={localProps.as}
-      class={cx(className, css(cssProps), localProps.class)}
-      {...rootProps}
-    />
-  )
-}
+export type HeadingProps = ComponentProps<typeof Heading>
+export const Heading = styled('h2', text, {
+  defaultProps: { variant: 'heading' },
+}) as StyledComponent<'h2', TextProps>
