@@ -23,69 +23,68 @@ export const Root = withRootProvider<
 >(Select.Root)
 
 export const ClearTrigger = withContext<
-  Assign<HTMLStyledProps<'button'>, Select.ClearTriggerProps>
+  Assign<HTMLStyledProps<'button'>, Select.ClearTriggerBaseProps>
 >(Select.ClearTrigger, 'clearTrigger')
 
-export const Content = withContext<Assign<HTMLStyledProps<'div'>, Select.ContentProps>>(
+export const Content = withContext<Assign<HTMLStyledProps<'div'>, Select.ContentBaseProps>>(
   Select.Content,
   'content',
 )
 
-export const Control = withContext<Assign<HTMLStyledProps<'div'>, Select.ControlProps>>(
+export const Control = withContext<Assign<HTMLStyledProps<'div'>, Select.ControlBaseProps>>(
   Select.Control,
   'control',
 )
 
-export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Select.IndicatorProps>>(
+export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Select.IndicatorBaseProps>>(
   Select.Indicator,
   'indicator',
 )
 
 export const ItemGroupLabel = withContext<
-  Assign<HTMLStyledProps<'div'>, Select.ItemGroupLabelProps>
+  Assign<HTMLStyledProps<'div'>, Select.ItemGroupLabelBaseProps>
 >(Select.ItemGroupLabel, 'itemGroupLabel')
 
-export const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemGroupProps>>(
+export const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemGroupBaseProps>>(
   Select.ItemGroup,
   'itemGroup',
 )
 
-export const ItemIndicator = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemIndicatorProps>>(
-  Select.ItemIndicator,
-  'itemIndicator',
-)
+export const ItemIndicator = withContext<
+  Assign<HTMLStyledProps<'div'>, Select.ItemIndicatorBaseProps>
+>(Select.ItemIndicator, 'itemIndicator')
 
-export const Item = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemProps>>(
+export const Item = withContext<Assign<HTMLStyledProps<'div'>, Select.ItemBaseProps>>(
   Select.Item,
   'item',
 )
 
-export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, Select.ItemTextProps>>(
+export const ItemText = withContext<Assign<HTMLStyledProps<'span'>, Select.ItemTextBaseProps>>(
   Select.ItemText,
   'itemText',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, Select.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, Select.LabelBaseProps>>(
   Select.Label,
   'label',
 )
 
-export const List = withContext<Assign<HTMLStyledProps<'div'>, Select.ListProps>>(
+export const List = withContext<Assign<HTMLStyledProps<'div'>, Select.ListBaseProps>>(
   Select.List,
   'list',
 )
 
-export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Select.PositionerProps>>(
+export const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Select.PositionerBaseProps>>(
   Select.Positioner,
   'positioner',
 )
 
-export const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Select.TriggerProps>>(
+export const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Select.TriggerBaseProps>>(
   Select.Trigger,
   'trigger',
 )
 
-export const ValueText = withContext<Assign<HTMLStyledProps<'span'>, Select.ValueTextProps>>(
+export const ValueText = withContext<Assign<HTMLStyledProps<'span'>, Select.ValueTextBaseProps>>(
   Select.ValueText,
   'valueText',
 )

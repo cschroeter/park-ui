@@ -11,6 +11,6 @@ export const conditions = {
     today: '&:is([data-today])',
     underValue: '&:is([data-state="under-value"])',
     dark: '.dark &',
-    light: '.light &',
+    light: ':root &, .light &',
   },
 }

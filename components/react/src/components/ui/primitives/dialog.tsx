@@ -8,12 +8,12 @@ import { createStyleContext } from '~/lib/create-style-context'
 const { withRootProvider, withContext } = createStyleContext(dialog)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
-export const RootProvider = withRootProvider<
-  Assign<Dialog.RootProviderBaseProps, DialogVariantProps>
->(Dialog.RootProvider)
+export const RootProvider = withRootProvider<Assign<Dialog.RootProviderProps, DialogVariantProps>>(
+  Dialog.RootProvider,
+)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<Dialog.RootBaseProps, DialogVariantProps>>(Dialog.Root)
+export const Root = withRootProvider<Assign<Dialog.RootProps, DialogVariantProps>>(Dialog.Root)
 
 export const Backdrop = withContext<
   HTMLDivElement,

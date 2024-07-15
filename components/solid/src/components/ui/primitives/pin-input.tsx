@@ -1,4 +1,4 @@
-import { PinInput, type Assign } from '@ark-ui/solid'
+import { type Assign, PinInput } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { type PinInputVariantProps, pinInput } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -8,25 +8,25 @@ const { withProvider, withContext } = createStyleContext(pinInput)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootProviderProps>, PinInputVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootProviderBaseProps>, PinInputVariantProps>
 >(PinInput.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootProps>, PinInputVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootBaseProps>, PinInputVariantProps>
 >(PinInput.Root, 'root')
 
-export const Control = withContext<Assign<HTMLStyledProps<'div'>, PinInput.ControlProps>>(
+export const Control = withContext<Assign<HTMLStyledProps<'div'>, PinInput.ControlBaseProps>>(
   PinInput.Control,
   'control',
 )
 
-export const Input = withContext<Assign<HTMLStyledProps<'input'>, PinInput.InputProps>>(
+export const Input = withContext<Assign<HTMLStyledProps<'input'>, PinInput.InputBaseProps>>(
   PinInput.Input,
   'input',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'label'>, PinInput.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'label'>, PinInput.LabelBaseProps>>(
   PinInput.Label,
   'label',
 )

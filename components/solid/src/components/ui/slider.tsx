@@ -24,7 +24,13 @@ export const Slider = (props: SliderProps) => {
               <ArkSlider.Track>
                 <ArkSlider.Range />
               </ArkSlider.Track>
-              <Index each={slider().value}>{(_, index) => <ArkSlider.Thumb index={index} />}</Index>
+              <Index each={slider().value}>
+                {(_, index) => (
+                  <ArkSlider.Thumb index={index}>
+                    <ArkSlider.HiddenInput />
+                  </ArkSlider.Thumb>
+                )}
+              </Index>
             </ArkSlider.Control>
             <Show when={localProps.marks}>
               <ArkSlider.MarkerGroup>

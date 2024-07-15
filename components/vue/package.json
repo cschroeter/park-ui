@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
+    "format": "prettier --write './src/**/*.vue'",
     "storybook": "histoire dev",
     "typecheck": "tsc"
   },
@@ -16,6 +17,7 @@
     "@vitejs/plugin-vue-jsx": "4.0.0",
     "histoire": "0.17.17",
     "lucide-vue-next": "0.408.0",
+    "prettier": "3.3.3",
     "typescript": "5.5.3",
     "vite": "5.3.3",
     "vite-tsconfig-paths": "4.3.2",

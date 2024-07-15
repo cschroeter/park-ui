@@ -8,25 +8,25 @@ const { withProvider, withContext } = createStyleContext(switchRecipe)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootProviderProps>, SwitchRecipeVariantProps>
+  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootProviderBaseProps>, SwitchRecipeVariantProps>
 >(Switch.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootProps>, SwitchRecipeVariantProps>
+  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootBaseProps>, SwitchRecipeVariantProps>
 >(Switch.Root, 'root')
 
-export const Control = withContext<Assign<HTMLStyledProps<'span'>, Switch.ControlProps>>(
+export const Control = withContext<Assign<HTMLStyledProps<'span'>, Switch.ControlBaseProps>>(
   Switch.Control,
   'control',
 )
 
-export const Label = withContext<Assign<HTMLStyledProps<'span'>, Switch.LabelProps>>(
+export const Label = withContext<Assign<HTMLStyledProps<'span'>, Switch.LabelBaseProps>>(
   Switch.Label,
   'label',
 )
 
-export const Thumb = withContext<Assign<HTMLStyledProps<'span'>, Switch.ThumbProps>>(
+export const Thumb = withContext<Assign<HTMLStyledProps<'span'>, Switch.ThumbBaseProps>>(
   Switch.Thumb,
   'thumb',
 )

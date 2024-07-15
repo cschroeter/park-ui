@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fixed an issue where the incorrect version was shown in the banner.
+#
+## [0.7.2] - 2024-07-14
+
+### Changed
+
+- Removed the requirement for `baseUrl` schema validation in `tsconfig.json`, as it is unnecessary for the CLI functionality.
+
 ## [0.7.1] - 2024-07-13
 
 ### Fixed
