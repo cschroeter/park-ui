@@ -5,7 +5,7 @@ import { Button } from '~/components/ui'
 <template>
   <Story title="Button">
     <Variant title="Basic">
-      <Button pt="2">Park UI</Button>
+      <Button>Park UI</Button>
     </Variant>
   </Story>
 </template>
