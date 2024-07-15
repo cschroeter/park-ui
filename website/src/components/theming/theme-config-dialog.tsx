@@ -1,19 +1,23 @@
 'use client'
 import { CopyIcon, XIcon } from 'lucide-react'
-import { Stack } from 'styled-system/jsx'
+import { useEffect, useState } from 'react'
+import { Box, Stack } from 'styled-system/jsx'
 import { Button, Code, Dialog, IconButton } from '~/components/ui'
+import { highlight } from '~/lib/shiki'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 import { CodePreview } from '../code-preview'
-import { pandaConfigPre } from './panda-config'
 
 export const ThemeConfigDialog = () => {
-  const { currentAccentColor, currentBorderRadius, currentGrayColor, getConfig } =
-    useThemeGenerator()
+  const { getConfig } = useThemeGenerator()
+  const [html, setHtml] = useState('')
 
-  const html = pandaConfigPre
-    .replace('__ACCENT_COLOR__', currentAccentColor)
-    .replace('__GRAY_COLOR__', currentGrayColor)
-    .replace('__BORDER_RADIUS__', currentBorderRadius)
+  useEffect(() => {
+    const highlightConfig = async () => {
+      const html = await highlight(getConfig())
+      setHtml(html)
+    }
+    highlightConfig()
+  }, [getConfig])
 
   return (
     <Dialog.Root>
@@ -34,7 +38,9 @@ export const ThemeConfigDialog = () => {
                 and update if needed.
               </Dialog.Description>
             </Stack>
-            <CodePreview code={getConfig()} html={html} />
+            <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
+              <CodePreview code={getConfig()} html={html} />
+            </Box>
           </Stack>
           <Dialog.CloseTrigger asChild position="absolute" top="2" right="2">
             <IconButton aria-label="Close Dialog" variant="ghost" size="sm">
