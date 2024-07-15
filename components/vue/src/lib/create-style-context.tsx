@@ -1,6 +1,13 @@
 import { styled } from 'styled-system/jsx'
 import type { ElementType } from 'styled-system/types'
-import { type ComputedRef, computed, defineComponent, inject, provide } from 'vue'
+import {
+  type ComputedRef,
+  type FunctionalComponent,
+  computed,
+  defineComponent,
+  inject,
+  provide,
+} from 'vue'
 
 type Props = Record<string, unknown>
 type Recipe = {
@@ -14,7 +21,7 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
   const withProvider = <P,>(Component: ElementType, slot: Slot<R>) => {
     const StyledComponent = styled(Component)
 
-    return defineComponent<P>({
+    const StyledSlotProvider = defineComponent<P>({
       setup(props, { slots }) {
         const splittedProps = computed(() => {
           return recipe.splitVariantProps(props)
@@ -33,12 +40,14 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
         )
       },
     })
+
+    return StyledSlotProvider as unknown as FunctionalComponent<P>
   }
 
   const withContext = <P,>(Component: ElementType, slot: Slot<R>) => {
     const StyledComponent = styled(Component)
 
-    return defineComponent<P>({
+    const StyledSlotComponent = defineComponent<P>({
       setup(props, { slots }) {
         const slotStyles = inject<ComputedRef<StyleContext<R>>>('styles')
 
@@ -49,6 +58,8 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
         )
       },
     })
+
+    return StyledSlotComponent as unknown as FunctionalComponent<P>
   }
 
   return { withProvider, withContext }

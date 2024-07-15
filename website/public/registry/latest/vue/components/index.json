@@ -1,1 +1,5 @@
-[{ "id": "button", "name": "Button" }]
+[
+  { "id": "button", "name": "Button" },
+  { "id": "card", "name": "Card" },
+  { "id": "input", "name": "Input" }
+]
