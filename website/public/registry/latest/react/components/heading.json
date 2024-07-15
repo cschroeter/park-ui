@@ -4,7 +4,7 @@
   "variants": [
     {
       "file": "primitives/heading.tsx",
-      "content": "import type { Assign } from '@ark-ui/react'\nimport { type ElementType, forwardRef } from 'react'\nimport { type HTMLStyledProps, styled } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nconst StyledHeading = styled('h2', text)\n\nexport type Headingprops = ComponentProps<typeof Heading>\nexport const Heading = forwardRef<\n  HTMLHeadingElement,\n  Assign<Assign<HTMLStyledProps<'h2'>, TextVariantProps>, { as?: ElementType }>\n>((props, ref) => <StyledHeading ref={ref} variant=\"heading\" {...props} />)\n\nHeading.displayName = 'Heading'\n",
+      "content": "import { styled } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\nimport type { ComponentProps, StyledComponent } from 'styled-system/types'\n\ntype TextProps = TextVariantProps & { as?: React.ElementType }\n\nexport type HeadingProps = ComponentProps<typeof Heading>\nexport const Heading = styled('h2', text, {\n  defaultProps: { variant: 'heading' },\n}) as StyledComponent<'h2', TextProps>\n",
       "exports": "export { Heading, type HeadingProps } from './heading'"
     }
   ]
