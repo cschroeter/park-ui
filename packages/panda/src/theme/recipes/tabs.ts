@@ -79,7 +79,7 @@ export const tabs = defineSlotRecipe({
           borderWidth: '1px',
           px: '1',
           backgroundColor: {
-            base: 'gray.a2',
+            _light: 'gray.a2',
             _dark: 'bg.canvas',
           },
           _horizontal: {
@@ -92,7 +92,7 @@ export const tabs = defineSlotRecipe({
         },
         indicator: {
           backgroundColor: {
-            base: 'bg.default',
+            _light: 'bg.default',
             _dark: 'bg.subtle',
           },
 

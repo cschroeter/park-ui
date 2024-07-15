@@ -6,6 +6,21 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Added support for forcing all components to render in either dark or light mode.
+
+```jsx
+export const App = () => {
+  return (
+    <Box className="dark">
+      {/* Renders a Popover component always in dark mode */}
+      <Popover />
+    </Box>
+  )
+}
+```
+
 ## [0.38.1] - 2024-06-25
 
 ### Fixed
