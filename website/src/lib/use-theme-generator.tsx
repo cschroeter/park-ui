@@ -232,7 +232,7 @@ export default defineConfig({
     }),
   ],
   include: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
-  jsxFramework: '__JS_FRAMEWORK__',
+  jsxFramework: 'react', // or 'solid' or 'vue'
   outdir: 'styled-system',
 })
 `
