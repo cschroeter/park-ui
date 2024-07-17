@@ -13,12 +13,12 @@ export default {
   async rewrites() {
     return [
       {
-        source: '/plus',
-        destination: 'http://localhost:3001/plus',
+        source: '/_',
+        destination: process.env.PARK_PLUS_URL,
       },
       {
-        source: '/plus/:path+',
-        destination: 'http://localhost:3001/plus/:path+',
+        source: '/_/:path+',
+        destination: `${process.env.PARK_PLUS_URL}/:path*`,
       },
     ]
   },

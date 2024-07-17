@@ -27,11 +27,11 @@ export const Showcase = async (props: Props) => {
               <EyeIcon />
               <Text display={{ base: 'none', md: 'flex' }}>Preview</Text>
             </Tabs.Trigger>
-            <Tabs.Trigger value="code">
+            <Tabs.Trigger value="code" disabled>
               <Code2Icon />
               <Text display={{ base: 'none', md: 'flex' }}>Code</Text>
             </Tabs.Trigger>
-            <Link
+            {/* <Link
               href={`https://www.figma.com/design/wN70u2btZ6uKVxFJ8UPXvy/Park-UI-Design-System-Pro-Components-(Preview)?node-id=${figmaNodeId}&mode=design`}
               target="_blank"
               textStyle="sm"
@@ -43,7 +43,7 @@ export const Showcase = async (props: Props) => {
             >
               <FigmaIcon />
               <Text>Figma</Text>
-            </Link>
+            </Link> */}
             <Tabs.Indicator />
           </Tabs.List>
         </HStack>

@@ -32,9 +32,7 @@ export const BlockPreview = (props: Props) => {
       }}
     >
       <Box width="full" borderWidth="1px" borderRadius="l3" overflow="hidden">
-        <IFrameExample
-          src={`http://localhost:3000/plus/categories/${categoryId}/variants/${variantId}`}
-        />
+        <IFrameExample src={`/_/categories/${categoryId}/variants/${variantId}`} />
       </Box>
     </Resizable>
   )

@@ -12,9 +12,15 @@ const Categories = Schema.Array(
   }),
 )
 
+const { PARK_PLUS_URL, PARK_PLUS_API_KEY } = process.env
+
 export const fetchCategories = () =>
   Effect.runPromise(
-    HttpClientRequest.get('http://localhost:3000/plus/api/categories').pipe(
+    HttpClientRequest.get(`${PARK_PLUS_URL}/api/categories`, {
+      headers: {
+        Authorization: PARK_PLUS_API_KEY,
+      },
+    }).pipe(
       HttpClient.fetchOk,
       HttpClientResponse.schemaBodyJsonScoped(Categories),
       Effect.timeout('1 seconds'),
@@ -32,13 +38,27 @@ const Category = Schema.Struct({
     Schema.Struct({
       id: Schema.String,
       name: Schema.String,
+      accessLevel: Schema.Union(Schema.Literal('free'), Schema.Literal('paid')),
     }),
   ),
 })
 
-export const fetchCategory = (category: string) =>
-  Effect.runPromise(
-    HttpClientRequest.get(`http://localhost:3000/plus/api/categories/${category}`).pipe(
+export const fetchCategory = async (category: string) => {
+  await fetch(`${PARK_PLUS_URL}/api/categories/${category}`, {
+    cache: 'no-cache',
+    headers: {
+      Authorization: PARK_PLUS_API_KEY ?? '',
+    },
+  })
+    .then((res) => res.json())
+    .catch(() => [])
+
+  return Effect.runPromise(
+    HttpClientRequest.get(`${PARK_PLUS_URL}/api/categories/${category}`, {
+      headers: {
+        Authorization: PARK_PLUS_API_KEY,
+      },
+    }).pipe(
       HttpClient.fetchOk,
       HttpClientResponse.schemaBodyJsonScoped(Category),
       Effect.timeout('1 seconds'),
@@ -46,6 +66,7 @@ export const fetchCategory = (category: string) =>
       Effect.catchAll(() => Effect.succeed(null)),
     ),
   )
+}
 
 const SourceFile = Schema.Struct({
   filename: Schema.String,
@@ -62,7 +83,12 @@ interface FetchSourceFilesProps {
 export const fetchSourceFiles = ({ categoryId, variantId }: FetchSourceFilesProps) =>
   Effect.runPromise(
     HttpClientRequest.get(
-      `http://localhost:3000/plus/api/categories/${categoryId}/variants/${variantId}/sources`,
+      `${PARK_PLUS_URL}/api/categories/${categoryId}/variants/${variantId}/sources`,
+      {
+        headers: {
+          Authorization: PARK_PLUS_API_KEY,
+        },
+      },
     ).pipe(
       HttpClient.fetchOk,
       HttpClientResponse.schemaBodyJsonScoped(SourceFiles),
