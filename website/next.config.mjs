@@ -10,6 +10,18 @@ export default {
     ignoreBuildErrors: true,
   },
   transpilePackages: ['shiki'],
+  async rewrites() {
+    return [
+      {
+        source: '/plus',
+        destination: 'http://localhost:3001/plus',
+      },
+      {
+        source: '/plus/:path+',
+        destination: 'http://localhost:3001/plus/:path+',
+      },
+    ]
+  },
 }
 
 class VeliteWebpackPlugin {

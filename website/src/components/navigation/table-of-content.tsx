@@ -1,5 +1,4 @@
 'use client'
-import { useWindowScroll } from '@uidotdev/usehooks'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { SegmentGroup, Text } from '~/components/ui'
@@ -28,7 +27,6 @@ export const TableOfContent = (props: Props) => {
   const entries = flattenTocEntries(props.entries)
   const activeItem = useScrollSpy(entries.map((entry) => entry.url))
   const router = useRouter()
-  const [{ y }] = useWindowScroll()
 
   return (
     <nav>
@@ -37,7 +35,7 @@ export const TableOfContent = (props: Props) => {
       </Text>
       <SegmentGroup.Root
         onValueChange={(details) => router.push(details.value)}
-        value={y && y > 32 ? activeItem : ''}
+        value={activeItem}
         orientation="vertical"
         size={{ base: 'md', md: 'sm' }}
         gap="0"
