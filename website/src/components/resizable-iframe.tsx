@@ -79,5 +79,9 @@ const PandaProvider = (props: PropsWithChildren) => {
     classList.remove(themeClass === 'dark' ? 'light' : 'dark')
   }, [resolvedTheme, iframe])
 
-  return <EnvironmentProvider {...props} />
+  return iframe.document ? (
+    <EnvironmentProvider value={iframe.document}>{props.children}</EnvironmentProvider>
+  ) : (
+    props.children
+  )
 }
