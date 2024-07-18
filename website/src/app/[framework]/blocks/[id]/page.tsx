@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Container, Stack } from 'styled-system/jsx'
 import { BlockPlayground } from '~/components/examples/block-playground'
@@ -30,9 +31,14 @@ export default async function Page(props: Props) {
   )
 }
 
-// export async function generateMetadata(props: Props): Promise<Metadata> {
-//   const { params } = props
-//   const category = await fetchCategory(params.category)
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const { params } = props
+  const block = blocks.find((block) => block.id === params.id)
 
-//   return category ? { title: category.name, description: category.description } : {}
-// }
+  return block ? { title: block.name, description: block.description } : {}
+}
+
+export const generateStaticParams = () =>
+  ['react', 'solid', 'vue'].flatMap((framework) =>
+    blocks.map((block) => ({ framework, id: block.id })),
+  )

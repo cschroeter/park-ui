@@ -48,5 +48,9 @@ export default async function Page() {
 }
 
 export const metadata: Metadata = {
-  title: 'Examples',
+  title: 'Blocks',
+  description: 'Explore our collection of building blocks to help you design and develop faster.',
 }
+
+export const generateStaticParams = () =>
+  ['react', 'solid', 'vue'].map((framework) => ({ framework }))
