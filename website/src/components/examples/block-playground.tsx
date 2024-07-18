@@ -1,6 +1,7 @@
 import { Code2Icon, EyeIcon } from 'lucide-react'
-import { HStack } from 'styled-system/jsx'
-import { Button, Heading, Tabs, Text } from '~/components/ui'
+import dynamic from 'next/dynamic'
+import { Box, HStack } from 'styled-system/jsx'
+import { Heading, Tabs, Text } from '~/components/ui'
 import { ResizableIFrame } from '../resizable-iframe'
 import { BlockCodePreview } from './block-code-preview'
 import type { Blocks } from '.velite'
@@ -15,6 +16,12 @@ interface Props {
 
 export const BlockPlayground = async (props: Props) => {
   const { block, variant } = props
+
+  const Block = dynamic(() =>
+    import(`~/components/blocks/${block.id}/${variant.id}/example`)
+      .then((mod) => mod.Example)
+      .catch(() => NotFound),
+  )
 
   return (
     <Tabs.Root variant="enclosed" defaultValue="preview" size="sm" lazyMount>
@@ -49,7 +56,7 @@ export const BlockPlayground = async (props: Props) => {
       </HStack>
       <Tabs.Content value="preview" px="!0">
         <ResizableIFrame>
-          <Button>{variant.name}</Button>
+          <Block />
         </ResizableIFrame>
       </Tabs.Content>
       <Tabs.Content value="code" px="!0">
@@ -57,4 +64,8 @@ export const BlockPlayground = async (props: Props) => {
       </Tabs.Content>
     </Tabs.Root>
   )
+}
+
+const NotFound = () => {
+  return <Box>Component not found</Box>
 }
