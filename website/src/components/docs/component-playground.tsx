@@ -1,6 +1,6 @@
+import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { Effect, pipe } from 'effect'
-import { readFile } from 'fs-extra'
 import { Box, Divider } from 'styled-system/jsx'
 import { getServerContext } from '~/lib/server-context'
 import { highlight } from '~/lib/shiki'

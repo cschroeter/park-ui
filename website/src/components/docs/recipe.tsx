@@ -1,6 +1,6 @@
+import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { Effect, pipe } from 'effect'
-import { readFile } from 'fs-extra'
 import { Box } from 'styled-system/jsx'
 import { CodePreview } from '~/components/code-preview'
 import { getServerContext } from '~/lib/server-context'
