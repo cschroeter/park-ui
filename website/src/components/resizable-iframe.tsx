@@ -7,6 +7,7 @@ import { type PropsWithChildren, useEffect } from 'react'
 import Frame, { useFrame } from 'react-frame-component'
 import { cx } from 'styled-system/css'
 import { Box, Flex } from 'styled-system/jsx'
+import { useInterval } from 'usehooks-ts'
 import { inter, jakarta, outfit, raleway, roboto } from '~/app/fonts'
 import { useIFrameResizeObserver } from '~/lib/use-iframe-resize-observer'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
@@ -65,9 +66,11 @@ const PandaProvider = (props: PropsWithChildren) => {
   useThemeGenerator(iframe)
 
   useEffect(() => {
-    const styleTag = document.head.querySelector('link[rel="stylesheet"]')
-    const frameStyles = styleTag?.cloneNode(true)
-    if (frameStyles) iframe.document?.head.append(frameStyles)
+    const styleTags = document.head.querySelectorAll('link[rel="stylesheet"]')
+    styleTags.forEach((styleTag) => {
+      const frameStyles = styleTag.cloneNode(true)
+      if (frameStyles) iframe.document?.head.append(frameStyles)
+    })
   }, [iframe])
 
   useEffect(() => {
