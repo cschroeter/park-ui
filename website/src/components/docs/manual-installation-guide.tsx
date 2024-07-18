@@ -1,6 +1,6 @@
+import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { Array, Effect, pipe } from 'effect'
-import { readJson } from 'fs-extra'
 import { Box } from 'styled-system/jsx'
 import { Code, Step, Steps, Text } from '~/components/ui'
 import { getServerContext } from '~/lib/server-context'
@@ -29,15 +29,16 @@ export const ManualIntallationGuide = async () => {
       pipe(
         Effect.tryPromise({
           try: () =>
-            readJson(
+            readFile(
               join(
                 process.cwd(),
                 `./public/registry/latest/${framework}/components/${component}.json`,
               ),
               'utf8',
-            ) as Promise<Component>,
+            ),
           catch: () => new Error('Snippet not found'),
         }),
+        Effect.map((content) => JSON.parse(content) as Component),
         Effect.catchAll(() =>
           Effect.succeed({
             variants: [{ file: 'primitives', content: 'No snippet found', exports: '' }],

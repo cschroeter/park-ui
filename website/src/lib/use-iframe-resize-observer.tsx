@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { useInterval, useIsomorphicLayoutEffect } from 'usehooks-ts'
 
-export const useIframeResizeObserver = () => {
+export const useIFrameResizeObserver = () => {
   const ref = useRef<HTMLIFrameElement>(null)
   const [height, setHeight] = useState(0)
   useInterval(
