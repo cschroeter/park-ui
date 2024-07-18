@@ -12,7 +12,6 @@
     "react": "bun run --cwd components/react",
     "solid": "bun run --cwd components/solid",
     "vue": "bun run --cwd components/vue",
-    "blocks:sync": "rsync -av --delete ./components/react/src/plus/blocks ./website/src/components",
     "demos:sync": "rsync -av --delete ./components/react/src/demos ./website/src/"
   },
   "dependencies": {

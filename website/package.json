@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "blocks:sync": "rsync -av --delete ../components/react/src/plus/blocks ./src/components"
+    "blocks:sync": "cp -a ../components/react/src/plus/blocks ./src/components"
   },
   "dependencies": {
     "@ark-ui/react": "3.5.0",
