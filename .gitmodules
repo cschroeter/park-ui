@@ -1,0 +1,9 @@
+[submodule "react-plus"]
+	path = components/react/src/plus
+	url = git@github.com:cschroeter/park-ui-plus_react.git
+[submodule "solid-plus"]
+	path = components/solid/src/plus
+	url = git@github.com:cschroeter/park-ui-plus_solid.git
+[submodule "vue-plus"]
+	path = components/vue/src/plus
+	url = git@github.com:cschroeter/park-ui-plus_vue.git
