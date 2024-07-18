@@ -39,19 +39,21 @@ export const ResizableIFrame = (props: PropsWithChildren) => {
         ),
       }}
     >
-      <Frame
-        ref={ref}
-        style={{ height, width: '100%' }}
-        initialContent={`<!DOCTYPE html><html class="${cx(
-          inter.variable,
-          jakarta.variable,
-          outfit.variable,
-          raleway.variable,
-          roboto.variable,
-        )}"><head></head><body><div class="frame-root"></div></body></html>`}
-      >
-        <PandaProvider {...props} />
-      </Frame>
+      <Box width="full" borderWidth="1px" borderRadius="l3" overflow="hidden">
+        <Frame
+          ref={ref}
+          style={{ height, width: '100%' }}
+          initialContent={`<!DOCTYPE html><html class="${cx(
+            inter.variable,
+            jakarta.variable,
+            outfit.variable,
+            raleway.variable,
+            roboto.variable,
+          )}"><head></head><body><div class="frame-root"></div></body></html>`}
+        >
+          <PandaProvider {...props} />
+        </Frame>
+      </Box>
     </Resizable>
   )
 }

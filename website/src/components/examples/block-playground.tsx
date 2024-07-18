@@ -1,27 +1,26 @@
-import { Code2Icon, EyeIcon, FigmaIcon } from 'lucide-react'
+import { Code2Icon, EyeIcon } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
-import { Heading, Link, Tabs, Text } from '~/components/ui'
-import { fetchSourceFiles } from '~/lib/blocks'
+import { Button, Heading, Tabs, Text } from '~/components/ui'
+import { ResizableIFrame } from '../resizable-iframe'
 import { BlockCodePreview } from './block-code-preview'
-import { BlockPreview } from './block-preview'
+import type { Blocks } from '.velite'
 
 interface Props {
-  categoryId: string
-  figmaNodeId: string
-  variantId: string
-  name: string
+  block: Blocks
+  variant: {
+    id: string
+    name: string
+  }
 }
 
-export const Showcase = async (props: Props) => {
-  const { variantId, categoryId, figmaNodeId, name } = props
-
-  const files = await fetchSourceFiles({ categoryId, variantId })
+export const BlockPlayground = async (props: Props) => {
+  const { block, variant } = props
 
   return (
     <Tabs.Root variant="enclosed" defaultValue="preview" size="sm" lazyMount>
       <HStack gap="3">
         <HStack justify="space-between" flex="1">
-          <Heading textStyle={{ base: 'md', md: 'lg' }}>{name}</Heading>
+          <Heading textStyle={{ base: 'md', md: 'lg' }}>{variant.name}</Heading>
           <Tabs.List width="fit-content">
             <Tabs.Trigger value="preview">
               <EyeIcon />
@@ -49,10 +48,12 @@ export const Showcase = async (props: Props) => {
         </HStack>
       </HStack>
       <Tabs.Content value="preview" px="!0">
-        <BlockPreview variantId={variantId} categoryId={categoryId} />
+        <ResizableIFrame>
+          <Button>{variant.name}</Button>
+        </ResizableIFrame>
       </Tabs.Content>
       <Tabs.Content value="code" px="!0">
-        <BlockCodePreview files={files} />
+        <BlockCodePreview files={[]} />
       </Tabs.Content>
     </Tabs.Root>
   )

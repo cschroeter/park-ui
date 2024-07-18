@@ -10,18 +10,6 @@ export default {
     ignoreBuildErrors: true,
   },
   transpilePackages: ['shiki'],
-  async rewrites() {
-    return [
-      {
-        source: '/_',
-        destination: process.env.PARK_PLUS_URL,
-      },
-      {
-        source: '/_/:path+',
-        destination: `${process.env.PARK_PLUS_URL}/:path*`,
-      },
-    ]
-  },
 }
 
 class VeliteWebpackPlugin {

@@ -6,7 +6,7 @@ import { Button } from '~/components/ui'
 
 interface Props {
   name: string
-  files: SourceFile[]
+  files: { filename: string; content: string; html: string }[]
 }
 
 export const DownloadButton = (props: Props) => {
@@ -14,7 +14,7 @@ export const DownloadButton = (props: Props) => {
 
   const handleClick = () => {
     const zip = new JSZip()
-    files.map((file) => zip.file(file.name, file.content))
+    files.map((file) => zip.file(file.filename, file.content))
     zip.generateAsync({ type: 'blob' }).then((content) => saveAs(content, `${name}.zip`))
   }
 

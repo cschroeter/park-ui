@@ -1,4 +1,6 @@
-import path from 'node:path'
+import { basename, join } from 'node:path'
+import { Effect, pipe } from 'effect'
+import { globby } from 'globby'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { defineCollection, defineConfig, s } from 'velite'
@@ -57,9 +59,43 @@ const controls = defineCollection({
     }),
 })
 
+const blocks = defineCollection({
+  name: 'Blocks',
+  pattern: 'website/src/content/blocks.json',
+  schema: s
+    .object({
+      id: s.string(),
+      name: s.string(),
+      description: s.string(),
+      figmaNodeId: s.string(),
+    })
+    .transform(async (data) =>
+      Effect.runPromise(
+        pipe(
+          Effect.succeed(`../components/react/src/plus/blocks/${data.id}`),
+          Effect.map((blockPath) => join(process.cwd(), blockPath)),
+          Effect.flatMap((pattern) =>
+            pipe(
+              Effect.promise(() => globby(pattern, { onlyDirectories: true })),
+              Effect.flatMap((variants) =>
+                Effect.forEach(variants, (variant) =>
+                  Effect.succeed({
+                    id: basename(variant),
+                    name: capitalize(basename(variant)),
+                  }),
+                ),
+              ),
+              Effect.map((variants) => ({ ...data, variantCount: variants.length, variants })),
+            ),
+          ),
+        ),
+      ),
+    ),
+})
+
 export default defineConfig({
-  root: path.join(process.cwd(), '../'),
-  collections: { pages, controls },
+  root: join(process.cwd(), '../'),
+  collections: { pages, controls, blocks },
   mdx: {
     rehypePlugins: [
       rehypeSlug,
@@ -75,3 +111,9 @@ export default defineConfig({
     ],
   },
 })
+
+const capitalize = (item: string) =>
+  item
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
