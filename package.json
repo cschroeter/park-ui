@@ -18,7 +18,8 @@
     "@biomejs/biome": "1.8.3",
     "@types/bun": "1.1.6",
     "lefthook": "1.7.2",
-    "typescript": "5.5.3"
+    "typescript": "5.5.3",
+    "vercel-submodules": "1.0.10"
   },
   "packageManager": "bun@1.1.18",
   "trustedDependencies": ["@park-ui/website"]
