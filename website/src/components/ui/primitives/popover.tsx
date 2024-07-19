@@ -13,9 +13,7 @@ export const RootProvider = withRootProvider<
 >(Popover.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<Popover.RootBaseProps, PopoverVariantProps>>(
-  Popover.Root,
-)
+export const Root = withRootProvider<Assign<Popover.RootProps, PopoverVariantProps>>(Popover.Root)
 
 export const Anchor = withContext<
   HTMLDivElement,

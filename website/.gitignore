@@ -40,3 +40,6 @@ styled-system
 styled-system-studio
 
 .velite
+
+# Blocks
+src/components/blocks/*

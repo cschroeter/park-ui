@@ -1,8 +1,8 @@
 'use client'
-import { useCopyToClipboard } from '@uidotdev/usehooks'
 import { CheckIcon, ChevronsUpDownIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
+import { useCopyToClipboard } from 'usehooks-ts'
 import { Avatar, Button, Card, Input, Select, Text } from '~/components/ui'
 
 const members = [
@@ -18,7 +18,7 @@ const members = [
   },
   {
     name: 'Philipp Körner',
-    avatar: 'https://pbs.twimg.com/profile_images/1777962842827673600/a6mDuBiM_400x400.jpg',
+    avatar: 'https://avatars.githubusercontent.com/u/153984143?v=4',
     email: 'phil@park-ui.com',
   },
 ]

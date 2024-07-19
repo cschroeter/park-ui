@@ -26,4 +26,9 @@ export default async function Page() {
 
 export const metadata: Metadata = {
   title: 'Pricing',
+  description:
+    'Get access to all components and free updates. Customize it to your needs, and make it yours today!',
 }
+
+export const generateStaticParams = () =>
+  ['react', 'solid', 'vue'].map((framework) => ({ framework }))

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "banners",
+    "name": "Banners",
+    "description": "Used to display an important message at the top or bottom of the page",
+    "figmaNodeId": "0-1"
+  },
+  {
+    "id": "cards",
+    "name": "Cards",
+    "description": "Used to display a collection of items in a grid",
+    "figmaNodeId": "1-4458"
+  },
+  {
+    "id": "footers",
+    "name": "Footers",
+    "description": "Used to display a footer at the bottom of the page",
+    "figmaNodeId": "1-7919"
+  }
+]
