@@ -1,7 +1,7 @@
-import { Code2Icon, EyeIcon } from 'lucide-react'
+import { Code2Icon, EyeIcon, FigmaIcon } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { Box, HStack } from 'styled-system/jsx'
-import { Heading, Tabs, Text } from '~/components/ui'
+import { Heading, Link, Tabs, Text } from '~/components/ui'
 import { ResizableIFrame } from '../resizable-iframe'
 import { BlockCodePreview } from './block-code-preview'
 import type { Blocks } from '.velite'
@@ -37,8 +37,8 @@ export const BlockPlayground = async (props: Props) => {
               <Code2Icon />
               <Text display={{ base: 'none', md: 'flex' }}>Code</Text>
             </Tabs.Trigger>
-            {/* <Link
-              href={`https://www.figma.com/design/wN70u2btZ6uKVxFJ8UPXvy/Park-UI-Design-System-Pro-Components-(Preview)?node-id=${figmaNodeId}&mode=design`}
+            <Link
+              href={`https://www.figma.com/design/wN70u2btZ6uKVxFJ8UPXvy/Park-UI-Design-System-Pro-Components-(Preview)?node-id=${block.figmaNodeId}&mode=design`}
               target="_blank"
               textStyle="sm"
               px="3"
@@ -49,7 +49,7 @@ export const BlockPlayground = async (props: Props) => {
             >
               <FigmaIcon />
               <Text>Figma</Text>
-            </Link> */}
+            </Link>
             <Tabs.Indicator />
           </Tabs.List>
         </HStack>
