@@ -14,6 +14,7 @@ import { useThemeGenerator } from '~/lib/use-theme-generator'
 export const ResizableIFrame = (props: PropsWithChildren) => {
   const { height, ref } = useIFrameResizeObserver()
   const isClient = useIsClient()
+
   if (!isClient) {
     return null
   }
@@ -39,19 +40,21 @@ export const ResizableIFrame = (props: PropsWithChildren) => {
         ),
       }}
     >
-      <Frame
-        ref={ref}
-        style={{ height, width: '100%' }}
-        initialContent={`<!DOCTYPE html><html class="${cx(
-          inter.variable,
-          jakarta.variable,
-          outfit.variable,
-          raleway.variable,
-          roboto.variable,
-        )}"><head></head><body><div class="frame-root"></div></body></html>`}
-      >
-        <PandaProvider {...props} />
-      </Frame>
+      <Box width="full" borderWidth="1px" borderRadius="l3" overflow="hidden">
+        <Frame
+          ref={ref}
+          style={{ height, width: '100%' }}
+          initialContent={`<!DOCTYPE html><html class="${cx(
+            inter.variable,
+            jakarta.variable,
+            outfit.variable,
+            raleway.variable,
+            roboto.variable,
+          )}"><head></head><body><div class="frame-root"></div></body></html>`}
+        >
+          <PandaProvider {...props} />
+        </Frame>
+      </Box>
     </Resizable>
   )
 }
@@ -63,9 +66,11 @@ const PandaProvider = (props: PropsWithChildren) => {
   useThemeGenerator(iframe)
 
   useEffect(() => {
-    const styleTag = document.head.querySelector('link[rel="stylesheet"]')
-    const frameStyles = styleTag?.cloneNode(true)
-    if (frameStyles) iframe.document?.head.append(frameStyles)
+    const styleTags = document.head.querySelectorAll('link[rel="stylesheet"]')
+    styleTags.forEach((styleTag) => {
+      const frameStyles = styleTag.cloneNode(true)
+      if (frameStyles) iframe.document?.head.append(frameStyles)
+    })
   }, [iframe])
 
   useEffect(() => {
@@ -77,5 +82,9 @@ const PandaProvider = (props: PropsWithChildren) => {
     classList.remove(themeClass === 'dark' ? 'light' : 'dark')
   }, [resolvedTheme, iframe])
 
-  return <EnvironmentProvider {...props} />
+  return iframe.document ? (
+    <EnvironmentProvider value={iframe.document}>{props.children}</EnvironmentProvider>
+  ) : (
+    props.children
+  )
 }

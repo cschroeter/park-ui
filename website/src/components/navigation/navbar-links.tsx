@@ -39,13 +39,13 @@ export const NavbarLinks = (props: Props) => {
       >
         Docs
       </NextLink>
-      {/* <NextLink
-        href={`/${framework}/examples`}
+      <NextLink
+        href={`/${framework}/blocks`}
         className={link}
-        aria-current={pathname.startsWith(`/${framework}/examples`) ? 'page' : undefined}
+        aria-current={pathname.startsWith(`/${framework}/blocks`) ? 'page' : undefined}
       >
-        Examples
-      </NextLink> */}
+        Blocks
+      </NextLink>
     </HStack>
   )
 }

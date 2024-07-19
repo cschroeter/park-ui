@@ -12,7 +12,8 @@
     "react": "bun run --cwd components/react",
     "solid": "bun run --cwd components/solid",
     "vue": "bun run --cwd components/vue",
-    "demos:sync": "rsync -av --delete ./components/react/src/demos ./website/src/"
+    "demos:sync": "rsync -av --delete ./components/react/src/demos ./website/src/",
+    "blocks:sync": "rsync -av --delete ./components/react/src/plus/blocks ./website/src/components"
   },
   "dependencies": {
     "@biomejs/biome": "1.8.3",
