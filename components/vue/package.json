@@ -16,11 +16,11 @@
     "@vitejs/plugin-vue": "5.0.5",
     "@vitejs/plugin-vue-jsx": "4.0.0",
     "histoire": "0.17.17",
-    "lucide-vue-next": "0.408.0",
+    "lucide-vue-next": "0.411.0",
     "prettier": "3.3.3",
     "typescript": "5.5.3",
-    "vite": "5.3.3",
+    "vite": "5.3.4",
     "vite-tsconfig-paths": "4.3.2",
-    "vue": "3.4.31"
+    "vue": "3.4.33"
   }
 }
