@@ -7,7 +7,6 @@ import { type PropsWithChildren, useEffect } from 'react'
 import Frame, { useFrame } from 'react-frame-component'
 import { cx } from 'styled-system/css'
 import { Box, Flex } from 'styled-system/jsx'
-import { useInterval } from 'usehooks-ts'
 import { inter, jakarta, outfit, raleway, roboto } from '~/app/fonts'
 import { useIFrameResizeObserver } from '~/lib/use-iframe-resize-observer'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
@@ -15,6 +14,7 @@ import { useThemeGenerator } from '~/lib/use-theme-generator'
 export const ResizableIFrame = (props: PropsWithChildren) => {
   const { height, ref } = useIFrameResizeObserver()
   const isClient = useIsClient()
+
   if (!isClient) {
     return null
   }
