@@ -35,7 +35,15 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props
   const block = blocks.find((block) => block.id === params.id)
 
-  return block ? { title: block.name, description: block.description } : {}
+  return block
+    ? {
+        title: block.name,
+        description: block.description,
+        alternates: {
+          canonical: `https://park-ui.com/react/blocks/${block.id}`,
+        },
+      }
+    : {}
 }
 
 export const generateStaticParams = () =>
