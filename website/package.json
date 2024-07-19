@@ -13,6 +13,8 @@
   "dependencies": {
     "@ark-ui/react": "3.5.0",
     "@biomejs/biome": "1.8.3",
+    "@effect/platform": "0.59.2",
+    "@effect/schema": "0.68.26",
     "@icons-pack/react-simple-icons": "9.6.0",
     "@pandacss/dev": "0.42.0",
     "@park-ui/panda-preset": "workspace:*",
