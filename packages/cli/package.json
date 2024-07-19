@@ -11,20 +11,20 @@
     "release-it": "release-it"
   },
   "dependencies": {
-    "@effect/schema": "0.68.23",
-    "@effect/platform": "0.58.27",
-    "effect": "3.5.3",
+    "@effect/schema": "0.68.26",
+    "@effect/platform": "0.59.2",
+    "effect": "3.5.6",
     "fs-extra": "11.2.0",
-    "get-tsconfig": "4.7.5",
+    "get-tsconfig": "4.7.6",
     "pkg-dir": "8.0.0",
     "yargs": "17.7.2"
   },
   "devDependencies": {
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "20.14.10",
+    "@types/node": "20.14.11",
     "@types/yargs": "17.0.32",
-    "release-it": "17.5.0",
+    "release-it": "17.6.0",
     "typescript": "5.5.3"
   },
   "peerDependencies": {
