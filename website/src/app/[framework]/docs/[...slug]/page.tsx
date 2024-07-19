@@ -63,7 +63,13 @@ export const generateMetadata = (props: Props): Metadata => {
       page.id === 'introduction'
         ? `A ${framework} Component Library built on Ark UI and Panda CSS.`
         : page.description
-    return { title: page.title, description }
+    return {
+      title: page.title,
+      description,
+      alternates: {
+        canonical: `https://park-ui.com/${props.params.framework}/docs/${props.params.slug.join('/')}`,
+      },
+    }
   }
   return {}
 }

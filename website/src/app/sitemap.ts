@@ -1,22 +1,21 @@
 import type { MetadataRoute } from 'next'
 
+const baseUrl = 'https://park-ui.com'
+const frameworks = ['react', 'solid', 'vue']
+const paths = ['/docs/overview/introduction', '/blocks']
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  return [
-    {
-      url: 'https://park-ui.com',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://park-ui.com/react/docs/overview/introduction',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://park-ui.com/solid/overview/introduction',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://park-ui.com/vue/overview/introduction',
-      lastModified: new Date(),
-    },
+  const lastModified = new Date().toISOString()
+
+  const sitemapEntries = [
+    { url: baseUrl, lastModified },
+    ...frameworks.flatMap((framework) =>
+      paths.map((path) => ({
+        url: `${baseUrl}/${framework}${path}`,
+        lastModified,
+      })),
+    ),
   ]
+
+  return sitemapEntries
 }
