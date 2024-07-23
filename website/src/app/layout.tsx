@@ -29,7 +29,12 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout(props: PropsWithChildren) {
+interface Props {
+  auth: React.ReactNode
+  children: React.ReactNode
+}
+
+export default function RootLayout(props: Props) {
   return (
     <html
       lang="en"
@@ -49,6 +54,7 @@ export default function RootLayout(props: PropsWithChildren) {
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <Navbar />
           {props.children}
+          {props.auth}
         </ThemeProvider>
       </body>
     </html>

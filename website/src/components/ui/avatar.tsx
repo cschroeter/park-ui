@@ -2,8 +2,8 @@ import { forwardRef } from 'react'
 import { Avatar as ArkAvatar } from '~/components/ui/primitives'
 
 export interface AvatarProps extends ArkAvatar.RootProps {
-  name?: string
-  src?: string
+  name?: string | undefined | null
+  src?: string | undefined | null
 }
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
@@ -11,8 +11,10 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
 
   return (
     <ArkAvatar.Root ref={ref} {...rootProps}>
-      <ArkAvatar.Fallback>{getInitials(name) || <UserIcon />}</ArkAvatar.Fallback>
-      <ArkAvatar.Image src={src} alt={name} />
+      <ArkAvatar.Fallback>{name ? getInitials(name) : <UserIcon />}</ArkAvatar.Fallback>
+      {src && (
+        <ArkAvatar.Image src={src} alt={name ?? 'User Profile'} referrerPolicy="no-referrer" />
+      )}
     </ArkAvatar.Root>
   )
 })

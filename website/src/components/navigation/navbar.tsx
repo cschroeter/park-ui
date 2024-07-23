@@ -9,6 +9,7 @@ import { MobileNavbarLinks } from '~/components/navigation/mobile-navbar-links'
 import { NavbarContainer } from '~/components/navigation/navbar-container'
 import { NavbarLinks } from '~/components/navigation/navbar-links'
 import { getServerContext } from '~/lib/server-context'
+import { UserButton } from '../auth/user-button'
 import { ThemeDrawer } from '../theming/theme-drawer'
 
 export const Navbar = () => {
@@ -31,7 +32,7 @@ export const Navbar = () => {
               <ColorModeButton />
               <GitHubLink />
             </HStack>
-            {/* <UserButton /> */}
+            <UserButton />
           </HStack>
         </HStack>
         <HStack gap="3" py="0.5" display={{ base: 'flex', md: 'none' }}>
@@ -43,7 +44,7 @@ export const Navbar = () => {
               <HStack gap="3" justifyContent="center" px="3" pt="6">
                 <ColorModeButton />
                 <GitHubLink />
-                {/* <UserButton /> */}
+                <UserButton />
               </HStack>
             </Stack>
           </MobileNavbar>
