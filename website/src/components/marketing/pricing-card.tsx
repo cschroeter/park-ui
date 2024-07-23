@@ -1,6 +1,7 @@
 import { BlocksIcon, FigmaIcon, HeartHandshakeIcon, UsersIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button, Card, Icon, Text } from '~/components/ui'
+import { SignInLink } from '../auth/sign-in-link'
 
 type Props = {
   variant: 'personal' | 'team'
@@ -30,9 +31,14 @@ export const PricingCard = (props: Props) => {
             {license.price}
           </Text>
         </Stack>
-        <Button width="full" asChild>
-          <a href={license.checkoutUrl}>Buy Now</a>
-        </Button>
+        <Stack gap="3">
+          <Button width="full" asChild>
+            <a href={license.checkoutUrl}>Buy Now</a>
+          </Button>
+          <Text color="fg.muted" textStyle="sm">
+            Already purchased? <SignInLink />
+          </Text>
+        </Stack>
         <Stack gap="6">
           {license.features.map((feature, id) => (
             <Stack key={id} direction="row">
