@@ -15,7 +15,9 @@ export default {
     ignoreBuildErrors: true,
   },
   experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../'),
+    outputFileTracingIncludes: {
+      '/*': ['../components/**/*'],
+    },
   },
   transpilePackages: ['shiki'],
 }
