@@ -2,22 +2,27 @@
   "name": "@park-ui/solid-start",
   "type": "module",
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
     "version": "vinxi version"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "@ark-ui/solid": "3.5.0",
     "@solidjs/meta": "0.29.4",
     "@solidjs/router": "0.14.1",
     "@solidjs/start": "1.0.4",
-    "solid-js": "1.8.18",
     "solid-icons": "1.1.0",
+    "solid-js": "1.8.18",
     "vinxi": "0.3.14",
     "vite-tsconfig-paths": "4.3.2"
   },
-  "engines": {
-    "node": ">=18"
+  "devDependencies": {
+    "@pandacss/dev": "^0.44.0",
+    "@park-ui/panda-preset": "^0.39.0"
   }
 }
