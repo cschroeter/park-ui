@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { build } from 'velite'
 
 /** @type {import('next').NextConfig} */
