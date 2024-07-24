@@ -15,6 +15,11 @@ export const ComponentPlayground = async () => {
   const componentControls =
     controls.filter((control) => control.component === component)[0] || defaultControls
 
+  console.log(
+    'demos',
+    path.join(process.cwd(), `../components/react/src/demos/${component}.demo.tsx`),
+  )
+
   const programm = pipe(
     Effect.forEach(['react', 'solid', 'vue'] as const, (framework) =>
       pipe(
