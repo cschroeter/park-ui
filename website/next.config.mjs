@@ -9,6 +9,9 @@ export default {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, '../'),
+  },
   transpilePackages: ['shiki'],
 }
 
