@@ -9,18 +9,18 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/vue": "3.6.0",
+    "@ark-ui/vue": "3.7.1",
     "@histoire/plugin-vue": "0.17.17",
     "@pandacss/dev": "0.44.0",
     "@park-ui/panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.1.0",
     "@vitejs/plugin-vue-jsx": "4.0.0",
     "histoire": "0.17.17",
-    "lucide-vue-next": "0.414.0",
+    "lucide-vue-next": "0.416.0",
     "prettier": "3.3.3",
     "typescript": "5.5.4",
-    "vite": "5.3.4",
+    "vite": "5.3.5",
     "vite-tsconfig-paths": "4.3.2",
-    "vue": "3.4.33"
+    "vue": "3.4.34"
   }
 }
