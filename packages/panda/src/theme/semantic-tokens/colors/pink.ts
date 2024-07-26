@@ -24,8 +24,8 @@ export const pink = {
   a11: { value: { _light: '{colors.pink.light.a11}', _dark: '{colors.pink.dark.a11}' } },
   a12: { value: { _light: '{colors.pink.light.a12}', _dark: '{colors.pink.dark.a12}' } },
 
-  default: { value: '{colors.pink.9}' },
-  emphasized: { value: '{colors.pink.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.pink.a11}' },
+  default: { value: { _light: '{colors.pink.9}', _dark: '{colors.pink.9}' } },
+  emphasized: { value: { _light: '{colors.pink.10}', _dark: '{colors.pink.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.pink.a11}', _dark: '{colors.pink.a11}' } },
 }

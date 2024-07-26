@@ -24,8 +24,8 @@ export const mint = {
   a11: { value: { _light: '{colors.mint.light.a11}', _dark: '{colors.mint.dark.a11}' } },
   a12: { value: { _light: '{colors.mint.light.a12}', _dark: '{colors.mint.dark.a12}' } },
 
-  default: { value: '{colors.mint.9}' },
-  emphasized: { value: '{colors.mint.10}' },
-  fg: { value: '{colors.sage.light.12}' },
-  text: { value: '{colors.mint.a11}' },
+  default: { value: { _light: '{colors.mint.9}', _dark: '{colors.mint.9}' } },
+  emphasized: { value: { _light: '{colors.mint.10}', _dark: '{colors.mint.10}' } },
+  fg: { value: { _light: '{colors.sage.light.12}', _dark: '{colors.sage.light.12}' } },
+  text: { value: { _light: '{colors.mint.a11}', _dark: '{colors.mint.a11}' } },
 }

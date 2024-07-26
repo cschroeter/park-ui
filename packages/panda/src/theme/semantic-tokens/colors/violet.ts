@@ -24,8 +24,8 @@ export const violet = {
   a11: { value: { _light: '{colors.violet.light.a11}', _dark: '{colors.violet.dark.a11}' } },
   a12: { value: { _light: '{colors.violet.light.a12}', _dark: '{colors.violet.dark.a12}' } },
 
-  default: { value: '{colors.violet.9}' },
-  emphasized: { value: '{colors.violet.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.violet.a11}' },
+  default: { value: { _light: '{colors.violet.9}', _dark: '{colors.violet.9}' } },
+  emphasized: { value: { _light: '{colors.violet.10}', _dark: '{colors.violet.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.violet.a11}', _dark: '{colors.violet.a11}' } },
 }

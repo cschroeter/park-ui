@@ -24,8 +24,8 @@ export const sage = {
   a11: { value: { _light: '{colors.sage.light.a11}', _dark: '{colors.sage.dark.a11}' } },
   a12: { value: { _light: '{colors.sage.light.a12}', _dark: '{colors.sage.dark.a12}' } },
 
-  default: { value: '{colors.sage.9}' },
-  emphasized: { value: '{colors.sage.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.sage.12}' },
+  default: { value: { _light: '{colors.sage.9}', _dark: '{colors.sage.9}' } },
+  emphasized: { value: { _light: '{colors.sage.10}', _dark: '{colors.sage.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.sage.12}', _dark: '{colors.sage.12}' } },
 }

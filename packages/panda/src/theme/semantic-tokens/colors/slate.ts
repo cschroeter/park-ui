@@ -24,8 +24,8 @@ export const slate = {
   a11: { value: { _light: '{colors.slate.light.a11}', _dark: '{colors.slate.dark.a11}' } },
   a12: { value: { _light: '{colors.slate.light.a12}', _dark: '{colors.slate.dark.a12}' } },
 
-  default: { value: '{colors.slate.9}' },
-  emphasized: { value: '{colors.slate.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.slate.12}' },
+  default: { value: { _light: '{colors.slate.9}', _dark: '{colors.slate.9}' } },
+  emphasized: { value: { _light: '{colors.slate.10}', _dark: '{colors.slate.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.slate.12}', _dark: '{colors.slate.12}' } },
 }

@@ -24,8 +24,8 @@ export const brown = {
   a11: { value: { _light: '{colors.brown.light.a11}', _dark: '{colors.brown.dark.a11}' } },
   a12: { value: { _light: '{colors.brown.light.a12}', _dark: '{colors.brown.dark.a12}' } },
 
-  default: { value: '{colors.brown.9}' },
-  emphasized: { value: '{colors.brown.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.brown.a11}' },
+  default: { value: { _light: '{colors.brown.9}', _dark: '{colors.brown.9}' } },
+  emphasized: { value: { _light: '{colors.brown.10}', _dark: '{colors.brown.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.brown.a11}', _dark: '{colors.brown.a11}' } },
 }

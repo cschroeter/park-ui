@@ -6,6 +6,10 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- Resolved an issue that sometimes forcing a color mode on a component would not work as expected.
+
 ## [0.39.0] - 2024-07-15
 
 ### Added

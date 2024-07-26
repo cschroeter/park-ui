@@ -24,8 +24,8 @@ export const sand = {
   a11: { value: { _light: '{colors.sand.light.a11}', _dark: '{colors.sand.dark.a11}' } },
   a12: { value: { _light: '{colors.sand.light.a12}', _dark: '{colors.sand.dark.a12}' } },
 
-  default: { value: '{colors.sand.9}' },
-  emphasized: { value: '{colors.sand.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.sand.12}' },
+  default: { value: { _light: '{colors.sand.9}', _dark: '{colors.sand.9}' } },
+  emphasized: { value: { _light: '{colors.sand.10}', _dark: '{colors.sand.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.sand.12}', _dark: '{colors.sand.12}' } },
 }

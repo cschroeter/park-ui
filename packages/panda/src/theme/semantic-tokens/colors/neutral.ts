@@ -25,7 +25,7 @@ export const neutral = {
   a12: { value: { _light: '{colors.neutral.light.a12}', _dark: '{colors.neutral.dark.a12}' } },
 
   default: { value: { _light: 'black', _dark: 'white' } },
-  emphasized: { value: '{colors.gray.12}' },
+  emphasized: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
   fg: { value: { _light: 'white', _dark: 'black' } },
   text: { value: { _light: 'black', _dark: 'white' } },
 }

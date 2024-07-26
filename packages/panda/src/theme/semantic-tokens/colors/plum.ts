@@ -24,8 +24,8 @@ export const plum = {
   a11: { value: { _light: '{colors.plum.light.a11}', _dark: '{colors.plum.dark.a11}' } },
   a12: { value: { _light: '{colors.plum.light.a12}', _dark: '{colors.plum.dark.a12}' } },
 
-  default: { value: '{colors.plum.9}' },
-  emphasized: { value: '{colors.plum.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.plum.a11}' },
+  default: { value: { _light: '{colors.plum.9}', _dark: '{colors.plum.9}' } },
+  emphasized: { value: { _light: '{colors.plum.10}', _dark: '{colors.plum.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.plum.a11}', _dark: '{colors.plum.a11}' } },
 }

@@ -24,8 +24,8 @@ export const grass = {
   a11: { value: { _light: '{colors.grass.light.a11}', _dark: '{colors.grass.dark.a11}' } },
   a12: { value: { _light: '{colors.grass.light.a12}', _dark: '{colors.grass.dark.a12}' } },
 
-  default: { value: '{colors.grass.9}' },
-  emphasized: { value: '{colors.grass.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.grass.a11}' },
+  default: { value: { _light: '{colors.grass.9}', _dark: '{colors.grass.9}' } },
+  emphasized: { value: { _light: '{colors.grass.10}', _dark: '{colors.grass.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.grass.a11}', _dark: '{colors.grass.a11}' } },
 }

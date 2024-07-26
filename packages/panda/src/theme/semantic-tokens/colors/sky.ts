@@ -24,8 +24,8 @@ export const sky = {
   a11: { value: { _light: '{colors.sky.light.a11}', _dark: '{colors.sky.dark.a11}' } },
   a12: { value: { _light: '{colors.sky.light.a12}', _dark: '{colors.sky.dark.a12}' } },
 
-  default: { value: '{colors.sky.9}' },
-  emphasized: { value: '{colors.sky.10}' },
-  fg: { value: '{colors.slate.light.12}' },
-  text: { value: '{colors.sky.a11}' },
+  default: { value: { _light: '{colors.sky.9}', _dark: '{colors.sky.9}' } },
+  emphasized: { value: { _light: '{colors.sky.10}', _dark: '{colors.sky.10}' } },
+  fg: { value: { _light: '{colors.slate.light.12}', _dark: '{colors.slate.light.12}' } },
+  text: { value: { _light: '{colors.sky.a11}', _dark: '{colors.sky.a11}' } },
 }

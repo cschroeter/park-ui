@@ -24,8 +24,8 @@ export const orange = {
   a11: { value: { _light: '{colors.orange.light.a11}', _dark: '{colors.orange.dark.a11}' } },
   a12: { value: { _light: '{colors.orange.light.a12}', _dark: '{colors.orange.dark.a12}' } },
 
-  default: { value: '{colors.orange.9}' },
-  emphasized: { value: '{colors.orange.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.orange.a11}' },
+  default: { value: { _light: '{colors.orange.9}', _dark: '{colors.orange.9}' } },
+  emphasized: { value: { _light: '{colors.orange.10}', _dark: '{colors.orange.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.orange.a11}', _dark: '{colors.orange.a11}' } },
 }
