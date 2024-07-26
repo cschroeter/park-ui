@@ -24,8 +24,8 @@ export const olive = {
   a11: { value: { _light: '{colors.olive.light.a11}', _dark: '{colors.olive.dark.a11}' } },
   a12: { value: { _light: '{colors.olive.light.a12}', _dark: '{colors.olive.dark.a12}' } },
 
-  default: { value: '{colors.olive.9}' },
-  emphasized: { value: '{colors.olive.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.olive.12}' },
+  default: { value: { _light: '{colors.olive.9}', _dark: '{colors.olive.9}' } },
+  emphasized: { value: { _light: '{colors.olive.10}', _dark: '{colors.olive.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.olive.12}', _dark: '{colors.olive.12}' } },
 }

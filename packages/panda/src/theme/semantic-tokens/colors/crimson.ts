@@ -24,8 +24,8 @@ export const crimson = {
   a11: { value: { _light: '{colors.crimson.light.a11}', _dark: '{colors.crimson.dark.a11}' } },
   a12: { value: { _light: '{colors.crimson.light.a12}', _dark: '{colors.crimson.dark.a12}' } },
 
-  default: { value: '{colors.crimson.9}' },
-  emphasized: { value: '{colors.crimson.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.crimson.a11}' },
+  default: { value: { _light: '{colors.crimson.9}', _dark: '{colors.crimson.9}' } },
+  emphasized: { value: { _light: '{colors.crimson.10}', _dark: '{colors.crimson.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.crimson.a11}', _dark: '{colors.crimson.a11}' } },
 }

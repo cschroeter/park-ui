@@ -24,8 +24,8 @@ export const mauve = {
   a11: { value: { _light: '{colors.mauve.light.a11}', _dark: '{colors.mauve.dark.a11}' } },
   a12: { value: { _light: '{colors.mauve.light.a12}', _dark: '{colors.mauve.dark.a12}' } },
 
-  default: { value: '{colors.mauve.9}' },
-  emphasized: { value: '{colors.mauve.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.mauve.12}' },
+  default: { value: { _light: '{colors.mauve.9}', _dark: '{colors.mauve.9}' } },
+  emphasized: { value: { _light: '{colors.mauve.10}', _dark: '{colors.mauve.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.mauve.12}', _dark: '{colors.mauve.12}' } },
 }

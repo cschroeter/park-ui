@@ -24,8 +24,8 @@ export const indigo = {
   a11: { value: { _light: '{colors.indigo.light.a11}', _dark: '{colors.indigo.dark.a11}' } },
   a12: { value: { _light: '{colors.indigo.light.a12}', _dark: '{colors.indigo.dark.a12}' } },
 
-  default: { value: '{colors.indigo.9}' },
-  emphasized: { value: '{colors.indigo.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.indigo.a11}' },
+  default: { value: { _light: '{colors.indigo.9}', _dark: '{colors.indigo.9}' } },
+  emphasized: { value: { _light: '{colors.indigo.10}', _dark: '{colors.indigo.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.indigo.a11}', _dark: '{colors.indigo.a11}' } },
 }

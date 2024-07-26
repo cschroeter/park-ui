@@ -24,8 +24,8 @@ export const jade = {
   a11: { value: { _light: '{colors.jade.light.a11}', _dark: '{colors.jade.dark.a11}' } },
   a12: { value: { _light: '{colors.jade.light.a12}', _dark: '{colors.jade.dark.a12}' } },
 
-  default: { value: '{colors.jade.9}' },
-  emphasized: { value: '{colors.jade.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.jade.a11}' },
+  default: { value: { _light: '{colors.jade.9}', _dark: '{colors.jade.9}' } },
+  emphasized: { value: { _light: '{colors.jade.10}', _dark: '{colors.jade.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.jade.a11}', _dark: '{colors.jade.a11}' } },
 }

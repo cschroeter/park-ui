@@ -24,8 +24,8 @@ export const purple = {
   a11: { value: { _light: '{colors.purple.light.a11}', _dark: '{colors.purple.dark.a11}' } },
   a12: { value: { _light: '{colors.purple.light.a12}', _dark: '{colors.purple.dark.a12}' } },
 
-  default: { value: '{colors.purple.9}' },
-  emphasized: { value: '{colors.purple.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.purple.a11}' },
+  default: { value: { _light: '{colors.purple.9}', _dark: '{colors.purple.9}' } },
+  emphasized: { value: { _light: '{colors.purple.10}', _dark: '{colors.purple.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.purple.a11}', _dark: '{colors.purple.a11}' } },
 }

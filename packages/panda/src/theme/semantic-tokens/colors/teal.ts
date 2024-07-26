@@ -24,8 +24,8 @@ export const teal = {
   a11: { value: { _light: '{colors.teal.light.a11}', _dark: '{colors.teal.dark.a11}' } },
   a12: { value: { _light: '{colors.teal.light.a12}', _dark: '{colors.teal.dark.a12}' } },
 
-  default: { value: '{colors.teal.9}' },
-  emphasized: { value: '{colors.teal.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.teal.a11}' },
+  default: { value: { _light: '{colors.teal.9}', _dark: '{colors.teal.9}' } },
+  emphasized: { value: { _light: '{colors.teal.10}', _dark: '{colors.teal.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.teal.a11}', _dark: '{colors.teal.a11}' } },
 }

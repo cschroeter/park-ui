@@ -24,8 +24,8 @@ export const lime = {
   a11: { value: { _light: '{colors.lime.light.a11}', _dark: '{colors.lime.dark.a11}' } },
   a12: { value: { _light: '{colors.lime.light.a12}', _dark: '{colors.lime.dark.a12}' } },
 
-  default: { value: '{colors.lime.9}' },
-  emphasized: { value: '{colors.lime.10}' },
-  fg: { value: '{colors.olive.light.12}' },
-  text: { value: '{colors.lime.a11}' },
+  default: { value: { _light: '{colors.lime.9}', _dark: '{colors.lime.9}' } },
+  emphasized: { value: { _light: '{colors.lime.10}', _dark: '{colors.lime.10}' } },
+  fg: { value: { _light: '{colors.olive.light.12}', _dark: '{colors.olive.light.12}' } },
+  text: { value: { _light: '{colors.lime.a11}', _dark: '{colors.lime.a11}' } },
 }

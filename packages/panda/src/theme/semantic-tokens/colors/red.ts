@@ -24,8 +24,8 @@ export const red = {
   a11: { value: { _light: '{colors.red.light.a11}', _dark: '{colors.red.dark.a11}' } },
   a12: { value: { _light: '{colors.red.light.a12}', _dark: '{colors.red.dark.a12}' } },
 
-  default: { value: '{colors.red.9}' },
-  emphasized: { value: '{colors.red.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.red.a11}' },
+  default: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
+  emphasized: { value: { _light: '{colors.red.10}', _dark: '{colors.red.10}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.red.a11}', _dark: '{colors.red.a11}' } },
 }
