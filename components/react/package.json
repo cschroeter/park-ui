@@ -9,23 +9,23 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/react": "3.5.0",
+    "@ark-ui/react": "3.6.1",
     "@pandacss/dev": "0.44.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-a11y": "8.2.5",
-    "@storybook/addon-essentials": "8.2.5",
-    "@storybook/addon-themes": "8.2.5",
-    "@storybook/react-vite": "8.2.5",
-    "@storybook/react": "8.2.5",
+    "@storybook/addon-a11y": "8.2.6",
+    "@storybook/addon-essentials": "8.2.6",
+    "@storybook/addon-themes": "8.2.6",
+    "@storybook/react-vite": "8.2.6",
+    "@storybook/react": "8.2.6",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.3.1",
-    "lucide-react": "0.414.0",
+    "lucide-react": "0.416.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "storybook": "8.2.5",
+    "storybook": "8.2.6",
     "typescript": "5.5.4",
-    "vite": "5.3.4",
+    "vite": "5.3.5",
     "vite-tsconfig-paths": "4.3.2"
   }
 }

@@ -23,7 +23,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "3.4.0",
+    "@ark-ui/anatomy": "3.5.0",
     "@radix-ui/colors": "3.0.0",
     "deepmerge": "4.3.1",
     "ts-pattern": "5.2.0"
@@ -33,7 +33,7 @@
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
     "release-it": "17.6.0",
-    "tsup": "8.2.2"
+    "tsup": "8.2.3"
   },
   "peerDependencies": {
     "@pandacss/dev": ">0.22.0"
