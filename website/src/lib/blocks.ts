@@ -1,4 +1,9 @@
+import { readFile } from 'node:fs/promises'
+import { basename, join } from 'node:path'
 import { Schema } from '@effect/schema'
+import { Effect, pipe } from 'effect'
+import { globby } from 'globby'
+import { highlight } from './shiki'
 
 const SourceFile = Schema.Struct({
   filename: Schema.String,
@@ -7,33 +12,40 @@ const SourceFile = Schema.Struct({
 
 const SourceFiles = Schema.Array(SourceFile)
 
-interface FetchSourceFilesProps {
-  categoryId: string
+interface FindSourceFilesProps {
+  blockId: string
   variantId: string
+  framework: string
 }
 
-// export const fetchSourceFiles = ({ categoryId, variantId }: FetchSourceFilesProps) =>
-//   Effect.runPromise(
-//     HttpClientRequest.get(
-//       `${PARK_PLUS_URL}/api/categories/${categoryId}/variants/${variantId}/sources`,
-//       {
-//         headers: {
-//           Authorization: PARK_PLUS_API_KEY,
-//         },
-//       },
-//     ).pipe(
-//       HttpClient.fetchOk,
-//       HttpClientResponse.schemaBodyJsonScoped(SourceFiles),
-//       Effect.timeout('1 seconds'),
-//       Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
-//       Effect.flatMap((files) =>
-//         Effect.forEach(files, (file) =>
-//           pipe(
-//             Effect.promise(() => highlight(file.content)),
-//             Effect.flatMap((html) => Effect.succeed({ ...file, html })),
-//           ),
-//         ),
-//       ),
-//       Effect.catchAll(() => Effect.succeed([])),
-//     ),
-//   )
+export const findSourceFiles = ({ blockId, variantId, framework }: FindSourceFilesProps) =>
+  Effect.runPromise(
+    pipe(
+      Effect.succeed(
+        `../components/${framework}/src/plus/blocks/${blockId}/${variantId}/*.{vue,tsx,ts}`,
+      ),
+      Effect.map((blockPath) => join(process.cwd(), blockPath)),
+      Effect.flatMap((pattern) =>
+        pipe(
+          Effect.promise(() => globby(pattern)),
+          Effect.flatMap((files) =>
+            Effect.forEach(files, (file) =>
+              pipe(
+                Effect.promise(() => readFile(file, 'utf-8')),
+                Effect.flatMap((content) =>
+                  pipe(
+                    Effect.promise(() => highlight(content, framework)),
+                    Effect.map((html) => ({
+                      filename: basename(file),
+                      content,
+                      html,
+                    })),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  )
