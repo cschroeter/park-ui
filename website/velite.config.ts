@@ -82,6 +82,7 @@ const blocks = defineCollection({
                   Effect.succeed({
                     id: basename(variant),
                     name: capitalize(basename(variant)),
+                    accessLevel: 'free',
                   }),
                 ),
               ),

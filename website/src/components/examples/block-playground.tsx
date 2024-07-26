@@ -2,6 +2,8 @@ import { Code2Icon, EyeIcon, FigmaIcon } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { Box, HStack } from 'styled-system/jsx'
 import { Heading, Link, Tabs, Text } from '~/components/ui'
+import { findSourceFiles } from '~/lib/blocks'
+import { getServerContext } from '~/lib/server-context'
 import { ResizableIFrame } from '../resizable-iframe'
 import { BlockCodePreview } from './block-code-preview'
 import type { Blocks } from '.velite'
@@ -11,17 +13,22 @@ interface Props {
   variant: {
     id: string
     name: string
+    accessLevel: string
   }
 }
 
 export const BlockPlayground = async (props: Props) => {
   const { block, variant } = props
+  const { framework } = getServerContext()
 
   const Block = dynamic(() =>
     import(`~/components/blocks/${block.id}/${variant.id}/example`)
       .then((mod) => mod.Example)
       .catch(() => NotFound),
   )
+
+  const sourceCodeAvailable = variant.accessLevel === 'free'
+  const sourceFiles = await findSourceFiles({ blockId: block.id, variantId: variant.id, framework })
 
   return (
     <Tabs.Root variant="enclosed" defaultValue="preview" size="sm" lazyMount>
@@ -33,7 +40,7 @@ export const BlockPlayground = async (props: Props) => {
               <EyeIcon />
               <Text display={{ base: 'none', md: 'flex' }}>Preview</Text>
             </Tabs.Trigger>
-            <Tabs.Trigger value="code" disabled>
+            <Tabs.Trigger value="code" disabled={!sourceCodeAvailable}>
               <Code2Icon />
               <Text display={{ base: 'none', md: 'flex' }}>Code</Text>
             </Tabs.Trigger>
@@ -60,7 +67,7 @@ export const BlockPlayground = async (props: Props) => {
         </ResizableIFrame>
       </Tabs.Content>
       <Tabs.Content value="code" px="!0">
-        <BlockCodePreview files={[]} />
+        <BlockCodePreview files={sourceFiles} />
       </Tabs.Content>
     </Tabs.Root>
   )
