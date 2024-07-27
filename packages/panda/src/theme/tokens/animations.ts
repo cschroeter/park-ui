@@ -37,4 +37,7 @@ export const animations = defineTokens.animations({
   'collapse-out': {
     value: 'collapse-out 200ms {easings.emphasized-out}',
   },
+  spin: {
+    value: 'spin 1s linear infinite',
+  },
 })

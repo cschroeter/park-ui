@@ -25,7 +25,6 @@
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
     "@radix-ui/colors": "3.0.0",
-    "deepmerge": "4.3.1",
     "ts-pattern": "5.2.0"
   },
   "devDependencies": {

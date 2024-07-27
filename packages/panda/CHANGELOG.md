@@ -6,9 +6,17 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Added `Spinner` component.
+
 ### Fixed
 
-- Resolved an issue that sometimes forcing a color mode on a component would not work as expected.
+- Fixed an issue where forcing a color mode on a component sometimes did not work as expected.
+
+### Removed
+
+- Removed the `icon-button` recipe in favor of reusing the `button` recipe.
 
 ## [0.39.0] - 2024-07-15
 

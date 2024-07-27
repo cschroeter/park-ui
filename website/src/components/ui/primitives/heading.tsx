@@ -1,10 +1,10 @@
-import { forwardRef } from 'react'
-import { Text, type TextProps } from './text'
+import { styled } from 'styled-system/jsx'
+import { type TextVariantProps, text } from 'styled-system/recipes'
+import type { ComponentProps, StyledComponent } from 'styled-system/types'
 
-export interface HeadingProps extends TextProps<React.ElementType> {}
+type TextProps = TextVariantProps & { as?: React.ElementType }
 
-export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => (
-  <Text as="h2" variant="heading" ref={ref} {...props} />
-))
-
-Heading.displayName = 'Heading'
+export type HeadingProps = ComponentProps<typeof Heading>
+export const Heading = styled('h2', text, {
+  defaultProps: { variant: 'heading' },
+}) as StyledComponent<'h2', TextProps>

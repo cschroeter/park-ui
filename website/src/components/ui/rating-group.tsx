@@ -22,6 +22,7 @@ export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, 
           }
         </ArkRatingGroup.Context>
       </ArkRatingGroup.Control>
+      <ArkRatingGroup.HiddenInput />
     </ArkRatingGroup.Root>
   )
 })

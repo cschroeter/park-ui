@@ -92,6 +92,9 @@ export default defineConfig({
         properties: {
           backgroundColor: ['*'],
           borderColor: ['*'],
+          borderLeftColor: ['bg.emphasized'],
+          borderBottomColor: ['bg.emphasized'],
+          borderWidth: ['4px'],
           boxShadow: ['*'],
           color: ['*'],
           colorPalette: ['red'],
