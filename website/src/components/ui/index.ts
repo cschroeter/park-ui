@@ -1,5 +1,7 @@
 export * from './primitives'
+
 export { Avatar, type AvatarProps } from './avatar'
+export { Button, type ButtonProps } from './button'
 export { Checkbox, type CheckboxProps } from './checkbox'
 export { NumberInput, type NumberInputProps } from './number-input'
 export { Pagination, type PaginationProps } from './pagination'

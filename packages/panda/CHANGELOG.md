@@ -6,6 +6,10 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- Updated the `Button` component to support loading states.
+
 ## [0.40.0] - 2024-07-27
 
 ### Added

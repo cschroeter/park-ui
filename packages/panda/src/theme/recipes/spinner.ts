@@ -12,7 +12,7 @@ export const spinner = defineRecipe({
     width: 'var(--size)',
     height: 'var(--size)',
     animation: 'spin',
-    animationDuration: 'slower',
+    animationDuration: 'slowest',
   },
   defaultVariants: {
     size: 'md',
