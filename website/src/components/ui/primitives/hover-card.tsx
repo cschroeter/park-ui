@@ -9,11 +9,11 @@ const { withRootProvider, withContext } = createStyleContext(hoverCard)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withRootProvider<
-  Assign<HoverCard.RootProviderBaseProps, HoverCardVariantProps>
+  Assign<HoverCard.RootProviderProps, HoverCardVariantProps>
 >(HoverCard.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<HoverCard.RootBaseProps, HoverCardVariantProps>>(
+export const Root = withRootProvider<Assign<HoverCard.RootProps, HoverCardVariantProps>>(
   HoverCard.Root,
 )
 

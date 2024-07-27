@@ -1,0 +1,6 @@
+{
+  "size": {
+    "options": ["xs", "sm", "md", "lg", "xl"],
+    "defaultValue": "md"
+  }
+}

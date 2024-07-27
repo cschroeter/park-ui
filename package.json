@@ -14,6 +14,7 @@
     "vue": "bun run --cwd components/vue",
     "demos:sync": "rsync -av --delete ./components/react/src/demos ./website/src/",
     "blocks:sync": "rsync -av --delete ./components/react/src/plus/blocks ./website/src/components",
+    "components:sync": "rsync -av --delete ./components/react/src/components/ui ./website/src/components",
     "setup": "vc link -p park-ui -y && vc env pull --environment development website/.env"
   },
   "dependencies": {

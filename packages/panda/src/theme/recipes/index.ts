@@ -21,7 +21,6 @@ import { fileUpload } from './file-upload'
 import { formLabel } from './form-label'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
-import { iconButton } from './icon-button'
 import { input } from './input'
 import { kbd } from './kbd'
 import { link } from './link'
@@ -40,6 +39,7 @@ import { select } from './select'
 import { signaturePad } from './signature-pad'
 import { skeleton } from './skeleton'
 import { slider } from './slider'
+import { spinner } from './spinner'
 import { splitter } from './splitter'
 import { switchRecipe } from './switch'
 import { table } from './table'
@@ -58,11 +58,11 @@ export const recipes: Record<string, Partial<RecipeConfig<RecipeVariantRecord>>>
   code,
   formLabel,
   icon,
-  iconButton,
   input,
   kbd,
   link,
   skeleton,
+  spinner,
   textarea,
   text,
 }

@@ -1,3 +1,4 @@
+import { splitProps } from 'solid-js'
 import { Avatar as ArkAvatar } from '~/components/ui/primitives'
 
 export interface AvatarProps extends ArkAvatar.RootProps {
@@ -6,12 +7,12 @@ export interface AvatarProps extends ArkAvatar.RootProps {
 }
 
 export const Avatar = (props: AvatarProps) => {
-  const { name, src, ...rootProps } = props
+  const [localProps, rootProps] = splitProps(props, ['name', 'src'])
 
   return (
     <ArkAvatar.Root {...rootProps}>
-      <ArkAvatar.Fallback>{getInitials(name) || <UserIcon />}</ArkAvatar.Fallback>
-      <ArkAvatar.Image src={src} alt={name} />
+      <ArkAvatar.Fallback>{getInitials(localProps.name) || <UserIcon />}</ArkAvatar.Fallback>
+      <ArkAvatar.Image src={localProps.src} alt={localProps.name} />
     </ArkAvatar.Root>
   )
 }

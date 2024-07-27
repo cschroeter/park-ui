@@ -2,8 +2,19 @@
 import { ExternalLinkIcon, InfoIcon } from 'lucide-react'
 import { Runner } from 'react-runner'
 import { Box, Flex, HStack, Stack } from 'styled-system/jsx'
-import { Alert, Avatar, Button, Checkbox, Code, Heading, Link } from '~/components/ui'
-import { Skeleton, Slider, Text } from '~/components/ui'
+import {
+  Alert,
+  Avatar,
+  Button,
+  Checkbox,
+  Code,
+  Heading,
+  Link,
+  Skeleton,
+  Slider,
+  Spinner,
+  Text,
+} from '~/components/ui'
 
 const icons = { InfoIcon, ExternalLinkIcon }
 const scope = {
@@ -19,6 +30,7 @@ const scope = {
   Link,
   Skeleton,
   Slider,
+  Spinner,
   Stack,
   Text,
   ...icons,

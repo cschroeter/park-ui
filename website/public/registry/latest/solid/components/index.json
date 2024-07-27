@@ -41,6 +41,7 @@
   { "id": "signature-pad", "name": "Signature Pad" },
   { "id": "skeleton", "name": "Skeleton" },
   { "id": "slider", "name": "Slider" },
+  { "id": "spinner", "name": "Spinner" },
   { "id": "splitter", "name": "Splitter" },
   { "id": "switch", "name": "Switch" },
   { "id": "table", "name": "Table" },

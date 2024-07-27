@@ -23,6 +23,7 @@ export const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) =
           </ArkPinInput.Input>
         ))}
       </ArkPinInput.Control>
+      <ArkPinInput.HiddenInput />
     </ArkPinInput.Root>
   )
 })

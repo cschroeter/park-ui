@@ -1,4 +1,5 @@
 export * from './primitives'
+
 export { Avatar, type AvatarProps } from './avatar'
 export { Checkbox, type CheckboxProps } from './checkbox'
 export { NumberInput, type NumberInputProps } from './number-input'
@@ -7,5 +8,6 @@ export { PinInput, type PinInputProps } from './pin-input'
 export { Progress, type ProgressProps } from './progress'
 export { RatingGroup, type RatingGroupProps } from './rating-group'
 export { Slider, type SliderProps } from './slider'
+export { Spinner, type SpinnerProps } from './spinner'
 export { Switch, type SwitchProps } from './switch'
-export { TreeView, type TreeViewProps, type TreeViewData } from './tree-view'
+export { TreeView, type TreeViewData, type TreeViewProps } from './tree-view'
