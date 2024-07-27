@@ -8,3 +8,9 @@ const meta: Meta = {
 export default meta
 
 export const Base = () => <Button>Park UI</Button>
+export const Loading = () => <Button loading>Park UI</Button>
+export const LoadingText = () => (
+  <Button loading loadingText="Loading...">
+    Park UI
+  </Button>
+)

@@ -33,6 +33,36 @@ Use the `colorPalette` prop to change the color of the button.
 </HStack>
 ```
 
+### With loading indicator
+
+Use the `loading` prop to show a loading spinner.
+
+```tsx
+// live
+<Button loading>Park UI</Button>
+```
+
+Alternatively, you can set a custom loading text using the `loadingText` prop.
+
+```tsx
+// live
+<Button loading loadingText="Loading...">
+  Park UI
+</Button>
+```
+
+
+### Renders as a link
+
+Use the `asChild` prop to render the button as a link.
+
+```tsx
+// live
+<Button asChild>
+  <a href="https://park-ui.com" target="_blank">Park UI</a>
+</Button>
+```
+
 ## Installation
 
 <InstallationGuide />
