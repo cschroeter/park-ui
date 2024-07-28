@@ -25,6 +25,6 @@
     "vercel": "35.2.1",
     "vercel-submodules": "1.0.10"
   },
-  "packageManager": "bun@1.1.20",
+  "packageManager": "bun@1.1.21",
   "trustedDependencies": ["@park-ui/website"]
 }
