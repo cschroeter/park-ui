@@ -16,7 +16,7 @@ export default {
   },
   experimental: {
     outputFileTracingIncludes: {
-      '/*': ['../components/**/*'],
+      '/*': ['../components/**/*', '../packages/panda/src/theme/recipes/**/*'],
     },
   },
   transpilePackages: ['shiki'],
