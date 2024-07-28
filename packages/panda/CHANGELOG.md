@@ -16,6 +16,10 @@ description: All notable changes will be documented in this file.
 
 - Updated the `Button` component to support loading states.
 
+### Fixed
+
+- Resolved an issue where Panda sometimes did not recognize style props on `IconButton` components.
+
 ## [0.40.0] - 2024-07-27
 
 ### Added
