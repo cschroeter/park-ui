@@ -6,6 +6,8 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+## [0.41.0] - 2024-07-28
+
 ### Added
 
 - Added new semantic tokens: `fg.error` and `border.error` for styling error states.
