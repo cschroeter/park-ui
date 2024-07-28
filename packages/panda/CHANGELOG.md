@@ -6,6 +6,12 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Added new semantic tokens: `fg.error` and `border.error` for styling error states.
+- Added support for `invalid` state in the `Input` component.
+- Added `_invalid` condition to the list of supported conditions.
+
 ### Changed
 
 - Updated the `Button` component to support loading states.

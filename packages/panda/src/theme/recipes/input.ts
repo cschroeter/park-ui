@@ -24,6 +24,13 @@ export const input = defineRecipe({
       borderColor: 'colorPalette.default',
       boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
     },
+    _invalid: {
+      borderColor: 'fg.error',
+      _focus: {
+        borderColor: 'fg.error',
+        boxShadow: '0 0 0 1px var(--colors-border-error)',
+      },
+    },
   },
   defaultVariants: {
     size: 'md',
