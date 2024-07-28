@@ -5,7 +5,7 @@ import type { PresetOptions } from '../../../types'
 
 export const defineColorPalettes = (options: PresetOptions) => {
   const { grayColor = 'neutral', accentColor = 'neutral', additionalColors = [] } = options
-  const availableColors = ['gray', grayColor, accentColor, ...additionalColors]
+  const availableColors = ['gray', 'red', grayColor, accentColor, ...additionalColors]
 
   return Object.fromEntries(
     [...Object.keys(radixColors), 'neutral']

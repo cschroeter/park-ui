@@ -12,5 +12,6 @@ export const conditions = {
     underValue: '&:is([data-state="under-value"])',
     dark: '.dark &',
     light: ':root &, .light &',
+    invalid: '&:is([aria-invalid])',
   },
 }

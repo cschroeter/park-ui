@@ -37,6 +37,7 @@ export const createSemanticTokens = (options: PresetOptions) => {
         muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
         subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
         disabled: { value: { _light: '{colors.gray.9}', _dark: '{colors.gray.9}' } },
+        error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
       },
       border: {
         default: { value: { _light: '{colors.gray.7}', _dark: '{colors.gray.7}' } },
@@ -44,6 +45,7 @@ export const createSemanticTokens = (options: PresetOptions) => {
         subtle: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.4}' } },
         disabled: { value: { _light: '{colors.gray.5}', _dark: '{colors.gray.5}' } },
         outline: { value: { _light: '{colors.gray.a9}', _dark: '{colors.gray.a9}' } },
+        error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
       },
     },
     shadows,
