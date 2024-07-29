@@ -4,9 +4,7 @@ import { Alert } from '~/components/ui/alert'
 export const Demo = (props: Alert.RootProps) => {
   return (
     <Alert.Root {...props}>
-      <Alert.Icon>
-        <InfoIcon />
-      </Alert.Icon>
+      <Alert.Icon asChild={(iconProps) => <InfoIcon {...iconProps()} />} />
       <Alert.Content>
         <Alert.Title>Browser Update available</Alert.Title>
         <Alert.Description>For the best experience, please update your browser.</Alert.Description>
