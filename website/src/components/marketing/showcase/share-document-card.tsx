@@ -3,7 +3,12 @@ import { CheckIcon, ChevronsUpDownIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
 import { useCopyToClipboard } from 'usehooks-ts'
-import { Avatar, Button, Card, Input, Select, Text } from '~/components/ui'
+import { Avatar } from '~/components/ui/avatar'
+import { Button } from '~/components/ui/button'
+import { Card } from '~/components/ui/card'
+import { Input } from '~/components/ui/input'
+import { Select } from '~/components/ui/select'
+import { Text } from '~/components/ui/text'
 
 const members = [
   {

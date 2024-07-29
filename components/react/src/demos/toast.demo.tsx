@@ -1,6 +1,8 @@
 'use client'
 import { XIcon } from 'lucide-react'
-import { Button, IconButton, Toast } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
+import { Toast } from '~/components/ui/toast'
 
 const toaster = Toast.createToaster({
   placement: 'bottom-end',

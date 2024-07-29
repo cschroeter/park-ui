@@ -1,5 +1,5 @@
 'use client'
-import { Tabs } from '~/components/ui'
+import { Tabs } from '~/components/ui/tabs'
 import { CodePreview } from './code-preview'
 
 interface CodeExample {

@@ -1,5 +1,5 @@
 import { Index, type JSX, Show, children, splitProps } from 'solid-js'
-import { Slider as ArkSlider } from '~/components/ui/primitives'
+import * as ArkSlider from './primitives/slider'
 
 export interface SliderProps extends ArkSlider.RootProps {
   marks?: {

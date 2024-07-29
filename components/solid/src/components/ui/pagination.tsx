@@ -1,5 +1,7 @@
 import { For } from 'solid-js'
-import { Pagination as ArkPagination, Button, IconButton } from '~/components/ui/primitives'
+import { Button } from './button'
+import { IconButton } from './icon-button'
+import * as ArkPagination from './primitives/pagination'
 
 export interface PaginationProps extends ArkPagination.RootProps {}
 

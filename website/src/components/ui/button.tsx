@@ -1,10 +1,7 @@
 import { forwardRef } from 'react'
 import { Center, styled } from 'styled-system/jsx'
-import { Spinner } from '~/components/ui'
-import {
-  Button as StyledButton,
-  type ButtonProps as StyledButtonProps,
-} from '~/components/ui/primitives'
+import { Button as StyledButton, type ButtonProps as StyledButtonProps } from './primitives/button'
+import { Spinner } from './spinner'
 
 interface ButtonLoadingProps {
   loading?: boolean
@@ -38,6 +35,6 @@ Button.displayName = 'Button'
 
 const ButtonSpinner = () => (
   <Center inline position="absolute" transform="translate(-50%, -50%)" top="50%" insetStart="50%">
-    <Spinner borderColor="currentColor" />
+    <Spinner colorPalette="gray" />
   </Center>
 )

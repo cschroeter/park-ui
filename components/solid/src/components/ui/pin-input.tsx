@@ -1,5 +1,6 @@
 import { Index, Show, children } from 'solid-js'
-import { PinInput as ArkPinInput, Input } from '~/components/ui/primitives'
+import { Input } from './input'
+import * as ArkPinInput from './primitives/pin-input'
 
 export interface PinInputProps extends ArkPinInput.RootProps {
   /**

@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Avatar } from '~/components/ui'
+import { Avatar } from '~/components/ui/avatar'
 
 const meta: Meta = {
   title: 'Components/Avatar',

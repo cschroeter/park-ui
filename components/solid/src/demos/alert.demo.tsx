@@ -1,5 +1,5 @@
 import { InfoIcon } from 'lucide-solid'
-import { Alert } from '~/components/ui'
+import { Alert } from '~/components/ui/alert'
 
 export const Demo = (props: Alert.RootProps) => {
   return (

@@ -1,6 +1,7 @@
 import type { Meta } from '@storybook/react'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import { Carousel, IconButton } from '~/components/ui'
+import { Carousel } from '~/components/ui/carousel'
+import { IconButton } from '~/components/ui/icon-button'
 
 const meta: Meta = {
   title: 'Components/Carousel',

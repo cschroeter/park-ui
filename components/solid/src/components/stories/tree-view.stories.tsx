@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { TreeView, type TreeViewData } from '~/components/ui'
+import { TreeView, type TreeViewData } from '~/components/ui/tree-view'
 
 const meta: Meta = {
   title: 'Components/Tree View',

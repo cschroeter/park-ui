@@ -1,5 +1,5 @@
 import { splitProps } from 'solid-js'
-import { Avatar as ArkAvatar } from '~/components/ui/primitives'
+import * as ArkAvatar from './primitives/avatar'
 
 export interface AvatarProps extends ArkAvatar.RootProps {
   name?: string

@@ -1,4 +1,4 @@
-import { Checkbox, type CheckboxProps } from '~/components/ui'
+import { Checkbox, type CheckboxProps } from '~/components/ui/checkbox'
 
 export const Demo = (props: CheckboxProps) => {
   return (

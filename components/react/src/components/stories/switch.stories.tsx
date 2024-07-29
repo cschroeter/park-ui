@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { Switch } from '~/components/ui'
+import { Switch } from '~/components/ui/switch'
 
 const meta: Meta = {
   title: 'Components/Switch',

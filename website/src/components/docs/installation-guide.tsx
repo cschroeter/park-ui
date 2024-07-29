@@ -1,6 +1,6 @@
 import { codeToHtml } from 'shiki'
 import { Box } from 'styled-system/jsx'
-import { Tabs } from '~/components/ui'
+import { Tabs } from '~/components/ui/tabs'
 import { getServerContext } from '~/lib/server-context'
 import { CodePreview } from '../code-preview'
 import { ManualIntallationGuide } from './manual-installation-guide'

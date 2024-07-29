@@ -1,15 +1,13 @@
 import { Box, Center, Container, Grid, GridItem, Stack } from 'styled-system/jsx'
 import { Hero } from '~/components/marketing/hero'
-import {
-  AuthenticationCard,
-  CardWithTabs,
-  ECommerceCard,
-  NotificationCard,
-  PaymentCard,
-  PricingCard,
-  ReportIssueCard,
-  ShareDocumentCard,
-} from '~/components/marketing/showcase'
+import { AuthenticationCard } from '~/components/marketing/showcase/authentication-card'
+import { CardWithTabs } from '~/components/marketing/showcase/card-with-tabs'
+import { ECommerceCard } from '~/components/marketing/showcase/e-commerce-card'
+import { NotificationCard } from '~/components/marketing/showcase/notification-card'
+import { PaymentCard } from '~/components/marketing/showcase/payment-card'
+import { PricingCard } from '~/components/marketing/showcase/pricing-card'
+import { ReportIssueCard } from '~/components/marketing/showcase/report-issue-card'
+import { ShareDocumentCard } from '~/components/marketing/showcase/share-document-card'
 
 export default function Home() {
   return (

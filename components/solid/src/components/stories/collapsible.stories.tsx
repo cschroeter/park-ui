@@ -1,6 +1,7 @@
 import type { Meta } from 'storybook-solidjs'
 import { Box } from 'styled-system/jsx'
-import { Button, Collapsible } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Collapsible } from '~/components/ui/collapsible'
 
 const meta: Meta = {
   title: 'Components/Collapsible',

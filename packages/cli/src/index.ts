@@ -82,24 +82,6 @@ const main = async () => {
               ),
               Effect.flatMap(([components, componentsDir, libDir]) =>
                 Effect.all([
-                  pipe(
-                    Effect.succeed(path.join(componentsDir, 'index.ts')),
-                    Effect.flatMap((indexFile) =>
-                      pipe(
-                        Effect.promise(() => fs.ensureFile(indexFile)),
-                        Effect.flatMap(() => Effect.promise(() => fs.readFile(indexFile, 'utf-8'))),
-                        Effect.flatMap((content) =>
-                          Effect.if(content.includes('./primitives'), {
-                            onTrue: () => Effect.succeed(''),
-                            onFalse: () =>
-                              Effect.promise(() =>
-                                fs.appendFile(indexFile, "export * from './primitives'\n"),
-                              ),
-                          }),
-                        ),
-                      ),
-                    ),
-                  ),
                   Effect.forEach(components, (component) =>
                     pipe(
                       Effect.forEach(component.variants, (variant) =>
@@ -111,31 +93,6 @@ const main = async () => {
                                 variant.content
                                   .replaceAll('~/components/ui', config.outputPaths.componentsDir)
                                   .replaceAll('~/lib', config.outputPaths.libDir),
-                              ),
-                            ),
-                            pipe(
-                              Effect.succeed(
-                                path.join(
-                                  path.parse(path.join(componentsDir, variant.file)).dir,
-                                  'index.ts',
-                                ),
-                              ),
-                              Effect.flatMap((indexFile) =>
-                                pipe(
-                                  Effect.promise(() => fs.ensureFile(indexFile)),
-                                  Effect.flatMap(() =>
-                                    Effect.promise(() => fs.readFile(indexFile, 'utf-8')),
-                                  ),
-                                  Effect.flatMap((content) =>
-                                    Effect.if(content.includes(`./${component.id}`), {
-                                      onTrue: () => Effect.succeed(''),
-                                      onFalse: () =>
-                                        Effect.promise(() =>
-                                          fs.appendFile(indexFile, `${variant.exports}\n`),
-                                        ),
-                                    }),
-                                  ),
-                                ),
                               ),
                             ),
                           ]),

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 import { BoldIcon, ItalicIcon, UnderlineIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { ToggleGroup } from '~/components/ui'
+import { ToggleGroup } from '~/components/ui/toggle-group'
 
 const meta: Meta = {
   title: 'Components/Toggle Group',

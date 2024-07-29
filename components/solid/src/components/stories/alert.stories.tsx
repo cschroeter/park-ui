@@ -1,6 +1,6 @@
 import { InfoIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { Alert } from '~/components/ui'
+import { Alert } from '~/components/ui/alert'
 
 const meta: Meta = {
   title: 'Components/Alert',

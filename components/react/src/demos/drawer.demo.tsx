@@ -1,5 +1,7 @@
 import { XIcon } from 'lucide-react'
-import { Button, Drawer, IconButton } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Drawer } from '~/components/ui/drawer'
+import { IconButton } from '~/components/ui/icon-button'
 
 export const Demo = (props: Drawer.RootProps) => {
   return (

@@ -1,5 +1,5 @@
 import { signIngWithGithub } from '~/app/actions'
-import { Button, type ButtonProps } from '~/components/ui'
+import { Button, type ButtonProps } from '~/components/ui/button'
 
 interface Props extends ButtonProps {
   redirectTo: string

@@ -1,7 +1,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Carousel, IconButton } from '~/components/ui'
+import { Carousel } from '~/components/ui/carousel'
+import { IconButton } from '~/components/ui/icon-button'
 
 const meta: Meta = {
   title: 'Components/Carousel',

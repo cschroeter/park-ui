@@ -1,5 +1,6 @@
 import { ChevronDownIcon } from 'lucide-react'
-import { Accordion, Link } from '~/components/ui'
+import { Accordion } from '~/components/ui/accordion'
+import { Link } from '~/components/ui/link'
 
 export const Faq = () => {
   const questions = [

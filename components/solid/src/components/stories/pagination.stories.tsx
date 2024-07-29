@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Pagination } from '~/components/ui'
+import { Pagination } from '~/components/ui/pagination'
 
 const meta: Meta = {
   title: 'Components/Pagination',

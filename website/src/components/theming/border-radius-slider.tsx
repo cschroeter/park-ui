@@ -1,6 +1,6 @@
 'use client'
 
-import { Slider } from '~/components/ui'
+import { Slider } from '~/components/ui/slider'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const BorderRadiusSlider = () => {

@@ -1,6 +1,6 @@
 import { cva } from 'styled-system/css'
 import { Grid } from 'styled-system/jsx'
-import { Text } from '~/components/ui'
+import { Text } from '~/components/ui/text'
 import { NextJsIcon, NuxtIcon, SolidStartIcon } from './icons'
 
 const link = cva({

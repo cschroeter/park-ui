@@ -1,4 +1,4 @@
-import { PinInput, type PinInputProps } from '~/components/ui'
+import { PinInput, type PinInputProps } from '~/components/ui/pin-input'
 
 export const Demo = (props: PinInputProps) => {
   return (

@@ -1,6 +1,8 @@
 import type { Meta } from '@storybook/react'
 import { XIcon } from 'lucide-react'
-import { Button, Drawer, IconButton } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Drawer } from '~/components/ui/drawer'
+import { IconButton } from '~/components/ui/icon-button'
 
 const meta: Meta = {
   title: 'Components/Drawer',

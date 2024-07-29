@@ -2,12 +2,12 @@
   "name": "@park-ui/website",
   "private": true,
   "type": "module",
+  "sideEffects": false,
   "scripts": {
     "prepare": "panda codegen && prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "blocks:sync": "cp -a ../components/react/src/plus/blocks ./src/components",
     "db:format": "prisma format",
     "db:push": "prisma db push",

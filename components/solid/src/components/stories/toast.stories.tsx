@@ -1,6 +1,8 @@
 import { XIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { Button, IconButton, Toast } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { IconButton } from '~/components/ui/icon-button'
+import { Toast } from '~/components/ui/toast'
 
 const meta: Meta = {
   title: 'Components / Toast',

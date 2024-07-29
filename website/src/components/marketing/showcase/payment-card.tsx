@@ -1,7 +1,12 @@
 import { SiApple, SiPaypal } from '@icons-pack/react-simple-icons'
 import { CheckIcon, ChevronsUpDownIcon, CreditCardIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button, Card, FormLabel, Input, RadioButtonGroup, Select } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Card } from '~/components/ui/card'
+import { FormLabel } from '~/components/ui/form-label'
+import { Input } from '~/components/ui/input'
+import { RadioButtonGroup } from '~/components/ui/radio-button-group'
+import { Select } from '~/components/ui/select'
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const years = ['2023', '2024', '2025']

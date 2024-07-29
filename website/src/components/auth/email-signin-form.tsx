@@ -1,6 +1,7 @@
 import { Stack } from 'styled-system/jsx'
 import { signInWithEmail } from '~/app/actions'
-import { Button, Input } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Input } from '~/components/ui/input'
 
 interface Props {
   redirectTo: string
