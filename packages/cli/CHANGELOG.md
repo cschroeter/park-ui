@@ -1,9 +1,21 @@
 ## [Unreleased]
 
+### Changed
+
+- **Removed support for barrel files**: `index.ts` files will no longer be created by default. Import components directly from their respective folders.
+
+```jsx
+// Before
+import { Button } from '~/components/ui'
+
+// After
+import { Button } from '~/components/ui/button'
+```
+
 ### Fixed
 
 - Fixed an issue where the incorrect version was shown in the banner.
-#
+
 ## [0.7.2] - 2024-07-14
 
 ### Changed
