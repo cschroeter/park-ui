@@ -14,15 +14,23 @@ export const field = defineSlotRecipe({
       color: 'fg.default',
       fontWeight: 'medium',
       textStyle: 'sm',
+      _disabled: {
+        color: 'fg.disabled',
+      },
     },
     helperText: {
       color: 'fg.muted',
       textStyle: 'sm',
+      _disabled: {
+        color: 'fg.disabled',
+      },
     },
     errorText: {
       color: 'fg.error',
-      fontWeight: 'medium',
       textStyle: 'sm',
+      _disabled: {
+        color: 'fg.disabled',
+      },
     },
   },
 })
