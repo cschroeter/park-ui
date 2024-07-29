@@ -3,11 +3,11 @@ import { mergeConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
-  stories: ['../src/stories/*.tsx'],
+  stories: ['../src/components/stories/*.tsx', '../src/plus/stories/*.tsx'],
   addons: [
     {
       name: '@storybook/addon-essentials',
-      options: { backgrounds: false, actions: false },
+      options: { backgrounds: false, controls: false, actions: false },
     },
     '@storybook/addon-a11y',
     '@storybook/addon-themes',

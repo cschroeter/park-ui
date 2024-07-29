@@ -16,6 +16,7 @@
     "@storybook/addon-themes": "8.2.6",
     "@storybook/docs-tools": "8.2.6",
     "lucide-solid": "0.417.0",
+    "solid-icons": "1.1.0",
     "solid-js": "1.8.19",
     "storybook": "8.2.6",
     "storybook-solidjs": "1.0.0-beta.2",
