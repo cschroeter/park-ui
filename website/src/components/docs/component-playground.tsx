@@ -53,7 +53,7 @@ export const ComponentPlayground = async () => {
   const demos = await Effect.runPromise(programm)
 
   return (
-    <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
+    <Box borderWidth="1px" borderRadius="l3" overflow="hidden" mt="12">
       <ComponentPreview controls={componentControls} />
       <Divider />
       <CodePreviewTabs defaultValue="react" examples={demos} border="none" borderTopRadius="none" />
