@@ -22,7 +22,7 @@
   "devDependencies": {
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "20.14.12",
+    "@types/node": "22.0.0",
     "@types/yargs": "17.0.32",
     "release-it": "17.6.0",
     "typescript": "5.5.4"
