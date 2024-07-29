@@ -1,6 +1,12 @@
 import { HeartIcon, HelpCircleIcon, ShieldIcon, ShoppingBagIcon } from 'lucide-react'
 import { Box, Divider, Grid, HStack, Stack } from 'styled-system/jsx'
-import { Badge, Button, Card, Heading, Icon, NumberInput, Text } from '~/components/ui'
+import { Badge } from '~/components/ui/badge'
+import { Button } from '~/components/ui/button'
+import { Card } from '~/components/ui/card'
+import { Heading } from '~/components/ui/heading'
+import { Icon } from '~/components/ui/icon'
+import { NumberInput } from '~/components/ui/number-input'
+import { Text } from '~/components/ui/text'
 import { RatingInfo } from './rating-info'
 import { SizePicker } from './size-picker'
 

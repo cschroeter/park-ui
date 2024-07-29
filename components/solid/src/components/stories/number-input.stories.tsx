@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { NumberInput } from '~/components/ui'
+import { NumberInput } from '~/components/ui/number-input'
 
 const meta: Meta = {
   title: 'Components/Number Input',

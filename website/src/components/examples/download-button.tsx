@@ -2,7 +2,7 @@
 import { saveAs } from 'file-saver'
 import JSZip from 'jszip'
 import { FolderArchiveIcon } from 'lucide-react'
-import { Button } from '~/components/ui'
+import { Button } from '~/components/ui/button'
 
 interface Props {
   name: string

@@ -3,9 +3,8 @@ import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { useMemo, useState } from 'react'
 import { Box, Flex, Stack, styled } from 'styled-system/jsx'
-import { toPascalCase } from '~/lib/string-utils'
-import { Select } from '../ui'
-import { Slider } from '../ui/slider'
+import { Select } from '~/components/ui/select'
+import { Slider } from '~/components/ui/slider'
 import type { Controls } from '.velite'
 
 interface Props {
@@ -25,7 +24,7 @@ export const ComponentPreview = ({ controls }: Props) => {
 
   const hasSettings = Object.keys(props).length > 0
 
-  const Demo = useMemo(() => getComponent(toPascalCase(component)), [component])
+  const Demo = useMemo(() => getComponent(component), [component])
 
   return (
     <Flex
@@ -96,5 +95,4 @@ export const ComponentPreview = ({ controls }: Props) => {
 }
 
 const getComponent = (component: string) =>
-  // @ts-expect-error
-  dynamic(() => import('~/demos').then((mod) => mod[component]))
+  dynamic(() => import(`~/demos/${component}.demo`).then((mod) => mod.Demo))

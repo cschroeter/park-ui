@@ -1,6 +1,6 @@
 import { Box, Flex, Grid } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { Text } from '~/components/ui'
+import { Text } from '~/components/ui/text'
 import { getColorTokens } from '~/lib/get-color-tokens'
 
 interface Props {

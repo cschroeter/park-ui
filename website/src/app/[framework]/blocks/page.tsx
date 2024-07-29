@@ -4,7 +4,9 @@ import dynamic from 'next/dynamic'
 import NextLink from 'next/link'
 import { Center, Container, Grid, GridItem, HStack, Stack } from 'styled-system/jsx'
 import { PageHeader } from '~/components/page-header'
-import { Card, Icon, Text } from '~/components/ui'
+import { Card } from '~/components/ui/card'
+import { Icon } from '~/components/ui/icon'
+import { Text } from '~/components/ui/text'
 import { blocks } from '.velite'
 
 export default async function Page() {

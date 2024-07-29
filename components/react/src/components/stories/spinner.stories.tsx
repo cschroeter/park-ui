@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Stack } from 'styled-system/jsx'
-import { Spinner } from '~/components/ui'
+import { Spinner } from '~/components/ui/spinner'
 
 const meta: Meta = {
   title: 'Components/Spinner',

@@ -1,5 +1,5 @@
 import { Show, children } from 'solid-js'
-import { NumberInput as ArkNumberInput } from '~/components/ui/primitives'
+import * as ArkNumberInput from './primitives/number-input'
 
 export interface NumberInputProps extends ArkNumberInput.RootProps {}
 

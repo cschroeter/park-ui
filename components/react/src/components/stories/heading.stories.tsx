@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Stack } from 'styled-system/jsx'
-import { Heading } from '~/components/ui'
+import { Heading } from '~/components/ui/heading'
 
 const meta: Meta = {
   title: 'Components/Heading',

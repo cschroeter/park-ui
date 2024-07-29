@@ -1,4 +1,4 @@
-import { Table } from '~/components/ui'
+import { Table } from '~/components/ui/table'
 
 export const Demo = (props: Table.RootProps) => {
   return (

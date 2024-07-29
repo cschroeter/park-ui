@@ -1,6 +1,9 @@
 import { CheckIcon, ClipboardCopyIcon } from 'lucide-solid'
 import type { Meta } from 'storybook-solidjs'
-import { Clipboard, FormLabel, IconButton, Input } from '~/components/ui'
+import { Clipboard } from '~/components/ui/clipboard'
+import { FormLabel } from '~/components/ui/form-label'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
 
 const meta: Meta = {
   title: 'Components/Clipboard',

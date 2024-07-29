@@ -1,6 +1,10 @@
 import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
 import { Divider, HStack, Stack } from 'styled-system/jsx'
-import { Button, Card, FormLabel, Input, Text } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Card } from '~/components/ui/card'
+import { FormLabel } from '~/components/ui/form-label'
+import { Input } from '~/components/ui/input'
+import { Text } from '~/components/ui/text'
 
 export const AuthenticationCard = () => {
   return (

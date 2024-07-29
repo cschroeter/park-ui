@@ -2,7 +2,10 @@ import { PipetteIcon } from 'lucide-solid'
 import { Index } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
 import { HStack, Stack } from 'styled-system/jsx'
-import { ColorPicker, IconButton, Input, Text } from '~/components/ui'
+import { ColorPicker } from '~/components/ui/color-picker'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
+import { Text } from '~/components/ui/text'
 
 const meta: Meta = {
   title: 'Components/Color Picker',

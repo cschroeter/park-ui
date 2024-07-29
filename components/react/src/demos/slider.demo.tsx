@@ -1,4 +1,4 @@
-import { Slider, type SliderProps } from '~/components/ui'
+import { Slider, type SliderProps } from '~/components/ui/slider'
 
 export const Demo = (props: SliderProps) => {
   return (

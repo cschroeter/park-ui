@@ -1,5 +1,5 @@
 import { Circle, HStack, Stack } from 'styled-system/jsx'
-import { Skeleton } from '~/components/ui'
+import { Skeleton } from '~/components/ui/skeleton'
 
 export const Demo = () => {
   return (

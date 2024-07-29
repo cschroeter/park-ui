@@ -46,7 +46,6 @@ export const Scrubber = withContext<Assign<HTMLStyledProps<'div'>, NumberInput.S
 
 export const ValueText = withContext<Assign<HTMLStyledProps<'span'>, NumberInput.ValueTextProps>>(
   NumberInput.ValueText,
-  // @ts-expect-error
   'valueText',
 )
 

@@ -52,7 +52,6 @@ export const Scrubber = withContext<
 export const ValueText = withContext<
   HTMLSpanElement,
   Assign<HTMLStyledProps<'span'>, NumberInput.ValueTextBaseProps>
-  // @ts-expect-error it exists
 >(NumberInput.ValueText, 'valueText')
 
 export { NumberInputContext as Context } from '@ark-ui/react/number-input'

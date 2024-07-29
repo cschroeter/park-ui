@@ -6,7 +6,7 @@ import type { Config } from './get-config'
 
 const TsconfigJson = Schema.Struct({
   compilerOptions: Schema.Struct({
-    paths: Schema.Record(Schema.String, Schema.Array(Schema.String)),
+    paths: Schema.Record({ key: Schema.String, value: Schema.Array(Schema.String) }),
   }),
 })
 

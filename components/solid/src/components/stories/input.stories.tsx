@@ -1,5 +1,5 @@
 import type { Meta } from 'storybook-solidjs'
-import { Input } from '~/components/ui'
+import { Input } from '~/components/ui/input'
 
 const meta: Meta = {
   title: 'Components/Input',

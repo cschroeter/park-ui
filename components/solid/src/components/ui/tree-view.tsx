@@ -1,5 +1,5 @@
 import { For, Show, splitProps } from 'solid-js'
-import { TreeView as ArkTreeView } from '~/components/ui/primitives'
+import * as ArkTreeView from './primitives/tree-view'
 
 interface Child {
   value: string

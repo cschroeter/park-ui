@@ -4,8 +4,11 @@
   "variants": [
     {
       "file": "primitives/textarea.tsx",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { textarea } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type TextareaProps = ComponentProps<typeof Textarea>\nexport const Textarea = styled(ark.textarea, textarea)\n",
-      "exports": "export { Textarea, type TextareaProps } from './textarea'"
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { textarea } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type TextareaProps = ComponentProps<typeof Textarea>\nexport const Textarea = styled(ark.textarea, textarea)\n"
+    },
+    {
+      "file": "textarea.tsx",
+      "content": "export { Textarea, type TextareaProps } from './primitives/textarea'\n"
     }
   ]
 }

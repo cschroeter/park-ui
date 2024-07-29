@@ -1,6 +1,7 @@
 import type React from 'react'
 import { Stack } from 'styled-system/jsx'
-import { Heading, Text } from '~/components/ui'
+import { Heading } from '~/components/ui/heading'
+import { Text } from '~/components/ui/text'
 
 interface Props {
   subHeading: string

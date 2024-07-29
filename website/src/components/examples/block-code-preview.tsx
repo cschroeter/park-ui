@@ -1,5 +1,5 @@
 import { HStack } from 'styled-system/jsx'
-import { Tabs } from '~/components/ui'
+import { Tabs } from '~/components/ui/tabs'
 import { CodePreview } from '../code-preview'
 import { DownloadButton } from './download-button'
 

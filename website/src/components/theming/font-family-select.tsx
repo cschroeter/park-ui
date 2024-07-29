@@ -1,6 +1,6 @@
 'use client'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import { Select } from '~/components/ui'
+import { Select } from '~/components/ui/select'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const FontFamilySelect = () => {

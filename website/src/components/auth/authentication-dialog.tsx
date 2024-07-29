@@ -4,7 +4,8 @@ import { XIcon } from 'lucide-react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/navigation'
 import { AuthenticationCard } from '~/components/auth/authentication-card'
-import { Dialog, IconButton } from '~/components/ui'
+import { Dialog } from '~/components/ui/dialog'
+import { IconButton } from '~/components/ui/icon-button'
 
 interface Props {
   redirectTo: string

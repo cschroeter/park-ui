@@ -1,5 +1,5 @@
 import { Box, Flex, Grid } from 'styled-system/jsx'
-import { Text } from '~/components/ui'
+import { Text } from '~/components/ui/text'
 
 export const ShadowTokens = () => {
   return (

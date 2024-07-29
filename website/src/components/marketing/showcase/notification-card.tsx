@@ -1,5 +1,8 @@
 import { Stack } from 'styled-system/jsx'
-import { Button, Card, Switch, Text } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Card } from '~/components/ui/card'
+import { Switch } from '~/components/ui/switch'
+import { Text } from '~/components/ui/text'
 
 export const NotificationCard = () => {
   return (

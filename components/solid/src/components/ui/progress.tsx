@@ -1,5 +1,5 @@
 import { Show, children, splitProps } from 'solid-js'
-import { Progress as ArkProgress } from '~/components/ui/primitives'
+import * as ArkProgress from './primitives/progress'
 
 export interface ProgressProps extends ArkProgress.RootProps {
   /**

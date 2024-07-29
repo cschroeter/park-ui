@@ -1,5 +1,5 @@
 import { LogOutIcon } from 'lucide-react'
-import { Button, type ButtonProps } from '~/components/ui'
+import { Button, type ButtonProps } from '~/components/ui/button'
 import { signOut } from '~/lib/auth'
 
 export const SignOutButton = (props: ButtonProps) => {

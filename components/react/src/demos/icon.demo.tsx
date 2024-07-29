@@ -1,5 +1,5 @@
 import { DiamondIcon } from 'lucide-react'
-import { Icon, type IconProps } from '~/components/ui'
+import { Icon, type IconProps } from '~/components/ui/icon'
 
 export const Demo = (props: IconProps) => {
   return (

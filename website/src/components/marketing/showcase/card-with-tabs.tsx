@@ -1,5 +1,9 @@
 import { Stack } from 'styled-system/jsx'
-import { Button, Card, FormLabel, Input, Tabs } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Card } from '~/components/ui/card'
+import { FormLabel } from '~/components/ui/form-label'
+import { Input } from '~/components/ui/input'
+import { Tabs } from '~/components/ui/tabs'
 
 export const CardWithTabs = () => {
   return (

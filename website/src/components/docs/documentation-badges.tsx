@@ -1,6 +1,6 @@
 import { ExternalLinkIcon } from 'lucide-react'
 import { HStack } from 'styled-system/jsx'
-import { Badge } from '~/components/ui'
+import { Badge } from '~/components/ui/badge'
 
 interface Props {
   framework: string

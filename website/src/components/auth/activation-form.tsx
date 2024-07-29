@@ -1,11 +1,11 @@
 'use client'
 import { MinusIcon } from 'lucide-react'
 import { Fragment } from 'react'
-import { useFormState } from 'react-dom'
 import { Stack } from 'styled-system/jsx'
-// import { activateLicense } from '~/app/actions'
-import { Button, Icon, Input } from '~/components/ui'
-import { PinInput } from '~/components/ui/primitives'
+import { Button } from '~/components/ui/button'
+import { Icon } from '~/components/ui/icon'
+import { Input } from '~/components/ui/input'
+import * as PinInput from '~/components/ui/primitives/pin-input'
 
 interface Props {
   licenseKey: string

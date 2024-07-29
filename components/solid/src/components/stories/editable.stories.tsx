@@ -1,6 +1,8 @@
 import { Show } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
-import { Button, Editable, FormLabel } from '~/components/ui'
+import { Button } from '~/components/ui/button'
+import { Editable } from '~/components/ui/editable'
+import { FormLabel } from '~/components/ui/form-label'
 
 const meta: Meta = {
   title: 'Components/Editable',

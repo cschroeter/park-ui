@@ -1,6 +1,6 @@
 import { type Assign, RadioGroup } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
-import { type RadioGroupVariantProps, radioButtonGroup } from 'styled-system/recipes'
+import { type RadioButtonGroupVariantProps, radioButtonGroup } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from '~/lib/create-style-context'
 
@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(radioButtonGroup)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootProps>, RadioGroupVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootProps>, RadioButtonGroupVariantProps>
 >(RadioGroup.Root, 'root')
 
 export const Indicator = withContext<Assign<HTMLStyledProps<'div'>, RadioGroup.IndicatorProps>>(

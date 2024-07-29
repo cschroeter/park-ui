@@ -19,7 +19,6 @@ const Component = Schema.Struct({
     Schema.Struct({
       file: Schema.String,
       content: Schema.String,
-      exports: Schema.String,
     }),
   ),
 })

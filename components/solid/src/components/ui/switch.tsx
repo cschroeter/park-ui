@@ -1,5 +1,5 @@
 import { Show, children } from 'solid-js'
-import { Switch as ArkSwitch } from '~/components/ui/primitives'
+import * as ArkSwitch from './primitives/switch'
 
 export interface SwitchProps extends ArkSwitch.RootProps {}
 

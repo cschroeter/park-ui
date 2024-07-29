@@ -1,6 +1,6 @@
 import type { Meta } from 'storybook-solidjs'
 import { Stack } from 'styled-system/jsx'
-import { Text } from '~/components/ui'
+import { Text } from '~/components/ui/text'
 
 const meta: Meta = {
   title: 'Components/Text',

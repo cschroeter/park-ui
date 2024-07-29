@@ -21,28 +21,11 @@ const programm = pipe(
                     Effect.succeed(parse(file).name),
                     // resolve primitives
                     pipe(
-                      Effect.all([
-                        Effect.promise(() => fs.readFile(file, 'utf-8')),
-                        Effect.promise(() =>
-                          fs
-                            .readFile(path.join(parse(file).dir, 'index.ts'), 'utf-8')
-                            .then((content) =>
-                              content
-                                .split('\n')
-                                .find((line) =>
-                                  line.toLowerCase().includes(`./${parse(file).name}`),
-                                ),
-                            ),
-                        ),
-                      ]),
-                      Effect.map(([content, exports]) => {
-                        if (!exports) {
-                          console.log('No exports found for', parse(file).name)
-                        }
+                      Effect.all([Effect.promise(() => fs.readFile(file, 'utf-8'))]),
+                      Effect.map(([content]) => {
                         return {
                           file: path.join('primitives', parse(file).base),
                           content,
-                          exports,
                         }
                       }),
                     ),
@@ -56,25 +39,12 @@ const programm = pipe(
                           }),
                           Effect.catchAll(() => Effect.succeed(undefined)),
                         ),
-                        Effect.promise(() =>
-                          fs
-                            .readFile(
-                              path.join(parse(file.replace('primitives', '')).dir, 'index.ts'),
-                              'utf-8',
-                            )
-                            .then((content) =>
-                              content
-                                .split('\n')
-                                .find((line) => line.toLowerCase().includes(parse(file).name)),
-                            ),
-                        ),
                       ]),
-                      Effect.map(([content, exports]) =>
+                      Effect.map(([content]) =>
                         content
                           ? {
                               file: parse(file).base,
                               content,
-                              exports,
                             }
                           : undefined,
                       ),

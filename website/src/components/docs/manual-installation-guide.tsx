@@ -2,7 +2,9 @@ import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { Array, Effect, pipe } from 'effect'
 import { Box } from 'styled-system/jsx'
-import { Code, Step, Steps, Text } from '~/components/ui'
+import { Code } from '~/components/ui/code'
+import { Step, Steps } from '~/components/ui/stepper'
+import { Text } from '~/components/ui/text'
 import { getServerContext } from '~/lib/server-context'
 import { highlight } from '~/lib/shiki'
 import { CodePreview } from '../code-preview'
@@ -12,7 +14,6 @@ import { Recipe } from './recipe'
 interface Variant {
   file: string
   content: string
-  exports: string
 }
 
 interface Component {
@@ -51,7 +52,6 @@ export const ManualIntallationGuide = async () => {
                 Effect.promise(() => highlight(variant.content)),
                 Effect.map((html) => ({
                   file: variant.file,
-                  exports: variant.exports,
                   label: framework,
                   value: framework,
                   code: variant.content,
@@ -69,11 +69,6 @@ export const ManualIntallationGuide = async () => {
   )
   const { primitive, composition } = await Effect.runPromise(programm)
 
-  const primitiveExport = await highlight(primitive[0].exports)
-  const compositionExport = composition
-    ? await highlight(`export * from './primitives'\n${composition[0].exports}`)
-    : ''
-
   return (
     <Steps>
       <Step number="1" title="Styled Primitive">
@@ -81,12 +76,6 @@ export const ManualIntallationGuide = async () => {
           Copy the code snippet below into <Code>~/components/ui/{primitive[0].file}</Code>
         </Text>
         <CodePreviewTabs defaultValue={framework} examples={primitive} />
-        <Text>
-          Extend <Code>~/components/ui/primitives/index.ts</Code> with the following line:
-        </Text>
-        <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
-          <CodePreview html={primitiveExport} code={primitive[0].exports} />
-        </Box>
       </Step>
       {composition && (
         <Step number="2" title="Add Composition">
@@ -94,12 +83,6 @@ export const ManualIntallationGuide = async () => {
             Copy the code snippet below into <Code>~/components/ui/{composition[0].file}</Code>
           </Text>
           <CodePreviewTabs defaultValue={framework} examples={composition} />
-          <Text>
-            Extend <Code>~/components/ui/index.ts</Code> with the following line:
-          </Text>
-          <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
-            <CodePreview html={compositionExport} code={composition[0].exports} />
-          </Box>
         </Step>
       )}
       <Step number={composition ? '3' : '2'} title="Integrate Recipe">

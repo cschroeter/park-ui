@@ -1,5 +1,6 @@
 import { Stack } from 'styled-system/jsx'
-import { FormLabel, Input, type InputProps } from '~/components/ui'
+import { FormLabel } from '~/components/ui/form-label'
+import { Input, type InputProps } from '~/components/ui/input'
 
 export const Demo = (props: InputProps) => {
   return (

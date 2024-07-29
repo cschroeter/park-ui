@@ -1,7 +1,9 @@
 import type { Meta } from '@storybook/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { Combobox, IconButton, Input } from '~/components/ui'
+import { Combobox } from '~/components/ui/combobox'
+import { IconButton } from '~/components/ui/icon-button'
+import { Input } from '~/components/ui/input'
 
 const meta: Meta = {
   title: 'Components/Combobox',

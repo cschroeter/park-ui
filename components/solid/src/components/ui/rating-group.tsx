@@ -1,5 +1,5 @@
 import { Index, Show, children } from 'solid-js'
-import { RatingGroup as ArkRatingGroup } from '~/components/ui/primitives'
+import * as ArkRatingGroup from './primitives/rating-group'
 
 export interface RatingGroupProps extends ArkRatingGroup.RootProps {}
 
