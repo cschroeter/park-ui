@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react'
+import type { Meta } from 'storybook-solidjs'
 import { Field } from '~/components/ui/field'
 import { Input } from '~/components/ui/input'
 import { Textarea } from '~/components/ui/textarea'
@@ -13,9 +13,7 @@ export const InputField = () => {
   return (
     <Field.Root>
       <Field.Label>Label</Field.Label>
-      <Field.Input asChild>
-        <Input />
-      </Field.Input>
+      <Field.Input asChild={(inputProps) => <Input {...inputProps()} />} />
       <Field.HelperText>Some additional Info</Field.HelperText>
       <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
@@ -24,11 +22,9 @@ export const InputField = () => {
 
 export const InputFieldInvalid = () => {
   return (
-    <Field.Root>
+    <Field.Root invalid>
       <Field.Label>Label</Field.Label>
-      <Field.Input asChild>
-        <Input />
-      </Field.Input>
+      <Field.Input asChild={(inputProps) => <Input {...inputProps()} />} />
       <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
   )
@@ -38,11 +34,8 @@ export const TextareaField = () => {
   return (
     <Field.Root>
       <Field.Label>Label</Field.Label>
-      <Field.Textarea asChild>
-        <Textarea />
-      </Field.Textarea>
+      <Field.Textarea asChild={(textareaProps) => <Textarea {...textareaProps()} />} />
       <Field.HelperText>Some additional Info</Field.HelperText>
-      <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
   )
 }
@@ -51,9 +44,7 @@ export const TextareaFieldInvalid = () => {
   return (
     <Field.Root invalid>
       <Field.Label>Label</Field.Label>
-      <Field.Textarea asChild>
-        <Textarea />
-      </Field.Textarea>
+      <Field.Textarea asChild={(textareaProps) => <Textarea {...textareaProps()} />} />
       <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
   )

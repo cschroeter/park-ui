@@ -7,6 +7,7 @@ import { Avatar } from '~/components/ui/avatar'
 import { Button } from '~/components/ui/button'
 import { Checkbox } from '~/components/ui/checkbox'
 import { Code } from '~/components/ui/code'
+import { Field } from '~/components/ui/field'
 import { Heading } from '~/components/ui/heading'
 import { Input } from '~/components/ui/input'
 import { Link } from '~/components/ui/link'
@@ -14,6 +15,7 @@ import { Skeleton } from '~/components/ui/skeleton'
 import { Slider } from '~/components/ui/slider'
 import { Spinner } from '~/components/ui/spinner'
 import { Text } from '~/components/ui/text'
+import { Textarea } from '~/components/ui/textarea'
 
 const icons = { InfoIcon, ExternalLinkIcon }
 const scope = {
@@ -24,6 +26,7 @@ const scope = {
   Checkbox,
   Code,
   Flex,
+  Field,
   Heading,
   HStack,
   Input,
@@ -33,6 +36,7 @@ const scope = {
   Spinner,
   Stack,
   Text,
+  Textarea,
   ...icons,
 }
 
