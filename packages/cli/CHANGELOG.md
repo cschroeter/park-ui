@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.8.0] - 2024-07-29
+
 ### Changed
 
 - **Removed support for barrel files**: `index.ts` files will no longer be created by default. Import components directly from their respective folders.
