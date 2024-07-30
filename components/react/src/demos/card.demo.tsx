@@ -1,7 +1,7 @@
-import { Field } from '@ark-ui/react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
+import { Field } from '~/components/ui/field'
 import { Input } from '~/components/ui/input'
 
 export const Demo = (props: Card.RootProps) => {
