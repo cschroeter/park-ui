@@ -15,7 +15,7 @@
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "sync:components": "rsync -av ./components/react/src/components/ui ./website/src/components",
-    "sync:demos": "rsync -av --delte ./components/react/src/demos ./website/src/",
+    "sync:demos": "rsync -av --delete ./components/react/src/demos ./website/src/",
     "sync:blocks": "rsync -av --delete ./components/react/src/plus/blocks ./website/src/components",
     "setup": "vc link -p park-ui -y && vc env pull --environment development website/.env"
   },

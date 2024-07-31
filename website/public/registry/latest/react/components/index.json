@@ -17,6 +17,7 @@
   { "id": "drawer", "name": "Drawer" },
   { "id": "editable", "name": "Editable" },
   { "id": "field", "name": "Field" },
+  { "id": "fieldset", "name": "Fieldset" },
   { "id": "file-upload", "name": "File Upload" },
   { "id": "form-label", "name": "Form Label" },
   { "id": "heading", "name": "Heading" },

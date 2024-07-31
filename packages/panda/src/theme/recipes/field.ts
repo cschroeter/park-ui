@@ -26,7 +26,12 @@ export const field = defineSlotRecipe({
       },
     },
     errorText: {
+      alignItems: 'center',
       color: 'fg.error',
+      display: 'inline-flex',
+      gap: '2',
+      gridArea: 'errorText',
+      mt: '4',
       textStyle: 'sm',
       _disabled: {
         color: 'fg.disabled',
