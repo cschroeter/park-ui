@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start": "bun run ./src/index.ts",
+    "lint": "biome lint ./src",
     "build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
     "release-it": "release-it"
   },

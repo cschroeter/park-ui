@@ -6,6 +6,7 @@
   "scripts": {
     "prepare": "panda codegen && prisma generate",
     "dev": "next dev",
+    "lint": "biome lint ./src",
     "build": "next build",
     "start": "next start",
     "blocks:sync": "cp -a ../components/react/src/plus/blocks ./src/components",
