@@ -1,1 +1,1 @@
-export { Skeleton, type SkeletonProps } from './primitives/skeleton'
+export { Skeleton, type SkeletonProps } from './styled/skeleton'

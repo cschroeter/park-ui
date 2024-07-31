@@ -1,1 +1,1 @@
-export * as Menu from './primitives/menu'
+export * as Menu from './styled/menu'

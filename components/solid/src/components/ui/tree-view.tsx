@@ -1,5 +1,5 @@
 import { For, Show, splitProps } from 'solid-js'
-import * as ArkTreeView from './primitives/tree-view'
+import * as StyledTreeView from './styled/tree-view'
 
 interface Child {
   value: string
@@ -12,7 +12,7 @@ export interface TreeViewData {
   children: Child[]
 }
 
-export interface TreeViewProps extends ArkTreeView.RootProps {
+export interface TreeViewProps extends StyledTreeView.RootProps {
   data: TreeViewData
 }
 export const TreeView = (props: TreeViewProps) => {
@@ -22,31 +22,31 @@ export const TreeView = (props: TreeViewProps) => {
     <Show
       when={child.children}
       fallback={
-        <ArkTreeView.Item value={child.value}>
-          <ArkTreeView.ItemText>{child.name}</ArkTreeView.ItemText>
-        </ArkTreeView.Item>
+        <StyledTreeView.Item value={child.value}>
+          <StyledTreeView.ItemText>{child.name}</StyledTreeView.ItemText>
+        </StyledTreeView.Item>
       }
     >
-      <ArkTreeView.Branch value={child.value}>
-        <ArkTreeView.BranchControl>
-          <ArkTreeView.BranchIndicator>
+      <StyledTreeView.Branch value={child.value}>
+        <StyledTreeView.BranchControl>
+          <StyledTreeView.BranchIndicator>
             <ChevronRightIcon />
-          </ArkTreeView.BranchIndicator>
-          <ArkTreeView.BranchText>{child.name}</ArkTreeView.BranchText>
-        </ArkTreeView.BranchControl>
-        <ArkTreeView.BranchContent>
+          </StyledTreeView.BranchIndicator>
+          <StyledTreeView.BranchText>{child.name}</StyledTreeView.BranchText>
+        </StyledTreeView.BranchControl>
+        <StyledTreeView.BranchContent>
           <For each={child.children}>{(child) => renderChild(child)}</For>
-        </ArkTreeView.BranchContent>
-      </ArkTreeView.Branch>
+        </StyledTreeView.BranchContent>
+      </StyledTreeView.Branch>
     </Show>
   )
 
   return (
-    <ArkTreeView.Root aria-label={localProps.data.label} {...rootProps}>
-      <ArkTreeView.Tree>
+    <StyledTreeView.Root aria-label={localProps.data.label} {...rootProps}>
+      <StyledTreeView.Tree>
         <For each={localProps.data.children}>{(child) => renderChild(child)}</For>
-      </ArkTreeView.Tree>
-    </ArkTreeView.Root>
+      </StyledTreeView.Tree>
+    </StyledTreeView.Root>
   )
 }
 

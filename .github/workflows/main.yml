@@ -13,6 +13,14 @@ jobs:
     name: main
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: oven-sh/setup-bun@v1
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
 
+      - name: Install Dependencies
+        run: bun install
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Lint
+        run: bun run lint

@@ -1,1 +1,1 @@
-export * as Select from './primitives/select'
+export * as Select from './styled/select'

@@ -1,1 +1,1 @@
-export * as FileUpload from './primitives/file-upload'
+export * as FileUpload from './styled/file-upload'

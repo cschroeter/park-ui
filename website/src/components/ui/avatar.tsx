@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
-import * as ArkAvatar from '~/components/ui/primitives/avatar'
+import * as StyledAvatar from './styled/avatar'
 
-export interface AvatarProps extends ArkAvatar.RootProps {
+export interface AvatarProps extends StyledAvatar.RootProps {
   name?: string | undefined | null
   src?: string | undefined | null
 }
@@ -10,12 +10,12 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { name, src, ...rootProps } = props
 
   return (
-    <ArkAvatar.Root ref={ref} {...rootProps}>
-      <ArkAvatar.Fallback>{name ? getInitials(name) : <UserIcon />}</ArkAvatar.Fallback>
+    <StyledAvatar.Root ref={ref} {...rootProps}>
+      <StyledAvatar.Fallback>{name ? getInitials(name) : <UserIcon />}</StyledAvatar.Fallback>
       {src && (
-        <ArkAvatar.Image src={src} alt={name ?? 'User Profile'} referrerPolicy="no-referrer" />
+        <StyledAvatar.Image src={src} alt={name ?? 'User Profile'} referrerPolicy="no-referrer" />
       )}
-    </ArkAvatar.Root>
+    </StyledAvatar.Root>
   )
 })
 

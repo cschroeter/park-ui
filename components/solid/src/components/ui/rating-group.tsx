@@ -1,37 +1,37 @@
 import { Index, Show, children } from 'solid-js'
-import * as ArkRatingGroup from './primitives/rating-group'
+import * as StyledRatingGroup from './styled/rating-group'
 
-export interface RatingGroupProps extends ArkRatingGroup.RootProps {}
+export interface RatingGroupProps extends StyledRatingGroup.RootProps {}
 
 export const RatingGroup = (props: RatingGroupProps) => {
   const getChildren = children(() => props.children)
 
   return (
-    <ArkRatingGroup.Root {...props}>
+    <StyledRatingGroup.Root {...props}>
       <Show when={getChildren()}>
-        <ArkRatingGroup.Label>{getChildren()}</ArkRatingGroup.Label>
+        <StyledRatingGroup.Label>{getChildren()}</StyledRatingGroup.Label>
       </Show>
-      <ArkRatingGroup.Control>
-        <ArkRatingGroup.Context>
+      <StyledRatingGroup.Control>
+        <StyledRatingGroup.Context>
           {(context) => (
             <Index each={context().items}>
               {(index) => (
-                <ArkRatingGroup.Item index={index()}>
-                  <ArkRatingGroup.ItemContext>
+                <StyledRatingGroup.Item index={index()}>
+                  <StyledRatingGroup.ItemContext>
                     {(item) => (
                       <Show when={item().highlighted} fallback={<StarIcon />}>
                         <StarIcon half={item().half} />
                       </Show>
                     )}
-                  </ArkRatingGroup.ItemContext>
-                </ArkRatingGroup.Item>
+                  </StyledRatingGroup.ItemContext>
+                </StyledRatingGroup.Item>
               )}
             </Index>
           )}
-        </ArkRatingGroup.Context>
-      </ArkRatingGroup.Control>
-      <ArkRatingGroup.HiddenInput />
-    </ArkRatingGroup.Root>
+        </StyledRatingGroup.Context>
+      </StyledRatingGroup.Control>
+      <StyledRatingGroup.HiddenInput />
+    </StyledRatingGroup.Root>
   )
 }
 

@@ -1,1 +1,1 @@
-export * as DatePicker from './primitives/date-picker'
+export * as DatePicker from './styled/date-picker'

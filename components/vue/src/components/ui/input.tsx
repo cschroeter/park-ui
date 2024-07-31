@@ -1,1 +1,1 @@
-export { Input, type InputProps } from './primitives/input'
+export { Input, type InputProps } from './styled/input'

@@ -1,7 +1,7 @@
 import { Show, children, splitProps } from 'solid-js'
-import * as ArkProgress from './primitives/progress'
+import * as StyledProgress from './styled/progress'
 
-export interface ProgressProps extends ArkProgress.RootProps {
+export interface ProgressProps extends StyledProgress.RootProps {
   /**
    * The type of progress to render.
    * @default linear
@@ -14,25 +14,25 @@ export const Progress = (props: ProgressProps) => {
   const getChildren = children(() => localProps.children)
 
   return (
-    <ArkProgress.Root {...rootProps}>
+    <StyledProgress.Root {...rootProps}>
       <Show when={getChildren()}>
-        <ArkProgress.Label>{getChildren()}</ArkProgress.Label>
+        <StyledProgress.Label>{getChildren()}</StyledProgress.Label>
       </Show>
       <Show
         when={localProps.type === 'circular'}
         fallback={
-          <ArkProgress.Track>
-            <ArkProgress.Range />
-          </ArkProgress.Track>
+          <StyledProgress.Track>
+            <StyledProgress.Range />
+          </StyledProgress.Track>
         }
       >
-        <ArkProgress.Circle>
-          <ArkProgress.CircleTrack />
-          <ArkProgress.CircleRange />
-          <ArkProgress.ValueText />
-        </ArkProgress.Circle>
+        <StyledProgress.Circle>
+          <StyledProgress.CircleTrack />
+          <StyledProgress.CircleRange />
+          <StyledProgress.ValueText />
+        </StyledProgress.Circle>
       </Show>
-      <ArkProgress.ValueText />
-    </ArkProgress.Root>
+      <StyledProgress.ValueText />
+    </StyledProgress.Root>
   )
 }

@@ -1,1 +1,1 @@
-export * as Dialog from './primitives/dialog'
+export * as Dialog from './styled/dialog'

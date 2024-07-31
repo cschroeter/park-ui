@@ -1,1 +1,1 @@
-export * as Tooltip from './primitives/tooltip'
+export * as Tooltip from './styled/tooltip'

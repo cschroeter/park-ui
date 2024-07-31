@@ -21,6 +21,6 @@
     "typescript": "5.5.4",
     "vite": "5.3.5",
     "vite-tsconfig-paths": "4.3.2",
-    "vue": "3.4.34"
+    "vue": "3.4.35"
   }
 }

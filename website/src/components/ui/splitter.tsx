@@ -1,1 +1,1 @@
-export * as Splitter from './primitives/splitter'
+export * as Splitter from './styled/splitter'

@@ -6,9 +6,8 @@ import fs from 'fs-extra'
 import color from 'picocolors'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { fetchComponents, fetchHelpers } from './client'
+import { fetchComponents, fetchUtils } from './client'
 import { getConfig } from './get-config'
-import { getImportAliasPath } from './tsconfig'
 
 const isEmpty = (arr: string[]) => arr.length === 0
 
@@ -55,65 +54,37 @@ const main = async () => {
           getConfig(),
           Effect.tap(() => spinner.start('Installing components...')),
           Effect.flatMap((config) =>
-            pipe(
-              getImportAliasPath(config),
-              Effect.flatMap((basePath) =>
-                Effect.all([
-                  fetchComponents(config, argv),
-                  Effect.succeed(
-                    path.join(
-                      basePath,
-                      config.outputPaths.componentsDir.replace(
-                        config.importAlias.replace(/\/\*$/, ''),
-                        '',
-                      ),
-                    ),
-                  ),
-                  Effect.succeed(
-                    path.join(
-                      basePath,
-                      config.outputPaths.libDir.replace(
-                        config.importAlias.replace(/\/\*$/, ''),
-                        '',
-                      ),
-                    ),
-                  ),
-                ]),
-              ),
-              Effect.flatMap(([components, componentsDir, libDir]) =>
-                Effect.all([
-                  Effect.forEach(components, (component) =>
+            Effect.all([
+              pipe(
+                fetchComponents(config, argv),
+                Effect.flatMap((components) =>
+                  Effect.forEach(components, ({ variants }) =>
                     pipe(
-                      Effect.forEach(component.variants, (variant) =>
-                        pipe(
-                          Effect.all([
-                            Effect.promise(() =>
-                              fs.outputFile(
-                                path.join(componentsDir, variant.file),
-                                variant.content
-                                  .replaceAll('~/components/ui', config.outputPaths.componentsDir)
-                                  .replaceAll('~/lib', config.outputPaths.libDir),
-                              ),
-                            ),
-                          ]),
-                        ),
-                      ),
-                    ),
-                  ),
-                  pipe(
-                    fetchHelpers(config),
-                    Effect.flatMap((helpers) =>
-                      Effect.forEach(helpers, (helper) =>
+                      Effect.forEach(variants, (variant) =>
                         Effect.promise(() =>
-                          fs.outputFile(path.join(libDir, helper.filename), helper.content),
+                          fs.outputFile(
+                            path.join(config.outputPath, variant.file),
+                            variant.content,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ]),
+                ),
               ),
-            ),
+              pipe(
+                fetchUtils(config),
+                Effect.flatMap((helpers) =>
+                  Effect.forEach(helpers, (helper) =>
+                    Effect.promise(() =>
+                      fs.outputFile(path.join(config.outputPath, helper.filename), helper.content),
+                    ),
+                  ),
+                ),
+              ),
+            ]),
           ),
+
           Effect.catchAll((error) => Effect.fail(error.message)),
         )
 

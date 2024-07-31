@@ -1,1 +1,1 @@
-export { FormLabel, type FormLabelProps } from './primitives/form-label'
+export { FormLabel, type FormLabelProps } from './styled/form-label'

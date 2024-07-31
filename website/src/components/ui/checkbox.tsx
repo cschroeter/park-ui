@@ -1,24 +1,24 @@
 import { forwardRef } from 'react'
-import * as ArkCheckbox from './primitives/checkbox'
+import * as StyledCheckbox from './styled/checkbox'
 
-export interface CheckboxProps extends ArkCheckbox.RootProps {}
+export interface CheckboxProps extends StyledCheckbox.RootProps {}
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
   const { children, ...rootProps } = props
 
   return (
-    <ArkCheckbox.Root ref={ref} {...rootProps}>
-      <ArkCheckbox.Control>
-        <ArkCheckbox.Indicator>
+    <StyledCheckbox.Root ref={ref} {...rootProps}>
+      <StyledCheckbox.Control>
+        <StyledCheckbox.Indicator>
           <CheckIcon />
-        </ArkCheckbox.Indicator>
-        <ArkCheckbox.Indicator indeterminate>
+        </StyledCheckbox.Indicator>
+        <StyledCheckbox.Indicator indeterminate>
           <MinusIcon />
-        </ArkCheckbox.Indicator>
-      </ArkCheckbox.Control>
-      {children && <ArkCheckbox.Label>{children}</ArkCheckbox.Label>}
-      <ArkCheckbox.HiddenInput />
-    </ArkCheckbox.Root>
+        </StyledCheckbox.Indicator>
+      </StyledCheckbox.Control>
+      {children && <StyledCheckbox.Label>{children}</StyledCheckbox.Label>}
+      <StyledCheckbox.HiddenInput />
+    </StyledCheckbox.Root>
   )
 })
 

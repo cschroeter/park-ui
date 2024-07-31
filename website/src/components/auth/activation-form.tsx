@@ -5,7 +5,7 @@ import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Icon } from '~/components/ui/icon'
 import { Input } from '~/components/ui/input'
-import * as PinInput from '~/components/ui/primitives/pin-input'
+import * as PinInput from '~/components/ui/styled/pin-input'
 
 interface Props {
   licenseKey: string
