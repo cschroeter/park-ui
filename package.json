@@ -17,7 +17,8 @@
     "sync:components": "rsync -av ./components/react/src/components/ui ./website/src/components",
     "sync:demos": "rsync -av --delete ./components/react/src/demos ./website/src/",
     "sync:blocks": "rsync -av --delete ./components/react/src/plus/blocks ./website/src/components",
-    "setup": "vc link -p park-ui -y && vc env pull --environment development website/.env"
+    "setup": "vc link -p park-ui -y && vc env pull --environment development website/.env",
+    "mdx:format": "prettier --write ./website/src/**/*.mdx"
   },
   "dependencies": {
     "@biomejs/biome": "1.8.3",
