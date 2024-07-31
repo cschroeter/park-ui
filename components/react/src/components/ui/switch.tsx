@@ -1,19 +1,19 @@
 import { forwardRef } from 'react'
-import * as ArkSwitch from './primitives/switch'
+import * as StyledSwitch from './styled/switch'
 
-export interface SwitchProps extends ArkSwitch.RootProps {}
+export interface SwitchProps extends StyledSwitch.RootProps {}
 
 export const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {
   const { children, ...rootProps } = props
 
   return (
-    <ArkSwitch.Root ref={ref} {...rootProps}>
-      <ArkSwitch.Control>
-        <ArkSwitch.Thumb />
-      </ArkSwitch.Control>
-      {children && <ArkSwitch.Label>{children}</ArkSwitch.Label>}
-      <ArkSwitch.HiddenInput />
-    </ArkSwitch.Root>
+    <StyledSwitch.Root ref={ref} {...rootProps}>
+      <StyledSwitch.Control>
+        <StyledSwitch.Thumb />
+      </StyledSwitch.Control>
+      {children && <StyledSwitch.Label>{children}</StyledSwitch.Label>}
+      <StyledSwitch.HiddenInput />
+    </StyledSwitch.Root>
   )
 })
 

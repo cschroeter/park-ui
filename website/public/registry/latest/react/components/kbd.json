@@ -3,9 +3,9 @@
   "name": "Kbd",
   "variants": [
     {
-      "file": "primitives/kbd.tsx",
+      "file": "styled/kbd.tsx",
       "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { kbd } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type KbdProps = ComponentProps<typeof Kbd>\nexport const Kbd = styled(ark.kbd, kbd)\n"
     },
-    { "file": "kbd.tsx", "content": "export { Kbd, type KbdProps } from './primitives/kbd'\n" }
+    { "file": "kbd.tsx", "content": "export { Kbd, type KbdProps } from './styled/kbd'\n" }
   ]
 }

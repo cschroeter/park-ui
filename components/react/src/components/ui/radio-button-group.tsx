@@ -1,1 +1,1 @@
-export * as RadioButtonGroup from './primitives/radio-button-group'
+export * as RadioButtonGroup from './styled/radio-button-group'

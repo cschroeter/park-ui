@@ -1,9 +1,6 @@
 import { mergeProps, splitProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
-import {
-  Spinner as StyledSpinner,
-  type SpinnerProps as StyledSpinnerProps,
-} from './primitives/spinner'
+import { Spinner as StyledSpinner, type SpinnerProps as StyledSpinnerProps } from './styled/spinner'
 
 export interface SpinnerProps extends StyledSpinnerProps {
   /**

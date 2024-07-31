@@ -17,6 +17,7 @@
   "scripts": {
     "build": "tsup",
     "release-it": "release-it",
+    "lint": "biome lint ./src",
     "test": "bun test",
     "prepack": "clean-package",
     "postpack": "clean-package restore",

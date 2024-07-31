@@ -2,39 +2,39 @@
 import { forwardRef } from 'react'
 import { Button } from './button'
 import { IconButton } from './icon-button'
-import * as ArkPagination from './primitives/pagination'
+import * as StyledPagination from './styled/pagination'
 
-export interface PaginationProps extends ArkPagination.RootProps {}
+export interface PaginationProps extends StyledPagination.RootProps {}
 
 export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
   return (
-    <ArkPagination.Root ref={ref} {...props}>
-      <ArkPagination.PrevTrigger asChild>
+    <StyledPagination.Root ref={ref} {...props}>
+      <StyledPagination.PrevTrigger asChild>
         <IconButton variant="ghost" aria-label="Next Page">
           <ChevronLeftIcon />
         </IconButton>
-      </ArkPagination.PrevTrigger>
-      <ArkPagination.Context>
+      </StyledPagination.PrevTrigger>
+      <StyledPagination.Context>
         {(pagination) =>
           pagination.pages.map((page, index) =>
             page.type === 'page' ? (
-              <ArkPagination.Item key={index} {...page} asChild>
+              <StyledPagination.Item key={index} {...page} asChild>
                 <Button variant="outline">{page.value}</Button>
-              </ArkPagination.Item>
+              </StyledPagination.Item>
             ) : (
-              <ArkPagination.Ellipsis key={index} index={index}>
+              <StyledPagination.Ellipsis key={index} index={index}>
                 &#8230;
-              </ArkPagination.Ellipsis>
+              </StyledPagination.Ellipsis>
             ),
           )
         }
-      </ArkPagination.Context>
-      <ArkPagination.NextTrigger asChild>
+      </StyledPagination.Context>
+      <StyledPagination.NextTrigger asChild>
         <IconButton variant="ghost" aria-label="Next Page">
           <ChevronRightIcon />
         </IconButton>
-      </ArkPagination.NextTrigger>
-    </ArkPagination.Root>
+      </StyledPagination.NextTrigger>
+    </StyledPagination.Root>
   )
 })
 

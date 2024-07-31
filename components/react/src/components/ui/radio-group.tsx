@@ -1,1 +1,1 @@
-export * as RadioGroup from './primitives/radio-group'
+export * as RadioGroup from './styled/radio-group'

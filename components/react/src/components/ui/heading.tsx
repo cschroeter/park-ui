@@ -1,1 +1,1 @@
-export { Heading, type HeadingProps } from './primitives/heading'
+export { Heading, type HeadingProps } from './styled/heading'

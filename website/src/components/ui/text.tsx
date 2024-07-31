@@ -1,1 +1,1 @@
-export { Text, type TextProps } from './primitives/text'
+export { Text, type TextProps } from './styled/text'

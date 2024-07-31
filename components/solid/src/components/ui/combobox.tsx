@@ -1,1 +1,1 @@
-export * as Combobox from './primitives/combobox'
+export * as Combobox from './styled/combobox'

@@ -1,1 +1,1 @@
-export * as Table from './primitives/table'
+export * as Table from './styled/table'

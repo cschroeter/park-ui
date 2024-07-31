@@ -5,7 +5,7 @@ import { Input } from '~/components/ui/input'
 <template>
   <Story title="Input">
     <Variant title="Basic">
-        <Input id="name" placeholder="Your Name" />
+      <Input id="name" placeholder="Your Name" />
     </Variant>
   </Story>
 </template>

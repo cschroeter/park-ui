@@ -29,6 +29,7 @@ const createPreset = (options: PresetOptions = defaultOptions): Preset => {
   const tokens = createTokens(options)
 
   return definePreset({
+    name: '@park-ui/panda-preset',
     theme: {
       extend: {
         breakpoints,

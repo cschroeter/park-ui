@@ -9,9 +9,7 @@ const programm = pipe(
   Effect.forEach(frameworks, (framework) =>
     Effect.all([
       pipe(
-        Effect.promise(() =>
-          globby([`../components/${framework}/src/components/ui/primitives/*.tsx`]),
-        ),
+        Effect.promise(() => globby([`../components/${framework}/src/components/ui/styled/*.tsx`])),
         Effect.flatMap((files) =>
           pipe(
             Effect.all([
@@ -24,7 +22,7 @@ const programm = pipe(
                       Effect.all([Effect.promise(() => fs.readFile(file, 'utf-8'))]),
                       Effect.map(([content]) => {
                         return {
-                          file: path.join('primitives', parse(file).base),
+                          file: path.join('styled', parse(file).base),
                           content,
                         }
                       }),
@@ -34,7 +32,7 @@ const programm = pipe(
                       Effect.all([
                         pipe(
                           Effect.tryPromise({
-                            try: () => fs.readFile(file.replace('/primitives', ''), 'utf-8'),
+                            try: () => fs.readFile(file.replace('/styled', ''), 'utf-8'),
                             catch: () => new Error('No composition file found'),
                           }),
                           Effect.catchAll(() => Effect.succeed(undefined)),
@@ -78,21 +76,22 @@ const programm = pipe(
         ),
       ),
       pipe(
-        Effect.promise(() => globby([`../components/${framework}/src/lib/**/*.tsx`])),
-        Effect.flatMap((helpers) =>
-          Effect.forEach(helpers, (helper) =>
+        Effect.promise(() =>
+          globby([`../components/${framework}/src/components/ui/styled/utils/*.tsx`]),
+        ),
+        Effect.flatMap((files) =>
+          Effect.forEach(files, (file) =>
             pipe(
-              Effect.promise(() => fs.readFile(helper, 'utf-8')),
+              Effect.promise(() => fs.readFile(file, 'utf-8')),
               Effect.map((content) => ({
-                filename: parse(helper).base,
+                filename: path.join('styled/utils', parse(file).base),
                 content,
               })),
               Effect.flatMap((data) =>
                 Effect.promise(() =>
-                  fs.outputJSON(
-                    `../website/public/registry/latest/${framework}/helpers/index.json`,
-                    [data],
-                  ),
+                  fs.outputJSON(`../website/public/registry/latest/${framework}/utils/index.json`, [
+                    data,
+                  ]),
                 ),
               ),
             ),

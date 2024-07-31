@@ -1,1 +1,1 @@
-export * as Drawer from './primitives/drawer'
+export * as Drawer from './styled/drawer'

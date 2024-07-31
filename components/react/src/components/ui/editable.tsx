@@ -1,1 +1,1 @@
-export * as Editable from './primitives/editable'
+export * as Editable from './styled/editable'

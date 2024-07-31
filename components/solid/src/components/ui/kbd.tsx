@@ -1,1 +1,1 @@
-export { Kbd, type KbdProps } from './primitives/kbd'
+export { Kbd, type KbdProps } from './styled/kbd'

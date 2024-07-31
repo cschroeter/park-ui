@@ -6,12 +6,8 @@ import fs from 'fs-extra'
 import { packageDirectorySync } from 'pkg-dir'
 
 const Config = Schema.Struct({
-  importAlias: Schema.String,
   jsFramework: Schema.Literal('react', 'solid', 'vue'),
-  outputPaths: Schema.Struct({
-    componentsDir: Schema.String,
-    libDir: Schema.String,
-  }),
+  outputPath: Schema.String,
 })
 export type Config = Schema.Schema.Type<typeof Config>
 
@@ -19,38 +15,41 @@ export const getConfig = (): Effect.Effect<Config, never, never> =>
   pipe(
     Effect.fromNullable(packageDirectorySync()),
     Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
-    Effect.map((packageDirectory) => path.join(packageDirectory, 'park-ui.json')),
-    Effect.flatMap((configFilePath) =>
+    Effect.flatMap((packageDirectory) =>
       pipe(
-        Effect.try({
-          try: () => fs.readJSONSync(configFilePath),
-          catch: () => new FileNotFoundError(),
-        }),
-        Effect.flatMap((fileContent) => Schema.decodeUnknown(Config)(fileContent)),
-        Effect.catchAll(() => {
-          p.note(
-            'No park-ui.json found or it is outdated in the project. Creating new config file.',
-            'Info',
-          )
-          return pipe(
-            Effect.promise(promptConfig),
-            Effect.map(({ importAlias, jsFramework, componentsDir, libDir }) => ({
-              $schema: 'https://park-ui.com/registry/latest/schema.json',
-              importAlias,
-              jsFramework,
-              outputPaths: {
-                componentsDir,
-                libDir,
-              },
-            })),
-            Effect.flatMap((config) =>
-              pipe(
-                Effect.promise(() => fs.outputJSON(configFilePath, config, { spaces: 2 })),
-                Effect.map(() => config),
-              ),
-            ),
-          )
-        }),
+        Effect.succeed(path.join(packageDirectory, 'park-ui.json')),
+        Effect.flatMap((configFilePath) =>
+          pipe(
+            Effect.try({
+              try: () => fs.readJSONSync(configFilePath),
+              catch: () => new FileNotFoundError(),
+            }),
+            Effect.flatMap((fileContent) => Schema.decodeUnknown(Config)(fileContent)),
+            Effect.catchAll(() => {
+              p.note(
+                'No park-ui.json found or it is outdated in the project. Creating new config file.',
+                'Info',
+              )
+              return pipe(
+                Effect.promise(promptConfig),
+                Effect.map(({ jsFramework, outputPath }) => ({
+                  $schema: 'https://park-ui.com/registry/latest/schema.json',
+                  jsFramework,
+                  outputPath,
+                })),
+                Effect.flatMap((config) =>
+                  pipe(
+                    Effect.promise(() => fs.outputJSON(configFilePath, config, { spaces: 2 })),
+                    Effect.map(() => ({
+                      ...config,
+                      outputPath: path.join(packageDirectory, config.outputPath),
+                    })),
+                  ),
+                ),
+              )
+            }),
+          ),
+        ),
       ),
     ),
   )
@@ -61,9 +60,7 @@ class FileNotFoundError {
 
 interface Prompt {
   jsFramework: 'react' | 'solid' | 'vue'
-  importAlias: string
-  componentsDir: string
-  libDir: string
+  outputPath: string
 }
 
 const promptConfig = async () =>
@@ -79,39 +76,15 @@ const promptConfig = async () =>
           ],
           initialValue: 'react',
         }),
-      importAlias: () =>
+      outputPath: () =>
         p.text({
-          message: 'Would you like to customize the default import alias?',
-          initialValue: '~/*',
+          message: 'Where would you like to store your components?',
+          initialValue: './src/components/ui',
           validate: (value) => {
-            if (!value) return 'Please enter an alias.'
-            if (!value.endsWith('/*')) return 'Please enter an alias ending with /*.'
+            if (!value) return 'Please enter a path.'
+            if (!value.startsWith('.')) return 'Please enter a relative path to the project root.'
           },
         }),
-      componentsDir: ({ results }) => {
-        const importAlias = (results.importAlias as string).replace(/\/\*$/, '')
-        return p.text({
-          message: 'Where would you like to store your components?',
-          initialValue: `${importAlias}/components/ui`,
-          validate: (value) => {
-            if (!value) return 'Please enter a path.'
-            if (!value.startsWith(importAlias))
-              return 'Please enter a path starting with the alias.'
-          },
-        })
-      },
-      libDir: ({ results }) => {
-        const importAlias = (results.importAlias as string).replace(/\/\*$/, '')
-        return p.text({
-          message: 'Where would you like to store your lib?',
-          initialValue: `${importAlias}/lib`,
-          validate: (value) => {
-            if (!value) return 'Please enter a path.'
-            if (!value.startsWith(importAlias))
-              return 'Please enter a path starting with the alias.'
-          },
-        })
-      },
     },
     {
       onCancel: () => {

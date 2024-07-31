@@ -1,1 +1,1 @@
-export * as Clipboard from './primitives/clipboard'
+export * as Clipboard from './styled/clipboard'

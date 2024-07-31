@@ -6,6 +6,28 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- **CLI**: No longer requires a `tsconfig.json` to install components using the CLI. This benefits users with setups like `nx` workspaces that lack a `tsconfig.json` file.
+
+The CLI now prompts:
+
+```text
+➜ Which JS framework do you use? [React / Solid / Vue]
+➜ Where would you like to store your components? [./src/components/ui]
+```
+
+Adding a for component will create the following folder structure:
+
+```text
+➜ /src/components/ui/
+  |-- styled/
+  |   |-- utils/
+  |   |   `-- create-style-context.ts
+  |   `-- button.tsx
+  `-- button.tsx
+```
+
 ## [0.41.0] - 2024-07-28
 
 ### Added
