@@ -1,46 +1,46 @@
 import { For } from 'solid-js'
 import { Button } from './button'
 import { IconButton } from './icon-button'
-import * as ArkPagination from './primitives/pagination'
+import * as StyledPagination from './styled/pagination'
 
-export interface PaginationProps extends ArkPagination.RootProps {}
+export interface PaginationProps extends StyledPagination.RootProps {}
 
 export const Pagination = (props: PaginationProps) => {
   return (
-    <ArkPagination.Root {...props}>
-      <ArkPagination.PrevTrigger
+    <StyledPagination.Root {...props}>
+      <StyledPagination.PrevTrigger
         asChild={(props) => (
           <IconButton {...props} variant="ghost" aria-label="Next Page">
             <ChevronLeftIcon />
           </IconButton>
         )}
       />
-      <ArkPagination.Context>
+      <StyledPagination.Context>
         {(pagiation) => (
           <For each={pagiation().pages}>
             {(page, index) =>
               page.type === 'page' ? (
-                <ArkPagination.Item
+                <StyledPagination.Item
                   {...page}
                   asChild={(props) => <Button {...props} variant="outline" />}
                 >
                   {page.value}
-                </ArkPagination.Item>
+                </StyledPagination.Item>
               ) : (
-                <ArkPagination.Ellipsis index={index()}>&#8230;</ArkPagination.Ellipsis>
+                <StyledPagination.Ellipsis index={index()}>&#8230;</StyledPagination.Ellipsis>
               )
             }
           </For>
         )}
-      </ArkPagination.Context>
-      <ArkPagination.NextTrigger
+      </StyledPagination.Context>
+      <StyledPagination.NextTrigger
         asChild={(props) => (
           <IconButton {...props} variant="ghost" aria-label="Next Page">
             <ChevronRightIcon />
           </IconButton>
         )}
       />
-    </ArkPagination.Root>
+    </StyledPagination.Root>
   )
 }
 

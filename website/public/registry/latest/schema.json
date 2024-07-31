@@ -7,36 +7,18 @@
       "description": "Schema version",
       "default": "https://park-ui.com/registry/latest/schema.json"
     },
-    "importAlias": {
-      "type": "string",
-      "description": "Alias used for imports",
-      "default": "~/*"
-    },
     "jsFramework": {
       "type": "string",
       "enum": ["react", "solid", "vue"],
-      "description": "JavaScript framework to be used",
+      "description": "The JavaScript framework to be used",
       "default": "react"
     },
-    "outputPaths": {
-      "type": "object",
-      "properties": {
-        "componentsDir": {
-          "type": "string",
-          "description": "Directory for component output",
-          "default": " ~/components/ui"
-        },
-        "libDir": {
-          "type": "string",
-          "description": "Directory for library output",
-          "default": "~/lib"
-        }
-      },
-      "required": ["componentsDir", "libDir"],
-      "additionalProperties": false,
-      "description": "Output directories for components and library"
+    "outputPath": {
+      "type": "string",
+      "description": "The relative path from the project's root directory to the component's directory",
+      "default": " ./src/components/ui"
     }
   },
-  "required": ["importAlias", "jsFramework", "outputPaths"],
+  "required": ["jsFramework", "outputPath"],
   "additionalProperties": false
 }

@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { Array, Effect, pipe } from 'effect'
+import { is } from 'effect/Match'
 import { Box } from 'styled-system/jsx'
 import { Code } from '~/components/ui/code'
 import { Step, Steps } from '~/components/ui/stepper'
@@ -42,7 +43,7 @@ export const ManualIntallationGuide = async () => {
         Effect.map((content) => JSON.parse(content) as Component),
         Effect.catchAll(() =>
           Effect.succeed({
-            variants: [{ file: 'primitives', content: 'No snippet found', exports: '' }],
+            variants: [{ file: 'styled', content: 'No snippet found' }],
           }),
         ),
         Effect.flatMap((component) =>
@@ -56,7 +57,7 @@ export const ManualIntallationGuide = async () => {
                   value: framework,
                   code: variant.content,
                   html,
-                  _tag: variant.file.startsWith('primitives') ? 'primitive' : 'composition',
+                  _tag: variant.file.startsWith('styled') ? 'styled' : 'composition',
                 })),
               ),
             ),
@@ -67,25 +68,36 @@ export const ManualIntallationGuide = async () => {
     Effect.map(Array.flatten),
     Effect.map((examples) => Array.groupBy(examples, (example) => example._tag)),
   )
-  const { primitive, composition } = await Effect.runPromise(programm)
+  const { styled, composition } = await Effect.runPromise(programm)
+
+  const isReexported = composition[0].code.startsWith('export')
 
   return (
     <Steps>
-      <Step number="1" title="Styled Primitive">
+      <Step number="1" title="Add Styled Primitive">
         <Text>
-          Copy the code snippet below into <Code>~/components/ui/{primitive[0].file}</Code>
+          Copy the code snippet below into <Code>~/components/ui/{styled[0].file}</Code>
         </Text>
-        <CodePreviewTabs defaultValue={framework} examples={primitive} />
+        <CodePreviewTabs defaultValue={framework} examples={styled} />
       </Step>
-      {composition && (
+      {isReexported ? (
+        <Step number="2" title="Add Re-Export">
+          <Text>
+            To improve the developer experience, re-export the styled primitives in
+            <Code>~/components/ui/{composition[0].file}</Code>.
+          </Text>
+          <CodePreviewTabs defaultValue={framework} examples={composition} />
+        </Step>
+      ) : (
         <Step number="2" title="Add Composition">
           <Text>
-            Copy the code snippet below into <Code>~/components/ui/{composition[0].file}</Code>
+            Copy the composition snippet below into{' '}
+            <Code>~/components/ui/{composition[0].file}</Code>
           </Text>
           <CodePreviewTabs defaultValue={framework} examples={composition} />
         </Step>
       )}
-      <Step number={composition ? '3' : '2'} title="Integrate Recipe">
+      <Step number="3" title="Integrate Recipe">
         <Text>
           If you're not using <Code>@park-ui/preset</Code>, add the following recipe to your
           <Code>panda.config.ts</Code>:

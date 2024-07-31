@@ -60,13 +60,11 @@ export default defineConfig({
 </Step>
 <Step number="4" title="Path Aliases">
 
-To streamline the integration of code snippets without the need to update import statements, we recommend setting up path aliases. <br />
-To implement path aliases, modify your `tsconfig.json` file as follows:
+To simplify integrating code snippets without changing import statements, set up path aliases by modifying your `tsconfig.json`:
 
 ```json
 {
   "compilerOptions": {
-    // Your other options...
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
@@ -90,6 +88,17 @@ export default defineConfig({
 
 <Step number="5" title="Adding Components to Your Project">
 
+We recommend storing your components in the `~/components/ui` directory.
+Here's an example how a project structure might look like:
+
+```bash
+➜ /src/components/ui/
+  |-- styled/
+  |   |-- utils/
+  |   |   `-- create-style-context.ts
+  |   `-- button.tsx
+  `-- button.tsx
+```
 
 Although you can manually add components, we recommend using the Park UI CLI for efficiency.
 To add a single component, run:
@@ -102,9 +111,7 @@ If a `park-ui.json` file is not found in your project, the CLI will prompt you t
 
 ```txt
 - Which JS framework do you use? [React / Solid / Vue]
-- Would you like to customize the default import alias? [~/*]
-- Where would you like to store your components? [~/components/ui]
-- Where would you like to store helper functions? [~/lib]
+- Where would you like to store your components? [./src/components/ui]
 ```
 
 To add multiple components at once, separate their names with spaces:

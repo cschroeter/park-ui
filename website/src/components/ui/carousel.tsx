@@ -1,1 +1,1 @@
-export * as Carousel from './primitives/carousel'
+export * as Carousel from './styled/carousel'

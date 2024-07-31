@@ -1,1 +1,1 @@
-export * as HoverCard from './primitives/hover-card'
+export * as HoverCard from './styled/hover-card'

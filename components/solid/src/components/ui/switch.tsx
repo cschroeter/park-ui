@@ -1,20 +1,20 @@
 import { Show, children } from 'solid-js'
-import * as ArkSwitch from './primitives/switch'
+import * as StyledSwitch from './styled/switch'
 
-export interface SwitchProps extends ArkSwitch.RootProps {}
+export interface SwitchProps extends StyledSwitch.RootProps {}
 
 export const Switch = (props: SwitchProps) => {
   const getChildren = children(() => props.children)
 
   return (
-    <ArkSwitch.Root {...props}>
-      <ArkSwitch.Control>
-        <ArkSwitch.Thumb />
-      </ArkSwitch.Control>
+    <StyledSwitch.Root {...props}>
+      <StyledSwitch.Control>
+        <StyledSwitch.Thumb />
+      </StyledSwitch.Control>
       <Show when={getChildren()}>
-        <ArkSwitch.Label>{getChildren()}</ArkSwitch.Label>
+        <StyledSwitch.Label>{getChildren()}</StyledSwitch.Label>
       </Show>
-      <ArkSwitch.HiddenInput />
-    </ArkSwitch.Root>
+      <StyledSwitch.HiddenInput />
+    </StyledSwitch.Root>
   )
 }

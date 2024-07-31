@@ -1,1 +1,1 @@
-export * as TagsInput from './primitives/tags-input'
+export * as TagsInput from './styled/tags-input'

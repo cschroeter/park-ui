@@ -1,1 +1,1 @@
-export { Badge, type BadgeProps } from './primitives/badge'
+export { Badge, type BadgeProps } from './styled/badge'

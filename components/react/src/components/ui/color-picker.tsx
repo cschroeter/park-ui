@@ -1,1 +1,1 @@
-export * as ColorPicker from './primitives/color-picker'
+export * as ColorPicker from './styled/color-picker'

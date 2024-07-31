@@ -1,26 +1,26 @@
 import { Show, children } from 'solid-js'
-import * as ArkNumberInput from './primitives/number-input'
+import * as StyledNumberInput from './styled/number-input'
 
-export interface NumberInputProps extends ArkNumberInput.RootProps {}
+export interface NumberInputProps extends StyledNumberInput.RootProps {}
 
 export const NumberInput = (props: NumberInputProps) => {
   const getChildren = children(() => props.children)
 
   return (
-    <ArkNumberInput.Root {...props}>
+    <StyledNumberInput.Root {...props}>
       <Show when={getChildren()}>
-        <ArkNumberInput.Label>{getChildren()}</ArkNumberInput.Label>
+        <StyledNumberInput.Label>{getChildren()}</StyledNumberInput.Label>
       </Show>
-      <ArkNumberInput.Control>
-        <ArkNumberInput.Input />
-        <ArkNumberInput.IncrementTrigger>
+      <StyledNumberInput.Control>
+        <StyledNumberInput.Input />
+        <StyledNumberInput.IncrementTrigger>
           <ChevronUpIcon />
-        </ArkNumberInput.IncrementTrigger>
-        <ArkNumberInput.DecrementTrigger>
+        </StyledNumberInput.IncrementTrigger>
+        <StyledNumberInput.DecrementTrigger>
           <ChevronDownIcon />
-        </ArkNumberInput.DecrementTrigger>
-      </ArkNumberInput.Control>
-    </ArkNumberInput.Root>
+        </StyledNumberInput.DecrementTrigger>
+      </StyledNumberInput.Control>
+    </StyledNumberInput.Root>
   )
 }
 

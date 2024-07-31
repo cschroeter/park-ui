@@ -3,12 +3,12 @@
   "name": "Form Label",
   "variants": [
     {
-      "file": "primitives/form-label.tsx",
+      "file": "styled/form-label.tsx",
       "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { formLabel } from 'styled-system/recipes'\n\nexport type FormLabelProps = ComponentProps<typeof FormLabel>\nexport const FormLabel = styled(ark.label, formLabel)\n"
     },
     {
       "file": "form-label.tsx",
-      "content": "export { FormLabel, type FormLabelProps } from './primitives/form-label'\n"
+      "content": "export { FormLabel, type FormLabelProps } from './styled/form-label'\n"
     }
   ]
 }

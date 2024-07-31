@@ -1,26 +1,26 @@
 import { Show, children } from 'solid-js'
-import * as ArkCheckbox from './primitives/checkbox'
+import * as StyledCheckbox from './styled/checkbox'
 
-export interface CheckboxProps extends ArkCheckbox.RootProps {}
+export interface CheckboxProps extends StyledCheckbox.RootProps {}
 
 export const Checkbox = (props: CheckboxProps) => {
   const getChildren = children(() => props.children)
 
   return (
-    <ArkCheckbox.Root {...props}>
-      <ArkCheckbox.Control>
-        <ArkCheckbox.Indicator>
+    <StyledCheckbox.Root {...props}>
+      <StyledCheckbox.Control>
+        <StyledCheckbox.Indicator>
           <CheckIcon />
-        </ArkCheckbox.Indicator>
-        <ArkCheckbox.Indicator indeterminate>
+        </StyledCheckbox.Indicator>
+        <StyledCheckbox.Indicator indeterminate>
           <MinusIcon />
-        </ArkCheckbox.Indicator>
-      </ArkCheckbox.Control>
+        </StyledCheckbox.Indicator>
+      </StyledCheckbox.Control>
       <Show when={getChildren()}>
-        <ArkCheckbox.Label>{getChildren()}</ArkCheckbox.Label>
+        <StyledCheckbox.Label>{getChildren()}</StyledCheckbox.Label>
       </Show>
-      <ArkCheckbox.HiddenInput />
-    </ArkCheckbox.Root>
+      <StyledCheckbox.HiddenInput />
+    </StyledCheckbox.Root>
   )
 }
 

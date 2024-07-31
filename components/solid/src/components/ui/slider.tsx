@@ -1,7 +1,7 @@
 import { Index, type JSX, Show, children, splitProps } from 'solid-js'
-import * as ArkSlider from './primitives/slider'
+import * as StyledSlider from './styled/slider'
 
-export interface SliderProps extends ArkSlider.RootProps {
+export interface SliderProps extends StyledSlider.RootProps {
   marks?: {
     value: number
     label?: JSX.Element
@@ -13,37 +13,37 @@ export const Slider = (props: SliderProps) => {
   const getChildren = children(() => localProps.children)
 
   return (
-    <ArkSlider.Root {...rootProps}>
-      <ArkSlider.Context>
+    <StyledSlider.Root {...rootProps}>
+      <StyledSlider.Context>
         {(slider) => (
           <>
             <Show when={getChildren()}>
-              <ArkSlider.Label>{getChildren()}</ArkSlider.Label>
+              <StyledSlider.Label>{getChildren()}</StyledSlider.Label>
             </Show>
-            <ArkSlider.Control>
-              <ArkSlider.Track>
-                <ArkSlider.Range />
-              </ArkSlider.Track>
+            <StyledSlider.Control>
+              <StyledSlider.Track>
+                <StyledSlider.Range />
+              </StyledSlider.Track>
               <Index each={slider().value}>
                 {(_, index) => (
-                  <ArkSlider.Thumb index={index}>
-                    <ArkSlider.HiddenInput />
-                  </ArkSlider.Thumb>
+                  <StyledSlider.Thumb index={index}>
+                    <StyledSlider.HiddenInput />
+                  </StyledSlider.Thumb>
                 )}
               </Index>
-            </ArkSlider.Control>
+            </StyledSlider.Control>
             <Show when={localProps.marks}>
-              <ArkSlider.MarkerGroup>
+              <StyledSlider.MarkerGroup>
                 <Index each={localProps.marks}>
                   {(mark) => (
-                    <ArkSlider.Marker value={mark().value}>{mark().label}</ArkSlider.Marker>
+                    <StyledSlider.Marker value={mark().value}>{mark().label}</StyledSlider.Marker>
                   )}
                 </Index>
-              </ArkSlider.MarkerGroup>
+              </StyledSlider.MarkerGroup>
             </Show>
           </>
         )}
-      </ArkSlider.Context>
-    </ArkSlider.Root>
+      </StyledSlider.Context>
+    </StyledSlider.Root>
   )
 }

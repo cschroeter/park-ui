@@ -3,12 +3,9 @@
   "name": "Input",
   "variants": [
     {
-      "file": "primitives/input.tsx",
+      "file": "styled/input.tsx",
       "content": "import { styled } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = styled('input', input)\n"
     },
-    {
-      "file": "input.tsx",
-      "content": "export { Input, type InputProps } from './primitives/input'\n"
-    }
+    { "file": "input.tsx", "content": "export { Input, type InputProps } from './styled/input'\n" }
   ]
 }

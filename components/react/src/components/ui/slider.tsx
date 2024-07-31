@@ -1,8 +1,8 @@
 'use client'
 import { type ReactNode, forwardRef } from 'react'
-import * as ArkSlider from './primitives/slider'
+import * as StyledSlider from './styled/slider'
 
-export interface SliderProps extends ArkSlider.RootProps {
+export interface SliderProps extends StyledSlider.RootProps {
   children?: ReactNode
   marks?: {
     value: number
@@ -14,34 +14,34 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
   const { children, marks, ...rootProps } = props
 
   return (
-    <ArkSlider.Root ref={ref} {...rootProps}>
-      <ArkSlider.Context>
+    <StyledSlider.Root ref={ref} {...rootProps}>
+      <StyledSlider.Context>
         {(api) => (
           <>
-            {children && <ArkSlider.Label>{children}</ArkSlider.Label>}
-            <ArkSlider.Control>
-              <ArkSlider.Track>
-                <ArkSlider.Range />
-              </ArkSlider.Track>
+            {children && <StyledSlider.Label>{children}</StyledSlider.Label>}
+            <StyledSlider.Control>
+              <StyledSlider.Track>
+                <StyledSlider.Range />
+              </StyledSlider.Track>
               {api.value.map((_, index) => (
-                <ArkSlider.Thumb key={index} index={index}>
-                  <ArkSlider.HiddenInput />
-                </ArkSlider.Thumb>
+                <StyledSlider.Thumb key={index} index={index}>
+                  <StyledSlider.HiddenInput />
+                </StyledSlider.Thumb>
               ))}
-            </ArkSlider.Control>
+            </StyledSlider.Control>
             {props.marks && (
-              <ArkSlider.MarkerGroup>
+              <StyledSlider.MarkerGroup>
                 {props.marks.map((mark) => (
-                  <ArkSlider.Marker key={mark.value} value={mark.value}>
+                  <StyledSlider.Marker key={mark.value} value={mark.value}>
                     {mark.label}
-                  </ArkSlider.Marker>
+                  </StyledSlider.Marker>
                 ))}
-              </ArkSlider.MarkerGroup>
+              </StyledSlider.MarkerGroup>
             )}
           </>
         )}
-      </ArkSlider.Context>
-    </ArkSlider.Root>
+      </StyledSlider.Context>
+    </StyledSlider.Root>
   )
 })
 

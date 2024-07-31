@@ -1,1 +1,1 @@
-export { Code, type CodeProps } from './primitives/code'
+export { Code, type CodeProps } from './styled/code'

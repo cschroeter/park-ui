@@ -1,1 +1,1 @@
-export * as ToggleGroup from './primitives/toggle-group'
+export * as ToggleGroup from './styled/toggle-group'

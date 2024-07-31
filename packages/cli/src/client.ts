@@ -40,8 +40,8 @@ export const fetchComponentById = (id: string, config: Config) =>
     Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
   )
 
-export const fetchHelpers = (config: Config) =>
-  HttpClientRequest.get(`${API_URL}/${config.jsFramework}/helpers`).pipe(
+export const fetchUtils = (config: Config) =>
+  HttpClientRequest.get(`${API_URL}/${config.jsFramework}/utils/index.json`).pipe(
     HttpClient.fetchOk,
     HttpClientResponse.schemaBodyJsonScoped(Helpers),
     Effect.timeout('1 seconds'),

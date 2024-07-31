@@ -1,1 +1,1 @@
-export * as Accordion from './primitives/accordion'
+export * as Accordion from './styled/accordion'

@@ -1,1 +1,1 @@
-export * as QrCode from './primitives/qr-code'
+export * as QrCode from './styled/qr-code'

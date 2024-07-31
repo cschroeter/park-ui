@@ -1,1 +1,1 @@
-export * as Collapsible from './primitives/collapsible'
+export * as Collapsible from './styled/collapsible'

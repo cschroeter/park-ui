@@ -11,11 +11,10 @@
     "release-it": "release-it"
   },
   "dependencies": {
-    "@effect/schema": "0.69.2",
-    "@effect/platform": "0.60.2",
-    "effect": "3.5.8",
+    "@effect/schema": "0.70.0",
+    "@effect/platform": "0.61.1",
+    "effect": "3.6.0",
     "fs-extra": "11.2.0",
-    "get-tsconfig": "4.7.6",
     "pkg-dir": "8.0.0",
     "yargs": "17.7.2"
   },

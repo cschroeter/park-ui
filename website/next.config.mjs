@@ -11,9 +11,6 @@ export default {
     config.plugins.push(new VeliteWebpackPlugin())
     return config
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   experimental: {
     outputFileTracingIncludes: {
       '/*': ['../components/**/*', '../packages/panda/src/theme/recipes/**/*'],

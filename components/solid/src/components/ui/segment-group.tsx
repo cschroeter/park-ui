@@ -1,1 +1,1 @@
-export * as SegmentGroup from './primitives/segment-group'
+export * as SegmentGroup from './styled/segment-group'

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
-import * as ArkAvatar from './primitives/avatar'
+import * as StyledAvatar from './styled/avatar'
 
-export interface AvatarProps extends ArkAvatar.RootProps {
+export interface AvatarProps extends StyledAvatar.RootProps {
   name?: string
   src?: string
 }
@@ -10,10 +10,10 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { name, src, ...rootProps } = props
 
   return (
-    <ArkAvatar.Root ref={ref} {...rootProps}>
-      <ArkAvatar.Fallback>{getInitials(name) || <UserIcon />}</ArkAvatar.Fallback>
-      <ArkAvatar.Image src={src} alt={name} />
-    </ArkAvatar.Root>
+    <StyledAvatar.Root ref={ref} {...rootProps}>
+      <StyledAvatar.Fallback>{getInitials(name) || <UserIcon />}</StyledAvatar.Fallback>
+      <StyledAvatar.Image src={src} alt={name} />
+    </StyledAvatar.Root>
   )
 })
 
