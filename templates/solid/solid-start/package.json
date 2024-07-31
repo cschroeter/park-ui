@@ -12,17 +12,18 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@ark-ui/solid": "3.5.0",
+    "@ark-ui/solid": "3.6.2",
     "@solidjs/meta": "0.29.4",
     "@solidjs/router": "0.14.1",
-    "@solidjs/start": "1.0.4",
+    "@solidjs/start": "1.0.6",
     "solid-icons": "1.1.0",
-    "solid-js": "1.8.18",
-    "vinxi": "0.3.14",
-    "vite-tsconfig-paths": "4.3.2"
+    "solid-js": "1.8.19",
+    "vinxi": "0.4.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.44.0",
-    "@park-ui/panda-preset": "^0.39.0"
+    "@pandacss/dev": "0.44.0",
+    "@park-ui/panda-preset": "0.41.0",
+    "typescript": "4.5.4",
+    "vite-tsconfig-paths": "4.3.2"
   }
 }

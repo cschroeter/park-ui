@@ -2,7 +2,7 @@ import { type Assign, type PolymorphicProps, ark } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
 import { card } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
-import { createStyleContext } from '~/lib/create-style-context'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(card)
 
