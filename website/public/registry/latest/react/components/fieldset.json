@@ -1,0 +1,11 @@
+{
+  "id": "fieldset",
+  "name": "Fieldset",
+  "variants": [
+    {
+      "file": "styled/fieldset.tsx",
+      "content": "'use client'\nimport type { Assign, PolymorphicProps } from '@ark-ui/react'\nimport { ark } from '@ark-ui/react/factory'\nimport { Fieldset } from '@ark-ui/react/fieldset'\nimport { type FieldsetVariantProps, fieldset } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(fieldset)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLFieldSetElement,\n  Assign<Assign<HTMLStyledProps<'fieldset'>, Fieldset.RootProviderBaseProps>, FieldsetVariantProps>\n>(Fieldset.Root, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLFieldSetElement,\n  Assign<Assign<HTMLStyledProps<'fieldset'>, Fieldset.RootBaseProps>, FieldsetVariantProps>\n>(Fieldset.Root, 'root')\n\nexport const ErrorText = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Fieldset.ErrorTextBaseProps>\n>(Fieldset.ErrorText, 'errorText')\n\nexport const HelperText = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Fieldset.HelperTextBaseProps>\n>(Fieldset.HelperText, 'helperText')\n\nexport const Legend = withContext<\n  HTMLLegendElement,\n  Assign<HTMLStyledProps<'legend'>, Fieldset.LegendBaseProps>\n>(Fieldset.Legend, 'legend')\n\nexport const Control = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, PolymorphicProps>\n>(ark.div, 'control')\n\nexport { FieldsetContext as Context } from '@ark-ui/react/fieldset'\n"
+    },
+    { "file": "fieldset.tsx", "content": "export * as Fieldset from './styled/fieldset'\n" }
+  ]
+}

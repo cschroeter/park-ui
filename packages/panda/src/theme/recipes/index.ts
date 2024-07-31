@@ -17,6 +17,7 @@ import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { editable } from './editable'
 import { field } from './field'
+import { fieldset } from './fieldset'
 import { fileUpload } from './file-upload'
 import { formLabel } from './form-label'
 import { hoverCard } from './hover-card'
@@ -83,6 +84,7 @@ export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
   drawer,
   editable,
   field,
+  fieldset,
   fileUpload,
   hoverCard,
   menu,

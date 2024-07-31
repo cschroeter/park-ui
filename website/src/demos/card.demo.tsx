@@ -1,7 +1,7 @@
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
-import { FormLabel } from '~/components/ui/form-label'
+import { Field } from '~/components/ui/field'
 import { Input } from '~/components/ui/input'
 
 export const Demo = (props: Card.RootProps) => {
@@ -13,14 +13,18 @@ export const Demo = (props: Card.RootProps) => {
       </Card.Header>
       <Card.Body>
         <Stack gap="4">
-          <Stack gap="1.5">
-            <FormLabel htmlFor="name">Name</FormLabel>
-            <Input id="name" placeholder="Name" />
-          </Stack>
-          <Stack gap="1.5">
-            <FormLabel htmlFor="email">Email</FormLabel>
-            <Input id="email" type="email" placeholder="Email" />
-          </Stack>
+          <Field.Root>
+            <Field.Label>Name</Field.Label>
+            <Field.Input asChild>
+              <Input placeholder="Name" />
+            </Field.Input>
+          </Field.Root>
+          <Field.Root>
+            <Field.Label>Email</Field.Label>
+            <Field.Input asChild>
+              <Input type="email" placeholder="Email" />
+            </Field.Input>
+          </Field.Root>
         </Stack>
       </Card.Body>
       <Card.Footer gap="3">
