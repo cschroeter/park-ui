@@ -24,20 +24,20 @@ Use the `invalid` prop to indicate that the fieldset is invalid.
 ```tsx
 // live
 <Fieldset.Root invalid>
-    <Fieldset.Legend>Notifiations</Fieldset.Legend>
-    <Fieldset.HelperText>Get notifcations when your are not online</Fieldset.HelperText>
-        <Fieldset.Control>
+  <Fieldset.Legend>Notifiations</Fieldset.Legend>
+  <Fieldset.HelperText>Get notifcations when your are not online</Fieldset.HelperText>
+  <Fieldset.Control>
     <Field.Root>
-        <Switch size="sm">Comments</Switch>
-          <Field.HelperText>When someone posts a comment</Field.HelperText>
+      <Switch size="sm">Comments</Switch>
+      <Field.HelperText>When someone posts a comment</Field.HelperText>
     </Field.Root>
-    </Fieldset.Control>
-    <Fieldset.ErrorText>
+  </Fieldset.Control>
+  <Fieldset.ErrorText>
     <Icon size="sm">
-        <OctagonAlertIcon />
+      <OctagonAlertIcon />
     </Icon>
     Something went wrong
-    </Fieldset.ErrorText>
+  </Fieldset.ErrorText>
 </Fieldset.Root>
 ```
 
