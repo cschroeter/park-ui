@@ -13,11 +13,11 @@ jobs:
     name: main
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Install Dependencies
+        run: bun install
 
       - name: Run typecheck
         run: bun run typecheck
