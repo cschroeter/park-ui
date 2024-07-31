@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.9.0] - 2024-07-31
+
 ### Changed
 
 - No longer requires a `tsconfig.json` to install components using the CLI. This benefits users with setups like `nx` workspaces that lack a `tsconfig.json` file.
