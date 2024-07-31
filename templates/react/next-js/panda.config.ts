@@ -8,6 +8,7 @@ export default defineConfig({
     createPreset({
       accentColor: 'amber',
       grayColor: 'sand',
+      additionalColors: ['red'],
     }),
   ],
   include: ['./src/**/*.{js,jsx,ts,tsx}', './pages/**/*.{js,jsx,ts,tsx}'],
