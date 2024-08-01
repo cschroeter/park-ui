@@ -12,7 +12,7 @@ export const createSemanticTokens = (options: PresetOptions) => {
     grayColor = 'neutral',
   } = options
 
-  const availableColors = [grayColor, accentColor, ...additionalColors]
+  const availableColors = [grayColor, accentColor, 'red', ...additionalColors]
   const extraColors = Object.fromEntries(
     Object.entries(colors).filter(
       ([color]) => availableColors.includes('*') || availableColors.includes(color),
