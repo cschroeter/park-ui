@@ -40,7 +40,7 @@ export default defineConfig({
   globalCss: {
     extend: {
       html: {
-        scrollPaddingTop: '6rem',
+        scrollPaddingTop: '5rem',
         scrollBehavior: 'smooth',
         minHeight: '100%',
       },
