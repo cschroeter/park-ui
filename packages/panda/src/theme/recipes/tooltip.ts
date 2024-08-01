@@ -15,6 +15,7 @@ export const tooltip = defineSlotRecipe({
       py: '2',
       textStyle: 'xs',
       maxWidth: '2xs',
+      zIndex: 'tooltip',
       _open: {
         animation: 'fadeIn 0.25s ease-out',
       },
