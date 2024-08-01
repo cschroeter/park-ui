@@ -45,8 +45,3 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       }
     : {}
 }
-
-export const generateStaticParams = () =>
-  ['react', 'solid', 'vue'].flatMap((framework) =>
-    blocks.map((block) => ({ framework, id: block.id })),
-  )

@@ -59,6 +59,8 @@ const controls = defineCollection({
     }),
 })
 
+const freeBlocks = ['banner-for-cookies', 'card-authentification', 'footer-with-social']
+
 const blocks = defineCollection({
   name: 'Blocks',
   pattern: 'website/src/content/blocks.json',
@@ -82,7 +84,7 @@ const blocks = defineCollection({
                   Effect.succeed({
                     id: basename(variant),
                     name: capitalize(basename(variant)),
-                    accessLevel: 'free',
+                    accessLevel: freeBlocks.includes(basename(variant)) ? 'free' : 'paid',
                   }),
                 ),
               ),

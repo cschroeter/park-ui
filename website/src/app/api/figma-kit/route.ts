@@ -41,5 +41,5 @@ export const GET = async (req: NextRequest) => {
     ),
   )
 
-  return Response.redirect(isValid ? FIGMA_KIT_URL : 'https://park-ui.com/404')
+  return Response.redirect(isValid ? FIGMA_KIT_URL : 'https://park-ui.com')
 }
