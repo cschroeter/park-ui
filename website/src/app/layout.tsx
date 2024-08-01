@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import Script from 'next/script'
-import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css'
 import { Navbar } from '~/components/navigation/navbar'
 import { inter, jakarta, outfit, raleway, roboto } from './fonts'
@@ -39,9 +38,9 @@ export default function RootLayout(props: Props) {
     <html
       lang="en"
       className={cx(
+        outfit.variable,
         inter.variable,
         jakarta.variable,
-        outfit.variable,
         raleway.variable,
         roboto.variable,
       )}

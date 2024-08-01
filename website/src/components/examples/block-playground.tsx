@@ -1,10 +1,14 @@
-import { Code2Icon, EyeIcon, FigmaIcon } from 'lucide-react'
+import { Code2Icon, EyeIcon, FigmaIcon, LockIcon } from 'lucide-react'
 import dynamic from 'next/dynamic'
+import NextLink from 'next/link'
 import { Box, HStack } from 'styled-system/jsx'
+import { hasUserPermission } from '~/app/actions'
+import { Button } from '~/components/ui/button'
 import { Heading } from '~/components/ui/heading'
-import { Link } from '~/components/ui/link'
+import { IconButton } from '~/components/ui/icon-button'
 import { Tabs } from '~/components/ui/tabs'
 import { Text } from '~/components/ui/text'
+import { Tooltip } from '~/components/ui/tooltip'
 import { findSourceFiles } from '~/lib/blocks'
 import { getServerContext } from '~/lib/server-context'
 import { ResizableIFrame } from '../resizable-iframe'
@@ -30,38 +34,54 @@ export const BlockPlayground = async (props: Props) => {
       .catch(() => NotFound),
   )
 
-  const sourceCodeAvailable = variant.accessLevel === 'free'
-  const sourceFiles = await findSourceFiles({ blockId: block.id, variantId: variant.id, framework })
+  const hasAccessToSourceCode = variant.accessLevel === 'free' || (await hasUserPermission())
+  const sourceFiles = hasAccessToSourceCode
+    ? await findSourceFiles({ blockId: block.id, variantId: variant.id, framework })
+    : []
 
   return (
     <Tabs.Root variant="enclosed" defaultValue="preview" size="sm" lazyMount>
       <HStack gap="3">
         <HStack justify="space-between" flex="1">
           <Heading textStyle={{ base: 'md', md: 'lg' }}>{variant.name}</Heading>
-          <Tabs.List width="fit-content">
-            <Tabs.Trigger value="preview">
-              <EyeIcon />
-              <Text display={{ base: 'none', md: 'flex' }}>Preview</Text>
-            </Tabs.Trigger>
-            <Tabs.Trigger value="code" disabled={!sourceCodeAvailable}>
-              <Code2Icon />
-              <Text display={{ base: 'none', md: 'flex' }}>Code</Text>
-            </Tabs.Trigger>
-            <Link
-              href={`https://www.figma.com/design/wN70u2btZ6uKVxFJ8UPXvy/Park-UI-Design-System-Pro-Components-(Preview)?node-id=${block.figmaNodeId}&mode=design`}
-              target="_blank"
-              textStyle="sm"
-              px="3"
-              color="fg.muted"
-              cursor="pinter"
-              textDecoration="none"
-              display={{ base: 'none', md: 'flex' }}
-            >
-              <FigmaIcon />
-              <Text>Figma</Text>
-            </Link>
-            <Tabs.Indicator />
-          </Tabs.List>
+          <HStack gap="3">
+            <Tooltip.Root positioning={{ placement: 'top' }} openDelay={0}>
+              <Tooltip.Trigger asChild>
+                <IconButton variant="outline" asChild>
+                  <a
+                    href={`https://www.figma.com/design/wN70u2btZ6uKVxFJ8UPXvy/Park-UI-Design-System-Pro-Components-(Preview)?node-id=${block.figmaNodeId}&mode=design`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FigmaIcon />
+                  </a>
+                </IconButton>
+              </Tooltip.Trigger>
+              <Tooltip.Positioner>
+                <Tooltip.Content>Preview in Figma</Tooltip.Content>
+              </Tooltip.Positioner>
+            </Tooltip.Root>
+            {hasAccessToSourceCode ? (
+              <Tabs.List width="fit-content">
+                <Tabs.Trigger value="preview">
+                  <EyeIcon />
+                  <Text display={{ base: 'none', md: 'flex' }}>Preview</Text>
+                </Tabs.Trigger>
+                <Tabs.Trigger value="code">
+                  <Code2Icon />
+                  <Text display={{ base: 'none', md: 'flex' }}>Code</Text>
+                </Tabs.Trigger>
+                <Tabs.Indicator />
+              </Tabs.List>
+            ) : (
+              <Button variant="outline" asChild>
+                <NextLink href={`/${framework}/plus`}>
+                  <LockIcon />
+                  Unlock Park UI Plus
+                </NextLink>
+              </Button>
+            )}
+          </HStack>
         </HStack>
       </HStack>
       <Tabs.Content value="preview" px="!0">

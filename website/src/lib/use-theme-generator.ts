@@ -9,7 +9,7 @@ import {
 import { Match } from 'effect'
 import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
-import { cssFrameworks, jsFrameworks, useThemeStore } from './use-theme-store'
+import { jsFrameworks, useThemeStore } from './use-theme-store'
 
 type Context = {
   document?: Document
@@ -25,7 +25,6 @@ export const useThemeGenerator = (context?: Context) => {
   const updateGrayColor = useThemeStore((state) => state.setGrayColor)
   const updateFontFamily = useThemeStore((state) => state.setFontFamily)
   const updateBorderRadius = useThemeStore((state) => state.setBorderRadius)
-  const updateCSSFramework = useThemeStore((state) => state.setCSSFramework)
   const updateJSFramework = useThemeStore((state) => state.setJSFramework)
   const reset = useThemeStore((state) => state.reset)
 
@@ -54,7 +53,6 @@ export const useThemeGenerator = (context?: Context) => {
   return {
     accentColors,
     borderRadii,
-    cssFrameworks,
     currentAccentColor,
     currentBorderRadius,
     currentFontFamily,
@@ -66,7 +64,6 @@ export const useThemeGenerator = (context?: Context) => {
     reset,
     updateAccentColor,
     updateBorderRadius,
-    updateCSSFramework,
     updateFontFamily,
     updateGrayColor,
     updateJSFramework,
