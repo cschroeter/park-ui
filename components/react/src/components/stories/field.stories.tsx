@@ -1,7 +1,5 @@
 import type { Meta } from '@storybook/react'
 import { Field } from '~/components/ui/field'
-import { Input } from '~/components/ui/input'
-import { Textarea } from '~/components/ui/textarea'
 
 const meta: Meta = {
   title: 'Components/Field',
@@ -13,9 +11,7 @@ export const InputField = () => {
   return (
     <Field.Root>
       <Field.Label>Label</Field.Label>
-      <Field.Input asChild>
-        <Input />
-      </Field.Input>
+      <Field.Input />
       <Field.HelperText>Some additional Info</Field.HelperText>
       <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
@@ -24,11 +20,9 @@ export const InputField = () => {
 
 export const InputFieldInvalid = () => {
   return (
-    <Field.Root>
+    <Field.Root invalid>
       <Field.Label>Label</Field.Label>
-      <Field.Input asChild>
-        <Input />
-      </Field.Input>
+      <Field.Input />
       <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
   )
@@ -38,9 +32,7 @@ export const TextareaField = () => {
   return (
     <Field.Root>
       <Field.Label>Label</Field.Label>
-      <Field.Textarea asChild>
-        <Textarea />
-      </Field.Textarea>
+      <Field.Textarea />
       <Field.HelperText>Some additional Info</Field.HelperText>
       <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
@@ -51,9 +43,7 @@ export const TextareaFieldInvalid = () => {
   return (
     <Field.Root invalid>
       <Field.Label>Label</Field.Label>
-      <Field.Textarea asChild>
-        <Textarea />
-      </Field.Textarea>
+      <Field.Textarea />
       <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
   )

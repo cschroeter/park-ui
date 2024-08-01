@@ -2,8 +2,8 @@ import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
+import { Field } from '~/components/ui/field'
 import { FormLabel } from '~/components/ui/form-label'
-import { Input } from '~/components/ui/input'
 import { Select } from '~/components/ui/select'
 import { Textarea } from '~/components/ui/textarea'
 
@@ -16,10 +16,10 @@ export const ReportIssueCard = () => {
         <Card.Description>Found a bug? Let us know so we can fix it.</Card.Description>
       </Card.Header>
       <Card.Body gap="4">
-        <Stack gap="1.5">
-          <FormLabel htmlFor="title">Title</FormLabel>
-          <Input id="title" />
-        </Stack>
+        <Field.Root>
+          <Field.Label>Title</Field.Label>
+          <Field.Input />
+        </Field.Root>
         <Select.Root items={frameworks} positioning={{ sameWidth: true }} multiple>
           <Select.Label>Frameworks</Select.Label>
           <Select.Control>

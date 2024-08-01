@@ -2,8 +2,7 @@ import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
 import { Divider, HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
-import { FormLabel } from '~/components/ui/form-label'
-import { Input } from '~/components/ui/input'
+import { Field } from '~/components/ui/field'
 import { Text } from '~/components/ui/text'
 
 export const AuthenticationCard = () => {
@@ -34,14 +33,14 @@ export const AuthenticationCard = () => {
             </Text>
             <Divider />
           </HStack>
-          <Stack gap="1.5">
-            <FormLabel htmlFor="email-1">E-Mail</FormLabel>
-            <Input id="email-1" placeholder="Your E-Mail" />
-          </Stack>
-          <Stack gap="1.5">
-            <FormLabel htmlFor="password-1">Password</FormLabel>
-            <Input id="password-1" type="password" placeholder="Your Password" />
-          </Stack>
+          <Field.Root>
+            <Field.Label>E-Mail</Field.Label>
+            <Field.Input type="email" placeholder="Your E-Mail" />
+          </Field.Root>
+          <Field.Root>
+            <Field.Label>Password</Field.Label>
+            <Field.Input type="password" placeholder="Your Password" />
+          </Field.Root>
         </Stack>
       </Card.Body>
       <Card.Footer>

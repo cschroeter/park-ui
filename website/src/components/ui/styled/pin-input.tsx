@@ -17,7 +17,7 @@ export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
   Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootBaseProps>, PinInputVariantProps>
->(PinInput.Root, 'root')
+>(PinInput.Root, 'root', { forwardProps: ['mask'] })
 
 export const Control = withContext<
   HTMLDivElement,
