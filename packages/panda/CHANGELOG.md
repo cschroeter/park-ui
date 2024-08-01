@@ -6,6 +6,8 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+## [0.42.0] - 2024-08-01
+
 ### Added
 
 - **Input, Textarea**: Now support usage within the `Field` component.
