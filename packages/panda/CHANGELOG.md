@@ -8,33 +8,35 @@ description: All notable changes will be documented in this file.
 
 ### Added
 
-- **Input, Textarea**: Added support to be used in `Field` component.
+- **Input, Textarea**: Now support usage within the `Field` component.
 
 ### Changed
 
-- **CLI**: No longer requires a `tsconfig.json` to install components using the CLI. This benefits users with setups like `nx` workspaces that lack a `tsconfig.json` file.
+- **CLI**: Installation of components using the CLI no longer requires a `tsconfig.json` file. 
+This is particularly beneficial for setups like `nx` workspaces that do not include a `tsconfig.json` file.
 
-The CLI now prompts:
+The CLI now prompts the following:
 
-```text
-➜ Which JS framework do you use? [React / Solid / Vue]
-➜ Where would you like to store your components? [./src/components/ui]
-```
+  ```text
+  ➜ Which JS framework do you use? [React / Solid / Vue]
+  ➜ Where would you like to store your components? [./src/components/ui]
+  ```
 
-Adding a for component will create the following folder structure:
+  Adding a component will create the following folder structure:
 
-```text
-➜ /src/components/ui/
-  |-- styled/
-  |   |-- utils/
-  |   |   `-- create-style-context.ts
-  |   `-- button.tsx
-  `-- button.tsx
-```
+  ```text
+  ➜ /src/components/ui/
+    |-- styled/
+    |   |-- utils/
+    |   |   `-- create-style-context.ts
+    |   `-- button.tsx
+    `-- button.tsx
+  ```
 
 ### Fixed
 
 - **Textarea**: Fixed an issue where the `invalid` state was not rendered correctly.
+- Resolved a warning related to the undefined usage of `colors.red.9`.
 
 ## [0.41.0] - 2024-07-28
 
