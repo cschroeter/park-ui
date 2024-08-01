@@ -6,13 +6,9 @@ import type { FontFamily } from './use-theme-generator'
 export type JSFramework = (typeof jsFrameworks)[number]
 export const jsFrameworks = ['react', 'solid', 'vue'] as const
 
-export type CSSFramework = (typeof cssFrameworks)[number]
-export const cssFrameworks = ['panda', 'tailwind'] as const
-
 type State = {
   accentColor: AccentColor
   borderRadius: BorderRadius
-  cssFramework: CSSFramework
   fontFamily: FontFamily
   grayColor: GrayColor
   jsFramework: JSFramework
@@ -24,15 +20,13 @@ type Actions = {
   setFontFamily: (font: FontFamily) => void
   setBorderRadius: (radius: BorderRadius) => void
   setJSFramework: (jsFramework: JSFramework) => void
-  setCSSFramework: (cssFramework: CSSFramework) => void
   reset: () => void
 }
 
 const initialState: State = {
   accentColor: 'neutral',
   borderRadius: 'sm',
-  cssFramework: 'panda',
-  fontFamily: { label: 'Jakarta', value: 'var(--font-jakarta)' },
+  fontFamily: { label: 'Outfit', value: 'var(--font-outfit)' },
   grayColor: 'neutral',
   jsFramework: 'react',
 }
@@ -47,14 +41,13 @@ export const useThemeStore = create<State & Actions>()(
         setFontFamily: (fontFamily) => set(() => ({ fontFamily })),
         setGrayColor: (grayColor) => set(() => ({ grayColor })),
         setJSFramework: (jsFramework) => set(() => ({ jsFramework })),
-        setCSSFramework: (cssFramework) => set(() => ({ cssFramework })),
         reset: () => {
           set(initialState)
         },
       }),
       {
         name: 'park-ui-store',
-        version: 3,
+        version: 4,
       },
     ),
   ),
