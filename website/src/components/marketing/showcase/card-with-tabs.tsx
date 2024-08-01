@@ -1,8 +1,6 @@
-import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
-import { FormLabel } from '~/components/ui/form-label'
-import { Input } from '~/components/ui/input'
+import { Field } from '~/components/ui/field'
 import { Tabs } from '~/components/ui/tabs'
 
 export const CardWithTabs = () => {
@@ -24,14 +22,14 @@ export const CardWithTabs = () => {
             <Card.Description>Enter your credentials to login to your account.</Card.Description>
           </Card.Header>
           <Card.Body gap="4">
-            <Stack gap="1.5">
-              <FormLabel htmlFor="username">Username</FormLabel>
-              <Input id="username" defaultValue="grizzly_codes" />
-            </Stack>
-            <Stack gap="1.5">
-              <FormLabel htmlFor="password-2">Password</FormLabel>
-              <Input id="password-2" type="password" placeholder="*****" />
-            </Stack>
+            <Field.Root>
+              <Field.Label>Username</Field.Label>
+              <Field.Input defaultValue="grizzly_codes" />
+            </Field.Root>
+            <Field.Root>
+              <Field.Label>Password</Field.Label>
+              <Field.Input type="password" placeholder="*****" />
+            </Field.Root>
           </Card.Body>
           <Card.Footer>
             <Button width="full">Login</Button>
@@ -45,22 +43,22 @@ export const CardWithTabs = () => {
             </Card.Description>
           </Card.Header>
           <Card.Body gap="4">
-            <Stack gap="1.5">
-              <FormLabel htmlFor="name">Name</FormLabel>
-              <Input id="name" />
-            </Stack>
-            <Stack gap="1.5">
-              <FormLabel htmlFor="email">E-Mail</FormLabel>
-              <Input id="email" />
-            </Stack>
-            <Stack gap="1.5">
-              <FormLabel htmlFor="password-3">Password</FormLabel>
-              <Input id="password-3" type="password" />
-            </Stack>
-            <Stack gap="1.5">
-              <FormLabel htmlFor="confirm">Confirm Password</FormLabel>
-              <Input id="confirm" type="password" />
-            </Stack>
+            <Field.Root>
+              <Field.Label>Name</Field.Label>
+              <Field.Input />
+            </Field.Root>
+            <Field.Root>
+              <Field.Label>E-Mail</Field.Label>
+              <Field.Input type="email" />
+            </Field.Root>
+            <Field.Root>
+              <Field.Label>Password</Field.Label>
+              <Field.Input type="password" />
+            </Field.Root>
+            <Field.Root>
+              <Field.Label>Confirm Password</Field.Label>
+              <Field.Input type="password" />
+            </Field.Root>
           </Card.Body>
           <Card.Footer>
             <Button width="full">Create Account</Button>

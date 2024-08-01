@@ -3,8 +3,7 @@ import { CheckIcon, ChevronsUpDownIcon, CreditCardIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
-import { FormLabel } from '~/components/ui/form-label'
-import { Input } from '~/components/ui/input'
+import { Field } from '~/components/ui/field'
 import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Select } from '~/components/ui/select'
 
@@ -42,14 +41,15 @@ export const PaymentCard = () => {
             </RadioButtonGroup.Item>
           ))}
         </RadioButtonGroup.Root>
-        <Stack gap="1.5">
-          <FormLabel htmlFor="owner">Owner</FormLabel>
-          <Input id="owner" />
-        </Stack>
-        <Stack gap="1.5">
-          <FormLabel htmlFor="card">Card Number</FormLabel>
-          <Input id="card" />
-        </Stack>
+        <Field.Root>
+          <Field.Label>Owner</Field.Label>
+          <Field.Input />
+        </Field.Root>
+        <Field.Root>
+          <Field.Label>Card Number</Field.Label>
+          <Field.Input />
+        </Field.Root>
+
         <Stack direction="row" gap="3">
           <Select.Root items={months} positioning={{ sameWidth: true }}>
             <Select.Label>Month</Select.Label>
@@ -93,10 +93,10 @@ export const PaymentCard = () => {
               </Select.Content>
             </Select.Positioner>
           </Select.Root>
-          <Stack gap="1.5">
-            <FormLabel htmlFor="cvc">CVC</FormLabel>
-            <Input id="cvc" />
-          </Stack>
+          <Field.Root>
+            <Field.Label>CVV</Field.Label>
+            <Field.Input type="nubmer" />
+          </Field.Root>
         </Stack>
       </Card.Body>
       <Card.Footer>

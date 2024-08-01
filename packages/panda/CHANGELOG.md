@@ -6,6 +6,10 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- **Input, Textarea**: Added support to be used in `Field` component.
+
 ### Changed
 
 - **CLI**: No longer requires a `tsconfig.json` to install components using the CLI. This benefits users with setups like `nx` workspaces that lack a `tsconfig.json` file.
@@ -27,6 +31,10 @@ Adding a for component will create the following folder structure:
   |   `-- button.tsx
   `-- button.tsx
 ```
+
+### Fixed
+
+- **Textarea**: Fixed an issue where the `invalid` state was not rendered correctly.
 
 ## [0.41.0] - 2024-07-28
 

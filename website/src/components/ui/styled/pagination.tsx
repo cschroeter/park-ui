@@ -17,7 +17,7 @@ export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLElement,
   Assign<Assign<HTMLStyledProps<'nav'>, Pagination.RootBaseProps>, PaginationVariantProps>
->(Pagination.Root, 'root')
+>(Pagination.Root, 'root', { forwardProps: ['page'] })
 
 export const Ellipsis = withContext<
   HTMLDivElement,

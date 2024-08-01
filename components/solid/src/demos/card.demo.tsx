@@ -2,7 +2,6 @@ import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Field } from '~/components/ui/field'
-import { Input } from '~/components/ui/input'
 
 export const Demo = (props: Card.RootProps) => {
   return (
@@ -15,13 +14,11 @@ export const Demo = (props: Card.RootProps) => {
         <Stack gap="4">
           <Field.Root>
             <Field.Label>Name</Field.Label>
-            <Field.Input asChild={(inputProps) => <Input {...inputProps()} placeholder="Name" />} />
+            <Field.Input placeholder="Name" />
           </Field.Root>
           <Field.Root>
             <Field.Label>Email</Field.Label>
-            <Field.Input
-              asChild={(inputProps) => <Input {...inputProps()} type="email" placeholder="Email" />}
-            />
+            <Field.Input type="email" placeholder="Email" />
           </Field.Root>
         </Stack>
       </Card.Body>

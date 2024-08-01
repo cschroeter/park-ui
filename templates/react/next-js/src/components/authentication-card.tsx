@@ -1,9 +1,8 @@
 import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
-import { Container, Divider, HStack, Stack } from 'styled-system/jsx'
+import { Divider, HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Field } from '~/components/ui/field'
-import { Input } from '~/components/ui/input'
 import { Text } from '~/components/ui/text'
 
 export const AuthenticationCard = () => (
@@ -35,15 +34,11 @@ export const AuthenticationCard = () => (
         </HStack>
         <Field.Root>
           <Field.Label>E-Mail</Field.Label>
-          <Field.Input asChild>
-            <Input placeholder="Your E-Mail" />
-          </Field.Input>
+          <Field.Input type="email" placeholder="Your E-Mail" />
         </Field.Root>
         <Field.Root>
           <Field.Label>Password</Field.Label>
-          <Field.Input asChild>
-            <Input type="password" placeholder="Your Password" />
-          </Field.Input>
+          <Field.Input type="password" placeholder="Your Password" />
         </Field.Root>
       </Stack>
     </Card.Body>

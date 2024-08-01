@@ -1,7 +1,8 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Field } from '@ark-ui/react/field'
-import { type FieldVariantProps, field } from 'styled-system/recipes'
+import { styled } from 'styled-system/jsx'
+import { type FieldVariantProps, field, input, textarea } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -29,11 +30,6 @@ export const HelperText = withContext<
   Assign<HTMLStyledProps<'span'>, Field.HelperTextBaseProps>
 >(Field.HelperText, 'helperText')
 
-export const Input = withContext<
-  HTMLInputElement,
-  Assign<HTMLStyledProps<'input'>, Field.InputBaseProps>
->(Field.Input, 'input')
-
 export const Label = withContext<
   HTMLLabelElement,
   Assign<HTMLStyledProps<'label'>, Field.LabelBaseProps>
@@ -44,9 +40,10 @@ export const Select = withContext<
   Assign<HTMLStyledProps<'select'>, Field.SelectBaseProps>
 >(Field.Select, 'select')
 
-export const Textarea = withContext<
-  HTMLTextAreaElement,
-  Assign<HTMLStyledProps<'textarea'>, Field.TextareaBaseProps>
->(Field.Textarea, 'textarea')
+export type InputProps = ComponentProps<typeof Input>
+export const Input = styled(Field.Input, input)
+
+export type TextareaProps = ComponentProps<typeof Textarea>
+export const Textarea = styled(Field.Textarea, textarea)
 
 export { FieldContext as Context } from '@ark-ui/react/field'

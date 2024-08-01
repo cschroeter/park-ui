@@ -2,6 +2,7 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const textarea = defineRecipe({
   className: 'textarea',
+  jsx: ['Textarea', 'Field.Textarea'],
   base: {
     appearance: 'none',
     background: 'none',
@@ -22,6 +23,13 @@ export const textarea = defineRecipe({
     _focus: {
       borderColor: 'colorPalette.default',
       boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+    },
+    _invalid: {
+      borderColor: 'fg.error',
+      _focus: {
+        borderColor: 'fg.error',
+        boxShadow: '0 0 0 1px var(--colors-border-error)',
+      },
     },
   },
   defaultVariants: {
