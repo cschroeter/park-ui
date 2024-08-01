@@ -37,6 +37,7 @@ The CLI now prompts the following:
 
 - **Textarea**: Fixed an issue where the `invalid` state was not rendered correctly.
 - **Tooltip**: Set a proper `z-index` value to ensure the tooltip is displayed above other elements.
+- **Input**: Fixed an issue where the horizontal padding was not applied correctly.
 - Resolved a warning related to the undefined usage of `colors.red.9`.
 
 ## [0.41.0] - 2024-07-28
