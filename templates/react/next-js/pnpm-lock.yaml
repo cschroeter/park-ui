@@ -12,8 +12,8 @@ dependencies:
     specifier: 9.6.0
     version: 9.6.0(react@18.3.1)
   lucide-react:
-    specifier: 0.418.0
-    version: 0.418.0(react@18.3.1)
+    specifier: 0.419.0
+    version: 0.419.0(react@18.3.1)
   next:
     specifier: 14.1.4
     version: 14.1.4(react-dom@18.3.1)(react@18.3.1)
@@ -29,11 +29,11 @@ devDependencies:
     specifier: 0.44.0
     version: 0.44.0(typescript@5.5.4)
   '@park-ui/panda-preset':
-    specifier: 0.41.0
-    version: 0.41.0(@internationalized/date@3.5.5)(@pandacss/dev@0.44.0)
+    specifier: 0.42.0
+    version: 0.42.0(@internationalized/date@3.5.5)(@pandacss/dev@0.44.0)
   '@types/node':
-    specifier: 22.0.1
-    version: 22.0.1
+    specifier: 22.0.2
+    version: 22.0.2
   '@types/react':
     specifier: 18.3.3
     version: 18.3.3
@@ -833,8 +833,8 @@ packages:
     resolution: {integrity: sha512-0ZG9jGPIg+pSlgSene9WUWL4BF3+8nM/Y/wGQ12RpEGnIhTL/3G0bJZki7TmFxr7lkk700cALRyg0DlRLM7Z1w==}
     dev: true
 
-  /@park-ui/panda-preset@0.41.0(@internationalized/date@3.5.5)(@pandacss/dev@0.44.0):
-    resolution: {integrity: sha512-OU5bdYRGpsX+bZf43Z5jFcZBbuPlIymZwPw6r8BfrxdhOJwwDZuO9Xh5Wl+H1emvKjTyC4CEvAVK3rTBPDjIig==}
+  /@park-ui/panda-preset@0.42.0(@internationalized/date@3.5.5)(@pandacss/dev@0.44.0):
+    resolution: {integrity: sha512-YvFYNylONBwlnbEZJkziArzqznS6XMCcok8GlrgcIZ8VhjvJbG3Vct1kJr0KYkWOMhQLyFnS75+60ojQyxHNOQ==}
     peerDependencies:
       '@pandacss/dev': '>0.22.0'
     dependencies:
@@ -889,8 +889,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
-  /@types/node@22.0.1:
-    resolution: {integrity: sha512-RVKWL+s4ax6syie/ev3FXFIs38mke4ZsCDPBcLF2Gu6MbQXKe9Fo9iU0EPUxDB1mDVvC0vCgkV3lKa2f6xIuHg==}
+  /@types/node@22.0.2:
+    resolution: {integrity: sha512-yPL6DyFwY5PiMVEwymNeqUTKsDczQBJ/5T7W/46RwLU/VH+AA8aT5TZkvBviLKLbbm0hlfftEkGrNzfRk/fofQ==}
     dependencies:
       undici-types: 6.11.1
     dev: true
@@ -3968,8 +3968,8 @@ packages:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
     dev: true
 
-  /lucide-react@0.418.0(react@18.3.1):
-    resolution: {integrity: sha512-7TSd4CLfvT/U9504MSJ+e03pgAvqZQ5WbML4Pm+axjCbYBLTWuDu68bebFr/e51Z32uHMY7MO+SpaHX8NubveA==}
+  /lucide-react@0.419.0(react@18.3.1):
+    resolution: {integrity: sha512-YkOHuc1uGH2A4G0NRZyeCW6mMFGb8z3amep0fARuKIri68nveAT5C8OuXOPJXpb/iIgSfsjdMjjII7bnEtGkvw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:

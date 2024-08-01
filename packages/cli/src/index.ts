@@ -33,16 +33,7 @@ const main = async () => {
       async (argv) => {
         console.clear()
         const spinner = p.spinner()
-        p.intro(
-          `${color.bgCyan(
-            color.black(
-              ` Park UI v${
-                // biome-ignore lint/complexity/useLiteralKeys: <explanation>
-                process.env['npm_package_version']
-              }`,
-            ),
-          )}`,
-        )
+        p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
         if (isEmpty(argv.components) && !argv.all) {
           p.note('You need to specify at least one component or use the --all flag', 'Error')
