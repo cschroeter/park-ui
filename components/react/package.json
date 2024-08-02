@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
+    "dev": "storybook dev -p 6006",
     "lint": "biome lint ./src",
     "storybook": "storybook dev -p 6006",
     "typecheck": "tsc"

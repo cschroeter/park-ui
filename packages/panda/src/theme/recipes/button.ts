@@ -9,7 +9,9 @@ export const button = defineRecipe({
     borderRadius: 'l2',
     cursor: 'pointer',
     display: 'inline-flex',
+    flexShrink: '0',
     fontWeight: 'semibold',
+    isolation: 'isolate',
     minWidth: '0',
     justifyContent: 'center',
     outline: 'none',
@@ -22,6 +24,11 @@ export const button = defineRecipe({
     whiteSpace: 'nowrap',
     _hidden: {
       display: 'none',
+    },
+    '& :where(svg)': {
+      fontSize: '1.1em',
+      width: '1.1em',
+      height: '1.1em',
     },
   },
   defaultVariants: {
@@ -151,11 +158,6 @@ export const button = defineRecipe({
         textStyle: 'xs',
         px: '3',
         gap: '2',
-        '& svg': {
-          fontSize: 'md',
-          width: '4',
-          height: '4',
-        },
       },
       sm: {
         h: '9',
@@ -163,10 +165,6 @@ export const button = defineRecipe({
         textStyle: 'sm',
         px: '3.5',
         gap: '2',
-        '& svg': {
-          width: '4',
-          height: '4',
-        },
       },
       md: {
         h: '10',
@@ -174,10 +172,6 @@ export const button = defineRecipe({
         textStyle: 'sm',
         px: '4',
         gap: '2',
-        '& svg': {
-          width: '5',
-          height: '5',
-        },
       },
       lg: {
         h: '11',
@@ -185,10 +179,6 @@ export const button = defineRecipe({
         textStyle: 'md',
         px: '4.5',
         gap: '2',
-        '& svg': {
-          width: '5',
-          height: '5',
-        },
       },
       xl: {
         h: '12',
@@ -196,10 +186,6 @@ export const button = defineRecipe({
         textStyle: 'md',
         px: '5',
         gap: '2.5',
-        '& svg': {
-          width: '5',
-          height: '5',
-        },
       },
       '2xl': {
         h: '16',
@@ -207,10 +193,6 @@ export const button = defineRecipe({
         textStyle: 'lg',
         px: '7',
         gap: '3',
-        '& svg': {
-          width: '6',
-          height: '6',
-        },
       },
     },
   },
