@@ -24,7 +24,7 @@
     "@biomejs/biome": "1.8.3",
     "@types/bun": "1.1.6",
     "lefthook": "1.7.11",
-    "turbo": "2.0.10",
+    "turbo": "2.0.11",
     "typescript": "5.5.4",
     "vercel": "35.2.2",
     "vercel-submodules": "1.0.10"
