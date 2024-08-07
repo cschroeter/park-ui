@@ -23,6 +23,14 @@ const itemStyle = {
   '& :where(svg)': {
     color: 'fg.muted',
   },
+  _disabled: {
+    color: 'fg.disabled',
+    cursor: 'not-allowed',
+    _hover: {
+      color: 'fg.disabled',
+      background: 'none',
+    },
+  },
 }
 
 export const menu = defineSlotRecipe({
