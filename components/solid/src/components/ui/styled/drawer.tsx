@@ -1,16 +1,16 @@
 import { type Assign, Dialog, type PolymorphicProps, ark } from '@ark-ui/solid'
 import type { ComponentProps } from 'solid-js'
-import { drawer } from 'styled-system/recipes'
+import { type DrawerVariantProps, drawer } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(drawer)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
-export const RootProvider = withRootProvider<Dialog.RootProviderProps>(Dialog.RootProvider)
+export const RootProvider = withRootProvider<Assign<Dialog.RootProps, DrawerVariantProps>>(Dialog.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Dialog.RootProps>(Dialog.Root)
+export const Root = withRootProvider<Assign<Dialog.RootProps, DrawerVariantProps>>(Dialog.Root)
 
 export type BackdropProps = ComponentProps<typeof Backdrop>
 export const Backdrop = withContext<Assign<HTMLStyledProps<'div'>, Dialog.BackdropProps>>(
