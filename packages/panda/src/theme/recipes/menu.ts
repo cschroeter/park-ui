@@ -26,9 +26,15 @@ const itemStyle = {
   _disabled: {
     color: 'fg.disabled',
     cursor: 'not-allowed',
+    '& :where(svg)': {
+      color: 'fg.disabled',
+    },
     _hover: {
       color: 'fg.disabled',
       background: 'none',
+      '& :where(svg)': {
+        color: 'fg.disabled',
+      },
     },
   },
 }
