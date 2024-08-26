@@ -91,4 +91,4 @@ export type {
   ComboboxInputValueChangeDetails as InputValueChangeDetails,
   ComboboxOpenChangeDetails as OpenChangeDetails,
   ComboboxValueChangeDetails as ValueChangeDetails,
-} from '@ark-ui/react/combobox'
+} from '@ark-ui/solid'
