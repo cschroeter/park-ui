@@ -56,6 +56,10 @@ export const numberInput = defineSlotRecipe({
         borderColor: 'colorPalette.default',
         boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
       },
+      _disabled: {
+        opacity: 0.4,
+        cursor: 'not-allowed',
+      },
     },
     input: {
       background: 'transparent',
@@ -63,6 +67,9 @@ export const numberInput = defineSlotRecipe({
       gridRow: '2',
       outline: 'none',
       width: 'full',
+      _disabled: {
+        cursor: 'not-allowed',
+      },
     },
     label: {
       color: 'fg.default',
