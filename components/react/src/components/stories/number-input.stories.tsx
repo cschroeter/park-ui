@@ -14,3 +14,4 @@ export const MinAndMax = () => (
     Max is 5 and Min is 0
   </NumberInput>
 )
+export const Disabled = () => <NumberInput disabled>Disabled</NumberInput>
