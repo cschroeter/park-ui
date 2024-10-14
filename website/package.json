@@ -19,8 +19,8 @@
     "@ark-ui/react": "4.1.1",
     "@auth/prisma-adapter": "2.7.0",
     "@biomejs/biome": "1.9.3",
-    "@effect/platform": "0.68.4",
-    "@effect/schema": "0.75.4",
+    "@effect/platform": "0.61.1",
+    "@effect/schema": "0.70.0",
     "@icons-pack/react-simple-icons": "10.0.0",
     "@pandacss/dev": "0.46.1",
     "@park-ui/panda-preset": "workspace:*",
@@ -32,7 +32,7 @@
     "@types/react": "18.3.11",
     "@types/react-dom": "18.3.1",
     "@uidotdev/usehooks": "2.4.1",
-    "effect": "3.9.2",
+    "effect": "3.6.0",
     "globby": "14.0.2",
     "lucide-react": "0.452.0",
     "next": "14.2.15",
@@ -50,7 +50,7 @@
     "shiki": "1.22.0",
     "typescript": "5.6.3",
     "usehooks-ts": "3.1.0",
-    "velite": "0.2.0",
+    "velite": "0.1.1",
     "zustand": "5.0.0"
   }
 }

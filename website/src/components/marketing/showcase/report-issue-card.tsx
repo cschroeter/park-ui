@@ -4,11 +4,11 @@ import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Field } from '~/components/ui/field'
 import { FormLabel } from '~/components/ui/form-label'
-import { Select } from '~/components/ui/select'
+import { Select, createListCollection } from '~/components/ui/select'
 import { Textarea } from '~/components/ui/textarea'
 
 export const ReportIssueCard = () => {
-  const frameworks = ['React', 'Solid', 'Vue']
+  const collection = createListCollection({ items: ['React', 'Solid', 'Vue'] })
   return (
     <Card.Root>
       <Card.Header>
@@ -20,7 +20,7 @@ export const ReportIssueCard = () => {
           <Field.Label>Title</Field.Label>
           <Field.Input />
         </Field.Root>
-        <Select.Root items={frameworks} positioning={{ sameWidth: true }} multiple>
+        <Select.Root collection={collection} positioning={{ sameWidth: true }} multiple>
           <Select.Label>Frameworks</Select.Label>
           <Select.Control>
             <Select.Trigger>
@@ -30,7 +30,7 @@ export const ReportIssueCard = () => {
           </Select.Control>
           <Select.Positioner>
             <Select.Content>
-              {frameworks.map((framework) => (
+              {collection.items.map((framework) => (
                 <Select.Item key={framework} item={framework}>
                   <Select.ItemText>{framework}</Select.ItemText>
                   <Select.ItemIndicator>

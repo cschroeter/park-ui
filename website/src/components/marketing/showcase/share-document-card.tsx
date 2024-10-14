@@ -7,7 +7,7 @@ import { Avatar } from '~/components/ui/avatar'
 import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Input } from '~/components/ui/input'
-import { Select } from '~/components/ui/select'
+import { Select, createListCollection } from '~/components/ui/select'
 import { Text } from '~/components/ui/text'
 
 const members = [
@@ -66,6 +66,7 @@ type Props = {
 
 const Member = (props: Props) => {
   const { name, avatar, email } = props
+  const collection = createListCollection({ items: ['Write', 'Read'] })
   return (
     <Stack direction="row" gap="8" justify="space-between" align="center">
       <Stack direction="row" gap="3">
@@ -81,7 +82,7 @@ const Member = (props: Props) => {
       </Stack>
       <Box>
         <Select.Root
-          items={['Write', 'Read']}
+          collection={collection}
           defaultValue={['Read']}
           positioning={{ sameWidth: true }}
           size="sm"

@@ -5,10 +5,14 @@ import { Button } from '~/components/ui/button'
 import { Card } from '~/components/ui/card'
 import { Field } from '~/components/ui/field'
 import { RadioButtonGroup } from '~/components/ui/radio-button-group'
-import { Select } from '~/components/ui/select'
+import { Select, createListCollection } from '~/components/ui/select'
 
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-const years = ['2023', '2024', '2025']
+const months = createListCollection({
+  items: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+})
+const years = createListCollection({
+  items: ['2023', '2024', '2025'],
+})
 
 export const PaymentCard = () => {
   return (
@@ -51,7 +55,7 @@ export const PaymentCard = () => {
         </Field.Root>
 
         <Stack direction="row" gap="3">
-          <Select.Root items={months} positioning={{ sameWidth: true }}>
+          <Select.Root collection={months} positioning={{ sameWidth: true }}>
             <Select.Label>Month</Select.Label>
             <Select.Control>
               <Select.Trigger>
@@ -61,7 +65,7 @@ export const PaymentCard = () => {
             </Select.Control>
             <Select.Positioner>
               <Select.Content>
-                {months.map((month) => (
+                {months.items.map((month) => (
                   <Select.Item key={month} item={month}>
                     <Select.ItemText>{month}</Select.ItemText>
                     <Select.ItemIndicator>
@@ -72,7 +76,7 @@ export const PaymentCard = () => {
               </Select.Content>
             </Select.Positioner>
           </Select.Root>
-          <Select.Root items={years} positioning={{ sameWidth: true }}>
+          <Select.Root collection={years} positioning={{ sameWidth: true }}>
             <Select.Label>Year</Select.Label>
             <Select.Control>
               <Select.Trigger>
@@ -82,7 +86,7 @@ export const PaymentCard = () => {
             </Select.Control>
             <Select.Positioner>
               <Select.Content>
-                {years.map((year) => (
+                {years.items.map((year) => (
                   <Select.Item key={year} item={year}>
                     <Select.ItemText>{year}</Select.ItemText>
                     <Select.ItemIndicator>
