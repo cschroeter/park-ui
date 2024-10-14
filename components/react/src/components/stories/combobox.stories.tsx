@@ -1,3 +1,4 @@
+import { createListCollection } from '@ark-ui/react/combobox'
 import type { Meta } from '@storybook/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
@@ -11,24 +12,31 @@ const meta: Meta = {
 
 export default meta
 
+const data = [
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Svelte', value: 'svelte', disabled: true },
+  { label: 'Vue', value: 'vue' },
+]
+
 export const Base = () => {
-  const data = [
-    { label: 'React', value: 'react' },
-    { label: 'Solid', value: 'solid' },
-    { label: 'Svelte', value: 'svelte', disabled: true },
-    { label: 'Vue', value: 'vue' },
-  ]
   const [items, setItems] = useState(data)
+  const collection = createListCollection({
+    items: [
+      { label: 'React', value: 'react' },
+      { label: 'Solid', value: 'solid' },
+      { label: 'Svelte', value: 'svelte', disabled: true },
+      { label: 'Vue', value: 'vue' },
+    ],
+  })
 
-  const handleChange = (e: Combobox.InputValueChangeDetails) => {
-    const filtered = data.filter((item) =>
-      item.label.toLowerCase().includes(e.inputValue.toLowerCase()),
+  const handleInputChange = (details: Combobox.InputValueChangeDetails) => {
+    setItems(
+      items.filter((item) => item.value.toLowerCase().includes(details.inputValue.toLowerCase())),
     )
-    setItems(filtered.length > 0 ? filtered : data)
   }
-
   return (
-    <Combobox.Root width="2xs" onInputValueChange={handleChange} items={items}>
+    <Combobox.Root width="2xs" onInputValueChange={handleInputChange} collection={collection}>
       <Combobox.Label>Framework</Combobox.Label>
       <Combobox.Control>
         <Combobox.Input placeholder="Select a Framework" asChild>
@@ -44,7 +52,7 @@ export const Base = () => {
         <Combobox.Content>
           <Combobox.ItemGroup>
             <Combobox.ItemGroupLabel>Frameworks</Combobox.ItemGroupLabel>
-            {items.map((item) => (
+            {collection.items.map((item) => (
               <Combobox.Item key={item.value} item={item}>
                 <Combobox.ItemText>{item.label}</Combobox.ItemText>
                 <Combobox.ItemIndicator>

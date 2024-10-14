@@ -1,16 +1,18 @@
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import { Select } from '~/components/ui/select'
+import { Select, createListCollection } from '~/components/ui/select'
 
-export const Demo = (props: Select.RootProps) => {
-  const items = [
+const collection = createListCollection({
+  items: [
     { label: 'React', value: 'react' },
     { label: 'Solid', value: 'solid' },
-    { label: 'Svelte', value: 'svelte', disabled: true },
     { label: 'Vue', value: 'vue' },
-  ]
+    { label: 'Svelte', value: 'svelte', disabled: true },
+  ],
+})
 
+export const Demo = (props: Select.RootProps) => {
   return (
-    <Select.Root positioning={{ sameWidth: true }} width="2xs" {...props} items={items}>
+    <Select.Root positioning={{ sameWidth: true }} width="2xs" {...props} collection={collection}>
       <Select.Label>Framework</Select.Label>
       <Select.Control>
         <Select.Trigger>
@@ -22,7 +24,7 @@ export const Demo = (props: Select.RootProps) => {
         <Select.Content>
           <Select.ItemGroup>
             <Select.ItemGroupLabel>Framework</Select.ItemGroupLabel>
-            {items.map((item) => (
+            {collection.items.map((item) => (
               <Select.Item key={item.value} item={item}>
                 <Select.ItemText>{item.label}</Select.ItemText>
                 <Select.ItemIndicator>
