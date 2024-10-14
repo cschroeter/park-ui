@@ -10,23 +10,23 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/react": "3.6.2",
-    "@pandacss/dev": "0.44.0",
+    "@ark-ui/react": "4.1.1",
+    "@pandacss/dev": "0.46.1",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-a11y": "8.2.7",
-    "@storybook/addon-essentials": "8.2.7",
-    "@storybook/addon-themes": "8.2.7",
-    "@storybook/react-vite": "8.2.7",
-    "@storybook/react": "8.2.7",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "@vitejs/plugin-react": "4.3.1",
-    "lucide-react": "0.419.0",
+    "@storybook/addon-a11y": "8.3.5",
+    "@storybook/addon-essentials": "8.3.5",
+    "@storybook/addon-themes": "8.3.5",
+    "@storybook/react-vite": "8.3.5",
+    "@storybook/react": "8.3.5",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.2",
+    "lucide-react": "0.452.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "storybook": "8.2.7",
-    "typescript": "5.5.4",
-    "vite": "5.3.5",
-    "vite-tsconfig-paths": "4.3.2"
+    "storybook": "8.3.5",
+    "typescript": "5.6.3",
+    "vite": "5.4.9",
+    "vite-tsconfig-paths": "5.0.1"
   }
 }

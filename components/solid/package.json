@@ -9,22 +9,22 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/solid": "3.6.2",
-    "@pandacss/dev": "0.44.0",
+    "@ark-ui/solid": "4.2.1",
+    "@pandacss/dev": "0.46.1",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-a11y": "8.2.7",
-    "@storybook/addon-essentials": "8.2.7",
-    "@storybook/addon-themes": "8.2.7",
-    "@storybook/docs-tools": "8.2.7",
-    "lucide-solid": "0.419.0",
+    "@storybook/addon-a11y": "8.3.5",
+    "@storybook/addon-essentials": "8.3.5",
+    "@storybook/addon-themes": "8.3.5",
+    "@storybook/docs-tools": "8.3.5",
+    "lucide-solid": "0.452.0",
     "solid-icons": "1.1.0",
-    "solid-js": "1.8.19",
-    "storybook": "8.2.7",
+    "solid-js": "1.9.2",
+    "storybook": "8.3.5",
     "storybook-solidjs": "1.0.0-beta.2",
     "storybook-solidjs-vite": "1.0.0-beta.2",
-    "typescript": "5.5.4",
-    "vite": "5.3.5",
+    "typescript": "5.6.3",
+    "vite": "5.4.9",
     "vite-plugin-solid": "2.10.2",
-    "vite-tsconfig-paths": "4.3.2"
+    "vite-tsconfig-paths": "5.0.1"
   }
 }
