@@ -50,7 +50,7 @@ export const ResizableIFrame = (props: PropsWithChildren) => {
             outfit.variable,
             raleway.variable,
             roboto.variable,
-          )}"><head></head><body><div class="frame-root"></div></body></html>`}
+          )}"><head><body><div class="frame-root"></div></body></html>`}
         >
           <PandaProvider {...props} />
         </Frame>

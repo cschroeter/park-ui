@@ -9,18 +9,18 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/vue": "3.7.2",
+    "@ark-ui/vue": "4.2.0",
     "@histoire/plugin-vue": "0.17.17",
-    "@pandacss/dev": "0.44.0",
+    "@pandacss/dev": "0.46.1",
     "@park-ui/panda-preset": "workspace:*",
-    "@vitejs/plugin-vue": "5.1.1",
-    "@vitejs/plugin-vue-jsx": "4.0.0",
+    "@vitejs/plugin-vue": "5.1.4",
+    "@vitejs/plugin-vue-jsx": "4.0.1",
     "histoire": "0.17.17",
-    "lucide-vue-next": "0.417.0",
+    "lucide-vue-next": "0.452.0",
     "prettier": "3.3.3",
-    "typescript": "5.5.4",
-    "vite": "5.3.5",
-    "vite-tsconfig-paths": "4.3.2",
-    "vue": "3.4.35"
+    "typescript": "5.6.3",
+    "vite": "5.4.9",
+    "vite-tsconfig-paths": "5.0.1",
+    "vue": "3.5.12"
   }
 }

@@ -11,11 +11,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@ark-ui/vue": "3.6.0",
-    "@pandacss/dev": "0.42.0",
-    "@park-ui/panda-preset": "0.38.1",
-    "@nuxt/kit": "3.12.3",
-    "nuxt": "3.12.3",
-    "vue": "3.4.31"
+    "@ark-ui/vue": "4.2.0",
+    "@pandacss/dev": "0.46.1",
+    "@park-ui/panda-preset": "0.42.0",
+    "@nuxt/kit": "3.13.2",
+    "nuxt": "3.13.2",
+    "vue": "3.5.12"
   }
 }

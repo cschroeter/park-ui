@@ -3,7 +3,7 @@ import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { useMemo, useState } from 'react'
 import { Box, Flex, Stack, styled } from 'styled-system/jsx'
-import { Select } from '~/components/ui/select'
+import { Select, createListCollection } from '~/components/ui/select'
 import { Slider } from '~/components/ui/slider'
 import type { Controls } from '.velite'
 
@@ -58,7 +58,7 @@ export const ComponentPreview = ({ controls }: Props) => {
                   <Select.Root
                     key={key}
                     defaultValue={[defaultValue ?? '']}
-                    items={options ?? []}
+                    collection={createListCollection({ items: options ?? [] })}
                     positioning={{ sameWidth: true }}
                     closeOnSelect={false}
                     size="sm"

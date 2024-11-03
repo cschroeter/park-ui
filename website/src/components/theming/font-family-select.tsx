@@ -1,6 +1,6 @@
 'use client'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
-import { Select } from '~/components/ui/select'
+import { Select, createListCollection } from '~/components/ui/select'
 import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const FontFamilySelect = () => {
@@ -8,7 +8,7 @@ export const FontFamilySelect = () => {
 
   return (
     <Select.Root
-      items={fontFamilies}
+      collection={createListCollection({ items: fontFamilies })}
       value={[currentFontFamily.value]}
       // @ts-ignore
       onValueChange={(e) => updateFontFamily(e.items[0])}
