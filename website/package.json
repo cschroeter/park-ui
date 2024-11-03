@@ -16,7 +16,7 @@
     "db:reset": "prisma db push --force-reset"
   },
   "dependencies": {
-    "@ark-ui/react": "4.1.1",
+    "@ark-ui/react": "4.2.0",
     "@auth/prisma-adapter": "2.7.0",
     "@biomejs/biome": "1.9.3",
     "@effect/platform": "0.61.1",

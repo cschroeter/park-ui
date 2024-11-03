@@ -9,7 +9,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/vue": "4.1.1",
+    "@ark-ui/vue": "4.2.0",
     "@histoire/plugin-vue": "0.17.17",
     "@pandacss/dev": "0.46.1",
     "@park-ui/panda-preset": "workspace:*",
