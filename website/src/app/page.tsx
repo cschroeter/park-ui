@@ -40,15 +40,15 @@ export default function Home() {
               }}
             >
               <Stack gap={{ base: '6', lg: '8' }} direction="row">
-                {/* <Stack gap={{ base: '6', lg: '8' }} maxW="sm">
+                <Stack gap={{ base: '6', lg: '8' }} maxW="sm">
                   <AuthenticationCard />
                   <NotificationCard />
                   <PricingCard />
-                </Stack> */}
-                {/* {/* <Stack gap={{ base: '6', lg: '8' }} maxW="md">
+                </Stack>
+                <Stack gap={{ base: '6', lg: '8' }} maxW="md">
                   <PaymentCard />
                   <ECommerceCard />
-                </Stack> */}
+                </Stack>
                 <Stack gap={{ base: '6', lg: '8' }} maxW="sm">
                   <ShareDocumentCard />
                   <ReportIssueCard />

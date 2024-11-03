@@ -1,4 +1,5 @@
 'use client'
+
 import { CheckIcon, ChevronsUpDownIcon, CopyIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Box, Divider, Stack } from 'styled-system/jsx'
@@ -95,7 +96,7 @@ const Member = (props: Props) => {
           </Select.Control>
           <Select.Positioner>
             <Select.Content>
-              {['Write', 'Read'].map((framework) => (
+              {collection.items.map((framework) => (
                 <Select.Item key={framework} item={framework}>
                   <Select.ItemText>{framework}</Select.ItemText>
                 </Select.Item>

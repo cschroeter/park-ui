@@ -29,7 +29,8 @@ export const Sizes = () => (
       <DiamondIcon /> Label
     </Button>
     <Button size="2xl">
-      <DiamondIcon /> Label
+      <DiamondIcon />
+      Label
     </Button>
   </Stack>
 )

@@ -1,3 +1,4 @@
+'use client'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
