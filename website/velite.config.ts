@@ -7,7 +7,7 @@ import { defineCollection, defineConfig, s } from 'velite'
 
 const pages = defineCollection({
   name: 'Pages',
-  pattern: ['website/src/content/pages/**/*.mdx', 'packages/panda/CHANGELOG.md'],
+  pattern: ['pages/**/*.mdx', '../../../packages/panda/CHANGELOG.md'],
   schema: s
     .object({
       id: s.string(),
@@ -41,7 +41,7 @@ const pages = defineCollection({
 
 const controls = defineCollection({
   name: 'Controls',
-  pattern: ['website/src/content/controls/*.json'],
+  pattern: ['controls/*.json'],
   schema: s
     .record(
       s.string(),
@@ -63,7 +63,7 @@ const freeBlocks = ['banner-for-cookies', 'card-authentification', 'footer-with-
 
 const blocks = defineCollection({
   name: 'Blocks',
-  pattern: 'website/src/content/blocks.json',
+  pattern: 'blocks.json',
   schema: s
     .object({
       id: s.string(),
@@ -97,7 +97,7 @@ const blocks = defineCollection({
 })
 
 export default defineConfig({
-  root: join(process.cwd(), '../'),
+  root: join(process.cwd(), './src/content'),
   collections: { pages, controls, blocks },
   mdx: {
     rehypePlugins: [
