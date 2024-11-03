@@ -9,7 +9,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/solid": "4.2.1",
+    "@ark-ui/solid": "4.3.0",
     "@pandacss/dev": "0.47.0",
     "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-a11y": "8.4.1",
