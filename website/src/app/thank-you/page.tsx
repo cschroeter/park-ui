@@ -3,17 +3,15 @@ import { Box, Container, Stack } from 'styled-system/jsx'
 import { findLicenseKeysByOrderId } from '~/app/actions'
 import { ActivationForm } from '~/components/activation-form'
 import { PageHeader } from '~/components/page-header'
-
 import { auth } from '~/lib/auth'
 
 interface Props {
-  searchParams: {
-    orderId: string
-  }
+  searchParams: Promise<{ orderId: string }>
 }
 
 export default async function Page(props: Props) {
-  const licenseKeys = await findLicenseKeysByOrderId(props.searchParams.orderId)
+  const { orderId } = await props.searchParams
+  const licenseKeys = await findLicenseKeysByOrderId(orderId)
   const session = await auth()
   const authenticated = session !== null
 

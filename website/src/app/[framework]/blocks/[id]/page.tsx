@@ -6,13 +6,13 @@ import { PageHeader } from '~/components/page-header'
 import { blocks } from '.velite'
 
 interface Props {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export default async function Page(props: Props) {
-  const { params } = props
+  const params = await props.params
   const block = blocks.find((block) => block.id === params.id)
 
   if (!block) {
@@ -32,7 +32,7 @@ export default async function Page(props: Props) {
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { params } = props
+  const params = await props.params
   const block = blocks.find((block) => block.id === params.id)
 
   return block

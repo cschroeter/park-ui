@@ -1,13 +1,12 @@
 import { AuthenticationDialog } from '~/components/auth/authentication-dialog'
 
 interface Props {
-  searchParams: {
-    callbackUrl?: string
-  }
+  searchParams: Promise<{ callbackUrl?: string }>
 }
 
-export default function Page(props: Props) {
-  const redirectTo = props.searchParams.callbackUrl ?? '/'
+export default async function Page(props: Props) {
+  const { callbackUrl } = await props.searchParams
+  const redirectTo = callbackUrl ?? '/'
 
   return <AuthenticationDialog redirectTo={redirectTo} />
 }

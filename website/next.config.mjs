@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    outputFileTracingIncludes: {
-      '/*': ['../components/**/*', '../packages/panda/src/theme/recipes/**/*'],
-    },
-  },
   transpilePackages: ['shiki'],
+  outputFileTracingIncludes: {
+    '/*': ['../components/**/*', '../packages/panda/src/theme/recipes/**/*'],
+  },
 }
 
 const isDev = process.argv.indexOf('dev') !== -1

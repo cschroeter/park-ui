@@ -13,19 +13,20 @@ import { getServerContext } from '~/lib/server-context'
 import { capitalize } from '~/lib/string-utils'
 
 interface Props {
-  params: { framework: string; slug: string[] }
+  params: Promise<{ framework: string; slug: string[] }>
 }
 
-export default function Page(props: Props) {
-  const currentPage = getPageBySlug(props.params.slug, props.params.framework)
-  const nextPage = getNextPage(props.params.slug)
-  const prevPage = getPrevPage(props.params.slug)
+export default async function Page(props: Props) {
+  const params = await props.params
+  const currentPage = getPageBySlug(params.slug, params.framework)
+  const nextPage = getNextPage(params.slug)
+  const prevPage = getPrevPage(params.slug)
 
   const serverContext = getServerContext()
-  serverContext.framework = props.params.framework
-  serverContext.component = props.params.slug[1]
+  serverContext.framework = params.framework
+  serverContext.component = params.slug[1]
 
-  const framework = capitalize(props.params.framework)
+  const framework = capitalize(params.framework)
 
   if (currentPage) {
     return (
@@ -40,7 +41,7 @@ export default function Page(props: Props) {
                 ? `A ${framework} Component Library built on Ark UI and Panda CSS.`
                 : currentPage.description}
             </Text>
-            <DocumentationBadges framework={props.params.framework} href={currentPage.docs} />
+            <DocumentationBadges framework={params.framework} href={currentPage.docs} />
             <MDXContent code={currentPage.code} />
           </Prose>
           <DocsFooter nextPage={nextPage} prevPage={prevPage} />
@@ -56,9 +57,10 @@ export default function Page(props: Props) {
   return notFound()
 }
 
-export const generateMetadata = (props: Props): Metadata => {
-  const page = getPageBySlug(props.params.slug)
-  const framework = capitalize(props.params.framework)
+export const generateMetadata = async (props: Props): Promise<Metadata> => {
+  const params = await props.params
+  const page = getPageBySlug(params.slug)
+  const framework = capitalize(params.framework)
 
   if (page) {
     const description =
@@ -69,7 +71,7 @@ export const generateMetadata = (props: Props): Metadata => {
       title: page.title,
       description,
       alternates: {
-        canonical: `https://park-ui.com/${props.params.framework}/docs/${props.params.slug.join('/')}`,
+        canonical: `https://park-ui.com/${params.framework}/docs/${params.slug.join('/')}`,
       },
     }
   }
