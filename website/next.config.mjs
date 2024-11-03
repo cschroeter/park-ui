@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    optimizePackageImports: ['@ark-ui/react'],
+  },
   transpilePackages: ['shiki'],
   outputFileTracingIncludes: {
     '/*': ['../components/**/*', '../packages/panda/src/theme/recipes/**/*'],
