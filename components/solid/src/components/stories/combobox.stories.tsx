@@ -1,3 +1,4 @@
+import { createListCollection } from '@ark-ui/solid/combobox'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
 import { For, createSignal } from 'solid-js'
 import type { Meta } from 'storybook-solidjs'
@@ -11,14 +12,18 @@ const meta: Meta = {
 
 export default meta
 
+const data = [
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Svelte', value: 'svelte', disabled: true },
+  { label: 'Vue', value: 'vue' },
+]
+
 export const Base = () => {
-  const data = [
-    { label: 'React', value: 'react' },
-    { label: 'Solid', value: 'solid' },
-    { label: 'Svelte', value: 'svelte', disabled: true },
-    { label: 'Vue', value: 'vue' },
-  ]
   const [items, setItems] = createSignal(data)
+  const collection = createListCollection({
+    items: data,
+  })
 
   const handleChange = (e: Combobox.InputValueChangeDetails) => {
     const filtered = data.filter((item) =>
@@ -28,7 +33,7 @@ export const Base = () => {
   }
 
   return (
-    <Combobox.Root width="2xs" onInputValueChange={handleChange} items={items()}>
+    <Combobox.Root width="2xs" onInputValueChange={handleChange} collection={collection}>
       <Combobox.Label>Framework</Combobox.Label>
       <Combobox.Control>
         <Combobox.Input

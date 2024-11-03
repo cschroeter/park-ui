@@ -1,17 +1,20 @@
+import { createListCollection } from '@ark-ui/solid/select'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
 import { For } from 'solid-js'
 import { Select } from '~/components/ui/select'
 
 export const Demo = (props: Select.RootProps) => {
-  const items = [
-    { label: 'React', value: 'react' },
-    { label: 'Solid', value: 'solid' },
-    { label: 'Svelte', value: 'svelte', disabled: true },
-    { label: 'Vue', value: 'vue' },
-  ]
+  const collection = createListCollection({
+    items: [
+      { label: 'React', value: 'react' },
+      { label: 'Solid', value: 'solid' },
+      { label: 'Svelte', value: 'svelte', disabled: true },
+      { label: 'Vue', value: 'vue' },
+    ],
+  })
 
   return (
-    <Select.Root positioning={{ sameWidth: true }} width="2xs" {...props} items={items}>
+    <Select.Root positioning={{ sameWidth: true }} width="2xs" {...props} collection={collection}>
       <Select.Label>Framework</Select.Label>
       <Select.Control>
         <Select.Trigger>
@@ -23,7 +26,7 @@ export const Demo = (props: Select.RootProps) => {
         <Select.Content>
           <Select.ItemGroup>
             <Select.ItemGroupLabel>Framework</Select.ItemGroupLabel>
-            <For each={items}>
+            <For each={collection.items}>
               {(item) => (
                 <Select.Item item={item}>
                   <Select.ItemText>{item.label}</Select.ItemText>

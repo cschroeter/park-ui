@@ -22,12 +22,7 @@ const data = [
 export const Base = () => {
   const [items, setItems] = useState(data)
   const collection = createListCollection({
-    items: [
-      { label: 'React', value: 'react' },
-      { label: 'Solid', value: 'solid' },
-      { label: 'Svelte', value: 'svelte', disabled: true },
-      { label: 'Vue', value: 'vue' },
-    ],
+    items: data,
   })
 
   const handleInputChange = (details: Combobox.InputValueChangeDetails) => {
