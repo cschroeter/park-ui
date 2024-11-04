@@ -95,4 +95,4 @@ export const ComponentPreview = ({ controls }: Props) => {
 }
 
 const getComponent = (component: string) =>
-  dynamic(() => import(`~/demos/${component}.demo`).then((mod) => mod.Demo))
+  dynamic(() => import(`~/demos/${component}.demo`).then((mod) => mod.Demo), { ssr: false })

@@ -1,3 +1,4 @@
+'use client'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Select, createListCollection } from '~/components/ui/select'
 

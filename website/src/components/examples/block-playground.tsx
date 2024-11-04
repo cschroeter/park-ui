@@ -30,8 +30,12 @@ export const BlockPlayground = async (props: Props) => {
 
   const Block = dynamic(() =>
     import(`~/components/blocks/${block.id}/${variant.id}/example`)
-      .then((mod) => mod.Example)
-      .catch(() => NotFound),
+      .then((mod) => ({
+        default: mod.Example,
+      }))
+      .catch(() => ({
+        default: NotFound,
+      })),
   )
 
   const hasAccessToSourceCode = variant.accessLevel === 'free' || (await hasUserPermission())
