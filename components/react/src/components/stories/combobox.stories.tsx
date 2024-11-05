@@ -1,8 +1,7 @@
-import { createListCollection } from '@ark-ui/react/combobox'
 import type { Meta } from '@storybook/react'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { useState } from 'react'
-import { Combobox } from '~/components/ui/combobox'
+import { Combobox, createListCollection } from '~/components/ui/combobox'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 

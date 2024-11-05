@@ -1,7 +1,6 @@
-import { createListCollection } from '@ark-ui/solid/select'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
 import { For } from 'solid-js'
-import { Select } from '~/components/ui/select'
+import { Select, createListCollection } from '~/components/ui/select'
 
 export const Demo = (props: Select.RootProps) => {
   const collection = createListCollection({

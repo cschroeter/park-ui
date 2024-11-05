@@ -1,7 +1,6 @@
-import { createListCollection } from '@ark-ui/solid/combobox'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
 import { For, createSignal } from 'solid-js'
-import { Combobox } from '~/components/ui/combobox'
+import { Combobox, createListCollection } from '~/components/ui/combobox'
 import { IconButton } from '~/components/ui/icon-button'
 import { Input } from '~/components/ui/input'
 
