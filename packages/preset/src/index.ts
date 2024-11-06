@@ -1,4 +1,4 @@
-import { definePreset } from '@pandacss/dev'
+import { type SemanticTokens, type Tokens, definePreset } from '@pandacss/dev'
 import { conditions } from './conditions'
 import { globalCss } from './global-css'
 import { breakpoints } from './theme/breakpoints'
@@ -7,17 +7,48 @@ import { semanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
 import { tokens } from './theme/tokens'
 
-export default definePreset({
-  name: '@park-ui/panda-preset',
-  conditions,
-  globalCss,
-  theme: {
-    extend: {
-      breakpoints,
-      keyframes,
-      semanticTokens,
-      textStyles,
-      tokens,
+export interface ColorPalette {
+  name: string
+  tokens: Tokens['colors']
+  semanticTokens: SemanticTokens['colors']
+}
+
+export interface PresetOptions {
+  colors: {
+    gray: ColorPalette
+    accent: ColorPalette
+  }
+}
+
+export const createPreset = (options: PresetOptions) => {
+  const { gray, accent } = options.colors
+
+  return definePreset({
+    name: '@park-ui/panda-preset',
+    conditions,
+    globalCss,
+    theme: {
+      extend: {
+        breakpoints,
+        keyframes,
+        semanticTokens: {
+          ...semanticTokens,
+          colors: {
+            ...semanticTokens.colors,
+            gray: gray.semanticTokens ?? {},
+            accent: accent.semanticTokens ?? {},
+          },
+        },
+        textStyles,
+        tokens: {
+          ...tokens,
+          colors: {
+            ...tokens.colors,
+            [gray.name]: gray.tokens,
+            [accent.name]: accent.tokens,
+          },
+        },
+      },
     },
-  },
-})
+  })
+}
