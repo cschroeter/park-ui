@@ -1,0 +1,22 @@
+{
+  "git": {
+    "commitMessage": "chore: release ${npm.name} v${version}",
+    "tagName": "${npm.name}@${version}"
+  },
+  "plugins": {
+    "@release-it/keep-a-changelog": {
+      "addUnreleased": true,
+      "filename": "CHANGELOG.md"
+    }
+  },
+  "github": {
+    "release": true,
+    "releaseName": "${npm.name}@${version}"
+  },
+  "npm": {
+    "versionArgs": ["--workspaces-update=false"]
+  },
+  "hooks": {
+    "before:init": ["bun run build"]
+  }
+}
