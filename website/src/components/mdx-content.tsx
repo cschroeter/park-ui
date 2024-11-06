@@ -32,7 +32,7 @@ const sharedComponents = {
   kbd: Kbd,
   pre: Pre,
   Quickstart,
-  RadiusTokens,
+  // RadiusTokens,
   ShadowTokens,
   Step,
   Steps,

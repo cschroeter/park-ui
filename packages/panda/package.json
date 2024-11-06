@@ -10,7 +10,6 @@
   "bugs": {
     "url": "https://github.com/cschroeter/park-ui/issues"
   },
-  "files": ["dist", "src"],
   "publishConfig": {
     "access": "public"
   },
@@ -24,9 +23,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "3.5.0",
-    "@radix-ui/colors": "3.0.0",
-    "ts-pattern": "5.5.0"
+    "@ark-ui/anatomy": "3.5.0"
   },
   "devDependencies": {
     "@pandacss/dev": "0.47.0",
@@ -54,11 +51,39 @@
     }
   },
   "tsup": {
-    "entry": ["src/index.ts"],
+    "entry": ["src/index.ts", "src/colors/*.ts"],
     "clean": true,
     "dts": true,
     "sourcemap": true,
     "format": ["esm", "cjs"]
   },
-  "main": "src/index.ts"
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./colors/*": {
+      "source": "./src/colors/*.ts",
+      "import": {
+        "types": "./dist/colors/*.d.ts",
+        "default": "./dist/colors/*.js"
+      },
+      "require": {
+        "types": "./dist/colors/*.d.cts",
+        "default": "./dist/colors/*.cjs"
+      }
+    }
+  }
 }

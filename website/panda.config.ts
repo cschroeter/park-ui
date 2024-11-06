@@ -1,12 +1,19 @@
 import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
+import accent from '@park-ui/panda-preset/colors/amber'
+import gray from '@park-ui/panda-preset/colors/sand'
 import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
   validation: 'none',
   presets: [
     '@pandacss/preset-base',
-    createPreset({ additionalColors: ['*'] }),
+    createPreset({
+      colors: {
+        gray,
+        accent,
+      },
+    }),
     typographyPreset({
       recipe: {
         sizes: ['base'],
