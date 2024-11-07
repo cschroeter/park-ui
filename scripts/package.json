@@ -5,9 +5,12 @@
     "generate": "bun run src/generate.ts",
     "postgenerate": "bun biome format --write ../components",
     "registry": "bun run src/registry.ts",
-    "postregistry": "bun biome format --write ../website/public/registry"
+    "postregistry": "bun biome format --write ../website/public/registry",
+    "colors:generate": "bun run src/colors/generate.ts",
+    "postcolors:generate": "bun biome format --write ../packages/panda/src/colors"
   },
   "dependencies": {
+    "@radix-ui/colors": "3.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/handlebars-helpers": "0.5.6",
     "@types/voca": "1.4.6",

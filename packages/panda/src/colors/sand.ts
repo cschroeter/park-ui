@@ -54,20 +54,19 @@ const tokens = defineTokens.colors({
     a12: { value: '#fffffded' },
   },
 })
-
 const semanticTokens = defineSemanticTokens.colors({
-  1: { value: { _light: '{colors.sand.light.1}', _dark: '{colors.sand.dark.1}' } },
-  2: { value: { _light: '{colors.sand.light.2}', _dark: '{colors.sand.dark.2}' } },
-  3: { value: { _light: '{colors.sand.light.3}', _dark: '{colors.sand.dark.3}' } },
-  4: { value: { _light: '{colors.sand.light.4}', _dark: '{colors.sand.dark.4}' } },
-  5: { value: { _light: '{colors.sand.light.5}', _dark: '{colors.sand.dark.5}' } },
-  6: { value: { _light: '{colors.sand.light.6}', _dark: '{colors.sand.dark.6}' } },
-  7: { value: { _light: '{colors.sand.light.7}', _dark: '{colors.sand.dark.7}' } },
-  8: { value: { _light: '{colors.sand.light.8}', _dark: '{colors.sand.dark.8}' } },
-  9: { value: { _light: '{colors.sand.light.9}', _dark: '{colors.sand.dark.9}' } },
-  10: { value: { _light: '{colors.sand.light.10}', _dark: '{colors.sand.dark.10}' } },
-  11: { value: { _light: '{colors.sand.light.11}', _dark: '{colors.sand.dark.11}' } },
-  12: { value: { _light: '{colors.sand.light.12}', _dark: '{colors.sand.dark.12}' } },
+  '1': { value: { _light: '{colors.sand.light.1}', _dark: '{colors.sand.dark.1}' } },
+  '2': { value: { _light: '{colors.sand.light.2}', _dark: '{colors.sand.dark.2}' } },
+  '3': { value: { _light: '{colors.sand.light.3}', _dark: '{colors.sand.dark.3}' } },
+  '4': { value: { _light: '{colors.sand.light.4}', _dark: '{colors.sand.dark.4}' } },
+  '5': { value: { _light: '{colors.sand.light.5}', _dark: '{colors.sand.dark.5}' } },
+  '6': { value: { _light: '{colors.sand.light.6}', _dark: '{colors.sand.dark.6}' } },
+  '7': { value: { _light: '{colors.sand.light.7}', _dark: '{colors.sand.dark.7}' } },
+  '8': { value: { _light: '{colors.sand.light.8}', _dark: '{colors.sand.dark.8}' } },
+  '9': { value: { _light: '{colors.sand.light.9}', _dark: '{colors.sand.dark.9}' } },
+  '10': { value: { _light: '{colors.sand.light.10}', _dark: '{colors.sand.dark.10}' } },
+  '11': { value: { _light: '{colors.sand.light.11}', _dark: '{colors.sand.dark.11}' } },
+  '12': { value: { _light: '{colors.sand.light.12}', _dark: '{colors.sand.dark.12}' } },
   a1: { value: { _light: '{colors.sand.light.a1}', _dark: '{colors.sand.dark.a1}' } },
   a2: { value: { _light: '{colors.sand.light.a2}', _dark: '{colors.sand.dark.a2}' } },
   a3: { value: { _light: '{colors.sand.light.a3}', _dark: '{colors.sand.dark.a3}' } },
@@ -80,11 +79,10 @@ const semanticTokens = defineSemanticTokens.colors({
   a10: { value: { _light: '{colors.sand.light.a10}', _dark: '{colors.sand.dark.a10}' } },
   a11: { value: { _light: '{colors.sand.light.a11}', _dark: '{colors.sand.dark.a11}' } },
   a12: { value: { _light: '{colors.sand.light.a12}', _dark: '{colors.sand.dark.a12}' } },
-
   default: { value: { _light: '{colors.sand.light.9}', _dark: '{colors.sand.dark.9}' } },
   emphasized: { value: { _light: '{colors.sand.light.10}', _dark: '{colors.sand.dark.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
-  text: { value: { _light: '{colors.sand.light.12}', _dark: '{colors.sand.dark.12}' } },
+  text: { value: { _light: '{colors.sand.light.a11}', _dark: '{colors.sand.dark.a11}' } },
 })
 
 export default {
