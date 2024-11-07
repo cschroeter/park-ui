@@ -38,8 +38,6 @@ export const createPreset = (options: PresetOptions) => {
           ...semanticTokens,
           colors: {
             ...semanticTokens.colors,
-            [gray.name]: gray.semanticTokens,
-            [accent.name]: accent.semanticTokens,
             gray: gray.semanticTokens ?? {},
             accent: accent.semanticTokens ?? {},
           },
