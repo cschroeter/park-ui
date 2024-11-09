@@ -24,8 +24,24 @@ export interface PresetOptions {
 export const createPreset = (options: PresetOptions) => {
   const { gray, accent } = options.colors
 
+  function replaceSandWithGray(obj: any): any {
+    if (typeof obj === 'string') {
+      return obj.replace(gray.name, 'gray')
+    }
+    if (Array.isArray(obj)) {
+      return obj.map(replaceSandWithGray)
+    }
+    if (typeof obj === 'object' && obj !== null) {
+      return Object.fromEntries(
+        Object.entries(obj).map(([key, value]) => [key, replaceSandWithGray(value)]),
+      )
+    }
+    return obj
+  }
+
   return definePreset({
     name: '@park-ui/panda-preset',
+    presets: ['@pandacss/preset-base'],
     conditions,
     globalCss,
     theme: {
@@ -34,21 +50,21 @@ export const createPreset = (options: PresetOptions) => {
         keyframes,
         recipes,
         slotRecipes,
-        semanticTokens: {
-          ...semanticTokens,
-          colors: {
-            ...semanticTokens.colors,
-            gray: gray.semanticTokens ?? {},
-            accent: accent.semanticTokens ?? {},
-          },
-        },
         textStyles,
         tokens: {
           ...tokens,
           colors: {
             ...tokens.colors,
-            [gray.name]: gray.tokens,
+            gray: gray.tokens ?? {},
             [accent.name]: accent.tokens,
+          },
+        },
+        semanticTokens: {
+          ...semanticTokens,
+          colors: {
+            ...semanticTokens.colors,
+            [accent.name]: accent.semanticTokens,
+            gray: replaceSandWithGray(gray.semanticTokens),
           },
         },
       },

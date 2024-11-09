@@ -31,7 +31,7 @@ export const PricingCard = () => {
           {features.map((feature) => (
             <styled.li key={feature}>
               <HStack gap="4">
-                <Icon color="accent.default">
+                <Icon color="colorPalette.default">
                   <CheckCircleIcon />
                 </Icon>
                 <Text textStyle="sm">{feature}</Text>

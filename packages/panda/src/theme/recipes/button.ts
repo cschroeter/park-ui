@@ -40,7 +40,6 @@ export const button = defineRecipe({
       solid: {
         background: 'colorPalette.default',
         color: 'colorPalette.fg',
-        colorPalette: 'accent',
         _hover: {
           background: 'colorPalette.emphasized',
         },

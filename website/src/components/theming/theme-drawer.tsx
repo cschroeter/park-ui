@@ -6,11 +6,6 @@ import { Button } from '~/components/ui/button'
 import { Drawer } from '~/components/ui/drawer'
 import { IconButton } from '~/components/ui/icon-button'
 import { AccentColorPicker } from './accent-color-picker'
-import { BorderRadiusSlider } from './border-radius-slider'
-import { FontFamilySelect } from './font-family-select'
-import { GrayColorPicker } from './gray-color-picker'
-import { ResetThemeButton } from './reset-theme-button'
-import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
   isHero?: boolean
@@ -66,16 +61,16 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
             </Drawer.Header>
             <Drawer.Body>
               <Stack flex="1" gap="4">
-                <FontFamilySelect />
-                <GrayColorPicker />
+                {/* <FontFamilySelect />
+                <GrayColorPicker /> */}
                 <AccentColorPicker />
-                <BorderRadiusSlider />
+                {/* <BorderRadiusSlider /> */}
               </Stack>
             </Drawer.Body>
             <Drawer.Footer>
               <HStack gap="3">
-                <ResetThemeButton />
-                <ThemeConfigDialog />
+                {/* <ResetThemeButton /> */}
+                {/* <ThemeConfigDialog /> */}
               </HStack>
             </Drawer.Footer>
           </Drawer.Content>

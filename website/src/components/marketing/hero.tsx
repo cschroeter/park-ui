@@ -6,6 +6,7 @@ import { Badge } from '~/components/ui/badge'
 import { Button } from '~/components/ui/button'
 import { Heading } from '~/components/ui/heading'
 import { Text } from '~/components/ui/text'
+import { ThemeDrawer } from '../theming/theme-drawer'
 import { SolidIcon } from './icons'
 
 export const Hero = () => {
@@ -33,7 +34,7 @@ export const Hero = () => {
             Get Started <ArrowRightIcon />
           </NextLink>
         </Button>
-        {/* <ThemeDrawer isHero /> */}
+        <ThemeDrawer isHero />
       </Stack>
       <HStack gap="6">
         {[

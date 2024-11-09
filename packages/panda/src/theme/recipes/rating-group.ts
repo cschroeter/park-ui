@@ -6,7 +6,6 @@ export const ratingGroup = defineSlotRecipe({
   slots: ratingGroupAnatomy.keys(),
   base: {
     root: {
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',

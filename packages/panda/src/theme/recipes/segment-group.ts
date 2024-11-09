@@ -7,7 +7,6 @@ export const segmentGroup = defineSlotRecipe({
   base: {
     root: {
       alignItems: 'flex-start',
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: {
         _horizontal: 'row',

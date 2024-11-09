@@ -6,7 +6,11 @@
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
   "homepage": "https://park-ui.com",
   "license": "MIT",
-  "repository": "https://github.com/cschroeter/park-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cschroeter/park-ui.git",
+    "directory": "packages/panda"
+  },
   "bugs": {
     "url": "https://github.com/cschroeter/park-ui/issues"
   },
@@ -17,9 +21,6 @@
     "build": "tsup",
     "release-it": "release-it",
     "lint": "biome lint ./src",
-    "test": "bun test",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -28,34 +29,11 @@
   "devDependencies": {
     "@pandacss/dev": "0.47.0",
     "@release-it/keep-a-changelog": "5.0.0",
-    "clean-package": "2.2.0",
     "release-it": "17.10.0",
     "tsup": "8.3.5"
   },
   "peerDependencies": {
     "@pandacss/dev": ">0.22.0"
-  },
-  "clean-package": {
-    "replace": {
-      "main": "dist/index.js",
-      "module": "dist/index.mjs",
-      "types": "dist/index.d.ts",
-      "exports": {
-        ".": {
-          "types": "./dist/index.d.ts",
-          "import": "./dist/index.mjs",
-          "require": "./dist/index.js"
-        },
-        "./package.json": "./package.json"
-      }
-    }
-  },
-  "tsup": {
-    "entry": ["src/index.ts", "src/colors/*.ts"],
-    "clean": true,
-    "dts": true,
-    "sourcemap": true,
-    "format": ["esm", "cjs"]
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -64,7 +42,6 @@
   "files": ["dist"],
   "exports": {
     ".": {
-      "source": "./src/index.ts",
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
@@ -75,7 +52,6 @@
       }
     },
     "./colors/*": {
-      "source": "./src/colors/*.ts",
       "import": {
         "types": "./dist/colors/*.d.ts",
         "default": "./dist/colors/*.js"
@@ -85,5 +61,12 @@
         "default": "./dist/colors/*.cjs"
       }
     }
+  },
+  "tsup": {
+    "entry": ["src/index.ts", "src/colors/*.ts"],
+    "clean": true,
+    "dts": true,
+    "sourcemap": true,
+    "format": ["esm", "cjs"]
   }
 }

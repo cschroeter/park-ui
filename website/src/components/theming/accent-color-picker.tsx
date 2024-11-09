@@ -3,17 +3,19 @@ import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
 import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
-import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { useTheme } from '~/lib/use-theme'
+import { Button } from '../ui/button'
 
 export const AccentColorPicker = () => {
-  const { currentAccentColor, accentColors, updateAccentColor } = useThemeGenerator()
+  const { accentColor, syncAccentColor } = useTheme()
 
   return (
     <Stack gap="1.5">
       <Text textStyle="sm" fontWeight="medium">
-        Accent
+        Accent: {accentColor}
       </Text>
-      <RadioButtonGroup.Root
+      <Button onClick={() => syncAccentColor()}>Sync</Button>
+      {/* <RadioButtonGroup.Root
         value={currentAccentColor}
         size="sm"
         variant="outline"
@@ -39,7 +41,7 @@ export const AccentColorPicker = () => {
             <RadioButtonGroup.ItemHiddenInput />
           </RadioButtonGroup.Item>
         ))}
-      </RadioButtonGroup.Root>
+      </RadioButtonGroup.Root> */}
     </Stack>
   )
 }

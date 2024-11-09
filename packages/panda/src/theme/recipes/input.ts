@@ -9,7 +9,6 @@ export const input = defineRecipe({
     borderColor: 'border.default',
     borderRadius: 'l2',
     borderWidth: '1px',
-    colorPalette: 'accent',
     color: 'fg.default',
     outline: 0,
     position: 'relative',

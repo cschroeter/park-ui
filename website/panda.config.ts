@@ -1,7 +1,7 @@
 import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
-import accent from '@park-ui/panda-preset/colors/amber'
-import gray from '@park-ui/panda-preset/colors/sand'
+import amber from '@park-ui/panda-preset/colors/amber'
+import sand from '@park-ui/panda-preset/colors/sand'
 import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
@@ -10,8 +10,8 @@ export default defineConfig({
     '@pandacss/preset-base',
     createPreset({
       colors: {
-        gray,
-        accent,
+        gray: sand,
+        accent: amber,
       },
     }),
     typographyPreset({
@@ -50,6 +50,7 @@ export default defineConfig({
         scrollPaddingTop: '5rem',
         scrollBehavior: 'smooth',
         minHeight: '100%',
+        colorPalette: 'accent',
       },
       'html, body': {
         display: 'flex',
@@ -97,14 +98,10 @@ export default defineConfig({
     css: [
       {
         properties: {
-          backgroundColor: ['*'],
-          borderColor: ['*'],
           borderLeftColor: ['bg.emphasized'],
           borderBottomColor: ['bg.emphasized'],
           borderWidth: ['4px'],
           boxShadow: ['*'],
-          color: ['*'],
-          colorPalette: ['red'],
           fontWeight: ['*'],
           textStyle: ['*'],
         },

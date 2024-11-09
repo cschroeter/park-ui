@@ -16,7 +16,7 @@ export const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <HStack justify="space-between">
+      <HStack justify="space-between" color="amb">
         <NextLink href="/" aria-label="Back to home">
           <Logo />
         </NextLink>

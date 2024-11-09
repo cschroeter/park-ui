@@ -6,7 +6,6 @@ export const slider = defineSlotRecipe({
   slots: sliderAnatomy.keys(),
   base: {
     root: {
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1',

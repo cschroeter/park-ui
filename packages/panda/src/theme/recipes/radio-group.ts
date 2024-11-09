@@ -6,7 +6,6 @@ export const radioGroup = defineSlotRecipe({
   slots: radioGroupAnatomy.keys(),
   base: {
     root: {
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: {
         _vertical: 'column',

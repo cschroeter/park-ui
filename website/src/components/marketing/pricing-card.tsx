@@ -51,7 +51,7 @@ export const PricingCard = (props: Props) => {
         <Stack gap="6">
           {license.features.map((feature, id) => (
             <Stack key={id} direction="row">
-              <Icon color="accent.text" size="lg" flexShrink={0}>
+              <Icon color="colorPalette.text" size="lg" flexShrink={0}>
                 <feature.icon />
               </Icon>
               <Text textStyle="sm" fontWeight="medium">

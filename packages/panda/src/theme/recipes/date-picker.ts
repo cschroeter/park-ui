@@ -6,7 +6,6 @@ export const datePicker = defineSlotRecipe({
   slots: [...datePickerAnatomy.keys()],
   base: {
     root: {
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',

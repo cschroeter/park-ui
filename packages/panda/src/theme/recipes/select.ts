@@ -6,7 +6,6 @@ export const select = defineSlotRecipe({
   slots: selectAnatomy.keys(),
   base: {
     root: {
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',

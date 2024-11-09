@@ -34,7 +34,6 @@ export const numberInput = defineSlotRecipe({
   slots: numberInputAnatomy.keys(),
   base: {
     root: {
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',
