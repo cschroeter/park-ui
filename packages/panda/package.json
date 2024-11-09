@@ -21,6 +21,7 @@
     "build": "tsup",
     "release-it": "release-it",
     "lint": "biome lint ./src",
+    "test": " bun test",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

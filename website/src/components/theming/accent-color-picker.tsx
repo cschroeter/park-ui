@@ -14,7 +14,10 @@ export const AccentColorPicker = () => {
       <Text textStyle="sm" fontWeight="medium">
         Accent: {accentColor}
       </Text>
-      <Button onClick={() => syncAccentColor()}>Sync</Button>
+      <Button onClick={() => syncAccentColor('amber')}>Change to Amber</Button>
+      <Button onClick={() => syncAccentColor('red')}>Change to Red</Button>
+      <Button onClick={() => syncAccentColor('blue')}>Change to Blue</Button>
+
       {/* <RadioButtonGroup.Root
         value={currentAccentColor}
         size="sm"
