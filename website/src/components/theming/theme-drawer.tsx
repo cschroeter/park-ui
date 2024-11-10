@@ -1,6 +1,6 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
-import { Settings2Icon, XIcon } from 'lucide-react'
+import { Settings2Icon, Undo2Icon, Wand2Icon, XIcon } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
@@ -8,8 +8,10 @@ import { Drawer } from '~/components/ui/drawer'
 import { IconButton } from '~/components/ui/icon-button'
 import { useTheme } from '~/lib/use-theme'
 import { AccentColorPicker } from './accent-color-picker'
+import { BorderRadiusSlider } from './border-radius-slider'
 import { FontFamilySelect } from './font-family-select'
 import { GrayColorPicker } from './gray-color-picker'
+import { ThemeConfigDialog } from './theme-config-dialog'
 
 interface Props {
   isHero?: boolean
@@ -17,14 +19,24 @@ interface Props {
 
 export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const { isHero } = props
-  const { setAccentColor, setFont, setGrayColor, accentColor, grayColor, font } = useTheme()
+  const {
+    setAccentColor,
+    setFont,
+    setGrayColor,
+    setRadius,
+    accentColor,
+    grayColor,
+    font,
+    radius,
+    reset,
+  } = useTheme()
 
   return (
     <Drawer.Root variant={isHero ? 'left' : 'right'}>
       <Drawer.Trigger asChild>
         {isHero ? (
           <Button variant="outline" size={isHero ? { base: 'xl', md: '2xl' } : 'md'}>
-            <Settings2Icon />
+            <Wand2Icon />
             Make it yours
           </Button>
         ) : (
@@ -70,13 +82,16 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
                 <FontFamilySelect font={font} onValueChange={setFont} />
                 <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
                 <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
-                {/* <BorderRadiusSlider /> */}
+                <BorderRadiusSlider radius={radius} onValueChange={setRadius} />
               </Stack>
             </Drawer.Body>
             <Drawer.Footer>
               <HStack gap="3">
-                {/* <ResetThemeButton /> */}
-                {/* <ThemeConfigDialog /> */}
+                <Button variant="outline" colorPalette="gray" onClick={reset}>
+                  <Undo2Icon />
+                  Reset
+                </Button>
+                <ThemeConfigDialog />
               </HStack>
             </Drawer.Footer>
           </Drawer.Content>

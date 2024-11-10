@@ -3,7 +3,7 @@ import { createVariables } from '@park-ui/panda-preset/utils'
 import { useEffect } from 'react'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import type { Font } from '~/app/fonts'
+import { type Font, fonts } from '~/app/fonts'
 
 const loadColorPalette = async (color: string): Promise<ColorPalette> => {
   const palettes: Record<string, () => Promise<{ default: ColorPalette }>> = {
@@ -53,28 +53,43 @@ export const useTheme = () => {
   const accentColor = useThemeStore((state) => state.accentColor)
   const grayColor = useThemeStore((state) => state.grayColor)
   const font = useThemeStore((state) => state.font)
+  const radius = useThemeStore((state) => state.radius)
 
   const setAccentColor = useThemeStore((state) => state.setAccentColor)
   const setGrayColor = useThemeStore((state) => state.setGrayColor)
   const setFont = useThemeStore((state) => state.setFont)
+  const setRadius = useThemeStore((state) => state.setRadius)
+  const reset = useThemeStore((state) => state.reset)
 
   useEffect(() => {
-    // document.cookie = `chakra-accent-color=${accentColor}`
     syncAccentColor(accentColor)
   }, [accentColor])
 
   useEffect(() => {
-    // document.cookie = `chakra-gray-color=${grayColor}`
     syncGrayColor(grayColor)
   }, [grayColor])
 
+  useEffect(() => {
+    syncFontFamily(font)
+  }, [font])
+
+  const getConfig = () =>
+    baseConfig
+      .replace('__ACCENT_COLOR__', accentColor)
+      .replace('__GRAY_COLOR__', grayColor)
+      .replace('__BORDER_RADIUS__', radius)
+
   return {
     accentColor,
-    grayColor,
     font,
+    grayColor,
+    radius,
+    getConfig,
+    reset,
     setAccentColor,
-    setGrayColor,
     setFont,
+    setGrayColor,
+    setRadius,
   }
 }
 
@@ -102,23 +117,35 @@ const syncGrayColor = async (color: GrayColor) => {
   styleStyle.textContent = cssVariables
 }
 
+const syncFontFamily = (font: Font) => {
+  const root = document.querySelector<HTMLHtmlElement>(':root')
+  if (!root) return
+
+  console.log(font)
+
+  root.style.setProperty('--fonts-body', fonts[font])
+}
+
 interface State {
   accentColor: AccentColor
-  grayColor: GrayColor
   font: Font
+  grayColor: GrayColor
+  radius: BorderRadius
 }
 
 const initialState: State = {
   accentColor: 'neutral',
-  grayColor: 'neutral',
   font: 'Outfit',
+  grayColor: 'neutral',
+  radius: 'sm',
 }
 
 interface Actions {
-  setAccentColor: (color: AccentColor) => void
-  setGrayColor: (color: GrayColor) => void
-  setFont: (font: Font) => void
   reset: () => void
+  setAccentColor: (color: AccentColor) => void
+  setFont: (font: Font) => void
+  setGrayColor: (color: GrayColor) => void
+  setRadius: (radius: BorderRadius) => void
 }
 
 const useThemeStore = create<State & Actions>()(
@@ -127,9 +154,9 @@ const useThemeStore = create<State & Actions>()(
       (set) => ({
         ...initialState,
         setAccentColor: (accentColor) => set(() => ({ accentColor })),
-        setGrayColor: (grayColor) => set(() => ({ grayColor })),
         setFont: (font) => set(() => ({ font })),
-        // setRadius: (radius) => set(() => ({ radius })),
+        setGrayColor: (grayColor) => set(() => ({ grayColor })),
+        setRadius: (radius) => set(() => ({ radius })),
         reset: () => set(initialState),
       }),
       {
@@ -172,3 +199,25 @@ export const accentColors = [
 
 export type GrayColor = (typeof grayColors)[number]
 export const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate'] as const
+
+export type BorderRadius = (typeof borderRadii)[number]
+export const borderRadii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
+
+const baseConfig = `import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
+
+export default defineConfig({
+  preflight: true,
+  presets: [
+    '@pandacss/preset-base',
+    createPreset({
+      accentColor: '__ACCENT_COLOR__',
+      grayColor: '__GRAY_COLOR__',
+      borderRadius: '__BORDER_RADIUS__',
+    }),
+  ],
+  include: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
+  jsxFramework: 'react', // or 'solid' or 'vue'
+  outdir: 'styled-system',
+})
+`

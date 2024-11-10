@@ -1,22 +1,25 @@
-'use client'
-
 import { Slider } from '~/components/ui/slider'
-import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { type BorderRadius, borderRadii } from '~/lib/use-theme'
 
-export const BorderRadiusSlider = () => {
-  const { currentBorderRadius, borderRadii, updateBorderRadius } = useThemeGenerator()
+interface Props {
+  radius: BorderRadius
+  onValueChange: (value: BorderRadius) => void
+}
+
+export const BorderRadiusSlider = (props: Props) => {
+  const { radius, onValueChange } = props
 
   return (
     <Slider
       min={0}
       max={borderRadii.length - 1}
-      value={[borderRadii.indexOf(currentBorderRadius)]}
-      onValueChange={(e) => updateBorderRadius(borderRadii[e.value[0]])}
+      value={[borderRadii.indexOf(radius)]}
+      onValueChange={(e) => onValueChange(borderRadii[e.value[0]])}
       marks={borderRadii.map((borderRadius) => ({
         value: borderRadii.indexOf(borderRadius),
       }))}
     >
-      Radius: {currentBorderRadius}
+      Radius: {radius}
     </Slider>
   )
 }

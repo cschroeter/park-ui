@@ -16,8 +16,7 @@ export const FontFamilySelect = (props: Props) => {
     <Select.Root
       collection={collection}
       value={[font]}
-      // @ts-ignore
-      onValueChange={(e) => onValueChange(e[0] as Font)}
+      onValueChange={(e) => onValueChange(e.value[0] as Font)}
       positioning={{ sameWidth: true }}
       size="sm"
     >
