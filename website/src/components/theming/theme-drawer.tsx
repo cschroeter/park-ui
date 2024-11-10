@@ -8,6 +8,8 @@ import { Drawer } from '~/components/ui/drawer'
 import { IconButton } from '~/components/ui/icon-button'
 import { useTheme } from '~/lib/use-theme'
 import { AccentColorPicker } from './accent-color-picker'
+import { FontFamilySelect } from './font-family-select'
+import { GrayColorPicker } from './gray-color-picker'
 
 interface Props {
   isHero?: boolean
@@ -15,7 +17,7 @@ interface Props {
 
 export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const { isHero } = props
-  const { setAccentColor, accentColor } = useTheme()
+  const { setAccentColor, setFont, setGrayColor, accentColor, grayColor, font } = useTheme()
 
   return (
     <Drawer.Root variant={isHero ? 'left' : 'right'}>
@@ -65,8 +67,8 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
             </Drawer.Header>
             <Drawer.Body>
               <Stack flex="1" gap="4">
-                {/* <FontFamilySelect />
-                <GrayColorPicker /> */}
+                <FontFamilySelect font={font} onValueChange={setFont} />
+                <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
                 <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
                 {/* <BorderRadiusSlider /> */}
               </Stack>

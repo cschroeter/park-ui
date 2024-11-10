@@ -6,7 +6,7 @@ export const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 export const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway' })
 export const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-roboto-mono' })
 
-export type FontFamily = keyof typeof fonts
+export type Font = 'Inter' | 'Jakarta' | 'Outfit' | 'Figtree' | (string & {})
 
 export const fonts = {
   Jakarta: jakarta,

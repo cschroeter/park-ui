@@ -1,17 +1,23 @@
 'use client'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
+import { type Font, fonts } from '~/app/fonts'
 import { Select, createListCollection } from '~/components/ui/select'
-import { useThemeGenerator } from '~/lib/use-theme-generator'
 
-export const FontFamilySelect = () => {
-  const { currentFontFamily, fontFamilies, updateFontFamily } = useThemeGenerator()
+interface Props {
+  font: Font
+  onValueChange: (font: Font) => void
+}
+
+export const FontFamilySelect = (props: Props) => {
+  const { font, onValueChange } = props
+  const collection = createListCollection({ items: Object.keys(fonts) })
 
   return (
     <Select.Root
-      collection={createListCollection({ items: fontFamilies })}
-      value={[currentFontFamily.value]}
+      collection={collection}
+      value={[font]}
       // @ts-ignore
-      onValueChange={(e) => updateFontFamily(e.items[0])}
+      onValueChange={(e) => onValueChange(e[0] as Font)}
       positioning={{ sameWidth: true }}
       size="sm"
     >
@@ -24,9 +30,9 @@ export const FontFamilySelect = () => {
       </Select.Control>
       <Select.Positioner>
         <Select.Content>
-          {fontFamilies.map((fontFamily, id) => (
-            <Select.Item key={id} item={fontFamily}>
-              <Select.ItemText>{fontFamily.label}</Select.ItemText>
+          {collection.items.map((font, id) => (
+            <Select.Item key={id} item={font}>
+              <Select.ItemText>{font}</Select.ItemText>
               <Select.ItemIndicator>
                 <CheckIcon />
               </Select.ItemIndicator>

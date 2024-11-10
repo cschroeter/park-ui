@@ -1,5 +1,6 @@
 'use client'
 import { Circle, Stack } from 'styled-system/jsx'
+import { token } from 'styled-system/tokens'
 import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
 import { type AccentColor, accentColors } from '~/lib/use-theme'
@@ -30,7 +31,12 @@ export const AccentColorPicker = (props: Props) => {
           <RadioButtonGroup.Item key={id} value={accent} justifyContent="flex-start">
             <RadioButtonGroup.ItemControl />
             <RadioButtonGroup.ItemText textTransform="capitalize">
-              <Circle size="3.5" background="colorPalette.default" />
+              <Circle
+                size="3.5"
+                style={{
+                  background: token.var(`colors.${accent}.default`),
+                }}
+              />
               {accent}
             </RadioButtonGroup.ItemText>
             <RadioButtonGroup.ItemHiddenInput />

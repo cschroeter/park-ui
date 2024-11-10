@@ -3,10 +3,15 @@ import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
 import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
-import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { type GrayColor, grayColors } from '~/lib/use-theme'
 
-export const GrayColorPicker = () => {
-  const { currentGrayColor, grayColors, updateGrayColor } = useThemeGenerator()
+interface Props {
+  grayColor: GrayColor
+  onValueChange: (value: GrayColor) => void
+}
+
+export const GrayColorPicker = (props: Props) => {
+  const { grayColor, onValueChange } = props
 
   return (
     <Stack gap="1.5">
@@ -14,15 +19,13 @@ export const GrayColorPicker = () => {
         Gray Color
       </Text>
       <RadioButtonGroup.Root
-        value={currentGrayColor}
+        value={grayColor}
         size="sm"
         variant="outline"
         display="grid"
         gap="1.5"
         gridTemplateColumns="repeat(3, 1fr)"
-        onValueChange={(e) =>
-          updateGrayColor(grayColors.find((gray) => gray === e.value) ?? currentGrayColor)
-        }
+        onValueChange={(e) => onValueChange(e.value as GrayColor)}
       >
         {grayColors.map((gray, id) => (
           <RadioButtonGroup.Item
