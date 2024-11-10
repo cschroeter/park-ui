@@ -9,7 +9,6 @@ import { cx } from 'styled-system/css'
 import { Box, Flex } from 'styled-system/jsx'
 import { inter, jakarta, outfit, raleway, roboto } from '~/app/fonts'
 import { useIFrameResizeObserver } from '~/lib/use-iframe-resize-observer'
-import { useThemeGenerator } from '~/lib/use-theme-generator'
 
 export const ResizableIFrame = (props: PropsWithChildren) => {
   const { height, ref } = useIFrameResizeObserver()
@@ -63,7 +62,7 @@ const PandaProvider = (props: PropsWithChildren) => {
   const iframe = useFrame()
   const { resolvedTheme } = useTheme()
 
-  useThemeGenerator(iframe)
+  // useThemeGenerator(iframe)
 
   useEffect(() => {
     const styleTags = document.head.querySelectorAll('link[rel="stylesheet"]')

@@ -1,8 +1,8 @@
-import { accentColors, grayColors } from '@park-ui/panda-preset'
 import { Stack } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
 import { Text } from '~/components/ui/text'
 import { ColorPalette } from './color-palette'
+import { accentColors, grayColors } from './theme-options'
 
 interface Props {
   type: 'gray' | 'accent'

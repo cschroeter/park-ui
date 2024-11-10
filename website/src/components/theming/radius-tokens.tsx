@@ -1,4 +1,3 @@
-// import { createRadiiTokens } from '@park-ui/panda-preset/src/theme/semantic-tokens/radii'
 // import { Flex, Grid } from 'styled-system/jsx'
 // import { token } from 'styled-system/tokens'
 // import { Text } from '~/components/ui/text'

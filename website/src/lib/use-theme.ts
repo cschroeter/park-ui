@@ -3,7 +3,13 @@ import { createVariables } from '@park-ui/panda-preset/utils'
 import { useEffect } from 'react'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import { type Font, fonts } from '~/app/fonts'
+import {
+  type AccentColor,
+  type BorderRadius,
+  type Font,
+  type GrayColor,
+  fonts,
+} from '~/components/theming/theme-options'
 
 const loadColorPalette = async (color: string): Promise<ColorPalette> => {
   const palettes: Record<string, () => Promise<{ default: ColorPalette }>> = {
@@ -166,42 +172,6 @@ const useThemeStore = create<State & Actions>()(
     ),
   ),
 )
-
-export type AccentColor = (typeof accentColors)[number]
-export const accentColors = [
-  'neutral',
-  'tomato',
-  'red',
-  'ruby',
-  'crimson',
-  'pink',
-  'plum',
-  'purple',
-  'violet',
-  'iris',
-  'indigo',
-  'blue',
-  'cyan',
-  'teal',
-  'jade',
-  'green',
-  'grass',
-  'bronze',
-  'gold',
-  'brown',
-  'orange',
-  'amber',
-  'yellow',
-  'lime',
-  'mint',
-  'sky',
-] as const
-
-export type GrayColor = (typeof grayColors)[number]
-export const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate'] as const
-
-export type BorderRadius = (typeof borderRadii)[number]
-export const borderRadii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
 
 const baseConfig = `import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'

@@ -1,5 +1,5 @@
 import { Slider } from '~/components/ui/slider'
-import { type BorderRadius, borderRadii } from '~/lib/use-theme'
+import { type BorderRadius, borderRadii } from './theme-options'
 
 interface Props {
   radius: BorderRadius

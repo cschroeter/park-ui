@@ -1,8 +1,8 @@
-import { type AccentColor, type GrayColor, grayColors } from '@park-ui/panda-preset'
 import { Flex, HStack, Stack } from 'styled-system/jsx'
 import { type Token, token } from 'styled-system/tokens'
 import { match } from 'ts-pattern'
 import { Text } from '~/components/ui/text'
+import { type AccentColor, type GrayColor, grayColors } from './theme-options'
 
 interface Props {
   grayColor: GrayColor
