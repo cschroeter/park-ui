@@ -126,55 +126,6 @@
 //       })
 // }
 
-// const syncBorderRaius = (borderRadius: BorderRadius, context?: Context) => {
-//   const doc = context?.document ?? document
-//   const root = doc.querySelector<HTMLHtmlElement>(':root')
-//   if (!root) return
-
-//   const borderRadii = Match.value(borderRadius).pipe(
-//     Match.when('none', () => ({
-//       l1: token.var('radii.none'),
-//       l2: token.var('radii.none'),
-//       l3: token.var('radii.none'),
-//     })),
-//     Match.when('xs', () => ({
-//       l1: token.var('radii.2xs'),
-//       l2: token.var('radii.xs'),
-//       l3: token.var('radii.sm'),
-//     })),
-//     Match.when('sm', () => ({
-//       l1: token.var('radii.xs'),
-//       l2: token.var('radii.sm'),
-//       l3: token.var('radii.md'),
-//     })),
-//     Match.when('md', () => ({
-//       l1: token.var('radii.sm'),
-//       l2: token.var('radii.md'),
-//       l3: token.var('radii.lg'),
-//     })),
-//     Match.when('lg', () => ({
-//       l1: token.var('radii.md'),
-//       l2: token.var('radii.lg'),
-//       l3: token.var('radii.xl'),
-//     })),
-//     Match.when('xl', () => ({
-//       l1: token.var('radii.lg'),
-//       l2: token.var('radii.xl'),
-//       l3: token.var('radii.2xl'),
-//     })),
-//     Match.when('2xl', () => ({
-//       l1: token.var('radii.xl'),
-//       l2: token.var('radii.2xl'),
-//       l3: token.var('radii.3xl'),
-//     })),
-//     Match.exhaustive,
-//   )
-
-//   root.style.setProperty('--radii-l1', borderRadii.l1)
-//   root.style.setProperty('--radii-l2', borderRadii.l2)
-//   root.style.setProperty('--radii-l3', borderRadii.l3)
-// }
-
 // export type FontFamily = (typeof fontFamilies)[number]
 // export const fontFamilies = [
 //   {
