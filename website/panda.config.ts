@@ -1,7 +1,6 @@
 import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
-import amber from '@park-ui/panda-preset/colors/amber'
-import sand from '@park-ui/panda-preset/colors/sand'
+import neutral from '@park-ui/panda-preset/colors/neutral'
 import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
@@ -10,8 +9,8 @@ export default defineConfig({
     '@pandacss/preset-base',
     createPreset({
       colors: {
-        gray: sand,
-        accent: amber,
+        gray: neutral,
+        accent: neutral,
       },
     }),
     typographyPreset({

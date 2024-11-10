@@ -52,6 +52,16 @@
         "default": "./dist/index.cjs"
       }
     },
+    "./utils": {
+      "import": {
+        "types": "./dist/utils/utils.d.ts",
+        "default": "./dist/utils/utils.js"
+      },
+      "require": {
+        "types": "./dist/utils/utils.d.cts",
+        "default": "./dist/utils/utils.cjs"
+      }
+    },
     "./colors/*": {
       "import": {
         "types": "./dist/colors/*.d.ts",
@@ -64,7 +74,7 @@
     }
   },
   "tsup": {
-    "entry": ["src/index.ts", "src/colors/*.ts"],
+    "entry": ["src/index.ts", "src/colors/*.ts", "src/utils/utils.ts"],
     "clean": true,
     "dts": true,
     "sourcemap": true,

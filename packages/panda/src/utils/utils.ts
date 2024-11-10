@@ -1,6 +1,6 @@
 import type { ColorPalette } from '..'
 
-export const createVariables = (color: ColorPalette) => {
+export const createVariables = (color: ColorPalette): string => {
   const tokens = createTokens(color)
   const semanticTokens = createSemanticTokens(color)
 
@@ -17,13 +17,19 @@ export const createVariables = (color: ColorPalette) => {
 
   const lightTheme = `
   :where(:root, .light) {
-    ${semanticTokens.light.join('\n    ')}
+    ${
+      // @ts-expect-error
+      semanticTokens.light.join('\n    ')
+    }
   }
   `
 
   const darkTheme = `
   .dark {
-    ${semanticTokens.dark.join('\n    ')}
+    ${
+      // @ts-expect-error
+      semanticTokens.dark.join('\n    ')
+    }
   }
   `
 
@@ -31,24 +37,21 @@ export const createVariables = (color: ColorPalette) => {
 }`
 }
 
-export const createTokens = (color: ColorPalette) => {
+const createTokens = (color: ColorPalette) => {
   const { name, tokens } = color
 
-  const x = Object.entries(tokens).flatMap(([condition, value]) =>
+  return Object.entries(tokens ?? {}).flatMap(([condition, value]) =>
     Object.entries(value).map(([key, { value }]) => {
       return `--colors-${name}-${condition}-${key}: ${value};`
     }),
   )
-
-  return x
 }
 
-export const createSemanticTokens = (color: ColorPalette) => {
+const createSemanticTokens = (color: ColorPalette) => {
   const { name, semanticTokens } = color
-
   const tokensByCondition: Record<string, string[]> = {}
 
-  Object.entries(semanticTokens).forEach(([shade, { value }]) => {
+  Object.entries(semanticTokens ?? {}).forEach(([shade, { value }]) => {
     Object.entries(value).forEach(([key, value]) => {
       const condition = key.replace('_', '')
       if (!tokensByCondition[condition]) {
@@ -60,6 +63,6 @@ export const createSemanticTokens = (color: ColorPalette) => {
   return tokensByCondition
 }
 
-const convert = (value: string) => {
+const convert = (value: string): string => {
   return value.replaceAll('.', '-').replace('{', 'var(--').replace('}', ')')
 }

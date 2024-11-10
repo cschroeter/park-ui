@@ -1,6 +1,7 @@
 import { defineSemanticTokens, defineTokens } from '@pandacss/dev'
 
 const tokens = defineTokens.colors({ light: {}, dark: {} })
+
 const semanticTokens = defineSemanticTokens.colors({
   '1': { value: { _light: '{colors.neutral.light.1}', _dark: '{colors.neutral.dark.1}' } },
   '2': { value: { _light: '{colors.neutral.light.2}', _dark: '{colors.neutral.dark.2}' } },
@@ -26,10 +27,11 @@ const semanticTokens = defineSemanticTokens.colors({
   a10: { value: { _light: '{colors.neutral.light.a10}', _dark: '{colors.neutral.dark.a10}' } },
   a11: { value: { _light: '{colors.neutral.light.a11}', _dark: '{colors.neutral.dark.a11}' } },
   a12: { value: { _light: '{colors.neutral.light.a12}', _dark: '{colors.neutral.dark.a12}' } },
-  default: { value: { _light: '{colors.neutral.light.9}', _dark: '{colors.neutral.dark.9}' } },
-  emphasized: { value: { _light: '{colors.neutral.light.10}', _dark: '{colors.neutral.dark.10}' } },
-  fg: { value: { _light: 'white', _dark: 'white' } },
-  text: { value: { _light: '{colors.neutral.light.a11}', _dark: '{colors.neutral.dark.a11}' } },
+
+  default: { value: { _light: 'black', _dark: 'white' } },
+  emphasized: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
+  fg: { value: { _light: 'white', _dark: 'black' } },
+  text: { value: { _light: 'black', _dark: 'white' } },
 })
 
 export default {
