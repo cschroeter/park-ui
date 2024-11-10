@@ -1,5 +1,7 @@
 import type { ColorPalette } from '@park-ui/panda-preset'
 import { createVariables } from '@park-ui/panda-preset/utils'
+import { sync } from 'effect/Deferred'
+import { useEffect } from 'react'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
@@ -7,10 +9,30 @@ const loadColorPalette = async (color: string): Promise<ColorPalette> => {
   const palettes: Record<string, () => Promise<{ default: ColorPalette }>> = {
     neutral: () => import('@park-ui/panda-preset/colors/neutral'),
     amber: () => import('@park-ui/panda-preset/colors/amber'),
-    red: () => import('@park-ui/panda-preset/colors/red'),
-    orange: () => import('@park-ui/panda-preset/colors/orange'),
     blue: () => import('@park-ui/panda-preset/colors/blue'),
-    // Add other color imports here as needed
+    bronze: () => import('@park-ui/panda-preset/colors/bronze'),
+    brown: () => import('@park-ui/panda-preset/colors/brown'),
+    crimson: () => import('@park-ui/panda-preset/colors/crimson'),
+    cyan: () => import('@park-ui/panda-preset/colors/cyan'),
+    gold: () => import('@park-ui/panda-preset/colors/gold'),
+    grass: () => import('@park-ui/panda-preset/colors/grass'),
+    green: () => import('@park-ui/panda-preset/colors/green'),
+    indigo: () => import('@park-ui/panda-preset/colors/indigo'),
+    iris: () => import('@park-ui/panda-preset/colors/iris'),
+    jade: () => import('@park-ui/panda-preset/colors/jade'),
+    lime: () => import('@park-ui/panda-preset/colors/lime'),
+    mint: () => import('@park-ui/panda-preset/colors/mint'),
+    orange: () => import('@park-ui/panda-preset/colors/orange'),
+    pink: () => import('@park-ui/panda-preset/colors/pink'),
+    plum: () => import('@park-ui/panda-preset/colors/plum'),
+    purple: () => import('@park-ui/panda-preset/colors/purple'),
+    red: () => import('@park-ui/panda-preset/colors/red'),
+    ruby: () => import('@park-ui/panda-preset/colors/ruby'),
+    sky: () => import('@park-ui/panda-preset/colors/sky'),
+    teal: () => import('@park-ui/panda-preset/colors/teal'),
+    tomato: () => import('@park-ui/panda-preset/colors/tomato'),
+    violet: () => import('@park-ui/panda-preset/colors/violet'),
+    yellow: () => import('@park-ui/panda-preset/colors/yellow'),
   }
 
   const loader = palettes[color]
@@ -24,6 +46,7 @@ const loadColorPalette = async (color: string): Promise<ColorPalette> => {
 
 export const useTheme = () => {
   const accentColor = useThemeStore((state) => state.accentColor)
+  const setAccentColor = useThemeStore((state) => state.setAccentColor)
 
   const syncAccentColor = async (color: string) => {
     const root = document.querySelector<HTMLHtmlElement>(':root')
@@ -37,32 +60,23 @@ export const useTheme = () => {
     styleStyle.textContent = cssVariables
   }
 
+  useEffect(() => {
+    // document.cookie = `chakra-accent-color=${accentColor}`
+    syncAccentColor(accentColor)
+  }, [accentColor])
+
   return {
     accentColor,
-    syncAccentColor,
+    setAccentColor,
   }
 }
-
-export type AccentColor = (typeof accentColors)[number] | (string & {})
-export const accentColors = [
-  'gray',
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'teal',
-  'blue',
-  'cyan',
-  'purple',
-  'pink',
-] as const
 
 interface State {
   accentColor: AccentColor
 }
 
 const initialState: State = {
-  accentColor: 'amber',
+  accentColor: 'neutral',
 }
 
 interface Actions {
@@ -87,3 +101,33 @@ const useThemeStore = create<State & Actions>()(
     ),
   ),
 )
+
+export type AccentColor = (typeof accentColors)[number]
+export const accentColors = [
+  'neutral',
+  'tomato',
+  'red',
+  'ruby',
+  'crimson',
+  'pink',
+  'plum',
+  'purple',
+  'violet',
+  'iris',
+  'indigo',
+  'blue',
+  'cyan',
+  'teal',
+  'jade',
+  'green',
+  'grass',
+  'bronze',
+  'gold',
+  'brown',
+  'orange',
+  'amber',
+  'yellow',
+  'lime',
+  'mint',
+  'sky',
+] as const

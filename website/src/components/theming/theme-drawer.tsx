@@ -1,3 +1,4 @@
+'use client'
 import { Portal } from '@ark-ui/react/portal'
 import { Settings2Icon, XIcon } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
@@ -5,6 +6,7 @@ import { HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
 import { Drawer } from '~/components/ui/drawer'
 import { IconButton } from '~/components/ui/icon-button'
+import { useTheme } from '~/lib/use-theme'
 import { AccentColorPicker } from './accent-color-picker'
 
 interface Props {
@@ -13,6 +15,8 @@ interface Props {
 
 export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
   const { isHero } = props
+  const { setAccentColor, accentColor } = useTheme()
+
   return (
     <Drawer.Root variant={isHero ? 'left' : 'right'}>
       <Drawer.Trigger asChild>
@@ -63,7 +67,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
               <Stack flex="1" gap="4">
                 {/* <FontFamilySelect />
                 <GrayColorPicker /> */}
-                <AccentColorPicker />
+                <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
                 {/* <BorderRadiusSlider /> */}
               </Stack>
             </Drawer.Body>

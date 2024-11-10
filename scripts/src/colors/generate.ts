@@ -6,7 +6,7 @@ const main = () => {
   Object.keys(radixColors)
     .filter((color) => !/[A-Z]/.test(color))
     .filter((color) => color !== 'default')
-    .map((color) => (color === 'gray' ? 'neutral' : color))
+    // .map((color) => (color === 'gray' ? 'neutral' : color))
     .map((color) => {
       const tokens = defineColorTokens(color)
       const semanticTokens = defineSemanticTokens(color)
