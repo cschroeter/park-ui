@@ -25,7 +25,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ark-ui/anatomy": "3.5.0"
+    "@ark-ui/anatomy": "3.5.0",
+    "effect": "3.10.13"
   },
   "devDependencies": {
     "@pandacss/dev": "0.47.0",

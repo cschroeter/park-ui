@@ -7,6 +7,7 @@ import { recipes, slotRecipes } from './theme/recipes'
 import { semanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
 import { tokens } from './theme/tokens'
+import { type Radii, getRadii } from './utils/get-radii'
 
 export interface ColorPalette {
   name: string
@@ -19,10 +20,14 @@ export interface PresetOptions {
     gray: ColorPalette
     accent: ColorPalette
   }
+  raddi: Radii
 }
 
 export const createPreset = (options: PresetOptions) => {
-  const { gray, accent } = options.colors
+  const {
+    raddi,
+    colors: { gray, accent },
+  } = options
 
   function replaceSandWithGray(obj: any): any {
     if (typeof obj === 'string') {
@@ -43,7 +48,13 @@ export const createPreset = (options: PresetOptions) => {
     name: '@park-ui/panda-preset',
     presets: ['@pandacss/preset-base'],
     conditions,
-    globalCss,
+    globalCss: {
+      ...globalCss,
+      html: {
+        ...globalCss['html'],
+        colorPalette: accent.name,
+      },
+    },
     theme: {
       extend: {
         breakpoints,
@@ -66,6 +77,7 @@ export const createPreset = (options: PresetOptions) => {
             [accent.name]: accent.semanticTokens,
             gray: replaceSandWithGray(gray.semanticTokens),
           },
+          radii: getRadii(raddi),
         },
       },
     },

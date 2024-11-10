@@ -37,12 +37,12 @@ import typographyPreset from 'pandacss-preset-typography'
 export default defineConfig({
   validation: 'none',
   presets: [
-    '@pandacss/preset-base',
     createPreset({
       colors: {
         gray: neutral,
         accent: neutral,
       },
+      raddi: 'sm',
     }),
     typographyPreset({
       recipe: {
