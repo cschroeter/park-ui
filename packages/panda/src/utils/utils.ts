@@ -1,4 +1,4 @@
-import type { ColorPalette } from '..'
+import type { ColorPalette } from '../options'
 
 export const createVariables = (color: ColorPalette): string => {
   const tokens = createTokens(color)

@@ -1,9 +1,9 @@
+import { type Radius, radii } from '@park-ui/panda-preset'
 import { Slider } from '~/components/ui/slider'
-import { type BorderRadius, borderRadii } from './theme-options'
 
 interface Props {
-  radius: BorderRadius
-  onValueChange: (value: BorderRadius) => void
+  radius: Radius
+  onValueChange: (value: Radius) => void
 }
 
 export const BorderRadiusSlider = (props: Props) => {
@@ -12,11 +12,11 @@ export const BorderRadiusSlider = (props: Props) => {
   return (
     <Slider
       min={0}
-      max={borderRadii.length - 1}
-      value={[borderRadii.indexOf(radius)]}
-      onValueChange={(e) => onValueChange(borderRadii[e.value[0]])}
-      marks={borderRadii.map((borderRadius) => ({
-        value: borderRadii.indexOf(borderRadius),
+      max={radii.length - 1}
+      value={[radii.indexOf(radius)]}
+      onValueChange={(e) => onValueChange(radii[e.value[0]])}
+      marks={radii.map((borderRadius) => ({
+        value: radii.indexOf(borderRadius),
       }))}
     >
       Radius: {radius}

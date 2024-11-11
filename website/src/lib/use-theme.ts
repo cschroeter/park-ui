@@ -1,17 +1,11 @@
-import type { ColorPalette } from '@park-ui/panda-preset'
+import type { AccentColor, ColorPalette, GrayColor, Radius } from '@park-ui/panda-preset'
 import { createVariables } from '@park-ui/panda-preset/utils'
 import { Match } from 'effect'
 import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import {
-  type AccentColor,
-  type BorderRadius,
-  type Font,
-  type GrayColor,
-  fonts,
-} from '~/components/theming/theme-options'
+import { type Font, fonts } from '~/app/fonts'
 
 const loadColorPalette = async (color: string): Promise<ColorPalette> => {
   const palettes: Record<string, () => Promise<{ default: ColorPalette }>> = {
@@ -136,11 +130,11 @@ const syncFontFamily = (font: Font) => {
   root.style.setProperty('--fonts-body', fonts[font])
 }
 
-const syncBorderRaius = (borderRadius: BorderRadius) => {
+const syncBorderRaius = (radius: Radius) => {
   const root = document.querySelector<HTMLHtmlElement>(':root')
   if (!root) return
 
-  const borderRadii = Match.value(borderRadius).pipe(
+  const borderRadii = Match.value(radius).pipe(
     Match.when('none', () => ({
       l1: token.var('radii.none'),
       l2: token.var('radii.none'),
@@ -188,7 +182,7 @@ interface State {
   accentColor: AccentColor
   font: Font
   grayColor: GrayColor
-  radius: BorderRadius
+  radius: Radius
 }
 
 const initialState: State = {
@@ -203,7 +197,7 @@ interface Actions {
   setAccentColor: (color: AccentColor) => void
   setFont: (font: Font) => void
   setGrayColor: (color: GrayColor) => void
-  setRadius: (radius: BorderRadius) => void
+  setRadius: (radius: Radius) => void
 }
 
 const useThemeStore = create<State & Actions>()(

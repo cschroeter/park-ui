@@ -1,3 +1,17 @@
+import type { SemanticTokens, Tokens } from '@pandacss/dev'
+
+export interface ColorPalette {
+  name: string
+  tokens: Tokens['colors']
+  semanticTokens: SemanticTokens['colors']
+}
+
+export interface PresetOptions {
+  accentColor: ColorPalette
+  grayColor: ColorPalette
+  radius: Radius
+}
+
 export type AccentColor = (typeof accentColors)[number]
 export const accentColors = [
   'neutral',
@@ -31,15 +45,5 @@ export const accentColors = [
 export type GrayColor = (typeof grayColors)[number]
 export const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate'] as const
 
-export type BorderRadius = (typeof borderRadii)[number]
-export const borderRadii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
-
-export type Font = 'Inter' | 'Jakarta' | 'Outfit' | 'Raleway' | 'Roboto Mono'
-
-export const fonts: Record<Font, string> = {
-  Inter: 'var(--font-inter)',
-  Jakarta: 'var(--font-jakarta)',
-  Outfit: 'var(--font-outfit)',
-  Raleway: 'var(--font-raleway)',
-  'Roboto Mono': 'var(--font-roboto-mono)',
-}
+export type Radius = (typeof radii)[number]
+export const radii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const

@@ -1,7 +1,7 @@
 'use client'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
+import { type Font, fonts } from '~/app/fonts'
 import { Select, createListCollection } from '~/components/ui/select'
-import { type Font, fonts } from './theme-options'
 
 interface Props {
   font: Font

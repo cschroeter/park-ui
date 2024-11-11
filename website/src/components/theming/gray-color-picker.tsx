@@ -1,9 +1,9 @@
 'use client'
+import { type GrayColor, grayColors } from '@park-ui/panda-preset'
 import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
 import { RadioButtonGroup } from '~/components/ui/radio-button-group'
 import { Text } from '~/components/ui/text'
-import { type GrayColor, grayColors } from './theme-options'
 
 interface Props {
   grayColor: GrayColor
