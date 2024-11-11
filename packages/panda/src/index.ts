@@ -1,4 +1,5 @@
 import { type SemanticTokens, type Tokens, definePreset } from '@pandacss/dev'
+import red from './colors/red'
 import { conditions } from './conditions'
 import { globalCss } from './global-css'
 import { breakpoints } from './theme/breakpoints'
@@ -16,33 +17,16 @@ export interface ColorPalette {
 }
 
 export interface PresetOptions {
-  colors: {
-    gray: ColorPalette
-    accent: ColorPalette
-  }
-  raddi: Radii
+  accentColor: ColorPalette
+  grayColor: ColorPalette
+  radii: Radii
 }
 
 export const createPreset = (options: PresetOptions) => {
-  const {
-    raddi,
-    colors: { gray, accent },
-  } = options
+  const { accentColor, grayColor, radii } = options
 
-  function replaceSandWithGray(obj: any): any {
-    if (typeof obj === 'string') {
-      return obj.replace(gray.name, 'gray')
-    }
-    if (Array.isArray(obj)) {
-      return obj.map(replaceSandWithGray)
-    }
-    if (typeof obj === 'object' && obj !== null) {
-      return Object.fromEntries(
-        Object.entries(obj).map(([key, value]) => [key, replaceSandWithGray(value)]),
-      )
-    }
-    return obj
-  }
+  const standardizeGrayTokens = (tokens: SemanticTokens['colors']) =>
+    JSON.parse(JSON.stringify(tokens).replace(new RegExp(grayColor.name, 'g'), 'gray'))
 
   return definePreset({
     name: '@park-ui/panda-preset',
@@ -51,8 +35,7 @@ export const createPreset = (options: PresetOptions) => {
     globalCss: {
       ...globalCss,
       html: {
-        ...globalCss['html'],
-        colorPalette: accent.name,
+        colorPalette: accentColor.name,
       },
     },
     theme: {
@@ -66,18 +49,20 @@ export const createPreset = (options: PresetOptions) => {
           ...tokens,
           colors: {
             ...tokens.colors,
-            gray: gray.tokens ?? {},
-            [accent.name]: accent.tokens,
+            red: red.tokens,
+            gray: grayColor.tokens ?? {},
+            [accentColor.name]: accentColor.tokens,
           },
         },
         semanticTokens: {
           ...semanticTokens,
           colors: {
             ...semanticTokens.colors,
-            [accent.name]: accent.semanticTokens,
-            gray: replaceSandWithGray(gray.semanticTokens),
+            red: red.semanticTokens,
+            gray: standardizeGrayTokens(grayColor.semanticTokens),
+            [accentColor.name]: accentColor.semanticTokens,
           },
-          radii: getRadii(raddi),
+          radii: getRadii(radii),
         },
       },
     },

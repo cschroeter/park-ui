@@ -5,7 +5,7 @@ import sand from '@park-ui/panda-preset/colors/sand'
 
 export default defineConfig({
   preflight: true,
-  presets: [createPreset({ colors: { accent: amber, gray: sand }, raddi: 'sm' })],
+  presets: [createPreset({ accentColor: amber, grayColor: sand, radii: 'sm' })],
   include: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
   jsxFramework: 'react',
   outdir: 'styled-system',
