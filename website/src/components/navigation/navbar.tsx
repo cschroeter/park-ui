@@ -10,6 +10,7 @@ import { NavbarContainer } from '~/components/navigation/navbar-container'
 import { NavbarLinks } from '~/components/navigation/navbar-links'
 import { getServerContext } from '~/lib/server-context'
 import { UserButton } from '../auth/user-button'
+import { ThemeDrawer } from '../theming/theme-drawer'
 
 export const Navbar = () => {
   const { framework } = getServerContext()
@@ -27,7 +28,7 @@ export const Navbar = () => {
           <Divider orientation="vertical" h="6" />
           <HStack gap="2">
             <HStack gap="0">
-              {/* <ThemeDrawer /> */}
+              <ThemeDrawer />
               <ColorModeButton />
               <GitHubLink />
             </HStack>

@@ -1,6 +1,6 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
-import { Settings2Icon, Undo2Icon, Wand2Icon, XIcon } from 'lucide-react'
+import { Undo2Icon, Wand2Icon, XIcon } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Button } from '~/components/ui/button'
@@ -53,7 +53,7 @@ export const ThemeDrawer = (props: PropsWithChildren<Props>) => {
               },
             }}
           >
-            <Settings2Icon />
+            <Wand2Icon />
           </IconButton>
         )}
       </Drawer.Trigger>

@@ -82,7 +82,7 @@ const semanticTokens = defineSemanticTokens.colors({
   default: { value: { _light: '{colors.sage.light.9}', _dark: '{colors.sage.dark.9}' } },
   emphasized: { value: { _light: '{colors.sage.light.10}', _dark: '{colors.sage.dark.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
-  text: { value: { _light: '{colors.sage.light.a11}', _dark: '{colors.sage.dark.a11}' } },
+  text: { value: { _light: '{colors.sage.light.12}', _dark: '{colors.sage.dark.12}' } },
 })
 
 export default {
