@@ -3,7 +3,7 @@ import { Match } from 'effect'
 export type Radii = (typeof borderRadii)[number]
 export const borderRadii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
 
-export const getRadii = (radii: Radii) =>
+export const createRadii = (radii: Radii) =>
   Match.value(radii).pipe(
     Match.when('xs', () => ({
       l1: { value: '{radii.2xs}' },

@@ -55,12 +55,12 @@
     },
     "./utils": {
       "import": {
-        "types": "./dist/utils/utils.d.ts",
-        "default": "./dist/utils/utils.js"
+        "types": "./dist/utils/index.d.ts",
+        "default": "./dist/utils/index.js"
       },
       "require": {
-        "types": "./dist/utils/utils.d.cts",
-        "default": "./dist/utils/utils.cjs"
+        "types": "./dist/utils/index.d.cts",
+        "default": "./dist/utils/index.cjs"
       }
     },
     "./colors/*": {
@@ -75,7 +75,7 @@
     }
   },
   "tsup": {
-    "entry": ["src/index.ts", "src/colors/*.ts", "src/utils/utils.ts"],
+    "entry": ["src/index.ts", "src/colors/*.ts", "src/utils/index.ts"],
     "clean": true,
     "dts": true,
     "sourcemap": true,

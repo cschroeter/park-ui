@@ -9,7 +9,7 @@ import { recipes, slotRecipes } from './theme/recipes'
 import { semanticTokens } from './theme/semantic-tokens'
 import { textStyles } from './theme/text-styles'
 import { tokens } from './theme/tokens'
-import { getRadii } from './utils/get-radii'
+import { createRadii } from './utils/create-radii'
 
 export const createPreset = (options: PresetOptions) => {
   const { accentColor, grayColor, radius } = options
@@ -51,7 +51,7 @@ export const createPreset = (options: PresetOptions) => {
             gray: standardizeGrayTokens(grayColor.semanticTokens),
             [accentColor.name]: accentColor.semanticTokens,
           },
-          radii: getRadii(radius),
+          radii: createRadii(radius),
         },
       },
     },

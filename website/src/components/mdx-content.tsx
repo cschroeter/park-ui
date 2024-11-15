@@ -13,7 +13,7 @@ import { ColorGrid } from './theming/color-grid'
 import { ColorPairings } from './theming/color-pairings'
 import { ColorPalette } from './theming/color-palette'
 import { ColorTokens } from './theming/color-tokens'
-// import { RadiusTokens } from './theming/radius-tokens'
+import { RadiusTokens } from './theming/radius-tokens'
 import { ShadowTokens } from './theming/shadow-tokens'
 import { Step, Steps } from './ui/stepper'
 
@@ -32,7 +32,7 @@ const sharedComponents = {
   kbd: Kbd,
   pre: Pre,
   Quickstart,
-  // RadiusTokens,
+  RadiusTokens,
   ShadowTokens,
   Step,
   Steps,
