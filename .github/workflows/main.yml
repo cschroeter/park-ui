@@ -17,7 +17,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
 
       - name: Install Dependencies
-        run: bun install
+        run: bun install && bun panda build
 
       - name: Typecheck
         run: bun run typecheck
