@@ -18,6 +18,7 @@
     "access": "public"
   },
   "scripts": {
+    "postinstall": "bun run build",
     "build": "tsup",
     "release-it": "release-it",
     "lint": "biome lint ./src",
