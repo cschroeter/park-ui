@@ -27,6 +27,76 @@ export default defineConfig({
 })
 ```
 
+## Custom Color Palette
+
+You can define a custom accent color palette and integrate it into your project. Here's an example of how you can
+create a custom `coral` color palette:
+
+```ts
+export const coral = {
+  name: 'coral',
+  tokens: defineTokens.colors({
+    light: {
+      '1': { value: '#fff8f7' },
+      // ...
+      '12': { value: '#762d25' },
+    },
+    dark: {
+      '1': { value: '#1c1412' },
+      // ...
+      '12': { value: '#faa19b' },
+    },
+  }),
+
+  semanticTokens: defineSemanticTokens.colors({
+    '1': { value: { _light: '{colors.coral.light.1}', _dark: '{colors.coral.dark.1}' } },
+    // ...
+    '12': { value: { _light: '{colors.coral.light.12}', _dark: '{colors.coral.dark.12}' } },
+
+    default: {
+      value: {
+        _light: '{colors.coral.light.9}',
+        _dark: '{colors.coral.dark.9}',
+      },
+    },
+    emphasized: {
+      value: {
+        _light: '{colors.coral.light.10}',
+        _dark: '{colors.coral.dark.10}',
+      },
+    },
+    fg: {
+      value: {
+        _light: 'white',
+        _dark: 'white',
+      },
+    },
+    text: {
+      value: {
+        _light: '{colors.coral.light.11}',
+        _dark: '{colors.coral.dark.11}',
+      },
+    },
+  }),
+}
+```
+
+> Since **Park UI** uses [Radix Colors](https://www.radix-ui.com/colors) under the hood, you can use their [tool](https://www.radix-ui.com/colors/custom) to generate your custom color palette.
+
+And then you can use it in your `panda.config.ts` like this:
+
+```ts
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
+import { createPreset } from '@park-ui/panda-preset/colors/sand'
+import coral from './coral'
+
+export default defineConfig({
+  presets: [createPreset({ grayColor: sand, accentColor: coral, radius: 'sm' })],
+  // etc.
+})
+```
+
 ## Semantic Tokens
 
 Another cool way to customize Park UI is by adjusting
