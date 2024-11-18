@@ -7,6 +7,6 @@ export default defineConfig({
   preflight: true,
   presets: [createPreset({ accentColor: amber, grayColor: sand, radius: 'sm' })],
   include: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
-  jsxFramework: 'react',
+  jsxFramework: 'react', // or solid or vue
   outdir: 'styled-system',
 })
