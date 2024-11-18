@@ -6,6 +6,8 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+## [0.43.0] - 2024-11-18
+
 ### Changed
 
 - **Color Tokens**: The `accent` color concept has been removed. Components now rely on the built-in
