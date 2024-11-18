@@ -8,17 +8,40 @@ description: All notable changes will be documented in this file.
 
 ### Changed
 
-- Removed the `accent` color concept. Components now use the built-in `colorPalette` prop for color customization. Learn more about the virtual color concept [here](https://panda-css.com/docs/concepts/virtual-color).
+- **Color Tokens**: The `accent` color concept has been removed. Components now rely on the built-in
+  `colorPalette` prop for color customization. This change aligns with how Panda CSS envisions the
+  use of its [virtual color system.](https://panda-css.com/docs/concepts/virtual-color).
 
-```diff
-- <Text color="accent.default">Park UI</Text>
-+ <Text color="colorPalette.default">Park UI</Text>
+Previously, color tokens were organized like this:
+
+```markdown
+colorPalette.1  
+ └── accent.1  
+ └── amber.1  
+ ├── amber.light.1  
+ └── amber.dark.1
 ```
 
-- Enhanced consistency and scalability by refining the Park UI Preset setup in the Panda configuration. [Learn more in the docs](https://park-ui.com/react/docs/theme/customize).
+The `accent` layer was unnecessary and has been removed:
 
+```markdown
+colorPalette.1  
+ └── amber.1  
+ ├── amber.light.1  
+ └── amber.dark.1
+```
+
+Here's how this change impacts usage:
 
 ```diff
+- <Box color="accent.default" />
++ <Box color="colorPalette.default" />
+```
+
+- Improved consistency and scalability by refining the Park UI Preset setup in the Panda
+  configuration. [Learn more in the docs](https://park-ui.com/react/docs/theme/customize).
+
+````diff
  import { defineConfig } from '@pandacss/dev'
 
 ```diff
@@ -44,7 +67,7 @@ description: All notable changes will be documented in this file.
    jsxFramework: 'react', // or 'solid' or 'vue'
    outdir: 'styled-system',
  })
-```
+````
 
 ## [0.42.0] - 2024-08-01
 
@@ -54,26 +77,27 @@ description: All notable changes will be documented in this file.
 
 ### Changed
 
-- **CLI**: Installation of components using the CLI no longer requires a `tsconfig.json` file. 
-This is particularly beneficial for setups like `nx` workspaces that do not include a `tsconfig.json` file.
+- **CLI**: Installation of components using the CLI no longer requires a `tsconfig.json` file. This
+  is particularly beneficial for setups like `nx` workspaces that do not include a `tsconfig.json`
+  file.
 
 The CLI now prompts the following:
 
-  ```text
-  ➜ Which JS framework do you use? [React / Solid / Vue]
-  ➜ Where would you like to store your components? [./src/components/ui]
-  ```
+```text
+➜ Which JS framework do you use? [React / Solid / Vue]
+➜ Where would you like to store your components? [./src/components/ui]
+```
 
-  Adding a component will create the following folder structure:
+Adding a component will create the following folder structure:
 
-  ```text
-  ➜ /src/components/ui/
-    |-- styled/
-    |   |-- utils/
-    |   |   `-- create-style-context.ts
-    |   `-- button.tsx
-    `-- button.tsx
-  ```
+```text
+➜ /src/components/ui/
+  |-- styled/
+  |   |-- utils/
+  |   |   `-- create-style-context.ts
+  |   `-- button.tsx
+  `-- button.tsx
+```
 
 ### Fixed
 
@@ -137,8 +161,9 @@ export const App = () => {
 
 ## [0.38.0] - 2024-06-06
 
-We are excited to announce that in this release, we have migrated all components to the new Ark UI 3.0.0 API. 
-This update includes several breaking changes, so please make sure to update your code snippets accordingly.
+We are excited to announce that in this release, we have migrated all components to the new Ark UI
+3.0.0 API. This update includes several breaking changes, so please make sure to update your code
+snippets accordingly.
 
 ### Changed
 
@@ -146,7 +171,8 @@ This update includes several breaking changes, so please make sure to update you
 
 ### Fixed
 
-- Resolved an issue with the `Avatar` component where the image did not display as round after loading.
+- Resolved an issue with the `Avatar` component where the image did not display as round after
+  loading.
 
 ## [0.37.1] - 2024-05-19
 
@@ -167,7 +193,8 @@ This update includes several breaking changes, so please make sure to update you
 ### Fixed
 
 - Fixed an issue where the `NumberInput` component rendered a border incorrectly.
-- Fixed an issue where the `ToggleGroup` component did not appear to work correctly on touch devices.
+- Fixed an issue where the `ToggleGroup` component did not appear to work correctly on touch
+  devices.
 
 ## [0.36.1] - 2024-03-06
 
@@ -195,7 +222,8 @@ This update includes several breaking changes, so please make sure to update you
 
 ### Fixed
 
-- Replaced `{colors.white}` and `{colors.black}` with `black` and `white` in color references to prevent false positive error messages.
+- Replaced `{colors.white}` and `{colors.black}` with `black` and `white` in color references to
+  prevent false positive error messages.
 
 ## [0.35.0] - 2024-02-16
 
@@ -208,20 +236,22 @@ This update includes several breaking changes, so please make sure to update you
 
 ### Fixed
 
-- Resolved an issue that you had to add the `accent` and `gray` colors to the `additionalColors` option in the `createPreset` function to make them available in the CSS bundle.
+- Resolved an issue that you had to add the `accent` and `gray` colors to the `additionalColors`
+  option in the `createPreset` function to make them available in the CSS bundle.
 
 ## [0.34.0] - 2024-02-08
 
 ### Added
 
-Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle size effectively. By default, the preset includes only the `gray` and `accent` colors. 
-This maybe a breaking change for some users, so please update your configuration accordingly.
+Introduced a new `additionalColors` option in the `createPreset` function to decrease the CSS bundle
+size effectively. By default, the preset includes only the `gray` and `accent` colors. This maybe a
+breaking change for some users, so please update your configuration accordingly.
 
 Example configuration:
 
 ```tsx
-import { defineConfig } from '@pandacss/dev';
-import { createPreset } from '@park-ui/panda-preset';
+import { defineConfig } from '@pandacss/dev'
+import { createPreset } from '@park-ui/panda-preset'
 
 export default defineConfig({
   presets: [
@@ -252,8 +282,8 @@ createPreset({
 
 ## [0.32.0] - 2024-01-31
 
-This release marks an important milestone for Park UI as we have upgraded to the new major version 2.0 of Ark UI. Please
-update your dependencies accordingly.
+This release marks an important milestone for Park UI as we have upgraded to the new major version
+2.0 of Ark UI. Please update your dependencies accordingly.
 
 ### Changed
 
@@ -292,7 +322,8 @@ update your dependencies accordingly.
 
 ## [0.29.0] - 2024-01-19
 
-We are excited to announce that in this release, we have revised several components to feature a closed Component API:
+We are excited to announce that in this release, we have revised several components to feature a
+closed Component API:
 
 - `Avatar`
 - `Checkbox`
@@ -303,14 +334,16 @@ We are excited to announce that in this release, we have revised several compone
 - `Slider`
 - `Switch`
 
-For more information on the reasoning behind this change, please refer to the [GitHub Issue](https://github.com/cschroeter/park-ui/issues/144).
+For more information on the reasoning behind this change, please refer to the
+[GitHub Issue](https://github.com/cschroeter/park-ui/issues/144).
 
 ### Added
 
 - Introduced styles for the `Progress` component (Preview).
 - Implemented support to render the `RatingGroup` in various colors.
 - Added a hover color to the items in `SegmentControl`.
-- Launched [Storybooks](https://github.com/cschroeter/park-ui/tree/main/components) for all components across each framework.
+- Launched [Storybooks](https://github.com/cschroeter/park-ui/tree/main/components) for all
+  components across each framework.
 
 ### Changed
 
@@ -319,15 +352,18 @@ For more information on the reasoning behind this change, please refer to the [G
 ### Fixed
 
 - Fixed an issue in the `PinInput` component where the input width was incorrect.
-- Addressed a bug in the `Select` component where a disabled item incorrectly displayed a hover color.
+- Addressed a bug in the `Select` component where a disabled item incorrectly displayed a hover
+  color.
 
 ## [0.28.0] - 2024-01-01
 
 ### Changed
 
-- Renamed `placement` prop to `variant` in `Drawer` component for better consistency with other CSS frameworks.
+- Renamed `placement` prop to `variant` in `Drawer` component for better consistency with other CSS
+  frameworks.
 - Renamed `Label` to `FormLabel`
-- Revised `Avatar` component. Check out the [docs](https://park-ui.com/docs/panda/components/avatar) for more details.
+- Revised `Avatar` component. Check out the [docs](https://park-ui.com/docs/panda/components/avatar)
+  for more details.
 
 ### Fixed
 
@@ -371,7 +407,8 @@ import { Avatar as ArkAvatar } from '@ark-ui/react/avatar'
 ### Changed
 
 - Integrated latest version of Ark UI 1.2.0
-- Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server Components, we've revised the export method for multi-part components.
+- Due to an issue with [Next.js](https://github.com/vercel/next.js/issues/51593) and React Server
+  Components, we've revised the export method for multi-part components.
 
 ```tsx
 // before
@@ -405,10 +442,10 @@ export type ButtonProps = HTMLStyledProps<typeof Button>
 ### Added
 
 - Added `Kbd` component.
-- Added `accent.text` to the list of semantic tokens. This token is used do display text in interactive elements like
-  buttons and links.
-- Added support to render components with different colors. Pass the `colorPalette` prop to the component to change its
-  visual style. See the example below for more details.
+- Added `accent.text` to the list of semantic tokens. This token is used do display text in
+  interactive elements like buttons and links.
+- Added support to render components with different colors. Pass the `colorPalette` prop to the
+  component to change its visual style. See the example below for more details.
 
 ```tsx
 <Button colorPalette="red">Danger</Button>
@@ -420,11 +457,13 @@ export type ButtonProps = HTMLStyledProps<typeof Button>
 
 ### Fixed
 
-- Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was scrolled.
+- Resolved an issue that caused the `Dialog` to show up in the wrong position when the page was
+  scrolled.
 
 ### Removed
 
-- Removed `border.accent` from the list of semantic tokens. Use `accent.default` or `colorPalette.default` instead.
+- Removed `border.accent` from the list of semantic tokens. Use `accent.default` or
+  `colorPalette.default` instead.
 
 ## [0.24.0] - 2023-11-21
 
@@ -445,8 +484,9 @@ export type ButtonProps = HTMLStyledProps<typeof Button>
 
 ## [0.22.0] - 2023-11-09
 
-With the introduction of Ark UI 1.0 support, this version implements significant changes, resulting in several breaking updates. Key component revisions include:
-`Accordion`, `ColorPicker`, `DatePicker`, `Dialog`, `RadioGroup`, `SegmentGroup`, `TagsInput`, `Toast`, and `ToggleGroup`.
+With the introduction of Ark UI 1.0 support, this version implements significant changes, resulting
+in several breaking updates. Key component revisions include: `Accordion`, `ColorPicker`,
+`DatePicker`, `Dialog`, `RadioGroup`, `SegmentGroup`, `TagsInput`, `Toast`, and `ToggleGroup`.
 
 ### Added
 
@@ -476,7 +516,8 @@ With the introduction of Ark UI 1.0 support, this version implements significant
 
 ### Added
 
-- Added a default export to `@park-ui/panda-preset` for easier configuration. This will use `neutral` as accent and gray color with `borderRadius` of `sm`.
+- Added a default export to `@park-ui/panda-preset` for easier configuration. This will use
+  `neutral` as accent and gray color with `borderRadius` of `sm`.
 
 ```jsx
 import { defineConfig } from '@pandacss/dev'
@@ -512,26 +553,28 @@ export default defineConfig({
 
 ## [0.19.0] - 2023-10-19
 
-This is one of the biggest releases of Park UI so far. We've introduced a new way to configure presets, which will make
-it easier to customize the theme to your needs. We've also replaced the default colors from `@pandacss/preset-base` with
-[Radix Colors](https://www.radix-ui.com/colors).
+This is one of the biggest releases of Park UI so far. We've introduced a new way to configure
+presets, which will make it easier to customize the theme to your needs. We've also replaced the
+default colors from `@pandacss/preset-base` with [Radix Colors](https://www.radix-ui.com/colors).
 
-The overall look and feel of Park UI has been improved as well. We've revised the `Card` and `Drawer` components and
-tweaked many of the existing components to make them more consistent.
+The overall look and feel of Park UI has been improved as well. We've revised the `Card` and
+`Drawer` components and tweaked many of the existing components to make them more consistent.
 
-We've also started to work on a Taildwind CSS plugin that will allow you to use Park UI as a plugin in your Tailwind CSS
-project. This is still a work in progress, but we're excited to share it with you soon.
+We've also started to work on a Taildwind CSS plugin that will allow you to use Park UI as a plugin
+in your Tailwind CSS project. This is still a work in progress, but we're excited to share it with
+you soon.
 
-In the light of these changes, we've renamed the `@park-ui/presets` package to `@park-ui/panda-preset`. We will continue
-to support the old package name for the time being, but we recommend that you update your configuration to use the new
-package name.
+In the light of these changes, we've renamed the `@park-ui/presets` package to
+`@park-ui/panda-preset`. We will continue to support the old package name for the time being, but we
+recommend that you update your configuration to use the new package name.
 
 ### Added
 
-- `createPreset` function introduced for more convenient and flexible preset configuration. See the examples below for
-  more details.
-- Replaced default colors from `@pandacss/preset-base` with [Radix Colors](https://www.radix-ui.com/colors). This will
-  allow us to provide more consistent colors when switching between light and dark mode.
+- `createPreset` function introduced for more convenient and flexible preset configuration. See the
+  examples below for more details.
+- Replaced default colors from `@pandacss/preset-base` with
+  [Radix Colors](https://www.radix-ui.com/colors). This will allow us to provide more consistent
+  colors when switching between light and dark mode.
 
 ### Changed
 
@@ -594,7 +637,8 @@ export default defineConfig({
 
 ### Added
 
-- Added support for component dot notation, e.g., `<Accordion.Content />` alongside `<AccordionContent />`.
+- Added support for component dot notation, e.g., `<Accordion.Content />` alongside
+  `<AccordionContent />`.
 
 ### Changed
 
@@ -629,8 +673,8 @@ export default defineConfig({
 
 ### Changed
 
-- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary` to `outline` and
-  `tertiary` to `ghost`.
+- BREAKING: Renamed `button` variants to match their visual style: `primary` to `solid`, `secondary`
+  to `outline` and `tertiary` to `ghost`.
 
 ## [0.14.0] - 2023-09-21
 
@@ -693,14 +737,15 @@ export default defineConfig({
 ### Fixed
 
 - Resolved an issue with the `Textarea` recipe where the resize handle would be hidden.
-- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be misaligned when the text was
-  longer than the specified width.
+- Resolved an issue with the `RadioButtonGroup` component where the radio buttons would be
+  misaligned when the text was longer than the specified width.
 
 ## [0.8.1] - 2023-08-17
 
 ### Fixed
 
-- Resolved a bug in the `Article` component where the font size didn't adjust appropriately in responsive modes.
+- Resolved a bug in the `Article` component where the font size didn't adjust appropriately in
+  responsive modes.
 
 ## [0.8.0] - 2023-08-17
 
@@ -711,8 +756,8 @@ export default defineConfig({
 
 ### Changed
 
-- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater compatibility with other
-  icon libraries.
+- Replaced `fontSize` with `height` and `width` to set icon sizing in `Button` for a greater
+  compatibility with other icon libraries.
 
 ## [0.7.1] - 2023-08-16
 
@@ -743,8 +788,8 @@ export default defineConfig({
 
 ### Removed
 
-- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark UI `asChild` prop.
-  Code snippets have been updated accordingly.
+- The `icon` prop has been removed from `IconButton` as it would affect compatibility with the Ark
+  UI `asChild` prop. Code snippets have been updated accordingly.
 
 ## [0.5.0] - 2023-08-10
 
@@ -760,8 +805,9 @@ export default defineConfig({
 
 ### Changed
 
-- All relevant recipes now use the new [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda CSS
-  to help organize the styles.
+- All relevant recipes now use the new
+  [defineSlotRecipe](https://panda-css.com/docs/concepts/slot-recipes) in Panda CSS to help organize
+  the styles.
 
 ## 0.3.1 - 2023-08-09
 
@@ -773,14 +819,15 @@ export default defineConfig({
 
 ### Added
 
-- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens. Interative elements like
-  buttons and links will use these colors for their background and foreground colors.
+- Added `accent.default`, `accent.emphasized` and `accent.fg` to the list of semantic tokens.
+  Interative elements like buttons and links will use these colors for their background and
+  foreground colors.
 
 ### Changed
 
 - All recipes now use semantic tokens for their colors.
-- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to `neutral.300` in dark mode to
-  improve contrast.
+- Changed `outline` from `neutral.500` to `neutral.700` in light mode and `neutral.500` to
+  `neutral.300` in dark mode to improve contrast.
 
 ### Removed
 
