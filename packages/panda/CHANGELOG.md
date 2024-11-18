@@ -8,6 +8,13 @@ description: All notable changes will be documented in this file.
 
 ### Changed
 
+- Removed the `accent` color concept. Components now use the built-in `colorPalette` prop for color customization. Learn more about the virtual color concept [here](https://panda-css.com/docs/concepts/virtual-color).
+
+```diff
+- <Text color="accent.default">Park UI</Text>
++ <Text color="colorPalette.default">Park UI</Text>
+```
+
 - Enhanced consistency and scalability by refining the Park UI Preset setup in the Panda configuration. [Learn more in the docs](https://park-ui.com/react/docs/theme/customize).
 
 
