@@ -3,7 +3,6 @@ import { defineRecipe } from '@pandacss/dev'
 export const spinner = defineRecipe({
   className: 'spinner',
   base: {
-    colorPalette: 'accent',
     display: 'inline-block',
     borderWidth: '2px',
     borderColor: 'colorPalette.default',

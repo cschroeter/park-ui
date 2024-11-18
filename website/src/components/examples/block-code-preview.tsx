@@ -35,7 +35,7 @@ export const BlockCodePreview = (props: Props) => {
               {filename}
             </Tabs.Trigger>
           ))}
-          <Tabs.Indicator bg="accent.default" />
+          <Tabs.Indicator bg="colorPalette.default" />
         </Tabs.List>
         <DownloadButton name="File" files={files} />
       </HStack>

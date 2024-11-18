@@ -5,7 +5,6 @@ export const badge = defineRecipe({
   base: {
     alignItems: 'center',
     borderRadius: 'full',
-    colorPalette: 'accent',
     display: 'inline-flex',
     fontWeight: 'medium',
     userSelect: 'none',

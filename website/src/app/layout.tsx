@@ -48,6 +48,8 @@ export default function RootLayout(props: Props) {
     >
       <head>
         <Script src="https://plausible.io/js/plausible.js" data-domain="park-ui.com" />
+        <style id="park-ui-gray" />
+        <style id="park-ui-accent" />
       </head>
       <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>

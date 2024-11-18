@@ -5,9 +5,6 @@ export const carousel = defineSlotRecipe({
   className: 'carousel',
   slots: carouselAnatomy.keys(),
   base: {
-    root: {
-      colorPalette: 'accent',
-    },
     viewport: {
       overflowX: 'hidden',
       position: 'relative',

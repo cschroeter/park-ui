@@ -45,7 +45,7 @@ export const Hero = () => {
         ].map(({ framework, icon }) => (
           <HStack key={framework} gap="2">
             <Box fontSize="3xl">{icon}</Box>
-            <Text as="span" color="fg.muted" display={{ base: 'none', sm: 'inline-block' }}>
+            <Text as="span" color="fg.muted" hideBelow="sm">
               {framework}
             </Text>
           </HStack>

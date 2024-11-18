@@ -5,7 +5,6 @@ export const link = defineRecipe({
   base: {
     alignItems: 'center',
     color: 'fg.default',
-    colorPalette: 'accent',
     cursor: 'pointer',
     display: 'inline-flex',
     fontWeight: 'medium',

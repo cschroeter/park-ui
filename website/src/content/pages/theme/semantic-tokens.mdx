@@ -15,7 +15,7 @@ define the `bg` (background), `fg` (foreground), and `accent` tokens.
 
 ### Accent
 
-<ColorPalette color="accent" withLegend />
+<ColorPalette withLegend />
 
 ### Background
 
@@ -72,17 +72,17 @@ Accent colors are pivotal in directing the user's attention to specific actions,
 
 <ColorTokens type="accent" />
 
-| Name       | CSS Variable                      | Token Name          |
-| ---------- | --------------------------------- | ------------------- |
-| Default    | `var(--colors-accent-default)`    | `accent.default`    |
-| Emphasized | `var(--colors-accent-emphasized)` | `accent.emphasized` |
-| Foreground | `var(--colors-accent-fg)`         | `accent.fg`         |
-| Text       | `var(--colors-accent-text)`       | `accent.text`       |
+| Name       | CSS Variable                             | Token Name                |
+| ---------- | ---------------------------------------- | ------------------------- |
+| Default    | `var(--colors-color-palette-default)`    | `colorPalette.default`    |
+| Emphasized | `var(--colors-color-palette-emphasized)` | `colorPalette.emphasized` |
+| Foreground | `var(--colors-color-palette-fg)`         | `colorPalette.fg`         |
+| Text       | `var(--colors-color-palette-text)`       | `colorPalette.text`       |
 
 ```tsx
 // live
-<Box bg="accent.default" p="2">
-  <Text color="accent.fg" size="sm">
+<Box bg="colorPalette.default" p="2">
+  <Text color="colorPalette.fg" size="sm">
     Hello from Park UI
   </Text>
 </Box>

@@ -6,59 +6,80 @@
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
   "homepage": "https://park-ui.com",
   "license": "MIT",
-  "repository": "https://github.com/cschroeter/park-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cschroeter/park-ui.git",
+    "directory": "packages/panda"
+  },
   "bugs": {
     "url": "https://github.com/cschroeter/park-ui/issues"
   },
-  "files": ["dist", "src"],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "postinstall": "bun run build",
     "build": "tsup",
     "release-it": "release-it",
     "lint": "biome lint ./src",
-    "test": "bun test",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore",
+    "test": " bun test",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
-    "@radix-ui/colors": "3.0.0",
-    "ts-pattern": "5.5.0"
+    "effect": "3.10.13"
   },
   "devDependencies": {
     "@pandacss/dev": "0.47.0",
     "@release-it/keep-a-changelog": "5.0.0",
-    "clean-package": "2.2.0",
     "release-it": "17.10.0",
     "tsup": "8.3.5"
   },
   "peerDependencies": {
     "@pandacss/dev": ">0.22.0"
   },
-  "clean-package": {
-    "replace": {
-      "main": "dist/index.js",
-      "module": "dist/index.mjs",
-      "types": "dist/index.d.ts",
-      "exports": {
-        ".": {
-          "types": "./dist/index.d.ts",
-          "import": "./dist/index.mjs",
-          "require": "./dist/index.js"
-        },
-        "./package.json": "./package.json"
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./utils": {
+      "import": {
+        "types": "./dist/utils/index.d.ts",
+        "default": "./dist/utils/index.js"
+      },
+      "require": {
+        "types": "./dist/utils/index.d.cts",
+        "default": "./dist/utils/index.cjs"
+      }
+    },
+    "./colors/*": {
+      "import": {
+        "types": "./dist/colors/*.d.ts",
+        "default": "./dist/colors/*.js"
+      },
+      "require": {
+        "types": "./dist/colors/*.d.cts",
+        "default": "./dist/colors/*.cjs"
       }
     }
   },
   "tsup": {
-    "entry": ["src/index.ts"],
+    "entry": ["src/index.ts", "src/colors/*.ts", "src/utils/index.ts"],
     "clean": true,
     "dts": true,
     "sourcemap": true,
     "format": ["esm", "cjs"]
-  },
-  "main": "src/index.ts"
+  }
 }

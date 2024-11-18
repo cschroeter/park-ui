@@ -7,11 +7,11 @@ import { Code } from '~/components/ui/code'
 import { Dialog } from '~/components/ui/dialog'
 import { IconButton } from '~/components/ui/icon-button'
 import { highlight } from '~/lib/shiki'
-import { useThemeGenerator } from '~/lib/use-theme-generator'
+import { useTheme } from '~/lib/use-theme'
 import { CodePreview } from '../code-preview'
 
 export const ThemeConfigDialog = () => {
-  const { getConfig } = useThemeGenerator()
+  const { getConfig } = useTheme()
   const [html, setHtml] = useState('')
 
   useEffect(() => {

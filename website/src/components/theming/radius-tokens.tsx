@@ -1,4 +1,4 @@
-import { createRadiiTokens } from '@park-ui/panda-preset/src/theme/semantic-tokens/radii'
+import { createRadii } from '@park-ui/panda-preset/utils'
 import { Flex, Grid } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
 import { Text } from '~/components/ui/text'
@@ -7,7 +7,7 @@ export const RadiusTokens = () => {
   return (
     <Grid className="not-prose" minChildWidth="80px" gap="4">
       {(['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const).map((size) => {
-        const { l1, l2, l3 } = createRadiiTokens(size)
+        const { l1, l2, l3 } = createRadii(size)
         return (
           <Flex
             key={size}

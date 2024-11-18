@@ -7,7 +7,6 @@ export const progress = defineSlotRecipe({
   base: {
     root: {
       alignItems: 'center',
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',

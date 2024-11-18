@@ -6,7 +6,6 @@ export const tagsInput = defineSlotRecipe({
   slots: tagsInputAnatomy.keys(),
   base: {
     root: {
-      colorPalette: 'accent',
       display: 'flex',
       flexDirection: 'column',
       gap: '1.5',
