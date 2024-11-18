@@ -4,27 +4,28 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
+    "dev": "bun run storybook",
     "lint": "biome lint ./src",
     "storybook": "storybook dev -p 6006",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/solid": "4.3.0",
-    "@pandacss/dev": "0.47.0",
+    "@ark-ui/solid": "4.5.1",
+    "@pandacss/dev": "0.48.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-a11y": "8.4.1",
-    "@storybook/addon-essentials": "8.4.1",
-    "@storybook/addon-themes": "8.4.1",
-    "@storybook/docs-tools": "8.4.1",
-    "lucide-solid": "0.454.0",
+    "@storybook/addon-a11y": "8.4.4",
+    "@storybook/addon-essentials": "8.4.4",
+    "@storybook/addon-themes": "8.4.4",
+    "@storybook/docs-tools": "8.4.4",
+    "lucide-solid": "0.460.0",
     "solid-icons": "1.1.0",
     "solid-js": "1.9.3",
-    "storybook": "8.4.1",
-    "storybook-solidjs": "1.0.0-beta.2",
-    "storybook-solidjs-vite": "1.0.0-beta.2",
+    "storybook": "8.4.4",
+    "storybook-solidjs": "1.0.0-beta.6",
+    "storybook-solidjs-vite": "1.0.0-beta.6",
     "typescript": "5.6.3",
-    "vite": "5.4.10",
+    "vite": "5.4.11",
     "vite-plugin-solid": "2.10.2",
-    "vite-tsconfig-paths": "5.0.1"
+    "vite-tsconfig-paths": "5.1.2"
   }
 }

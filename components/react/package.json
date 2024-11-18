@@ -4,29 +4,29 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
-    "dev": "storybook dev -p 6006",
+    "dev": "bun run storybook",
     "lint": "biome lint ./src",
     "storybook": "storybook dev -p 6006",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/react": "4.2.0",
-    "@pandacss/dev": "0.47.0",
+    "@ark-ui/react": "4.4.4",
+    "@pandacss/dev": "0.48.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-a11y": "8.4.1",
-    "@storybook/addon-essentials": "8.4.1",
-    "@storybook/addon-themes": "8.4.1",
-    "@storybook/react-vite": "8.4.1",
-    "@storybook/react": "8.4.1",
+    "@storybook/addon-a11y": "8.4.4",
+    "@storybook/addon-essentials": "8.4.4",
+    "@storybook/addon-themes": "8.4.4",
+    "@storybook/react-vite": "8.4.4",
+    "@storybook/react": "8.4.4",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "@vitejs/plugin-react": "4.3.3",
-    "lucide-react": "0.454.0",
+    "lucide-react": "0.460.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "storybook": "8.4.1",
+    "storybook": "8.4.4",
     "typescript": "5.6.3",
-    "vite": "5.4.10",
-    "vite-tsconfig-paths": "5.0.1"
+    "vite": "5.4.11",
+    "vite-tsconfig-paths": "5.1.2"
   }
 }

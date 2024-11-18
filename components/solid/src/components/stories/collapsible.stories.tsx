@@ -15,7 +15,7 @@ export const Basic = () => (
       Toggle
     </Collapsible.Trigger>
     <Collapsible.Content>
-      <Box width="sm" bg="accent.default" color="accent.fg" p="4" borderRadius="l3">
+      <Box width="sm" bg="colorPalette.default" color="colorPalette.fg" p="4" borderRadius="l3">
         Content
       </Box>
     </Collapsible.Content>

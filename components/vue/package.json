@@ -4,23 +4,24 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen --silent",
+    "dev": "bun run storybook",
     "format": "prettier --write './src/**/*.vue'",
     "storybook": "histoire dev",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@ark-ui/vue": "4.2.0",
+    "@ark-ui/vue": "4.4.2",
     "@histoire/plugin-vue": "0.17.17",
-    "@pandacss/dev": "0.47.0",
+    "@pandacss/dev": "0.48.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@vitejs/plugin-vue": "5.1.4",
-    "@vitejs/plugin-vue-jsx": "4.0.1",
+    "@vitejs/plugin-vue": "5.2.0",
+    "@vitejs/plugin-vue-jsx": "4.1.0",
     "histoire": "0.17.17",
-    "lucide-vue-next": "0.454.0",
+    "lucide-vue-next": "0.460.0",
     "prettier": "3.3.3",
     "typescript": "5.6.3",
-    "vite": "5.4.10",
-    "vite-tsconfig-paths": "5.0.1",
-    "vue": "3.5.12"
+    "vite": "5.4.11",
+    "vite-tsconfig-paths": "5.1.2",
+    "vue": "3.5.13"
   }
 }

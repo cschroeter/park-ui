@@ -13,7 +13,7 @@ export const Demo = (props: Collapsible.RootProps) => {
         )}
       />
       <Collapsible.Content>
-        <Box bg="accent.default" color="accent.fg" p="4" borderRadius="l3" mt="3">
+        <Box bg="colorPalette.default" color="colorPalette.fg" p="4" borderRadius="l3" mt="3">
           Content
         </Box>
       </Collapsible.Content>

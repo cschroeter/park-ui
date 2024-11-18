@@ -1,4 +1,5 @@
-import { type Assign, TreeView } from '@ark-ui/solid'
+import type { Assign } from '@ark-ui/solid'
+import { type TreeNode, TreeView } from '@ark-ui/solid/tree-view'
 import type { ComponentProps } from 'solid-js'
 import { type TreeViewVariantProps, treeView } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -8,16 +9,19 @@ const { withProvider, withContext } = createStyleContext(treeView)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, TreeView.RootProviderBaseProps>, TreeViewVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, TreeView.RootProviderBaseProps<TreeNode>>,
+    TreeViewVariantProps
+  >
 >(TreeView.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
-  Assign<Assign<HTMLStyledProps<'div'>, TreeView.RootBaseProps>, TreeViewVariantProps>
+  Assign<Assign<HTMLStyledProps<'div'>, TreeView.RootBaseProps<TreeNode>>, TreeViewVariantProps>
 >(TreeView.Root, 'root')
 
 export const BranchContent = withContext<
-  Assign<HTMLStyledProps<'ul'>, TreeView.BranchContentBaseProps>
+  Assign<HTMLStyledProps<'div'>, TreeView.BranchContentBaseProps>
 >(TreeView.BranchContent, 'branchContent')
 
 export const BranchControl = withContext<
@@ -28,10 +32,14 @@ export const BranchIndicator = withContext<
   Assign<HTMLStyledProps<'div'>, TreeView.BranchIndicatorBaseProps>
 >(TreeView.BranchIndicator, 'branchIndicator')
 
-export const Branch = withContext<Assign<HTMLStyledProps<'li'>, TreeView.BranchBaseProps>>(
+export const Branch = withContext<Assign<HTMLStyledProps<'div'>, TreeView.BranchBaseProps>>(
   TreeView.Branch,
   'branch',
 )
+
+export const BranchIndentGuide = withContext<
+  Assign<HTMLStyledProps<'div'>, TreeView.BranchIndentGuideBaseProps>
+>(TreeView.BranchIndentGuide, 'branchIndentGuide')
 
 export const BranchText = withContext<
   Assign<HTMLStyledProps<'span'>, TreeView.BranchTextBaseProps>
@@ -45,7 +53,7 @@ export const ItemIndicator = withContext<
   Assign<HTMLStyledProps<'div'>, TreeView.ItemIndicatorBaseProps>
 >(TreeView.ItemIndicator, 'itemIndicator')
 
-export const Item = withContext<Assign<HTMLStyledProps<'li'>, TreeView.ItemBaseProps>>(
+export const Item = withContext<Assign<HTMLStyledProps<'div'>, TreeView.ItemBaseProps>>(
   TreeView.Item,
   'item',
 )
@@ -60,9 +68,12 @@ export const Label = withContext<Assign<HTMLStyledProps<'label'>, TreeView.Label
   'label',
 )
 
-export const Tree = withContext<Assign<HTMLStyledProps<'ul'>, TreeView.TreeBaseProps>>(
+export const Tree = withContext<Assign<HTMLStyledProps<'div'>, TreeView.TreeBaseProps>>(
   TreeView.Tree,
   'tree',
 )
+
+export type NodeProviderProps = TreeView.NodeProviderProps<TreeNode>
+export const NodeProvider = TreeView.NodeProvider
 
 export { TreeViewContext as Context } from '@ark-ui/solid'

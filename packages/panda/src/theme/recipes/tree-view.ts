@@ -3,7 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const treeView = defineSlotRecipe({
   className: 'treeView',
-  slots: treeViewAnatomy.keys(),
+  slots: [...treeViewAnatomy.keys(), 'branchIndentGuide'],
   base: {
     root: {
       width: 'full',
@@ -24,6 +24,7 @@ export const treeView = defineSlotRecipe({
     branchContent: {
       position: 'relative',
     },
+    branchIndentGuide: {},
     branchControl: {
       alignItems: 'center',
       borderRadius: 'l2',

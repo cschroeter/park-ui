@@ -23,10 +23,10 @@
   "dependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/bun": "1.1.13",
-    "lefthook": "1.8.2",
-    "turbo": "2.2.3",
+    "lefthook": "1.8.4",
+    "turbo": "2.3.0",
     "typescript": "5.6.3",
-    "vercel": "37.14.0",
+    "vercel": "39.0.3",
     "vercel-submodules": "1.0.10"
   },
   "packageManager": "bun@1.1.34",
