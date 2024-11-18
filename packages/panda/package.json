@@ -23,7 +23,9 @@
     "release-it": "release-it",
     "lint": "biome lint ./src",
     "test": " bun test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
@@ -32,6 +34,7 @@
   "devDependencies": {
     "@pandacss/dev": "0.47.0",
     "@release-it/keep-a-changelog": "5.0.0",
+    "clean-package": "2.2.0",
     "release-it": "17.10.0",
     "tsup": "8.3.5"
   },
@@ -81,5 +84,8 @@
     "dts": true,
     "sourcemap": true,
     "format": ["esm", "cjs"]
+  },
+  "clean-package": {
+    "remove": ["scripts.postinstall"]
   }
 }
