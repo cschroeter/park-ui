@@ -6,6 +6,10 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- **NumberInput**: Fixed an issue where the grid layout was not applied correctly.
+
 ## [0.43.0] - 2024-11-18
 
 ### Changed

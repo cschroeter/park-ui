@@ -42,7 +42,6 @@ export const numberInput = defineSlotRecipe({
       borderColor: 'border.default',
       borderRadius: 'l2',
       borderWidth: '1px',
-
       display: 'grid',
       divideX: '1px',
       gridTemplateColumns: '1fr 32px',
@@ -63,7 +62,7 @@ export const numberInput = defineSlotRecipe({
     input: {
       background: 'transparent',
       border: 'none',
-      gridRow: '2',
+      gridRow: 'span 2 / span 2',
       outline: 'none',
       width: 'full',
       _disabled: {
