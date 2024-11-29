@@ -30,10 +30,10 @@ export const getColorTokens = (props: Props): ColorToken[] => {
   //               .with('disabled', () => 'colors.fg.default')
   //               .otherwise(() => 'colors.gray.1'),
   //           )
-  //           .with('accent', () =>
+  //           .with('colorPalette', () =>
   //             match<string, Token>(token)
-  //               .with('fg', () => 'colors.accent.default')
-  //               .otherwise(() => 'colors.accent.fg'),
+  //               .with('fg', () => 'colors.colorPalette.default')
+  //               .otherwise(() => 'colors.colorPalette.fg'),
   //           )
   //           .otherwise(() => 'colors.fg.default'),
   //       })),

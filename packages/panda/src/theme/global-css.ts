@@ -18,6 +18,6 @@ export const globalCss = defineGlobalStyles({
     color: 'fg.subtle',
   },
   '*::selection': {
-    bg: 'accent.a4',
+    bg: 'colorPalette.a4',
   },
 })

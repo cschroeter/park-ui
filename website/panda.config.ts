@@ -113,7 +113,7 @@ export default defineConfig({
         '--colors-prose-td-border': 'colors.border.subtle',
         '--colors-prose-th-border': 'colors.border.subtle',
         '--colors-prose-hr-border': 'colors.border.subtle',
-        '--colors-prose-quote-border': 'colors.accent.default',
+        '--colors-prose-quote-border': 'colors.colorPalette.default',
       },
     },
   },
