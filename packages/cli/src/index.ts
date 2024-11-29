@@ -8,6 +8,7 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { fetchComponents, fetchUtils } from './client'
 import { getConfig } from './get-config'
+import { updateRecipeIndex } from './recipes'
 
 const isEmpty = (arr: string[]) => arr.length === 0
 
@@ -45,44 +46,49 @@ const main = async () => {
           getConfig(),
           Effect.tap(() => spinner.start('Installing components...')),
           Effect.flatMap((config) =>
-            Effect.all([
-              pipe(
-                fetchComponents(config, argv),
-                Effect.flatMap((components) =>
-                  Effect.forEach(components, ({ component: { variants }, recipe }) =>
-                    Effect.all([
-                      Effect.forEach(variants, (variant) =>
-                        Effect.promise(() =>
-                          fs.outputFile(
-                            path.join(config.paths.components, variant.file),
-                            variant.content,
+            pipe(
+              Effect.all([
+                pipe(
+                  fetchComponents(config, argv),
+                  Effect.flatMap((components) =>
+                    Effect.forEach(components, ({ component: { variants }, recipe }) =>
+                      Effect.all([
+                        Effect.forEach(variants, (variant) =>
+                          Effect.promise(() =>
+                            fs.outputFile(
+                              path.join(config.paths.components, variant.file),
+                              variant.content,
+                            ),
                           ),
                         ),
-                      ),
-                      Effect.promise(() =>
-                        fs.outputFile(
-                          path.join(config.paths.recipes, recipe.filename),
-                          recipe.content,
-                        ),
-                      ),
-                    ]),
+                        recipe
+                          ? Effect.promise(() =>
+                              fs.outputFile(
+                                path.join(config.paths.recipes, recipe.filename),
+                                recipe.content,
+                              ),
+                            )
+                          : Effect.succeed(null),
+                      ]),
+                    ),
                   ),
                 ),
-              ),
-              pipe(
-                fetchUtils(config),
-                Effect.flatMap((helpers) =>
-                  Effect.forEach(helpers, (helper) =>
-                    Effect.promise(() =>
-                      fs.outputFile(
-                        path.join(config.paths.components, helper.filename),
-                        helper.content,
+                pipe(
+                  fetchUtils(config),
+                  Effect.flatMap((helpers) =>
+                    Effect.forEach(helpers, (helper) =>
+                      Effect.promise(() =>
+                        fs.outputFile(
+                          path.join(config.paths.components, helper.filename),
+                          helper.content,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ]),
+              ]),
+              Effect.flatMap(() => updateRecipeIndex(config)),
+            ),
           ),
 
           Effect.catchAll((error) => Effect.fail(error.message)),
