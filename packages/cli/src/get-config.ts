@@ -5,8 +5,11 @@ import fs from 'fs-extra'
 import { packageDirectorySync } from 'pkg-dir'
 
 const Config = Schema.Struct({
-  jsFramework: Schema.Literal('react', 'solid', 'vue'),
-  outputPath: Schema.String,
+  framework: Schema.Literal('react', 'solid', 'vue'),
+  paths: Schema.Struct({
+    components: Schema.String,
+    recipes: Schema.String,
+  }),
 })
 export type Config = Schema.Schema.Type<typeof Config>
 
@@ -31,17 +34,23 @@ export const getConfig = (): Effect.Effect<Config, never, never> =>
               )
               return pipe(
                 Effect.promise(promptConfig),
-                Effect.map(({ jsFramework, outputPath }) => ({
+                Effect.map(({ framework, components, recipes }) => ({
                   $schema: 'https://park-ui.com/registry/latest/schema.json',
-                  jsFramework,
-                  outputPath,
+                  framework,
+                  paths: {
+                    components,
+                    recipes,
+                  },
                 })),
                 Effect.flatMap((config) =>
                   pipe(
                     Effect.promise(() => fs.outputJSON(configFilePath, config, { spaces: 2 })),
                     Effect.map(() => ({
                       ...config,
-                      outputPath: path.join(packageDirectory, config.outputPath),
+                      paths: {
+                        components: path.join(packageDirectory, config.paths.components),
+                        recipes: path.join(packageDirectory, config.paths.recipes),
+                      },
                     })),
                   ),
                 ),
@@ -57,15 +66,18 @@ class FileNotFoundError {
   readonly _tag = 'FileNotFoundError'
 }
 
+type Framework = 'react' | 'solid' | 'vue'
+
 interface Prompt {
-  jsFramework: 'react' | 'solid' | 'vue'
-  outputPath: string
+  framework: Framework
+  components: string
+  recipes: string
 }
 
 const promptConfig = async () =>
   p.group(
     {
-      jsFramework: () =>
+      framework: () =>
         p.select({
           message: 'Which JS framework do you use?',
           options: [
@@ -75,10 +87,19 @@ const promptConfig = async () =>
           ],
           initialValue: 'react',
         }),
-      outputPath: () =>
+      components: () =>
         p.text({
           message: 'Where would you like to store your components?',
           initialValue: './src/components/ui',
+          validate: (value) => {
+            if (!value) return 'Please enter a path.'
+            if (!value.startsWith('.')) return 'Please enter a relative path to the project root.'
+          },
+        }),
+      recipes: () =>
+        p.text({
+          message: 'Where would you like to store your recipes?',
+          initialValue: './src/theme/recipes',
           validate: (value) => {
             if (!value) return 'Please enter a path.'
             if (!value.startsWith('.')) return 'Please enter a relative path to the project root.'

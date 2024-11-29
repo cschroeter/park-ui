@@ -11,6 +11,12 @@ const Utils = Schema.Array(
   }),
 )
 
+const Recipe = Schema.Struct({
+  id: Schema.String,
+  filename: Schema.String,
+  content: Schema.String,
+})
+
 const Components = Schema.Array(
   Schema.Struct({
     id: Schema.String,
@@ -32,14 +38,26 @@ const Component = Schema.Struct({
 export type Component = Schema.Schema.Type<typeof Component>
 
 export const fetchComponentById = (id: string, config: Config) =>
-  HttpClient.get(`${API_URL}/${config.jsFramework}/components/${id}.json`).pipe(
-    Effect.flatMap(HttpClientResponse.schemaBodyJson(Component)),
-    Effect.scoped,
-    Effect.provide(FetchHttpClient.layer),
+  Effect.all([
+    HttpClient.get(`${API_URL}/${config.framework}/components/${id}.json`).pipe(
+      Effect.flatMap(HttpClientResponse.schemaBodyJson(Component)),
+      Effect.scoped,
+      Effect.provide(FetchHttpClient.layer),
+    ),
+    HttpClient.get(`${API_URL}/recipes/${id}.json`).pipe(
+      Effect.flatMap(HttpClientResponse.schemaBodyJson(Recipe)),
+      Effect.scoped,
+      Effect.provide(FetchHttpClient.layer),
+    ),
+  ]).pipe(
+    Effect.map(([component, recipe]) => ({
+      component,
+      recipe,
+    })),
   )
 
 export const fetchUtils = (config: Config) =>
-  HttpClient.get(`${API_URL}/${config.jsFramework}/utils/index.json`).pipe(
+  HttpClient.get(`${API_URL}/${config.framework}/utils/index.json`).pipe(
     Effect.flatMap(HttpClientResponse.schemaBodyJson(Utils)),
     Effect.scoped,
     Effect.provide(FetchHttpClient.layer),
@@ -52,7 +70,7 @@ interface Args {
 
 export const fetchComponents = (config: Config, args: Args) =>
   args.all
-    ? HttpClient.get(`${API_URL}/${config.jsFramework}/components`).pipe(
+    ? HttpClient.get(`${API_URL}/${config.framework}/components`).pipe(
         Effect.flatMap(HttpClientResponse.schemaBodyJson(Components)),
         Effect.scoped,
         Effect.provide(FetchHttpClient.layer),

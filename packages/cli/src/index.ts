@@ -49,17 +49,23 @@ const main = async () => {
               pipe(
                 fetchComponents(config, argv),
                 Effect.flatMap((components) =>
-                  Effect.forEach(components, ({ variants }) =>
-                    pipe(
+                  Effect.forEach(components, ({ component: { variants }, recipe }) =>
+                    Effect.all([
                       Effect.forEach(variants, (variant) =>
                         Effect.promise(() =>
                           fs.outputFile(
-                            path.join(config.outputPath, variant.file),
+                            path.join(config.paths.components, variant.file),
                             variant.content,
                           ),
                         ),
                       ),
-                    ),
+                      Effect.promise(() =>
+                        fs.outputFile(
+                          path.join(config.paths.recipes, recipe.filename),
+                          recipe.content,
+                        ),
+                      ),
+                    ]),
                   ),
                 ),
               ),
@@ -68,7 +74,10 @@ const main = async () => {
                 Effect.flatMap((helpers) =>
                   Effect.forEach(helpers, (helper) =>
                     Effect.promise(() =>
-                      fs.outputFile(path.join(config.outputPath, helper.filename), helper.content),
+                      fs.outputFile(
+                        path.join(config.paths.components, helper.filename),
+                        helper.content,
+                      ),
                     ),
                   ),
                 ),
