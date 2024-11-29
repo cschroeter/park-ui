@@ -1,0 +1,5 @@
+{
+  "id": "signature-pad",
+  "filename": "signature-pad.ts",
+  "content": "import { signaturePadAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const signaturePad = defineSlotRecipe({\n  className: 'signaturePad',\n  slots: signaturePadAnatomy.keys(),\n  base: {},\n})\n"
+}
