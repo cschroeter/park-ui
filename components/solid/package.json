@@ -13,19 +13,19 @@
     "@ark-ui/solid": "4.5.1",
     "@pandacss/dev": "0.48.0",
     "@park-ui/panda-preset": "workspace:*",
-    "@storybook/addon-a11y": "8.4.4",
-    "@storybook/addon-essentials": "8.4.4",
-    "@storybook/addon-themes": "8.4.4",
-    "@storybook/docs-tools": "8.4.4",
-    "lucide-solid": "0.460.0",
+    "@storybook/addon-a11y": "8.4.6",
+    "@storybook/addon-essentials": "8.4.6",
+    "@storybook/addon-themes": "8.4.6",
+    "@storybook/docs-tools": "8.4.6",
+    "lucide-solid": "0.462.0",
     "solid-icons": "1.1.0",
     "solid-js": "1.9.3",
-    "storybook": "8.4.4",
+    "storybook": "8.4.6",
     "storybook-solidjs": "1.0.0-beta.6",
     "storybook-solidjs-vite": "1.0.0-beta.6",
     "typescript": "5.7.2",
-    "vite": "5.4.11",
-    "vite-plugin-solid": "2.10.2",
-    "vite-tsconfig-paths": "5.1.2"
+    "vite": "6.0.1",
+    "vite-plugin-solid": "2.11.0",
+    "vite-tsconfig-paths": "5.1.3"
   }
 }
