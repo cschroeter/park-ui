@@ -1,9 +1,15 @@
-import { HttpClient, HttpClientRequest, HttpClientResponse } from '@effect/platform'
-import { Schema } from '@effect/schema'
-import { Effect, Schedule } from 'effect'
+import { FetchHttpClient, HttpClient, HttpClientResponse } from '@effect/platform'
+import { Effect, Schema } from 'effect'
 import type { Config } from './get-config'
 
 const API_URL = 'https://park-ui.com/registry/latest'
+
+const Utils = Schema.Array(
+  Schema.Struct({
+    filename: Schema.String,
+    content: Schema.String,
+  }),
+)
 
 const Components = Schema.Array(
   Schema.Struct({
@@ -25,27 +31,18 @@ const Component = Schema.Struct({
 
 export type Component = Schema.Schema.Type<typeof Component>
 
-const Helpers = Schema.Array(
-  Schema.Struct({
-    filename: Schema.String,
-    content: Schema.String,
-  }),
-)
-
 export const fetchComponentById = (id: string, config: Config) =>
-  HttpClientRequest.get(`${API_URL}/${config.jsFramework}/components/${id}.json`).pipe(
-    HttpClient.fetchOk,
-    HttpClientResponse.schemaBodyJsonScoped(Component),
-    Effect.timeout('1 seconds'),
-    Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
+  HttpClient.get(`${API_URL}/${config.jsFramework}/components/${id}.json`).pipe(
+    Effect.flatMap(HttpClientResponse.schemaBodyJson(Component)),
+    Effect.scoped,
+    Effect.provide(FetchHttpClient.layer),
   )
 
 export const fetchUtils = (config: Config) =>
-  HttpClientRequest.get(`${API_URL}/${config.jsFramework}/utils/index.json`).pipe(
-    HttpClient.fetchOk,
-    HttpClientResponse.schemaBodyJsonScoped(Helpers),
-    Effect.timeout('1 seconds'),
-    Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
+  HttpClient.get(`${API_URL}/${config.jsFramework}/utils/index.json`).pipe(
+    Effect.flatMap(HttpClientResponse.schemaBodyJson(Utils)),
+    Effect.scoped,
+    Effect.provide(FetchHttpClient.layer),
   )
 
 interface Args {
@@ -55,18 +52,14 @@ interface Args {
 
 export const fetchComponents = (config: Config, args: Args) =>
   args.all
-    ? HttpClientRequest.get(`${API_URL}/${config.jsFramework}/components`)
-        .pipe(
-          HttpClient.fetchOk,
-          HttpClientResponse.schemaBodyJsonScoped(Components),
-          Effect.timeout('1 seconds'),
-          Effect.retry(Schedule.exponential(200).pipe(Schedule.compose(Schedule.recurs(3)))),
-        )
-        .pipe(
-          Effect.flatMap((components) =>
-            Effect.forEach(components, (component) => fetchComponentById(component.id, config), {
-              concurrency: 10,
-            }),
-          ),
-        )
+    ? HttpClient.get(`${API_URL}/${config.jsFramework}/components`).pipe(
+        Effect.flatMap(HttpClientResponse.schemaBodyJson(Components)),
+        Effect.scoped,
+        Effect.provide(FetchHttpClient.layer),
+        Effect.flatMap((components) =>
+          Effect.forEach(components, (component) => fetchComponentById(component.id, config), {
+            concurrency: 10,
+          }),
+        ),
+      )
     : Effect.forEach(args.components, (id) => fetchComponentById(id, config))

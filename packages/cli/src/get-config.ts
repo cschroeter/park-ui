@@ -1,7 +1,6 @@
 import path from 'node:path'
 import * as p from '@clack/prompts'
-import { Schema } from '@effect/schema'
-import { Effect, pipe } from 'effect'
+import { Effect, Schema, pipe } from 'effect'
 import fs from 'fs-extra'
 import { packageDirectorySync } from 'pkg-dir'
 

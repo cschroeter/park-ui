@@ -12,9 +12,8 @@
     "release-it": "release-it"
   },
   "dependencies": {
-    "@effect/schema": "0.75.5",
-    "@effect/platform": "0.69.24",
-    "effect": "3.10.15",
+    "@effect/platform": "0.69.28",
+    "effect": "3.10.19",
     "fs-extra": "11.2.0",
     "pkg-dir": "8.0.0",
     "yargs": "17.7.2"
@@ -22,10 +21,10 @@
   "devDependencies": {
     "@release-it/keep-a-changelog": "5.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "22.9.0",
+    "@types/node": "22.10.1",
     "@types/yargs": "17.0.33",
     "release-it": "17.10.0",
-    "typescript": "5.6.3"
+    "typescript": "5.7.2"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

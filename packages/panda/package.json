@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
-    "effect": "3.10.15"
+    "effect": "3.10.19"
   },
   "devDependencies": {
     "@pandacss/dev": "0.48.0",

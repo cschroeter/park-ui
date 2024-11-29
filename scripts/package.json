@@ -14,7 +14,7 @@
     "@types/fs-extra": "11.0.4",
     "@types/handlebars-helpers": "0.5.6",
     "@types/voca": "1.4.6",
-    "effect": "3.10.15",
+    "effect": "3.10.19",
     "fs-extra": "11.2.0",
     "globby": "14.0.2",
     "handlebars": "4.7.8",
