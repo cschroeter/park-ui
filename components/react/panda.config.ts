@@ -9,4 +9,9 @@ export default defineConfig({
   include: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
   jsxFramework: 'react', // or solid or vue
   outdir: 'styled-system',
+
+  theme: {
+    recipes,
+    slotRecipes,
+  },
 })

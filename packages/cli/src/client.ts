@@ -14,6 +14,7 @@ const Utils = Schema.Array(
 const Recipe = Schema.Struct({
   id: Schema.String,
   filename: Schema.String,
+  slotRecipe: Schema.Boolean,
   content: Schema.String,
 })
 

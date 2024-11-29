@@ -15,6 +15,7 @@ const programm = pipe(
         Effect.map((content) => ({
           id: parse(recipe).name,
           filename: parse(recipe).base,
+          slotRecipe: content.includes('defineSlotRecipe'),
           content,
         })),
         Effect.flatMap((item) =>
