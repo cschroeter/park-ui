@@ -11,8 +11,8 @@ export const Pre = async (props: PropsWithChildren) => {
   const rawCode = props.children?.props.children.toString() as string
 
   const hasPreview = rawCode.startsWith('// live')
-  const html = await highlight(rawCode, lang)
   const code = rawCode.replace('// live', '').trim()
+  const html = await highlight(code, lang)
 
   return (
     <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
