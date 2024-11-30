@@ -6,6 +6,29 @@ description: All notable changes will be documented in this file.
 
 ## [Unreleased]
 
+### Removed
+
+- **Breaking**: The Park UI Preset no longer includes component recipes. From now on, recipes will be added to your project when you install a component via the CLI, giving you full flexibility to customize them as needed. To migrate, simply reinstall your components using the CLI.
+
+Afterward, update your `panda.config.ts` as follows:
+
+```tsx
+// other imports
+import { recipes, slotRecipes } from '~/theme/recipes'
+
+export default defineConfig({
+  // other configuration
+  theme: {
+    extend: {
+      recipes,
+      slotRecipes,
+    },
+  },
+})
+```
+
+If you run into any issues, check out the updated [getting started guide](https://park-ui.com/react/docs/overview/getting-started#setup-guide).
+
 ## [0.43.1] - 2024-11-23
 
 ### Fixed

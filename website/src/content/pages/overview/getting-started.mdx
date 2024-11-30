@@ -32,15 +32,13 @@ npm install @ark-ui/react
 </Step>
 <Step number="3" title="Install the Panda Presets">
 
-The next package you will need is `@park-ui/panda-preset`. This package contains all the recipes and tokens explicitly
-built for Ark UI's headless components.
+The next package you'll need is `@park-ui/panda-preset`. It extends the Panda Base Preset with advanced color options and opinionated design tokens.
 
 ```bash
 npm install @park-ui/panda-preset -D
 ```
 
-After you've installed the presets, you'll need to add it to your Panda configuration file along with your preferred
-`jsxFramework` like shown below:
+Next, update your Panda config file to include the preset and set your preferred `jsxFramework`, as shown below:
 
 ```tsx multi
 import { defineConfig } from '@pandacss/dev'
@@ -57,7 +55,7 @@ export default defineConfig({
 })
 ```
 
-> Ensure you run `panda codegen` after adding the presets to your Panda configuration file.
+> Don't forget to run `panda codegen` after updating your configuration
 
 </Step>
 <Step number="4" title="Path Aliases">
@@ -89,47 +87,69 @@ export default defineConfig({
 
 </Step>
 
-<Step number="5" title="Adding Components to Your Project">
+<Step number="5" title="Add your first component">
 
-We recommend storing your components in the `~/components/ui` directory.
-Here's an example how a project structure might look like:
-
-```bash
-➜ /src/components/ui/
-  |-- styled/
-  |   |-- utils/
-  |   |   `-- create-style-context.ts
-  |   `-- button.tsx
-  `-- button.tsx
-```
-
-Although you can manually add components, we recommend using the Park UI CLI for efficiency.
-To add a single component, run:
+Use the Park UI CLI to add your first component. For example, to add a button, run:
 
 ```bash
 npx @park-ui/cli components add button
 ```
 
-If a `park-ui.json` file is not found in your project, the CLI will prompt you to set up the configuration by asking:
+If it's your first time running the CLI, you'll be prompted to configure:
 
 ```txt
 - Which JS framework do you use? [React / Solid / Vue]
 - Where would you like to store your components? [./src/components/ui]
+- Where would you like to store your recipes? [./src/theme/recipes]
 ```
 
-To add multiple components at once, separate their names with spaces:
+After adding the button, your folder structure should resemble this:
+
+```bash
+➜ /src/
+  |-- components/
+  |   `-- ui/
+  |       |-- styled/
+  |       |   |-- utils/
+  |       |   |   `-- create-style-context.ts
+  |       |   `-- button.tsx
+  |       `-- button.tsx
+  `-- theme/
+      `-- recipes/
+          |-- button.tsx
+          `-- index.ts
+```
+
+Update the `panda.config.ts` file to include the recipes:
+
+```tsx
+// other imports
+import { recipes, slotRecipes } from '~/theme/recipes'
+
+export default defineConfig({
+  // other configuration
+  theme: {
+    extend: {
+      recipes,
+      slotRecipes,
+    },
+  },
+})
+```
+
+To add multiple components at once, list them separated by spaces:
 
 ```bash
 npx @park-ui/cli components add avatar button card
 ```
 
-To add all available components at once, use the `--all` flag:
+Or use the `--all` flag to install all available components:
 
 ```bash
 npx @park-ui/cli components add --all
 ```
 
-And that's it! Happy hacking! ✌️
+That's it! Happy hacking! ✌️
 
 </Step>
 </Steps>

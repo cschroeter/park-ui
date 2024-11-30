@@ -1,16 +1,15 @@
 ---
 id: customize
 title: Customize
-description: Learn how to customize the Park UI Theme
+description: Learn how to customize the Park UI Preset
 ---
 
-Depending on your project's needs, you may want to customize the Park UI theme. This guide will walk you through the
-different ways you can tailor Park UI to fit your brand.
+This guide will walk you through the different ways you can customize Park UI to fit your brand.
 
 ## Presets
 
-Park UI was built with customization in mind. When you integrate the `@park-ui/panda-preset` into your Panda config, it
-lets you adjust features like color palettes and border radii to fit your brand.
+Park UI was built with customization in mind. By adding the `@park-ui/panda-preset` into your Panda configuration,
+you can play with different accent and gray colors and pick a border radii to match your brand.
 
 ```tsx
 import { defineConfig } from '@pandacss/dev'
@@ -38,19 +37,19 @@ export const coral = {
   tokens: defineTokens.colors({
     light: {
       '1': { value: '#fff8f7' },
-      // ...
+      // [2 - 11]
       '12': { value: '#762d25' },
     },
     dark: {
       '1': { value: '#1c1412' },
-      // ...
+      // [2 - 11]
       '12': { value: '#faa19b' },
     },
   }),
 
   semanticTokens: defineSemanticTokens.colors({
     '1': { value: { _light: '{colors.coral.light.1}', _dark: '{colors.coral.dark.1}' } },
-    // ...
+    // [2 - 11]
     '12': { value: { _light: '{colors.coral.light.12}', _dark: '{colors.coral.dark.12}' } },
 
     default: {
@@ -99,7 +98,7 @@ export default defineConfig({
 
 ## Semantic Tokens
 
-Another cool way to customize Park UI is by adjusting
+A powerful way to customize Park UI is by adjusting
 [semantic tokens](https://park-ui.com/docs/panda/theme/semantic-tokens). This is helpful if you want to modify specific
 aspects of the theme, such as the appearance of disabled elements.
 
@@ -127,56 +126,8 @@ export default defineConfig({
 
 > You don't have to use color tokens. You can also use simple color values like `#000` or `black`.
 
-## Recipes
+## Recipes  
 
-To customize or enhance a component's style, you want to extend its recipe. In the example below we're extending the
-`button` recipe to render all buttons in uppercase.
+As of `v0.44`, the `@park-ui/panda-preset` no longer includes component recipes.
+Recipes are now added to your project when you install a component, allowing you to fully customize them as needed.
 
-```tsx
-import { defineConfig } from '@pandacss/dev'
-
-export default defineConfig({
-  // ...
-  theme: {
-    extend: {
-      recipes: {
-        button: {
-          base: {
-            textTransform: 'uppercase',
-          },
-        },
-      },
-    },
-  },
-})
-```
-
-You can also add a completly new variant to a component. The following example demonstrates how to add a `primary`
-variant to the `button` component.
-
-```tsx
-import { defineConfig } from '@pandacss/dev'
-
-export default defineConfig({
-  // ...
-  theme: {
-    extend: {
-      recipes: {
-        button: {
-          variants: {
-            primary: {
-              base: {
-                color: '{colors.white}',
-                // etc...
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-})
-```
-
-Learn more about [recipes](https://panda-css.com/docs/concepts/recipes) and
-[slot recipes](https://panda-css.com/docs/concepts/slot-recipes) at Panda CSS.
