@@ -1,6 +1,5 @@
 import crypto from 'node:crypto'
-import { Schema } from '@effect/schema'
-import { Effect, Match, pipe } from 'effect'
+import { Effect, Match, Schema, pipe } from 'effect'
 import type { NextRequest } from 'next/server'
 import { prisma } from '~/lib/prisma'
 

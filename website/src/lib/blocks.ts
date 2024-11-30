@@ -1,7 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import { basename, join } from 'node:path'
-import { Schema } from '@effect/schema'
-import { Effect, pipe } from 'effect'
+import { Effect, Schema, pipe } from 'effect'
 import { globby } from 'globby'
 import { highlight } from '~/lib/shiki'
 

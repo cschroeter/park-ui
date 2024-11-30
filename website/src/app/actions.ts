@@ -1,6 +1,5 @@
 'use server'
-import { Schema } from '@effect/schema'
-import { Effect, Match, pipe } from 'effect'
+import { Effect, Match, Schema, pipe } from 'effect'
 import { auth, signIn } from '~/lib/auth'
 import { prisma } from '~/lib/prisma'
 

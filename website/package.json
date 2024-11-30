@@ -20,7 +20,6 @@
     "@auth/prisma-adapter": "2.7.4",
     "@biomejs/biome": "1.9.4",
     "@effect/platform": "0.69.28",
-    "@effect/schema": "0.75.5",
     "@icons-pack/react-simple-icons": "10.2.0",
     "@pandacss/dev": "0.48.0",
     "@park-ui/panda-preset": "workspace:*",
