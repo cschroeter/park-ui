@@ -5,8 +5,10 @@ const nextConfig = {
   },
   outputFileTracingIncludes: {
     '/*': [
-      // '../components/**/*',
-      '../packages/panda/src/theme/recipes/**/*',
+      '../components/react/src/demos/*',
+      '../components/solid/src/demos/*',
+      '../components/vue/src/demos/*',
+      '../packages/panda/src/theme/recipes/*',
     ],
   },
 }
