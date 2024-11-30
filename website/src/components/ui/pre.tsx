@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
-import { codeToHtml } from 'shiki'
 import { Box } from 'styled-system/jsx'
 import { CodePreview } from '~/components/code-preview'
+import { highlight } from '~/lib/shiki'
 import { LivePreview } from '../live-preview'
 
 export const Pre = async (props: PropsWithChildren) => {
@@ -11,12 +11,8 @@ export const Pre = async (props: PropsWithChildren) => {
   const rawCode = props.children?.props.children.toString() as string
 
   const hasPreview = rawCode.startsWith('// live')
+  const html = await highlight(rawCode)
   const code = rawCode.replace('// live', '').trim()
-
-  const html = await codeToHtml(code, {
-    lang,
-    theme: 'github-dark-default',
-  })
 
   return (
     <Box borderWidth="1px" borderRadius="l3" overflow="hidden">

@@ -3,7 +3,7 @@ import { basename, join } from 'node:path'
 import { Schema } from '@effect/schema'
 import { Effect, pipe } from 'effect'
 import { globby } from 'globby'
-import { highlight } from './shiki'
+import { highlight } from '~/lib/shiki'
 
 const SourceFile = Schema.Struct({
   filename: Schema.String,

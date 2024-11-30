@@ -1,7 +1,7 @@
-import { codeToHtml } from 'shiki'
 import { Box } from 'styled-system/jsx'
 import { Tabs } from '~/components/ui/tabs'
 import { getServerContext } from '~/lib/server-context'
+import { highlight } from '~/lib/shiki'
 import { CodePreview } from '../code-preview'
 import { ManualIntallationGuide } from './manual-installation-guide'
 
@@ -9,10 +9,7 @@ export const InstallationGuide = async () => {
   const { component } = getServerContext()
 
   const code = `npx @park-ui/cli components add ${component}`
-  const html = await codeToHtml(code, {
-    lang: 'bash',
-    theme: 'github-dark-default',
-  })
+  const html = await highlight(code)
 
   return (
     <Tabs.Root defaultValue="cli">

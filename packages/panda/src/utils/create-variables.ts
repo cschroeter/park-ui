@@ -18,8 +18,8 @@ export const createVariables = (color: ColorPalette): string => {
   const lightTheme = `
   :where(:root, .light) {
     ${
-      // @ts-expect-error
-      semanticTokens.light.join('\n    ')
+      // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+      semanticTokens['light'].join('\n    ')
     }
   }
   `
@@ -27,8 +27,8 @@ export const createVariables = (color: ColorPalette): string => {
   const darkTheme = `
   .dark {
     ${
-      // @ts-expect-error
-      semanticTokens.dark.join('\n    ')
+      // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+      semanticTokens['dark'].join('\n    ')
     }
   }
   `

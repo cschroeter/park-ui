@@ -1,9 +1,12 @@
-import { codeToHtml } from 'shiki'
+import { createHighlighter } from 'shiki'
 
-export const highlight = async (code: string, framework?: string) => {
-  const lang = framework === 'vue' ? 'vue' : 'tsx'
-  return codeToHtml(code, {
-    lang,
+const highlighter = createHighlighter({
+  themes: ['github-dark-default'],
+  langs: ['vue', 'tsx'],
+})
+
+export const highlight = async (code: string, framework?: string) =>
+  (await highlighter).codeToHtml(code, {
+    lang: framework === 'vue' ? 'vue' : 'tsx',
     theme: 'github-dark-default',
   })
-}
