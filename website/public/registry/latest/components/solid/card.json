@@ -1,0 +1,11 @@
+{
+  "id": "card",
+  "name": "Card",
+  "variants": [
+    {
+      "file": "styled/card.tsx",
+      "content": "import { type Assign, type PolymorphicProps, ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { card } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'root',\n)\n\nexport const Body = withContext<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'body',\n)\n\nexport const Description = withContext<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'description',\n)\n\nexport const Footer = withContext<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'footer',\n)\n\nexport const Header = withContext<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'header',\n)\n\nexport const Title = withContext<Assign<HTMLStyledProps<'h3'>, PolymorphicProps<'h3'>>>(\n  ark.h3,\n  'title',\n)\n"
+    },
+    { "file": "card.tsx", "content": "export * as Card from './styled/card'\n" }
+  ]
+}

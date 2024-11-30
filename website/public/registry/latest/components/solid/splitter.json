@@ -1,0 +1,11 @@
+{
+  "id": "splitter",
+  "name": "Splitter",
+  "variants": [
+    {
+      "file": "styled/splitter.tsx",
+      "content": "import { type Assign, Splitter } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type SplitterVariantProps, splitter } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Splitter.RootProviderBaseProps>, SplitterVariantProps>\n>(Splitter.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Splitter.RootBaseProps>, SplitterVariantProps>\n>(Splitter.Root, 'root')\n\nexport const Panel = withContext<Assign<HTMLStyledProps<'div'>, Splitter.PanelBaseProps>>(\n  Splitter.Panel,\n  'panel',\n)\n\nexport const ResizeTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Splitter.ResizeTriggerBaseProps>\n>(Splitter.ResizeTrigger, 'resizeTrigger')\n\nexport { SplitterContext as Context } from '@ark-ui/solid'\n"
+    },
+    { "file": "splitter.tsx", "content": "export * as Splitter from './styled/splitter'\n" }
+  ]
+}

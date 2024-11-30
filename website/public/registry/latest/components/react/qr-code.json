@@ -1,0 +1,11 @@
+{
+  "id": "qr-code",
+  "name": "Qr Code",
+  "variants": [
+    {
+      "file": "styled/qr-code.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { QrCode } from '@ark-ui/react/qr-code'\nimport { type QrCodeVariantProps, qrCode } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(qrCode)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, QrCode.RootProviderBaseProps>, QrCodeVariantProps>\n>(QrCode.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, QrCode.RootBaseProps>, QrCodeVariantProps>\n>(QrCode.Root, 'root')\n\nexport const Frame = withContext<\n  SVGSVGElement,\n  Assign<HTMLStyledProps<'svg'>, QrCode.FrameBaseProps>\n>(QrCode.Frame, 'frame')\n\nexport const Overlay = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, QrCode.OverlayBaseProps>\n>(QrCode.Overlay, 'overlay')\n\nexport const Pattern = withContext<\n  SVGPathElement,\n  Assign<HTMLStyledProps<'path'>, QrCode.PatternBaseProps>\n>(QrCode.Pattern, 'pattern')\n\nexport { QrCodeContext as Context } from '@ark-ui/react/qr-code'\n"
+    },
+    { "file": "qr-code.tsx", "content": "export * as QrCode from './styled/qr-code'\n" }
+  ]
+}

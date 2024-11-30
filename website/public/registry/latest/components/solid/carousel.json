@@ -1,0 +1,11 @@
+{
+  "id": "carousel",
+  "name": "Carousel",
+  "variants": [
+    {
+      "file": "styled/carousel.tsx",
+      "content": "import { type Assign, Carousel } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type CarouselVariantProps, carousel } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(carousel)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Carousel.RootProviderBaseProps>, CarouselVariantProps>\n>(Carousel.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Carousel.RootBaseProps>, CarouselVariantProps>\n>(Carousel.Root, 'root')\n\nexport const Control = withContext<Assign<HTMLStyledProps<'div'>, Carousel.ControlBaseProps>>(\n  Carousel.Control,\n  'control',\n)\n\nexport const IndicatorGroup = withContext<\n  Assign<HTMLStyledProps<'div'>, Carousel.IndicatorGroupBaseProps>\n>(Carousel.IndicatorGroup, 'indicatorGroup')\n\nexport const Indicator = withContext<\n  Assign<HTMLStyledProps<'button'>, Carousel.IndicatorBaseProps>\n>(Carousel.Indicator, 'indicator')\n\nexport const ItemGroup = withContext<Assign<HTMLStyledProps<'div'>, Carousel.ItemGroupBaseProps>>(\n  Carousel.ItemGroup,\n  'itemGroup',\n)\n\nexport const Item = withContext<Assign<HTMLStyledProps<'div'>, Carousel.ItemBaseProps>>(\n  Carousel.Item,\n  'item',\n)\n\nexport const NextTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Carousel.NextTriggerBaseProps>\n>(Carousel.NextTrigger, 'nextTrigger')\n\nexport const PrevTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Carousel.PrevTriggerBaseProps>\n>(Carousel.PrevTrigger, 'prevTrigger')\n\nexport const Viewport = withContext<Assign<HTMLStyledProps<'div'>, Carousel.ViewportBaseProps>>(\n  Carousel.Viewport,\n  'viewport',\n)\n\nexport { CarouselContext as Context } from '@ark-ui/solid'\n"
+    },
+    { "file": "carousel.tsx", "content": "export * as Carousel from './styled/carousel'\n" }
+  ]
+}

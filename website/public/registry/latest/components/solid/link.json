@@ -1,0 +1,11 @@
+{
+  "id": "link",
+  "name": "Link",
+  "variants": [
+    {
+      "file": "styled/link.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\n\nexport type LinkProps = ComponentProps<typeof Link>\nexport const Link = styled(ark.a, link)\n"
+    },
+    { "file": "link.tsx", "content": "export { Link, type LinkProps } from './styled/link'\n" }
+  ]
+}

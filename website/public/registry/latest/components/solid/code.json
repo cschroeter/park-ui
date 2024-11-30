@@ -1,0 +1,11 @@
+{
+  "id": "code",
+  "name": "Code",
+  "variants": [
+    {
+      "file": "styled/code.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.code, code)\n"
+    },
+    { "file": "code.tsx", "content": "export { Code, type CodeProps } from './styled/code'\n" }
+  ]
+}

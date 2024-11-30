@@ -1,0 +1,11 @@
+{
+  "id": "splitter",
+  "name": "Splitter",
+  "variants": [
+    {
+      "file": "styled/splitter.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Splitter } from '@ark-ui/react/splitter'\nimport { type SplitterVariantProps, splitter } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Splitter.RootProviderBaseProps>, SplitterVariantProps>\n>(Splitter.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Splitter.RootBaseProps>, SplitterVariantProps>\n>(Splitter.Root, 'root')\n\nexport const Panel = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Splitter.PanelBaseProps>\n>(Splitter.Panel, 'panel')\n\nexport const ResizeTrigger = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, Splitter.ResizeTriggerBaseProps>\n>(Splitter.ResizeTrigger, 'resizeTrigger')\n\nexport { SplitterContext as Context } from '@ark-ui/react/splitter'\n"
+    },
+    { "file": "splitter.tsx", "content": "export * as Splitter from './styled/splitter'\n" }
+  ]
+}

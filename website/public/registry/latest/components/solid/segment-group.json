@@ -1,0 +1,14 @@
+{
+  "id": "segment-group",
+  "name": "Segment Group",
+  "variants": [
+    {
+      "file": "styled/segment-group.tsx",
+      "content": "import { type Assign, SegmentGroup } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type SegmentGroupVariantProps, segmentGroup } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(segmentGroup)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<\n    Assign<HTMLStyledProps<'div'>, SegmentGroup.RootProviderBaseProps>,\n    SegmentGroupVariantProps\n  >\n>(SegmentGroup.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, SegmentGroup.RootBaseProps>, SegmentGroupVariantProps>\n>(SegmentGroup.Root, 'root')\n\nexport const Indicator = withContext<\n  Assign<HTMLStyledProps<'div'>, SegmentGroup.IndicatorBaseProps>\n>(SegmentGroup.Indicator, 'indicator')\n\nexport const ItemControl = withContext<\n  Assign<HTMLStyledProps<'div'>, SegmentGroup.ItemControlBaseProps>\n>(SegmentGroup.ItemControl, 'itemControl')\n\nexport const Item = withContext<Assign<HTMLStyledProps<'label'>, SegmentGroup.ItemBaseProps>>(\n  SegmentGroup.Item,\n  'item',\n)\n\nexport const ItemText = withContext<\n  Assign<HTMLStyledProps<'span'>, SegmentGroup.ItemTextBaseProps>\n>(SegmentGroup.ItemText, 'itemText')\n\nexport const Label = withContext<Assign<HTMLStyledProps<'label'>, SegmentGroup.LabelBaseProps>>(\n  SegmentGroup.Label,\n  'label',\n)\n\nexport {\n  SegmentGroupContext as Context,\n  SegmentGroupItemHiddenInput as ItemHiddenInput,\n} from '@ark-ui/solid'\n"
+    },
+    {
+      "file": "segment-group.tsx",
+      "content": "export * as SegmentGroup from './styled/segment-group'\n"
+    }
+  ]
+}

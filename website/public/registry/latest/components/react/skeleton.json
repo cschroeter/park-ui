@@ -1,0 +1,14 @@
+{
+  "id": "skeleton",
+  "name": "Skeleton",
+  "variants": [
+    {
+      "file": "styled/skeleton.tsx",
+      "content": "'use client'\nimport type { Assign, HTMLArkProps } from '@ark-ui/react'\nimport { ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { type SkeletonVariantProps, skeleton } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nconst StyledSkeleton = styled(ark.div, skeleton)\n\nexport interface SkeletonProps\n  extends Assign<JsxStyleProps, HTMLArkProps<'div'>>,\n    SkeletonVariantProps {\n  /**\n   *\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {\n  const { isLoaded, ...otherProps } = props\n\n  if (isLoaded) {\n    return <styled.div animation=\"fade-in\" ref={ref} {...otherProps} />\n  }\n  return <StyledSkeleton ref={ref} {...otherProps} />\n})\n\nSkeleton.displayName = 'Skeleton'\n"
+    },
+    {
+      "file": "skeleton.tsx",
+      "content": "export { Skeleton, type SkeletonProps } from './styled/skeleton'\n"
+    }
+  ]
+}

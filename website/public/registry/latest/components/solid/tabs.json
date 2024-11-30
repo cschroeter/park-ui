@@ -1,0 +1,11 @@
+{
+  "id": "tabs",
+  "name": "Tabs",
+  "variants": [
+    {
+      "file": "styled/tabs.tsx",
+      "content": "import { type Assign, Tabs } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type TabsVariantProps, tabs } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Tabs.RootProviderBaseProps>, TabsVariantProps>\n>(Tabs.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Tabs.RootBaseProps>, TabsVariantProps>\n>(Tabs.Root, 'root')\n\nexport const Content = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ContentBaseProps>>(\n  Tabs.Content,\n  'content',\n)\n\nexport const Indicator = withContext<Assign<HTMLStyledProps<'div'>, Tabs.IndicatorBaseProps>>(\n  Tabs.Indicator,\n  'indicator',\n)\n\nexport const List = withContext<Assign<HTMLStyledProps<'div'>, Tabs.ListBaseProps>>(\n  Tabs.List,\n  'list',\n)\n\nexport const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Tabs.TriggerBaseProps>>(\n  Tabs.Trigger,\n  'trigger',\n)\n\nexport { TabsContext as Context } from '@ark-ui/solid'\n"
+    },
+    { "file": "tabs.tsx", "content": "export * as Tabs from './styled/tabs'\n" }
+  ]
+}

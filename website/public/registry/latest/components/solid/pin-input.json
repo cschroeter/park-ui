@@ -1,0 +1,14 @@
+{
+  "id": "pin-input",
+  "name": "Pin Input",
+  "variants": [
+    {
+      "file": "styled/pin-input.tsx",
+      "content": "import { type Assign, PinInput } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type PinInputVariantProps, pinInput } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(pinInput)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootProviderBaseProps>, PinInputVariantProps>\n>(PinInput.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootBaseProps>, PinInputVariantProps>\n>(PinInput.Root, 'root', { forwardProps: ['mask'] })\n\nexport const Control = withContext<Assign<HTMLStyledProps<'div'>, PinInput.ControlBaseProps>>(\n  PinInput.Control,\n  'control',\n)\n\nexport const Input = withContext<Assign<HTMLStyledProps<'input'>, PinInput.InputBaseProps>>(\n  PinInput.Input,\n  'input',\n)\n\nexport const Label = withContext<Assign<HTMLStyledProps<'label'>, PinInput.LabelBaseProps>>(\n  PinInput.Label,\n  'label',\n)\n\nexport {\n  PinInputContext as Context,\n  PinInputHiddenInput as HiddenInput,\n} from '@ark-ui/solid'\n"
+    },
+    {
+      "file": "pin-input.tsx",
+      "content": "import { Index, Show, children } from 'solid-js'\nimport { Input } from './input'\nimport * as StyledPinInput from './styled/pin-input'\n\nexport interface PinInputProps extends StyledPinInput.RootProps {\n  /**\n   * The number of inputs to render.\n   * @default 4\n   */\n  length?: number\n}\n\nexport const PinInput = (props: PinInputProps) => {\n  const getChildren = children(() => props.children)\n\n  return (\n    <StyledPinInput.Root {...props}>\n      <Show when={getChildren()}>\n        <StyledPinInput.Label>{getChildren()}</StyledPinInput.Label>\n      </Show>\n      <StyledPinInput.Control>\n        <Index each={Array.from({ length: props.length ?? 4 }, (_, index) => index)}>\n          {(index) => (\n            <StyledPinInput.Input\n              index={index()}\n              asChild={(inputProps) => <Input {...inputProps()} size={props.size} />}\n            />\n          )}\n        </Index>\n      </StyledPinInput.Control>\n      <StyledPinInput.HiddenInput />\n    </StyledPinInput.Root>\n  )\n}\n"
+    }
+  ]
+}

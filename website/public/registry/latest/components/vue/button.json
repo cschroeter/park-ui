@@ -1,0 +1,14 @@
+{
+  "id": "button",
+  "name": "Button",
+  "variants": [
+    {
+      "file": "styled/button.tsx",
+      "content": "import { styled } from 'styled-system/jsx'\nimport { button } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type ButtonProps = ComponentProps<typeof Button>\nexport const Button = styled('button', button)\n"
+    },
+    {
+      "file": "button.tsx",
+      "content": "export { Button, type ButtonProps } from './styled/button'\n"
+    }
+  ]
+}

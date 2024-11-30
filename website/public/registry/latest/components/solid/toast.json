@@ -1,0 +1,11 @@
+{
+  "id": "toast",
+  "name": "Toast",
+  "variants": [
+    {
+      "file": "styled/toast.tsx",
+      "content": "import { type Assign, Toast } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { toast } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toast)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, Toast.RootProps>>(\n  Toast.Root,\n  'root',\n)\n\nexport const ActionTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Toast.ActionTriggerProps>\n>(Toast.ActionTrigger, 'actionTrigger')\n\nexport const CloseTrigger = withContext<Assign<HTMLStyledProps<'div'>, Toast.CloseTriggerProps>>(\n  Toast.CloseTrigger,\n  'closeTrigger',\n)\n\nexport const Description = withContext<Assign<HTMLStyledProps<'div'>, Toast.DescriptionProps>>(\n  Toast.Description,\n  'description',\n)\n\nexport const Title = withContext<Assign<HTMLStyledProps<'div'>, Toast.TitleProps>>(\n  Toast.Title,\n  'title',\n)\n\nexport {\n  ToastContext as Context,\n  createToaster,\n  Toaster,\n  type ToastContextProps as ContextProps,\n  type ToasterProps,\n} from '@ark-ui/solid'\n"
+    },
+    { "file": "toast.tsx", "content": "export * as Toast from './styled/toast'\n" }
+  ]
+}

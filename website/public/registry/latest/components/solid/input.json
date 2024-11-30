@@ -1,0 +1,11 @@
+{
+  "id": "input",
+  "name": "Input",
+  "variants": [
+    {
+      "file": "styled/input.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = styled(ark.input, input)\n"
+    },
+    { "file": "input.tsx", "content": "export { Input, type InputProps } from './styled/input'\n" }
+  ]
+}

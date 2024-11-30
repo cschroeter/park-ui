@@ -1,0 +1,11 @@
+{
+  "id": "toast",
+  "name": "Toast",
+  "variants": [
+    {
+      "file": "styled/toast.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Toast } from '@ark-ui/react/toast'\nimport { toast } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toast)\n\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Toast.ActionTriggerProps>\n>(Toast.Root, 'root')\n\nexport const ActionTrigger = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, Toast.ActionTriggerProps>\n>(Toast.ActionTrigger, 'actionTrigger')\n\nexport const CloseTrigger = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Toast.CloseTriggerProps>\n>(Toast.CloseTrigger, 'closeTrigger')\n\nexport const Description = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Toast.DescriptionProps>\n>(Toast.Description, 'description')\n\nexport const Title = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, Toast.TitleProps>>(\n  Toast.Title,\n  'title',\n)\n\nexport {\n  ToastContext as Context,\n  Toaster,\n  createToaster,\n  type ToastContextProps as ContextProps,\n  type ToasterProps,\n} from '@ark-ui/react/toast'\n"
+    },
+    { "file": "toast.tsx", "content": "export * as Toast from './styled/toast'\n" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "table",
+  "name": "Table",
+  "variants": [
+    {
+      "file": "styled/table.tsx",
+      "content": "'use client'\nimport type { Assign, PolymorphicProps } from '@ark-ui/react'\nimport { ark } from '@ark-ui/react/factory'\nimport { type TableVariantProps, table } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(table)\n\nexport interface RootProps\n  extends Assign<HTMLStyledProps<'table'>, PolymorphicProps>,\n    TableVariantProps {}\nexport const Root = withProvider<HTMLTableElement, RootProps>(ark.table, 'root')\n\nexport const Body = withContext<\n  HTMLTableSectionElement,\n  Assign<HTMLStyledProps<'tbody'>, PolymorphicProps>\n>(ark.tbody, 'body')\n\nexport const Caption = withContext<\n  HTMLTableCaptionElement,\n  Assign<HTMLStyledProps<'caption'>, PolymorphicProps>\n>(ark.caption, 'caption')\n\nexport const Cell = withContext<\n  HTMLTableCellElement,\n  Assign<HTMLStyledProps<'td'>, PolymorphicProps>\n>(ark.td, 'cell')\n\nexport const Foot = withContext<\n  HTMLTableSectionElement,\n  Assign<HTMLStyledProps<'tfoot'>, PolymorphicProps>\n>(ark.tfoot, 'footer')\n\nexport const Head = withContext<\n  HTMLTableSectionElement,\n  Assign<HTMLStyledProps<'head'>, PolymorphicProps>\n>(ark.thead, 'head')\n\nexport const Header = withContext<\n  HTMLTableCellElement,\n  Assign<HTMLStyledProps<'th'>, PolymorphicProps>\n>(ark.th, 'header')\n\nexport const Row = withContext<\n  HTMLTableRowElement,\n  Assign<HTMLStyledProps<'tr'>, PolymorphicProps>\n>(ark.tr, 'row')\n"
+    },
+    { "file": "table.tsx", "content": "export * as Table from './styled/table'\n" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "dialog",
+  "name": "Dialog",
+  "variants": [
+    {
+      "file": "styled/dialog.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Dialog } from '@ark-ui/react/dialog'\nimport { type DialogVariantProps, dialog } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withRootProvider, withContext } = createStyleContext(dialog)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withRootProvider<Assign<Dialog.RootProviderProps, DialogVariantProps>>(\n  Dialog.RootProvider,\n)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider<Assign<Dialog.RootProps, DialogVariantProps>>(Dialog.Root)\n\nexport const Backdrop = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Dialog.BackdropBaseProps>\n>(Dialog.Backdrop, 'backdrop')\n\nexport const CloseTrigger = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, Dialog.CloseTriggerBaseProps>\n>(Dialog.CloseTrigger, 'closeTrigger')\n\nexport const Content = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Dialog.ContentBaseProps>\n>(Dialog.Content, 'content')\n\nexport const Description = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Dialog.DescriptionBaseProps>\n>(Dialog.Description, 'description')\n\nexport const Positioner = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Dialog.PositionerBaseProps>\n>(Dialog.Positioner, 'positioner')\n\nexport const Title = withContext<\n  HTMLHeadingElement,\n  Assign<HTMLStyledProps<'h2'>, Dialog.TitleBaseProps>\n>(Dialog.Title, 'title')\n\nexport const Trigger = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, Dialog.TriggerBaseProps>\n>(Dialog.Trigger, 'trigger')\n\nexport { DialogContext as Context } from '@ark-ui/react/dialog'\n"
+    },
+    { "file": "dialog.tsx", "content": "export * as Dialog from './styled/dialog'\n" }
+  ]
+}

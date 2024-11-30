@@ -1,0 +1,11 @@
+{
+  "id": "alert",
+  "name": "Alert",
+  "variants": [
+    {
+      "file": "styled/alert.tsx",
+      "content": "'use client'\nimport type { Assign, PolymorphicProps } from '@ark-ui/react'\nimport { ark } from '@ark-ui/react/factory'\nimport { alert } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(alert)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(\n  ark.div,\n  'root',\n)\n\nexport const Content = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, PolymorphicProps>\n>(ark.div, 'content')\n\nexport const Description = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, PolymorphicProps>\n>(ark.div, 'description')\n\nexport const Icon = withContext<HTMLOrSVGElement, Assign<HTMLStyledProps<'svg'>, PolymorphicProps>>(\n  ark.svg,\n  'icon',\n)\n\nexport const Title = withContext<\n  HTMLHeadingElement,\n  Assign<HTMLStyledProps<'h5'>, PolymorphicProps>\n>(ark.h5, 'title')\n"
+    },
+    { "file": "alert.tsx", "content": "export * as Alert from './styled/alert'\n" }
+  ]
+}

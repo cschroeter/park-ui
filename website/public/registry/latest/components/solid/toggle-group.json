@@ -1,0 +1,14 @@
+{
+  "id": "toggle-group",
+  "name": "Toggle Group",
+  "variants": [
+    {
+      "file": "styled/toggle-group.tsx",
+      "content": "import { type Assign, ToggleGroup } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type ToggleGroupVariantProps, toggleGroup } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, ToggleGroup.RootProviderBaseProps>, ToggleGroupVariantProps>\n>(ToggleGroup.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, ToggleGroup.RootBaseProps>, ToggleGroupVariantProps>\n>(ToggleGroup.Root, 'root')\n\nexport const Item = withContext<Assign<HTMLStyledProps<'button'>, ToggleGroup.ItemBaseProps>>(\n  ToggleGroup.Item,\n  'item',\n)\n\nexport { ToggleGroupContext as Context } from '@ark-ui/solid'\n"
+    },
+    {
+      "file": "toggle-group.tsx",
+      "content": "export * as ToggleGroup from './styled/toggle-group'\n"
+    }
+  ]
+}

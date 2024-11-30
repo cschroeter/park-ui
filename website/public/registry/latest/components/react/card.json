@@ -1,0 +1,11 @@
+{
+  "id": "card",
+  "name": "Card",
+  "variants": [
+    {
+      "file": "styled/card.tsx",
+      "content": "'use client'\nimport type { Assign, PolymorphicProps } from '@ark-ui/react'\nimport { type HTMLArkProps, ark } from '@ark-ui/react/factory'\nimport { type CardVariantProps, card } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, PolymorphicProps>, CardVariantProps>\n>(ark.div, 'root')\n\nexport const Body = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(\n  ark.div,\n  'body',\n)\n\nexport const Description = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, PolymorphicProps>\n>(ark.div, 'description')\n\nexport const Footer = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(\n  ark.div,\n  'footer',\n)\n\nexport const Header = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(\n  ark.div,\n  'header',\n)\n\nexport const Title = withContext<\n  HTMLHeadingElement,\n  Assign<HTMLStyledProps<'h3'>, HTMLArkProps<'h3'>>\n>(ark.h3, 'title')\n"
+    },
+    { "file": "card.tsx", "content": "export * as Card from './styled/card'\n" }
+  ]
+}

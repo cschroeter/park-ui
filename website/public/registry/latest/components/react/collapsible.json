@@ -1,0 +1,14 @@
+{
+  "id": "collapsible",
+  "name": "Collapsible",
+  "variants": [
+    {
+      "file": "styled/collapsible.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Collapsible } from '@ark-ui/react/collapsible'\nimport { type CollapsibleVariantProps, collapsible } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(collapsible)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Collapsible.RootProviderBaseProps>, CollapsibleVariantProps>\n>(Collapsible.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Collapsible.RootBaseProps>, CollapsibleVariantProps>\n>(Collapsible.Root, 'root')\n\nexport const Content = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Collapsible.ContentBaseProps>\n>(Collapsible.Content, 'content')\n\nexport const Trigger = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, Collapsible.TriggerBaseProps>\n>(Collapsible.Trigger, 'trigger')\n\nexport { CollapsibleContext as Context } from '@ark-ui/react/collapsible'\n"
+    },
+    {
+      "file": "collapsible.tsx",
+      "content": "export * as Collapsible from './styled/collapsible'\n"
+    }
+  ]
+}

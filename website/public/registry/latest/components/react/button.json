@@ -1,0 +1,14 @@
+{
+  "id": "button",
+  "name": "Button",
+  "variants": [
+    {
+      "file": "styled/button.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { button } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type ButtonProps = ComponentProps<typeof Button>\nexport const Button = styled(ark.button, button)\n"
+    },
+    {
+      "file": "button.tsx",
+      "content": "import { forwardRef } from 'react'\nimport { Center, styled } from 'styled-system/jsx'\nimport { Spinner } from './spinner'\nimport { Button as StyledButton, type ButtonProps as StyledButtonProps } from './styled/button'\n\ninterface ButtonLoadingProps {\n  loading?: boolean\n  loadingText?: React.ReactNode\n}\n\nexport interface ButtonProps extends StyledButtonProps, ButtonLoadingProps {}\n\nexport const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {\n  const { loading, disabled, loadingText, children, ...rest } = props\n\n  const trulyDisabled = loading || disabled\n\n  return (\n    <StyledButton disabled={trulyDisabled} ref={ref} {...rest}>\n      {loading && !loadingText ? (\n        <>\n          <ButtonSpinner />\n          <styled.span opacity={0}>{children}</styled.span>\n        </>\n      ) : loadingText ? (\n        loadingText\n      ) : (\n        children\n      )}\n    </StyledButton>\n  )\n})\n\nButton.displayName = 'Button'\n\nconst ButtonSpinner = () => (\n  <Center inline position=\"absolute\" transform=\"translate(-50%, -50%)\" top=\"50%\" insetStart=\"50%\">\n    <Spinner\n      width=\"1.1em\"\n      height=\"1.1em\"\n      borderWidth=\"1.5px\"\n      borderTopColor=\"fg.disabled\"\n      borderRightColor=\"fg.disabled\"\n    />\n  </Center>\n)\n"
+    }
+  ]
+}

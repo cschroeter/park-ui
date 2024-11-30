@@ -1,0 +1,11 @@
+{
+  "id": "field",
+  "name": "Field",
+  "variants": [
+    {
+      "file": "styled/field.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Field } from '@ark-ui/react/field'\nimport { styled } from 'styled-system/jsx'\nimport { type FieldVariantProps, field, input, textarea } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(field)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Field.RootProviderBaseProps>, FieldVariantProps>\n>(Field.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Field.RootBaseProps>, FieldVariantProps>\n>(Field.Root, 'root')\n\nexport const ErrorText = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Field.ErrorTextBaseProps>\n>(Field.ErrorText, 'errorText')\n\nexport const HelperText = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Field.HelperTextBaseProps>\n>(Field.HelperText, 'helperText')\n\nexport const Label = withContext<\n  HTMLLabelElement,\n  Assign<HTMLStyledProps<'label'>, Field.LabelBaseProps>\n>(Field.Label, 'label')\n\nexport const Select = withContext<\n  HTMLSelectElement,\n  Assign<HTMLStyledProps<'select'>, Field.SelectBaseProps>\n>(Field.Select, 'select')\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = styled(Field.Input, input)\n\nexport type TextareaProps = ComponentProps<typeof Textarea>\nexport const Textarea = styled(Field.Textarea, textarea)\n\nexport { FieldContext as Context } from '@ark-ui/react/field'\n"
+    },
+    { "file": "field.tsx", "content": "export * as Field from './styled/field'\n" }
+  ]
+}

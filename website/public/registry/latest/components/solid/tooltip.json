@@ -1,0 +1,11 @@
+{
+  "id": "tooltip",
+  "name": "Tooltip",
+  "variants": [
+    {
+      "file": "styled/tooltip.tsx",
+      "content": "import { type Assign, Tooltip } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type TooltipVariantProps, tooltip } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withRootProvider, withContext } = createStyleContext(tooltip)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withRootProvider<\n  Assign<Tooltip.RootProviderProps, TooltipVariantProps>\n>(Tooltip.RootProvider)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider<Assign<Tooltip.RootProps, TooltipVariantProps>>(Tooltip.Root)\n\nexport const Arrow = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.ArrowBaseProps>>(\n  Tooltip.Arrow,\n  'arrow',\n)\n\nexport const ArrowTip = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.ArrowTipBaseProps>>(\n  Tooltip.ArrowTip,\n  'arrowTip',\n)\n\nexport const Content = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.ContentBaseProps>>(\n  Tooltip.Content,\n  'content',\n)\n\nexport const Positioner = withContext<Assign<HTMLStyledProps<'div'>, Tooltip.PositionerBaseProps>>(\n  Tooltip.Positioner,\n  'positioner',\n)\n\nexport const Trigger = withContext<Assign<HTMLStyledProps<'button'>, Tooltip.TriggerBaseProps>>(\n  Tooltip.Trigger,\n  'trigger',\n)\n\nexport { TooltipContext as Context } from '@ark-ui/solid'\n"
+    },
+    { "file": "tooltip.tsx", "content": "export * as Tooltip from './styled/tooltip'\n" }
+  ]
+}

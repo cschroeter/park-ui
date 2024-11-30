@@ -51,7 +51,7 @@ const programm = pipe(
                   Effect.flatMap(([component, primitive, composition]) =>
                     Effect.promise(() =>
                       fs.outputJSON(
-                        `../website/public/registry/latest/${framework}/components/${component}.json`,
+                        `../website/public/registry/latest/components/${framework}/${component}.json`,
                         {
                           id: parse(file).name,
                           name: toTitleCase(parse(file).name),
@@ -64,7 +64,7 @@ const programm = pipe(
               ),
               Effect.promise(() =>
                 fs.outputJSON(
-                  `../website/public/registry/latest/${framework}/components/index.json`,
+                  `../website/public/registry/latest/components/${framework}/index.json`,
                   files.sort().map((file) => ({
                     id: parse(file).name,
                     name: toTitleCase(parse(file).name),
@@ -89,7 +89,7 @@ const programm = pipe(
               })),
               Effect.flatMap((data) =>
                 Effect.promise(() =>
-                  fs.outputJSON(`../website/public/registry/latest/${framework}/utils/index.json`, [
+                  fs.outputJSON(`../website/public/registry/latest/utils/${framework}/index.json`, [
                     data,
                   ]),
                 ),

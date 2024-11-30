@@ -58,7 +58,7 @@ export const fetchComponentById = (id: string, config: Config) =>
   )
 
 export const fetchUtils = (config: Config) =>
-  HttpClient.get(`${API_URL}/${config.framework}/utils/index.json`).pipe(
+  HttpClient.get(`${API_URL}/utils/${config.framework}/index.json`).pipe(
     Effect.flatMap(HttpClientResponse.schemaBodyJson(Utils)),
     Effect.scoped,
     Effect.provide(FetchHttpClient.layer),
@@ -71,7 +71,7 @@ interface Args {
 
 export const fetchComponents = (config: Config, args: Args) =>
   args.all
-    ? HttpClient.get(`${API_URL}/${config.framework}/components`).pipe(
+    ? HttpClient.get(`${API_URL}/components/${config.framework}`).pipe(
         Effect.flatMap(HttpClientResponse.schemaBodyJson(Components)),
         Effect.scoped,
         Effect.provide(FetchHttpClient.layer),

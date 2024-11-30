@@ -1,0 +1,14 @@
+{
+  "id": "radio-button-group",
+  "name": "Radio Button Group",
+  "variants": [
+    {
+      "file": "styled/radio-button-group.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { RadioGroup } from '@ark-ui/react/radio-group'\nimport { type RadioButtonGroupVariantProps, radioButtonGroup } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(radioButtonGroup)\n\nexport interface RootProps\n  extends Assign<HTMLStyledProps<'div'>, RadioGroup.RootProps>,\n    RadioButtonGroupVariantProps {}\nexport const Root = withProvider<HTMLDivElement, RootProps>(RadioGroup.Root, 'root')\n\nexport const Indicator = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, RadioGroup.IndicatorProps>\n>(RadioGroup.Indicator, 'indicator')\n\nexport const ItemControl = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, RadioGroup.ItemControlProps>\n>(RadioGroup.ItemControl, 'itemControl')\n\nexport const Item = withContext<\n  HTMLLabelElement,\n  Assign<HTMLStyledProps<'label'>, RadioGroup.ItemProps>\n>(RadioGroup.Item, 'item')\n\nexport const ItemText = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, RadioGroup.ItemTextProps>\n>(RadioGroup.ItemText, 'itemText')\n\nexport const Label = withContext<\n  HTMLLabelElement,\n  Assign<HTMLStyledProps<'label'>, RadioGroup.LabelProps>\n>(RadioGroup.Label, 'label')\n\nexport {\n  RadioGroupContext as Context,\n  RadioGroupItemHiddenInput as ItemHiddenInput,\n} from '@ark-ui/react/radio-group'\n"
+    },
+    {
+      "file": "radio-button-group.tsx",
+      "content": "export * as RadioButtonGroup from './styled/radio-button-group'\n"
+    }
+  ]
+}

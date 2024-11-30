@@ -1,0 +1,14 @@
+{
+  "id": "textarea",
+  "name": "Textarea",
+  "variants": [
+    {
+      "file": "styled/textarea.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { textarea } from 'styled-system/recipes'\n\nexport type TextareaProps = ComponentProps<typeof Textarea>\nexport const Textarea = styled(ark.textarea, textarea)\n"
+    },
+    {
+      "file": "textarea.tsx",
+      "content": "export { Textarea, type TextareaProps } from './styled/textarea'\n"
+    }
+  ]
+}

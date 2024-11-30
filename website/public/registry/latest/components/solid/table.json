@@ -1,0 +1,11 @@
+{
+  "id": "table",
+  "name": "Table",
+  "variants": [
+    {
+      "file": "styled/table.tsx",
+      "content": "import { type Assign, type PolymorphicProps, ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { table } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(table)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'table'>, PolymorphicProps<'table'>>>(\n  ark.table,\n  'root',\n)\n\nexport const Body = withContext<Assign<HTMLStyledProps<'tbody'>, PolymorphicProps<'tbody'>>>(\n  ark.tbody,\n  'body',\n)\n\nexport const Caption = withContext<Assign<HTMLStyledProps<'caption'>, PolymorphicProps<'caption'>>>(\n  ark.caption,\n  'caption',\n)\n\nexport const Cell = withContext<Assign<HTMLStyledProps<'td'>, PolymorphicProps<'td'>>>(\n  ark.td,\n  'cell',\n)\n\nexport const Foot = withContext<Assign<HTMLStyledProps<'tfoot'>, PolymorphicProps<'tfoot'>>>(\n  ark.tfoot,\n  'footer',\n)\n\nexport const Head = withContext<Assign<HTMLStyledProps<'head'>, PolymorphicProps<'head'>>>(\n  ark.thead,\n  'head',\n)\n\nexport const Header = withContext<Assign<HTMLStyledProps<'th'>, PolymorphicProps<'th'>>>(\n  ark.th,\n  'header',\n)\n\nexport const Row = withContext<Assign<HTMLStyledProps<'tr'>, PolymorphicProps<'tr'>>>(ark.tr, 'row')\n"
+    },
+    { "file": "table.tsx", "content": "export * as Table from './styled/table'\n" }
+  ]
+}

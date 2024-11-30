@@ -1,0 +1,11 @@
+{
+  "id": "icon",
+  "name": "Icon",
+  "variants": [
+    {
+      "file": "styled/icon.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { icon } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type IconProps = ComponentProps<typeof Icon>\nexport const Icon = styled(ark.svg, icon, {\n  defaultProps: { asChild: true },\n})\n"
+    },
+    { "file": "icon.tsx", "content": "export { Icon, type IconProps } from './styled/icon'\n" }
+  ]
+}

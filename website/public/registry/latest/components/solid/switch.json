@@ -1,0 +1,14 @@
+{
+  "id": "switch",
+  "name": "Switch",
+  "variants": [
+    {
+      "file": "styled/switch.tsx",
+      "content": "import { type Assign, Switch } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type SwitchRecipeVariantProps, switchRecipe } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(switchRecipe)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootProviderBaseProps>, SwitchRecipeVariantProps>\n>(Switch.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootBaseProps>, SwitchRecipeVariantProps>\n>(Switch.Root, 'root')\n\nexport const Control = withContext<Assign<HTMLStyledProps<'span'>, Switch.ControlBaseProps>>(\n  Switch.Control,\n  'control',\n)\n\nexport const Label = withContext<Assign<HTMLStyledProps<'span'>, Switch.LabelBaseProps>>(\n  Switch.Label,\n  'label',\n)\n\nexport const Thumb = withContext<Assign<HTMLStyledProps<'span'>, Switch.ThumbBaseProps>>(\n  Switch.Thumb,\n  'thumb',\n)\n\nexport {\n  SwitchContext as Context,\n  SwitchHiddenInput as HiddenInput,\n} from '@ark-ui/solid'\n"
+    },
+    {
+      "file": "switch.tsx",
+      "content": "import { Show, children } from 'solid-js'\nimport * as StyledSwitch from './styled/switch'\n\nexport interface SwitchProps extends StyledSwitch.RootProps {}\n\nexport const Switch = (props: SwitchProps) => {\n  const getChildren = children(() => props.children)\n\n  return (\n    <StyledSwitch.Root {...props}>\n      <StyledSwitch.Control>\n        <StyledSwitch.Thumb />\n      </StyledSwitch.Control>\n      <Show when={getChildren()}>\n        <StyledSwitch.Label>{getChildren()}</StyledSwitch.Label>\n      </Show>\n      <StyledSwitch.HiddenInput />\n    </StyledSwitch.Root>\n  )\n}\n"
+    }
+  ]
+}

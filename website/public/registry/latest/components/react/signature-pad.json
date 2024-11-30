@@ -1,0 +1,14 @@
+{
+  "id": "signature-pad",
+  "name": "Signature Pad",
+  "variants": [
+    {
+      "file": "styled/signature-pad.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { SignaturePad } from '@ark-ui/react/signature-pad'\nimport { type SignaturePadVariantProps, signaturePad } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(signaturePad)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<\n    Assign<HTMLStyledProps<'div'>, SignaturePad.RootProviderBaseProps>,\n    SignaturePadVariantProps\n  >\n>(SignaturePad.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, SignaturePad.RootBaseProps>, SignaturePadVariantProps>\n>(SignaturePad.Root, 'root')\n\nexport const ClearTrigger = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, SignaturePad.ClearTriggerBaseProps>\n>(SignaturePad.ClearTrigger, 'clearTrigger')\n\nexport const Control = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, SignaturePad.ControlBaseProps>\n>(SignaturePad.Control, 'control')\n\nexport const Guide = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, SignaturePad.GuideBaseProps>\n>(SignaturePad.Guide, 'guide')\n\nexport const Label = withContext<\n  HTMLLabelElement,\n  Assign<HTMLStyledProps<'label'>, SignaturePad.LabelBaseProps>\n>(SignaturePad.Label, 'label')\n\nexport const Segment = withContext<\n  SVGSVGElement,\n  Assign<HTMLStyledProps<'svg'>, SignaturePad.SegmentBaseProps>\n>(SignaturePad.Segment, 'segment')\n\nexport {\n  SignaturePadContext as Context,\n  SignaturePadHiddenInput as HiddenInput,\n} from '@ark-ui/react/signature-pad'\n"
+    },
+    {
+      "file": "signature-pad.tsx",
+      "content": "export * as SignaturePad from './styled/signature-pad'\n"
+    }
+  ]
+}

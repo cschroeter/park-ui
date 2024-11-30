@@ -1,0 +1,14 @@
+{
+  "id": "button",
+  "name": "Button",
+  "variants": [
+    {
+      "file": "styled/button.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { button } from 'styled-system/recipes'\n\nexport type ButtonProps = ComponentProps<typeof Button>\nexport const Button = styled(ark.button, button)\n"
+    },
+    {
+      "file": "button.tsx",
+      "content": "import type { JSX } from 'solid-js'\nimport { Show, splitProps } from 'solid-js'\nimport { Center, styled } from 'styled-system/jsx'\nimport { Spinner } from './spinner'\nimport { Button as StyledButton, type ButtonProps as StyledButtonProps } from './styled/button'\n\ninterface ButtonLoadingProps {\n  loading?: boolean\n  loadingText?: JSX.Element\n}\n\nexport interface ButtonProps extends StyledButtonProps, ButtonLoadingProps {}\n\nexport const Button = (props: ButtonProps) => {\n  const [localProps, rest] = splitProps(props, ['loading', 'disabled', 'loadingText', 'children'])\n  const trulyDisabled = () => localProps.loading || localProps.disabled\n\n  return (\n    <StyledButton disabled={trulyDisabled()} {...rest}>\n      <Show\n        when={localProps.loading && !localProps.loadingText}\n        fallback={localProps.loadingText || localProps.children}\n      >\n        <>\n          <ButtonSpinner />\n          <styled.span opacity={0}>{localProps.children}</styled.span>\n        </>\n      </Show>\n    </StyledButton>\n  )\n}\n\nconst ButtonSpinner = () => (\n  <Center inline position=\"absolute\" transform=\"translate(-50%, -50%)\" top=\"50%\" insetStart=\"50%\">\n    <Spinner\n      width=\"1.1em\"\n      height=\"1.1em\"\n      borderWidth=\"1.5px\"\n      borderTopColor=\"fg.disabled\"\n      borderRightColor=\"fg.disabled\"\n    />\n  </Center>\n)\n"
+    }
+  ]
+}

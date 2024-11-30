@@ -1,0 +1,14 @@
+{
+  "id": "signature-pad",
+  "name": "Signature Pad",
+  "variants": [
+    {
+      "file": "styled/signature-pad.tsx",
+      "content": "import { type Assign, SignaturePad } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type SignaturePadVariantProps, signaturePad } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(signaturePad)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<\n    Assign<HTMLStyledProps<'div'>, SignaturePad.RootProviderBaseProps>,\n    SignaturePadVariantProps\n  >\n>(SignaturePad.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, SignaturePad.RootBaseProps>, SignaturePadVariantProps>\n>(SignaturePad.Root, 'root')\n\nexport const ClearTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, SignaturePad.ClearTriggerBaseProps>\n>(SignaturePad.ClearTrigger, 'clearTrigger')\n\nexport const Control = withContext<Assign<HTMLStyledProps<'div'>, SignaturePad.ControlBaseProps>>(\n  SignaturePad.Control,\n  'control',\n)\n\nexport const Guide = withContext<Assign<HTMLStyledProps<'div'>, SignaturePad.GuideBaseProps>>(\n  SignaturePad.Guide,\n  'guide',\n)\n\nexport const Label = withContext<Assign<HTMLStyledProps<'label'>, SignaturePad.LabelBaseProps>>(\n  SignaturePad.Label,\n  'label',\n)\n\nexport const Segment = withContext<Assign<HTMLStyledProps<'svg'>, SignaturePad.SegmentBaseProps>>(\n  SignaturePad.Segment,\n  'segment',\n)\n\nexport {\n  SignaturePadContext as Context,\n  SignaturePadHiddenInput as HiddenInput,\n} from '@ark-ui/solid'\n"
+    },
+    {
+      "file": "signature-pad.tsx",
+      "content": "export * as SignaturePad from './styled/signature-pad'\n"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "accordion",
+  "name": "Accordion",
+  "variants": [
+    {
+      "file": "styled/accordion.tsx",
+      "content": "import { Accordion, type Assign } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type AccordionVariantProps, accordion } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(accordion)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootProviderBaseProps>, AccordionVariantProps>\n>(Accordion.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootBaseProps>, AccordionVariantProps>\n>(Accordion.Root, 'root')\n\nexport const ItemContent = withContext<\n  Assign<HTMLStyledProps<'div'>, Accordion.ItemContentBaseProps>\n>(Accordion.ItemContent, 'itemContent')\n\nexport const ItemIndicator = withContext<\n  Assign<HTMLStyledProps<'div'>, Accordion.ItemIndicatorBaseProps>\n>(Accordion.ItemIndicator, 'itemIndicator')\n\nexport const Item = withContext<Assign<HTMLStyledProps<'div'>, Accordion.ItemBaseProps>>(\n  Accordion.Item,\n  'item',\n)\n\nexport const ItemTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Accordion.ItemTriggerBaseProps>\n>(Accordion.ItemTrigger, 'itemTrigger')\n\nexport { AccordionContext as Context, AccordionItemContext as ItemContext } from '@ark-ui/solid'\n\nexport type {\n  AccordionFocusChangeDetails as FocusChangeDetails,\n  AccordionValueChangeDetails as ValueChangeDetails,\n} from '@ark-ui/solid'\n"
+    },
+    { "file": "accordion.tsx", "content": "export * as Accordion from './styled/accordion'\n" }
+  ]
+}

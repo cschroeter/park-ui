@@ -1,0 +1,14 @@
+{
+  "id": "skeleton",
+  "name": "Skeleton",
+  "variants": [
+    {
+      "file": "styled/skeleton.tsx",
+      "content": "import type { Assign, HTMLArkProps } from '@ark-ui/solid'\nimport { Show, splitProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { type SkeletonVariantProps, skeleton } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nconst StyledSkeleton = styled('div', skeleton)\n\nexport interface SkeletonProps\n  extends Assign<JsxStyleProps, HTMLArkProps<'div'>>,\n    SkeletonVariantProps {\n  /**\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = (props: SkeletonProps) => {\n  const [localProps, otherProps] = splitProps(props, ['isLoaded'])\n\n  return (\n    <Show when={localProps.isLoaded} fallback={<StyledSkeleton {...otherProps} />}>\n      <styled.div animation=\"fade-in\" {...otherProps} />\n    </Show>\n  )\n}\n"
+    },
+    {
+      "file": "skeleton.tsx",
+      "content": "export { Skeleton, type SkeletonProps } from './styled/skeleton'\n"
+    }
+  ]
+}

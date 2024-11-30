@@ -1,0 +1,11 @@
+{
+  "id": "badge",
+  "name": "Badge",
+  "variants": [
+    {
+      "file": "styled/badge.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { badge } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type BadgeProps = ComponentProps<typeof Badge>\nexport const Badge = styled(ark.div, badge)\n"
+    },
+    { "file": "badge.tsx", "content": "export { Badge, type BadgeProps } from './styled/badge'\n" }
+  ]
+}

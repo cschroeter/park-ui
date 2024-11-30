@@ -1,0 +1,14 @@
+{
+  "id": "segment-group",
+  "name": "Segment Group",
+  "variants": [
+    {
+      "file": "styled/segment-group.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { SegmentGroup } from '@ark-ui/react/segment-group'\nimport { type SegmentGroupVariantProps, segmentGroup } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(segmentGroup)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<\n    Assign<HTMLStyledProps<'div'>, SegmentGroup.RootProviderBaseProps>,\n    SegmentGroupVariantProps\n  >\n>(SegmentGroup.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, SegmentGroup.RootBaseProps>, SegmentGroupVariantProps>\n>(SegmentGroup.Root, 'root')\n\nexport const Indicator = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, SegmentGroup.IndicatorBaseProps>\n>(SegmentGroup.Indicator, 'indicator')\n\nexport const ItemControl = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, SegmentGroup.ItemControlBaseProps>\n>(SegmentGroup.ItemControl, 'itemControl')\n\nexport const Item = withContext<\n  HTMLLabelElement,\n  Assign<HTMLStyledProps<'label'>, SegmentGroup.ItemBaseProps>\n>(SegmentGroup.Item, 'item')\n\nexport const ItemText = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, SegmentGroup.ItemTextBaseProps>\n>(SegmentGroup.ItemText, 'itemText')\n\nexport const Label = withContext<\n  HTMLLabelElement,\n  Assign<HTMLStyledProps<'label'>, SegmentGroup.LabelBaseProps>\n>(SegmentGroup.Label, 'label')\n\nexport {\n  SegmentGroupContext as Context,\n  SegmentGroupItemHiddenInput as ItemHiddenInput,\n} from '@ark-ui/react/segment-group'\n"
+    },
+    {
+      "file": "segment-group.tsx",
+      "content": "export * as SegmentGroup from './styled/segment-group'\n"
+    }
+  ]
+}

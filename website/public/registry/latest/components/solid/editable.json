@@ -1,0 +1,11 @@
+{
+  "id": "editable",
+  "name": "Editable",
+  "variants": [
+    {
+      "file": "styled/editable.tsx",
+      "content": "import { type Assign, Editable } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { type EditableVariantProps, editable } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(editable)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Editable.RootProviderBaseProps>, EditableVariantProps>\n>(Editable.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  Assign<Assign<HTMLStyledProps<'div'>, Editable.RootBaseProps>, EditableVariantProps>\n>(Editable.Root, 'root')\n\nexport const Area = withContext<Assign<HTMLStyledProps<'div'>, Editable.AreaBaseProps>>(\n  Editable.Area,\n  'area',\n)\n\nexport const CancelTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Editable.CancelTriggerBaseProps>\n>(Editable.CancelTrigger, 'cancelTrigger')\n\nexport const Control = withContext<Assign<HTMLStyledProps<'div'>, Editable.ControlBaseProps>>(\n  Editable.Control,\n  'control',\n)\n\nexport const EditTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Editable.EditTriggerBaseProps>\n>(Editable.EditTrigger, 'editTrigger')\n\nexport const Input = withContext<Assign<HTMLStyledProps<'input'>, Editable.InputBaseProps>>(\n  Editable.Input,\n  'input',\n)\n\nexport const Label = withContext<Assign<HTMLStyledProps<'label'>, Editable.LabelBaseProps>>(\n  Editable.Label,\n  'label',\n)\n\nexport const Preview = withContext<Assign<HTMLStyledProps<'span'>, Editable.PreviewBaseProps>>(\n  Editable.Preview,\n  'preview',\n)\n\nexport const SubmitTrigger = withContext<\n  Assign<HTMLStyledProps<'button'>, Editable.SubmitTriggerBaseProps>\n>(Editable.SubmitTrigger, 'submitTrigger')\n\nexport { EditableContext as Context } from '@ark-ui/solid'\n"
+    },
+    { "file": "editable.tsx", "content": "export * as Editable from './styled/editable'\n" }
+  ]
+}

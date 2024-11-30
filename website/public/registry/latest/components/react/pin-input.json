@@ -1,0 +1,14 @@
+{
+  "id": "pin-input",
+  "name": "Pin Input",
+  "variants": [
+    {
+      "file": "styled/pin-input.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { PinInput } from '@ark-ui/react/pin-input'\nimport { type PinInputVariantProps, pinInput } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(pinInput)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootProviderBaseProps>, PinInputVariantProps>\n>(PinInput.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootBaseProps>, PinInputVariantProps>\n>(PinInput.Root, 'root', { forwardProps: ['mask'] })\n\nexport const Control = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, PinInput.ControlBaseProps>\n>(PinInput.Control, 'control')\n\nexport const Input = withContext<\n  HTMLInputElement,\n  Assign<HTMLStyledProps<'input'>, PinInput.InputBaseProps>\n>(PinInput.Input, 'input')\n\nexport const Label = withContext<\n  HTMLLabelElement,\n  Assign<HTMLStyledProps<'label'>, PinInput.LabelBaseProps>\n>(PinInput.Label, 'label')\n\nexport {\n  PinInputContext as Context,\n  PinInputHiddenInput as HiddenInput,\n} from '@ark-ui/react/pin-input'\n"
+    },
+    {
+      "file": "pin-input.tsx",
+      "content": "import { forwardRef } from 'react'\nimport { Input } from './input'\nimport * as StyledPinInput from './styled/pin-input'\n\nexport interface PinInputProps extends StyledPinInput.RootProps {\n  /**\n   * The number of inputs to render.\n   * @default 4\n   */\n  length?: number\n}\n\nexport const PinInput = forwardRef<HTMLDivElement, PinInputProps>((props, ref) => {\n  const { children, length = 4, ...rootProps } = props\n\n  return (\n    <StyledPinInput.Root ref={ref} {...rootProps}>\n      {children && <StyledPinInput.Label>{children}</StyledPinInput.Label>}\n      <StyledPinInput.Control>\n        {Array.from({ length }, (_, index) => index).map((id, index) => (\n          <StyledPinInput.Input key={id} index={index} asChild>\n            <Input size={rootProps.size} />\n          </StyledPinInput.Input>\n        ))}\n      </StyledPinInput.Control>\n      <StyledPinInput.HiddenInput />\n    </StyledPinInput.Root>\n  )\n})\n\nPinInput.displayName = 'PinInput'\n"
+    }
+  ]
+}

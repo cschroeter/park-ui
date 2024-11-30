@@ -1,0 +1,14 @@
+{
+  "id": "switch",
+  "name": "Switch",
+  "variants": [
+    {
+      "file": "styled/switch.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Switch } from '@ark-ui/react/switch'\nimport { type SwitchRecipeVariantProps, switchRecipe } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(switchRecipe)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLLabelElement,\n  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootProviderBaseProps>, SwitchRecipeVariantProps>\n>(Switch.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLLabelElement,\n  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootBaseProps>, SwitchRecipeVariantProps>\n>(Switch.Root, 'root')\n\nexport const Control = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Switch.ControlBaseProps>\n>(Switch.Control, 'control')\n\nexport const Label = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Switch.LabelBaseProps>\n>(Switch.Label, 'label')\n\nexport const Thumb = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Switch.ThumbBaseProps>\n>(Switch.Thumb, 'thumb')\n\nexport {\n  SwitchContext as Context,\n  SwitchHiddenInput as HiddenInput,\n} from '@ark-ui/react/switch'\n"
+    },
+    {
+      "file": "switch.tsx",
+      "content": "import { forwardRef } from 'react'\nimport * as StyledSwitch from './styled/switch'\n\nexport interface SwitchProps extends StyledSwitch.RootProps {}\n\nexport const Switch = forwardRef<HTMLLabelElement, SwitchProps>((props, ref) => {\n  const { children, ...rootProps } = props\n\n  return (\n    <StyledSwitch.Root ref={ref} {...rootProps}>\n      <StyledSwitch.Control>\n        <StyledSwitch.Thumb />\n      </StyledSwitch.Control>\n      {children && <StyledSwitch.Label>{children}</StyledSwitch.Label>}\n      <StyledSwitch.HiddenInput />\n    </StyledSwitch.Root>\n  )\n})\n\nSwitch.displayName = 'Switch'\n"
+    }
+  ]
+}

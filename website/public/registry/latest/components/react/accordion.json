@@ -1,0 +1,11 @@
+{
+  "id": "accordion",
+  "name": "Accordion",
+  "variants": [
+    {
+      "file": "styled/accordion.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Accordion } from '@ark-ui/react/accordion'\nimport { type AccordionVariantProps, accordion } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(accordion)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootProviderBaseProps>, AccordionVariantProps>\n>(Accordion.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootBaseProps>, AccordionVariantProps>\n>(Accordion.Root, 'root')\n\nexport const ItemContent = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Accordion.ItemContentBaseProps>\n>(Accordion.ItemContent, 'itemContent')\n\nexport const ItemIndicator = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Accordion.ItemIndicatorBaseProps>\n>(Accordion.ItemIndicator, 'itemIndicator')\n\nexport const Item = withContext<\n  HTMLDivElement,\n  Assign<HTMLStyledProps<'div'>, Accordion.ItemBaseProps>\n>(Accordion.Item, 'item')\n\nexport const ItemTrigger = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, Accordion.ItemTriggerBaseProps>\n>(Accordion.ItemTrigger, 'itemTrigger')\n\nexport {\n  AccordionContext as Context,\n  AccordionItemContext as ItemContext,\n} from '@ark-ui/react/accordion'\n\nexport type {\n  AccordionFocusChangeDetails as FocusChangeDetails,\n  AccordionValueChangeDetails as ValueChangeDetails,\n} from '@ark-ui/react/accordion'\n"
+    },
+    { "file": "accordion.tsx", "content": "export * as Accordion from './styled/accordion'\n" }
+  ]
+}

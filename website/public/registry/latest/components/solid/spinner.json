@@ -1,0 +1,14 @@
+{
+  "id": "spinner",
+  "name": "Spinner",
+  "variants": [
+    {
+      "file": "styled/spinner.tsx",
+      "content": "import { ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { spinner } from 'styled-system/recipes'\n\nexport type SpinnerProps = ComponentProps<typeof Spinner>\nexport const Spinner = styled(ark.div, spinner)\n"
+    },
+    {
+      "file": "spinner.tsx",
+      "content": "import { mergeProps, splitProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { Spinner as StyledSpinner, type SpinnerProps as StyledSpinnerProps } from './styled/spinner'\n\nexport interface SpinnerProps extends StyledSpinnerProps {\n  /**\n   * For accessibility, it is important to add a fallback loading text.\n   * This text will be visible to screen readers.\n   * @default \"Loading...\"\n   */\n  label?: string\n}\n\nexport const Spinner = (props: SpinnerProps) => {\n  const [_localProps, rootProps] = splitProps(props, ['label'])\n  const localProps = mergeProps({ label: 'Loading...' }, _localProps)\n\n  return (\n    <StyledSpinner borderBottomColor=\"transparent\" borderLeftColor=\"transparent\" {...rootProps}>\n      <styled.span srOnly>{localProps.label}</styled.span>\n    </StyledSpinner>\n  )\n}\n"
+    }
+  ]
+}

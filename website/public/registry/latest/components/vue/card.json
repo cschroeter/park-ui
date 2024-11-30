@@ -1,0 +1,11 @@
+{
+  "id": "card",
+  "name": "Card",
+  "variants": [
+    {
+      "file": "styled/card.tsx",
+      "content": "import { type AccordionVariantProps, card } from 'styled-system/recipes'\nimport type { Assign, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport interface RootProps extends Assign<HTMLStyledProps<'div'>, AccordionVariantProps> {}\nexport const Root = withProvider<RootProps>('div', 'root')\n\nexport const Header = withContext<HTMLStyledProps<'div'>>('div', 'header')\nexport const Body = withContext<HTMLStyledProps<'div'>>('div', 'body')\nexport const Footer = withContext<HTMLStyledProps<'div'>>('div', 'footer')\nexport const Title = withContext<HTMLStyledProps<'h3'>>('h3', 'title')\nexport const Description = withContext<HTMLStyledProps<'div'>>('div', 'description')\n"
+    },
+    { "file": "card.tsx", "content": "export * as Card from './styled/card'\n" }
+  ]
+}

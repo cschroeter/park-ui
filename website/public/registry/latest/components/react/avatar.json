@@ -1,0 +1,14 @@
+{
+  "id": "avatar",
+  "name": "Avatar",
+  "variants": [
+    {
+      "file": "styled/avatar.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { Avatar } from '@ark-ui/react/avatar'\nimport { type AvatarVariantProps, avatar } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(avatar)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Avatar.RootProviderBaseProps>, AvatarVariantProps>\n>(Avatar.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, Avatar.RootBaseProps>, AvatarVariantProps>\n>(Avatar.Root, 'root')\n\nexport const Fallback = withContext<\n  HTMLSpanElement,\n  Assign<HTMLStyledProps<'span'>, Avatar.FallbackBaseProps>\n>(Avatar.Fallback, 'fallback')\n\nexport const Image = withContext<\n  HTMLImageElement,\n  Assign<HTMLStyledProps<'img'>, Avatar.ImageBaseProps>\n>(Avatar.Image, 'image')\n\nexport { AvatarContext as Context } from '@ark-ui/react/avatar'\nexport type { AvatarStatusChangeDetails as StatusChangeDetails } from '@ark-ui/react/avatar'\n"
+    },
+    {
+      "file": "avatar.tsx",
+      "content": "import { forwardRef } from 'react'\nimport * as StyledAvatar from './styled/avatar'\n\nexport interface AvatarProps extends StyledAvatar.RootProps {\n  name?: string\n  src?: string\n}\n\nexport const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {\n  const { name, src, ...rootProps } = props\n\n  return (\n    <StyledAvatar.Root ref={ref} {...rootProps}>\n      <StyledAvatar.Fallback>{getInitials(name) || <UserIcon />}</StyledAvatar.Fallback>\n      <StyledAvatar.Image src={src} alt={name} />\n    </StyledAvatar.Root>\n  )\n})\n\nAvatar.displayName = 'Avatar'\n\nconst UserIcon = () => (\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    stroke=\"currentColor\"\n    strokeWidth=\"2\"\n  >\n    <title>User Icon</title>\n    <path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\" />\n    <circle cx=\"12\" cy=\"7\" r=\"4\" />\n  </svg>\n)\n\nconst getInitials = (name = '') =>\n  name\n    .split(' ')\n    .map((part) => part[0])\n    .splice(0, 2)\n    .join('')\n    .toUpperCase()\n"
+    }
+  ]
+}

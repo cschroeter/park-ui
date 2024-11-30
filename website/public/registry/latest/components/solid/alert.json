@@ -1,0 +1,11 @@
+{
+  "id": "alert",
+  "name": "Alert",
+  "variants": [
+    {
+      "file": "styled/alert.tsx",
+      "content": "import { type Assign, type PolymorphicProps, ark } from '@ark-ui/solid'\nimport type { ComponentProps } from 'solid-js'\nimport { alert } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(alert)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'root',\n)\n\nexport const Content = withContext<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'content',\n)\n\nexport const Description = withContext<Assign<HTMLStyledProps<'div'>, PolymorphicProps<'div'>>>(\n  ark.div,\n  'description',\n)\n\nexport const Icon = withContext<Assign<HTMLStyledProps<'svg'>, PolymorphicProps<'svg'>>>(\n  ark.svg,\n  'icon',\n)\n\nexport const Title = withContext<Assign<HTMLStyledProps<'h5'>, PolymorphicProps<'h5'>>>(\n  ark.h5,\n  'title',\n)\n"
+    },
+    { "file": "alert.tsx", "content": "export * as Alert from './styled/alert'\n" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "toggle-group",
+  "name": "Toggle Group",
+  "variants": [
+    {
+      "file": "styled/toggle-group.tsx",
+      "content": "'use client'\nimport type { Assign } from '@ark-ui/react'\nimport { ToggleGroup } from '@ark-ui/react/toggle-group'\nimport { type ToggleGroupVariantProps, toggleGroup } from 'styled-system/recipes'\nimport type { ComponentProps, HTMLStyledProps } from 'styled-system/types'\nimport { createStyleContext } from './utils/create-style-context'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport type RootProviderProps = ComponentProps<typeof RootProvider>\nexport const RootProvider = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, ToggleGroup.RootProviderBaseProps>, ToggleGroupVariantProps>\n>(ToggleGroup.RootProvider, 'root')\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider<\n  HTMLDivElement,\n  Assign<Assign<HTMLStyledProps<'div'>, ToggleGroup.RootBaseProps>, ToggleGroupVariantProps>\n>(ToggleGroup.Root, 'root')\n\nexport const Item = withContext<\n  HTMLButtonElement,\n  Assign<HTMLStyledProps<'button'>, ToggleGroup.ItemBaseProps>\n>(ToggleGroup.Item, 'item')\n\nexport { ToggleGroupContext as Context } from '@ark-ui/react/toggle-group'\n"
+    },
+    {
+      "file": "toggle-group.tsx",
+      "content": "export * as ToggleGroup from './styled/toggle-group'\n"
+    }
+  ]
+}

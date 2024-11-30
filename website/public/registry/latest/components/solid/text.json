@@ -1,0 +1,11 @@
+{
+  "id": "text",
+  "name": "Text",
+  "variants": [
+    {
+      "file": "styled/text.tsx",
+      "content": "import type { ComponentProps, JSX } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\nimport type { StyledComponent } from 'styled-system/types'\n\ntype ParagraphProps = TextVariantProps & { as?: JSX.Element }\n\nexport type TextProps = ComponentProps<typeof Text>\nexport const Text = styled('p', text) as StyledComponent<'p', ParagraphProps>\n"
+    },
+    { "file": "text.tsx", "content": "export { Text, type TextProps } from './styled/text'\n" }
+  ]
+}

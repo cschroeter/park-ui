@@ -1,0 +1,14 @@
+{
+  "id": "heading",
+  "name": "Heading",
+  "variants": [
+    {
+      "file": "styled/heading.tsx",
+      "content": "import { styled } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\nimport type { ComponentProps, StyledComponent } from 'styled-system/types'\n\ntype TextProps = TextVariantProps & { as?: React.ElementType }\n\nexport type HeadingProps = ComponentProps<typeof Heading>\nexport const Heading = styled('h2', text, {\n  defaultProps: { variant: 'heading' },\n}) as StyledComponent<'h2', TextProps>\n"
+    },
+    {
+      "file": "heading.tsx",
+      "content": "export { Heading, type HeadingProps } from './styled/heading'\n"
+    }
+  ]
+}

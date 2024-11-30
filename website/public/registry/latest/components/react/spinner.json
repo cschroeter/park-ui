@@ -1,0 +1,14 @@
+{
+  "id": "spinner",
+  "name": "Spinner",
+  "variants": [
+    {
+      "file": "styled/spinner.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { spinner } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type SpinnerProps = ComponentProps<typeof Spinner>\nexport const Spinner = styled(ark.div, spinner)\n"
+    },
+    {
+      "file": "spinner.tsx",
+      "content": "import { forwardRef } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { Spinner as StyledSpinner, type SpinnerProps as StyledSpinnerProps } from './styled/spinner'\n\nexport interface SpinnerProps extends StyledSpinnerProps {\n  /**\n   * For accessibility, it is important to add a fallback loading text.\n   * This text will be visible to screen readers.\n   * @default \"Loading...\"\n   */\n  label?: string\n}\n\nexport const Spinner = forwardRef<HTMLDivElement, SpinnerProps>((props, ref) => {\n  const { label = 'Loading...', ...rest } = props\n\n  return (\n    <StyledSpinner\n      ref={ref}\n      borderBottomColor=\"transparent\"\n      borderLeftColor=\"transparent\"\n      {...rest}\n    >\n      {label && <styled.span srOnly>{label}</styled.span>}\n    </StyledSpinner>\n  )\n})\n\nSpinner.displayName = 'Spinner'\n"
+    }
+  ]
+}
