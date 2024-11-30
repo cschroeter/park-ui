@@ -31,7 +31,7 @@ export const ComponentPlayground = async () => {
           }),
         ),
         Effect.flatMap((code) =>
-          Effect.promise(() => highlight(code, framework)).pipe(
+          Effect.promise(() => highlight(code, framework === 'vue' ? 'vue' : 'tsx')).pipe(
             Effect.map((html) => ({
               code,
               html,

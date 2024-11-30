@@ -2,11 +2,11 @@ import { createHighlighter } from 'shiki'
 
 const highlighter = createHighlighter({
   themes: ['github-dark-default'],
-  langs: ['vue', 'tsx'],
+  langs: ['vue', 'tsx', 'bash', 'json', 'txt'],
 })
 
-export const highlight = async (code: string, framework?: string) =>
+export const highlight = async (code: string, lang: string) =>
   (await highlighter).codeToHtml(code, {
-    lang: framework === 'vue' ? 'vue' : 'tsx',
+    lang,
     theme: 'github-dark-default',
   })

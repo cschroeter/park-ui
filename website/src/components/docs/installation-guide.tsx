@@ -9,7 +9,7 @@ export const InstallationGuide = async () => {
   const { component } = getServerContext()
 
   const code = `npx @park-ui/cli components add ${component}`
-  const html = await highlight(code)
+  const html = await highlight(code, 'bash')
 
   return (
     <Tabs.Root defaultValue="cli">

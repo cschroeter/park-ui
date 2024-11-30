@@ -16,7 +16,7 @@ export const ThemeConfigDialog = () => {
 
   useEffect(() => {
     const highlightConfig = async () => {
-      const html = await highlight(getConfig())
+      const html = await highlight(getConfig(), 'ts')
       setHtml(html)
     }
     highlightConfig()

@@ -17,7 +17,7 @@ export const Recipe = async () => {
     }),
     Effect.catchAll(() => Effect.succeed('Not yet available')),
     Effect.flatMap((code) =>
-      Effect.promise(() => highlight(code)).pipe(
+      Effect.promise(() => highlight(code, 'ts')).pipe(
         Effect.map((html) => ({
           code,
           html,

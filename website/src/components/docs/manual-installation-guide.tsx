@@ -47,7 +47,9 @@ export const ManualIntallationGuide = async () => {
           pipe(
             Effect.forEach(component.variants, (variant) =>
               pipe(
-                Effect.promise(() => highlight(variant.content)),
+                Effect.promise(() =>
+                  highlight(variant.content, framework === 'vue' ? 'vue' : 'tsx'),
+                ),
                 Effect.map((html) => ({
                   file: variant.file,
                   label: framework,
