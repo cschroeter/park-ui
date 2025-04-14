@@ -1,4 +1,4 @@
-import { type Radius, radii } from '@park-ui/panda-preset'
+import { type Radius, radii } from '@dcousineau/park-ui-panda-preset'
 import { Slider } from '~/components/ui/slider'
 
 interface Props {

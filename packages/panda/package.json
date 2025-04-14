@@ -1,6 +1,6 @@
 {
-  "name": "@park-ui/panda-preset",
-  "version": "0.43.1",
+  "name": "@dcousineau/park-ui-panda-preset",
+  "version": "0.43.3",
   "description": "Panda CSS Preset for Park UI",
   "keywords": ["Ark UI", "Panda CSS", "Preset", "Park UI"],
   "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
@@ -21,9 +21,7 @@
     "build": "tsup",
     "release-it": "release-it",
     "lint": "biome lint ./src",
-    "typecheck": "tsc",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
@@ -32,7 +30,6 @@
   "devDependencies": {
     "@pandacss/dev": "0.48.0",
     "@release-it/keep-a-changelog": "5.0.0",
-    "clean-package": "2.2.0",
     "release-it": "17.10.0",
     "tsup": "8.3.5"
   },
@@ -43,7 +40,7 @@
   "main": "src/index.ts",
   "module": "src/index.ts",
   "types": "src/index.ts",
-  "files": ["dist"],
+  "files": ["dist", "src"],
   "exports": {
     ".": {
       "import": {

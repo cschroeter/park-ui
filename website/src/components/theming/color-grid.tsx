@@ -1,4 +1,4 @@
-import { accentColors, grayColors } from '@park-ui/panda-preset'
+import { accentColors, grayColors } from '@dcousineau/park-ui-panda-preset'
 import { Stack } from 'styled-system/jsx'
 import { match } from 'ts-pattern'
 import { Text } from '~/components/ui/text'

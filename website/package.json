@@ -22,7 +22,7 @@
     "@effect/platform": "0.69.28",
     "@icons-pack/react-simple-icons": "10.2.0",
     "@pandacss/dev": "0.48.0",
-    "@park-ui/panda-preset": "workspace:*",
+    "@dcousineau/park-ui-panda-preset": "workspace:*",
     "@prisma/client": "6.0.0",
     "@types/file-saver": "2.0.7",
     "@types/node": "22.10.1",

@@ -7,4 +7,4 @@ const meta: Meta = {
 
 export default meta
 
-export const Base = () => <Code>@park-ui/panda-preset</Code>
+export const Base = () => <Code>@dcousineau/park-ui-panda-preset</Code>

@@ -1,4 +1,4 @@
-// import { createSemanticTokens } from '@park-ui/panda-preset/src/theme/semantic-tokens'
+// import { createSemanticTokens } from '@dcousineau/park-ui-panda-preset/src/theme/semantic-tokens'
 import type { Token } from 'styled-system/tokens'
 // import { match } from 'ts-pattern'
 

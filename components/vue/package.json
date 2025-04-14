@@ -13,7 +13,7 @@
     "@ark-ui/vue": "4.4.2",
     "@histoire/plugin-vue": "0.17.17",
     "@pandacss/dev": "0.48.0",
-    "@park-ui/panda-preset": "workspace:*",
+    "@dcousineau/park-ui-panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.2.1",
     "@vitejs/plugin-vue-jsx": "4.1.1",
     "histoire": "0.17.17",

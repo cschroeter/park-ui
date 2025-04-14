@@ -1,4 +1,4 @@
-import { createRadii } from '@park-ui/panda-preset/utils'
+import { createRadii } from '@dcousineau/park-ui-panda-preset/utils'
 import { Flex, Grid } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
 import { Text } from '~/components/ui/text'

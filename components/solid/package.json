@@ -12,7 +12,7 @@
   "dependencies": {
     "@ark-ui/solid": "4.5.1",
     "@pandacss/dev": "0.48.0",
-    "@park-ui/panda-preset": "workspace:*",
+    "@dcousineau/park-ui-panda-preset": "workspace:*",
     "@storybook/addon-a11y": "8.4.6",
     "@storybook/addon-essentials": "8.4.6",
     "@storybook/addon-themes": "8.4.6",

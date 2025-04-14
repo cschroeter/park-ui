@@ -1,5 +1,5 @@
-import type { AccentColor, ColorPalette, GrayColor, Radius } from '@park-ui/panda-preset'
-import { createVariables } from '@park-ui/panda-preset/utils'
+import type { AccentColor, ColorPalette, GrayColor, Radius } from '@dcousineau/park-ui-panda-preset'
+import { createVariables } from '@dcousineau/park-ui-panda-preset/utils'
 import { Match } from 'effect'
 import { useEffect } from 'react'
 import { token } from 'styled-system/tokens'
@@ -9,37 +9,37 @@ import { type Font, fonts } from '~/app/fonts'
 
 const loadColorPalette = async (color: string): Promise<ColorPalette> => {
   const palettes: Record<string, () => Promise<{ default: ColorPalette }>> = {
-    amber: () => import('@park-ui/panda-preset/colors/amber'),
-    blue: () => import('@park-ui/panda-preset/colors/blue'),
-    bronze: () => import('@park-ui/panda-preset/colors/bronze'),
-    brown: () => import('@park-ui/panda-preset/colors/brown'),
-    crimson: () => import('@park-ui/panda-preset/colors/crimson'),
-    cyan: () => import('@park-ui/panda-preset/colors/cyan'),
-    gold: () => import('@park-ui/panda-preset/colors/gold'),
-    grass: () => import('@park-ui/panda-preset/colors/grass'),
-    green: () => import('@park-ui/panda-preset/colors/green'),
-    indigo: () => import('@park-ui/panda-preset/colors/indigo'),
-    iris: () => import('@park-ui/panda-preset/colors/iris'),
-    jade: () => import('@park-ui/panda-preset/colors/jade'),
-    lime: () => import('@park-ui/panda-preset/colors/lime'),
-    mauve: () => import('@park-ui/panda-preset/colors/mauve'),
-    mint: () => import('@park-ui/panda-preset/colors/mint'),
-    neutral: () => import('@park-ui/panda-preset/colors/neutral'),
-    olive: () => import('@park-ui/panda-preset/colors/olive'),
-    orange: () => import('@park-ui/panda-preset/colors/orange'),
-    pink: () => import('@park-ui/panda-preset/colors/pink'),
-    plum: () => import('@park-ui/panda-preset/colors/plum'),
-    purple: () => import('@park-ui/panda-preset/colors/purple'),
-    red: () => import('@park-ui/panda-preset/colors/red'),
-    ruby: () => import('@park-ui/panda-preset/colors/ruby'),
-    sage: () => import('@park-ui/panda-preset/colors/sage'),
-    sand: () => import('@park-ui/panda-preset/colors/sand'),
-    sky: () => import('@park-ui/panda-preset/colors/sky'),
-    slate: () => import('@park-ui/panda-preset/colors/slate'),
-    teal: () => import('@park-ui/panda-preset/colors/teal'),
-    tomato: () => import('@park-ui/panda-preset/colors/tomato'),
-    violet: () => import('@park-ui/panda-preset/colors/violet'),
-    yellow: () => import('@park-ui/panda-preset/colors/yellow'),
+    amber: () => import('@dcousineau/park-ui-panda-preset/colors/amber'),
+    blue: () => import('@dcousineau/park-ui-panda-preset/colors/blue'),
+    bronze: () => import('@dcousineau/park-ui-panda-preset/colors/bronze'),
+    brown: () => import('@dcousineau/park-ui-panda-preset/colors/brown'),
+    crimson: () => import('@dcousineau/park-ui-panda-preset/colors/crimson'),
+    cyan: () => import('@dcousineau/park-ui-panda-preset/colors/cyan'),
+    gold: () => import('@dcousineau/park-ui-panda-preset/colors/gold'),
+    grass: () => import('@dcousineau/park-ui-panda-preset/colors/grass'),
+    green: () => import('@dcousineau/park-ui-panda-preset/colors/green'),
+    indigo: () => import('@dcousineau/park-ui-panda-preset/colors/indigo'),
+    iris: () => import('@dcousineau/park-ui-panda-preset/colors/iris'),
+    jade: () => import('@dcousineau/park-ui-panda-preset/colors/jade'),
+    lime: () => import('@dcousineau/park-ui-panda-preset/colors/lime'),
+    mauve: () => import('@dcousineau/park-ui-panda-preset/colors/mauve'),
+    mint: () => import('@dcousineau/park-ui-panda-preset/colors/mint'),
+    neutral: () => import('@dcousineau/park-ui-panda-preset/colors/neutral'),
+    olive: () => import('@dcousineau/park-ui-panda-preset/colors/olive'),
+    orange: () => import('@dcousineau/park-ui-panda-preset/colors/orange'),
+    pink: () => import('@dcousineau/park-ui-panda-preset/colors/pink'),
+    plum: () => import('@dcousineau/park-ui-panda-preset/colors/plum'),
+    purple: () => import('@dcousineau/park-ui-panda-preset/colors/purple'),
+    red: () => import('@dcousineau/park-ui-panda-preset/colors/red'),
+    ruby: () => import('@dcousineau/park-ui-panda-preset/colors/ruby'),
+    sage: () => import('@dcousineau/park-ui-panda-preset/colors/sage'),
+    sand: () => import('@dcousineau/park-ui-panda-preset/colors/sand'),
+    sky: () => import('@dcousineau/park-ui-panda-preset/colors/sky'),
+    slate: () => import('@dcousineau/park-ui-panda-preset/colors/slate'),
+    teal: () => import('@dcousineau/park-ui-panda-preset/colors/teal'),
+    tomato: () => import('@dcousineau/park-ui-panda-preset/colors/tomato'),
+    violet: () => import('@dcousineau/park-ui-panda-preset/colors/violet'),
+    yellow: () => import('@dcousineau/park-ui-panda-preset/colors/yellow'),
   }
 
   const loader = palettes[color]
@@ -220,7 +220,7 @@ const useThemeStore = create<State & Actions>()(
 )
 
 const baseConfig = `import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/panda-preset'
+import { createPreset } from '@dcousineau/park-ui-panda-preset'
 
 export default defineConfig({
   preflight: true,

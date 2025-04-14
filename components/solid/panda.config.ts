@@ -1,7 +1,7 @@
+import { createPreset } from '@dcousineau/park-ui-panda-preset'
+import amber from '@dcousineau/park-ui-panda-preset/colors/amber'
+import sand from '@dcousineau/park-ui-panda-preset/colors/sand'
 import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/panda-preset'
-import amber from '@park-ui/panda-preset/colors/amber'
-import sand from '@park-ui/panda-preset/colors/sand'
 
 export default defineConfig({
   preflight: true,
