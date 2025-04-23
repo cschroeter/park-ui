@@ -19,43 +19,41 @@ export const Base = () => {
     'https://tinyurl.com/yp4rfum7',
   ]
   return (
-    <Carousel.Root>
-      <Carousel.Viewport>
-        <Carousel.ItemGroup>
+    <Carousel.Root slideCount={images.length}>
+      <Carousel.ItemGroup>
+        <Index each={images}>
+          {(image, index) => (
+            <Carousel.Item index={index}>
+              <img
+                src={image()}
+                alt={`Slide ${index}`}
+                style={{ height: '398px', width: '100%', 'object-fit': 'cover' }}
+              />
+            </Carousel.Item>
+          )}
+        </Index>
+      </Carousel.ItemGroup>
+      <Carousel.Control>
+        <Carousel.PrevTrigger
+          asChild={(props) => <IconButton {...props()} size="sm" variant="link" />}
+          aria-label="Previous Slide"
+        >
+          <ChevronLeftIcon />
+        </Carousel.PrevTrigger>
+        <Carousel.IndicatorGroup>
           <Index each={images}>
-            {(image, index) => (
-              <Carousel.Item index={index}>
-                <img
-                  src={image()}
-                  alt={`Slide ${index}`}
-                  style={{ height: '398px', width: '100%', 'object-fit': 'cover' }}
-                />
-              </Carousel.Item>
+            {(_, index) => (
+              <Carousel.Indicator index={index} aria-label={`Goto slide ${index + 1}`} />
             )}
           </Index>
-        </Carousel.ItemGroup>
-        <Carousel.Control>
-          <Carousel.PrevTrigger
-            asChild={(props) => <IconButton {...props()} size="sm" variant="link" />}
-            aria-label="Previous Slide"
-          >
-            <ChevronLeftIcon />
-          </Carousel.PrevTrigger>
-          <Carousel.IndicatorGroup>
-            <Index each={images}>
-              {(_, index) => (
-                <Carousel.Indicator index={index} aria-label={`Goto slide ${index + 1}`} />
-              )}
-            </Index>
-          </Carousel.IndicatorGroup>
-          <Carousel.NextTrigger
-            asChild={(props) => <IconButton {...props()} size="sm" variant="link" />}
-            aria-label="Next Slide"
-          >
-            <ChevronRightIcon />
-          </Carousel.NextTrigger>
-        </Carousel.Control>
-      </Carousel.Viewport>
+        </Carousel.IndicatorGroup>
+        <Carousel.NextTrigger
+          asChild={(props) => <IconButton {...props()} size="sm" variant="link" />}
+          aria-label="Next Slide"
+        >
+          <ChevronRightIcon />
+        </Carousel.NextTrigger>
+      </Carousel.Control>
     </Carousel.Root>
   )
 }

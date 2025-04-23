@@ -13,44 +13,42 @@ export const Demo = (props: Carousel.RootProps) => {
   ]
   return (
     <Carousel.Root {...props}>
-      <Carousel.Viewport>
-        <Carousel.ItemGroup>
+      <Carousel.ItemGroup>
+        <For each={images}>
+          {(image, index) => (
+            <Carousel.Item index={index()}>
+              <img
+                src={image}
+                alt={`Slide ${index()}`}
+                style={{ height: '398px', width: '100%', 'object-fit': 'cover' }}
+              />
+            </Carousel.Item>
+          )}
+        </For>
+      </Carousel.ItemGroup>
+      <Carousel.Control>
+        <Carousel.PrevTrigger
+          asChild={(triggerProps) => (
+            <IconButton {...triggerProps()} size="sm" variant="link" aria-label="Previous Slide">
+              <ChevronLeftIcon />
+            </IconButton>
+          )}
+        />
+        <Carousel.IndicatorGroup>
           <For each={images}>
-            {(image, index) => (
-              <Carousel.Item index={index()}>
-                <img
-                  src={image}
-                  alt={`Slide ${index()}`}
-                  style={{ height: '398px', width: '100%', 'object-fit': 'cover' }}
-                />
-              </Carousel.Item>
+            {(_, index) => (
+              <Carousel.Indicator index={index()} aria-label={`Goto slide ${index() + 1}`} />
             )}
           </For>
-        </Carousel.ItemGroup>
-        <Carousel.Control>
-          <Carousel.PrevTrigger
-            asChild={(triggerProps) => (
-              <IconButton {...triggerProps()} size="sm" variant="link" aria-label="Previous Slide">
-                <ChevronLeftIcon />
-              </IconButton>
-            )}
-          />
-          <Carousel.IndicatorGroup>
-            <For each={images}>
-              {(_, index) => (
-                <Carousel.Indicator index={index()} aria-label={`Goto slide ${index() + 1}`} />
-              )}
-            </For>
-          </Carousel.IndicatorGroup>
-          <Carousel.NextTrigger
-            asChild={(triggerProps) => (
-              <IconButton {...triggerProps()} size="sm" variant="link" aria-label="Next Slide">
-                <ChevronRightIcon />
-              </IconButton>
-            )}
-          />
-        </Carousel.Control>
-      </Carousel.Viewport>
+        </Carousel.IndicatorGroup>
+        <Carousel.NextTrigger
+          asChild={(triggerProps) => (
+            <IconButton {...triggerProps()} size="sm" variant="link" aria-label="Next Slide">
+              <ChevronRightIcon />
+            </IconButton>
+          )}
+        />
+      </Carousel.Control>
     </Carousel.Root>
   )
 }

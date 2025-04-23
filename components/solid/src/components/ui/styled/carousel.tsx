@@ -47,9 +47,4 @@ export const PrevTrigger = withContext<
   Assign<HTMLStyledProps<'button'>, Carousel.PrevTriggerBaseProps>
 >(Carousel.PrevTrigger, 'prevTrigger')
 
-export const Viewport = withContext<Assign<HTMLStyledProps<'div'>, Carousel.ViewportBaseProps>>(
-  Carousel.Viewport,
-  'viewport',
-)
-
 export { CarouselContext as Context } from '@ark-ui/solid'
