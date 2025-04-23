@@ -22,13 +22,13 @@
   },
   "dependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/bun": "1.1.14",
-    "lefthook": "1.8.4",
-    "turbo": "2.3.3",
-    "typescript": "5.7.2",
-    "vercel": "39.1.2",
+    "@types/bun": "1.2.10",
+    "lefthook": "1.11.11",
+    "turbo": "2.5.1",
+    "typescript": "5.8.3",
+    "vercel": "41.6.2",
     "vercel-submodules": "1.0.10"
   },
-  "packageManager": "bun@1.1.38",
+  "packageManager": "bun@1.2.10",
   "trustedDependencies": ["@park-ui/website"]
 }
