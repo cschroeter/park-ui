@@ -11,6 +11,20 @@ const nextConfig = {
       '../packages/panda/src/theme/recipes/*',
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/docs',
+        destination: '/docs/overview/introduction',
+        permanent: false,
+      },
+      {
+        source: '/:framework/docs/:slug*',
+        destination: '/docs/:slug*',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 const isDev = process.argv.indexOf('dev') !== -1

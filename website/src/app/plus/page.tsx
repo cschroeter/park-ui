@@ -29,6 +29,3 @@ export const metadata: Metadata = {
   title: 'Park UI Plus',
   description: 'Unlock exclusive blocks and support the development of Park UI.',
 }
-
-export const generateStaticParams = () =>
-  ['react', 'solid', 'vue'].map((framework) => ({ framework }))

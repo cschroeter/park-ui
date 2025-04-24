@@ -3,10 +3,6 @@ import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cva } from 'styled-system/css'
 
-interface Props {
-  framework: string
-}
-
 const link = cva({
   base: {
     borderBottomWidth: '1px',
@@ -26,23 +22,22 @@ const link = cva({
   },
 })()
 
-export const MobileNavbarLinks = (props: Props) => {
-  const { framework } = props
+export const MobileNavbarLinks = () => {
   const pathname = usePathname()
 
   return (
     <>
       <NextLink
-        href={`/${framework}/docs/overview/introduction`}
+        href="/docs"
         className={link}
-        aria-current={pathname.startsWith(`/${framework}/docs`) ? 'page' : undefined}
+        aria-current={pathname.startsWith('/docs') ? 'page' : undefined}
       >
         Docs
       </NextLink>
       <NextLink
-        href={`/${framework}/blocks`}
+        href="/blocks"
         className={link}
-        aria-current={pathname.startsWith(`/${framework}/blocks`) ? 'page' : undefined}
+        aria-current={pathname.startsWith('/blocks') ? 'page' : undefined}
       >
         Blocks
       </NextLink>

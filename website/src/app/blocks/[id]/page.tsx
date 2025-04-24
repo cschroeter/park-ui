@@ -39,9 +39,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     ? {
         title: block.name,
         description: block.description,
-        alternates: {
-          canonical: `https://park-ui.com/react/blocks/${block.id}`,
-        },
       }
     : {}
 }

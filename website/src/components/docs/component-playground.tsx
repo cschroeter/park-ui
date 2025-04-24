@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { Effect, pipe } from 'effect'
 import { Box, Divider } from 'styled-system/jsx'
+import { getFramework } from '~/lib/framework'
 import { getServerContext } from '~/lib/server-context'
 import { highlight } from '~/lib/shiki'
 import { CodePreviewTabs } from '../code-preview-tabs'
@@ -10,6 +11,7 @@ import { controls } from '.velite'
 
 export const ComponentPlayground = async () => {
   const { component } = getServerContext()
+  const framework = await getFramework()
   const defaultControls = { component, props: {} }
 
   const componentControls =
@@ -56,7 +58,12 @@ export const ComponentPlayground = async () => {
     <Box borderWidth="1px" borderRadius="l3" overflow="hidden" mt="12">
       <ComponentPreview controls={componentControls} />
       <Divider />
-      <CodePreviewTabs defaultValue="react" examples={demos} border="none" borderTopRadius="none" />
+      <CodePreviewTabs
+        defaultValue={framework}
+        examples={demos}
+        border="none"
+        borderTopRadius="none"
+      />
     </Box>
   )
 }

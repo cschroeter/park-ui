@@ -3,13 +3,12 @@ import { HStack } from 'styled-system/jsx'
 import { Badge } from '~/components/ui/badge'
 
 interface Props {
-  framework: string
   href?: string | undefined
 }
 
 export const DocumentationBadges = (props: Props) => {
-  const { framework, href } = props
-  const docs = `https://ark-ui.com/${framework}/docs${href}`
+  const { href } = props
+  const docs = `https://ark-ui.com/docs/${href}`
 
   return href ? (
     <HStack gap="2">

@@ -14,7 +14,7 @@ export const Hero = () => {
     <Stack gap={{ base: '8', md: '12' }} maxW={{ md: '2xl' }}>
       <Stack gap={{ base: '4', md: '6' }}>
         <Stack gap="4">
-          <NextLink href="/react/docs/overview/figma">
+          <NextLink href="/docs/overview/figma">
             <Badge size="lg" variant="outline">
               <SiFigma /> Checkout the new Park UI Figma Kit <ArrowRightIcon />
             </Badge>
@@ -30,7 +30,7 @@ export const Hero = () => {
       </Stack>
       <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
         <Button asChild size={{ base: 'xl', md: '2xl' }}>
-          <NextLink href="/react/docs/overview/introduction">
+          <NextLink href="/docs/overview/introduction">
             Get Started <ArrowRightIcon />
           </NextLink>
         </Button>

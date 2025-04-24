@@ -1,25 +1,29 @@
 'use client'
 import { CheckIcon, ChevronDownIcon } from 'lucide-react'
-import { useParams, usePathname, useRouter } from 'next/navigation'
 import { Icon } from '~/components/ui/icon'
 import { Select, createListCollection } from '~/components/ui/select'
 
-export const FrameworkSelect = () => {
-  const router = useRouter()
-  const params = useParams<{ framework: string }>()
-  const pathname = usePathname()
-  const collection = createListCollection({
-    items: [
-      { label: 'React', value: 'react' },
-      { label: 'Solid', value: 'solid' },
-      { label: 'Vue', value: 'vue' },
-    ],
-  })
+const collection = createListCollection({
+  items: [
+    { label: 'React', value: 'react' },
+    { label: 'Solid', value: 'solid' },
+    { label: 'Vue', value: 'vue' },
+  ],
+})
 
+interface Props {
+  framework: string
+}
+
+export const FrameworkSelect = (props: Props) => {
+  const { framework } = props
   return (
     <Select.Root
-      defaultValue={[params.framework ?? 'react']}
-      onValueChange={(e) => router.push(pathname.replace(params.framework, e.value[0]))}
+      defaultValue={[framework]}
+      onValueChange={(e) => {
+        document.cookie = `framework=${e.value[0]}; path=/; max-age=31536000;`
+        window.location.reload()
+      }}
       size={{ base: 'md', md: 'sm' }}
       collection={collection}
       variant="ghost"

@@ -4,6 +4,7 @@ import { Array, Effect, pipe } from 'effect'
 import { Code } from '~/components/ui/code'
 import { Step, Steps } from '~/components/ui/stepper'
 import { Text } from '~/components/ui/text'
+import { getFramework } from '~/lib/framework'
 import { getServerContext } from '~/lib/server-context'
 import { highlight } from '~/lib/shiki'
 import { CodePreviewTabs } from '../code-preview-tabs'
@@ -21,7 +22,8 @@ interface Component {
 }
 
 export const ManualIntallationGuide = async () => {
-  const { framework, component } = getServerContext()
+  const { component } = getServerContext()
+  const framework = await getFramework()
 
   const programm = pipe(
     Effect.forEach(['react', 'solid', 'vue'], (framework) =>

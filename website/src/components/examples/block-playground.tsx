@@ -10,7 +10,7 @@ import { Tabs } from '~/components/ui/tabs'
 import { Text } from '~/components/ui/text'
 import { Tooltip } from '~/components/ui/tooltip'
 import { findSourceFiles } from '~/lib/blocks'
-import { getServerContext } from '~/lib/server-context'
+import { getFramework } from '~/lib/framework'
 import { ResizableIFrame } from '../resizable-iframe'
 import { BlockCodePreview } from './block-code-preview'
 import type { Blocks } from '.velite'
@@ -26,7 +26,7 @@ interface Props {
 
 export const BlockPlayground = async (props: Props) => {
   const { block, variant } = props
-  const { framework } = getServerContext()
+  const framework = await getFramework()
 
   const Block = dynamic(() =>
     import(`~/components/blocks/${block.id}/${variant.id}/example`)
@@ -79,7 +79,7 @@ export const BlockPlayground = async (props: Props) => {
               </Tabs.List>
             ) : (
               <Button variant="outline" asChild>
-                <NextLink href={`/${framework}/plus`}>
+                <NextLink href="/plus">
                   <LockIcon />
                   Unlock Park UI Plus
                 </NextLink>

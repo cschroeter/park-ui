@@ -10,23 +10,19 @@ import { Prose } from '~/components/ui/prose'
 import { Text } from '~/components/ui/text'
 import { getSidebarGroups } from '~/lib/docs'
 import { getServerContext } from '~/lib/server-context'
-import { capitalize } from '~/lib/string-utils'
 
 interface Props {
-  params: Promise<{ framework: string; slug: string[] }>
+  params: Promise<{ slug: string[] }>
 }
 
 export default async function Page(props: Props) {
   const params = await props.params
-  const currentPage = getPageBySlug(params.slug, params.framework)
+  const currentPage = getPageBySlug(params.slug)
   const nextPage = getNextPage(params.slug)
   const prevPage = getPrevPage(params.slug)
 
   const serverContext = getServerContext()
-  serverContext.framework = params.framework
   serverContext.component = params.slug[1]
-
-  const framework = capitalize(params.framework)
 
   if (currentPage) {
     return (
@@ -38,10 +34,10 @@ export default async function Page(props: Props) {
             </Heading>
             <Text className="lead" color="fg.muted" mb="6">
               {currentPage.id === 'introduction'
-                ? `A ${framework} Component Library built on Ark UI and Panda CSS.`
+                ? 'A Component Library built on Ark UI and Panda CSS.'
                 : currentPage.description}
             </Text>
-            <DocumentationBadges framework={params.framework} href={currentPage.docs} />
+            <DocumentationBadges href={currentPage.docs} />
             <MDXContent code={currentPage.code} />
           </Prose>
           <DocsFooter nextPage={nextPage} prevPage={prevPage} />
@@ -60,19 +56,15 @@ export default async function Page(props: Props) {
 export const generateMetadata = async (props: Props): Promise<Metadata> => {
   const params = await props.params
   const page = getPageBySlug(params.slug)
-  const framework = capitalize(params.framework)
 
   if (page) {
     const description =
       page.id === 'introduction'
-        ? `A ${framework} Component Library built on Ark UI and Panda CSS.`
+        ? 'A Component Library built on Ark UI and Panda CSS.'
         : page.description
     return {
       title: page.title,
       description,
-      alternates: {
-        canonical: `https://park-ui.com/${params.framework}/docs/${params.slug.join('/')}`,
-      },
     }
   }
   return {}
@@ -80,18 +72,9 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
 
 const pages = getSidebarGroups().flat()
 
-export const generateStaticParams = () =>
-  ['react', 'solid', 'vue'].flatMap((framework) =>
-    pages.map((page) => ({ framework, slug: page.slug.split('/') })),
-  )
+export const generateStaticParams = () => pages.map((page) => ({ slug: page.slug.split('/') }))
 
-const getPageBySlug = (slug: string[], framework?: string) => {
-  if (framework) {
-    return pages.find(
-      (page) =>
-        page.slug === slug.join('/') && (page.framework === '*' || page.framework === framework),
-    )
-  }
+const getPageBySlug = (slug: string[]) => {
   return pages.find((page) => page.slug === slug.join('/'))
 }
 

@@ -11,7 +11,7 @@ export const Demo = (props: Carousel.RootProps) => {
     'https://tinyurl.com/yp4rfum7',
   ]
   return (
-    <Carousel.Root {...props}>
+    <Carousel.Root {...props} slideCount={images.length}>
       <Carousel.ItemGroup>
         {images.map((image, index) => (
           <Carousel.Item key={index} index={index}>
