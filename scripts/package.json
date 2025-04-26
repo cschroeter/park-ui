@@ -9,7 +9,7 @@
     "recipes": "bun run src/generators/recipes.ts",
     "postrecipes": "bun biome format --write ../website/public/registry/latest/recipes",
     "colors": "bun run src/generators/colors.ts",
-    "postcolors": "bun biome format --write ../packages/panda/src/colors"
+    "postcolors": "bun biome format --write ../packages/preset/src/colors"
   },
   "dependencies": {
     "@radix-ui/colors": "3.0.0",

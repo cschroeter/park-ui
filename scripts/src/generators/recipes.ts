@@ -7,7 +7,7 @@ import { globby } from 'globby'
  * Reads all the recipes from the theme and generates a JSON file for each recipe.
  */
 const programm = pipe(
-  Effect.promise(() => globby(['../packages/panda/src/theme/recipes/*.ts'])),
+  Effect.promise(() => globby(['../packages/preset/src/theme/recipes/*.ts'])),
   Effect.flatMap((recipes) =>
     Effect.forEach(recipes, (recipe) =>
       pipe(

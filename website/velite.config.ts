@@ -7,7 +7,7 @@ import { defineCollection, defineConfig, s } from 'velite'
 
 const pages = defineCollection({
   name: 'Pages',
-  pattern: ['pages/**/*.mdx', '../../../packages/panda/CHANGELOG.md'],
+  pattern: ['pages/**/*.mdx', '../../../packages/preset/CHANGELOG.md'],
   schema: s
     .object({
       id: s.string(),
