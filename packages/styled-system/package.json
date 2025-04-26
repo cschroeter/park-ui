@@ -1,5 +1,5 @@
 {
-  "name": "@park-ui/styled-system",
+  "name": "styled-system",
   "private": true,
   "scripts": {
     "prepare": "panda codegen --clean"
