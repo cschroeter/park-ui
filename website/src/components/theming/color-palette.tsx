@@ -1,7 +1,7 @@
 'use client'
 import type { AccentColor, GrayColor } from '@park-ui/panda-preset'
 import { Box, Grid, Stack } from 'styled-system/jsx'
-import { token } from 'styled-system/tokens/index.mjs'
+import { token } from 'styled-system/tokens'
 import { Text } from '~/components/ui/text'
 import { useTheme } from '~/lib/use-theme'
 
@@ -24,6 +24,7 @@ export const ColorPalette = (props: Props) => {
             boxShadow="xs"
             aspectRatio={1}
             style={{
+              // @ts-ignore
               background: token.var(`colors.${color ?? accentColor}.${shade}`),
             }}
           />
