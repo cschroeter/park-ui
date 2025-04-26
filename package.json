@@ -23,6 +23,7 @@
   "dependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/bun": "1.2.10",
+    "caniuse-lite": "1.0.30001715",
     "lefthook": "1.11.11",
     "turbo": "2.5.1",
     "typescript": "5.8.3",
@@ -30,5 +31,8 @@
     "vercel-submodules": "1.0.10"
   },
   "packageManager": "bun@1.2.10",
-  "trustedDependencies": ["@park-ui/website"]
+  "trustedDependencies": ["@park-ui/website"],
+  "overrides": {
+    "@pandacss/dev": "0.53.4"
+  }
 }

@@ -3,7 +3,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen --silent",
     "dev": "bun run storybook",
     "format": "prettier --write './src/**/*.vue'",
     "storybook": "histoire dev",
@@ -12,7 +11,7 @@
   "dependencies": {
     "@ark-ui/vue": "5.6.0",
     "@histoire/plugin-vue": "0.17.17",
-    "@pandacss/dev": "0.48.0",
+    "@pandacss/dev": "0.53.4",
     "@park-ui/panda-preset": "workspace:*",
     "@vitejs/plugin-vue": "5.2.1",
     "@vitejs/plugin-vue-jsx": "4.1.1",

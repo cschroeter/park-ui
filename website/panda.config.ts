@@ -31,7 +31,6 @@ import teal from '@park-ui/panda-preset/colors/teal'
 import tomato from '@park-ui/panda-preset/colors/tomato'
 import violet from '@park-ui/panda-preset/colors/violet'
 import yellow from '@park-ui/panda-preset/colors/yellow'
-
 import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({

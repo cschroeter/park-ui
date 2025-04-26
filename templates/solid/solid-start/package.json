@@ -21,8 +21,8 @@
     "vinxi": "0.4.3"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.46.1",
-    "@park-ui/panda-preset": "0.42.0",
+    "@pandacss/dev": "0.53.4",
+    "@park-ui/panda-preset": "0.43.1",
     "typescript": "5.6.3",
     "vite-tsconfig-paths": "5.0.1"
   }

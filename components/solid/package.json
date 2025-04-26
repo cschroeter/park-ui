@@ -3,7 +3,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen --silent",
     "dev": "bun run storybook",
     "lint": "biome lint ./src",
     "storybook": "storybook dev -p 6006",
@@ -11,7 +10,7 @@
   },
   "dependencies": {
     "@ark-ui/solid": "5.6.0",
-    "@pandacss/dev": "0.48.0",
+    "@pandacss/dev": "0.53.4",
     "@park-ui/panda-preset": "workspace:*",
     "@storybook/addon-a11y": "8.4.6",
     "@storybook/addon-essentials": "8.4.6",
