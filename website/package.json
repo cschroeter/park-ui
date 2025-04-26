@@ -4,7 +4,7 @@
   "type": "module",
   "sideEffects": false,
   "scripts": {
-    "prepare": "panda codegen && prisma generate",
+    "prepare": "prisma generate",
     "dev": "next dev",
     "lint": "biome lint ./src",
     "build": "next build",
