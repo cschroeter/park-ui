@@ -8,7 +8,7 @@
     "scripts": "bun run --cwd scripts",
     "web": "bun run --cwd website",
     "cli": "bun run --cwd packages/cli",
-    "panda": "bun run --cwd packages/panda",
+    "panda": "bun run --cwd packages/preset",
     "react": "bun run --cwd components/react",
     "solid": "bun run --cwd components/solid",
     "vue": "bun run --cwd components/vue",
