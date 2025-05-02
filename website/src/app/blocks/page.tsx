@@ -18,7 +18,15 @@ export default async function Page() {
           subHeading="Blocks"
           description="Explore our collection of building blocks to help you design and develop faster."
         />
-        <Grid gridTemplateColumns={{ base: '1fr', sm: '2fr', md: '3fr', xl: '4fr' }} gap="8">
+        <Grid
+          gridTemplateColumns={{
+            base: '1fr',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+            xl: 'repeat(4, 1fr)',
+          }}
+          gap="8"
+        >
           {blocks.map((block) => {
             const Icon = dynamic(() =>
               import(`~/components/icons/blocks/${block.id}`).catch(() => NotFoundIcon),
