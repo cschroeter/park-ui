@@ -7,8 +7,8 @@ import { IconButton } from '~/components/ui/icon-button'
 export const Demo = (props: FileUpload.RootProps) => {
   return (
     <FileUpload.Root maxFiles={3} {...props}>
+      <FileUpload.Label>Drop your files here</FileUpload.Label>
       <FileUpload.Dropzone>
-        <FileUpload.Label>Drop your files here</FileUpload.Label>
         <FileUpload.Trigger asChild>
           <Button size="sm">Open Dialog</Button>
         </FileUpload.Trigger>
