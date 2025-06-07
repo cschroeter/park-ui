@@ -126,6 +126,33 @@ export default defineConfig({
 
 > You don't have to use color tokens. You can also use simple color values like `#000` or `black`.
 
+## Importing secondary color palettes
+
+Whilst Park UI will always use a the accent color, you may want to also include another color palette. A common use case for this might be wanting green for success states
+
+```ts
+import { defineConfig } from '@pandacss/dev'
+import green from '@park-ui/panda-preset/colors/green';
+
+export default defineConfig({
+  ...
+  theme: {
+    extend: {
+      tokens: {
+        colors: {
+          green: green.tokens,
+        },
+      },
+      semanticTokens: {
+        colors: {
+          green: green.semanticTokens,
+        }
+      }
+    }
+  }
+ });
+```
+
 ## Recipes  
 
 As of `v0.44`, the `@park-ui/panda-preset` no longer includes component recipes.
