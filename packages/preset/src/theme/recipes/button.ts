@@ -81,12 +81,12 @@ export const button = defineRecipe({
           outlineOffset: '2px',
         },
         _selected: {
-          background: 'accent.default',
-          borderColor: 'accent.default',
-          color: 'accent.fg',
+          background: 'colorPalette.default',
+          borderColor: 'colorPalette.default',
+          color: 'colorPalette.fg',
           _hover: {
-            background: 'accent.emphasized',
-            borderColor: 'accent.emphasized',
+            background: 'colorPalette.emphasized',
+            borderColor: 'colorPalette.emphasized',
           },
         },
       },
