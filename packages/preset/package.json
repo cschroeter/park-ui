@@ -77,7 +77,7 @@
     }
   },
   "tsup": {
-    "entry": ["src/index.ts", "src/colors/*.ts", "src/utils/index.ts"],
+    "entry": ["./src/index.ts", "./src/colors/*.ts", "./src/utils/index.ts"],
     "clean": true,
     "dts": true,
     "sourcemap": true,
