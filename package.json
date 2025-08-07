@@ -9,6 +9,9 @@
   ],
   "scripts": {
     "postinstall": "lefthook install",
+    "lint": "bun run --filter='*' lint",
+    "test": "bun run --filter='*' test",
+    "typecheck": "bun run --filter='*' typecheck",
     "react": "bun run --cwd components/react",
     "web": "bun run --cwd website"
   },
