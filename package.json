@@ -8,12 +8,14 @@
     "website"
   ],
   "scripts": {
+    "postinstall": "lefthook install",
     "react": "bun run --cwd components/react",
     "web": "bun run --cwd website"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
-    "@types/bun": "1.2.19"
+    "@types/bun": "1.2.19",
+    "lefthook": "1.12.2"
   },
   "trustedDependencies": [
     "@park-ui/styled-system"

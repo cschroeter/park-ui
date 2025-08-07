@@ -1,7 +1,7 @@
 import { Box, Stack } from '@park-ui/styled-system/jsx'
+import { getSidebarGroups } from '~/lib/docs'
 import { SidebarGroup } from './sidebar-group'
 import { SidebarLink } from './sidebar-link'
-import { getSidebarGroups } from '~/lib/docs'
 
 export const Sidebar = () => {
   const groups = getSidebarGroups()

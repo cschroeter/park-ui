@@ -23,7 +23,9 @@ export const SidebarMobileContainer = (props: Props) => {
       zIndex="sticky"
     >
       <HStack h="full" textStyle="sm" color="fg.muted">
-        <button onClick={() => setOpen(!open)}>Open {open.toString()}</button>
+        <button type="button" onClick={() => setOpen(!open)}>
+          Open {open.toString()}
+        </button>
         <span>Components</span>
         <span>Avatar</span>
       </HStack>

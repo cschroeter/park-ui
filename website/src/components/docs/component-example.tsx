@@ -1,7 +1,7 @@
-import { kebabCase, pascalCase } from 'change-case'
-import dynamic from 'next/dynamic'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import { kebabCase, pascalCase } from 'change-case'
+import dynamic from 'next/dynamic'
 import { getServerContext } from '~/server-context'
 
 interface Props {
