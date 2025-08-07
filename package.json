@@ -4,6 +4,7 @@
   "private": true,
   "workspaces": [
     "components/*",
+    "demo/*",
     "packages/*",
     "website"
   ],
