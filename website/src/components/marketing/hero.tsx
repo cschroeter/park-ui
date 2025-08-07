@@ -1,4 +1,4 @@
-import { SiFigma, SiReact, SiVuedotjs } from '@icons-pack/react-simple-icons'
+import { SiFigma, SiReact, SiSvelte, SiVuedotjs } from '@icons-pack/react-simple-icons'
 import { Badge, Button, Heading, Text } from '@park-ui/react'
 import { Box, HStack, Stack } from '@park-ui/styled-system/jsx'
 import { ArrowRightIcon } from 'lucide-react'
@@ -40,7 +40,7 @@ export const Hero = () => {
           {[
             { framework: 'React', icon: <SiReact /> },
             { framework: 'Vue', icon: <SiVuedotjs /> },
-            // { framework: 'Svelte', icon: <SiSvelte /> },
+            { framework: 'Svelte', icon: <SiSvelte /> },
           ].map(({ framework, icon }) => (
             <HStack key={framework} gap="2">
               <Box fontSize="3xl">{icon}</Box>
