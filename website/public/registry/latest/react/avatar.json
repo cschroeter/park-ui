@@ -1,0 +1,12 @@
+{
+  "id": "avatar",
+  "name": "Avatar",
+  "component": {
+    "content": "",
+    "export": "export * as Avatar from './avatar"
+  },
+  "recipe": {
+    "content": "",
+    "isSlotRecipe": true
+  }
+}
