@@ -1,6 +1,0 @@
-{
-  "id": "card",
-  "filename": "card.ts",
-  "slotRecipe": true,
-  "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const card = defineSlotRecipe({\n  className: 'card',\n  slots: ['root', 'header', 'body', 'footer', 'title', 'description'],\n  base: {\n    root: {\n      bg: 'bg.default',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      display: 'flex',\n      flexDirection: 'column',\n      overflow: 'hidden',\n      position: 'relative',\n    },\n    header: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1',\n      p: '6',\n    },\n    body: {\n      display: 'flex',\n      flex: '1',\n      flexDirection: 'column',\n      pb: '6',\n      px: '6',\n    },\n    footer: {\n      display: 'flex',\n      justifyContent: 'flex-end',\n      pb: '6',\n      pt: '2',\n      px: '6',\n    },\n    title: {\n      color: 'fg.default',\n      textStyle: 'lg',\n      fontWeight: 'semibold',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n  },\n})\n"
-}

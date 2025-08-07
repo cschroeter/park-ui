@@ -1,49 +1,8 @@
 {
-  "name": "@park-ui/panda-preset",
-  "version": "0.43.1",
-  "description": "Panda CSS Preset for Park UI",
-  "keywords": ["Ark UI", "Panda CSS", "Preset", "Park UI"],
-  "author": "Christian Schröter <dev@grizzly.codes> (https://cschroeter.net/)",
-  "homepage": "https://park-ui.com",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cschroeter/park-ui.git",
-    "directory": "packages/panda"
-  },
-  "bugs": {
-    "url": "https://github.com/cschroeter/park-ui/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "tsup",
-    "release-it": "release-it",
-    "lint": "biome lint ./src",
-    "typecheck": "tsc",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore"
-  },
-  "dependencies": {
-    "@ark-ui/anatomy": "3.5.0",
-    "effect": "3.10.19"
-  },
-  "devDependencies": {
-    "@pandacss/dev": "0.53.4",
-    "@release-it/keep-a-changelog": "5.0.0",
-    "clean-package": "2.2.0",
-    "release-it": "17.10.0",
-    "tsup": "8.3.5"
-  },
-  "peerDependencies": {
-    "@pandacss/dev": ">0.22.0"
-  },
-  "type": "module",
+  "name": "@park-ui/preset",
+  "version": "1.0.0",
   "main": "src/index.ts",
-  "module": "src/index.ts",
-  "types": "src/index.ts",
-  "files": ["dist", "src"],
+  "scripts": {},
   "exports": {
     ".": {
       "import": {
@@ -76,11 +35,8 @@
       }
     }
   },
-  "tsup": {
-    "entry": ["src/index.ts", "src/colors/*.ts", "src/utils/index.ts"],
-    "clean": true,
-    "dts": true,
-    "sourcemap": true,
-    "format": ["esm", "cjs"]
+  "dependencies": {
+    "@ark-ui/anatomy": "3.5.0",
+    "effect": "3.17.6"
   }
 }

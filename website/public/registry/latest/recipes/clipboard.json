@@ -1,6 +1,0 @@
-{
-  "id": "clipboard",
-  "filename": "clipboard.ts",
-  "slotRecipe": true,
-  "content": "import { clipboardAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const clipboard = defineSlotRecipe({\n  className: 'clipboard',\n  slots: clipboardAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n    },\n    control: {\n      display: 'flex',\n      gap: '3',\n    },\n  },\n})\n"
-}

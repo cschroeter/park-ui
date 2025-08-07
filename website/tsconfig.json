@@ -16,13 +16,15 @@
     "strict": true,
     "target": "ESNext",
     "verbatimModuleSyntax": true,
+    "noUnusedLocals": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "@/components/ui": ["../components/react/src/components/ui/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

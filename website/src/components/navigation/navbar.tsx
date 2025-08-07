@@ -1,55 +1,33 @@
-import NextLink from 'next/link'
-import { Divider, HStack, Stack } from 'styled-system/jsx'
-import { Logo } from '~/components/logo'
-import { ColorModeButton } from '~/components/navigation/color-mode-button'
-import { FrameworkSelect } from '~/components/navigation/framework-select'
-import { GitHubLink } from '~/components/navigation/github-link'
-import { MobileNavbar } from '~/components/navigation/mobile-navbar'
-import { MobileNavbarLinks } from '~/components/navigation/mobile-navbar-links'
-import { NavbarContainer } from '~/components/navigation/navbar-container'
-import { NavbarLinks } from '~/components/navigation/navbar-links'
-import { getFramework } from '~/lib/framework'
-import { UserButton } from '../auth/user-button'
-import { ThemeDrawer } from '../theming/theme-drawer'
+import { SiGithub } from '@icons-pack/react-simple-icons'
+import { Box, HStack } from '@park-ui/styled-system/jsx'
+import Link from 'next/link'
+import { Logo } from '../logo'
+import { PageLink } from './page-link'
 
-export const Navbar = async () => {
-  const framework = await getFramework()
-
+export const Navbar = () => {
   return (
-    <NavbarContainer>
-      <HStack justify="space-between">
-        <NextLink href="/" aria-label="Back to home">
+    <Box
+      borderBottomWidth="1px"
+      position="fixed"
+      insetX="0"
+      top="0"
+      zIndex="sticky"
+      h="16"
+      bg="bg.default"
+    >
+      <HStack h="full" px={{ base: '4', sm: '6', md: '8' }} justify="space-between">
+        <Link href="/" aria-label="Home">
           <Logo />
-        </NextLink>
-        <HStack gap="3" py="1" display={{ base: 'none', md: 'flex' }}>
-          <NavbarLinks framework={framework} />
-          <Divider orientation="vertical" h="6" />
-          <FrameworkSelect framework={framework} />
-          <Divider orientation="vertical" h="6" />
-          <HStack gap="2">
-            <HStack gap="0">
-              <ThemeDrawer />
-              <ColorModeButton />
-              <GitHubLink />
-            </HStack>
-            <UserButton />
-          </HStack>
-        </HStack>
-        <HStack gap="3" py="0.5" display={{ base: 'flex', md: 'none' }}>
-          <MobileNavbar>
-            <Stack gap="0" width="17rem">
-              <MobileNavbarLinks />
-              <FrameworkSelect framework={framework} />
-              <Divider />
-              <HStack gap="3" justifyContent="center" px="3" pt="6">
-                <ColorModeButton />
-                <GitHubLink />
-                <UserButton />
-              </HStack>
-            </Stack>
-          </MobileNavbar>
+        </Link>
+        <HStack gap="6" textStyle="sm">
+          <PageLink href="/docs">Docs</PageLink>
+          <PageLink href="/blog">Blog</PageLink>
+          <PageLink href="/plus">Plus</PageLink>
+          <Link href="https://github.com/cschroeter/park-ui" target="_blank" rel="noreferrer">
+            <SiGithub />
+          </Link>
         </HStack>
       </HStack>
-    </NavbarContainer>
+    </Box>
   )
 }

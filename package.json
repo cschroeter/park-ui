@@ -2,37 +2,20 @@
   "name": "root",
   "type": "module",
   "private": true,
-  "workspaces": ["components/*", "packages/*", "scripts", "website"],
+  "workspaces": [
+    "components/*",
+    "packages/*",
+    "website"
+  ],
   "scripts": {
-    "postinstall": "lefthook install",
-    "scripts": "bun run --cwd scripts",
-    "web": "bun run --cwd website",
-    "cli": "bun run --cwd packages/cli",
-    "panda": "bun run --cwd packages/panda",
     "react": "bun run --cwd components/react",
-    "solid": "bun run --cwd components/solid",
-    "vue": "bun run --cwd components/vue",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
-    "sync:components": "rsync -av ./components/react/src/components/ui ./website/src/components",
-    "sync:demos": "rsync -av --delete ./components/react/src/demos ./website/src/",
-    "sync:blocks": "rsync -av --delete ./components/react/src/plus/blocks ./website/src/components",
-    "setup": "vc link -p park-ui -y && vc env pull --environment development website/.env",
-    "mdx:format": "prettier --write ./website/src/**/*.mdx"
+    "web": "bun run --cwd website"
   },
-  "dependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/bun": "1.2.10",
-    "caniuse-lite": "1.0.30001715",
-    "lefthook": "1.11.11",
-    "turbo": "2.5.1",
-    "typescript": "5.8.3",
-    "vercel": "41.6.2",
-    "vercel-submodules": "1.0.10"
+  "devDependencies": {
+    "@biomejs/biome": "2.1.4",
+    "@types/bun": "1.2.19"
   },
-  "packageManager": "bun@1.2.10",
-  "trustedDependencies": ["@park-ui/website"],
-  "overrides": {
-    "@pandacss/dev": "0.53.4"
-  }
+  "trustedDependencies": [
+    "@park-ui/styled-system"
+  ]
 }

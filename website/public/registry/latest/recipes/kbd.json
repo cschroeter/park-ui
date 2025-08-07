@@ -1,6 +1,0 @@
-{
-  "id": "kbd",
-  "filename": "kbd.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const kbd = defineRecipe({\n  className: 'kbd',\n  base: {\n    alignItems: 'center',\n    bg: 'bg.subtle',\n    borderRadius: 'l2',\n    boxShadow:\n      '0 -2px 0 0 inset var(--colors-border-muted), 0 0 0 1px inset var(--colors-border-muted)',\n    color: 'fg.default',\n    display: 'inline-flex',\n    fontFamily: 'var(--fonts-code)',\n    fontWeight: 'medium',\n    whiteSpace: 'pre',\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: {\n        minHeight: '5',\n        px: '0.5',\n        textStyle: 'xs',\n      },\n      md: {\n        minHeight: '6',\n        textStyle: 'sm',\n        px: '1',\n        py: '1px',\n      },\n      lg: {\n        minHeight: '7',\n        px: '1.5',\n        py: '1px',\n        textStyle: 'md',\n      },\n    },\n  },\n})\n"
-}

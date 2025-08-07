@@ -1,6 +1,0 @@
-{
-  "id": "skeleton",
-  "filename": "skeleton.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const skeleton = defineRecipe({\n  className: 'skeleton',\n  base: {\n    animation: 'skeleton-pulse',\n    backgroundClip: 'padding-box',\n    backgroundColor: 'gray.a4',\n    borderRadius: 'l3',\n    color: 'transparent',\n    cursor: 'default',\n    pointerEvents: 'none',\n    userSelect: 'none',\n    '&::before, &::after, *': {\n      visibility: 'hidden',\n    },\n  },\n})\n"
-}

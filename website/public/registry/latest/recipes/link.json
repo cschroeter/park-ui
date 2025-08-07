@@ -1,6 +1,0 @@
-{
-  "id": "link",
-  "filename": "link.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const link = defineRecipe({\n  className: 'link',\n  base: {\n    alignItems: 'center',\n    color: 'fg.default',\n    cursor: 'pointer',\n    display: 'inline-flex',\n    fontWeight: 'medium',\n    gap: '2',\n    textDecoration: 'underline 0.1em transparent',\n    textUnderlineOffset: '0.125em',\n    transitionDuration: 'normal',\n    transitionProperty: 'text-decoration-color',\n    transitionTimingFunction: 'default',\n    _hover: {\n      textDecorationColor: 'colorPalette.default',\n    },\n    '& svg': {\n      width: '1em',\n      height: '1em',\n    },\n  },\n})\n"
-}

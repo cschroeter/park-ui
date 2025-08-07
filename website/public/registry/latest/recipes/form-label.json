@@ -1,6 +1,0 @@
-{
-  "id": "form-label",
-  "filename": "form-label.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const formLabel = defineRecipe({\n  className: 'formLabel',\n  base: {\n    color: 'fg.default',\n    fontWeight: 'medium',\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: {\n        textStyle: 'sm',\n      },\n      md: {\n        textStyle: 'sm',\n      },\n      lg: {\n        textStyle: 'sm',\n      },\n      xl: {\n        textStyle: 'md',\n      },\n    },\n  },\n})\n"
-}

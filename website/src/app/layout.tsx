@@ -1,13 +1,34 @@
+import { cx } from '@park-ui/styled-system/css'
 import type { Metadata } from 'next'
-import { ThemeProvider } from 'next-themes'
-import Script from 'next/script'
-import { cx } from 'styled-system/css'
+import type { PropsWithChildren } from 'react'
 import { Navbar } from '~/components/navigation/navbar'
 import { inter, jakarta, outfit, raleway, roboto } from './fonts'
-import './global.css'
+import './index.css'
+
+export default function RootLayout(props: PropsWithChildren) {
+  const { children } = props
+  return (
+    <html
+      lang="en"
+      className={cx(
+        outfit.variable,
+        inter.variable,
+        jakarta.variable,
+        raleway.variable,
+        roboto.variable,
+      )}
+    >
+      <body>
+        <Navbar />
+        {children}
+      </body>
+    </html>
+  )
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://park-ui.com'),
+  applicationName: 'Park UI',
   title: {
     default: 'Home | Park UI',
     template: '%s | Park UI',
@@ -26,38 +47,4 @@ export const metadata: Metadata = {
   twitter: {
     creator: '@grizzly_codes',
   },
-}
-
-interface Props {
-  auth: React.ReactNode
-  children: React.ReactNode
-}
-
-export default function RootLayout(props: Props) {
-  return (
-    <html
-      lang="en"
-      className={cx(
-        outfit.variable,
-        inter.variable,
-        jakarta.variable,
-        raleway.variable,
-        roboto.variable,
-      )}
-      suppressHydrationWarning
-    >
-      <head>
-        <Script src="https://plausible.io/js/plausible.js" data-domain="park-ui.com" />
-        <style id="park-ui-gray" />
-        <style id="park-ui-accent" />
-      </head>
-      <body>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
-          <Navbar />
-          {props.children}
-          {props.auth}
-        </ThemeProvider>
-      </body>
-    </html>
-  )
 }

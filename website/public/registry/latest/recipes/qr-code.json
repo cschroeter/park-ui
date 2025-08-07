@@ -1,6 +1,0 @@
-{
-  "id": "qr-code",
-  "filename": "qr-code.ts",
-  "slotRecipe": true,
-  "content": "import { qrCodeAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const qrCode = defineSlotRecipe({\n  className: 'qrCode',\n  slots: qrCodeAnatomy.keys(),\n  base: {},\n})\n"
-}

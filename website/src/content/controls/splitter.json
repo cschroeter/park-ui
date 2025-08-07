@@ -1,6 +1,0 @@
-{
-  "orientation": {
-    "options": ["horizontal", "vertical"],
-    "defaultValue": "horizontal"
-  }
-}

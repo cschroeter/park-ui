@@ -2,7 +2,7 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const button = defineRecipe({
   className: 'button',
-  jsx: ['Button', 'IconButton', 'SubmitButton'],
+  jsx: ['Button', 'IconButton', 'PageButton'],
   base: {
     alignItems: 'center',
     appearance: 'none',
@@ -37,6 +37,7 @@ export const button = defineRecipe({
   variants: {
     variant: {
       solid: {
+        colorPalette: 'accent',
         background: 'colorPalette.default',
         color: 'colorPalette.fg',
         _hover: {

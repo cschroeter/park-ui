@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
@@ -14,22 +11,22 @@
       "enabled": true,
       "indentStyle": "space",
       "quoteStyle": "single",
-      "semicolons": "asNeeded"
+      "semicolons": "asNeeded",
+      "trailingCommas": "all"
     }
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
-      "complexity": {
-        "noForEach": "off"
-      },
       "suspicious": {
-        "noArrayIndexKey": "off",
-        "noShadowRestrictedNames": "off"
+        "noArrayIndexKey": "off"
       },
-      "security": {
-        "noDangerouslySetInnerHtml": "off"
+      "complexity": {
+        "noForEach": "info"
+      },
+      "correctness": {
+        "noUnusedImports": "error"
       }
     }
   }

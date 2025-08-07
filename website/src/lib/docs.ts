@@ -1,31 +1,32 @@
-import { type Pages, pages } from '.velite'
+import { type Doc, docs } from '.velite'
 
-export const getSidebarGroups = (): Pages[][] => {
+export const getDocumentBySlug = (slug: string[]): Doc | undefined => {
+  return docs.find((doc) => doc.slug === slug.join('/'))
+}
+
+export const getSidebarGroups = (): Doc[][] => {
   const categories = ['overview', 'theme', 'typography', 'components']
   const overviewPriority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
 
-  const sortedCategories = pages.reduce<Record<string, Pages[]>>((acc, page) => {
-    const category = page.category
-    if (categories.includes(category)) {
-      if (!acc[category]) {
-        acc[category] = []
+  const sortedCategories = docs.reduce(
+    (acc, doc) => {
+      const category = doc.category
+      if (categories.includes(category)) {
+        acc[category] ??= []
+        acc[category].push(doc)
       }
-      acc[category].push(page)
-    }
-    return acc
-  }, {})
+      return acc
+    },
+    {} as Record<string, Doc[]>,
+  )
 
-  // Sort pages within the 'overview' category by priority
   if (sortedCategories.overview) {
     sortedCategories.overview.sort(
       (a, b) => overviewPriority.indexOf(a.id) - overviewPriority.indexOf(b.id),
     )
   }
 
-  return (
-    categories
-      // biome-ignore lint/suspicious/noPrototypeBuiltins: This line is safe as `categories` is predefined and not from external input
-      .filter((category) => sortedCategories.hasOwnProperty(category))
-      .map((category) => sortedCategories[category])
-  )
+  return categories
+    .filter((category) => category in sortedCategories)
+    .map((category) => sortedCategories[category])
 }

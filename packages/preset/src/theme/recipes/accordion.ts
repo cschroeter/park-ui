@@ -44,10 +44,12 @@ export const accordion = defineSlotRecipe({
       transitionDuration: 'normal',
       transitionTimingFunction: 'default',
       _open: {
-        animation: 'collapse-in',
+        animationName: "expand-height, fade-in",
+        animationDuration: "moderate",
       },
       _closed: {
-        animation: 'collapse-out',
+        animationName: "collapse-height, fade-out",
+        animationDuration: "moderate",
       },
     },
   },

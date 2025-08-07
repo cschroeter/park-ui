@@ -1,12 +1,12 @@
 {
-  "name": "styled-system",
+  "name": "@park-ui/styled-system",
   "private": true,
   "scripts": {
     "prepare": "panda codegen --clean"
   },
   "dependencies": {
-    "@pandacss/dev": "0.53.4",
-    "@park-ui/panda-preset": "workspace:*"
+    "@pandacss/dev": "1.0.1",
+    "@park-ui/preset": "workspace:*"
   },
   "exports": {
     "./css": {
