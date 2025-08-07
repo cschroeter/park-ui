@@ -11,7 +11,9 @@ const docs = defineCollection({
       mdx: s.mdx(),
     })
     .transform((data, { meta }) => {
+      // @ts-expect-error TODO
       const id = basename(meta.path, '.mdx')
+      // @ts-expect-error TODO
       const category = basename(dirname(meta.path))
       const href = join('/docs/', category, id)
 

@@ -1,4 +1,4 @@
-import { Button, type ButtonProps } from '@park-ui/react/button'
+import { Button, type ButtonProps } from '@park-ui/react'
 import NextLink from 'next/link'
 
 interface Props extends ButtonProps {

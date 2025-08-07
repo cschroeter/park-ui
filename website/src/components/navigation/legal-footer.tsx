@@ -1,5 +1,5 @@
 import { HStack, type HstackProps } from '@park-ui/styled-system/jsx'
-import { Text } from '@park-ui/react/text'
+import { Text } from '@park-ui/react'
 import { PageLink } from './page-link'
 
 const legalLinks = [
