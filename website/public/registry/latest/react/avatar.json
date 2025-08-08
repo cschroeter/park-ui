@@ -1,12 +1,18 @@
 {
   "id": "avatar",
   "name": "Avatar",
-  "component": {
-    "content": "",
-    "export": "export * as Avatar from './avatar"
-  },
-  "recipe": {
-    "content": "",
-    "isSlotRecipe": true
-  }
+  "files": [
+    {
+      "type": "component",
+      "path": "avatar.ts",
+      "content": "TBD",
+      "export": "export * as Avatar from './avatar'"
+    },
+    {
+      "type": "recipe",
+      "path": "avatar.ts",
+      "content": "TBD",
+      "isSlotRecipe": true
+    }
+  ]
 }

@@ -12,12 +12,14 @@
     "release-it": "release-it"
   },
   "dependencies": {
+    "@better-fetch/fetch": "1.1.18",
     "@effect/platform": "0.90.0",
     "effect": "3.17.6",
     "fs-extra": "11.3.1",
     "globby": "14.1.0",
     "pkg-dir": "9.0.0",
-    "yargs": "18.0.0"
+    "yargs": "18.0.0",
+    "zod": "4.0.15"
   },
   "devDependencies": {
     "@release-it/keep-a-changelog": "7.0.0",
