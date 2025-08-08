@@ -4,7 +4,7 @@ import { Effect, pipe } from 'effect'
 import color from 'picocolors'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { installComponent, installRecipe } from './effects'
+import { getComponentList, installComponent, installRecipe } from './effects'
 import { getConfig } from './get-config'
 
 const isEmpty = (arr: string[]) => arr.length === 0
@@ -39,16 +39,19 @@ const main = async () => {
           return
         }
 
-        const components = ['avatar']
-
         const programm = pipe(
           getConfig(),
-          Effect.tap(() => spinner.start('Installing components...')),
           Effect.flatMap(({ framework, paths }) =>
-            Effect.all([
-              Effect.forEach(components, installComponent({ framework, dest: paths.components })),
-              Effect.forEach(components, installRecipe({ framework, dest: paths.recipes })),
-            ]),
+            pipe(
+              getComponentList(framework, argv.all, argv.components),
+              Effect.tap((comps) => spinner.start(`Installing ${comps.length} components...`)),
+              Effect.flatMap((comps) =>
+                Effect.all([
+                  Effect.forEach(comps, installComponent({ framework, dest: paths.components })),
+                  Effect.forEach(comps, installRecipe({ framework, dest: paths.recipes })),
+                ]),
+              ),
+            ),
           ),
         )
 

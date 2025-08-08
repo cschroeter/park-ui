@@ -31,7 +31,7 @@ export const schema = createSchema({
   '/:framework/recipes/:id': {
     output: Recipe,
   },
-  ':framework/components/index': {
+  '/:framework/components/index': {
     output: Index,
   },
   '/:framework/components/:id': {
@@ -64,8 +64,7 @@ interface Params {
 export const getComponent = (params: Params) => $fetch('/:framework/components/:id', { params })
 export const getRecipe = (params: Params) => $fetch('/:framework/recipes/:id', { params })
 
-// export const listRecipes = (framework: Framework) =>
-//   $fetch('/:framework/recipes/index', { params: { framework } })
-
-// export const listComponents = (framework: Framework) =>
-//   $fetch('/:framework/components/index', { params: { framework } })
+export const listRecipes = (framework: Framework) =>
+  $fetch('/:framework/recipes/index', { params: { framework } })
+export const listComponents = (framework: Framework) =>
+  $fetch('/:framework/components/index', { params: { framework } })

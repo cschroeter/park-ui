@@ -2,7 +2,7 @@ import path from 'node:path'
 import * as p from '@clack/prompts'
 import { Effect, pipe } from 'effect'
 import fs from 'fs-extra'
-import { type Framework, getComponent, getRecipe } from './client'
+import { type Framework, getComponent, getRecipe, listComponents } from './client'
 
 interface Args {
   framework: Framework
@@ -50,6 +50,22 @@ export const installRecipe =
         return Effect.succeed(undefined)
       }),
     )
+
+export const getComponentList = (framework: Framework, all: boolean, components: string[]) =>
+  all
+    ? pipe(
+        Effect.tryPromise({
+          try: () => listComponents(framework),
+          catch: () => HttpError,
+        }),
+        Effect.filterOrFail(
+          (result) => 'data' in result && result.data !== null,
+          () => HttpError,
+        ),
+        Effect.map(({ data }) => data.map((component) => component.id)),
+        Effect.catchAll(() => Effect.succeed([])),
+      )
+    : Effect.succeed(components)
 
 const HttpError = {
   _tag: 'HttpError',
