@@ -54,7 +54,7 @@ const $fetch = createFetch({
   ],
 })
 
-type Framework = 'react' | 'vue' | 'svelte' | 'solid'
+export type Framework = 'react' | 'vue' | 'svelte' | 'solid'
 
 interface Params {
   framework: Framework

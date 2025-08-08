@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-import path from 'node:path'
 import * as p from '@clack/prompts'
 import { Effect, pipe } from 'effect'
-import fs from 'fs-extra'
 import color from 'picocolors'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { getComponent } from './client'
+import { installComponent, installRecipe } from './effects'
 import { getConfig } from './get-config'
 
 const isEmpty = (arr: string[]) => arr.length === 0
@@ -41,33 +39,16 @@ const main = async () => {
           return
         }
 
-        const components = ['button', 'select', 'avatar']
+        const components = ['avatar']
 
         const programm = pipe(
           getConfig(),
           Effect.tap(() => spinner.start('Installing components...')),
           Effect.flatMap(({ framework, paths }) =>
-            Effect.forEach(components, (id) =>
-              pipe(
-                Effect.tryPromise({
-                  try: () => getComponent({ framework, id }),
-                  catch: () => HttpError,
-                }),
-                Effect.filterOrFail(
-                  (result) => 'data' in result && result.data !== null,
-                  () => HttpError,
-                ),
-                Effect.flatMap(({ data: { sourceCode, filename } }) =>
-                  Effect.promise(() =>
-                    fs.outputFile(path.join(paths.components, filename), sourceCode),
-                  ),
-                ),
-                Effect.catchAll(() => {
-                  p.log.error(`Failed to install component: ${id}`)
-                  return Effect.succeed(undefined)
-                }),
-              ),
-            ),
+            Effect.all([
+              Effect.forEach(components, installComponent({ framework, dest: paths.components })),
+              Effect.forEach(components, installRecipe({ framework, dest: paths.recipes })),
+            ]),
           ),
         )
 
@@ -91,7 +72,3 @@ const main = async () => {
 }
 
 main()
-
-export const HttpError = {
-  _tag: 'HttpError',
-}
