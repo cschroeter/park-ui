@@ -6,9 +6,8 @@ import fs from 'fs-extra'
 import color from 'picocolors'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { fetchComponents, fetchUtils } from './client'
+import { getComponent } from './client'
 import { getConfig } from './get-config'
-import { updateRecipeIndex } from './recipes'
 
 const isEmpty = (arr: string[]) => arr.length === 0
 
@@ -42,56 +41,34 @@ const main = async () => {
           return
         }
 
+        const components = ['button', 'select', 'avatar']
+
         const programm = pipe(
           getConfig(),
           Effect.tap(() => spinner.start('Installing components...')),
-          Effect.flatMap((config) =>
-            pipe(
-              Effect.all([
-                pipe(
-                  fetchComponents(config, argv),
-                  Effect.flatMap((components) =>
-                    Effect.forEach(components, ({ component: { variants }, recipe }) =>
-                      Effect.all([
-                        Effect.forEach(variants, (variant) =>
-                          Effect.promise(() =>
-                            fs.outputFile(
-                              path.join(config.paths.components, variant.file),
-                              variant.content,
-                            ),
-                          ),
-                        ),
-                        recipe
-                          ? Effect.promise(() =>
-                              fs.outputFile(
-                                path.join(config.paths.recipes, recipe.filename),
-                                recipe.content,
-                              ),
-                            )
-                          : Effect.succeed(null),
-                      ]),
-                    ),
+          Effect.flatMap(({ framework, paths }) =>
+            Effect.forEach(components, (id) =>
+              pipe(
+                Effect.tryPromise({
+                  try: () => getComponent({ framework, id }),
+                  catch: () => HttpError,
+                }),
+                Effect.filterOrFail(
+                  (result) => 'data' in result && result.data !== null,
+                  () => HttpError,
+                ),
+                Effect.flatMap(({ data: { sourceCode, filename } }) =>
+                  Effect.promise(() =>
+                    fs.outputFile(path.join(paths.components, filename), sourceCode),
                   ),
                 ),
-                pipe(
-                  fetchUtils(config),
-                  Effect.flatMap((helpers) =>
-                    Effect.forEach(helpers, (helper) =>
-                      Effect.promise(() =>
-                        fs.outputFile(
-                          path.join(config.paths.components, helper.filename),
-                          helper.content,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ]),
-              Effect.flatMap(() => updateRecipeIndex(config)),
+                Effect.catchAll(() => {
+                  p.log.error(`Failed to install component: ${id}`)
+                  return Effect.succeed(undefined)
+                }),
+              ),
             ),
           ),
-
-          Effect.catchAll((error) => Effect.fail(error.message)),
         )
 
         await Effect.runPromise(programm)
@@ -114,3 +91,7 @@ const main = async () => {
 }
 
 main()
+
+export const HttpError = {
+  _tag: 'HttpError',
+}

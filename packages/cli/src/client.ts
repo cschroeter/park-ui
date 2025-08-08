@@ -1,84 +1,71 @@
-import { FetchHttpClient, HttpClient, HttpClientResponse } from '@effect/platform'
-import { Effect, Schema } from 'effect'
-import type { Config } from './get-config'
+import { createFetch, createSchema } from '@better-fetch/fetch'
+import { z } from 'zod'
 
-const API_URL = 'https://park-ui.com/registry/latest'
+const Recipe = z.object({
+  id: z.string(),
+  name: z.string(),
+  filename: z.string(),
+  recipe: z.string(),
+  hasSlots: z.boolean(),
+})
 
-const Utils = Schema.Array(
-  Schema.Struct({
-    filename: Schema.String,
-    content: Schema.String,
+const Component = z.object({
+  id: z.string(),
+  name: z.string(),
+  filename: z.string(),
+  sourceCode: z.string(),
+  exportStatement: z.string(),
+})
+
+const Index = z.array(
+  z.object({
+    id: z.string(),
+    name: z.string(),
   }),
 )
 
-const Recipe = Schema.Struct({
-  id: Schema.String,
-  filename: Schema.String,
-  content: Schema.String,
+export const schema = createSchema({
+  '/:framework/recipes/index': {
+    output: Index,
+  },
+  '/:framework/recipes/:id': {
+    output: Recipe,
+  },
+  ':framework/components/index': {
+    output: Index,
+  },
+  '/:framework/components/:id': {
+    output: Component,
+  },
 })
 
-const Components = Schema.Array(
-  Schema.Struct({
-    id: Schema.String,
-    name: Schema.String,
-  }),
-)
-
-const Component = Schema.Struct({
-  id: Schema.String,
-  name: Schema.String,
-  variants: Schema.Array(
-    Schema.Struct({
-      file: Schema.String,
-      content: Schema.String,
-    }),
-  ),
+const $fetch = createFetch({
+  baseURL: 'https://next.park-ui.com/registry/latest',
+  schema,
+  plugins: [
+    {
+      id: 'json',
+      name: 'JSON',
+      init: (url, options) => ({
+        url: `${url}.json`,
+        options,
+      }),
+    },
+  ],
 })
 
-export type Component = Schema.Schema.Type<typeof Component>
+type Framework = 'react' | 'vue' | 'svelte' | 'solid'
 
-export const fetchComponentById = (id: string, config: Config) =>
-  Effect.all([
-    HttpClient.get(`${API_URL}/${config.framework}/components/${id}.json`).pipe(
-      Effect.flatMap(HttpClientResponse.schemaBodyJson(Component)),
-      Effect.scoped,
-      Effect.provide(FetchHttpClient.layer),
-    ),
-    HttpClient.get(`${API_URL}/recipes/${id}.json`).pipe(
-      Effect.flatMap(HttpClientResponse.schemaBodyJson(Recipe)),
-      Effect.catchAll(() => Effect.succeed(null)),
-      Effect.scoped,
-      Effect.provide(FetchHttpClient.layer),
-    ),
-  ]).pipe(
-    Effect.map(([component, recipe]) => ({
-      component,
-      recipe,
-    })),
-  )
-
-export const fetchUtils = (config: Config) =>
-  HttpClient.get(`${API_URL}/utils/${config.framework}/index.json`).pipe(
-    Effect.flatMap(HttpClientResponse.schemaBodyJson(Utils)),
-    Effect.scoped,
-    Effect.provide(FetchHttpClient.layer),
-  )
-
-interface Args {
-  components: string[]
-  all?: boolean
+interface Params {
+  framework: Framework
+  id: string
 }
 
-export const fetchComponents = (config: Config, args: Args) =>
-  args.all
-    ? HttpClient.get(`${API_URL}/components/${config.framework}`).pipe(
-        Effect.flatMap(HttpClientResponse.schemaBodyJson(Components)),
-        Effect.scoped,
-        Effect.provide(FetchHttpClient.layer),
-        Effect.flatMap((components) =>
-          Effect.forEach(components, (component) => fetchComponentById(component.id, config), {
-            concurrency: 10,
-          }),
-        ),
-      )
-    : Effect.forEach(args.components, (id) => fetchComponentById(id, config))
+export const getComponent = (params: Params) => $fetch('/:framework/components/:id', { params })
+export const getRecipe = (params: Params) => $fetch('/:framework/recipes/:id', { params })
+
+// export const listRecipes = (framework: Framework) =>
+//   $fetch('/:framework/recipes/index', { params: { framework } })
+
+// export const listComponents = (framework: Framework) =>
+//   $fetch('/:framework/components/index', { params: { framework } })

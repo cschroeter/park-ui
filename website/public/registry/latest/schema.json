@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Park UI Config",
+  "type": "object",
+  "required": ["framework", "paths"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "default": "https://next.park-ui.com/registry/latest/schema.json"
+    },
+    "framework": {
+      "type": "string",
+      "enum": ["react", "solid", "vue", "svelte"]
+    },
+    "paths": {
+      "type": "object",
+      "required": ["components", "recipes"],
+      "properties": {
+        "components": {
+          "type": "string"
+        },
+        "recipes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

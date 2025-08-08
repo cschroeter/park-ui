@@ -1,6 +1,6 @@
 import path from 'node:path'
 import * as p from '@clack/prompts'
-import { Effect, Schema, pipe } from 'effect'
+import { Effect, pipe, Schema } from 'effect'
 import fs from 'fs-extra'
 import { packageDirectorySync } from 'pkg-dir'
 
@@ -35,7 +35,7 @@ export const getConfig = (): Effect.Effect<Config, never, never> =>
               return pipe(
                 Effect.promise(promptConfig),
                 Effect.map(({ framework, components, recipes }) => ({
-                  $schema: 'https://park-ui.com/registry/latest/schema.json',
+                  $schema: 'https://next.park-ui.com/registry/latest/schema.json',
                   framework,
                   paths: {
                     components,

@@ -1,8 +1,8 @@
 {
-  "$schema": "https://park-ui.com/registry/latest/schema.json",
+  "$schema": "https://next.park-ui.com/registry/latest/schema.json",
   "framework": "react",
   "paths": {
-    "components": "./dist/components/ui",
-    "recipes": "./dist/theme/recipes"
+    "components": "./src/components/ui",
+    "recipes": "./src/theme/recipes"
   }
 }
