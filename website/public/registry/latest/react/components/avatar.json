@@ -1,0 +1,7 @@
+{
+  "id": "avatar",
+  "name": "Avatar",
+  "filename": "avatar.ts",
+  "sourceCode": "...",
+  "exportStatement": "export { Avatar } from './avatar';"
+}
