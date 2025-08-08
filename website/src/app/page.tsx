@@ -6,10 +6,10 @@ import { LegalFooter } from '~/components/navigation/legal-footer'
 
 export default function Page() {
   return (
-    <Center flex="1" overflow={{ lg: 'hidden' }} mt="16">
+    <Center flex="1" overflow={{ lg: 'hidden' }} mt="14">
       <Container>
         <Grid
-          gridTemplateColumns={{ base: '1fr', lg: 'minmax(512px, 1fr) 1312px' }}
+          gridTemplateColumns={{ base: '1fr', lg: 'minmax(512px, 1fr) 1fr' }}
           gap={{ base: '0', lg: '24' }}
         >
           <GridItem display="flex" flexDirection="column" py={{ base: '16', md: '24', lg: '0' }}>
@@ -24,9 +24,8 @@ export default function Page() {
             py={{ base: '1px', lg: '0' }}
           >
             <Box
-              height={{ base: 'auto', lg: 'calc(100vh - 96px)' }}
-              width="1312px"
-              pb="8"
+              height={{ base: 'auto', lg: 'calc(100vh - 56px)' }}
+              width="1324px"
               transform={{
                 base: 'none',
                 lg: 'rotate(5deg) translateX(60px) translateY(35px)',

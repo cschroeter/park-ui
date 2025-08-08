@@ -22,7 +22,7 @@ const legalLinks = [
 
 export const LegalFooter = (props: HstackProps) => {
   return (
-    <HStack gap="6" colorPalette="gray" py={{ base: '4', md: '0' }} {...props}>
+    <HStack gap="6" colorPalette="gray" py="4" {...props}>
       <Text textStyle="sm" color="fg.muted">
         &copy; {new Date().getFullYear()} Chakra Systems. All rights reserved.
       </Text>
