@@ -17,7 +17,7 @@ export const SidebarMobileContainer = (props: Props) => {
       height="14"
       position="fixed"
       insetX="0"
-      top="16"
+      top="14"
       hideFrom="lg"
       bg="bg.default"
       zIndex="sticky"

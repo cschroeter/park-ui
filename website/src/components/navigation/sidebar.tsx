@@ -10,7 +10,7 @@ export const Sidebar = () => {
       <Box
         px={{ base: '4', md: '8' }}
         position="sticky"
-        top="16"
+        top="14"
         left="0"
         bottom="0"
         overflowY="auto"

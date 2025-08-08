@@ -15,16 +15,16 @@ export default async function DocsLayout(props: PropsWithChildren) {
         minH="dvh"
         gridTemplateColumns={{
           base: 'auto',
-          lg: '18rem 2.5rem minmax(0,1fr) 2.5rem',
+          lg: '18rem 2rem minmax(0,1fr) 2rem',
         }}
         gap="0"
-        pt={{ base: '120px', lg: '16' }}
+        pt={{ base: '28', lg: '14' }}
       >
-        <GridItem position="relative" hideBelow="lg">
+        <GridItem position="relative" hideBelow="lg" borderEndWidth="1px">
           <Sidebar />
         </GridItem>
-        <GridItem hideBelow="lg" bg="gray.1" borderXWidth="1px" />
-        <GridItem position="relative" bg="bg.default">
+        <GridItem hideBelow="lg" bg="gray.1" />
+        <GridItem position="relative" bg="bg.default" borderXWidth={{ base: '0', lg: '1px' }}>
           <Grid
             isolation="isolate"
             xl={{ maxW: '5xl' }}
@@ -37,7 +37,7 @@ export default async function DocsLayout(props: PropsWithChildren) {
             {children}
           </Grid>
         </GridItem>
-        <GridItem hideBelow="lg" borderXWidth="1px" />
+        <GridItem hideBelow="lg" bg="gray.1" />
       </Grid>
     </>
   )
