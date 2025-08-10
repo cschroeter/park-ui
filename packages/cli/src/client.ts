@@ -1,6 +1,24 @@
 import { createFetch, createSchema } from '@better-fetch/fetch'
 import { z } from 'zod'
 
+const ExportsConfig = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('named'),
+    specifier: z.string(),
+    symbols: z.array(
+      z.object({
+        name: z.string(),
+        isType: z.boolean().optional(),
+      }),
+    ),
+  }),
+  z.object({
+    type: z.literal('namespace'),
+    specifier: z.string(),
+    name: z.string(),
+  }),
+])
+
 const Recipe = z.object({
   id: z.string(),
   name: z.string(),
@@ -14,7 +32,7 @@ const Component = z.object({
   name: z.string(),
   filename: z.string(),
   sourceCode: z.string(),
-  exportStatement: z.string(),
+  exportsConfig: ExportsConfig,
 })
 
 const Index = z.array(
