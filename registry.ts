@@ -1,0 +1,61 @@
+import path, { parse } from 'node:path'
+import { Project } from 'ts-morph'
+
+const project = new Project()
+const indexPath = path.resolve('./components/react/src/components/ui/index.ts')
+const source = project.addSourceFileAtPath(indexPath)
+
+for (const exp of source.getExportDeclarations()) {
+  const exportsConfig: any[] = []
+
+  const moduleSpecifier = exp.getModuleSpecifierValue()
+  console.log('Module Specifier:', moduleSpecifier)
+
+  if (exp.getNamespaceExport()) {
+    exportsConfig.push({
+      type: 'namespace',
+      specifier: moduleSpecifier,
+      name: exp.getNamespaceExportOrThrow().getName(),
+    })
+    continue
+  }
+
+  const namedExports = exp.getNamedExports().map((ne) => {
+    const name = ne.getName()
+    const isType = ne.isTypeOnly()
+    return { name, isType }
+  })
+
+  if (namedExports.length > 0) {
+    exportsConfig.push({
+      type: 'named',
+      specifier: moduleSpecifier,
+      symbols: namedExports,
+    })
+  }
+
+  const moduleSourceFile = exp.getModuleSpecifierSourceFile()
+  if (moduleSourceFile) {
+    const sourceFile = moduleSourceFile.getFilePath()
+
+    const file = Bun.file(sourceFile)
+    if (!file.name) continue
+
+    const id = parse(file.name).name
+    const filename = parse(file.name).base
+
+    Bun.write(
+      `./website/public/registry/latest/react/components/${id}.json`,
+      JSON.stringify(
+        {
+          id,
+          filename,
+          sourceCode: await file.text(),
+          exportsConfig,
+        },
+        null,
+        2,
+      ),
+    )
+  }
+}
