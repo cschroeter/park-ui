@@ -2,7 +2,7 @@
   "$schema": "https://next.park-ui.com/registry/latest/schema.json",
   "framework": "react",
   "paths": {
-    "components": "./src/components/ui",
-    "recipes": "./src/theme/recipes"
+    "components": "./dist/components/ui",
+    "recipes": "./dist/theme/recipes"
   }
 }

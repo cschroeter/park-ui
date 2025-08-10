@@ -1,6 +1,7 @@
 import { createFetch, createSchema } from '@better-fetch/fetch'
 import { z } from 'zod'
 
+export type ExportsConfig = z.infer<typeof ExportsConfig>
 const ExportsConfig = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('named'),

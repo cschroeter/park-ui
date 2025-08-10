@@ -3,6 +3,8 @@ import * as p from '@clack/prompts'
 import { Effect, pipe } from 'effect'
 import fs from 'fs-extra'
 import { type Framework, getComponent, getRecipe, listComponents } from './client'
+import { updateIndex } from './update-index'
+import { updateRecipeIndex } from './update-recipe-index'
 
 interface Args {
   framework: Framework
@@ -21,8 +23,11 @@ export const installComponent =
         (result) => 'data' in result && result.data !== null,
         () => HttpError,
       ),
-      Effect.flatMap(({ data: { sourceCode, filename } }) =>
-        Effect.promise(() => fs.outputFile(path.join(dest, filename), sourceCode)),
+      Effect.flatMap(({ data: { sourceCode, filename, exportsConfig } }) =>
+        Effect.all([
+          Effect.promise(() => fs.outputFile(path.join(dest, filename), sourceCode)),
+          Effect.promise(() => updateIndex({ exportsConfig, dest })),
+        ]),
       ),
       Effect.catchAll(() => {
         p.log.error(`Failed to install component: ${id}`)
@@ -42,8 +47,11 @@ export const installRecipe =
         (result) => 'data' in result && result.data !== null,
         () => HttpError,
       ),
-      Effect.flatMap(({ data: { recipe, filename } }) =>
-        Effect.promise(() => fs.outputFile(path.join(dest, filename), recipe)),
+      Effect.flatMap(({ data: { id, recipe, filename, hasSlots } }) =>
+        Effect.all([
+          Effect.promise(() => fs.outputFile(path.join(dest, filename), recipe)),
+          Effect.promise(() => updateRecipeIndex({ recipe: { name: id, hasSlots }, dest })),
+        ]),
       ),
       Effect.catchAll(() => {
         p.log.error(`Failed to install recipe: ${id}`)
