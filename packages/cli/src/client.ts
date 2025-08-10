@@ -43,16 +43,16 @@ const Index = z.array(
 )
 
 export const schema = createSchema({
-  '/:framework/recipes/index': {
+  '/recipes/index': {
     output: Index,
   },
-  '/:framework/recipes/:id': {
+  '/recipes/:id': {
     output: Recipe,
   },
-  '/:framework/components/index': {
+  '/components/:framework/index': {
     output: Index,
   },
-  '/:framework/components/:id': {
+  '/components/:framework/:id': {
     output: Component,
   },
 })
@@ -79,10 +79,9 @@ interface Params {
   id: string
 }
 
-export const getComponent = (params: Params) => $fetch('/:framework/components/:id', { params })
-export const getRecipe = (params: Params) => $fetch('/:framework/recipes/:id', { params })
+export const getComponent = (params: Params) => $fetch('/components/:framework/:id', { params })
+export const getRecipe = (id: string) => $fetch('/recipes/:id', { params: { id } })
 
-export const listRecipes = (framework: Framework) =>
-  $fetch('/:framework/recipes/index', { params: { framework } })
+export const listRecipes = () => $fetch('/recipes/index')
 export const listComponents = (framework: Framework) =>
-  $fetch('/:framework/components/index', { params: { framework } })
+  $fetch('/components/:framework/index', { params: { framework } })

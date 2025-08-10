@@ -1,4 +1,3 @@
-import type { RecipeConfig, RecipeVariantRecord, SlotRecipeConfig } from '@pandacss/dev'
 import { accordion } from './accordion'
 import { alert } from './alert'
 import { avatar } from './avatar'
@@ -53,7 +52,7 @@ import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
 import { treeView } from './tree-view'
 
-export const recipes: Record<string, Partial<RecipeConfig<RecipeVariantRecord>>> = {
+export const recipes = {
   badge,
   button,
   code,
@@ -68,7 +67,7 @@ export const recipes: Record<string, Partial<RecipeConfig<RecipeVariantRecord>>>
   text,
 }
 
-export const slotRecipes: Record<string, Partial<SlotRecipeConfig>> = {
+export const slotRecipes = {
   accordion,
   alert,
   avatar,

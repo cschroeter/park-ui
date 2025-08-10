@@ -65,7 +65,7 @@ for (const exp of source.getExportDeclarations()) {
     })
 
     Bun.write(
-      `./website/public/registry/latest/react/components/${id}.json`,
+      `./website/public/registry/latest/components/react/${id}.json`,
       JSON.stringify(
         {
           id,
@@ -81,6 +81,6 @@ for (const exp of source.getExportDeclarations()) {
 }
 
 Bun.write(
-  `./website/public/registry/latest/react/components/index.json`,
+  `./website/public/registry/latest/components/react/index.json`,
   JSON.stringify(index, null, 2),
 )

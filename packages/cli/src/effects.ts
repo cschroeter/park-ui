@@ -36,11 +36,11 @@ export const installComponent =
     )
 
 export const installRecipe =
-  ({ framework, dest }: Args) =>
+  ({ dest }: Args) =>
   (id: string) =>
     pipe(
       Effect.tryPromise({
-        try: () => getRecipe({ framework, id }),
+        try: () => getRecipe(id),
         catch: () => HttpError,
       }),
       Effect.filterOrFail(
