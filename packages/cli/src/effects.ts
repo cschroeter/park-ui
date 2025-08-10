@@ -3,7 +3,7 @@ import * as p from '@clack/prompts'
 import { Effect, pipe } from 'effect'
 import fs from 'fs-extra'
 import { type Framework, getComponent, getRecipe, listComponents } from './client'
-import { updateIndex } from './update-index'
+import { updateComponentIndex } from './update-component-index'
 import { updateRecipeIndex } from './update-recipe-index'
 
 interface Args {
@@ -26,7 +26,7 @@ export const installComponent =
       Effect.flatMap(({ data: { sourceCode, filename, exportsConfig } }) =>
         Effect.all([
           Effect.promise(() => fs.outputFile(path.join(dest, filename), sourceCode)),
-          Effect.promise(() => updateIndex({ exportsConfig, dest })),
+          Effect.promise(() => updateComponentIndex({ exportsConfig, dest })),
         ]),
       ),
       Effect.catchAll(() => {

@@ -7,7 +7,7 @@ interface Args {
   dest: string
 }
 
-export const updateIndex = async (args: Args) => {
+export const updateComponentIndex = async (args: Args) => {
   const { exportsConfig, dest } = args
   const indexPath = path.resolve(path.join(dest, 'index.ts'))
   const project = new Project()

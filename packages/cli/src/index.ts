@@ -6,6 +6,7 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { getComponentList, installComponent, installRecipe } from './effects'
 import { getConfig } from './get-config'
+import { updatePandaConfig } from './update-panda-config'
 
 const isEmpty = (arr: string[]) => arr.length === 0
 
@@ -49,6 +50,7 @@ const main = async () => {
                 Effect.all([
                   Effect.forEach(comps, installComponent({ framework, dest: paths.components })),
                   Effect.forEach(comps, installRecipe({ framework, dest: paths.recipes })),
+                  Effect.promise(() => updatePandaConfig({ dest: paths.recipes })),
                 ]),
               ),
             ),
