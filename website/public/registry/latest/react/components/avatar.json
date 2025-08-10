@@ -1,10 +1,12 @@
 {
   "id": "avatar",
   "filename": "avatar.ts",
-  "sourceCode": "...",
-  "exportsConfig": {
-    "type": "namespace",
-    "specifier": "./avatar",
-    "name": "Avatar"
-  }
+  "sourceCode": "'use client'\nimport { Avatar } from '@ark-ui/react/avatar'\nimport { createStyleContext } from '@park-ui/styled-system/jsx'\nimport { avatar } from '@park-ui/styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(avatar)\n\nexport const Root = withProvider(Avatar.Root, 'root')\nexport const Image = withContext(Avatar.Image, 'image')\nexport const Fallback = withContext(Avatar.Fallback, 'fallback')\n",
+  "exportsConfig": [
+    {
+      "type": "namespace",
+      "specifier": "./avatar",
+      "name": "Avatar"
+    }
+  ]
 }

@@ -9,7 +9,6 @@ for (const exp of source.getExportDeclarations()) {
   const exportsConfig: any[] = []
 
   const moduleSpecifier = exp.getModuleSpecifierValue()
-  console.log('Module Specifier:', moduleSpecifier)
 
   if (exp.getNamespaceExport()) {
     exportsConfig.push({
@@ -17,7 +16,6 @@ for (const exp of source.getExportDeclarations()) {
       specifier: moduleSpecifier,
       name: exp.getNamespaceExportOrThrow().getName(),
     })
-    continue
   }
 
   const namedExports = exp.getNamedExports().map((ne) => {

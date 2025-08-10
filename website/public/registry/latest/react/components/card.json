@@ -1,0 +1,12 @@
+{
+  "id": "card",
+  "filename": "card.ts",
+  "sourceCode": "'use client'\nimport { createStyleContext } from '@park-ui/styled-system/jsx'\nimport { card } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps } from '@park-ui/styled-system/types'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport const Root = withProvider('div', 'root')\nexport const Header = withContext('div', 'header')\nexport const Body = withContext('div', 'body')\nexport const Footer = withContext('div', 'footer')\nexport const Title = withContext('h3', 'title')\nexport const Description = withContext('div', 'description')\n\nexport type RootProps = ComponentProps<typeof Root>\n",
+  "exportsConfig": [
+    {
+      "type": "namespace",
+      "specifier": "./card",
+      "name": "Card"
+    }
+  ]
+}
