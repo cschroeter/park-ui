@@ -1,9 +1,12 @@
 pre-commit:
   commands:
+    components:
+      run: bun run build-component-registry && git update-index --again
+      stage_fixed: true
+    recipes:
+      run: bun run build-recipe-registry && git update-index --again
+      stage_fixed: true
     check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
-      stage_fixed: true
-    components:
-      run: bun run registry && git update-index --again
       stage_fixed: true

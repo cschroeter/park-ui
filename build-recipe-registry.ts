@@ -5,12 +5,14 @@ const project = new Project()
 const indexPath = path.resolve('./packages/preset/src/theme/recipes/index.ts')
 const source = project.addSourceFileAtPath(indexPath)
 
-const getKeys = async (varName: string) => {
-  const decl = source.getVariableDeclaration(varName)
-  if (!decl) return []
+for (const recipeType of ['slotRecipes', 'recipes']) {
+  const decl = source.getVariableDeclaration(recipeType)
+  if (!decl) continue
+
   const init = decl.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression)
-  if (!init) return []
-  return init
+  if (!init) continue
+
+  init
     .getProperties()
     .filter((p) => p.isKind(SyntaxKind.ShorthandPropertyAssignment))
     .map(async (p) => {
@@ -32,19 +34,14 @@ const getKeys = async (varName: string) => {
 
           const id = parse(file.name).name
           const filename = parse(file.name).base
-          const hasSlots = varName === 'slotRecipes'
+          const hasSlots = recipeType === 'slotRecipes'
           const recipe = await file.text()
 
           Bun.write(
             `./website/public/registry/latest/recipes/${id}.json`,
             JSON.stringify({ id, filename, hasSlots, recipe }, null, 2),
           )
-
-          return
         }
       }
     })
 }
-
-getKeys('slotRecipes')
-getKeys('recipes')
