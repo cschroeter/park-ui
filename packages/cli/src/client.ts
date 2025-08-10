@@ -22,7 +22,6 @@ const ExportsConfig = z.discriminatedUnion('type', [
 
 const Recipe = z.object({
   id: z.string(),
-  name: z.string(),
   filename: z.string(),
   recipe: z.string(),
   hasSlots: z.boolean(),
@@ -30,7 +29,6 @@ const Recipe = z.object({
 
 const Component = z.object({
   id: z.string(),
-  name: z.string(),
   filename: z.string(),
   sourceCode: z.string(),
   exportsConfig: ExportsConfig,
