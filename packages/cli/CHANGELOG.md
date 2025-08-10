@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## Changed
+
+- New CLI for Park UI Next
+
 ## [0.9.0] - 2024-07-31
 
 ### Changed
