@@ -1,6 +1,21 @@
 import path, { parse } from 'node:path'
 import { Project } from 'ts-morph'
 
+type ExportsConfig =
+  | {
+      type: 'named'
+      specifier: string
+      symbols: {
+        name: string
+        isType?: boolean | undefined
+      }[]
+    }
+  | {
+      type: 'namespace'
+      specifier: string
+      name: string
+    }
+
 const project = new Project()
 const indexPath = path.resolve('./components/react/src/components/ui/index.ts')
 const source = project.addSourceFileAtPath(indexPath)
@@ -8,9 +23,10 @@ const source = project.addSourceFileAtPath(indexPath)
 const index: { id: string }[] = []
 
 for (const exp of source.getExportDeclarations()) {
-  const exportsConfig: any[] = []
+  const exportsConfig: ExportsConfig[] = []
 
   const moduleSpecifier = exp.getModuleSpecifierValue()
+  if (!moduleSpecifier) continue
 
   if (exp.getNamespaceExport()) {
     exportsConfig.push({
