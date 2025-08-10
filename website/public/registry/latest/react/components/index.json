@@ -1,1 +1,29 @@
-[{ "id": "avatar", "name": "Avatar" }]
+[
+  {
+    "id": "avatar"
+  },
+  {
+    "id": "badge"
+  },
+  {
+    "id": "button"
+  },
+  {
+    "id": "card"
+  },
+  {
+    "id": "field"
+  },
+  {
+    "id": "heading"
+  },
+  {
+    "id": "input"
+  },
+  {
+    "id": "link"
+  },
+  {
+    "id": "text"
+  }
+]

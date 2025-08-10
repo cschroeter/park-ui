@@ -5,6 +5,8 @@ const project = new Project()
 const indexPath = path.resolve('./components/react/src/components/ui/index.ts')
 const source = project.addSourceFileAtPath(indexPath)
 
+const index: { id: string }[] = []
+
 for (const exp of source.getExportDeclarations()) {
   const exportsConfig: any[] = []
 
@@ -42,6 +44,10 @@ for (const exp of source.getExportDeclarations()) {
     const id = parse(file.name).name
     const filename = parse(file.name).base
 
+    index.push({
+      id,
+    })
+
     Bun.write(
       `./website/public/registry/latest/react/components/${id}.json`,
       JSON.stringify(
@@ -57,3 +63,8 @@ for (const exp of source.getExportDeclarations()) {
     )
   }
 }
+
+Bun.write(
+  `./website/public/registry/latest/react/components/index.json`,
+  JSON.stringify(index, null, 2),
+)

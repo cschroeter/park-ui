@@ -39,7 +39,6 @@ const Component = z.object({
 const Index = z.array(
   z.object({
     id: z.string(),
-    name: z.string(),
   }),
 )
 
