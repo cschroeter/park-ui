@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@pandacss/dev": "1.0.1",
-    "@types/node": "24.2.0",
+    "@types/node": "24.2.1",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
     "typescript": "5.9.2"

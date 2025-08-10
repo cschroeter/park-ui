@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
-    "effect": "3.17.6"
+    "effect": "3.17.7"
   }
 }

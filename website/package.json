@@ -14,7 +14,7 @@
     "@park-ui/react": "workspace:*",
     "@park-ui/styled-system": "workspace:*",
     "change-case": "5.4.4",
-    "effect": "3.17.6",
+    "effect": "3.17.7",
     "framer": "2.4.1",
     "lucide-react": "0.539.0",
     "next": "15.4.6",
@@ -23,7 +23,7 @@
     "react-dom": "19.1.1"
   },
   "devDependencies": {
-    "@types/node": "24.2.0",
+    "@types/node": "24.2.1",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
     "typescript": "5.9.2",

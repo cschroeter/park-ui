@@ -13,19 +13,18 @@
   },
   "dependencies": {
     "@better-fetch/fetch": "1.1.18",
-    "@effect/platform": "0.90.0",
-    "effect": "3.17.6",
+    "effect": "3.17.7",
     "fs-extra": "11.3.1",
     "globby": "14.1.0",
     "pkg-dir": "9.0.0",
     "ts-morph": "26.0.0",
     "yargs": "18.0.0",
-    "zod": "4.0.15"
+    "zod": "4.0.17"
   },
   "devDependencies": {
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "24.2.0",
+    "@types/node": "24.2.1",
     "@types/yargs": "17.0.33",
     "release-it": "19.0.4",
     "typescript": "5.9.2"
