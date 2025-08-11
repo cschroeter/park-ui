@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [1.0.0-next.2] - 2025-08-11
+
 ## Fixed
 
 - Resolved various issues.
