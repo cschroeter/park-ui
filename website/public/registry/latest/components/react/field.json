@@ -2,11 +2,9 @@
   "id": "field",
   "filename": "field.ts",
   "sourceCode": "'use client'\nimport { Field } from '@ark-ui/react/field'\nimport { createStyleContext } from '@park-ui/styled-system/jsx'\nimport { field } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps } from '@park-ui/styled-system/types'\n\nconst { withProvider, withContext } = createStyleContext(field)\n\nexport type RootProps = ComponentProps<typeof Root>\n\nexport const Root = withProvider(Field.Root, 'root')\nexport const RootProvider = withProvider(Field.RootProvider, 'root')\nexport const ErrorText = withContext(Field.ErrorText, 'errorText')\nexport const HelperText = withContext(Field.HelperText, 'helperText')\nexport const Label = withContext(Field.Label, 'label')\n\nexport const Context = Field.Context\n",
-  "exportsConfig": [
-    {
-      "type": "namespace",
-      "specifier": "./field",
-      "name": "Field"
-    }
-  ]
+  "exportsConfig": {
+    "type": "namespace",
+    "specifier": "./field",
+    "name": "Field"
+  }
 }

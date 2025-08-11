@@ -2,20 +2,18 @@
   "id": "text",
   "filename": "text.ts",
   "sourceCode": "import { styled } from '@park-ui/styled-system/jsx'\nimport { type TextVariantProps, text } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps, StyledComponent } from '@park-ui/styled-system/types'\n\ntype ParagraphProps = TextVariantProps & { as?: React.ElementType }\n\nexport type TextProps = ComponentProps<typeof Text>\nexport const Text = styled('p', text) as StyledComponent<'p', ParagraphProps>\n",
-  "exportsConfig": [
-    {
-      "type": "named",
-      "specifier": "./text",
-      "symbols": [
-        {
-          "name": "Text",
-          "isType": false
-        },
-        {
-          "name": "TextProps",
-          "isType": true
-        }
-      ]
-    }
-  ]
+  "exportsConfig": {
+    "type": "named",
+    "specifier": "./text",
+    "symbols": [
+      {
+        "name": "Text",
+        "isType": false
+      },
+      {
+        "name": "TextProps",
+        "isType": true
+      }
+    ]
+  }
 }

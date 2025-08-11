@@ -23,17 +23,17 @@ const source = project.addSourceFileAtPath(indexPath)
 const index: { id: string }[] = []
 
 for (const exp of source.getExportDeclarations()) {
-  const exportsConfig: ExportsConfig[] = []
+  let exportsConfig: ExportsConfig = {} as ExportsConfig
 
   const moduleSpecifier = exp.getModuleSpecifierValue()
   if (!moduleSpecifier) continue
 
   if (exp.getNamespaceExport()) {
-    exportsConfig.push({
+    exportsConfig = {
       type: 'namespace',
       specifier: moduleSpecifier,
       name: exp.getNamespaceExportOrThrow().getName(),
-    })
+    }
   }
 
   const namedExports = exp.getNamedExports().map((ne) => {
@@ -43,11 +43,11 @@ for (const exp of source.getExportDeclarations()) {
   })
 
   if (namedExports.length > 0) {
-    exportsConfig.push({
+    exportsConfig = {
       type: 'named',
       specifier: moduleSpecifier,
       symbols: namedExports,
-    })
+    }
   }
 
   const moduleSourceFile = exp.getModuleSpecifierSourceFile()
