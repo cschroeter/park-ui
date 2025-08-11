@@ -16,9 +16,12 @@ export const updatePandaConfig = async (args: Args) => {
     .find((imp) => imp.getModuleSpecifierValue() === dest)
 
   if (!existingImport) {
+    const relativePath = path.relative(path.dirname(configPath), dest)
+    const importPath = relativePath.startsWith('.') ? relativePath : `./${relativePath}`
+
     source.addImportDeclaration({
       namedImports: ['recipes', 'slotRecipes'],
-      moduleSpecifier: dest,
+      moduleSpecifier: importPath,
     })
   } else {
     for (const name of ['recipes', 'slotRecipes']) {
