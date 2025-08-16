@@ -1,10 +1,7 @@
 pre-commit:
   commands:
-    components:
-      run: bun run build-component-registry && git update-index --again
-      stage_fixed: true
-    recipes:
-      run: bun run build-recipe-registry && git update-index --again
+    registry:
+      run: bun run build:registry && git update-index --again
       stage_fixed: true
     check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"

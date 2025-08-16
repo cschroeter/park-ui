@@ -6,7 +6,7 @@
     {
       "type": "component",
       "content": "'use client'\nimport { createStyleContext } from '@park-ui/styled-system/jsx'\nimport { card } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps } from '@park-ui/styled-system/types'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport const Root = withProvider('div', 'root')\nexport const Header = withContext('div', 'header')\nexport const Body = withContext('div', 'body')\nexport const Footer = withContext('div', 'footer')\nexport const Title = withContext('h3', 'title')\nexport const Description = withContext('div', 'description')\n\nexport type RootProps = ComponentProps<typeof Root>\n",
-      "path": "card.ts",
+      "path": "./card.ts",
       "exports": [
         {
           "type": "namespace",
@@ -14,6 +14,11 @@
           "name": "Card"
         }
       ]
+    },
+    {
+      "type": "slotRecipe",
+      "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const card = defineSlotRecipe({\n  className: 'card',\n  slots: ['root', 'header', 'body', 'footer', 'title', 'description'],\n  base: {\n    root: {\n      bg: 'bg.default',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      display: 'flex',\n      flexDirection: 'column',\n      overflow: 'hidden',\n      position: 'relative',\n    },\n    header: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1',\n      p: '6',\n    },\n    body: {\n      display: 'flex',\n      flex: '1',\n      flexDirection: 'column',\n      pb: '6',\n      px: '6',\n    },\n    footer: {\n      display: 'flex',\n      justifyContent: 'flex-end',\n      pb: '6',\n      pt: '2',\n      px: '6',\n    },\n    title: {\n      color: 'fg.default',\n      textStyle: 'lg',\n      fontWeight: 'semibold',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n  },\n})\n",
+      "path": "./card.ts"
     }
   ]
 }

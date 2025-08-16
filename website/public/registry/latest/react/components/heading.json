@@ -6,7 +6,7 @@
     {
       "type": "component",
       "content": "import { styled } from '@park-ui/styled-system/jsx'\nimport { type TextVariantProps, text } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps, StyledComponent } from '@park-ui/styled-system/types'\n\ntype TextProps = TextVariantProps & { as?: React.ElementType }\n\nexport type HeadingProps = ComponentProps<typeof Heading>\nexport const Heading = styled('h2', text, {\n  defaultProps: { variant: 'heading' },\n}) as StyledComponent<'h2', TextProps>\n",
-      "path": "heading.ts",
+      "path": "./heading.ts",
       "exports": [
         {
           "type": "named",

@@ -1,5 +1,20 @@
-import path, { parse } from 'node:path'
+import { join, parse, resolve } from 'node:path'
 import { Project } from 'ts-morph'
+
+const findRecipe = async (path: string) => {
+  const recipe = Bun.file(join('./packages/preset/src/theme/recipes/', path))
+  const content = await recipe.text().catch(() => null)
+
+  if (!content) {
+    return null
+  }
+
+  return {
+    type: content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe',
+    content,
+    path,
+  }
+}
 
 type ExportEntry =
   | {
@@ -17,7 +32,7 @@ type ExportEntry =
     }
 
 const project = new Project()
-const indexPath = path.resolve('./components/react/src/components/ui/index.ts')
+const indexPath = resolve('./components/react/src/components/ui/index.ts')
 const source = project.addSourceFileAtPath(indexPath)
 
 const index: { id: string }[] = []
@@ -58,11 +73,22 @@ for (const exp of source.getExportDeclarations()) {
     if (!file.name) continue
 
     const id = parse(file.name).name
-    const filename = parse(file.name).base
+    const path = `./${parse(file.name).base}`
 
     index.push({
       id,
     })
+
+    const recipe = await findRecipe(path)
+    const files = [
+      {
+        type: 'component',
+        content: await file.text(),
+        path,
+        exports,
+      },
+      recipe,
+    ].filter(Boolean)
 
     Bun.write(
       `./website/public/registry/latest/react/components/${id}.json`,
@@ -71,14 +97,7 @@ for (const exp of source.getExportDeclarations()) {
           $schema: 'https://next.park-ui.com/schema/registry-item.json',
           id,
           type: 'component',
-          files: [
-            {
-              type: 'component',
-              content: await file.text(),
-              path: filename,
-              exports,
-            },
-          ],
+          files,
         },
         null,
         2,
