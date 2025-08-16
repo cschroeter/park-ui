@@ -116,7 +116,7 @@
           },
           "type": {
             "type": "string",
-            "enum": ["block", "component", "recipe", "item"],
+            "enum": ["block", "component", "recipe", "slotRecipe"],
             "description": "The type of the file. This is used to determine the type of the file when resolved for a project"
           },
           "exports": {
