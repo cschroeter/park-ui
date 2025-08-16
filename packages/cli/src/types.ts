@@ -1,14 +1,32 @@
-type RegistryItemType = 'block' | 'component' | 'recipe' | 'item'
+type RegistryItemType = 'block' | 'component' | 'recipe' | 'slotRecipe'
+
+type ExportEntry =
+  | {
+      type: 'named'
+      specifier: string
+      symbols: {
+        name: string
+        isType?: boolean | undefined
+      }[]
+    }
+  | {
+      type: 'namespace'
+      specifier: string
+      name: string
+    }
 
 interface RegistryFile {
-  /** The path to the file relative to the registry root */
+  /** This is the path to the file in the project. */
   path: string
 
   /** The content of the file */
-  content?: string
+  content: string
 
   /** The type of the file. This is used to determine the type of the file when resolved for a project */
   type: RegistryItemType
+
+  /** Defines the module exports available from this file, including named exports with their symbols and namespace exports. */
+  exports?: ExportEntry[]
 }
 
 interface PandaConfig {

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "input",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "content": "import { Field } from '@ark-ui/react/field'\nimport { styled } from '@park-ui/styled-system/jsx'\nimport { input } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps } from '@park-ui/styled-system/types'\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = styled(Field.Input, input)\n",
+      "path": "input.ts",
+      "exports": [
+        {
+          "type": "named",
+          "specifier": "./input",
+          "symbols": [
+            {
+              "name": "Input",
+              "isType": false
+            },
+            {
+              "name": "InputProps",
+              "isType": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

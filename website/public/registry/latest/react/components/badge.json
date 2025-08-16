@@ -1,0 +1,28 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "badge",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from '@park-ui/styled-system/jsx'\nimport { badge } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps } from '@park-ui/styled-system/types'\n\nexport type BadgeProps = ComponentProps<typeof Badge>\nexport const Badge = styled(ark.div, badge)\n",
+      "path": "badge.ts",
+      "exports": [
+        {
+          "type": "named",
+          "specifier": "./badge",
+          "symbols": [
+            {
+              "name": "Badge",
+              "isType": false
+            },
+            {
+              "name": "BadgeProps",
+              "isType": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

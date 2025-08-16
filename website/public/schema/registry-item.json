@@ -3,6 +3,59 @@
   "title": "RegistryItem",
   "type": "object",
   "required": ["id", "type"],
+  "definitions": {
+    "ExportEntry": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "named"
+            },
+            "specifier": {
+              "type": "string"
+            },
+            "symbols": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "isType": {
+                    "type": "boolean"
+                  }
+                },
+                "required": ["name"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["type", "specifier", "symbols"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "namespace"
+            },
+            "specifier": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": ["type", "specifier", "name"],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
   "properties": {
     "$schema": {
       "type": "string",
@@ -55,7 +108,7 @@
         "properties": {
           "path": {
             "type": "string",
-            "description": "The path to the file relative to the registry root"
+            "description": "This is the path to the file in the project."
           },
           "content": {
             "type": "string",
@@ -65,6 +118,13 @@
             "type": "string",
             "enum": ["block", "component", "recipe", "item"],
             "description": "The type of the file. This is used to determine the type of the file when resolved for a project"
+          },
+          "exports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ExportEntry"
+            },
+            "description": "Defines the module exports available from this file, including named exports with their symbols and namespace exports."
           }
         },
         "additionalProperties": false

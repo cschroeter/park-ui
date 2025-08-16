@@ -1,7 +1,7 @@
 import path, { parse } from 'node:path'
 import { Project } from 'ts-morph'
 
-type ExportsConfig =
+type ExportEntry =
   | {
       type: 'named'
       specifier: string
@@ -23,17 +23,17 @@ const source = project.addSourceFileAtPath(indexPath)
 const index: { id: string }[] = []
 
 for (const exp of source.getExportDeclarations()) {
-  let exportsConfig: ExportsConfig = {} as ExportsConfig
+  const exports: ExportEntry[] = []
 
   const moduleSpecifier = exp.getModuleSpecifierValue()
   if (!moduleSpecifier) continue
 
   if (exp.getNamespaceExport()) {
-    exportsConfig = {
+    exports.push({
       type: 'namespace',
       specifier: moduleSpecifier,
       name: exp.getNamespaceExportOrThrow().getName(),
-    }
+    })
   }
 
   const namedExports = exp.getNamedExports().map((ne) => {
@@ -43,11 +43,11 @@ for (const exp of source.getExportDeclarations()) {
   })
 
   if (namedExports.length > 0) {
-    exportsConfig = {
+    exports.push({
       type: 'named',
       specifier: moduleSpecifier,
       symbols: namedExports,
-    }
+    })
   }
 
   const moduleSourceFile = exp.getModuleSpecifierSourceFile()
@@ -65,13 +65,20 @@ for (const exp of source.getExportDeclarations()) {
     })
 
     Bun.write(
-      `./website/public/registry/latest/components/react/${id}.json`,
+      `./website/public/registry/latest/react/components/${id}.json`,
       JSON.stringify(
         {
+          $schema: 'https://next.park-ui.com/schema/registry-item.json',
           id,
-          filename,
-          sourceCode: await file.text(),
-          exportsConfig,
+          type: 'component',
+          files: [
+            {
+              type: 'component',
+              content: await file.text(),
+              path: filename,
+              exports,
+            },
+          ],
         },
         null,
         2,
@@ -81,6 +88,6 @@ for (const exp of source.getExportDeclarations()) {
 }
 
 Bun.write(
-  `./website/public/registry/latest/components/react/index.json`,
+  `./website/public/registry/latest/react/components/index.json`,
   JSON.stringify(index, null, 2),
 )
