@@ -9,7 +9,7 @@
     "lint": "biome lint ./src"
   },
   "dependencies": {
-    "@ark-ui/react": "5.18.3",
+    "@ark-ui/react": "5.18.4",
     "@icons-pack/react-simple-icons": "13.7.0",
     "@park-ui/react": "workspace:*",
     "@park-ui/styled-system": "workspace:*",
@@ -23,8 +23,8 @@
     "react-dom": "19.1.1"
   },
   "devDependencies": {
-    "@types/node": "24.2.1",
-    "@types/react": "19.1.9",
+    "@types/node": "24.3.0",
+    "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
     "typescript": "5.9.2",
     "velite": "0.2.4"

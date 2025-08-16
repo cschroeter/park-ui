@@ -1,4 +1,5 @@
 import { docs } from '.velite'
+import { Box, Grid, GridItem } from '@park-ui/styled-system/jsx'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { MDXContent } from '~/components/docs/mdx-content'
@@ -23,9 +24,14 @@ export default async function Page(props: Props) {
     context.component = doc.title
   }
   return (
-    <Prose css={{ maxW: 'unset' }}>
-      <MDXContent mdx={doc.mdx} />
-    </Prose>
+    <Grid gridTemplateColumns={{ base: '1fr', md: 'minmax(0,1fr) 288px' }} gap="8" pt="12">
+      <GridItem mx="auto" maxW="2xl" width="full" px={{ base: '4', sm: '6', md: '8' }}>
+        <Prose>
+          <MDXContent mdx={doc.mdx} />
+        </Prose>
+      </GridItem>
+      <Box hideBelow="md">Right</Box>
+    </Grid>
   )
 }
 
