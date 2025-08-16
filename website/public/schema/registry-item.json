@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RegistryItem",
+  "type": "object",
+  "required": ["id", "type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The id of the item. This is used to identify the item in the registry. It should be unique for your registry"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["block", "component", "recipe", "item"],
+      "description": "The type of the item. This is used to determine the type and target path of the item when resolved for a project"
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the item. This is used to provide a brief overview of the item"
+    },
+    "name": {
+      "type": "string",
+      "description": "The human-readable name for your registry item. Keep it short and descriptive"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "An array of NPM dependencies required by the registry item"
+    },
+    "devDependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "An array of NPM dev dependencies required by the registry item"
+    },
+    "registryDependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "An array of registry items that this item depends on. Use the id of the item to reference components and urls to reference other registries"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "type"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "The path to the file relative to the registry root"
+          },
+          "content": {
+            "type": "string",
+            "description": "The content of the file"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["block", "component", "recipe", "item"],
+            "description": "The type of the file. This is used to determine the type of the file when resolved for a project"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "The main payload of the registry item. This is an array of files that are part of the registry item"
+    },
+    "panda": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "theme": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "type": "string"
+                }
+              },
+              "description": "The theme configuration for the panda item"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "description": "The panda configuration for the registry item. This is an object with a config property."
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The categories of the registry item. This is an array of strings"
+    }
+  },
+  "additionalProperties": false
+}
