@@ -4,6 +4,11 @@
   "type": "object",
   "required": ["id", "type"],
   "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "default": "https://next.park-ui.com/schema/registry-item.json"
+    },
     "id": {
       "type": "string",
       "description": "The id of the item. This is used to identify the item in the registry. It should be unique for your registry"
