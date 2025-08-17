@@ -10,6 +10,8 @@ type ExportEntry =
       as: string
     }
 
+type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue }
+
 interface RegistryFile {
   /** This is the path to the file in the project. */
   path: string
@@ -25,7 +27,7 @@ interface RegistryFile {
 }
 
 interface PandaConfig {
-  theme?: Record<string, string>
+  theme?: JsonValue
 }
 
 interface PandaConfiguration {

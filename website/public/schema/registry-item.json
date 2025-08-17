@@ -4,6 +4,22 @@
   "type": "object",
   "required": ["id", "type"],
   "definitions": {
+    "JsonValue": {
+      "anyOf": [
+        { "type": "string" },
+        { "type": "number" },
+        { "type": "boolean" },
+        { "type": "null" },
+        {
+          "type": "array",
+          "items": { "$ref": "#/definitions/JsonValue" }
+        },
+        {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/JsonValue" }
+        }
+      ]
+    },
     "ExportEntry": {
       "oneOf": [
         {
@@ -130,12 +146,7 @@
           "type": "object",
           "properties": {
             "theme": {
-              "type": "object",
-              "patternProperties": {
-                ".*": {
-                  "type": "string"
-                }
-              },
+              "$ref": "#/definitions/JsonValue",
               "description": "The theme configuration for the panda item"
             }
           },
