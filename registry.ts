@@ -27,8 +27,8 @@ const getExportEntries = (exp: ExportDeclaration) => {
   return exports
 }
 
-const findRecipe = async (path: string) => {
-  const file = Bun.file(join('./packages/preset/src/theme/recipes/', path))
+const resolveRecipe = async (fileName: string) => {
+  const file = Bun.file(join('./packages/preset/src/theme/recipes/', fileName))
 
   if (!file.name) return
   const name = parse(file.name).name
@@ -39,7 +39,7 @@ const findRecipe = async (path: string) => {
   return {
     type: content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe',
     content,
-    path,
+    path: `./recipes/${parse(file.name).base}`,
     exports: [{ type: 'named', symbols: [{ name }] }],
   }
 }
@@ -77,7 +77,7 @@ for (const exp of source.getExportDeclarations()) {
       id,
     })
 
-    const recipe = await findRecipe(path)
+    const recipe = await resolveRecipe(path)
     const files = [
       {
         type: 'component',
