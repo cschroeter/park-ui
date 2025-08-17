@@ -14,6 +14,6 @@ export const NotFound = {
   _tag: 'NotFound',
 } as const
 
-export const InternalServerError = {
-  _tag: 'InternalServerError',
+export const HttpError = {
+  _tag: 'HttpError',
 } as const

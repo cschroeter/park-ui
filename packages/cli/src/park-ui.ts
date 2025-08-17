@@ -107,7 +107,6 @@ const promptUser = async () =>
   ) as Promise<Prompt>
 
 const ParkUIConfig = Schema.Struct({
-  $schema: Schema.Literal('https://next.park-ui.com/schema/park-ui-config.json'),
   framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
   paths: Schema.Struct({
     components: Schema.String,

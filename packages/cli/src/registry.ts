@@ -1,6 +1,6 @@
 import { BetterFetchError, createFetch, createSchema } from '@better-fetch/fetch'
 import { Effect } from 'effect'
-import { InternalServerError, NotFound } from './error'
+import { HttpError, NotFound } from './error'
 import { registryIndexList, registryItem } from './schema'
 
 const schema = createSchema({
@@ -35,7 +35,7 @@ interface Params {
   id: string
 }
 
-export const client = {
+export const registry = {
   getComponent: (params: Params) =>
     Effect.tryPromise({
       try: () => $fetch('/components/:framework/:id', { params }),
@@ -43,12 +43,12 @@ export const client = {
         if (e instanceof BetterFetchError) {
           if (e.status === 404) return NotFound
         }
-        return InternalServerError
+        return HttpError
       },
     }),
   getComponentIds: (framework: Framework) =>
     Effect.tryPromise({
       try: () => $fetch('/components/:framework/index', { params: { framework } }),
-      catch: () => InternalServerError,
+      catch: () => HttpError,
     }),
 }
