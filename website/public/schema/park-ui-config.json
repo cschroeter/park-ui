@@ -20,7 +20,7 @@
         "components": {
           "type": "string"
         },
-        "recipes": {
+        "theme": {
           "type": "string"
         }
       },
