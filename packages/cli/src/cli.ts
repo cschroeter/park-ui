@@ -1,6 +1,6 @@
-import { Effect, pipe } from 'effect'
-import { PandaConfigInvalid } from './error'
-import { getPandaConfigPath, updatePandaConfig } from './panda'
+import { Effect } from 'effect'
+
+import { getParkUIConfig } from './park-ui'
 
 const config = {
   theme: {
@@ -22,16 +22,23 @@ const config = {
 }
 
 const main = async () => {
-  const programm = pipe(
-    getPandaConfigPath(),
-    Effect.flatMap((configPath) =>
-      Effect.tryPromise({
-        try: () => updatePandaConfig({ config, configPath }),
-        catch: () => PandaConfigInvalid,
-      }),
-    ),
-  )
+  // user want to install button
+
+  // const components = ['button']
+
+  console.clear()
+
+  // p.intro(`${color.bgCyan(color.white(' Park UI '))}`)
+
+  const programm = getParkUIConfig()
   await Effect.runPromise(programm)
+
+  // const programm = updatePandaConfig(config).pipe(
+  //   Effect.catchTag('PandaConfigInvalid', () => Effect.succeed(undefined)),
+  //   Effect.catchTag('PandaConfigNotFound', () => Effect.succeed(undefined)),
+  // )
+
+  // spinner.stop()
 }
 
 main()

@@ -2,39 +2,67 @@ import { access } from 'node:fs/promises'
 import { join } from 'node:path'
 import { Effect, pipe } from 'effect'
 import { packageDirectory } from 'pkg-dir'
-import { type ObjectLiteralExpression, Project, SyntaxKind } from 'ts-morph'
-import { PandaConfigNotFound } from './error'
+import {
+  type ObjectLiteralExpression,
+  Project,
+  type PropertyAssignment,
+  SyntaxKind,
+} from 'ts-morph'
+import { PandaConfigInvalid, PandaConfigNotFound } from './error'
 
-interface Args {
-  config: Record<string, unknown>
-  configPath: string
-}
+export const updatePandaConfig = (config: Record<string, unknown>) =>
+  getConfigPath().pipe(
+    Effect.flatMap((configPath) =>
+      pipe(
+        Effect.sync(() => new Project()),
+        Effect.tap((project) => Effect.sync(() => project.addSourceFileAtPath(configPath))),
+        Effect.flatMap((project) =>
+          Effect.try({
+            try: () => project.getSourceFileOrThrow(configPath),
+            catch: () => PandaConfigNotFound,
+          }),
+        ),
+        Effect.flatMap((sourceFile) =>
+          pipe(
+            Effect.sync(() =>
+              sourceFile
+                .getDescendantsOfKind(SyntaxKind.CallExpression)
+                .find((call) => call.getExpression().getText() === 'defineConfig'),
+            ),
+            Effect.flatMap(Effect.fromNullable),
+            Effect.catchTag('NoSuchElementException', () => Effect.fail(PandaConfigInvalid)),
+            Effect.flatMap((callExpr) =>
+              pipe(
+                Effect.sync(() => callExpr.getArguments()[0]),
+                Effect.flatMap(Effect.fromNullable),
+                Effect.catchTag('NoSuchElementException', () => Effect.fail(PandaConfigInvalid)),
+              ),
+            ),
+            Effect.flatMap((arg) =>
+              Effect.try({
+                try: () => {
+                  if (!arg.asKind(SyntaxKind.ObjectLiteralExpression)) {
+                    throw new Error('defineConfig arg is not an object')
+                  }
+                  return arg.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
+                },
+                catch: () => PandaConfigInvalid,
+              }),
+            ),
+            Effect.tap((configObj) => Effect.sync(() => mergeObjectLiteral(configObj, config))),
+            Effect.flatMap(() =>
+              Effect.tryPromise({
+                try: () => sourceFile.save(),
+                catch: (error) => new Error(`Failed to save file: ${error}`),
+              }),
+            ),
+          ),
+        ),
+      ),
+    ),
+  )
 
-export const updatePandaConfig = async ({ config, configPath }: Args) => {
-  const project = new Project()
-  project.addSourceFileAtPath(configPath)
-
-  const sourceFile = project.getSourceFileOrThrow(configPath)
-
-  const callExpr = sourceFile
-    .getDescendantsOfKind(SyntaxKind.CallExpression)
-    .find((call) => call.getExpression().getText() === 'defineConfig')
-
-  if (!callExpr) throw new Error('defineConfig(...) not found')
-
-  const arg = callExpr.getArguments()[0]
-  if (!arg || !arg.asKind(SyntaxKind.ObjectLiteralExpression)) {
-    throw new Error('defineConfig arg is not an object')
-  }
-
-  const configObj = arg.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
-
-  mergeObjectLiteral(configObj, config)
-
-  await sourceFile.save()
-}
-
-export const getPandaConfigPath = () =>
+const getConfigPath = () =>
   pipe(
     Effect.promise(() => packageDirectory()),
     Effect.flatMap(Effect.fromNullable),
@@ -51,9 +79,12 @@ export const getPandaConfigPath = () =>
     ),
   )
 
-const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: Record<string, any>) => {
+const mergeObjectLiteral = (
+  objLiteral: ObjectLiteralExpression,
+  update: Record<string, unknown>,
+) => {
   for (const [key, value] of Object.entries(update)) {
-    let prop = objLiteral.getProperty(key) as any
+    let prop = objLiteral.getProperty(key) as PropertyAssignment | undefined
 
     if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
       if (!prop) {
@@ -66,7 +97,7 @@ const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: Record<
         prop
           .setInitializer('{}')
           .getInitializerIfKind(SyntaxKind.ObjectLiteralExpression)) as ObjectLiteralExpression
-      mergeObjectLiteral(nested, value)
+      mergeObjectLiteral(nested, value as Record<string, unknown>)
     } else {
       if (prop) {
         prop.setInitializer(JSON.stringify(value))
