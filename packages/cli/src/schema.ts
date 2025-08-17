@@ -58,5 +58,6 @@ export const registryItem = z.object({
   panda: pandaConfiguration.optional(),
   categories: z.array(z.string()).optional(),
 })
-
 export type RegistryItem = z.infer<typeof registryItem>
+
+export const registryIndexList = z.array(z.array(z.object({ id: z.string() })))

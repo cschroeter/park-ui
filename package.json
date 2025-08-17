@@ -13,6 +13,7 @@
     "lint": "bun run --filter='*' lint",
     "test": "bun run --filter='*' test",
     "typecheck": "bun run --filter='*' typecheck",
+    "cli": "bun run --cwd packages/cli",
     "react": "bun run --cwd components/react",
     "web": "bun run --cwd website",
     "build:registry": "bun run registry.ts"

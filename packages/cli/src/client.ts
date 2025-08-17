@@ -1,9 +1,12 @@
 import { createFetch, createSchema } from '@better-fetch/fetch'
-import { registryItem } from './schema'
+import { registryIndexList, registryItem } from './schema'
 
 const schema = createSchema({
   '/components/:framework/:id': {
     output: registryItem,
+  },
+  '/components/:framework/index': {
+    output: registryIndexList,
   },
 })
 
@@ -30,5 +33,7 @@ interface Params {
 }
 
 export const client = {
-  fetchComponent: (params: Params) => $fetch('/components/:framework/:id', { params }),
+  getComponent: (params: Params) => $fetch('/components/:framework/:id', { params }),
+  getComponentIds: (framework: Framework) =>
+    $fetch('/components/:framework/index', { params: { framework } }),
 }
