@@ -10,7 +10,6 @@
       "exports": [
         {
           "type": "named",
-          "specifier": "./text",
           "symbols": [
             {
               "name": "Text",

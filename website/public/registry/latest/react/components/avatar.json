@@ -10,8 +10,7 @@
       "exports": [
         {
           "type": "namespace",
-          "specifier": "./avatar",
-          "name": "Avatar"
+          "as": "Avatar"
         }
       ]
     },

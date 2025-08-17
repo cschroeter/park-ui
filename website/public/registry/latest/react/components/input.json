@@ -10,7 +10,6 @@
       "exports": [
         {
           "type": "named",
-          "specifier": "./input",
           "symbols": [
             {
               "name": "Input",

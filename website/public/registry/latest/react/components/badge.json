@@ -10,7 +10,6 @@
       "exports": [
         {
           "type": "named",
-          "specifier": "./badge",
           "symbols": [
             {
               "name": "Badge",

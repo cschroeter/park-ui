@@ -10,8 +10,7 @@
       "exports": [
         {
           "type": "namespace",
-          "specifier": "./card",
-          "name": "Card"
+          "as": "Card"
         }
       ]
     },

@@ -10,7 +10,6 @@
       "exports": [
         {
           "type": "named",
-          "specifier": "./heading",
           "symbols": [
             {
               "name": "Heading",

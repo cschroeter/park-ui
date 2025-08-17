@@ -1,18 +1,13 @@
-type RegistryItemType = 'block' | 'component' | 'recipe' | 'slotRecipe'
+type RegistryItemType = 'block' | 'component' | 'recipe' | 'slotRecipe' | 'theme'
 
 type ExportEntry =
   | {
       type: 'named'
-      specifier: string
-      symbols: {
-        name: string
-        isType?: boolean | undefined
-      }[]
+      symbols: { name: string; isType?: boolean }[]
     }
   | {
       type: 'namespace'
-      specifier: string
-      name: string
+      as: string
     }
 
 interface RegistryFile {

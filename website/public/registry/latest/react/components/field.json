@@ -10,8 +10,7 @@
       "exports": [
         {
           "type": "namespace",
-          "specifier": "./field",
-          "name": "Field"
+          "as": "Field"
         }
       ]
     },

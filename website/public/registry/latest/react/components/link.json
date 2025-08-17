@@ -10,7 +10,6 @@
       "exports": [
         {
           "type": "named",
-          "specifier": "./link",
           "symbols": [
             {
               "name": "Link",

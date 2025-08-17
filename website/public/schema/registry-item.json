@@ -10,11 +10,7 @@
           "type": "object",
           "properties": {
             "type": {
-              "type": "string",
               "const": "named"
-            },
-            "specifier": {
-              "type": "string"
             },
             "symbols": {
               "type": "array",
@@ -33,24 +29,20 @@
               }
             }
           },
-          "required": ["type", "specifier", "symbols"],
+          "required": ["type", "symbols"],
           "additionalProperties": false
         },
         {
           "type": "object",
           "properties": {
             "type": {
-              "type": "string",
               "const": "namespace"
             },
-            "specifier": {
-              "type": "string"
-            },
-            "name": {
+            "as": {
               "type": "string"
             }
           },
-          "required": ["type", "specifier", "name"],
+          "required": ["type", "as"],
           "additionalProperties": false
         }
       ]
@@ -116,7 +108,7 @@
           },
           "type": {
             "type": "string",
-            "enum": ["block", "component", "recipe", "slotRecipe"],
+            "enum": ["block", "component", "recipe", "slotRecipe", "theme"],
             "description": "The type of the file. This is used to determine the type of the file when resolved for a project"
           },
           "exports": {

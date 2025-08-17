@@ -10,7 +10,6 @@
       "exports": [
         {
           "type": "named",
-          "specifier": "./button",
           "symbols": [
             {
               "name": "Button",

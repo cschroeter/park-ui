@@ -19,16 +19,11 @@ const findRecipe = async (path: string) => {
 type ExportEntry =
   | {
       type: 'named'
-      specifier: string
-      symbols: {
-        name: string
-        isType?: boolean | undefined
-      }[]
+      symbols: { name: string; isType?: boolean }[]
     }
   | {
       type: 'namespace'
-      specifier: string
-      name: string
+      as: string
     }
 
 const project = new Project()
@@ -46,8 +41,7 @@ for (const exp of source.getExportDeclarations()) {
   if (exp.getNamespaceExport()) {
     exports.push({
       type: 'namespace',
-      specifier: moduleSpecifier,
-      name: exp.getNamespaceExportOrThrow().getName(),
+      as: exp.getNamespaceExportOrThrow().getName(),
     })
   }
 
@@ -60,7 +54,6 @@ for (const exp of source.getExportDeclarations()) {
   if (namedExports.length > 0) {
     exports.push({
       type: 'named',
-      specifier: moduleSpecifier,
       symbols: namedExports,
     })
   }
