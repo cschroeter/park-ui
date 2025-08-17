@@ -1,42 +1,8 @@
 import { join, parse, resolve } from 'node:path'
-import { Project } from 'ts-morph'
+import { type ExportDeclaration, Project } from 'ts-morph'
 
-const findRecipe = async (path: string) => {
-  const recipe = Bun.file(join('./packages/preset/src/theme/recipes/', path))
-  const content = await recipe.text().catch(() => null)
-
-  if (!content) {
-    return null
-  }
-
-  return {
-    type: content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe',
-    content,
-    path,
-  }
-}
-
-type ExportEntry =
-  | {
-      type: 'named'
-      symbols: { name: string; isType?: boolean }[]
-    }
-  | {
-      type: 'namespace'
-      as: string
-    }
-
-const project = new Project()
-const indexPath = resolve('./components/react/src/components/ui/index.ts')
-const source = project.addSourceFileAtPath(indexPath)
-
-const index: { id: string }[] = []
-
-for (const exp of source.getExportDeclarations()) {
+const getExportEntries = (exp: ExportDeclaration) => {
   const exports: ExportEntry[] = []
-
-  const moduleSpecifier = exp.getModuleSpecifierValue()
-  if (!moduleSpecifier) continue
 
   if (exp.getNamespaceExport()) {
     exports.push({
@@ -58,11 +24,50 @@ for (const exp of source.getExportDeclarations()) {
     })
   }
 
+  return exports
+}
+
+const findRecipe = async (path: string) => {
+  const file = Bun.file(join('./packages/preset/src/theme/recipes/', path))
+
+  if (!file.name) return
+  const name = parse(file.name).name
+
+  const content = await file.text().catch(() => null)
+  if (!content) return
+
+  return {
+    type: content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe',
+    content,
+    path,
+    exports: [{ type: 'named', symbols: [{ name }] }],
+  }
+}
+
+type ExportEntry =
+  | {
+      type: 'named'
+      symbols: { name: string; isType?: boolean }[]
+    }
+  | {
+      type: 'namespace'
+      as: string
+    }
+
+const project = new Project()
+const source = project.addSourceFileAtPath(resolve('./components/react/src/components/ui/index.ts'))
+
+const index: { id: string }[] = []
+
+for (const exp of source.getExportDeclarations()) {
+  const moduleSpecifier = exp.getModuleSpecifierValue()
+  if (!moduleSpecifier) continue
+
+  const exports = getExportEntries(exp)
+
   const moduleSourceFile = exp.getModuleSpecifierSourceFile()
   if (moduleSourceFile) {
-    const sourceFile = moduleSourceFile.getFilePath()
-
-    const file = Bun.file(sourceFile)
+    const file = Bun.file(moduleSourceFile.getFilePath())
     if (!file.name) continue
 
     const id = parse(file.name).name
