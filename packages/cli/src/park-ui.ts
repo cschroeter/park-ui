@@ -1,7 +1,7 @@
 import { join, parse } from 'node:path'
 import * as p from '@clack/prompts'
 import { Effect, pipe, Schema } from 'effect'
-import fs from 'fs-extra'
+import { outputJSON, readJSON } from 'fs-extra'
 import { packageDirectory } from 'pkg-dir'
 import { ParkUIConfigNotFound } from './error'
 import type { Framework } from './schema'
@@ -15,26 +15,29 @@ export const getParkUIConfig = () =>
     Effect.flatMap((configPath) =>
       pipe(
         Effect.tryPromise({
-          try: () => fs.readJSONSync(configPath),
+          try: () => readJSON(configPath),
           catch: () => ParkUIConfigNotFound,
         }),
         Effect.flatMap((config) => Schema.decodeUnknown(ParkUIConfig)(config)),
         Effect.catchTag('ParseError', () => {
-          p.note('Invalid or outdated Park UI config detected.\nCreating new config...', 'Info')
-          return createParkUIConfig(configPath)
+          p.note(
+            'Invalid or outdated Park UI configuration detected.\nCreating a new configuration file...',
+            'Info',
+          )
+          return createConfig(configPath)
         }),
         Effect.catchTag('ParkUIConfigNotFound', () => {
           p.note(
-            `Park UI config not found at ${parse(configPath).dir}.\nCreating new config...`,
+            `Park UI configuration not found in ${parse(configPath).dir}.\nInitializing a new configuration...`,
             'Info',
           )
-          return createParkUIConfig(configPath)
+          return createConfig(configPath)
         }),
       ),
     ),
   )
 
-const createParkUIConfig = (configPath: string) =>
+const createConfig = (configPath: string) =>
   pipe(
     Effect.promise(promptUser),
     Effect.map(({ framework, components, theme }) => ({
@@ -47,7 +50,7 @@ const createParkUIConfig = (configPath: string) =>
     })),
     Effect.flatMap((config) =>
       pipe(
-        Effect.promise(() => fs.outputJSON(configPath, config, { spaces: 2 })),
+        Effect.promise(() => outputJSON(configPath, config, { spaces: 2 })),
         Effect.map(() => config),
       ),
     ),
@@ -64,7 +67,7 @@ const promptUser = async () =>
     {
       framework: () =>
         p.select({
-          message: 'Which JS framework do you use?',
+          message: '🚀 Which JavaScript framework are you using?',
           options: [
             { value: 'react', label: 'React' },
             { value: 'solid', label: 'Solid' },
@@ -74,33 +77,38 @@ const promptUser = async () =>
         }),
       components: () =>
         p.text({
-          message: 'Where should components be stored?',
+          message: '📦 Where should UI components be stored?',
           initialValue: './src/components/ui',
           validate: (value) => {
-            if (!value) return 'Please enter a path.'
-            if (!value.startsWith('.')) return 'Please enter a relative path from the project root.'
+            if (!value) return '❌ Please enter a valid path.'
+            if (!value.startsWith('.'))
+              return '❌ Please enter a relative path from the project root (e.g., ./src/components/ui).'
           },
         }),
       theme: () =>
         p.text({
-          message: 'Where should theme related files be stored?',
+          message: '🎨 Where should theme files be stored?',
           initialValue: './src/theme',
           validate: (value) => {
-            if (!value) return 'Please enter a path.'
-            if (!value.startsWith('.')) return 'Please enter a relative path from the project root.'
+            if (!value) return '❌ Please enter a valid path.'
+            if (!value.startsWith('.'))
+              return '❌ Please enter a relative path from the project root (e.g., ./src/theme).'
           },
         }),
     },
     {
       onCancel: () => {
-        p.cancel('Operation cancelled.')
+        p.cancel(
+          "🚫 Setup cancelled. Run the command again when you're ready to configure Park UI.",
+        )
         process.exit(0)
       },
     },
   ) as Promise<Prompt>
 
 const ParkUIConfig = Schema.Struct({
-  framework: Schema.Literal('react', 'solid', 'vue'),
+  $schema: Schema.Literal('https://next.park-ui.com/schema/park-ui-config.json'),
+  framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
   paths: Schema.Struct({
     components: Schema.String,
     theme: Schema.String,

@@ -9,3 +9,11 @@ export const PandaConfigInvalid = {
 export const ParkUIConfigNotFound = {
   _tag: 'ParkUIConfigNotFound',
 } as const
+
+export const NotFound = {
+  _tag: 'NotFound',
+} as const
+
+export const InternalServerError = {
+  _tag: 'InternalServerError',
+} as const

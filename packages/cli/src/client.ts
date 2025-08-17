@@ -1,4 +1,6 @@
-import { createFetch, createSchema } from '@better-fetch/fetch'
+import { BetterFetchError, createFetch, createSchema } from '@better-fetch/fetch'
+import { Effect } from 'effect'
+import { InternalServerError, NotFound } from './error'
 import { registryIndexList, registryItem } from './schema'
 
 const schema = createSchema({
@@ -12,6 +14,7 @@ const schema = createSchema({
 
 const $fetch = createFetch({
   baseURL: 'https://next.park-ui.com/registry',
+  throw: true,
   schema,
   plugins: [
     {
@@ -33,7 +36,19 @@ interface Params {
 }
 
 export const client = {
-  getComponent: (params: Params) => $fetch('/components/:framework/:id', { params }),
+  getComponent: (params: Params) =>
+    Effect.tryPromise({
+      try: () => $fetch('/components/:framework/:id', { params }),
+      catch: (e) => {
+        if (e instanceof BetterFetchError) {
+          if (e.status === 404) return NotFound
+        }
+        return InternalServerError
+      },
+    }),
   getComponentIds: (framework: Framework) =>
-    $fetch('/components/:framework/index', { params: { framework } }),
+    Effect.tryPromise({
+      try: () => $fetch('/components/:framework/index', { params: { framework } }),
+      catch: () => InternalServerError,
+    }),
 }
