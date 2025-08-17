@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 import * as p from '@clack/prompts'
 import { Effect, pipe } from 'effect'
+// import { update } from 'effect/Differ'
 import color from 'picocolors'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { getComponentList, installComponent, installRecipe } from './effects'
 import { getConfig } from './get-config'
 import { updatePandaConfig } from './update-panda-config'
+
+// import { updatePandaTheme } from './update-panda-config2'
 
 const isEmpty = (arr: string[]) => arr.length === 0
 

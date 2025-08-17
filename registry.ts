@@ -89,7 +89,7 @@ for (const exp of source.getExportDeclarations()) {
     ].filter(Boolean)
 
     Bun.write(
-      `./website/public/registry/latest/react/components/${id}.json`,
+      `./website/public/registry/components/react/${id}.json`,
       JSON.stringify(
         {
           $schema: 'https://next.park-ui.com/schema/registry-item.json',
@@ -104,7 +104,4 @@ for (const exp of source.getExportDeclarations()) {
   }
 }
 
-Bun.write(
-  `./website/public/registry/latest/react/components/index.json`,
-  JSON.stringify(index, null, 2),
-)
+Bun.write(`./website/public/registry/components/react/index.json`, JSON.stringify(index, null, 2))
