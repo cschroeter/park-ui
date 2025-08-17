@@ -3,6 +3,6 @@
   "framework": "react",
   "paths": {
     "components": "./dist/components/ui",
-    "recipes": "./dist/theme/recipes"
+    "theme": "./dist/theme"
   }
 }

@@ -15,7 +15,7 @@
     },
     "paths": {
       "type": "object",
-      "required": ["components", "recipes"],
+      "required": ["components", "theme"],
       "properties": {
         "components": {
           "type": "string"

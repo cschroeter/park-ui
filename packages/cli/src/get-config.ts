@@ -8,7 +8,7 @@ const Config = Schema.Struct({
   framework: Schema.Literal('react', 'solid', 'vue'),
   paths: Schema.Struct({
     components: Schema.String,
-    recipes: Schema.String,
+    theme: Schema.String,
   }),
 })
 export type Config = Schema.Schema.Type<typeof Config>
@@ -34,12 +34,12 @@ export const getConfig = (): Effect.Effect<Config, never, never> =>
               )
               return pipe(
                 Effect.promise(promptConfig),
-                Effect.map(({ framework, components, recipes }) => ({
+                Effect.map(({ framework, components, theme }) => ({
                   $schema: 'https://next.park-ui.com/registry/latest/schema.json',
                   framework,
                   paths: {
                     components,
-                    recipes,
+                    theme,
                   },
                 })),
                 Effect.flatMap((config) =>
@@ -49,7 +49,7 @@ export const getConfig = (): Effect.Effect<Config, never, never> =>
                       ...config,
                       paths: {
                         components: path.join(packageDirectory, config.paths.components),
-                        recipes: path.join(packageDirectory, config.paths.recipes),
+                        theme: path.join(packageDirectory, config.paths.theme),
                       },
                     })),
                   ),
@@ -71,7 +71,7 @@ type Framework = 'react' | 'solid' | 'vue'
 interface Prompt {
   framework: Framework
   components: string
-  recipes: string
+  theme: string
 }
 
 const promptConfig = async () =>
@@ -89,20 +89,20 @@ const promptConfig = async () =>
         }),
       components: () =>
         p.text({
-          message: 'Where would you like to store your components?',
+          message: 'Where should components be stored?',
           initialValue: './src/components/ui',
           validate: (value) => {
             if (!value) return 'Please enter a path.'
-            if (!value.startsWith('.')) return 'Please enter a relative path to the project root.'
+            if (!value.startsWith('.')) return 'Please enter a relative path from the project root.'
           },
         }),
-      recipes: () =>
+      theme: () =>
         p.text({
-          message: 'Where would you like to store your recipes?',
-          initialValue: './src/theme/recipes',
+          message: 'Where should theme related files be stored?',
+          initialValue: './src/theme',
           validate: (value) => {
             if (!value) return 'Please enter a path.'
-            if (!value.startsWith('.')) return 'Please enter a relative path to the project root.'
+            if (!value.startsWith('.')) return 'Please enter a relative path from the project root.'
           },
         }),
     },
