@@ -45,7 +45,7 @@
         "exports": [
           {
             "type": "object-literal",
-            "variableName": "recipe",
+            "variableName": "recipes",
             "properties": [
               {
                 "name": "link"

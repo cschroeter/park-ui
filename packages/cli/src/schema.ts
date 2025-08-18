@@ -65,7 +65,9 @@ const pandaConfig = z.object({
 
 const pandaConfiguration = z.object({
   config: pandaConfig.optional(),
+  imports: z.array(moduleDeclaration).optional(),
 })
+export type PandaConfiguration = z.infer<typeof pandaConfiguration>
 
 export const registryItem = z.object({
   id: z.string(),

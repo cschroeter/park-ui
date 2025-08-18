@@ -7,7 +7,7 @@ import { registry } from './registry'
 const main = async () => {
   console.clear()
 
-  const components = ['button', 'avatar']
+  const components = ['button']
 
   const programm = getParkUIConfig().pipe(
     Effect.flatMap((config) =>
@@ -33,3 +33,8 @@ const main = async () => {
 }
 
 main()
+
+// // const programm = updatePandaConfig(config).pipe(
+// //   Effect.catchTag('PandaConfigInvalid', () => Effect.succeed(undefined)),
+// //   Effect.catchTag('PandaConfigNotFound', () => Effect.succeed(undefined)),
+// // )

@@ -47,7 +47,7 @@ const resolveRecipe = async (fileName: string) => {
       exports: [
         {
           type: 'object-literal',
-          variableName: content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe',
+          variableName: content.includes('defineSlotRecipe') ? 'slotRecipes' : 'recipes',
           properties: [{ name }],
         },
       ],

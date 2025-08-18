@@ -2,6 +2,7 @@ import { join } from 'node:path'
 import { Effect, Match } from 'effect'
 import { outputFile } from 'fs-extra'
 import { updateIndexFile } from './index-file'
+import { updatePandaConfig } from './panda'
 import type { ParkUIConfig, RegistryFile, RegistryItem } from './schema'
 
 interface Args {
@@ -15,6 +16,7 @@ export const installRegistryItem = ({ item, config }: Args) =>
       files: item.files,
       config,
     }),
+    updatePandaConfig(item.panda),
   ])
 
 interface CreateFilesArgs {
@@ -56,8 +58,3 @@ const createFiles = ({ files = [], config }: CreateFilesArgs) =>
       ),
     ]),
   )
-
-// // const programm = updatePandaConfig(config).pipe(
-// //   Effect.catchTag('PandaConfigInvalid', () => Effect.succeed(undefined)),
-// //   Effect.catchTag('PandaConfigNotFound', () => Effect.succeed(undefined)),
-// // )

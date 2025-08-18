@@ -9,9 +9,10 @@ import {
   SyntaxKind,
 } from 'ts-morph'
 import { PandaConfigInvalid, PandaConfigNotFound } from './error'
+import type { PandaConfiguration } from './schema'
 
-export const updatePandaConfig = (config: Record<string, unknown>) =>
-  getConfigPath().pipe(
+export const updatePandaConfig = ({ imports = [], config = {} }: PandaConfiguration = {}) => {
+  return getConfigPath().pipe(
     Effect.flatMap((configPath) =>
       pipe(
         Effect.sync(() => new Project()),
@@ -24,43 +25,74 @@ export const updatePandaConfig = (config: Record<string, unknown>) =>
         ),
         Effect.flatMap((sourceFile) =>
           pipe(
-            Effect.sync(() =>
-              sourceFile
-                .getDescendantsOfKind(SyntaxKind.CallExpression)
-                .find((call) => call.getExpression().getText() === 'defineConfig'),
-            ),
-            Effect.flatMap(Effect.fromNullable),
-            Effect.catchTag('NoSuchElementException', () => Effect.fail(PandaConfigInvalid)),
-            Effect.flatMap((callExpr) =>
+            Effect.sync(() => {
+              for (const importConfig of imports) {
+                if (importConfig.type === 'named') {
+                  const { symbols, moduleSpecifier } = importConfig
+
+                  sourceFile.addImportDeclaration({
+                    namedImports: symbols.map((s) => ({
+                      name: s.name,
+                      isTypeOnly: Boolean(s.isType),
+                    })),
+                    moduleSpecifier,
+                  })
+                }
+
+                if (importConfig.type === 'namespace') {
+                  const { namespace, moduleSpecifier } = importConfig
+                  sourceFile.addImportDeclaration({
+                    namespaceImport: namespace,
+                    moduleSpecifier,
+                  })
+                }
+              }
+            }),
+            Effect.flatMap(() =>
               pipe(
-                Effect.sync(() => callExpr.getArguments()[0]),
+                Effect.sync(() =>
+                  sourceFile
+                    .getDescendantsOfKind(SyntaxKind.CallExpression)
+                    .find((call) => call.getExpression().getText() === 'defineConfig'),
+                ),
                 Effect.flatMap(Effect.fromNullable),
                 Effect.catchTag('NoSuchElementException', () => Effect.fail(PandaConfigInvalid)),
+                Effect.flatMap((callExpr) =>
+                  pipe(
+                    Effect.sync(() => callExpr.getArguments()[0]),
+                    Effect.flatMap(Effect.fromNullable),
+                    Effect.catchTag('NoSuchElementException', () =>
+                      Effect.fail(PandaConfigInvalid),
+                    ),
+                  ),
+                ),
+                Effect.flatMap((arg) =>
+                  Effect.try({
+                    try: () => {
+                      if (!arg.asKind(SyntaxKind.ObjectLiteralExpression)) {
+                        throw new Error('defineConfig arg is not an object')
+                      }
+                      return arg.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
+                    },
+                    catch: () => PandaConfigInvalid,
+                  }),
+                ),
+                Effect.tap((configObj) => Effect.sync(() => mergeObjectLiteral(configObj, config))),
+                Effect.tap(() => sourceFile.organizeImports()),
+                Effect.flatMap(() =>
+                  Effect.tryPromise({
+                    try: () => sourceFile.save(),
+                    catch: (error) => new Error(`Failed to save file: ${error}`),
+                  }),
+                ),
               ),
-            ),
-            Effect.flatMap((arg) =>
-              Effect.try({
-                try: () => {
-                  if (!arg.asKind(SyntaxKind.ObjectLiteralExpression)) {
-                    throw new Error('defineConfig arg is not an object')
-                  }
-                  return arg.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
-                },
-                catch: () => PandaConfigInvalid,
-              }),
-            ),
-            Effect.tap((configObj) => Effect.sync(() => mergeObjectLiteral(configObj, config))),
-            Effect.flatMap(() =>
-              Effect.tryPromise({
-                try: () => sourceFile.save(),
-                catch: (error) => new Error(`Failed to save file: ${error}`),
-              }),
             ),
           ),
         ),
       ),
     ),
   )
+}
 
 const getConfigPath = () =>
   pipe(
@@ -100,13 +132,45 @@ const mergeObjectLiteral = (
       mergeObjectLiteral(nested, value as Record<string, unknown>)
     } else {
       if (prop) {
-        prop.setInitializer(JSON.stringify(value))
+        const existingObj = prop.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression)
+        if (
+          existingObj &&
+          existingObj.getProperties().length > 0 &&
+          typeof value === 'string' &&
+          shouldTreatAsIdentifier(key, value)
+        ) {
+          const existingText = existingObj.getText()
+          const spreadText = existingText.slice(1, -1).trim().replace(/,\s*$/, '')
+          prop.setInitializer(`{ ${spreadText}, ...${value} }`)
+        } else {
+          prop.remove()
+          if (typeof value === 'string' && shouldTreatAsIdentifier(key, value)) {
+            objLiteral.addShorthandPropertyAssignment({
+              name: key,
+            })
+          } else {
+            objLiteral.addPropertyAssignment({
+              name: key,
+              initializer: JSON.stringify(value),
+            })
+          }
+        }
       } else {
-        objLiteral.addPropertyAssignment({
-          name: key,
-          initializer: JSON.stringify(value),
-        })
+        if (typeof value === 'string' && shouldTreatAsIdentifier(key, value)) {
+          objLiteral.addShorthandPropertyAssignment({
+            name: key,
+          })
+        } else {
+          objLiteral.addPropertyAssignment({
+            name: key,
+            initializer: JSON.stringify(value),
+          })
+        }
       }
     }
   }
+}
+
+const shouldTreatAsIdentifier = (key: string, value: string): boolean => {
+  return key === value && /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(value)
 }
