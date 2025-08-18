@@ -33,6 +33,9 @@
             "type": {
               "const": "named"
             },
+            "moduleSpecifier": {
+              "type": "string"
+            },
             "symbols": {
               "type": "array",
               "items": {
@@ -43,17 +46,14 @@
                   },
                   "isType": {
                     "type": "boolean"
-                  },
-                  "moduleSpecifier": {
-                    "type": "string"
                   }
                 },
-                "required": ["name", "moduleSpecifier"],
+                "required": ["name"],
                 "additionalProperties": false
               }
             }
           },
-          "required": ["type", "symbols"],
+          "required": ["type", "moduleSpecifier", "symbols"],
           "additionalProperties": false
         },
         {
