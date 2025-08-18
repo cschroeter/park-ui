@@ -45,7 +45,6 @@
         "exports": [
           {
             "type": "object-literal",
-            "moduleSpecifier": "./link",
             "variableName": "recipe",
             "properties": [
               {

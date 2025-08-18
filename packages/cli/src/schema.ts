@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const registryItemType = z.enum(['block', 'component', 'recipe', 'slotRecipe', 'theme'])
+const registryItemType = z.enum(['block', 'component', 'recipe', 'theme'])
 
 const moduleDeclaration = z.discriminatedUnion('type', [
   z.object({

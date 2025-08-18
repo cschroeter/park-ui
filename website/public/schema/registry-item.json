@@ -6,7 +6,7 @@
   "definitions": {
     "RegistryItemType": {
       "type": "string",
-      "enum": ["block", "component", "recipe", "slotRecipe", "theme"],
+      "enum": ["block", "component", "recipe", "theme"],
       "description": "The type of the item. This is used to determine the type and target path of the item when resolved for a project"
     },
     "JsonValue": {

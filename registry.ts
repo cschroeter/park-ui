@@ -38,10 +38,8 @@ const resolveRecipe = async (fileName: string) => {
   const content = await file.text().catch(() => null)
   if (!content) return
 
-  const type = content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe'
-
   return {
-    type,
+    type: 'recipe',
     fileName,
     content,
     indexFile: {
@@ -49,8 +47,7 @@ const resolveRecipe = async (fileName: string) => {
       exports: [
         {
           type: 'object-literal',
-          moduleSpecifier: `./${name}`,
-          variableName: type,
+          variableName: content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe',
           properties: [{ name }],
         },
       ],

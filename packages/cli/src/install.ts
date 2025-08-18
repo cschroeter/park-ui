@@ -32,9 +32,6 @@ const createFiles = ({ files = [], config }: CreateFilesArgs) =>
               Match.when({ type: 'component' }, ({ fileName }) =>
                 join(config.paths.components, fileName),
               ),
-              Match.when({ type: 'slotRecipe' }, ({ fileName }) =>
-                join(config.paths.theme, 'recipes', fileName),
-              ),
               Match.when({ type: 'recipe' }, ({ fileName }) =>
                 join(config.paths.theme, 'recipes', fileName),
               ),
@@ -51,9 +48,6 @@ const createFiles = ({ files = [], config }: CreateFilesArgs) =>
           imports: indexFile.imports,
           path: Match.value(file).pipe(
             Match.when({ type: 'component' }, () => join(config.paths.components, 'index.ts')),
-            Match.when({ type: 'slotRecipe' }, () =>
-              join(config.paths.theme, 'recipes', 'index.ts'),
-            ),
             Match.when({ type: 'recipe' }, () => join(config.paths.theme, 'recipes', 'index.ts')),
             Match.orElse(() => 'index.ts'),
           ),

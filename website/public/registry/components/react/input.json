@@ -45,7 +45,6 @@
         "exports": [
           {
             "type": "object-literal",
-            "moduleSpecifier": "./input",
             "variableName": "recipe",
             "properties": [
               {
