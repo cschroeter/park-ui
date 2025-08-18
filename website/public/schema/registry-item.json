@@ -87,7 +87,7 @@
                     "type": "string"
                   }
                 },
-                "required": ["key"],
+                "required": ["name"],
                 "additionalProperties": false
               }
             }
@@ -100,10 +100,6 @@
     "IndexFile": {
       "type": "object",
       "properties": {
-        "path": {
-          "type": "string",
-          "description": "The path to the index file"
-        },
         "exports": {
           "type": "array",
           "items": {
@@ -119,7 +115,6 @@
           "description": "Defines the module imports required by this index file"
         }
       },
-      "required": ["path"],
       "additionalProperties": false
     }
   },
@@ -169,11 +164,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["path", "type", "content"],
+        "required": ["fileName", "type", "content"],
         "properties": {
-          "path": {
+          "fileName": {
             "type": "string",
-            "description": "This is the path to the file in the project."
+            "description": "The name of the file"
           },
           "content": {
             "type": "string",

@@ -40,10 +40,9 @@ const resolveRecipe = async (fileName: string) => {
 
   return {
     type,
+    fileName,
     content,
-    path: `./recipes/${parse(file.name).base}`,
     indexFile: {
-      path: './recipes/index.ts',
       imports: [{ type: 'named', symbols: [{ name }] }],
       exports: [{ type: 'object-literal', variableName: type, properties: [{ name }] }],
     },
@@ -85,20 +84,21 @@ for (const exp of source.getExportDeclarations()) {
     if (!file.name) continue
 
     const id = parse(file.name).name
-    const path = `./${parse(file.name).base}`
+    const fileName = parse(file.name).base
 
     index.push({
       id,
     })
 
-    const recipe = await resolveRecipe(path)
+    const recipe = await resolveRecipe(fileName)
+    const content = await file.text()
+
     const files = [
       {
         type: 'component',
-        content: await file.text(),
-        path,
+        fileName,
+        content,
         indexFile: {
-          path: './index.ts',
           exports,
         },
       },

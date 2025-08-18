@@ -42,14 +42,14 @@ const jsonValue: z.ZodType<JsonValue> = z.lazy(() =>
 )
 
 const indexFile = z.object({
-  path: z.string(),
+  fileName: z.string(),
   exports: z.array(moduleDeclaration).optional(),
   imports: z.array(moduleDeclaration).optional(),
 })
 
 const registryFile = z.object({
   type: registryItemType,
-  path: z.string(),
+  fileName: z.string(),
   content: z.string(),
   indexFile: indexFile.optional(),
 })
