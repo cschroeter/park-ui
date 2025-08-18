@@ -20,7 +20,8 @@
                 "name": "TextProps",
                 "isType": true
               }
-            ]
+            ],
+            "moduleSpecifier": "./text"
           }
         ]
       }
@@ -33,6 +34,7 @@
         "imports": [
           {
             "type": "named",
+            "moduleSpecifier": "./text",
             "symbols": [
               {
                 "name": "text"
@@ -43,6 +45,7 @@
         "exports": [
           {
             "type": "object-literal",
+            "moduleSpecifier": "./text",
             "variableName": "recipe",
             "properties": [
               {

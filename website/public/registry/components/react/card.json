@@ -11,7 +11,8 @@
         "exports": [
           {
             "type": "namespace",
-            "namespace": "Card"
+            "namespace": "Card",
+            "moduleSpecifier": "./card"
           }
         ]
       }
@@ -24,6 +25,7 @@
         "imports": [
           {
             "type": "named",
+            "moduleSpecifier": "./card",
             "symbols": [
               {
                 "name": "card"
@@ -34,6 +36,7 @@
         "exports": [
           {
             "type": "object-literal",
+            "moduleSpecifier": "./card",
             "variableName": "slotRecipe",
             "properties": [
               {

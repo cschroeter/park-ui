@@ -11,7 +11,8 @@
         "exports": [
           {
             "type": "namespace",
-            "namespace": "Field"
+            "namespace": "Field",
+            "moduleSpecifier": "./field"
           }
         ]
       }
@@ -24,6 +25,7 @@
         "imports": [
           {
             "type": "named",
+            "moduleSpecifier": "./field",
             "symbols": [
               {
                 "name": "field"
@@ -34,6 +36,7 @@
         "exports": [
           {
             "type": "object-literal",
+            "moduleSpecifier": "./field",
             "variableName": "slotRecipe",
             "properties": [
               {

@@ -20,7 +20,8 @@
                 "name": "BadgeProps",
                 "isType": true
               }
-            ]
+            ],
+            "moduleSpecifier": "./badge"
           }
         ]
       }
@@ -33,6 +34,7 @@
         "imports": [
           {
             "type": "named",
+            "moduleSpecifier": "./badge",
             "symbols": [
               {
                 "name": "badge"
@@ -43,6 +45,7 @@
         "exports": [
           {
             "type": "object-literal",
+            "moduleSpecifier": "./badge",
             "variableName": "recipe",
             "properties": [
               {

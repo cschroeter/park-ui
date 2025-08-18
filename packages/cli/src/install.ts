@@ -1,6 +1,7 @@
 import { join } from 'node:path'
 import { Effect, Match } from 'effect'
 import { outputFile } from 'fs-extra'
+import { updateIndexFile } from './index-file'
 import type { ParkUIConfig, RegistryFile, RegistryItem } from './schema'
 
 interface Args {
@@ -23,19 +24,43 @@ interface CreateFilesArgs {
 
 const createFiles = ({ files = [], config }: CreateFilesArgs) =>
   Effect.forEach(files, (file) =>
-    Effect.tryPromise({
-      try: () =>
-        outputFile(
-          Match.value(file).pipe(
-            Match.when({ type: 'component' }, () => join(config.paths.components, file.path)),
-            Match.when({ type: 'slotRecipe' }, () => join(config.paths.theme, file.path)),
-            Match.when({ type: 'recipe' }, () => join(config.paths.theme, file.path)),
-            Match.orElse(() => file.path),
+    Effect.all([
+      Effect.tryPromise({
+        try: () =>
+          outputFile(
+            Match.value(file).pipe(
+              Match.when({ type: 'component' }, ({ fileName }) =>
+                join(config.paths.components, fileName),
+              ),
+              Match.when({ type: 'slotRecipe' }, ({ fileName }) =>
+                join(config.paths.theme, 'recipes', fileName),
+              ),
+              Match.when({ type: 'recipe' }, ({ fileName }) =>
+                join(config.paths.theme, 'recipes', fileName),
+              ),
+              Match.orElse(() => file.fileName),
+            ),
+            file.content,
           ),
-          file.content,
-        ),
-      catch: () => new Error(`Failed to create file: ${file.path}`),
-    }),
+        catch: () => new Error(`Failed to create file: ${file.fileName}`),
+      }),
+
+      Effect.fromNullable(file.indexFile).pipe(
+        Effect.map((indexFile) => ({
+          exports: indexFile.exports,
+          imports: indexFile.imports,
+          path: Match.value(file).pipe(
+            Match.when({ type: 'component' }, () => join(config.paths.components, 'index.ts')),
+            Match.when({ type: 'slotRecipe' }, () =>
+              join(config.paths.theme, 'recipes', 'index.ts'),
+            ),
+            Match.when({ type: 'recipe' }, () => join(config.paths.theme, 'recipes', 'index.ts')),
+            Match.orElse(() => 'index.ts'),
+          ),
+        })),
+        Effect.map(updateIndexFile),
+      ),
+    ]),
   )
 
 // // const programm = updatePandaConfig(config).pipe(

@@ -11,7 +11,8 @@
         "exports": [
           {
             "type": "namespace",
-            "namespace": "Avatar"
+            "namespace": "Avatar",
+            "moduleSpecifier": "./avatar"
           }
         ]
       }
@@ -24,6 +25,7 @@
         "imports": [
           {
             "type": "named",
+            "moduleSpecifier": "./avatar",
             "symbols": [
               {
                 "name": "avatar"
@@ -34,6 +36,7 @@
         "exports": [
           {
             "type": "object-literal",
+            "moduleSpecifier": "./avatar",
             "variableName": "slotRecipe",
             "properties": [
               {

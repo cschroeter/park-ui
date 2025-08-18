@@ -5,6 +5,7 @@ const registryItemType = z.enum(['block', 'component', 'recipe', 'slotRecipe', '
 const moduleDeclaration = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('named'),
+    moduleSpecifier: z.string(),
     symbols: z.array(
       z.object({
         name: z.string(),
@@ -14,6 +15,7 @@ const moduleDeclaration = z.discriminatedUnion('type', [
   }),
   z.object({
     type: z.literal('namespace'),
+    moduleSpecifier: z.string(),
     namespace: z.string(),
   }),
   z.object({

@@ -8,6 +8,7 @@ const getExportEntries = (exp: ExportDeclaration) => {
     exports.push({
       type: 'namespace',
       namespace: exp.getNamespaceExportOrThrow().getName(),
+      moduleSpecifier: exp.getModuleSpecifierValue() || '',
     })
   }
 
@@ -21,6 +22,7 @@ const getExportEntries = (exp: ExportDeclaration) => {
     exports.push({
       type: 'named',
       symbols: namedExports,
+      moduleSpecifier: exp.getModuleSpecifierValue() || '',
     })
   }
 
@@ -43,8 +45,15 @@ const resolveRecipe = async (fileName: string) => {
     fileName,
     content,
     indexFile: {
-      imports: [{ type: 'named', symbols: [{ name }] }],
-      exports: [{ type: 'object-literal', variableName: type, properties: [{ name }] }],
+      imports: [{ type: 'named', moduleSpecifier: `./${name}`, symbols: [{ name }] }],
+      exports: [
+        {
+          type: 'object-literal',
+          moduleSpecifier: `./${name}`,
+          variableName: type,
+          properties: [{ name }],
+        },
+      ],
     },
   }
 }
@@ -52,11 +61,13 @@ const resolveRecipe = async (fileName: string) => {
 type ModuleDeclaration =
   | {
       type: 'named'
+      moduleSpecifier: string
       symbols: { name: string; isType?: boolean }[]
     }
   | {
       type: 'namespace'
       namespace: string
+      moduleSpecifier: string
     }
   | {
       type: 'object-literal'

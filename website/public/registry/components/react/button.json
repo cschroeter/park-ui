@@ -20,7 +20,8 @@
                 "name": "ButtonProps",
                 "isType": true
               }
-            ]
+            ],
+            "moduleSpecifier": "./button"
           }
         ]
       }
@@ -33,6 +34,7 @@
         "imports": [
           {
             "type": "named",
+            "moduleSpecifier": "./button",
             "symbols": [
               {
                 "name": "button"
@@ -43,6 +45,7 @@
         "exports": [
           {
             "type": "object-literal",
+            "moduleSpecifier": "./button",
             "variableName": "recipe",
             "properties": [
               {
