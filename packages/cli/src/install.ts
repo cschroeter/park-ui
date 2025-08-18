@@ -3,28 +3,28 @@ import { Effect, Match } from 'effect'
 import { outputFile } from 'fs-extra'
 import { updateIndexFile } from './index-file'
 import { updatePandaConfig } from './panda'
-import type { ParkUIConfig, RegistryFile, RegistryItem } from './schema'
+import type { Context, RegistryFile, RegistryItem } from './schema'
 
 interface Args {
   item: RegistryItem
-  config: ParkUIConfig
+  ctx: Context
 }
 
-export const installRegistryItem = ({ item: { files, pandaConfig }, config }: Args) =>
+export const installRegistryItem = ({ item: { files, pandaConfig }, ctx }: Args) =>
   Effect.all([
     createFiles({
       files,
-      config,
+      ctx,
     }),
     updatePandaConfig(pandaConfig),
   ])
 
 interface CreateFilesArgs {
   files?: RegistryFile[]
-  config: ParkUIConfig
+  ctx: Context
 }
 
-const createFiles = ({ files = [], config }: CreateFilesArgs) =>
+const createFiles = ({ files = [], ctx }: CreateFilesArgs) =>
   Effect.forEach(files, (file) =>
     Effect.all([
       Effect.tryPromise({
@@ -32,10 +32,10 @@ const createFiles = ({ files = [], config }: CreateFilesArgs) =>
           outputFile(
             Match.value(file).pipe(
               Match.when({ type: 'component' }, ({ fileName }) =>
-                join(config.paths.components, fileName),
+                join(ctx.paths.components, fileName),
               ),
               Match.when({ type: 'recipe' }, ({ fileName }) =>
-                join(config.paths.theme, 'recipes', fileName),
+                join(ctx.paths.theme, 'recipes', fileName),
               ),
               Match.orElse(() => file.fileName),
             ),
@@ -49,8 +49,8 @@ const createFiles = ({ files = [], config }: CreateFilesArgs) =>
           exports: indexFile.exports,
           imports: indexFile.imports,
           path: Match.value(file).pipe(
-            Match.when({ type: 'component' }, () => join(config.paths.components, 'index.ts')),
-            Match.when({ type: 'recipe' }, () => join(config.paths.theme, 'recipes', 'index.ts')),
+            Match.when({ type: 'component' }, () => join(ctx.paths.components, 'index.ts')),
+            Match.when({ type: 'recipe' }, () => join(ctx.paths.theme, 'recipes', 'index.ts')),
             Match.orElse(() => 'index.ts'),
           ),
         })),

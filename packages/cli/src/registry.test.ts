@@ -13,7 +13,7 @@ describe('Registry', () => {
   })
 
   it('should return list of component IDs for a given framework', async () => {
-    const data = await Effect.runPromise(registry.getComponentIds('react'))
+    const data = await Effect.runPromise(registry.getComponentIds({ framework: 'react' }))
 
     expect(data.length).toBeGreaterThan(0)
   })

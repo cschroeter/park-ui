@@ -46,9 +46,9 @@ export const registry = {
         return HttpError
       },
     }),
-  getComponentIds: (framework: Framework) =>
+  getComponentIds: (params: Omit<Params, 'id'>) =>
     Effect.tryPromise({
-      try: () => $fetch('/components/:framework/index', { params: { framework } }),
+      try: () => $fetch('/components/:framework/index', { params }),
       catch: () => HttpError,
-    }),
+    }).pipe(Effect.map((item) => item.map((i) => i.id))),
 }
