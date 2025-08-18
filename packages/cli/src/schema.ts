@@ -14,7 +14,7 @@ const moduleDeclaration = z.discriminatedUnion('type', [
   }),
   z.object({
     type: z.literal('namespace'),
-    as: z.string(),
+    namespaceExport: z.string(),
   }),
   z.object({
     type: z.literal('object-literal'),
@@ -27,6 +27,7 @@ const moduleDeclaration = z.discriminatedUnion('type', [
     ),
   }),
 ])
+export type ModuleDeclaration = z.infer<typeof moduleDeclaration>
 
 type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue }
 
@@ -46,6 +47,7 @@ const indexFile = z.object({
   exports: z.array(moduleDeclaration).optional(),
   imports: z.array(moduleDeclaration).optional(),
 })
+export type IndexFile = z.infer<typeof indexFile>
 
 const registryFile = z.object({
   type: registryItemType,

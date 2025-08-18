@@ -59,11 +59,11 @@
             "type": {
               "const": "namespace"
             },
-            "as": {
+            "namespaceExport": {
               "type": "string"
             }
           },
-          "required": ["type", "as"],
+          "required": ["type", "namespaceExport"],
           "additionalProperties": false
         },
         {
