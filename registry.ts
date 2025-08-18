@@ -7,7 +7,7 @@ const getExportEntries = (exp: ExportDeclaration) => {
   if (exp.getNamespaceExport()) {
     exports.push({
       type: 'namespace',
-      namespaceExport: exp.getNamespaceExportOrThrow().getName(),
+      namespace: exp.getNamespaceExportOrThrow().getName(),
     })
   }
 
@@ -56,7 +56,7 @@ type ModuleDeclaration =
     }
   | {
       type: 'namespace'
-      namespaceExport: string
+      namespace: string
     }
   | {
       type: 'object-literal'

@@ -11,7 +11,7 @@
         "exports": [
           {
             "type": "namespace",
-            "namespaceExport": "Field"
+            "namespace": "Field"
           }
         ]
       }

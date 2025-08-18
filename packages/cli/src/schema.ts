@@ -14,7 +14,7 @@ const moduleDeclaration = z.discriminatedUnion('type', [
   }),
   z.object({
     type: z.literal('namespace'),
-    namespaceExport: z.string(),
+    namespace: z.string(),
   }),
   z.object({
     type: z.literal('object-literal'),
