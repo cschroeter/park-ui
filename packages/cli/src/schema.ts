@@ -37,6 +37,7 @@ const registryFile = z.object({
   content: z.string(),
   exports: z.array(exportEntry).optional(),
 })
+export type RegistryFile = z.infer<typeof registryFile>
 
 const pandaConfig = z.object({
   theme: jsonValue.optional(),
@@ -72,5 +73,4 @@ const ParkUIConfig = z.object({
     theme: z.string(),
   }),
 })
-
 export type ParkUIConfig = z.infer<typeof ParkUIConfig>
