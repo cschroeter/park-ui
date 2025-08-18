@@ -1,0 +1,36 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "colors/blue",
+  "type": "theme",
+  "files": [
+    {
+      "type": "theme",
+      "content": "",
+      "fileName": "./colors/blue.ts"
+    }
+  ],
+  "panda": {
+    "imports": [
+      {
+        "type": "named",
+        "moduleSpecifier": "./colors/blue",
+        "symbols": [
+          {
+            "name": "blue"
+          }
+        ]
+      }
+    ],
+    "config": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "blue": "blue"
+            }
+          }
+        }
+      }
+    }
+  }
+}
