@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 const registryItemType = z.enum(['block', 'component', 'recipe', 'slotRecipe', 'theme'])
 
-const exportEntry = z.discriminatedUnion('type', [
+const moduleDeclaration = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('named'),
     symbols: z.array(
@@ -15,6 +15,16 @@ const exportEntry = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('namespace'),
     as: z.string(),
+  }),
+  z.object({
+    type: z.literal('object-literal'),
+    variableName: z.string(),
+    properties: z.array(
+      z.object({
+        key: z.string(),
+        value: z.string().optional(),
+      }),
+    ),
   }),
 ])
 
@@ -31,11 +41,17 @@ const jsonValue: z.ZodType<JsonValue> = z.lazy(() =>
   ]),
 )
 
+const indexFile = z.object({
+  path: z.string(),
+  exports: z.array(moduleDeclaration).optional(),
+  imports: z.array(moduleDeclaration).optional(),
+})
+
 const registryFile = z.object({
   type: registryItemType,
   path: z.string(),
   content: z.string(),
-  exports: z.array(exportEntry).optional(),
+  indexFile: indexFile.optional(),
 })
 export type RegistryFile = z.infer<typeof registryFile>
 
