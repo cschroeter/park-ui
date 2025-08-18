@@ -10,13 +10,13 @@ interface Args {
   config: ParkUIConfig
 }
 
-export const installRegistryItem = ({ item, config }: Args) =>
+export const installRegistryItem = ({ item: { files, pandaConfig }, config }: Args) =>
   Effect.all([
     createFiles({
-      files: item.files,
+      files,
       config,
     }),
-    updatePandaConfig(item.panda),
+    updatePandaConfig(pandaConfig),
   ])
 
 interface CreateFilesArgs {

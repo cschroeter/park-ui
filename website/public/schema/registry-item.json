@@ -192,22 +192,23 @@
       },
       "description": "The main payload of the registry item. This is an array of files that are part of the registry item"
     },
-    "panda": {
+    "pandaConfig": {
       "type": "object",
       "properties": {
-        "config": {
-          "type": "object",
-          "properties": {
-            "theme": {
-              "$ref": "#/definitions/JsonValue",
-              "description": "The theme configuration for the panda item"
-            }
+        "extension": {
+          "$ref": "#/definitions/JsonValue",
+          "description": "The theme configuration for the panda item"
+        },
+        "imports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ModuleDeclaration"
           },
-          "additionalProperties": false
+          "description": "The module imports required for the panda configuration"
         }
       },
       "additionalProperties": false,
-      "description": "The panda configuration for the registry item. This is an object with a config property."
+      "description": "The panda configuration for the registry item."
     },
     "categories": {
       "type": "array",

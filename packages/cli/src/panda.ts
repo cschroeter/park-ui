@@ -9,9 +9,9 @@ import {
   SyntaxKind,
 } from 'ts-morph'
 import { PandaConfigInvalid, PandaConfigNotFound } from './error'
-import type { PandaConfiguration } from './schema'
+import type { JsonValue, PandaConfig } from './schema'
 
-export const updatePandaConfig = ({ imports = [], config = {} }: PandaConfiguration = {}) => {
+export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig = {}) => {
   return getConfigPath().pipe(
     Effect.flatMap((configPath) =>
       pipe(
@@ -77,7 +77,9 @@ export const updatePandaConfig = ({ imports = [], config = {} }: PandaConfigurat
                     catch: () => PandaConfigInvalid,
                   }),
                 ),
-                Effect.tap((configObj) => Effect.sync(() => mergeObjectLiteral(configObj, config))),
+                Effect.tap((objLiteral) =>
+                  Effect.sync(() => mergeObjectLiteral(objLiteral, extension)),
+                ),
                 Effect.tap(() => sourceFile.organizeImports()),
                 Effect.flatMap(() =>
                   Effect.tryPromise({
@@ -111,10 +113,10 @@ const getConfigPath = () =>
     ),
   )
 
-const mergeObjectLiteral = (
-  objLiteral: ObjectLiteralExpression,
-  update: Record<string, unknown>,
-) => {
+const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: JsonValue) => {
+  if (typeof update !== 'object' || update === null || Array.isArray(update)) {
+    throw new Error('update must be an object')
+  }
   for (const [key, value] of Object.entries(update)) {
     let prop = objLiteral.getProperty(key) as PropertyAssignment | undefined
 
@@ -129,7 +131,7 @@ const mergeObjectLiteral = (
         prop
           .setInitializer('{}')
           .getInitializerIfKind(SyntaxKind.ObjectLiteralExpression)) as ObjectLiteralExpression
-      mergeObjectLiteral(nested, value as Record<string, unknown>)
+      mergeObjectLiteral(nested, value)
     } else {
       if (prop) {
         const existingObj = prop.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression)

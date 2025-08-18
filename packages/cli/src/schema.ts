@@ -31,7 +31,13 @@ const moduleDeclaration = z.discriminatedUnion('type', [
 ])
 export type ModuleDeclaration = z.infer<typeof moduleDeclaration>
 
-type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue }
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonValue[]
+  | { [key: string]: JsonValue }
 
 const jsonValue: z.ZodType<JsonValue> = z.lazy(() =>
   z.union([
@@ -45,7 +51,6 @@ const jsonValue: z.ZodType<JsonValue> = z.lazy(() =>
 )
 
 const indexFile = z.object({
-  fileName: z.string(),
   exports: z.array(moduleDeclaration).optional(),
   imports: z.array(moduleDeclaration).optional(),
 })
@@ -60,14 +65,10 @@ const registryFile = z.object({
 export type RegistryFile = z.infer<typeof registryFile>
 
 const pandaConfig = z.object({
-  theme: jsonValue.optional(),
-})
-
-const pandaConfiguration = z.object({
-  config: pandaConfig.optional(),
+  extension: jsonValue.optional(),
   imports: z.array(moduleDeclaration).optional(),
 })
-export type PandaConfiguration = z.infer<typeof pandaConfiguration>
+export type PandaConfig = z.infer<typeof pandaConfig>
 
 export const registryItem = z.object({
   id: z.string(),
@@ -78,7 +79,7 @@ export const registryItem = z.object({
   devDependencies: z.array(z.string()).optional(),
   registryDependencies: z.array(z.string()).optional(),
   files: z.array(registryFile).optional(),
-  panda: pandaConfiguration.optional(),
+  pandaConfig: pandaConfig.optional(),
   categories: z.array(z.string()).optional(),
 })
 export type RegistryItem = z.infer<typeof registryItem>
