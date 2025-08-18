@@ -80,7 +80,7 @@
               "items": {
                 "type": "object",
                 "properties": {
-                  "key": {
+                  "name": {
                     "type": "string"
                   },
                   "value": {

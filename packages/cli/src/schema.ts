@@ -21,7 +21,7 @@ const moduleDeclaration = z.discriminatedUnion('type', [
     variableName: z.string(),
     properties: z.array(
       z.object({
-        key: z.string(),
+        name: z.string(),
         value: z.string().optional(),
       }),
     ),

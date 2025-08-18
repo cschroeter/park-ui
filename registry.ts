@@ -2,7 +2,7 @@ import { join, parse, resolve } from 'node:path'
 import { type ExportDeclaration, Project } from 'ts-morph'
 
 const getExportEntries = (exp: ExportDeclaration) => {
-  const exports: ExportEntry[] = []
+  const exports: ModuleDeclaration[] = []
 
   if (exp.getNamespaceExport()) {
     exports.push({
@@ -36,15 +36,21 @@ const resolveRecipe = async (fileName: string) => {
   const content = await file.text().catch(() => null)
   if (!content) return
 
+  const type = content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe'
+
   return {
-    type: content.includes('defineSlotRecipe') ? 'slotRecipe' : 'recipe',
+    type,
     content,
     path: `./recipes/${parse(file.name).base}`,
-    exports: [{ type: 'named', symbols: [{ name }] }],
+    indexFile: {
+      path: './recipes/index.ts',
+      imports: [{ type: 'named', symbols: [{ name }] }],
+      exports: [{ type: 'object-literal', variableName: type, properties: [{ name }] }],
+    },
   }
 }
 
-type ExportEntry =
+type ModuleDeclaration =
   | {
       type: 'named'
       symbols: { name: string; isType?: boolean }[]
@@ -52,6 +58,14 @@ type ExportEntry =
   | {
       type: 'namespace'
       as: string
+    }
+  | {
+      type: 'object-literal'
+      variableName: string
+      properties: {
+        key: string
+        value?: string
+      }[]
     }
 
 const project = new Project()
@@ -83,7 +97,10 @@ for (const exp of source.getExportDeclarations()) {
         type: 'component',
         content: await file.text(),
         path,
-        exports,
+        indexFile: {
+          path: './index.ts',
+          exports,
+        },
       },
       recipe,
     ].filter(Boolean)
