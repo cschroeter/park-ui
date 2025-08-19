@@ -13,7 +13,7 @@ const main = () => {
 
       export const ${color} = defineSemanticTokens.colors(${tokens})
 `
-      fs.writeFileSync(join(process.cwd(), 'src/colors', `${color}.ts`), content)
+      fs.writeFileSync(join(process.cwd(), 'src/theme/colors', `${color}.ts`), content)
     })
 }
 

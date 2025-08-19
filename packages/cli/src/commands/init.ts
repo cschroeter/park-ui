@@ -14,8 +14,8 @@ export const init = new Command('init').description('').action(async () => {
     verifyPandaConfig(),
     pipe(
       promptInitConfig(),
-      Effect.flatMap((config) =>
-        Effect.all([createParkUIConfig(config), createThemeConfig(config)]),
+      Effect.flatMap(({ config, colors }) =>
+        Effect.all([createParkUIConfig(config), createThemeConfig(colors)]),
       ),
     ),
   ]).pipe(

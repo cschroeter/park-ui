@@ -1,6 +1,6 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
-export const gray = defineSemanticTokens.colors({
+export const neutral = defineSemanticTokens.colors({
   '1': { value: { _light: { value: '#fcfcfc' }, _dark: { value: '#111111' } } },
   '2': { value: { _light: { value: '#f9f9f9' }, _dark: { value: '#191919' } } },
   '3': { value: { _light: { value: '#f0f0f0' }, _dark: { value: '#222222' } } },

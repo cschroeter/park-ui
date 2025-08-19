@@ -28,15 +28,17 @@ export const promptInitConfig = () =>
           try: () => prompt(colors),
           catch: () => new Error('Failed to collect configuration. Please try again.'),
         }).pipe(
-          Effect.map((config) => ({
-            framework: config.framework,
-            paths: {
-              components: config.components,
-              theme: config.theme,
+          Effect.map(({ accentColor, framework, components, grayColor, theme }) => ({
+            config: {
+              framework,
+              paths: {
+                components,
+                theme,
+              },
             },
             colors: {
-              accent: config.accentColor,
-              gray: config.grayColor,
+              accentColor,
+              grayColor,
             },
           })),
         ),

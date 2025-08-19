@@ -112,6 +112,8 @@ const generateColors = async () => {
       })
     }
 
+    const key = type === 'gray' ? 'gray' : id
+
     Bun.write(
       `./website/public/registry/theme/colors/${type}/${id}.json`,
       JSON.stringify(
@@ -133,7 +135,7 @@ const generateColors = async () => {
                 extend: {
                   semanticTokens: {
                     colors: {
-                      [id]: id,
+                      [key]: id,
                     },
                   },
                 },

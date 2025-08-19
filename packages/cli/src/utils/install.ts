@@ -7,24 +7,24 @@ import { updatePandaConfig } from './panda'
 
 interface Args {
   item: RegistryItem
-  ctx: ParkUIConfig
+  config: ParkUIConfig
 }
 
-export const installRegistryItem = ({ item: { files, pandaConfig }, ctx }: Args) =>
+export const installRegistryItem = ({ item: { files, pandaConfig }, config }: Args) =>
   Effect.all([
     createFiles({
       files,
-      ctx,
+      config,
     }),
     updatePandaConfig(pandaConfig),
   ])
 
 interface CreateFilesArgs {
   files?: RegistryFile[]
-  ctx: ParkUIConfig
+  config: ParkUIConfig
 }
 
-const createFiles = ({ files = [], ctx }: CreateFilesArgs) =>
+const createFiles = ({ files = [], config }: CreateFilesArgs) =>
   Effect.forEach(files, (file) =>
     Effect.all([
       Effect.tryPromise({
@@ -32,11 +32,12 @@ const createFiles = ({ files = [], ctx }: CreateFilesArgs) =>
           outputFile(
             Match.value(file).pipe(
               Match.when({ type: 'component' }, ({ fileName }) =>
-                join(ctx.paths.components, fileName),
+                join(config.paths.components, fileName),
               ),
               Match.when({ type: 'recipe' }, ({ fileName }) =>
-                join(ctx.paths.theme, 'recipes', fileName),
+                join(config.paths.theme, 'recipes', fileName),
               ),
+              Match.when({ type: 'theme' }, ({ fileName }) => join(config.paths.theme, fileName)),
               Match.orElse(() => file.fileName),
             ),
             file.content,
@@ -49,12 +50,13 @@ const createFiles = ({ files = [], ctx }: CreateFilesArgs) =>
           exports: indexFile.exports,
           imports: indexFile.imports,
           path: Match.value(file).pipe(
-            Match.when({ type: 'component' }, () => join(ctx.paths.components, 'index.ts')),
-            Match.when({ type: 'recipe' }, () => join(ctx.paths.theme, 'recipes', 'index.ts')),
+            Match.when({ type: 'component' }, () => join(config.paths.components, 'index.ts')),
+            Match.when({ type: 'recipe' }, () => join(config.paths.theme, 'recipes', 'index.ts')),
             Match.orElse(() => 'index.ts'),
           ),
         })),
         Effect.map(updateIndexFile),
+        Effect.catchTag('NoSuchElementException', () => Effect.void),
       ),
     ]),
   )

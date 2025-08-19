@@ -56,6 +56,16 @@ export const registry = {
       try: () => $fetch('/theme/colors/gray/index'),
       catch: () => HttpError,
     }).pipe(Effect.map((item) => item.map((i) => i.id))),
+  getGrayColor: (params: Omit<Params, 'framework'>) =>
+    Effect.tryPromise({
+      try: () => $fetch('/theme/colors/gray/:id', { params }),
+      catch: () => HttpError,
+    }),
+  getAccentColor: (params: Omit<Params, 'framework'>) =>
+    Effect.tryPromise({
+      try: () => $fetch('/theme/colors/accent/:id', { params }),
+      catch: () => HttpError,
+    }),
   getComponent: (params: Params) =>
     Effect.tryPromise({
       try: () => $fetch('/components/:framework/:id', { params }),
