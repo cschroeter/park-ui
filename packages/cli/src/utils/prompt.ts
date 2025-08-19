@@ -1,5 +1,6 @@
 import * as p from '@clack/prompts'
 import { Effect } from 'effect'
+import { titleCase } from 'scule'
 import type { Framework } from '~/schema'
 import { registry } from './registry'
 
@@ -9,13 +10,12 @@ export const promptInitConfig = () =>
       Effect.map(([accentColors, grayColors]) => {
         const accentOptions = accentColors.map((color) => ({
           value: color,
-          label: color.toUpperCase(),
+          label: titleCase(color),
         }))
         const grayOptions = grayColors.map((color) => ({
           value: color,
-          label: color.toUpperCase(),
+          label: titleCase(color),
         }))
-
         return {
           accentColors: accentOptions,
           neutralColors: grayOptions,
