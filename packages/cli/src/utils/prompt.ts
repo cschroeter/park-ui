@@ -1,26 +1,56 @@
 import * as p from '@clack/prompts'
 import { Effect } from 'effect'
 import type { Framework } from '~/schema'
+import { registry } from './registry'
 
 export const promptInitConfig = () =>
-  Effect.tryPromise({
-    try: () => prompt(),
-    catch: () => new Error('Failed to collect configuration. Please try again.'),
-  }).pipe(
-    Effect.map((config) => ({
-      framework: config.framework,
-      paths: {
-        components: config.components,
-        theme: config.theme,
-      },
-      colors: {
-        accent: config.accentColor,
-        gray: config.grayColor,
-      },
-    })),
-  )
+  Effect.all([registry.getAcccentColors(), registry.getGrayColors()])
+    .pipe(
+      Effect.map(([accentColors, grayColors]) => {
+        const accentOptions = accentColors.map((color) => ({
+          value: color,
+          label: color.toUpperCase(),
+        }))
+        const grayOptions = grayColors.map((color) => ({
+          value: color,
+          label: color.toUpperCase(),
+        }))
 
-const prompt = () =>
+        return {
+          accentColors: accentOptions,
+          neutralColors: grayOptions,
+        }
+      }),
+    )
+    .pipe(
+      Effect.flatMap((colors) =>
+        Effect.tryPromise({
+          try: () => prompt(colors),
+          catch: () => new Error('Failed to collect configuration. Please try again.'),
+        }).pipe(
+          Effect.map((config) => ({
+            framework: config.framework,
+            paths: {
+              components: config.components,
+              theme: config.theme,
+            },
+            colors: {
+              accent: config.accentColor,
+              gray: config.grayColor,
+            },
+          })),
+        ),
+      ),
+    )
+
+type Option = p.Option<string>
+
+interface Args {
+  accentColors: Option[]
+  neutralColors: Option[]
+}
+
+const prompt = ({ accentColors, neutralColors }: Args) =>
   p.group(
     {
       framework: () =>
@@ -57,14 +87,14 @@ const prompt = () =>
       accentColor: () =>
         p.autocomplete({
           message: 'Select an accent color',
-          options: [],
+          options: accentColors,
           placeholder: 'Type to search...',
           maxItems: 8,
         }),
       grayColor: () =>
         p.autocomplete({
-          message: 'Select a gray color',
-          options: [],
+          message: 'Select a neutral color',
+          options: neutralColors,
           placeholder: 'Type to search...',
           maxItems: 8,
         }),

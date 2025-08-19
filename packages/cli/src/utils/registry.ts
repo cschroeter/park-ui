@@ -1,6 +1,6 @@
 import { BetterFetchError, createFetch, createSchema } from '@better-fetch/fetch'
 import { Effect } from 'effect'
-import { registryIndexList, registryItem } from '../schema'
+import { type Framework, registryIndexList, registryItem } from '../schema'
 import { HttpError, RegistryItemNotFound } from './errors'
 
 const schema = createSchema({
@@ -9,6 +9,18 @@ const schema = createSchema({
   },
   '/components/:framework/index': {
     output: registryIndexList,
+  },
+  '/theme/colors/gray/:id': {
+    output: registryItem,
+  },
+  '/theme/colors/gray/index': {
+    output: registryIndexList,
+  },
+  '/theme/colors/accent/index': {
+    output: registryIndexList,
+  },
+  '/theme/colors/accent/:id': {
+    output: registryItem,
   },
 })
 
@@ -28,14 +40,22 @@ const $fetch = createFetch({
   ],
 })
 
-type Framework = 'react' | 'vue' | 'svelte' | 'solid'
-
 interface Params {
   framework: Framework
   id: string
 }
 
 export const registry = {
+  getAcccentColors: () =>
+    Effect.tryPromise({
+      try: () => $fetch('/theme/colors/accent/index'),
+      catch: () => HttpError,
+    }).pipe(Effect.map((item) => item.map((i) => i.id))),
+  getGrayColors: () =>
+    Effect.tryPromise({
+      try: () => $fetch('/theme/colors/gray/index'),
+      catch: () => HttpError,
+    }).pipe(Effect.map((item) => item.map((i) => i.id))),
   getComponent: (params: Params) =>
     Effect.tryPromise({
       try: () => $fetch('/components/:framework/:id', { params }),

@@ -1,13 +1,13 @@
 import { join } from 'node:path'
 import { Effect, Match } from 'effect'
 import { outputFile } from 'fs-extra'
-import type { Context, RegistryFile, RegistryItem } from '../schema'
+import type { ParkUIConfig, RegistryFile, RegistryItem } from '../schema'
 import { updateIndexFile } from './index-file'
 import { updatePandaConfig } from './panda'
 
 interface Args {
   item: RegistryItem
-  ctx: Context
+  ctx: ParkUIConfig
 }
 
 export const installRegistryItem = ({ item: { files, pandaConfig }, ctx }: Args) =>
@@ -21,7 +21,7 @@ export const installRegistryItem = ({ item: { files, pandaConfig }, ctx }: Args)
 
 interface CreateFilesArgs {
   files?: RegistryFile[]
-  ctx: Context
+  ctx: ParkUIConfig
 }
 
 const createFiles = ({ files = [], ctx }: CreateFilesArgs) =>
