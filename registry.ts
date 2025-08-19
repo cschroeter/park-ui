@@ -79,7 +79,10 @@ const resolveRecipe = async (fileName: string) => {
 const generateColors = async () => {
   const glob = new Glob('./packages/preset/src/colors/*.ts')
 
-  const index: { id: string }[] = []
+  const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate']
+
+  const grayIndex: { id: string }[] = []
+  const accentIndex: { id: string }[] = []
 
   for await (const path of glob.scan('.')) {
     const file = Bun.file(path)
@@ -89,6 +92,8 @@ const generateColors = async () => {
     const fileName = `./colors/${parse(file.name).base}`
     const content = await file.text()
 
+    const type = grayColors.includes(id) ? 'gray' : 'accent'
+
     const files = [
       {
         type: 'theme',
@@ -97,12 +102,18 @@ const generateColors = async () => {
       },
     ]
 
-    index.push({
-      id,
-    })
+    if (type === 'gray') {
+      grayIndex.push({
+        id,
+      })
+    } else {
+      accentIndex.push({
+        id,
+      })
+    }
 
     Bun.write(
-      `./website/public/registry/theme/colors/${id}.json`,
+      `./website/public/registry/theme/colors/${type}/${id}.json`,
       JSON.stringify(
         {
           $schema: 'https://next.park-ui.com/schema/registry-item.json',
@@ -137,9 +148,18 @@ const generateColors = async () => {
   }
 
   Bun.write(
-    `./website/public/registry/theme/colors/index.json`,
+    `./website/public/registry/theme/colors/gray/index.json`,
     JSON.stringify(
-      index.sort((a, b) => a.id.localeCompare(b.id)),
+      grayIndex.sort((a, b) => a.id.localeCompare(b.id)),
+      null,
+      2,
+    ),
+  )
+
+  Bun.write(
+    `./website/public/registry/theme/colors/accent/index.json`,
+    JSON.stringify(
+      grayIndex.sort((a, b) => a.id.localeCompare(b.id)),
       null,
       2,
     ),
