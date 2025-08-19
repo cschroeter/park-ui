@@ -1,6 +1,7 @@
-export const PandaConfigNotFound = {
-  _tag: 'PandaConfigNotFound',
-} as const
+export const PandaConfigNotFound = (message: string) => ({
+  _tag: 'PandaConfigNotFound' as const,
+  message,
+})
 
 export const PandaConfigInvalid = {
   _tag: 'PandaConfigInvalid',

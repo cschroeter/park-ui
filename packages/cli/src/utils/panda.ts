@@ -12,7 +12,7 @@ import type { JsonValue, PandaConfig } from '../schema'
 import { PandaConfigInvalid, PandaConfigNotFound } from './errors'
 
 export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig = {}) => {
-  return getConfigPath().pipe(
+  return getPandaConfigPath().pipe(
     Effect.flatMap((configPath) =>
       pipe(
         Effect.sync(() => new Project()),
@@ -96,7 +96,7 @@ export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig 
   )
 }
 
-const getConfigPath = () =>
+export const getPandaConfigPath = () =>
   pipe(
     Effect.promise(() => packageDirectory()),
     Effect.flatMap(Effect.fromNullable),
@@ -106,7 +106,10 @@ const getConfigPath = () =>
       pipe(
         Effect.tryPromise({
           try: () => access(configPath),
-          catch: () => PandaConfigNotFound,
+          catch: () =>
+            PandaConfigNotFound(
+              `No Panda CSS configuration found at ${configPath}\nInstall Panda CSS then try again.`,
+            ),
         }),
         Effect.map(() => configPath),
       ),
