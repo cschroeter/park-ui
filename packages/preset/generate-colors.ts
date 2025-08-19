@@ -4,99 +4,61 @@ import * as radixColors from '@radix-ui/colors'
 
 const main = () => {
   Object.keys(radixColors)
-    .filter((color) => !/[A-Z]/.test(color))
-    .filter((color) => color !== 'default')
-    // .map((color) => (color === 'gray' ? 'neutral' : color))
-    // biome-ignore lint/suspicious/useIterableCallbackReturn: sure
-    .map((color) => {
-      const tokens = defineSemanticTokens(color)
+    .filter((color) => !/[A-Z]/.test(color) && color !== 'default')
+    .map((color) => ({ color, tokens: generateSemanticTokens(color) }))
+    .forEach((colorPalette) => {
+      const color = colorPalette.color === 'gray' ? 'neutral' : colorPalette.color
+      const tokens = JSON.stringify(colorPalette.tokens, null, 0)
+      const content = `import { defineSemanticTokens } from '@pandacss/dev'
 
-      fs.writeFileSync(
-        join(process.cwd(), 'src/colors', `${color}.ts`),
-        `import { defineSemanticTokens } from '@pandacss/dev'
-
-      export const ${color} = defineSemanticTokens.colors(${JSON.stringify(tokens, null, 0)})
-            `,
-      )
+      export const ${color} = defineSemanticTokens.colors(${tokens})
+`
+      fs.writeFileSync(join(process.cwd(), 'src/colors', `${color}.ts`), content)
     })
 }
 
-const defineSemanticTokens = (color: string) => {
-  const tokens = defineColorTokens(color)
-  const numbers = Array.from({ length: 12 }, (_, i) => i + 1)
+const generateSemanticTokens = (color: string) => {
+  const { light, dark } = getColorTokens(color)
 
-  const semanticTokens = numbers.reduce((acc, num) => {
-    acc[num] = {
-      value: {
-        _light: tokens.light[num],
-        _dark: tokens.dark[num],
-      },
+  // Generate numbered tokens (1-12) and alpha tokens (a1-a12)
+  const semanticTokens = {}
+  for (let i = 1; i <= 12; i++) {
+    semanticTokens[i] = {
+      value: { _light: light[i], _dark: dark[i] },
     }
-    acc[`a${num}`] = {
-      value: {
-        _light: tokens.light[`a${num}`],
-        _dark: tokens.dark[`a${num}`],
-      },
+    semanticTokens[`a${i}`] = {
+      value: { _light: light[`a${i}`], _dark: dark[`a${i}`] },
     }
-    return acc
-  }, {})
-
-  const aliasTokens = {
-    default: {
-      value: `{ colors.${color}.9 }`,
-    },
-    emphasized: {
-      value: `{ colors.${color}.10 }`,
-    },
-    fg: {
-      value: 'white',
-    },
-    text: {
-      value: `{ colors.${color}.a11 }`,
-    },
   }
 
-  return { ...semanticTokens, ...aliasTokens }
+  // Add alias tokens
+  return {
+    ...semanticTokens,
+    default: { value: `{ colors.${color}.9 }` },
+    emphasized: { value: `{ colors.${color}.10 }` },
+    fg: { value: 'white' },
+    text: { value: `{ colors.${color}.a11 }` },
+  }
 }
 
-const defineColorTokens = (color: string) => {
-  const colorObj = Object.fromEntries(
-    Object.keys(radixColors)
-      .filter((key) => key.startsWith(color))
-      .filter((key) => !/\d/.test(key))
-      .map((key) => {
-        // biome-ignore lint/performance/noDynamicNamespaceImportAccess: no one cares
-        const tokens = toColorTokens(color, radixColors[key])
-        return [key, tokens]
-      }),
-  )
+const getColorTokens = (color: string) => {
+  const light = {}
+  const dark = {}
 
-  return Object.keys(colorObj).reduce(
-    (acc, key) => {
-      const target = key.includes('Dark') ? 'dark' : 'light'
-      acc[target] = { ...acc[target], ...colorObj[key] }
-      return acc
-    },
-    { light: {}, dark: {} },
-  )
-}
+  Object.keys(radixColors)
+    .filter((key) => key.startsWith(color) && !/\d/.test(key))
+    .forEach((key) => {
+      // biome-ignore lint/performance/noDynamicNamespaceImportAccess: no one cares
+      const scale = radixColors[key]
+      const target = key.includes('Dark') ? dark : light
 
-interface Token<T> {
-  value: T
-  description?: string
-}
+      Object.keys(scale).forEach((scaleKey) => {
+        const tokenName = scaleKey.replace(color, '').toLowerCase()
+        target[tokenName] = { value: scale[scaleKey] }
+      })
+    })
 
-const toColorTokens = (
-  color: string,
-  scale: Record<string, string>,
-): Record<string, Token<string>> => {
-  return Object.fromEntries(
-    Object.keys(scale).map((key) => {
-      const value = scale[key]
-      const name = key.replace(color, '').toLowerCase()
-      return [name, { value }]
-    }),
-  )
+  return { light, dark }
 }
 
 main()

@@ -23,7 +23,7 @@
         "noArrayIndexKey": "off"
       },
       "complexity": {
-        "noForEach": "info"
+        "noForEach": "off"
       },
       "correctness": {
         "noUnusedImports": "error"
