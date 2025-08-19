@@ -77,7 +77,7 @@ const resolveRecipe = async (fileName: string) => {
 }
 
 const generateColors = async () => {
-  const glob = new Glob('./packages/preset/src/colors/*.ts')
+  const glob = new Glob('./packages/preset/src/theme/colors/*.ts')
 
   const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate']
 
@@ -159,7 +159,7 @@ const generateColors = async () => {
   Bun.write(
     `./website/public/registry/theme/colors/accent/index.json`,
     JSON.stringify(
-      grayIndex.sort((a, b) => a.id.localeCompare(b.id)),
+      accentIndex.sort((a, b) => a.id.localeCompare(b.id)),
       null,
       2,
     ),

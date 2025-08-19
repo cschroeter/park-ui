@@ -1,20 +1,77 @@
 [
   {
-    "id": "mauve"
+    "id": "amber"
   },
   {
-    "id": "neutral"
+    "id": "blue"
   },
   {
-    "id": "olive"
+    "id": "bronze"
   },
   {
-    "id": "sage"
+    "id": "brown"
   },
   {
-    "id": "sand"
+    "id": "crimson"
   },
   {
-    "id": "slate"
+    "id": "cyan"
+  },
+  {
+    "id": "gold"
+  },
+  {
+    "id": "grass"
+  },
+  {
+    "id": "green"
+  },
+  {
+    "id": "indigo"
+  },
+  {
+    "id": "iris"
+  },
+  {
+    "id": "jade"
+  },
+  {
+    "id": "lime"
+  },
+  {
+    "id": "mint"
+  },
+  {
+    "id": "orange"
+  },
+  {
+    "id": "pink"
+  },
+  {
+    "id": "plum"
+  },
+  {
+    "id": "purple"
+  },
+  {
+    "id": "red"
+  },
+  {
+    "id": "ruby"
+  },
+  {
+    "id": "sky"
+  },
+  {
+    "id": "teal"
+  },
+  {
+    "id": "tomato"
+  },
+  {
+    "id": "violet"
+  },
+  {
+    "id": "yellow"
   }
 ]
