@@ -1,7 +1,7 @@
 import { BetterFetchError, createFetch, createSchema } from '@better-fetch/fetch'
 import { Effect } from 'effect'
-import { HttpError, NotFound } from './error'
-import { registryIndexList, registryItem } from './schema'
+import { HttpError, NotFound } from '../errors'
+import { registryIndexList, registryItem } from '../schema'
 
 const schema = createSchema({
   '/components/:framework/:id': {

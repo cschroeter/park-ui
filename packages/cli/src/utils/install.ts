@@ -1,9 +1,9 @@
 import { join } from 'node:path'
 import { Effect, Match } from 'effect'
 import { outputFile } from 'fs-extra'
+import type { Context, RegistryFile, RegistryItem } from '../schema'
 import { updateIndexFile } from './index-file'
 import { updatePandaConfig } from './panda'
-import type { Context, RegistryFile, RegistryItem } from './schema'
 
 interface Args {
   item: RegistryItem

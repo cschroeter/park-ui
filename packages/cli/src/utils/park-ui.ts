@@ -3,8 +3,8 @@ import * as p from '@clack/prompts'
 import { Effect, pipe, Schema } from 'effect'
 import { outputJSON, readJSON } from 'fs-extra'
 import { packageDirectory } from 'pkg-dir'
-import { ParkUIConfigNotFound } from './error'
-import type { Framework } from './schema'
+import { ParkUIConfigNotFound } from '../errors'
+import type { Framework } from '../schema'
 
 export const getParkUIConfig = () =>
   pipe(

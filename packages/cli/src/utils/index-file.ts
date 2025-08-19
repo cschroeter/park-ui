@@ -1,5 +1,5 @@
 import { Node, Project, type SourceFile, SyntaxKind, VariableDeclarationKind } from 'ts-morph'
-import type { ModuleDeclaration } from './schema'
+import type { ModuleDeclaration } from '../schema'
 
 interface Args {
   imports?: ModuleDeclaration[]
