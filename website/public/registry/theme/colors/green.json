@@ -1,0 +1,37 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "green",
+  "type": "theme",
+  "files": [
+    {
+      "type": "theme",
+      "fileName": "./colors/green.ts",
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const green = defineSemanticTokens.colors({\n  '1': { value: { _light: { value: '#fbfefc' }, _dark: { value: '#0e1512' } } },\n  '2': { value: { _light: { value: '#f4fbf6' }, _dark: { value: '#121b17' } } },\n  '3': { value: { _light: { value: '#e6f6eb' }, _dark: { value: '#132d21' } } },\n  '4': { value: { _light: { value: '#d6f1df' }, _dark: { value: '#113b29' } } },\n  '5': { value: { _light: { value: '#c4e8d1' }, _dark: { value: '#174933' } } },\n  '6': { value: { _light: { value: '#adddc0' }, _dark: { value: '#20573e' } } },\n  '7': { value: { _light: { value: '#8eceaa' }, _dark: { value: '#28684a' } } },\n  '8': { value: { _light: { value: '#5bb98b' }, _dark: { value: '#2f7c57' } } },\n  '9': { value: { _light: { value: '#30a46c' }, _dark: { value: '#30a46c' } } },\n  '10': { value: { _light: { value: '#2b9a66' }, _dark: { value: '#33b074' } } },\n  '11': { value: { _light: { value: '#218358' }, _dark: { value: '#3dd68c' } } },\n  '12': { value: { _light: { value: '#193b2d' }, _dark: { value: '#b1f1cb' } } },\n  a1: { value: { _light: { value: '#00c04004' }, _dark: { value: '#00de4505' } } },\n  a2: { value: { _light: { value: '#00a32f0b' }, _dark: { value: '#29f99d0b' } } },\n  a3: { value: { _light: { value: '#00a43319' }, _dark: { value: '#22ff991e' } } },\n  a4: { value: { _light: { value: '#00a83829' }, _dark: { value: '#11ff992d' } } },\n  a5: { value: { _light: { value: '#019c393b' }, _dark: { value: '#2bffa23c' } } },\n  a6: { value: { _light: { value: '#00963c52' }, _dark: { value: '#44ffaa4b' } } },\n  a7: { value: { _light: { value: '#00914071' }, _dark: { value: '#50fdac5e' } } },\n  a8: { value: { _light: { value: '#00924ba4' }, _dark: { value: '#54ffad73' } } },\n  a9: { value: { _light: { value: '#008f4acf' }, _dark: { value: '#44ffa49e' } } },\n  a10: { value: { _light: { value: '#008647d4' }, _dark: { value: '#43fea4ab' } } },\n  a11: { value: { _light: { value: '#00713fde' }, _dark: { value: '#46fea5d4' } } },\n  a12: { value: { _light: { value: '#002616e6' }, _dark: { value: '#bbffd7f0' } } },\n  default: { value: '{ colors.green.9 }' },\n  emphasized: { value: '{ colors.green.10 }' },\n  fg: { value: 'white' },\n  text: { value: '{ colors.green.a11 }' },\n})\n"
+    }
+  ],
+  "pandaConfig": {
+    "imports": [
+      {
+        "type": "named",
+        "moduleSpecifier": "./colors/green",
+        "symbols": [
+          {
+            "name": "green",
+            "isType": false
+          }
+        ]
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "green": "green"
+            }
+          }
+        }
+      }
+    }
+  }
+}

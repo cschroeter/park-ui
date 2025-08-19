@@ -1,0 +1,37 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "sand",
+  "type": "theme",
+  "files": [
+    {
+      "type": "theme",
+      "fileName": "./colors/sand.ts",
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const sand = defineSemanticTokens.colors({\n  '1': { value: { _light: { value: '#fdfdfc' }, _dark: { value: '#111110' } } },\n  '2': { value: { _light: { value: '#f9f9f8' }, _dark: { value: '#191918' } } },\n  '3': { value: { _light: { value: '#f1f0ef' }, _dark: { value: '#222221' } } },\n  '4': { value: { _light: { value: '#e9e8e6' }, _dark: { value: '#2a2a28' } } },\n  '5': { value: { _light: { value: '#e2e1de' }, _dark: { value: '#31312e' } } },\n  '6': { value: { _light: { value: '#dad9d6' }, _dark: { value: '#3b3a37' } } },\n  '7': { value: { _light: { value: '#cfceca' }, _dark: { value: '#494844' } } },\n  '8': { value: { _light: { value: '#bcbbb5' }, _dark: { value: '#62605b' } } },\n  '9': { value: { _light: { value: '#8d8d86' }, _dark: { value: '#6f6d66' } } },\n  '10': { value: { _light: { value: '#82827c' }, _dark: { value: '#7c7b74' } } },\n  '11': { value: { _light: { value: '#63635e' }, _dark: { value: '#b5b3ad' } } },\n  '12': { value: { _light: { value: '#21201c' }, _dark: { value: '#eeeeec' } } },\n  a1: { value: { _light: { value: '#55550003' }, _dark: { value: '#00000000' } } },\n  a2: { value: { _light: { value: '#25250007' }, _dark: { value: '#f4f4f309' } } },\n  a3: { value: { _light: { value: '#20100010' }, _dark: { value: '#f6f6f513' } } },\n  a4: { value: { _light: { value: '#1f150019' }, _dark: { value: '#fefef31b' } } },\n  a5: { value: { _light: { value: '#1f180021' }, _dark: { value: '#fbfbeb23' } } },\n  a6: { value: { _light: { value: '#19130029' }, _dark: { value: '#fffaed2d' } } },\n  a7: { value: { _light: { value: '#19140035' }, _dark: { value: '#fffbed3c' } } },\n  a8: { value: { _light: { value: '#1915014a' }, _dark: { value: '#fff9eb57' } } },\n  a9: { value: { _light: { value: '#0f0f0079' }, _dark: { value: '#fffae965' } } },\n  a10: { value: { _light: { value: '#0c0c0083' }, _dark: { value: '#fffdee73' } } },\n  a11: { value: { _light: { value: '#080800a1' }, _dark: { value: '#fffcf4b0' } } },\n  a12: { value: { _light: { value: '#060500e3' }, _dark: { value: '#fffffded' } } },\n  default: { value: '{ colors.sand.9 }' },\n  emphasized: { value: '{ colors.sand.10 }' },\n  fg: { value: 'white' },\n  text: { value: '{ colors.sand.a11 }' },\n})\n"
+    }
+  ],
+  "pandaConfig": {
+    "imports": [
+      {
+        "type": "named",
+        "moduleSpecifier": "./colors/sand",
+        "symbols": [
+          {
+            "name": "sand",
+            "isType": false
+          }
+        ]
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "sand": "sand"
+            }
+          }
+        }
+      }
+    }
+  }
+}

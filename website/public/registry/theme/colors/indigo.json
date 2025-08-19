@@ -1,0 +1,37 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "indigo",
+  "type": "theme",
+  "files": [
+    {
+      "type": "theme",
+      "fileName": "./colors/indigo.ts",
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const indigo = defineSemanticTokens.colors({\n  '1': { value: { _light: { value: '#fdfdfe' }, _dark: { value: '#11131f' } } },\n  '2': { value: { _light: { value: '#f7f9ff' }, _dark: { value: '#141726' } } },\n  '3': { value: { _light: { value: '#edf2fe' }, _dark: { value: '#182449' } } },\n  '4': { value: { _light: { value: '#e1e9ff' }, _dark: { value: '#1d2e62' } } },\n  '5': { value: { _light: { value: '#d2deff' }, _dark: { value: '#253974' } } },\n  '6': { value: { _light: { value: '#c1d0ff' }, _dark: { value: '#304384' } } },\n  '7': { value: { _light: { value: '#abbdf9' }, _dark: { value: '#3a4f97' } } },\n  '8': { value: { _light: { value: '#8da4ef' }, _dark: { value: '#435db1' } } },\n  '9': { value: { _light: { value: '#3e63dd' }, _dark: { value: '#3e63dd' } } },\n  '10': { value: { _light: { value: '#3358d4' }, _dark: { value: '#5472e4' } } },\n  '11': { value: { _light: { value: '#3a5bc7' }, _dark: { value: '#9eb1ff' } } },\n  '12': { value: { _light: { value: '#1f2d5c' }, _dark: { value: '#d6e1ff' } } },\n  a1: { value: { _light: { value: '#00008002' }, _dark: { value: '#1133ff0f' } } },\n  a2: { value: { _light: { value: '#0040ff08' }, _dark: { value: '#3354fa17' } } },\n  a3: { value: { _light: { value: '#0047f112' }, _dark: { value: '#2f62ff3c' } } },\n  a4: { value: { _light: { value: '#0044ff1e' }, _dark: { value: '#3566ff57' } } },\n  a5: { value: { _light: { value: '#0044ff2d' }, _dark: { value: '#4171fd6b' } } },\n  a6: { value: { _light: { value: '#003eff3e' }, _dark: { value: '#5178fd7c' } } },\n  a7: { value: { _light: { value: '#0037ed54' }, _dark: { value: '#5a7fff90' } } },\n  a8: { value: { _light: { value: '#0034dc72' }, _dark: { value: '#5b81feac' } } },\n  a9: { value: { _light: { value: '#0031d2c1' }, _dark: { value: '#4671ffdb' } } },\n  a10: { value: { _light: { value: '#002ec9cc' }, _dark: { value: '#5c7efee3' } } },\n  a11: { value: { _light: { value: '#002bb7c5' }, _dark: { value: '#9eb1ff' } } },\n  a12: { value: { _light: { value: '#001046e0' }, _dark: { value: '#d6e1ff' } } },\n  default: { value: '{ colors.indigo.9 }' },\n  emphasized: { value: '{ colors.indigo.10 }' },\n  fg: { value: 'white' },\n  text: { value: '{ colors.indigo.a11 }' },\n})\n"
+    }
+  ],
+  "pandaConfig": {
+    "imports": [
+      {
+        "type": "named",
+        "moduleSpecifier": "./colors/indigo",
+        "symbols": [
+          {
+            "name": "indigo",
+            "isType": false
+          }
+        ]
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "indigo": "indigo"
+            }
+          }
+        }
+      }
+    }
+  }
+}

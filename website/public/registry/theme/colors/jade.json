@@ -1,0 +1,37 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "jade",
+  "type": "theme",
+  "files": [
+    {
+      "type": "theme",
+      "fileName": "./colors/jade.ts",
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const jade = defineSemanticTokens.colors({\n  '1': { value: { _light: { value: '#fbfefd' }, _dark: { value: '#0d1512' } } },\n  '2': { value: { _light: { value: '#f4fbf7' }, _dark: { value: '#121c18' } } },\n  '3': { value: { _light: { value: '#e6f7ed' }, _dark: { value: '#0f2e22' } } },\n  '4': { value: { _light: { value: '#d6f1e3' }, _dark: { value: '#0b3b2c' } } },\n  '5': { value: { _light: { value: '#c3e9d7' }, _dark: { value: '#114837' } } },\n  '6': { value: { _light: { value: '#acdec8' }, _dark: { value: '#1b5745' } } },\n  '7': { value: { _light: { value: '#8bceb6' }, _dark: { value: '#246854' } } },\n  '8': { value: { _light: { value: '#56ba9f' }, _dark: { value: '#2a7e68' } } },\n  '9': { value: { _light: { value: '#29a383' }, _dark: { value: '#29a383' } } },\n  '10': { value: { _light: { value: '#26997b' }, _dark: { value: '#27b08b' } } },\n  '11': { value: { _light: { value: '#208368' }, _dark: { value: '#1fd8a4' } } },\n  '12': { value: { _light: { value: '#1d3b31' }, _dark: { value: '#adf0d4' } } },\n  a1: { value: { _light: { value: '#00c08004' }, _dark: { value: '#00de4505' } } },\n  a2: { value: { _light: { value: '#00a3460b' }, _dark: { value: '#27fba60c' } } },\n  a3: { value: { _light: { value: '#00ae4819' }, _dark: { value: '#02f99920' } } },\n  a4: { value: { _light: { value: '#00a85129' }, _dark: { value: '#00ffaa2d' } } },\n  a5: { value: { _light: { value: '#00a2553c' }, _dark: { value: '#11ffb63b' } } },\n  a6: { value: { _light: { value: '#009a5753' }, _dark: { value: '#34ffc24b' } } },\n  a7: { value: { _light: { value: '#00945f74' }, _dark: { value: '#45fdc75e' } } },\n  a8: { value: { _light: { value: '#00976ea9' }, _dark: { value: '#48ffcf75' } } },\n  a9: { value: { _light: { value: '#00916bd6' }, _dark: { value: '#38feca9d' } } },\n  a10: { value: { _light: { value: '#008764d9' }, _dark: { value: '#31fec7ab' } } },\n  a11: { value: { _light: { value: '#007152df' }, _dark: { value: '#21fec0d6' } } },\n  a12: { value: { _light: { value: '#002217e2' }, _dark: { value: '#b8ffe1ef' } } },\n  default: { value: '{ colors.jade.9 }' },\n  emphasized: { value: '{ colors.jade.10 }' },\n  fg: { value: 'white' },\n  text: { value: '{ colors.jade.a11 }' },\n})\n"
+    }
+  ],
+  "pandaConfig": {
+    "imports": [
+      {
+        "type": "named",
+        "moduleSpecifier": "./colors/jade",
+        "symbols": [
+          {
+            "name": "jade",
+            "isType": false
+          }
+        ]
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "jade": "jade"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "mauve",
+  "type": "theme",
+  "files": [
+    {
+      "type": "theme",
+      "fileName": "./colors/mauve.ts",
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const mauve = defineSemanticTokens.colors({\n  '1': { value: { _light: { value: '#fdfcfd' }, _dark: { value: '#121113' } } },\n  '2': { value: { _light: { value: '#faf9fb' }, _dark: { value: '#1a191b' } } },\n  '3': { value: { _light: { value: '#f2eff3' }, _dark: { value: '#232225' } } },\n  '4': { value: { _light: { value: '#eae7ec' }, _dark: { value: '#2b292d' } } },\n  '5': { value: { _light: { value: '#e3dfe6' }, _dark: { value: '#323035' } } },\n  '6': { value: { _light: { value: '#dbd8e0' }, _dark: { value: '#3c393f' } } },\n  '7': { value: { _light: { value: '#d0cdd7' }, _dark: { value: '#49474e' } } },\n  '8': { value: { _light: { value: '#bcbac7' }, _dark: { value: '#625f69' } } },\n  '9': { value: { _light: { value: '#8e8c99' }, _dark: { value: '#6f6d78' } } },\n  '10': { value: { _light: { value: '#84828e' }, _dark: { value: '#7c7a85' } } },\n  '11': { value: { _light: { value: '#65636d' }, _dark: { value: '#b5b2bc' } } },\n  '12': { value: { _light: { value: '#211f26' }, _dark: { value: '#eeeef0' } } },\n  a1: { value: { _light: { value: '#55005503' }, _dark: { value: '#00000000' } } },\n  a2: { value: { _light: { value: '#2b005506' }, _dark: { value: '#f5f4f609' } } },\n  a3: { value: { _light: { value: '#30004010' }, _dark: { value: '#ebeaf814' } } },\n  a4: { value: { _light: { value: '#20003618' }, _dark: { value: '#eee5f81d' } } },\n  a5: { value: { _light: { value: '#20003820' }, _dark: { value: '#efe6fe25' } } },\n  a6: { value: { _light: { value: '#14003527' }, _dark: { value: '#f1e6fd30' } } },\n  a7: { value: { _light: { value: '#10003332' }, _dark: { value: '#eee9ff40' } } },\n  a8: { value: { _light: { value: '#08003145' }, _dark: { value: '#eee7ff5d' } } },\n  a9: { value: { _light: { value: '#05001d73' }, _dark: { value: '#eae6fd6e' } } },\n  a10: { value: { _light: { value: '#0500197d' }, _dark: { value: '#ece9fd7c' } } },\n  a11: { value: { _light: { value: '#0400119c' }, _dark: { value: '#f5f1ffb7' } } },\n  a12: { value: { _light: { value: '#020008e0' }, _dark: { value: '#fdfdffef' } } },\n  default: { value: '{ colors.mauve.9 }' },\n  emphasized: { value: '{ colors.mauve.10 }' },\n  fg: { value: 'white' },\n  text: { value: '{ colors.mauve.a11 }' },\n})\n"
+    }
+  ],
+  "pandaConfig": {
+    "imports": [
+      {
+        "type": "named",
+        "moduleSpecifier": "./colors/mauve",
+        "symbols": [
+          {
+            "name": "mauve",
+            "isType": false
+          }
+        ]
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "mauve": "mauve"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,26 @@
 import { join, parse, resolve } from 'node:path'
+import { Glob } from 'bun'
 import { type ExportDeclaration, Project } from 'ts-morph'
+
+type ModuleDeclaration =
+  | {
+      type: 'named'
+      moduleSpecifier: string
+      symbols: { name: string; isType?: boolean }[]
+    }
+  | {
+      type: 'namespace'
+      namespace: string
+      moduleSpecifier: string
+    }
+  | {
+      type: 'object-literal'
+      variableName: string
+      properties: {
+        key: string
+        value?: string
+      }[]
+    }
 
 const getExportEntries = (exp: ExportDeclaration) => {
   const exports: ModuleDeclaration[] = []
@@ -55,72 +76,53 @@ const resolveRecipe = async (fileName: string) => {
   }
 }
 
-type ModuleDeclaration =
-  | {
-      type: 'named'
-      moduleSpecifier: string
-      symbols: { name: string; isType?: boolean }[]
-    }
-  | {
-      type: 'namespace'
-      namespace: string
-      moduleSpecifier: string
-    }
-  | {
-      type: 'object-literal'
-      variableName: string
-      properties: {
-        key: string
-        value?: string
-      }[]
-    }
+const generateColors = async () => {
+  const glob = new Glob('./packages/preset/src/colors/*.ts')
 
-const project = new Project()
-const source = project.addSourceFileAtPath(resolve('./components/react/src/components/ui/index.ts'))
-
-const index: { id: string }[] = []
-
-for (const exp of source.getExportDeclarations()) {
-  const moduleSpecifier = exp.getModuleSpecifierValue()
-  if (!moduleSpecifier) continue
-
-  const exports = getExportEntries(exp)
-
-  const moduleSourceFile = exp.getModuleSpecifierSourceFile()
-  if (moduleSourceFile) {
-    const file = Bun.file(moduleSourceFile.getFilePath())
+  for await (const path of glob.scan('.')) {
+    const file = Bun.file(path)
     if (!file.name) continue
 
     const id = parse(file.name).name
-    const fileName = parse(file.name).base
-
-    index.push({
-      id,
-    })
-
-    const recipe = await resolveRecipe(fileName)
+    const fileName = `./colors/${parse(file.name).base}`
     const content = await file.text()
 
     const files = [
       {
-        type: 'component',
+        type: 'theme',
         fileName,
         content,
-        indexFile: {
-          exports,
-        },
       },
-      recipe,
-    ].filter(Boolean)
+    ]
 
     Bun.write(
-      `./website/public/registry/components/react/${id}.json`,
+      `./website/public/registry/theme/colors/${id}.json`,
       JSON.stringify(
         {
           $schema: 'https://next.park-ui.com/schema/registry-item.json',
           id,
-          type: 'component',
+          type: 'theme',
           files,
+          pandaConfig: {
+            imports: [
+              {
+                type: 'named',
+                moduleSpecifier: `./colors/${id}`,
+                symbols: [{ name: id, isType: false }],
+              },
+            ],
+            extension: {
+              theme: {
+                extend: {
+                  semanticTokens: {
+                    colors: {
+                      [id]: id,
+                    },
+                  },
+                },
+              },
+            },
+          },
         },
         null,
         2,
@@ -129,4 +131,65 @@ for (const exp of source.getExportDeclarations()) {
   }
 }
 
-Bun.write(`./website/public/registry/components/react/index.json`, JSON.stringify(index, null, 2))
+const main = async () => {
+  await generateColors()
+  const project = new Project()
+  const source = project.addSourceFileAtPath(
+    resolve('./components/react/src/components/ui/index.ts'),
+  )
+
+  const index: { id: string }[] = []
+
+  for (const exp of source.getExportDeclarations()) {
+    const moduleSpecifier = exp.getModuleSpecifierValue()
+    if (!moduleSpecifier) continue
+
+    const exports = getExportEntries(exp)
+
+    const moduleSourceFile = exp.getModuleSpecifierSourceFile()
+    if (moduleSourceFile) {
+      const file = Bun.file(moduleSourceFile.getFilePath())
+      if (!file.name) continue
+
+      const id = parse(file.name).name
+      const fileName = parse(file.name).base
+
+      index.push({
+        id,
+      })
+
+      const recipe = await resolveRecipe(fileName)
+      const content = await file.text()
+
+      const files = [
+        {
+          type: 'component',
+          fileName,
+          content,
+          indexFile: {
+            exports,
+          },
+        },
+        recipe,
+      ].filter(Boolean)
+
+      Bun.write(
+        `./website/public/registry/components/react/${id}.json`,
+        JSON.stringify(
+          {
+            $schema: 'https://next.park-ui.com/schema/registry-item.json',
+            id,
+            type: 'component',
+            files,
+          },
+          null,
+          2,
+        ),
+      )
+    }
+  }
+
+  Bun.write(`./website/public/registry/components/react/index.json`, JSON.stringify(index, null, 2))
+}
+
+await main()
