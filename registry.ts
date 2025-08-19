@@ -79,6 +79,8 @@ const resolveRecipe = async (fileName: string) => {
 const generateColors = async () => {
   const glob = new Glob('./packages/preset/src/colors/*.ts')
 
+  const index: { id: string }[] = []
+
   for await (const path of glob.scan('.')) {
     const file = Bun.file(path)
     if (!file.name) continue
@@ -94,6 +96,10 @@ const generateColors = async () => {
         content,
       },
     ]
+
+    index.push({
+      id,
+    })
 
     Bun.write(
       `./website/public/registry/theme/colors/${id}.json`,
@@ -129,6 +135,15 @@ const generateColors = async () => {
       ),
     )
   }
+
+  Bun.write(
+    `./website/public/registry/theme/colors/index.json`,
+    JSON.stringify(
+      index.sort((a, b) => a.id.localeCompare(b.id)),
+      null,
+      2,
+    ),
+  )
 }
 
 const main = async () => {
