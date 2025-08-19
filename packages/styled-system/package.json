@@ -5,7 +5,7 @@
     "prepare": "panda codegen --clean"
   },
   "dependencies": {
-    "@pandacss/dev": "1.0.1",
+    "@pandacss/dev": "1.1.0",
     "@park-ui/preset": "workspace:*"
   },
   "exports": {
