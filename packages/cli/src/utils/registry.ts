@@ -1,7 +1,7 @@
 import { BetterFetchError, createFetch, createSchema } from '@better-fetch/fetch'
 import { Effect } from 'effect'
-import { HttpError, NotFound } from '../errors'
 import { registryIndexList, registryItem } from '../schema'
+import { HttpError, RegistryItemNotFound } from './errors'
 
 const schema = createSchema({
   '/components/:framework/:id': {
@@ -41,7 +41,7 @@ export const registry = {
       try: () => $fetch('/components/:framework/:id', { params }),
       catch: (e) => {
         if (e instanceof BetterFetchError) {
-          if (e.status === 404) return NotFound
+          if (e.status === 404) return RegistryItemNotFound
         }
         return HttpError
       },

@@ -10,8 +10,12 @@ export const ParkUIConfigNotFound = {
   _tag: 'ParkUIConfigNotFound',
 } as const
 
-export const NotFound = {
-  _tag: 'NotFound',
+export const ParkUIConfigInvalid = {
+  _tag: 'ParkUIConfigNotFound',
+} as const
+
+export const RegistryItemNotFound = {
+  _tag: 'RegistryItemNotFound',
 } as const
 
 export const HttpError = {

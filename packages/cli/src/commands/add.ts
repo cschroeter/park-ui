@@ -37,7 +37,7 @@ export const add = new Command('add')
                 registry.getComponent({ framework: ctx.framework, id }),
                 Effect.tap(() => spinner.message(`Installing component: ${color.cyan(id)}`)),
                 Effect.flatMap((item) => installRegistryItem({ item, ctx })),
-                Effect.catchTag('NotFound', () => {
+                Effect.catchTag('RegistryItemNotFound', () => {
                   p.log.error(`Component "${id}" not found in the registry`)
                   return Effect.succeed(undefined)
                 }),

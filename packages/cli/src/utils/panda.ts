@@ -8,8 +8,8 @@ import {
   type PropertyAssignment,
   SyntaxKind,
 } from 'ts-morph'
-import { PandaConfigInvalid, PandaConfigNotFound } from '../errors'
 import type { JsonValue, PandaConfig } from '../schema'
+import { PandaConfigInvalid, PandaConfigNotFound } from './errors'
 
 export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig = {}) => {
   return getConfigPath().pipe(

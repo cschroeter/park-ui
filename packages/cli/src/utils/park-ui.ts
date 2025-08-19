@@ -3,15 +3,12 @@ import * as p from '@clack/prompts'
 import { Effect, pipe, Schema } from 'effect'
 import { outputJSON, readJSON } from 'fs-extra'
 import { packageDirectory } from 'pkg-dir'
-import { ParkUIConfigNotFound } from '../errors'
 import type { Framework } from '../schema'
+import { ParkUIConfigNotFound } from './errors'
 
 export const getParkUIConfig = () =>
   pipe(
-    Effect.promise(() => packageDirectory()),
-    Effect.flatMap(Effect.fromNullable),
-    Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
-    Effect.map((packageDir) => join(packageDir, 'park-ui.json')),
+    getConfigPath(),
     Effect.flatMap((configPath) =>
       pipe(
         Effect.tryPromise({
@@ -37,7 +34,15 @@ export const getParkUIConfig = () =>
     ),
   )
 
-const createConfig = (configPath: string) =>
+export const getConfigPath = () =>
+  pipe(
+    Effect.promise(() => packageDirectory()),
+    Effect.flatMap(Effect.fromNullable),
+    Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
+    Effect.map((packageDir) => join(packageDir, 'park-ui.json')),
+  )
+
+export const createConfig = (configPath: string) =>
   pipe(
     Effect.promise(promptUser),
     Effect.map(({ framework, components, theme }) => ({
