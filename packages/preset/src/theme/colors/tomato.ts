@@ -1,32 +1,3 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
-export const tomato = defineSemanticTokens.colors({
-  '1': { value: { _light: { value: '#fffcfc' }, _dark: { value: '#181111' } } },
-  '2': { value: { _light: { value: '#fff8f7' }, _dark: { value: '#1f1513' } } },
-  '3': { value: { _light: { value: '#feebe7' }, _dark: { value: '#391714' } } },
-  '4': { value: { _light: { value: '#ffdcd3' }, _dark: { value: '#4e1511' } } },
-  '5': { value: { _light: { value: '#ffcdc2' }, _dark: { value: '#5e1c16' } } },
-  '6': { value: { _light: { value: '#fdbdaf' }, _dark: { value: '#6e2920' } } },
-  '7': { value: { _light: { value: '#f5a898' }, _dark: { value: '#853a2d' } } },
-  '8': { value: { _light: { value: '#ec8e7b' }, _dark: { value: '#ac4d39' } } },
-  '9': { value: { _light: { value: '#e54d2e' }, _dark: { value: '#e54d2e' } } },
-  '10': { value: { _light: { value: '#dd4425' }, _dark: { value: '#ec6142' } } },
-  '11': { value: { _light: { value: '#d13415' }, _dark: { value: '#ff977d' } } },
-  '12': { value: { _light: { value: '#5c271f' }, _dark: { value: '#fbd3cb' } } },
-  a1: { value: { _light: { value: '#ff000003' }, _dark: { value: '#f1121208' } } },
-  a2: { value: { _light: { value: '#ff200008' }, _dark: { value: '#ff55330f' } } },
-  a3: { value: { _light: { value: '#f52b0018' }, _dark: { value: '#ff35232b' } } },
-  a4: { value: { _light: { value: '#ff35002c' }, _dark: { value: '#fd201142' } } },
-  a5: { value: { _light: { value: '#ff2e003d' }, _dark: { value: '#fe332153' } } },
-  a6: { value: { _light: { value: '#f92d0050' }, _dark: { value: '#ff4f3864' } } },
-  a7: { value: { _light: { value: '#e7280067' }, _dark: { value: '#fd644a7d' } } },
-  a8: { value: { _light: { value: '#db250084' }, _dark: { value: '#fe6d4ea7' } } },
-  a9: { value: { _light: { value: '#df2600d1' }, _dark: { value: '#fe5431e4' } } },
-  a10: { value: { _light: { value: '#d72400da' }, _dark: { value: '#ff6847eb' } } },
-  a11: { value: { _light: { value: '#cd2200ea' }, _dark: { value: '#ff977d' } } },
-  a12: { value: { _light: { value: '#460900e0' }, _dark: { value: '#ffd6cefb' } } },
-  default: { value: '{ colors.tomato.9 }' },
-  emphasized: { value: '{ colors.tomato.10 }' },
-  fg: { value: 'white' },
-  text: { value: '{ colors.tomato.a11 }' },
-})
+      export const tomato = defineSemanticTokens.colors({"1":{"value":{"_light":{"value":"#fffcfc"},"_dark":{"value":"#181111"}}},"2":{"value":{"_light":{"value":"#fff8f7"},"_dark":{"value":"#1f1513"}}},"3":{"value":{"_light":{"value":"#feebe7"},"_dark":{"value":"#391714"}}},"4":{"value":{"_light":{"value":"#ffdcd3"},"_dark":{"value":"#4e1511"}}},"5":{"value":{"_light":{"value":"#ffcdc2"},"_dark":{"value":"#5e1c16"}}},"6":{"value":{"_light":{"value":"#fdbdaf"},"_dark":{"value":"#6e2920"}}},"7":{"value":{"_light":{"value":"#f5a898"},"_dark":{"value":"#853a2d"}}},"8":{"value":{"_light":{"value":"#ec8e7b"},"_dark":{"value":"#ac4d39"}}},"9":{"value":{"_light":{"value":"#e54d2e"},"_dark":{"value":"#e54d2e"}}},"10":{"value":{"_light":{"value":"#dd4425"},"_dark":{"value":"#ec6142"}}},"11":{"value":{"_light":{"value":"#d13415"},"_dark":{"value":"#ff977d"}}},"12":{"value":{"_light":{"value":"#5c271f"},"_dark":{"value":"#fbd3cb"}}},"a1":{"value":{"_light":{"value":"#ff000003"},"_dark":{"value":"#f1121208"}}},"a2":{"value":{"_light":{"value":"#ff200008"},"_dark":{"value":"#ff55330f"}}},"a3":{"value":{"_light":{"value":"#f52b0018"},"_dark":{"value":"#ff35232b"}}},"a4":{"value":{"_light":{"value":"#ff35002c"},"_dark":{"value":"#fd201142"}}},"a5":{"value":{"_light":{"value":"#ff2e003d"},"_dark":{"value":"#fe332153"}}},"a6":{"value":{"_light":{"value":"#f92d0050"},"_dark":{"value":"#ff4f3864"}}},"a7":{"value":{"_light":{"value":"#e7280067"},"_dark":{"value":"#fd644a7d"}}},"a8":{"value":{"_light":{"value":"#db250084"},"_dark":{"value":"#fe6d4ea7"}}},"a9":{"value":{"_light":{"value":"#df2600d1"},"_dark":{"value":"#fe5431e4"}}},"a10":{"value":{"_light":{"value":"#d72400da"},"_dark":{"value":"#ff6847eb"}}},"a11":{"value":{"_light":{"value":"#cd2200ea"},"_dark":{"value":"#ff977d"}}},"a12":{"value":{"_light":{"value":"#460900e0"},"_dark":{"value":"#ffd6cefb"}}},"default":{"value":"{ colors.tomato.9 }"},"emphasized":{"value":"{ colors.tomato.10 }"},"fg":{"value":"white"},"text":{"value":"{ colors.tomato.a11 }"}})

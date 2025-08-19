@@ -1,32 +1,3 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
-export const mint = defineSemanticTokens.colors({
-  '1': { value: { _light: { value: '#f9fefd' }, _dark: { value: '#0e1515' } } },
-  '2': { value: { _light: { value: '#f2fbf9' }, _dark: { value: '#0f1b1b' } } },
-  '3': { value: { _light: { value: '#ddf9f2' }, _dark: { value: '#092c2b' } } },
-  '4': { value: { _light: { value: '#c8f4e9' }, _dark: { value: '#003a38' } } },
-  '5': { value: { _light: { value: '#b3ecde' }, _dark: { value: '#004744' } } },
-  '6': { value: { _light: { value: '#9ce0d0' }, _dark: { value: '#105650' } } },
-  '7': { value: { _light: { value: '#7ecfbd' }, _dark: { value: '#1e685f' } } },
-  '8': { value: { _light: { value: '#4cbba5' }, _dark: { value: '#277f70' } } },
-  '9': { value: { _light: { value: '#86ead4' }, _dark: { value: '#86ead4' } } },
-  '10': { value: { _light: { value: '#7de0cb' }, _dark: { value: '#a8f5e5' } } },
-  '11': { value: { _light: { value: '#027864' }, _dark: { value: '#58d5ba' } } },
-  '12': { value: { _light: { value: '#16433c' }, _dark: { value: '#c4f5e1' } } },
-  a1: { value: { _light: { value: '#00d5aa06' }, _dark: { value: '#00dede05' } } },
-  a2: { value: { _light: { value: '#00b18a0d' }, _dark: { value: '#00f9f90b' } } },
-  a3: { value: { _light: { value: '#00d29e22' }, _dark: { value: '#00fff61d' } } },
-  a4: { value: { _light: { value: '#00cc9937' }, _dark: { value: '#00fff42c' } } },
-  a5: { value: { _light: { value: '#00c0914c' }, _dark: { value: '#00fff23a' } } },
-  a6: { value: { _light: { value: '#00b08663' }, _dark: { value: '#0effeb4a' } } },
-  a7: { value: { _light: { value: '#00a17d81' }, _dark: { value: '#34fde55e' } } },
-  a8: { value: { _light: { value: '#009e7fb3' }, _dark: { value: '#41ffdf76' } } },
-  a9: { value: { _light: { value: '#00d3a579' }, _dark: { value: '#92ffe7e9' } } },
-  a10: { value: { _light: { value: '#00c39982' }, _dark: { value: '#aefeedf5' } } },
-  a11: { value: { _light: { value: '#007763fd' }, _dark: { value: '#67ffded2' } } },
-  a12: { value: { _light: { value: '#00312ae9' }, _dark: { value: '#cbfee9f5' } } },
-  default: { value: '{ colors.mint.9 }' },
-  emphasized: { value: '{ colors.mint.10 }' },
-  fg: { value: 'white' },
-  text: { value: '{ colors.mint.a11 }' },
-})
+      export const mint = defineSemanticTokens.colors({"1":{"value":{"_light":{"value":"#f9fefd"},"_dark":{"value":"#0e1515"}}},"2":{"value":{"_light":{"value":"#f2fbf9"},"_dark":{"value":"#0f1b1b"}}},"3":{"value":{"_light":{"value":"#ddf9f2"},"_dark":{"value":"#092c2b"}}},"4":{"value":{"_light":{"value":"#c8f4e9"},"_dark":{"value":"#003a38"}}},"5":{"value":{"_light":{"value":"#b3ecde"},"_dark":{"value":"#004744"}}},"6":{"value":{"_light":{"value":"#9ce0d0"},"_dark":{"value":"#105650"}}},"7":{"value":{"_light":{"value":"#7ecfbd"},"_dark":{"value":"#1e685f"}}},"8":{"value":{"_light":{"value":"#4cbba5"},"_dark":{"value":"#277f70"}}},"9":{"value":{"_light":{"value":"#86ead4"},"_dark":{"value":"#86ead4"}}},"10":{"value":{"_light":{"value":"#7de0cb"},"_dark":{"value":"#a8f5e5"}}},"11":{"value":{"_light":{"value":"#027864"},"_dark":{"value":"#58d5ba"}}},"12":{"value":{"_light":{"value":"#16433c"},"_dark":{"value":"#c4f5e1"}}},"a1":{"value":{"_light":{"value":"#00d5aa06"},"_dark":{"value":"#00dede05"}}},"a2":{"value":{"_light":{"value":"#00b18a0d"},"_dark":{"value":"#00f9f90b"}}},"a3":{"value":{"_light":{"value":"#00d29e22"},"_dark":{"value":"#00fff61d"}}},"a4":{"value":{"_light":{"value":"#00cc9937"},"_dark":{"value":"#00fff42c"}}},"a5":{"value":{"_light":{"value":"#00c0914c"},"_dark":{"value":"#00fff23a"}}},"a6":{"value":{"_light":{"value":"#00b08663"},"_dark":{"value":"#0effeb4a"}}},"a7":{"value":{"_light":{"value":"#00a17d81"},"_dark":{"value":"#34fde55e"}}},"a8":{"value":{"_light":{"value":"#009e7fb3"},"_dark":{"value":"#41ffdf76"}}},"a9":{"value":{"_light":{"value":"#00d3a579"},"_dark":{"value":"#92ffe7e9"}}},"a10":{"value":{"_light":{"value":"#00c39982"},"_dark":{"value":"#aefeedf5"}}},"a11":{"value":{"_light":{"value":"#007763fd"},"_dark":{"value":"#67ffded2"}}},"a12":{"value":{"_light":{"value":"#00312ae9"},"_dark":{"value":"#cbfee9f5"}}},"default":{"value":"{ colors.mint.9 }"},"emphasized":{"value":"{ colors.mint.10 }"},"fg":{"value":"white"},"text":{"value":"{ colors.mint.a11 }"}})

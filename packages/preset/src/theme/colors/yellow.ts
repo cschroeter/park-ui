@@ -1,32 +1,3 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
-export const yellow = defineSemanticTokens.colors({
-  '1': { value: { _light: { value: '#fdfdf9' }, _dark: { value: '#14120b' } } },
-  '2': { value: { _light: { value: '#fefce9' }, _dark: { value: '#1b180f' } } },
-  '3': { value: { _light: { value: '#fffab8' }, _dark: { value: '#2d2305' } } },
-  '4': { value: { _light: { value: '#fff394' }, _dark: { value: '#362b00' } } },
-  '5': { value: { _light: { value: '#ffe770' }, _dark: { value: '#433500' } } },
-  '6': { value: { _light: { value: '#f3d768' }, _dark: { value: '#524202' } } },
-  '7': { value: { _light: { value: '#e4c767' }, _dark: { value: '#665417' } } },
-  '8': { value: { _light: { value: '#d5ae39' }, _dark: { value: '#836a21' } } },
-  '9': { value: { _light: { value: '#ffe629' }, _dark: { value: '#ffe629' } } },
-  '10': { value: { _light: { value: '#ffdc00' }, _dark: { value: '#ffff57' } } },
-  '11': { value: { _light: { value: '#9e6c00' }, _dark: { value: '#f5e147' } } },
-  '12': { value: { _light: { value: '#473b1f' }, _dark: { value: '#f6eeb4' } } },
-  a1: { value: { _light: { value: '#aaaa0006' }, _dark: { value: '#d1510004' } } },
-  a2: { value: { _light: { value: '#f4dd0016' }, _dark: { value: '#f9b4000b' } } },
-  a3: { value: { _light: { value: '#ffee0047' }, _dark: { value: '#ffaa001e' } } },
-  a4: { value: { _light: { value: '#ffe3016b' }, _dark: { value: '#fdb70028' } } },
-  a5: { value: { _light: { value: '#ffd5008f' }, _dark: { value: '#febb0036' } } },
-  a6: { value: { _light: { value: '#ebbc0097' }, _dark: { value: '#fec40046' } } },
-  a7: { value: { _light: { value: '#d2a10098' }, _dark: { value: '#fdcb225c' } } },
-  a8: { value: { _light: { value: '#c99700c6' }, _dark: { value: '#fdca327b' } } },
-  a9: { value: { _light: { value: '#ffe100d6' }, _dark: { value: '#ffe629' } } },
-  a10: { value: { _light: { value: '#ffdc00' }, _dark: { value: '#ffff57' } } },
-  a11: { value: { _light: { value: '#9e6c00' }, _dark: { value: '#fee949f5' } } },
-  a12: { value: { _light: { value: '#2e2000e0' }, _dark: { value: '#fef6baf6' } } },
-  default: { value: '{ colors.yellow.9 }' },
-  emphasized: { value: '{ colors.yellow.10 }' },
-  fg: { value: 'white' },
-  text: { value: '{ colors.yellow.a11 }' },
-})
+      export const yellow = defineSemanticTokens.colors({"1":{"value":{"_light":{"value":"#fdfdf9"},"_dark":{"value":"#14120b"}}},"2":{"value":{"_light":{"value":"#fefce9"},"_dark":{"value":"#1b180f"}}},"3":{"value":{"_light":{"value":"#fffab8"},"_dark":{"value":"#2d2305"}}},"4":{"value":{"_light":{"value":"#fff394"},"_dark":{"value":"#362b00"}}},"5":{"value":{"_light":{"value":"#ffe770"},"_dark":{"value":"#433500"}}},"6":{"value":{"_light":{"value":"#f3d768"},"_dark":{"value":"#524202"}}},"7":{"value":{"_light":{"value":"#e4c767"},"_dark":{"value":"#665417"}}},"8":{"value":{"_light":{"value":"#d5ae39"},"_dark":{"value":"#836a21"}}},"9":{"value":{"_light":{"value":"#ffe629"},"_dark":{"value":"#ffe629"}}},"10":{"value":{"_light":{"value":"#ffdc00"},"_dark":{"value":"#ffff57"}}},"11":{"value":{"_light":{"value":"#9e6c00"},"_dark":{"value":"#f5e147"}}},"12":{"value":{"_light":{"value":"#473b1f"},"_dark":{"value":"#f6eeb4"}}},"a1":{"value":{"_light":{"value":"#aaaa0006"},"_dark":{"value":"#d1510004"}}},"a2":{"value":{"_light":{"value":"#f4dd0016"},"_dark":{"value":"#f9b4000b"}}},"a3":{"value":{"_light":{"value":"#ffee0047"},"_dark":{"value":"#ffaa001e"}}},"a4":{"value":{"_light":{"value":"#ffe3016b"},"_dark":{"value":"#fdb70028"}}},"a5":{"value":{"_light":{"value":"#ffd5008f"},"_dark":{"value":"#febb0036"}}},"a6":{"value":{"_light":{"value":"#ebbc0097"},"_dark":{"value":"#fec40046"}}},"a7":{"value":{"_light":{"value":"#d2a10098"},"_dark":{"value":"#fdcb225c"}}},"a8":{"value":{"_light":{"value":"#c99700c6"},"_dark":{"value":"#fdca327b"}}},"a9":{"value":{"_light":{"value":"#ffe100d6"},"_dark":{"value":"#ffe629"}}},"a10":{"value":{"_light":{"value":"#ffdc00"},"_dark":{"value":"#ffff57"}}},"a11":{"value":{"_light":{"value":"#9e6c00"},"_dark":{"value":"#fee949f5"}}},"a12":{"value":{"_light":{"value":"#2e2000e0"},"_dark":{"value":"#fef6baf6"}}},"default":{"value":"{ colors.yellow.9 }"},"emphasized":{"value":"{ colors.yellow.10 }"},"fg":{"value":"white"},"text":{"value":"{ colors.yellow.a11 }"}})
