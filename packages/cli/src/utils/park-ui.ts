@@ -1,40 +1,28 @@
-import { join, parse } from 'node:path'
+import { join } from 'node:path'
 import * as p from '@clack/prompts'
 import { Effect, pipe, Schema } from 'effect'
 import { outputJSON, readJSON } from 'fs-extra'
 import { packageDirectory } from 'pkg-dir'
-import type { Framework } from '../schema'
-import { ParkUIConfigNotFound } from './errors'
+import { ParkUIConfigInvalid, ParkUIConfigNotFound } from './errors'
+
+export const createParkUIConfig = () => getConfigPath().pipe(Effect.flatMap(createConfig))
 
 export const getParkUIConfig = () =>
   pipe(
-    getParkUIConfigPath(),
+    getConfigPath(),
     Effect.flatMap((configPath) =>
       pipe(
         Effect.tryPromise({
           try: () => readJSON(configPath),
-          catch: () => ParkUIConfigNotFound,
+          catch: () => ParkUIConfigNotFound(configPath),
         }),
-        Effect.flatMap((config) => Schema.decodeUnknown(ParkUIConfig)(config)),
-        Effect.catchTag('ParseError', () => {
-          p.note(
-            'Invalid or outdated Park UI configuration detected.\nCreating a new configuration file...',
-            'Info',
-          )
-          return createConfig(configPath)
-        }),
-        Effect.catchTag('ParkUIConfigNotFound', () => {
-          p.note(
-            `Park UI configuration not found in ${parse(configPath).dir}.\nInitializing a new configuration...`,
-            'Info',
-          )
-          return createConfig(configPath)
-        }),
+        Effect.flatMap((config) => Schema.decodeUnknown(ConfigSchema)(config)),
+        Effect.catchTag('ParseError', () => Effect.fail(ParkUIConfigInvalid(configPath))),
       ),
     ),
   )
 
-export const getParkUIConfigPath = () =>
+const getConfigPath = () =>
   pipe(
     Effect.promise(() => packageDirectory()),
     Effect.flatMap(Effect.fromNullable),
@@ -42,9 +30,9 @@ export const getParkUIConfigPath = () =>
     Effect.map((packageDir) => join(packageDir, 'park-ui.json')),
   )
 
-export const createConfig = (configPath: string) =>
+const createConfig = (configPath: string) =>
   pipe(
-    Effect.promise(promptUser),
+    Effect.promise(collectConfig),
     Effect.map(({ framework, components, theme }) => ({
       $schema: 'https://next.park-ui.com/schema/park-ui-config.json',
       framework,
@@ -61,36 +49,15 @@ export const createConfig = (configPath: string) =>
     ),
   )
 
-interface Prompt {
-  framework: Framework
-  components: string
-  theme: string
-}
+const ConfigSchema = Schema.Struct({
+  framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
+  paths: Schema.Struct({
+    components: Schema.String,
+    theme: Schema.String,
+  }),
+})
 
-const countries = [
-  { value: 'us', label: 'United States', hint: 'NA' },
-  { value: 'ca', label: 'Canada', hint: 'NA' },
-  { value: 'mx', label: 'Mexico', hint: 'NA' },
-  { value: 'br', label: 'Brazil', hint: 'SA' },
-  { value: 'ar', label: 'Argentina', hint: 'SA' },
-  { value: 'uk', label: 'United Kingdom', hint: 'EU' },
-  { value: 'fr', label: 'France', hint: 'EU' },
-  { value: 'de', label: 'Germany', hint: 'EU' },
-  { value: 'it', label: 'Italy', hint: 'EU' },
-  { value: 'es', label: 'Spain', hint: 'EU' },
-  { value: 'pt', label: 'Portugal', hint: 'EU' },
-  { value: 'ru', label: 'Russia', hint: 'EU/AS' },
-  { value: 'cn', label: 'China', hint: 'AS' },
-  { value: 'jp', label: 'Japan', hint: 'AS' },
-  { value: 'in', label: 'India', hint: 'AS' },
-  { value: 'kr', label: 'South Korea', hint: 'AS' },
-  { value: 'au', label: 'Australia', hint: 'OC' },
-  { value: 'nz', label: 'New Zealand', hint: 'OC' },
-  { value: 'za', label: 'South Africa', hint: 'AF' },
-  { value: 'eg', label: 'Egypt', hint: 'AF' },
-]
-
-const promptUser = async () =>
+const collectConfig = async () =>
   p.group(
     {
       framework: () =>
@@ -124,20 +91,6 @@ const promptUser = async () =>
               return 'Please enter a relative path from the project root (e.g., ./src/theme).'
           },
         }),
-      accentColor: () =>
-        p.autocomplete({
-          message: 'Select an accent color',
-          options: countries,
-          placeholder: 'Type to search...',
-          maxItems: 8,
-        }),
-      grayColor: () =>
-        p.autocomplete({
-          message: 'Select a gray color',
-          options: countries,
-          placeholder: 'Type to search...',
-          maxItems: 8,
-        }),
     },
     {
       onCancel: () => {
@@ -145,12 +98,4 @@ const promptUser = async () =>
         process.exit(0)
       },
     },
-  ) as Promise<Prompt>
-
-const ParkUIConfig = Schema.Struct({
-  framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
-  paths: Schema.Struct({
-    components: Schema.String,
-    theme: Schema.String,
-  }),
-})
+  )

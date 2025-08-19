@@ -12,7 +12,7 @@ import type { JsonValue, PandaConfig } from '../schema'
 import { PandaConfigInvalid, PandaConfigNotFound } from './errors'
 
 export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig = {}) => {
-  return getPandaConfigPath().pipe(
+  return getConfigPath().pipe(
     Effect.flatMap((configPath) =>
       pipe(
         Effect.sync(() => new Project()),
@@ -20,7 +20,7 @@ export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig 
         Effect.flatMap((project) =>
           Effect.try({
             try: () => project.getSourceFileOrThrow(configPath),
-            catch: () => PandaConfigNotFound,
+            catch: () => PandaConfigNotFound(configPath),
           }),
         ),
         Effect.flatMap((sourceFile) =>
@@ -96,24 +96,22 @@ export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig 
   )
 }
 
-export const getPandaConfigPath = () =>
+export const verifyPandaConfig = () =>
+  getConfigPath().pipe(
+    Effect.flatMap((configPath) =>
+      Effect.tryPromise({
+        try: () => access(configPath),
+        catch: () => PandaConfigNotFound(configPath),
+      }),
+    ),
+  )
+
+const getConfigPath = () =>
   pipe(
     Effect.promise(() => packageDirectory()),
     Effect.flatMap(Effect.fromNullable),
     Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
     Effect.map((packageDir) => join(packageDir, 'panda.config.ts')),
-    Effect.flatMap((configPath) =>
-      pipe(
-        Effect.tryPromise({
-          try: () => access(configPath),
-          catch: () =>
-            PandaConfigNotFound(
-              `No Panda CSS configuration found at ${configPath}\nInstall Panda CSS then try again.`,
-            ),
-        }),
-        Effect.map(() => configPath),
-      ),
-    ),
   )
 
 const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: JsonValue) => {

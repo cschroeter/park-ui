@@ -2,19 +2,21 @@ import * as p from '@clack/prompts'
 import { Command } from 'commander'
 import { Effect } from 'effect'
 import color from 'picocolors'
-import { getPandaConfigPath } from '~/utils/panda'
-import { createConfig, getParkUIConfigPath } from '~/utils/park-ui'
+import { verifyPandaConfig } from '~/utils/panda'
+import { createParkUIConfig } from '~/utils/park-ui'
+import { promptInitConfig } from '~/utils/prompt'
+import { createThemeConfig } from '~/utils/theme'
 
 export const init = new Command('init').description('').action(async () => {
   p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
   const programm = Effect.all([
-    getPandaConfigPath(),
-    getParkUIConfigPath().pipe(
-      Effect.flatMap(createConfig),
-      Effect.tap(() => p.outro(`Park UI has been initialized successfully! 🎉`)),
+    verifyPandaConfig(),
+    promptInitConfig().pipe(
+      Effect.flatMap((config) => Effect.all([createParkUIConfig(), createThemeConfig()])),
     ),
   ]).pipe(
+    Effect.tap(() => p.outro(`Park UI has been initialized successfully! 🎉`)),
     Effect.tapErrorTag('PandaConfigNotFound', ({ message }) =>
       Effect.sync(() => {
         p.log.error(message)
