@@ -1,3 +1,32 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
-      export const sky = defineSemanticTokens.colors({"1":{"value":{"_light":{"value":"#f9feff"},"_dark":{"value":"#0d141f"}}},"2":{"value":{"_light":{"value":"#f1fafd"},"_dark":{"value":"#111a27"}}},"3":{"value":{"_light":{"value":"#e1f6fd"},"_dark":{"value":"#112840"}}},"4":{"value":{"_light":{"value":"#d1f0fa"},"_dark":{"value":"#113555"}}},"5":{"value":{"_light":{"value":"#bee7f5"},"_dark":{"value":"#154467"}}},"6":{"value":{"_light":{"value":"#a9daed"},"_dark":{"value":"#1b537b"}}},"7":{"value":{"_light":{"value":"#8dcae3"},"_dark":{"value":"#1f6692"}}},"8":{"value":{"_light":{"value":"#60b3d7"},"_dark":{"value":"#197cae"}}},"9":{"value":{"_light":{"value":"#7ce2fe"},"_dark":{"value":"#7ce2fe"}}},"10":{"value":{"_light":{"value":"#74daf8"},"_dark":{"value":"#a8eeff"}}},"11":{"value":{"_light":{"value":"#00749e"},"_dark":{"value":"#75c7f0"}}},"12":{"value":{"_light":{"value":"#1d3e56"},"_dark":{"value":"#c2f3ff"}}},"a1":{"value":{"_light":{"value":"#00d5ff06"},"_dark":{"value":"#0044ff0f"}}},"a2":{"value":{"_light":{"value":"#00a4db0e"},"_dark":{"value":"#1171fb18"}}},"a3":{"value":{"_light":{"value":"#00b3ee1e"},"_dark":{"value":"#1184fc33"}}},"a4":{"value":{"_light":{"value":"#00ace42e"},"_dark":{"value":"#128fff49"}}},"a5":{"value":{"_light":{"value":"#00a1d841"},"_dark":{"value":"#1c9dfd5d"}}},"a6":{"value":{"_light":{"value":"#0092ca56"},"_dark":{"value":"#28a5ff72"}}},"a7":{"value":{"_light":{"value":"#0089c172"},"_dark":{"value":"#2badfe8b"}}},"a8":{"value":{"_light":{"value":"#0085bf9f"},"_dark":{"value":"#1db2fea9"}}},"a9":{"value":{"_light":{"value":"#00c7fe83"},"_dark":{"value":"#7ce3fffe"}}},"a10":{"value":{"_light":{"value":"#00bcf38b"},"_dark":{"value":"#a8eeff"}}},"a11":{"value":{"_light":{"value":"#00749e"},"_dark":{"value":"#7cd3ffef"}}},"a12":{"value":{"_light":{"value":"#002540e2"},"_dark":{"value":"#c2f3ff"}}},"default":{"value":"{ colors.sky.9 }"},"emphasized":{"value":"{ colors.sky.10 }"},"fg":{"value":"white"},"text":{"value":"{ colors.sky.a11 }"}})
+export const sky = defineSemanticTokens.colors({
+  '1': { value: { _light: { value: '#f9feff' }, _dark: { value: '#0d141f' } } },
+  '2': { value: { _light: { value: '#f1fafd' }, _dark: { value: '#111a27' } } },
+  '3': { value: { _light: { value: '#e1f6fd' }, _dark: { value: '#112840' } } },
+  '4': { value: { _light: { value: '#d1f0fa' }, _dark: { value: '#113555' } } },
+  '5': { value: { _light: { value: '#bee7f5' }, _dark: { value: '#154467' } } },
+  '6': { value: { _light: { value: '#a9daed' }, _dark: { value: '#1b537b' } } },
+  '7': { value: { _light: { value: '#8dcae3' }, _dark: { value: '#1f6692' } } },
+  '8': { value: { _light: { value: '#60b3d7' }, _dark: { value: '#197cae' } } },
+  '9': { value: { _light: { value: '#7ce2fe' }, _dark: { value: '#7ce2fe' } } },
+  '10': { value: { _light: { value: '#74daf8' }, _dark: { value: '#a8eeff' } } },
+  '11': { value: { _light: { value: '#00749e' }, _dark: { value: '#75c7f0' } } },
+  '12': { value: { _light: { value: '#1d3e56' }, _dark: { value: '#c2f3ff' } } },
+  a1: { value: { _light: { value: '#00d5ff06' }, _dark: { value: '#0044ff0f' } } },
+  a2: { value: { _light: { value: '#00a4db0e' }, _dark: { value: '#1171fb18' } } },
+  a3: { value: { _light: { value: '#00b3ee1e' }, _dark: { value: '#1184fc33' } } },
+  a4: { value: { _light: { value: '#00ace42e' }, _dark: { value: '#128fff49' } } },
+  a5: { value: { _light: { value: '#00a1d841' }, _dark: { value: '#1c9dfd5d' } } },
+  a6: { value: { _light: { value: '#0092ca56' }, _dark: { value: '#28a5ff72' } } },
+  a7: { value: { _light: { value: '#0089c172' }, _dark: { value: '#2badfe8b' } } },
+  a8: { value: { _light: { value: '#0085bf9f' }, _dark: { value: '#1db2fea9' } } },
+  a9: { value: { _light: { value: '#00c7fe83' }, _dark: { value: '#7ce3fffe' } } },
+  a10: { value: { _light: { value: '#00bcf38b' }, _dark: { value: '#a8eeff' } } },
+  a11: { value: { _light: { value: '#00749e' }, _dark: { value: '#7cd3ffef' } } },
+  a12: { value: { _light: { value: '#002540e2' }, _dark: { value: '#c2f3ff' } } },
+  default: { value: '{ colors.sky.9 }' },
+  emphasized: { value: '{ colors.sky.10 }' },
+  fg: { value: 'white' },
+  text: { value: '{ colors.sky.a11 }' },
+})

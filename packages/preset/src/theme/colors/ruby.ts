@@ -1,3 +1,32 @@
 import { defineSemanticTokens } from '@pandacss/dev'
 
-      export const ruby = defineSemanticTokens.colors({"1":{"value":{"_light":{"value":"#fffcfd"},"_dark":{"value":"#191113"}}},"2":{"value":{"_light":{"value":"#fff7f8"},"_dark":{"value":"#1e1517"}}},"3":{"value":{"_light":{"value":"#feeaed"},"_dark":{"value":"#3a141e"}}},"4":{"value":{"_light":{"value":"#ffdce1"},"_dark":{"value":"#4e1325"}}},"5":{"value":{"_light":{"value":"#ffced6"},"_dark":{"value":"#5e1a2e"}}},"6":{"value":{"_light":{"value":"#f8bfc8"},"_dark":{"value":"#6f2539"}}},"7":{"value":{"_light":{"value":"#efacb8"},"_dark":{"value":"#883447"}}},"8":{"value":{"_light":{"value":"#e592a3"},"_dark":{"value":"#b3445a"}}},"9":{"value":{"_light":{"value":"#e54666"},"_dark":{"value":"#e54666"}}},"10":{"value":{"_light":{"value":"#dc3b5d"},"_dark":{"value":"#ec5a72"}}},"11":{"value":{"_light":{"value":"#ca244d"},"_dark":{"value":"#ff949d"}}},"12":{"value":{"_light":{"value":"#64172b"},"_dark":{"value":"#fed2e1"}}},"a1":{"value":{"_light":{"value":"#ff005503"},"_dark":{"value":"#f4124a09"}}},"a2":{"value":{"_light":{"value":"#ff002008"},"_dark":{"value":"#fe5a7f0e"}}},"a3":{"value":{"_light":{"value":"#f3002515"},"_dark":{"value":"#ff235d2c"}}},"a4":{"value":{"_light":{"value":"#ff002523"},"_dark":{"value":"#fd195e42"}}},"a5":{"value":{"_light":{"value":"#ff002a31"},"_dark":{"value":"#fe2d6b53"}}},"a6":{"value":{"_light":{"value":"#e4002440"},"_dark":{"value":"#ff447665"}}},"a7":{"value":{"_light":{"value":"#ce002553"},"_dark":{"value":"#ff577d80"}}},"a8":{"value":{"_light":{"value":"#c300286d"},"_dark":{"value":"#ff5c7cae"}}},"a9":{"value":{"_light":{"value":"#db002cb9"},"_dark":{"value":"#fe4c70e4"}}},"a10":{"value":{"_light":{"value":"#d2002cc4"},"_dark":{"value":"#ff617beb"}}},"a11":{"value":{"_light":{"value":"#c10030db"},"_dark":{"value":"#ff949d"}}},"a12":{"value":{"_light":{"value":"#550016e8"},"_dark":{"value":"#ffd3e2fe"}}},"default":{"value":"{ colors.ruby.9 }"},"emphasized":{"value":"{ colors.ruby.10 }"},"fg":{"value":"white"},"text":{"value":"{ colors.ruby.a11 }"}})
+export const ruby = defineSemanticTokens.colors({
+  '1': { value: { _light: { value: '#fffcfd' }, _dark: { value: '#191113' } } },
+  '2': { value: { _light: { value: '#fff7f8' }, _dark: { value: '#1e1517' } } },
+  '3': { value: { _light: { value: '#feeaed' }, _dark: { value: '#3a141e' } } },
+  '4': { value: { _light: { value: '#ffdce1' }, _dark: { value: '#4e1325' } } },
+  '5': { value: { _light: { value: '#ffced6' }, _dark: { value: '#5e1a2e' } } },
+  '6': { value: { _light: { value: '#f8bfc8' }, _dark: { value: '#6f2539' } } },
+  '7': { value: { _light: { value: '#efacb8' }, _dark: { value: '#883447' } } },
+  '8': { value: { _light: { value: '#e592a3' }, _dark: { value: '#b3445a' } } },
+  '9': { value: { _light: { value: '#e54666' }, _dark: { value: '#e54666' } } },
+  '10': { value: { _light: { value: '#dc3b5d' }, _dark: { value: '#ec5a72' } } },
+  '11': { value: { _light: { value: '#ca244d' }, _dark: { value: '#ff949d' } } },
+  '12': { value: { _light: { value: '#64172b' }, _dark: { value: '#fed2e1' } } },
+  a1: { value: { _light: { value: '#ff005503' }, _dark: { value: '#f4124a09' } } },
+  a2: { value: { _light: { value: '#ff002008' }, _dark: { value: '#fe5a7f0e' } } },
+  a3: { value: { _light: { value: '#f3002515' }, _dark: { value: '#ff235d2c' } } },
+  a4: { value: { _light: { value: '#ff002523' }, _dark: { value: '#fd195e42' } } },
+  a5: { value: { _light: { value: '#ff002a31' }, _dark: { value: '#fe2d6b53' } } },
+  a6: { value: { _light: { value: '#e4002440' }, _dark: { value: '#ff447665' } } },
+  a7: { value: { _light: { value: '#ce002553' }, _dark: { value: '#ff577d80' } } },
+  a8: { value: { _light: { value: '#c300286d' }, _dark: { value: '#ff5c7cae' } } },
+  a9: { value: { _light: { value: '#db002cb9' }, _dark: { value: '#fe4c70e4' } } },
+  a10: { value: { _light: { value: '#d2002cc4' }, _dark: { value: '#ff617beb' } } },
+  a11: { value: { _light: { value: '#c10030db' }, _dark: { value: '#ff949d' } } },
+  a12: { value: { _light: { value: '#550016e8' }, _dark: { value: '#ffd3e2fe' } } },
+  default: { value: '{ colors.ruby.9 }' },
+  emphasized: { value: '{ colors.ruby.10 }' },
+  fg: { value: 'white' },
+  text: { value: '{ colors.ruby.a11 }' },
+})
