@@ -3,18 +3,19 @@ export const PandaConfigNotFound = (configPath: string) => ({
   message: `No Panda CSS configuration found at ${configPath}\nInstall Panda CSS then try again.`,
 })
 
-export const PandaConfigInvalid = {
-  _tag: 'PandaConfigInvalid',
-} as const
+export const PandaConfigInvalid = (configPath: string) => ({
+  _tag: 'PandaConfigInvalid' as const,
+  message: `Failed to update your Panda config at ${configPath}.\nPlease review your configuration file`,
+})
 
 export const ParkUIConfigNotFound = (configPath: string) => ({
   _tag: 'ParkUIConfigNotFound' as const,
-  message: `No Park UI configuration found at ${configPath}\nRun npx @park-ui/cli init to create a new configuration.`,
+  message: `No Park UI configuration found at ${configPath}.`,
 })
 
 export const ParkUIConfigInvalid = (configPath: string) => ({
   _tag: 'ParkUIConfigNotFound' as const,
-  message: `Park UI configuration at ${configPath} is invalid or outdated.\nRun npx @park-ui/cli init to create a new configuration.`,
+  message: `Park UI configuration at ${configPath} is invalid or outdated.`,
 })
 
 export const RegistryItemNotFound = {
@@ -24,3 +25,8 @@ export const RegistryItemNotFound = {
 export const HttpError = {
   _tag: 'HttpError',
 } as const
+
+export const FileError = (filePath: string) => ({
+  _tag: 'FileError' as const,
+  message: `Failed to read or write file at ${filePath}`,
+})

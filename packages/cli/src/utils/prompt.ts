@@ -1,17 +1,30 @@
 import * as p from '@clack/prompts'
 import { Effect } from 'effect'
+import type { Framework } from '~/schema'
 
 export const promptInitConfig = () =>
   Effect.tryPromise({
     try: () => prompt(),
     catch: () => new Error('Failed to collect configuration. Please try again.'),
-  })
+  }).pipe(
+    Effect.map((config) => ({
+      framework: config.framework,
+      paths: {
+        components: config.components,
+        theme: config.theme,
+      },
+      colors: {
+        accent: config.accentColor,
+        gray: config.grayColor,
+      },
+    })),
+  )
 
 const prompt = () =>
   p.group(
     {
       framework: () =>
-        p.select({
+        p.select<Framework>({
           message: 'Which JavaScript framework are you using?',
           options: [
             { value: 'react', label: 'React' },

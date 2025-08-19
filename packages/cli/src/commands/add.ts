@@ -10,7 +10,7 @@ export const add = new Command('add')
   .description('add components to your project')
   .argument('[components...]', 'list of components to add')
   .option('--all', 'add all components', false)
-  .action(async (components, opts) => {
+  .action(async (components: string[], opts) => {
     console.clear()
     p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
@@ -50,22 +50,26 @@ export const add = new Command('add')
           ),
         ),
       ),
-      Effect.catchTag('PandaConfigInvalid', () => {
-        p.log.error(
-          `Your Panda CSS configuration is invalid.\nPlease review your configuration file.`,
-        )
-        p.outro(
-          `If you believe this is a mistake, open an issue at ${color.underline(color.cyan('https://github.com/cschroeter/park-ui/issues/new'))}`,
-        )
-        return Effect.succeed(undefined)
-      }),
-      Effect.catchTag('PandaConfigNotFound', () => {
-        p.log.error(
-          `No Panda CSS configuration found at /Users/christian/Developer/park-ui/demo/nextjs.\nInstall Panda CSS then try again.`,
-        )
-        p.outro(`Visit https://panda-css.com/docs/overview/getting-started to get started.`)
-        return Effect.succeed(undefined)
-      }),
+      Effect.tapErrorTag('ParkUIConfigNotFound', ({ message }) =>
+        Effect.sync(() => {
+          p.log.error(message)
+          p.outro(`Run npx @park-ui/cli init to create a new configuration.`)
+        }),
+      ),
+      Effect.tapErrorTag('PandaConfigInvalid', ({ message }) =>
+        Effect.sync(() => {
+          p.log.error(message)
+          p.outro(
+            `If you believe this is a mistake, open an issue at https://github.com/cschroeter/park-ui/issues`,
+          )
+        }),
+      ),
+      Effect.tapErrorTag('PandaConfigNotFound', ({ message }) =>
+        Effect.sync(() => {
+          p.log.error(message)
+          p.outro(`Visit https://panda-css.com/docs/overview/getting-started to get started.`)
+        }),
+      ),
     )
 
     await Effect.runPromise(programm)

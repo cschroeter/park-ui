@@ -56,13 +56,15 @@ export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig 
                     .find((call) => call.getExpression().getText() === 'defineConfig'),
                 ),
                 Effect.flatMap(Effect.fromNullable),
-                Effect.catchTag('NoSuchElementException', () => Effect.fail(PandaConfigInvalid)),
+                Effect.catchTag('NoSuchElementException', () =>
+                  Effect.fail(PandaConfigInvalid(configPath)),
+                ),
                 Effect.flatMap((callExpr) =>
                   pipe(
                     Effect.sync(() => callExpr.getArguments()[0]),
                     Effect.flatMap(Effect.fromNullable),
                     Effect.catchTag('NoSuchElementException', () =>
-                      Effect.fail(PandaConfigInvalid),
+                      Effect.fail(PandaConfigInvalid(configPath)),
                     ),
                   ),
                 ),
@@ -74,7 +76,7 @@ export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig 
                       }
                       return arg.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
                     },
-                    catch: () => PandaConfigInvalid,
+                    catch: () => PandaConfigInvalid(configPath),
                   }),
                 ),
                 Effect.tap((objLiteral) =>

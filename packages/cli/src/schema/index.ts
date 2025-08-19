@@ -89,11 +89,11 @@ export const registryIndexList = z.array(z.object({ id: z.string() }))
 const Framework = z.enum(['react', 'vue', 'solid', 'svelte'])
 export type Framework = z.infer<typeof Framework>
 
-const Context = z.object({
+const parkUIConfig = z.object({
   framework: z.enum(['react', 'solid', 'svelte', 'vue']),
   paths: z.object({
     components: z.string(),
     theme: z.string(),
   }),
 })
-export type Context = z.infer<typeof Context>
+export type ParkUIConfig = z.infer<typeof parkUIConfig>

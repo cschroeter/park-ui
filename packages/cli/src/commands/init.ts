@@ -1,6 +1,6 @@
 import * as p from '@clack/prompts'
 import { Command } from 'commander'
-import { Effect } from 'effect'
+import { Effect, pipe } from 'effect'
 import color from 'picocolors'
 import { verifyPandaConfig } from '~/utils/panda'
 import { createParkUIConfig } from '~/utils/park-ui'
@@ -10,14 +10,23 @@ import { createThemeConfig } from '~/utils/theme'
 export const init = new Command('init').description('').action(async () => {
   p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
-  const programm = Effect.all([
+  const program = Effect.all([
     verifyPandaConfig(),
-    promptInitConfig().pipe(
-      Effect.flatMap((config) => Effect.all([createParkUIConfig(), createThemeConfig()])),
+    pipe(
+      promptInitConfig(),
+      Effect.flatMap((config) =>
+        Effect.all([createParkUIConfig(config), createThemeConfig(config)]),
+      ),
     ),
   ]).pipe(
     Effect.tap(() => p.outro(`Park UI has been initialized successfully! 🎉`)),
-    Effect.tapErrorTag('PandaConfigNotFound', ({ message }) =>
+    Effect.catchTag('FileError', ({ message }) =>
+      Effect.sync(() => {
+        p.log.error(message)
+        p.outro(`Please check the file permissions or path and try again.`)
+      }),
+    ),
+    Effect.catchTag('PandaConfigNotFound', ({ message }) =>
       Effect.sync(() => {
         p.log.error(message)
         p.outro(`Visit https://panda-css.com/docs/overview/getting-started to get started.`)
@@ -25,5 +34,5 @@ export const init = new Command('init').description('').action(async () => {
     ),
   )
 
-  await Effect.runPromise(programm).catch(() => process.exit(1))
+  await Effect.runPromise(program)
 })
