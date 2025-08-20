@@ -1,6 +1,6 @@
 import * as p from '@clack/prompts'
 import { Command } from 'commander'
-import { Effect, pipe } from 'effect'
+import { Effect } from 'effect'
 import color from 'picocolors'
 import { fetchComponents } from '~/utils/components'
 import { withPandaConfig } from '~/utils/panda-config'
@@ -12,25 +12,14 @@ export const add = new Command('add')
   .argument('[components...]', 'list of components to add')
   .option('--all', 'add all components', false)
   .action(async (components, opts) => {
-    console.clear()
-
     p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
-    // const spinner = p.spinner()
-    // spinner.start()
-
     const program = fetchComponents(components, opts).pipe(
-      Effect.flatMap((components) =>
-        Effect.forEach(components, (component) => {
-          p.log.info(`Installing component: ${color.cyan(component.id)}`)
-          // spinner.message(`Installing component: ${color.cyan(component.id)}`)
-          return pipe(install(component))
-        }),
-      ),
-      Effect.tap(() => {
-        // spinner.stop()
-        p.outro('Happy Hacking 🤞')
+      Effect.flatMap((components) => {
+        p.note(`Installing ${components.length} components...`, 'Info')
+        return Effect.forEach(components, (component) => install(component))
       }),
+      Effect.tap(() => p.outro('Components installed. Happy Hacking 🤞')),
       Effect.catchAll(() =>
         Effect.sync(() => {
           p.log.error('An unexpected error occurred while installing components.')
