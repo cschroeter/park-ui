@@ -38,6 +38,6 @@
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
     "@radix-ui/colors": "3.0.0",
-    "effect": "3.17.7"
+    "effect": "3.17.8"
   }
 }

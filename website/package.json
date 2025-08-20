@@ -14,10 +14,10 @@
     "@park-ui/react": "workspace:*",
     "@park-ui/styled-system": "workspace:*",
     "change-case": "5.4.4",
-    "effect": "3.17.7",
+    "effect": "3.17.8",
     "framer": "2.4.1",
     "lucide-react": "0.540.0",
-    "next": "15.4.7",
+    "next": "15.5.0",
     "pandacss-preset-typography": "0.1.6",
     "react": "19.1.1",
     "react-dom": "19.1.1"

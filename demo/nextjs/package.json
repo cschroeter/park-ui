@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "next": "15.4.7"
+    "next": "15.5.0"
   },
   "devDependencies": {
     "@pandacss/dev": "1.1.0",
