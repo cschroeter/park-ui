@@ -27,7 +27,7 @@
         "extend": {
           "semanticTokens": {
             "colors": {
-              "gold": "gold"
+              "gold": "{gold}"
             }
           }
         }

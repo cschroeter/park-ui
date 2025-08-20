@@ -135,7 +135,7 @@ const generateColors = async () => {
                 extend: {
                   semanticTokens: {
                     colors: {
-                      [key]: id,
+                      [key]: `{${id}}`,
                     },
                   },
                 },

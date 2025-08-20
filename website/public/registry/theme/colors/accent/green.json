@@ -27,7 +27,7 @@
         "extend": {
           "semanticTokens": {
             "colors": {
-              "green": "green"
+              "green": "{green}"
             }
           }
         }
