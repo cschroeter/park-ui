@@ -16,7 +16,9 @@ export const installRegistryItem = ({ item: { files, pandaConfig }, config }: Ar
       files,
       config,
     }),
-    updatePandaConfig(pandaConfig),
+    pandaConfig
+      ? updatePandaConfig({ config: pandaConfig, themePath: config.paths.theme })
+      : Effect.void,
   ])
 
 interface CreateFilesArgs {

@@ -11,7 +11,15 @@ import {
 import type { JsonValue, PandaConfig } from '../schema'
 import { PandaConfigInvalid, PandaConfigNotFound } from './errors'
 
-export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig = {}) => {
+interface Args {
+  config: PandaConfig
+  themePath: string
+}
+
+export const updatePandaConfig = ({
+  config: { imports = [], extension = {} },
+  themePath,
+}: Args) => {
   return getConfigPath().pipe(
     Effect.flatMap((configPath) =>
       pipe(
@@ -35,7 +43,7 @@ export const updatePandaConfig = ({ imports = [], extension = {} }: PandaConfig 
                       name: s.name,
                       isTypeOnly: Boolean(s.isType),
                     })),
-                    moduleSpecifier,
+                    moduleSpecifier: join(themePath, moduleSpecifier),
                   })
                 }
 
@@ -146,13 +154,24 @@ const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: JsonVal
         ) {
           const existingText = existingObj.getText()
           const spreadText = existingText.slice(1, -1).trim().replace(/,\s*$/, '')
-          prop.setInitializer(`{ ${spreadText}, ...${value} }`)
+          const identifier = getIdentifierFromValue(value)
+          prop.setInitializer(`{ ${spreadText}, ...${identifier} }`)
         } else {
           prop.remove()
           if (typeof value === 'string' && shouldTreatAsIdentifier(key, value)) {
-            objLiteral.addShorthandPropertyAssignment({
-              name: key,
-            })
+            const identifier = getIdentifierFromValue(value)
+            if (key === identifier) {
+              // Use shorthand property assignment when key matches identifier
+              objLiteral.addShorthandPropertyAssignment({
+                name: key,
+              })
+            } else {
+              // Use regular property assignment when key doesn't match identifier
+              objLiteral.addPropertyAssignment({
+                name: key,
+                initializer: identifier,
+              })
+            }
           } else {
             objLiteral.addPropertyAssignment({
               name: key,
@@ -162,9 +181,17 @@ const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: JsonVal
         }
       } else {
         if (typeof value === 'string' && shouldTreatAsIdentifier(key, value)) {
-          objLiteral.addShorthandPropertyAssignment({
-            name: key,
-          })
+          const identifier = getIdentifierFromValue(value)
+          if (key === identifier) {
+            objLiteral.addShorthandPropertyAssignment({
+              name: key,
+            })
+          } else {
+            objLiteral.addPropertyAssignment({
+              name: key,
+              initializer: identifier,
+            })
+          }
         } else {
           objLiteral.addPropertyAssignment({
             name: key,
@@ -177,5 +204,17 @@ const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: JsonVal
 }
 
 const shouldTreatAsIdentifier = (key: string, value: string): boolean => {
+  // Handle bracket notation like "{mauve}" -> mauve
+  if (value.startsWith('{') && value.endsWith('}')) {
+    const identifier = value.slice(1, -1)
+    return /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(identifier)
+  }
   return key === value && /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(value)
+}
+
+const getIdentifierFromValue = (value: string): string => {
+  if (value.startsWith('{') && value.endsWith('}')) {
+    return value.slice(1, -1)
+  }
+  return value
 }
