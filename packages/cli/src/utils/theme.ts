@@ -1,25 +1,15 @@
-import { Effect, pipe } from 'effect'
-import { installRegistryItem } from './install'
-import { getParkUIConfig } from './park-ui'
+import { Effect } from 'effect'
 import { registry } from './registry'
+import { install } from './registry-item'
 
 interface Args {
   accentColor: string
   grayColor: string
 }
 
-export const createThemeConfig = ({ accentColor, grayColor }: Args) => {
+export const initTheme = ({ accentColor, grayColor }: Args) => {
   return Effect.all([
     registry.getAccentColor({ id: accentColor }),
     registry.getGrayColor({ id: grayColor }),
-  ]).pipe(
-    Effect.flatMap((colors) =>
-      pipe(
-        getParkUIConfig(),
-        Effect.flatMap((config) =>
-          Effect.forEach(colors, (item) => installRegistryItem({ item, config })),
-        ),
-      ),
-    ),
-  )
+  ]).pipe(Effect.flatMap((colors) => Effect.forEach(colors, (color) => install(color))))
 }

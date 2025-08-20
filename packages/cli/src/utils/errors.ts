@@ -14,7 +14,7 @@ export const ParkUIConfigNotFound = (configPath: string) => ({
 })
 
 export const ParkUIConfigInvalid = (configPath: string) => ({
-  _tag: 'ParkUIConfigNotFound' as const,
+  _tag: 'ParkUIConfigInvalid' as const,
   message: `Park UI configuration at ${configPath} is invalid or outdated.`,
 })
 

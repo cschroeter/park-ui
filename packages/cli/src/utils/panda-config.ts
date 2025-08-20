@@ -1,6 +1,7 @@
 import { access } from 'node:fs/promises'
 import { join } from 'node:path'
-import { Effect, pipe } from 'effect'
+import * as p from '@clack/prompts'
+import { Context, Effect, Layer, pipe, Schema } from 'effect'
 import { packageDirectory } from 'pkg-dir'
 import {
   type ObjectLiteralExpression,
@@ -8,27 +9,55 @@ import {
   type PropertyAssignment,
   SyntaxKind,
 } from 'ts-morph'
-import type { JsonValue, PandaConfig } from '../schema'
+import type { JsonValue } from '~/schema'
 import { PandaConfigInvalid, PandaConfigNotFound } from './errors'
+import { ParkUIConfig } from './park-ui-config'
 
-interface Args {
-  config: PandaConfig
-  themePath: string
-}
+const ConfigSchema = Schema.Struct({
+  path: Schema.String,
+})
 
-export const updatePandaConfig = ({
-  config: { imports = [], extension = {} },
-  themePath,
-}: Args) => {
-  return getConfigPath().pipe(
-    Effect.flatMap((configPath) =>
+type ConfigSchema = Schema.Schema.Type<typeof ConfigSchema>
+
+const getConfigPath = () =>
+  pipe(
+    Effect.promise(() => packageDirectory()),
+    Effect.flatMap(Effect.fromNullable),
+    Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
+    Effect.map((packageDir) => join(packageDir, 'panda.config.ts')),
+    Effect.flatMap((path) =>
+      Effect.tryPromise({
+        try: () => access(path),
+        catch: () => PandaConfigNotFound(path),
+      }).pipe(Effect.map(() => ({ path }))),
+    ),
+  )
+
+export const PandaConfig = Context.GenericTag<ConfigSchema>('PandaConfig')
+const ConfigLayer = Layer.effect(PandaConfig, getConfigPath())
+
+export const withPandaConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
+  effect.pipe(
+    Effect.provide(ConfigLayer),
+    Effect.catchTag('PandaConfigNotFound', ({ message }) =>
+      Effect.sync(() => {
+        p.log.error(message)
+        p.outro(`Visit https://panda-css.com/docs/overview/getting-started to get started.`)
+      }),
+    ),
+  )
+
+export const updatePandaConfig = ({ imports = [], extension = {} }: any) => {
+  return pipe(
+    Effect.all([PandaConfig, ParkUIConfig]),
+    Effect.flatMap(([{ path }, config]) =>
       pipe(
         Effect.sync(() => new Project()),
-        Effect.tap((project) => Effect.sync(() => project.addSourceFileAtPath(configPath))),
+        Effect.tap((project) => Effect.sync(() => project.addSourceFileAtPath(path))),
         Effect.flatMap((project) =>
           Effect.try({
-            try: () => project.getSourceFileOrThrow(configPath),
-            catch: () => PandaConfigNotFound(configPath),
+            try: () => project.getSourceFileOrThrow(path),
+            catch: () => PandaConfigNotFound(path),
           }),
         ),
         Effect.flatMap((sourceFile) =>
@@ -39,11 +68,11 @@ export const updatePandaConfig = ({
                   const { symbols, moduleSpecifier } = importConfig
 
                   sourceFile.addImportDeclaration({
-                    namedImports: symbols.map((s) => ({
+                    namedImports: symbols.map((s: any) => ({
                       name: s.name,
                       isTypeOnly: Boolean(s.isType),
                     })),
-                    moduleSpecifier: join(themePath, moduleSpecifier),
+                    moduleSpecifier: join(config.paths.theme, moduleSpecifier),
                   })
                 }
 
@@ -65,14 +94,14 @@ export const updatePandaConfig = ({
                 ),
                 Effect.flatMap(Effect.fromNullable),
                 Effect.catchTag('NoSuchElementException', () =>
-                  Effect.fail(PandaConfigInvalid(configPath)),
+                  Effect.fail(PandaConfigInvalid(path)),
                 ),
                 Effect.flatMap((callExpr) =>
                   pipe(
                     Effect.sync(() => callExpr.getArguments()[0]),
                     Effect.flatMap(Effect.fromNullable),
                     Effect.catchTag('NoSuchElementException', () =>
-                      Effect.fail(PandaConfigInvalid(configPath)),
+                      Effect.fail(PandaConfigInvalid(path)),
                     ),
                   ),
                 ),
@@ -84,7 +113,7 @@ export const updatePandaConfig = ({
                       }
                       return arg.asKindOrThrow(SyntaxKind.ObjectLiteralExpression)
                     },
-                    catch: () => PandaConfigInvalid(configPath),
+                    catch: () => PandaConfigInvalid(path),
                   }),
                 ),
                 Effect.tap((objLiteral) =>
@@ -105,24 +134,6 @@ export const updatePandaConfig = ({
     ),
   )
 }
-
-export const verifyPandaConfig = () =>
-  getConfigPath().pipe(
-    Effect.flatMap((configPath) =>
-      Effect.tryPromise({
-        try: () => access(configPath),
-        catch: () => PandaConfigNotFound(configPath),
-      }),
-    ),
-  )
-
-const getConfigPath = () =>
-  pipe(
-    Effect.promise(() => packageDirectory()),
-    Effect.flatMap(Effect.fromNullable),
-    Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
-    Effect.map((packageDir) => join(packageDir, 'panda.config.ts')),
-  )
 
 const mergeObjectLiteral = (objLiteral: ObjectLiteralExpression, update: JsonValue) => {
   if (typeof update !== 'object' || update === null || Array.isArray(update)) {

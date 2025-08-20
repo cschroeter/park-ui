@@ -1,38 +1,32 @@
 import * as p from '@clack/prompts'
 import { Command } from 'commander'
-import { Effect, pipe } from 'effect'
+import { Effect, Layer } from 'effect'
 import color from 'picocolors'
-import { verifyPandaConfig } from '~/utils/panda'
-import { createParkUIConfig } from '~/utils/park-ui'
+import { withPandaConfig } from '~/utils/panda-config'
+import { createParkUIConfig, ParkUIConfig } from '~/utils/park-ui-config'
 import { promptInitConfig } from '~/utils/prompt'
-import { createThemeConfig } from '~/utils/theme'
+import { initTheme } from '~/utils/theme'
 
 export const init = new Command('init').description('').action(async () => {
   p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
-  const program = Effect.all([
-    verifyPandaConfig(),
-    pipe(
-      promptInitConfig(),
-      Effect.flatMap(({ config, colors }) =>
-        Effect.all([createParkUIConfig(config), createThemeConfig(colors)]),
-      ),
+  const program = promptInitConfig().pipe(
+    Effect.flatMap(({ config, colors }) =>
+      Effect.all([
+        createParkUIConfig(config),
+        initTheme(colors).pipe(Effect.provide(Layer.effect(ParkUIConfig, Effect.succeed(config)))),
+      ]),
     ),
-  ]).pipe(
     Effect.tap(() => p.outro(`Park UI has been initialized successfully! 🎉`)),
-    Effect.catchTag('FileError', ({ message }) =>
+    Effect.catchAll(() =>
       Effect.sync(() => {
-        p.log.error(message)
-        p.outro(`Please check the file permissions or path and try again.`)
-      }),
-    ),
-    Effect.catchTag('PandaConfigNotFound', ({ message }) =>
-      Effect.sync(() => {
-        p.log.error(message)
-        p.outro(`Visit https://panda-css.com/docs/overview/getting-started to get started.`)
+        p.log.error('An error occurred while initializing Park UI.')
+        p.outro(
+          `You can report this issue at: ${color.underline(color.cyan('https://github.com/cschroeter/park-ui/issues'))}`,
+        )
       }),
     ),
   )
 
-  await Effect.runPromise(program)
+  await Effect.runPromise(withPandaConfig(program))
 })
