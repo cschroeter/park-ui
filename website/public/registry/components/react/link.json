@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "link.ts",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from '@park-ui/styled-system/jsx'\nimport { link } from '@park-ui/styled-system/recipes'\nimport type { ComponentProps } from '@park-ui/styled-system/types'\n\nexport type LinkProps = ComponentProps<typeof Link>\nexport const Link = styled(ark.a, link)\n",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type LinkProps = ComponentProps<typeof Link>\nexport const Link = styled(ark.a, link)\n",
       "indexFile": {
         "exports": [
           {
