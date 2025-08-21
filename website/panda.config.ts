@@ -1,24 +1,12 @@
 import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/preset'
-import typographyPreset from 'pandacss-preset-typography'
-import neutral from '@park-ui/preset/colors/neutral'
+import { plugin, preset } from '@park-ui/preset'
 
 export default defineConfig({
-  presets: [
-    '@pandacss/preset-panda',
-    createPreset({ accentColor: neutral, grayColor: neutral, radius: 'sm' }),
-    typographyPreset({
-      recipe: {
-        sizes: ['base'],
-        notProse: {
-          className: 'not-prose',
-        },
-      },
-    }),
-  ],
+  presets: [preset],
   preflight: true,
-  include: ['./src/**/*.{js,jsx,ts,tsx}'],
-  exclude: [],
+  include: ['./src/**/*.{ts,tsx}'],
+  jsxFramework: 'react',
+  plugins: [plugin],
   theme: {
     extend: {
       tokens: {
@@ -48,13 +36,4 @@ export default defineConfig({
       },
     },
   },
-
-  importMap: '@park-ui/styled-system',
-  jsxFramework: 'react',
-
-  staticCss: {
-    recipes: '*',
-  },
-
-  outdir: '../packages/styled-system/dist',
 })

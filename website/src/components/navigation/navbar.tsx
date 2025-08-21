@@ -1,6 +1,6 @@
 import { SiGithub } from '@icons-pack/react-simple-icons'
-import { Box, HStack } from '@park-ui/styled-system/jsx'
 import Link from 'next/link'
+import { Box, HStack } from 'styled-system/jsx'
 import { Logo } from '../logo'
 import { NavbarLink } from './navbar-link'
 

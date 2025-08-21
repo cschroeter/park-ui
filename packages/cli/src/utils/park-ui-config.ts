@@ -43,13 +43,7 @@ const ConfigLayer = Layer.effect(ParkUIConfig, loadConfig())
 export const withParkUIConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
   effect.pipe(
     Effect.provide(ConfigLayer),
-    Effect.catchTag('ParkUIConfigInvalid', ({ message }) =>
-      Effect.sync(() => {
-        p.log.error(message)
-        p.outro(`Run npx @park-ui/cli init to create a new configuration.`)
-      }),
-    ),
-    Effect.catchTag('ParkUIConfigNotFound', ({ message }) =>
+    Effect.catchAll(({ message }) =>
       Effect.sync(() => {
         p.log.error(message)
         p.outro(`Run npx @park-ui/cli init to create a new configuration.`)

@@ -2,39 +2,8 @@
   "name": "@park-ui/preset",
   "version": "1.0.0",
   "main": "src/index.ts",
+  "private": true,
   "scripts": {},
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./src/index.ts",
-        "default": "./src/index.ts"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
-    },
-    "./utils": {
-      "import": {
-        "types": "./src/utils/index.ts",
-        "default": "./src/utils/index.ts"
-      },
-      "require": {
-        "types": "./dist/utils/index.d.cts",
-        "default": "./dist/utils/index.cjs"
-      }
-    },
-    "./colors/*": {
-      "import": {
-        "types": "./src/colors/*.ts",
-        "default": "./src/colors/*.ts"
-      },
-      "require": {
-        "types": "./dist/colors/*.d.cts",
-        "default": "./dist/colors/*.cjs"
-      }
-    }
-  },
   "dependencies": {
     "@ark-ui/anatomy": "3.5.0",
     "@radix-ui/colors": "3.0.0",

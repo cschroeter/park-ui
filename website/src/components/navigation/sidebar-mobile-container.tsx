@@ -1,7 +1,7 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
-import { Box, HStack } from '@park-ui/styled-system/jsx'
 import { useState } from 'react'
+import { Box, HStack } from 'styled-system/jsx'
 
 interface Props {
   children: React.ReactNode

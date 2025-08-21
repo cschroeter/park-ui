@@ -1,8 +1,8 @@
 import { SiFigma, SiReact, SiSvelte, SiVuedotjs } from '@icons-pack/react-simple-icons'
 import { Badge, Button, Heading, Text } from '@park-ui/react'
-import { Box, HStack, Stack } from '@park-ui/styled-system/jsx'
 import { ArrowRightIcon } from 'lucide-react'
 import NextLink from 'next/link'
+import { Box, HStack, Stack } from 'styled-system/jsx'
 import { PageButton } from '../navigation/page-button'
 import { HeroGroup, HeroItem } from './framer'
 

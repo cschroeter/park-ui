@@ -1,5 +1,5 @@
-import { Grid, GridItem } from '@park-ui/styled-system/jsx'
 import type { PropsWithChildren } from 'react'
+import { Grid, GridItem } from 'styled-system/jsx'
 import { Sidebar } from '~/components/navigation/sidebar'
 import { SidebarMobileContainer } from '~/components/navigation/sidebar-mobile-container'
 

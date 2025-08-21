@@ -1,7 +1,7 @@
 'use client'
 import { Avatar } from '@ark-ui/react/avatar'
-import { createStyleContext } from '@park-ui/styled-system/jsx'
-import { avatar } from '@park-ui/styled-system/recipes'
+import { createStyleContext } from 'styled-system/jsx'
+import { avatar } from 'styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(avatar)
 

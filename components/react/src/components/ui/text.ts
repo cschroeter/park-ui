@@ -1,6 +1,6 @@
-import { styled } from '@park-ui/styled-system/jsx'
-import { type TextVariantProps, text } from '@park-ui/styled-system/recipes'
-import type { ComponentProps, StyledComponent } from '@park-ui/styled-system/types'
+import { styled } from 'styled-system/jsx'
+import { type TextVariantProps, text } from 'styled-system/recipes'
+import type { ComponentProps, StyledComponent } from 'styled-system/types'
 
 type ParagraphProps = TextVariantProps & { as?: React.ElementType }
 

@@ -1,7 +1,7 @@
 'use client'
-import { createStyleContext } from '@park-ui/styled-system/jsx'
-import { card } from '@park-ui/styled-system/recipes'
-import type { ComponentProps } from '@park-ui/styled-system/types'
+import { createStyleContext } from 'styled-system/jsx'
+import { card } from 'styled-system/recipes'
+import type { ComponentProps } from 'styled-system/types'
 
 const { withProvider, withContext } = createStyleContext(card)
 

@@ -1,6 +1,6 @@
-import { cx } from '@park-ui/styled-system/css'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
+import { cx } from 'styled-system/css'
 import { Navbar } from '~/components/navigation/navbar'
 import { inter, jakarta, outfit, raleway, roboto } from './fonts'
 import './index.css'

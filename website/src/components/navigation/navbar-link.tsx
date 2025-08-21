@@ -1,7 +1,7 @@
 'use client'
-import { css, cx } from '@park-ui/styled-system/css'
 import NextLink, { type LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
+import { css, cx } from 'styled-system/css'
 
 interface Props extends LinkProps {
   children?: React.ReactNode

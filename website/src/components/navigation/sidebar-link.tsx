@@ -1,5 +1,5 @@
-import { HStack } from '@park-ui/styled-system/jsx'
 import { BookIcon } from 'lucide-react'
+import { HStack } from 'styled-system/jsx'
 
 interface Props {
   children: React.ReactNode

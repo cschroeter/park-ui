@@ -1,15 +1,10 @@
 import { defineConfig } from '@pandacss/dev'
-import { createPreset } from '@park-ui/preset'
-import neutral from '@park-ui/preset/colors/neutral'
+import { plugin, preset } from '@park-ui/preset'
 
 export default defineConfig({
+  presets: [preset],
   preflight: true,
-  include: ['./src/**/*.{js,jsx,ts,tsx}'],
-  exclude: [],
-  importMap: '@park-ui/styled-system',
+  include: ['./src/**/*.{ts,tsx}'],
   jsxFramework: 'react',
-  presets: [
-    '@pandacss/preset-panda',
-    createPreset({ accentColor: neutral, grayColor: neutral, radius: 'sm' }),
-  ],
+  plugins: [plugin],
 })

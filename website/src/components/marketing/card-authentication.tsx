@@ -1,6 +1,6 @@
 import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
 import { Button, Card, Field, Input, Text } from '@park-ui/react'
-import { Divider, HStack, Stack } from '@park-ui/styled-system/jsx'
+import { Divider, HStack, Stack } from 'styled-system/jsx'
 
 export const CardAuthentication = () => {
   return (

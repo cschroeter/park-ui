@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "prepare": "panda codegen --clean",
     "dev": "bun run storybook",
     "lint": "biome lint ./src",
     "storybook": "storybook dev -p 6006",

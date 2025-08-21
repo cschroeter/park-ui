@@ -1,7 +1,7 @@
 'use client'
 
-import { styled } from '@park-ui/styled-system/jsx'
 import type { ComponentProps } from 'react'
+import { styled } from 'styled-system/jsx'
 
 export type ProseProps = ComponentProps<typeof Prose>
 

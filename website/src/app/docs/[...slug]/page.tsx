@@ -1,7 +1,7 @@
 import { docs } from '.velite'
-import { Box, Grid, GridItem } from '@park-ui/styled-system/jsx'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { Box, Grid, GridItem } from 'styled-system/jsx'
 import { MDXContent } from '~/components/docs/mdx-content'
 import { Prose } from '~/components/ui/prose'
 import { getDocumentBySlug } from '~/lib/docs'

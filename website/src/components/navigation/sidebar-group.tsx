@@ -1,8 +1,8 @@
 'use client'
 import type { Doc } from '.velite'
-import { sva } from '@park-ui/styled-system/css'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
+import { sva } from 'styled-system/css'
 
 const recipe = sva({
   slots: ['root', 'heading', 'list', 'item', 'link'],

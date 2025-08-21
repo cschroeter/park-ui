@@ -1,8 +1,8 @@
 'use client'
 
-import { styled } from '@park-ui/styled-system/jsx'
 import { motion } from 'framer-motion'
 import type { PropsWithChildren } from 'react'
+import { styled } from 'styled-system/jsx'
 
 const MotionGroup = styled(motion.div)
 
