@@ -1,6 +1,6 @@
 export const Logo = () => {
   return (
-    <svg height="24" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg height="26" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <title>Park UI Logo</title>
       <path
         d="M96.7058 0H3.29424C1.47488 0 0 1.49238 0 3.33333V26.6667C0 28.5076 1.47488 30 3.29424 30H96.7058C98.5251 30 100 28.5076 100 26.6667V3.33333C100 1.49238 98.5251 0 96.7058 0Z"

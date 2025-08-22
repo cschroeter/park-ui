@@ -14,6 +14,7 @@ export const Navbar = () => {
       top="0"
       zIndex="sticky"
       bg="bg.default"
+      h="14"
     >
       <HStack h="full" px={{ base: '4', sm: '6', md: '8' }} justify="space-between">
         <Link href="/" aria-label="Home">

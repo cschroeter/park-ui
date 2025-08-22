@@ -15,6 +15,9 @@ export const preset = definePreset({
         boxSizing: 'border-box',
       },
     },
+    body: {
+      background: 'gray.1',
+    },
   },
   conditions: {
     extend: {
@@ -38,6 +41,9 @@ export const preset = definePreset({
             default: { value: '{colors.gray.7}' },
             muted: { value: '{colors.gray.6}' },
             subtle: { value: '{colors.gray.4}' },
+          },
+          bg: {
+            default: { value: 'white' },
           },
         },
       },

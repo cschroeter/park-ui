@@ -9,6 +9,12 @@ export default {
       },
     ]
   },
+  experimental: {
+    optimizePackageImports: ['@ark-ui/react'],
+  },
+  outputFileTracingIncludes: {
+    '/*': ['../components/react/src/examples/*'],
+  },
 }
 
 const isDev = process.argv.indexOf('dev') !== -1

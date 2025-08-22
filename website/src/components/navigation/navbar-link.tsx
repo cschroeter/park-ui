@@ -48,7 +48,7 @@ export const NavbarLink = (props: Props) => {
           right: '0',
           height: '2px',
           width: '100%',
-          background: 'currentColor',
+          background: 'colorPalette.default',
           transform: 'scaleX(0)',
           transformOrigin: 'left',
           transition: 'transform 0.3s ease',
