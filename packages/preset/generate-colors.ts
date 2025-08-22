@@ -13,7 +13,7 @@ const main = () => {
 
       export const ${color} = defineSemanticTokens.colors(${tokens})
 `
-      fs.writeFileSync(join(process.cwd(), 'src/theme/colors', `${color}.ts`), content)
+      fs.writeFileSync(join(process.cwd(), 'src/colors', `${color}.ts`), content)
     })
 }
 
@@ -34,10 +34,10 @@ const generateSemanticTokens = (color: string) => {
   // Add alias tokens
   return {
     ...semanticTokens,
-    default: { value: `{colors.${color}.9}` },
-    emphasized: { value: `{colors.${color}.10}` },
-    fg: { value: 'white' },
-    text: { value: `{colors.${color}.a11}` },
+    default: { value: { _light: `{colors.${color}.9}`, _dark: `{colors.${color}.9}` } },
+    emphasized: { value: { _light: `{colors.${color}.10}`, _dark: `{colors.${color}.9}` } },
+    fg: { value: { _light: 'white', _dark: 'white' } },
+    text: { value: { _light: `{colors.${color}.a11}`, _dark: `{colors.${color}.a11}` } },
   }
 }
 

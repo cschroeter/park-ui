@@ -25,8 +25,8 @@ export const gold = defineSemanticTokens.colors({
   a10: { value: { _light: '#492d00a1', _dark: '#fedfb09d' } },
   a11: { value: { _light: '#362100b4', _dark: '#fee7c6c8' } },
   a12: { value: { _light: '#130c00d4', _dark: '#fef7ede7' } },
-  default: { value: '{colors.gold.9}' },
-  emphasized: { value: '{colors.gold.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.gold.a11}' },
+  default: { value: { _light: '{colors.gold.9}', _dark: '{colors.gold.9}' } },
+  emphasized: { value: { _light: '{colors.gold.10}', _dark: '{colors.gold.9}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.gold.a11}', _dark: '{colors.gold.a11}' } },
 })

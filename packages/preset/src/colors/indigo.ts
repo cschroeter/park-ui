@@ -25,8 +25,8 @@ export const indigo = defineSemanticTokens.colors({
   a10: { value: { _light: '#002ec9cc', _dark: '#5c7efee3' } },
   a11: { value: { _light: '#002bb7c5', _dark: '#9eb1ff' } },
   a12: { value: { _light: '#001046e0', _dark: '#d6e1ff' } },
-  default: { value: '{colors.indigo.9}' },
-  emphasized: { value: '{colors.indigo.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.indigo.a11}' },
+  default: { value: { _light: '{colors.indigo.9}', _dark: '{colors.indigo.9}' } },
+  emphasized: { value: { _light: '{colors.indigo.10}', _dark: '{colors.indigo.9}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.indigo.a11}', _dark: '{colors.indigo.a11}' } },
 })

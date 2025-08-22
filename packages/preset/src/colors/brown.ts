@@ -25,8 +25,8 @@ export const brown = defineSemanticTokens.colors({
   a10: { value: { _light: '#723300ac', _dark: '#ffc18cb3' } },
   a11: { value: { _light: '#522100b9', _dark: '#fed1aad9' } },
   a12: { value: { _light: '#140600d1', _dark: '#feecd4f2' } },
-  default: { value: '{colors.brown.9}' },
-  emphasized: { value: '{colors.brown.10}' },
-  fg: { value: 'white' },
-  text: { value: '{colors.brown.a11}' },
+  default: { value: { _light: '{colors.brown.9}', _dark: '{colors.brown.9}' } },
+  emphasized: { value: { _light: '{colors.brown.10}', _dark: '{colors.brown.9}' } },
+  fg: { value: { _light: 'white', _dark: 'white' } },
+  text: { value: { _light: '{colors.brown.a11}', _dark: '{colors.brown.a11}' } },
 })
