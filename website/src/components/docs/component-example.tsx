@@ -23,7 +23,7 @@ export const ComponentExample = async (props: Props) => {
   const source = await getComponentExampleSourceCode({
     component: 'button',
     framework: 'react',
-    example: 'Basic',
+    example: 'basic',
   })
 
   return (
