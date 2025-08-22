@@ -3,6 +3,7 @@ import { ClientOnly } from '@ark-ui/react'
 import { MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Box } from 'styled-system/jsx'
+import { Icon, IconButton } from '@/components/ui'
 
 export const ColorModeButton = () => {
   const { theme, setTheme } = useTheme()
@@ -12,11 +13,12 @@ export const ColorModeButton = () => {
   }
 
   return (
-    <ClientOnly fallback={<Box h="9" minW="10" />}>
-      {/* Fallback is needed to prevent hydration errors */}
-      <button type="button" onClick={handleClick}>
-        {theme === 'light' ? <SunIcon /> : <MoonIcon />}
-      </button>
-    </ClientOnly>
+    <Box minW="57px" h="14">
+      <ClientOnly>
+        <IconButton variant="ghost" h="14" minW="14" onClick={handleClick}>
+          <Icon size="md">{theme === 'light' ? <SunIcon /> : <MoonIcon />}</Icon>
+        </IconButton>
+      </ClientOnly>
+    </Box>
   )
 }
