@@ -1,11 +1,8 @@
-import { dialogAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
-
-const anatomy = dialogAnatomy.extendWith('header', 'body', 'footer')
 
 export const drawer = defineSlotRecipe({
   className: 'drawer',
-  slots: [...anatomy.keys()],
+  slots: ['backdrop', 'positioner', 'content', 'header', 'body', 'footer', 'title', 'description'],
   base: {
     backdrop: {
       backdropFilter: 'blur(4px)',

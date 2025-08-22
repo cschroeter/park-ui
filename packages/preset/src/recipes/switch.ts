@@ -1,10 +1,9 @@
-import { switchAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const switchRecipe = defineSlotRecipe({
   className: 'switchRecipe',
   jsx: ['Switch', /Switch\.+/],
-  slots: switchAnatomy.keys(),
+  slots: ['root', 'control', 'label', 'thumb'],
   base: {
     root: {
       alignItems: 'center',

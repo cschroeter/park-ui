@@ -1,9 +1,8 @@
-import { toastAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const toast = defineSlotRecipe({
   className: 'toast',
-  slots: toastAnatomy.keys(),
+  slots: ['root', 'title', 'description', 'actionTrigger', 'closeTrigger'],
   base: {
     root: {
       background: 'bg.default',

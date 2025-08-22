@@ -1,4 +1,3 @@
-import { numberInputAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 const trigger = {
@@ -31,7 +30,7 @@ const trigger = {
 
 export const numberInput = defineSlotRecipe({
   className: 'numberInput',
-  slots: numberInputAnatomy.keys(),
+  slots: ['root', 'control', 'input', 'label', 'decrementTrigger', 'incrementTrigger'],
   base: {
     root: {
       display: 'flex',

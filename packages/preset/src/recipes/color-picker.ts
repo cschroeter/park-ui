@@ -1,9 +1,22 @@
-import { colorPickerAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const colorPicker = defineSlotRecipe({
   className: 'colorPicker',
-  slots: colorPickerAnatomy.keys(),
+  slots: [
+    'root',
+    'label',
+    'control',
+    'content',
+    'area',
+    'areaThumb',
+    'areaBackground',
+    'channelSlider',
+    'channelSliderTrack',
+    'swatchGroup',
+    'swatch',
+    'channelSliderThumb',
+    'transparencyGrid',
+  ],
   base: {
     root: {
       display: 'flex',

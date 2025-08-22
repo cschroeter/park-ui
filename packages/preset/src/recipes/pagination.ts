@@ -1,9 +1,8 @@
-import { paginationAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const pagination = defineSlotRecipe({
   className: 'pagination',
-  slots: paginationAnatomy.keys(),
+  slots: ['root', 'item', 'ellipsis'],
   base: {
     root: {
       display: 'flex',

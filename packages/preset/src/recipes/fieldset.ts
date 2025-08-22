@@ -1,9 +1,8 @@
-import { fieldsetAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const fieldset = defineSlotRecipe({
   className: 'fieldset',
-  slots: [...fieldsetAnatomy.keys(), 'control'],
+  slots: ['root', 'control', 'legend', 'helperText', 'errorText'],
   base: {
     root: {
       display: 'grid',

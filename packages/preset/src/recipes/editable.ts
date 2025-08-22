@@ -1,9 +1,8 @@
-import { editableAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const editable = defineSlotRecipe({
   className: 'editable',
-  slots: editableAnatomy.keys(),
+  slots: ['root', 'control'],
   base: {
     root: {
       display: 'flex',

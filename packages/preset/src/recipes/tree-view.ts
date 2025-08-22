@@ -1,9 +1,17 @@
-import { treeViewAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const treeView = defineSlotRecipe({
   className: 'treeView',
-  slots: [...treeViewAnatomy.keys(), 'branchIndentGuide'],
+  slots: [
+    'root',
+    'branch',
+    'branchContent',
+    'branchIndentGuide',
+    'branchControl',
+    'branchIndicator',
+    'item',
+    'tree',
+  ],
   base: {
     root: {
       width: 'full',

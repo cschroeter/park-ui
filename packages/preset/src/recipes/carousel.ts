@@ -1,9 +1,8 @@
-import { carouselAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const carousel = defineSlotRecipe({
   className: 'carousel',
-  slots: carouselAnatomy.keys(),
+  slots: ['viewport', 'control', 'indicatorGroup', 'indicator'],
   base: {
     viewport: {
       overflowX: 'hidden',

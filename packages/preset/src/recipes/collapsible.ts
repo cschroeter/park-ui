@@ -1,9 +1,8 @@
-import { collapsibleAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const collapsible = defineSlotRecipe({
   className: 'collapsible',
-  slots: collapsibleAnatomy.keys(),
+  slots: ['root', 'content'],
   base: {
     root: {
       alignItems: 'flex-start',

@@ -1,9 +1,8 @@
-import { pinInputAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const pinInput = defineSlotRecipe({
   className: 'pinInput',
-  slots: pinInputAnatomy.keys(),
+  slots: ['root', 'control', 'label', 'input'],
   base: {
     root: {
       display: 'flex',

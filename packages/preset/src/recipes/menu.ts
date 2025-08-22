@@ -1,4 +1,3 @@
-import { menuAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 const itemStyle = {
@@ -35,7 +34,7 @@ const itemStyle = {
 
 export const menu = defineSlotRecipe({
   className: 'menu',
-  slots: menuAnatomy.keys(),
+  slots: ['itemGroupLabel', 'content', 'itemGroup', 'positioner', 'item', 'triggerItem'],
   base: {
     itemGroupLabel: {
       fontWeight: 'semibold',

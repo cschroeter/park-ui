@@ -1,9 +1,8 @@
-import { radioGroupAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const radioGroup = defineSlotRecipe({
   className: 'radioGroup',
-  slots: radioGroupAnatomy.keys(),
+  slots: ['root', 'itemControl', 'item', 'itemText'],
   base: {
     root: {
       display: 'flex',

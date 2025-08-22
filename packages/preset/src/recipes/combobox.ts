@@ -1,9 +1,17 @@
-import { comboboxAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const combobox = defineSlotRecipe({
   className: 'combobox',
-  slots: comboboxAnatomy.keys(),
+  slots: [
+    'root',
+    'control',
+    'label',
+    'trigger',
+    'content',
+    'item',
+    'itemGroupLabel',
+    'itemIndicator',
+  ],
   base: {
     root: {
       display: 'flex',

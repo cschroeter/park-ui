@@ -1,9 +1,8 @@
-import { ratingGroupAnatomy } from '@ark-ui/anatomy'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const ratingGroup = defineSlotRecipe({
   className: 'ratingGroup',
-  slots: ratingGroupAnatomy.keys(),
+  slots: ['root', 'label', 'control', 'item'],
   base: {
     root: {
       display: 'flex',
