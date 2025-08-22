@@ -17,22 +17,15 @@ export default defineConfig({
       },
     },
   },
-
   globalCss: {
     extend: {
       body: {
         fontFamily: 'body',
       },
-      article: {
-        '--colors-prose-body': 'colors.fg.muted',
-        '--colors-prose-heading': 'colors.fg.default',
-        '--colors-prose-bold': 'colors.fg.default',
-        '--colors-prose-link': 'colors.fg.default',
-        '--colors-prose-code': 'colors.fg.default',
-        '--colors-prose-td-border': 'colors.border.subtle',
-        '--colors-prose-th-border': 'colors.border.subtle',
-        '--colors-prose-hr-border': 'colors.border.subtle',
-        '--colors-prose-quote-border': 'colors.accent.default',
+      pre: {
+        background: 'transparent!',
+        overflowX: 'auto',
+        fontSize: '13px',
       },
     },
   },

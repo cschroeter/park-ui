@@ -7,13 +7,11 @@ export const preset = definePreset({
   name: '@park-ui/preset',
   presets: ['@pandacss/preset-base', '@pandacss/preset-panda'],
   globalCss: {
+    '*, *::before, *::after': {
+      borderColor: 'border.subtle',
+    },
     html: {
       colorPalette: 'blue',
-      '*, *::before, *::after': {
-        borderColor: 'border.subtle',
-        borderStyle: 'solid',
-        boxSizing: 'border-box',
-      },
     },
     body: {
       background: 'gray.1',
@@ -43,7 +41,7 @@ export const preset = definePreset({
             subtle: { value: '{colors.gray.4}' },
           },
           bg: {
-            default: { value: 'white' },
+            default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
           },
         },
       },
