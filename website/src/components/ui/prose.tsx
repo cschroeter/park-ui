@@ -51,7 +51,7 @@ export const Prose = styled('article', {
     },
     '& ul > li': {
       _marker: {
-        color: 'accent.default',
+        color: 'colorPalette.default',
       },
     },
     '& ol': {
@@ -59,7 +59,7 @@ export const Prose = styled('article', {
     },
     '& ol > li': {
       _marker: {
-        color: 'accent.default',
+        color: 'colorPalette.default',
         fontWeight: 'medium',
       },
     },
@@ -69,7 +69,7 @@ export const Prose = styled('article', {
       fontWeight: 'medium',
       outline: 'none',
       textDecoration: 'underline',
-      textDecorationColor: 'accent.default',
+      textDecorationColor: 'colorPalette.default',
       textDecorationThickness: '1px',
       textUnderlineOffset: '2px',
       transitionDuration: 'normal',

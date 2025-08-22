@@ -20,7 +20,7 @@ export const ComponentExample = async (props: Props) => {
       .then((mod) => mod[name]),
   )
 
-  const source = await getComponentExampleSourceCode({
+  const code = await getComponentExampleSourceCode({
     component: 'button',
     framework: 'react',
     example: 'basic',
@@ -29,7 +29,7 @@ export const ComponentExample = async (props: Props) => {
   return (
     <Box>
       <Example />
-      <CodeSnippet source={source} />
+      <CodeSnippet code={code} lang="tsx" />
     </Box>
   )
 }

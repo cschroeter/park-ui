@@ -1,14 +1,16 @@
 import { createHighlighter } from 'shiki'
 
-const highlighter = createHighlighter({
-  themes: ['github-dark-default'],
-  langs: ['tsx'],
-})
+export type Lang = 'tsx' | 'bash' | 'vue'
 
 interface Props {
   code: string
-  lang: 'tsx' | 'vue'
+  lang: Lang
 }
+
+const highlighter = createHighlighter({
+  themes: ['github-dark-default'],
+  langs: ['tsx', 'bash', 'vue'],
+})
 
 export const highlight = async ({ code, lang }: Props) =>
   (await highlighter).codeToHtml(code, {
