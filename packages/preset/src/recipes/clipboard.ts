@@ -2,7 +2,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const clipboard = defineSlotRecipe({
   className: 'clipboard',
-  slots: ['root', 'control'],
+  slots: ['root', 'control', 'indicator', 'input', 'label', 'trigger', 'valueText'],
   base: {
     root: {
       display: 'flex',
