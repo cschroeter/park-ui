@@ -1,0 +1,30 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "icon-button",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "icon-button.ts",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type ButtonVariantProps, button } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type IconButtonProps = ComponentProps<typeof IconButton>\nexport const IconButton = styled(ark.button, button, {\n  defaultProps: { px: '0' } as ButtonVariantProps,\n})\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "named",
+            "symbols": [
+              {
+                "name": "IconButton",
+                "isType": false
+              },
+              {
+                "name": "IconButtonProps",
+                "isType": true
+              }
+            ],
+            "moduleSpecifier": "./icon-button"
+          }
+        ]
+      }
+    }
+  ]
+}
