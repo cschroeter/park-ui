@@ -24,6 +24,7 @@
     ],
     "paths": {
       "~/*": ["./src/*"],
+      "~/images/*": ["./public/images/*"],
       "@/components/ui": ["../components/react/src/components/ui/index"]
     }
   },

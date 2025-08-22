@@ -25,7 +25,7 @@ export default async function Page(props: Props) {
   }
   return (
     <Grid gridTemplateColumns={{ base: '1fr', md: 'minmax(0,1fr) 288px' }} gap="8" pt="12">
-      <GridItem mx="auto" maxW="2xl" width="full" px={{ base: '4', sm: '6', md: '8' }}>
+      <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
         <Prose>
           <MDXContent mdx={doc.mdx} />
         </Prose>

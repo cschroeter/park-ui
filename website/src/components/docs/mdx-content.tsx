@@ -1,8 +1,10 @@
 import * as runtime from 'react/jsx-runtime'
 import { ComponentExample } from '~/components/docs/component-example'
+import { FigmaKitPreview } from './figma-kit-preview'
 
 const sharedComponents = {
   ComponentExample,
+  FigmaKitPreview,
 }
 
 const useMDXComponent = (code: string) => {
