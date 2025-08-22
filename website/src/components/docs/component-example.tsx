@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import { Box } from 'styled-system/jsx'
 import { getComponentExampleSourceCode } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
-import { Code } from './code'
+import { CodeSnippet } from './code-snippet'
 
 interface Props {
   name: string
@@ -29,7 +29,7 @@ export const ComponentExample = async (props: Props) => {
   return (
     <Box>
       <Example />
-      <Code source={source} />
+      <CodeSnippet source={source} />
     </Box>
   )
 }

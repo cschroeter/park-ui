@@ -7,7 +7,7 @@ interface Props {
   }
 }
 
-export const Code = (props: Props) => {
+export const CodeSnippet = (props: Props) => {
   const { source } = props
   return (
     <Box className="dark" bg="gray.2" position="relative">
