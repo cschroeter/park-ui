@@ -1,7 +1,7 @@
 import { definePlugin, definePreset } from '@pandacss/dev'
+import { blue } from './colors/blue'
+import { neutral } from './colors/neutral'
 import { recipes, slotRecipes } from './recipes'
-import { blue } from './theme/colors/blue'
-import { neutral } from './theme/colors/neutral'
 
 export const preset = definePreset({
   name: '@park-ui/preset',
