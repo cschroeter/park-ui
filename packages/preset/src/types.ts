@@ -1,17 +1,3 @@
-import type { SemanticTokens, Tokens } from '@pandacss/dev'
-
-export interface ColorPalette {
-  name: string
-  tokens: Tokens['colors']
-  semanticTokens: SemanticTokens['colors']
-}
-
-export interface PresetOptions {
-  accentColor: ColorPalette
-  grayColor: ColorPalette
-  radius: Radius
-}
-
 export type AccentColor = (typeof accentColors)[number]
 export const accentColors = [
   'neutral',

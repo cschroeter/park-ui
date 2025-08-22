@@ -1,7 +1,7 @@
 import { definePlugin, definePreset } from '@pandacss/dev'
-import { gold } from './theme/colors/gold'
+import { recipes, slotRecipes } from './recipes'
+import { blue } from './theme/colors/blue'
 import { neutral } from './theme/colors/neutral'
-import { recipes, slotRecipes } from './theme/recipes'
 
 export const preset = definePreset({
   name: '@park-ui/preset',
@@ -13,7 +13,7 @@ export const preset = definePreset({
       semanticTokens: {
         colors: {
           gray: neutral,
-          gold,
+          blue,
         },
       },
     },

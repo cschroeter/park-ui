@@ -51,7 +51,7 @@ const getExportEntries = (exp: ExportDeclaration) => {
 }
 
 const resolveRecipe = async (fileName: string) => {
-  const file = Bun.file(join('./packages/preset/src/theme/recipes/', fileName))
+  const file = Bun.file(join('./packages/preset/src/recipes/', fileName))
 
   if (!file.name) return
   const name = parse(file.name).name
@@ -77,7 +77,7 @@ const resolveRecipe = async (fileName: string) => {
 }
 
 const generateColors = async () => {
-  const glob = new Glob('./packages/preset/src/theme/colors/*.ts')
+  const glob = new Glob('./packages/preset/src/colors/*.ts')
 
   const grayColors = ['neutral', 'mauve', 'olive', 'sage', 'sand', 'slate']
 

@@ -1,8 +1,0 @@
-{
-  "$schema": "https://next.park-ui.com/schema/park-ui-config.json",
-  "framework": "react",
-  "paths": {
-    "components": "./src/components/ui",
-    "theme": "./src/theme"
-  }
-}
