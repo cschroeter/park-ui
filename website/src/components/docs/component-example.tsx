@@ -1,8 +1,9 @@
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
-import { kebabCase, pascalCase } from 'change-case'
+import { pascalCase } from 'change-case'
 import dynamic from 'next/dynamic'
+import { Box } from 'styled-system/jsx'
+import { getComponentExampleSourceCode } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
+import { Code } from './code'
 
 interface Props {
   name: string
@@ -19,23 +20,16 @@ export const ComponentExample = async (props: Props) => {
       .then((mod) => mod[name]),
   )
 
-  const storyPath = join(
-    process.cwd(),
-    `../components/react/src/examples/${kebabCase(component)}/${kebabCase(name)}.tsx`,
-  )
-
-  const sourceCode = await readFile(storyPath, 'utf-8').catch(() => null)
-
-  if (!sourceCode) {
-    return <div>Example not found</div>
-  }
+  const source = await getComponentExampleSourceCode({
+    component: 'button',
+    framework: 'react',
+    example: 'Basic',
+  })
 
   return (
-    <div>
+    <Box>
       <Example />
-      <pre>
-        <code>{sourceCode}</code>
-      </pre>
-    </div>
+      <Code source={source} />
+    </Box>
   )
 }

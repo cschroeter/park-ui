@@ -22,6 +22,9 @@
       "suspicious": {
         "noArrayIndexKey": "off"
       },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
       "complexity": {
         "noForEach": "off"
       },
