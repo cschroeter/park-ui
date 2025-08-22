@@ -19,6 +19,10 @@ export default defineConfig({
   },
   globalCss: {
     extend: {
+      html: {
+        scrollPaddingTop: '5rem',
+        scrollBehavior: 'smooth',
+      },
       body: {
         fontFamily: 'body',
       },

@@ -1,4 +1,6 @@
 import { basename, dirname, join } from 'node:path'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug'
 import { defineCollection, defineConfig, s } from 'velite'
 
 const docs = defineCollection({
@@ -25,4 +27,18 @@ const docs = defineCollection({
 export default defineConfig({
   root: join(process.cwd(), './src/content'),
   collections: { docs },
+  mdx: {
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ['subheading-anchor'],
+            ariaLabel: 'Link to section',
+          },
+        },
+      ],
+    ],
+  },
 })
