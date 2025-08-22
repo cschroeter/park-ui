@@ -12,7 +12,7 @@ export const Navbar = () => {
       position="fixed"
       insetX="0"
       top="0"
-      zIndex="sticky"
+      zIndex="1"
       bg="bg.default"
       h="14"
     >

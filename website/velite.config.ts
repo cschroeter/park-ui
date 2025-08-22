@@ -9,6 +9,7 @@ const docs = defineCollection({
       title: s.string(),
       description: s.string(),
       mdx: s.mdx(),
+      toc: s.toc(),
     })
     .transform((data, { meta }) => {
       // @ts-expect-error TODO

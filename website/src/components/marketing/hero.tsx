@@ -11,7 +11,7 @@ export const Hero = () => {
     <HeroGroup>
       <HeroItem>
         <Stack gap={{ base: '4', md: '6' }} align="flex-start">
-          <NextLink href="/react/docs/overview/figma">
+          <NextLink href="/docs/overview/figma">
             <Badge size="lg" variant="outline">
               <SiFigma /> Checkout the new Park UI Figma Kit <ArrowRightIcon />
             </Badge>
@@ -27,7 +27,7 @@ export const Hero = () => {
       </HeroItem>
       <HeroItem>
         <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
-          <PageButton href="/docs" size={{ base: 'xl', md: '2xl' }}>
+          <PageButton href="/docs/overview/introduction" size={{ base: 'xl', md: '2xl' }}>
             Get Started <ArrowRightIcon />
           </PageButton>
           <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>
