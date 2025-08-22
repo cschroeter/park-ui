@@ -1,8 +1,9 @@
 import { docs } from '.velite'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Box, Grid, GridItem } from 'styled-system/jsx'
+import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
 import { MDXContent } from '~/components/docs/mdx-content'
+import { PageHeader } from '~/components/page-header'
 import { Prose } from '~/components/ui/prose'
 import { getDocumentBySlug } from '~/lib/docs'
 import { getServerContext } from '~/server-context'
@@ -19,16 +20,23 @@ export default async function Page(props: Props) {
     return notFound()
   }
 
-  if (doc.category === 'components') {
+  const { title, category, description } = doc
+
+  if (category === 'components') {
     const context = getServerContext()
     context.component = doc.title
   }
+
   return (
-    <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" pt="12">
+    <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" pt="10">
       <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
-        <Prose>
-          <MDXContent mdx={doc.mdx} />
-        </Prose>
+        <Stack gap="8">
+          <PageHeader title={title} description={description} />
+          <Divider />
+          <Prose>
+            <MDXContent mdx={doc.mdx} />
+          </Prose>
+        </Stack>
       </GridItem>
       <Box hideBelow="xl">Sidebar</Box>
     </Grid>
