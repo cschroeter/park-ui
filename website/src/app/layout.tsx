@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
 import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css'
 import { Navbar } from '~/components/navigation/navbar'
@@ -6,10 +7,10 @@ import { inter, jakarta, outfit, raleway, roboto } from './fonts'
 import './index.css'
 
 export default function RootLayout(props: PropsWithChildren) {
-  const { children } = props
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cx(
         outfit.variable,
         inter.variable,
@@ -19,8 +20,10 @@ export default function RootLayout(props: PropsWithChildren) {
       )}
     >
       <body>
-        <Navbar />
-        {children}
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          <Navbar />
+          {props.children}
+        </ThemeProvider>
       </body>
     </html>
   )

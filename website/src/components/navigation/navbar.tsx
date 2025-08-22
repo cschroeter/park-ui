@@ -1,6 +1,7 @@
 import { SiGithub } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
 import { Box, HStack } from 'styled-system/jsx'
+import { ColorModeButton } from '../color-mode-button'
 import { Logo } from '../logo'
 import { NavbarLink } from './navbar-link'
 
@@ -25,6 +26,7 @@ export const Navbar = () => {
           <NavbarLink href="https://github.com/cschroeter/park-ui">
             <SiGithub />
           </NavbarLink>
+          <ColorModeButton />
         </HStack>
       </HStack>
     </Box>
