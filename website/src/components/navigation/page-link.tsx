@@ -1,5 +1,5 @@
-import { Link, type LinkProps } from '@park-ui/react'
 import NextLink from 'next/link'
+import { Link, type LinkProps } from '@/components/ui'
 
 interface Props extends LinkProps {
   children: React.ReactNode
