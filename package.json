@@ -22,8 +22,5 @@
     "@biomejs/biome": "2.2.0",
     "@types/bun": "1.2.20",
     "lefthook": "1.12.3"
-  },
-  "trustedDependencies": [
-    "@park-ui/styled-system"
-  ]
+  }
 }

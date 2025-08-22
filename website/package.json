@@ -10,10 +10,9 @@
     "lint": "biome lint ./src"
   },
   "dependencies": {
-    "@ark-ui/react": "5.19.0",
+    "@ark-ui/react": "5.20.0",
     "@icons-pack/react-simple-icons": "13.7.0",
     "@park-ui/react": "workspace:*",
-    "@park-ui/styled-system": "workspace:*",
     "change-case": "5.4.4",
     "effect": "3.17.8",
     "framer": "2.4.1",
