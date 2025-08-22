@@ -1,4 +1,4 @@
-import { type SemanticTokens, definePreset } from '@pandacss/dev'
+import { definePreset, type SemanticTokens } from '@pandacss/dev'
 import red from './colors/red'
 import type { PresetOptions } from './options'
 import { breakpoints } from './theme/breakpoints'

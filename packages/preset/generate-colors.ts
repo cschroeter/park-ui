@@ -34,10 +34,10 @@ const generateSemanticTokens = (color: string) => {
   // Add alias tokens
   return {
     ...semanticTokens,
-    default: { value: `{ colors.${color}.9 }` },
-    emphasized: { value: `{ colors.${color}.10 }` },
+    default: { value: `{colors.${color}.9}` },
+    emphasized: { value: `{colors.${color}.10}` },
     fg: { value: 'white' },
-    text: { value: `{ colors.${color}.a11 }` },
+    text: { value: `{colors.${color}.a11}` },
   }
 }
 
@@ -54,7 +54,7 @@ const getColorTokens = (color: string) => {
 
       Object.keys(scale).forEach((scaleKey) => {
         const tokenName = scaleKey.replace(color, '').toLowerCase()
-        target[tokenName] = { value: scale[scaleKey] }
+        target[tokenName] = scale[scaleKey]
       })
     })
 

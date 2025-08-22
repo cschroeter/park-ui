@@ -8,7 +8,7 @@ import { easings } from './easings'
 import { radii } from './radii'
 import { sizes } from './sizes'
 import { spacing } from './spacing'
-import { fontSizes, fontWeights, fonts, letterSpacings, lineHeights } from './typography'
+import { fontSizes, fonts, fontWeights, letterSpacings, lineHeights } from './typography'
 import { zIndex } from './z-index'
 
 export const tokens = defineTokens({
