@@ -6,6 +6,21 @@ import { recipes, slotRecipes } from './recipes'
 export const preset = definePreset({
   name: '@park-ui/preset',
   presets: ['@pandacss/preset-base', '@pandacss/preset-panda'],
+  globalCss: {
+    html: {
+      colorPalette: 'blue',
+      '*, *::before, *::after': {
+        borderColor: 'border.subtle',
+        borderStyle: 'solid',
+        boxSizing: 'border-box',
+      },
+    },
+  },
+  conditions: {
+    extend: {
+      light: ':root &, .light &',
+    },
+  },
   theme: {
     extend: {
       recipes,
@@ -14,6 +29,16 @@ export const preset = definePreset({
         colors: {
           gray: neutral,
           blue,
+          fg: {
+            default: { value: '{colors.gray.12}' },
+            muted: { value: '{colors.gray.11}' },
+            subtle: { value: '{colors.gray.10}' },
+          },
+          border: {
+            default: { value: '{colors.gray.7}' },
+            muted: { value: '{colors.gray.6}' },
+            subtle: { value: '{colors.gray.4}' },
+          },
         },
       },
     },
