@@ -9,6 +9,7 @@
     "website"
   ],
   "scripts": {
+    "prepare": "bun run --filter='*' prepare",
     "postinstall": "lefthook install",
     "lint": "bun run --filter='*' lint",
     "test": "bun run --filter='*' test",
