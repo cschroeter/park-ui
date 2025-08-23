@@ -47,6 +47,7 @@ export const TableOfContents = (props: Props) => {
                   textStyle: 'sm',
                   '&:is(:active, [data-active="true"])': {
                     color: 'colorPalette.default',
+                    fontWeight: 'medium',
                   },
                 })}
               >
