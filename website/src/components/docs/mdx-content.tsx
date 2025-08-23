@@ -2,6 +2,7 @@ import type { PropsWithChildren } from 'react'
 import * as runtime from 'react/jsx-runtime'
 import { Step, Steps } from '../ui/steps'
 import { CodeSnippet } from './code-snippet'
+import { ColorGrid } from './color-grid'
 import { ComponentExample } from './component-example'
 import { FigmaKitPreview } from './figma-kit-preview'
 import { QuickstartGuide } from './quickstart-guide'
@@ -17,6 +18,7 @@ const Pre = async (props: PropsWithChildren) => {
 }
 
 const sharedComponents = {
+  ColorGrid,
   ComponentExample,
   FigmaKitPreview,
   QuickstartGuide,

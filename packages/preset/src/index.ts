@@ -1,5 +1,5 @@
 import { definePlugin, definePreset } from '@pandacss/dev'
-import { neutral } from './colors/neutral'
+import { colors } from './colors'
 import { recipes, slotRecipes } from './recipes'
 
 export const preset = definePreset({
@@ -27,8 +27,8 @@ export const preset = definePreset({
       slotRecipes,
       semanticTokens: {
         colors: {
-          gray: neutral,
-          neutral,
+          ...colors,
+          gray: colors.neutral,
           fg: {
             default: { value: '{colors.gray.12}' },
             muted: { value: '{colors.gray.11}' },

@@ -85,6 +85,8 @@ const generateColors = async () => {
   const accentIndex: { id: string }[] = []
 
   for await (const path of glob.scan('.')) {
+    if (path.endsWith('index.ts')) continue
+
     const file = Bun.file(path)
     if (!file.name) continue
 
