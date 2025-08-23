@@ -27,7 +27,7 @@ export const ComponentExample = async (props: Props) => {
   })
 
   return (
-    <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
       <Box p={{ base: '4', md: '6' }}>
         <ErrorBoundary componentName={name}>
           <Example />
