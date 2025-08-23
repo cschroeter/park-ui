@@ -1,6 +1,6 @@
 import { Card, Field, Input } from '@/components/ui'
 
-export const Example = () => {
+export const App = () => {
   return (
     <Card.Root boxShadow="lg">
       <Card.Header gap="1">

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
 import { MDXContent } from '~/components/docs/mdx-content'
-import { TableOfContents } from '~/components/navigation/table-of-content'
+import { TableOfContents } from '~/components/navigation/table-of-contents'
 import { PageHeader } from '~/components/page-header'
 import { Prose } from '~/components/ui/prose'
 import { getDocumentBySlug } from '~/lib/docs'
@@ -23,7 +23,7 @@ export default async function Page(props: Props) {
 
   if (doc.category === 'components') {
     const context = getServerContext()
-    context.component = doc.title
+    context.component = doc.id
   }
 
   return (

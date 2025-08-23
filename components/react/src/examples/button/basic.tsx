@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui'
 
-export const Example = () => {
+export const App = () => {
   return <Button>Park UI</Button>
 }

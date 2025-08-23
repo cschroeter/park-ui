@@ -1,6 +1,6 @@
 import { Tabs } from '@/components/ui'
 
-export const Example = () => {
+export const App = () => {
   return (
     <Tabs.Root defaultValue="react">
       <Tabs.List>

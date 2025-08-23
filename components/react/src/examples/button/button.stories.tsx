@@ -7,5 +7,5 @@ const meta: Meta = {
 
 export default meta
 
-export { Example as Basic } from './basic'
-export { Exampe as Colors } from './color'
+export { App as basic } from './basic'
+export { App as colors } from './colors'

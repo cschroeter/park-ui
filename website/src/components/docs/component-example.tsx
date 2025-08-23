@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { Box, Divider } from 'styled-system/jsx'
 import { getComponentCodeExamples } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
+import { ErrorBoundary } from '../error-boundary'
 import { CodePreviewTabs } from './code-preview-tabs'
 
 interface Props {
@@ -21,14 +22,16 @@ export const ComponentExample = async (props: Props) => {
   )
 
   const codeExamples = await getComponentCodeExamples({
-    component: 'button',
-    example: 'basic',
+    component,
+    name,
   })
 
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
       <Box p={{ base: '4', md: '6' }}>
-        <Example />
+        <ErrorBoundary componentName={name}>
+          <Example />
+        </ErrorBoundary>
       </Box>
       <Divider />
       <CodePreviewTabs examples={codeExamples} />

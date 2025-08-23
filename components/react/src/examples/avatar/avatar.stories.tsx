@@ -7,4 +7,4 @@ const meta: Meta = {
 
 export default meta
 
-export { Example as Basic } from './basic'
+export { App as Basic } from './basic'

@@ -5,11 +5,11 @@ import type { CodeExample, Framework, Lang } from '~/types'
 
 interface Props {
   component: string
-  example: string
+  name: string
 }
 
 export const getComponentCodeExamples = async (props: Props): Promise<CodeExample[]> => {
-  const { component, example } = props
+  const { component, name } = props
   const frameworks: Framework[] = ['react', 'solid', 'svelte', 'vue']
   const frameworkLang: Record<Framework, Lang> = {
     vue: 'vue',
@@ -23,7 +23,7 @@ export const getComponentCodeExamples = async (props: Props): Promise<CodeExampl
   return Promise.all(
     frameworks.map(async (framework) => {
       const lang = frameworkLang[framework]
-      const path = join(baseDir, framework, 'src/examples', component, `${example}.${lang}`)
+      const path = join(baseDir, framework, 'src/examples', component, `${name}.${lang}`)
       const code = await readFile(path, 'utf-8').catch(() => null)
       return { framework, lang, code }
     }),

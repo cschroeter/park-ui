@@ -1,7 +1,7 @@
 import { HStack } from 'styled-system/jsx'
 import { Button } from '@/components/ui'
 
-export const Exampe = () => {
+export const App = () => {
   return (
     <HStack>
       <Button colorPalette="red">Button</Button>

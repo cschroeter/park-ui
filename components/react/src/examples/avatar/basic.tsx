@@ -1,6 +1,6 @@
 import { Avatar } from '@/components/ui'
 
-export const Example = () => {
+export const App = () => {
   return (
     <Avatar.Root>
       <Avatar.Fallback>PA</Avatar.Fallback>
