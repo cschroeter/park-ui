@@ -30,14 +30,14 @@ export const preset = definePreset({
           ...colors,
           gray: colors.neutral,
           fg: {
-            default: { value: '{colors.gray.12}' },
-            muted: { value: '{colors.gray.11}' },
-            subtle: { value: '{colors.gray.10}' },
+            default: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
+            muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
+            subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
           },
           border: {
-            default: { value: '{colors.gray.7}' },
-            muted: { value: '{colors.gray.6}' },
-            subtle: { value: '{colors.gray.4}' },
+            default: { value: { _light: '{colors.gray.7}', _dark: '{colors.gray.7}' } },
+            muted: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } },
+            subtle: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.4}' } },
           },
           bg: {
             default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
