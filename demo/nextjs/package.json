@@ -2,7 +2,7 @@
   "name": "@park-ui/demo-nextjs",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen",
+    "prepare": "panda codegen --clean --silent",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
