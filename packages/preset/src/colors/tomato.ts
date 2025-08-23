@@ -26,7 +26,7 @@ export const tomato = defineSemanticTokens.colors({
   a11: { value: { _light: '#cd2200ea', _dark: '#ff977d' } },
   a12: { value: { _light: '#460900e0', _dark: '#ffd6cefb' } },
   default: { value: { _light: '{colors.tomato.9}', _dark: '{colors.tomato.9}' } },
-  emphasized: { value: { _light: '{colors.tomato.10}', _dark: '{colors.tomato.9}' } },
+  emphasized: { value: { _light: '{colors.tomato.10}', _dark: '{colors.tomato.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
   text: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } },
 })

@@ -26,7 +26,7 @@ export const plum = defineSemanticTokens.colors({
   a11: { value: { _light: '#730086c1', _dark: '#f19cfef3' } },
   a12: { value: { _light: '#40004be6', _dark: '#feddfef4' } },
   default: { value: { _light: '{colors.plum.9}', _dark: '{colors.plum.9}' } },
-  emphasized: { value: { _light: '{colors.plum.10}', _dark: '{colors.plum.9}' } },
+  emphasized: { value: { _light: '{colors.plum.10}', _dark: '{colors.plum.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
   text: { value: { _light: '{colors.plum.a11}', _dark: '{colors.plum.a11}' } },
 })

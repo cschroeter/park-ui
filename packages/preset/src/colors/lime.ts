@@ -26,7 +26,7 @@ export const lime = defineSemanticTokens.colors({
   a11: { value: { _light: '#375f00d0', _dark: '#d1fe77e4' } },
   a12: { value: { _light: '#1e2900e3', _dark: '#e9febff7' } },
   default: { value: { _light: '{colors.lime.9}', _dark: '{colors.lime.9}' } },
-  emphasized: { value: { _light: '{colors.lime.10}', _dark: '{colors.lime.9}' } },
-  fg: { value: { _light: 'white', _dark: 'white' } },
+  emphasized: { value: { _light: '{colors.lime.10}', _dark: '{colors.lime.10}' } },
+  fg: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
   text: { value: { _light: '{colors.lime.a11}', _dark: '{colors.lime.a11}' } },
 })

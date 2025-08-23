@@ -26,7 +26,7 @@ export const iris = defineSemanticTokens.colors({
   a11: { value: { _light: '#0600abac', _dark: '#b1a9ff' } },
   a12: { value: { _light: '#000246d8', _dark: '#e1e0fffe' } },
   default: { value: { _light: '{colors.iris.9}', _dark: '{colors.iris.9}' } },
-  emphasized: { value: { _light: '{colors.iris.10}', _dark: '{colors.iris.9}' } },
+  emphasized: { value: { _light: '{colors.iris.10}', _dark: '{colors.iris.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
   text: { value: { _light: '{colors.iris.a11}', _dark: '{colors.iris.a11}' } },
 })

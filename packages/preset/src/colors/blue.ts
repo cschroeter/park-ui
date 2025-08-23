@@ -26,7 +26,7 @@ export const blue = defineSemanticTokens.colors({
   a11: { value: { _light: '#006dcbf2', _dark: '#70b8ff' } },
   a12: { value: { _light: '#002359ee', _dark: '#c2e6ff' } },
   default: { value: { _light: '{colors.blue.9}', _dark: '{colors.blue.9}' } },
-  emphasized: { value: { _light: '{colors.blue.10}', _dark: '{colors.blue.9}' } },
+  emphasized: { value: { _light: '{colors.blue.10}', _dark: '{colors.blue.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
   text: { value: { _light: '{colors.blue.a11}', _dark: '{colors.blue.a11}' } },
 })

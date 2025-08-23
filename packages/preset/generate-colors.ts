@@ -35,7 +35,7 @@ const generateSemanticTokens = (color: string) => {
   return {
     ...semanticTokens,
     default: { value: { _light: `{colors.${color}.9}`, _dark: `{colors.${color}.9}` } },
-    emphasized: { value: { _light: `{colors.${color}.10}`, _dark: `{colors.${color}.9}` } },
+    emphasized: { value: { _light: `{colors.${color}.10}`, _dark: `{colors.${color}.10}` } },
     fg: { value: { _light: 'white', _dark: 'white' } },
     text: { value: { _light: `{colors.${color}.a11}`, _dark: `{colors.${color}.a11}` } },
   }

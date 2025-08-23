@@ -26,7 +26,7 @@ export const jade = defineSemanticTokens.colors({
   a11: { value: { _light: '#007152df', _dark: '#21fec0d6' } },
   a12: { value: { _light: '#002217e2', _dark: '#b8ffe1ef' } },
   default: { value: { _light: '{colors.jade.9}', _dark: '{colors.jade.9}' } },
-  emphasized: { value: { _light: '{colors.jade.10}', _dark: '{colors.jade.9}' } },
+  emphasized: { value: { _light: '{colors.jade.10}', _dark: '{colors.jade.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
   text: { value: { _light: '{colors.jade.a11}', _dark: '{colors.jade.a11}' } },
 })

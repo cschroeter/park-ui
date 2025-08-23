@@ -26,7 +26,7 @@ export const ruby = defineSemanticTokens.colors({
   a11: { value: { _light: '#c10030db', _dark: '#ff949d' } },
   a12: { value: { _light: '#550016e8', _dark: '#ffd3e2fe' } },
   default: { value: { _light: '{colors.ruby.9}', _dark: '{colors.ruby.9}' } },
-  emphasized: { value: { _light: '{colors.ruby.10}', _dark: '{colors.ruby.9}' } },
+  emphasized: { value: { _light: '{colors.ruby.10}', _dark: '{colors.ruby.10}' } },
   fg: { value: { _light: 'white', _dark: 'white' } },
   text: { value: { _light: '{colors.ruby.a11}', _dark: '{colors.ruby.a11}' } },
 })
