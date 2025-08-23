@@ -1,14 +1,19 @@
 import { Box } from 'styled-system/jsx'
-import { highlight, type Lang } from '~/lib/shiki'
+import { highlight } from '~/lib/shiki'
+import type { Lang } from '~/types'
 import { ClipboardButton } from './clipboard-button'
 
 interface Props {
-  code: string
+  code: string | null
   lang: Lang
 }
 
 export const CodeSnippet = async (props: Props) => {
   const { code, lang } = props
+  if (!code) {
+    return null
+  }
+
   const __html = await highlight({ code, lang })
 
   return (

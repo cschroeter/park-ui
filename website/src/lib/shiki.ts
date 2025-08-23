@@ -1,6 +1,5 @@
 import { createHighlighter } from 'shiki'
-
-export type Lang = 'tsx' | 'bash' | 'vue'
+import type { Lang } from '~/types'
 
 interface Props {
   code: string
@@ -9,7 +8,7 @@ interface Props {
 
 const highlighter = createHighlighter({
   themes: ['github-dark-default'],
-  langs: ['tsx', 'bash', 'vue'],
+  langs: ['tsx', 'bash', 'vue', 'svelte'],
 })
 
 export const highlight = async ({ code, lang }: Props) =>

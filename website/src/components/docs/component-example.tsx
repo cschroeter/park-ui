@@ -1,9 +1,9 @@
 import { pascalCase } from 'change-case'
 import dynamic from 'next/dynamic'
-import { Box } from 'styled-system/jsx'
-import { getComponentExampleSourceCode } from '~/app/docs/actions'
+import { Box, Divider } from 'styled-system/jsx'
+import { getComponentCodeExamples } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
-import { CodeSnippet } from './code-snippet'
+import { CodePreviewTabs } from './code-preview-tabs'
 
 interface Props {
   name: string
@@ -20,16 +20,19 @@ export const ComponentExample = async (props: Props) => {
       .then((mod) => mod[name]),
   )
 
-  const code = await getComponentExampleSourceCode({
+  const examples = await getComponentCodeExamples({
     component: 'button',
     framework: 'react',
     example: 'basic',
   })
 
   return (
-    <Box>
-      <Example />
-      <CodeSnippet code={code} lang="tsx" />
+    <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
+      <Box p={{ base: '4', md: '6' }}>
+        <Example />
+      </Box>
+      <Divider />
+      <CodePreviewTabs examples={examples} />
     </Box>
   )
 }
