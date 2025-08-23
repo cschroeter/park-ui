@@ -27,6 +27,6 @@ export const amber = defineSemanticTokens.colors({
   a12: { value: { _light: '#341500dd', _dark: '#ffe7b3' } },
   default: { value: { _light: '{colors.amber.9}', _dark: '{colors.amber.9}' } },
   emphasized: { value: { _light: '{colors.amber.10}', _dark: '{colors.amber.9}' } },
-  fg: { value: { _light: 'white', _dark: 'white' } },
+  fg: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
   text: { value: { _light: '{colors.amber.a11}', _dark: '{colors.amber.a11}' } },
 })
