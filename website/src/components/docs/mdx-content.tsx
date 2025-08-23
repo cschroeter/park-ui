@@ -5,6 +5,7 @@ import { CodeSnippet } from './code-snippet'
 import { ColorGrid } from './color-grid'
 import { ComponentExample } from './component-example'
 import { FigmaKitPreview } from './figma-kit-preview'
+import { InstallationGuide } from './installation-guide'
 import { QuickstartGuide } from './quickstart-guide'
 
 // TODO this needs to be more capable
@@ -21,6 +22,7 @@ const sharedComponents = {
   ColorGrid,
   ComponentExample,
   FigmaKitPreview,
+  InstallationGuide,
   QuickstartGuide,
   Step,
   Steps,
