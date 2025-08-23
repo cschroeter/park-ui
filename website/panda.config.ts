@@ -4,7 +4,7 @@ import { plugin, preset } from '@park-ui/preset'
 export default defineConfig({
   presets: [preset],
   preflight: true,
-  include: ['./src/**/*.{ts,tsx}'],
+  include: ['./src/**/*.{ts,tsx}', '../components/react/src/examples/**/*.{ts,tsx}'],
   jsxFramework: 'react',
   plugins: [plugin],
   theme: {
