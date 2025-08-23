@@ -20,9 +20,8 @@ export const ComponentExample = async (props: Props) => {
       .then((mod) => mod[name]),
   )
 
-  const examples = await getComponentCodeExamples({
+  const codeExamples = await getComponentCodeExamples({
     component: 'button',
-    framework: 'react',
     example: 'basic',
   })
 
@@ -32,7 +31,7 @@ export const ComponentExample = async (props: Props) => {
         <Example />
       </Box>
       <Divider />
-      <CodePreviewTabs examples={examples} />
+      <CodePreviewTabs examples={codeExamples} />
     </Box>
   )
 }
