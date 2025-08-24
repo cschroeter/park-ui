@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import * as runtime from 'react/jsx-runtime'
 import { Step, Steps } from '../ui/steps'
+import { Callout } from './callout'
 import { CodeSnippet } from './code-snippet'
 import { ColorGrid } from './color-grid'
 import { ComponentExample } from './component-example'
@@ -26,6 +27,7 @@ const sharedComponents = {
   QuickstartGuide,
   Step,
   Steps,
+  callout: Callout,
   pre: Pre,
 }
 
