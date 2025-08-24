@@ -44,6 +44,9 @@ export const preset = definePreset({
             default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
           },
         },
+        spacing: {
+          4.5: { value: '1.125rem' },
+        },
         radii: {
           l1: { value: '{radii.xs}' },
           l2: { value: '{radii.sm}' },

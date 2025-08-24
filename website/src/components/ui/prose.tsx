@@ -126,12 +126,12 @@ export const Prose = styled('article', {
         },
         '& h2': {
           textStyle: '2xl',
-          mt: '8',
+          mt: '9',
           mb: '4',
         },
         '& h3': {
           textStyle: 'xl',
-          mt: '8',
+          mt: '9',
           mb: '3',
         },
         '& h4': {
