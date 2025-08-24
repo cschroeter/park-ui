@@ -23,6 +23,40 @@ export const preset = definePreset({
   },
   theme: {
     extend: {
+      tokens: {
+        colors: {
+          black: {
+            DEFAULT: { value: '#000000' },
+            a1: { value: 'rgba(0, 0, 0, 0.05)' },
+            a2: { value: 'rgba(0, 0, 0, 0.1)' },
+            a3: { value: 'rgba(0, 0, 0, 0.15)' },
+            a4: { value: 'rgba(0, 0, 0, 0.2)' },
+            a5: { value: 'rgba(0, 0, 0, 0.3)' },
+            a6: { value: 'rgba(0, 0, 0, 0.4)' },
+            a7: { value: 'rgba(0, 0, 0, 0.5)' },
+            a8: { value: 'rgba(0, 0, 0, 0.6)' },
+            a9: { value: 'rgba(0, 0, 0, 0.7)' },
+            a10: { value: 'rgba(0, 0, 0, 0.8)' },
+            a11: { value: 'rgba(0, 0, 0, 0.9)' },
+            a12: { value: 'rgba(0, 0, 0, 0.95)' },
+          },
+          white: {
+            DEFAULT: { value: '#ffffff' },
+            a1: { value: 'rgba(255, 255, 255, 0.05)' },
+            a2: { value: 'rgba(255, 255, 255, 0.1)' },
+            a3: { value: 'rgba(255, 255, 255, 0.15)' },
+            a4: { value: 'rgba(255, 255, 255, 0.2)' },
+            a5: { value: 'rgba(255, 255, 255, 0.3)' },
+            a6: { value: 'rgba(255, 255, 255, 0.4)' },
+            a7: { value: 'rgba(255, 255, 255, 0.5)' },
+            a8: { value: 'rgba(255, 255, 255, 0.6)' },
+            a9: { value: 'rgba(255, 255, 255, 0.7)' },
+            a10: { value: 'rgba(255, 255, 255, 0.8)' },
+            a11: { value: 'rgba(255, 255, 255, 0.9)' },
+            a12: { value: 'rgba(255, 255, 255, 0.95)' },
+          },
+        },
+      },
       recipes,
       slotRecipes,
       semanticTokens: {
@@ -51,6 +85,32 @@ export const preset = definePreset({
           l1: { value: '{radii.xs}' },
           l2: { value: '{radii.sm}' },
           l3: { value: '{radii.md}' },
+        },
+        shadows: {
+          xs: {
+            value: {
+              _light: '0px 1px 2px {colors.gray.a5}, 0px 0px 1px {colors.gray.a7}',
+              _dark: '0px 1px 1px {colors.black.a12}, 0px 0px 1px inset {colors.gray.a7}',
+            },
+          },
+          sm: {
+            value: {
+              _light: '0px 2px 4px {colors.gray.a3}, 0px 0px 1px {colors.gray.a7}',
+              _dark: '0px 2px 4px {colors.black.a10}, 0px 0px 1px inset {colors.gray.a7}',
+            },
+          },
+          md: {
+            value: {
+              _light: '0px 4px 8px {colors.gray.a3}, 0px 0px 1px {colors.gray.a7}',
+              _dark: '0px 4px 8px {colors.black.a10}, 0px 0px 1px inset {colors.gray.a7}',
+            },
+          },
+          lg: {
+            value: {
+              _light: '0px 8px 16px {colors.gray.a3}, 0px 0px 1px {colors.gray.a7}',
+              _dark: '0px 8px 16px {colors.black.a10}, 0px 0px 1px inset {colors.gray.a7}',
+            },
+          },
         },
       },
     },
