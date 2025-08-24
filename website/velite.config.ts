@@ -10,6 +10,13 @@ const docs = defineCollection({
     .object({
       title: s.string(),
       description: s.string(),
+      links: s
+        .object({
+          recipe: s.string().url().optional(),
+          source: s.string().url().optional(),
+          ark: s.string().url().optional(),
+        })
+        .optional(),
       mdx: s.mdx(),
       toc: s.toc(),
     })

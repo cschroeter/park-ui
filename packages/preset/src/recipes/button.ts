@@ -9,7 +9,7 @@ export const button = defineRecipe({
     borderRadius: 'l2',
     cursor: 'pointer',
     display: 'inline-flex',
-    fontWeight: 'semibold',
+    fontWeight: 'medium',
     flexShrink: '0',
     isolation: 'isolate',
     minWidth: '0',

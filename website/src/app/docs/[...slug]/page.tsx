@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
 import { MDXContent } from '~/components/docs/mdx-content'
+import { PageLinks } from '~/components/docs/page-links'
 import { TableOfContents } from '~/components/navigation/table-of-contents'
 import { PageHeader } from '~/components/page-header'
 import { Prose } from '~/components/ui/prose'
@@ -30,7 +31,9 @@ export default async function Page(props: Props) {
     <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" pt="10">
       <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
         <Stack gap="8">
-          <PageHeader title={doc.title} description={doc.description} />
+          <PageHeader title={doc.title} description={doc.description}>
+            <PageLinks links={doc.links} />
+          </PageHeader>
           <Divider />
           <Prose>
             <MDXContent mdx={doc.mdx} />
