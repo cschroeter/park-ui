@@ -27,6 +27,6 @@ export const sky = defineSemanticTokens.colors({
   a12: { value: { _light: '#002540e2', _dark: '#c2f3ff' } },
   default: { value: { _light: '{colors.sky.9}', _dark: '{colors.sky.9}' } },
   emphasized: { value: { _light: '{colors.sky.10}', _dark: '{colors.sky.10}' } },
-  fg: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
+  fg: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } },
   text: { value: { _light: '{colors.sky.a11}', _dark: '{colors.sky.a11}' } },
 })
