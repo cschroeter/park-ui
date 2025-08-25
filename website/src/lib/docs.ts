@@ -13,7 +13,10 @@ export const getSidebarGroups = (): Doc[][] => {
       const category = doc.category
       if (categories.includes(category)) {
         acc[category] ??= []
-        acc[category].push(doc)
+        acc[category].push({
+          ...doc,
+          title: doc.id === 'introduction' ? 'Introduction' : doc.title,
+        })
       }
       return acc
     },

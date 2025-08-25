@@ -16,7 +16,7 @@ export const CodeSnippet = async (props: Props) => {
   const __html = await highlight(sourceCode)
 
   return (
-    <Box className="dark" bg="gray.2" position="relative" borderRadius="l3">
+    <Box className="dark not-prose" bg="gray.2" position="relative" borderRadius="l3">
       <Box position="absolute" top="1" right="1">
         <ClipboardButton value={sourceCode.code} />
       </Box>

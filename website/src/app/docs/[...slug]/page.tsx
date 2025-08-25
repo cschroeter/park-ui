@@ -1,7 +1,7 @@
 import { docs } from '.velite'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
+import { Box, Divider, Grid, GridItem } from 'styled-system/jsx'
 import { MDXContent } from '~/components/docs/mdx-content'
 import { PageHeaderLinks } from '~/components/docs/page-links'
 import { TableOfContents } from '~/components/navigation/table-of-contents'
@@ -28,17 +28,15 @@ export default async function Page(props: Props) {
   }
 
   return (
-    <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" pt="10">
+    <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" pt="12">
       <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
-        <Stack gap="8">
-          <PageHeader title={doc.title} description={doc.description}>
-            <PageHeaderLinks links={doc.links} />
-          </PageHeader>
-          <Divider />
-          <Prose>
-            <MDXContent mdx={doc.mdx} />
-          </Prose>
-        </Stack>
+        <PageHeader title={doc.title} description={doc.description}>
+          <PageHeaderLinks links={doc.links} />
+        </PageHeader>
+        <Divider my="12" />
+        <Prose>
+          <MDXContent mdx={doc.mdx} />
+        </Prose>
       </GridItem>
       <Box hideBelow="xl" position="sticky" height="calc(100dvh - 96px)" top="24">
         <TableOfContents toc={doc.toc} />

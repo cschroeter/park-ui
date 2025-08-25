@@ -8,7 +8,13 @@ interface Props {
 
 export const FigmaKitPreview = (props: Props) =>
   props.variant === 'foundation' ? (
-    <Flex bg="bg.subtle" borderRadius="l3" borderWidth="1px" overflow="hidden" my="12">
+    <Flex
+      bg="bg.subtle"
+      borderRadius="l3"
+      borderWidth="1px"
+      overflow="hidden"
+      className="not-prose"
+    >
       <iframe
         title="Fimga Kit Preview"
         width="100%"
@@ -22,7 +28,7 @@ export const FigmaKitPreview = (props: Props) =>
       target="_blank"
       rel="noreferrer"
       aria-label="Preview Park UI Figma Kit Pro"
-      style={{ display: 'block', width: '100%' }}
+      className="not-prose"
     >
       <AspectRatio ratio={16 / 9}>
         <Image

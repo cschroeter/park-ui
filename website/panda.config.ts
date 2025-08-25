@@ -1,8 +1,12 @@
 import { defineConfig } from '@pandacss/dev'
 import { plugin, preset } from '@park-ui/preset'
+import typographyPreset from 'pandacss-preset-typography'
 
 export default defineConfig({
-  presets: [preset],
+  presets: [
+    preset,
+    typographyPreset({ recipe: { notProse: true, semanticTokens: { defaults: false } } }),
+  ],
   preflight: true,
   include: ['./src/**/*.{ts,tsx}', '../components/react/src/examples/**/*.{ts,tsx}'],
   jsxFramework: 'react',
@@ -15,6 +19,15 @@ export default defineConfig({
           code: { value: 'var(--font-roboto-mono), monospace' },
         },
       },
+      semanticTokens: {
+        colors: {
+          prose: {
+            heading: { value: '{colors.gray.12}' },
+            body: { value: '{colors.gray.11}' },
+            link: { value: '{colors.gray.12}' },
+          },
+        },
+      },
     },
   },
   globalCss: {
@@ -25,6 +38,9 @@ export default defineConfig({
       },
       body: {
         fontFamily: 'body',
+      },
+      h2: {
+        fontWeight: 'semibold!',
       },
       pre: {
         background: 'transparent!',

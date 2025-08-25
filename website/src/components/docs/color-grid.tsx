@@ -18,7 +18,7 @@ export const ColorGrid = (props: Props) => {
   const colors = type === 'gray' ? grayColors : accentColors
 
   return (
-    <Stack gap="5">
+    <Stack gap="5" className="not-prose">
       {colors.map((color) => (
         <Stack key={color} gap="1.5">
           <Text textStyle="sm" textTransform="capitalize" color="fg.default">
@@ -39,7 +39,7 @@ interface ColorPaletteProps {
 const ColorPalette = (props: ColorPaletteProps) => {
   const { color, withLegend } = props
   return (
-    <Grid className="not-prose" columns={{ base: 6, sm: 12 }} gap="1">
+    <Grid columns={{ base: 6, sm: 12 }} gap="1">
       {Array.from({ length: 12 }, (_, i) => (i + 1) as Shade).map((shade) => (
         <Stack key={shade} gap="1">
           <Box

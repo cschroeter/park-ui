@@ -10,7 +10,7 @@ export const QuickstartGuide = () => {
     { name: 'Nuxt', icon: NuxtIcon, slug: 'templates/vue/nuxt' },
   ]
   return (
-    <Wrap direction="row" gap={{ base: '4', md: '6' }}>
+    <Wrap direction="row" gap={{ base: '4', md: '6' }} className="not-prose">
       {frameworks.map(({ name, icon: Icon, slug }) => (
         <a
           key={name}
