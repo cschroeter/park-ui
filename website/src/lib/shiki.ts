@@ -3,7 +3,7 @@ import type { SourceCode } from '~/types'
 
 const highlighter = createHighlighter({
   themes: ['github-dark-default'],
-  langs: ['tsx', 'bash', 'vue', 'svelte'],
+  langs: ['tsx', 'bash', 'vue', 'svelte', 'ts'],
 })
 
 export const highlight = async ({ code, lang }: SourceCode) =>

@@ -3,6 +3,7 @@ import { Tabs } from '@/components/ui'
 import { getServerContext } from '~/server-context'
 import type { SourceCode } from '~/types'
 import { CodeSnippet } from './code-snippet'
+import { ManualIntallationGuide } from './manual-installation-guide'
 
 export const InstallationGuide = () => {
   const { component } = getServerContext()
@@ -21,7 +22,7 @@ export const InstallationGuide = () => {
         </Box>
       </Tabs.Content>
       <Tabs.Content value="manual" pt="6">
-        {/* <ManualIntallationGuide /> */}
+        <ManualIntallationGuide />
       </Tabs.Content>
     </Tabs.Root>
   )

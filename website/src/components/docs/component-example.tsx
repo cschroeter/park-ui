@@ -1,7 +1,7 @@
 import { pascalCase } from 'change-case'
 import dynamic from 'next/dynamic'
 import { Box, Divider } from 'styled-system/jsx'
-import { getComponentCodeExamples } from '~/app/docs/actions'
+import { getComponentExamples } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
 import { ErrorBoundary } from '../error-boundary'
 import { CodePreviewTabs } from './code-preview-tabs'
@@ -21,7 +21,7 @@ export const ComponentExample = async (props: Props) => {
       .then((mod) => mod[name]),
   )
 
-  const codeExamples = await getComponentCodeExamples({
+  const codeExamples = await getComponentExamples({
     component,
     name,
   })

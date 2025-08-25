@@ -1,5 +1,5 @@
 export type Framework = 'react' | 'solid' | 'svelte' | 'vue'
-export type Lang = 'tsx' | 'bash' | 'vue' | 'svelte'
+export type Lang = 'tsx' | 'bash' | 'vue' | 'svelte' | 'ts'
 
 export interface SourceCode {
   lang: Lang
