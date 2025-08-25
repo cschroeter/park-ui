@@ -8,7 +8,7 @@ interface Props {
   links?: Doc['links']
 }
 
-export const PageLinks = (props: Props) => {
+export const PageHeaderLinks = (props: Props) => {
   const { links } = props
   if (!links) return null
 
@@ -33,7 +33,7 @@ export const PageLinks = (props: Props) => {
 
     return (
       <Button key={key} variant="subtle" size="xs" textStyle="sm" asChild>
-        <a href={url}>
+        <a href={url} target="_blank" rel="noopener noreferrer">
           <Icon size="sm">{content.icon}</Icon>
           {content.label}
         </a>
