@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "icon-button.ts",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { type ButtonVariantProps, button } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type IconButtonProps = ComponentProps<typeof IconButton>\nexport const IconButton = styled(ark.button, button, {\n  defaultProps: { px: '0' } as ButtonVariantProps,\n})\n",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { type ButtonVariantProps, button } from 'styled-system/recipes'\n\nexport type IconButtonProps = ComponentProps<typeof IconButton>\nexport const IconButton = styled(ark.button, button, {\n  defaultProps: { px: '0' } as ButtonVariantProps,\n})\n",
       "indexFile": {
         "exports": [
           {

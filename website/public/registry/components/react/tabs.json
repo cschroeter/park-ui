@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "tabs.ts",
-      "content": "'use client'\nimport { Tabs } from '@ark-ui/react/tabs'\nimport { type ComponentProps, createStyleContext } from 'styled-system/jsx'\nimport { tabs } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport type RootProps = ComponentProps<typeof Tabs.Root>\nexport const Root = withProvider(Tabs.Root, 'root')\n\nexport const List = withContext(Tabs.List, 'list')\nexport const Trigger = withContext(Tabs.Trigger, 'trigger')\nexport const Content = withContext(Tabs.Content, 'content')\nexport const Indicator = withContext(Tabs.Indicator, 'indicator')\n",
+      "content": "'use client'\nimport { Tabs } from '@ark-ui/react/tabs'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { tabs } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Tabs.Root, 'root')\n\nexport const List = withContext(Tabs.List, 'list')\nexport const Trigger = withContext(Tabs.Trigger, 'trigger')\nexport const Content = withContext(Tabs.Content, 'content')\nexport const Indicator = withContext(Tabs.Indicator, 'indicator')\n",
       "indexFile": {
         "exports": [
           {

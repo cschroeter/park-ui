@@ -1,6 +1,7 @@
+import type { ComponentProps } from 'react'
 import { styled } from 'styled-system/jsx'
 import { type TextVariantProps, text } from 'styled-system/recipes'
-import type { ComponentProps, StyledComponent } from 'styled-system/types'
+import type { StyledComponent } from 'styled-system/types'
 
 type ParagraphProps = TextVariantProps & { as?: React.ElementType }
 
