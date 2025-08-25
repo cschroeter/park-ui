@@ -22,7 +22,7 @@ export const preset = definePreset({
         color: 'fg.default',
       },
       '*::selection': {
-        bg: 'colorPalette.3',
+        bg: 'colorPalette.a3',
       },
     },
   },

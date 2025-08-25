@@ -46,12 +46,12 @@ export default defineConfig({
         background: 'transparent!',
         overflowX: 'auto',
         fontSize: '13px',
+        '::selection': {
+          bg: 'gray.5',
+        },
       },
       code: {
         fontFamily: 'code',
-        '::selection': {
-          bg: 'gray.4',
-        },
       },
     },
   },
