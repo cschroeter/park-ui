@@ -6,12 +6,7 @@ export interface SourceCode {
   code: string
 }
 
-export interface SourceFile {
-  fileName: string
-  sourceCode: SourceCode
-}
-
-export interface CodeExample {
+export interface FrameworkSourceCode {
   framework: Framework
-  sourceCode?: SourceCode | null
+  sourceCode: SourceCode | null
 }

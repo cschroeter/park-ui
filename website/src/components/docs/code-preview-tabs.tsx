@@ -1,13 +1,13 @@
 import { Tabs } from '@/components/ui'
-import type { CodeExample } from '~/types'
+import type { FrameworkSourceCode } from '~/types'
 import { CodeSnippet } from './code-snippet'
 
 interface Props {
-  examples: CodeExample[]
+  sources: FrameworkSourceCode[]
 }
 
 export const CodePreviewTabs = (props: Props) => {
-  const { examples } = props
+  const { sources } = props
 
   return (
     <Tabs.Root defaultValue="react" className="dark" variant="line" size="sm" bg="gray.2">
@@ -19,20 +19,20 @@ export const CodePreviewTabs = (props: Props) => {
         px="4"
         borderColor="gray.a4"
       >
-        {examples.map((example) => (
+        {sources.map(({ framework, sourceCode }) => (
           <Tabs.Trigger
-            key={example.framework}
-            value={example.framework}
+            key={framework}
+            value={framework}
             textTransform="capitalize"
             transform="translateY(6px)"
-            disabled={!example.sourceCode}
+            disabled={!sourceCode}
           >
-            {example.framework}
+            {framework}
           </Tabs.Trigger>
         ))}
         <Tabs.Indicator bg="gray.12" />
       </Tabs.List>
-      {examples.map(({ sourceCode, framework }) => (
+      {sources.map(({ sourceCode, framework }) => (
         <Tabs.Content key={framework} value={framework} pt="0">
           {sourceCode && <CodeSnippet sourceCode={sourceCode} />}
         </Tabs.Content>

@@ -2,14 +2,14 @@
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { frameworks } from '~/lib/frameworks'
-import type { CodeExample, SourceCode } from '~/types'
+import type { FrameworkSourceCode, SourceCode } from '~/types'
 
 interface Props {
   component: string
   name: string
 }
 
-export const getComponentExamples = async (props: Props): Promise<CodeExample[]> => {
+export const getComponentExamples = async (props: Props): Promise<FrameworkSourceCode[]> => {
   const { component, name } = props
 
   const baseDir = join(process.cwd(), '../components')
@@ -28,7 +28,7 @@ export const getComponentExamples = async (props: Props): Promise<CodeExample[]>
   )
 }
 
-export const getComponentSourceCode = async (name: string): Promise<CodeExample[]> => {
+export const getComponentDefinitions = async (name: string): Promise<FrameworkSourceCode[]> => {
   const baseDir = join(process.cwd(), '../components')
 
   return Promise.all(
