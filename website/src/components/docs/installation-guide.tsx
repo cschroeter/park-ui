@@ -1,4 +1,3 @@
-import { Box } from 'styled-system/jsx'
 import { Tabs } from '@/components/ui'
 import { getServerContext } from '~/server-context'
 import type { SourceCode } from '~/types'
@@ -17,9 +16,7 @@ export const InstallationGuide = () => {
         <Tabs.Indicator />
       </Tabs.List>
       <Tabs.Content value="cli" pt="6">
-        <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
-          <CodeSnippet sourceCode={sourceCode} />
-        </Box>
+        <CodeSnippet sourceCode={sourceCode} />
       </Tabs.Content>
       <Tabs.Content value="manual" pt="6">
         <ManualIntallationGuide />

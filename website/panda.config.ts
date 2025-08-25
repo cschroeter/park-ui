@@ -47,6 +47,12 @@ export default defineConfig({
         overflowX: 'auto',
         fontSize: '13px',
       },
+      code: {
+        fontFamily: 'code',
+        '::selection': {
+          bg: 'gray.4',
+        },
+      },
     },
   },
 })

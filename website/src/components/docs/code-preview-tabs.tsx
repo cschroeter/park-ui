@@ -2,15 +2,24 @@ import { Tabs } from '@/components/ui'
 import type { FrameworkSourceCode } from '~/types'
 import { CodeSnippet } from './code-snippet'
 
-interface Props {
+interface Props extends Tabs.RootProps {
   sources: FrameworkSourceCode[]
 }
 
 export const CodePreviewTabs = (props: Props) => {
-  const { sources } = props
+  const { sources, ...rootProps } = props
 
   return (
-    <Tabs.Root defaultValue="react" className="dark" variant="line" size="sm" bg="gray.2">
+    <Tabs.Root
+      defaultValue="react"
+      className="dark"
+      variant="line"
+      size="sm"
+      bg="gray.2"
+      borderRadius="l3"
+      borderWidth="1px"
+      {...rootProps}
+    >
       <Tabs.List
         bg="gray.a2"
         borderBottomWidth="1px"
@@ -34,7 +43,7 @@ export const CodePreviewTabs = (props: Props) => {
       </Tabs.List>
       {sources.map(({ sourceCode, framework }) => (
         <Tabs.Content key={framework} value={framework} pt="0">
-          {sourceCode && <CodeSnippet sourceCode={sourceCode} />}
+          {sourceCode && <CodeSnippet sourceCode={sourceCode} borderWidth="0" borderRadius="0" />}
         </Tabs.Content>
       ))}
     </Tabs.Root>

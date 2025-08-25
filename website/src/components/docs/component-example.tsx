@@ -34,7 +34,7 @@ export const ComponentExample = async (props: Props) => {
         </ErrorBoundary>
       </Box>
       <Divider />
-      <CodePreviewTabs sources={codeExamples} />
+      <CodePreviewTabs sources={codeExamples} borderRadius="0" borderWidth="0" />
     </Box>
   )
 }
