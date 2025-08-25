@@ -27,7 +27,7 @@ export const Hero = () => {
       </HeroItem>
       <HeroItem>
         <Stack direction={{ base: 'column', sm: 'row' }} gap="3">
-          <PageButton href="/docs/overview/introduction" size={{ base: 'xl', md: '2xl' }}>
+          <PageButton href="/docs" size={{ base: 'xl', md: '2xl' }}>
             Get Started <ArrowRightIcon />
           </PageButton>
           <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>

@@ -14,6 +14,16 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/*': ['../components/react/src/examples/**/*'],
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/docs',
+        destination: '/docs/overview/introduction',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 export default nextConfig
