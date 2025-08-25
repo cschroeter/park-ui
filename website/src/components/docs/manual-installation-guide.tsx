@@ -18,6 +18,7 @@ export const ManualIntallationGuide = async () => {
         <CodePreviewTabs sources={sources} />
       </Step>
       <Step number="2" title="Integrate Recipe">
+        <Text>Integrate this recipe in to your Panda config.</Text>
         <CodeSnippet sourceCode={recipe} />
       </Step>
     </Steps>
