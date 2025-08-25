@@ -23,9 +23,18 @@ export const getComponentCodeExamples = async (props: Props): Promise<CodeExampl
   return Promise.all(
     frameworks.map(async (framework) => {
       const lang = frameworkLang[framework]
-      const path = join(baseDir, framework, 'src/examples', component, `${name}.${lang}`)
+      const fileName = `${name}.${lang}`
+      const path = join(baseDir, framework, 'src/examples', component, fileName)
       const code = await readFile(path, 'utf-8').catch(() => null)
-      return { framework, lang, code }
+
+      return {
+        framework,
+        sourceCode: code ? { code, lang } : null,
+      }
     }),
   )
+}
+
+export const getInstallationGuide = async () => {
+  return () => {}
 }

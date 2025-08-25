@@ -25,16 +25,16 @@ export const CodePreviewTabs = (props: Props) => {
             value={example.framework}
             textTransform="capitalize"
             transform="translateY(6px)"
-            disabled={!example.code}
+            disabled={!example.sourceCode}
           >
             {example.framework}
           </Tabs.Trigger>
         ))}
         <Tabs.Indicator bg="gray.12" />
       </Tabs.List>
-      {examples.map((example) => (
-        <Tabs.Content key={example.framework} value={example.framework} pt="0">
-          <CodeSnippet code={example.code} lang={example.lang} />
+      {examples.map(({ sourceCode, framework }) => (
+        <Tabs.Content key={framework} value={framework} pt="0">
+          {sourceCode && <CodeSnippet sourceCode={sourceCode} />}
         </Tabs.Content>
       ))}
     </Tabs.Root>

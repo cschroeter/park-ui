@@ -1,11 +1,12 @@
 import { Box } from 'styled-system/jsx'
 import { Tabs } from '@/components/ui'
 import { getServerContext } from '~/server-context'
+import type { SourceCode } from '~/types'
 import { CodeSnippet } from './code-snippet'
 
 export const InstallationGuide = () => {
   const { component } = getServerContext()
-  const code = `npx @park-ui/cli@next add ${component}`
+  const sourceCode: SourceCode = { code: `npx @park-ui/cli@next add ${component}`, lang: 'bash' }
 
   return (
     <Tabs.Root defaultValue="cli">
@@ -16,7 +17,7 @@ export const InstallationGuide = () => {
       </Tabs.List>
       <Tabs.Content value="cli" pt="6">
         <Box borderWidth="1px" borderRadius="l3" overflow="hidden">
-          <CodeSnippet code={code} lang="bash" />
+          <CodeSnippet sourceCode={sourceCode} />
         </Box>
       </Tabs.Content>
       <Tabs.Content value="manual" pt="6">

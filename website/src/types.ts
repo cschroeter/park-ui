@@ -1,7 +1,17 @@
 export type Framework = 'react' | 'solid' | 'svelte' | 'vue'
 export type Lang = 'tsx' | 'bash' | 'vue' | 'svelte'
+
+export interface SourceCode {
+  lang: Lang
+  code: string
+}
+
+export interface SourceFile {
+  fileName: string
+  sourceCode: SourceCode
+}
+
 export interface CodeExample {
   framework: Framework
-  lang: Lang
-  code: string | null
+  sourceCode?: SourceCode | null
 }

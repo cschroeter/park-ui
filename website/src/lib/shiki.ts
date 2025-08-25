@@ -1,17 +1,12 @@
 import { createHighlighter } from 'shiki'
-import type { Lang } from '~/types'
-
-interface Props {
-  code: string
-  lang: Lang
-}
+import type { SourceCode } from '~/types'
 
 const highlighter = createHighlighter({
   themes: ['github-dark-default'],
   langs: ['tsx', 'bash', 'vue', 'svelte'],
 })
 
-export const highlight = async ({ code, lang }: Props) =>
+export const highlight = async ({ code, lang }: SourceCode) =>
   (await highlighter).codeToHtml(code, {
     lang,
     theme: 'github-dark-default',

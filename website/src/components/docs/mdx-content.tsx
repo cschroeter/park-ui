@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import * as runtime from 'react/jsx-runtime'
+import type { SourceCode } from '~/types'
 import { Step, Steps } from '../ui/steps'
 import { Callout } from './callout'
 import { CodeSnippet } from './code-snippet'
@@ -16,7 +17,9 @@ const Pre = async (props: PropsWithChildren) => {
   // @ts-expect-error it exists
   const code = props.children?.props.children.toString() as string
 
-  return <CodeSnippet lang={lang} code={code} />
+  const sourceCode: SourceCode = { code, lang }
+
+  return <CodeSnippet sourceCode={sourceCode} />
 }
 
 const sharedComponents = {
