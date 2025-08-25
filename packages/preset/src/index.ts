@@ -14,6 +14,10 @@ export const preset = definePreset({
     },
     body: {
       background: 'gray.1',
+      color: 'fg.default',
+    },
+    '*::selection': {
+      bg: 'colorPalette.a3',
     },
   },
   conditions: {
@@ -23,6 +27,8 @@ export const preset = definePreset({
   },
   theme: {
     extend: {
+      recipes,
+      slotRecipes,
       tokens: {
         colors: {
           black: {
@@ -57,8 +63,6 @@ export const preset = definePreset({
           },
         },
       },
-      recipes,
-      slotRecipes,
       semanticTokens: {
         colors: {
           ...colors,
