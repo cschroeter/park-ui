@@ -3,8 +3,8 @@ import { Text } from '@/components/ui'
 
 export const ShadowTokens = () => {
   return (
-    <Grid gap="6" columns={{ base: 2, sm: 4, md: 6 }} className="not-prose">
-      {['xs', 'sm', 'md', 'lg', 'xl', '2xl'].map((shadow) => (
+    <Grid className="not-prose" minChildWidth="20" gap="4">
+      {['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'].map((shadow) => (
         <Flex
           key={shadow}
           borderRadius="l3"

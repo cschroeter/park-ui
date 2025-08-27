@@ -35,14 +35,22 @@ Alternatively, choose the gray scale which is saturated with the hue closest to 
 
 ## Tokens
 
+### Border Radius
+
+Radii tokens define consistent corner rounding across components. This setup makes it easy to nest border radii as shown below.
+
+* **`l1`** – smallest radius, used inside other elements
+* **`l2`** – medium radius, used when wrapping `l1`
+* **`l3`** – largest radius, used when wrapping `l2`
+
+<BorderRadiusTokens />  
+
 ### Colors
 
 ### Shadows
 
-Shadows provide depth to UI components, emphasizing a layered appearance and hierarchical structure.
+Shadows provide consistent elevation levels, from `xs` to `2xl`. Unlike the default Panda shadows, they adapt seamlessly to both light and dark mode.
 
 <ShadowTokens />
-
-### Radii
 
 ### z-Index

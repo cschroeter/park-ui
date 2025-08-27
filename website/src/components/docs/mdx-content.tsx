@@ -3,6 +3,7 @@ import * as runtime from 'react/jsx-runtime'
 import type { SourceCode } from '~/types'
 import { PageLink } from '../navigation/page-link'
 import { Step, Steps } from '../ui/steps'
+import { BorderRadiusTokens } from './border-radius-tokens'
 import { Callout } from './callout'
 import { CodeSnippet } from './code-snippet'
 import { ColorGrid } from './color-grid'
@@ -26,18 +27,19 @@ const Pre = async (props: PropsWithChildren) => {
 }
 
 const sharedComponents = {
-  a: PageLink,
-  callout: Callout,
+  BorderRadiusTokens,
   ColorGrid,
   ColorPairings,
   ComponentExample,
   FigmaKitPreview,
   InstallationGuide,
-  pre: Pre,
   QuickstartGuide,
   ShadowTokens,
   Step,
   Steps,
+  a: PageLink,
+  callout: Callout,
+  pre: Pre,
 }
 
 const useMDXComponent = (code: string) => {
