@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import * as runtime from 'react/jsx-runtime'
 import type { SourceCode } from '~/types'
+import { PageLink } from '../navigation/page-link'
 import { Step, Steps } from '../ui/steps'
 import { Callout } from './callout'
 import { CodeSnippet } from './code-snippet'
@@ -32,6 +33,7 @@ const sharedComponents = {
   Steps,
   callout: Callout,
   pre: Pre,
+  a: PageLink,
 }
 
 const useMDXComponent = (code: string) => {

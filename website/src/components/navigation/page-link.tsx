@@ -8,9 +8,17 @@ interface Props extends LinkProps {
 
 export const PageLink = (props: Props) => {
   const { children, href, ...linkProps } = props
+
+  if (href.startsWith('/')) {
+    return (
+      <Link asChild {...linkProps}>
+        <NextLink href={href}>{children}</NextLink>
+      </Link>
+    )
+  }
   return (
-    <Link asChild {...linkProps}>
-      <NextLink href={href}>{children}</NextLink>
+    <Link href={href} target="_blank" {...linkProps}>
+      {children}
     </Link>
   )
 }
