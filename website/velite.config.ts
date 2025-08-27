@@ -23,13 +23,15 @@ const docs = defineCollection({
       toc: s.toc(),
     })
     .transform((data, { meta }) => {
-      // @ts-expect-error TODO
+      if (typeof meta.path !== 'string') {
+        throw new Error('Meta path is not a string')
+      }
       const id = basename(meta.path, '.mdx')
-      // @ts-expect-error TODO
       const category = basename(dirname(meta.path))
-      const href = join('/docs/', category, id)
+      const href = toBasePath(meta.path)
+      const slug = join(category, id).replace(/^docs\//, '')
 
-      return { ...data, id, category, slug: join(category, id), href }
+      return { ...data, id, category, slug, href }
     }),
 })
 
@@ -52,3 +54,10 @@ export default defineConfig({
     remarkPlugins: [remarkDirective, remarkCallout],
   },
 })
+
+const toBasePath = (filePath: string): string => {
+  const contentIndex = filePath.indexOf('/src/content')
+  if (contentIndex === -1) return filePath
+  const relativePath = filePath.slice(contentIndex + '/src/content'.length)
+  return relativePath.replace(/\.mdx$/, '')
+}

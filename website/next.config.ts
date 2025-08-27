@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/docs',
-        destination: '/docs/overview/introduction',
+        destination: '/docs/introduction',
         permanent: false,
       },
     ]

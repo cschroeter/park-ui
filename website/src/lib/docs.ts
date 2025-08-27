@@ -1,8 +1,10 @@
 import { type Doc, docs } from '.velite'
 
+const categories = ['docs', 'typography', 'components']
+const docsPriority = ['introduction', 'installation', 'theming', 'figma', 'about']
+
 export const getDocumentBySlug = (slug: string[]) => {
   const sortedDocs = docs.sort((a, b) => {
-    const categories = ['overview', 'theme', 'typography', 'components']
     const categoryAIndex = categories.indexOf(a.category)
     const categoryBIndex = categories.indexOf(b.category)
     if (categoryAIndex === categoryBIndex) {
@@ -13,9 +15,8 @@ export const getDocumentBySlug = (slug: string[]) => {
 
   return sortedDocs
     .sort((a, b) => {
-      if (a.category === 'overview' && b.category === 'overview') {
-        const overviewPriority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
-        return overviewPriority.indexOf(a.id) - overviewPriority.indexOf(b.id)
+      if (a.category === 'docs' && b.category === 'docs') {
+        return docsPriority.indexOf(a.id) - docsPriority.indexOf(b.id)
       }
       return 0
     })
@@ -33,9 +34,6 @@ export const getPrevDocument = (slug: string[]) => {
 }
 
 export const getSidebarGroups = (): Doc[][] => {
-  const categories = ['overview', 'theme', 'typography', 'components']
-  const overviewPriority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
-
   const sortedCategories = docs.reduce(
     (acc, doc) => {
       const category = doc.category
@@ -48,10 +46,8 @@ export const getSidebarGroups = (): Doc[][] => {
     {} as Record<string, Doc[]>,
   )
 
-  if (sortedCategories.overview) {
-    sortedCategories.overview.sort(
-      (a, b) => overviewPriority.indexOf(a.id) - overviewPriority.indexOf(b.id),
-    )
+  if (sortedCategories.docs) {
+    sortedCategories.docs.sort((a, b) => docsPriority.indexOf(a.id) - docsPriority.indexOf(b.id))
   }
 
   return categories

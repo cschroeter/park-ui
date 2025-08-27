@@ -63,7 +63,7 @@ export const SidebarGroup = (props: Props) => {
   const { heading, docs } = props
   return (
     <div className={classNames.root}>
-      <h3 className={classNames.heading}>{heading}</h3>
+      <h3 className={classNames.heading}>{heading === 'docs' ? 'Gettting Started' : heading}</h3>
       <ul className={classNames.list}>
         {docs.map((doc) => (
           <li
