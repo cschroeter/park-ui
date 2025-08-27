@@ -1,31 +1,31 @@
 ---
 title: Theming
-description: TBD
+description: This guide covers the key differences Park UI introduces to theming.
 ---
+
+Park UI builds on the default [Panda Preset](https://www.npmjs.com/package/@pandacss/preset-panda). To achieve a consistent, minimal design system, it introduces a few key adjustments to the standard Panda configuration.
 
 ## Colors
 
-Based on [Radix Colors](https://www.radix-ui.com/colors), Park UI's color palette balances accessibility with customization options.
+The biggest change Park UI introduces is its color system. Instead of the `50–950` scale used in Panda CSS, Park UI is built on [Radix Colors](https://www.radix-ui.com/colors).
+Each color comes with 12 shades per mode (light and dark), for a total of 24 shades. This provides finer control and greater flexibility than the traditional 11-shade scale.
 
 ### Gray Palettes
-
-Gray colors provide contrast and visual hierarchy in your interface.
 
 <ColorGrid type="gray" />
 
 ### Accent Palettes
 
-Accent colors establish your interface's primary visual tone.
-
 <ColorGrid type="accent" />
 
-### Pairings
+### Color Pairings
 
-Park UI themes use one gray and one accent color. The default configuration uses `neutral` for both gray and accent colors. You can select any color from the palette to customize your theme.
+Park UI is built around the concept of one accent color and one gray color. When initializing your project, you'll choose which combination works best for you.
 
-Use `neutral` for the gray shade and pair it with any accent color for a clean, minimalist appearance.
+**Need something neutral?** Use `neutral` gray with any accent color for a clean, minimalist look.
 
-Select a gray scale that complements your chosen accent color. This creates visual cohesion between your gray and accent colors.
+**Want more cohesion?** Pick a gray that complements your accent color to create visual harmony throughout your design.
+
 
 ## Tokens
 
@@ -36,4 +36,3 @@ Select a gray scale that complements your chosen accent color. This creates visu
 ### Radii
 
 ### z-Index
-

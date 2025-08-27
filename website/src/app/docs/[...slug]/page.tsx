@@ -36,7 +36,7 @@ export default async function Page(props: Props) {
         <PageHeader title={doc.title} description={doc.description}>
           <PageHeaderLinks links={doc.links} />
         </PageHeader>
-        <Divider my="12" />
+        <Divider mt="12" mb="4" />
         <Stack gap={{ base: '12', md: '16' }}>
           <Prose maxW="none">
             <MDXContent mdx={doc.mdx} />
