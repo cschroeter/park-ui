@@ -40,6 +40,7 @@ export default defineConfig({
             heading: { value: '{colors.gray.12}' },
             body: { value: '{colors.gray.11}' },
             link: { value: '{colors.gray.12}' },
+            bold: { value: '{colors.gray.12}' },
           },
         },
       },
@@ -67,6 +68,9 @@ export default defineConfig({
       },
       code: {
         fontFamily: 'code',
+      },
+      'ul li::marker': {
+        color: 'colorPalette.default',
       },
     },
   },

@@ -1,18 +1,50 @@
 ---
-title: Welcome to Park UI
-description: A component library built on Ark UI and Panda CSS.
+title: Introduction
+description: Park UI beautifully-designed, accessible components system and code distribution platform. Built with Panda CSS and supporting a wide range of JS frameworks
 ---
 
-## Motivation
+Many popular UI component libraries require installing NPM packages and importing their components so you can use them in your app. 
+This works very well until you need to customize a component or add a component that doesn't exist in the library. 
+You end up wrapping library components, overriding styles with workarounds, or mixing incompatible APIs from different libraries.
 
-Many popular component libraries are tailored to specific JavaScript frameworks and adhere to particular UI designs. While this approach may suit individuals and small businesses, it often presents challenges for larger organizations or agencies working with diverse clients and teams using different JS frameworks.
+**Park UI solves these problems the following principles:**
 
-Additionally, most component libraries tightly couple design and functionality, making customization difficult and sometimes impossible.
+## Open Code
 
-## Solution
+Park UI gives you direct access to component source code, giving you complete ownership and flexibility. This has several key benefits:
 
-Introducing Park UI. Our goal is to give you control over how components are built and styled. Park UI offers a set of components with sensible defaults that can be easily customized to meet your needs.
+* **Full Control:** Every component's implementation and recipe is fully exposed and readable.
+* **Easy Customization:** Change any aspect of a component to match your specific design system and functional needs.
+* **AI Ready:** Direct access to the code makes it straightforward for LLMs to read, understand, and even improve your components.
+* **No More Bug Reports:** Fix it directly in your codebase without waiting for library maintainers.
 
-Unlike many other component libraries, Park UI isn't shipped as a single npm package. Instead, you can install only the components you need. If you want the full design system, you can install the Panda CSS Park UI Preset. You will learn more in the next section.
+*Want to add a new variant to a button or change an existing one? You simply edit the button recipe directly. No need to override or tinker with external APIs.*
 
-## FAQ
+## Composition
+
+All Park UI components are built on top of [Ark UI](https://ark-ui.com), a headless component library designed for building scalable design systems. 
+Every component is architected with composability at its core, enabling seamless combination and customization without complex workarounds.
+
+This shared, composable interface is predictable for both developers and AI tools, maintaining consistency even when switching JavaScript frameworks.
+
+## Code Distribution
+
+As explaine above Park UI takes a different approach from traditional component libraries by distributing components as source code rather than shipping them as an NPM package. <br />There are two convenient ways to obtain components:
+
+* **CLI:**: Install components directly into your project using the Park UI CLI.
+* **Docs:**: Browse and copy component source code directly from this website.
+
+
+## Beautiful Design
+
+Developed in cooperation with [Brains & Pixels](https://x.com/Brainsandpixels), Park UI provides a large collection of components that have carefully chosen default styles.
+They are designed to look good on their own and to work well together as a consistent system.
+
+* **Minimalistic Design**: Your UI has a clean and minimal look without extra work.
+* **Consistent Styling**: Components naturally fit with one another. Each component is built to match the others, keeping your UI consistent.
+* **Customizable Foundation**: Modify component recipes to adapt the design system to your brand requirements.
+* **Design Integration**: Use the [Figma Kit](/docs/overview/figma) to prototype and design with Park UI components.
+
+## AI Ready
+
+The architecture of Park UI makes it easy for AI tools to work with your code. Its open code and consistent API allow AI models to read, understand, and even generate new components that integrate seamlessly with your existing design system.
