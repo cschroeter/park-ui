@@ -1,7 +1,9 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
+import { ChevronRightIcon, MenuIcon } from 'lucide-react'
 import { useState } from 'react'
 import { Box, HStack } from 'styled-system/jsx'
+import { Button, Icon } from '@/components/ui'
 
 interface Props {
   children: React.ReactNode
@@ -22,12 +24,22 @@ export const SidebarMobileContainer = (props: Props) => {
       bg="bg.default"
       zIndex="sticky"
     >
-      <HStack h="full" textStyle="sm" color="fg.muted">
-        <button type="button" onClick={() => setOpen(!open)}>
-          Open {open.toString()}
-        </button>
-        <span>Components</span>
-        <span>Avatar</span>
+      <HStack h="full" color="fg.muted">
+        <Button
+          variant="link"
+          fontWeight="normal"
+          gap="2"
+          aria-label="Open menu"
+          onClick={() => setOpen(!open)}
+          textStyle="md"
+        >
+          <MenuIcon />
+          <span>Components</span>
+          <Icon size="sm">
+            <ChevronRightIcon />
+          </Icon>
+          <span>Avatar</span>
+        </Button>
       </HStack>
       {open && (
         <Portal>

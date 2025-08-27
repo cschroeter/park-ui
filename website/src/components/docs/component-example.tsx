@@ -28,7 +28,7 @@ export const ComponentExample = async (props: Props) => {
 
   return (
     <Box borderWidth="1px" borderRadius="l3" overflow="hidden" className="not-prose">
-      <Box p="6">
+      <Box p={{ base: '4', md: '6' }}>
         <ErrorBoundary componentName={name}>
           <Example />
         </ErrorBoundary>

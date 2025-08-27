@@ -1,5 +1,7 @@
+import { MoreVerticalIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Box, HStack } from 'styled-system/jsx'
+import { IconButton } from '@/components/ui'
 import { ColorModeButton } from '../color-mode-button'
 import { Logo } from '../logo'
 import { GithubButton } from './github-button'
@@ -20,13 +22,18 @@ export const Navbar = () => {
         <Link href="/" aria-label="Home">
           <Logo />
         </Link>
-        <HStack gap="0" textStyle="sm" divideX="1px" borderXWidth="1px">
+        <HStack gap="0" divideX="1px" borderXWidth="1px" hideBelow="md">
           <NavbarLink href="/docs">Docs</NavbarLink>
           <NavbarLink href="/blog">Blog</NavbarLink>
           <NavbarLink href="/plus">Plus</NavbarLink>
           <GithubButton />
           <ColorModeButton />
         </HStack>
+        <Box hideFrom="md">
+          <IconButton variant="ghost" px="0" size="sm" aria-label="Open menu">
+            <MoreVerticalIcon />
+          </IconButton>
+        </Box>
       </HStack>
     </Box>
   )
