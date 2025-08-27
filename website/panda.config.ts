@@ -1,6 +1,20 @@
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig, defineTextStyles } from '@pandacss/dev'
 import { plugin, preset } from '@park-ui/preset'
 import typographyPreset from 'pandacss-preset-typography'
+
+// @ts-expect-error
+const textStyles = defineTextStyles({
+  nav: {
+    value: {
+      color: 'fg.muted',
+      textTransform: 'uppercase',
+      fontFamily: 'code',
+      textStyle: 'xs',
+      fontWeight: 'medium',
+      letterSpacing: 'widest',
+    },
+  },
+})
 
 export default defineConfig({
   presets: [
@@ -19,6 +33,7 @@ export default defineConfig({
           code: { value: 'var(--font-roboto-mono), monospace' },
         },
       },
+      textStyles,
       semanticTokens: {
         colors: {
           prose: {

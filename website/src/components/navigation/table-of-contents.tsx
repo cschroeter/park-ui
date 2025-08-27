@@ -1,11 +1,10 @@
 'use client'
 import type { TOCItemType } from 'fumadocs-core/server'
 import { AnchorProvider, ScrollProvider, TOCItem } from 'fumadocs-core/toc'
-import { MenuIcon } from 'lucide-react'
 import { type ReactNode, useRef } from 'react'
 import { css } from 'styled-system/css'
-import { HStack, Stack } from 'styled-system/jsx'
-import { Icon, Text } from '@/components/ui'
+import { Stack } from 'styled-system/jsx'
+import { Text } from '@/components/ui'
 
 interface TocEntry {
   title: string
@@ -24,18 +23,11 @@ export const TableOfContents = (props: Props) => {
   const items = convertToItems(toc)
 
   return (
-    <Stack>
-      <HStack gap="1">
-        <Icon size="sm" color="fg.muted">
-          <MenuIcon />
-        </Icon>
-        <Text textStyle="sm" color="fg.muted">
-          On this page
-        </Text>
-      </HStack>
+    <Stack gap="3">
+      <Text className={css({ textStyle: 'nav' })}>On this page</Text>
 
       <AnchorProvider toc={items}>
-        <Stack ref={viewRef} overflow="auto" minH="0" pos="relative">
+        <Stack ref={viewRef} overflow="auto" minH="0" pos="relative" borderLeftWidth="1px" ps="4">
           <ScrollProvider containerRef={viewRef}>
             {items.map((item) => (
               <TOCItem
