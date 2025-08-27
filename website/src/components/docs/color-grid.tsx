@@ -44,10 +44,8 @@ const ColorPalette = (props: ColorPaletteProps) => {
         <Stack key={shade} gap="1">
           <Box
             width="full"
-            maxH="12"
-            borderRadius="l2"
-            boxShadow="xs"
             aspectRatio={1}
+            maxH="12"
             style={{
               background: token.var(`colors.${color}.${shade}`),
             }}
