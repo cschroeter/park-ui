@@ -6,6 +6,7 @@ import { Step, Steps } from '../ui/steps'
 import { Callout } from './callout'
 import { CodeSnippet } from './code-snippet'
 import { ColorGrid } from './color-grid'
+import { ColorPairings } from './color-pairings'
 import { ComponentExample } from './component-example'
 import { FigmaKitPreview } from './figma-kit-preview'
 import { InstallationGuide } from './installation-guide'
@@ -25,6 +26,7 @@ const Pre = async (props: PropsWithChildren) => {
 
 const sharedComponents = {
   ColorGrid,
+  ColorPairings,
   ComponentExample,
   FigmaKitPreview,
   InstallationGuide,

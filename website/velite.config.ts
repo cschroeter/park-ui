@@ -20,7 +20,7 @@ const docs = defineCollection({
         })
         .optional(),
       mdx: s.mdx(),
-      toc: s.toc(),
+      toc: s.toc({ maxDepth: 3 }),
     })
     .transform((data, { meta }) => {
       if (typeof meta.path !== 'string') {
