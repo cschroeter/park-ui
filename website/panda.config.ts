@@ -4,7 +4,7 @@ import typographyPreset from 'pandacss-preset-typography'
 
 // @ts-expect-error
 const textStyles = defineTextStyles({
-  nav: {
+  header: {
     value: {
       color: 'fg.muted',
       textTransform: 'uppercase',

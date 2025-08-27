@@ -24,7 +24,7 @@ export const TableOfContents = (props: Props) => {
 
   return (
     <Stack gap="3">
-      <Text className={css({ textStyle: 'nav' })}>On this page</Text>
+      <Text className={css({ textStyle: 'header' })}>On this page</Text>
 
       <AnchorProvider toc={items}>
         <Stack ref={viewRef} overflow="auto" minH="0" pos="relative" borderLeftWidth="1px" ps="4">

@@ -13,7 +13,7 @@ const recipe = sva({
       gap: '3',
     },
     heading: {
-      textStyle: 'nav',
+      textStyle: 'header',
     },
     list: {
       borderStartWidth: '1px',
