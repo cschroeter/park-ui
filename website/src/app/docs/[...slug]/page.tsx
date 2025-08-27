@@ -1,13 +1,14 @@
 import { docs } from '.velite'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Box, Divider, Grid, GridItem } from 'styled-system/jsx'
+import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
 import { MDXContent } from '~/components/docs/mdx-content'
 import { PageHeaderLinks } from '~/components/docs/page-links'
+import { PageFooter } from '~/components/navigation/page-footer'
 import { TableOfContents } from '~/components/navigation/table-of-contents'
 import { PageHeader } from '~/components/page-header'
 import { Prose } from '~/components/ui/prose'
-import { getDocumentBySlug } from '~/lib/docs'
+import { getDocumentBySlug, getNextDocument, getPrevDocument } from '~/lib/docs'
 import { getServerContext } from '~/server-context'
 
 interface Props {
@@ -16,7 +17,9 @@ interface Props {
 
 export default async function Page(props: Props) {
   const params = await props.params
-  const doc = docs.find((doc) => doc.slug === params.slug.join('/'))
+  const doc = getDocumentBySlug(params.slug)
+  const nextDoc = getNextDocument(params.slug)
+  const prevDoc = getPrevDocument(params.slug)
 
   if (!doc) {
     return notFound()
@@ -34,9 +37,12 @@ export default async function Page(props: Props) {
           <PageHeaderLinks links={doc.links} />
         </PageHeader>
         <Divider my="12" />
-        <Prose maxW="none">
-          <MDXContent mdx={doc.mdx} />
-        </Prose>
+        <Stack gap={{ base: '12', md: '16' }}>
+          <Prose maxW="none">
+            <MDXContent mdx={doc.mdx} />
+          </Prose>
+          <PageFooter nextPage={nextDoc} prevPage={prevDoc} />
+        </Stack>
       </GridItem>
       <Box hideBelow="xl" position="sticky" height="calc(100dvh - 192px)" top="36">
         <TableOfContents toc={doc.toc} />

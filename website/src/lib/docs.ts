@@ -1,7 +1,35 @@
 import { type Doc, docs } from '.velite'
 
-export const getDocumentBySlug = (slug: string[]): Doc | undefined => {
-  return docs.find((doc) => doc.slug === slug.join('/'))
+export const getDocumentBySlug = (slug: string[]) => {
+  const sortedDocs = docs.sort((a, b) => {
+    const categories = ['overview', 'theme', 'typography', 'components']
+    const categoryAIndex = categories.indexOf(a.category)
+    const categoryBIndex = categories.indexOf(b.category)
+    if (categoryAIndex === categoryBIndex) {
+      return a.id.localeCompare(b.id)
+    }
+    return categoryAIndex - categoryBIndex
+  })
+
+  return sortedDocs
+    .sort((a, b) => {
+      if (a.category === 'overview' && b.category === 'overview') {
+        const overviewPriority = ['introduction', 'getting-started', 'figma', 'changelog', 'about']
+        return overviewPriority.indexOf(a.id) - overviewPriority.indexOf(b.id)
+      }
+      return 0
+    })
+    .find((doc) => doc.slug === slug.join('/'))
+}
+
+export const getNextDocument = (slug: string[]) => {
+  const index = docs.findIndex((doc) => doc.slug === slug.join('/'))
+  return docs[index + 1]
+}
+
+export const getPrevDocument = (slug: string[]) => {
+  const index = docs.findIndex((doc) => doc.slug === slug.join('/'))
+  return docs[index - 1]
 }
 
 export const getSidebarGroups = (): Doc[][] => {
