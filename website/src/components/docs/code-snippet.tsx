@@ -27,7 +27,7 @@ export const CodeSnippet = async (props: Props) => {
       <Box position="absolute" top="1" right="1">
         <ClipboardButton value={sourceCode.code} />
       </Box>
-      <Box maxH="lg" overflow="auto" p="4" dangerouslySetInnerHTML={{ __html }} />
+      <Box maxH="lg" overflow="auto" p="3.5" dangerouslySetInnerHTML={{ __html }} />
     </Box>
   )
 }
