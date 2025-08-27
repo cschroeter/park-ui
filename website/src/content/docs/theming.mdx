@@ -5,16 +5,16 @@ description: This guide covers the key differences Park UI introduces to theming
 
 Park UI builds on the default [Panda Preset](https://www.npmjs.com/package/@pandacss/preset-panda). To achieve a consistent, minimal design system, it introduces a few key adjustments to the standard Panda configuration.
 
-## Colors
+## Color System
 
 The biggest change Park UI introduces is its color system. Instead of the `50–950` scale used in Panda CSS, Park UI is built on [Radix Colors](https://www.radix-ui.com/colors).
 Each color comes with 12 shades per mode (light and dark), for a total of 24 shades. This provides finer control and greater flexibility than the traditional 11-shade scale.
 
-### Gray Palettes
+### Gray
 
 <ColorGrid type="gray" />
 
-### Accent Palettes
+### Accent
 
 <ColorGrid type="accent" />
 
@@ -46,6 +46,28 @@ Radii tokens define consistent corner rounding across components. This setup mak
 <BorderRadiusTokens />  
 
 ### Colors
+
+#### Foreground
+
+| Name     | CSS Variable                | Token Name    |
+| -------- | --------------------------- | ------------- |
+| Default  | `var(--colors-fg-default)`  | `fg.default`  |
+| Muted    | `var(--colors-fg-muted)`    | `fg.muted`    |
+| Subtle   | `var(--colors-fg-subtle)`   | `fg.subtle`   |
+| Disabled | `var(--colors-fg-disabled)` | `fg.disabled` |
+| Error    | `var(--colors-fg-error)`    | `fg.error`    |
+
+
+#### Background
+
+| Name       | CSS Variable                  | Token Name      |
+| ---------- | ----------------------------- | --------------- |
+| Canvas     | `var(--colors-bg-canvas)`     | `bg.canvas`     |
+| Default    | `var(--colors-bg-default)`    | `bg.default`    |
+| Subtle     | `var(--colors-bg-subtle)`     | `bg.subtle`     |
+| Muted      | `var(--colors-bg-muted)`      | `bg.muted`      |
+| Emphasized | `var(--colors-bg-emphasized)` | `bg.emphasized` |
+| Disabled   | `var(--colors-bg-disabled)`   | `bg.disabled`   |
 
 ### Shadows
 
