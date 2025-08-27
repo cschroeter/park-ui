@@ -11,6 +11,7 @@ import { ComponentExample } from './component-example'
 import { FigmaKitPreview } from './figma-kit-preview'
 import { InstallationGuide } from './installation-guide'
 import { QuickstartGuide } from './quickstart-guide'
+import { ShadowTokens } from './shadow-tokens'
 
 // TODO this needs to be more capable
 const Pre = async (props: PropsWithChildren) => {
@@ -25,17 +26,18 @@ const Pre = async (props: PropsWithChildren) => {
 }
 
 const sharedComponents = {
+  a: PageLink,
+  callout: Callout,
   ColorGrid,
   ColorPairings,
   ComponentExample,
   FigmaKitPreview,
   InstallationGuide,
+  pre: Pre,
   QuickstartGuide,
+  ShadowTokens,
   Step,
   Steps,
-  callout: Callout,
-  pre: Pre,
-  a: PageLink,
 }
 
 const useMDXComponent = (code: string) => {

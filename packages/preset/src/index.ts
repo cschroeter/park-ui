@@ -53,7 +53,7 @@ export const preset = definePreset({
           border: {
             default: { value: { _light: '{colors.gray.7}', _dark: '{colors.gray.7}' } },
             muted: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } },
-            subtle: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.4}' } },
+            subtle: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.3}' } },
           },
           bg: {
             default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
@@ -73,6 +73,13 @@ export const preset = definePreset({
   },
   staticCss: {
     recipes: '*',
+    css: [
+      {
+        properties: {
+          boxShadow: ['*'],
+        },
+      },
+    ],
   },
 })
 
