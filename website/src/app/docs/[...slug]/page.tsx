@@ -28,17 +28,17 @@ export default async function Page(props: Props) {
   }
 
   return (
-    <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" pt="12">
-      <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
+    <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" minH="100%">
+      <GridItem mx="auto" xl={{ maxW: '52rem' }} width="full" px={{ base: '4', sm: '6', md: '8' }}>
         <PageHeader title={doc.title} description={doc.description}>
           <PageHeaderLinks links={doc.links} />
         </PageHeader>
         <Divider my="12" />
-        <Prose>
+        <Prose maxW="none">
           <MDXContent mdx={doc.mdx} />
         </Prose>
       </GridItem>
-      <Box hideBelow="xl" position="sticky" height="calc(100dvh - 96px)" top="24">
+      <Box hideBelow="xl" position="sticky" height="calc(100dvh - 192px)" top="36">
         <TableOfContents toc={doc.toc} />
       </Box>
     </Grid>

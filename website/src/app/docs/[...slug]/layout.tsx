@@ -24,7 +24,12 @@ export default async function DocsLayout(props: PropsWithChildren) {
           <Sidebar />
         </GridItem>
         <GridItem hideBelow="lg" bg="gray.1" />
-        <GridItem position="relative" bg="bg.default" borderXWidth={{ base: '0', lg: '1px' }}>
+        <GridItem
+          position="relative"
+          bg="bg.default"
+          borderXWidth={{ base: '0', lg: '1px' }}
+          py={{ base: '12' }}
+        >
           {children}
         </GridItem>
         <GridItem hideBelow="lg" bg="gray.1" />
