@@ -24,8 +24,8 @@ export const Navbar = () => {
         </Link>
         <HStack gap="0" divideX="1px" borderXWidth="1px" hideBelow="md">
           <NavbarLink href="/docs">Docs</NavbarLink>
-          <NavbarLink href="/blog">Blog</NavbarLink>
-          <NavbarLink href="/plus">Plus</NavbarLink>
+          {/* <NavbarLink href="/blog">Blog</NavbarLink>
+          <NavbarLink href="/plus">Plus</NavbarLink> */}
           <GithubButton />
           <ColorModeButton />
         </HStack>

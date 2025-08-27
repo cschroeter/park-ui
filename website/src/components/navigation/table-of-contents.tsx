@@ -41,6 +41,8 @@ export const TableOfContents = (props: Props) => {
                     color: 'colorPalette.default',
                     fontWeight: 'medium',
                   },
+                  '&[data-depth="1"]': { ps: '4' },
+                  '&[data-depth="2"]': { ps: '8' },
                 })}
               >
                 {item.title}
