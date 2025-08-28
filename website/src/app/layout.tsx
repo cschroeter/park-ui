@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 import { ThemeProvider } from 'next-themes'
 import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css'
@@ -6,11 +7,17 @@ import { Navbar } from '~/components/navigation/navbar'
 import { inter, jakarta, outfit, raleway, roboto } from './fonts'
 import './index.css'
 
-export default function RootLayout(props: PropsWithChildren) {
+export default async function RootLayout(props: PropsWithChildren) {
+  const cookieStore = await cookies()
+  const accentColor = cookieStore.get('accent-color') ?? 'neutral'
+  const grayColor = cookieStore.get('gray-color') ?? 'neutral'
+
   return (
     <html
       lang="en"
       suppressHydrationWarning
+      data-accent-color={accentColor}
+      data-gray-color={grayColor}
       className={cx(
         outfit.variable,
         inter.variable,

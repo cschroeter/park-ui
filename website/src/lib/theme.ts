@@ -15,6 +15,7 @@ export const useTheme = () => {
     if (!root) return
 
     root.setAttribute('data-accent-color', accentColor)
+    document.cookie = `accent-color=${accentColor}`
   }, [accentColor])
 
   useEffect(() => {
@@ -22,6 +23,8 @@ export const useTheme = () => {
     if (!root) return
 
     root.setAttribute('data-gray-color', grayColor)
+
+    document.cookie = `gray-color=${grayColor}`
   }, [grayColor])
 
   //   const font = useThemeStore((state) => state.font)
