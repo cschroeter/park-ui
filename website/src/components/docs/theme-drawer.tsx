@@ -5,9 +5,10 @@ import { HStack, Stack } from 'styled-system/jsx'
 import { Drawer, IconButton } from '@/components/ui'
 import { useTheme } from '~/lib/theme'
 import { AccentColorPicker } from './accent-color-picker'
+import { GrayColorPicker } from './gray-color-picker'
 
 export const ThemeDrawer = () => {
-  const { setAccentColor, accentColor } = useTheme()
+  const { setAccentColor, grayColor, setGrayColor, accentColor } = useTheme()
 
   return (
     <Drawer.Root variant="right">
@@ -32,8 +33,8 @@ export const ThemeDrawer = () => {
             </Drawer.Header>
             <Drawer.Body>
               <Stack flex="1" gap="4">
-                {/* <FontFamilySelect font={font} onValueChange={setFont} />
-                <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} /> */}
+                {/* <FontFamilySelect font={font} onValueChange={setFont} />*/}
+                <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
                 <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
                 {/* <BorderRadiusSlider radius={radius} onValueChange={setRadius} /> */}
               </Stack>

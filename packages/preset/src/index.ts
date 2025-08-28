@@ -61,6 +61,7 @@ export const preset = definePreset({
             default: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } },
             muted: { value: { _light: '{colors.gray.a6}', _dark: '{colors.gray.a6}' } },
             subtle: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
+            outline: { value: { _light: '{colors.gray.a9}', _dark: '{colors.gray.a9}' } },
           },
           bg: {
             default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
