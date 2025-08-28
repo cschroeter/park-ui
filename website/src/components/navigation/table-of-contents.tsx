@@ -38,7 +38,7 @@ export const TableOfContents = (props: Props) => {
                   color: 'fg.muted',
                   textStyle: 'sm',
                   '&:is(:active, [data-active="true"])': {
-                    color: 'colorPalette.default',
+                    color: 'fg.default',
                     fontWeight: 'medium',
                   },
                   '&[data-depth="1"]': { ps: '4' },
