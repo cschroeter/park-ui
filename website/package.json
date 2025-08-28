@@ -27,7 +27,8 @@
     "rehype-autolink-headings": "7.1.0",
     "rehype-slug": "6.0.0",
     "remark-directive": "4.0.0",
-    "shiki": "3.12.0"
+    "shiki": "3.12.0",
+    "zustand": "5.0.8"
   },
   "devDependencies": {
     "@types/node": "24.3.0",

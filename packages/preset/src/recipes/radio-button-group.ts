@@ -15,7 +15,6 @@ export const radioButtonGroup = defineSlotRecipe({
       borderRadius: 'l2',
       borderWidth: '1px',
       color: 'fg.default',
-
       cursor: 'pointer',
       display: 'inline-flex',
       fontWeight: 'semibold',
@@ -52,7 +51,7 @@ export const radioButtonGroup = defineSlotRecipe({
   },
   defaultVariants: {
     size: 'md',
-    variant: 'solid',
+    variant: 'outline',
   },
   variants: {
     variant: {

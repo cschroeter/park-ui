@@ -2,7 +2,7 @@ import { MoreVerticalIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Box, HStack } from 'styled-system/jsx'
 import { IconButton } from '@/components/ui'
-import { ColorModeButton } from '../color-mode-button'
+import { ThemeDrawer } from '../docs/theme-drawer'
 import { Logo } from '../logo'
 import { GithubButton } from './github-button'
 import { NavbarLink } from './navbar-link'
@@ -27,7 +27,7 @@ export const Navbar = () => {
           {/* <NavbarLink href="/blog">Blog</NavbarLink>
           <NavbarLink href="/plus">Plus</NavbarLink> */}
           <GithubButton />
-          <ColorModeButton />
+          <ThemeDrawer />
         </HStack>
         <Box hideFrom="md">
           <IconButton variant="ghost" px="0" size="sm" aria-label="Open menu">

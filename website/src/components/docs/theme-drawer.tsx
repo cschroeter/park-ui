@@ -1,0 +1,64 @@
+'use client'
+import { Portal } from '@ark-ui/react/portal'
+import { Wand2Icon, XIcon } from 'lucide-react'
+import { HStack, Stack } from 'styled-system/jsx'
+import { Drawer, IconButton } from '@/components/ui'
+import { AccentColorPicker } from './accent-color-picker'
+
+export const ThemeDrawer = () => {
+  // const {
+  //   setAccentColor,
+  //   setFont,
+  //   setGrayColor,
+  //   setRadius,
+  //   accentColor,
+  //   grayColor,
+  //   font,
+  //   radius,
+  //   reset,
+  // } = useTheme()
+
+  return (
+    <Drawer.Root variant="right">
+      <Drawer.Trigger asChild>
+        <IconButton variant="ghost" h="14" minW="14" borderRadius="0">
+          <Wand2Icon />
+        </IconButton>
+      </Drawer.Trigger>
+      <Portal>
+        <Drawer.Positioner>
+          <Drawer.Content>
+            <Drawer.Header>
+              <Drawer.Title>Make it yours</Drawer.Title>
+              <Drawer.Description>
+                Pick the style you want and copy the configuration to your project.
+              </Drawer.Description>
+              <Drawer.CloseTrigger asChild>
+                <IconButton variant="ghost" position="absolute" top="3" right="4">
+                  <XIcon />
+                </IconButton>
+              </Drawer.CloseTrigger>
+            </Drawer.Header>
+            <Drawer.Body>
+              <Stack flex="1" gap="4">
+                {/* <FontFamilySelect font={font} onValueChange={setFont} />
+                <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} /> */}
+                <AccentColorPicker accentColor="red" onValueChange={() => console.log('changed')} />
+                {/* <BorderRadiusSlider radius={radius} onValueChange={setRadius} /> */}
+              </Stack>
+            </Drawer.Body>
+            <Drawer.Footer>
+              <HStack gap="3">
+                {/* <Button variant="outline" colorPalette="gray" onClick={reset}>
+                  <Undo2Icon />
+                  Reset
+                </Button> */}
+                {/* <ThemeConfigDialog /> */}
+              </HStack>
+            </Drawer.Footer>
+          </Drawer.Content>
+        </Drawer.Positioner>
+      </Portal>
+    </Drawer.Root>
+  )
+}
