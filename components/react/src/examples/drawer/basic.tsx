@@ -3,7 +3,7 @@ import { Button, Drawer, IconButton } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Drawer.Root>
+    <Drawer.Root variant="right">
       <Drawer.Trigger asChild>
         <Button>Open Drawer</Button>
       </Drawer.Trigger>

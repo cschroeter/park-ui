@@ -62,6 +62,14 @@ export const drawer = defineSlotRecipe({
       _hidden: {
         display: 'none',
       },
+      _open: {
+        animationDuration: 'slowest',
+        animationTimingFunction: 'ease-in',
+      },
+      _closed: {
+        animationDuration: 'slower',
+        animationTimingFunction: 'ease-out',
+      },
     },
     header: {
       display: 'flex',
@@ -120,10 +128,10 @@ export const drawer = defineSlotRecipe({
         },
         content: {
           _open: {
-            animation: 'drawer-in-right',
+            animationName: 'slide-from-right-full, fade-in',
           },
           _closed: {
-            animation: 'drawer-out-right',
+            animationName: 'slide-to-right-full, fade-out',
           },
         },
       },
