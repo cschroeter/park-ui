@@ -3,7 +3,7 @@
 import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
 import { RadioButtonGroup, Text } from '@/components/ui'
-import { type GrayColor, grayColors } from '~/lib/colors'
+import { type GrayColor, grayColors } from '~/lib/theme'
 
 interface Props {
   grayColor: GrayColor

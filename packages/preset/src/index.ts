@@ -14,16 +14,6 @@ export const preset = definePreset({
       '*, *::before, *::after': {
         borderColor: 'border.subtle',
       },
-      html: {
-        '--colors-color-palette-9': 'var(--colors-neutral-9)',
-        '--colors-color-palette-default': 'var(--colors-neutral-default)',
-        '--colors-color-palette-fg': 'var(--colors-neutral-fg)',
-        "&[data-accent-color='red']": {
-          '--colors-color-palette-9': 'var(--colors-red-9)',
-          '--colors-color-palette-default': 'var(--colors-red-default)',
-          '--colors-color-palette-fg': 'var(--colors-red-fg)',
-        },
-      },
       body: {
         background: 'gray.1',
         color: 'fg.default',

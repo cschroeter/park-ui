@@ -3,7 +3,7 @@
 import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
 import { RadioButtonGroup, Text } from '@/components/ui'
-import { type AccentColor, accentColors } from '~/lib/colors'
+import { type AccentColor, accentColors } from '~/lib/theme'
 
 interface Props {
   accentColor: AccentColor

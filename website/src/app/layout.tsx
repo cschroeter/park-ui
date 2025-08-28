@@ -9,8 +9,11 @@ import './index.css'
 
 export default async function RootLayout(props: PropsWithChildren) {
   const cookieStore = await cookies()
-  const accentColor = cookieStore.get('accent-color') ?? 'neutral'
-  const grayColor = cookieStore.get('gray-color') ?? 'neutral'
+  const state = cookieStore.get('park-ui')
+
+  const { accentColor, grayColor } = state?.value
+    ? JSON.parse(state.value).state
+    : { accentColor: 'neutral', grayColor: 'neutral' }
 
   return (
     <html

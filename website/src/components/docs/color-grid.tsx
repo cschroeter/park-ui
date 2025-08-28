@@ -1,12 +1,6 @@
 import { Box, Flex, Grid, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import {
-  type AccentColor,
-  accentColors,
-  type GrayColor,
-  grayColors,
-  type Shade,
-} from '~/lib/colors'
+import { type AccentColor, accentColors, type GrayColor, grayColors, type Shade } from '~/lib/theme'
 
 interface Props {
   type: 'gray' | 'accent'

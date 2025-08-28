@@ -1,6 +1,7 @@
 import { defineConfig, defineTextStyles } from '@pandacss/dev'
 import { plugin, preset } from '@park-ui/preset'
 import typographyPreset from 'pandacss-preset-typography'
+import { createAccentColorSelectors } from '~/lib/theme'
 
 // @ts-expect-error
 const textStyles = defineTextStyles({
@@ -53,6 +54,7 @@ export default defineConfig({
       html: {
         scrollPaddingTop: '5rem',
         scrollBehavior: 'smooth',
+        ...createAccentColorSelectors(),
       },
       body: {
         fontFamily: 'body',
