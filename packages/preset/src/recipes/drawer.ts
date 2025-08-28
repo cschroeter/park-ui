@@ -2,7 +2,19 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const drawer = defineSlotRecipe({
   className: 'drawer',
-  slots: ['backdrop', 'positioner', 'content', 'header', 'body', 'footer', 'title', 'description'],
+  slots: [
+    'backdrop',
+    'body',
+    'closeTrigger',
+    'content',
+    'description',
+    'footer',
+    'header',
+    'positioner',
+    'root',
+    'title',
+    'trigger',
+  ],
   base: {
     backdrop: {
       backdropFilter: 'blur(4px)',
