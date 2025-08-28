@@ -1,7 +1,7 @@
 pre-commit:
   commands:
     registry:
-      run: bun run build:registry && git update-index --again
+      run: bun run build:registry && git add website/public/registry/*
       stage_fixed: true
     check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
