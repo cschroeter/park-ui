@@ -51,7 +51,7 @@ export const radioButtonGroup = defineSlotRecipe({
   },
   defaultVariants: {
     size: 'md',
-    variant: 'outline',
+    variant: 'solid',
   },
   variants: {
     variant: {
