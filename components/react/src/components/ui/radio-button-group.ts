@@ -1,0 +1,18 @@
+'use client'
+import { RadioGroup } from '@ark-ui/react/radio-group'
+import type { ComponentProps } from 'react'
+import { createStyleContext } from 'styled-system/jsx'
+import { radioButtonGroup } from 'styled-system/recipes'
+
+const { withProvider, withContext } = createStyleContext(radioButtonGroup)
+
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(RadioGroup.Root, 'root')
+
+export const Indicator = withContext(RadioGroup.Indicator, 'indicator')
+export const Item = withProvider(RadioGroup.Item, 'item')
+export const ItemControl = withContext(RadioGroup.ItemControl, 'itemControl')
+export const ItemText = withContext(RadioGroup.ItemText, 'itemText')
+export const Label = withContext(RadioGroup.Label, 'label')
+
+export const ItemHiddenInput = RadioGroup.ItemHiddenInput

@@ -2,7 +2,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const radioButtonGroup = defineSlotRecipe({
   className: 'radioButtonGroup',
-  slots: ['root', 'item', 'itemText'],
+  slots: ['root', 'item', 'label', 'itemText', 'label', 'itemControl', 'indicator'],
   base: {
     root: {
       display: 'flex',
