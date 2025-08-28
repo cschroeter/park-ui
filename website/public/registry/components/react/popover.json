@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "popover",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "popover.ts",
+      "content": "'use client'\nimport { Popover } from '@ark-ui/react/popover'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { popover } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(popover)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Popover.Root, 'root')\n\nexport const Anchor = withContext(Popover.Anchor, 'anchor')\nexport const Arrow = withContext(Popover.Arrow, 'arrow')\nexport const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')\nexport const CloseTrigger = withContext(Popover.CloseTrigger, 'closeTrigger')\nexport const Content = withContext(Popover.Content, 'content')\nexport const Description = withContext(Popover.Description, 'description')\nexport const Indicator = withContext(Popover.Indicator, 'indicator')\nexport const Positioner = withContext(Popover.Positioner, 'positioner')\nexport const Title = withContext(Popover.Title, 'title')\nexport const Trigger = withContext(Popover.Trigger, 'trigger')\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Popover",
+            "moduleSpecifier": "./popover"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "popover.ts",
+      "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const popover = defineSlotRecipe({\n  className: 'popover',\n  slots: [\n    'anchor',\n    'arrow',\n    'arrowTip',\n    'closeTrigger',\n    'content',\n    'description',\n    'indicator',\n    'positioner',\n    'root',\n    'title',\n    'trigger',\n  ],\n  base: {\n    positioner: {\n      position: 'relative',\n    },\n    content: {\n      background: 'bg.default',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      display: 'flex',\n      flexDirection: 'column',\n      maxWidth: 'sm',\n      zIndex: 'popover',\n      p: '4',\n      _open: {\n        animation: 'ease-in',\n      },\n      _closed: {\n        animation: 'ease-out',\n      },\n      _hidden: {\n        display: 'none',\n      },\n    },\n    title: {\n      fontWeight: 'medium',\n      textStyle: 'sm',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n    closeTrigger: {\n      position: 'absolute',\n      top: '1',\n      right: '1',\n    },\n    arrow: {\n      '--arrow-size': 'var(--sizes-3)',\n      '--arrow-background': 'var(--colors-bg-default)',\n    },\n    arrowTip: {\n      borderTopWidth: '1px',\n      borderLeftWidth: '1px',\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./popover",
+            "symbols": [
+              {
+                "name": "popover"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "popover"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
