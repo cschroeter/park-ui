@@ -3,20 +3,11 @@ import { Portal } from '@ark-ui/react/portal'
 import { Wand2Icon, XIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Drawer, IconButton } from '@/components/ui'
+import { useTheme } from '~/lib/theme'
 import { AccentColorPicker } from './accent-color-picker'
 
 export const ThemeDrawer = () => {
-  // const {
-  //   setAccentColor,
-  //   setFont,
-  //   setGrayColor,
-  //   setRadius,
-  //   accentColor,
-  //   grayColor,
-  //   font,
-  //   radius,
-  //   reset,
-  // } = useTheme()
+  const { setAccentColor, accentColor } = useTheme()
 
   return (
     <Drawer.Root variant="right">
@@ -43,7 +34,7 @@ export const ThemeDrawer = () => {
               <Stack flex="1" gap="4">
                 {/* <FontFamilySelect font={font} onValueChange={setFont} />
                 <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} /> */}
-                <AccentColorPicker accentColor="red" onValueChange={() => console.log('changed')} />
+                <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
                 {/* <BorderRadiusSlider radius={radius} onValueChange={setRadius} /> */}
               </Stack>
             </Drawer.Body>

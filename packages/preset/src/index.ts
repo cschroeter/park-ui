@@ -15,7 +15,14 @@ export const preset = definePreset({
         borderColor: 'border.subtle',
       },
       html: {
-        colorPalette: 'neutral',
+        '--colors-color-palette-9': 'var(--colors-neutral-9)',
+        '--colors-color-palette-default': 'var(--colors-neutral-default)',
+        '--colors-color-palette-fg': 'var(--colors-neutral-fg)',
+        "&[data-accent-color='red']": {
+          '--colors-color-palette-9': 'var(--colors-red-9)',
+          '--colors-color-palette-default': 'var(--colors-red-default)',
+          '--colors-color-palette-fg': 'var(--colors-red-fg)',
+        },
       },
       body: {
         background: 'gray.1',
@@ -51,8 +58,8 @@ export const preset = definePreset({
             disabled: { value: { _light: '{colors.gray.9}', _dark: '{colors.gray.9}' } },
           },
           border: {
-            default: { value: { _light: '{colors.gray.7}', _dark: '{colors.gray.7}' } },
-            muted: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } },
+            default: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } },
+            muted: { value: { _light: '{colors.gray.a6}', _dark: '{colors.gray.a6}' } },
             subtle: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
           },
           bg: {
@@ -60,9 +67,6 @@ export const preset = definePreset({
           },
         },
         shadows,
-        spacing: {
-          4.5: { value: '1.125rem' },
-        },
         radii: {
           l1: { value: '{radii.xs}' },
           l2: { value: '{radii.sm}' },
