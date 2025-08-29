@@ -4,6 +4,8 @@ import { recipes, slotRecipes } from './recipes'
 import { keyframes } from './theme/keyframes'
 import { shadows } from './theme/semantic-tokens/shadows'
 import { colors } from './theme/tokens/colors'
+import { durations } from './theme/tokens/durations'
+import { easings } from './theme/tokens/easings'
 import { zIndex } from './theme/tokens/z-index'
 
 export const preset = definePreset({
@@ -35,6 +37,8 @@ export const preset = definePreset({
       keyframes,
       tokens: {
         colors,
+        easings,
+        durations,
         zIndex,
       },
       semanticTokens: {

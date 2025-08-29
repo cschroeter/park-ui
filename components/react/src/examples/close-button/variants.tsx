@@ -3,7 +3,7 @@ import { CloseButton } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Wrap gap="6">
+    <Wrap gap="4">
       <CloseButton variant="solid" />
       <CloseButton variant="outline" />
       <CloseButton variant="subtle" />

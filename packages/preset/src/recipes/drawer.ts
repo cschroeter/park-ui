@@ -11,7 +11,6 @@ export const drawer = defineSlotRecipe({
     'footer',
     'header',
     'positioner',
-    'root',
     'title',
     'trigger',
   ],
@@ -22,75 +21,74 @@ export const drawer = defineSlotRecipe({
         _light: 'white.a10',
         _dark: 'black.a10',
       },
-      height: '100vh',
-      left: '0',
       position: 'fixed',
+      insetInlineStart: '0',
       top: '0',
       width: '100vw',
+      height: '100dvh',
       zIndex: 'overlay',
       _open: {
-        animation: 'backdrop-in',
+        animationName: 'fade-in',
+        animationTimingFunction: 'emphasized-in',
+        animationDuration: 'slow',
       },
       _closed: {
-        animation: 'backdrop-out',
+        animationName: 'fade-out',
+        animationTimingFunction: 'emphasized-out',
+        animationDuration: 'normal',
       },
     },
     positioner: {
-      alignItems: 'center',
       display: 'flex',
+      width: '100vw',
       height: '100dvh',
-      justifyContent: 'center',
       position: 'fixed',
-      top: 0,
-      width: { base: '100vw', sm: 'sm' },
+      insetInlineStart: '0',
+      top: '0',
       zIndex: 'modal',
+      overscrollBehaviorY: 'none',
     },
     content: {
-      background: 'bg.default',
+      display: 'flex',
+      flexDirection: 'column',
+      position: 'relative',
+      width: '100%',
+      outline: 0,
+      zIndex: 'modal',
+      maxH: '100dvh',
+      color: 'inherit',
+      bg: 'bg.default',
       boxShadow: 'lg',
-      display: 'grid',
-      divideY: '1px',
-      gridTemplateColumns: '1fr',
-      gridTemplateRows: 'auto 1fr auto',
-      gridTemplateAreas: `
-        'header'
-        'body'
-        'footer'
-      `,
-      height: 'full',
-      width: 'full',
-      _hidden: {
-        display: 'none',
-      },
       _open: {
         animationDuration: 'slowest',
-        animationTimingFunction: 'ease-in',
+        animationTimingFunction: 'emphasized-in',
       },
       _closed: {
-        animationDuration: 'slower',
-        animationTimingFunction: 'ease-out',
+        animationDuration: 'normal',
+        animationTimingFunction: 'emphasized-out',
       },
     },
     header: {
       display: 'flex',
       flexDirection: 'column',
       gap: '1',
-      gridArea: 'header',
       pt: { base: '4', md: '6' },
       pb: '4',
       px: { base: '4', md: '6' },
+      flex: '0',
     },
     body: {
       display: 'flex',
       flexDirection: 'column',
-      gridArea: 'body',
+      flex: '1',
       overflow: 'auto',
       p: { base: '4', md: '6' },
     },
     footer: {
       display: 'flex',
-      gridArea: 'footer',
+      alignItems: 'center',
       justifyContent: 'flex-end',
+      flex: '0',
       py: '4',
       px: { base: '4', md: '6' },
     },
@@ -103,36 +101,112 @@ export const drawer = defineSlotRecipe({
       color: 'fg.muted',
       textStyle: 'sm',
     },
+    closeTrigger: {
+      pos: 'absolute',
+      top: '3',
+      insetEnd: '3',
+    },
   },
   defaultVariants: {
-    variant: 'right',
+    placement: 'end',
+    size: 'sm',
   },
   variants: {
-    variant: {
-      left: {
+    size: {
+      xs: {
+        content: {
+          maxW: 'xs',
+        },
+      },
+      sm: {
+        content: {
+          maxW: 'sm',
+        },
+      },
+      md: {
+        content: {
+          maxW: 'md',
+        },
+      },
+      lg: {
+        content: {
+          maxW: 'lg',
+        },
+      },
+      xl: {
+        content: {
+          maxW: 'xl',
+        },
+      },
+      full: {
+        content: {
+          maxW: '100vw',
+          h: '100dvh',
+        },
+      },
+    },
+    placement: {
+      start: {
         positioner: {
-          left: 0,
+          justifyContent: 'flex-start',
+          alignItems: 'stretch',
         },
         content: {
           _open: {
-            animation: 'drawer-in-left',
+            animationName: {
+              base: 'slide-from-left-full, fade-in',
+              _rtl: 'slide-from-right-full, fade-in',
+            },
           },
           _closed: {
-            animation: 'drawer-out-left',
+            animationName: {
+              base: 'slide-to-left-full, fade-out',
+              _rtl: 'slide-to-right-full, fade-out',
+            },
           },
         },
       },
-      right: {
+      end: {
         positioner: {
-          right: 0,
+          justifyContent: 'flex-end',
+          alignItems: 'stretch',
         },
         content: {
           _open: {
-            animationName: 'slide-from-right-full, fade-in',
+            animationName: {
+              base: 'slide-from-right-full, fade-in',
+              _rtl: 'slide-from-left-full, fade-in',
+            },
           },
           _closed: {
-            animationName: 'slide-to-right-full, fade-out',
+            animationName: {
+              base: 'slide-to-right-full, fade-out',
+              _rtl: 'slide-to-left-full, fade-out',
+            },
           },
+        },
+      },
+      top: {
+        positioner: {
+          justifyContent: 'stretch',
+          alignItems: 'flex-start',
+        },
+        content: {
+          maxW: '100%',
+          _open: { animationName: 'slide-from-top-full, fade-in' },
+          _closed: { animationName: 'slide-to-top-full, fade-out' },
+        },
+      },
+
+      bottom: {
+        positioner: {
+          justifyContent: 'stretch',
+          alignItems: 'flex-end',
+        },
+        content: {
+          maxW: '100%',
+          _open: { animationName: 'slide-from-bottom-full, fade-in' },
+          _closed: { animationName: 'slide-to-bottom-full, fade-out' },
         },
       },
     },

@@ -1,8 +1,8 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
-import { Undo2Icon, Wand2Icon, XIcon } from 'lucide-react'
+import { Undo2Icon, Wand2Icon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
-import { Button, Drawer, IconButton } from '@/components/ui'
+import { Button, CloseButton, Drawer, IconButton } from '@/components/ui'
 import { useTheme } from '~/lib/use-theme'
 import { ColorModeButton } from '../color-mode-button'
 import { AccentColorPicker } from './accent-color-picker'
@@ -24,7 +24,7 @@ export const ThemeDrawer = () => {
   } = useTheme()
 
   return (
-    <Drawer.Root variant="right">
+    <Drawer.Root>
       <Drawer.Trigger asChild>
         <IconButton variant="ghost" h="14" minW="14" borderRadius="0">
           <Wand2Icon />
@@ -32,16 +32,14 @@ export const ThemeDrawer = () => {
       </Drawer.Trigger>
       <Portal>
         <Drawer.Positioner>
-          <Drawer.Content>
+          <Drawer.Content divideY="1px">
             <Drawer.Header>
               <Drawer.Title>Make it yours</Drawer.Title>
               <Drawer.Description>
                 Pick the style you want and copy the configuration to your project.
               </Drawer.Description>
               <Drawer.CloseTrigger asChild>
-                <IconButton variant="ghost" position="absolute" top="3" right="4">
-                  <XIcon />
-                </IconButton>
+                <CloseButton />
               </Drawer.CloseTrigger>
             </Drawer.Header>
             <Drawer.Body>
@@ -56,7 +54,7 @@ export const ThemeDrawer = () => {
             </Drawer.Body>
             <Drawer.Footer>
               <HStack gap="3">
-                <Button variant="outline" colorPalette="gray" onClick={reset}>
+                <Button variant="outline" onClick={reset}>
                   <Undo2Icon />
                   Reset
                 </Button>

@@ -3,7 +3,7 @@ import { Button } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Wrap gap="6">
+    <Wrap gap="4">
       <Button size="xs">Button</Button>
       <Button size="sm">Button</Button>
       <Button size="md">Button</Button>
