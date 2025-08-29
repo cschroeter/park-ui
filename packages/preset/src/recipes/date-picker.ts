@@ -1,19 +1,9 @@
+import { datePickerAnatomy } from '@ark-ui/react/date-picker'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const datePicker = defineSlotRecipe({
   className: 'datePicker',
-  slots: [
-    'root',
-    'content',
-    'control',
-    'label',
-    'tableHeader',
-    'viewControl',
-    'table',
-    'tableCell',
-    'tableCellTrigger',
-    'view',
-  ],
+  slots: datePickerAnatomy.keys(),
   base: {
     root: {
       display: 'flex',

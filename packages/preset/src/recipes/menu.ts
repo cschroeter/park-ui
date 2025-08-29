@@ -1,3 +1,4 @@
+import { menuAnatomy } from '@ark-ui/react/menu'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 const itemStyle = {
@@ -18,9 +19,9 @@ const itemStyle = {
   },
   _highlighted: {
     background: 'bg.muted',
-  },
-  '& :where(svg)': {
-    color: 'fg.muted',
+    '& :where(svg)': {
+      color: 'fg.default',
+    },
   },
   _disabled: {
     color: 'fg.disabled',
@@ -34,7 +35,7 @@ const itemStyle = {
 
 export const menu = defineSlotRecipe({
   className: 'menu',
-  slots: ['itemGroupLabel', 'content', 'itemGroup', 'positioner', 'item', 'triggerItem'],
+  slots: menuAnatomy.keys(),
   base: {
     itemGroupLabel: {
       fontWeight: 'semibold',

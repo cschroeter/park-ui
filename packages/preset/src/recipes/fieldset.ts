@@ -1,8 +1,10 @@
+import { fieldsetAnatomy } from '@ark-ui/react/fieldset'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const fieldset = defineSlotRecipe({
   className: 'fieldset',
-  slots: ['root', 'control', 'legend', 'helperText', 'errorText'],
+  // TODO review extendedWith usage
+  slots: fieldsetAnatomy.extendWith('control').keys(),
   base: {
     root: {
       display: 'grid',

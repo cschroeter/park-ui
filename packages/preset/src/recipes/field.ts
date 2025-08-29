@@ -1,8 +1,9 @@
+import { fieldAnatomy } from '@ark-ui/react/field'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const field = defineSlotRecipe({
   className: 'field',
-  slots: ['root', 'label', 'helperText', 'errorText'],
+  slots: fieldAnatomy.keys(),
   base: {
     root: {
       display: 'flex',

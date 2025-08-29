@@ -1,8 +1,9 @@
+import { avatarAnatomy } from '@ark-ui/react/avatar'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const avatar = defineSlotRecipe({
   className: 'avatar',
-  slots: ['root', 'fallback', 'image'],
+  slots: avatarAnatomy.keys(),
   base: {
     root: {
       borderRadius: 'full',

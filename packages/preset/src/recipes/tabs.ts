@@ -1,8 +1,9 @@
+import { tabsAnatomy } from '@ark-ui/react/tabs'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tabs = defineSlotRecipe({
   className: 'tabs',
-  slots: ['root', 'list', 'trigger', 'indicator', 'content'],
+  slots: tabsAnatomy.keys(),
   base: {
     root: {
       display: 'flex',

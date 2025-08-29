@@ -1,3 +1,4 @@
+import { numberInputAnatomy } from '@ark-ui/react/number-input'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 const trigger = {
@@ -8,12 +9,10 @@ const trigger = {
   display: 'inline-flex',
   justifyContent: 'center',
   transitionDuration: 'normal',
-  transitionProperty: 'background, border-color, color, box-shadow',
+  transitionProperty: 'background, border-color, color',
   transitionTimingFunction: 'default',
-  '& :where(svg)': {
-    width: '4',
-    height: '4',
-  },
+  width: '6',
+  height: '4',
   _hover: {
     background: 'gray.a2',
     color: 'fg.default',
@@ -30,7 +29,7 @@ const trigger = {
 
 export const numberInput = defineSlotRecipe({
   className: 'numberInput',
-  slots: ['root', 'control', 'input', 'label', 'decrementTrigger', 'incrementTrigger'],
+  slots: numberInputAnatomy.keys(),
   base: {
     root: {
       display: 'flex',
