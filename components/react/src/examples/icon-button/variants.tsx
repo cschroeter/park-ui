@@ -1,5 +1,6 @@
+import { SearchIcon } from 'lucide-react'
 import { Wrap } from 'styled-system/jsx'
-import { Button } from '@/components/ui'
+import { IconButton } from '@/components/ui'
 
 export const App = () => {
   const variants = ['solid', 'outline', 'subtle', 'ghost', 'link'] as const
@@ -7,9 +8,9 @@ export const App = () => {
   return (
     <Wrap gap="4">
       {variants.map((variant) => (
-        <Button key={variant} variant={variant}>
-          {variant}
-        </Button>
+        <IconButton key={variant} variant={variant} aria-label="Search">
+          <SearchIcon />
+        </IconButton>
       ))}
     </Wrap>
   )
