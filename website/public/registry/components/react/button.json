@@ -5,7 +5,7 @@
   "files": [
     {
       "type": "component",
-      "fileName": "button.ts",
+      "fileName": "button.tsx",
       "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { button } from 'styled-system/recipes'\n\nexport type ButtonProps = ComponentProps<typeof Button>\nexport const Button = styled(ark.button, button)\n",
       "indexFile": {
         "exports": [

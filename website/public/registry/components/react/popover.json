@@ -5,7 +5,7 @@
   "files": [
     {
       "type": "component",
-      "fileName": "popover.ts",
+      "fileName": "popover.tsx",
       "content": "'use client'\nimport { Popover } from '@ark-ui/react/popover'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { popover } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(popover)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Popover.Root, 'root')\n\nexport const Anchor = withContext(Popover.Anchor, 'anchor')\nexport const Arrow = withContext(Popover.Arrow, 'arrow')\nexport const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')\nexport const CloseTrigger = withContext(Popover.CloseTrigger, 'closeTrigger')\nexport const Content = withContext(Popover.Content, 'content')\nexport const Description = withContext(Popover.Description, 'description')\nexport const Indicator = withContext(Popover.Indicator, 'indicator')\nexport const Positioner = withContext(Popover.Positioner, 'positioner')\nexport const Title = withContext(Popover.Title, 'title')\nexport const Trigger = withContext(Popover.Trigger, 'trigger')\n",
       "indexFile": {
         "exports": [

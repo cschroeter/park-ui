@@ -5,7 +5,7 @@
   "files": [
     {
       "type": "component",
-      "fileName": "clipboard.ts",
+      "fileName": "clipboard.tsx",
       "content": "'use client'\nimport { Clipboard } from '@ark-ui/react/clipboard'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { clipboard } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(clipboard)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Clipboard.Root, 'root')\nexport const RootProvider = withProvider(Clipboard.RootProvider, 'root')\nexport const Control = withContext(Clipboard.Control, 'control')\nexport const Indicator = withContext(Clipboard.Indicator, 'indicator')\nexport const Input = withContext(Clipboard.Input, 'input')\nexport const Label = withContext(Clipboard.Label, 'label')\nexport const Trigger = withContext(Clipboard.Trigger, 'trigger')\n",
       "indexFile": {
         "exports": [

@@ -51,7 +51,8 @@ const getExportEntries = (exp: ExportDeclaration) => {
 }
 
 const resolveRecipe = async (fileName: string) => {
-  const file = Bun.file(join('./packages/preset/src/recipes/', fileName))
+  const recipeFileName = fileName.replace('.tsx', '.ts')
+  const file = Bun.file(join('./packages/preset/src/recipes/', recipeFileName))
 
   if (!file.name) return
   const name = parse(file.name).name
@@ -61,7 +62,7 @@ const resolveRecipe = async (fileName: string) => {
 
   return {
     type: 'recipe',
-    fileName,
+    fileName: recipeFileName,
     content,
     indexFile: {
       imports: [{ type: 'named', moduleSpecifier: `./${name}`, symbols: [{ name }] }],
@@ -172,7 +173,12 @@ const generateColors = async () => {
 
 const main = async () => {
   await generateColors()
-  const project = new Project()
+  const project = new Project({
+    compilerOptions: {
+      jsx: 1,
+    },
+  })
+
   const source = project.addSourceFileAtPath(
     resolve('./components/react/src/components/ui/index.ts'),
   )

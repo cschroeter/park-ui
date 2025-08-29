@@ -5,7 +5,7 @@
   "files": [
     {
       "type": "component",
-      "fileName": "input.ts",
+      "fileName": "input.tsx",
       "content": "import { Field } from '@ark-ui/react/field'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { input } from 'styled-system/recipes'\n\nexport type InputProps = ComponentProps<typeof Input>\nexport const Input = styled(Field.Input, input)\n",
       "indexFile": {
         "exports": [
