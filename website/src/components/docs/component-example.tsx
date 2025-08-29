@@ -1,4 +1,4 @@
-import { pascalCase } from 'change-case'
+import { camelCase, pascalCase } from 'change-case'
 import dynamic from 'next/dynamic'
 import { Box, Divider } from 'styled-system/jsx'
 import { getComponentExamples } from '~/app/docs/actions'
@@ -18,7 +18,7 @@ export const ComponentExample = async (props: Props) => {
     import('@park-ui/react/examples')
       // @ts-expect-error
       .then((mod) => mod[pascalCase(component)])
-      .then((mod) => mod[name]),
+      .then((mod) => mod[camelCase(name)]),
   )
 
   const codeExamples = await getComponentExamples({
