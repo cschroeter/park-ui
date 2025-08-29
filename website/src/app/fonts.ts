@@ -6,12 +6,15 @@ export const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 export const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway' })
 export const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-roboto-mono' })
 
-export type Font = 'Inter' | 'Jakarta' | 'Outfit' | 'Raleway' | 'Roboto Mono'
-
-export const fonts: Record<Font, string> = {
-  Inter: 'var(--font-inter)',
-  Jakarta: 'var(--font-jakarta)',
-  Outfit: 'var(--font-outfit)',
-  Raleway: 'var(--font-raleway)',
-  'Roboto Mono': 'var(--font-roboto-mono)',
+export interface Font {
+  label: string
+  value: string
 }
+
+export const fonts = [
+  { label: 'Inter', value: 'var(--font-inter)' },
+  { label: 'Jakarta', value: 'var(--font-jakarta)' },
+  { label: 'Outfit', value: 'var(--font-outfit)' },
+  { label: 'Raleway', value: 'var(--font-raleway)' },
+  { label: 'Roboto Mono', value: 'var(--font-roboto-mono)' },
+]

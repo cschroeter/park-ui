@@ -34,7 +34,7 @@ export const useTheme = () => {
     const root = document.querySelector<HTMLHtmlElement>(':root')
     if (!root) return
 
-    root.setAttribute('data-font', font)
+    root.setAttribute('data-font', font.label)
   }, [font])
 
   useEffect(() => {
@@ -67,7 +67,7 @@ interface State {
 const initialState: State = {
   accentColor: 'neutral',
   grayColor: 'neutral',
-  font: 'Outfit',
+  font: { label: 'Outfit', value: 'var(--font-outfit)' },
   radius: 'sm',
 }
 

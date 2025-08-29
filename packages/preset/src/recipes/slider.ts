@@ -2,7 +2,19 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const slider = defineSlotRecipe({
   className: 'slider',
-  slots: ['root', 'control', 'track', 'range', 'thumb', 'label', 'markerGroup', 'marker'],
+  slots: [
+    'control',
+    'draggingIndicator',
+    'label',
+    'marker',
+    'markerIndicator',
+    'markerGroup',
+    'range',
+    'root',
+    'thumb',
+    'track',
+    'valueText',
+  ],
   base: {
     root: {
       display: 'flex',

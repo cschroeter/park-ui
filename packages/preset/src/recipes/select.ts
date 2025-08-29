@@ -2,7 +2,23 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const select = defineSlotRecipe({
   className: 'select',
-  slots: ['root', 'content', 'item', 'itemGroupLabel', 'itemIndicator', 'label', 'trigger'],
+  slots: [
+    'clearTrigger',
+    'content',
+    'control',
+    'indicator',
+    'item',
+    'itemGroup',
+    'itemGroupLabel',
+    'itemIndicator',
+    'itemText',
+    'label',
+    'list',
+    'positioner',
+    'root',
+    'trigger',
+    'valueText',
+  ],
   base: {
     root: {
       display: 'flex',

@@ -1,15 +1,27 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
-import { Wand2Icon, XIcon } from 'lucide-react'
+import { Undo2Icon, Wand2Icon, XIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
-import { Drawer, IconButton } from '@/components/ui'
+import { Button, Drawer, IconButton } from '@/components/ui'
 import { useTheme } from '~/lib/use-theme'
 import { ColorModeButton } from '../color-mode-button'
 import { AccentColorPicker } from './accent-color-picker'
+import { BorderRadiusSlider } from './border-radius-slider'
+import { FontFamilySelect } from './font-familiy-select'
 import { GrayColorPicker } from './gray-color-picker'
 
 export const ThemeDrawer = () => {
-  const { setAccentColor, grayColor, setGrayColor, accentColor } = useTheme()
+  const {
+    accentColor,
+    font,
+    grayColor,
+    radius,
+    reset,
+    setAccentColor,
+    setFont,
+    setGrayColor,
+    setRadius,
+  } = useTheme()
 
   return (
     <Drawer.Root variant="right">
@@ -34,20 +46,20 @@ export const ThemeDrawer = () => {
             </Drawer.Header>
             <Drawer.Body>
               <Stack flex="1" gap="4">
-                {/* <FontFamilySelect font={font} onValueChange={setFont} />*/}
+                <FontFamilySelect font={font} onValueChange={setFont} />
                 <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
                 <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
                 <ColorModeButton />
-                {/* <BorderRadiusSlider radius={radius} onValueChange={setRadius} /> */}
+                <BorderRadiusSlider radius={radius} onValueChange={setRadius} />
+                <pre>{JSON.stringify({ font, radius, grayColor, accentColor }, null, 2)}</pre>
               </Stack>
             </Drawer.Body>
             <Drawer.Footer>
               <HStack gap="3">
-                {/* <Button variant="outline" colorPalette="gray" onClick={reset}>
+                <Button variant="outline" colorPalette="gray" onClick={reset}>
                   <Undo2Icon />
                   Reset
-                </Button> */}
-                {/* <ThemeConfigDialog /> */}
+                </Button>
               </HStack>
             </Drawer.Footer>
           </Drawer.Content>
