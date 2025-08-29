@@ -7,4 +7,11 @@ export default defineConfig({
   include: ['./src/**/*.{ts,tsx}'],
   jsxFramework: 'react',
   plugins: [plugin],
+  globalCss: {
+    extend: {
+      html: {
+        colorPalette: 'neutral',
+      },
+    },
+  },
 })
