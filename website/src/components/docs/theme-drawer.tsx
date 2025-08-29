@@ -10,7 +10,11 @@ import { BorderRadiusSlider } from './border-radius-slider'
 import { FontFamilySelect } from './font-familiy-select'
 import { GrayColorPicker } from './gray-color-picker'
 
-export const ThemeDrawer = () => {
+interface Props {
+  hero?: boolean
+}
+
+export const ThemeDrawer = ({ hero }: Props) => {
   const {
     accentColor,
     font,
@@ -24,11 +28,18 @@ export const ThemeDrawer = () => {
   } = useTheme()
 
   return (
-    <Drawer.Root>
+    <Drawer.Root placement={hero ? 'start' : 'end'}>
       <Drawer.Trigger asChild>
-        <IconButton variant="ghost" h="14" minW="14" borderRadius="0">
-          <Wand2Icon />
-        </IconButton>
+        {hero ? (
+          <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>
+            <Wand2Icon />
+            Make it yours
+          </Button>
+        ) : (
+          <IconButton variant="ghost" h="14" minW="14" borderRadius="0">
+            <Wand2Icon />
+          </IconButton>
+        )}
       </Drawer.Trigger>
       <Portal>
         <Drawer.Positioner>

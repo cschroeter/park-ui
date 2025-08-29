@@ -1,6 +1,5 @@
-import { XIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button, IconButton, Popover } from '@/components/ui'
+import { Button, CloseButton, Popover } from '@/components/ui'
 
 export const App = () => {
   return (
@@ -20,9 +19,7 @@ export const App = () => {
             </Popover.Description>
           </Stack>
           <Popover.CloseTrigger asChild>
-            <IconButton variant="ghost" size="sm">
-              <XIcon />
-            </IconButton>
+            <CloseButton />
           </Popover.CloseTrigger>
         </Popover.Content>
       </Popover.Positioner>

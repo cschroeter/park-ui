@@ -2,7 +2,8 @@ import { SiFigma, SiReact, SiSvelte, SiVuedotjs } from '@icons-pack/react-simple
 import { ArrowRightIcon } from 'lucide-react'
 import NextLink from 'next/link'
 import { Box, HStack, Stack } from 'styled-system/jsx'
-import { Badge, Button, Heading, Text } from '@/components/ui'
+import { Badge, Heading, Text } from '@/components/ui'
+import { ThemeDrawer } from '../docs/theme-drawer'
 import { PageButton } from '../navigation/page-button'
 import { HeroGroup, HeroItem } from './framer'
 
@@ -30,9 +31,7 @@ export const Hero = () => {
           <PageButton href="/docs" size={{ base: 'xl', md: '2xl' }}>
             Get Started <ArrowRightIcon />
           </PageButton>
-          <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>
-            Make it yours!
-          </Button>
+          <ThemeDrawer hero />
         </Stack>
       </HeroItem>
       <HeroItem>
