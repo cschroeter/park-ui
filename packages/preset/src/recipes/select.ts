@@ -33,14 +33,13 @@ export const select = defineSlotRecipe({
       display: 'flex',
       flexDirection: 'column',
       zIndex: 'dropdown',
-      _hidden: {
-        display: 'none',
-      },
       _open: {
-        animation: 'fadeIn 0.25s ease-out',
+        animationStyle: 'slide-fade-in',
+        animationDuration: 'slow',
       },
       _closed: {
-        animation: 'fadeOut 0.2s ease-out',
+        animationStyle: 'slide-fade-out',
+        animationDuration: 'normal',
       },
       _focusVisible: {
         outlineOffset: '2px',
@@ -86,6 +85,7 @@ export const select = defineSlotRecipe({
     },
     label: {
       color: 'fg.default',
+      userSelect: 'none',
       fontWeight: 'medium',
     },
     trigger: {
