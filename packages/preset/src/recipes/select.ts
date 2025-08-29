@@ -36,9 +36,11 @@ export const select = defineSlotRecipe({
       _open: {
         animationStyle: 'slide-fade-in',
         animationDuration: 'slow',
+        animationTimingFunction: 'emphasized-in',
       },
       _closed: {
         animationStyle: 'slide-fade-out',
+        animationTimingFunction: 'emphasized-out',
         animationDuration: 'normal',
       },
       _focusVisible: {

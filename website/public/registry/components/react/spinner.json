@@ -1,0 +1,59 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "spinner",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "spinner.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { spinner } from 'styled-system/recipes'\n\nexport type SpinnerProps = ComponentProps<typeof Spinner>\nexport const Spinner = styled(ark.span, spinner)\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "named",
+            "symbols": [
+              {
+                "name": "Spinner",
+                "isType": false
+              },
+              {
+                "name": "SpinnerProps",
+                "isType": true
+              }
+            ],
+            "moduleSpecifier": "./spinner"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "spinner.ts",
+      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const spinner = defineRecipe({\n  className: 'spinner',\n  base: {\n    '--spinner-track-color': 'transparent',\n    animation: 'spin',\n    animationDuration: 'slowest',\n    borderBottomColor: 'var(--spinner-track-color)',\n    borderColor: 'currentColor',\n    borderInlineStartColor: 'var(--spinner-track-color)',\n    borderRadius: 'full',\n    borderStyle: 'solid',\n    borderWidth: '2px',\n    display: 'inline-block',\n    height: 'var(--spinner-size)',\n    width: 'var(--spinner-size)',\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      inherit: { '--spinner-size': '1em' },\n      xs: { '--spinner-size': 'sizes.3' },\n      sm: { '--spinner-size': 'sizes.4' },\n      md: { '--spinner-size': 'sizes.5' },\n      lg: { '--spinner-size': 'sizes.6' },\n      xl: { '--spinner-size': 'sizes.7' },\n      '2xl': { '--spinner-size': 'sizes.8' },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./spinner",
+            "symbols": [
+              {
+                "name": "spinner"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "recipes",
+            "properties": [
+              {
+                "name": "spinner"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
