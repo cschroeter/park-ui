@@ -22,12 +22,13 @@ export const CodeSnippet = async (props: Props) => {
       borderRadius="l3"
       borderWidth="1px"
       position="relative"
+      my="6"
       {...rootProps}
     >
       <Box position="absolute" top="1" right="1">
         <ClipboardButton value={sourceCode.code} />
       </Box>
-      <Box maxH="lg" overflow="auto" p="3.5" dangerouslySetInnerHTML={{ __html }} />
+      <Box maxH="lg" overflow="auto" px="4" py="3" dangerouslySetInnerHTML={{ __html }} />
     </Box>
   )
 }

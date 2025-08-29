@@ -32,9 +32,9 @@ export const getComponentDefinitions = async (name: string): Promise<FrameworkSo
   const baseDir = join(process.cwd(), '../components')
 
   return Promise.all(
-    frameworks.map(async ({ framework }) => {
-      const lang = 'ts'
-      const path = join(baseDir, framework, 'src/components/ui', `${name}.${lang}`)
+    frameworks.map(async ({ framework, lang }) => {
+      const fileName = `${name}.${lang}`
+      const path = join(baseDir, framework, 'src/components/ui', fileName)
       const code = await readFile(path, 'utf-8').catch(() => null)
 
       return {

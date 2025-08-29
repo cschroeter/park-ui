@@ -1,0 +1,38 @@
+---
+title: Drawer
+description: Used to render a content that slides in from the side of the screen.
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/drawer.ts
+  ark: https://ark-ui.com/react/docs/components/dialog
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Drawer } from '@/components/ui'
+```
+
+```tsx
+<Drawer.Root>
+  <Drawer.Backdrop />
+  <Drawer.Trigger />
+  <Drawer.Positioner>
+    <Drawer.Content>
+      <Drawer.CloseTrigger />
+      <Drawer.Header>
+        <Drawer.Title />
+      </Drawer.Header>
+      <Drawer.Body />
+      <Drawer.Footer />
+    </Drawer.Content>
+  </Drawer.Positioner>
+</Drawer.Root>
+```
+
+## Examples

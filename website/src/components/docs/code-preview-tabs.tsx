@@ -42,8 +42,10 @@ export const CodePreviewTabs = (props: Props) => {
         <Tabs.Indicator bg="gray.12" />
       </Tabs.List>
       {sources.map(({ sourceCode, framework }) => (
-        <Tabs.Content key={framework} value={framework} pt="0">
-          {sourceCode && <CodeSnippet sourceCode={sourceCode} borderWidth="0" borderRadius="0" />}
+        <Tabs.Content key={framework} value={framework} pt="0" pb="0">
+          {sourceCode && (
+            <CodeSnippet sourceCode={sourceCode} borderWidth="0" borderRadius="0" my="0" />
+          )}
         </Tabs.Content>
       ))}
     </Tabs.Root>

@@ -15,8 +15,8 @@ export const InstallationGuide = () => {
         <Tabs.Trigger value="manual">Manual</Tabs.Trigger>
         <Tabs.Indicator />
       </Tabs.List>
-      <Tabs.Content value="cli" pt="6">
-        <CodeSnippet sourceCode={sourceCode} />
+      <Tabs.Content value="cli" pt="0" pb="0">
+        <CodeSnippet sourceCode={sourceCode} mb="0" />
       </Tabs.Content>
       <Tabs.Content value="manual" pt="6">
         <ManualIntallationGuide />
