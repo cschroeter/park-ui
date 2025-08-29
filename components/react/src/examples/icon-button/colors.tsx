@@ -5,16 +5,16 @@ import { IconButton } from '@/components/ui'
 export const App = () => {
   return (
     <Wrap gap="4">
-      <IconButton colorPalette="red">
+      <IconButton colorPalette="red" aria-label="Search">
         <SearchIcon />
       </IconButton>
-      <IconButton colorPalette="green">
+      <IconButton colorPalette="green" aria-label="Search">
         <SearchIcon />
       </IconButton>
-      <IconButton colorPalette="blue">
+      <IconButton colorPalette="blue" aria-label="Search">
         <SearchIcon />
       </IconButton>
-      <IconButton colorPalette="amber">
+      <IconButton colorPalette="amber" aria-label="Search">
         <SearchIcon />
       </IconButton>
     </Wrap>

@@ -8,7 +8,7 @@ export const App = () => {
   return (
     <Wrap gap="4">
       {sizes.map((size) => (
-        <IconButton key={size} size={size}>
+        <IconButton key={size} size={size} aria-label="Call us">
           <PhoneIcon />
         </IconButton>
       ))}
