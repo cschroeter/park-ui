@@ -1,5 +1,5 @@
 import { Box, type BoxProps } from 'styled-system/jsx'
-import { highlight } from '~/lib/shiki'
+import { codeToHtml } from '~/lib/shiki'
 import type { SourceCode } from '~/types'
 import { ClipboardButton } from './clipboard-button'
 
@@ -13,7 +13,9 @@ export const CodeSnippet = async (props: Props) => {
     return null
   }
 
-  const __html = await highlight(sourceCode)
+  const { code, lang } = sourceCode
+
+  const __html = await codeToHtml(code, { lang, theme: 'github-dark-default' })
 
   return (
     <Box
