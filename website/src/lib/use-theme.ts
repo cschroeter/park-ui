@@ -34,7 +34,7 @@ export const useTheme = () => {
     const root = document.querySelector<HTMLHtmlElement>(':root')
     if (!root) return
 
-    root.setAttribute('data-font', font.label)
+    root.style.setProperty('--fonts-body', font.value)
   }, [font])
 
   useEffect(() => {

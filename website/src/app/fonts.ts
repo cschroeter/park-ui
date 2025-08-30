@@ -1,10 +1,10 @@
-import { Inter, Outfit, Plus_Jakarta_Sans, Raleway, Roboto_Mono } from 'next/font/google'
+import { DM_Sans, Inter, Outfit, Roboto_Mono, Space_Grotesk } from 'next/font/google'
 
 export const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-export const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta' })
 export const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
-export const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway' })
 export const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--font-roboto-mono' })
+export const space = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
+export const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 
 export interface Font {
   label: string
@@ -13,8 +13,8 @@ export interface Font {
 
 export const fonts = [
   { label: 'Inter', value: 'var(--font-inter)' },
-  { label: 'Jakarta', value: 'var(--font-jakarta)' },
   { label: 'Outfit', value: 'var(--font-outfit)' },
-  { label: 'Raleway', value: 'var(--font-raleway)' },
   { label: 'Roboto Mono', value: 'var(--font-roboto-mono)' },
+  { label: 'Space Grotesk', value: 'var(--font-space-grotesk)' },
+  { label: 'DM Sans', value: 'var(--font-dm-sans)' },
 ]

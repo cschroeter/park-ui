@@ -4,7 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css'
 import { Navbar } from '~/components/navigation/navbar'
-import { inter, jakarta, outfit, raleway, roboto } from './fonts'
+import { dmSans, inter, outfit, roboto, space } from './fonts'
 import './index.css'
 
 export default async function RootLayout(props: PropsWithChildren) {
@@ -24,9 +24,9 @@ export default async function RootLayout(props: PropsWithChildren) {
       className={cx(
         outfit.variable,
         inter.variable,
-        jakarta.variable,
-        raleway.variable,
         roboto.variable,
+        space.variable,
+        dmSans.variable,
       )}
     >
       <body>
