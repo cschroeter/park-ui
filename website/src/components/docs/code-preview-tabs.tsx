@@ -1,50 +1,64 @@
+import { Flex } from 'styled-system/jsx'
 import { Tabs } from '@/components/ui'
 import type { FrameworkSourceCode } from '~/types'
+import { CodePreviewToggle } from './code-preview-toggle'
 import { CodeSnippet } from './code-snippet'
+import { Hide } from './hide'
 
 interface Props extends Tabs.RootProps {
   sources: FrameworkSourceCode[]
+  collapsable?: boolean
 }
 
 export const CodePreviewTabs = (props: Props) => {
-  const { sources, ...rootProps } = props
+  const { sources, collapsable, ...rootProps } = props
 
   return (
-    <Tabs.Root
-      defaultValue="react"
-      className="dark"
-      variant="line"
-      size="sm"
-      bg="gray.2"
-      borderRadius="l3"
-      borderWidth="1px"
-      {...rootProps}
-    >
+    <Tabs.Root variant="enclosed" borderRadius="l3" borderWidth="1px" {...rootProps}>
       <Tabs.List
-        bg="gray.a2"
-        borderBottomWidth="1px"
+        background="gray.1"
         boxShadow="none"
-        h="10"
+        borderWidth="0"
+        justifyContent="space-between"
+        alignItems="center"
         px="4"
-        borderColor="gray.a4"
+        height="12"
       >
-        {sources.map(({ framework, sourceCode }) => (
-          <Tabs.Trigger
-            key={framework}
-            value={framework}
-            textTransform="capitalize"
-            transform="translateY(6px)"
-            disabled={!sourceCode}
-          >
-            {framework}
-          </Tabs.Trigger>
-        ))}
-        <Tabs.Indicator bg="gray.12" />
+        <Hide when={collapsable}>
+          <Flex>
+            {sources
+              // .filter((source) => source.sourceCode)
+              .map(({ framework, sourceCode }) => (
+                <Tabs.Trigger
+                  key={framework}
+                  value={framework}
+                  textTransform="capitalize"
+                  disabled={!sourceCode}
+                  fontSize="13px"
+                >
+                  {framework}
+                </Tabs.Trigger>
+              ))}
+          </Flex>
+          <Tabs.Indicator
+            background={{ _light: 'white', _dark: 'gray.2' }}
+            height="8"
+            boxShadow="xs"
+          />
+        </Hide>
+        {collapsable && <CodePreviewToggle />}
       </Tabs.List>
+
       {sources.map(({ sourceCode, framework }) => (
-        <Tabs.Content key={framework} value={framework} pt="0" pb="0">
+        <Tabs.Content key={framework} value={framework} p="0" className="dark">
           {sourceCode && (
-            <CodeSnippet sourceCode={sourceCode} borderWidth="0" borderRadius="0" my="0" />
+            <CodeSnippet
+              sourceCode={sourceCode}
+              borderWidth="0"
+              borderTopWidth="1px"
+              borderRadius="0"
+              my="0"
+            />
           )}
         </Tabs.Content>
       ))}

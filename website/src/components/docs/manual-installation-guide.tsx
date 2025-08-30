@@ -15,7 +15,7 @@ export const ManualIntallationGuide = async () => {
     <Steps>
       <Step number="1" title="Add Component">
         <Text>Copy the code snippet below into you components folder.</Text>
-        <CodePreviewTabs sources={sources} />
+        <CodePreviewTabs defaultValue="react" sources={sources} />
       </Step>
       <Step number="2" title="Integrate Recipe">
         <Text>Integrate this recipe in to your Panda config.</Text>

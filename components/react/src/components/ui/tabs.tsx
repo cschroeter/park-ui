@@ -13,3 +13,4 @@ export const List = withContext(Tabs.List, 'list')
 export const Trigger = withContext(Tabs.Trigger, 'trigger')
 export const Content = withContext(Tabs.Content, 'content')
 export const Indicator = withContext(Tabs.Indicator, 'indicator')
+export const Context = Tabs.Context
