@@ -1,7 +1,11 @@
 import { defineRecipe } from '@pandacss/dev'
 
-export const text = defineRecipe({
-  className: 'text',
+export const heading = defineRecipe({
+  className: 'heading',
+  base: {
+    color: 'fg.default',
+    fontWeight: 'semibold',
+  },
   variants: {
     size: {
       xs: { textStyle: 'xs', lineHeight: '1.125rem' },

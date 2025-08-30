@@ -35,7 +35,7 @@ export const ComponentExample = async (props: Props) => {
       my="6"
       divideY="1px"
     >
-      <Box p={{ base: '4', md: '8' }}>
+      <Box p={{ base: '4', md: '8' }} color={component === 'text' ? 'fg.default' : undefined}>
         <ErrorBoundary componentName={name}>
           <Example />
         </ErrorBoundary>

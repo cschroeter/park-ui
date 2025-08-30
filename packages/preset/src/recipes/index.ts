@@ -19,6 +19,7 @@ import { field } from './field'
 import { fieldset } from './fieldset'
 import { fileUpload } from './file-upload'
 import { formLabel } from './form-label'
+import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { input } from './input'
@@ -57,14 +58,15 @@ export const recipes = {
   button,
   code,
   formLabel,
+  heading,
   icon,
   input,
   kbd,
   link,
   skeleton,
   spinner,
-  textarea,
   text,
+  textarea,
 }
 
 export const slotRecipes = {
