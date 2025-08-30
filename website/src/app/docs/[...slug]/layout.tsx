@@ -8,9 +8,7 @@ export default async function DocsLayout(props: PropsWithChildren) {
 
   return (
     <>
-      <SidebarMobileContainer>
-        <Sidebar />
-      </SidebarMobileContainer>
+      <SidebarMobileContainer />
       <Grid
         minH="dvh"
         gridTemplateColumns={{

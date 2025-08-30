@@ -1,19 +1,12 @@
-'use client'
 import { Portal } from '@ark-ui/react/portal'
-import { ChevronRightIcon, MenuIcon } from 'lucide-react'
-import { useState } from 'react'
-import { Box, HStack } from 'styled-system/jsx'
-import { Button, Icon } from '@/components/ui'
+import { MenuIcon } from 'lucide-react'
+import { HStack } from 'styled-system/jsx'
+import { CloseButton, Drawer, IconButton } from '@/components/ui'
+import { Sidebar } from './sidebar'
 
-interface Props {
-  children: React.ReactNode
-}
-
-export const SidebarMobileContainer = (props: Props) => {
-  const { children } = props
-  const [open, setOpen] = useState(false)
+export const SidebarMobileContainer = () => {
   return (
-    <Box
+    <HStack
       px={{ base: '4', sm: '6', md: '8' }}
       borderBottomWidth="1px"
       height="14"
@@ -24,32 +17,23 @@ export const SidebarMobileContainer = (props: Props) => {
       bg="bg.default"
       zIndex="sticky"
     >
-      <HStack h="full" color="fg.muted">
-        <Button
-          variant="link"
-          fontWeight="normal"
-          gap="2"
-          aria-label="Open menu"
-          onClick={() => setOpen(!open)}
-          textStyle="md"
-        >
-          <MenuIcon />
-          <span>Components</span>
-          <Icon size="sm">
-            <ChevronRightIcon />
-          </Icon>
-          <span>Avatar</span>
-        </Button>
-      </HStack>
-      {open && (
+      <Drawer.Root placement="start" size="xs">
+        <Drawer.Trigger asChild>
+          <IconButton size="sm" variant="ghost">
+            <MenuIcon />
+          </IconButton>
+        </Drawer.Trigger>
         <Portal>
-          <Box position="fixed" inset="0" zIndex="sticky">
-            <Box position="fixed" insetY="0" left="0" top="120px" width="full">
-              {children}
-            </Box>
-          </Box>
+          <Drawer.Positioner pt="14">
+            <Drawer.Content>
+              <Sidebar maxH="100dvh" maxW="full" />
+              <Drawer.CloseTrigger asChild>
+                <CloseButton />
+              </Drawer.CloseTrigger>
+            </Drawer.Content>
+          </Drawer.Positioner>
         </Portal>
-      )}
-    </Box>
+      </Drawer.Root>
+    </HStack>
   )
 }
