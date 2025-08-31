@@ -1,5 +1,5 @@
 'use client'
-import { useTabsContext } from '@ark-ui/react'
+import { useTabsContext } from '@ark-ui/react/tabs'
 import { Button, type ButtonProps } from '@/components/ui'
 
 export const CodePreviewToggle = (props: ButtonProps) => {

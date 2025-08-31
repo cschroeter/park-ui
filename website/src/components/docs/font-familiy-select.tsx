@@ -1,5 +1,5 @@
 'use client'
-import { createListCollection } from '@ark-ui/react'
+import { createListCollection } from '@ark-ui/react/collection'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Select } from '@/components/ui'
 import { type Font, fonts } from '~/app/fonts'
