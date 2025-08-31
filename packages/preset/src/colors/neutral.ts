@@ -25,8 +25,7 @@ export const neutral = defineSemanticTokens.colors({
   a10: { value: { _light: '#0000007c', _dark: '#ffffff72' } },
   a11: { value: { _light: '#0000009b', _dark: '#ffffffaf' } },
   a12: { value: { _light: '#000000df', _dark: '#ffffffed' } },
-  default: { value: { _light: 'black', _dark: 'white' } },
-  emphasized: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
-  fg: { value: { _light: '{colors.gray.1}', _dark: '{colors.gray.1}' } },
-  text: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
+  contrast: { value: { _light: 'white', _dark: 'black' } },
+  solid: { value: { _light: 'black', _dark: 'white' } },
+  emphasiszed: { value: { _light: '{colors.neutral.12}', _dark: '{colors.neutral.12}' } },
 })

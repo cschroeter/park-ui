@@ -47,13 +47,15 @@ const link = cva({
     transitionProperty: 'border-color, box-shadow',
     transitionTimingFunction: 'default',
     _hover: {
-      borderColor: 'colorPalette.default',
-      boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+      borderColor: 'colorPalette.solid',
+      shadowColor: 'colorPalette.solid',
+      boxShadow: '0 0 0 1px var(--shadow-color)',
     },
     _focusVisible: {
       outline: 'none',
-      borderColor: 'colorPalette.default',
-      boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+      borderColor: 'colorPalette.solid',
+      shadowColor: 'colorPalette.solid',
+      boxShadow: '0 0 0 1px var(--shadow-color)',
     },
   },
 })()

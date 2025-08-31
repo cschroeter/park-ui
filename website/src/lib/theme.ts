@@ -41,10 +41,9 @@ export const radii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
 const baseKeys = [
   ...Array.from({ length: 12 }, (_, i) => `${i + 1}`),
   ...Array.from({ length: 12 }, (_, i) => `a${i + 1}`),
-  'default',
-  'emphasized',
-  'fg',
-  'text',
+  'contrast',
+  'solid',
+  'emphasiszed',
 ]
 
 export const createAccentColorSelectors = () =>

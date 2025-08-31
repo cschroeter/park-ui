@@ -16,7 +16,7 @@ export const PageHeader = (props: Props) => {
       <Stack gap={{ base: '5', md: '8' }}>
         <Stack gap={{ base: '3', md: '4' }}>
           {subtitle && (
-            <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium" color="colorPalette.text">
+            <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium" color="colorPalette.a11">
               {subtitle}
             </Text>
           )}

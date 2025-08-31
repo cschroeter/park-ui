@@ -34,7 +34,7 @@ export const AccentColorPicker = (props: Props) => {
               <Circle
                 size="3.5"
                 style={{
-                  background: token.var(`colors.${accent}.default`),
+                  background: token.var(`colors.${accent}.solid`),
                 }}
               />
               {accent}

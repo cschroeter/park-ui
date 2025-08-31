@@ -74,7 +74,7 @@ export default defineConfig({
         fontFamily: 'code',
       },
       'ul li::marker': {
-        color: 'colorPalette.default',
+        color: 'colorPalette.solid',
       },
     },
   },

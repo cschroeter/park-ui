@@ -25,8 +25,7 @@ export const purple = defineSemanticTokens.colors({
   a10: { value: { _light: '#53009eb8', _dark: '#bc6fffcd' } },
   a11: { value: { _light: '#52009aba', _dark: '#d19dff' } },
   a12: { value: { _light: '#250049df', _dark: '#f1ddfffa' } },
-  default: { value: { _light: '{colors.purple.9}', _dark: '{colors.purple.9}' } },
-  emphasized: { value: { _light: '{colors.purple.10}', _dark: '{colors.purple.10}' } },
-  fg: { value: { _light: 'white', _dark: 'white' } },
-  text: { value: { _light: '{colors.purple.a11}', _dark: '{colors.purple.a11}' } },
+  contrast: { value: { _light: 'white', _dark: 'white' } },
+  solid: { value: { _light: '{colors.purple.9}', _dark: '{colors.purple.9}' } },
+  emphasiszed: { value: { _light: '{colors.purple.10}', _dark: '{colors.purple.10}' } },
 })

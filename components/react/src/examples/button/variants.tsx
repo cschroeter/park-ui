@@ -2,15 +2,14 @@ import { Wrap } from 'styled-system/jsx'
 import { Button } from '@/components/ui'
 
 export const App = () => {
-  const variants = ['solid', 'outline', 'subtle', 'ghost', 'link'] as const
-
   return (
     <Wrap gap="4">
-      {variants.map((variant) => (
-        <Button key={variant} variant={variant}>
-          {variant}
-        </Button>
-      ))}
+      <Button variant="solid">Solid</Button>
+      <Button variant="surface">Surface</Button>
+      <Button variant="subtle">Subtle</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="plain">Plain</Button>
     </Wrap>
   )
 }

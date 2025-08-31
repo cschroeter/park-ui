@@ -25,8 +25,7 @@ export const bronze = defineSemanticTokens.colors({
   a10: { value: { _light: '#4c150097', _dark: '#fecab5a9' } },
   a11: { value: { _light: '#3d0f00ab', _dark: '#ffd7c6d1' } },
   a12: { value: { _light: '#1d0600d4', _dark: '#fff1e9ec' } },
-  default: { value: { _light: '{colors.bronze.9}', _dark: '{colors.bronze.9}' } },
-  emphasized: { value: { _light: '{colors.bronze.10}', _dark: '{colors.bronze.10}' } },
-  fg: { value: { _light: 'white', _dark: 'white' } },
-  text: { value: { _light: '{colors.bronze.a11}', _dark: '{colors.bronze.a11}' } },
+  contrast: { value: { _light: 'white', _dark: 'white' } },
+  solid: { value: { _light: '{colors.bronze.9}', _dark: '{colors.bronze.9}' } },
+  emphasiszed: { value: { _light: '{colors.bronze.10}', _dark: '{colors.bronze.10}' } },
 })

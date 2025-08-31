@@ -25,8 +25,7 @@ export const slate = defineSemanticTokens.colors({
   a10: { value: { _light: '#00071b7f', _dark: '#e5edfd7b' } },
   a11: { value: { _light: '#0007149f', _dark: '#f1f7feb5' } },
   a12: { value: { _light: '#000509e3', _dark: '#fcfdffef' } },
-  default: { value: { _light: '{colors.slate.9}', _dark: '{colors.slate.9}' } },
-  emphasized: { value: { _light: '{colors.slate.10}', _dark: '{colors.slate.10}' } },
-  fg: { value: { _light: 'white', _dark: 'white' } },
-  text: { value: { _light: '{colors.slate.a11}', _dark: '{colors.slate.a11}' } },
+  contrast: { value: { _light: 'white', _dark: 'white' } },
+  solid: { value: { _light: '{colors.slate.9}', _dark: '{colors.slate.9}' } },
+  emphasiszed: { value: { _light: '{colors.slate.10}', _dark: '{colors.slate.10}' } },
 })

@@ -12,28 +12,26 @@ export const button = defineRecipe({
     fontWeight: 'semibold',
     flexShrink: '0',
     isolation: 'isolate',
-    minWidth: '0',
     justifyContent: 'center',
-    outline: 'none',
+    outline: '0',
     position: 'relative',
     transitionDuration: 'normal',
-    transitionProperty: 'background, border-color, color, box-shadow',
+    transitionProperty: 'background, color, box-shadow',
     transitionTimingFunction: 'default',
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
-    _hidden: {
-      display: 'none',
-    },
-    '& :where(svg)': {
+    _icon: {
+      flexShrink: '0',
       fontSize: '1.1em',
       width: '1.1em',
       height: '1.1em',
     },
     _disabled: {
       cursor: 'not-allowed',
-      layerStyle: 'disabled',
     },
+    focusVisibleRing: 'outside',
+    focusRingColor: 'colorPalette.solid',
   },
   defaultVariants: {
     variant: 'solid',
@@ -42,86 +40,63 @@ export const button = defineRecipe({
   variants: {
     variant: {
       solid: {
-        colorPalette: 'accent',
-        background: 'colorPalette.default',
-        color: 'colorPalette.fg',
+        background: 'colorPalette.solid',
+        color: 'colorPalette.contrast',
         _hover: {
-          background: 'colorPalette.emphasized',
+          background: 'colorPalette.emphasiszed',
         },
-        _focusVisible: {
-          outline: '2px solid',
-          outlineColor: 'colorPalette.default',
-          outlineOffset: '2px',
+        _disabled: {
+          layerStyle: 'disabled',
+        },
+      },
+      surface: {
+        background: 'colorPalette.a2',
+        color: 'colorPalette.a11',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.a7',
+        _hover: {
+          background: 'colorPalette.a3',
+          shadowColor: 'colorPalette.a8',
+        },
+        _active: {
+          shadowColor: 'colorPalette.a8',
+        },
+      },
+      subtle: {
+        background: 'colorPalette.a3',
+        color: 'colorPalette.a11',
+        _hover: {
+          background: 'colorPalette.a4',
         },
         _disabled: {
           layerStyle: 'disabled',
         },
       },
       outline: {
-        borderWidth: '1px',
-        borderColor: 'colorPalette.a7',
-        color: 'colorPalette.text',
-        colorPalette: 'gray',
+        color: 'colorPalette.a11',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.a8',
         _hover: {
           background: 'colorPalette.a2',
-        },
-        _focusVisible: {
-          outline: '2px solid',
-          outlineColor: 'colorPalette.default',
-          outlineOffset: '2px',
-        },
-        _selected: {
-          background: 'accent.default',
-          borderColor: 'accent.default',
-          color: 'accent.fg',
-          _hover: {
-            background: 'accent.emphasized',
-            borderColor: 'accent.emphasized',
-          },
         },
         _disabled: {
           layerStyle: 'disabled',
         },
       },
       ghost: {
-        color: 'colorPalette.text',
-        colorPalette: 'gray',
+        color: 'colorPalette.a11',
         _hover: {
           background: 'colorPalette.a3',
         },
         _selected: {
           background: 'colorPalette.a3',
         },
-        _focusVisible: {
-          outline: '2px solid',
-          outlineColor: 'colorPalette.default',
-          outlineOffset: '2px',
-        },
         _disabled: {
           layerStyle: 'disabled',
         },
       },
-      link: {
-        verticalAlign: 'baseline',
-        height: 'auto!',
-        px: '0!',
-        minW: '0!',
-      },
-      subtle: {
-        background: 'colorPalette.a3',
-        color: 'colorPalette.text',
-        colorPalette: 'gray',
-        _hover: {
-          background: 'colorPalette.a4',
-        },
-        _focusVisible: {
-          outline: '2px solid',
-          outlineColor: 'colorPalette.default',
-          outlineOffset: '2px',
-        },
-        _disabled: {
-          layerStyle: 'disabled',
-        },
+      plain: {
+        color: 'colorPalette.a11',
       },
     },
     size: {

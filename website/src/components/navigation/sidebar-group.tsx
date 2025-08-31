@@ -34,10 +34,10 @@ const recipe = sva({
       transitionTimingFunction: 'default',
       _hover: {
         color: 'fg.default',
-        borderColor: 'colorPalette.default',
+        borderColor: 'colorPalette.solid',
       },
       _currentPage: {
-        borderColor: 'colorPalette.default',
+        borderColor: 'colorPalette.solid',
         color: 'fg.default',
         fontWeight: 'medium',
         _hover: {

@@ -31,12 +31,12 @@ export const ThemeDrawer = ({ hero }: Props) => {
     <Drawer.Root placement={hero ? 'start' : 'end'}>
       <Drawer.Trigger asChild>
         {hero ? (
-          <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>
+          <Button variant="outline" colorPalette="gray" size={{ base: 'xl', md: '2xl' }}>
             <Wand2Icon />
             Make it yours
           </Button>
         ) : (
-          <IconButton variant="ghost" h="14" minW="14" borderRadius="0">
+          <IconButton variant="ghost" colorPalette="gray" h="14" minW="14" borderRadius="0">
             <Wand2Icon />
           </IconButton>
         )}

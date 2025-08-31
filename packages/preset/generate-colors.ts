@@ -31,13 +31,28 @@ const generateSemanticTokens = (color: string) => {
     }
   }
 
+  const brightColors = ['amber', 'yellow', 'lime', 'mint', 'sky']
+
+  const contrast = brightColors.includes(color)
+    ? { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } }
+    : { value: { _light: 'white', _dark: 'white' } }
+
+  const solid =
+    color === 'neutral'
+      ? { value: { _light: `black`, _dark: `white` } }
+      : { value: { _light: `{colors.${color}.9}`, _dark: `{colors.${color}.9}` } }
+
+  const emphasiszed =
+    color === 'neutral'
+      ? { value: { _light: `{colors.gray.12}`, _dark: `{colors.gray.12}` } }
+      : { value: { _light: `{colors.${color}.10}`, _dark: `{colors.${color}.10}` } }
+
   // Add alias tokens
   return {
     ...semanticTokens,
-    default: { value: { _light: `{colors.${color}.9}`, _dark: `{colors.${color}.9}` } },
-    emphasized: { value: { _light: `{colors.${color}.10}`, _dark: `{colors.${color}.10}` } },
-    fg: { value: { _light: 'white', _dark: 'white' } },
-    text: { value: { _light: `{colors.${color}.a11}`, _dark: `{colors.${color}.a11}` } },
+    contrast,
+    solid,
+    emphasiszed,
   }
 }
 
