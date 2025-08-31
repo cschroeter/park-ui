@@ -3,6 +3,7 @@ import { colors as colorPalettes } from './colors'
 import { recipes, slotRecipes } from './recipes'
 import { animationStyles } from './theme/animation-styles'
 import { keyframes } from './theme/keyframes'
+import { layerStyles } from './theme/layer-styles'
 import { shadows } from './theme/semantic-tokens/shadows'
 import { colors } from './theme/tokens/colors'
 import { durations } from './theme/tokens/durations'
@@ -37,6 +38,7 @@ export const preset = definePreset({
       recipes,
       slotRecipes,
       keyframes,
+      layerStyles,
       tokens: {
         colors,
         easings,

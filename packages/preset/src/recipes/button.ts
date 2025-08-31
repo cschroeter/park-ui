@@ -30,6 +30,10 @@ export const button = defineRecipe({
       width: '1.1em',
       height: '1.1em',
     },
+    _disabled: {
+      cursor: 'not-allowed',
+      layerStyle: 'disabled',
+    },
   },
   defaultVariants: {
     variant: 'solid',
@@ -50,13 +54,7 @@ export const button = defineRecipe({
           outlineOffset: '2px',
         },
         _disabled: {
-          color: 'fg.disabled',
-          background: 'bg.disabled',
-          cursor: 'not-allowed',
-          _hover: {
-            color: 'fg.disabled',
-            background: 'bg.disabled',
-          },
+          layerStyle: 'disabled',
         },
       },
       outline: {
@@ -66,16 +64,6 @@ export const button = defineRecipe({
         colorPalette: 'gray',
         _hover: {
           background: 'colorPalette.a2',
-        },
-        _disabled: {
-          borderColor: 'border.disabled',
-          color: 'fg.disabled',
-          cursor: 'not-allowed',
-          _hover: {
-            background: 'transparent',
-            borderColor: 'border.disabled',
-            color: 'fg.disabled',
-          },
         },
         _focusVisible: {
           outline: '2px solid',
@@ -91,6 +79,9 @@ export const button = defineRecipe({
             borderColor: 'accent.emphasized',
           },
         },
+        _disabled: {
+          layerStyle: 'disabled',
+        },
       },
       ghost: {
         color: 'colorPalette.text',
@@ -101,29 +92,17 @@ export const button = defineRecipe({
         _selected: {
           background: 'colorPalette.a3',
         },
-        _disabled: {
-          color: 'fg.disabled',
-          cursor: 'not-allowed',
-          _hover: {
-            background: 'transparent',
-            color: 'fg.disabled',
-          },
-        },
         _focusVisible: {
           outline: '2px solid',
           outlineColor: 'colorPalette.default',
           outlineOffset: '2px',
         },
+        _disabled: {
+          layerStyle: 'disabled',
+        },
       },
       link: {
         verticalAlign: 'baseline',
-        _disabled: {
-          color: 'border.disabled',
-          cursor: 'not-allowed',
-          _hover: {
-            color: 'border.disabled',
-          },
-        },
         height: 'auto!',
         px: '0!',
         minW: '0!',
@@ -141,13 +120,7 @@ export const button = defineRecipe({
           outlineOffset: '2px',
         },
         _disabled: {
-          background: 'bg.disabled',
-          color: 'fg.disabled',
-          cursor: 'not-allowed',
-          _hover: {
-            background: 'bg.disabled',
-            color: 'fg.disabled',
-          },
+          layerStyle: 'disabled',
         },
       },
     },

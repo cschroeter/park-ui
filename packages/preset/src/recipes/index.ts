@@ -1,3 +1,4 @@
+import { absoluteCenter } from './absolute-center'
 import { accordion } from './accordion'
 import { alert } from './alert'
 import { avatar } from './avatar'
@@ -54,6 +55,7 @@ import { tooltip } from './tooltip'
 import { treeView } from './tree-view'
 
 export const recipes = {
+  absoluteCenter,
   badge,
   button,
   code,
