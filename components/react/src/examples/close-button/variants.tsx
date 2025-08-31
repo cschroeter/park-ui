@@ -5,10 +5,11 @@ export const App = () => {
   return (
     <Wrap gap="4">
       <CloseButton variant="solid" />
-      <CloseButton variant="outline" />
+      <CloseButton variant="surface" />
       <CloseButton variant="subtle" />
+      <CloseButton variant="outline" />
       <CloseButton variant="ghost" />
-      <CloseButton variant="link" />
+      <CloseButton variant="plain" />
     </Wrap>
   )
 }

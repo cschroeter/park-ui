@@ -10,35 +10,35 @@ export const code = defineRecipe({
     fontWeight: 'medium',
     fontFamily: 'code',
     gap: '1',
-    whiteSpace: 'nowrap',
+    whiteSpace: 'pre',
   },
   defaultVariants: {
-    size: 'sm',
+    size: 'md',
     variant: 'subtle',
   },
   variants: {
     variant: {
       solid: {
-        bg: 'colorPalette.bg.solid',
+        bg: 'colorPalette.solid',
         color: 'colorPalette.contrast',
-      },
-      subtle: {
-        bg: 'colorPalette.bg.subtle',
-        color: 'fg.default',
-      },
-      outline: {
-        color: 'colorPalette.contrast',
-        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.muted',
       },
       surface: {
-        bg: 'colorPalette.subtle',
-        color: 'colorPalette.contrast',
+        background: 'colorPalette.a2',
+        color: 'colorPalette.a11',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.muted',
+        shadowColor: 'colorPalette.a7',
+      },
+      subtle: {
+        background: 'colorPalette.a3',
+        color: 'colorPalette.a11',
+      },
+      outline: {
+        color: 'colorPalette.a11',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.a8',
       },
       plain: {
-        color: 'colorPalette.contrast',
+        color: 'colorPalette.a11',
       },
     },
     size: {

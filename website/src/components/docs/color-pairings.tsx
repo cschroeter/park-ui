@@ -63,7 +63,14 @@ export const ColorPairings = () => {
                   style={{
                     color: token.var(
                       match<string, Token>(color)
-                        .with('amber', 'lime', 'mint', 'sky', 'yellow', () => `colors.${color}.fg`)
+                        .with(
+                          'amber',
+                          'lime',
+                          'mint',
+                          'sky',
+                          'yellow',
+                          () => `colors.${color}.contrast`,
+                        )
                         .otherwise(() => 'colors.white'),
                     ),
                   }}

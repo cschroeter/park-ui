@@ -3,15 +3,26 @@ import { Wrap } from 'styled-system/jsx'
 import { IconButton } from '@/components/ui'
 
 export const App = () => {
-  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
-
   return (
     <Wrap gap="4">
-      {sizes.map((size) => (
-        <IconButton key={size} size={size} aria-label="Call us">
-          <PhoneIcon />
-        </IconButton>
-      ))}
+      <IconButton size="xs" aria-label="Call us">
+        <PhoneIcon />
+      </IconButton>
+      <IconButton size="sm" aria-label="Call us">
+        <PhoneIcon />
+      </IconButton>
+      <IconButton size="md" aria-label="Call us">
+        <PhoneIcon />
+      </IconButton>
+      <IconButton size="lg" aria-label="Call us">
+        <PhoneIcon />
+      </IconButton>
+      <IconButton size="xl" aria-label="Call us">
+        <PhoneIcon />
+      </IconButton>
+      <IconButton size="2xl" aria-label="Call us">
+        <PhoneIcon />
+      </IconButton>
     </Wrap>
   )
 }
