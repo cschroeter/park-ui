@@ -2,13 +2,12 @@ import { Wrap } from 'styled-system/jsx'
 import { Spinner } from '@/components/ui'
 
 export const App = () => {
-  const colorPalettes = ['red', 'green', 'blue', 'amber'] as const
-
   return (
     <Wrap gap="4">
-      {colorPalettes.map((colorPalette) => (
-        <Spinner key={colorPalette} color="colorPalette.default" colorPalette={colorPalette} />
-      ))}
+      <Spinner color="colorPalette.solid" colorPalette="red" />
+      <Spinner color="colorPalette.solid" colorPalette="green" />
+      <Spinner color="colorPalette.solid" colorPalette="blue" />
+      <Spinner color="colorPalette.solid" colorPalette="amber" />
     </Wrap>
   )
 }
