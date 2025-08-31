@@ -23,7 +23,7 @@ export default defineConfig({
     typographyPreset({ recipe: { notProse: true, semanticTokens: { defaults: false } } }),
   ],
   preflight: true,
-  include: ['./src/**/*.{ts,tsx}', '../components/react/src/examples/**/*.{ts,tsx}'],
+  include: ['./src/**/*.{ts,tsx}', '../components/react/src/**/*.{ts,tsx}'],
   jsxFramework: 'react',
   plugins: [plugin],
   theme: {
