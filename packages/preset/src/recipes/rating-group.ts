@@ -23,7 +23,7 @@ export const ratingGroup = defineSlotRecipe({
       transitionTimingFunction: 'default',
       fill: 'bg.emphasized',
       _highlighted: {
-        fill: 'colorPalette.default',
+        fill: 'colorPalette.solid',
       },
       _focusVisible: {
         outline: 'none',

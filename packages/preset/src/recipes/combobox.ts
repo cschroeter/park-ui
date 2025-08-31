@@ -83,7 +83,7 @@ export const combobox = defineSlotRecipe({
       textStyle: 'sm',
     },
     itemIndicator: {
-      color: 'colorPalette.default',
+      color: 'colorPalette.solid',
     },
   },
   defaultVariants: {

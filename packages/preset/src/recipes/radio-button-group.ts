@@ -58,12 +58,12 @@ export const radioButtonGroup = defineSlotRecipe({
       solid: {
         item: {
           _checked: {
-            background: 'colorPalette.default',
-            borderColor: 'colorPalette.default',
-            color: 'colorPalette.fg',
+            background: 'colorPalette.solid',
+            borderColor: 'colorPalette.solid',
+            color: 'colorPalette.contrast',
             _hover: {
-              color: 'colorPalette.fg',
-              background: 'colorPalette.default',
+              color: 'colorPalette.contrast',
+              background: 'colorPalette.solid',
             },
           },
         },
@@ -71,7 +71,7 @@ export const radioButtonGroup = defineSlotRecipe({
       outline: {
         item: {
           _checked: {
-            borderColor: 'colorPalette.default',
+            borderColor: 'colorPalette.solid',
             boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
             _hover: {
               background: 'initial',

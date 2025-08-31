@@ -23,7 +23,7 @@ export const segmentGroup = defineSlotRecipe({
       },
     },
     indicator: {
-      borderColor: 'colorPalette.default',
+      borderColor: 'colorPalette.solid',
       _horizontal: {
         bottom: '0',
         borderBottomWidth: '2px',

@@ -10,7 +10,13 @@ export const ClipboardButton = ({ value }: Props) => {
     <Clipboard.Root value={value}>
       <Clipboard.Control>
         <Clipboard.Trigger asChild>
-          <IconButton variant="ghost" size="sm" aria-label="Copy to clipboard" hideBelow="lg">
+          <IconButton
+            variant="ghost"
+            size="sm"
+            colorPalette="gray"
+            aria-label="Copy to clipboard"
+            hideBelow="lg"
+          >
             <Clipboard.Indicator copied={<CheckIcon />}>
               <CopyIcon />
             </Clipboard.Indicator>

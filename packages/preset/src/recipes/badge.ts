@@ -3,12 +3,14 @@ import { defineRecipe } from '@pandacss/dev'
 export const badge = defineRecipe({
   className: 'badge',
   base: {
-    alignItems: 'center',
-    borderRadius: 'full',
     display: 'inline-flex',
+    alignItems: 'center',
+    borderRadius: 'l2',
+    gap: '1',
     fontWeight: 'medium',
-    userSelect: 'none',
+    fontVariantNumeric: 'tabular-nums',
     whiteSpace: 'nowrap',
+    userSelect: 'none',
   },
   defaultVariants: {
     variant: 'subtle',
@@ -17,51 +19,62 @@ export const badge = defineRecipe({
   variants: {
     variant: {
       solid: {
-        background: 'colorPalette.default',
-        color: 'colorPalette.fg',
+        background: 'colorPalette.solid',
+        color: 'colorPalette.contrast',
+      },
+      surface: {
+        background: 'colorPalette.a2',
+        color: 'colorPalette.a11',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.a7',
       },
       subtle: {
-        background: 'bg.subtle',
-        borderColor: 'border.subtle',
-        borderWidth: '1px',
-        color: 'fg.default',
-        '& svg': {
-          color: 'fg.muted',
-        },
+        background: 'colorPalette.a3',
+        color: 'colorPalette.a11',
       },
       outline: {
-        color: 'fg.default',
-        borderWidth: '2px',
-        borderColor: 'border.default',
+        color: 'colorPalette.a11',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.a8',
       },
     },
     size: {
       sm: {
-        textStyle: 'xs',
-        px: '2',
-        h: '5',
-        gap: '1',
-        '& svg': {
-          width: '3',
-          height: '3',
+        fontSize: '11px',
+        px: '1.5',
+        h: '4',
+        gap: '0.5',
+        _icon: {
+          width: '2',
+          height: '2',
         },
       },
       md: {
         textStyle: 'xs',
+        px: '2',
+        h: '5',
+        gap: '1',
+        _icon: {
+          width: '3',
+          height: '3',
+        },
+      },
+      lg: {
+        textStyle: 'xs',
         px: '2.5',
         h: '6',
         gap: '1.5',
-        '& svg': {
+        _icon: {
           width: '4',
           height: '4',
         },
       },
-      lg: {
+      xl: {
         textStyle: 'sm',
         px: '3',
         h: '7',
         gap: '1.5',
-        '& svg': {
+        _icon: {
           width: '4',
           height: '4',
         },

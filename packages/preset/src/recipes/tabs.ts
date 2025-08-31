@@ -113,7 +113,7 @@ export const tabs = defineSlotRecipe({
           },
         },
         indicator: {
-          background: 'colorPalette.default',
+          background: 'colorPalette.solid',
           _horizontal: {
             bottom: '0',
             height: '2px',

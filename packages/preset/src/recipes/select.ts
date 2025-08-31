@@ -83,7 +83,7 @@ export const select = defineSlotRecipe({
       textStyle: 'sm',
     },
     itemIndicator: {
-      color: 'colorPalette.default',
+      color: 'colorPalette.solid',
     },
     label: {
       color: 'fg.default',
@@ -130,7 +130,7 @@ export const select = defineSlotRecipe({
         trigger: {
           borderWidth: '1px',
           _focus: {
-            borderColor: 'colorPalette.default',
+            borderColor: 'colorPalette.solid',
             boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
           },
         },

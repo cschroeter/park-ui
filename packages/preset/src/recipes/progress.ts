@@ -23,7 +23,7 @@ export const progress = defineSlotRecipe({
       width: '100%',
     },
     range: {
-      backgroundColor: 'colorPalette.default',
+      backgroundColor: 'colorPalette.solid',
       height: '100%',
       transition: 'width 0.2s ease-in-out',
       '--translate-x': '-100%',
@@ -32,7 +32,7 @@ export const progress = defineSlotRecipe({
       stroke: 'bg.emphasized',
     },
     circleRange: {
-      stroke: 'colorPalette.default',
+      stroke: 'colorPalette.solid',
       transitionProperty: 'stroke-dasharray, stroke',
       transitionDuration: '0.6s',
     },

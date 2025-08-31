@@ -34,11 +34,11 @@ export const slider = defineSlotRecipe({
       flex: '1',
     },
     range: {
-      background: 'colorPalette.default',
+      background: 'colorPalette.solid',
     },
     thumb: {
       background: 'bg.default',
-      borderColor: 'colorPalette.default',
+      borderColor: 'colorPalette.solid',
       borderRadius: 'full',
       borderWidth: '2px',
       boxShadow: 'sm',
@@ -55,7 +55,7 @@ export const slider = defineSlotRecipe({
     marker: {
       '--before-background': {
         _light: 'white',
-        _dark: 'colors.colorPalette.fg',
+        _dark: 'colors.colorPalette.contrast',
       },
       color: 'fg.muted',
       _before: {

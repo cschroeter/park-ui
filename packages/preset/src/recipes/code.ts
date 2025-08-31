@@ -20,25 +20,25 @@ export const code = defineRecipe({
     variant: {
       solid: {
         bg: 'colorPalette.bg.solid',
-        color: 'colorPalette.fg',
+        color: 'colorPalette.contrast',
       },
       subtle: {
         bg: 'colorPalette.bg.subtle',
         color: 'fg.default',
       },
       outline: {
-        color: 'colorPalette.fg',
+        color: 'colorPalette.contrast',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
         shadowColor: 'colorPalette.muted',
       },
       surface: {
         bg: 'colorPalette.subtle',
-        color: 'colorPalette.fg',
+        color: 'colorPalette.contrast',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
         shadowColor: 'colorPalette.muted',
       },
       plain: {
-        color: 'colorPalette.fg',
+        color: 'colorPalette.contrast',
       },
     },
     size: {

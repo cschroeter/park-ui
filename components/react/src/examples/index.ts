@@ -1,4 +1,5 @@
 export * as Avatar from './avatar/avatar.stories'
+export * as Badge from './badge/badge.stories'
 export * as Button from './button/button.stories'
 export * as CloseButton from './close-button/close-button.stories'
 export * as Code from './code/code.stories'

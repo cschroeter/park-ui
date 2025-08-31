@@ -15,7 +15,7 @@ export const link = defineRecipe({
     transitionProperty: 'text-decoration-color',
     transitionTimingFunction: 'default',
     _hover: {
-      textDecorationColor: 'colorPalette.default',
+      textDecorationColor: 'colorPalette.solid',
     },
     '& svg': {
       width: '1em',

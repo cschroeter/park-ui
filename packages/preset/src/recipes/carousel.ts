@@ -27,7 +27,7 @@ export const carousel = defineSlotRecipe({
       background: 'gray.6',
       cursor: 'pointer',
       _current: {
-        background: 'colorPalette.default',
+        background: 'colorPalette.solid',
       },
       _focusVisible: {
         outlineOffset: '2px',

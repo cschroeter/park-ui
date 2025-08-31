@@ -20,7 +20,7 @@ export const textarea = defineRecipe({
       cursor: 'not-allowed',
     },
     _focus: {
-      borderColor: 'colorPalette.default',
+      borderColor: 'colorPalette.solid',
       boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
     },
     _invalid: {
