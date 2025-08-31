@@ -63,6 +63,7 @@ export const preset = definePreset({
           },
           bg: {
             default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
+            subtle: { value: { _light: '{colors.gray.2}', _dark: '{colors.gray.3}' } },
           },
         },
         shadows,

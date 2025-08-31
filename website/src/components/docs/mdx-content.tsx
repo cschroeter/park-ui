@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react'
 import * as runtime from 'react/jsx-runtime'
+import { Code } from '@/components/ui'
 import type { SourceCode } from '~/types'
 import { PageLink } from '../navigation/page-link'
 import { Step, Steps } from '../ui/steps'
@@ -38,6 +39,7 @@ const sharedComponents = {
   Step,
   Steps,
   a: PageLink,
+  code: Code,
   callout: Callout,
   pre: Pre,
 }

@@ -1,6 +1,7 @@
 export * as Avatar from './avatar/avatar.stories'
 export * as Button from './button/button.stories'
 export * as CloseButton from './close-button/close-button.stories'
+export * as Code from './code/code.stories'
 export * as Drawer from './drawer/drawer.stories'
 export * as IconButton from './icon-button/icon-button.stories'
 export * as Spinner from './spinner/spinner.stories'

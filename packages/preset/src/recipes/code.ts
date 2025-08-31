@@ -4,24 +4,42 @@ export const code = defineRecipe({
   className: 'code',
   base: {
     alignItems: 'center',
-    bg: 'bg.subtle',
     borderRadius: 'l2',
-    color: 'fg.default',
     display: 'inline-flex',
-    fontWeight: 'medium!',
-    fontFamily: 'var(--fonts-code)',
-    whiteSpace: 'pre',
+    fontVariantNumeric: 'tabular-nums',
+    fontWeight: 'medium',
+    fontFamily: 'code',
+    gap: '1',
+    whiteSpace: 'nowrap',
   },
   defaultVariants: {
-    size: 'md',
-    variant: 'outline',
+    size: 'sm',
+    variant: 'subtle',
   },
   variants: {
     variant: {
-      outline: {
-        borderWidth: '1px',
+      solid: {
+        bg: 'colorPalette.bg.solid',
+        color: 'colorPalette.fg',
       },
-      ghost: {},
+      subtle: {
+        bg: 'colorPalette.bg.subtle',
+        color: 'fg.default',
+      },
+      outline: {
+        color: 'colorPalette.fg',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.muted',
+      },
+      surface: {
+        bg: 'colorPalette.subtle',
+        color: 'colorPalette.fg',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.muted',
+      },
+      plain: {
+        color: 'colorPalette.fg',
+      },
     },
     size: {
       sm: {
