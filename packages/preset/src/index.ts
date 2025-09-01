@@ -25,6 +25,10 @@ export const preset = definePreset({
       '*::selection': {
         bg: 'colorPalette.a3',
       },
+      '*::placeholder': {
+        opacity: 1,
+        color: 'gray.10',
+      },
     },
   },
   conditions: {

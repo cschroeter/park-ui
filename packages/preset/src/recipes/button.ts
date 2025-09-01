@@ -75,7 +75,7 @@ export const button = defineRecipe({
       outline: {
         color: 'colorPalette.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.a8',
+        shadowColor: 'colorPalette.a7',
         _hover: {
           background: 'colorPalette.a2',
         },

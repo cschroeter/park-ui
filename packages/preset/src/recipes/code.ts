@@ -35,7 +35,7 @@ export const code = defineRecipe({
       outline: {
         color: 'colorPalette.a11',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.a8',
+        shadowColor: 'colorPalette.a7',
       },
       plain: {
         color: 'colorPalette.a11',
