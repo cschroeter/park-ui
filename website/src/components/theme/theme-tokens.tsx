@@ -52,12 +52,12 @@ const generateColorVariables = () => {
 const generateRadiusVariables = () => {
   const radiusConfigs = [
     { size: 'none', l3: 'none', l2: 'none', l1: 'none' },
-    { size: 'xs', l3: '2xs', l2: 'xs', l1: 'sm' },
-    { size: 'sm', l3: 'xs', l2: 'sm', l1: 'md' },
-    { size: 'md', l3: 'sm', l2: 'md', l1: 'lg' },
-    { size: 'lg', l3: 'md', l2: 'lg', l1: 'xl' },
-    { size: 'xl', l3: 'lg', l2: 'xl', l1: '2xl' },
-    { size: '2xl', l3: 'xl', l2: '2xl', l1: '3xl' },
+    { size: 'xs', l1: '2xs', l2: 'xs', l3: 'sm' },
+    { size: 'sm', l1: 'xs', l2: 'sm', l3: 'md' },
+    { size: 'md', l1: 'sm', l2: 'md', l3: 'lg' },
+    { size: 'lg', l1: 'md', l2: 'lg', l3: 'xl' },
+    { size: 'xl', l1: 'lg', l2: 'xl', l3: '2xl' },
+    { size: '2xl', l1: 'xl', l2: '2xl', l3: '3xl' },
   ]
 
   return radiusConfigs
