@@ -1,93 +1,73 @@
-import { accentColors, grayColors } from '~/lib/theme'
+import { accentColors, type Color, grayColors } from '~/lib/theme'
 
 export const ThemeTokens = () => {
-  const accentBaseKeys = [
-    ...Array.from({ length: 12 }, (_, i) => `${i + 1}`),
-    ...Array.from({ length: 12 }, (_, i) => `a${i + 1}`),
-    'contrast',
-    'fg',
-    'solid',
-    'emphasiszed',
-  ]
-
-  const grayBaseKeys = [
-    ...Array.from({ length: 12 }, (_, i) => `${i + 1}`),
-    ...Array.from({ length: 12 }, (_, i) => `a${i + 1}`),
-  ]
-
-  const accentContent = accentColors.reduce(
-    (acc, color) => {
-      acc[`&[data-accent-color='${color}']`] = Object.fromEntries(
-        accentBaseKeys.map((k) => [`--colors-color-palette-${k}`, `var(--colors-${color}-${k})`]),
-      )
-      return acc
-    },
-    {} as Record<string, Record<string, string>>,
-  )
-
-  const grayContent = grayColors.reduce(
-    (acc, color) => {
-      acc[`&[data-gray-color='${color}']`] = Object.fromEntries(
-        grayBaseKeys.map((k) => [`--colors-gray-${k}`, `var(--colors-${color}-${k})`]),
-      )
-      return acc
-    },
-    {} as Record<string, Record<string, string>>,
-  )
-
-  const allContent = { ...accentContent, ...grayContent }
-
   return (
     <style>{`
       @layer tokens {
-  :where(:root, .light, .dark) {
-    ${Object.entries(allContent)
-      .map(
-        ([selector, vars]) =>
-          `${selector} {
-        ${Object.entries(vars)
-          .map(([varName, varValue]) => `${varName}: ${varValue};`)
-          .join('\n')}
-      }`,
-      )
-      .join('\n')}
-
-    &[data-radius="none"] {
-      --radii-l3: var(--radii-none);
-      --radii-l2: var(--radii-none);
-      --radii-l1: var(--radii-none);
-    }
-    &[data-radius="xs"] {
-        --radii-l3: var(--radii-2xs);
-        --radii-l2: var(--radii-xs);
-        --radii-l1: var(--radii-sm);
-    }
-    &[data-radius="sm"] {
-      --radii-l3: var(--radii-xs);
-      --radii-l2: var(--radii-sm);
-      --radii-l1: var(--radii-md);
-    }
-    &[data-radius="md"] {
-      --radii-l3: var(--radii-sm);
-      --radii-l2: var(--radii-md);
-      --radii-l1: var(--radii-lg);
-    }
-    &[data-radius="lg"] {
-      --radii-l3: var(--radii-md);
-      --radii-l2: var(--radii-lg);
-      --radii-l1: var(--radii-xl);
-    }
-    &[data-radius="xl"] {
-      --radii-l3: var(--radii-lg);
-      --radii-l2: var(--radii-xl);
-      --radii-l1: var(--radii-2xl);
-    }
-    &[data-radius="2xl"] {
-      --radii-l3: var(--radii-xl);
-      --radii-l2: var(--radii-2xl);
-      --radii-l1: var(--radii-3xl);
-    }
-  }
-}`}</style>
+        :where(:root, .light, .dark) {
+          ${generateColorVariables()}
+          ${generateRadiusVariables()}
+        }
+      }
+    `}</style>
   )
+}
+
+const createBaseKeys = (includeSpecialKeys = false) => {
+  const numberedKeys = Array.from({ length: 12 }, (_, i) => `${i + 1}`)
+  const alphaKeys = Array.from({ length: 12 }, (_, i) => `a${i + 1}`)
+  const specialKeys = includeSpecialKeys ? ['contrast', 'fg', 'solid', 'emphasiszed'] : []
+
+  return [...numberedKeys, ...alphaKeys, ...specialKeys]
+}
+
+const generateColorPalette = (
+  colors: readonly Color[],
+  dataAttribute: string,
+  variablePrefix: string,
+  keys: string[],
+) => {
+  return colors
+    .map((color) => {
+      const selector = `&[data-${dataAttribute}='${color}']`
+      const variables = keys
+        .map((key) => `--colors-${variablePrefix}-${key}: var(--colors-${color}-${key});`)
+        .join('\n          ')
+
+      return `${selector} {\n          ${variables}\n        }`
+    })
+    .join('\n        ')
+}
+
+const generateColorVariables = () => {
+  const accentKeys = createBaseKeys(true)
+  const grayKeys = createBaseKeys(false)
+
+  const accentVars = generateColorPalette(accentColors, 'accent-color', 'color-palette', accentKeys)
+  const grayVars = generateColorPalette(grayColors, 'gray-color', 'gray', grayKeys)
+
+  return `${accentVars}\n        ${grayVars}`
+}
+
+const generateRadiusVariables = () => {
+  const radiusConfigs = [
+    { size: 'none', l3: 'none', l2: 'none', l1: 'none' },
+    { size: 'xs', l3: '2xs', l2: 'xs', l1: 'sm' },
+    { size: 'sm', l3: 'xs', l2: 'sm', l1: 'md' },
+    { size: 'md', l3: 'sm', l2: 'md', l1: 'lg' },
+    { size: 'lg', l3: 'md', l2: 'lg', l1: 'xl' },
+    { size: 'xl', l3: 'lg', l2: 'xl', l1: '2xl' },
+    { size: '2xl', l3: 'xl', l2: '2xl', l1: '3xl' },
+  ]
+
+  return radiusConfigs
+    .map(
+      ({ size, l3, l2, l1 }) =>
+        `&[data-radius="${size}"] {
+        --radii-l3: var(--radii-${l3});
+        --radii-l2: var(--radii-${l2});
+        --radii-l1: var(--radii-${l1});
+      }`,
+    )
+    .join('\n        ')
 }

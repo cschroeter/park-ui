@@ -20,141 +20,165 @@ export const slider = defineSlotRecipe({
       display: 'flex',
       flexDirection: 'column',
       gap: '1',
+      textStyle: 'sm',
+      position: 'relative',
+      isolation: 'isolate',
+      touchAction: 'none',
       width: 'full',
     },
+    label: {
+      fontWeight: 'medium',
+      textStyle: 'sm',
+    },
     control: {
-      position: 'relative',
-      display: 'flex',
+      display: 'inline-flex',
       alignItems: 'center',
     },
     track: {
-      backgroundColor: 'bg.emphasized',
-      borderRadius: 'full',
       overflow: 'hidden',
+      borderRadius: 'full',
       flex: '1',
     },
     range: {
-      background: 'colorPalette.solid',
-    },
-    thumb: {
-      background: 'bg.default',
-      borderColor: 'colorPalette.solid',
-      borderRadius: 'full',
-      borderWidth: '2px',
-      boxShadow: 'sm',
-      outline: 'none',
-      zIndex: '1',
-    },
-    label: {
-      color: 'fg.default',
-      fontWeight: 'medium',
+      width: 'inherit',
+      height: 'inherit',
     },
     markerGroup: {
-      mt: '-1',
+      position: 'absolute!',
+      zIndex: '1',
     },
     marker: {
-      '--before-background': {
-        _light: 'white',
-        _dark: 'colors.colorPalette.contrast',
-      },
-      color: 'fg.muted',
-      _before: {
-        background: 'white',
-        borderRadius: 'full',
-        content: "''",
-        display: 'block',
-        left: '50%',
-        position: 'relative',
-        transform: 'translateX(-50%)',
-      },
-      _underValue: {
-        _before: {
-          background: 'var(--before-background)',
-        },
+      '--marker-bg': { base: 'white', _underValue: 'colors.bg' },
+      display: 'flex',
+      alignItems: 'center',
+      gap: 'calc(var(--slider-thumb-size) / 2)',
+      color: 'gray.11',
+      textStyle: 'xs',
+    },
+    markerIndicator: {
+      width: 'var(--slider-marker-size)',
+      height: 'var(--slider-marker-size)',
+      borderRadius: 'full',
+      bg: 'var(--marker-bg)',
+    },
+    thumb: {
+      width: 'var(--slider-thumb-size)',
+      height: 'var(--slider-thumb-size)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      outline: 0,
+      zIndex: '2',
+      borderRadius: 'full',
+      _focusVisible: {
+        ring: '2px',
+        ringColor: 'colorPalette.solid',
+        ringOffset: '2px',
+        ringOffsetColor: 'bg',
       },
     },
   },
   defaultVariants: {
     size: 'md',
+    variant: 'outline',
+    orientation: 'horizontal',
   },
   variants: {
     size: {
       sm: {
-        control: {
-          height: '4',
-        },
-        range: {
-          height: '1.5',
-        },
-        track: {
-          height: '1.5',
-        },
-        thumb: {
-          height: '4',
-          width: '4',
-        },
-        marker: {
-          _before: {
-            height: '1',
-            top: '-2.5',
-            width: '1',
-          },
-          textStyle: 'sm',
-        },
-        label: {
-          textStyle: 'sm',
+        root: {
+          '--slider-thumb-size': 'sizes.5',
+          '--slider-track-size': 'sizes.2',
+          '--slider-marker-center': '8px',
+          '--slider-marker-size': 'sizes.1',
+          '--slider-marker-inset': '4px',
         },
       },
       md: {
-        control: {
-          height: '5',
-        },
-        range: {
-          height: '2',
-        },
-        track: {
-          height: '2',
-        },
-        thumb: {
-          height: '5',
-          width: '5',
-        },
-        marker: {
-          _before: {
-            height: '1',
-            top: '-3',
-            width: '1',
-          },
-          textStyle: 'sm',
-        },
-        label: {
-          textStyle: 'sm',
+        root: {
+          '--slider-thumb-size': 'sizes.5',
+          '--slider-track-size': 'sizes.2',
+          '--slider-marker-center': '8px',
+          '--slider-marker-size': 'sizes.1',
+          '--slider-marker-inset': '4px',
         },
       },
       lg: {
-        control: {
-          height: '6',
+        root: {
+          '--slider-thumb-size': 'sizes.5',
+          '--slider-track-size': 'sizes.2',
+          '--slider-marker-center': '8px',
+          '--slider-marker-size': 'sizes.1',
+          '--slider-marker-inset': '4px',
+        },
+      },
+    },
+    variant: {
+      outline: {
+        thumb: {
+          bg: 'colorPalette.contrast',
+          borderWidth: '2px',
+          borderColor: 'colorPalette.solid',
+          boxShadow: 'xs',
         },
         range: {
-          height: '2.5',
+          bg: 'colorPalette.solid',
         },
         track: {
-          height: '2.5',
+          bg: 'gray.a4',
+        },
+      },
+    },
+    orientation: {
+      vertical: {
+        root: {
+          display: 'inline-flex',
+        },
+        control: {
+          flexDirection: 'column',
+          height: '100%',
+          minWidth: 'var(--slider-thumb-size)',
+          '&[data-has-mark-label], &:has(.chakra-slider__marker-label)': {
+            marginEnd: '4',
+          },
+        },
+        track: {
+          width: 'var(--slider-track-size)',
         },
         thumb: {
-          height: '6',
-          width: '6',
+          left: '50%',
+          translate: '-50% 0',
+        },
+        markerGroup: {
+          insetStart: 'var(--slider-marker-center)',
+          insetBlock: 'var(--slider-marker-inset)',
         },
         marker: {
-          _before: {
-            height: '1.5',
-            top: '-15px',
-            width: '1.5',
-          },
-          textStyle: 'md',
+          flexDirection: 'row',
         },
-        label: {
-          textStyle: 'md',
+      },
+      horizontal: {
+        control: {
+          flexDirection: 'row',
+          width: '100%',
+          minHeight: 'var(--slider-thumb-size)',
+          '&[data-has-mark-label], &:has(.chakra-slider__marker-label)': {
+            marginBottom: '4',
+          },
+        },
+        track: {
+          height: 'var(--slider-track-size)',
+        },
+        thumb: {
+          top: '50%',
+          translate: '0 -50%',
+        },
+        markerGroup: {
+          top: 'var(--slider-marker-center)',
+          insetInline: 'var(--slider-marker-inset)',
+        },
+        marker: {
+          flexDirection: 'column',
         },
       },
     },
