@@ -37,23 +37,3 @@ export type Color = AccentColor | GrayColor
 
 export type BorderRadius = (typeof radii)[number]
 export const radii = ['none', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
-
-const baseKeys = [
-  ...Array.from({ length: 12 }, (_, i) => `${i + 1}`),
-  ...Array.from({ length: 12 }, (_, i) => `a${i + 1}`),
-  'contrast',
-  'fg',
-  'solid',
-  'emphasiszed',
-]
-
-export const createAccentColorSelectors = () =>
-  [...accentColors].reduce(
-    (acc, color) => ({
-      ...acc,
-      [`&[data-accent-color='${color}']`]: Object.fromEntries(
-        baseKeys.map((k) => [`--colors-color-palette-${k}`, `var(--colors-${color}-${k})`]),
-      ),
-    }),
-    {},
-  )

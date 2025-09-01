@@ -54,18 +54,17 @@ export const ThemeDrawer = ({ hero }: Props) => {
               </Drawer.CloseTrigger>
             </Drawer.Header>
             <Drawer.Body>
-              <Stack flex="1" gap="4">
+              <Stack flex="1" gap="4" alignItems="start">
+                <ColorModeButton />
                 <FontFamilySelect font={font} onValueChange={setFont} />
                 <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
                 <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
-                <ColorModeButton />
                 <BorderRadiusSlider radius={radius} onValueChange={setRadius} />
-                <pre>{JSON.stringify({ font, radius, grayColor, accentColor }, null, 2)}</pre>
               </Stack>
             </Drawer.Body>
             <Drawer.Footer>
               <HStack gap="3">
-                <Button variant="outline" onClick={reset}>
+                <Button variant="subtle" onClick={reset} colorPalette="gray">
                   <Undo2Icon />
                   Reset
                 </Button>

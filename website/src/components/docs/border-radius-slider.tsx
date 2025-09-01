@@ -16,6 +16,7 @@ export const BorderRadiusSlider = (props: Props) => {
       value={[radii.indexOf(radius)]}
       onValueChange={(e) => onValueChange(radii[e.value[0]])}
     >
+      <Slider.Label>Radius</Slider.Label>
       <Slider.Control>
         <Slider.Track>
           <Slider.Range />

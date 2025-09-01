@@ -14,7 +14,7 @@ export const GrayColorPicker = (props: Props) => {
   const { grayColor, onValueChange } = props
 
   return (
-    <Stack gap="1.5">
+    <Stack gap="1.5" width="full">
       <Text textStyle="sm" fontWeight="medium">
         Gray Color
       </Text>

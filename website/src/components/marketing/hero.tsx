@@ -13,7 +13,7 @@ export const Hero = () => {
       <HeroItem>
         <Stack gap={{ base: '4', md: '6' }} align="flex-start">
           <NextLink href="/docs/overview/figma">
-            <Badge size="lg" variant="surface">
+            <Badge size="xl">
               <SiFigma /> Checkout the new Park UI Figma Kit <ArrowRightIcon />
             </Badge>
           </NextLink>

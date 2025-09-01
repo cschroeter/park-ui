@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css'
 import { Navbar } from '~/components/navigation/navbar'
+import { ThemeTokens } from '~/components/theme/theme-tokens'
 import { dmSans, inter, outfit, roboto, space } from './fonts'
 import './index.css'
 
@@ -29,6 +30,9 @@ export default async function RootLayout(props: PropsWithChildren) {
         dmSans.variable,
       )}
     >
+      <head>
+        <ThemeTokens />
+      </head>
       <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <Navbar />
