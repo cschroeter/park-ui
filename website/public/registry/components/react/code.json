@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "code.tsx",
-      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.div, code)\n",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { code } from 'styled-system/recipes'\n\nexport type CodeProps = ComponentProps<typeof Code>\nexport const Code = styled(ark.code, code)\n",
       "indexFile": {
         "exports": [
           {
