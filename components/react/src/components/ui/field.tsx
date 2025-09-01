@@ -13,5 +13,6 @@ export const RootProvider = withProvider(Field.RootProvider, 'root')
 export const ErrorText = withContext(Field.ErrorText, 'errorText')
 export const HelperText = withContext(Field.HelperText, 'helperText')
 export const Label = withContext(Field.Label, 'label')
+export const RequiredIndicator = withContext(Field.RequiredIndicator, 'requiredIndicator')
 
 export const Context = Field.Context

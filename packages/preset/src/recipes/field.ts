@@ -2,7 +2,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const field = defineSlotRecipe({
   className: 'field',
-  slots: ['root', 'label', 'helperText', 'errorText'],
+  slots: ['root', 'label', 'helperText', 'errorText', 'requiredIndicator'],
   base: {
     root: {
       display: 'flex',
@@ -10,7 +10,7 @@ export const field = defineSlotRecipe({
       gap: '1.5',
     },
     label: {
-      color: 'fg.default',
+      color: 'gray.12',
       fontWeight: 'medium',
       textStyle: 'sm',
       _disabled: {
@@ -18,7 +18,7 @@ export const field = defineSlotRecipe({
       },
     },
     helperText: {
-      color: 'fg.muted',
+      color: 'gray.11',
       textStyle: 'sm',
       _disabled: {
         color: 'fg.disabled',
