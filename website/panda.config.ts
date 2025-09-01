@@ -60,7 +60,7 @@ export default defineConfig({
         fontFamily: 'body',
       },
       h2: {
-        fontWeight: 'semibold!',
+        fontWeight: 'semibold',
       },
       pre: {
         background: 'transparent!',
