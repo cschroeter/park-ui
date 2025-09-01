@@ -51,7 +51,7 @@ export const button = defineRecipe({
       },
       surface: {
         background: 'colorPalette.a2',
-        color: 'colorPalette.a11',
+        color: 'colorPalette.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
         shadowColor: 'colorPalette.a7',
         _hover: {
@@ -64,7 +64,7 @@ export const button = defineRecipe({
       },
       subtle: {
         background: 'colorPalette.a3',
-        color: 'colorPalette.a11',
+        color: 'colorPalette.fg',
         _hover: {
           background: 'colorPalette.a4',
         },
@@ -73,7 +73,7 @@ export const button = defineRecipe({
         },
       },
       outline: {
-        color: 'colorPalette.a11',
+        color: 'colorPalette.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
         shadowColor: 'colorPalette.a8',
         _hover: {
@@ -84,7 +84,7 @@ export const button = defineRecipe({
         },
       },
       ghost: {
-        color: 'colorPalette.a11',
+        color: 'colorPalette.fg',
         _hover: {
           background: 'colorPalette.a3',
         },
@@ -96,7 +96,7 @@ export const button = defineRecipe({
         },
       },
       plain: {
-        color: 'colorPalette.a11',
+        color: 'colorPalette.fg',
       },
     },
     size: {

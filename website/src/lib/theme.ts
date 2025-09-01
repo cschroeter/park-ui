@@ -42,6 +42,7 @@ const baseKeys = [
   ...Array.from({ length: 12 }, (_, i) => `${i + 1}`),
   ...Array.from({ length: 12 }, (_, i) => `a${i + 1}`),
   'contrast',
+  'fg',
   'solid',
   'emphasiszed',
 ]

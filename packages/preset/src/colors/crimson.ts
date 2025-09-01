@@ -26,6 +26,7 @@ export const crimson = defineSemanticTokens.colors({
   a11: { value: { _light: '#c4004fe2', _dark: '#ff92ad' } },
   a12: { value: { _light: '#530026e9', _dark: '#ffd5eafd' } },
   contrast: { value: { _light: 'white', _dark: 'white' } },
+  fg: { value: { _light: '{colors.crimson.a11}', _dark: '{colors.crimson.a11}' } },
   solid: { value: { _light: '{colors.crimson.9}', _dark: '{colors.crimson.9}' } },
   emphasiszed: { value: { _light: '{colors.crimson.10}', _dark: '{colors.crimson.10}' } },
 })

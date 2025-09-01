@@ -26,6 +26,7 @@ export const mint = defineSemanticTokens.colors({
   a11: { value: { _light: '#007763fd', _dark: '#67ffded2' } },
   a12: { value: { _light: '#00312ae9', _dark: '#cbfee9f5' } },
   contrast: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } },
+  fg: { value: { _light: '{colors.mint.a11}', _dark: '{colors.mint.a11}' } },
   solid: { value: { _light: '{colors.mint.9}', _dark: '{colors.mint.9}' } },
   emphasiszed: { value: { _light: '{colors.mint.10}', _dark: '{colors.mint.10}' } },
 })

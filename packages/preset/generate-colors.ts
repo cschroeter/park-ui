@@ -37,6 +37,11 @@ const generateSemanticTokens = (color: string) => {
     ? { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } }
     : { value: { _light: 'white', _dark: 'white' } }
 
+  const fg =
+    color === 'neutral'
+      ? { value: { _light: `{colors.gray.a12}`, _dark: `{colors.gray.a12}` } }
+      : { value: { _light: `{colors.${color}.a11}`, _dark: `{colors.${color}.a11}` } }
+
   const solid =
     color === 'neutral'
       ? { value: { _light: `black`, _dark: `white` } }
@@ -51,6 +56,7 @@ const generateSemanticTokens = (color: string) => {
   return {
     ...semanticTokens,
     contrast,
+    fg,
     solid,
     emphasiszed,
   }

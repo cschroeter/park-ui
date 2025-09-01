@@ -26,6 +26,7 @@ export const sand = defineSemanticTokens.colors({
   a11: { value: { _light: '#080800a1', _dark: '#fffcf4b0' } },
   a12: { value: { _light: '#060500e3', _dark: '#fffffded' } },
   contrast: { value: { _light: 'white', _dark: 'white' } },
+  fg: { value: { _light: '{colors.sand.a11}', _dark: '{colors.sand.a11}' } },
   solid: { value: { _light: '{colors.sand.9}', _dark: '{colors.sand.9}' } },
   emphasiszed: { value: { _light: '{colors.sand.10}', _dark: '{colors.sand.10}' } },
 })

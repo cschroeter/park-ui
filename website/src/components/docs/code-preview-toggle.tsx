@@ -9,7 +9,6 @@ export const CodePreviewToggle = (props: ButtonProps) => {
     <Button
       size="xs"
       variant="ghost"
-      colorPalette="gray"
       fontSize="13px"
       onClick={() => (tabs.value ? tabs.clearValue() : tabs.setValue('react'))}
       {...props}

@@ -26,6 +26,7 @@ export const sage = defineSemanticTokens.colors({
   a11: { value: { _light: '#000a07a0', _dark: '#f4fefbb0' } },
   a12: { value: { _light: '#000805e5', _dark: '#fdfffeed' } },
   contrast: { value: { _light: 'white', _dark: 'white' } },
+  fg: { value: { _light: '{colors.sage.a11}', _dark: '{colors.sage.a11}' } },
   solid: { value: { _light: '{colors.sage.9}', _dark: '{colors.sage.9}' } },
   emphasiszed: { value: { _light: '{colors.sage.10}', _dark: '{colors.sage.10}' } },
 })

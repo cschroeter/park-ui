@@ -26,6 +26,7 @@ export const orange = defineSemanticTokens.colors({
   a11: { value: { _light: '#cc4e00', _dark: '#ffa057' } },
   a12: { value: { _light: '#431200e2', _dark: '#ffe0c2' } },
   contrast: { value: { _light: 'white', _dark: 'white' } },
+  fg: { value: { _light: '{colors.orange.a11}', _dark: '{colors.orange.a11}' } },
   solid: { value: { _light: '{colors.orange.9}', _dark: '{colors.orange.9}' } },
   emphasiszed: { value: { _light: '{colors.orange.10}', _dark: '{colors.orange.10}' } },
 })

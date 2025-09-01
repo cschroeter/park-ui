@@ -26,6 +26,7 @@ export const grass = defineSemanticTokens.colors({
   a11: { value: { _light: '#006514d5', _dark: '#89ff9fcd' } },
   a12: { value: { _light: '#002006df', _dark: '#ceffceef' } },
   contrast: { value: { _light: 'white', _dark: 'white' } },
+  fg: { value: { _light: '{colors.grass.a11}', _dark: '{colors.grass.a11}' } },
   solid: { value: { _light: '{colors.grass.9}', _dark: '{colors.grass.9}' } },
   emphasiszed: { value: { _light: '{colors.grass.10}', _dark: '{colors.grass.10}' } },
 })

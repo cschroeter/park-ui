@@ -21,7 +21,7 @@ export const textarea = defineRecipe({
     },
     _focus: {
       borderColor: 'colorPalette.solid',
-      boxShadow: '0 0 0 1px var(--colors-color-palette-default)',
+      boxShadow: '0 0 0 1px var(--colors-color-palette-solid)',
     },
     _invalid: {
       borderColor: 'fg.error',

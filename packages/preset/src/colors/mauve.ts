@@ -26,6 +26,7 @@ export const mauve = defineSemanticTokens.colors({
   a11: { value: { _light: '#0400119c', _dark: '#f5f1ffb7' } },
   a12: { value: { _light: '#020008e0', _dark: '#fdfdffef' } },
   contrast: { value: { _light: 'white', _dark: 'white' } },
+  fg: { value: { _light: '{colors.mauve.a11}', _dark: '{colors.mauve.a11}' } },
   solid: { value: { _light: '{colors.mauve.9}', _dark: '{colors.mauve.9}' } },
   emphasiszed: { value: { _light: '{colors.mauve.10}', _dark: '{colors.mauve.10}' } },
 })
