@@ -1,4 +1,5 @@
 'use client'
+import { ark } from '@ark-ui/react/factory'
 import { Slider, useSliderContext } from '@ark-ui/react/slider'
 import { type ComponentProps, forwardRef } from 'react'
 import { createStyleContext } from 'styled-system/jsx'
@@ -11,7 +12,7 @@ export const Control = withContext(Slider.Control, 'control')
 export const DraggingIndicator = withContext(Slider.DraggingIndicator, 'draggingIndicator')
 export const Label = withContext(Slider.Label, 'label')
 export const Marker = withContext(Slider.Marker, 'marker')
-export const MarkerIndicator = withContext('div', 'markerIndicator')
+export const MarkerIndicator = withContext(ark.div, 'markerIndicator')
 export const MarkerGroup = withContext(Slider.MarkerGroup, 'markerGroup')
 export const Range = withContext(Slider.Range, 'range')
 export const Thumb = withContext(Slider.Thumb, 'thumb')

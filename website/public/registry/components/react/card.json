@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "card.tsx",
-      "content": "'use client'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { card } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider('div', 'root')\n\nexport const Header = withContext('div', 'header')\nexport const Body = withContext('div', 'body')\nexport const Footer = withContext('div', 'footer')\nexport const Title = withContext('h3', 'title')\nexport const Description = withContext('div', 'description')\n",
+      "content": "'use client'\nimport { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { card } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(card)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(ark.div, 'root')\n\nexport const Header = withContext(ark.div, 'header')\nexport const Body = withContext(ark.div, 'body')\nexport const Footer = withContext(ark.h3, 'footer')\nexport const Title = withContext(ark.h3, 'title')\nexport const Description = withContext(ark.div, 'description')\n",
       "indexFile": {
         "exports": [
           {

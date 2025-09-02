@@ -1,0 +1,39 @@
+---
+title: Table
+description: Used to display data in a tabular format.
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/table.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Table } from "@/components/ui"
+```
+
+```tsx
+<Table.Root>
+  <Table.Caption />
+  <Table.Head>
+    <Table.Row>
+      <Table.Header />
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+  <Table.Row>
+    <Table.Cell />
+    </Table.Row>
+  </Table.Body>
+  <Table.Foot>
+    <Table.Row>
+      <Table.Cell />
+    </Table.Row>
+  </Table.Foot>
+</Table.Root>
+```
