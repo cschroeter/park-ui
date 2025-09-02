@@ -4,7 +4,7 @@ import { Button, Card, Field, Input, Text } from '@/components/ui'
 
 export const CardAuthentication = () => {
   return (
-    <Card.Root boxShadow="lg">
+    <Card.Root boxShadow="xl">
       <Card.Header gap="1">
         <Card.Title>Sign Up</Card.Title>
         <Card.Description>

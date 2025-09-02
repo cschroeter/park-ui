@@ -58,5 +58,8 @@
   },
   {
     "id": "text"
+  },
+  {
+    "id": "textarea"
   }
 ]

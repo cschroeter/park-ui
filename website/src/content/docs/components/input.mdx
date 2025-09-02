@@ -18,7 +18,7 @@ import { Input } from '@/components/ui'
 ```
 
 ```tsx
-<Input>Input</Input>
+<Input placeholder="Enter your email" />
 ```
 
 ## Examples
@@ -34,5 +34,29 @@ Use the `variant` prop to change the visual style of the input.
 Use the `size` prop to change the size of the input.
 
 <ComponentExample name="sizes" />
+
+### Field
+
+Compose the input with the `Field` component to add a label, helper text, and error message.
+
+<ComponentExample name="field" />
+
+### Required
+
+Pass the `required` prop to `Field.Root` and use the `Field.RequiredIndicator` to indicate that the input is required.
+
+<ComponentExample name="required" />
+
+### Invalid
+
+Pass the `invalid` prop to the `Field.Root` and use the `Field.ErrorText` to indicate that the input is invalid.
+
+<ComponentExample name="invalid" />
+
+### Ref
+
+Here's how to access the underlying element reference
+
+<ComponentExample name="ref" codeOnly />
 
 ## Props

@@ -1,0 +1,79 @@
+---
+title: Textarea
+description: Used to enter multiple lines of text.
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/textarea.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Textarea } from '@/components/ui'
+```
+
+```tsx
+<Textarea placeholder="Enter your message" />
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the visual style of the textarea.
+
+<ComponentExample name="variants" />
+
+### Sizes
+
+Use the `size` prop to change the size of the textarea.
+
+<ComponentExample name="sizes" />
+
+### Resize
+
+Use the `resize` prop to control the resize behavior of the textarea.
+
+<ComponentExample name="resize" />
+
+To limit the maximum height (or rows) of the textarea, we recommend using the `maxHeight` prop and setting the value to a `lh` unit.
+
+```tsx
+<Textarea maxH="5lh" />
+```
+### Autoresize
+
+Use the `autoresize` prop to make the textarea autoresize vertically as you type.
+
+<ComponentExample name="autoresize" />
+
+### Field
+
+Compose the textarea with the `Field` component to add a label, helper text, and error message.
+
+<ComponentExample name="field" />
+
+### Required
+
+Pass the `required` prop to `Field.Root` and use the `Field.RequiredIndicator` to indicate that the textarea is required.
+
+<ComponentExample name="required" />
+
+### Invalid
+
+Pass the `invalid` prop to the `Field.Root` and use the `Field.ErrorText` to indicate that the textarea is invalid.
+
+<ComponentExample name="invalid" />
+
+### Ref
+
+Here's how to access the underlying element reference
+
+<ComponentExample name="ref" codeOnly />
+
+## Props

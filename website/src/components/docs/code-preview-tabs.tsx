@@ -26,19 +26,17 @@ export const CodePreviewTabs = (props: Props) => {
       >
         <Hide when={collapsable}>
           <Flex>
-            {sources
-              // .filter((source) => source.sourceCode)
-              .map(({ framework, sourceCode }) => (
-                <Tabs.Trigger
-                  key={framework}
-                  value={framework}
-                  textTransform="capitalize"
-                  disabled={!sourceCode}
-                  fontSize="13px"
-                >
-                  {framework}
-                </Tabs.Trigger>
-              ))}
+            {sources.map(({ framework, sourceCode }) => (
+              <Tabs.Trigger
+                key={framework}
+                value={framework}
+                textTransform="capitalize"
+                disabled={!sourceCode}
+                fontSize="13px"
+              >
+                {framework}
+              </Tabs.Trigger>
+            ))}
           </Flex>
           <Tabs.Indicator
             background={{ _light: 'white', _dark: 'gray.2' }}

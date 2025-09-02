@@ -8,10 +8,11 @@ import { CodePreviewTabs } from './code-preview-tabs'
 
 interface Props {
   name: string
+  codeOnly?: boolean
 }
 
 export const ComponentExample = async (props: Props) => {
-  const { name } = props
+  const { name, codeOnly } = props
   const { component } = getServerContext()
 
   const Example = dynamic(() =>
@@ -26,13 +27,16 @@ export const ComponentExample = async (props: Props) => {
     name,
   })
 
-  return (
+  return codeOnly ? (
+    <CodePreviewTabs sources={codeExamples} defaultValue="react" />
+  ) : (
     <Box
       borderWidth="1px"
       borderRadius="l3"
       overflow="hidden"
       className="not-prose"
-      my="6"
+      mt="6"
+      mb="12"
       divideY="1px"
     >
       <Box p={{ base: '4', md: '8' }} color={component === 'text' ? 'fg.default' : undefined}>

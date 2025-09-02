@@ -58,12 +58,14 @@ export const preset = definePreset({
             muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
             subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
             disabled: { value: { _light: '{colors.gray.9}', _dark: '{colors.gray.9}' } },
+            error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
           },
           border: {
             default: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } },
             muted: { value: { _light: '{colors.gray.a6}', _dark: '{colors.gray.a6}' } },
             subtle: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
             outline: { value: { _light: '{colors.gray.a9}', _dark: '{colors.gray.a9}' } },
+            error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
           },
           bg: {
             default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
