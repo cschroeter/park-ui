@@ -2,64 +2,83 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const table = defineSlotRecipe({
   className: 'table',
-  slots: ['root', 'body', 'cell', 'footer', 'head', 'header', 'row', 'caption'],
+  slots: ['root', 'body', 'cell', 'foot', 'head', 'header', 'row', 'caption'],
   base: {
     root: {
-      captionSide: 'bottom',
+      fontVariantNumeric: 'lining-nums tabular-nums',
+      borderCollapse: 'collapse',
       width: 'full',
-    },
-    body: {
-      '& tr:last-child': {
-        borderBottomWidth: '0',
-      },
-    },
-    caption: {
-      color: 'fg.subtle',
-    },
-    cell: {
-      verticalAlign: 'middle',
-    },
-    footer: {
-      fontWeight: 'medium',
-      borderTopWidth: '1px',
-      '& tr:last-child': {
-        borderBottomWidth: '0',
-      },
-    },
-    header: {
-      color: 'fg.muted',
-      fontWeight: 'medium',
-      textAlign: 'left',
-      verticalAlign: 'middle',
+      textAlign: 'start',
+      verticalAlign: 'top',
     },
     row: {
-      borderBottomWidth: '1px',
       transitionDuration: 'normal',
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
+      _selected: {
+        bg: 'bg.subtle',
+      },
+    },
+    cell: {
+      textAlign: 'start',
+      alignItems: 'center',
+    },
+    head: {
+      fontWeight: 'medium',
+      textAlign: 'start',
+      color: 'fg.default',
+    },
+    caption: {
+      color: 'fg.subtle',
+      fontWeight: 'medium',
+    },
+    foot: {
+      fontWeight: 'medium',
     },
   },
   defaultVariants: {
     size: 'md',
-    variant: 'plain',
+    variant: 'outline',
   },
   variants: {
     variant: {
       outline: {
         root: {
-          borderWidth: '1px',
+          boxShadow: '0 0 0 1px {colors.border.subtle}',
+          overflow: 'hidden',
+        },
+        header: {
+          borderBottomWidth: '1px',
         },
         head: {
           bg: 'bg.subtle',
         },
+        row: {
+          '&:not(:last-of-type)': {
+            borderBottomWidth: '1px',
+          },
+        },
+        foot: {
+          borderTopWidth: '1px',
+        },
       },
       plain: {
+        header: {
+          borderBottomWidth: '1px',
+        },
+        cell: {
+          borderBottomWidth: '1px',
+        },
         row: {
-          _hover: {
+          bg: 'bg.default',
+        },
+      },
+    },
+    striped: {
+      true: {
+        row: {
+          '&:nth-of-type(even) td': {
             bg: 'bg.subtle',
-          },
-          _selected: {
-            bg: 'bg.muted',
           },
         },
       },
