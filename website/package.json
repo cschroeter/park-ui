@@ -14,9 +14,9 @@
     "@icons-pack/react-simple-icons": "13.7.0",
     "@park-ui/react": "workspace:*",
     "change-case": "5.4.4",
-    "effect": "3.17.10",
+    "effect": "3.17.11",
     "framer": "2.4.1",
-    "fumadocs-core": "15.7.7",
+    "fumadocs-core": "15.7.8",
     "hastscript": "9.0.1",
     "lucide-react": "0.542.0",
     "next": "15.5.2",
@@ -27,7 +27,7 @@
     "rehype-autolink-headings": "7.1.0",
     "rehype-slug": "6.0.0",
     "remark-directive": "4.0.0",
-    "shiki": "3.12.1",
+    "shiki": "3.12.2",
     "zustand": "5.0.8"
   },
   "devDependencies": {

@@ -6,6 +6,6 @@
   "scripts": {},
   "dependencies": {
     "@radix-ui/colors": "3.0.0",
-    "effect": "3.17.10"
+    "effect": "3.17.11"
   }
 }

@@ -36,6 +36,7 @@ import { qrCode } from './qr-code'
 import { radioButtonGroup } from './radio-button-group'
 import { radioGroup } from './radio-group'
 import { ratingGroup } from './rating-group'
+import { scrollArea } from './scroll-area'
 import { segmentGroup } from './segment-group'
 import { select } from './select'
 import { signaturePad } from './signature-pad'
@@ -99,6 +100,7 @@ export const slotRecipes = {
   radioButtonGroup,
   radioGroup,
   ratingGroup,
+  scrollArea,
   segmentGroup,
   select,
   signaturePad,

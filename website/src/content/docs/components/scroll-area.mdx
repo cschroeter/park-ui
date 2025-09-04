@@ -1,0 +1,58 @@
+---
+title: Scroll Area
+description: Used to create a scrollable area with custom styled scrollbars
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/scroll-area.ts
+  ark: https://ark-ui.com/react/docs/components/scroll-area
+---
+
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { ScrollArea } from '@/components/ui'
+```
+
+```tsx
+<ScrollArea.Root>
+  <ScrollArea.Viewport>
+    <ScrollArea.Content />
+  </ScrollArea.Viewport>
+  <ScrollArea.Scrollbar>
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+  <ScrollArea.Corner />
+</ScrollArea.Root>
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the scrollbar visibility behavior.
+
+<ComponentExample name="variants" />
+
+### Sizes
+
+Use the `size` prop to change the size of the scroll area. This affects the scrollbar thickness and content padding.
+
+<ComponentExample name="sizes" />
+
+### Horizontal
+
+The scroll area automatically supports horizontal scrolling when content overflows horizontally.
+
+<ComponentExample name="horizontal" />
+
+### Virtualization
+
+Use `@tanstack/react-virtual` to handle large datasets efficiently by rendering only visible items.
+
+<ComponentExample name="virtualization" />
