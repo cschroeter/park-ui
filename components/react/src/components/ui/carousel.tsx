@@ -8,6 +8,7 @@ const { withProvider, withContext } = createStyleContext(carousel)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(Carousel.Root, 'root')
+export const RootProvider = withProvider(Carousel.RootProvider, 'root')
 export const AutoplayTrigger = withContext(Carousel.AutoplayTrigger, 'autoplayTrigger')
 export const Control = withContext(Carousel.Control, 'control')
 export const IndicatorGroup = withContext(Carousel.IndicatorGroup, 'indicatorGroup')

@@ -43,3 +43,5 @@ export const List = withContext(Select.List, 'list')
 export const Positioner = withContext(Select.Positioner, 'positioner')
 export const Trigger = withContext(Select.Trigger, 'trigger')
 export const ValueText = withContext(Select.ValueText, 'valueText')
+
+export { SelectContext as Context } from '@ark-ui/react/select'

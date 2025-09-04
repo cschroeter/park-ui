@@ -8,6 +8,7 @@ const { withProvider, withContext } = createStyleContext(colorPicker)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(ColorPicker.Root, 'root')
+export const RootProvider = withProvider(ColorPicker.RootProvider, 'root')
 export const Area = withContext(ColorPicker.Area, 'area')
 export const AreaBackground = withContext(ColorPicker.AreaBackground, 'areaBackground')
 export const AreaThumb = withContext(ColorPicker.AreaThumb, 'areaThumb')

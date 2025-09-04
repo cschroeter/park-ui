@@ -19,7 +19,8 @@ export const Thumb = withContext(Slider.Thumb, 'thumb')
 export const Track = withContext(Slider.Track, 'track')
 export const ValueText = withContext(Slider.ValueText, 'valueText')
 export const HiddenInput = Slider.HiddenInput
-export const Context = Slider.Context
+
+export { SliderContext as Context } from '@ark-ui/react/slider'
 
 export type RootProps = ComponentProps<typeof Root>
 export type MarkerGroupProps = ComponentProps<typeof MarkerGroup>

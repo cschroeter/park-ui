@@ -8,7 +8,6 @@ const { withProvider, withContext } = createStyleContext(card)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(ark.div, 'root')
-
 export const Header = withContext(ark.div, 'header')
 export const Body = withContext(ark.div, 'body')
 export const Footer = withContext(ark.h3, 'footer')

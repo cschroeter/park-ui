@@ -8,6 +8,7 @@ const { withRootProvider, withContext } = createStyleContext(popover)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withRootProvider(Popover.Root)
+export const RootProvider = withRootProvider(Popover.Root)
 export const Anchor = withContext(Popover.Anchor, 'anchor')
 export const Arrow = withContext(Popover.Arrow, 'arrow')
 export const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')

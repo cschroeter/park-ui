@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "field.tsx",
-      "content": "'use client'\nimport { Field } from '@ark-ui/react/field'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { field } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(field)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Field.Root, 'root')\n\nexport const RootProvider = withProvider(Field.RootProvider, 'root')\nexport const ErrorText = withContext(Field.ErrorText, 'errorText')\nexport const HelperText = withContext(Field.HelperText, 'helperText')\nexport const Label = withContext(Field.Label, 'label')\nexport const RequiredIndicator = withContext(Field.RequiredIndicator, 'requiredIndicator')\n\nexport const Context = Field.Context\n",
+      "content": "'use client'\nimport { Field } from '@ark-ui/react/field'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { field } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(field)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Field.Root, 'root')\nexport const RootProvider = withProvider(Field.RootProvider, 'root')\nexport const ErrorText = withContext(Field.ErrorText, 'errorText')\nexport const HelperText = withContext(Field.HelperText, 'helperText')\nexport const Label = withContext(Field.Label, 'label')\nexport const RequiredIndicator = withContext(Field.RequiredIndicator, 'requiredIndicator')\n\nexport { FieldContext as Context } from '@ark-ui/react/field'\n",
       "indexFile": {
         "exports": [
           {

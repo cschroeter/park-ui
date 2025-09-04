@@ -8,6 +8,7 @@ const { withProvider, withContext } = createStyleContext(datePicker)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(DatePicker.Root, 'root')
+export const RootProvider = withProvider(DatePicker.RootProvider, 'root')
 export const ClearTrigger = withContext(DatePicker.ClearTrigger, 'clearTrigger')
 export const Content = withContext(DatePicker.Content, 'content')
 export const Control = withContext(DatePicker.Control, 'control')

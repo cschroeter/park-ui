@@ -8,6 +8,7 @@ const { withProvider, withContext } = createStyleContext(tagsInput)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(TagsInput.Root, 'root')
+export const RootProvider = withProvider(TagsInput.RootProvider, 'root')
 export const ClearTrigger = withContext(TagsInput.ClearTrigger, 'clearTrigger')
 export const Control = withContext(TagsInput.Control, 'control')
 export const HiddenInput = TagsInput.HiddenInput
