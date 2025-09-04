@@ -18,15 +18,27 @@ export const table = defineSlotRecipe({
       _selected: {
         bg: 'bg.subtle',
       },
+      row: {
+        '&:not(:last-of-type)': {
+          borderBottomWidth: '1px',
+        },
+      },
     },
     cell: {
       textAlign: 'start',
       alignItems: 'center',
+      color: 'fg.muted',
+      textStyle: 'sm',
+    },
+    header: {
+      fontWeight: 'medium',
+      textAlign: 'left',
+      verticalAlign: 'middle',
     },
     head: {
-      fontWeight: 'medium',
+      fontWeight: 'semibold',
       textAlign: 'start',
-      color: 'fg.default',
+      borderBottomWidth: '1px',
     },
     caption: {
       color: 'fg.subtle',
@@ -34,51 +46,66 @@ export const table = defineSlotRecipe({
     },
     foot: {
       fontWeight: 'medium',
+      borderTopWidth: '1px',
     },
   },
   defaultVariants: {
     size: 'md',
-    variant: 'outline',
+    variant: 'plain',
   },
   variants: {
     variant: {
       outline: {
         root: {
-          boxShadow: '0 0 0 1px {colors.border.subtle}',
-          overflow: 'hidden',
-        },
-        header: {
-          borderBottomWidth: '1px',
+          borderWidth: '1px',
         },
         head: {
           bg: 'bg.subtle',
         },
-        row: {
-          '&:not(:last-of-type)': {
-            borderBottomWidth: '1px',
-          },
-        },
-        foot: {
-          borderTopWidth: '1px',
-        },
       },
-      plain: {
-        header: {
-          borderBottomWidth: '1px',
-        },
-        cell: {
-          borderBottomWidth: '1px',
-        },
-        row: {
-          bg: 'bg.default',
-        },
-      },
+      plain: {},
     },
     striped: {
       true: {
         row: {
-          '&:nth-of-type(even) td': {
+          '&:nth-of-type(odd) td': {
             bg: 'bg.subtle',
+          },
+        },
+      },
+    },
+    interactive: {
+      true: {
+        body: {
+          '& tr': {
+            _hover: {
+              bg: 'bg.subtle',
+            },
+          },
+        },
+      },
+    },
+    columnBorder: {
+      true: {
+        header: {
+          '&:not(:last-of-type)': {
+            borderInlineEndWidth: '1px',
+          },
+        },
+        cell: {
+          '&:not(:last-of-type)': {
+            borderInlineEndWidth: '1px',
+          },
+        },
+      },
+    },
+    stickyHeader: {
+      true: {
+        head: {
+          '& :where(tr)': {
+            top: 'var(--table-sticky-offset, 0)',
+            position: 'sticky',
+            zIndex: 1,
           },
         },
       },
