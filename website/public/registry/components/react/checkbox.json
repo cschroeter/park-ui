@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "checkbox",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "checkbox.tsx",
+      "content": "'use client'\nimport { Checkbox } from '@ark-ui/react/checkbox'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { checkbox } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(checkbox)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Checkbox.Root, 'root')\nexport const Control = withContext(Checkbox.Control, 'control')\nexport const Group = withProvider(Checkbox.Group, 'group')\nexport const Indicator = withContext(Checkbox.Indicator, 'indicator')\nexport const Label = withContext(Checkbox.Label, 'label')\n\n// HiddenInput doesn't have styling, so export it directly\nexport const HiddenInput = Checkbox.HiddenInput\n\nexport {\n  CheckboxGroupProvider as GroupProvider,\n  CheckboxRootProvider as RootProvider,\n} from '@ark-ui/react/checkbox'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Checkbox",
+            "moduleSpecifier": "./checkbox"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "checkbox.ts",
+      "content": "import { checkboxAnatomy } from '@ark-ui/react/checkbox'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const checkbox = defineSlotRecipe({\n  className: 'checkbox',\n  slots: checkboxAnatomy.keys(),\n  base: {\n    root: {\n      alignItems: 'center',\n      display: 'flex',\n    },\n    label: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n    },\n    control: {\n      alignItems: 'center',\n      borderColor: 'border.default',\n      borderWidth: '1px',\n      color: 'colorPalette.contrast',\n      cursor: 'pointer',\n      display: 'flex',\n      justifyContent: 'center',\n      transitionDuration: 'normal',\n      transitionProperty: 'border-color, background',\n      transitionTimingFunction: 'default',\n      _hover: {\n        background: 'bg.subtle',\n      },\n      _checked: {\n        background: 'colorPalette.solid',\n        borderColor: 'colorPalette.solid',\n        _hover: {\n          background: 'colorPalette.solid',\n        },\n      },\n      _indeterminate: {\n        background: 'colorPalette.solid',\n        borderColor: 'colorPalette.solid',\n        _hover: {\n          background: 'colorPalette.solid',\n        },\n      },\n      '&:has(+ :focus-visible)': {\n        outlineOffset: '2px',\n        outline: '2px solid',\n        outlineColor: 'border.outline',\n        _checked: {\n          outlineColor: 'colorPalette.solid',\n        },\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: {\n        root: {\n          gap: '2',\n        },\n        control: {\n          width: '4',\n          height: '4',\n          borderRadius: 'l1',\n          '& svg': {\n            width: '3',\n            height: '3',\n          },\n        },\n        label: {\n          textStyle: 'sm',\n        },\n      },\n      md: {\n        root: {\n          gap: '3',\n        },\n        control: {\n          width: '5',\n          height: '5',\n          borderRadius: 'l1',\n          '& svg': {\n            width: '3.5',\n            height: '3.5',\n          },\n        },\n        label: {\n          textStyle: 'md',\n        },\n      },\n      lg: {\n        root: {\n          gap: '4',\n        },\n        control: {\n          width: '6',\n          height: '6',\n          borderRadius: 'l1',\n          '& svg': {\n            width: '4',\n            height: '4',\n          },\n        },\n        label: {\n          textStyle: 'lg',\n        },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./checkbox",
+            "symbols": [
+              {
+                "name": "checkbox"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "checkbox"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
