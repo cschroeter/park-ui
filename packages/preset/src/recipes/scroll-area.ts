@@ -29,11 +29,12 @@ export const scrollArea = defineSlotRecipe({
       minWidth: '100%',
     },
     scrollbar: {
-      display: 'flex',
-      userSelect: 'none',
-      touchAction: 'none',
-      position: 'relative',
       alignItems: 'center',
+      display: 'flex',
+      position: 'relative',
+      touchAction: 'none',
+      userSelect: 'none',
+      zIndex: 'overlay',
       _vertical: {
         flexDirection: 'column',
         width: 'var(--scrollbar-size)',
