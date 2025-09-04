@@ -11,7 +11,7 @@ interface Props {
 
 export const Callout = (props: Props) => {
   return (
-    <Box borderWidth="1px" p="4">
+    <Box borderWidth="1px" p="4" borderRadius="l3" className="not-prose">
       {props.children}
     </Box>
   )
