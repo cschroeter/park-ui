@@ -1,15 +1,14 @@
 import { Text } from '@/components/ui'
-import { getComponentDefinitions, getRecipe } from '~/app/docs/actions'
+import { getComponentDefinitions, getRecipes } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
 import { Step, Steps } from '../ui/steps'
 import { CodePreviewTabs } from './code-preview-tabs'
-import { CodeSnippet } from './code-snippet'
 
 export const ManualIntallationGuide = async () => {
   const { component } = getServerContext()
 
   const sources = await getComponentDefinitions(component)
-  const recipe = await getRecipe(component)
+  const recipes = await getRecipes(component)
 
   return (
     <Steps>
@@ -19,7 +18,7 @@ export const ManualIntallationGuide = async () => {
       </Step>
       <Step number="2" title="Integrate Recipe">
         <Text>Integrate this recipe in to your Panda config.</Text>
-        <CodeSnippet sourceCode={recipe} />
+        <CodePreviewTabs defaultValue="react" sources={recipes} />
       </Step>
     </Steps>
   )

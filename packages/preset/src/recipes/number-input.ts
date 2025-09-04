@@ -28,7 +28,7 @@ const trigger = {
 }
 
 export const numberInput = defineSlotRecipe({
-  className: 'numberInput',
+  className: 'number-input',
   slots: numberInputAnatomy.keys(),
   base: {
     root: {

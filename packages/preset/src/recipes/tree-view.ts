@@ -2,7 +2,7 @@ import { treeViewAnatomy } from '@ark-ui/react/tree-view'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const treeView = defineSlotRecipe({
-  className: 'treeView',
+  className: 'tree-view',
   slots: treeViewAnatomy.keys(),
   base: {
     root: {

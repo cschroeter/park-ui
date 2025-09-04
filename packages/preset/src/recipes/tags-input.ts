@@ -2,7 +2,7 @@ import { tagsInputAnatomy } from '@ark-ui/react/tags-input'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tagsInput = defineSlotRecipe({
-  className: 'tagsInput',
+  className: 'tags-input',
   slots: tagsInputAnatomy.keys(),
   base: {
     root: {

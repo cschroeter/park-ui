@@ -2,7 +2,7 @@
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { frameworks } from '~/lib/frameworks'
-import type { FrameworkSourceCode, SourceCode } from '~/types'
+import type { FrameworkSourceCode } from '~/types'
 
 interface Props {
   component: string
@@ -45,10 +45,15 @@ export const getComponentDefinitions = async (name: string): Promise<FrameworkSo
   )
 }
 
-export const getRecipe = async (name: string): Promise<SourceCode | null> => {
+export const getRecipes = async (name: string): Promise<FrameworkSourceCode[]> => {
   const lang = 'ts'
   const path = join(process.cwd(), '../packages/preset/src/recipes', `${name}.${lang}`)
   const code = await readFile(path, 'utf-8').catch(() => null)
 
-  return code ? { code, lang } : null
+  return frameworks.map(({ framework }) => ({
+    framework,
+    sourceCode: code
+      ? { code: code.replace(/@ark-ui\/react/g, `@ark-ui/${framework}`), lang }
+      : null,
+  }))
 }

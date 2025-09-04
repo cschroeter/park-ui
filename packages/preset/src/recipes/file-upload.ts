@@ -2,7 +2,7 @@ import { fileUploadAnatomy } from '@ark-ui/react/file-upload'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const fileUpload = defineSlotRecipe({
-  className: 'fileUpload',
+  className: 'file-upload',
   slots: fileUploadAnatomy.keys(),
   base: {
     root: {
