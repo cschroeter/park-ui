@@ -14,7 +14,6 @@ export const App = () => {
               <ScrollArea.Content
                 spaceY="3"
                 textStyle="sm"
-                pe="3"
                 dangerouslySetInnerHTML={{
                   __html: loremIpsum({
                     count: 10,

@@ -34,6 +34,7 @@ export const preset = definePreset({
   conditions: {
     extend: {
       light: ':root &, .light &',
+      invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',
     },
   },
   theme: {
@@ -63,7 +64,7 @@ export const preset = definePreset({
           border: {
             default: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } },
             muted: { value: { _light: '{colors.gray.a6}', _dark: '{colors.gray.a6}' } },
-            subtle: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
+            subtle: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },
             outline: { value: { _light: '{colors.gray.a9}', _dark: '{colors.gray.a9}' } },
             error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
           },

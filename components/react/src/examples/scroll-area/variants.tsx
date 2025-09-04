@@ -9,7 +9,7 @@ export const App = () => {
       {variants.map((variant) => (
         <Stack key={variant}>
           <Heading as="h3">Variant: {variant}</Heading>
-          <ScrollArea.Root height="2xl" variant={variant}>
+          <ScrollArea.Root height="36" variant={variant}>
             <ScrollArea.Viewport>
               <ScrollArea.Content
                 spaceY="3"

@@ -4,7 +4,7 @@ import { ScrollArea } from '@/components/ui'
 export const App = () => (
   <ScrollArea.Root variant="visible">
     <ScrollArea.Viewport>
-      <ScrollArea.Content py="4">
+      <ScrollArea.Content>
         <HStack gap="3">
           {Array.from({ length: 12 }, (_, i) => (
             <Center key={i} h="20" w="40" bg="gray.a3" borderRadius="l2">
