@@ -1,5 +1,5 @@
 import { parseColor } from '@ark-ui/react/color-picker'
-import * as ColorPicker from '@/components/ui/color-picker'
+import { ColorPicker } from '@/components/ui'
 
 export const App = () => {
   return (
