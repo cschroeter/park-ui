@@ -1,8 +1,9 @@
+import { progressAnatomy } from '@ark-ui/react/progress'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const progress = defineSlotRecipe({
   className: 'progress',
-  slots: ['root', 'label', 'track', 'range', 'circleTrack', 'circleRange', 'valueText'],
+  slots: progressAnatomy.keys(),
   base: {
     root: {
       alignItems: 'center',

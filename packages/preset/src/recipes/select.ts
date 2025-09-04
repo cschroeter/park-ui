@@ -1,24 +1,9 @@
+import { selectAnatomy } from '@ark-ui/react/select'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const select = defineSlotRecipe({
   className: 'select',
-  slots: [
-    'clearTrigger',
-    'content',
-    'control',
-    'indicator',
-    'item',
-    'itemGroup',
-    'itemGroupLabel',
-    'itemIndicator',
-    'itemText',
-    'label',
-    'list',
-    'positioner',
-    'root',
-    'trigger',
-    'valueText',
-  ],
+  slots: selectAnatomy.keys(),
   base: {
     root: {
       display: 'flex',

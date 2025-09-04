@@ -1,8 +1,9 @@
+import { segmentGroupAnatomy } from '@ark-ui/react/segment-group'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const segmentGroup = defineSlotRecipe({
   className: 'segmentGroup',
-  slots: ['root', 'indicator', 'item'],
+  slots: segmentGroupAnatomy.keys(),
   base: {
     root: {
       alignItems: 'flex-start',

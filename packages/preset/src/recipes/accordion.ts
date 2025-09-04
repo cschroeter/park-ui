@@ -1,8 +1,9 @@
+import { accordionAnatomy } from '@ark-ui/react/accordion'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const accordion = defineSlotRecipe({
   className: 'accordion',
-  slots: ['root', 'itemTrigger', 'itemIndicator', 'itemContent'],
+  slots: accordionAnatomy.keys(),
   base: {
     root: {
       divideY: '1px',

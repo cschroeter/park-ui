@@ -1,8 +1,9 @@
+import { dialogAnatomy } from '@ark-ui/react/dialog'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const dialog = defineSlotRecipe({
   className: 'dialog',
-  slots: ['backdrop', 'positioner', 'content', 'title', 'description'],
+  slots: dialogAnatomy.keys(),
   base: {
     backdrop: {
       backdropFilter: 'blur(4px)',

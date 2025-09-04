@@ -1,8 +1,9 @@
+import { tooltipAnatomy } from '@ark-ui/react/tooltip'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const tooltip = defineSlotRecipe({
   className: 'tooltip',
-  slots: ['content'],
+  slots: tooltipAnatomy.keys(),
   base: {
     content: {
       background: 'gray.a12',

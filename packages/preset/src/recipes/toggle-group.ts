@@ -1,8 +1,9 @@
+import { toggleGroupAnatomy } from '@ark-ui/react/toggle-group'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const toggleGroup = defineSlotRecipe({
   className: 'toggleGroup',
-  slots: ['root', 'item'],
+  slots: toggleGroupAnatomy.keys(),
   base: {
     root: {
       display: 'flex',

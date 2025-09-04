@@ -1,20 +1,9 @@
+import { popoverAnatomy } from '@ark-ui/react/popover'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const popover = defineSlotRecipe({
   className: 'popover',
-  slots: [
-    'anchor',
-    'arrow',
-    'arrowTip',
-    'closeTrigger',
-    'content',
-    'description',
-    'indicator',
-    'positioner',
-    'root',
-    'title',
-    'trigger',
-  ],
+  slots: popoverAnatomy.keys(),
   base: {
     positioner: {
       position: 'relative',

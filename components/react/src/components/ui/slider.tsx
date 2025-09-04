@@ -41,7 +41,7 @@ export const Marks = forwardRef<HTMLDivElement, MarksProps>(function Marks(props
         return (
           <Marker key={index} value={value}>
             <MarkerIndicator />
-            {label != null && <span className="chakra-slider__marker-label">{label}</span>}
+            {label != null && <span>{label}</span>}
           </Marker>
         )
       })}
