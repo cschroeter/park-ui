@@ -1,0 +1,22 @@
+import { ChevronDownIcon } from 'lucide-react'
+import { Accordion } from '@/components/ui'
+
+export const App = () => {
+  return (
+    <Accordion.Root defaultValue={['React']}>
+      {['React', 'Solid', 'Vue', 'Svelte'].map((item) => (
+        <Accordion.Item key={item} value={item}>
+          <Accordion.ItemTrigger>
+            What is {item}?
+            <Accordion.ItemIndicator>
+              <ChevronDownIcon />
+            </Accordion.ItemIndicator>
+          </Accordion.ItemTrigger>
+          <Accordion.ItemContent>
+            {item} is a JavaScript library for building user interfaces.
+          </Accordion.ItemContent>
+        </Accordion.Item>
+      ))}
+    </Accordion.Root>
+  )
+}

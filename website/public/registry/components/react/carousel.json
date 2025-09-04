@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "carousel",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "carousel.tsx",
+      "content": "'use client'\nimport { Carousel } from '@ark-ui/react/carousel'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { carousel } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(carousel)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Carousel.Root, 'root')\nexport const AutoplayTrigger = withContext(Carousel.AutoplayTrigger, 'autoplayTrigger')\nexport const Control = withContext(Carousel.Control, 'control')\nexport const IndicatorGroup = withContext(Carousel.IndicatorGroup, 'indicatorGroup')\nexport const Indicator = withContext(Carousel.Indicator, 'indicator')\nexport const ItemGroup = withContext(Carousel.ItemGroup, 'itemGroup')\nexport const Item = withContext(Carousel.Item, 'item')\nexport const NextTrigger = withContext(Carousel.NextTrigger, 'nextTrigger')\nexport const PrevTrigger = withContext(Carousel.PrevTrigger, 'prevTrigger')\n\nexport { CarouselContext as Context } from '@ark-ui/react/carousel'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Carousel",
+            "moduleSpecifier": "./carousel"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "carousel.ts",
+      "content": "import { carouselAnatomy } from '@ark-ui/react/carousel'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const carousel = defineSlotRecipe({\n  className: 'carousel',\n  // TODO review extendedWith usage\n  slots: carouselAnatomy.extendWith('viewport', 'control').keys(),\n  base: {\n    viewport: {\n      overflowX: 'hidden',\n      position: 'relative',\n      borderRadius: 'l2',\n    },\n    control: {\n      alignItems: 'center',\n      background: { _light: 'gray.dark.a12', _dark: 'gray.light.a12' },\n      borderRadius: 'l2',\n      bottom: '4',\n      display: 'flex',\n      left: '50%',\n      position: 'absolute',\n      transform: 'translateX(-50%)',\n    },\n    indicatorGroup: {\n      display: 'flex',\n    },\n    indicator: {\n      borderRadius: 'full',\n      background: 'gray.6',\n      cursor: 'pointer',\n      _current: {\n        background: 'colorPalette.solid',\n      },\n      _focusVisible: {\n        outlineOffset: '2px',\n        outline: '2px solid',\n        outlineColor: 'border.outline',\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: {\n        control: {\n          gap: '1',\n          p: '1',\n        },\n        indicatorGroup: {\n          gap: '2',\n        },\n        indicator: {\n          width: '2',\n          height: '2',\n        },\n      },\n      md: {\n        control: {\n          gap: '2',\n          p: '2.5',\n        },\n        indicatorGroup: {\n          gap: '3',\n        },\n        indicator: {\n          width: '2.5',\n          height: '2.5',\n        },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./carousel",
+            "symbols": [
+              {
+                "name": "carousel"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "carousel"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

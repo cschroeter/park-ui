@@ -1,5 +1,8 @@
 [
   {
+    "id": "accordion"
+  },
+  {
     "id": "avatar"
   },
   {
@@ -12,6 +15,9 @@
     "id": "card"
   },
   {
+    "id": "carousel"
+  },
+  {
     "id": "checkbox"
   },
   {
@@ -22,6 +28,12 @@
   },
   {
     "id": "code"
+  },
+  {
+    "id": "color-picker"
+  },
+  {
+    "id": "date-picker"
   },
   {
     "id": "drawer"
@@ -43,6 +55,9 @@
   },
   {
     "id": "link"
+  },
+  {
+    "id": "menu"
   },
   {
     "id": "popover"
@@ -67,6 +82,9 @@
   },
   {
     "id": "tabs"
+  },
+  {
+    "id": "tags-input"
   },
   {
     "id": "text"

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "accordion",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "accordion.tsx",
+      "content": "'use client'\nimport { Accordion } from '@ark-ui/react/accordion'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { accordion } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(accordion)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Accordion.Root, 'root')\nexport const Item = withContext(Accordion.Item, 'item')\nexport const ItemContent = withContext(Accordion.ItemContent, 'itemContent')\nexport const ItemIndicator = withContext(Accordion.ItemIndicator, 'itemIndicator')\nexport const ItemTrigger = withContext(Accordion.ItemTrigger, 'itemTrigger')\n\nexport { AccordionContext as Context } from '@ark-ui/react/accordion'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Accordion",
+            "moduleSpecifier": "./accordion"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "accordion.ts",
+      "content": "import { accordionAnatomy } from '@ark-ui/react/accordion'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const accordion = defineSlotRecipe({\n  className: 'accordion',\n  slots: accordionAnatomy.keys(),\n  base: {\n    root: {\n      divideY: '1px',\n      width: 'full',\n      borderTopWidth: '1px',\n      borderBottomWidth: '1px',\n    },\n    itemTrigger: {\n      alignItems: 'center',\n      color: 'fg.default',\n      cursor: 'pointer',\n      display: 'flex',\n      fontWeight: 'semibold',\n      gap: '3',\n      justifyContent: 'space-between',\n      textStyle: 'lg',\n      textAlign: 'left',\n      width: 'full',\n      _disabled: {\n        color: 'fg.disabled',\n        cursor: 'not-allowed',\n      },\n    },\n    itemIndicator: {\n      color: 'fg.muted',\n      transformOrigin: 'center',\n      transitionDuration: 'normal',\n      transitionProperty: 'transform',\n      transitionTimingFunction: 'default',\n      _open: {\n        transform: 'rotate(-180deg)',\n      },\n    },\n    itemContent: {\n      color: 'fg.muted',\n      overflow: 'hidden',\n      transitionProperty: 'padding-bottom',\n      transitionDuration: 'normal',\n      transitionTimingFunction: 'default',\n      _open: {\n        animationName: 'expand-height, fade-in',\n        animationDuration: 'moderate',\n      },\n      _closed: {\n        animationName: 'collapse-height, fade-out',\n        animationDuration: 'moderate',\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      md: {\n        itemTrigger: {\n          py: '4',\n        },\n        itemContent: {\n          pb: '6',\n          pr: '8',\n          _closed: {\n            pb: '0',\n          },\n        },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./accordion",
+            "symbols": [
+              {
+                "name": "accordion"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "accordion"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
