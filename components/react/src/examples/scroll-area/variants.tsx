@@ -1,6 +1,6 @@
 import { loremIpsum } from 'lorem-ipsum'
 import { Stack } from 'styled-system/jsx'
-import { Heading, ScrollArea } from '@/components/ui/'
+import { Heading, ScrollArea } from '@/components/ui'
 
 export const App = () => {
   const variants = ['auto', 'visible'] as const

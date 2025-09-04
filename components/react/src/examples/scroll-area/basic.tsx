@@ -1,5 +1,5 @@
 import { loremIpsum } from 'lorem-ipsum'
-import { ScrollArea } from '@/components/ui/'
+import { ScrollArea } from '@/components/ui'
 
 export const App = () => {
   return (
