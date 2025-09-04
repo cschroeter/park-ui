@@ -1,6 +1,7 @@
 import { absoluteCenter } from './absolute-center'
 import { accordion } from './accordion'
 import { alert } from './alert'
+import { angleSlider } from './angle-slider'
 import { avatar } from './avatar'
 import { badge } from './badge'
 import { button } from './button'
@@ -19,6 +20,7 @@ import { editable } from './editable'
 import { field } from './field'
 import { fieldset } from './fieldset'
 import { fileUpload } from './file-upload'
+import { floatingPanel } from './floating-panel'
 import { formLabel } from './form-label'
 import { heading } from './heading'
 import { hoverCard } from './hover-card'
@@ -26,9 +28,11 @@ import { icon } from './icon'
 import { input } from './input'
 import { kbd } from './kbd'
 import { link } from './link'
+import { listbox } from './listbox'
 import { menu } from './menu'
 import { numberInput } from './number-input'
 import { pagination } from './pagination'
+import { passwordInput } from './password-input'
 import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { progress } from './progress'
@@ -44,15 +48,20 @@ import { skeleton } from './skeleton'
 import { slider } from './slider'
 import { spinner } from './spinner'
 import { splitter } from './splitter'
+import { steps } from './steps'
 import { switchRecipe } from './switch'
 import { table } from './table'
 import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
 import { text } from './text'
 import { textarea } from './textarea'
+import { timePicker } from './time-picker'
+import { timer } from './timer'
 import { toast } from './toast'
+import { toggle } from './toggle'
 import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
+import { tour } from './tour'
 import { treeView } from './tree-view'
 
 export const recipes = {
@@ -75,6 +84,7 @@ export const recipes = {
 export const slotRecipes = {
   accordion,
   alert,
+  angleSlider,
   avatar,
   card,
   carousel,
@@ -90,10 +100,13 @@ export const slotRecipes = {
   field,
   fieldset,
   fileUpload,
+  floatingPanel,
   hoverCard,
+  listbox,
   menu,
   numberInput,
   pagination,
+  passwordInput,
   pinInput,
   popover,
   progress,
@@ -106,13 +119,18 @@ export const slotRecipes = {
   signaturePad,
   slider,
   splitter,
+  steps,
   switchRecipe,
   table,
   tabs,
   tagsInput,
+  timePicker,
+  timer,
   toast,
+  toggle,
   toggleGroup,
   tooltip,
+  tour,
   treeView,
   qrCode,
 }
