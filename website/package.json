@@ -14,7 +14,7 @@
     "@icons-pack/react-simple-icons": "13.7.0",
     "@park-ui/react": "workspace:*",
     "change-case": "5.4.4",
-    "effect": "3.17.11",
+    "effect": "3.17.13",
     "framer": "2.4.1",
     "fumadocs-core": "15.7.8",
     "hastscript": "9.0.1",
@@ -31,7 +31,7 @@
     "zustand": "5.0.8"
   },
   "devDependencies": {
-    "@types/node": "24.3.0",
+    "@types/node": "24.3.1",
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.9",
     "typescript": "5.9.2",
