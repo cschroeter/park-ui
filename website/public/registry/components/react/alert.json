@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "alert",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "alert.tsx",
+      "content": "'use client'\nimport { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { alert } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(alert)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(ark.div, 'root')\nexport const Title = withContext(ark.h3, 'title')\nexport const Description = withContext(ark.div, 'description')\nexport const Icon = withContext(ark.svg, 'icon')\nexport const Content = withContext(ark.div, 'content')\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Alert",
+            "moduleSpecifier": "./alert"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "alert.ts",
+      "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const alert = defineSlotRecipe({\n  className: 'alert',\n  slots: ['root', 'content', 'description', 'icon', 'title'],\n  base: {\n    root: {\n      background: 'bg.default',\n      borderWidth: '1px',\n      borderRadius: 'l3',\n      display: 'flex',\n      gap: '3',\n      p: '4',\n      width: 'full',\n    },\n    content: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n    icon: {\n      color: 'fg.default',\n      flexShrink: '0',\n      width: '5',\n      height: '5',\n    },\n    title: {\n      color: 'fg.default',\n      fontWeight: 'semibold',\n      textStyle: 'sm',\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./alert",
+            "symbols": [
+              {
+                "name": "alert"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "alert"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

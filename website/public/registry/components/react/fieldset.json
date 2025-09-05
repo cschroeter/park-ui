@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "fieldset",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "fieldset.tsx",
+      "content": "'use client'\nimport { Fieldset } from '@ark-ui/react/fieldset'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { fieldset } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(fieldset)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Fieldset.Root, 'root')\nexport const RootProvider = withProvider(Fieldset.RootProvider, 'root')\nexport const Legend = withContext(Fieldset.Legend, 'legend')\nexport const HelperText = withContext(Fieldset.HelperText, 'helperText')\nexport const ErrorText = withContext(Fieldset.ErrorText, 'errorText')\n\nexport { FieldsetContext as Context } from '@ark-ui/react/fieldset'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Fieldset",
+            "moduleSpecifier": "./fieldset"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "fieldset.ts",
+      "content": "import { fieldsetAnatomy } from '@ark-ui/react/fieldset'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const fieldset = defineSlotRecipe({\n  className: 'fieldset',\n  // TODO review extendedWith usage\n  slots: fieldsetAnatomy.extendWith('control').keys(),\n  base: {\n    root: {\n      display: 'grid',\n      borderTopWidth: '1px',\n      py: '6',\n      columnGap: '8',\n      rowGap: '1.5',\n      gridTemplateAreas: {\n        base: `\n        \"legend legend\" \n        \"helperText helperText\"\n        \"control control\"\n        \"errorText errorText\"\n        `,\n        md: `\n        \"legend control\"\n        \"helperText control\"\n        \"errorText errorText\"`,\n      },\n      gridTemplateRows: 'auto 1fr',\n      gridTemplateColumns: '1fr auto',\n      width: 'full',\n    },\n    control: {\n      gridArea: 'control',\n      display: 'grid',\n      gap: '4',\n    },\n    legend: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n      gridArea: 'legend',\n      textStyle: 'sm',\n      float: 'left',\n      '+ *': {\n        clear: 'both',\n      },\n      _disabled: {\n        color: 'fg.disabled',\n      },\n    },\n    helperText: {\n      color: 'fg.muted',\n      gridArea: 'helperText',\n      textStyle: 'sm',\n      _disabled: {\n        color: 'fg.disabled',\n      },\n    },\n    errorText: {\n      alignItems: 'center',\n      color: 'fg.error',\n      display: 'inline-flex',\n      gap: '2',\n      gridArea: 'errorText',\n      mt: '4',\n      textStyle: 'sm',\n      _disabled: {\n        color: 'fg.disabled',\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./fieldset",
+            "symbols": [
+              {
+                "name": "fieldset"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "fieldset"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

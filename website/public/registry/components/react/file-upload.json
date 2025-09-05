@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "file-upload",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "file-upload.tsx",
+      "content": "'use client'\nimport { FileUpload } from '@ark-ui/react/file-upload'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { fileUpload } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(fileUpload)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(FileUpload.Root, 'root')\nexport const RootProvider = withProvider(FileUpload.RootProvider, 'root')\nexport const ClearTrigger = withContext(FileUpload.ClearTrigger, 'clearTrigger')\nexport const Dropzone = withContext(FileUpload.Dropzone, 'dropzone')\nexport const HiddenInput = FileUpload.HiddenInput\nexport const Item = withContext(FileUpload.Item, 'item')\nexport const ItemDeleteTrigger = withContext(FileUpload.ItemDeleteTrigger, 'itemDeleteTrigger')\nexport const ItemGroup = withContext(FileUpload.ItemGroup, 'itemGroup')\nexport const ItemName = withContext(FileUpload.ItemName, 'itemName')\nexport const ItemPreview = withContext(FileUpload.ItemPreview, 'itemPreview')\nexport const ItemPreviewImage = withContext(FileUpload.ItemPreviewImage, 'itemPreviewImage')\nexport const ItemSizeText = withContext(FileUpload.ItemSizeText, 'itemSizeText')\nexport const Label = withContext(FileUpload.Label, 'label')\nexport const Trigger = withContext(FileUpload.Trigger, 'trigger')\n\nexport { FileUploadContext as Context } from '@ark-ui/react/file-upload'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "FileUpload",
+            "moduleSpecifier": "./file-upload"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "file-upload.ts",
+      "content": "import { fileUploadAnatomy } from '@ark-ui/react/file-upload'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const fileUpload = defineSlotRecipe({\n  className: 'file-upload',\n  slots: fileUploadAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '4',\n      width: '100%',\n    },\n    label: {\n      fontWeight: 'medium',\n      textStyle: 'sm',\n    },\n    dropzone: {\n      alignItems: 'center',\n      background: 'bg.default',\n      borderRadius: 'l3',\n      borderWidth: '1px',\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '3',\n      justifyContent: 'center',\n      minHeight: 'xs',\n      px: '6',\n      py: '4',\n    },\n    item: {\n      animation: 'fadeIn 0.25s ease-out',\n      background: 'bg.default',\n      borderRadius: 'l3',\n      borderWidth: '1px',\n      columnGap: '3',\n      display: 'grid',\n      gridTemplateColumns: 'auto 1fr auto',\n      gridTemplateAreas: `\n        \"preview name delete\"\n        \"preview size delete\"\n        `,\n      p: '4',\n    },\n    itemGroup: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '3',\n    },\n    itemName: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n      gridArea: 'name',\n      textStyle: 'sm',\n    },\n    itemSizeText: {\n      color: 'fg.muted',\n      gridArea: 'size',\n      textStyle: 'sm',\n    },\n    itemDeleteTrigger: {\n      alignSelf: 'flex-start',\n      gridArea: 'delete',\n    },\n    itemPreview: {\n      gridArea: 'preview',\n    },\n    itemPreviewImage: {\n      aspectRatio: '1',\n      height: '10',\n      objectFit: 'scale-down',\n      width: '10',\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./file-upload",
+            "symbols": [
+              {
+                "name": "file-upload"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "file-upload"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

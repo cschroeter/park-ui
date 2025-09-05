@@ -3,6 +3,9 @@
     "id": "accordion"
   },
   {
+    "id": "alert"
+  },
+  {
     "id": "avatar"
   },
   {
@@ -30,16 +33,34 @@
     "id": "code"
   },
   {
+    "id": "collapsible"
+  },
+  {
     "id": "color-picker"
+  },
+  {
+    "id": "combobox"
   },
   {
     "id": "date-picker"
   },
   {
+    "id": "dialog"
+  },
+  {
     "id": "drawer"
   },
   {
+    "id": "editable"
+  },
+  {
     "id": "field"
+  },
+  {
+    "id": "fieldset"
+  },
+  {
+    "id": "file-upload"
   },
   {
     "id": "heading"
@@ -57,13 +78,25 @@
     "id": "input"
   },
   {
+    "id": "kbd"
+  },
+  {
     "id": "link"
   },
   {
     "id": "menu"
   },
   {
+    "id": "number-input"
+  },
+  {
+    "id": "pin-input"
+  },
+  {
     "id": "popover"
+  },
+  {
+    "id": "progress"
   },
   {
     "id": "radio-button-group"
@@ -78,6 +111,9 @@
     "id": "scroll-area"
   },
   {
+    "id": "segment-group"
+  },
+  {
     "id": "select"
   },
   {
@@ -88,6 +124,9 @@
   },
   {
     "id": "splitter"
+  },
+  {
+    "id": "switch"
   },
   {
     "id": "table"
@@ -103,6 +142,9 @@
   },
   {
     "id": "textarea"
+  },
+  {
+    "id": "toast"
   },
   {
     "id": "toggle-group"

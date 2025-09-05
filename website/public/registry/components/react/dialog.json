@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "dialog",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "dialog.tsx",
+      "content": "'use client'\nimport { Dialog } from '@ark-ui/react/dialog'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { dialog } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(dialog)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider(Dialog.Root)\nexport const RootProvider = withRootProvider(Dialog.RootProvider)\nexport const Backdrop = withContext(Dialog.Backdrop, 'backdrop')\nexport const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')\nexport const Content = withContext(Dialog.Content, 'content')\nexport const Description = withContext(Dialog.Description, 'description')\nexport const Positioner = withContext(Dialog.Positioner, 'positioner')\nexport const Title = withContext(Dialog.Title, 'title')\nexport const Trigger = withContext(Dialog.Trigger, 'trigger')\n\nexport { DialogContext as Context } from '@ark-ui/react/dialog'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Dialog",
+            "moduleSpecifier": "./dialog"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "dialog.ts",
+      "content": "import { dialogAnatomy } from '@ark-ui/react/dialog'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const dialog = defineSlotRecipe({\n  className: 'dialog',\n  slots: dialogAnatomy.keys(),\n  base: {\n    backdrop: {\n      backdropFilter: 'blur(4px)',\n      background: {\n        _light: 'white.a10',\n        _dark: 'black.a10',\n      },\n      height: '100vh',\n      left: '0',\n      position: 'fixed',\n      top: '0',\n      width: '100vw',\n      zIndex: 'overlay',\n      _open: {\n        animation: 'backdrop-in',\n      },\n      _closed: {\n        animation: 'backdrop-out',\n      },\n    },\n    positioner: {\n      alignItems: 'center',\n      display: 'flex',\n      justifyContent: 'center',\n      left: '0',\n      overflow: 'auto',\n      position: 'fixed',\n      top: '0',\n      width: '100vw',\n      height: '100dvh',\n      zIndex: 'modal',\n    },\n    content: {\n      background: 'bg.default',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      minW: 'sm',\n      position: 'relative',\n      _open: {\n        animation: 'dialog-in',\n      },\n      _closed: {\n        animation: 'dialog-out',\n      },\n    },\n    title: {\n      fontWeight: 'semibold',\n      textStyle: 'lg',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./dialog",
+            "symbols": [
+              {
+                "name": "dialog"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "dialog"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

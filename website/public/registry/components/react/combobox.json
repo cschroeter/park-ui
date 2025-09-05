@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "combobox",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "combobox.tsx",
+      "content": "'use client'\nimport type { CollectionItem } from '@ark-ui/react/combobox'\nimport { Combobox } from '@ark-ui/react/combobox'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { combobox } from 'styled-system/recipes'\nimport type {\n  Assign,\n  ComponentProps,\n  JsxHTMLProps,\n  RecipeVariantProps,\n  UnstyledProps,\n} from 'styled-system/types'\n\nconst { withProvider, withContext } = createStyleContext(combobox)\n\ninterface RootBaseProps<T extends CollectionItem>\n  extends Assign<Combobox.RootBaseProps<T>, RecipeVariantProps<typeof combobox>>,\n    UnstyledProps {}\n\ninterface RootProps<T extends CollectionItem>\n  extends JsxHTMLProps<ComponentProps<'div'>, RootBaseProps<T>> {}\n\ntype RootComponent = <T extends CollectionItem>(\n  props: RootProps<T> & React.RefAttributes<HTMLDivElement>,\n) => React.JSX.Element\n\nexport const Root = withProvider(Combobox.Root, 'root', {\n  // @ts-expect-error\n  defaultProps: { positioning: { sameWidth: true } },\n}) as RootComponent\n\nexport const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger')\nexport const Content = withContext(Combobox.Content, 'content')\nexport const Control = withContext(Combobox.Control, 'control')\nexport const Empty = withContext(Combobox.Empty, 'empty')\nexport const Input = withContext(Combobox.Input, 'input')\nexport const Item = withContext(Combobox.Item, 'item')\nexport const ItemGroup = withContext(Combobox.ItemGroup, 'itemGroup')\nexport const ItemGroupLabel = withContext(Combobox.ItemGroupLabel, 'itemGroupLabel')\nexport const ItemIndicator = withContext(Combobox.ItemIndicator, 'itemIndicator')\nexport const ItemText = withContext(Combobox.ItemText, 'itemText')\nexport const Label = withContext(Combobox.Label, 'label')\nexport const List = withContext(Combobox.List, 'list')\nexport const Positioner = withContext(Combobox.Positioner, 'positioner')\nexport const Trigger = withContext(Combobox.Trigger, 'trigger')\n\nexport { ComboboxContext as Context } from '@ark-ui/react/combobox'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Combobox",
+            "moduleSpecifier": "./combobox"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "combobox.ts",
+      "content": "import { comboboxAnatomy } from '@ark-ui/react/combobox'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const combobox = defineSlotRecipe({\n  className: 'combobox',\n  slots: comboboxAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n      width: 'full',\n    },\n    control: {\n      position: 'relative',\n    },\n    label: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n    },\n    trigger: {\n      bottom: '0',\n      color: 'fg.muted',\n      position: 'absolute',\n      right: '0',\n      top: '0',\n    },\n    content: {\n      background: 'bg.default',\n      borderRadius: 'l2',\n      boxShadow: 'lg',\n      display: 'flex',\n      flexDirection: 'column',\n      zIndex: 'dropdown',\n      _hidden: {\n        display: 'none',\n      },\n      _open: {\n        animation: 'fadeIn 0.25s ease-out',\n      },\n      _closed: {\n        animation: 'fadeOut 0.2s ease-out',\n      },\n      _focusVisible: {\n        outlineOffset: '2px',\n        outline: '2px solid',\n        outlineColor: 'border.outline',\n      },\n    },\n    item: {\n      alignItems: 'center',\n      borderRadius: 'l1',\n      cursor: 'pointer',\n      display: 'flex',\n      justifyContent: 'space-between',\n      transitionDuration: 'fast',\n      transitionProperty: 'background, color',\n      transitionTimingFunction: 'default',\n      _hover: {\n        background: 'bg.muted',\n      },\n      _highlighted: {\n        background: 'bg.muted',\n      },\n      _disabled: {\n        color: 'fg.disabled',\n        cursor: 'not-allowed',\n        _hover: {\n          background: 'transparent',\n        },\n      },\n    },\n    itemGroupLabel: {\n      fontWeight: 'semibold',\n      textStyle: 'sm',\n    },\n    itemIndicator: {\n      color: 'colorPalette.solid',\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: {\n        content: { p: '0.5', gap: '1' },\n        item: { textStyle: 'sm', px: '2', height: '9' },\n        itemIndicator: {\n          '& :where(svg)': {\n            width: '4',\n            height: '4',\n          },\n        },\n        itemGroupLabel: {\n          px: '2',\n          py: '1.5',\n        },\n        label: { textStyle: 'sm' },\n        trigger: { right: '2.5' },\n      },\n      md: {\n        content: { p: '1', gap: '1' },\n        item: { textStyle: 'md', px: '2', height: '10' },\n        itemIndicator: {\n          '& :where(svg)': {\n            width: '4',\n            height: '4',\n          },\n        },\n        itemGroupLabel: {\n          px: '2',\n          py: '1.5',\n        },\n        label: { textStyle: 'sm' },\n        trigger: { right: '3' },\n      },\n      lg: {\n        content: { p: '1.5', gap: '1' },\n        item: { textStyle: 'md', px: '2', height: '11' },\n        itemIndicator: {\n          '& :where(svg)': {\n            width: '5',\n            height: '5',\n          },\n        },\n        itemGroupLabel: {\n          px: '2',\n          py: '1.5',\n        },\n        label: { textStyle: 'sm' },\n        trigger: { right: '3.5' },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./combobox",
+            "symbols": [
+              {
+                "name": "combobox"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "combobox"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

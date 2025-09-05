@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "number-input",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "number-input.tsx",
+      "content": "'use client'\nimport { NumberInput } from '@ark-ui/react/number-input'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { numberInput } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(numberInput)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(NumberInput.Root, 'root')\nexport const RootProvider = withProvider(NumberInput.RootProvider, 'root')\nexport const Control = withContext(NumberInput.Control, 'control')\nexport const DecrementTrigger = withContext(NumberInput.DecrementTrigger, 'decrementTrigger')\nexport const IncrementTrigger = withContext(NumberInput.IncrementTrigger, 'incrementTrigger')\nexport const Input = withContext(NumberInput.Input, 'input')\nexport const Label = withContext(NumberInput.Label, 'label')\nexport const Scrubber = withContext(NumberInput.Scrubber, 'scrubber')\nexport const ValueText = withContext(NumberInput.ValueText, 'valueText')\n\nexport { NumberInputContext as Context } from '@ark-ui/react/number-input'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "NumberInput",
+            "moduleSpecifier": "./number-input"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "number-input.ts",
+      "content": "import { numberInputAnatomy } from '@ark-ui/react/number-input'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nconst trigger = {\n  alignItems: 'center',\n  borderColor: 'border.default',\n  color: 'fg.muted',\n  cursor: 'pointer',\n  display: 'inline-flex',\n  justifyContent: 'center',\n  transitionDuration: 'normal',\n  transitionProperty: 'background, border-color, color',\n  transitionTimingFunction: 'default',\n  width: '6',\n  height: '4',\n  _hover: {\n    background: 'gray.a2',\n    color: 'fg.default',\n  },\n  _disabled: {\n    color: 'fg.disabled',\n    cursor: 'not-allowed',\n    _hover: {\n      background: 'transparent',\n      color: 'fg.disabled',\n    },\n  },\n}\n\nexport const numberInput = defineSlotRecipe({\n  className: 'number-input',\n  slots: numberInputAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n    },\n    control: {\n      borderColor: 'border.default',\n      borderRadius: 'l2',\n      borderWidth: '1px',\n      display: 'grid',\n      divideX: '1px',\n      gridTemplateColumns: '1fr 32px',\n      gridTemplateRows: '1fr 1fr',\n      overflow: 'hidden',\n      transitionDuration: 'normal',\n      transitionProperty: 'border-color, box-shadow',\n      transitionTimingFunction: 'default',\n      _focusWithin: {\n        borderColor: 'colorPalette.solid',\n        boxShadow: '0 0 0 1px var(--colors-color-palette-solid)',\n      },\n      _disabled: {\n        opacity: 0.4,\n        cursor: 'not-allowed',\n      },\n    },\n    input: {\n      background: 'transparent',\n      border: 'none',\n      gridRow: 'span 2 / span 2',\n      outline: 'none',\n      width: 'full',\n      _disabled: {\n        cursor: 'not-allowed',\n      },\n    },\n    label: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n    },\n    decrementTrigger: { ...trigger, borderTopWidth: '1px' },\n    incrementTrigger: trigger,\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      md: {\n        control: {\n          ps: '3',\n          h: '10',\n          minW: '10',\n          fontSize: 'md',\n        },\n        label: {\n          textStyle: 'sm',\n        },\n      },\n      lg: {\n        control: {\n          ps: '3.5',\n          h: '11',\n          minW: '11',\n          fontSize: 'md',\n        },\n        label: {\n          textStyle: 'sm',\n        },\n      },\n      xl: {\n        control: {\n          ps: '4',\n          h: '12',\n          minW: '12',\n          fontSize: 'lg',\n        },\n        label: {\n          textStyle: 'md',\n        },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./number-input",
+            "symbols": [
+              {
+                "name": "number-input"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "number-input"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

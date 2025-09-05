@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "progress",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "progress.tsx",
+      "content": "'use client'\nimport { Progress } from '@ark-ui/react/progress'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { progress } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(progress)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Progress.Root, 'root')\nexport const RootProvider = withProvider(Progress.RootProvider, 'root')\nexport const Circle = withContext(Progress.Circle, 'circle')\nexport const CircleRange = withContext(Progress.CircleRange, 'circleRange')\nexport const CircleTrack = withContext(Progress.CircleTrack, 'circleTrack')\nexport const Label = withContext(Progress.Label, 'label')\nexport const Range = withContext(Progress.Range, 'range')\nexport const Track = withContext(Progress.Track, 'track')\nexport const ValueText = withContext(Progress.ValueText, 'valueText')\nexport const View = withContext(Progress.View, 'view')\n\nexport { ProgressContext as Context } from '@ark-ui/react/progress'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Progress",
+            "moduleSpecifier": "./progress"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "progress.ts",
+      "content": "import { progressAnatomy } from '@ark-ui/react/progress'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const progress = defineSlotRecipe({\n  className: 'progress',\n  slots: progressAnatomy.keys(),\n  base: {\n    root: {\n      alignItems: 'center',\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n      width: 'full',\n    },\n    label: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n      textStyle: 'sm',\n    },\n    track: {\n      backgroundColor: 'bg.emphasized',\n      borderRadius: 'l2',\n      overflow: 'hidden',\n      width: '100%',\n    },\n    range: {\n      backgroundColor: 'colorPalette.solid',\n      height: '100%',\n      transition: 'width 0.2s ease-in-out',\n      '--translate-x': '-100%',\n    },\n    circleTrack: {\n      stroke: 'bg.emphasized',\n    },\n    circleRange: {\n      stroke: 'colorPalette.solid',\n      transitionProperty: 'stroke-dasharray, stroke',\n      transitionDuration: '0.6s',\n    },\n    valueText: {\n      textStyle: 'sm',\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: {\n        circle: {\n          '--size': '36px',\n          '--thickness': '4px',\n        },\n        track: {\n          height: '1.5',\n        },\n      },\n      md: {\n        track: {\n          height: '2',\n        },\n        circle: {\n          '--size': '40px',\n          '--thickness': '4px',\n        },\n      },\n      lg: {\n        track: {\n          height: '2.5',\n        },\n        circle: {\n          '--size': '44px',\n          '--thickness': '4px',\n        },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./progress",
+            "symbols": [
+              {
+                "name": "progress"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "progress"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
