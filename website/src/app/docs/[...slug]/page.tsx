@@ -25,7 +25,7 @@ export default async function Page(props: Props) {
     return notFound()
   }
 
-  if (['typography', 'components'].includes(doc.category)) {
+  if (doc.category !== 'getting-started') {
     const context = getServerContext()
     context.component = doc.id
   }

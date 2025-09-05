@@ -1,4 +1,4 @@
-import { basename, dirname, join } from 'node:path'
+import { basename, join } from 'node:path'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive'
@@ -12,6 +12,7 @@ const docs = defineCollection({
     .object({
       title: s.string(),
       description: s.string(),
+      category: s.string(),
       links: s
         .object({
           recipe: s.string().url().optional(),
@@ -27,11 +28,10 @@ const docs = defineCollection({
         throw new Error('Meta path is not a string')
       }
       const id = basename(meta.path, '.mdx')
-      const category = basename(dirname(meta.path))
       const href = toBasePath(meta.path)
-      const slug = join(category, id).replace(/^docs\//, '')
+      const slug = href.replace('/docs/', '')
 
-      return { ...data, id, category, slug, href }
+      return { ...data, id, slug, href }
     }),
 })
 
