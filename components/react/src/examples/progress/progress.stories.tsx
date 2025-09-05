@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Progress',
+  title: 'Feedback / Progress',
 }
 
 export default meta

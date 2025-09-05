@@ -2,7 +2,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Kbd',
+  title: 'Typography / Kbd',
 }
 
 export default meta

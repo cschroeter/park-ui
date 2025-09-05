@@ -2,7 +2,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Link',
+  title: 'Navigation / Link',
 }
 
 export default meta

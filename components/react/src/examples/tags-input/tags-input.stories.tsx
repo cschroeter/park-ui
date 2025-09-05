@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / TagsInput',
+  title: 'Forms / TagsInput',
 }
 
 export default meta

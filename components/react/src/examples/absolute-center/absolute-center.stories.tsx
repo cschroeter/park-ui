@@ -2,7 +2,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Absolute Center',
+  title: 'Layout / AbsoluteCenter',
 }
 
 export default meta

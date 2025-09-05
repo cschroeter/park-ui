@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Hover Card',
+  title: 'Overlays / HoverCard',
 }
 
 export default meta

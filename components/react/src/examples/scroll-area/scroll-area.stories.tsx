@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Scroll Area',
+  title: 'Layout / ScrollArea',
 }
 
 export default meta

@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Drawer',
+  title: 'Overlays / Drawer',
 }
 
 export default meta

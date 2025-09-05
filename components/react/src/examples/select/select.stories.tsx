@@ -2,7 +2,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Select',
+  title: 'Forms / Select',
 }
 
 export default meta

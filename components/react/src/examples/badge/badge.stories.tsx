@@ -2,7 +2,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Components / Badge',
+  title: 'Display / Badge',
 }
 
 export default meta
