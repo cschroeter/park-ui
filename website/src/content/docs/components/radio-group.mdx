@@ -1,0 +1,37 @@
+---
+title: Radio Group
+description: A set of checkable buttons where only one can be checked at a time.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/radio-group.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { RadioGroup } from '@/components/ui'
+```
+
+```tsx
+<RadioGroup.Root>
+  <RadioGroup.Label>Radio Group</RadioGroup.Label>
+  <RadioGroup.Item value="option1">
+    <RadioGroup.ItemControl>
+      <RadioGroup.ItemIndicator />
+    </RadioGroup.ItemControl>
+    <RadioGroup.ItemText>Option 1</RadioGroup.ItemText>
+  </RadioGroup.Item>
+  <RadioGroup.Item value="option2">
+    <RadioGroup.ItemControl>
+      <RadioGroup.ItemIndicator />
+    </RadioGroup.ItemControl>
+    <RadioGroup.ItemText>Option 2</RadioGroup.ItemText>
+  </RadioGroup.Item>
+</RadioGroup.Root>
+```

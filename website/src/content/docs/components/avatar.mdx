@@ -1,0 +1,26 @@
+---
+title: Avatar
+description: Represents a user or entity with an image, icon, or initials.
+category: display
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/avatar.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Avatar } from '@/components/ui'
+```
+
+```tsx
+<Avatar.Root>
+  <Avatar.Image src="https://example.com/avatar.jpg" alt="Avatar" />
+  <Avatar.Fallback>JD</Avatar.Fallback>
+</Avatar.Root>
+```

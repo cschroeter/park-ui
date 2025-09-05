@@ -1,0 +1,33 @@
+---
+title: Dialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+category: overlays
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/dialog.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Dialog } from '@/components/ui'
+```
+
+```tsx
+<Dialog.Root>
+  <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+  <Dialog.Backdrop />
+  <Dialog.Positioner>
+    <Dialog.Content>
+      <Dialog.Title>Dialog Title</Dialog.Title>
+      <Dialog.Description>Dialog description</Dialog.Description>
+      <Dialog.CloseTrigger>Close</Dialog.CloseTrigger>
+    </Dialog.Content>
+  </Dialog.Positioner>
+</Dialog.Root>
+```

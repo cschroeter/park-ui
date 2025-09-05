@@ -1,0 +1,25 @@
+---
+title: Clipboard
+description: A button that copies content to the clipboard when clicked.
+category: buttons
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/clipboard.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Clipboard } from '@/components/ui'
+```
+
+```tsx
+<Clipboard.Root value="Content to copy">
+  <Clipboard.Trigger>Copy</Clipboard.Trigger>
+</Clipboard.Root>
+```

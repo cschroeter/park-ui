@@ -1,0 +1,33 @@
+---
+title: Menu
+description: A dropdown menu that displays a list of actions or options.
+category: overlays
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/menu.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Menu } from '@/components/ui'
+```
+
+```tsx
+<Menu.Root>
+  <Menu.Trigger>Open Menu</Menu.Trigger>
+  <Menu.Positioner>
+    <Menu.Content>
+      <Menu.Item value="item-1">Menu Item 1</Menu.Item>
+      <Menu.Item value="item-2">Menu Item 2</Menu.Item>
+      <Menu.Separator />
+      <Menu.Item value="item-3">Menu Item 3</Menu.Item>
+    </Menu.Content>
+  </Menu.Positioner>
+</Menu.Root>
+```

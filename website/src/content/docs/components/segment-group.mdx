@@ -1,0 +1,33 @@
+---
+title: Segment Group
+description: A set of mutually exclusive options presented as connected segments.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/segment-group.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { SegmentGroup } from '@/components/ui'
+```
+
+```tsx
+<SegmentGroup.Root>
+  <SegmentGroup.Indicator />
+  <SegmentGroup.Item value="option1">
+    <SegmentGroup.ItemText>Option 1</SegmentGroup.ItemText>
+    <SegmentGroup.ItemControl />
+  </SegmentGroup.Item>
+  <SegmentGroup.Item value="option2">
+    <SegmentGroup.ItemText>Option 2</SegmentGroup.ItemText>
+    <SegmentGroup.ItemControl />
+  </SegmentGroup.Item>
+</SegmentGroup.Root>
+```

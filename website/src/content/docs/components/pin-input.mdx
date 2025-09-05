@@ -1,0 +1,30 @@
+---
+title: Pin Input
+description: Allows users to enter a sequence of digits with separate input fields for each digit.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/pin-input.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { PinInput } from '@/components/ui'
+```
+
+```tsx
+<PinInput.Root>
+  <PinInput.Label>Pin Input</PinInput.Label>
+  <PinInput.Control>
+    {Array.from({ length: 4 }, (_, index) => (
+      <PinInput.Input key={index} index={index} />
+    ))}
+  </PinInput.Control>
+</PinInput.Root>
+```

@@ -1,0 +1,35 @@
+---
+title: Combobox
+description: Combines a text input with a dropdown list for autocomplete functionality.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/combobox.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Combobox } from '@/components/ui'
+```
+
+```tsx
+<Combobox.Root>
+  <Combobox.Control>
+    <Combobox.Input placeholder="Select option..." />
+    <Combobox.Trigger>
+      <Combobox.ClearTrigger />
+    </Combobox.Trigger>
+  </Combobox.Control>
+  <Combobox.Positioner>
+    <Combobox.Content>
+      <Combobox.Item item="option1">Option 1</Combobox.Item>
+    </Combobox.Content>
+  </Combobox.Positioner>
+</Combobox.Root>
+```

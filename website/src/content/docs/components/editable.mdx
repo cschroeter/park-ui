@@ -1,0 +1,28 @@
+---
+title: Editable
+description: Allows users to edit text in place with a double-click or focus.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/editable.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Editable } from '@/components/ui'
+```
+
+```tsx
+<Editable.Root placeholder="Enter text..." activationMode="dblclick">
+  <Editable.Area>
+    <Editable.Input />
+    <Editable.Preview />
+  </Editable.Area>
+</Editable.Root>
+```

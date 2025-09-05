@@ -1,0 +1,42 @@
+---
+title: Date Picker
+description: Allows users to select a date from a calendar interface.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/date-picker.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { DatePicker } from '@/components/ui'
+```
+
+```tsx
+<DatePicker.Root>
+  <DatePicker.Control>
+    <DatePicker.Input />
+    <DatePicker.Trigger>
+      <DatePicker.ClearTrigger />
+    </DatePicker.Trigger>
+  </DatePicker.Control>
+  <DatePicker.Positioner>
+    <DatePicker.Content>
+      <DatePicker.View view="day">
+        <DatePicker.ViewControl>
+          <DatePicker.PrevTrigger />
+          <DatePicker.ViewTrigger />
+          <DatePicker.NextTrigger />
+        </DatePicker.ViewControl>
+        <DatePicker.Table />
+      </DatePicker.View>
+    </DatePicker.Content>
+  </DatePicker.Positioner>
+</DatePicker.Root>
+```

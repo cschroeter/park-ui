@@ -1,0 +1,30 @@
+---
+title: Splitter
+description: Allows users to resize panels by dragging a splitter handle.
+category: layout
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/splitter.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Splitter } from '@/components/ui'
+```
+
+```tsx
+<Splitter.Root size={[
+  { id: 'a', size: 50 },
+  { id: 'b', size: 50 },
+]}>
+  <Splitter.Panel id="a">Panel A</Splitter.Panel>
+  <Splitter.ResizeTrigger id="a:b" />
+  <Splitter.Panel id="b">Panel B</Splitter.Panel>
+</Splitter.Root>
+```

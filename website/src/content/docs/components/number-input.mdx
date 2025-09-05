@@ -1,0 +1,31 @@
+---
+title: Number Input
+description: An input component for entering numeric values with increment/decrement buttons.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/number-input.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { NumberInput } from '@/components/ui'
+```
+
+```tsx
+<NumberInput.Root>
+  <NumberInput.Scrubber />
+  <NumberInput.Label>Number Input</NumberInput.Label>
+  <NumberInput.Control>
+    <NumberInput.Input />
+    <NumberInput.IncrementTrigger />
+    <NumberInput.DecrementTrigger />
+  </NumberInput.Control>
+</NumberInput.Root>
+```

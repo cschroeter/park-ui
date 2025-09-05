@@ -1,0 +1,29 @@
+---
+title: Progress
+description: Displays the progress of a task or operation.
+category: feedback
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/progress.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Progress } from '@/components/ui'
+```
+
+```tsx
+<Progress.Root value={32}>
+  <Progress.Label>Progress Label</Progress.Label>
+  <Progress.ValueText />
+  <Progress.Track>
+    <Progress.Range />
+  </Progress.Track>
+</Progress.Root>
+```

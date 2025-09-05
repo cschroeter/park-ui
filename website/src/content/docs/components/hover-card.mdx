@@ -1,0 +1,33 @@
+---
+title: Hover Card
+description: A floating card that appears when the user hovers over a trigger element.
+category: overlays
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/hover-card.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { HoverCard } from '@/components/ui'
+```
+
+```tsx
+<HoverCard.Root>
+  <HoverCard.Trigger>Hover me</HoverCard.Trigger>
+  <HoverCard.Positioner>
+    <HoverCard.Content>
+      <HoverCard.Arrow>
+        <HoverCard.ArrowTip />
+      </HoverCard.Arrow>
+      Hover card content
+    </HoverCard.Content>
+  </HoverCard.Positioner>
+</HoverCard.Root>
+```

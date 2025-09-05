@@ -1,0 +1,43 @@
+---
+title: File Upload
+description: Allows users to upload files through drag and drop or file selection.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/file-upload.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { FileUpload } from '@/components/ui'
+```
+
+```tsx
+<FileUpload.Root>
+  <FileUpload.Dropzone>
+    <FileUpload.Label>Upload Files</FileUpload.Label>
+    <FileUpload.Trigger>Choose Files</FileUpload.Trigger>
+  </FileUpload.Dropzone>
+  <FileUpload.ItemGroup>
+    <FileUpload.Context>
+      {({ acceptedFiles }) =>
+        acceptedFiles.map((file, id) => (
+          <FileUpload.Item key={id} file={file}>
+            <FileUpload.ItemPreview type="image/*">
+              <FileUpload.ItemPreviewImage />
+            </FileUpload.ItemPreview>
+            <FileUpload.ItemName />
+            <FileUpload.ItemDeleteTrigger />
+          </FileUpload.Item>
+        ))
+      }
+    </FileUpload.Context>
+  </FileUpload.ItemGroup>
+</FileUpload.Root>
+```

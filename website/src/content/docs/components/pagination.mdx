@@ -1,0 +1,41 @@
+---
+title: Pagination
+description: Allows users to navigate through multiple pages of content.
+category: navigation
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/pagination.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Pagination } from '@/components/ui'
+```
+
+```tsx
+<Pagination.Root count={5000} pageSize={10} siblingCount={2}>
+  <Pagination.PrevTrigger>Previous</Pagination.PrevTrigger>
+  <Pagination.Context>
+    {({ pages }) =>
+      pages.map((page, index) =>
+        page.type === 'page' ? (
+          <Pagination.Item key={index} {...page}>
+            {page.value}
+          </Pagination.Item>
+        ) : (
+          <Pagination.Ellipsis key={index} index={index}>
+            &#8230;
+          </Pagination.Ellipsis>
+        )
+      )
+    }
+  </Pagination.Context>
+  <Pagination.NextTrigger>Next</Pagination.NextTrigger>
+</Pagination.Root>
+```

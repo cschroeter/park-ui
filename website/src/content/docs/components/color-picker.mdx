@@ -1,0 +1,30 @@
+---
+title: Color Picker
+description: Allows users to select a color from a visual color picker interface.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/color-picker.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { ColorPicker } from '@/components/ui'
+```
+
+```tsx
+<ColorPicker.Root>
+  <ColorPicker.Control>
+    <ColorPicker.ChannelInput channel="hex" />
+    <ColorPicker.Trigger>
+      <ColorPicker.Swatch value="#000000" />
+    </ColorPicker.Trigger>
+  </ColorPicker.Control>
+</ColorPicker.Root>
+```

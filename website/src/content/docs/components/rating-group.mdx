@@ -1,0 +1,36 @@
+---
+title: Rating Group
+description: Allows users to rate something using stars or other symbols.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/rating-group.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { RatingGroup } from '@/components/ui'
+```
+
+```tsx
+<RatingGroup.Root count={5} value={3}>
+  <RatingGroup.Label>Rating</RatingGroup.Label>
+  <RatingGroup.Control>
+    <RatingGroup.Context>
+      {({ items }) =>
+        items.map((item) => (
+          <RatingGroup.Item key={item} index={item}>
+            <RatingGroup.ItemIndicator />
+          </RatingGroup.Item>
+        ))
+      }
+    </RatingGroup.Context>
+  </RatingGroup.Control>
+</RatingGroup.Root>
+```

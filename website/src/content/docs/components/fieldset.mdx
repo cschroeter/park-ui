@@ -1,0 +1,29 @@
+---
+title: Fieldset
+description: Groups related form controls and provides a legend for accessibility.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/fieldset.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Fieldset } from '@/components/ui'
+```
+
+```tsx
+<Fieldset.Root>
+  <Fieldset.Legend>Fieldset Legend</Fieldset.Legend>
+  <Fieldset.HelperText>Helper text for the fieldset</Fieldset.HelperText>
+  <Fieldset.Content>
+    {/* Form controls */}
+  </Fieldset.Content>
+</Fieldset.Root>
+```

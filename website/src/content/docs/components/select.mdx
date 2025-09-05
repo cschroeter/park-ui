@@ -1,0 +1,39 @@
+---
+title: Select
+description: Allows users to choose an option from a list in a dropdown format.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/select.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Select } from '@/components/ui'
+```
+
+```tsx
+<Select.Root>
+  <Select.Label>Select Label</Select.Label>
+  <Select.Control>
+    <Select.Trigger>
+      <Select.ValueText placeholder="Select option..." />
+      <Select.Indicator />
+    </Select.Trigger>
+  </Select.Control>
+  <Select.Positioner>
+    <Select.Content>
+      <Select.Item item="option1">
+        <Select.ItemText>Option 1</Select.ItemText>
+        <Select.ItemIndicator />
+      </Select.Item>
+    </Select.Content>
+  </Select.Positioner>
+</Select.Root>
+```
