@@ -90,6 +90,9 @@
     "id": "number-input"
   },
   {
+    "id": "pagination"
+  },
+  {
     "id": "pin-input"
   },
   {
@@ -115,6 +118,9 @@
   },
   {
     "id": "select"
+  },
+  {
+    "id": "skeleton"
   },
   {
     "id": "slider"
