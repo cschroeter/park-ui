@@ -66,6 +66,12 @@
     "id": "radio-button-group"
   },
   {
+    "id": "radio-group"
+  },
+  {
+    "id": "rating-group"
+  },
+  {
     "id": "scroll-area"
   },
   {
@@ -91,5 +97,8 @@
   },
   {
     "id": "textarea"
+  },
+  {
+    "id": "tooltip"
   }
 ]

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "tooltip",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "tooltip.tsx",
+      "content": "'use client'\nimport { Tooltip } from '@ark-ui/react/tooltip'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { tooltip } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(tooltip)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider(Tooltip.Root)\nexport const RootProvider = withRootProvider(Tooltip.RootProvider)\nexport const Arrow = withContext(Tooltip.Arrow, 'arrow')\nexport const ArrowTip = withContext(Tooltip.ArrowTip, 'arrowTip')\nexport const Content = withContext(Tooltip.Content, 'content')\nexport const Positioner = withContext(Tooltip.Positioner, 'positioner')\nexport const Trigger = withContext(Tooltip.Trigger, 'trigger')\n\nexport { TooltipContext as Context } from '@ark-ui/react/tooltip'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "Tooltip",
+            "moduleSpecifier": "./tooltip"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "tooltip.ts",
+      "content": "import { tooltipAnatomy } from '@ark-ui/react/tooltip'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const tooltip = defineSlotRecipe({\n  className: 'tooltip',\n  slots: tooltipAnatomy.keys(),\n  base: {\n    content: {\n      background: 'gray.a12',\n      borderRadius: 'l2',\n      boxShadow: 'sm',\n      color: 'bg.default',\n      fontWeight: 'semibold',\n      px: '3',\n      py: '2',\n      textStyle: 'xs',\n      maxWidth: '2xs',\n      zIndex: 'tooltip',\n      _open: {\n        animation: 'fadeIn 0.25s ease-out',\n      },\n      _closed: {\n        animation: 'fadeOut 0.2s ease-out',\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./tooltip",
+            "symbols": [
+              {
+                "name": "tooltip"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "tooltip"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

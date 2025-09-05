@@ -1,0 +1,50 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "rating-group",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "rating-group.tsx",
+      "content": "'use client'\nimport { RatingGroup } from '@ark-ui/react/rating-group'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { ratingGroup } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(ratingGroup)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(RatingGroup.Root, 'root')\nexport const RootProvider = withProvider(RatingGroup.RootProvider, 'root')\nexport const Control = withContext(RatingGroup.Control, 'control')\nexport const Item = withContext(RatingGroup.Item, 'item')\nexport const Label = withContext(RatingGroup.Label, 'label')\nexport const HiddenInput = RatingGroup.HiddenInput\n\nexport {\n  RatingGroupContext as Context,\n  RatingGroupItemContext as ItemContext,\n} from '@ark-ui/react/rating-group'\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "namespace",
+            "namespace": "RatingGroup",
+            "moduleSpecifier": "./rating-group"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "rating-group.ts",
+      "content": "import { ratingGroupAnatomy } from '@ark-ui/react/rating-group'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const ratingGroup = defineSlotRecipe({\n  className: 'rating-group',\n  slots: ratingGroupAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n    },\n    label: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n    },\n    control: {\n      display: 'flex',\n    },\n    item: {\n      cursor: 'pointer',\n      transitionDuration: 'normal',\n      transitionProperty: 'color, fill',\n      transitionTimingFunction: 'default',\n      fill: 'bg.emphasized',\n      _highlighted: {\n        fill: 'colorPalette.solid',\n      },\n      _focusVisible: {\n        outline: 'none',\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: {\n        control: {\n          gap: '0',\n        },\n        item: {\n          '& svg': {\n            width: '4',\n            height: '4',\n          },\n        },\n        label: {\n          textStyle: 'sm',\n        },\n      },\n      md: {\n        control: {\n          gap: '0.5',\n        },\n        item: {\n          '& svg': {\n            width: '5',\n            height: '5',\n          },\n        },\n        label: {\n          textStyle: 'sm',\n        },\n      },\n      lg: {\n        control: {\n          gap: '0.5',\n        },\n        item: {\n          '& svg': {\n            width: '6',\n            height: '6',\n          },\n        },\n        label: {\n          textStyle: 'md',\n        },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./rating-group",
+            "symbols": [
+              {
+                "name": "rating-group"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "slotRecipes",
+            "properties": [
+              {
+                "name": "rating-group"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
