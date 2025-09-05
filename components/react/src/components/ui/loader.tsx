@@ -5,7 +5,7 @@ import { styled } from 'styled-system/jsx'
 import { AbsoluteCenter } from './absolute-center'
 import { Spinner } from './spinner'
 
-interface LoaderProps {
+export interface LoaderProps {
   /**
    * Whether the loader is visible
    * @default true

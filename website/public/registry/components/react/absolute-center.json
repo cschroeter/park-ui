@@ -1,0 +1,59 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "absolute-center",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "absolute-center.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { absoluteCenter } from 'styled-system/recipes'\n\nexport type AbsoluteCenterProps = ComponentProps<typeof AbsoluteCenter>\nexport const AbsoluteCenter = styled(ark.div, absoluteCenter)\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "named",
+            "symbols": [
+              {
+                "name": "AbsoluteCenter",
+                "isType": false
+              },
+              {
+                "name": "AbsoluteCenterProps",
+                "isType": true
+              }
+            ],
+            "moduleSpecifier": "./absolute-center"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "absolute-center.ts",
+      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const absoluteCenter = defineRecipe({\n  className: 'absolute-center',\n  base: {\n    position: 'absolute',\n    display: 'flex',\n    alignItems: 'center',\n    justifyContent: 'center',\n  },\n  defaultVariants: {\n    axis: 'both',\n  },\n  variants: {\n    axis: {\n      horizontal: {\n        insetStart: '50%',\n        translate: '-50%',\n        _rtl: {\n          translate: '50%',\n        },\n      },\n      vertical: {\n        top: '50%',\n        translate: '0 -50%',\n      },\n      both: {\n        insetStart: '50%',\n        top: '50%',\n        translate: '-50% -50%',\n        _rtl: {\n          translate: '50% -50%',\n        },\n      },\n    },\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./absolute-center",
+            "symbols": [
+              {
+                "name": "absolute-center"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "recipes",
+            "properties": [
+              {
+                "name": "absolute-center"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
