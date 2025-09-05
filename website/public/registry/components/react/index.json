@@ -84,6 +84,9 @@
     "id": "spinner"
   },
   {
+    "id": "splitter"
+  },
+  {
     "id": "table"
   },
   {
@@ -97,6 +100,9 @@
   },
   {
     "id": "textarea"
+  },
+  {
+    "id": "toggle-group"
   },
   {
     "id": "tooltip"
