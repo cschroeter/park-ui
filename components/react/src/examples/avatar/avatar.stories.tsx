@@ -6,4 +6,14 @@ const meta: Meta = {
 
 export default meta
 
+export { App as badge } from './badge'
 export { App as basic } from './basic'
+export { App as fallback } from './fallback'
+// export { App as group } from './group'
+// export { App as overflow } from './overflow'
+export { App as persona } from './persona'
+// export { App as randomColor } from './random-color'
+export { App as ring } from './ring'
+export { App as shapes } from './shapes'
+export { App as sizes } from './sizes'
+export { App as variants } from './variants'

@@ -6,134 +6,125 @@ export const avatar = defineSlotRecipe({
   slots: avatarAnatomy.keys(),
   base: {
     root: {
-      borderRadius: 'full',
-      flexShrink: 0,
-      overflow: 'hidden',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontWeight: 'medium',
+      position: 'relative',
+      verticalAlign: 'top',
+      flexShrink: '0',
+      userSelect: 'none',
+      width: 'var(--avatar-size)',
+      height: 'var(--avatar-size)',
+      fontSize: 'var(--avatar-font-size)',
+      borderRadius: 'var(--avatar-radius)',
     },
     fallback: {
-      alignItems: 'center',
-      background: 'bg.subtle',
-      borderRadius: 'full',
-      borderWidth: '1px',
-      color: 'fg.default',
-      display: 'flex',
-      fontWeight: 'semibold',
-      height: 'inherit',
-      justifyContent: 'center',
-      _hidden: {
-        display: 'none',
-      },
+      lineHeight: '1',
+      textTransform: 'uppercase',
+      fontWeight: 'medium',
+      fontSize: 'var(--avatar-font-size)',
+      borderRadius: 'var(--avatar-radius)',
     },
     image: {
+      width: '100%',
+      height: '100%',
       objectFit: 'cover',
+      borderRadius: 'var(--avatar-radius)',
     },
   },
   defaultVariants: {
     size: 'md',
+    shape: 'full',
+    variant: 'subtle',
   },
   variants: {
     size: {
+      full: {
+        root: {
+          '--avatar-size': '100%',
+          '--avatar-font-size': '100%',
+        },
+      },
+      '2xs': {
+        root: {
+          '--avatar-font-size': 'fontSizes.2xs',
+          '--avatar-size': 'sizes.6',
+        },
+      },
       xs: {
         root: {
-          height: '8',
-          width: '8',
-        },
-        image: {
-          height: '8',
-          width: '8',
-        },
-        fallback: {
-          textStyle: 'xs',
-          '& svg': {
-            width: '4',
-            height: '4',
-          },
+          '--avatar-font-size': 'fontSizes.xs',
+          '--avatar-size': 'sizes.8',
         },
       },
       sm: {
         root: {
-          height: '9',
-          width: '9',
-        },
-        image: {
-          height: '9',
-          width: '9',
-        },
-        fallback: {
-          textStyle: 'sm',
-          '& svg': {
-            width: '4',
-            height: '4',
-          },
+          '--avatar-font-size': 'fontSizes.sm',
+          '--avatar-size': 'sizes.9',
         },
       },
       md: {
         root: {
-          height: '10',
-          width: '10',
-        },
-        image: {
-          height: '10',
-          width: '10',
-        },
-        fallback: {
-          textStyle: 'md',
-          '& svg': {
-            width: '5',
-            height: '5',
-          },
+          '--avatar-font-size': 'fontSizes.md',
+          '--avatar-size': 'sizes.10',
         },
       },
       lg: {
         root: {
-          height: '11',
-          width: '11',
-        },
-        image: {
-          height: '11',
-          width: '11',
-        },
-        fallback: {
-          textStyle: 'lg',
-          '& svg': {
-            width: '6',
-            height: '6',
-          },
+          '--avatar-font-size': 'fontSizes.md',
+          '--avatar-size': 'sizes.11',
         },
       },
       xl: {
         root: {
-          height: '12',
-          width: '12',
-        },
-        image: {
-          height: '12',
-          width: '12',
-        },
-        fallback: {
-          textStyle: 'xl',
-          '& svg': {
-            width: '7',
-            height: '7',
-          },
+          '--avatar-font-size': 'fontSizes.lg',
+          '--avatar-size': 'sizes.12',
         },
       },
       '2xl': {
         root: {
-          height: '16',
-          width: '16',
+          '--avatar-font-size': 'fontSizes.xl',
+          '--avatar-size': 'sizes.16',
         },
-        image: {
-          height: '16',
-          width: '16',
+      },
+    },
+    variant: {
+      solid: {
+        root: {
+          bg: 'colorPalette.solid',
+          color: 'colorPalette.contrast',
         },
-        fallback: {
-          textStyle: '2xl',
-          '& svg': {
-            width: '8',
-            height: '8',
-          },
+      },
+      surface: {
+        root: {
+          background: 'colorPalette.a2',
+          color: 'colorPalette.fg',
+          shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+          shadowColor: 'colorPalette.a7',
         },
+      },
+      subtle: {
+        root: {
+          bg: 'colorPalette.a3',
+          color: 'colorPalette.fg',
+        },
+      },
+      outline: {
+        root: {
+          color: 'colorPalette.fg',
+          shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+          shadowColor: 'colorPalette.a7',
+        },
+      },
+    },
+    shape: {
+      square: {},
+      rounded: {
+        root: { '--avatar-radius': 'radii.l3' },
+      },
+      full: {
+        root: { '--avatar-radius': 'radii.full' },
       },
     },
   },

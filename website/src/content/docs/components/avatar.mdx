@@ -4,6 +4,7 @@ description: A display component for showing user profile images, icons, or init
 category: display
 links:
   recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/avatar.ts
+  ark: https://ark-ui.com/react/docs/components/avatar
 ---
 
 <ComponentExample name="basic" />
@@ -20,7 +21,80 @@ import { Avatar } from '@/components/ui'
 
 ```tsx
 <Avatar.Root>
-  <Avatar.Image src="https://example.com/avatar.jpg" alt="Avatar" />
-  <Avatar.Fallback>JD</Avatar.Fallback>
+  <Avatar.Image src="https://shorturl.at/gaV8r" />
+  <Avatar.Fallback name="Christian Busch" />
 </Avatar.Root>
 ```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the avatar
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to change the variant of the avatar
+
+<ComponentExample name="variants" />
+
+### Shapes
+
+Use the `shape` prop to change the shape of the avatar
+
+<ComponentExample name="shapes" />
+
+### Fallback
+
+If the image fails to load, the avatar will display the user’s initial. When no name is provided, a generic icon is shown instead.
+
+<ComponentExample name="fallback" />
+
+### Ring
+
+Use the `outline` props to add a ring around the avatar
+
+<ComponentExample name="ring" />
+
+### Badge
+
+Show a badge on the right corner of the avatar by composing the `Float` and `Circle` components
+
+<ComponentExample name="badge" />
+
+### Persona
+
+Here's an example of how to use the `Avatar` component to display a user persona.
+
+<ComponentExample name="persona" />
+
+### Next.js
+
+Here's an example of how to compose the avatar with Next.js Image.
+
+```tsx
+import { getImageProps } from "next/image"
+import { Avatar } from "@/components/ui"
+
+export const App = () => {
+  const imageProps = getImageProps({
+    src: "/image.png",
+  })
+  return (
+    <Avatar.Root>
+      <Avatar.Fallback name="Christian Busch" />
+      <Avatar.Image {...imageProps} />
+    </Avatar.Root>
+  )
+}
+```
+
+### Closed Component
+
+Here's how to setup the avatar for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+## Props
