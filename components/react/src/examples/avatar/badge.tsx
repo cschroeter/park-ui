@@ -3,7 +3,7 @@ import { Avatar } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Avatar.Root>
+    <Avatar.Root size="lg">
       <Avatar.Fallback name="Christian Busch" />
       <Float placement="bottom-end" offsetX="1" offsetY="1">
         <Circle bg="colorPalette.solid" size="2" outline="0.2em solid" outlineColor="bg.default" />

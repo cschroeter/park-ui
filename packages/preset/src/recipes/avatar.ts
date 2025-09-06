@@ -18,6 +18,10 @@ export const avatar = defineSlotRecipe({
       height: 'var(--avatar-size)',
       fontSize: 'var(--avatar-font-size)',
       borderRadius: 'var(--avatar-radius)',
+      '&[data-group-item]': {
+        borderWidth: '0.125em',
+        borderColor: 'bg.default',
+      },
     },
     fallback: {
       lineHeight: '1',
@@ -98,7 +102,7 @@ export const avatar = defineSlotRecipe({
       },
       surface: {
         root: {
-          background: 'colorPalette.a2',
+          background: 'colorPalette.2',
           color: 'colorPalette.fg',
           shadow: 'inset 0 0 0px 1px var(--shadow-color)',
           shadowColor: 'colorPalette.a7',
@@ -106,7 +110,7 @@ export const avatar = defineSlotRecipe({
       },
       subtle: {
         root: {
-          bg: 'colorPalette.a3',
+          bg: 'colorPalette.3',
           color: 'colorPalette.fg',
         },
       },
@@ -115,6 +119,15 @@ export const avatar = defineSlotRecipe({
           color: 'colorPalette.fg',
           shadow: 'inset 0 0 0px 1px var(--shadow-color)',
           shadowColor: 'colorPalette.a7',
+        },
+      },
+    },
+    borderless: {
+      true: {
+        root: {
+          '&[data-group-item]': {
+            borderWidth: '0px',
+          },
         },
       },
     },

@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <Wrap gap="4">
       {variants.map((variant) => (
-        <Avatar.Root variant={variant} key={variant}>
+        <Avatar.Root variant={variant} size="lg" key={variant}>
           <Avatar.Fallback name="Christian Busch" />
         </Avatar.Root>
       ))}
