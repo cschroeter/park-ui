@@ -7,3 +7,5 @@ const meta: Meta = {
 export default meta
 
 export { App as basic } from './basic'
+export { App as lazyMount } from './lazy-mount'
+export { App as unmountOnExit } from './unmount-on-exit'

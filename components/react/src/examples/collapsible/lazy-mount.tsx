@@ -3,14 +3,14 @@ import { Button, Collapsible } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Collapsible.Root>
+    <Collapsible.Root lazyMount>
       <Collapsible.Trigger asChild>
         <Button variant="outline">Toggle</Button>
       </Collapsible.Trigger>
       <Collapsible.Content>
         <Box p="4" mt="3" borderWidth="1px">
-          Park UI beautifully-designed, accessible components system and code distribution platform.
-          Built with Panda CSS and supporting a wide range of JS frameworks
+          If you inspect the DOM, you'll notice that the content is unmounted when collapsed. This
+          is useful for performance reasons when you have a lot of collapsible content.
         </Box>
       </Collapsible.Content>
     </Collapsible.Root>

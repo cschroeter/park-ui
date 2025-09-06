@@ -1,6 +1,23 @@
 import { defineKeyframes } from '@pandacss/dev'
 
 export const keyframes = defineKeyframes({
+  // collapse
+  'expand-height': {
+    from: { height: '0' },
+    to: { height: 'var(--height)' },
+  },
+  'collapse-height': {
+    from: { height: 'var(--height)' },
+    to: { height: '0' },
+  },
+  'expand-width': {
+    from: { width: '0' },
+    to: { width: 'var(--width)' },
+  },
+  'collapse-width': {
+    from: { height: 'var(--width)' },
+    to: { height: '0' },
+  },
   // fade
   'fade-in': {
     from: { opacity: 0 },

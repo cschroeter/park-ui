@@ -20,7 +20,7 @@
     {
       "type": "recipe",
       "fileName": "collapsible.ts",
-      "content": "import { collapsibleAnatomy } from '@ark-ui/react/collapsible'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const collapsible = defineSlotRecipe({\n  className: 'collapsible',\n  slots: collapsibleAnatomy.keys(),\n  base: {\n    root: {\n      alignItems: 'flex-start',\n      display: 'flex',\n      flexDirection: 'column',\n      width: 'full',\n    },\n    content: {\n      overflow: 'hidden',\n      width: 'full',\n      _open: {\n        animation: 'collapse-in',\n      },\n      _closed: {\n        animation: 'collapse-out',\n      },\n    },\n  },\n})\n",
+      "content": "import { collapsibleAnatomy } from '@ark-ui/react/collapsible'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const collapsible = defineSlotRecipe({\n  className: 'collapsible',\n  slots: collapsibleAnatomy.keys(),\n  base: {\n    content: {\n      overflow: 'hidden',\n      _open: {\n        animationName: 'expand-height, fade-in',\n        animationDuration: 'slow',\n      },\n      _closed: {\n        animationName: 'collapse-height, fade-out',\n        animationDuration: 'normal',\n      },\n    },\n  },\n})\n",
       "indexFile": {
         "imports": [
           {

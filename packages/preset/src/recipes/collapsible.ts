@@ -5,20 +5,15 @@ export const collapsible = defineSlotRecipe({
   className: 'collapsible',
   slots: collapsibleAnatomy.keys(),
   base: {
-    root: {
-      alignItems: 'flex-start',
-      display: 'flex',
-      flexDirection: 'column',
-      width: 'full',
-    },
     content: {
       overflow: 'hidden',
-      width: 'full',
       _open: {
-        animation: 'collapse-in',
+        animationName: 'expand-height, fade-in',
+        animationDuration: 'slow',
       },
       _closed: {
-        animation: 'collapse-out',
+        animationName: 'collapse-height, fade-out',
+        animationDuration: 'normal',
       },
     },
   },
