@@ -22,6 +22,7 @@ import { fieldset } from './fieldset'
 import { fileUpload } from './file-upload'
 import { floatingPanel } from './floating-panel'
 import { formLabel } from './form-label'
+import { group } from './group'
 import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
@@ -70,6 +71,7 @@ export const recipes = {
   button,
   code,
   formLabel,
+  group,
   heading,
   icon,
   input,
