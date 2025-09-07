@@ -67,7 +67,7 @@ export const scrollArea = defineSlotRecipe({
     variant: {
       auto: {
         scrollbar: {
-          '&[data-scrolling], &[data-hover]': {
+          '&[data-scrolling]': {
             '--thumb-bg': '{colors.gray.a8}',
           },
         },
