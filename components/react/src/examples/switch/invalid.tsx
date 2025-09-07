@@ -2,7 +2,7 @@ import { Switch } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Switch.Root defaultChecked>
+    <Switch.Root invalid>
       <Switch.Control>
         <Switch.Thumb />
       </Switch.Control>

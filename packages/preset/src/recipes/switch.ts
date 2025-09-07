@@ -2,97 +2,135 @@ import { switchAnatomy } from '@ark-ui/react/switch'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const switchRecipe = defineSlotRecipe({
-  className: 'switch-recipe',
+  className: 'switch',
   jsx: ['Switch', /Switch\.+/],
-  slots: switchAnatomy.keys(),
+  slots: switchAnatomy.extendWith('indicator').keys(),
   base: {
     root: {
-      alignItems: 'center',
-      display: 'flex',
-      position: 'relative',
-    },
-    control: {
-      alignItems: 'center',
-      background: 'bg.emphasized',
-      borderRadius: 'full',
-      cursor: 'pointer',
       display: 'inline-flex',
-      flexShrink: '0',
-      transitionDuration: 'normal',
-      transitionProperty: 'background',
-      transitionTimingFunction: 'default',
-      _checked: {
-        background: 'colorPalette.solid',
+      gap: '2.5',
+      alignItems: 'center',
+      position: 'relative',
+      verticalAlign: 'middle',
+      '--switch-diff': 'calc(var(--switch-width) - var(--switch-height))',
+      '--switch-x': {
+        base: 'var(--switch-diff)',
+        _rtl: 'calc(var(--switch-diff) * -1)',
       },
     },
     label: {
-      color: 'fg.default',
+      lineHeight: '1',
+      userSelect: 'none',
+      fontSize: 'sm',
       fontWeight: 'medium',
+      _disabled: {
+        color: 'fg.disabled',
+      },
+    },
+    indicator: {
+      position: 'absolute',
+      height: 'var(--switch-height)',
+      width: 'var(--switch-height)',
+      fontSize: 'var(--switch-indicator-font-size)',
+      fontWeight: 'medium',
+      flexShrink: 0,
+      userSelect: 'none',
+      display: 'grid',
+      placeContent: 'center',
+      transition: 'inset-inline-start 0.12s ease',
+      insetInlineStart: 'calc(var(--switch-x) - 2px)',
+      _checked: {
+        insetInlineStart: '2px',
+      },
+    },
+    control: {
+      display: 'inline-flex',
+      gap: '0.5rem',
+      flexShrink: 0,
+      justifyContent: 'flex-start',
+      cursor: 'switch',
+      borderRadius: 'full',
+      position: 'relative',
+      width: 'var(--switch-width)',
+      height: 'var(--switch-height)',
+      transition: 'backgrounds',
+      _disabled: {
+        layerStyle: 'disabled',
+        cursor: 'not-allowed',
+      },
+      _invalid: {
+        outline: '2px solid',
+        outlineColor: 'border.error',
+        outlineOffset: '2px',
+      },
     },
     thumb: {
-      background: 'bg.default',
-      borderRadius: 'full',
-      boxShadow: 'xs',
-      transitionDuration: 'normal',
-      transitionProperty: 'transform, background',
-      transitionTimingFunction: 'default',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0,
+      transitionProperty: 'translate',
+      transitionDuration: 'fast',
+      borderRadius: 'inherit',
       _checked: {
-        transform: 'translateX(100%)',
-        background: { _light: 'bg.default', _dark: 'colorPalette.contrast' },
+        translate: 'var(--switch-x) 0',
       },
     },
   },
   defaultVariants: {
+    variant: 'solid',
     size: 'md',
   },
   variants: {
-    size: {
-      sm: {
-        root: {
-          gap: '2',
-        },
+    variant: {
+      solid: {
         control: {
-          width: '7',
-          p: '0.5',
+          borderRadius: 'full',
+          bg: 'gray.4',
+          focusVisibleRing: 'outside',
+          _checked: {
+            bg: 'colorPalette.solid',
+          },
         },
         thumb: {
-          width: '3',
-          height: '3',
+          bg: 'colorPalette.contrast',
+          width: 'var(--switch-height)',
+          height: 'var(--switch-height)',
+          scale: '0.8',
+          boxShadow: 'sm',
+          _checked: {
+            bg: 'colorPalette.contrast',
+          },
         },
-        label: {
-          textStyle: 'sm',
+      },
+    },
+    size: {
+      xs: {
+        root: {
+          '--switch-width': 'sizes.6',
+          '--switch-height': 'sizes.3',
+          '--switch-indicator-font-size': 'fontSizes.xs',
+        },
+      },
+      sm: {
+        root: {
+          '--switch-width': 'sizes.8',
+          '--switch-height': 'sizes.4',
+          '--switch-indicator-font-size': 'fontSizes.xs',
         },
       },
       md: {
         root: {
-          gap: '3',
-        },
-        control: {
-          width: '9',
-          p: '0.5',
-        },
-        thumb: {
-          width: '4',
-          height: '4',
-        },
-        label: {
-          textStyle: 'md',
+          '--switch-width': 'sizes.10',
+          '--switch-height': 'sizes.5',
+          '--switch-indicator-font-size': 'fontSizes.sm',
         },
       },
       lg: {
         root: {
-          gap: '4',
-        },
-        control: {
-          width: '11',
-          p: '0.5',
-        },
-        thumb: {
-          width: '5',
-          height: '5',
-        },
-        label: {
-          textStyle: 'lg',
+          '--switch-width': 'sizes.12',
+          '--switch-height': 'sizes.6',
+          '--switch-indicator-font-size': 'fontSizes.md',
         },
       },
     },

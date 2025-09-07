@@ -20,9 +20,84 @@ import { Switch } from '@/components/ui'
 
 ```tsx
 <Switch.Root>
+  <Switch.HiddenInput />
   <Switch.Control>
     <Switch.Thumb />
   </Switch.Control>
-  <Switch.Label>Switch Label</Switch.Label>
+  <Switch.Label />
 </Switch.Root>
 ```
+
+## Shortcuts
+
+The `Switch` component also provides a set of shortcuts for common use cases.
+
+### SwitchControl
+
+The `Switch.Control` renders the `Switch.Thumb` within it by default.
+
+This works:
+
+```tsx
+<Switch.Control>
+  <Switch.Thumb />
+</Switch.Control>
+```
+
+This might be more concise, if you don't need to customize the thumb:
+
+```tsx
+<Switch.Control />
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the switch.
+
+<ComponentExample name="sizes" />
+
+### Controlled
+
+Use the `checked` and `onCheckedChange` prop to control the state of the switch.
+
+<ComponentExample name="controlled" />
+
+### Disabled
+
+Use the `disabled` prop to disable the switch.
+
+<ComponentExample name="disabled" />
+
+### Invalid
+
+Use the `invalid` prop to mark the switch as invalid.
+
+<ComponentExample name="invalid" />
+
+### Tooltip
+
+Wrap the `Switch.Root` with a `Tooltip` to show a tooltip on hover or focus.
+
+<ComponentExample name="with-tooltip" />
+
+### Track Indicator
+
+Use the `Switch.Indicator` component to display different indicators based on the checked state.
+
+<ComponentExample name="indicator" />
+
+### Thumb Indicator
+
+Use the `Switch.ThumbIndicator` component to add an icon to the switch thumb.
+
+<ComponentExample name="thumb-indicator" />
+
+### Closed Component
+
+Here's how to setup the switch for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+## Props

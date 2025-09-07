@@ -32,7 +32,15 @@ export const PageHeaderLinks = (props: Props) => {
     if (!content) return null
 
     return (
-      <Button key={key} colorPalette="gray" variant="subtle" size="xs" textStyle="sm" asChild>
+      <Button
+        key={key}
+        colorPalette="gray"
+        variant="subtle"
+        fontWeight="medium"
+        size="xs"
+        textStyle="sm"
+        asChild
+      >
         <a href={url} target="_blank" rel="noopener noreferrer">
           <Icon size="sm">{content.icon}</Icon>
           {content.label}
