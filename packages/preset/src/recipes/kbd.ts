@@ -3,39 +3,59 @@ import { defineRecipe } from '@pandacss/dev'
 export const kbd = defineRecipe({
   className: 'kbd',
   base: {
-    alignItems: 'center',
-    bg: 'bg.subtle',
-    borderRadius: 'l2',
-    boxShadow:
-      '0 -2px 0 0 inset var(--colors-border-muted), 0 0 0 1px inset var(--colors-border-muted)',
-    color: 'fg.default',
     display: 'inline-flex',
-    fontFamily: 'var(--fonts-code)',
+    alignItems: 'center',
     fontWeight: 'medium',
-    whiteSpace: 'pre',
+    fontFamily: 'code',
+    flexShrink: '0',
+    whiteSpace: 'nowrap',
+    wordSpacing: '-0.5em',
+    userSelect: 'none',
+    px: '1',
+    borderRadius: 'l2',
   },
-  defaultVariants: {
-    size: 'md',
-  },
+
   variants: {
-    size: {
-      sm: {
-        minHeight: '5',
-        px: '0.5',
-        textStyle: 'xs',
+    variant: {
+      raised: {
+        background: 'colorPalette.a2',
+        color: 'colorPalette.a11',
+        borderWidth: '1px',
+        borderBottomWidth: '2px',
+        borderColor: 'colorPalette.a7',
       },
-      md: {
-        minHeight: '6',
-        textStyle: 'sm',
-        px: '1',
-        py: '1px',
+      outline: {
+        color: 'colorPalette.a11',
+        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
+        shadowColor: 'colorPalette.a7',
       },
-      lg: {
-        minHeight: '7',
-        px: '1.5',
-        py: '1px',
-        textStyle: 'md',
+      subtle: {
+        background: 'colorPalette.a3',
+        color: 'colorPalette.a11',
+      },
+      plain: {
+        color: 'colorPalette.fg',
       },
     },
+
+    size: {
+      sm: {
+        textStyle: 'xs',
+        height: '4.5',
+      },
+      md: {
+        textStyle: 'sm',
+        height: '5',
+      },
+      lg: {
+        textStyle: 'md',
+        height: '6',
+      },
+    },
+  },
+
+  defaultVariants: {
+    size: 'md',
+    variant: 'raised',
   },
 })
