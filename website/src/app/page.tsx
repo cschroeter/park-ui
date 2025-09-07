@@ -1,5 +1,7 @@
 import { Box, Grid, GridItem, Stack } from 'styled-system/jsx'
 import { CardAuthentication } from '~/components/marketing/card-authentication'
+import { CardNotification } from '~/components/marketing/card-notification'
+import { CardPricing } from '~/components/marketing/card-pricing'
 import { Group, Item } from '~/components/marketing/framer'
 import { Hero } from '~/components/marketing/hero'
 import { LegalFooter } from '~/components/navigation/legal-footer'
@@ -44,10 +46,10 @@ export default function Page() {
                   <CardAuthentication />
                 </Item>
                 <Item>
-                  <CardAuthentication />
+                  <CardNotification />
                 </Item>
                 <Item>
-                  <CardAuthentication />
+                  <CardPricing />
                 </Item>
               </Group>
               <Group>
