@@ -9,7 +9,7 @@ export const App = () => {
       {sizes.map((size) => (
         <Avatar.Root size={size} key={size}>
           <Avatar.Fallback name="Christian Busch" />
-          <Avatar.Image src="https://shorturl.at/gaV8r" />
+          <Avatar.Image src="https://avatars.githubusercontent.com/u/1846056?v=4" />
         </Avatar.Root>
       ))}
     </Wrap>

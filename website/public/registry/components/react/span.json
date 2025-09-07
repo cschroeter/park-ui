@@ -1,0 +1,30 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "span",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "span.tsx",
+      "content": "import { type ComponentProps, styled } from 'styled-system/jsx'\n\nexport type SpanProps = ComponentProps<typeof Span>\nexport const Span = styled('span')\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "named",
+            "symbols": [
+              {
+                "name": "Span",
+                "isType": false
+              },
+              {
+                "name": "SpanProps",
+                "isType": true
+              }
+            ],
+            "moduleSpecifier": "./span"
+          }
+        ]
+      }
+    }
+  ]
+}

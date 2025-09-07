@@ -1,4 +1,5 @@
 'use server'
+import { readFileSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { frameworks } from '~/lib/frameworks'
@@ -56,4 +57,31 @@ export const getRecipes = async (name: string): Promise<FrameworkSourceCode[]> =
       ? { code: code.replace(/@ark-ui\/react/g, `@ark-ui/${framework}`), lang }
       : null,
   }))
+}
+
+export interface Properties {
+  type: string
+  isRequired: boolean
+  defaultValue?: string | undefined
+  description?: string | undefined
+}
+
+const sortEntries = (props: Record<string, any>): [string, Properties][] => {
+  return Object.entries(props).sort(([, a], [, b]) => {
+    if (a.isRequired && !b.isRequired) return -1
+    if (!a.isRequired && b.isRequired) return 1
+    if (a.defaultValue && !b.defaultValue) return -1
+    if (!a.defaultValue && b.defaultValue) return 1
+    return 0
+  })
+}
+export const getComponentProps = async (name: string) => {
+  const path = join(process.cwd(), 'public', 'types', 'react', `${name}.json`)
+  const part = 'Root'
+  const componentTypes = JSON.parse(readFileSync(path, 'utf-8'))
+  const componentType = part ? componentTypes[part] : componentTypes
+
+  if (!componentType?.props) return null
+
+  return sortEntries(componentType.props)
 }

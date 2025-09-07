@@ -115,32 +115,39 @@ export const table = defineSlotRecipe({
         root: {
           textStyle: 'sm',
         },
-        caption: {
-          mt: '4',
+        header: {
+          px: '2',
+          py: '2',
         },
         cell: {
-          height: '11',
-          px: '3',
-        },
-        header: {
-          height: '11',
-          px: '3',
+          px: '2',
+          py: '2',
         },
       },
       md: {
         root: {
           textStyle: 'sm',
         },
-        caption: {
-          mt: '4',
+        header: {
+          px: '3',
+          py: '3',
         },
         cell: {
-          height: '14',
-          px: '4',
+          px: '3',
+          py: '3',
+        },
+      },
+      lg: {
+        root: {
+          textStyle: 'md',
         },
         header: {
-          height: '11',
           px: '4',
+          py: '3',
+        },
+        cell: {
+          px: '4',
+          py: '3',
         },
       },
     },
