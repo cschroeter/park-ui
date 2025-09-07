@@ -4,6 +4,7 @@ description: A floating label component providing helpful information on hover o
 category: overlays
 links:
   recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/tooltip.ts
+  ark: https://ark-ui.com/docs/components/tooltip
 ---
 
 <ComponentExample name="basic" />
@@ -19,15 +20,72 @@ import { Tooltip } from '@/components/ui'
 ```
 
 ```tsx
-<Tooltip.Root>
-  <Tooltip.Trigger>Hover me</Tooltip.Trigger>
-  <Tooltip.Positioner>
-    <Tooltip.Content>
-      <Tooltip.Arrow>
-        <Tooltip.ArrowTip />
-      </Tooltip.Arrow>
-      Tooltip content
-    </Tooltip.Content>
-  </Tooltip.Positioner>
-</Tooltip.Root>
+<Tooltip content="This is the tooltip content">
+  <button>Hover me</button>
+</Tooltip>
 ```
+
+
+## Examples
+
+### Arrow
+
+Use the `showArrow` prop to show an arrow on the tooltip.
+
+<ComponentExample name="arrow" />
+
+### Placement
+
+Use the `positioning.placement` prop to change the position of the tooltip.
+
+<ComponentExample name="placement" />
+
+### Offset
+
+Use the `positioning.offset` prop to change the offset of the tooltip.
+
+<ComponentExample name="offset" />
+
+### Delay
+
+Use the `openDelay` and `closeDelay` prop to change the delay of the tooltip.
+
+<ComponentExample name="delay" />
+
+### Custom Background
+
+Use the `--tooltip-bg` CSS variable to change the background color of the tooltip.
+
+<ComponentExample name="custom-background" />
+
+### Controlled
+
+Use the `open` and `onOpenChange` prop to control the visibility of the tooltip.
+
+<ComponentExample name="controlled" />
+
+### Interactive
+
+Use the `interactive` prop to keep the tooltip open when interacting with its content.
+
+<ComponentExample name="interactive" />
+
+### Disabled
+
+Use the `disabled` prop to disable the tooltip. When disabled, the tooltip will not be shown.
+
+<ComponentExample name="disabled" />
+
+### With Avatar
+
+Here's an example of how to use the `Tooltip` component with an `Avatar` component.
+
+<ComponentExample name="with-avatar" />
+
+### With Switch
+
+Here's an example of how to wrap `Tooltip` around a `Switch` component.
+
+<ComponentExample name="with-switch" />
+
+## Props

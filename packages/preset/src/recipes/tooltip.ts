@@ -6,22 +6,33 @@ export const tooltip = defineSlotRecipe({
   slots: tooltipAnatomy.keys(),
   base: {
     content: {
-      background: 'gray.a12',
+      '--tooltip-bg': 'colors.gray.12',
+      bg: 'var(--tooltip-bg)',
+      color: 'gray.1',
       borderRadius: 'l2',
       boxShadow: 'sm',
-      color: 'bg.default',
       fontWeight: 'semibold',
-      px: '3',
-      py: '2',
+      px: '2',
+      py: '1.5',
       textStyle: 'xs',
-      maxWidth: '2xs',
-      zIndex: 'tooltip',
+      maxWidth: 'xs',
       _open: {
-        animation: 'fadeIn 0.25s ease-out',
+        animationStyle: 'scale-fade-in',
+        animationDuration: 'fast',
       },
       _closed: {
-        animation: 'fadeOut 0.2s ease-out',
+        animationStyle: 'scale-fade-out',
+        animationDuration: 'faster',
       },
+    },
+    arrow: {
+      '--arrow-size': 'sizes.2',
+      '--arrow-background': 'var(--tooltip-bg)',
+    },
+    arrowTip: {
+      borderTopWidth: '1px',
+      borderInlineStartWidth: '1px',
+      borderColor: 'var(--tooltip-bg)',
     },
   },
 })
