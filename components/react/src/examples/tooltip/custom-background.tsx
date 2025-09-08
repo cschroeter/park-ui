@@ -7,8 +7,7 @@ export const App = () => {
       content="This is the tooltip content"
       contentProps={{
         style: {
-          // @ts-expect-error TODO find a better way to update CSS variables
-          '--tooltip-bg': 'tomato',
+          ['--tooltip-bg' as string]: 'tomato',
         },
       }}
     >
