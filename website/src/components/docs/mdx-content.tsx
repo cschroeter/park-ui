@@ -10,6 +10,7 @@ import { CodeSnippet } from './code-snippet'
 import { ColorGrid } from './color-grid'
 import { ColorPairings } from './color-pairings'
 import { ComponentExample } from './component-example'
+import { ComponentSizing } from './component-sizing'
 import { FigmaKitPreview } from './figma-kit-preview'
 import { InstallationGuide } from './installation-guide'
 import { PropsTable } from './props-table'
@@ -33,6 +34,7 @@ const sharedComponents = {
   ColorGrid,
   ColorPairings,
   ComponentExample,
+  ComponentSizing,
   FigmaKitPreview,
   InstallationGuide,
   PropsTable,

@@ -6,6 +6,18 @@ category: getting-started
 
 Park UI builds on the default [Panda Preset](https://www.npmjs.com/package/@pandacss/preset-panda). To achieve a consistent, minimal design system, it introduces a few key adjustments to the standard Panda configuration.
 
+## Component Sizing
+
+In Park UI, components are grouped into two categories:
+
+* **Primary components** — the main interactive elements in your interface (e.g. Buttons, Inputs, Selects).
+* **Secondary components** — smaller supporting elements that work alongside primaries (e.g. Badges, Checkboxes, Switches).
+
+Within each category, components share the same height for a given size token. For example, `md` Buttons and Inputs are both `40px` tall.
+
+<ComponentSizing />
+
+
 ## Color System
 
 The biggest change Park UI introduces is its color system. Instead of the `50–950` scale used in Panda CSS, Park UI is built on [Radix Colors](https://www.radix-ui.com/colors).
