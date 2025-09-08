@@ -49,6 +49,12 @@ export const preset = definePreset({
         easings,
         durations,
         zIndex,
+        sizes: {
+          '5.5': { value: '1.375rem' },
+        },
+        spacing: {
+          '5.5': { value: '1.375rem' },
+        },
       },
       semanticTokens: {
         colors: {

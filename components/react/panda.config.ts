@@ -14,4 +14,14 @@ export default defineConfig({
       },
     },
   },
+  staticCss: {
+    css: [
+      {
+        properties: {
+          width: ['*'],
+          height: ['*'],
+        },
+      },
+    ],
+  },
 })
