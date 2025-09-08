@@ -6,9 +6,7 @@ export const ComponentSizing = () => {
     <Stack gap="6" className="not-prose" my="8">
       {sizes.map(({ label, height, boxSize }) => (
         <Stack key={label} direction="row" gap="1">
-          <Center textStyle="xs" color="fg.default">
-            {HEIGHT_MAP[height]}
-          </Center>
+          <Center textStyle="xs">{HEIGHT_MAP[height]}px</Center>
           <Center width="2.5" borderYWidth="1px" borderColor="gray.9" me="1">
             <Box width="1px" bg="gray.9" h="full" />
           </Center>
@@ -33,9 +31,9 @@ export const ComponentSizing = () => {
             <Box width="1px" bg="gray.9" h="full" />
             <Box width="2" h="1px" bg="gray.9" position="absolute" transform="translateY(-50%)" />
           </Center>
-          <Stack gap="0" justify="space-around" color="fg.default">
-            <Text textStyle="xs">{HEIGHT_MAP[height] / 2}</Text>
-            <Text textStyle="xs">{HEIGHT_MAP[height] / 2}</Text>
+          <Stack gap="0" justify="space-around">
+            <Text textStyle="xs">{HEIGHT_MAP[height] / 2}px</Text>
+            <Text textStyle="xs">{HEIGHT_MAP[height] / 2}px</Text>
           </Stack>
         </Stack>
       ))}

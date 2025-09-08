@@ -21,14 +21,7 @@ export default async function DocsLayout(props: PropsWithChildren) {
         <GridItem position="relative" hideBelow="lg" borderEndWidth="1px">
           <Sidebar />
         </GridItem>
-        <GridItem
-          hideBelow="lg"
-          bg="gray.1"
-          backgroundImage={{
-            _light: 'url(/images/pattern-light.svg)',
-            _dark: 'url(/images/pattern-dark.svg)',
-          }}
-        />
+        <GridItem hideBelow="lg" bg="gray.a1" />
         <GridItem
           position="relative"
           bg="bg.default"
@@ -37,14 +30,7 @@ export default async function DocsLayout(props: PropsWithChildren) {
         >
           {children}
         </GridItem>
-        <GridItem
-          hideBelow="lg"
-          bg="gray.1"
-          backgroundImage={{
-            _light: 'url(/images/pattern-light.svg)',
-            _dark: 'url(/images/pattern-dark.svg)',
-          }}
-        />
+        <GridItem hideBelow="lg" bg="gray.a1" />
       </Grid>
     </>
   )

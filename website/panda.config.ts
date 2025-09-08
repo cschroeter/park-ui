@@ -82,6 +82,7 @@ export default defineConfig({
         properties: {
           width: ['*'],
           height: ['*'],
+          boxShadow: ['*'],
         },
       },
     ],

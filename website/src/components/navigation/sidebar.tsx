@@ -2,7 +2,6 @@ import { Box, type BoxProps, Stack } from 'styled-system/jsx'
 import { ScrollArea } from '@/components/ui'
 import { getSidebarGroups } from '~/lib/docs'
 import { SidebarGroup } from './sidebar-group'
-import { SidebarLink } from './sidebar-link'
 
 export const Sidebar = (props: BoxProps) => {
   const groups = getSidebarGroups()
@@ -23,9 +22,6 @@ export const Sidebar = (props: BoxProps) => {
           <ScrollArea.Content py="8">
             <nav>
               <Stack gap="8">
-                <Stack gap="2">
-                  <SidebarLink>Documentation</SidebarLink>
-                </Stack>
                 {groups.map((docs, index) => (
                   <SidebarGroup key={index} heading={docs[0].category} docs={docs} />
                 ))}
