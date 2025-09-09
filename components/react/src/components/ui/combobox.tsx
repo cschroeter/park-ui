@@ -1,33 +1,22 @@
 'use client'
-import type { CollectionItem } from '@ark-ui/react/combobox'
 import { Combobox } from '@ark-ui/react/combobox'
+import type { ComponentProps } from 'react'
 import { createStyleContext } from 'styled-system/jsx'
-import { combobox } from 'styled-system/recipes'
-import type {
-  Assign,
-  ComponentProps,
-  JsxHTMLProps,
-  RecipeVariantProps,
-  UnstyledProps,
-} from 'styled-system/types'
+import { type ComboboxVariantProps, combobox } from 'styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(combobox)
 
-interface RootBaseProps<T extends CollectionItem>
-  extends Assign<Combobox.RootBaseProps<T>, RecipeVariantProps<typeof combobox>>,
-    UnstyledProps {}
-
-interface RootProps<T extends CollectionItem>
-  extends JsxHTMLProps<ComponentProps<'div'>, RootBaseProps<T>> {}
-
-type RootComponent = <T extends CollectionItem>(
-  props: RootProps<T> & React.RefAttributes<HTMLDivElement>,
-) => React.JSX.Element
+export type RootProps = ComponentProps<typeof Root>
 
 export const Root = withProvider(Combobox.Root, 'root', {
   // @ts-expect-error
   defaultProps: { positioning: { sameWidth: true } },
-}) as RootComponent
+}) as Combobox.RootComponent<ComboboxVariantProps>
+
+export const RootProvider = withProvider(Combobox.RootProvider, 'root', {
+  // @ts-expect-error
+  defaultProps: { positioning: { sameWidth: true } },
+}) as Combobox.RootProviderComponent<ComboboxVariantProps>
 
 export const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger')
 export const Content = withContext(Combobox.Content, 'content')

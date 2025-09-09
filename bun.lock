@@ -14,7 +14,7 @@
       "dependencies": {
         "@ark-ui/react": "5.23.0",
         "@tanstack/react-virtual": "3.13.12",
-        "lucide-react": "0.542.0",
+        "lucide-react": "0.543.0",
       },
       "devDependencies": {
         "@pandacss/dev": "1.2.0",
@@ -86,7 +86,7 @@
         "framer": "2.4.1",
         "fumadocs-core": "15.7.10",
         "hastscript": "9.0.1",
-        "lucide-react": "0.542.0",
+        "lucide-react": "0.543.0",
         "next": "15.5.2",
         "next-themes": "0.4.6",
         "pandacss-preset-typography": "0.1.6",
@@ -1394,7 +1394,7 @@
 
     "lru-cache": ["lru-cache@7.18.3", "", {}, "sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA=="],
 
-    "lucide-react": ["lucide-react@0.542.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-w3hD8/SQB7+lzU2r4VdFyzzOzKnUjTZIF/MQJGSSvni7Llewni4vuViRppfRAa2guOsY5k4jZyxw/i9DQHv+dw=="],
+    "lucide-react": ["lucide-react@0.543.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-fpVfuOQO0V3HBaOA1stIiP/A2fPCXHIleRZL16Mx3HmjTYwNSbimhnFBygs2CAfU1geexMX5ItUcWBGUaqw5CA=="],
 
     "lz-string": ["lz-string@1.5.0", "", { "bin": { "lz-string": "bin/bin.js" } }, "sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ=="],
 
