@@ -5,9 +5,11 @@ export const layerStyles = defineLayerStyles({
     value: {
       color: 'gray.9',
       background: 'gray.5',
+      borderColor: 'gray.5',
       _hover: {
         color: 'gray.9',
         background: 'gray.5',
+        borderColor: 'gray.5',
       },
     },
   },

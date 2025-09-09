@@ -2,111 +2,125 @@ import { checkboxAnatomy } from '@ark-ui/react/checkbox'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const checkbox = defineSlotRecipe({
-  className: 'checkbox',
   slots: checkboxAnatomy.keys(),
+  className: 'checkbox',
   base: {
     root: {
+      display: 'inline-flex',
+      gap: '2',
       alignItems: 'center',
-      display: 'flex',
-    },
-    label: {
-      color: 'fg.default',
-      fontWeight: 'medium',
+      verticalAlign: 'top',
+      position: 'relative',
     },
     control: {
+      display: 'inline-flex',
       alignItems: 'center',
-      borderColor: 'border.default',
-      borderWidth: '1px',
-      color: 'colorPalette.contrast',
-      cursor: 'pointer',
-      display: 'flex',
       justifyContent: 'center',
-      transitionDuration: 'normal',
-      transitionProperty: 'border-color, background',
-      transitionTimingFunction: 'default',
-      _hover: {
-        background: 'bg.subtle',
+      flexShrink: '0',
+      borderWidth: '1px',
+      borderColor: 'transparent',
+      borderRadius: 'l1',
+      cursor: 'checkbox',
+      focusVisibleRing: 'outside',
+      _icon: {
+        boxSize: 'full',
       },
-      _checked: {
-        background: 'colorPalette.solid',
-        borderColor: 'colorPalette.solid',
-        _hover: {
-          background: 'colorPalette.solid',
-        },
+      _invalid: {
+        colorPalette: 'red',
       },
-      _indeterminate: {
-        background: 'colorPalette.solid',
-        borderColor: 'colorPalette.solid',
-        _hover: {
-          background: 'colorPalette.solid',
-        },
+      _disabled: {
+        cursor: 'disabled',
       },
-      '&:has(+ :focus-visible)': {
-        outlineOffset: '2px',
-        outline: '2px solid',
-        outlineColor: 'border.outline',
-        _checked: {
-          outlineColor: 'colorPalette.solid',
-        },
+    },
+    label: {
+      fontWeight: 'medium',
+      userSelect: 'none',
+      _disabled: {
+        color: 'fg.disabled',
       },
     },
   },
-  defaultVariants: {
-    size: 'md',
-  },
+
   variants: {
     size: {
       sm: {
-        root: {
-          gap: '2',
-        },
-        control: {
-          width: '4',
-          height: '4',
-          borderRadius: 'l1',
-          '& svg': {
-            width: '3',
-            height: '3',
-          },
-        },
-        label: {
-          textStyle: 'sm',
-        },
+        root: { gap: '2' },
+        label: { textStyle: 'sm' },
+        control: { boxSize: '4.5', p: '0.5' },
       },
       md: {
-        root: {
-          gap: '3',
-        },
-        control: {
-          width: '5',
-          height: '5',
-          borderRadius: 'l1',
-          '& svg': {
-            width: '3.5',
-            height: '3.5',
-          },
-        },
-        label: {
-          textStyle: 'md',
-        },
+        root: { gap: '3' },
+        label: { textStyle: 'md' },
+        control: { boxSize: '5', p: '0.5' },
       },
       lg: {
-        root: {
-          gap: '4',
-        },
+        root: { gap: '3' },
+        label: { textStyle: 'lg' },
+        control: { boxSize: '5.5', p: '0.5' },
+      },
+    },
+
+    variant: {
+      outline: {
         control: {
-          width: '6',
-          height: '6',
-          borderRadius: 'l1',
-          '& svg': {
-            width: '4',
-            height: '4',
+          borderColor: 'gray.a7',
+          color: 'colorPalette.fg',
+          '&:is([data-state=checked], [data-state=indeterminate])': {
+            borderColor: 'colorPalette.solid',
+          },
+          _disabled: {
+            layerStyle: 'disabled',
           },
         },
-        label: {
-          textStyle: 'lg',
+      },
+      solid: {
+        control: {
+          borderColor: 'border.default',
+          '&:is([data-state=checked], [data-state=indeterminate])': {
+            bg: 'colorPalette.solid',
+            color: 'colorPalette.contrast',
+            borderColor: 'colorPalette.solid',
+          },
+          _disabled: {
+            layerStyle: 'disabled',
+          },
+          _invalid: {
+            borderColor: 'border.error',
+          },
+        },
+      },
+      surface: {
+        control: {
+          bg: 'colorPalette.a2',
+          color: 'colorPalette.a11',
+          borderColor: 'colorPalette.a7',
+          _disabled: {
+            layerStyle: 'disabled',
+          },
+        },
+      },
+      subtle: {
+        control: {
+          bg: 'colorPalette.a3',
+          color: 'colorPalette.a11',
+          _disabled: {
+            layerStyle: 'disabled',
+          },
+        },
+      },
+      plain: {
+        control: {
+          color: 'colorPalette.fg',
+          _disabled: {
+            layerStyle: 'disabled',
+          },
         },
       },
     },
+  },
+
+  defaultVariants: {
+    variant: 'solid',
+    size: 'md',
   },
 })

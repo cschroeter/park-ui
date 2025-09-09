@@ -1,3 +1,4 @@
+import { PlusIcon } from 'lucide-react'
 import { Checkbox } from '@/components/ui'
 
 export const App = () => {
@@ -5,7 +6,9 @@ export const App = () => {
     <Checkbox.Root>
       <Checkbox.HiddenInput />
       <Checkbox.Control>
-        <Checkbox.Indicator />
+        <Checkbox.Indicator>
+          <PlusIcon />
+        </Checkbox.Indicator>
       </Checkbox.Control>
       <Checkbox.Label>Label</Checkbox.Label>
     </Checkbox.Root>
