@@ -1,5 +1,5 @@
+import { codeToHtml } from 'shiki'
 import { Box, type BoxProps } from 'styled-system/jsx'
-import { codeToHtml } from '~/lib/shiki'
 import type { SourceCode } from '~/types'
 import { ClipboardButton } from './clipboard-button'
 
