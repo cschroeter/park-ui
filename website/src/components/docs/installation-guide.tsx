@@ -9,7 +9,7 @@ export const InstallationGuide = () => {
   const sourceCode: SourceCode = { code: `npx @park-ui/cli@next add ${component}`, lang: 'bash' }
 
   return (
-    <Tabs.Root defaultValue="cli">
+    <Tabs.Root defaultValue="cli" lazyMount>
       <Tabs.List>
         <Tabs.Trigger value="cli">CLI</Tabs.Trigger>
         <Tabs.Trigger value="manual">Manual</Tabs.Trigger>

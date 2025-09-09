@@ -14,7 +14,7 @@ export const CodePreviewTabs = (props: Props) => {
   const { sources, collapsable, ...rootProps } = props
 
   return (
-    <Tabs.Root variant="enclosed" borderRadius="l3" borderWidth="1px" {...rootProps}>
+    <Tabs.Root variant="enclosed" borderRadius="l3" borderWidth="1px" lazyMount {...rootProps}>
       <Tabs.List
         background="gray.1"
         boxShadow="none"
