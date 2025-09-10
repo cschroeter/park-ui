@@ -11,6 +11,9 @@ export const checkbox = defineSlotRecipe({
       alignItems: 'center',
       verticalAlign: 'top',
       position: 'relative',
+      _disabled: {
+        layerStyle: 'disabled',
+      },
     },
     control: {
       display: 'inline-flex',
@@ -20,24 +23,16 @@ export const checkbox = defineSlotRecipe({
       borderWidth: '1px',
       borderColor: 'transparent',
       borderRadius: 'l1',
-      cursor: 'checkbox',
+      cursor: 'pointer',
       focusVisibleRing: 'outside',
+      focusRingColor: 'colorPalette.solid.bg',
       _icon: {
         boxSize: 'full',
-      },
-      _invalid: {
-        colorPalette: 'red',
-      },
-      _disabled: {
-        cursor: 'disabled',
       },
     },
     label: {
       fontWeight: 'medium',
       userSelect: 'none',
-      _disabled: {
-        color: 'fg.disabled',
-      },
     },
   },
 
@@ -75,45 +70,35 @@ export const checkbox = defineSlotRecipe({
       },
       solid: {
         control: {
-          borderColor: 'border.default',
-          '&:is([data-state=checked], [data-state=indeterminate])': {
-            bg: 'colorPalette.solid',
-            color: 'colorPalette.contrast',
-            borderColor: 'colorPalette.solid',
-          },
-          _disabled: {
-            layerStyle: 'disabled',
-          },
-          _invalid: {
-            borderColor: 'border.error',
+          control: {
+            borderColor: 'border.default',
+            '&:is([data-state=checked], [data-state=indeterminate])': {
+              background: 'colorPalette.solid.bg',
+              color: 'colorPalette.solid.fg',
+              borderColor: 'transparent',
+            },
+            _invalid: {
+              background: 'bg.error',
+            },
           },
         },
       },
       surface: {
         control: {
-          bg: 'colorPalette.a2',
-          color: 'colorPalette.a11',
-          borderColor: 'colorPalette.a7',
-          _disabled: {
-            layerStyle: 'disabled',
-          },
+          background: 'colorPalette.surface.bg',
+          color: 'colorPalette.surface.fg',
+          borderColor: 'colorPalette.surface.border',
         },
       },
       subtle: {
         control: {
-          bg: 'colorPalette.a3',
-          color: 'colorPalette.a11',
-          _disabled: {
-            layerStyle: 'disabled',
-          },
+          background: 'colorPalette.subtle.bg',
+          color: 'colorPalette.subtle.fg',
         },
       },
       plain: {
         control: {
-          color: 'colorPalette.fg',
-          _disabled: {
-            layerStyle: 'disabled',
-          },
+          color: 'colorPalette.plain.fg',
         },
       },
     },
