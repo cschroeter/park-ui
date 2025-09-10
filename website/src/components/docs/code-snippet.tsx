@@ -1,3 +1,4 @@
+import { cache } from 'react'
 import { codeToHtml } from 'shiki'
 import { Box, type BoxProps } from 'styled-system/jsx'
 import type { SourceCode } from '~/types'
@@ -7,6 +8,13 @@ interface Props extends BoxProps {
   sourceCode: SourceCode | null
 }
 
+const getCachedHighlightedCode = cache(async (code: string, lang: string) => {
+  return codeToHtml(code, {
+    lang,
+    theme: 'github-dark-default',
+  })
+})
+
 export const CodeSnippet = async (props: Props) => {
   const { sourceCode, ...rootProps } = props
   if (!sourceCode) {
@@ -15,7 +23,7 @@ export const CodeSnippet = async (props: Props) => {
 
   const { code, lang } = sourceCode
 
-  const __html = await codeToHtml(code, { lang, theme: 'github-dark-default' })
+  const __html = await getCachedHighlightedCode(code, lang)
 
   return (
     <Box

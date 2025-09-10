@@ -1,5 +1,6 @@
 import { camelCase, pascalCase } from 'change-case'
 import dynamic from 'next/dynamic'
+import { cache } from 'react'
 import { Box } from 'styled-system/jsx'
 import { getComponentExamples } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
@@ -11,25 +12,33 @@ interface Props {
   codeOnly?: boolean
 }
 
-export const ComponentExample = async (props: Props) => {
-  const { name, codeOnly } = props
-  const { component } = getServerContext()
-
-  const Example = dynamic(() =>
+const createDynamicExample = cache((component: string, name: string) => {
+  return dynamic(() =>
     import('@park-ui/react/examples')
       // @ts-expect-error
       .then((mod) => mod[pascalCase(component)])
       .then((mod) => mod[camelCase(name)]),
   )
+})
 
-  const codeExamples = await getComponentExamples({
+const getCachedComponentExamples = cache(getComponentExamples)
+
+export const ComponentExample = async (props: Props) => {
+  const { name, codeOnly } = props
+  const { component } = getServerContext()
+
+  const Example = createDynamicExample(component, name)
+
+  const codeExamples = await getCachedComponentExamples({
     component,
     name,
   })
 
-  return codeOnly ? (
-    <CodePreviewTabs sources={codeExamples} defaultValue="react" />
-  ) : (
+  if (codeOnly) {
+    return <CodePreviewTabs sources={codeExamples} defaultValue="react" />
+  }
+
+  return (
     <Box
       borderWidth="1px"
       borderRadius="l3"
