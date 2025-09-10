@@ -4,10 +4,10 @@ import { Spinner } from '@/components/ui'
 export const App = () => {
   return (
     <Wrap gap="4">
-      <Spinner color="colorPalette.solid" colorPalette="red" />
-      <Spinner color="colorPalette.solid" colorPalette="green" />
-      <Spinner color="colorPalette.solid" colorPalette="blue" />
-      <Spinner color="colorPalette.solid" colorPalette="amber" />
+      <Spinner color="colorPalette.9" colorPalette="red" />
+      <Spinner color="colorPalette.9" colorPalette="green" />
+      <Spinner color="colorPalette.9" colorPalette="blue" />
+      <Spinner color="colorPalette.9" colorPalette="amber" />
     </Wrap>
   )
 }

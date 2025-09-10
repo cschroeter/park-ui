@@ -116,7 +116,7 @@ export const select = defineSlotRecipe({
           borderWidth: '1px',
           _focus: {
             borderColor: 'colorPalette.solid',
-            boxShadow: '0 0 0 1px var(--colors-color-palette-solid)',
+            boxShadow: '0 0 0 1px var(--colors-color-palette-solid-bg)',
           },
         },
       },

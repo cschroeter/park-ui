@@ -57,14 +57,14 @@ const link = cva({
     transitionProperty: 'border-color, box-shadow',
     transitionTimingFunction: 'default',
     _hover: {
-      borderColor: 'colorPalette.solid',
-      shadowColor: 'colorPalette.solid',
+      borderColor: 'colorPalette.9',
+      shadowColor: 'colorPalette.9',
       boxShadow: '0 0 0 1px var(--shadow-color)',
     },
     _focusVisible: {
       outline: 'none',
-      borderColor: 'colorPalette.default',
-      shadowColor: 'colorPalette.solid',
+      borderColor: 'colorPalette.9',
+      shadowColor: 'colorPalette.9',
       boxShadow: '0 0 0 1px var(--shadow-color)',
     },
   },

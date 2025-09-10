@@ -50,7 +50,7 @@ export const numberInput = defineSlotRecipe({
       transitionTimingFunction: 'default',
       _focusWithin: {
         borderColor: 'colorPalette.solid',
-        boxShadow: '0 0 0 1px var(--colors-color-palette-solid)',
+        boxShadow: '0 0 0 1px var(--colors-color-palette-solid-bg)',
       },
       _disabled: {
         opacity: 0.4,

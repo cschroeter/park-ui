@@ -24,7 +24,7 @@ export const tagsInput = defineSlotRecipe({
       transitionTimingFunction: 'default',
       _focusWithin: {
         borderColor: 'colorPalette.solid',
-        boxShadow: '0 0 0 1px var(--colors-color-palette-solid)',
+        boxShadow: '0 0 0 1px var(--colors-color-palette-solid-bg)',
       },
     },
     input: {
@@ -42,7 +42,7 @@ export const tagsInput = defineSlotRecipe({
       fontWeight: 'medium',
       _highlighted: {
         borderColor: 'colorPalette.solid',
-        boxShadow: '0 0 0 1px var(--colors-color-palette-solid)',
+        boxShadow: '0 0 0 1px var(--colors-color-palette-solid-bg)',
       },
       _hidden: {
         display: 'none',

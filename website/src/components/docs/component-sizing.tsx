@@ -13,7 +13,7 @@ export const ComponentSizing = () => {
           <Box
             h={height}
             bg="colorPalette.9"
-            color="colorPalette.contrast"
+            color="colorPalette.solid.fg"
             textStyle="sm"
             display="flex"
             alignItems="flex-end"

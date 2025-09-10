@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <Wrap gap="4">
       {sizes.map((size) => (
-        <Icon key={size} size={size} color="colorPalette.solid">
+        <Icon key={size} size={size} color="colorPalette.solid.bg">
           <DiamondIcon />
         </Icon>
       ))}

@@ -26,7 +26,7 @@ export const CardPricing = () => {
         <Stack gap="4">
           {features.map((feature) => (
             <HStack gap="4" key={feature}>
-              <Icon color="colorPalette.solid">
+              <Icon color="colorPalette.9">
                 <CheckCircleIcon />
               </Icon>
               <Text textStyle="sm">{feature}</Text>

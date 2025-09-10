@@ -3,7 +3,7 @@ import { Icon } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Icon size="lg" color="colorPalette.solid">
+    <Icon size="lg" color="colorPalette.solid.bg">
       <HeartIcon />
     </Icon>
   )
