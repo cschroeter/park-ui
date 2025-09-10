@@ -3,14 +3,9 @@ import { defineLayerStyles } from '@pandacss/dev'
 export const layerStyles = defineLayerStyles({
   disabled: {
     value: {
-      color: 'gray.9',
-      background: 'gray.5',
-      borderColor: 'gray.5',
-      _hover: {
-        color: 'gray.9',
-        background: 'gray.5',
-        borderColor: 'gray.5',
-      },
+      cursor: 'not-allowed',
+      opacity: '0.7',
+      filter: 'grayscale(100%)',
     },
   },
 })

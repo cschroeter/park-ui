@@ -19,7 +19,7 @@
     "build:registry": "bun run scripts/registry.ts"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.3",
+    "@biomejs/biome": "2.2.4",
     "@types/bun": "1.2.21",
     "lefthook": "1.12.4"
   },

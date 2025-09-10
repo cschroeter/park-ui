@@ -9,15 +9,13 @@ export const button = defineRecipe({
     borderRadius: 'l2',
     cursor: 'pointer',
     display: 'inline-flex',
-    fontWeight: 'semibold',
     flexShrink: '0',
+    fontWeight: 'semibold',
     isolation: 'isolate',
     justifyContent: 'center',
     outline: '0',
     position: 'relative',
-    transitionDuration: 'normal',
-    transitionProperty: 'background, color, box-shadow',
-    transitionTimingFunction: 'default',
+    transition: 'common',
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
@@ -28,10 +26,10 @@ export const button = defineRecipe({
       height: '1.1em',
     },
     _disabled: {
-      cursor: 'not-allowed',
+      layerStyle: 'disabled',
     },
     focusVisibleRing: 'outside',
-    focusRingColor: 'colorPalette.solid',
+    focusRingColor: 'colorPalette.solid.bg',
   },
   defaultVariants: {
     variant: 'solid',
@@ -40,63 +38,62 @@ export const button = defineRecipe({
   variants: {
     variant: {
       solid: {
-        background: 'colorPalette.solid',
-        color: 'colorPalette.contrast',
+        background: 'colorPalette.solid.bg',
+        color: 'colorPalette.solid.fg',
         _hover: {
-          background: 'colorPalette.emphasiszed',
+          background: 'colorPalette.solid.bg.hover',
         },
-        _disabled: {
-          layerStyle: 'disabled',
+        _active: {
+          background: 'colorPalette.solid.bg.active',
         },
       },
       surface: {
-        background: 'colorPalette.a2',
-        color: 'colorPalette.fg',
+        background: 'colorPalette.surface.bg',
+        color: 'colorPalette.surface.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.a7',
+        shadowColor: 'colorPalette.surface.border',
         _hover: {
-          background: 'colorPalette.a3',
-          shadowColor: 'colorPalette.a8',
+          background: 'colorPalette.surface.bg.hover',
+          shadowColor: 'colorPalette.surface.border.hover',
         },
         _active: {
-          shadowColor: 'colorPalette.a8',
+          background: 'colorPalette.surface.bg.active',
+          shadowColor: 'colorPalette.surface.border.active',
         },
       },
       subtle: {
-        background: 'colorPalette.a3',
-        color: 'colorPalette.fg',
+        background: 'colorPalette.subtle.bg',
+        color: 'colorPalette.subtle.fg',
         _hover: {
-          background: 'colorPalette.a4',
+          background: 'colorPalette.subtle.bg.hover',
         },
-        _disabled: {
-          layerStyle: 'disabled',
+        _active: {
+          background: 'colorPalette.subtle.bg.active',
         },
       },
       outline: {
-        color: 'colorPalette.fg',
+        background: 'colorPalette.outline.bg',
+        color: 'colorPalette.outline.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.a7',
+        shadowColor: 'colorPalette.outline.border',
         _hover: {
-          background: 'colorPalette.a2',
+          background: 'colorPalette.outline.bg.hover',
+          shadowColor: 'colorPalette.outline.border.hover',
         },
-        _disabled: {
-          layerStyle: 'disabled',
-        },
-      },
-      ghost: {
-        color: 'colorPalette.fg',
-        _hover: {
-          background: 'colorPalette.a3',
-        },
-        _selected: {
-          background: 'colorPalette.a3',
-        },
-        _disabled: {
-          layerStyle: 'disabled',
+        _active: {
+          background: 'colorPalette.outline.bg.active',
+          shadowColor: 'colorPalette.outline.border.active',
         },
       },
       plain: {
-        color: 'colorPalette.fg',
+        background: 'colorPalette.plain.bg',
+        color: 'colorPalette.plain.fg',
+        _hover: {
+          background: 'colorPalette.plain.bg.hover',
+        },
+        _active: {
+          background: 'colorPalette.plain.bg.active',
+        },
       },
     },
     size: {
