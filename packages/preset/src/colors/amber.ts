@@ -25,8 +25,54 @@ export const amber = defineSemanticTokens.colors({
   a10: { value: { _light: '#ffb300e7', _dark: '#ffd60a' } },
   a11: { value: { _light: '#ab6400', _dark: '#ffca16' } },
   a12: { value: { _light: '#341500dd', _dark: '#ffe7b3' } },
-  contrast: { value: { _light: '{colors.amber.12}', _dark: '{colors.amber.1}' } },
-  fg: { value: { _light: '{colors.amber.a11}', _dark: '{colors.amber.a11}' } },
-  solid: { value: { _light: '{colors.amber.9}', _dark: '{colors.amber.9}' } },
-  emphasiszed: { value: { _light: '{colors.amber.10}', _dark: '{colors.amber.10}' } },
+  solid: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.amber.9}', _dark: '{colors.amber.9}' } },
+      hover: { value: { _light: '{colors.amber.10}', _dark: '{colors.amber.10}' } },
+      active: { value: { _light: '{colors.amber.11}', _dark: '{colors.amber.11}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } } },
+  },
+  subtle: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.amber.a3}', _dark: '{colors.amber.a3}' } },
+      hover: { value: { _light: '{colors.amber.a4}', _dark: '{colors.amber.a4}' } },
+      active: { value: { _light: '{colors.amber.a5}', _dark: '{colors.amber.a5}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.amber.a11}', _dark: '{colors.amber.a11}' } } },
+  },
+  surface: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.amber.a2}', _dark: '{colors.amber.a2}' } },
+      hover: { value: { _light: '{colors.amber.a3}', _dark: '{colors.amber.a3}' } },
+      active: { value: { _light: '{colors.amber.a4}', _dark: '{colors.amber.a4}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.amber.a11}', _dark: '{colors.amber.a11}' } } },
+    border: {
+      DEFAULT: { value: { _light: '{colors.amber.a5}', _dark: '{colors.amber.a5}' } },
+      hover: { value: { _light: '{colors.amber.a6}', _dark: '{colors.amber.a6}' } },
+      active: { value: { _light: '{colors.amber.a6}', _dark: '{colors.amber.a6}' } },
+    },
+  },
+  outline: {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: '{colors.amber.a2}', _dark: '{colors.amber.a2}' } },
+      active: { value: { _light: '{colors.amber.a3}', _dark: '{colors.amber.a3}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.amber.a11}', _dark: '{colors.amber.a11}' } } },
+    border: {
+      DEFAULT: { value: { _light: '{colors.amber.a7}', _dark: '{colors.amber.a7}' } },
+      hover: { value: { _light: '{colors.amber.a8}', _dark: '{colors.amber.a8}' } },
+      active: { value: { _light: '{colors.amber.a8}', _dark: '{colors.amber.a8}' } },
+    },
+  },
+  plain: {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: '{colors.amber.a3}', _dark: '{colors.amber.a3}' } },
+      active: { value: { _light: '{colors.amber.a4}', _dark: '{colors.amber.a4}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.amber.a11}', _dark: '{colors.amber.a11}' } } },
+  },
 })

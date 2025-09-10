@@ -13,7 +13,7 @@ export const ColorModeButton = () => {
 
   return (
     <ClientOnly>
-      <IconButton variant="ghost" onClick={handleClick}>
+      <IconButton variant="plain" onClick={handleClick}>
         <Icon size="md">{theme === 'light' ? <SunIcon /> : <MoonIcon />}</Icon>
       </IconButton>
     </ClientOnly>

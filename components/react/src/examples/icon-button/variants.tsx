@@ -17,9 +17,6 @@ export const App = () => {
       <IconButton variant="outline" aria-label="Search">
         <SearchIcon />
       </IconButton>
-      <IconButton variant="ghost" aria-label="Search">
-        <SearchIcon />
-      </IconButton>
       <IconButton variant="plain" aria-label="Search">
         <SearchIcon />
       </IconButton>

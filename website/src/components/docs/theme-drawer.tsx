@@ -36,7 +36,7 @@ export const ThemeDrawer = ({ hero }: Props) => {
             Make it yours
           </Button>
         ) : (
-          <IconButton variant="ghost" colorPalette="gray" h="14" minW="14" borderRadius="0">
+          <IconButton variant="plain" colorPalette="gray" h="14" minW="14" borderRadius="0">
             <Wand2Icon />
           </IconButton>
         )}

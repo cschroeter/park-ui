@@ -25,8 +25,54 @@ export const tomato = defineSemanticTokens.colors({
   a10: { value: { _light: '#d72400da', _dark: '#ff6847eb' } },
   a11: { value: { _light: '#cd2200ea', _dark: '#ff977d' } },
   a12: { value: { _light: '#460900e0', _dark: '#ffd6cefb' } },
-  contrast: { value: { _light: 'white', _dark: 'white' } },
-  fg: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } },
-  solid: { value: { _light: '{colors.tomato.9}', _dark: '{colors.tomato.9}' } },
-  emphasiszed: { value: { _light: '{colors.tomato.10}', _dark: '{colors.tomato.10}' } },
+  solid: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.tomato.9}', _dark: '{colors.tomato.9}' } },
+      hover: { value: { _light: '{colors.tomato.10}', _dark: '{colors.tomato.10}' } },
+      active: { value: { _light: '{colors.tomato.11}', _dark: '{colors.tomato.11}' } },
+    },
+    fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },
+  },
+  subtle: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
+      hover: { value: { _light: '{colors.tomato.a4}', _dark: '{colors.tomato.a4}' } },
+      active: { value: { _light: '{colors.tomato.a5}', _dark: '{colors.tomato.a5}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } } },
+  },
+  surface: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.tomato.a2}', _dark: '{colors.tomato.a2}' } },
+      hover: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
+      active: { value: { _light: '{colors.tomato.a4}', _dark: '{colors.tomato.a4}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } } },
+    border: {
+      DEFAULT: { value: { _light: '{colors.tomato.a5}', _dark: '{colors.tomato.a5}' } },
+      hover: { value: { _light: '{colors.tomato.a6}', _dark: '{colors.tomato.a6}' } },
+      active: { value: { _light: '{colors.tomato.a6}', _dark: '{colors.tomato.a6}' } },
+    },
+  },
+  outline: {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: '{colors.tomato.a2}', _dark: '{colors.tomato.a2}' } },
+      active: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } } },
+    border: {
+      DEFAULT: { value: { _light: '{colors.tomato.a7}', _dark: '{colors.tomato.a7}' } },
+      hover: { value: { _light: '{colors.tomato.a8}', _dark: '{colors.tomato.a8}' } },
+      active: { value: { _light: '{colors.tomato.a8}', _dark: '{colors.tomato.a8}' } },
+    },
+  },
+  plain: {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
+      active: { value: { _light: '{colors.tomato.a4}', _dark: '{colors.tomato.a4}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } } },
+  },
 })

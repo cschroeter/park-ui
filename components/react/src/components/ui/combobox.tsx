@@ -9,14 +9,13 @@ const { withProvider, withContext } = createStyleContext(combobox)
 export type RootProps = ComponentProps<typeof Root>
 
 export const Root = withProvider(Combobox.Root, 'root', {
-  // @ts-expect-error
   defaultProps: { positioning: { sameWidth: true } },
 }) as Combobox.RootComponent<ComboboxVariantProps>
 
-export const RootProvider = withProvider(Combobox.RootProvider, 'root', {
-  // @ts-expect-error
-  defaultProps: { positioning: { sameWidth: true } },
-}) as Combobox.RootProviderComponent<ComboboxVariantProps>
+export const RootProvider = withProvider(
+  Combobox.RootProvider,
+  'root',
+) as Combobox.RootProviderComponent<ComboboxVariantProps>
 
 export const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger')
 export const Content = withContext(Combobox.Content, 'content')

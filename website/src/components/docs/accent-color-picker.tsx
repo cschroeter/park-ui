@@ -15,7 +15,7 @@ export const AccentColorPicker = (props: Props) => {
   return (
     <Stack gap="1.5">
       <Text textStyle="sm" fontWeight="medium">
-        Accent
+        Accent Color
       </Text>
 
       <RadioButtonGroup.Root
@@ -34,7 +34,7 @@ export const AccentColorPicker = (props: Props) => {
               <Circle
                 size="3.5"
                 style={{
-                  background: token.var(`colors.${accent}.solid`),
+                  background: token.var(`colors.${accent}.solid.bg`),
                 }}
               />
               {accent}

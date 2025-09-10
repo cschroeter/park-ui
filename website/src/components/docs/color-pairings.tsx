@@ -69,7 +69,7 @@ export const ColorPairings = () => {
                           'mint',
                           'sky',
                           'yellow',
-                          () => `colors.${color}.contrast`,
+                          () => `colors.${color}.solid.fg`,
                         )
                         .otherwise(() => 'colors.white'),
                     ),

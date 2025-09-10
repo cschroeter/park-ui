@@ -25,8 +25,54 @@ export const sky = defineSemanticTokens.colors({
   a10: { value: { _light: '#00bcf38b', _dark: '#a8eeff' } },
   a11: { value: { _light: '#00749e', _dark: '#7cd3ffef' } },
   a12: { value: { _light: '#002540e2', _dark: '#c2f3ff' } },
-  contrast: { value: { _light: '{colors.sky.12}', _dark: '{colors.sky.1}' } },
-  fg: { value: { _light: '{colors.sky.a11}', _dark: '{colors.sky.a11}' } },
-  solid: { value: { _light: '{colors.sky.9}', _dark: '{colors.sky.9}' } },
-  emphasiszed: { value: { _light: '{colors.sky.10}', _dark: '{colors.sky.10}' } },
+  solid: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.sky.9}', _dark: '{colors.sky.9}' } },
+      hover: { value: { _light: '{colors.sky.10}', _dark: '{colors.sky.10}' } },
+      active: { value: { _light: '{colors.sky.11}', _dark: '{colors.sky.11}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } } },
+  },
+  subtle: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.sky.a3}', _dark: '{colors.sky.a3}' } },
+      hover: { value: { _light: '{colors.sky.a4}', _dark: '{colors.sky.a4}' } },
+      active: { value: { _light: '{colors.sky.a5}', _dark: '{colors.sky.a5}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.sky.a11}', _dark: '{colors.sky.a11}' } } },
+  },
+  surface: {
+    bg: {
+      DEFAULT: { value: { _light: '{colors.sky.a2}', _dark: '{colors.sky.a2}' } },
+      hover: { value: { _light: '{colors.sky.a3}', _dark: '{colors.sky.a3}' } },
+      active: { value: { _light: '{colors.sky.a4}', _dark: '{colors.sky.a4}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.sky.a11}', _dark: '{colors.sky.a11}' } } },
+    border: {
+      DEFAULT: { value: { _light: '{colors.sky.a5}', _dark: '{colors.sky.a5}' } },
+      hover: { value: { _light: '{colors.sky.a6}', _dark: '{colors.sky.a6}' } },
+      active: { value: { _light: '{colors.sky.a6}', _dark: '{colors.sky.a6}' } },
+    },
+  },
+  outline: {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: '{colors.sky.a2}', _dark: '{colors.sky.a2}' } },
+      active: { value: { _light: '{colors.sky.a3}', _dark: '{colors.sky.a3}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.sky.a11}', _dark: '{colors.sky.a11}' } } },
+    border: {
+      DEFAULT: { value: { _light: '{colors.sky.a7}', _dark: '{colors.sky.a7}' } },
+      hover: { value: { _light: '{colors.sky.a8}', _dark: '{colors.sky.a8}' } },
+      active: { value: { _light: '{colors.sky.a8}', _dark: '{colors.sky.a8}' } },
+    },
+  },
+  plain: {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: '{colors.sky.a3}', _dark: '{colors.sky.a3}' } },
+      active: { value: { _light: '{colors.sky.a4}', _dark: '{colors.sky.a4}' } },
+    },
+    fg: { DEFAULT: { value: { _light: '{colors.sky.a11}', _dark: '{colors.sky.a11}' } } },
+  },
 })

@@ -19,7 +19,7 @@ export const SidebarMobileContainer = () => {
     >
       <Drawer.Root placement="start" size="xs">
         <Drawer.Trigger asChild>
-          <IconButton size="sm" variant="ghost">
+          <IconButton size="sm" variant="plain">
             <MenuIcon />
           </IconButton>
         </Drawer.Trigger>

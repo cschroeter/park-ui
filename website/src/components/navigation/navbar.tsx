@@ -30,7 +30,7 @@ export const Navbar = () => {
           <ThemeDrawer />
         </HStack>
         <Box hideFrom="md">
-          <IconButton variant="ghost" px="0" size="sm" aria-label="Open menu">
+          <IconButton variant="plain" px="0" size="sm" aria-label="Open menu">
             <MoreVerticalIcon />
           </IconButton>
         </Box>

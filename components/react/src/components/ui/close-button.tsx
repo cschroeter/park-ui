@@ -6,7 +6,7 @@ export type CloseButtonProps = IconButtonProps
 export const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
   function CloseButton(props, ref) {
     return (
-      <IconButton variant="ghost" colorPalette="gray" aria-label="Close" ref={ref} {...props}>
+      <IconButton variant="plain" colorPalette="gray" aria-label="Close" ref={ref} {...props}>
         {props.children ?? <XIcon />}
       </IconButton>
     )

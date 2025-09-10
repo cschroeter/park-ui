@@ -4,7 +4,7 @@ import { type ButtonProps, Icon, IconButton } from '@/components/ui'
 export const GithubButton = (props: ButtonProps) => (
   <IconButton
     colorPalette="gray"
-    variant="ghost"
+    variant="plain"
     h="14"
     minW="14"
     borderRadius="0"

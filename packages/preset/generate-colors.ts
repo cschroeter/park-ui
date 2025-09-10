@@ -31,34 +31,86 @@ const generateSemanticTokens = (color: string) => {
     }
   }
 
-  const brightColors = ['amber', 'yellow', 'lime', 'mint', 'sky']
+  const name = ['gray', 'mauve', 'slate', 'sage', 'olive', 'sand'].includes(color) ? 'gray' : color
+  const isBright = ['amber', 'yellow', 'lime', 'mint', 'sky'].includes(color)
 
-  const contrast = brightColors.includes(color)
-    ? { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } }
-    : { value: { _light: 'white', _dark: 'white' } }
+  const solid = {
+    bg: {
+      DEFAULT: { value: { _light: `{colors.${name}.9}`, _dark: `{colors.${name}.9}` } },
+      hover: { value: { _light: `{colors.${name}.10}`, _dark: `{colors.${name}.10}` } },
+      active: { value: { _light: `{colors.${name}.11}`, _dark: `{colors.${name}.11}` } },
+    },
+    fg: {
+      DEFAULT: {
+        value: isBright
+          ? { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' }
+          : { _light: 'white', _dark: 'white' },
+      },
+    },
+  }
 
-  const fg =
-    color === 'neutral'
-      ? { value: { _light: `{colors.gray.a12}`, _dark: `{colors.gray.a12}` } }
-      : { value: { _light: `{colors.${color}.a11}`, _dark: `{colors.${color}.a11}` } }
+  const subtle = {
+    bg: {
+      DEFAULT: { value: { _light: `{colors.${name}.a3}`, _dark: `{colors.${name}.a3}` } },
+      hover: { value: { _light: `{colors.${name}.a4}`, _dark: `{colors.${name}.a4}` } },
+      active: { value: { _light: `{colors.${name}.a5}`, _dark: `{colors.${name}.a5}` } },
+    },
+    fg: {
+      DEFAULT: { value: { _light: `{colors.${name}.a11}`, _dark: `{colors.${name}.a11}` } },
+    },
+  }
 
-  const solid =
-    color === 'neutral'
-      ? { value: { _light: `black`, _dark: `white` } }
-      : { value: { _light: `{colors.${color}.9}`, _dark: `{colors.${color}.9}` } }
+  const surface = {
+    bg: {
+      DEFAULT: { value: { _light: `{colors.${name}.a2}`, _dark: `{colors.${name}.a2}` } },
+      hover: { value: { _light: `{colors.${name}.a3}`, _dark: `{colors.${name}.a3}` } },
+      active: { value: { _light: `{colors.${name}.a4}`, _dark: `{colors.${name}.a4}` } },
+    },
+    fg: {
+      DEFAULT: { value: { _light: `{colors.${name}.a11}`, _dark: `{colors.${name}.a11}` } },
+    },
+    border: {
+      DEFAULT: { value: { _light: `{colors.${name}.a5}`, _dark: `{colors.${name}.a5}` } },
+      hover: { value: { _light: `{colors.${name}.a6}`, _dark: `{colors.${name}.a6}` } },
+      active: { value: { _light: `{colors.${name}.a6}`, _dark: `{colors.${name}.a6}` } },
+    },
+  }
 
-  const emphasiszed =
-    color === 'neutral'
-      ? { value: { _light: `{colors.gray.12}`, _dark: `{colors.gray.12}` } }
-      : { value: { _light: `{colors.${color}.10}`, _dark: `{colors.${color}.10}` } }
+  const outline = {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: `{colors.${name}.a2}`, _dark: `{colors.${name}.a2}` } },
+      active: { value: { _light: `{colors.${name}.a3}`, _dark: `{colors.${name}.a3}` } },
+    },
+    fg: {
+      DEFAULT: { value: { _light: `{colors.${name}.a11}`, _dark: `{colors.${name}.a11}` } },
+    },
+    border: {
+      DEFAULT: { value: { _light: `{colors.${name}.a7}`, _dark: `{colors.${name}.a7}` } },
+      hover: { value: { _light: `{colors.${name}.a8}`, _dark: `{colors.${name}.a8}` } },
+      active: { value: { _light: `{colors.${name}.a8}`, _dark: `{colors.${name}.a8}` } },
+    },
+  }
+
+  const plain = {
+    bg: {
+      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
+      hover: { value: { _light: `{colors.${name}.a3}`, _dark: `{colors.${name}.a3}` } },
+      active: { value: { _light: `{colors.${name}.a4}`, _dark: `{colors.${name}.a4}` } },
+    },
+    fg: {
+      DEFAULT: { value: { _light: `{colors.${name}.a11}`, _dark: `{colors.${name}.a11}` } },
+    },
+  }
 
   // Add alias tokens
   return {
     ...semanticTokens,
-    contrast,
-    fg,
     solid,
-    emphasiszed,
+    subtle,
+    surface,
+    outline,
+    plain,
   }
 }
 

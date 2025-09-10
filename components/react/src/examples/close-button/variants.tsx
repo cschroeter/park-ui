@@ -8,7 +8,6 @@ export const App = () => {
       <CloseButton variant="surface" />
       <CloseButton variant="subtle" />
       <CloseButton variant="outline" />
-      <CloseButton variant="ghost" />
       <CloseButton variant="plain" />
     </Wrap>
   )

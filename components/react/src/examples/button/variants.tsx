@@ -8,7 +8,6 @@ export const App = () => {
       <Button variant="surface">Surface</Button>
       <Button variant="subtle">Subtle</Button>
       <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
       <Button variant="plain">Plain</Button>
     </Wrap>
   )

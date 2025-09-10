@@ -16,9 +16,47 @@ export const ThemeTokens = () => {
 const createBaseKeys = (includeSpecialKeys = false) => {
   const numberedKeys = Array.from({ length: 12 }, (_, i) => `${i + 1}`)
   const alphaKeys = Array.from({ length: 12 }, (_, i) => `a${i + 1}`)
-  const specialKeys = includeSpecialKeys ? ['contrast', 'fg', 'solid', 'emphasiszed'] : []
 
-  return [...numberedKeys, ...alphaKeys, ...specialKeys]
+  if (!includeSpecialKeys) {
+    return [...numberedKeys, ...alphaKeys]
+  }
+
+  // Generate variant-based keys for the new structure
+  const variantKeys = [
+    // solid variant
+    'solid-bg',
+    'solid-bg-hover',
+    'solid-bg-active',
+    'solid-fg',
+    // subtle variant
+    'subtle-bg',
+    'subtle-bg-hover',
+    'subtle-bg-active',
+    'subtle-fg',
+    // surface variant
+    'surface-bg',
+    'surface-bg-hover',
+    'surface-bg-active',
+    'surface-fg',
+    'surface-border',
+    'surface-border-hover',
+    'surface-border-active',
+    // outline variant
+    'outline-bg',
+    'outline-bg-hover',
+    'outline-bg-active',
+    'outline-fg',
+    'outline-border',
+    'outline-border-hover',
+    'outline-border-active',
+    // plain variant
+    'plain-bg',
+    'plain-bg-hover',
+    'plain-bg-active',
+    'plain-fg',
+  ]
+
+  return [...numberedKeys, ...alphaKeys, ...variantKeys]
 }
 
 const generateColorPalette = (
@@ -31,7 +69,21 @@ const generateColorPalette = (
     .map((color) => {
       const selector = `&[data-${dataAttribute}='${color}']`
       const variables = keys
-        .map((key) => `--colors-${variablePrefix}-${key}: var(--colors-${color}-${key});`)
+        .map((key) => {
+          // Handle nested variant keys (e.g., solid-bg, solid-bg-hover)
+          if (key.includes('-')) {
+            const parts = key.split('-')
+            if (parts.length === 2) {
+              // e.g., solid-bg -> solid.bg
+              return `--colors-${variablePrefix}-${key}: var(--colors-${color}-${parts[0]}-${parts[1]});`
+            } else if (parts.length === 3) {
+              // e.g., solid-bg-hover -> solid.bg.hover
+              return `--colors-${variablePrefix}-${key}: var(--colors-${color}-${parts[0]}-${parts[1]}-${parts[2]});`
+            }
+          }
+          // Handle regular numbered and alpha keys
+          return `--colors-${variablePrefix}-${key}: var(--colors-${color}-${key});`
+        })
         .join('\n          ')
 
       return `${selector} {\n          ${variables}\n        }`
