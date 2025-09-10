@@ -19,23 +19,24 @@ export const code = defineRecipe({
   variants: {
     variant: {
       solid: {
-        bg: 'colorPalette.solid',
-        color: 'colorPalette.contrast',
+        background: 'colorPalette.solid.bg',
+        color: 'colorPalette.solid.fg',
       },
       surface: {
-        background: 'colorPalette.a2',
-        color: 'colorPalette.a11',
+        background: 'colorPalette.surface.bg',
+        color: 'colorPalette.surface.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.a7',
+        shadowColor: 'colorPalette.surface.border',
       },
       subtle: {
-        background: 'colorPalette.a3',
-        color: 'colorPalette.a11',
+        background: 'colorPalette.subtle.bg',
+        color: 'colorPalette.subtle.fg',
       },
       outline: {
-        color: 'colorPalette.a11',
+        background: 'colorPalette.outline.bg',
+        color: 'colorPalette.outline.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.a7',
+        shadowColor: 'colorPalette.outline.border',
       },
       plain: {
         color: 'colorPalette.a11',

@@ -13,49 +13,62 @@ export const kbd = defineRecipe({
     userSelect: 'none',
     px: '1',
     borderRadius: 'l2',
+    justifyContent: 'center',
   },
 
   variants: {
     variant: {
-      raised: {
-        background: 'colorPalette.a2',
-        color: 'colorPalette.a11',
+      solid: {
+        background: 'colorPalette.solid.bg',
+        color: 'colorPalette.solid.fg',
+      },
+      surface: {
+        background: 'colorPalette.surface.bg',
+        color: 'colorPalette.surface.fg',
         borderWidth: '1px',
         borderBottomWidth: '2px',
-        borderColor: 'colorPalette.a7',
+        borderColor: 'colorPalette.surface.border',
       },
       outline: {
-        color: 'colorPalette.a11',
+        background: 'colorPalette.outline.bg',
+        color: 'colorPalette.outline.fg',
         shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.a7',
+        shadowColor: 'colorPalette.outline.border',
       },
       subtle: {
-        background: 'colorPalette.a3',
-        color: 'colorPalette.a11',
+        background: 'colorPalette.subtle.bg',
+        color: 'colorPalette.subtle.fg',
       },
       plain: {
-        color: 'colorPalette.fg',
+        color: 'colorPalette.plain.fg',
       },
     },
-
     size: {
       sm: {
         textStyle: 'xs',
         height: '4.5',
+        minWidth: '4.5',
       },
       md: {
         textStyle: 'sm',
         height: '5',
+        minWidth: '5',
       },
       lg: {
+        textStyle: 'sm',
+        height: '5.5',
+        minWidth: '5.5',
+      },
+      xl: {
         textStyle: 'md',
         height: '6',
+        minWidth: '6',
       },
     },
   },
 
   defaultVariants: {
     size: 'md',
-    variant: 'raised',
+    variant: 'surface',
   },
 })

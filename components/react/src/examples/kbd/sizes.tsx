@@ -7,6 +7,7 @@ export const App = () => {
       <Kbd size="sm">Shift + Tab</Kbd>
       <Kbd size="md">Shift + Tab</Kbd>
       <Kbd size="lg">Shift + Tab</Kbd>
+      <Kbd size="xl">Shift + Tab</Kbd>
     </Wrap>
   )
 }
