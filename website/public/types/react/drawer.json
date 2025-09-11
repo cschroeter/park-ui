@@ -1,0 +1,16 @@
+{
+  "Root": {
+    "props": {
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'",
+        "defaultValue": "'sm'",
+        "isRequired": false
+      },
+      "placement": {
+        "type": "'start' | 'end' | 'top' | 'bottom'",
+        "defaultValue": "'end'",
+        "isRequired": false
+      }
+    }
+  }
+}

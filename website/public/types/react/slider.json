@@ -1,0 +1,21 @@
+{
+  "Root": {
+    "props": {
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
+      "variant": {
+        "type": "'outline'",
+        "defaultValue": "'outline'",
+        "isRequired": false
+      },
+      "orientation": {
+        "type": "'vertical' | 'horizontal'",
+        "defaultValue": "'horizontal'",
+        "isRequired": false
+      }
+    }
+  }
+}

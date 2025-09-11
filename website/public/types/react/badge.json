@@ -1,0 +1,16 @@
+{
+  "Root": {
+    "props": {
+      "variant": {
+        "type": "'outline' | 'solid' | 'surface' | 'subtle'",
+        "defaultValue": "'subtle'",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'sm' | 'md' | 'lg' | 'xl'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      }
+    }
+  }
+}

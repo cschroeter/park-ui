@@ -4,10 +4,15 @@ import { Code, Icon, Span, Table, Text } from '@/components/ui'
 import { getComponentProps } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
 
-export const PropsTable = async () => {
-  const { component } = getServerContext()
+interface Props {
+  part?: string
+  component?: string
+}
 
-  const properties = await getComponentProps(component)
+export const PropsTable = async (props: Props) => {
+  const { part, component = getServerContext().component } = props
+
+  const properties = await getComponentProps({ component, part })
   if (!properties) return null
 
   return (

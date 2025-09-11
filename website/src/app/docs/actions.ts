@@ -75,9 +75,15 @@ const sortEntries = (props: Record<string, any>): [string, Properties][] => {
     return 0
   })
 }
-export const getComponentProps = async (name: string) => {
-  const path = join(process.cwd(), 'public', 'types', 'react', `${name}.json`)
-  const part = 'Root'
+
+interface GetComponentProps {
+  component: string
+  part?: string
+}
+
+export const getComponentProps = async (props: GetComponentProps) => {
+  const { component, part = 'Root' } = props
+  const path = join(process.cwd(), 'public', 'types', 'react', `${component}.json`)
   const componentTypes = JSON.parse(readFileSync(path, 'utf-8'))
   const componentType = part ? componentTypes[part] : componentTypes
 
