@@ -1,5 +1,5 @@
 {
-  "ErrorText": {
+  "Control": {
     "props": {
       "asChild": {
         "type": "boolean",
@@ -9,17 +9,7 @@
     },
     "element": "HTMLSpanElement"
   },
-  "HelperText": {
-    "props": {
-      "asChild": {
-        "type": "boolean",
-        "isRequired": false,
-        "description": "Use the provided child element as the default rendered element, combining their props and behavior."
-      }
-    },
-    "element": "HTMLSpanElement"
-  },
-  "Input": {
+  "HiddenInput": {
     "props": {
       "asChild": {
         "type": "boolean",
@@ -37,20 +27,6 @@
         "description": "Use the provided child element as the default rendered element, combining their props and behavior."
       }
     },
-    "element": "HTMLLabelElement"
-  },
-  "RequiredIndicator": {
-    "props": {
-      "asChild": {
-        "type": "boolean",
-        "isRequired": false,
-        "description": "Use the provided child element as the default rendered element, combining their props and behavior."
-      },
-      "fallback": {
-        "type": "string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<...>",
-        "isRequired": false
-      }
-    },
     "element": "HTMLSpanElement"
   },
   "Root": {
@@ -60,38 +36,74 @@
         "isRequired": false,
         "description": "Use the provided child element as the default rendered element, combining their props and behavior."
       },
+      "checked": {
+        "type": "boolean",
+        "isRequired": false,
+        "description": "The controlled checked state of the switch"
+      },
       "disabled": {
         "type": "boolean",
         "isRequired": false,
-        "description": "Indicates whether the field is disabled."
+        "description": "Whether the switch is disabled."
       },
       "ids": {
-        "type": "ElementIds",
+        "type": "Partial<{ root: string; hiddenInput: string; control: string; label: string; thumb: string }>",
         "isRequired": false,
-        "description": "The ids of the field parts."
+        "description": "The ids of the elements in the switch. Useful for composition."
       },
       "invalid": {
         "type": "boolean",
         "isRequired": false,
-        "description": "Indicates whether the field is invalid."
+        "description": "If `true`, the switch is marked as invalid."
+      },
+      "label": {
+        "type": "string",
+        "isRequired": false,
+        "description": "Specifies the localized strings that identifies the accessibility elements and their states"
+      },
+      "name": {
+        "type": "string",
+        "isRequired": false,
+        "description": "The name of the input field in a switch\n(Useful for form submission)."
+      },
+      "onCheckedChange": {
+        "type": "(details: CheckedChangeDetails) => void",
+        "isRequired": false,
+        "description": "Function to call when the switch is clicked."
       },
       "readOnly": {
         "type": "boolean",
         "isRequired": false,
-        "description": "Indicates whether the field is read-only."
+        "description": "Whether the switch is read-only"
       },
       "required": {
         "type": "boolean",
         "isRequired": false,
-        "description": "Indicates whether the field is required."
+        "description": "If `true`, the switch input is marked as required,"
+      },
+      "value": {
+        "type": "string | number",
+        "isRequired": false,
+        "defaultValue": "\"on\"",
+        "description": "The value of switch input. Useful for form submission."
+      },
+      "variant": {
+        "type": "'solid'",
+        "defaultValue": "'solid'",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
       }
     },
-    "element": "HTMLDivElement"
+    "element": "HTMLLabelElement"
   },
   "RootProvider": {
     "props": {
       "value": {
-        "type": "{ ariaDescribedby: string | undefined; ids: { root: string; control: string; label: string; errorText: string; helperText: string; }; refs: { rootRef: RefObject<HTMLDivElement | null>; }; ... 11 more ...; getRequiredIndicatorProps: () => Omit<...>; }",
+        "type": "UseSwitchReturn",
         "isRequired": true
       },
       "asChild": {
@@ -100,9 +112,9 @@
         "description": "Use the provided child element as the default rendered element, combining their props and behavior."
       }
     },
-    "element": "HTMLDivElement"
+    "element": "HTMLLabelElement"
   },
-  "Select": {
+  "Thumb": {
     "props": {
       "asChild": {
         "type": "boolean",
@@ -110,22 +122,6 @@
         "description": "Use the provided child element as the default rendered element, combining their props and behavior."
       }
     },
-    "element": "HTMLSelectElement"
-  },
-  "Textarea": {
-    "props": {
-      "asChild": {
-        "type": "boolean",
-        "isRequired": false,
-        "description": "Use the provided child element as the default rendered element, combining their props and behavior."
-      },
-      "autoresize": {
-        "type": "boolean",
-        "isRequired": false,
-        "defaultValue": "false",
-        "description": "Whether the textarea should autoresize"
-      }
-    },
-    "element": "HTMLTextAreaElement"
+    "element": "HTMLSpanElement"
   }
 }
