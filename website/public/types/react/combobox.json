@@ -141,6 +141,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "collection": {
         "type": "ListCollection<T>",
         "isRequired": true,
@@ -398,11 +403,6 @@
         "type": "string[]",
         "isRequired": false,
         "description": "The controlled value of the combobox's selected items"
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     }
   },

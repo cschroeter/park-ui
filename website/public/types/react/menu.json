@@ -224,6 +224,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "anchorPoint": {
         "type": "Point",
         "isRequired": false,
@@ -370,11 +375,6 @@
         "isRequired": false,
         "defaultValue": "false",
         "description": "Whether to unmount on exit."
-      },
-      "size": {
-        "type": "'xs' | 'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     }
   },

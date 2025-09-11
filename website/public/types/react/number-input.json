@@ -51,6 +51,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'md' | 'lg' | 'xl'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "allowMouseWheel": {
         "type": "boolean",
         "isRequired": false,
@@ -195,11 +200,6 @@
         "type": "string",
         "isRequired": false,
         "description": "The controlled value of the input"
-      },
-      "size": {
-        "type": "'md' | 'lg' | 'xl'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

@@ -51,6 +51,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'md'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "asChild": {
         "type": "boolean",
         "isRequired": false,
@@ -120,11 +125,6 @@
         "type": "string[]",
         "isRequired": false,
         "description": "The controlled value of the expanded accordion items."
-      },
-      "size": {
-        "type": "'md'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

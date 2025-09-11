@@ -45,6 +45,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "asChild": {
         "type": "boolean",
         "isRequired": false,
@@ -166,11 +171,6 @@
         "type": "string[]",
         "isRequired": false,
         "description": "The controlled value of the the pin input."
-      },
-      "size": {
-        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

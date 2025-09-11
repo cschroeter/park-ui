@@ -75,6 +75,22 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
+      "variant": {
+        "type": "'outline'",
+        "defaultValue": "'outline'",
+        "isRequired": false
+      },
+      "orientation": {
+        "type": "'horizontal' | 'vertical'",
+        "isRequired": false,
+        "defaultValue": "\"horizontal\"",
+        "description": "The orientation of the slider"
+      },
       "aria-label": {
         "type": "string[]",
         "isRequired": false,
@@ -163,11 +179,6 @@
         "isRequired": false,
         "description": "Function invoked when the slider value change is done"
       },
-      "orientation": {
-        "type": "'vertical' | 'horizontal'",
-        "defaultValue": "'horizontal'",
-        "isRequired": false
-      },
       "origin": {
         "type": "'center' | 'end' | 'start'",
         "isRequired": false,
@@ -200,16 +211,6 @@
         "type": "number[]",
         "isRequired": false,
         "description": "The controlled value of the slider"
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
-      },
-      "variant": {
-        "type": "'outline'",
-        "defaultValue": "'outline'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

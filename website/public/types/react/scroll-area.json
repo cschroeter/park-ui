@@ -21,16 +21,6 @@
   },
   "Root": {
     "props": {
-      "asChild": {
-        "type": "boolean",
-        "isRequired": false,
-        "description": "Use the provided child element as the default rendered element, combining their props and behavior."
-      },
-      "ids": {
-        "type": "Partial<{ root: string; viewport: string; content: string; scrollbar: string; thumb: string }>",
-        "isRequired": false,
-        "description": "The ids of the scroll area elements"
-      },
       "variant": {
         "type": "'auto' | 'visible'",
         "defaultValue": "'auto'",
@@ -40,6 +30,16 @@
         "type": "'xs' | 'sm' | 'md' | 'lg'",
         "defaultValue": "'md'",
         "isRequired": false
+      },
+      "asChild": {
+        "type": "boolean",
+        "isRequired": false,
+        "description": "Use the provided child element as the default rendered element, combining their props and behavior."
+      },
+      "ids": {
+        "type": "Partial<{ root: string; viewport: string; content: string; scrollbar: string; thumb: string }>",
+        "isRequired": false,
+        "description": "The ids of the scroll area elements"
       }
     },
     "element": "HTMLDivElement"

@@ -103,6 +103,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'sm' | 'md'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "slideCount": {
         "type": "number",
         "isRequired": true,
@@ -207,11 +212,6 @@
         "type": "IntlTranslations",
         "isRequired": false,
         "description": "The localized messages to use."
-      },
-      "size": {
-        "type": "'sm' | 'md'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

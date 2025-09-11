@@ -9,7 +9,19 @@ interface PropertyInfo {
 }
 
 const fetchArkComponentProps = async <T>(component: string): Promise<T> => {
-  const prom = await fetch(`http://ark-ui.com/api/types/react/${component}`)
+  // Map components to their corresponding Ark UI API endpoints
+  const componentApiMap = (name: string): string => {
+    switch (name) {
+      case 'drawer':
+        return 'dialog'
+      // Add other mappings as needed
+      default:
+        return name
+    }
+  }
+
+  const apiComponent = componentApiMap(component)
+  const prom = await fetch(`http://ark-ui.com/api/types/react/${apiComponent}`)
   return prom.json()
 }
 
@@ -121,9 +133,8 @@ const main = async () => {
           continue
         }
       } else if (recipeProps && arkProps.Root) {
-        // Original logic: merge recipe props with ark props
+        // Original logic: merge recipe props with ark props (recipe props first)
         finalProps.Root.props = {
-          ...arkProps.Root.props,
           ...Object.entries(recipeProps).reduce(
             (acc, [key, value]) => {
               acc[key] = {
@@ -135,6 +146,7 @@ const main = async () => {
             },
             {} as Record<string, any>,
           ),
+          ...arkProps.Root.props,
         }
       }
 

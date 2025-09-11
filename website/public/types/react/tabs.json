@@ -56,6 +56,16 @@
   },
   "Root": {
     "props": {
+      "variant": {
+        "type": "'enclosed' | 'line' | 'outline'",
+        "defaultValue": "'line'",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "activationMode": {
         "type": "'manual' | 'automatic'",
         "isRequired": false,
@@ -140,16 +150,6 @@
         "type": "string",
         "isRequired": false,
         "description": "The controlled selected tab value"
-      },
-      "variant": {
-        "type": "'enclosed' | 'line' | 'outline'",
-        "defaultValue": "'line'",
-        "isRequired": false
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

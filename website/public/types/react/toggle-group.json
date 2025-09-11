@@ -19,6 +19,16 @@
   },
   "Root": {
     "props": {
+      "variant": {
+        "type": "'outline' | 'ghost'",
+        "defaultValue": "'outline'",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "asChild": {
         "type": "boolean",
         "isRequired": false,
@@ -82,16 +92,6 @@
         "type": "string[]",
         "isRequired": false,
         "description": "The controlled selected value of the toggle group."
-      },
-      "variant": {
-        "type": "'outline' | 'ghost'",
-        "defaultValue": "'outline'",
-        "isRequired": false
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

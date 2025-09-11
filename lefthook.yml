@@ -3,9 +3,6 @@ pre-commit:
     registry:
       run: bun run build:registry && git add website/public/registry/*
       stage_fixed: true
-    types:
-      run: bun run build:types && git add website/public/types/*
-      stage_fixed: true
     check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: bun biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}

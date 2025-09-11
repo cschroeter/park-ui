@@ -141,6 +141,16 @@
   },
   "Root": {
     "props": {
+      "variant": {
+        "type": "'outline' | 'ghost'",
+        "defaultValue": "'outline'",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "collection": {
         "type": "ListCollection<T>",
         "isRequired": true,
@@ -326,16 +336,6 @@
         "type": "string[]",
         "isRequired": false,
         "description": "The controlled keys of the selected items"
-      },
-      "variant": {
-        "type": "'outline' | 'ghost'",
-        "defaultValue": "'outline'",
-        "isRequired": false
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     }
   },

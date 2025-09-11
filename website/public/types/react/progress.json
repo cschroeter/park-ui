@@ -51,6 +51,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "asChild": {
         "type": "boolean",
         "isRequired": false,
@@ -116,11 +121,6 @@
         "type": "number",
         "isRequired": false,
         "description": "The controlled value of the progress bar."
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { frameworks } from '~/lib/frameworks'
-import type { FrameworkSourceCode } from '~/types'
+import type { Framework, FrameworkSourceCode } from '~/types'
 
 interface Props {
   component: string
@@ -78,12 +78,13 @@ const sortEntries = (props: Record<string, any>): [string, Properties][] => {
 
 interface GetComponentProps {
   component: string
-  part?: string
+  part: string
+  framework: Framework
 }
 
 export const getComponentProps = async (props: GetComponentProps) => {
-  const { component, part = 'Root' } = props
-  const path = join(process.cwd(), 'public', 'types', 'react', `${component}.json`)
+  const { component, part, framework } = props
+  const path = join(process.cwd(), 'public', 'types', framework, `${component}.json`)
   const componentTypes = JSON.parse(readFileSync(path, 'utf-8'))
   const componentType = part ? componentTypes[part] : componentTypes
 

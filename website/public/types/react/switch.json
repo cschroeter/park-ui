@@ -31,6 +31,16 @@
   },
   "Root": {
     "props": {
+      "variant": {
+        "type": "'solid'",
+        "defaultValue": "'solid'",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "asChild": {
         "type": "boolean",
         "isRequired": false,
@@ -86,16 +96,6 @@
         "isRequired": false,
         "defaultValue": "\"on\"",
         "description": "The value of switch input. Useful for form submission."
-      },
-      "variant": {
-        "type": "'solid'",
-        "defaultValue": "'solid'",
-        "isRequired": false
-      },
-      "size": {
-        "type": "'xs' | 'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLLabelElement"

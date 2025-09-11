@@ -45,6 +45,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "allowHalf": {
         "type": "boolean",
         "isRequired": false,
@@ -125,11 +130,6 @@
         "type": "number",
         "isRequired": false,
         "description": "The controlled value of the rating"
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
-        "isRequired": false
       }
     },
     "element": "HTMLDivElement"

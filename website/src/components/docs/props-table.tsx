@@ -5,14 +5,18 @@ import { getComponentProps } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
 
 interface Props {
+  /**
+   * Part of the component to show props for (e.g. "Root", "Item", etc.)
+   * @default 'Root'
+   */
   part?: string
-  component?: string
 }
 
 export const PropsTable = async (props: Props) => {
-  const { part, component = getServerContext().component } = props
+  const { part = 'Root' } = props
+  const { component } = getServerContext()
 
-  const properties = await getComponentProps({ component, part })
+  const properties = await getComponentProps({ part, component, framework: 'react' })
   if (!properties) return null
 
   return (
