@@ -35,6 +35,9 @@ export const preset = definePreset({
     extend: {
       light: ':root &, .light &',
       invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',
+      hover: '&:not(:disabled):hover',
+      active: '&:not(:disabled):active',
+      checked: '&:is([data-state=checked], [data-state=indeterminate])',
     },
   },
   theme: {

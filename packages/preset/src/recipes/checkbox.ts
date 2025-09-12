@@ -60,10 +60,8 @@ export const checkbox = defineSlotRecipe({
         control: {
           control: {
             borderColor: 'border.default',
-            '&:is([data-state=checked], [data-state=indeterminate])': {
-              background: 'colorPalette.solid.bg',
-              color: 'colorPalette.solid.fg',
-              borderColor: 'transparent',
+            _checked: {
+              layerStyle: 'solid',
             },
             _invalid: {
               background: 'bg.error',
@@ -73,30 +71,25 @@ export const checkbox = defineSlotRecipe({
       },
       surface: {
         control: {
-          background: 'colorPalette.surface.bg',
-          color: 'colorPalette.surface.fg',
-          borderColor: 'colorPalette.surface.border',
+          layerStyle: 'surface',
         },
       },
       subtle: {
         control: {
-          background: 'colorPalette.subtle.bg',
-          color: 'colorPalette.subtle.fg',
+          layerStyle: 'subtle',
         },
       },
       outline: {
         control: {
-          background: 'colorPalette.outline.bg',
-          borderColor: 'gray.a7',
-          color: 'colorPalette.outline.fg',
-          '&:is([data-state=checked], [data-state=indeterminate])': {
+          layerStyle: 'outline',
+          _checked: {
             borderColor: 'colorPalette.solid',
           },
         },
       },
       plain: {
         control: {
-          color: 'colorPalette.plain.fg',
+          layerStyle: 'plain',
         },
       },
     },

@@ -38,62 +38,19 @@ export const button = defineRecipe({
   variants: {
     variant: {
       solid: {
-        background: 'colorPalette.solid.bg',
-        color: 'colorPalette.solid.fg',
-        _hover: {
-          background: 'colorPalette.solid.bg.hover',
-        },
-        _active: {
-          background: 'colorPalette.solid.bg.active',
-        },
+        layerStyle: 'solid.interactive',
       },
       surface: {
-        background: 'colorPalette.surface.bg',
-        color: 'colorPalette.surface.fg',
-        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.surface.border',
-        _hover: {
-          background: 'colorPalette.surface.bg.hover',
-          shadowColor: 'colorPalette.surface.border.hover',
-        },
-        _active: {
-          background: 'colorPalette.surface.bg.active',
-          shadowColor: 'colorPalette.surface.border.active',
-        },
+        layerStyle: 'surface.interactive',
       },
       subtle: {
-        background: 'colorPalette.subtle.bg',
-        color: 'colorPalette.subtle.fg',
-        _hover: {
-          background: 'colorPalette.subtle.bg.hover',
-        },
-        _active: {
-          background: 'colorPalette.subtle.bg.active',
-        },
+        layerStyle: 'subtle.interactive',
       },
       outline: {
-        background: 'colorPalette.outline.bg',
-        color: 'colorPalette.outline.fg',
-        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.outline.border',
-        _hover: {
-          background: 'colorPalette.outline.bg.hover',
-          shadowColor: 'colorPalette.outline.border.hover',
-        },
-        _active: {
-          background: 'colorPalette.outline.bg.active',
-          shadowColor: 'colorPalette.outline.border.active',
-        },
+        layerStyle: 'outline.interactive',
       },
       plain: {
-        background: 'colorPalette.plain.bg',
-        color: 'colorPalette.plain.fg',
-        _hover: {
-          background: 'colorPalette.plain.bg.hover',
-        },
-        _active: {
-          background: 'colorPalette.plain.bg.active',
-        },
+        layerStyle: 'plain.interactive',
       },
     },
     size: {

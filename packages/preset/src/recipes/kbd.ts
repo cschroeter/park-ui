@@ -19,28 +19,19 @@ export const kbd = defineRecipe({
   variants: {
     variant: {
       solid: {
-        background: 'colorPalette.solid.bg',
-        color: 'colorPalette.solid.fg',
+        layerStyle: 'solid',
       },
       surface: {
-        background: 'colorPalette.surface.bg',
-        color: 'colorPalette.surface.fg',
-        borderWidth: '1px',
-        borderBottomWidth: '2px',
-        borderColor: 'colorPalette.surface.border',
+        layerStyle: 'surface',
       },
       outline: {
-        background: 'colorPalette.outline.bg',
-        color: 'colorPalette.outline.fg',
-        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.outline.border',
+        layerStyle: 'outline',
       },
       subtle: {
-        background: 'colorPalette.subtle.bg',
-        color: 'colorPalette.subtle.fg',
+        layerStyle: 'subtle',
       },
       plain: {
-        color: 'colorPalette.plain.fg',
+        layerStyle: 'plain',
       },
     },
     size: {
