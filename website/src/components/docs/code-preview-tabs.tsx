@@ -1,4 +1,4 @@
-import { Flex } from 'styled-system/jsx'
+import { HStack } from 'styled-system/jsx'
 import { Tabs } from '@/components/ui'
 import type { FrameworkSourceCode } from '~/types'
 import { CodePreviewToggle } from './code-preview-toggle'
@@ -14,18 +14,22 @@ export const CodePreviewTabs = (props: Props) => {
   const { sources, collapsable, ...rootProps } = props
 
   return (
-    <Tabs.Root variant="enclosed" borderRadius="l3" borderWidth="1px" lazyMount {...rootProps}>
+    <Tabs.Root
+      size="xs"
+      variant="surface"
+      colorPalette="gray"
+      borderWidth="1px"
+      lazyMount
+      {...rootProps}
+    >
       <Tabs.List
-        background="gray.1"
+        borderRadius="0"
         boxShadow="none"
-        borderWidth="0"
         justifyContent="space-between"
-        alignItems="center"
-        px="4"
-        height="12"
+        _dark={{ bg: 'bg.canvas' }}
       >
-        <Hide when={collapsable}>
-          <Flex>
+        <HStack gap="1">
+          <Hide when={collapsable}>
             {sources.map(({ framework, sourceCode }) => (
               <Tabs.Trigger
                 key={framework}
@@ -37,14 +41,10 @@ export const CodePreviewTabs = (props: Props) => {
                 {framework}
               </Tabs.Trigger>
             ))}
-          </Flex>
-          <Tabs.Indicator
-            background={{ _light: 'white', _dark: 'gray.2' }}
-            height="8"
-            boxShadow="xs"
-          />
-        </Hide>
-        {collapsable && <CodePreviewToggle />}
+            <Tabs.Indicator />
+          </Hide>
+        </HStack>
+        {collapsable && <CodePreviewToggle alignSelf="flex-end" />}
       </Tabs.List>
 
       {sources.map(({ sourceCode, framework }) => (
