@@ -22,7 +22,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
     "@types/bun": "1.2.21",
-    "lefthook": "1.12.4"
+    "lefthook": "1.13.0"
   },
   "trustedDependencies": [
     "@park-ui/react",
