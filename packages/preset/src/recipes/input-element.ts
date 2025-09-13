@@ -6,7 +6,6 @@ export const inputElement = defineRecipe({
     alignItems: 'center',
     color: 'fg.muted',
     display: 'flex',
-    fontSize: 'sm',
     height: 'full',
     justifyContent: 'center',
     position: 'absolute',
