@@ -39,7 +39,7 @@ export const neutral = defineSemanticTokens.colors({
       hover: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },
       active: { value: { _light: '{colors.gray.a5}', _dark: '{colors.gray.a5}' } },
     },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a11}', _dark: '{colors.gray.a11}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
   },
   surface: {
     bg: {
@@ -47,7 +47,7 @@ export const neutral = defineSemanticTokens.colors({
       hover: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
       active: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },
     },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a11}', _dark: '{colors.gray.a11}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
     border: {
       DEFAULT: { value: { _light: '{colors.gray.a5}', _dark: '{colors.gray.a5}' } },
       hover: { value: { _light: '{colors.gray.a6}', _dark: '{colors.gray.a6}' } },
@@ -60,7 +60,7 @@ export const neutral = defineSemanticTokens.colors({
       hover: { value: { _light: '{colors.gray.a2}', _dark: '{colors.gray.a2}' } },
       active: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
     },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a11}', _dark: '{colors.gray.a11}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
     border: {
       DEFAULT: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } },
       hover: { value: { _light: '{colors.gray.a8}', _dark: '{colors.gray.a8}' } },
@@ -73,6 +73,6 @@ export const neutral = defineSemanticTokens.colors({
       hover: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
       active: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },
     },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a11}', _dark: '{colors.gray.a11}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
   },
 })
