@@ -27,6 +27,7 @@ import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { input } from './input'
+import { inputElement } from './input-element'
 import { kbd } from './kbd'
 import { link } from './link'
 import { listbox } from './listbox'
@@ -75,6 +76,7 @@ export const recipes = {
   heading,
   icon,
   input,
+  inputElement,
   kbd,
   link,
   skeleton,
