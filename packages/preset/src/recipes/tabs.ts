@@ -7,11 +7,15 @@ export const tabs = defineSlotRecipe({
   base: {
     root: {
       position: 'relative',
+      display: 'flex',
+      alignItems: 'start',
       _horizontal: {
-        display: 'block',
+        flexDirection: 'column',
+        gap: '2',
       },
       _vertical: {
-        display: 'flex',
+        flexDirection: 'row',
+        gap: '4',
       },
     },
     list: {
@@ -83,14 +87,6 @@ export const tabs = defineSlotRecipe({
           px: '3.5',
           gap: '2',
         },
-        content: {
-          _horizontal: {
-            py: '4',
-          },
-          _vertical: {
-            px: '4',
-          },
-        },
       },
       md: {
         list: {
@@ -102,14 +98,6 @@ export const tabs = defineSlotRecipe({
           textStyle: 'sm',
           px: '4',
           gap: '2',
-        },
-        content: {
-          _horizontal: {
-            py: '4',
-          },
-          _vertical: {
-            px: '4',
-          },
         },
       },
       lg: {
@@ -123,18 +111,13 @@ export const tabs = defineSlotRecipe({
           px: '4.5',
           gap: '2',
         },
-        content: {
-          _horizontal: {
-            py: '4',
-          },
-          _vertical: {
-            px: '4',
-          },
-        },
       },
     },
     variant: {
       line: {
+        root: {
+          alignItems: 'stretch',
+        },
         list: {
           borderColor: 'border.default',
           _horizontal: {
@@ -176,9 +159,11 @@ export const tabs = defineSlotRecipe({
           borderRadius: 'l2',
         },
       },
-      surface: {
+      enclosed: {
         list: {
-          layerStyle: 'surface',
+          '--border-color': '{colors.border.subtle}',
+          background: 'gray.a2',
+          boxShadow: 'inset 0 0 0px 1px var(--border-color)',
           borderRadius: 'l3',
           p: '1',
         },
@@ -193,15 +178,15 @@ export const tabs = defineSlotRecipe({
           boxShadow: 'xs',
           background: {
             _light: 'white',
-            _dark: 'transparent',
+            _dark: 'gray.a2',
           },
         },
       },
     },
     fitted: {
       true: {
-        list: {
-          display: 'flex',
+        root: {
+          alignItems: 'stretch',
         },
         trigger: {
           flex: 1,
