@@ -1,4 +1,4 @@
-import { HStack, type HstackProps } from 'styled-system/jsx'
+import { HStack, Stack, type StackProps } from 'styled-system/jsx'
 import { Text } from '@/components/ui'
 import { PageLink } from './page-link'
 
@@ -20,9 +20,15 @@ const legalLinks = [
   },
 ]
 
-export const LegalFooter = (props: HstackProps) => {
+export const LegalFooter = (props: StackProps) => {
   return (
-    <HStack gap="6" colorPalette="gray" py="4" {...props}>
+    <Stack
+      colorPalette="gray"
+      direction={{ base: 'column-reverse', sm: 'row' }}
+      pb="4"
+      gap={{ base: '1', sm: '6' }}
+      {...props}
+    >
       <Text textStyle="sm" color="fg.muted">
         &copy; {new Date().getFullYear()} Chakra Systems. All rights reserved.
       </Text>
@@ -33,6 +39,6 @@ export const LegalFooter = (props: HstackProps) => {
           </PageLink>
         ))}
       </HStack>
-    </HStack>
+    </Stack>
   )
 }
