@@ -5,7 +5,7 @@ export const input = defineRecipe({
   jsx: ['Input', 'Field.Input'],
   base: {
     '--error-color': 'colors.red.9',
-    '--focus-color': 'colors.colorPalette.solid',
+    '--focus-color': 'colors.colorPalette.solid.bg',
     appearance: 'none',
     borderRadius: 'l2',
     height: 'var(--input-height)',
