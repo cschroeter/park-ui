@@ -20,7 +20,6 @@
     "exactOptionalPropertyTypes": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "types": ["vitest/globals"]
+    "noUnusedParameters": true
   }
 }
