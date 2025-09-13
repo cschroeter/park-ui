@@ -10,7 +10,7 @@ export const code = defineRecipe({
     fontWeight: 'medium',
     fontFamily: 'code',
     gap: '1',
-    whiteSpace: 'pre',
+    whiteSpace: 'pre-wrap',
   },
   defaultVariants: {
     size: 'md',

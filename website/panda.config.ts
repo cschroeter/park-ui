@@ -62,8 +62,9 @@ export default defineConfig({
       },
       pre: {
         background: 'transparent!',
-        overflowX: 'auto',
         fontSize: '13px',
+        overflowX: 'auto',
+        whiteSpace: 'pre-wrap',
         '::selection': {
           bg: 'gray.5',
         },
