@@ -1,4 +1,3 @@
-'use client'
 import type { Meta } from '@storybook/react'
 import { Box, Stack } from 'styled-system/jsx'
 

@@ -1,33 +1,16 @@
-import { FileIcon } from 'lucide-react'
-import { FileUpload } from '@/components/ui'
+import { UploadIcon } from 'lucide-react'
+import { Button, FileUpload } from '@/components/ui'
 
 export const App = () => {
   return (
-    <FileUpload.Root maxFiles={5}>
-      <FileUpload.Label>File Upload</FileUpload.Label>
-      <FileUpload.Dropzone>
-        <FileUpload.Trigger>Choose file(s)</FileUpload.Trigger>
-      </FileUpload.Dropzone>
-      <FileUpload.ItemGroup>
-        <FileUpload.Context>
-          {({ acceptedFiles }) =>
-            acceptedFiles.map((file) => (
-              <FileUpload.Item key={file.name} file={file}>
-                <FileUpload.ItemPreview type="image/*">
-                  <FileUpload.ItemPreviewImage />
-                </FileUpload.ItemPreview>
-                <FileUpload.ItemPreview type=".*">
-                  <FileIcon />
-                </FileUpload.ItemPreview>
-                <FileUpload.ItemName />
-                <FileUpload.ItemSizeText />
-                <FileUpload.ItemDeleteTrigger>X</FileUpload.ItemDeleteTrigger>
-              </FileUpload.Item>
-            ))
-          }
-        </FileUpload.Context>
-      </FileUpload.ItemGroup>
+    <FileUpload.Root>
       <FileUpload.HiddenInput />
+      <FileUpload.Trigger asChild>
+        <Button variant="outline" size="sm">
+          <UploadIcon /> Upload file
+        </Button>
+      </FileUpload.Trigger>
+      {/* <FileUpload.List /> */}
     </FileUpload.Root>
   )
 }

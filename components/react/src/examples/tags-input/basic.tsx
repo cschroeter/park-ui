@@ -1,3 +1,4 @@
+'use client'
 import { TagsInput } from '@/components/ui'
 
 export const App = () => {

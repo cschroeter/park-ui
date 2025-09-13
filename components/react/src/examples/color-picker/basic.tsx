@@ -1,3 +1,4 @@
+'use client'
 import { parseColor } from '@ark-ui/react/color-picker'
 import { ColorPicker } from '@/components/ui'
 

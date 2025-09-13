@@ -1,3 +1,4 @@
+'use client'
 import type { Combobox as ArkCombobox } from '@ark-ui/react/combobox'
 import { useListCollection } from '@ark-ui/react/combobox'
 import { useFilter } from '@ark-ui/react/locale'
