@@ -1,6 +1,7 @@
 import { cache } from 'react'
 import { codeToHtml } from 'shiki'
 import { Box, type BoxProps } from 'styled-system/jsx'
+import { ScrollArea } from '@/components/ui'
 import type { SourceCode } from '~/types'
 import { ClipboardButton } from './clipboard-button'
 
@@ -38,7 +39,15 @@ export const CodeSnippet = async (props: Props) => {
       <Box position="absolute" top="1" right="1">
         <ClipboardButton value={sourceCode.code} />
       </Box>
-      <Box maxH="lg" overflow="auto" px="4" py="3" dangerouslySetInnerHTML={{ __html }} />
+      <ScrollArea.Root maxH="lg" style={{ ['--scrollbar-margin' as string]: '2px' }}>
+        <ScrollArea.Viewport>
+          <ScrollArea.Content px="4" py="3" dangerouslySetInnerHTML={{ __html }} />
+        </ScrollArea.Viewport>
+        <ScrollArea.Scrollbar>
+          <ScrollArea.Thumb />
+        </ScrollArea.Scrollbar>
+        <ScrollArea.Corner />
+      </ScrollArea.Root>
     </Box>
   )
 }
