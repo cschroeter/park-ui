@@ -1,0 +1,59 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "id": "input-addon",
+  "type": "component",
+  "files": [
+    {
+      "type": "component",
+      "fileName": "input-addon.tsx",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { inputAddon } from 'styled-system/recipes'\n\nexport type InputAddonProps = ComponentProps<typeof InputAddon>\nexport const InputAddon = styled(ark.div, inputAddon)\n",
+      "indexFile": {
+        "exports": [
+          {
+            "type": "named",
+            "symbols": [
+              {
+                "name": "InputAddon",
+                "isType": false
+              },
+              {
+                "name": "InputAddonProps",
+                "isType": true
+              }
+            ],
+            "moduleSpecifier": "./input-addon"
+          }
+        ]
+      }
+    },
+    {
+      "type": "recipe",
+      "fileName": "input-addon.ts",
+      "content": "import { defineRecipe } from '@pandacss/dev'\nimport { input } from './input'\n\nexport const inputAddon = defineRecipe({\n  className: 'input-addon',\n  base: {\n    flex: '0 0 auto',\n    width: 'auto',\n    display: 'flex',\n    alignItems: 'center',\n    whiteSpace: 'nowrap',\n    alignSelf: 'stretch',\n    borderRadius: 'l2',\n  },\n  variants: {\n    size: input.variants?.size ?? {},\n    variant: {\n      outline: {\n        borderWidth: '1px',\n        borderColor: 'border',\n        bg: 'bg.muted',\n      },\n      subtle: {\n        borderWidth: '1px',\n        borderColor: 'transparent',\n        bg: 'bg.emphasized',\n      },\n      flushed: {\n        borderBottom: '1px solid',\n        borderColor: 'inherit',\n        borderRadius: '0',\n        px: '0',\n        bg: 'transparent',\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n    variant: 'outline',\n  },\n})\n",
+      "indexFile": {
+        "imports": [
+          {
+            "type": "named",
+            "moduleSpecifier": "./input-addon",
+            "symbols": [
+              {
+                "name": "input-addon"
+              }
+            ]
+          }
+        ],
+        "exports": [
+          {
+            "type": "object-literal",
+            "variableName": "recipes",
+            "properties": [
+              {
+                "name": "input-addon"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
