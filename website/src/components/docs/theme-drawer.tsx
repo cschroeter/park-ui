@@ -31,7 +31,7 @@ export const ThemeDrawer = ({ hero }: Props) => {
     <Drawer.Root placement={hero ? 'start' : 'end'} preventScroll={false}>
       <Drawer.Trigger asChild>
         {hero ? (
-          <Button variant="outline" colorPalette="gray" size={{ base: 'xl', md: '2xl' }}>
+          <Button variant="outline" size={{ base: 'xl', md: '2xl' }}>
             <Wand2Icon />
             Make it yours
           </Button>
