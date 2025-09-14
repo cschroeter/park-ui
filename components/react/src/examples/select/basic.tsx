@@ -3,19 +3,20 @@
 import { createListCollection } from '@ark-ui/react/collection'
 import { Select } from '@/components/ui'
 
-const frameworks = ['React', 'Vue', 'Svelte', 'Angular']
-
 const collection = createListCollection({
-  items: frameworks,
+  items: ['React', 'Vue', 'Svelte', 'Angular'],
 })
 
 export const App = () => {
   return (
-    <Select.Root collection={collection}>
+    <Select.Root collection={collection} maxW="xs">
       <Select.Label>Framework</Select.Label>
       <Select.Control>
         <Select.Trigger>
           <Select.ValueText placeholder="Select a framework" />
+          <Select.IndicatorGroup>
+            <Select.Indicator />
+          </Select.IndicatorGroup>
         </Select.Trigger>
       </Select.Control>
       <Select.Positioner>
@@ -23,7 +24,7 @@ export const App = () => {
           {collection.items.map((item) => (
             <Select.Item key={item} item={item}>
               <Select.ItemText>{item}</Select.ItemText>
-              <Select.ItemIndicator>✓</Select.ItemIndicator>
+              <Select.ItemIndicator />
             </Select.Item>
           ))}
         </Select.Content>

@@ -79,7 +79,7 @@ export const input = defineRecipe({
         '--input-height': 'sizes.7',
       },
       xs: {
-        textStyle: 'xs',
+        textStyle: 'sm',
         px: '2',
         '--input-height': 'sizes.8',
       },

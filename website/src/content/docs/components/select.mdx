@@ -21,23 +21,43 @@ import { Select } from '@/components/ui'
 
 ```tsx
 <Select.Root>
-  <Select.Label>Select Label</Select.Label>
+  <Select.HiddenSelect />
+  <Select.Label />
   <Select.Control>
     <Select.Trigger>
-      <Select.ValueText placeholder="Select option..." />
-      <Select.Indicator />
+      <Select.ValueText />
     </Select.Trigger>
+    <Select.IndicatorGroup>
+      <Select.Indicator />
+      <Select.ClearTrigger />
+    </Select.IndicatorGroup>
   </Select.Control>
   <Select.Positioner>
     <Select.Content>
-      <Select.Item item="option1">
-        <Select.ItemText>Option 1</Select.ItemText>
-        <Select.ItemIndicator />
-      </Select.Item>
+      <Select.Item />
+      <Select.ItemGroup>
+        <Select.ItemGroupLabel />
+        <Select.Item />
+      </Select.ItemGroup>
     </Select.Content>
   </Select.Positioner>
 </Select.Root>
 ```
+
+
+## Examples
+
+### Size
+
+Use the `size` prop to change the size of the select component.
+
+<ComponentExample name="sizes" />
+
+### Option Group
+
+Use the `Select.ItemGroup` component to group select options.
+
+<ComponentExample name="option-group" />
 
 ## Props
 
