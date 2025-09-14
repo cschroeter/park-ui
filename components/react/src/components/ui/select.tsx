@@ -1,7 +1,7 @@
 'use client'
 import { ark } from '@ark-ui/react/factory'
 import { Select } from '@ark-ui/react/select'
-import type { SVGProps } from 'react'
+import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { createStyleContext } from 'styled-system/jsx'
 import { type SelectVariantProps, select } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
@@ -32,48 +32,13 @@ export const List = withContext(Select.List, 'list')
 export const Positioner = withContext(Select.Positioner, 'positioner')
 export const Trigger = withContext(Select.Trigger, 'trigger')
 export const ValueText = withContext(Select.ValueText, 'valueText')
+export const Indicator = withContext(Select.Indicator, 'indicator', {
+  defaultProps: { children: <ChevronsUpDownIcon /> },
+})
+export const ItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator', {
+  defaultProps: { children: <CheckIcon /> },
+})
 export const HiddenSelect = Select.HiddenSelect
 
 export const Context = Select.Context
 export const ItemContext = Select.ItemContext
-
-const CheckIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <title>Checkmark</title>
-    <path d="M20 6 9 17l-5-5" />
-  </svg>
-)
-
-const ChevronsUpDownIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <title>Chevrons Up Down</title>
-    <path d="m7 15 5 5 5-5" />
-    <path d="m7 9 5-5 5 5" />
-  </svg>
-)
-
-export const Indicator = withContext(Select.Indicator, 'indicator', {
-  defaultProps: { children: <ChevronsUpDownIcon /> },
-})
-
-export const ItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator', {
-  defaultProps: { children: <CheckIcon /> },
-})

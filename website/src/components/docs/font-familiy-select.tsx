@@ -1,6 +1,5 @@
 'use client'
 import { createListCollection } from '@ark-ui/react/collection'
-import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
 import { Select } from '@/components/ui'
 import { type Font, fonts } from '~/app/fonts'
 
@@ -22,8 +21,10 @@ export const FontFamilySelect = (props: Props) => {
       <Select.Label>Font Family</Select.Label>
       <Select.Control>
         <Select.Trigger>
-          <Select.ValueText />
-          <ChevronsUpDownIcon />
+          <Select.ValueText placeholder="Select a font" />
+          <Select.IndicatorGroup>
+            <Select.Indicator />
+          </Select.IndicatorGroup>
         </Select.Trigger>
       </Select.Control>
       <Select.Positioner>
@@ -31,9 +32,7 @@ export const FontFamilySelect = (props: Props) => {
           {collection.items.map((font, id) => (
             <Select.Item key={id} item={font}>
               <Select.ItemText>{font.label}</Select.ItemText>
-              <Select.ItemIndicator>
-                <CheckIcon />
-              </Select.ItemIndicator>
+              <Select.ItemIndicator />
             </Select.Item>
           ))}
         </Select.Content>
