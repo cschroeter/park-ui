@@ -28,5 +28,5 @@
     "@park-ui/react",
     "@park-ui/website"
   ],
-  "packageManager": "bun@1.2.21"
+  "packageManager": "bun@1.2.22"
 }
