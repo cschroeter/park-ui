@@ -55,11 +55,17 @@ export const avatar = defineSlotRecipe({
           '--avatar-font-size': 'fontSizes.2xs',
           '--avatar-size': 'sizes.6',
         },
+        fallback: {
+          _icon: { width: '3', height: '3' },
+        },
       },
       xs: {
         root: {
           '--avatar-font-size': 'fontSizes.xs',
           '--avatar-size': 'sizes.8',
+        },
+        fallback: {
+          _icon: { width: '4', height: '4' },
         },
       },
       sm: {
@@ -67,11 +73,17 @@ export const avatar = defineSlotRecipe({
           '--avatar-font-size': 'fontSizes.sm',
           '--avatar-size': 'sizes.9',
         },
+        fallback: {
+          _icon: { width: '4.5', height: '4.5' },
+        },
       },
       md: {
         root: {
           '--avatar-font-size': 'fontSizes.md',
           '--avatar-size': 'sizes.10',
+        },
+        fallback: {
+          _icon: { width: '5', height: '5' },
         },
       },
       lg: {
@@ -79,17 +91,26 @@ export const avatar = defineSlotRecipe({
           '--avatar-font-size': 'fontSizes.md',
           '--avatar-size': 'sizes.11',
         },
+        fallback: {
+          _icon: { width: '5.5', height: '5.5' },
+        },
       },
       xl: {
         root: {
           '--avatar-font-size': 'fontSizes.lg',
           '--avatar-size': 'sizes.12',
         },
+        fallback: {
+          _icon: { width: '6', height: '6' },
+        },
       },
       '2xl': {
         root: {
           '--avatar-font-size': 'fontSizes.xl',
           '--avatar-size': 'sizes.16',
+        },
+        fallback: {
+          _icon: { width: '8', height: '8' },
         },
       },
     },
