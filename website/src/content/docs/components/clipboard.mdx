@@ -20,10 +20,34 @@ import { Clipboard } from '@/components/ui'
 ```
 
 ```tsx
-<Clipboard.Root value="Content to copy">
-  <Clipboard.Trigger>Copy</Clipboard.Trigger>
+<Clipboard.Root>
+  <Clipboard.Trigger>
+    <Clipboard.CopyText />
+    <Clipboard.Indicator />
+  </Clipboard.Trigger>
+  <Clipboard.Input />
 </Clipboard.Root>
 ```
+
+## Examples
+
+### Button
+
+Use the `Clipboard.Trigger` component to create a copy button.
+
+<ComponentExample name="button" />
+
+### Input
+
+Use the `Clipboard.Input` component to create a copy input.
+
+<ComponentExample name="input" />
+
+### Timeout
+
+Use the `timeout` prop to set the duration of the copied state.
+
+<ComponentExample name="timeout" /> 
 
 ## Props
 

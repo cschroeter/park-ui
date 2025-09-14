@@ -20,12 +20,12 @@ export const Control = withContext(Switch.Control, 'control', {
 
 export { SwitchContext as Context } from '@ark-ui/react/switch'
 
-interface SwitchIndicatorProps extends ComponentProps<typeof StyledIndicator> {
+interface IndicatorProps extends ComponentProps<typeof StyledIndicator> {
   fallback?: ReactNode | undefined
 }
 
 const StyledIndicator = withContext(ark.span, 'indicator')
-export const Indicator = forwardRef<HTMLSpanElement, SwitchIndicatorProps>(
+export const Indicator = forwardRef<HTMLSpanElement, IndicatorProps>(
   function Indicator(props, ref) {
     const { fallback, children, ...rest } = props
     const api = useSwitchContext()

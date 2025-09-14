@@ -17,7 +17,7 @@
         "description": "Use the provided child element as the default rendered element, combining their props and behavior."
       },
       "copied": {
-        "type": "string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<...>",
+        "type": "React.ReactNode",
         "isRequired": false
       }
     },

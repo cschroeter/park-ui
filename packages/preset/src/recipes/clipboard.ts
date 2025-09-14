@@ -8,11 +8,14 @@ export const clipboard = defineSlotRecipe({
     root: {
       display: 'flex',
       flexDirection: 'column',
+      alignItems: 'flex-start',
       gap: '1.5',
     },
-    control: {
-      display: 'flex',
-      gap: '3',
+    label: {
+      fontWeight: 'medium',
+      textStyle: 'sm',
+      color: 'fg.default',
+      gap: '0.5',
     },
   },
 })
