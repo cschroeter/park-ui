@@ -86,36 +86,33 @@ export const switchRecipe = defineSlotRecipe({
       solid: {
         control: {
           borderRadius: 'full',
-          bg: 'gray.4',
+          bg: 'gray.a5',
           focusVisibleRing: 'outside',
           _checked: {
-            bg: 'colorPalette.solid',
+            bg: 'colorPalette.solid.bg',
           },
         },
         thumb: {
-          bg: 'colorPalette.contrast',
+          bg: 'bg.default',
           width: 'var(--switch-height)',
           height: 'var(--switch-height)',
           scale: '0.8',
           boxShadow: 'sm',
-          _checked: {
-            bg: 'colorPalette.contrast',
-          },
         },
       },
     },
     size: {
       xs: {
         root: {
-          '--switch-width': 'sizes.6',
-          '--switch-height': 'sizes.3',
+          '--switch-width': 'sizes.8',
+          '--switch-height': 'sizes.4',
           '--switch-indicator-font-size': 'fontSizes.xs',
         },
       },
       sm: {
         root: {
-          '--switch-width': 'sizes.8',
-          '--switch-height': 'sizes.4',
+          '--switch-width': 'sizes.9',
+          '--switch-height': 'sizes.4.5',
           '--switch-indicator-font-size': 'fontSizes.xs',
         },
       },
@@ -128,8 +125,8 @@ export const switchRecipe = defineSlotRecipe({
       },
       lg: {
         root: {
-          '--switch-width': 'sizes.12',
-          '--switch-height': 'sizes.6',
+          '--switch-width': 'sizes.11',
+          '--switch-height': 'sizes.5.5',
           '--switch-indicator-font-size': 'fontSizes.md',
         },
       },

@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Grid
-        gridTemplateColumns={{ base: '1fr', lg: 'minmax(34rem, 1fr) 1fr' }}
+        gridTemplateColumns={{ base: '1fr', lg: 'minmax(34rem, 5fr) 6fr' }}
         mt="14"
         overflow={{ lg: 'hidden' }}
       >
@@ -37,7 +37,7 @@ export default function Page() {
         >
           <Box
             height={{ base: 'auto', lg: 'calc(100vh - 56px)' }}
-            width="1324px"
+            width="1300px"
             transform={{
               base: 'none',
               lg: 'rotate(4deg) translateX(60px) translateY(50px)',

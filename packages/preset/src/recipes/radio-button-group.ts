@@ -61,9 +61,9 @@ export const radioButtonGroup = defineSlotRecipe({
           _checked: {
             background: 'colorPalette.solid',
             borderColor: 'colorPalette.solid',
-            color: 'colorPalette.contrast',
+            color: 'colorPalette.solid.fg',
             _hover: {
-              color: 'colorPalette.contrast',
+              color: 'colorPalette.solid.fg',
               background: 'colorPalette.solid',
             },
           },

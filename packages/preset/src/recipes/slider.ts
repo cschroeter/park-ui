@@ -105,13 +105,13 @@ export const slider = defineSlotRecipe({
     variant: {
       outline: {
         thumb: {
-          bg: 'colorPalette.contrast',
+          bg: 'bg.default',
           borderWidth: '2px',
-          borderColor: 'colorPalette.solid',
+          borderColor: 'colorPalette.solid.bg',
           boxShadow: 'xs',
         },
         range: {
-          bg: 'colorPalette.solid',
+          bg: 'colorPalette.solid.bg',
         },
         track: {
           bg: 'gray.a4',

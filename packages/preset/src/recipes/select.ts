@@ -91,6 +91,7 @@ export const select = defineSlotRecipe({
       '--input-height': 'var(--select-trigger-height)',
       alignItems: 'center',
       borderRadius: 'l2',
+      borderColor: 'gray.a7',
       color: 'fg.default',
       display: 'flex',
       focusRingColor: 'colorPalette.solid.bg',
