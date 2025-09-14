@@ -1,16 +1,14 @@
-'use client'
 import { Portal } from '@ark-ui/react/portal'
 import { Button, CloseButton, Dialog } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Dialog.Root>
+    <Dialog.Root closeOnInteractOutside={false} modal={false}>
       <Dialog.Trigger asChild>
-        <Button>Open Dialog</Button>
+        <Button variant="outline">Open Dialog</Button>
       </Dialog.Trigger>
       <Portal>
-        <Dialog.Backdrop />
-        <Dialog.Positioner>
+        <Dialog.Positioner pointerEvents="none">
           <Dialog.Content>
             <Dialog.Header>
               <Dialog.Title>Title</Dialog.Title>

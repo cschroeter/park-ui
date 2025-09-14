@@ -1,12 +1,12 @@
-'use client'
 import { Portal } from '@ark-ui/react/portal'
+import { loremIpsum } from 'lorem-ipsum'
 import { Button, CloseButton, Dialog } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Dialog.Root>
+    <Dialog.Root scrollBehavior="inside">
       <Dialog.Trigger asChild>
-        <Button>Open Dialog</Button>
+        <Button variant="outline">Open Dialog</Button>
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
@@ -14,9 +14,13 @@ export const App = () => {
           <Dialog.Content>
             <Dialog.Header>
               <Dialog.Title>Title</Dialog.Title>
-              <Dialog.Description>Description</Dialog.Description>
             </Dialog.Header>
-            <Dialog.Body>{/* Content */}</Dialog.Body>
+            <Dialog.Body
+              color="fg.muted"
+              dangerouslySetInnerHTML={{
+                __html: loremIpsum({ count: 10, format: 'html', units: 'paragraphs' }),
+              }}
+            />
             <Dialog.Footer>
               <Dialog.ActionTrigger asChild>
                 <Button variant="outline">Cancel</Button>

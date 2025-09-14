@@ -79,6 +79,7 @@ export const drawer = defineSlotRecipe({
       alignItems: 'center',
       justifyContent: 'flex-end',
       flex: '0',
+      gap: '3',
       py: '4',
       px: { base: '4', md: '6' },
     },

@@ -1,7 +1,6 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
 import { Undo2Icon, Wand2Icon } from 'lucide-react'
-import { HStack, Stack } from 'styled-system/jsx'
 import { Button, CloseButton, Drawer, IconButton } from '@/components/ui'
 import { useTheme } from '~/lib/use-theme'
 import { ColorModeButton } from '../color-mode-button'
@@ -53,22 +52,18 @@ export const ThemeDrawer = ({ hero }: Props) => {
                 <CloseButton />
               </Drawer.CloseTrigger>
             </Drawer.Header>
-            <Drawer.Body>
-              <Stack flex="1" gap="4" alignItems="start">
-                <ColorModeButton />
-                <FontFamilySelect font={font} onValueChange={setFont} />
-                <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
-                <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
-                <BorderRadiusSlider radius={radius} onValueChange={setRadius} />
-              </Stack>
+            <Drawer.Body gap="4">
+              <ColorModeButton />
+              <FontFamilySelect font={font} onValueChange={setFont} />
+              <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />
+              <AccentColorPicker accentColor={accentColor} onValueChange={setAccentColor} />
+              <BorderRadiusSlider radius={radius} onValueChange={setRadius} />
             </Drawer.Body>
             <Drawer.Footer>
-              <HStack gap="3">
-                <Button variant="subtle" onClick={reset} colorPalette="gray">
-                  <Undo2Icon />
-                  Reset
-                </Button>
-              </HStack>
+              <Button variant="subtle" onClick={reset} colorPalette="gray">
+                <Undo2Icon />
+                Reset
+              </Button>
             </Drawer.Footer>
           </Drawer.Content>
         </Drawer.Positioner>

@@ -1,12 +1,15 @@
 'use client'
 import { Portal } from '@ark-ui/react/portal'
+import { useState } from 'react'
 import { Button, CloseButton, Dialog } from '@/components/ui'
 
 export const App = () => {
+  const [open, setOpen] = useState(false)
+
   return (
-    <Dialog.Root>
+    <Dialog.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
       <Dialog.Trigger asChild>
-        <Button>Open Dialog</Button>
+        <Button variant="outline">Open Dialog</Button>
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
