@@ -5,6 +5,7 @@ import { animationStyles } from './theme/animation-styles'
 import { keyframes } from './theme/keyframes'
 import { layerStyles } from './theme/layer-styles'
 import { shadows } from './theme/semantic-tokens/shadows'
+import { textStyles } from './theme/text-styles'
 import { colors } from './theme/tokens/colors'
 import { durations } from './theme/tokens/durations'
 import { easings } from './theme/tokens/easings'
@@ -47,6 +48,7 @@ export const preset = definePreset({
       slotRecipes,
       keyframes,
       layerStyles,
+      textStyles,
       tokens: {
         colors,
         easings,
