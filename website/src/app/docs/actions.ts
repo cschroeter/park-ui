@@ -10,7 +10,7 @@ interface Props {
   name: string
 }
 
-export const getComponentExamples = async (props: Props): Promise<FrameworkSourceCode[]> => {
+export const getComponentSourceCode = async (props: Props): Promise<FrameworkSourceCode[]> => {
   const { component, name } = props
 
   const baseDir = join(process.cwd(), '../components')

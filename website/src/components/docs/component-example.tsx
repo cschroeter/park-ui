@@ -1,9 +1,8 @@
-import { camelCase, pascalCase } from 'change-case'
-import dynamic from 'next/dynamic'
 import { cache } from 'react'
 import { Box } from 'styled-system/jsx'
 import { Button, Collapsible } from '@/components/ui'
-import { getComponentExamples } from '~/app/docs/actions'
+import { getComponentSourceCode } from '~/app/docs/actions'
+import { getComponentExample } from '~/lib/examples'
 import { getServerContext } from '~/server-context'
 import { ErrorBoundary } from '../error-boundary'
 import { CodePreviewTabs } from './code-preview-tabs'
@@ -13,30 +12,20 @@ interface Props {
   codeOnly?: boolean
 }
 
-const createDynamicExample = cache((component: string, name: string) => {
-  return dynamic(() =>
-    import('@park-ui/react/examples')
-      // @ts-expect-error
-      .then((mod) => mod[pascalCase(component)])
-      .then((mod) => mod[camelCase(name)]),
-  )
-})
-
-const getCachedComponentExamples = cache(getComponentExamples)
+const getCachedComponentSourceCode = cache(getComponentSourceCode)
 
 export const ComponentExample = async (props: Props) => {
   const { name, codeOnly } = props
   const { component } = getServerContext()
 
-  const Example = createDynamicExample(component, name)
-
-  const codeExamples = await getCachedComponentExamples({
+  const Example = getComponentExample({ component, name })
+  const sources = await getCachedComponentSourceCode({
     component,
     name,
   })
 
   if (codeOnly) {
-    return <CodePreviewTabs sources={codeExamples} defaultValue="react" />
+    return <CodePreviewTabs sources={sources} defaultValue="react" />
   }
 
   return (
@@ -69,7 +58,7 @@ export const ComponentExample = async (props: Props) => {
         <Collapsible.Content>
           <CodePreviewTabs
             defaultValue="react"
-            sources={codeExamples}
+            sources={sources}
             borderRadius="0"
             borderWidth="0"
           />
