@@ -16,7 +16,7 @@ export const App = () => {
               <Popover.Description>Description</Popover.Description>
             </Popover.Body>
             <Popover.Footer>
-              <Popover.Root portalled={false}>
+              <Popover.Root>
                 <Popover.Trigger asChild>
                   <Button variant="outline" size="sm">
                     Open Nested Popover

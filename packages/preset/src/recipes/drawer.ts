@@ -66,6 +66,7 @@ export const drawer = defineSlotRecipe({
     body: {
       display: 'flex',
       flexDirection: 'column',
+      alignItems: 'flex-start',
       flex: '1',
       overflow: 'auto',
       p: { base: '4', md: '6' },

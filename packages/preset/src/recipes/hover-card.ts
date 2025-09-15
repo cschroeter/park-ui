@@ -6,27 +6,36 @@ export const hoverCard = defineSlotRecipe({
   slots: hoverCardAnatomy.keys(),
   base: {
     content: {
-      '--hover-card-background': 'colors.bg.default',
-      background: 'var(--hover-card-background)',
+      '--hovercard-bg': 'colors.bg.default',
+
+      bg: 'var(--hovercard-bg)',
       borderRadius: 'l3',
       boxShadow: 'lg',
-      maxW: '80',
-      p: '4',
+      display: 'flex',
+      flexDirection: 'column',
+      maxWidth: '80',
+      outline: '0',
+      padding: '4',
       position: 'relative',
+      textStyle: 'sm',
+      transformOrigin: 'var(--transform-origin)',
+      zIndex: 'popover',
       _open: {
-        animation: 'fadeIn 0.25s ease-out',
+        animationStyle: 'slide-fade-in',
+        animationDuration: 'fast',
       },
       _closed: {
-        animation: 'fadeOut 0.2s ease-out',
+        animationStyle: 'slide-fade-out',
+        animationDuration: 'faster',
       },
     },
     arrow: {
-      '--arrow-size': '12px',
-      '--arrow-background': 'var(--hover-card-background)',
+      '--arrow-size': 'sizes.3',
+      '--arrow-background': 'var(--hovercard-bg)',
     },
     arrowTip: {
-      borderTopWidth: '1px',
-      borderLeftWidth: '1px',
+      borderTopWidth: '0.5px',
+      borderInlineStartWidth: '0.5px',
     },
   },
 })

@@ -75,7 +75,7 @@ Use the `lazyMounted` and/or `unmountOnExit` prop to defer the mounting of the p
 
 ### Placement
 
-Use the `positioning.placement` prop to configure the underlying `floating-ui` positioning logic.
+Use the` positioning.placement` prop to change the position of the popover.
 
 <ComponentExample name="placement" />
 
@@ -94,10 +94,7 @@ as the trigger.
 
 ### Nested
 
-When nesting overlay elements like popover, select, menu, inside of the popover,
-set `portalled=false` on them.
-
-Here's an example of a popover inside another popover.
+To use the `Popover` within a `Popover`, you need to avoid portalling the nested `Popover.Positioner` to the document's body.
 
 <ComponentExample name="nested" />
 

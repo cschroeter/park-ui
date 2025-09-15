@@ -1,11 +1,11 @@
-import { Portal } from '@ark-ui/react'
+import { Portal } from '@ark-ui/react/portal'
 import { MapPinIcon } from 'lucide-react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Avatar, HoverCard, Icon, Link, Text } from '@/components/ui'
 
 export const App = () => {
   return (
-    <HoverCard.Root>
+    <HoverCard.Root positioning={{ placement: 'right' }}>
       <HoverCard.Trigger asChild>
         <Link href="https://twitter.com/grizzly_codes/" target="_blank">
           @grizzly_codes

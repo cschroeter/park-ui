@@ -64,8 +64,8 @@ export const popover = defineSlotRecipe({
       '--arrow-background': 'var(--popover-bg)',
     },
     arrowTip: {
-      borderTopWidth: '1px',
-      borderInlineStartWidth: '1px',
+      borderTopWidth: '0.5px',
+      borderInlineStartWidth: '0.5px',
     },
   },
 })

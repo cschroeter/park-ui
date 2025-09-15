@@ -1,11 +1,15 @@
-import { Portal } from '@ark-ui/react'
+'use client'
+import { Portal } from '@ark-ui/react/portal'
 import { MapPinIcon } from 'lucide-react'
+import { useState } from 'react'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Avatar, HoverCard, Icon, Link, Text } from '@/components/ui'
 
 export const App = () => {
+  const [open, setOpen] = useState(false)
+
   return (
-    <HoverCard.Root>
+    <HoverCard.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
       <HoverCard.Trigger asChild>
         <Link href="https://twitter.com/grizzly_codes/" target="_blank">
           @grizzly_codes
@@ -24,12 +28,8 @@ export const App = () => {
               </Avatar.Root>
               <Stack gap="3">
                 <Stack gap="1">
-                  <Text size="sm" fontWeight="semibold">
-                    @grizzly_codes
-                  </Text>
-                  <Text size="sm" color="fg.muted">
-                    Principal Software Engineer working at Pyck.ai
-                  </Text>
+                  <Text fontWeight="semibold">@grizzly_codes</Text>
+                  <Text color="fg.muted">Principal Software Engineer working at Pyck.ai</Text>
                 </Stack>
                 <HStack gap="1" color="fg.subtle">
                   <Icon size="sm">
