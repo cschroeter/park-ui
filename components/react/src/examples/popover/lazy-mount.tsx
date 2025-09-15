@@ -3,9 +3,9 @@ import { Button, CloseButton, Popover } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Popover.Root>
+    <Popover.Root lazyMount unmountOnExit>
       <Popover.Trigger asChild>
-        <Button>Open Popover</Button>
+        <Button variant="outline">Open Popover</Button>
       </Popover.Trigger>
       <Portal>
         <Popover.Positioner>

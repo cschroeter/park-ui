@@ -1,11 +1,14 @@
+'use client'
 import { Portal } from '@ark-ui/react/portal'
+import { useState } from 'react'
 import { Button, CloseButton, Popover } from '@/components/ui'
 
 export const App = () => {
+  const [open, setOpen] = useState(false)
   return (
-    <Popover.Root>
+    <Popover.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
       <Popover.Trigger asChild>
-        <Button>Open Popover</Button>
+        <Button variant="outline">Open Popover</Button>
       </Popover.Trigger>
       <Portal>
         <Popover.Positioner>

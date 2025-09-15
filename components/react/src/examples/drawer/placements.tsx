@@ -8,9 +8,7 @@ export const App = () => {
       {(['bottom', 'top', 'start', 'end'] as const).map((placement) => (
         <Drawer.Root key={placement} placement={placement}>
           <Drawer.Trigger asChild>
-            <Button variant="outline" size="sm">
-              Open ({placement})
-            </Button>
+            <Button variant="outline">Open ({placement})</Button>
           </Drawer.Trigger>
           <Portal>
             <Drawer.Backdrop />

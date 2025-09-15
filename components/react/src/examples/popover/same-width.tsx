@@ -3,13 +3,15 @@ import { Button, CloseButton, Popover } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Popover.Root>
+    <Popover.Root positioning={{ sameWidth: true }}>
       <Popover.Trigger asChild>
-        <Button>Open Popover</Button>
+        <Button variant="outline" minW="50%">
+          Open Popover
+        </Button>
       </Popover.Trigger>
       <Portal>
         <Popover.Positioner>
-          <Popover.Content>
+          <Popover.Content width="auto">
             <Popover.Arrow />
             <Popover.Body>
               <Popover.Title>Title</Popover.Title>

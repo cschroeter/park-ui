@@ -21,19 +21,122 @@ import { Popover } from '@/components/ui'
 
 ```tsx
 <Popover.Root>
-  <Popover.Trigger>Open Popover</Popover.Trigger>
+  <Popover.Trigger />
   <Popover.Positioner>
     <Popover.Content>
+      <Popover.CloseTrigger />
       <Popover.Arrow>
         <Popover.ArrowTip />
       </Popover.Arrow>
-      <Popover.Title>Popover Title</Popover.Title>
-      <Popover.Description>Popover content</Popover.Description>
-      <Popover.CloseTrigger>Close</Popover.CloseTrigger>
+      <Popover.Body>
+        <Popover.Title />
+      </Popover.Body>
     </Popover.Content>
   </Popover.Positioner>
 </Popover.Root>
 ```
+
+## Shortcuts
+
+The `Popover` provides a shortcuts for common use cases.
+
+### Arrow
+
+The `Popover.Arrow` renders the `Popover.ArrowTip` component within in by
+default.
+
+This works:
+
+```tsx
+<Popover.Arrow>
+  <Popover.ArrowTip />
+</Popover.Arrow>
+```
+
+This might be more concise, if you don't need to customize the arrow tip.
+
+```tsx
+<Popover.Arrow />
+```
+
+## Examples
+
+### Controlled
+
+Use the `open` and `onOpenChange` to control the visibility of the popover.
+
+<ComponentExample name="controlled" />
+
+### Lazy Mount
+
+Use the `lazyMounted` and/or `unmountOnExit` prop to defer the mounting of the popover content until it's opened.
+
+<ComponentExample name="lazy-mount" />
+
+### Placement
+
+Use the `positioning.placement` prop to configure the underlying `floating-ui` positioning logic.
+
+<ComponentExample name="placement" />
+
+### Offset
+
+Use the `positioning.offset` prop to adjust the position of the popover content.
+
+<ComponentExample name="offset" />
+
+### Same Width
+
+Use the `positioning.sameWidth` prop to make the popover content the same width
+as the trigger.
+
+<ComponentExample name="same-width" />
+
+### Nested
+
+When nesting overlay elements like popover, select, menu, inside of the popover,
+set `portalled=false` on them.
+
+Here's an example of a popover inside another popover.
+
+<ComponentExample name="nested" />
+
+### Form
+
+Here's an example of a popover with a form inside.
+
+<ComponentExample name="form" />
+
+### Initial Focus
+
+Use the `initialFocusEl` prop to set the initial focus of the popover content.
+
+<ComponentExample name="initial-focus" />
+
+### Custom Background
+
+Use the `--popover-bg` CSS variable to change the background color of the
+popover content and its arrow.
+
+<ComponentExample name="custom-background" />
+
+### Within Dialog
+
+To use the `Popover` within a `Dialog`, you need to avoid portalling the `Popover.Positioner` to the document's body. 
+
+If you have set `scrollBehavior="inside"` on the `Dialog`, you need to:
+- Set the popover positioning to `fixed` to avoid the popover from being clipped
+  by the dialog.
+- Set `hideWhenDetached` to `true` to hide the popover when the trigger is
+  scrolled out of view.
+
+```tsx
+<Popover.Root positioning={{ strategy: "fixed", hideWhenDetached: true }}>
+  {/* ... */}
+</Popover.Root>
+```
+
+<ComponentExample name="dialog" />
 
 ## Props
 
