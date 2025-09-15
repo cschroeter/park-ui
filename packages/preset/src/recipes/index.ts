@@ -58,7 +58,6 @@ import { tabs } from './tabs'
 import { tagsInput } from './tags-input'
 import { text } from './text'
 import { textarea } from './textarea'
-import { timePicker } from './time-picker'
 import { timer } from './timer'
 import { toast } from './toast'
 import { toggle } from './toggle'
@@ -130,7 +129,6 @@ export const slotRecipes = {
   table,
   tabs,
   tagsInput,
-  timePicker,
   timer,
   toast,
   toggle,
