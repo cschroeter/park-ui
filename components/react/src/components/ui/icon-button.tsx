@@ -1,9 +1,10 @@
-import { ark } from '@ark-ui/react/factory'
-import type { ComponentProps } from 'react'
-import { styled } from 'styled-system/jsx'
-import { type ButtonVariantProps, button } from 'styled-system/recipes'
+import { forwardRef } from 'react'
+import { Button, type ButtonProps } from './button'
 
-export type IconButtonProps = ComponentProps<typeof IconButton>
-export const IconButton = styled(ark.button, button, {
-  defaultProps: { px: '0' } as ButtonVariantProps,
-})
+export interface IconButtonProps extends ButtonProps {}
+
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  function IconButton(props, ref) {
+    return <Button px="0" py="0" ref={ref} {...props} />
+  },
+)

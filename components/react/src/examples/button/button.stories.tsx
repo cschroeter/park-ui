@@ -7,9 +7,11 @@ const meta: Meta = {
 export default meta
 
 export { App as asLink } from './as-link'
+export { App as attached } from './attached'
 export { App as basic } from './basic'
 export { App as colors } from './colors'
 export { App as disabled } from './disabled'
+export { App as group } from './group'
 export { App as icon } from './icon'
 export { App as loading } from './loading'
 export { App as ref } from './ref'

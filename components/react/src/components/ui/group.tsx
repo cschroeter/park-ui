@@ -2,10 +2,12 @@ import { ark } from '@ark-ui/react'
 import {
   Children,
   type ComponentProps,
+  type CSSProperties,
   cloneElement,
   forwardRef,
   isValidElement,
   memo,
+  type ReactElement,
   useMemo,
 } from 'react'
 import { styled } from 'styled-system/jsx'
@@ -30,43 +32,68 @@ export interface GroupProps extends StyledGroupProps {
   /**
    * A function that determines if a child should be skipped
    */
-  skip?: (child: React.ReactElement) => boolean | undefined
+  skip?: (child: ReactElement) => boolean | undefined
 }
 
 export const Group = memo(
   forwardRef<HTMLDivElement, GroupProps>(function Group(props, ref) {
     const { align = 'center', justify = 'flex-start', children, wrap, skip, ...rest } = props
 
-    const _children = useMemo(() => {
+    const enhancedChildren = useMemo(() => {
+      // Convert children to array and filter out invalid elements
       const childArray = Children.toArray(children).filter(isValidElement)
-      if (childArray.length === 1) return childArray
 
-      const validChildArray = childArray.filter((child) => !skip?.(child))
-      const validChildCount = validChildArray.length
-      if (validChildArray.length === 1) return childArray
+      // If only one child, no need for group enhancements
+      if (childArray.length === 1) {
+        return childArray
+      }
 
+      // Filter out skipped children to get valid children for indexing
+      const validChildren = childArray.filter((child) => !skip?.(child))
+
+      // If only one valid child after filtering, return original array
+      if (validChildren.length === 1) {
+        return childArray
+      }
+
+      // Enhance each child with group data attributes
       return childArray.map((child) => {
-        const childProps = child.props as any
-        if (skip?.(child)) return child
-        const index = validChildArray.indexOf(child)
-        return cloneElement(child, {
+        // Skip enhancement for children that should be skipped
+        if (skip?.(child)) {
+          return child
+        }
+
+        const childProps = child.props as Record<string, unknown> & {
+          style?: CSSProperties
+        }
+
+        const indexInValidChildren = validChildren.indexOf(child)
+
+        const enhancedProps: Record<string, unknown> = {
           ...childProps,
           'data-group-item': '',
-          'data-first': dataAttr(index === 0),
-          'data-last': dataAttr(index === validChildCount - 1),
-          'data-between': dataAttr(index > 0 && index < validChildCount - 1),
+          'data-first': dataAttr(indexInValidChildren === 0),
+          'data-last': dataAttr(indexInValidChildren === validChildren.length - 1),
+          'data-between': dataAttr(
+            indexInValidChildren > 0 && indexInValidChildren < validChildren.length - 1,
+          ),
           style: {
-            '--group-count': validChildCount,
-            '--group-index': index,
+            '--group-count': validChildren.length,
+            '--group-index': indexInValidChildren,
             ...(childProps?.style ?? {}),
+          } as CSSProperties & {
+            '--group-count': number
+            '--group-index': number
           },
-        } as any)
+        }
+
+        return cloneElement(child, enhancedProps)
       })
     }, [children, skip])
 
     return (
       <StyledGroup ref={ref} alignItems={align} justifyContent={justify} flexWrap={wrap} {...rest}>
-        {_children}
+        {enhancedChildren}
       </StyledGroup>
     )
   }),
@@ -74,5 +101,5 @@ export const Group = memo(
 
 type Booleanish = boolean | 'true' | 'false'
 
-export const dataAttr = (condition: boolean | undefined) =>
+const dataAttr = (condition: boolean | undefined): Booleanish =>
   (condition ? '' : undefined) as Booleanish

@@ -1,12 +1,14 @@
 'use client'
 
 import { ark } from '@ark-ui/react/factory'
-import { type ComponentProps, forwardRef } from 'react'
+import { createContext, mergeProps } from '@ark-ui/react/utils'
+import { type ComponentProps, forwardRef, useMemo } from 'react'
 import { styled } from 'styled-system/jsx'
-import { button } from 'styled-system/recipes'
+import { type ButtonVariantProps, button } from 'styled-system/recipes'
+import { Group, type GroupProps } from '@/components/ui/group'
 import { Loader } from './loader'
 
-export interface ButtonLoadingProps {
+interface ButtonLoadingProps {
   /**
    * If `true`, the button will show a loading spinner.
    * @default false
@@ -33,7 +35,13 @@ const BaseButton = styled(ark.button, button)
 export interface ButtonProps extends BaseButtonProps, ButtonLoadingProps {}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
-  const { loading, loadingText, children, spinner, spinnerPlacement, ...rest } = props
+  const propsContext = useButtonPropsContext()
+  const buttonProps = useMemo(
+    () => mergeProps<ButtonProps>(propsContext, props),
+    [propsContext, props],
+  )
+
+  const { loading, loadingText, children, spinner, spinnerPlacement, ...rest } = buttonProps
   return (
     <BaseButton
       type="button"
@@ -51,4 +59,24 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       )}
     </BaseButton>
   )
+})
+
+export interface ButtonGroupProps extends GroupProps, ButtonVariantProps {}
+
+export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
+  function ButtonGroup(props, ref) {
+    const [variantProps, otherProps] = useMemo(() => button.splitVariantProps(props), [props])
+    return (
+      <ButtonPropsProvider value={variantProps}>
+        <Group ref={ref} {...otherProps} />
+      </ButtonPropsProvider>
+    )
+  },
+)
+
+const [ButtonPropsProvider, useButtonPropsContext] = createContext<ButtonVariantProps>({
+  name: 'ButtonPropsContext',
+  hookName: 'useButtonPropsContext',
+  providerName: '<PropsProvider />',
+  strict: false,
 })
