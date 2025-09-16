@@ -94,17 +94,6 @@ export const preset = definePreset({
       },
     },
   },
-  staticCss: {
-    recipes: '*',
-    css: [
-      {
-        properties: {
-          boxShadow: ['*'],
-          borderRadius: ['*'],
-        },
-      },
-    ],
-  },
 })
 
 export const plugin = definePlugin({

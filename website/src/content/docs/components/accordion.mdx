@@ -21,9 +21,11 @@ import { Accordion } from '@/components/ui'
 
 ```tsx
 <Accordion.Root>
-  <Accordion.Item value="item-1">
-    <Accordion.ItemTrigger>Trigger</Accordion.ItemTrigger>
-    <Accordion.ItemContent>Content</Accordion.ItemContent>
+  <Accordion.Item>
+    <Accordion.ItemTrigger>
+      <Accordion.ItemIndicator />
+    </Accordion.ItemTrigger>
+    <Accordion.ItemContent />
   </Accordion.Item>
 </Accordion.Root>
 ```

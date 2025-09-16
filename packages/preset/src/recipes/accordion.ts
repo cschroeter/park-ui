@@ -3,71 +3,86 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const accordion = defineSlotRecipe({
   className: 'accordion',
-  slots: accordionAnatomy.keys(),
+  slots: accordionAnatomy.extendWith('itemBody').keys(),
   base: {
     root: {
-      divideY: '1px',
       width: 'full',
-      borderTopWidth: '1px',
-      borderBottomWidth: '1px',
+      '--accordion-radius': 'radii.l2',
+    },
+    item: {
+      overflowAnchor: 'none',
     },
     itemTrigger: {
       alignItems: 'center',
+      borderRadius: 'var(--accordion-radius)',
       color: 'fg.default',
       cursor: 'pointer',
       display: 'flex',
       fontWeight: 'semibold',
       gap: '3',
       justifyContent: 'space-between',
+      textAlign: 'start',
       textStyle: 'lg',
-      textAlign: 'left',
       width: 'full',
+      _focusVisible: {
+        outline: '2px solid',
+        outlineColor: 'colorPalette.focusRing',
+      },
       _disabled: {
-        color: 'fg.disabled',
-        cursor: 'not-allowed',
+        layerStyle: 'disabled',
       },
     },
     itemIndicator: {
-      color: 'fg.muted',
+      transition: 'rotate 0.2s',
       transformOrigin: 'center',
-      transitionDuration: 'normal',
-      transitionProperty: 'transform',
-      transitionTimingFunction: 'default',
+      color: 'fg.subtle',
       _open: {
-        transform: 'rotate(-180deg)',
+        rotate: '180deg',
+      },
+      _icon: {
+        width: '1.2em',
+        height: '1.2em',
       },
     },
-    itemContent: {
+    itemBody: {
+      pb: 'calc(var(--accordion-padding-y) * 2)',
       color: 'fg.muted',
+    },
+    itemContent: {
       overflow: 'hidden',
-      transitionProperty: 'padding-bottom',
-      transitionDuration: 'normal',
-      transitionTimingFunction: 'default',
+      borderRadius: 'var(--accordion-radius)',
       _open: {
         animationName: 'expand-height, fade-in',
-        animationDuration: 'moderate',
+        animationDuration: 'normal',
       },
       _closed: {
         animationName: 'collapse-height, fade-out',
-        animationDuration: 'moderate',
+        animationDuration: 'normal',
       },
     },
   },
   defaultVariants: {
     size: 'md',
+    variant: 'outline',
   },
   variants: {
+    variant: {
+      outline: {
+        item: {
+          borderBottomWidth: '1px',
+        },
+      },
+      plain: {},
+    },
     size: {
       md: {
-        itemTrigger: {
-          py: '4',
+        root: {
+          '--accordion-padding-x': 'spacing.4',
+          '--accordion-padding-y': 'spacing.2.5',
         },
-        itemContent: {
-          pb: '6',
-          pr: '8',
-          _closed: {
-            pb: '0',
-          },
+        itemTrigger: {
+          textStyle: 'md',
+          py: 'var(--accordion-padding-y)',
         },
       },
     },
