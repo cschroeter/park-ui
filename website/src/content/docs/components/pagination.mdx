@@ -20,25 +20,41 @@ import { Pagination } from '@/components/ui'
 ```
 
 ```tsx
-<Pagination.Root count={5000} pageSize={10} siblingCount={2}>
-  <Pagination.PrevTrigger>Previous</Pagination.PrevTrigger>
-  <Pagination.Context>
-    {({ pages }) =>
-      pages.map((page, index) =>
-        page.type === 'page' ? (
-          <Pagination.Item key={index} {...page}>
-            {page.value}
-          </Pagination.Item>
-        ) : (
-          <Pagination.Ellipsis key={index} index={index}>
-            &#8230;
-          </Pagination.Ellipsis>
-        )
-      )
-    }
-  </Pagination.Context>
-  <Pagination.NextTrigger>Next</Pagination.NextTrigger>
+<Pagination.Root>
+  <Pagination.PrevTrigger />
+  <Pagination.Ellipsis />
+  <Pagination.Item />
+  <Pagination.PageText />
+  <Pagination.NextTrigger />
 </Pagination.Root>
+```
+
+## Shortcuts
+
+The `Pagination` component also provides a set of shortcuts for common use cases.
+
+### PaginationItems
+
+This component renders the number of pages based on the `count` and `pageSize` props. Rendering this:
+
+```tsx
+<Pagination.Items />
+```
+
+is shorthand for this:
+
+```tsx
+<Pagination.Context>
+  {({ pages }) =>
+    pages.map((page, index) =>
+      page.type === "page" ? (
+        <Pagination.Item key={index} {...page} />
+      ) : (
+        <Pagination.Ellipsis key={index} index={index} />
+      ),
+    )
+  }
+</Pagination.Context>
 ```
 
 ## Props
