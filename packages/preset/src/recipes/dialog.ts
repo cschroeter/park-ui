@@ -3,6 +3,7 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const dialog = defineSlotRecipe({
   className: 'dialog',
+  jsx: ['Dialog.Root'],
   slots: dialogAnatomy.extendWith('header', 'body', 'footer').keys(),
   base: {
     backdrop: {
