@@ -78,6 +78,7 @@ export default defineConfig({
     },
   },
   staticCss: {
+    recipes: '*',
     css: [
       {
         properties: {

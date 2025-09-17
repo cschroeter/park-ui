@@ -7,38 +7,27 @@ export const radioGroup = defineSlotRecipe({
   base: {
     root: {
       display: 'flex',
-      flexDirection: {
-        _vertical: 'column',
-        _horizontal: 'row',
-      },
+      flexDirection: 'column',
+      gap: '3',
     },
     itemControl: {
-      background: 'transparent',
-      borderColor: 'border.default',
+      alignItems: 'center',
       borderRadius: 'full',
-      borderWidth: '1px',
-      transitionDuration: 'normal',
-      transitionProperty: 'background',
-      transitionTimingFunction: 'default',
-      _hover: {
-        background: 'bg.subtle',
+      display: 'inline-flex',
+      flexShrink: 0,
+      justifyContent: 'center',
+      outlineColor: 'bg.default',
+      outlineStyle: 'solid',
+      verticalAlign: 'top',
+      _after: {
+        content: '""',
+        display: 'block',
+        borderRadius: 'full',
+        boxSize: '40%',
       },
-      _checked: {
-        background: 'colorPalette.solid',
-        borderColor: 'colorPalette.solid',
-        outlineColor: 'bg.default',
-        outlineStyle: 'solid',
-        _hover: {
-          background: 'colorPalette.solid',
-        },
-      },
-      _disabled: {
-        borderColor: 'border.disabled',
-        color: 'fg.disabled',
-        _hover: {
-          bg: 'initial',
-          color: 'fg.disabled',
-        },
+      _focusVisible: {
+        focusVisibleRing: 'outside',
+        focusRingColor: 'colorPalette.solid.bg',
       },
     },
     item: {
@@ -46,87 +35,49 @@ export const radioGroup = defineSlotRecipe({
       cursor: 'pointer',
       display: 'flex',
       _disabled: {
-        cursor: 'not-allowed',
+        layerStyle: 'disabled',
       },
     },
     itemText: {
-      color: 'fg.default',
       fontWeight: 'medium',
-      _disabled: {
-        color: 'fg.disabled',
-      },
+      userSelect: 'none',
     },
   },
   defaultVariants: {
+    variant: 'solid',
     size: 'md',
   },
   variants: {
+    variant: {
+      solid: {
+        itemControl: {
+          '--border-color': '{colors.border.default}',
+          boxShadow: 'inset 0 0 0 1px var(--border-color)',
+          _checked: {
+            layerStyle: 'solid',
+            boxShadow: 'none',
+            _after: {
+              background: 'colorPalette.solid.fg',
+            },
+          },
+        },
+      },
+    },
     size: {
       sm: {
-        root: {
-          gap: {
-            _vertical: '3',
-            _horizontal: '4',
-          },
-        },
-        item: {
-          gap: '2',
-        },
-        itemControl: {
-          width: '4',
-          height: '4',
-          _checked: {
-            outlineWidth: '3px',
-            outlineOffset: '-4px',
-          },
-        },
-        itemText: {
-          textStyle: 'sm',
-        },
+        item: { gap: '2' },
+        itemControl: { boxSize: '4.5' },
+        itemText: { textStyle: 'sm' },
       },
       md: {
-        root: {
-          gap: {
-            _vertical: '4',
-            _horizontal: '6',
-          },
-        },
-        item: {
-          gap: '3',
-        },
-        itemControl: {
-          width: '5',
-          height: '5',
-          _checked: {
-            outlineWidth: '4px',
-            outlineOffset: '-5px',
-          },
-        },
-        itemText: {
-          textStyle: 'md',
-        },
+        item: { gap: '3' },
+        itemControl: { boxSize: '5' },
+        itemText: { textStyle: 'md' },
       },
       lg: {
-        root: {
-          gap: {
-            _vertical: '5',
-            _horizontal: '8',
-          },
-        },
-        item: {
-          gap: '4',
-        },
-        itemControl: {
-          width: '6',
-          height: '6',
-          _checked: {
-            outlineWidth: '5px',
-            outlineOffset: '-6px',
-          },
-        },
-        itemText: {
-          textStyle: 'lg',
-        },
+        item: { gap: '3' },
+        itemControl: { boxSize: '5.5' },
+        itemText: { textStyle: 'lg' },
       },
     },
   },

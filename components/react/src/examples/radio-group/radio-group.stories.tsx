@@ -6,4 +6,8 @@ const meta: Meta = {
 
 export default meta
 
-export { Demo as basic } from './basic'
+export { App as basic } from './basic'
+export { App as colors } from './colors'
+export { App as controlled } from './controlled'
+export { App as disabled } from './disabled'
+export { App as sizes } from './sizes'

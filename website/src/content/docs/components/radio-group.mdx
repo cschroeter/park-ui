@@ -21,20 +21,63 @@ import { RadioGroup } from '@/components/ui'
 
 ```tsx
 <RadioGroup.Root>
-  <RadioGroup.Label>Radio Group</RadioGroup.Label>
-  <RadioGroup.Item value="option1">
-    <RadioGroup.ItemControl>
-      <RadioGroup.ItemIndicator />
-    </RadioGroup.ItemControl>
-    <RadioGroup.ItemText>Option 1</RadioGroup.ItemText>
-  </RadioGroup.Item>
-  <RadioGroup.Item value="option2">
-    <RadioGroup.ItemControl>
-      <RadioGroup.ItemIndicator />
-    </RadioGroup.ItemControl>
-    <RadioGroup.ItemText>Option 2</RadioGroup.ItemText>
+  <RadioGroup.Item>
+    <RadioGroup.ItemHiddenInput />
+    <RadioGroup.ItemControl />
+    <RadioGroup.ItemText />
   </RadioGroup.Item>
 </RadioGroup.Root>
+```
+
+:::info
+
+If you prefer a closed component composition, check out the
+[snippet below](#closed-component).
+
+:::
+
+## Examples
+
+### Controlled
+
+Pass the `value` and `onValueChange` props to the `RadioGroup.Root` component to
+control the selected radio button.
+
+<ComponentExample name="controlled" />
+
+### Colors
+
+Pass the `colorPalette` prop to the `RadioGroup.Root` component to change the
+color scheme of the component.
+
+<ComponentExample name="colors" />
+
+### Sizes
+
+Pass the `size` prop to the `RadioGroup.Root` component to change the size of
+the radio component.
+
+<ComponentExample name="sizes" />
+
+### Disabled
+
+Pass the `disabled` prop to the `RadioGroup.Item` component to make the radio
+disabled.
+
+<ComponentExample name="disabled" />
+
+### Closed Component
+
+Here's how to setup the Radio for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+Here's how to use it:
+
+```tsx
+<RadioGroup>
+  <Radio />
+</RadioGroup>
 ```
 
 ## Props

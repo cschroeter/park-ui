@@ -7,6 +7,8 @@ import { radioGroup } from 'styled-system/recipes'
 const { withProvider, withContext } = createStyleContext(radioGroup)
 
 export type RootProps = ComponentProps<typeof Root>
+export type ItemProps = ComponentProps<typeof Item>
+
 export const Root = withProvider(RadioGroup.Root, 'root')
 export const RootProvider = withProvider(RadioGroup.RootProvider, 'root')
 export const Indicator = withContext(RadioGroup.Indicator, 'indicator')
