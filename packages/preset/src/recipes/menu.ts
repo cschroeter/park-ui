@@ -1,240 +1,144 @@
 import { menuAnatomy } from '@ark-ui/react/menu'
 import { defineSlotRecipe } from '@pandacss/dev'
 
-const itemStyle = {
-  alignItems: 'center',
-  borderRadius: 'l1',
-  cursor: 'pointer',
-  display: 'flex',
-  fontWeight: 'medium',
-  textStyle: 'sm',
-  transitionDuration: 'fast',
-  transitionProperty: 'background, color',
-  transitionTimingFunction: 'default',
-  _hover: {
-    background: 'bg.muted',
-    '& :where(svg)': {
-      color: 'fg.default',
-    },
-  },
-  _highlighted: {
-    background: 'bg.muted',
-    '& :where(svg)': {
-      color: 'fg.default',
-    },
-  },
-  _disabled: {
-    color: 'fg.disabled',
-    cursor: 'not-allowed',
-    _hover: {
-      color: 'fg.disabled',
-      background: 'none',
-    },
-  },
-}
-
 export const menu = defineSlotRecipe({
   className: 'menu',
-  jsx: ['Menu.Root'],
   slots: menuAnatomy.keys(),
   base: {
-    itemGroupLabel: {
-      fontWeight: 'semibold',
-      textStyle: 'sm',
-    },
     content: {
-      background: 'bg.default',
-      borderRadius: 'l2',
+      '--menu-z-index': 'zIndex.dropdown',
+
+      bg: 'bg.default',
+      borderRadius: 'l3',
       boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
-      outline: 'none',
-      width: 'calc(100% + 2rem)',
-      zIndex: 'dropdown',
-      _hidden: {
-        display: 'none',
-      },
+      maxHeight: 'var(--available-height)',
+      outline: '0',
+      overflow: 'hidden',
+      overflowY: 'auto',
+      position: 'relative',
+      zIndex: 'calc(var(--menu-z-index) + var(--layer-index, 0))',
       _open: {
-        animation: 'fadeIn 0.25s ease-out',
+        animationStyle: 'slide-fade-in',
+        animationDuration: 'fast',
       },
       _closed: {
-        animation: 'fadeOut 0.2s ease-out',
+        animationStyle: 'slide-fade-out',
+        animationDuration: 'faster',
       },
     },
-    itemGroup: {
+    item: {
+      alignItems: 'center',
+      borderRadius: 'l2',
       display: 'flex',
-      flexDirection: 'column',
+      flex: '0 0 auto',
+      fontWeight: 'medium',
+      outline: '0',
+      textAlign: 'start',
+      textDecoration: 'none',
+      userSelect: 'none',
+      width: '100%',
+      _icon: {
+        color: 'gray.plain.fg.muted',
+      },
+      _highlighted: {
+        bg: 'gray.subtle.bg',
+      },
+      _disabled: {
+        layerStyle: 'disabled',
+      },
     },
-    positioner: {
-      zIndex: 'dropdown',
+    trigger: {
+      focusVisibleRing: 'outside',
+      focusRingColor: 'colorPalette.solid.bg',
     },
-    item: itemStyle,
-    triggerItem: itemStyle,
+
+    itemIndicator: {
+      justifyContent: 'flex-end',
+      display: 'flex',
+      flex: '1',
+      _checked: {
+        _icon: {
+          color: 'colorPalette.plain.fg',
+        },
+      },
+    },
   },
+
   defaultVariants: {
     size: 'md',
   },
+
   variants: {
     size: {
-      xs: {
-        itemGroup: {
-          gap: '1',
-        },
-        itemGroupLabel: {
-          py: '1.5',
-          px: '1.5',
-          mx: '1',
-        },
-        content: {
-          py: '1',
-          gap: '1',
-        },
-        item: {
-          h: '8',
-          px: '1.5',
-          mx: '1',
-          '& :where(svg)': {
-            width: '4',
-            height: '4',
-          },
-        },
-        optionItem: {
-          h: '8',
-          px: '1.5',
-          mx: '1',
-          '& :where(svg)': {
-            width: '4',
-            height: '4',
-          },
-        },
-        triggerItem: {
-          h: '8',
-          px: '1.5',
-          mx: '1',
-          '& :where(svg)': {
-            width: '4',
-            height: '4',
-          },
-        },
-      },
       sm: {
-        itemGroup: {
-          gap: '1',
-        },
-        itemGroupLabel: {
-          py: '2',
-          px: '2',
-          mx: '1',
-        },
         content: {
-          py: '1',
-          gap: '1',
+          minW: '40',
+          padding: '1.5',
+          scrollPadding: '1.5',
+          gap: '0.5',
+        },
+        separator: {
+          my: '0.5',
+          mx: '-1.5',
         },
         item: {
-          h: '9',
-          px: '2',
-          mx: '1',
-          '& :where(svg)': {
-            width: '4',
-            height: '4',
-          },
-        },
-        optionItem: {
-          h: '9',
-          px: '2',
-          mx: '1',
-          '& :where(svg)': {
-            width: '4',
-            height: '4',
-          },
-        },
-        triggerItem: {
-          h: '9',
-          px: '2',
-          mx: '1.5',
-          '& :where(svg)': {
+          gap: '2',
+          textStyle: 'sm',
+          py: '2',
+          px: '1.5',
+          _icon: {
             width: '4',
             height: '4',
           },
         },
       },
       md: {
-        itemGroup: {
-          gap: '1',
-        },
-        itemGroupLabel: {
-          py: '2.5',
-          px: '2.5',
-          mx: '1',
-        },
         content: {
-          py: '1',
-          gap: '1',
+          minW: '44',
+          padding: '1.5',
+          scrollPadding: '1.5',
+          gap: '0.5',
+        },
+        separator: {
+          my: '0.5',
+          mx: '-1.5',
         },
         item: {
-          h: '10',
-          px: '2.5',
-          mx: '1',
-          '& :where(svg)': {
-            width: '4',
-            height: '4',
+          gap: '3',
+          textStyle: 'sm',
+          py: '2.5',
+          px: '2',
+          _icon: {
+            width: '5',
+            height: '5',
           },
         },
-        optionItem: {
-          h: '10',
-          px: '2.5',
-          mx: '1',
-          '& :where(svg)': {
-            width: '4',
-            height: '4',
-          },
-        },
-        triggerItem: {
-          h: '10',
-          px: '2.5',
-          mx: '1.5',
-          '& :where(svg)': {
+        itemIndicator: {
+          _icon: {
             width: '4',
             height: '4',
           },
         },
       },
       lg: {
-        itemGroup: {
-          gap: '1',
-        },
-        itemGroupLabel: {
-          py: '2.5',
-          px: '2.5',
-          mx: '1',
-        },
         content: {
-          py: '1',
-          gap: '1',
+          minW: '48',
+          padding: '1.5',
+          scrollPadding: '1.5',
+          gap: '0.5',
+        },
+        separator: {
+          my: '0.5',
+          mx: '-1.5',
         },
         item: {
-          h: '11',
+          gap: '3',
+          textStyle: 'md',
+          py: '2.5',
           px: '2.5',
-          mx: '1',
-          '& :where(svg)': {
-            width: '5',
-            height: '5',
-          },
-        },
-        optionItem: {
-          h: '11',
-          px: '2.5',
-          mx: '1',
-          '& :where(svg)': {
-            width: '5',
-            height: '5',
-          },
-        },
-        triggerItem: {
-          h: '11',
-          px: '2.5',
-          mx: '1.5',
-          '& :where(svg)': {
+          _icon: {
             width: '5',
             height: '5',
           },

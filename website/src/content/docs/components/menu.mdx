@@ -21,17 +21,54 @@ import { Menu } from '@/components/ui'
 
 ```tsx
 <Menu.Root>
-  <Menu.Trigger>Open Menu</Menu.Trigger>
+  <Menu.Trigger />
   <Menu.Positioner>
     <Menu.Content>
-      <Menu.Item value="item-1">Menu Item 1</Menu.Item>
-      <Menu.Item value="item-2">Menu Item 2</Menu.Item>
+      <Menu.Arrow />
+      <Menu.Item />
+      <Menu.ItemGroup>
+        <Menu.Item />
+      </Menu.ItemGroup>
       <Menu.Separator />
-      <Menu.Item value="item-3">Menu Item 3</Menu.Item>
+      <Menu.CheckboxItem>
+        <Menu.ItemIndicator />
+      </Menu.CheckboxItem>
+      <Menu.RadioItemGroup>
+        <Menu.RadioItem>
+          <Menu.ItemIndicator />
+        </Menu.RadioItem>
+      </Menu.RadioItemGroup>
     </Menu.Content>
   </Menu.Positioner>
 </Menu.Root>
 ```
+
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to adjust the size of the menu items.
+
+<ComponentExample name="sizes" />
+
+### Context Menu
+
+Use the `Menu.ContextTrigger` component to create a context menu.
+
+<ComponentExample name="context" />
+
+### Group
+
+Use the `Menu.ItemGroup` component to group related menu items.
+
+<ComponentExample name="group" />
+
+### Submenu
+
+Here's an example of how to create a submenu.
+
+<ComponentExample name="submenu" />
 
 ## Props
 

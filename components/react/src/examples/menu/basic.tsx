@@ -1,15 +1,20 @@
-import { Menu } from '@/components/ui'
+import { Button, Menu } from '@/components/ui'
 
 export const App = () => {
   return (
     <Menu.Root>
-      <Menu.Trigger>Open menu</Menu.Trigger>
+      <Menu.Trigger asChild>
+        <Button variant="outline">
+          File
+          <Menu.Indicator />
+        </Button>
+      </Menu.Trigger>
       <Menu.Positioner>
         <Menu.Content>
-          <Menu.Item value="new-tab">New Tab</Menu.Item>
-          <Menu.Item value="new-window">New Window</Menu.Item>
-          <Menu.Item value="open-file">Open File...</Menu.Item>
-          <Menu.Item value="export">Export</Menu.Item>
+          <Menu.Item value="new-file">New File</Menu.Item>
+          <Menu.Item value="new-folder">New Folder</Menu.Item>
+          <Menu.Item value="open">Open</Menu.Item>
+          <Menu.Item value="save">Save</Menu.Item>
         </Menu.Content>
       </Menu.Positioner>
     </Menu.Root>
