@@ -7,6 +7,11 @@ import { FileError, ParkUIConfigInvalid, ParkUIConfigNotFound } from './errors'
 
 const ConfigSchema = Schema.Struct({
   framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
+  imports: Schema.optional(
+    Schema.Struct({
+      'styled-system-base': Schema.optional(Schema.String),
+    }),
+  ),
   paths: Schema.Struct({
     components: Schema.String,
     theme: Schema.String,
