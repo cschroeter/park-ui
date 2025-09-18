@@ -1,9 +1,10 @@
 'use client'
+import { Wrap } from 'styled-system/jsx'
 import { Button, toaster } from '@/components/ui'
 
 export const App = () => {
   return (
-    <div>
+    <Wrap gap="4">
       <Button
         variant="outline"
         onClick={() =>
@@ -15,6 +16,9 @@ export const App = () => {
       >
         Add Toast
       </Button>
-    </div>
+      <Button variant="outline" onClick={() => toaster.dismiss()}>
+        Close Toasts
+      </Button>
+    </Wrap>
   )
 }

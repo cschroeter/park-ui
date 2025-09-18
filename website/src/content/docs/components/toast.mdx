@@ -16,15 +16,128 @@ links:
 ## Usage
 
 ```tsx
-import { Toast } from '@/components/ui'
+import { Toaster, toaster } from "@/components/ui"
 ```
 
+First, render the `Toaster` component in the root of your application.
+
 ```tsx
-<Toast.Root>
-  <Toast.Title>Toast Title</Toast.Title>
-  <Toast.Description>Toast description</Toast.Description>
-  <Toast.CloseTrigger />
-</Toast.Root>
+<Toaster />
+```
+
+Then, create a toast by calling the `toaster` function.
+
+```tsx
+toaster.create({
+  title: "Toast Title",
+  description: "Toast Description",
+})
+```
+
+## Examples
+
+### Closable 
+
+Set the `closable` prop to `true` to create a closable toast.
+
+<ComponentExample name="closable" />
+
+### External Close
+
+Use the `toaster.dismiss` method to close a toast.
+
+- `toaster.dismiss(id)`: Dismiss a toast by its id.
+- `toaster.dismiss()`: Dismiss all toasts.
+
+
+<ComponentExample name="external-close" />
+
+### Types
+
+Here's an example of each type of toast.
+
+<ComponentExample name="types" />
+
+### With Action
+
+Use the `action` and `actionLabel` prop to add an action to the toast.
+
+> When the action trigger is clicked, the toast will be closed.
+
+<ComponentExample name="action" />
+
+### Promise
+
+Use the `toaster.promise` to create a toast that resolves when the promise is resolved.
+
+Next, you can define the toast options (title, description, etc.) for each state of the promise.
+
+<ComponentExample name="promise" />
+
+### Custom Duration
+
+Use the `duration` prop to set the duration of the toast.
+
+<ComponentExample name="duration" />
+
+### Maximum Visible Toasts
+
+Set the `max` prop on the `createToaster` function to define the maximum number of toasts that can be rendered at any one time.
+Any extra toasts will be queued and rendered when a toast has been dismissed.
+
+```tsx
+const toaster = createToaster({
+  max: 3,
+})
+```
+
+### Placement
+
+Toasts can be displayed on all four corners of a page. We recommend picking one desired position and configure it in the `createToaster` function.
+
+```tsx
+const toaster = createToaster({
+  placement: "top-end",
+})
+
+```
+### Stacked Toasts
+
+By default, toasts overlap each other. To make the toasts stack on top of each other, set the `overlap` prop to `false` in the `createToaster` function.
+
+```tsx
+const toaster = createToaster({
+  placement: "top-end",
+  overlap: false,
+})
+```
+
+### Page Idle Behavior
+
+Pause toast timers when the page is idle/hidden.
+
+```tsx
+const toaster = createToaster({
+  pauseOnPageIdle: true,
+})
+```
+
+### Offset
+
+Set the `offsets` prop in the `createToaster` function to offset the toasts from the edges of the screen.
+
+```tsx
+const toaster = createToaster({
+  offsets: "20px",
+})
+```
+
+Alternatively, you can use the `offsets` prop to set the offset for each edge of the screen.
+
+```tsx
+const toaster = createToaster({
+  offsets: { left: "20px", top: "20px", right: "20px", bottom: "20px" },
+})
 ```
 
 ## Props

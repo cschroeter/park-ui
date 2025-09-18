@@ -10,6 +10,7 @@ export const App = () => {
           toaster.create({
             title: 'Title',
             description: 'Description',
+            duration: 6000,
           })
         }
       >
