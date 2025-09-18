@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "span.tsx",
-      "content": "import { type ComponentProps, styled } from 'styled-system/jsx'\n\nexport type SpanProps = ComponentProps<typeof Span>\nexport const Span = styled('span')\n",
+      "content": "import type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\n\nexport type SpanProps = ComponentProps<typeof Span>\nexport const Span = styled('span')\n",
       "indexFile": {
         "exports": [
           {

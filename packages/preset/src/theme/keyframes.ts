@@ -16,7 +16,7 @@ export const keyframes = defineKeyframes({
   },
   'collapse-width': {
     from: { width: 'var(--width)' },
-    to: { with: '0' },
+    to: { width: '0' },
   },
   // fade
   'fade-in': {

@@ -9,8 +9,12 @@ import { dialog } from 'styled-system/recipes'
 const { withRootProvider, withContext } = createStyleContext(dialog)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider(Dialog.Root)
-export const RootProvider = withRootProvider(Dialog.RootProvider)
+export const Root = withRootProvider(Dialog.Root, {
+  defaultProps: { unmountOnExit: true, lazyMount: true },
+})
+export const RootProvider = withRootProvider(Dialog.RootProvider, {
+  defaultProps: { unmountOnExit: true, lazyMount: true },
+})
 export const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
 export const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')
 export const Content = withContext(Dialog.Content, 'content')

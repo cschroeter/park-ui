@@ -9,7 +9,9 @@ const { withRootProvider, withContext } = createStyleContext(tooltip)
 
 type RootProps = ComponentProps<typeof Root>
 type ContentProps = ComponentProps<typeof Content>
-const Root = withRootProvider(ArkTooltip.Root)
+const Root = withRootProvider(ArkTooltip.Root, {
+  defaultProps: { unmountOnExit: true, lazyMount: true },
+})
 const Arrow = withContext(ArkTooltip.Arrow, 'arrow')
 const ArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')
 const Content = withContext(ArkTooltip.Content, 'content')

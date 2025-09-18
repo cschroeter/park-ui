@@ -8,8 +8,12 @@ import { menu } from 'styled-system/recipes'
 const { withRootProvider, withContext } = createStyleContext(menu)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider(Menu.Root)
-export const RootProvider = withRootProvider(Menu.Root)
+export const Root = withRootProvider(Menu.Root, {
+  defaultProps: { unmountOnExit: true, lazyMount: true },
+})
+export const RootProvider = withRootProvider(Menu.Root, {
+  defaultProps: { unmountOnExit: true, lazyMount: true },
+})
 export const Arrow = withContext(Menu.Arrow, 'arrow')
 export const ArrowTip = withContext(Menu.ArrowTip, 'arrowTip')
 export const CheckboxItem = withContext(Menu.CheckboxItem, 'item')

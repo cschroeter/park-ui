@@ -8,8 +8,12 @@ import { popover } from 'styled-system/recipes'
 const { withRootProvider, withContext } = createStyleContext(popover)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider(Popover.Root)
-export const RootProvider = withRootProvider(Popover.Root)
+export const Root = withRootProvider(Popover.Root, {
+  defaultProps: { unmountOnExit: true, lazyMount: true },
+})
+export const RootProvider = withRootProvider(Popover.Root, {
+  defaultProps: { unmountOnExit: true, lazyMount: true },
+})
 export const Anchor = withContext(Popover.Anchor, 'anchor')
 export const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')
 export const Arrow = withContext(Popover.Arrow, 'arrow', {
