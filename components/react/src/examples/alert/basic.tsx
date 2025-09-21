@@ -1,16 +1,10 @@
-import { InfoIcon } from 'lucide-react'
 import { Alert } from '@/components/ui'
 
 export const App = () => {
   return (
     <Alert.Root>
-      <Alert.Icon asChild>
-        <InfoIcon />
-      </Alert.Icon>
-      <Alert.Content>
-        <Alert.Title>Browser Update available</Alert.Title>
-        <Alert.Description>For the best experience, please update your browser.</Alert.Description>
-      </Alert.Content>
+      <Alert.Indicator />
+      <Alert.Title>This is a title</Alert.Title>
     </Alert.Root>
   )
 }
