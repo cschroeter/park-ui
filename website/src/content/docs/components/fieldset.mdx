@@ -21,13 +21,27 @@ import { Fieldset } from '@/components/ui'
 
 ```tsx
 <Fieldset.Root>
-  <Fieldset.Legend>Fieldset Legend</Fieldset.Legend>
-  <Fieldset.HelperText>Helper text for the fieldset</Fieldset.HelperText>
-  <Fieldset.Content>
-    {/* Form controls */}
-  </Fieldset.Content>
+  <Fieldset.Control>
+    <Fieldset.Legend />
+    <Fieldset.HelperText />
+  </Fieldset.Control>
+  <Fieldset.Content />
 </Fieldset.Root>
 ```
+
+## Exampels
+
+### Disabled
+
+Use the `disabled` prop to disable the fieldset to disable all input elements within the fieldset.
+
+<ComponentExample name="disabled" />
+
+### Invalid
+
+Use the `invalid` prop to mark the fieldset as invalid, which will display the error text. 
+
+<ComponentExample name="invalid" />
 
 ## Props
 

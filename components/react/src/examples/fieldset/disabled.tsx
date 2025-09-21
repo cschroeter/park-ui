@@ -2,7 +2,7 @@ import { Field, Fieldset, Input } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Fieldset.Root>
+    <Fieldset.Root disabled>
       <Fieldset.Control>
         <Fieldset.Legend>Contact details</Fieldset.Legend>
         <Fieldset.HelperText>Please provide your contact details below.</Fieldset.HelperText>

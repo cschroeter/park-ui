@@ -3,68 +3,44 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const fieldset = defineSlotRecipe({
   className: 'fieldset',
-  // TODO review extendedWith usage
-  slots: fieldsetAnatomy.extendWith('control').keys(),
+  slots: fieldsetAnatomy.extendWith('content', 'control').keys(),
   base: {
     root: {
-      display: 'grid',
-      borderTopWidth: '1px',
-      py: '6',
-      columnGap: '8',
-      rowGap: '1.5',
-      gridTemplateAreas: {
-        base: `
-        "legend legend" 
-        "helperText helperText"
-        "control control"
-        "errorText errorText"
-        `,
-        md: `
-        "legend control"
-        "helperText control"
-        "errorText errorText"`,
-      },
-      gridTemplateRows: 'auto 1fr',
-      gridTemplateColumns: '1fr auto',
-      width: 'full',
+      display: 'flex',
+      justifyContent: 'space-between',
+      widht: 'full',
+      flexDirection: { base: 'column', md: 'row' },
+      gap: { base: '5', md: '8' },
     },
     control: {
-      gridArea: 'control',
-      display: 'grid',
+      maxW: 'xs',
+      display: 'flex',
+      flexDirection: 'column',
+      width: 'full',
+      gap: '1',
+    },
+    content: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: 'full',
+      maxW: '2xl',
       gap: '4',
     },
     legend: {
       color: 'fg.default',
-      fontWeight: 'medium',
-      gridArea: 'legend',
-      textStyle: 'sm',
-      float: 'left',
-      '+ *': {
-        clear: 'both',
-      },
-      _disabled: {
-        color: 'fg.disabled',
-      },
+      fontWeight: 'semibold',
     },
     helperText: {
       color: 'fg.muted',
-      gridArea: 'helperText',
       textStyle: 'sm',
-      _disabled: {
-        color: 'fg.disabled',
-      },
     },
     errorText: {
+      display: 'inline-flex',
       alignItems: 'center',
       color: 'fg.error',
-      display: 'inline-flex',
       gap: '2',
-      gridArea: 'errorText',
-      mt: '4',
+      fontWeight: 'medium',
       textStyle: 'sm',
-      _disabled: {
-        color: 'fg.disabled',
-      },
     },
   },
 })
