@@ -1,83 +1,77 @@
-import { ratingGroupAnatomy } from '@ark-ui/react/rating-group'
+import { ratingGroupAnatomy } from '@ark-ui/react/rating-group/'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const ratingGroup = defineSlotRecipe({
   className: 'rating-group',
-  slots: ratingGroupAnatomy.keys(),
+  slots: ratingGroupAnatomy.extendWith('itemIndicator').keys(),
   base: {
     root: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1.5',
-    },
-    label: {
-      color: 'fg.default',
-      fontWeight: 'medium',
+      alignItems: 'center',
+      display: 'inline-flex',
+      verticalAlign: 'top',
     },
     control: {
-      display: 'flex',
+      alignItems: 'center',
+      display: 'inline-flex',
+      gap: '0.5',
     },
     item: {
-      cursor: 'pointer',
-      transitionDuration: 'normal',
-      transitionProperty: 'color, fill',
-      transitionTimingFunction: 'default',
-      fill: 'bg.emphasized',
-      _highlighted: {
-        fill: 'colorPalette.solid',
+      alignItems: 'center',
+      display: 'inline-flex',
+      justifyContent: 'center',
+      userSelect: 'none',
+    },
+    label: {
+      fontWeight: 'medium',
+      userSelect: 'none',
+    },
+    itemIndicator: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative',
+      '--clip-path': { base: 'inset(0 50% 0 0)', _rtl: 'inset(0 0 0 50%)' },
+      _icon: {
+        stroke: 'currentColor',
+        display: 'inline-block',
+        flexShrink: 0,
+        position: 'absolute',
+        width: 'inherit',
+        height: 'inherit',
+        left: 0,
+        top: 0,
       },
-      _focusVisible: {
-        outline: 'none',
+      '& [data-bg]': {
+        color: 'bg.muted',
+      },
+      '& [data-fg]': {
+        color: 'transparent',
+      },
+      '&[data-highlighted]:not([data-half])': {
+        '& [data-fg]': {
+          color: 'colorPalette.solid.bg',
+        },
+      },
+      '&[data-half]': {
+        '& [data-fg]': {
+          color: 'colorPalette.solid.bg',
+          clipPath: 'var(--clip-path)',
+        },
       },
     },
   },
-  defaultVariants: {
-    size: 'md',
-  },
+
   variants: {
     size: {
-      sm: {
-        control: {
-          gap: '0',
-        },
-        item: {
-          '& svg': {
-            width: '4',
-            height: '4',
-          },
-        },
-        label: {
-          textStyle: 'sm',
-        },
-      },
-      md: {
-        control: {
-          gap: '0.5',
-        },
-        item: {
-          '& svg': {
-            width: '5',
-            height: '5',
-          },
-        },
-        label: {
-          textStyle: 'sm',
-        },
-      },
-      lg: {
-        control: {
-          gap: '0.5',
-        },
-        item: {
-          '& svg': {
-            width: '6',
-            height: '6',
-          },
-        },
-        label: {
-          textStyle: 'md',
-        },
-      },
+      xs: { root: { gap: '2' }, itemIndicator: { width: '4', height: '4' } },
+      sm: { root: { gap: '2' }, itemIndicator: { width: '4.5', height: '4.5' } },
+      md: { root: { gap: '3' }, itemIndicator: { width: '5', height: '5' } },
+      lg: { root: { gap: '3' }, itemIndicator: { width: '5.5', height: '5.5' } },
+      xl: { root: { gap: '3' }, itemIndicator: { width: '6', height: '6' } },
     },
+  },
+
+  defaultVariants: {
+    size: 'md',
   },
 })

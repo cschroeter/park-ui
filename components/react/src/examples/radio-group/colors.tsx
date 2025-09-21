@@ -4,7 +4,7 @@ import { RadioGroup } from '@/components/ui'
 export const App = () => {
   const colors = ['blue', 'green', 'amber', 'red'] as const
   return (
-    <Stack gap="3">
+    <Stack gap="4">
       {colors.map((color) => (
         <RadioGroup.Root
           key={color}
