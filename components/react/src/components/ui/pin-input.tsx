@@ -7,7 +7,9 @@ import { pinInput } from 'styled-system/recipes'
 const { withProvider, withContext } = createStyleContext(pinInput)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withProvider(PinInput.Root, 'root')
+export const Root = withProvider(PinInput.Root, 'root', {
+  forwardProps: ['mask'],
+})
 export const RootProvider = withProvider(PinInput.RootProvider, 'root')
 export const Control = withContext(PinInput.Control, 'control')
 export const HiddenInput = PinInput.HiddenInput

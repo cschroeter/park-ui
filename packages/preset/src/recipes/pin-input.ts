@@ -1,81 +1,53 @@
 import { pinInputAnatomy } from '@ark-ui/react/pin-input'
 import { defineSlotRecipe } from '@pandacss/dev'
+import { input } from './input'
 
 export const pinInput = defineSlotRecipe({
   className: 'pin-input',
   slots: pinInputAnatomy.keys(),
   base: {
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1.5',
+    input: {
+      ...input.base,
+      textAlign: 'center',
+      width: 'var(--input-height)',
+      px: '1!',
     },
     control: {
-      display: 'flex',
+      display: 'inline-flex',
       gap: '2',
-    },
-    label: {
-      color: 'fg.default',
-      fontWeight: 'medium',
-    },
-    input: {
-      px: '0!',
-      textAlign: 'center',
+      isolation: 'isolate',
     },
   },
   defaultVariants: {
     size: 'md',
+    variant: 'outline',
   },
+
   variants: {
     size: {
       xs: {
-        label: {
-          textStyle: 'sm',
-        },
-        input: {
-          width: '8',
-        },
+        input: input.variants?.size?.xs,
       },
       sm: {
-        label: {
-          textStyle: 'sm',
-        },
-        input: {
-          width: '9',
-        },
+        input: input.variants?.size?.sm,
       },
       md: {
-        label: {
-          textStyle: 'sm',
-        },
-        input: {
-          width: '10',
-        },
+        input: input.variants?.size?.md,
       },
       lg: {
-        label: {
-          textStyle: 'sm',
-        },
-        input: {
-          width: '11',
-        },
+        input: input.variants?.size?.lg,
       },
       xl: {
-        label: {
-          textStyle: 'md',
-        },
-        input: {
-          width: '12',
-        },
+        input: input.variants?.size?.xl,
       },
       '2xl': {
-        label: {
-          textStyle: 'md',
-        },
-        input: {
-          width: '16',
-        },
+        input: input.variants?.size?.['2xl'],
       },
+    },
+    variant: {
+      outline: { input: input.variants?.variant?.outline },
+      subtle: { input: input.variants?.variant?.subtle },
+      flushed: { input: input.variants?.variant?.flushed },
     },
   },
 })
