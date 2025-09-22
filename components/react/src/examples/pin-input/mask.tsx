@@ -2,6 +2,7 @@ import { PinInput } from '@/components/ui'
 
 export const App = () => {
   return (
+    // @ts-expect-error TODO fix PinInput types
     <PinInput.Root mask>
       <PinInput.HiddenInput />
       <PinInput.Control>
