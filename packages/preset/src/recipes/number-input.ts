@@ -1,29 +1,26 @@
+/** biome-ignore-all lint/complexity/useLiteralKeys: Need to improve types in Panda CSS */
 import { numberInputAnatomy } from '@ark-ui/react/number-input'
 import { defineSlotRecipe } from '@pandacss/dev'
+import { input } from './input'
 
 const trigger = {
   alignItems: 'center',
-  borderColor: 'border.default',
   color: 'fg.muted',
   cursor: 'pointer',
-  display: 'inline-flex',
+  display: 'flex',
+  flex: '1',
   justifyContent: 'center',
-  transitionDuration: 'normal',
-  transitionProperty: 'background, border-color, color',
-  transitionTimingFunction: 'default',
-  width: '6',
-  height: '4',
-  _hover: {
-    background: 'gray.a2',
-    color: 'fg.default',
+  lineHeight: '1',
+  transition: 'common',
+  userSelect: 'none',
+  _icon: {
+    boxSize: '1em',
   },
-  _disabled: {
-    color: 'fg.disabled',
-    cursor: 'not-allowed',
-    _hover: {
-      background: 'transparent',
-      color: 'fg.disabled',
-    },
+  _hover: {
+    bg: 'bg.muted',
+  },
+  _active: {
+    bg: 'bg.emphasized',
   },
 }
 
@@ -32,85 +29,77 @@ export const numberInput = defineSlotRecipe({
   slots: numberInputAnatomy.keys(),
   base: {
     root: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1.5',
+      isolation: 'isolate',
+      position: 'relative',
+      _disabled: {
+        layerStyle: 'disabled',
+      },
     },
     control: {
-      borderColor: 'border.default',
-      borderRadius: 'l2',
-      borderWidth: '1px',
-      display: 'grid',
-      divideX: '1px',
-      gridTemplateColumns: '1fr 32px',
-      gridTemplateRows: '1fr 1fr',
-      overflow: 'hidden',
-      transitionDuration: 'normal',
-      transitionProperty: 'border-color, box-shadow',
-      transitionTimingFunction: 'default',
-      _focusWithin: {
-        borderColor: 'colorPalette.solid',
-        boxShadow: '0 0 0 1px var(--colors-color-palette-solid-bg)',
-      },
-      _disabled: {
-        opacity: 0.4,
-        cursor: 'not-allowed',
-      },
+      borderStartWidth: '1px',
+      display: 'flex',
+      divideY: '1px',
+      flexDirection: 'column',
+      height: 'calc(100% - 2px)',
+      insetEnd: '0px',
+      margin: '1px',
+      position: 'absolute',
+      top: '0',
+      width: 'var(--stepper-width)',
+      zIndex: '1',
     },
     input: {
-      background: 'transparent',
-      border: 'none',
-      gridRow: 'span 2 / span 2',
-      outline: 'none',
-      width: 'full',
-      _disabled: {
-        cursor: 'not-allowed',
-      },
+      ...input.base,
+      verticalAlign: 'top',
+      pe: 'calc(var(--stepper-width) + 0.5rem)',
     },
     label: {
       color: 'fg.default',
       fontWeight: 'medium',
     },
-    decrementTrigger: { ...trigger, borderTopWidth: '1px' },
-    incrementTrigger: trigger,
+    incrementTrigger: {
+      ...trigger,
+      borderTopRightRadius: 'l2',
+    },
+    decrementTrigger: {
+      ...trigger,
+      borderBottomRightRadius: 'l2',
+    },
   },
   defaultVariants: {
     size: 'md',
+    variant: 'outline',
   },
   variants: {
     size: {
+      sm: {
+        control: {
+          '--stepper-width': 'sizes.4.5',
+        },
+        input: input.variants?.['size']?.['sm'],
+      },
       md: {
         control: {
-          ps: '3',
-          h: '10',
-          minW: '10',
-          fontSize: 'md',
+          '--stepper-width': 'sizes.5',
         },
-        label: {
-          textStyle: 'sm',
-        },
+        input: input.variants?.['size']?.['md'],
       },
       lg: {
         control: {
-          ps: '3.5',
-          h: '11',
-          minW: '11',
-          fontSize: 'md',
+          '--stepper-width': 'sizes.5.5',
         },
-        label: {
-          textStyle: 'sm',
-        },
+        input: input.variants?.['size']?.['lg'],
       },
       xl: {
         control: {
-          ps: '4',
-          h: '12',
-          minW: '12',
-          fontSize: 'lg',
+          '--stepper-width': 'sizes.6',
         },
-        label: {
-          textStyle: 'md',
-        },
+        input: input.variants?.['size']?.['xl'],
+      },
+    },
+    variant: {
+      outline: {
+        input: input.variants?.['variant']?.['outline'],
       },
     },
   },
