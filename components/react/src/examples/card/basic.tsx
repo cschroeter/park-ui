@@ -2,7 +2,7 @@ import { Button, Card, Field, Input } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Card.Root maxW="sm" mx="auto">
+    <Card.Root>
       <Card.Header>
         <Card.Title>Team Mebers</Card.Title>
         <Card.Description>Add new members to your organisation.</Card.Description>

@@ -5,9 +5,7 @@ export const card = defineSlotRecipe({
   slots: ['root', 'header', 'body', 'footer', 'title', 'description'],
   base: {
     root: {
-      bg: 'bg.default',
       borderRadius: 'l3',
-      boxShadow: 'lg',
       display: 'flex',
       flexDirection: 'column',
       overflow: 'hidden',
@@ -34,13 +32,23 @@ export const card = defineSlotRecipe({
       px: '6',
     },
     title: {
-      color: 'fg.default',
       textStyle: 'lg',
       fontWeight: 'semibold',
     },
     description: {
-      color: 'fg.muted',
       textStyle: 'sm',
+    },
+  },
+  defaultVariants: {
+    variant: 'surface',
+  },
+  variants: {
+    variant: {
+      surface: {
+        root: {
+          layerStyle: 'surface',
+        },
+      },
     },
   },
 })
