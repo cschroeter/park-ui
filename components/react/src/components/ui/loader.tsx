@@ -1,11 +1,10 @@
 'use client'
-
 import { forwardRef } from 'react'
-import { styled } from 'styled-system/jsx'
+import { type HTMLStyledProps, styled } from 'styled-system/jsx'
 import { AbsoluteCenter } from './absolute-center'
 import { Spinner } from './spinner'
 
-export interface LoaderProps {
+export interface LoaderProps extends HTMLStyledProps<'span'> {
   /**
    * Whether the loader is visible
    * @default true
