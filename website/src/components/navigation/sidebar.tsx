@@ -16,8 +16,7 @@ export const Sidebar = (props: BoxProps) => {
       borderRightWidth={{ base: '1px', lg: '0' }}
       {...props}
     >
-      {/* @ts-expect-error TODO */}
-      <ScrollArea.Root height="full" maxW="xs" size="sm" style={{ '--scrollbar-margin': '2px' }}>
+      <ScrollArea.Root height="full" maxW="xs" size="sm" css={{ '--scrollbar-margin': '1px' }}>
         <ScrollArea.Viewport>
           <ScrollArea.Content py="8">
             <nav>

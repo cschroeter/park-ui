@@ -30,10 +30,10 @@ export const NavbarLink = (props: Props) => {
           py: '4',
           px: '5',
           _hover: {
-            color: 'fg.default',
+            color: 'text',
           },
-          _active: {
-            color: 'fg.default',
+          _currentPage: {
+            color: 'text',
           },
         }),
       )}
