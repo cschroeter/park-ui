@@ -1,9 +1,10 @@
-import { SiFigma, SiReact, SiSvelte, SiVuedotjs } from '@icons-pack/react-simple-icons'
+import { SiFigma } from '@icons-pack/react-simple-icons'
 import { ArrowRightIcon } from 'lucide-react'
 import NextLink from 'next/link'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { Badge, Heading, Text } from '@/components/ui'
 import { ThemeDrawer } from '../docs/theme-drawer'
+import { ReactIcon, SolidIcon, VueIcon } from '../icons'
 import { PageButton } from '../navigation/page-button'
 import { HeroGroup, HeroItem } from './framer'
 
@@ -37,9 +38,9 @@ export const Hero = () => {
       <HeroItem>
         <HStack gap="6">
           {[
-            { framework: 'React', icon: <SiReact /> },
-            { framework: 'Vue', icon: <SiVuedotjs /> },
-            { framework: 'Svelte', icon: <SiSvelte /> },
+            { framework: 'React', icon: <ReactIcon /> },
+            { framework: 'Solid', icon: <SolidIcon /> },
+            { framework: 'Vue', icon: <VueIcon /> },
           ].map(({ framework, icon }) => (
             <HStack key={framework} gap="2">
               <Box fontSize="3xl">{icon}</Box>

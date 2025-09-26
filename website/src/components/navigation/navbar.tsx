@@ -2,8 +2,8 @@ import { MoreVerticalIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Box, HStack } from 'styled-system/jsx'
 import { IconButton } from '@/components/ui'
+import { ParkIcon } from '~/components/icons'
 import { ThemeDrawer } from '../docs/theme-drawer'
-import { Logo } from '../logo'
 import { GithubButton } from './github-button'
 import { NavbarLink } from './navbar-link'
 
@@ -20,7 +20,7 @@ export const Navbar = () => {
     >
       <HStack h="full" px={{ base: '4', sm: '6', md: '8' }} justify="space-between">
         <Link href="/" aria-label="Home">
-          <Logo />
+          <ParkIcon />
         </Link>
         <HStack gap="0" divideX="1px" borderXWidth="1px" hideBelow="md">
           <NavbarLink href="/docs">Docs</NavbarLink>
