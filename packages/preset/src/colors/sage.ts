@@ -38,7 +38,7 @@ export const sage = defineSemanticTokens.colors({
       hover: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },
       active: { value: { _light: '{colors.gray.a5}', _dark: '{colors.gray.a5}' } },
     },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },
   },
   surface: {
     bg: {
@@ -49,21 +49,21 @@ export const sage = defineSemanticTokens.colors({
       DEFAULT: { value: { _light: '{colors.gray.a6}', _dark: '{colors.gray.a6}' } },
       hover: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } },
     },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },
   },
   outline: {
     bg: {
       hover: { value: { _light: '{colors.gray.a2}', _dark: '{colors.gray.a2}' } },
       active: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
     },
-    border: { DEFAULT: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } } },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
+    border: { DEFAULT: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },
   },
   plain: {
     bg: {
       hover: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },
       active: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },
     },
-    fg: { DEFAULT: { value: { _light: '{colors.gray.a12}', _dark: '{colors.gray.a12}' } } },
+    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },
   },
 })
