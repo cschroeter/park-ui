@@ -36,7 +36,7 @@ const recipe = sva({
       _hover: {
         bg: 'gray.surface.bg.hover',
         borderColor: 'gray.surface.border.hover',
-        color: 'gray.surface.fg',
+        color: 'colorPalette.surface.fg',
       },
       _currentPage: {
         bg: 'colorPalette.surface.bg.active',
