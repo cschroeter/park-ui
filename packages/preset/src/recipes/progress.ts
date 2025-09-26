@@ -2,77 +2,119 @@ import { progressAnatomy } from '@ark-ui/react/progress'
 import { defineSlotRecipe } from '@pandacss/dev'
 
 export const progress = defineSlotRecipe({
-  className: 'progress',
   slots: progressAnatomy.keys(),
+  className: 'progress',
   base: {
     root: {
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1.5',
-      width: 'full',
-    },
-    label: {
-      color: 'fg.default',
-      fontWeight: 'medium',
       textStyle: 'sm',
+      position: 'relative',
     },
     track: {
-      backgroundColor: 'bg.emphasized',
-      borderRadius: 'l2',
       overflow: 'hidden',
-      width: '100%',
+      position: 'relative',
     },
     range: {
-      backgroundColor: 'colorPalette.solid',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transitionProperty: 'width, height',
+      transitionDuration: 'slow',
       height: '100%',
-      transition: 'width 0.2s ease-in-out',
-      '--translate-x': '-100%',
+      bgColor: 'var(--track-color)',
+      _indeterminate: {
+        '--animate-from-x': '-40%',
+        '--animate-to-x': '100%',
+        position: 'absolute',
+        willChange: 'left',
+        minWidth: '50%',
+        animation: 'position 1s ease infinite normal none running',
+        backgroundImage: `linear-gradient(to right, transparent 0%, var(--track-color) 50%, transparent 100%)`,
+      },
     },
-    circleTrack: {
-      stroke: 'bg.emphasized',
-    },
-    circleRange: {
-      stroke: 'colorPalette.solid',
-      transitionProperty: 'stroke-dasharray, stroke',
-      transitionDuration: '0.6s',
+    label: {
+      display: 'inline-flex',
+      fontWeight: 'medium',
+      alignItems: 'center',
+      gap: '1',
     },
     valueText: {
-      textStyle: 'sm',
+      textStyle: 'xs',
+      lineHeight: '1',
+      fontWeight: 'medium',
     },
   },
-  defaultVariants: {
-    size: 'md',
-  },
+
   variants: {
-    size: {
-      sm: {
-        circle: {
-          '--size': '36px',
-          '--thickness': '4px',
-        },
+    variant: {
+      solid: {
         track: {
-          height: '1.5',
+          bgColor: 'gray.subtle.bg',
+        },
+        range: {
+          bgColor: 'colorPalette.solid.bg',
+          color: 'colorPalette.solid.fg',
         },
       },
-      md: {
+      subtle: {
         track: {
-          height: '2',
+          bgColor: 'colorPalette.subtle.bg.active',
         },
-        circle: {
-          '--size': '40px',
-          '--thickness': '4px',
-        },
-      },
-      lg: {
-        track: {
-          height: '2.5',
-        },
-        circle: {
-          '--size': '44px',
-          '--thickness': '4px',
+        range: {
+          bgColor: 'colorPalette.solid.bg',
+          color: 'colorPalette.solid.fg',
         },
       },
     },
+
+    shape: {
+      square: {},
+      rounded: {
+        track: {
+          borderRadius: 'l1',
+        },
+      },
+      full: {
+        track: {
+          borderRadius: 'full',
+        },
+      },
+    },
+
+    striped: {
+      true: {
+        range: {
+          backgroundImage: `linear-gradient(45deg, var(--stripe-color) 25%, transparent 25%, transparent 50%, var(--stripe-color) 50%, var(--stripe-color) 75%, transparent 75%, transparent)`,
+          backgroundSize: `var(--stripe-size) var(--stripe-size)`,
+          '--stripe-size': '1rem',
+          '--stripe-color': {
+            _light: 'rgba(255, 255, 255, 0.3)',
+            _dark: 'rgba(0, 0, 0, 0.3)',
+          },
+        },
+      },
+    },
+
+    animated: {
+      true: {
+        range: {
+          '--animate-from': 'var(--stripe-size)',
+          animation: 'bg-position 1s linear infinite',
+        },
+      },
+    },
+
+    size: {
+      xs: { track: { h: '1.5' } },
+      sm: { track: { h: '2' } },
+      md: { track: { h: '2.5' } },
+      lg: { track: { h: '3' } },
+      xl: { track: { h: '3.5' } },
+    },
+  },
+
+  defaultVariants: {
+    variant: 'solid',
+    size: 'md',
+    shape: 'rounded',
   },
 })
