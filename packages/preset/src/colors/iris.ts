@@ -29,7 +29,6 @@ export const iris = defineSemanticTokens.colors({
     bg: {
       DEFAULT: { value: { _light: '{colors.iris.9}', _dark: '{colors.iris.9}' } },
       hover: { value: { _light: '{colors.iris.10}', _dark: '{colors.iris.10}' } },
-      active: { value: { _light: '{colors.iris.11}', _dark: '{colors.iris.11}' } },
     },
     fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },
   },
@@ -44,32 +43,24 @@ export const iris = defineSemanticTokens.colors({
   surface: {
     bg: {
       DEFAULT: { value: { _light: '{colors.iris.a2}', _dark: '{colors.iris.a2}' } },
-      hover: { value: { _light: '{colors.iris.a3}', _dark: '{colors.iris.a3}' } },
-      active: { value: { _light: '{colors.iris.a4}', _dark: '{colors.iris.a4}' } },
+      active: { value: { _light: '{colors.iris.a3}', _dark: '{colors.iris.a3}' } },
+    },
+    border: {
+      DEFAULT: { value: { _light: '{colors.iris.a6}', _dark: '{colors.iris.a6}' } },
+      hover: { value: { _light: '{colors.iris.a7}', _dark: '{colors.iris.a7}' } },
     },
     fg: { DEFAULT: { value: { _light: '{colors.iris.a11}', _dark: '{colors.iris.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.iris.a5}', _dark: '{colors.iris.a5}' } },
-      hover: { value: { _light: '{colors.iris.a6}', _dark: '{colors.iris.a6}' } },
-      active: { value: { _light: '{colors.iris.a6}', _dark: '{colors.iris.a6}' } },
-    },
   },
   outline: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.iris.a2}', _dark: '{colors.iris.a2}' } },
       active: { value: { _light: '{colors.iris.a3}', _dark: '{colors.iris.a3}' } },
     },
+    border: { DEFAULT: { value: { _light: '{colors.iris.a7}', _dark: '{colors.iris.a7}' } } },
     fg: { DEFAULT: { value: { _light: '{colors.iris.a11}', _dark: '{colors.iris.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.iris.a7}', _dark: '{colors.iris.a7}' } },
-      hover: { value: { _light: '{colors.iris.a8}', _dark: '{colors.iris.a8}' } },
-      active: { value: { _light: '{colors.iris.a8}', _dark: '{colors.iris.a8}' } },
-    },
   },
   plain: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.iris.a3}', _dark: '{colors.iris.a3}' } },
       active: { value: { _light: '{colors.iris.a4}', _dark: '{colors.iris.a4}' } },
     },

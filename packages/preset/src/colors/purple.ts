@@ -29,7 +29,6 @@ export const purple = defineSemanticTokens.colors({
     bg: {
       DEFAULT: { value: { _light: '{colors.purple.9}', _dark: '{colors.purple.9}' } },
       hover: { value: { _light: '{colors.purple.10}', _dark: '{colors.purple.10}' } },
-      active: { value: { _light: '{colors.purple.11}', _dark: '{colors.purple.11}' } },
     },
     fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },
   },
@@ -44,32 +43,24 @@ export const purple = defineSemanticTokens.colors({
   surface: {
     bg: {
       DEFAULT: { value: { _light: '{colors.purple.a2}', _dark: '{colors.purple.a2}' } },
-      hover: { value: { _light: '{colors.purple.a3}', _dark: '{colors.purple.a3}' } },
-      active: { value: { _light: '{colors.purple.a4}', _dark: '{colors.purple.a4}' } },
+      active: { value: { _light: '{colors.purple.a3}', _dark: '{colors.purple.a3}' } },
+    },
+    border: {
+      DEFAULT: { value: { _light: '{colors.purple.a6}', _dark: '{colors.purple.a6}' } },
+      hover: { value: { _light: '{colors.purple.a7}', _dark: '{colors.purple.a7}' } },
     },
     fg: { DEFAULT: { value: { _light: '{colors.purple.a11}', _dark: '{colors.purple.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.purple.a5}', _dark: '{colors.purple.a5}' } },
-      hover: { value: { _light: '{colors.purple.a6}', _dark: '{colors.purple.a6}' } },
-      active: { value: { _light: '{colors.purple.a6}', _dark: '{colors.purple.a6}' } },
-    },
   },
   outline: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.purple.a2}', _dark: '{colors.purple.a2}' } },
       active: { value: { _light: '{colors.purple.a3}', _dark: '{colors.purple.a3}' } },
     },
+    border: { DEFAULT: { value: { _light: '{colors.purple.a7}', _dark: '{colors.purple.a7}' } } },
     fg: { DEFAULT: { value: { _light: '{colors.purple.a11}', _dark: '{colors.purple.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.purple.a7}', _dark: '{colors.purple.a7}' } },
-      hover: { value: { _light: '{colors.purple.a8}', _dark: '{colors.purple.a8}' } },
-      active: { value: { _light: '{colors.purple.a8}', _dark: '{colors.purple.a8}' } },
-    },
   },
   plain: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.purple.a3}', _dark: '{colors.purple.a3}' } },
       active: { value: { _light: '{colors.purple.a4}', _dark: '{colors.purple.a4}' } },
     },

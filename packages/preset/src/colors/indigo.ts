@@ -29,7 +29,6 @@ export const indigo = defineSemanticTokens.colors({
     bg: {
       DEFAULT: { value: { _light: '{colors.indigo.9}', _dark: '{colors.indigo.9}' } },
       hover: { value: { _light: '{colors.indigo.10}', _dark: '{colors.indigo.10}' } },
-      active: { value: { _light: '{colors.indigo.11}', _dark: '{colors.indigo.11}' } },
     },
     fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },
   },
@@ -44,32 +43,24 @@ export const indigo = defineSemanticTokens.colors({
   surface: {
     bg: {
       DEFAULT: { value: { _light: '{colors.indigo.a2}', _dark: '{colors.indigo.a2}' } },
-      hover: { value: { _light: '{colors.indigo.a3}', _dark: '{colors.indigo.a3}' } },
-      active: { value: { _light: '{colors.indigo.a4}', _dark: '{colors.indigo.a4}' } },
+      active: { value: { _light: '{colors.indigo.a3}', _dark: '{colors.indigo.a3}' } },
+    },
+    border: {
+      DEFAULT: { value: { _light: '{colors.indigo.a6}', _dark: '{colors.indigo.a6}' } },
+      hover: { value: { _light: '{colors.indigo.a7}', _dark: '{colors.indigo.a7}' } },
     },
     fg: { DEFAULT: { value: { _light: '{colors.indigo.a11}', _dark: '{colors.indigo.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.indigo.a5}', _dark: '{colors.indigo.a5}' } },
-      hover: { value: { _light: '{colors.indigo.a6}', _dark: '{colors.indigo.a6}' } },
-      active: { value: { _light: '{colors.indigo.a6}', _dark: '{colors.indigo.a6}' } },
-    },
   },
   outline: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.indigo.a2}', _dark: '{colors.indigo.a2}' } },
       active: { value: { _light: '{colors.indigo.a3}', _dark: '{colors.indigo.a3}' } },
     },
+    border: { DEFAULT: { value: { _light: '{colors.indigo.a7}', _dark: '{colors.indigo.a7}' } } },
     fg: { DEFAULT: { value: { _light: '{colors.indigo.a11}', _dark: '{colors.indigo.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.indigo.a7}', _dark: '{colors.indigo.a7}' } },
-      hover: { value: { _light: '{colors.indigo.a8}', _dark: '{colors.indigo.a8}' } },
-      active: { value: { _light: '{colors.indigo.a8}', _dark: '{colors.indigo.a8}' } },
-    },
   },
   plain: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.indigo.a3}', _dark: '{colors.indigo.a3}' } },
       active: { value: { _light: '{colors.indigo.a4}', _dark: '{colors.indigo.a4}' } },
     },

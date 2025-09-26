@@ -29,7 +29,6 @@ export const grass = defineSemanticTokens.colors({
     bg: {
       DEFAULT: { value: { _light: '{colors.grass.9}', _dark: '{colors.grass.9}' } },
       hover: { value: { _light: '{colors.grass.10}', _dark: '{colors.grass.10}' } },
-      active: { value: { _light: '{colors.grass.11}', _dark: '{colors.grass.11}' } },
     },
     fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },
   },
@@ -44,32 +43,24 @@ export const grass = defineSemanticTokens.colors({
   surface: {
     bg: {
       DEFAULT: { value: { _light: '{colors.grass.a2}', _dark: '{colors.grass.a2}' } },
-      hover: { value: { _light: '{colors.grass.a3}', _dark: '{colors.grass.a3}' } },
-      active: { value: { _light: '{colors.grass.a4}', _dark: '{colors.grass.a4}' } },
+      active: { value: { _light: '{colors.grass.a3}', _dark: '{colors.grass.a3}' } },
+    },
+    border: {
+      DEFAULT: { value: { _light: '{colors.grass.a6}', _dark: '{colors.grass.a6}' } },
+      hover: { value: { _light: '{colors.grass.a7}', _dark: '{colors.grass.a7}' } },
     },
     fg: { DEFAULT: { value: { _light: '{colors.grass.a11}', _dark: '{colors.grass.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.grass.a5}', _dark: '{colors.grass.a5}' } },
-      hover: { value: { _light: '{colors.grass.a6}', _dark: '{colors.grass.a6}' } },
-      active: { value: { _light: '{colors.grass.a6}', _dark: '{colors.grass.a6}' } },
-    },
   },
   outline: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.grass.a2}', _dark: '{colors.grass.a2}' } },
       active: { value: { _light: '{colors.grass.a3}', _dark: '{colors.grass.a3}' } },
     },
+    border: { DEFAULT: { value: { _light: '{colors.grass.a7}', _dark: '{colors.grass.a7}' } } },
     fg: { DEFAULT: { value: { _light: '{colors.grass.a11}', _dark: '{colors.grass.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.grass.a7}', _dark: '{colors.grass.a7}' } },
-      hover: { value: { _light: '{colors.grass.a8}', _dark: '{colors.grass.a8}' } },
-      active: { value: { _light: '{colors.grass.a8}', _dark: '{colors.grass.a8}' } },
-    },
   },
   plain: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.grass.a3}', _dark: '{colors.grass.a3}' } },
       active: { value: { _light: '{colors.grass.a4}', _dark: '{colors.grass.a4}' } },
     },

@@ -29,7 +29,6 @@ export const tomato = defineSemanticTokens.colors({
     bg: {
       DEFAULT: { value: { _light: '{colors.tomato.9}', _dark: '{colors.tomato.9}' } },
       hover: { value: { _light: '{colors.tomato.10}', _dark: '{colors.tomato.10}' } },
-      active: { value: { _light: '{colors.tomato.11}', _dark: '{colors.tomato.11}' } },
     },
     fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },
   },
@@ -44,32 +43,24 @@ export const tomato = defineSemanticTokens.colors({
   surface: {
     bg: {
       DEFAULT: { value: { _light: '{colors.tomato.a2}', _dark: '{colors.tomato.a2}' } },
-      hover: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
-      active: { value: { _light: '{colors.tomato.a4}', _dark: '{colors.tomato.a4}' } },
+      active: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
+    },
+    border: {
+      DEFAULT: { value: { _light: '{colors.tomato.a6}', _dark: '{colors.tomato.a6}' } },
+      hover: { value: { _light: '{colors.tomato.a7}', _dark: '{colors.tomato.a7}' } },
     },
     fg: { DEFAULT: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.tomato.a5}', _dark: '{colors.tomato.a5}' } },
-      hover: { value: { _light: '{colors.tomato.a6}', _dark: '{colors.tomato.a6}' } },
-      active: { value: { _light: '{colors.tomato.a6}', _dark: '{colors.tomato.a6}' } },
-    },
   },
   outline: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.tomato.a2}', _dark: '{colors.tomato.a2}' } },
       active: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
     },
+    border: { DEFAULT: { value: { _light: '{colors.tomato.a7}', _dark: '{colors.tomato.a7}' } } },
     fg: { DEFAULT: { value: { _light: '{colors.tomato.a11}', _dark: '{colors.tomato.a11}' } } },
-    border: {
-      DEFAULT: { value: { _light: '{colors.tomato.a7}', _dark: '{colors.tomato.a7}' } },
-      hover: { value: { _light: '{colors.tomato.a8}', _dark: '{colors.tomato.a8}' } },
-      active: { value: { _light: '{colors.tomato.a8}', _dark: '{colors.tomato.a8}' } },
-    },
   },
   plain: {
     bg: {
-      DEFAULT: { value: { _light: 'transparent', _dark: 'transparent' } },
       hover: { value: { _light: '{colors.tomato.a3}', _dark: '{colors.tomato.a3}' } },
       active: { value: { _light: '{colors.tomato.a4}', _dark: '{colors.tomato.a4}' } },
     },
