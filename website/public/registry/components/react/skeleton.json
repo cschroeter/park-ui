@@ -6,7 +6,7 @@
     {
       "type": "component",
       "fileName": "skeleton.tsx",
-      "content": "'use client'\nimport type { Assign, HTMLArkProps } from '@ark-ui/react'\nimport { ark } from '@ark-ui/react/factory'\nimport { forwardRef } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { type SkeletonVariantProps, skeleton } from 'styled-system/recipes'\nimport type { JsxStyleProps } from 'styled-system/types'\n\nconst StyledSkeleton = styled(ark.div, skeleton)\n\nexport interface SkeletonProps\n  extends Assign<JsxStyleProps, HTMLArkProps<'div'>>,\n    SkeletonVariantProps {\n  /**\n   *\n   * @default false\n   */\n  isLoaded?: boolean\n}\n\nexport const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {\n  const { isLoaded, ...otherProps } = props\n\n  if (isLoaded) {\n    return <styled.div animation=\"fade-in\" ref={ref} {...otherProps} />\n  }\n  return <StyledSkeleton ref={ref} {...otherProps} />\n})\n\nSkeleton.displayName = 'Skeleton'\n",
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { type ComponentProps, forwardRef } from 'react'\nimport { Stack, type StackProps, styled } from 'styled-system/jsx'\nimport { skeleton } from 'styled-system/recipes'\n\nexport type SkeletonProps = ComponentProps<typeof Skeleton>\nexport const Skeleton = styled(ark.div, skeleton)\n\nexport type SkeletonCircleProps = ComponentProps<typeof SkeletonCircle>\nexport const SkeletonCircle = styled(ark.div, skeleton, { defaultProps: { circle: true } })\n\nexport interface SkeletonTextProps extends SkeletonProps {\n  /**\n   * Number of lines to display\n   * @default 3\n   */\n  noOfLines?: number | undefined\n  rootProps?: StackProps | undefined\n}\n\nexport const SkeletonText = forwardRef<HTMLDivElement, SkeletonTextProps>(\n  function SkeletonText(props, ref) {\n    const { noOfLines = 3, gap, rootProps, ...skeletonProps } = props\n    return (\n      <Stack ref={ref} gap={gap} width=\"full\" {...rootProps}>\n        {[...Array(noOfLines).keys()].map((index) => (\n          <Skeleton\n            key={index}\n            height=\"4\"\n            _last={{ maxW: noOfLines === 1 ? '100%' : '80%' }}\n            {...skeletonProps}\n          />\n        ))}\n      </Stack>\n    )\n  },\n)\n",
       "indexFile": {
         "exports": [
           {
@@ -17,7 +17,23 @@
                 "isType": false
               },
               {
+                "name": "SkeletonCircle",
+                "isType": false
+              },
+              {
+                "name": "SkeletonCircleProps",
+                "isType": true
+              },
+              {
                 "name": "SkeletonProps",
+                "isType": true
+              },
+              {
+                "name": "SkeletonText",
+                "isType": false
+              },
+              {
+                "name": "SkeletonTextProps",
                 "isType": true
               }
             ],
@@ -29,7 +45,7 @@
     {
       "type": "recipe",
       "fileName": "skeleton.ts",
-      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const skeleton = defineRecipe({\n  className: 'skeleton',\n  base: {\n    animation: 'skeleton-pulse',\n    backgroundClip: 'padding-box',\n    backgroundColor: 'gray.a4',\n    borderRadius: 'l3',\n    color: 'transparent',\n    cursor: 'default',\n    pointerEvents: 'none',\n    userSelect: 'none',\n    '&::before, &::after, *': {\n      visibility: 'hidden',\n    },\n  },\n})\n",
+      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const skeleton = defineRecipe({\n  className: 'skeleton',\n  jsx: ['Skeleton', 'SkeletonCircle', 'SkeletonText'],\n  base: {},\n  variants: {\n    loading: {\n      true: {\n        borderRadius: 'l2',\n        boxShadow: 'none',\n        backgroundClip: 'padding-box',\n        cursor: 'default',\n        color: 'transparent',\n        pointerEvents: 'none',\n        userSelect: 'none',\n        flexShrink: '0',\n        '&::before, &::after, *': {\n          visibility: 'hidden',\n        },\n      },\n      false: {\n        background: 'unset',\n        animation: 'fade-in var(--fade-duration, 0.1s) ease-out !important',\n      },\n    },\n\n    circle: {\n      true: {\n        display: 'flex',\n        alignItems: 'center',\n        justifyContent: 'center',\n        flex: '0 0 auto',\n        borderRadius: '9999px',\n      },\n    },\n\n    variant: {\n      pulse: {\n        background: 'gray.subtle.bg.active',\n        animation: 'pulse',\n        animationDuration: 'var(--duration, 1.2s)',\n      },\n      shine: {\n        '--animate-from': '200%',\n        '--animate-to': '-200%',\n        '--start-color': 'colors.gray.subtle.bg',\n        '--end-color': 'colors.gray.subtle.bg.active',\n        backgroundImage:\n          'linear-gradient(270deg,var(--start-color),var(--end-color),var(--end-color),var(--start-color))',\n        backgroundSize: '400% 100%',\n        animation: 'bg-position var(--duration, 5s) ease-in-out infinite',\n      },\n      none: {\n        animation: 'none',\n      },\n    },\n  },\n\n  defaultVariants: {\n    variant: 'pulse',\n    loading: true,\n  },\n})\n",
       "indexFile": {
         "imports": [
           {

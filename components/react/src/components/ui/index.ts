@@ -44,7 +44,14 @@ export * as RatingGroup from './rating-group'
 export * as ScrollArea from './scroll-area'
 export * as SegmentGroup from './segment-group'
 export * as Select from './select'
-export { Skeleton, type SkeletonProps } from './skeleton'
+export {
+  Skeleton,
+  SkeletonCircle,
+  type SkeletonCircleProps,
+  type SkeletonProps,
+  SkeletonText,
+  type SkeletonTextProps,
+} from './skeleton'
 export * as Slider from './slider'
 export { Span, type SpanProps } from './span'
 export { Spinner, type SpinnerProps } from './spinner'

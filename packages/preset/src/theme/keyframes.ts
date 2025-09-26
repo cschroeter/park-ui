@@ -109,4 +109,23 @@ export const keyframes = defineKeyframes({
     from: { scale: '1' },
     to: { scale: '0.95' },
   },
+
+  'bg-position': {
+    from: {
+      backgroundPosition: 'var(--animate-from, 1rem) 0',
+    },
+    to: {
+      backgroundPosition: 'var(--animate-to, 0) 0',
+    },
+  },
+  position: {
+    from: {
+      insetInlineStart: 'var(--animate-from-x)',
+      insetBlockStart: 'var(--animate-from-y)',
+    },
+    to: {
+      insetInlineStart: 'var(--animate-to-x)',
+      insetBlockStart: 'var(--animate-to-y)',
+    },
+  },
 })

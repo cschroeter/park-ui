@@ -1,30 +1,37 @@
-'use client'
-import type { Assign, HTMLArkProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { forwardRef } from 'react'
-import { styled } from 'styled-system/jsx'
-import { type SkeletonVariantProps, skeleton } from 'styled-system/recipes'
-import type { JsxStyleProps } from 'styled-system/types'
+import { type ComponentProps, forwardRef } from 'react'
+import { Stack, type StackProps, styled } from 'styled-system/jsx'
+import { skeleton } from 'styled-system/recipes'
 
-const StyledSkeleton = styled(ark.div, skeleton)
+export type SkeletonProps = ComponentProps<typeof Skeleton>
+export const Skeleton = styled(ark.div, skeleton)
 
-export interface SkeletonProps
-  extends Assign<JsxStyleProps, HTMLArkProps<'div'>>,
-    SkeletonVariantProps {
+export type SkeletonCircleProps = ComponentProps<typeof SkeletonCircle>
+export const SkeletonCircle = styled(ark.div, skeleton, { defaultProps: { circle: true } })
+
+export interface SkeletonTextProps extends SkeletonProps {
   /**
-   *
-   * @default false
+   * Number of lines to display
+   * @default 3
    */
-  isLoaded?: boolean
+  noOfLines?: number | undefined
+  rootProps?: StackProps | undefined
 }
 
-export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {
-  const { isLoaded, ...otherProps } = props
-
-  if (isLoaded) {
-    return <styled.div animation="fade-in" ref={ref} {...otherProps} />
-  }
-  return <StyledSkeleton ref={ref} {...otherProps} />
-})
-
-Skeleton.displayName = 'Skeleton'
+export const SkeletonText = forwardRef<HTMLDivElement, SkeletonTextProps>(
+  function SkeletonText(props, ref) {
+    const { noOfLines = 3, gap, rootProps, ...skeletonProps } = props
+    return (
+      <Stack ref={ref} gap={gap} width="full" {...rootProps}>
+        {[...Array(noOfLines).keys()].map((index) => (
+          <Skeleton
+            key={index}
+            height="4"
+            _last={{ maxW: noOfLines === 1 ? '100%' : '80%' }}
+            {...skeletonProps}
+          />
+        ))}
+      </Stack>
+    )
+  },
+)
