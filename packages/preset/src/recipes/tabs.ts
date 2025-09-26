@@ -155,7 +155,8 @@ export const tabs = defineSlotRecipe({
           },
         },
         indicator: {
-          layerStyle: 'subtle',
+          bg: 'colorPalette.subtle.bg',
+          color: 'colorPalette.subtle.fg',
           borderRadius: 'l2',
         },
       },

@@ -19,16 +19,23 @@ export const badge = defineRecipe({
   variants: {
     variant: {
       solid: {
-        layerStyle: 'solid',
+        bg: 'colorPalette.solid.bg',
+        color: 'colorPalette.solid.fg',
       },
       surface: {
-        layerStyle: 'surface',
+        bg: 'colorPalette.surface.bg',
+        borderWidth: '1px',
+        borderColor: 'colorPalette.surface.border',
+        color: 'colorPalette.surface.fg',
       },
       subtle: {
-        layerStyle: 'subtle',
+        bg: 'colorPalette.subtle.bg',
+        color: 'colorPalette.subtle.fg',
       },
       outline: {
-        layerStyle: 'outline',
+        borderWidth: '1px',
+        borderColor: 'colorPalette.outline.border',
+        color: 'colorPalette.outline.fg',
       },
     },
     size: {

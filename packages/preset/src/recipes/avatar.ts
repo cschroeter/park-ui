@@ -117,22 +117,29 @@ export const avatar = defineSlotRecipe({
     variant: {
       solid: {
         root: {
-          layerStyle: 'solid',
+          bg: 'colorPalette.solid.bg',
+          color: 'colorPalette.solid.fg',
         },
       },
       surface: {
         root: {
-          layerStyle: 'surface',
+          bg: 'colorPalette.surface.bg',
+          borderWidth: '1px',
+          borderColor: 'colorPalette.surface.border',
+          color: 'colorPalette.surface.fg',
         },
       },
       subtle: {
         root: {
-          layerStyle: 'subtle',
+          bg: 'colorPalette.subtle.bg',
+          color: 'colorPalette.subtle.fg',
         },
       },
       outline: {
         root: {
-          layerStyle: 'outline',
+          borderWidth: '1px',
+          borderColor: 'colorPalette.outline.border',
+          color: 'colorPalette.outline.fg',
         },
       },
     },

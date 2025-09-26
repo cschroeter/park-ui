@@ -51,10 +51,10 @@ export const radioGroup = defineSlotRecipe({
     variant: {
       solid: {
         itemControl: {
-          '--border-color': '{colors.border.default}',
-          boxShadow: 'inset 0 0 0 1px var(--border-color)',
+          borderWidth: '1px',
           _checked: {
-            layerStyle: 'solid',
+            bg: 'colorPalette.solid.bg',
+            color: 'colorPalette.solid.fg',
             boxShadow: 'none',
             _after: {
               background: 'colorPalette.solid.fg',

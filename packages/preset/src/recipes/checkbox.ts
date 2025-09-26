@@ -41,17 +41,17 @@ export const checkbox = defineSlotRecipe({
       sm: {
         root: { gap: '2' },
         label: { textStyle: 'sm' },
-        control: { boxSize: '4.5', p: '0.5' },
+        control: { boxSize: '4.5' },
       },
       md: {
         root: { gap: '3' },
         label: { textStyle: 'md' },
-        control: { boxSize: '5', p: '0.5' },
+        control: { boxSize: '5' },
       },
       lg: {
         root: { gap: '3' },
         label: { textStyle: 'lg' },
-        control: { boxSize: '5.5', p: '0.5' },
+        control: { boxSize: '5.5' },
       },
     },
 
@@ -61,7 +61,9 @@ export const checkbox = defineSlotRecipe({
           control: {
             borderColor: 'border.default',
             _checked: {
-              layerStyle: 'solid',
+              bg: 'colorPalette.solid.bg',
+              borderColor: 'colorPalette.solid.bg',
+              color: 'colorPalette.solid.fg',
             },
             _invalid: {
               background: 'bg.error',
@@ -71,25 +73,31 @@ export const checkbox = defineSlotRecipe({
       },
       surface: {
         control: {
-          layerStyle: 'surface',
+          bg: 'colorPalette.surface.bg',
+          borderWidth: '1px',
+          borderColor: 'colorPalette.surface.border',
+          color: 'colorPalette.surface.fg',
         },
       },
       subtle: {
         control: {
-          layerStyle: 'subtle',
+          bg: 'colorPalette.subtle.bg',
+          color: 'colorPalette.subtle.fg',
         },
       },
       outline: {
         control: {
-          layerStyle: 'outline',
+          borderWidth: '1px',
+          borderColor: 'colorPalette.outline.border',
+          color: 'colorPalette.outline.fg',
           _checked: {
-            borderColor: 'colorPalette.solid',
+            borderColor: 'colorPalette.solid.bg',
           },
         },
       },
       plain: {
         control: {
-          layerStyle: 'plain',
+          color: 'colorPalette.plain.fg',
         },
       },
     },
