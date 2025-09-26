@@ -1,8 +1,6 @@
-import { SiFigma } from '@icons-pack/react-simple-icons'
 import { ArrowRightIcon } from 'lucide-react'
-import NextLink from 'next/link'
 import { Box, HStack, Stack } from 'styled-system/jsx'
-import { Badge, Heading, Text } from '@/components/ui'
+import { Heading, Text } from '@/components/ui'
 import { ThemeDrawer } from '../docs/theme-drawer'
 import { ReactIcon, SolidIcon, VueIcon } from '../icons'
 import { PageButton } from '../navigation/page-button'
@@ -13,11 +11,6 @@ export const Hero = () => {
     <HeroGroup>
       <HeroItem>
         <Stack gap={{ base: '4', md: '6' }} align="flex-start">
-          <NextLink href="/docs/overview/figma">
-            <Badge size="xl">
-              <SiFigma /> Checkout the new Park UI Figma Kit <ArrowRightIcon />
-            </Badge>
-          </NextLink>
           <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
             Build your own Design System
           </Heading>
