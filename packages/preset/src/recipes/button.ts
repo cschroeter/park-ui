@@ -11,6 +11,7 @@ export const button = defineRecipe({
     display: 'inline-flex',
     flexShrink: '0',
     fontWeight: 'semibold',
+    gap: '2',
     isolation: 'isolate',
     justifyContent: 'center',
     outline: '0',
@@ -21,9 +22,6 @@ export const button = defineRecipe({
     whiteSpace: 'nowrap',
     _icon: {
       flexShrink: '0',
-      fontSize: '1.1em',
-      width: '1.1em',
-      height: '1.1em',
     },
     _disabled: {
       layerStyle: 'disabled',
@@ -38,63 +36,109 @@ export const button = defineRecipe({
   variants: {
     variant: {
       solid: {
-        layerStyle: 'solid.interactive',
+        bg: 'colorPalette.solid.bg',
+        color: 'colorPalette.solid.fg',
+        _hover: {
+          bg: 'colorPalette.solid.bg.hover',
+        },
       },
       surface: {
-        layerStyle: 'surface.interactive',
+        bg: 'colorPalette.surface.bg',
+        borderWidth: '1px',
+        borderColor: 'colorPalette.surface.border',
+        color: 'colorPalette.surface.fg',
+        _hover: {
+          boxShadowColor: 'colorPalette.surface.border.hover',
+        },
+        _active: {
+          bg: 'colorPalette.surface.bg.active',
+        },
       },
       subtle: {
-        layerStyle: 'subtle.interactive',
+        bg: 'colorPalette.subtle.bg',
+        color: 'colorPalette.subtle.fg',
+        _hover: {
+          bg: 'colorPalette.subtle.bg.hover',
+        },
+        _active: {
+          bg: 'colorPalette.subtle.bg.active',
+        },
       },
       outline: {
-        layerStyle: 'outline.interactive',
+        borderWidth: '1px',
+        borderColor: 'colorPalette.outline.border',
+        color: 'colorPalette.outline.fg',
+        _hover: {
+          bg: 'colorPalette.outline.bg.hover',
+        },
+        _active: {
+          bg: 'colorPalette.outline.bg.active',
+        },
       },
       plain: {
-        layerStyle: 'plain.interactive',
+        color: 'colorPalette.plain.fg',
+        _hover: {
+          bg: 'colorPalette.plain.bg.hover',
+        },
+        _active: {
+          bg: 'colorPalette.plain.bg.active',
+        },
       },
     },
     size: {
       xs: {
         h: '8',
         minW: '8',
-        textStyle: 'xs',
-        px: '3',
-        gap: '2',
+        textStyle: 'sm',
+        px: '2.5',
+        _icon: {
+          boxSize: '4',
+        },
       },
       sm: {
         h: '9',
         minW: '9',
         textStyle: 'sm',
-        px: '3.5',
-        gap: '2',
+        px: '3',
+        _icon: {
+          boxSize: '4.5',
+        },
       },
       md: {
         h: '10',
         minW: '10',
         textStyle: 'sm',
-        px: '4',
-        gap: '2',
+        px: '3.5',
+        _icon: {
+          boxSize: '5',
+        },
       },
       lg: {
         h: '11',
         minW: '11',
         textStyle: 'md',
-        px: '4.5',
-        gap: '2',
+        px: '4',
+        _icon: {
+          boxSize: '5',
+        },
       },
       xl: {
         h: '12',
         minW: '12',
         textStyle: 'md',
-        px: '5',
-        gap: '2.5',
+        px: '4.5',
+        _icon: {
+          boxSize: '5.5',
+        },
       },
       '2xl': {
         h: '16',
         minW: '16',
-        textStyle: 'lg',
-        px: '7',
-        gap: '3',
+        textStyle: 'xl',
+        px: '6',
+        _icon: {
+          boxSize: '6',
+        },
       },
     },
   },

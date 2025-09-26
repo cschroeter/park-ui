@@ -1,15 +1,17 @@
+import { CircleDotIcon } from 'lucide-react'
 import { Wrap } from 'styled-system/jsx'
 import { Button } from '@/components/ui'
 
 export const App = () => {
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
+
   return (
     <Wrap gap="4">
-      <Button size="xs">Button</Button>
-      <Button size="sm">Button</Button>
-      <Button size="md">Button</Button>
-      <Button size="lg">Button</Button>
-      <Button size="xl">Button</Button>
-      <Button size="2xl">Button</Button>
+      {sizes.map((size) => (
+        <Button key={size} size={size}>
+          Button <CircleDotIcon />
+        </Button>
+      ))}
     </Wrap>
   )
 }

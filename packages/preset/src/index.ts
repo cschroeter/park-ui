@@ -54,17 +54,18 @@ export const preset = definePreset({
         easings,
         durations,
         zIndex,
-        sizes: {
-          '5.5': { value: '1.375rem' },
-        },
-        spacing: {
-          '5.5': { value: '1.375rem' },
-        },
       },
       semanticTokens: {
         colors: {
           ...colorPalettes,
           gray: colorPalettes.neutral,
+          // aliases
+          text: {
+            DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
+            muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
+            subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
+          },
+          // deprecated
           fg: {
             default: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
             muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
