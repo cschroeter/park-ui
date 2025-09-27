@@ -51,6 +51,11 @@
   },
   "Root": {
     "props": {
+      "variant": {
+        "type": "'outline' | 'plain'",
+        "defaultValue": "'outline'",
+        "isRequired": false
+      },
       "size": {
         "type": "'md'",
         "defaultValue": "'md'",

@@ -225,7 +225,7 @@
   "Root": {
     "props": {
       "size": {
-        "type": "'xs' | 'sm' | 'md' | 'lg'",
+        "type": "'sm' | 'md' | 'lg'",
         "defaultValue": "'md'",
         "isRequired": false
       },

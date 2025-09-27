@@ -50,6 +50,11 @@
         "defaultValue": "'md'",
         "isRequired": false
       },
+      "variant": {
+        "type": "'outline' | 'subtle' | 'flushed'",
+        "defaultValue": "'outline'",
+        "isRequired": false
+      },
       "asChild": {
         "type": "boolean",
         "isRequired": false,

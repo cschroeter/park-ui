@@ -51,8 +51,26 @@
   },
   "Root": {
     "props": {
+      "variant": {
+        "type": "'solid' | 'subtle'",
+        "defaultValue": "'solid'",
+        "isRequired": false
+      },
+      "shape": {
+        "type": "'square' | 'rounded' | 'full'",
+        "defaultValue": "'rounded'",
+        "isRequired": false
+      },
+      "striped": {
+        "type": "boolean",
+        "isRequired": false
+      },
+      "animated": {
+        "type": "boolean",
+        "isRequired": false
+      },
       "size": {
-        "type": "'sm' | 'md' | 'lg'",
+        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
         "defaultValue": "'md'",
         "isRequired": false
       },

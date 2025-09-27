@@ -46,7 +46,7 @@
   "Root": {
     "props": {
       "size": {
-        "type": "'sm' | 'md' | 'lg'",
+        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
         "defaultValue": "'md'",
         "isRequired": false
       },

@@ -142,12 +142,12 @@
   "Root": {
     "props": {
       "variant": {
-        "type": "'outline' | 'ghost'",
+        "type": "'outline'",
         "defaultValue": "'outline'",
         "isRequired": false
       },
       "size": {
-        "type": "'sm' | 'md' | 'lg'",
+        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
         "defaultValue": "'md'",
         "isRequired": false
       },

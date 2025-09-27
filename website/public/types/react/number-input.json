@@ -52,8 +52,13 @@
   "Root": {
     "props": {
       "size": {
-        "type": "'md' | 'lg' | 'xl'",
+        "type": "'sm' | 'md' | 'lg' | 'xl'",
         "defaultValue": "'md'",
+        "isRequired": false
+      },
+      "variant": {
+        "type": "'outline'",
+        "defaultValue": "'outline'",
         "isRequired": false
       },
       "allowMouseWheel": {

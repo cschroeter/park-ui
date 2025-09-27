@@ -56,14 +56,18 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "variant": {
-        "type": "'enclosed' | 'line' | 'outline'",
+        "type": "'line' | 'subtle' | 'enclosed'",
         "defaultValue": "'line'",
         "isRequired": false
       },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
+      "fitted": {
+        "type": "boolean",
         "isRequired": false
       },
       "activationMode": {

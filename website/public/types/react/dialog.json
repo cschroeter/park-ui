@@ -51,6 +51,26 @@
   },
   "Root": {
     "props": {
+      "motionPreset": {
+        "type": "'scale' | 'slide-in-bottom' | 'slide-in-top' | 'slide-in-left' | 'slide-in-right' | 'none'",
+        "defaultValue": "'scale'",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'cover' | 'full'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
+      "placement": {
+        "type": "'center' | 'top' | 'bottom'",
+        "defaultValue": "'center'",
+        "isRequired": false
+      },
+      "scrollBehavior": {
+        "type": "'inside' | 'outside'",
+        "defaultValue": "'outside'",
+        "isRequired": false
+      },
       "aria-label": {
         "type": "string",
         "isRequired": false,
