@@ -2,7 +2,7 @@ import { Button, Card, Field, Input, Tabs } from '@/components/ui'
 
 export const CardTabs = () => {
   return (
-    <Card.Root>
+    <Card.Root variant="elevated">
       <Tabs.Root defaultValue="login" variant="line" size="sm" fitted gap="0">
         <Tabs.List mx="6" pt="4">
           <Tabs.Trigger value="login">Login</Tabs.Trigger>

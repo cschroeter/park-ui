@@ -4,7 +4,7 @@ import { Switch } from '~/components/ui/switch'
 
 export const CardNotification = () => {
   return (
-    <Card.Root>
+    <Card.Root variant="elevated">
       <Card.Header>
         <Card.Title>Notifications</Card.Title>
         <Card.Description>Manage when you'll receive notifications.</Card.Description>

@@ -5,7 +5,7 @@ import { Button, Card, Field, Input, Select, Textarea } from '@/components/ui'
 
 export const CardIssue = () => {
   return (
-    <Card.Root>
+    <Card.Root variant="elevated">
       <Card.Header>
         <Card.Title>Report an issue</Card.Title>
         <Card.Description>Found a bug? Let us know so we can fix it.</Card.Description>

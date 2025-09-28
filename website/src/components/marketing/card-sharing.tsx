@@ -8,7 +8,7 @@ import { Avatar } from '~/components/ui/avatar'
 
 export const CardSharing = () => {
   return (
-    <Card.Root>
+    <Card.Root variant="elevated">
       <Card.Header>
         <Card.Title>Share Document</Card.Title>
         <Card.Description>

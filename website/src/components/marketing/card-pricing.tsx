@@ -11,7 +11,7 @@ export const CardPricing = () => {
     'Custom Integration',
   ]
   return (
-    <Card.Root>
+    <Card.Root variant="elevated">
       <Card.Header>
         <Card.Title textStyle="xl">Starter Plan</Card.Title>
         <Card.Description textStyle="md">Kickstart your digital journey.</Card.Description>

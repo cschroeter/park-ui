@@ -56,7 +56,6 @@ export const card = defineSlotRecipe({
         root: {
           bg: 'gray.surface.bg',
           borderWidth: '1px',
-          borderColor: 'gray.surface.border',
         },
       },
       subtle: {
