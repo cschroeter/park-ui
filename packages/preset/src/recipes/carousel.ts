@@ -3,70 +3,72 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const carousel = defineSlotRecipe({
   className: 'carousel',
-  // TODO review extendedWith usage
-  slots: carouselAnatomy.extendWith('viewport', 'control').keys(),
+  slots: carouselAnatomy.keys(),
   base: {
-    viewport: {
-      overflowX: 'hidden',
+    root: {
       position: 'relative',
-      borderRadius: 'l2',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2',
+      _vertical: {
+        flexDirection: 'row',
+      },
     },
     control: {
       alignItems: 'center',
-      background: { _light: 'gray.dark.a12', _dark: 'gray.light.a12' },
+      justifyContent: 'space-between',
       borderRadius: 'l2',
-      bottom: '4',
       display: 'flex',
-      left: '50%',
-      position: 'absolute',
-      transform: 'translateX(-50%)',
+      _vertical: {
+        flexDirection: 'column',
+      },
+    },
+    itemGroup: {
+      flex: '1',
     },
     indicatorGroup: {
       display: 'flex',
+      _vertical: {
+        flexDirection: 'column',
+      },
     },
     indicator: {
       borderRadius: 'full',
-      background: 'gray.6',
+      background: 'gray.subtle.bg',
       cursor: 'pointer',
       _current: {
-        background: 'colorPalette.solid',
+        background: 'colorPalette.solid.bg',
       },
-      _focusVisible: {
-        outlineOffset: '2px',
-        outline: '2px solid',
-        outlineColor: 'border.outline',
-      },
+      focusVisibleRing: 'outside',
+      focusRingColor: 'colorPalette.solid.bg',
     },
   },
   defaultVariants: {
     size: 'md',
   },
   variants: {
-    size: {
-      sm: {
+    inline: {
+      true: {
         control: {
-          gap: '1',
+          background: { _light: 'white.a11', _dark: 'black.a11' },
+          bottom: '3',
+          left: '50%',
           p: '1',
-        },
-        indicatorGroup: {
-          gap: '2',
-        },
-        indicator: {
-          width: '2',
-          height: '2',
+          position: 'absolute',
+          transform: 'translateX(-50%)',
         },
       },
+    },
+    size: {
       md: {
         control: {
-          gap: '2',
-          p: '2.5',
+          gap: '3',
         },
         indicatorGroup: {
           gap: '3',
         },
         indicator: {
-          width: '2.5',
-          height: '2.5',
+          boxSize: '2.5',
         },
       },
     },

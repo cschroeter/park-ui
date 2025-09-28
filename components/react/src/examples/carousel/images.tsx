@@ -1,32 +1,25 @@
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
-import { Center } from 'styled-system/jsx'
-import { Carousel, IconButton, Text } from '@/components/ui'
+import { Carousel, IconButton, Image } from '@/components/ui'
 
 export const App = () => {
-  const slides = 5
-
   return (
-    <Carousel.Root slideCount={slides}>
-      <Carousel.ItemGroup>
-        {Array.from({ length: slides }, (_, index) => (
+    <Carousel.Root slideCount={images.length} inline>
+      <Carousel.ItemGroup borderRadius="l3">
+        {images.map((image, index) => (
           <Carousel.Item key={index} index={index}>
-            <Center bg="colorPalette.subtle.bg" height="48" borderRadius="l2">
-              <Text textStyle="3xl" fontWeight="semibold" color="colorPalette.subtle.fg">
-                {index + 1}
-              </Text>
-            </Center>
+            <Image src={image} width="full" height="80" />
           </Carousel.Item>
         ))}
       </Carousel.ItemGroup>
       <Carousel.Control>
         <Carousel.PrevTrigger asChild>
-          <IconButton size="sm" variant="plain">
+          <IconButton size="xs" variant="plain">
             <ChevronLeftIcon />
           </IconButton>
         </Carousel.PrevTrigger>
         <Carousel.IndicatorGroup />
         <Carousel.NextTrigger asChild>
-          <IconButton size="sm" variant="plain">
+          <IconButton size="xs" variant="plain">
             <ChevronRightIcon />
           </IconButton>
         </Carousel.NextTrigger>
@@ -34,3 +27,11 @@ export const App = () => {
     </Carousel.Root>
   )
 }
+
+const images = [
+  'https://tinyurl.com/5b6ka8jd',
+  'https://tinyurl.com/7rmccdn5',
+  'https://tinyurl.com/59jxz9uu',
+  'https://tinyurl.com/6jurv23t',
+  'https://tinyurl.com/yp4rfum7',
+]
