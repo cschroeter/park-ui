@@ -14,7 +14,7 @@
     ".": "./src/components/ui/index.ts"
   },
   "dependencies": {
-    "@ark-ui/react": "5.25.0",
+    "@ark-ui/react": "5.25.1",
     "lucide-react": "0.544.0"
   },
   "devDependencies": {

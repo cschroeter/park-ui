@@ -10,13 +10,13 @@
     "lint": "biome lint ./src"
   },
   "dependencies": {
-    "@ark-ui/react": "5.25.0",
+    "@ark-ui/react": "5.25.1",
     "@icons-pack/react-simple-icons": "13.7.0",
     "@park-ui/react": "workspace:*",
     "change-case": "5.4.4",
     "effect": "3.17.14",
     "framer": "2.4.1",
-    "fumadocs-core": "15.8.0",
+    "fumadocs-core": "15.8.1",
     "hastscript": "9.0.1",
     "lucide-react": "0.544.0",
     "next": "15.5.4",
