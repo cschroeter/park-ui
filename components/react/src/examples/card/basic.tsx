@@ -1,27 +1,21 @@
-import { Button, Card, Field, Input } from '@/components/ui'
+import { Box } from 'styled-system/jsx'
+import { Button, Card } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Card.Root>
+    <Card.Root width={{ base: 'full', md: '50%' }}>
       <Card.Header>
-        <Card.Title>Team Mebers</Card.Title>
-        <Card.Description>Add new members to your organisation.</Card.Description>
+        <Card.Title>Title</Card.Title>
+        <Card.Description>Description</Card.Description>
       </Card.Header>
-      <Card.Body gap="4">
-        <Field.Root>
-          <Field.Label>Name</Field.Label>
-          <Input placeholder="Name" />
-        </Field.Root>
-        <Field.Root>
-          <Field.Label>Email</Field.Label>
-          <Input placeholder="Email" />
-        </Field.Root>
+      <Card.Body>
+        <Box bg="gray.subtle.bg" minH="48" borderRadius="l2" />
       </Card.Body>
-      <Card.Footer gap="3">
+      <Card.Footer>
         <Button variant="outline" colorPalette="gray">
-          Cancel
+          Secondary
         </Button>
-        <Button>Invite</Button>
+        <Button>Primary</Button>
       </Card.Footer>
     </Card.Root>
   )

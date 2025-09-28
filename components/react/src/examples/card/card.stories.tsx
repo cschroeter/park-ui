@@ -1,17 +1,14 @@
 import type { Meta } from '@storybook/react'
-import { Box } from 'styled-system/jsx'
 
 const meta: Meta = {
   title: 'Display / Card',
-  decorators: [
-    (Story) => (
-      <Box maxW="sm">
-        <Story />
-      </Box>
-    ),
-  ],
 }
 
 export default meta
 
+export { App as avatar } from './avatar'
 export { App as basic } from './basic'
+export { App as form } from './form'
+export { App as horizontal } from './horizontal'
+export { App as image } from './image'
+export { App as variants } from './variants'

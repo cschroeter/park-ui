@@ -44,7 +44,7 @@ export const CardIssue = () => {
           </Field.HelperText>
         </Field.Root>
       </Card.Body>
-      <Card.Footer gap="3">
+      <Card.Footer>
         <Button variant="outline">Cancel</Button>
         <Button>Submit</Button>
       </Card.Footer>

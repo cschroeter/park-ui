@@ -38,7 +38,7 @@ export default defineConfig({
         colors: {
           prose: {
             heading: { value: '{colors.gray.12}' },
-            body: { value: '{colors.gray.11}' },
+            body: { value: '{colors.gray.12}' },
             link: { value: '{colors.gray.12}' },
             bold: { value: '{colors.gray.12}' },
             'td-border': { value: '{colors.gray.a3}' },
@@ -74,6 +74,9 @@ export default defineConfig({
       },
       'ul li::marker': {
         color: 'colorPalette.solid',
+      },
+      'article p': {
+        color: 'text.muted',
       },
     },
   },
