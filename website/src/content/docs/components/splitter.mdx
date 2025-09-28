@@ -20,15 +20,38 @@ import { Splitter } from '@/components/ui'
 ```
 
 ```tsx
-<Splitter.Root size={[
-  { id: 'a', size: 50 },
-  { id: 'b', size: 50 },
-]}>
-  <Splitter.Panel id="a">Panel A</Splitter.Panel>
-  <Splitter.ResizeTrigger id="a:b" />
-  <Splitter.Panel id="b">Panel B</Splitter.Panel>
+<Splitter.Root>
+  <Splitter.Panel />
+  <Splitter.ResizeTrigger />
+  <Splitter.Panel />
 </Splitter.Root>
 ```
+
+## Examples
+
+### Collapsible
+
+Set `collapsible` to true on a panel to make it collapsible. Use `collapsedSize` to control its collapsed size. This can be useful for building sidebar layouts.
+
+<ComponentExample name="collapsible" />
+
+### Vertical
+
+Use the `orientation` prop to create a vertical splitter.
+
+<ComponentExample name="vertical" />
+
+### Multiple
+
+Here is an example  with multiple panels.
+
+<ComponentExample name="multiple" />
+
+### Store
+
+Use the `useSplitter` hook to control the state of the splitter programmatically.
+
+<ComponentExample name="store" />
 
 ## Props
 

@@ -29,7 +29,8 @@
         "noForEach": "off"
       },
       "correctness": {
-        "noUnusedImports": "error"
+        "noUnusedImports": "error",
+        "useUniqueElementIds": "off"
       }
     }
   }
