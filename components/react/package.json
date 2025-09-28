@@ -25,7 +25,7 @@
     "@storybook/addon-themes": "9.1.8",
     "@storybook/react": "9.1.8",
     "@tanstack/react-virtual": "3.13.12",
-    "@types/react": "19.1.14",
+    "@types/react": "19.1.15",
     "@types/react-dom": "19.1.9",
     "lorem-ipsum": "2.0.8",
     "react": "19.1.1",
