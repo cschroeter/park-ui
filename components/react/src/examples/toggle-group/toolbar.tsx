@@ -3,8 +3,8 @@ import { ButtonGroup, IconButton, ToggleGroup } from '@/components/ui'
 
 export const App = () => {
   return (
-    <ToggleGroup.Root defaultValue={['left']} asChild>
-      <ButtonGroup variant="surface" attached>
+    <ToggleGroup.Root defaultValue={['left']} variant="outline" asChild>
+      <ButtonGroup variant="plain" size="sm">
         <ToggleGroup.Item value="left" asChild>
           <IconButton aria-label="Align Left">
             <AlignLeftIcon />

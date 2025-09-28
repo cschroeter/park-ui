@@ -53,6 +53,9 @@ export const button = defineRecipe({
         _active: {
           bg: 'colorPalette.surface.bg.active',
         },
+        _on: {
+          bg: 'colorPalette.surface.bg.active',
+        },
       },
       subtle: {
         bg: 'colorPalette.subtle.bg',
@@ -61,6 +64,9 @@ export const button = defineRecipe({
           bg: 'colorPalette.subtle.bg.hover',
         },
         _active: {
+          bg: 'colorPalette.subtle.bg.active',
+        },
+        _on: {
           bg: 'colorPalette.subtle.bg.active',
         },
       },
@@ -74,6 +80,9 @@ export const button = defineRecipe({
         _active: {
           bg: 'colorPalette.outline.bg.active',
         },
+        _on: {
+          bg: 'colorPalette.outline.bg.active',
+        },
       },
       plain: {
         color: 'colorPalette.plain.fg',
@@ -81,6 +90,9 @@ export const button = defineRecipe({
           bg: 'colorPalette.plain.bg.hover',
         },
         _active: {
+          bg: 'colorPalette.plain.bg.active',
+        },
+        _on: {
           bg: 'colorPalette.plain.bg.active',
         },
       },

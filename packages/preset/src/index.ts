@@ -28,7 +28,7 @@ export const preset = definePreset({
       },
       '*::placeholder': {
         opacity: 1,
-        color: 'gray.10',
+        color: 'gray.text.subtle',
       },
     },
   },
@@ -38,7 +38,8 @@ export const preset = definePreset({
       invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',
       hover: '&:not(:disabled):hover',
       active: '&:not(:disabled):active',
-      checked: '&:is([data-state=checked], [data-state=indeterminate])',
+      checked: '&:is(:checked, [data-checked], [aria-checked=true], [data-state=indeterminate])',
+      on: '&:is([data-state=on])',
     },
   },
   theme: {
