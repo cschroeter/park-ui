@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@pandacss/dev": "1.4.0",
-    "@rsbuild/core": "1.5.12",
+    "@rsbuild/core": "1.5.13",
     "@rsbuild/plugin-react": "1.4.1",
     "@storybook/addon-a11y": "9.1.8",
     "@storybook/addon-themes": "9.1.8",
