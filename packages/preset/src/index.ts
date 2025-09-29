@@ -38,7 +38,8 @@ export const preset = definePreset({
       invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',
       hover: '&:not(:is(:disabled, [data-state=on], :active)):hover',
       active: '&:not(:disabled):active',
-      checked: '&:is(:checked, [data-checked], [aria-checked=true], [data-state=indeterminate])',
+      checked:
+        '&:is(:checked, [data-checked], [data-state=checked], [aria-checked=true], [data-state=indeterminate])',
       on: '&:is([data-state=on])',
     },
   },
