@@ -1,53 +1,54 @@
 'use client'
-import type { Combobox as ArkCombobox } from '@ark-ui/react/combobox'
-import { useListCollection } from '@ark-ui/react/combobox'
+import { useListCollection } from '@ark-ui/react/collection'
 import { useFilter } from '@ark-ui/react/locale'
 import { Portal } from '@ark-ui/react/portal'
-import { ChevronDownIcon, XIcon } from 'lucide-react'
 import { Combobox } from '@/components/ui'
 
 export const App = () => {
   const { contains } = useFilter({ sensitivity: 'base' })
 
   const { collection, filter } = useListCollection({
-    initialItems: ['React', 'Solid', 'Vue', 'Svelte', 'Angular', 'Qwik'],
+    initialItems: frameworks,
     filter: contains,
   })
 
-  const handleInputChange = (details: ArkCombobox.InputValueChangeDetails) => {
-    filter(details.inputValue)
-  }
-
   return (
-    <Combobox.Root collection={collection} onInputValueChange={handleInputChange}>
+    <Combobox.Root collection={collection} onInputValueChange={(e) => filter(e.inputValue)}>
       <Combobox.Label>Framework</Combobox.Label>
       <Combobox.Control>
-        <Combobox.Input placeholder="Select a framework" />
-        <Combobox.Trigger>
-          <ChevronDownIcon />
-        </Combobox.Trigger>
-        <Combobox.ClearTrigger>
-          <XIcon />
-        </Combobox.ClearTrigger>
+        <Combobox.Input placeholder="Type to search" />
+        <Combobox.IndicatorGroup>
+          <Combobox.ClearTrigger />
+          <Combobox.Trigger />
+        </Combobox.IndicatorGroup>
       </Combobox.Control>
       <Portal>
         <Combobox.Positioner>
           <Combobox.Content>
-            <Combobox.ItemGroup>
-              <Combobox.ItemGroupLabel>Frameworks</Combobox.ItemGroupLabel>
-              {collection.items.map((item) => (
-                <Combobox.Item key={item} item={item}>
-                  <Combobox.ItemText>{item}</Combobox.ItemText>
-                  <Combobox.ItemIndicator>✓</Combobox.ItemIndicator>
-                </Combobox.Item>
-              ))}
-              {collection.items.length === 0 && (
-                <Combobox.Empty>No frameworks found</Combobox.Empty>
-              )}
-            </Combobox.ItemGroup>
+            <Combobox.Empty>No items found</Combobox.Empty>
+            {collection.items.map((item) => (
+              <Combobox.Item item={item} key={item.value}>
+                {item.label}
+                <Combobox.ItemIndicator />
+              </Combobox.Item>
+            ))}
           </Combobox.Content>
         </Combobox.Positioner>
       </Portal>
     </Combobox.Root>
   )
 }
+
+const frameworks = [
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Vue', value: 'vue' },
+  { label: 'Angular', value: 'angular' },
+  { label: 'Svelte', value: 'svelte' },
+  { label: 'Preact', value: 'preact' },
+  { label: 'Qwik', value: 'qwik' },
+  { label: 'Lit', value: 'lit' },
+  { label: 'Alpine.js', value: 'alpinejs' },
+  { label: 'Ember', value: 'ember' },
+  { label: 'Next.js', value: 'nextjs' },
+]

@@ -1,13 +1,13 @@
 import type { Meta } from '@storybook/react'
-import { Container } from 'styled-system/jsx'
+import { Box } from 'styled-system/jsx'
 
 const meta: Meta = {
   title: 'Forms / Select',
   decorators: [
     (Story) => (
-      <Container maxW="md">
+      <Box maxW="md">
         <Story />
-      </Container>
+      </Box>
     ),
   ],
 }

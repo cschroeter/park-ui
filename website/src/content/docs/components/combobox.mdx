@@ -21,19 +21,45 @@ import { Combobox } from '@/components/ui'
 
 ```tsx
 <Combobox.Root>
+  <Combobox.Label />
   <Combobox.Control>
-    <Combobox.Input placeholder="Select option..." />
-    <Combobox.Trigger>
+    <Combobox.Input />
+    <Combobox.IndicatorGroup>
       <Combobox.ClearTrigger />
-    </Combobox.Trigger>
+      <Combobox.Trigger />
+    </Combobox.IndicatorGroup>
   </Combobox.Control>
   <Combobox.Positioner>
     <Combobox.Content>
-      <Combobox.Item item="option1">Option 1</Combobox.Item>
+      <Combobox.Empty />
+      <Combobox.Item />
+      <Combobox.ItemGroup>
+        <Combobox.ItemGroupLabel />
+        <Combobox.Item />
+      </Combobox.ItemGroup>
     </Combobox.Content>
   </Combobox.Positioner>
 </Combobox.Root>
 ```
+
+To setup combobox, you might need to import the following hooks:
+
+- `useListCollection`: Used to manage the list of items in the combobox, providing helpful methods for filtering and mutating the list.
+- `useFilter`: Used to provide the filtering logic for the combobox based on [`Intl.Collator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator) APIs.
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to adjust the size of the combobox.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to adjust the visual style of the combobox.
+
+<ComponentExample name="variants" />
 
 ## Props
 
