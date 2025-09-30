@@ -4,22 +4,43 @@ export const link = defineRecipe({
   className: 'link',
   base: {
     alignItems: 'center',
-    color: 'fg.default',
+    borderRadius: 'l1',
     cursor: 'pointer',
     display: 'inline-flex',
+    focusRingColor: 'colorPalette.surface.fg',
+    focusVisibleRing: 'outside',
     fontWeight: 'medium',
-    gap: '2',
-    textDecoration: 'underline 0.1em transparent',
+    gap: '1.5',
+    outline: 'none',
+    textDecorationThickness: 'from-font',
     textUnderlineOffset: '0.125em',
     transitionDuration: 'normal',
     transitionProperty: 'text-decoration-color',
-    transitionTimingFunction: 'default',
-    _hover: {
-      textDecorationColor: 'colorPalette.solid',
+    _icon: {
+      boxSize: '1em',
     },
-    '& svg': {
-      width: '1em',
-      height: '1em',
+  },
+  defaultVariants: {
+    variant: 'underline',
+  },
+  variants: {
+    variant: {
+      underline: {
+        color: 'colorPalette.surface.fg',
+        textDecoration: 'underline',
+        textDecorationColor: 'colorPalette.surface.fg/60',
+        _hover: {
+          textDecorationColor: 'colorPalette.surface.fg',
+        },
+      },
+      plain: {
+        color: 'colorPalette.surface.fg',
+        textDecoration: 'underline',
+        textDecorationColor: 'transparent',
+        _hover: {
+          textDecorationColor: 'colorPalette.surface.fg',
+        },
+      },
     },
   },
 })

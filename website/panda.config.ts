@@ -75,7 +75,7 @@ export default defineConfig({
       'ul li::marker': {
         color: 'colorPalette.solid',
       },
-      'article p': {
+      '.prose p, .prose li': {
         color: 'text.muted',
       },
     },

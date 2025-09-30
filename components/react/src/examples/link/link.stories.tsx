@@ -7,3 +7,6 @@ const meta: Meta = {
 export default meta
 
 export { App as basic } from './basic'
+export { App as icon } from './icon'
+export { App as inline } from './inline'
+export { App as variants } from './variants'
