@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const popover = defineSlotRecipe({
   className: 'popover',
-  jsx: ['Popover.Root'],
   slots: popoverAnatomy.extendWith('header', 'body', 'footer').keys(),
   base: {
     content: {

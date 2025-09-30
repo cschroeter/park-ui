@@ -65,7 +65,7 @@ export const badge = defineRecipe({
         px: '2.5',
         h: '6',
         gap: '1.5',
-        _icon: { boxSize: '3.5' },
+        _icon: { boxSize: '4' },
       },
     },
   },

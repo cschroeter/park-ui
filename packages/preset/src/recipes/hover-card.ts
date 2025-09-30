@@ -3,7 +3,6 @@ import { defineSlotRecipe } from '@pandacss/dev'
 
 export const hoverCard = defineSlotRecipe({
   className: 'hover-card',
-  jsx: ['HoverCard.Root'],
   slots: hoverCardAnatomy.keys(),
   base: {
     content: {
