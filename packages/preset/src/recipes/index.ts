@@ -41,6 +41,7 @@ import { popover } from './popover'
 import { progress } from './progress'
 import { qrCode } from './qr-code'
 import { radioButtonGroup } from './radio-button-group'
+import { radioCard } from './radio-card'
 import { radioGroup } from './radio-group'
 import { ratingGroup } from './rating-group'
 import { scrollArea } from './scroll-area'
@@ -116,6 +117,7 @@ export const slotRecipes = {
   popover,
   progress,
   radioButtonGroup,
+  radioCard,
   radioGroup,
   ratingGroup,
   scrollArea,
