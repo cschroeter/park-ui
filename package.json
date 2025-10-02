@@ -20,7 +20,7 @@
     "build:types": "bun run scripts/types.ts"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.4",
+    "@biomejs/biome": "2.2.5",
     "@types/bun": "1.2.23",
     "lefthook": "1.13.6"
   },
