@@ -36,7 +36,7 @@ export const CodeSnippet = async (props: Props) => {
       my="6"
       {...rootProps}
     >
-      <Box position="absolute" top="1" right="1">
+      <Box position="absolute" top="1" right="1" zIndex="1">
         <ClipboardButton value={sourceCode.code} />
       </Box>
       <ScrollArea.Root maxH="lg" style={{ ['--scrollbar-margin' as string]: '2px' }}>
