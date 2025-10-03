@@ -105,14 +105,14 @@ export const select = defineSlotRecipe({
   },
   defaultVariants: {
     size: 'md',
-    variant: 'surface',
+    variant: 'outline',
   },
   variants: {
     variant: {
       outline: {
         trigger: {
           borderWidth: '1px',
-          borderColor: 'colorPalette.outline.border',
+          borderColor: 'gray.outline.border',
           focusRingColor: 'colorPalette.solid.bg',
           focusVisibleRing: 'inside',
         },
