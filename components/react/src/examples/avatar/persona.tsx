@@ -9,10 +9,8 @@ export const App = () => {
         <Avatar.Fallback name="Christian Busch" />
       </Avatar.Root>
       <Box>
-        <Text color="fg.default" fontWeight="medium">
-          Christian Busch
-        </Text>
-        <Text color="fg.muted" textStyle="sm">
+        <Text fontWeight="medium">Christian Busch</Text>
+        <Text color="text.muted" textStyle="sm">
           christian@park-ui.com
         </Text>
       </Box>

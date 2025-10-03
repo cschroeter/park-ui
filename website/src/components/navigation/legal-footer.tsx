@@ -1,8 +1,7 @@
-import { HStack, Stack, type StackProps } from 'styled-system/jsx'
+import { Stack, type StackProps } from 'styled-system/jsx'
 import { Text } from '@/components/ui'
-import { PageLink } from './page-link'
 
-const legalLinks = [
+export const legalLinks = [
   {
     href: '/legal/privacy',
     label: 'Privacy Policy',
@@ -29,16 +28,16 @@ export const LegalFooter = (props: StackProps) => {
       gap={{ base: '1', sm: '6' }}
       {...props}
     >
-      <Text textStyle="sm" color="fg.muted">
+      <Text textStyle="sm" color="text.muted">
         &copy; {new Date().getFullYear()} Chakra Systems. All rights reserved.
       </Text>
-      <HStack gap="3">
+      {/* <HStack gap="3">
         {legalLinks.map((link, idx) => (
           <PageLink key={idx} href={link.href} textStyle="sm" colorPalette="gray">
             {link.shortLabel}
           </PageLink>
         ))}
-      </HStack>
+      </HStack> */}
     </Stack>
   )
 }

@@ -23,7 +23,7 @@ export const CardAuthentication = () => {
               GitHub
             </Button>
           </Stack>
-          <HStack gap="2">
+          <HStack>
             <Divider flex="1" />
             <Text color="fg.subtle" textStyle="sm" whiteSpace="nowrap">
               or sign up with

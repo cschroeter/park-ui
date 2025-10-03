@@ -16,7 +16,7 @@ export const App = () => {
               <Dialog.Title>Title</Dialog.Title>
             </Dialog.Header>
             <Dialog.Body
-              color="fg.muted"
+              color="text.muted"
               dangerouslySetInnerHTML={{
                 __html: loremIpsum({ count: 10, format: 'html', units: 'paragraphs' }),
               }}

@@ -5,6 +5,7 @@ const GETTING_STARTED_PRIORITY = [
   'introduction',
   'installation',
   'theming',
+  'migration',
   'figma',
   'about',
 ] as const

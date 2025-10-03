@@ -45,7 +45,9 @@ export const CardIssue = () => {
         </Field.Root>
       </Card.Body>
       <Card.Footer>
-        <Button variant="outline">Cancel</Button>
+        <Button variant="outline" colorPalette="gray">
+          Cancel
+        </Button>
         <Button>Submit</Button>
       </Card.Footer>
     </Card.Root>

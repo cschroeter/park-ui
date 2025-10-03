@@ -24,7 +24,7 @@ export const PageHeader = (props: Props) => {
             {title}
           </Heading>
         </Stack>
-        <Text color="fg.muted" fontSize={{ base: 'lg', md: 'xl' }} maxW="3xl">
+        <Text color="text.muted" fontSize={{ base: 'lg', md: 'xl' }} maxW="3xl">
           {description}
         </Text>
       </Stack>

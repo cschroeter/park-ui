@@ -1,7 +1,9 @@
 import { Box, Grid, GridItem, Stack } from 'styled-system/jsx'
 import { CardAuthentication } from '~/components/marketing/card-authentication'
+import { CardECommerce } from '~/components/marketing/card-ecommerce'
 import { CardIssue } from '~/components/marketing/card-issue'
 import { CardNotification } from '~/components/marketing/card-notification'
+import { CardPayment } from '~/components/marketing/card-payment'
 import { CardPricing } from '~/components/marketing/card-pricing'
 import { CardSharing } from '~/components/marketing/card-sharing'
 import { CardTabs } from '~/components/marketing/card-tabs'
@@ -57,10 +59,10 @@ export default function Page() {
               </Group>
               <Group>
                 <Item>
-                  <CardAuthentication />
+                  <CardPayment />
                 </Item>
                 <Item>
-                  <CardAuthentication />
+                  <CardECommerce />
                 </Item>
                 <Item>
                   <CardAuthentication />

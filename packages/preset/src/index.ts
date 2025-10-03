@@ -17,18 +17,18 @@ export const preset = definePreset({
   globalCss: {
     extend: {
       '*, *::before, *::after': {
-        borderColor: 'border.subtle',
+        borderColor: 'gray.a4',
       },
       body: {
         background: 'gray.1',
-        color: 'fg.default',
+        color: 'text',
       },
       '*::selection': {
         bg: 'colorPalette.a3',
       },
       '*::placeholder': {
         opacity: 1,
-        color: 'gray.text.subtle',
+        color: 'text.subtle',
       },
     },
   },

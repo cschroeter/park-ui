@@ -50,11 +50,7 @@ export const Toaster = () => {
       <StyledToaster toaster={toaster} insetInline={{ mdDown: '4' }}>
         {(toast) => (
           <Root>
-            {toast.type === 'loading' ? (
-              <Spinner color="colorPalette.plain.fg.muted" />
-            ) : (
-              <Indicator />
-            )}
+            {toast.type === 'loading' ? <Spinner color="colorPalette.plain.fg" /> : <Indicator />}
 
             <Stack gap="3" alignItems="start">
               <Stack gap="1">

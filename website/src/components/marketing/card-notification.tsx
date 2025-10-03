@@ -15,7 +15,7 @@ export const CardNotification = () => {
             <Text textStyle="sm" fontWeight="medium">
               Disputes
             </Text>
-            <Text textStyle="sm" color="fg.muted">
+            <Text textStyle="sm" color="text.muted">
               Receive a notification if a payment is disputed by a customer.
             </Text>
           </Stack>
@@ -26,7 +26,7 @@ export const CardNotification = () => {
             <Text textStyle="sm" fontWeight="medium">
               Fraudulent payments
             </Text>
-            <Text textStyle="sm" color="fg.muted">
+            <Text textStyle="sm" color="text.muted">
               Receive a notification if Radar detects a fraudulent payment on your account.
             </Text>
           </Stack>
@@ -37,7 +37,7 @@ export const CardNotification = () => {
             <Text textStyle="sm" fontWeight="medium">
               Successful payments
             </Text>
-            <Text textStyle="sm" color="fg.muted">
+            <Text textStyle="sm" color="text.muted">
               Receive a notification for every successful payment.
             </Text>
           </Stack>
@@ -45,7 +45,7 @@ export const CardNotification = () => {
         </Stack>
       </Card.Body>
       <Card.Footer>
-        <Button variant="outline" width="full">
+        <Button variant="outline" colorPalette="gray" width="full">
           Save Preferences
         </Button>
       </Card.Footer>

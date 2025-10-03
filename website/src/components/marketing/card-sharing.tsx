@@ -63,7 +63,7 @@ const Member = (props: Props) => {
           <Text textStyle="sm" fontWeight="medium">
             {name}
           </Text>
-          <Text textStyle="sm" color="fg.muted">
+          <Text textStyle="sm" color="text.muted">
             {email}
           </Text>
         </Box>

@@ -15,16 +15,12 @@ export const radioButtonGroup = defineSlotRecipe({
       borderColor: 'border.default',
       borderRadius: 'l2',
       borderWidth: '1px',
-      color: 'fg.default',
       cursor: 'pointer',
       display: 'inline-flex',
       fontWeight: 'semibold',
       justifyContent: 'center',
       outline: 'none',
       position: 'relative',
-      transitionDuration: 'normal',
-      transitionProperty: 'background, border-color, color, box-shadow',
-      transitionTimingFunction: 'default',
       userSelect: 'none',
       verticalAlign: 'middle',
       whiteSpace: 'nowrap',
@@ -35,14 +31,9 @@ export const radioButtonGroup = defineSlotRecipe({
         cursor: 'default',
       },
       _disabled: {
-        borderColor: 'border.disabled',
-        color: 'fg.disabled',
+        borderColor: 'gray.6',
+        color: 'gray.6',
         cursor: 'not-allowed',
-        _hover: {
-          background: 'initial',
-          borderColor: 'border.disabled',
-          color: 'fg.disabled',
-        },
       },
     },
     itemText: {
@@ -59,12 +50,12 @@ export const radioButtonGroup = defineSlotRecipe({
       solid: {
         item: {
           _checked: {
-            background: 'colorPalette.solid',
-            borderColor: 'colorPalette.solid',
+            background: 'colorPalette.solid.bg',
+            borderColor: 'colorPalette.solid.bg',
             color: 'colorPalette.solid.fg',
             _hover: {
               color: 'colorPalette.solid.fg',
-              background: 'colorPalette.solid',
+              background: 'colorPalette.solid.bg',
             },
           },
         },
@@ -72,7 +63,7 @@ export const radioButtonGroup = defineSlotRecipe({
       outline: {
         item: {
           _checked: {
-            borderColor: 'colorPalette.solid',
+            borderColor: 'colorPalette.solid.bg',
             boxShadow: '0 0 0 1px var(--colors-color-palette-solid-bg)',
             _hover: {
               background: 'initial',

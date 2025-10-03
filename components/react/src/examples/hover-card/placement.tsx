@@ -27,11 +27,11 @@ export const App = () => {
                   <Text size="sm" fontWeight="semibold">
                     @grizzly_codes
                   </Text>
-                  <Text size="sm" color="fg.muted">
+                  <Text size="sm" color="text.muted">
                     Principal Software Engineer working at Pyck.ai
                   </Text>
                 </Stack>
-                <HStack gap="1" color="fg.subtle">
+                <HStack gap="1" color="text.subtle">
                   <Icon size="sm">
                     <MapPinIcon />
                   </Icon>
