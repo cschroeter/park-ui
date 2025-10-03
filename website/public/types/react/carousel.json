@@ -103,8 +103,12 @@
   },
   "Root": {
     "props": {
+      "inline": {
+        "type": "boolean",
+        "isRequired": false
+      },
       "size": {
-        "type": "'sm' | 'md'",
+        "type": "'md'",
         "defaultValue": "'md'",
         "isRequired": false
       },

@@ -20,13 +20,7 @@
   "Root": {
     "props": {
       "variant": {
-        "type": "'outline' | 'ghost'",
-        "defaultValue": "'outline'",
-        "isRequired": false
-      },
-      "size": {
-        "type": "'sm' | 'md' | 'lg'",
-        "defaultValue": "'md'",
+        "type": "'outline'",
         "isRequired": false
       },
       "asChild": {
