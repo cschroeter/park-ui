@@ -11,7 +11,7 @@ export const Sidebar = (props: BoxProps) => {
       position="sticky"
       top="14"
       h="full"
-      bg="bg.default"
+      bg="gray.surface.bg"
       maxH="calc(100dvh - 64px)"
       borderRightWidth={{ base: '1px', lg: '0' }}
       {...props}

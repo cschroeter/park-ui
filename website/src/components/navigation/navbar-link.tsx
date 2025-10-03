@@ -27,6 +27,7 @@ export const NavbarLink = (props: Props) => {
           height: 'full',
           width: 'full',
           textStyle: 'md',
+          userSelect: 'none',
           py: '4',
           px: '5',
           _hover: {
