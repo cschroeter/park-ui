@@ -8,6 +8,7 @@ import { Navbar } from '~/components/navigation/navbar'
 import { ThemeTokens } from '~/components/theme/theme-tokens'
 import { dmSans, inter, outfit, roboto, space } from './fonts'
 import './index.css'
+import Script from 'next/script'
 
 export default async function RootLayout(props: PropsWithChildren) {
   const cookieStore = await cookies()
@@ -33,6 +34,7 @@ export default async function RootLayout(props: PropsWithChildren) {
     >
       <head>
         <ThemeTokens />
+        <Script src="https://plausible.io/js/plausible.js" data-domain="next.park-ui.com" />
       </head>
       <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>
