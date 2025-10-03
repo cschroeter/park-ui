@@ -17,9 +17,14 @@ export const VariantPreview = (props: Props) => {
   const states = ['base', 'hover', 'active', 'disabled'] as const
 
   return (
-    <Stack gap="3" key={variant} mb="8">
+    <Stack key={variant} mb="8" direction={{ base: 'row', sm: 'column' }}>
       {colors.map((color) => (
-        <Grid key={color} gridTemplateColumns="repeat(4, 1fr)" colorPalette={color}>
+        <Grid
+          key={color}
+          gridTemplateColumns={{ base: '1fr', sm: 'repeat(4, 1fr)' }}
+          colorPalette={color}
+          width="full"
+        >
           {states.map((state) => (
             <VariantBox key={state} variant={variant} data-state={state} textTransform="capitalize">
               {state === 'base' ? color : `_${state}`}
@@ -42,7 +47,7 @@ const styles = cva({
     justifyContent: 'start',
     pb: '1',
     ps: '2',
-    textStyle: 'xs',
+    textStyle: 'sm',
     transition: 'colors',
     userSelect: 'none',
     "&[data-state='disabled']": {
@@ -55,9 +60,6 @@ const styles = cva({
         bg: 'colorPalette.solid.bg',
         color: 'colorPalette.solid.fg',
         "&[data-state='hover']": {
-          bg: 'colorPalette.solid.bg.hover',
-        },
-        "&[data-state='active']": {
           bg: 'colorPalette.solid.bg.hover',
         },
       },
