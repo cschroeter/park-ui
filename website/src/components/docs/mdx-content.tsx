@@ -16,6 +16,7 @@ import { InstallationGuide } from './installation-guide'
 import { PropsTable } from './props-table'
 import { QuickstartGuide } from './quickstart-guide'
 import { ShadowTokens } from './shadow-tokens'
+import { VariantPreview } from './variant-preview'
 
 // TODO this needs to be more capable
 const Pre = async (props: PropsWithChildren) => {
@@ -42,6 +43,7 @@ const sharedComponents = {
   ShadowTokens,
   Step,
   Steps,
+  VariantPreview,
   a: PageLink,
   code: Code,
   callout: Callout,

@@ -48,7 +48,7 @@ export const button = defineRecipe({
         borderColor: 'colorPalette.surface.border',
         color: 'colorPalette.surface.fg',
         _hover: {
-          boxShadowColor: 'colorPalette.surface.border.hover',
+          borderColor: 'colorPalette.surface.border.hover',
         },
         _active: {
           bg: 'colorPalette.surface.bg.active',

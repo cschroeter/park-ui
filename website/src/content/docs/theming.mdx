@@ -4,24 +4,68 @@ description: This guide covers the key differences Park UI introduces to theming
 category: getting-started
 ---
 
-Park UI builds on the default [Panda Preset](https://www.npmjs.com/package/@pandacss/preset-panda). To achieve a consistent, minimal design system, it introduces a few key adjustments to the standard Panda configuration.
+Park UI extends the default [Panda Preset](https://www.npmjs.com/package/@pandacss/preset-panda) with a minimal, systematic design approach. It introduces key adjustments to component sizing and variants to ensure alignment and visual consistency across your UI.
 
-## Component Sizing
+## Components
 
-In Park UI, components are grouped into two categories:
+Park UI components are designed with consistent sizing and standardized variants to ensure visual harmony across your interface.
 
-* **Primary components** — the main interactive elements in your interface (e.g. Buttons, Inputs, Selects).
-* **Secondary components** — smaller supporting elements that work alongside primaries (e.g. Badges, Checkboxes, Switches).
+### Sizing
 
-Within each category, components share the same height for a given size token. For example, `md` Buttons and Inputs are both `40px` tall.
+Park UI organizes component sizing into two categories:
+
+* **Primary components** — core interactive elements that drive user actions (e.g., Buttons, Inputs, Selects).
+* **Secondary components** — supporting elements that complement primary interactions (e.g., Badges, Checkboxes, Switches).
+
+This categorization establishes a clear hierarchy and guarantees alignment. Components within the same category share identical heights for a given size token. For example, both a `md` Button and a `md` Input are exactly `40px` tall, ensuring perfect alignment when placed together.
 
 <ComponentSizing />
 
+### Variants
 
-## Color System
+Variants are standardized across components for a unified look and feel. Park UI defines five shared variants:
 
-The biggest change Park UI introduces is its color system. Instead of the `50–950` scale used in Panda CSS, Park UI is built on [Radix Colors](https://www.radix-ui.com/colors).
-Each color comes with 12 shades per mode (light and dark), for a total of 24 shades. This provides finer control and greater flexibility than the traditional 11-shade scale.
+* `solid`
+* `subtle`
+* `surface`
+* `outline`
+* `plain`
+
+This consistency allows you to combine components without worrying about mismatched styles. Using the same variant across elements guarantees visual harmony.
+
+#### Solid
+
+High-contrast background with inverted foreground. Use for primary CTAs, submit buttons, and main actions.
+
+<VariantPreview variant="solid" />
+
+#### Subtle
+
+Tinted background with matching foreground. Use for badges, tags, selected states, and secondary highlights.
+
+<VariantPreview variant="subtle" />
+
+#### Surface
+
+Background with visible border and hover states. Use for cards, menu items, selectable lists, and elevated containers.
+
+<VariantPreview variant="surface" />
+
+#### Outline
+
+Border-only with transparent background. Use for secondary actions, cancel buttons, filters, and tertiary controls.
+
+<VariantPreview variant="outline" />
+
+#### Plain
+
+Minimal style with background on interaction. Use for text buttons, links, tabs, and ghost actions.
+
+<VariantPreview variant="plain" />
+
+## Colors
+
+The biggest change Park UI introduces is its color system. Instead of the `50–950` scale used in Panda CSS, Park UI is built on [Radix Colors](https://www.radix-ui.com/colors). Each color comes with 12 shades per mode (light and dark), for a total of 24 shades. This provides finer control and greater flexibility than the traditional 11-shade scale.
 
 ### Gray
 
@@ -31,10 +75,9 @@ Each color comes with 12 shades per mode (light and dark), for a total of 24 sha
 
 <ColorGrid type="accent" />
 
-### Color Pairings
+### Pairings
 
 Park UI is built around the concept of one accent color and one gray color. When initializing your project, you'll choose which combination works best for you.
-
 
 #### Neutral Pairings
 
@@ -56,31 +99,7 @@ Radii tokens define consistent corner rounding across components. This setup mak
 * **`l2`** – medium radius, used when wrapping `l1`
 * **`l3`** – largest radius, used when wrapping `l2`
 
-<BorderRadiusTokens />  
-
-### Colors
-
-#### Foreground
-
-| Name     | CSS Variable                | Token Name    |
-| -------- | --------------------------- | ------------- |
-| Default  | `var(--colors-fg-default)`  | `fg.default`  |
-| Muted    | `var(--colors-fg-muted)`    | `fg.muted`    |
-| Subtle   | `var(--colors-fg-subtle)`   | `fg.subtle`   |
-| Disabled | `var(--colors-fg-disabled)` | `fg.disabled` |
-| Error    | `var(--colors-fg-error)`    | `fg.error`    |
-
-
-#### Background
-
-| Name       | CSS Variable                  | Token Name      |
-| ---------- | ----------------------------- | --------------- |
-| Canvas     | `var(--colors-bg-canvas)`     | `bg.canvas`     |
-| Default    | `var(--colors-bg-default)`    | `bg.default`    |
-| Subtle     | `var(--colors-bg-subtle)`     | `bg.subtle`     |
-| Muted      | `var(--colors-bg-muted)`      | `bg.muted`      |
-| Emphasized | `var(--colors-bg-emphasized)` | `bg.emphasized` |
-| Disabled   | `var(--colors-bg-disabled)`   | `bg.disabled`   |
+<BorderRadiusTokens />
 
 ### Shadows
 
