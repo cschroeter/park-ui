@@ -3,7 +3,7 @@ import { Text } from '@/components/ui'
 
 export const ComponentSizing = () => {
   return (
-    <Stack gap="6" className="not-prose" my="8">
+    <Stack gap="6" className="not-prose" my="8" fontFamily="code">
       {sizes.map(({ label, height, boxSize }) => (
         <Stack key={label} direction="row" gap="1">
           <Center textStyle="xs">{HEIGHT_MAP[height]}px</Center>
@@ -12,9 +12,9 @@ export const ComponentSizing = () => {
           </Center>
           <Box
             h={height}
-            bg="colorPalette.9"
+            bg="colorPalette.solid.bg"
             color="colorPalette.solid.fg"
-            textStyle="sm"
+            textStyle="xs"
             display="flex"
             alignItems="flex-end"
             px="2.5"
@@ -31,9 +31,9 @@ export const ComponentSizing = () => {
             <Box width="1px" bg="gray.9" h="full" />
             <Box width="2" h="1px" bg="gray.9" position="absolute" transform="translateY(-50%)" />
           </Center>
-          <Stack gap="0" justify="space-around">
-            <Text textStyle="xs">{HEIGHT_MAP[height] / 2}px</Text>
-            <Text textStyle="xs">{HEIGHT_MAP[height] / 2}px</Text>
+          <Stack gap="0" justify="space-around" lineHeight="1">
+            <Text fontSize="xs">{HEIGHT_MAP[height] / 2}px</Text>
+            <Text fontSize="xs">{HEIGHT_MAP[height] / 2}px</Text>
           </Stack>
         </Stack>
       ))}

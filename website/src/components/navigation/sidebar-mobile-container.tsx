@@ -14,12 +14,12 @@ export const SidebarMobileContainer = () => {
       insetX="0"
       top="14"
       hideFrom="lg"
-      bg="bg.default"
-      zIndex="sticky"
+      bg="gray.surface.bg"
+      zIndex="docked"
     >
       <Drawer.Root placement="start" size={{ smDown: 'full', md: 'sm' }}>
         <Drawer.Trigger asChild>
-          <IconButton size="sm" variant="plain">
+          <IconButton size="sm" variant="plain" colorPalette="gray">
             <MenuIcon />
           </IconButton>
         </Drawer.Trigger>

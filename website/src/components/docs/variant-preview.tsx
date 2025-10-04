@@ -47,7 +47,7 @@ const styles = cva({
     justifyContent: 'start',
     pb: '1',
     ps: '2',
-    textStyle: 'sm',
+    textStyle: 'xs',
     transition: 'colors',
     userSelect: 'none',
     "&[data-state='disabled']": {

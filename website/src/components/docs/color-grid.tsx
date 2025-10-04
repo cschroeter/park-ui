@@ -27,7 +27,14 @@ const ColorPalette = (props: ColorPaletteProps) => {
   const { color } = props
   return (
     <Stack direction={{ base: 'column', sm: 'row' }} gap="1.5">
-      <Flex alignItems="center" textTransform="capitalize" w="20">
+      <Flex
+        alignItems="center"
+        textTransform="capitalize"
+        w="20"
+        textStyle="sm"
+        fontWeight="medium"
+        color="text.muted"
+      >
         {color}
       </Flex>
       <Grid columns={{ base: 6, sm: 12 }} gap="1" width="full">
