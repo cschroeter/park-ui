@@ -8,6 +8,7 @@ import { ErrorBoundary } from '../error-boundary'
 import { CodePreviewTabs } from './code-preview-tabs'
 
 interface Props {
+  component?: string
   name: string
   codeOnly?: boolean
 }
@@ -16,7 +17,9 @@ const getCachedComponentSourceCode = cache(getComponentSourceCode)
 
 export const ComponentExample = async (props: Props) => {
   const { name, codeOnly } = props
-  const { component } = getServerContext()
+  const ctx = getServerContext()
+
+  const component = props.component ?? ctx.component
 
   const Example = getComponentExample({ component, name })
   const sources = await getCachedComponentSourceCode({
@@ -25,7 +28,7 @@ export const ComponentExample = async (props: Props) => {
   })
 
   if (codeOnly) {
-    return <CodePreviewTabs sources={sources} defaultValue="react" />
+    return <CodePreviewTabs sources={sources} defaultValue="react" borderRadius="l3" />
   }
 
   return (

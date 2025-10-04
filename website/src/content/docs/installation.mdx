@@ -21,11 +21,10 @@ If not, please refer to the [Panda CSS Getting Started Guide](https://panda-css.
 </Step>
 <Step title="Install Dependencies" number="2">
 
-Park UI requires [Ark UI](https://ark-ui.com), a headless component library for building design systems.
-It provides the foundational components that Park UI builds upon.
+Park UI is built on [Ark UI](https://ark-ui.com) as its headless foundation and uses [Lucide Icons](https://lucide.dev) by default, but you can swap it out for any icon library of your choice.
 
 ```bash multi
-npm install @ark-ui/react
+npm install @ark-ui/react lucide-react
 ```
 
 </Step>
@@ -52,17 +51,7 @@ npx @park-ui/cli@next add button
 
 The command above will add the Button component to your project. You can then import it like this:
 
-```tsx
-import { Button } from '@/components/ui'
-
-export default function Home() {
-  return (
-    <div>
-      <Button>Park UI</Button>
-    </div>
-  )
-}
-```
+<ComponentExample component="Button" name="basic" codeOnly />
 
 That's it! Happy hacking! ✌️
 </Step>

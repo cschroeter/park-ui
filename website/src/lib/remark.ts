@@ -1,6 +1,6 @@
 import type { Properties } from 'hast'
 import { h } from 'hastscript'
-import type { Node, Paragraph, Root, Strong } from 'mdast'
+import type { Code, Node, Paragraph, Root, Strong } from 'mdast'
 import type { ContainerDirective, ContainerDirectiveData } from 'mdast-util-directive'
 import { visit } from 'unist-util-visit'
 
@@ -69,6 +69,32 @@ export function remarkCallout() {
       data.hProperties = {
         ...h(tagName, calloutNode.attributes || {}).properties,
         type: calloutNode.name !== 'callout' ? calloutNode.name : true,
+      }
+    })
+  }
+}
+
+export function remarkCodeMeta() {
+  return (tree: Root) => {
+    visit(tree, 'code', (node: Code) => {
+      const meta = node.meta || ''
+      if (meta) {
+        node.data = node.data || {}
+        node.data.hProperties = node.data.hProperties || {}
+        const hProperties = node.data.hProperties
+        hProperties['data-meta'] = meta
+
+        // Parse meta string and add individual properties
+        const metaParts = meta.split(/\s+/)
+        metaParts.forEach((part: string) => {
+          const [key, value] = part.split('=')
+          if (value) {
+            hProperties[`data-${key}`] = value.replace(/['"]/g, '')
+          } else {
+            // For flags without values (like "multi")
+            hProperties[`data-${part}`] = true
+          }
+        })
       }
     })
   }

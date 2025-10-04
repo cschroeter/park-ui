@@ -3,7 +3,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive'
 import { defineCollection, defineConfig, s } from 'velite'
-import { remarkCallout } from '~/lib/remark'
+import { remarkCallout, remarkCodeMeta } from '~/lib/remark'
 
 const docs = defineCollection({
   name: 'Doc',
@@ -51,7 +51,7 @@ export default defineConfig({
         },
       ],
     ],
-    remarkPlugins: [remarkDirective, remarkCallout],
+    remarkPlugins: [remarkDirective, remarkCallout, remarkCodeMeta],
   },
 })
 

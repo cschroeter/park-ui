@@ -1,12 +1,10 @@
-import type { PropsWithChildren } from 'react'
 import * as runtime from 'react/jsx-runtime'
 import { Code } from '@/components/ui'
-import type { SourceCode } from '~/types'
 import { PageLink } from '../navigation/page-link'
+import { Pre } from '../ui/pre'
 import { Step, Steps } from '../ui/steps'
 import { BorderRadiusTokens } from './border-radius-tokens'
 import { Callout } from './callout'
-import { CodeSnippet } from './code-snippet'
 import { ColorGrid } from './color-grid'
 import { ColorPairings } from './color-pairings'
 import { ComponentExample } from './component-example'
@@ -17,18 +15,6 @@ import { PropsTable } from './props-table'
 import { QuickstartGuide } from './quickstart-guide'
 import { ShadowTokens } from './shadow-tokens'
 import { VariantPreview } from './variant-preview'
-
-// TODO this needs to be more capable
-const Pre = async (props: PropsWithChildren) => {
-  // @ts-expect-error it exists
-  const lang = props.children?.props.className?.replace('language-', '')
-  // @ts-expect-error it exists
-  const code = props.children?.props.children.toString() as string
-
-  const sourceCode: SourceCode = { code, lang }
-
-  return <CodeSnippet sourceCode={sourceCode} />
-}
 
 const sharedComponents = {
   BorderRadiusTokens,
