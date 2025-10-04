@@ -32,7 +32,7 @@ export const CommandMenu = () => {
       onOpenChange={(event) => setOpen(event.open)}
       motionPreset="slide-in-bottom"
       scrollBehavior="inside"
-      size="lg"
+      size="md"
     >
       <Dialog.Trigger asChild>
         <Button variant="subtle" colorPalette="gray" size="sm" minW="64" hideBelow="md">
