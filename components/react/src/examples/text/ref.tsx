@@ -1,5 +1,4 @@
 'use client'
-
 import { useRef } from 'react'
 import { Text } from '@/components/ui'
 

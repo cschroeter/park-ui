@@ -85,9 +85,10 @@ export default defineConfig({
     css: [
       {
         properties: {
-          width: ['*'],
-          height: ['*'],
           boxShadow: ['*'],
+          height: ['*'],
+          textStyles: ['*'],
+          width: ['*'],
         },
       },
     ],

@@ -1,5 +1,4 @@
 'use client'
-
 import { Dialog, useDialogContext } from '@ark-ui/react/dialog'
 import { ark } from '@ark-ui/react/factory'
 import { type ComponentProps, forwardRef } from 'react'

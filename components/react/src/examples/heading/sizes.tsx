@@ -3,18 +3,18 @@ import { Heading } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Stack>
-      <Heading size="xs">Ag</Heading>
-      <Heading size="sm">Ag</Heading>
-      <Heading size="md">Ag</Heading>
-      <Heading size="lg">Ag</Heading>
-      <Heading size="xl">Ag</Heading>
-      <Heading size="2xl">Ag</Heading>
-      <Heading size="3xl">Ag</Heading>
-      <Heading size="4xl">Ag</Heading>
-      <Heading size="5xl">Ag</Heading>
-      <Heading size="6xl">Ag</Heading>
-      <Heading size="7xl">Ag</Heading>
+    <Stack gap="0">
+      <Heading textStyle="xs">Ag</Heading>
+      <Heading textStyle="sm">Ag</Heading>
+      <Heading textStyle="md">Ag</Heading>
+      <Heading textStyle="lg">Ag</Heading>
+      <Heading textStyle="xl">Ag</Heading>
+      <Heading textStyle="2xl">Ag</Heading>
+      <Heading textStyle="3xl">Ag</Heading>
+      <Heading textStyle="4xl">Ag</Heading>
+      <Heading textStyle="5xl">Ag</Heading>
+      <Heading textStyle="6xl">Ag</Heading>
+      <Heading textStyle="7xl">Ag</Heading>
     </Stack>
   )
 }
