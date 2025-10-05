@@ -23,12 +23,12 @@ export const CardECommerce = () => {
             </Text>
             <HStack gap="1.5">
               <RatingGroup count={5} defaultValue={4} readOnly size="xs" />
-              <Link href="#" textStyle="sm" color="text.muted" colorPalette="gray">
+              <Link href="#" textStyle="sm" color="fg.muted" colorPalette="gray">
                 12 Reviews
               </Link>
             </HStack>
           </HStack>
-          <Text color="text.muted">
+          <Text color="fg.muted">
             With a sleek design and a captivating essence, this is a modern Classic made for every
             occasion.
           </Text>
@@ -108,7 +108,7 @@ const SizePicker = () => {
         </RadioButtonGroup.Root>
       </Stack>
 
-      <HStack color="text.muted">
+      <HStack color="fg.muted">
         <Icon size="sm">
           <RulerIcon />
         </Icon>

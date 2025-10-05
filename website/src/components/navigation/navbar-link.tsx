@@ -21,7 +21,7 @@ export const NavbarLink = (props: Props) => {
       className={cx(
         'group',
         css({
-          color: 'text.muted',
+          color: 'fg.muted',
           position: 'relative',
           display: 'block',
           height: 'full',
@@ -31,10 +31,10 @@ export const NavbarLink = (props: Props) => {
           py: '4',
           px: '5',
           _hover: {
-            color: 'text',
+            color: 'fg.default',
           },
           _currentPage: {
-            color: 'text',
+            color: 'fg.default',
           },
         }),
       )}

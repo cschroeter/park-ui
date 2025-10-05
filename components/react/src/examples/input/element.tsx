@@ -8,7 +8,7 @@ export const App = () => {
       <InputGroup startElement={<UserIcon />}>
         <Input placeholder="Username" />
       </InputGroup>
-      <InputGroup startElement="https://" startElementProps={{ color: 'text.muted' }}>
+      <InputGroup startElement="https://" startElementProps={{ color: 'fg.muted' }}>
         <Input ps="7ch" placeholder="yoursite.com" />
       </InputGroup>
       <InputGroup flex="1" startElement={<SearchIcon />} endElement={<Kbd>⌘K</Kbd>}>

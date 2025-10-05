@@ -36,7 +36,7 @@ export const CommandMenu = () => {
     >
       <Dialog.Trigger asChild>
         <Button variant="subtle" colorPalette="gray" size="sm" minW="64" hideBelow="md">
-          <Icon color="text.muted" size="sm">
+          <Icon color="fg.muted" size="sm">
             <SearchIcon />
           </Icon>
           <Span
@@ -87,7 +87,7 @@ export const CommandMenu = () => {
                     {matchEntries.map(([key, items]) => (
                       <Combobox.ItemGroup key={key}>
                         <Combobox.ItemGroupLabel
-                          color="text.muted"
+                          color="fg.muted"
                           fontWeight="medium"
                           px="2.5"
                           pb="1"
@@ -104,7 +104,7 @@ export const CommandMenu = () => {
                             gap="2"
                             px="2.5"
                           >
-                            <Icon color="text.muted" size="xs">
+                            <Icon color="fg.muted" size="xs">
                               {item.category === 'Components' ? (
                                 <CircleDashedIcon />
                               ) : (
@@ -134,7 +134,7 @@ export const CommandMenu = () => {
                   <CornerDownLeftIcon />
                 </Icon>
               </Kbd>
-              <Text color="text.muted">Go to Page</Text>
+              <Text color="fg.muted">Go to Page</Text>
             </Dialog.Footer>
           </Dialog.Content>
         </Dialog.Positioner>

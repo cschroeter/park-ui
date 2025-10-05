@@ -15,7 +15,7 @@ export const App = () => {
             <Text fontWeight="semibold" textStyle="sm">
               Nate Foss
             </Text>
-            <Text color="text.muted" textStyle="sm">
+            <Text color="fg.muted" textStyle="sm">
               @natefoss
             </Text>
           </Stack>

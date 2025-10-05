@@ -76,7 +76,7 @@ export default defineConfig({
         color: 'colorPalette.solid',
       },
       '.prose p, .prose li': {
-        color: 'text.muted',
+        color: 'fg.muted',
       },
     },
   },

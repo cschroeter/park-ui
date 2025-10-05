@@ -10,7 +10,7 @@ export const App = () => {
       </Avatar.Root>
       <Box>
         <Text fontWeight="medium">Christian Busch</Text>
-        <Text color="text.muted" textStyle="sm">
+        <Text color="fg.muted" textStyle="sm">
           christian@park-ui.com
         </Text>
       </Box>

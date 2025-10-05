@@ -25,7 +25,7 @@ const recipe = sva({
     item: {
       borderStartWidth: '1px',
       borderColor: 'transparent',
-      color: 'text.muted',
+      color: 'fg.muted',
       borderEndRadius: 'l2',
       fontSize: 'sm',
       display: 'flex',

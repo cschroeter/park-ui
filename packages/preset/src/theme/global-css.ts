@@ -7,14 +7,14 @@ export const globalCss = defineGlobalStyles({
     },
     body: {
       background: 'gray.1',
-      color: 'text',
+      color: 'fg.default',
     },
     '*::selection': {
       bg: 'colorPalette.a3',
     },
     '*::placeholder': {
       opacity: 1,
-      color: 'text.subtle',
+      color: 'fg.subtle',
     },
   },
 })

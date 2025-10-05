@@ -33,7 +33,7 @@ const ColorPalette = (props: ColorPaletteProps) => {
         w="20"
         textStyle="sm"
         fontWeight="medium"
-        color="text.muted"
+        color="fg.muted"
       >
         {color}
       </Flex>

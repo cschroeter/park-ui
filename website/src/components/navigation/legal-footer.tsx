@@ -28,7 +28,7 @@ export const LegalFooter = (props: StackProps) => {
       gap={{ base: '1', sm: '6' }}
       {...props}
     >
-      <Text textStyle="sm" color="text.muted">
+      <Text textStyle="sm" color="fg.muted">
         &copy; {new Date().getFullYear()} Chakra Systems. All rights reserved.
       </Text>
       {/* <HStack gap="3">

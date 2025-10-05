@@ -35,19 +35,12 @@ export const preset = definePreset({
           ...colorPalettes,
           gray: colorPalettes.neutral,
           // aliases
-          text: {
-            DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
-            muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
-            subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
-          },
-          // deprecated
           fg: {
             default: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },
             muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
             subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
-            disabled: { value: { _light: '{colors.gray.9}', _dark: '{colors.gray.9}' } },
-            error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
           },
+          // deprecated
           border: {
             default: { value: { _light: '{colors.gray.a7}', _dark: '{colors.gray.a7}' } },
             muted: { value: { _light: '{colors.gray.a6}', _dark: '{colors.gray.a6}' } },

@@ -14,7 +14,7 @@ export const Hero = () => {
           <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
             Build your own Design System
           </Heading>
-          <Text textStyle={{ base: 'lg', md: 'xl' }} color="text.muted" maxW="2xl">
+          <Text textStyle={{ base: 'lg', md: 'xl' }} color="fg.muted" maxW="2xl">
             Beautifully designed components built with Ark UI and Panda CSS that work with a variety
             of JS frameworks.
           </Text>
@@ -37,7 +37,7 @@ export const Hero = () => {
           ].map(({ framework, icon }) => (
             <HStack key={framework}>
               <Box fontSize="3xl">{icon}</Box>
-              <Text as="span" color="text.muted" hideBelow="sm">
+              <Text as="span" color="fg.muted" hideBelow="sm">
                 {framework}
               </Text>
             </HStack>

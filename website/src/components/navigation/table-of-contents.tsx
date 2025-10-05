@@ -35,7 +35,7 @@ export const TableOfContents = (props: Props) => {
                 href={item.url}
                 data-depth={item.depth}
                 className={css({
-                  color: 'text.muted',
+                  color: 'fg.muted',
                   textStyle: 'sm',
                   '&:is(:active, [data-active="true"])': {
                     color: 'fg.default',

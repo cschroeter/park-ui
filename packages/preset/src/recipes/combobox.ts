@@ -92,15 +92,15 @@ export const combobox = defineSlotRecipe({
       bottom: '0',
     },
     trigger: {
-      color: 'text.subtle',
+      color: 'fg.subtle',
     },
     clearTrigger: {
-      color: 'text.muted',
+      color: 'fg.muted',
     },
     empty: {
       display: 'flex',
       alignItems: 'center',
-      color: 'text.subtle',
+      color: 'fg.subtle',
     },
   },
   defaultVariants: {

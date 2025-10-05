@@ -29,7 +29,7 @@ export const App = () => {
               <Stack gap="3">
                 <Stack gap="1">
                   <Text fontWeight="semibold">@grizzly_codes</Text>
-                  <Text color="text.muted">Principal Software Engineer working at Pyck.ai</Text>
+                  <Text color="fg.muted">Principal Software Engineer working at Pyck.ai</Text>
                 </Stack>
                 <HStack gap="1" color="fg.subtle">
                   <Icon size="sm">

@@ -27,7 +27,7 @@ export const App = () => {
                   <Text size="sm" fontWeight="semibold">
                     @grizzly_codes
                   </Text>
-                  <Text size="sm" color="text.muted">
+                  <Text size="sm" color="fg.muted">
                     Principal Software Engineer working at Pyck.ai
                   </Text>
                 </Stack>

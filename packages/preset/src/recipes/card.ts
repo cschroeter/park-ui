@@ -37,7 +37,7 @@ export const card = defineSlotRecipe({
       fontWeight: 'semibold',
     },
     description: {
-      color: 'text.muted',
+      color: 'fg.muted',
       textStyle: 'sm',
     },
   },

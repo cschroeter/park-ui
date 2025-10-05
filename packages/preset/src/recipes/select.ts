@@ -69,7 +69,7 @@ export const select = defineSlotRecipe({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: { base: 'text.subtle' },
+      color: { base: 'fg.subtle' },
     },
     itemGroupLabel: {
       fontWeight: 'semibold',
@@ -96,7 +96,7 @@ export const select = defineSlotRecipe({
       userSelect: 'none',
       width: 'full',
       _placeholderShown: {
-        color: 'text.subtle',
+        color: 'fg.subtle',
       },
       _disabled: {
         layerStyle: 'disabled',
