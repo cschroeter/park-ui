@@ -2,47 +2,21 @@ import { definePlugin, definePreset } from '@pandacss/dev'
 import { colors as colorPalettes } from './colors'
 import { recipes, slotRecipes } from './recipes'
 import { animationStyles } from './theme/animation-styles'
+import { conditions } from './theme/conditions'
+import { globalCss } from './theme/global-css'
 import { keyframes } from './theme/keyframes'
 import { layerStyles } from './theme/layer-styles'
 import { textStyles } from './theme/text-styles'
 import { colors } from './theme/tokens/colors'
 import { durations } from './theme/tokens/durations'
-import { easings } from './theme/tokens/easings'
 import { shadows } from './theme/tokens/shadows'
 import { zIndex } from './theme/tokens/z-index'
 
 export const preset = definePreset({
   name: '@park-ui/preset',
   presets: ['@pandacss/preset-base', '@pandacss/preset-panda'],
-  globalCss: {
-    extend: {
-      '*, *::before, *::after': {
-        borderColor: 'gray.a4',
-      },
-      body: {
-        background: 'gray.1',
-        color: 'text',
-      },
-      '*::selection': {
-        bg: 'colorPalette.a3',
-      },
-      '*::placeholder': {
-        opacity: 1,
-        color: 'text.subtle',
-      },
-    },
-  },
-  conditions: {
-    extend: {
-      light: ':root &, .light &',
-      invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',
-      hover: '&:not(:disabled):hover',
-      active: '&:not(:disabled):active',
-      checked:
-        '&:is(:checked, [data-checked], [data-state=checked], [aria-checked=true], [data-state=indeterminate])',
-      on: '&:is([data-state=on])',
-    },
-  },
+  globalCss,
+  conditions,
   theme: {
     extend: {
       animationStyles,
@@ -53,7 +27,6 @@ export const preset = definePreset({
       textStyles,
       tokens: {
         colors,
-        easings,
         durations,
         zIndex,
       },

@@ -47,11 +47,11 @@ export const drawer = defineSlotRecipe({
       boxShadow: 'lg',
       _open: {
         animationDuration: 'slowest',
-        animationTimingFunction: 'emphasized-in',
+        animationTimingFunction: 'cubic-bezier(0.05, 0.7, 0.1, 1.0)',
       },
       _closed: {
         animationDuration: 'normal',
-        animationTimingFunction: 'emphasized-out',
+        animationTimingFunction: 'cubic-bezier(0.3, 0.0, 0.8, 0.15)',
       },
     },
     header: {

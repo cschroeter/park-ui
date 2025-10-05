@@ -27,7 +27,6 @@ export const keyframes = defineKeyframes({
     from: { opacity: '1' },
     to: { opacity: '0' },
   },
-
   // slide from (full)
   'slide-from-left-full': {
     from: { translate: '-100% 0' },
@@ -45,7 +44,6 @@ export const keyframes = defineKeyframes({
     from: { translate: '0 100%' },
     to: { translate: '0 0' },
   },
-
   // slide to (full)
   'slide-to-left-full': {
     from: { translate: '0 0' },
@@ -63,7 +61,6 @@ export const keyframes = defineKeyframes({
     from: { translate: '0 0' },
     to: { translate: '0 100%' },
   },
-
   // slide from
   'slide-from-top': {
     '0%': { translate: '0 -0.5rem' },
@@ -81,7 +78,6 @@ export const keyframes = defineKeyframes({
     '0%': { translate: '0.5rem 0' },
     to: { translate: '0' },
   },
-
   // slide to
   'slide-to-top': {
     '0%': { translate: '0' },
@@ -99,7 +95,6 @@ export const keyframes = defineKeyframes({
     '0%': { translate: '0' },
     to: { translate: '0.5rem 0' },
   },
-
   // scale
   'scale-in': {
     from: { scale: '0.95' },
@@ -109,7 +104,6 @@ export const keyframes = defineKeyframes({
     from: { scale: '1' },
     to: { scale: '0.95' },
   },
-
   'bg-position': {
     from: {
       backgroundPosition: 'var(--animate-from, 1rem) 0',
