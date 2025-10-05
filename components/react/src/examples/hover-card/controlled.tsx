@@ -35,7 +35,7 @@ export const App = () => {
                   <Icon size="sm">
                     <MapPinIcon />
                   </Icon>
-                  <Text size="xs">Joined Oktober 2025</Text>
+                  <Text textStyle="xs">Joined Oktober 2025</Text>
                 </HStack>
               </Stack>
             </Stack>

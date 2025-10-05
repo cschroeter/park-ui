@@ -38,10 +38,10 @@ export const App = () => {
                       </Avatar.Root>
                       <Stack gap="3">
                         <Stack gap="1">
-                          <Text size="sm" fontWeight="semibold">
+                          <Text textStyle="sm" fontWeight="semibold">
                             @grizzly_codes
                           </Text>
-                          <Text size="sm" color="fg.muted">
+                          <Text textStyle="sm" color="fg.muted">
                             Principal Software Engineer working at Pyck.ai
                           </Text>
                         </Stack>
@@ -49,7 +49,7 @@ export const App = () => {
                           <Icon size="sm">
                             <MapPinIcon />
                           </Icon>
-                          <Text size="xs">Joined Oktober 2025</Text>
+                          <Text textStyle="xs">Joined Oktober 2025</Text>
                         </HStack>
                       </Stack>
                     </Stack>
