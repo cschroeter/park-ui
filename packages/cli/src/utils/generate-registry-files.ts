@@ -40,6 +40,7 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
 
   let successCount = 0
   let errorCount = 0
+  const indexItems: Array<{ name: string; type: string }> = []
 
   for (const item of registry.items) {
     try {
@@ -65,6 +66,8 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
       const outputPath = join(distDir, `${item.name}.json`)
       await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, 'utf-8')
 
+      indexItems.push({ name: item.name, type: item.type })
+
       successCount++
     } catch (error) {
       console.error(`❌ ${item.name}:`, error)
@@ -72,7 +75,11 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
     }
   }
 
+  const indexPath = join(distDir, 'index.json')
+  await writeFile(indexPath, `${JSON.stringify(indexItems, null, 2)}\n`, 'utf-8')
+
   console.log(`✨ Generated ${successCount} registry files`)
+  console.log(`✨ Generated index.json with ${indexItems.length} items`)
   if (errorCount > 0) console.log(`❌ Failed: ${errorCount}`)
 }
 
