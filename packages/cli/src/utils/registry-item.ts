@@ -23,8 +23,17 @@ const saveFiles = (files: RegistryFile[] = []) =>
       Effect.forEach(files, (file) =>
         Effect.all([
           Effect.tryPromise({
-            try: () =>
-              outputFile(
+            try: () => {
+              // Replace styled-system imports if configured
+              let content = file.content
+              if (config.imports?.['styled-system-base']) {
+                content = content.replace(
+                  /from ['"]styled-system\//g,
+                  `from '${config.imports['styled-system-base']}/`,
+                )
+              }
+
+              return outputFile(
                 Match.value(file).pipe(
                   Match.when({ type: 'component' }, ({ fileName }) =>
                     join(config.paths.components, fileName),
@@ -37,8 +46,9 @@ const saveFiles = (files: RegistryFile[] = []) =>
                   ),
                   Match.orElse(() => file.fileName),
                 ),
-                file.content,
-              ),
+                content,
+              )
+            },
             catch: () => FileError(file.fileName),
           }),
 

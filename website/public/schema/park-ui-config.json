@@ -13,6 +13,14 @@
       "type": "string",
       "enum": ["react", "solid", "vue", "svelte"]
     },
+    "imports": {
+      "type": "object",
+      "properties": {
+        "styled-system-base": {
+          "type": "string"
+        }
+      }
+    },
     "paths": {
       "type": "object",
       "required": ["components", "theme"],

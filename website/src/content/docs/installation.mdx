@@ -56,3 +56,20 @@ The command above will add the Button component to your project. You can then im
 That's it! Happy hacking! ✌️
 </Step>
 </Steps>
+
+## Additional configuration
+
+If you need to customise the import path for styled-system because of TypeScript configuration, you can do so by updating the `park-ui.config.json` file.
+
+```json
+{
+  "framework": "react",
+  "paths": {
+    "components": "./src/components/ui",
+    "theme": "./src/theme"
+  },
+  "imports": {
+    "styled-system-base": "./app/styled-system"
+  }
+}
+```
