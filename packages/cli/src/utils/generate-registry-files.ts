@@ -25,6 +25,10 @@ const transformPath = (filePath: string, type: string): string => {
     return filePath.replace(/^.*\/recipes\//, 'recipes/')
   }
 
+  if (type === 'registry:color' || type === 'registry:theme') {
+    return filePath.replace(/^src\/theme\//, '')
+  }
+
   return filePath
 }
 

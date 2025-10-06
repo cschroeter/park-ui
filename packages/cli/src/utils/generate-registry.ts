@@ -1,5 +1,6 @@
-import { join, parse } from 'node:path'
-import { readdir, readFile, writeFile } from 'fs-extra'
+import { parse } from 'node:path'
+import fg from 'fast-glob'
+import { readFile, writeFile } from 'fs-extra'
 import type { Registry, RegistryItemPartial } from '~/schema'
 
 const toKebabCase = (str: string) => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
@@ -102,20 +103,30 @@ const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryIt
   return recipeItems
 }
 
-export const generateRegistry = async (options: { name: string }) => {
-  console.log('🔍 Scanning UI components...')
-  const uiDir = './src/components/ui'
-  const files = await readdir(uiDir)
+const getRegistryType = (filePath: string) => {
+  if (filePath.includes('src/theme/colors')) return 'registry:color'
+  if (filePath.includes('src/components/ui')) return 'registry:ui'
+  if (filePath.includes('src/theme')) return 'registry:theme'
+  return 'registry:ui' // default fallback
+}
+
+export const generateRegistry = async (options: { name: string; pattern?: string }) => {
+  const pattern = options.pattern || 'src/components/ui/*.tsx'
+  console.log(`🔍 Scanning files matching: ${pattern}`)
+
+  const files = await fg(pattern, {
+    ignore: ['**/*.test.tsx', '**/*.spec.tsx', '**/index.ts'],
+  })
+
   const items: RegistryItemPartial[] = []
   const allRecipes = new Set<string>()
 
-  for (const path of files) {
-    if (!path.endsWith('.tsx') || path.endsWith('index.ts')) continue
-
-    const componentName = parse(path).name
-    const content = await readFile(join(uiDir, path), 'utf-8')
+  for (const filePath of files) {
+    const componentName = parse(filePath).name
+    const content = await readFile(filePath, 'utf-8')
     const dependencies = extractDependencies(content)
     const registryDependencies = extractRegistryDependencies(content, componentName)
+    const registryType = getRegistryType(filePath)
 
     for (const recipe of extractRecipeDependencies(content)) {
       allRecipes.add(recipe)
@@ -123,9 +134,9 @@ export const generateRegistry = async (options: { name: string }) => {
 
     const item: RegistryItemPartial = {
       name: componentName,
-      type: 'registry:ui',
+      type: registryType,
       dependencies: dependencies.length > 0 ? dependencies : ['@ark-ui/react'],
-      files: [{ path: `src/components/ui/${path}`, type: 'registry:ui' }],
+      files: [{ path: filePath, type: registryType }],
       ...(registryDependencies.length > 0 && { registryDependencies }),
     }
 

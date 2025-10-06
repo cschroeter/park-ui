@@ -1,7 +1,7 @@
 import { definePlugin, definePreset } from '@pandacss/dev'
-import { colors as colorPalettes } from './colors'
 import { recipes, slotRecipes } from './recipes'
 import { animationStyles } from './theme/animation-styles'
+import { colors as colorPalettes } from './theme/colors'
 import { conditions } from './theme/conditions'
 import { globalCss } from './theme/global-css'
 import { keyframes } from './theme/keyframes'

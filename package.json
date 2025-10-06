@@ -14,6 +14,7 @@
     "test": "bun run --filter='*' test",
     "typecheck": "bun run --filter='*' typecheck",
     "cli": "bun run --cwd packages/cli",
+    "preset": "bun run --cwd packages/preset",
     "react": "bun run --cwd components/react",
     "web": "bun run --cwd website",
     "build:registry": "bun run scripts/registry.ts",

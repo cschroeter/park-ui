@@ -1,0 +1,395 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry.json",
+  "name": "@park-ui/preset",
+  "homepage": "https://park-ui.com",
+  "items": [
+    {
+      "name": "__init",
+      "type": "registry:theme",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/tokens/colors.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/tokens/durations.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/tokens/shadows.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/tokens/z-index.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/animation-styles.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/conditions.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/global-css.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/keyframes.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/layer-styles.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/text-styles.ts",
+          "type": "registry:theme"
+        }
+      ]
+    },
+    {
+      "name": "amber",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/amber.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "blue",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/blue.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "bronze",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/bronze.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "brown",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/brown.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "crimson",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/crimson.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "cyan",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/cyan.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "gold",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/gold.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "grass",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/grass.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "green",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/green.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "indigo",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/indigo.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "iris",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/iris.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "jade",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/jade.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "lime",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/lime.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "mauve",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/mauve.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "mint",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/mint.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "neutral",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/neutral.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "olive",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/olive.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "orange",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/orange.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "pink",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/pink.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "plum",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/plum.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "purple",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/purple.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "red",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/red.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "ruby",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/ruby.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "sage",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/sage.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "sand",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/sand.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "sky",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/sky.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "slate",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/slate.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "teal",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/teal.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "tomato",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/tomato.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "violet",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/violet.ts",
+          "type": "registry:color"
+        }
+      ]
+    },
+    {
+      "name": "yellow",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/yellow.ts",
+          "type": "registry:color"
+        }
+      ]
+    }
+  ]
+}

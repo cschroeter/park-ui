@@ -11,10 +11,13 @@ export const registry = new Command('registry')
     new Command('prepare')
       .description('prepare registry.json from component files')
       .requiredOption('--name <name>', 'registry name (e.g., @park-ui/react)')
-      .action(async (options) => {
+      .argument('[pattern]', 'glob pattern for component files (e.g., src/components/ui/*.tsx)')
+      .action(async (pattern, options) => {
         p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
-        const program = Effect.promise(() => generateRegistry({ name: options.name })).pipe(
+        const program = Effect.promise(() =>
+          generateRegistry({ name: options.name, pattern }),
+        ).pipe(
           Effect.tap(() => p.outro('Registry prepared successfully! 🎉')),
           Effect.catchAll((error) =>
             Effect.sync(() => {

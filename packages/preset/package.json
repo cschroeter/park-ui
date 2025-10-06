@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "private": true,
-  "scripts": {},
-  "dependencies": {
+  "scripts": {
+    "registry:build": "park-ui registry build theme"
+  },
+  "devDependencies": {
     "@radix-ui/colors": "3.0.0",
-    "effect": "3.18.2"
+    "@park-ui/cli": "workspace:*",
+    "typescript": "5.9.3"
   }
 }
