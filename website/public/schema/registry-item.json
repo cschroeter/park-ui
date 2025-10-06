@@ -14,7 +14,14 @@
     },
     "type": {
       "type": "string",
-      "enum": ["registry:block", "registry:component", "registry:recipe", "registry:ui"],
+      "enum": [
+        "registry:block",
+        "registry:color",
+        "registry:component",
+        "registry:recipe",
+        "registry:theme",
+        "registry:ui"
+      ],
       "description": "The type of registry item"
     },
     "categories": {

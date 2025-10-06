@@ -2,10 +2,14 @@ import { z } from 'zod'
 
 const registryItemType = z.enum([
   'registry:block',
+  'registry:color',
   'registry:component',
   'registry:recipe',
+  'registry:theme',
   'registry:ui',
 ])
+
+export type RegistryItemType = z.infer<typeof registryItemType>
 
 export type JsonValue =
   | string
