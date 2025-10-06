@@ -1,0 +1,13 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "popover-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { popoverAnatomy } from '@ark-ui/react/popover'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const popover = defineSlotRecipe({\n  className: 'popover',\n  slots: popoverAnatomy.extendWith('header', 'body', 'footer').keys(),\n  base: {\n    content: {\n      '--popover-bg': 'colors.bg.default',\n      '--popover-padding': 'spacing.4',\n\n      background: 'var(--popover-bg)',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      display: 'flex',\n      flexDirection: 'column',\n      maxHeight: 'var(--available-height)',\n      outline: '0',\n      position: 'relative',\n      textStyle: 'sm',\n      transformOrigin: 'var(--transform-origin)',\n      width: 'xs',\n      zIndex: 'calc(var(--z-index-popover) + var(--layer-index, 0))',\n      _open: {\n        animationStyle: 'scale-fade-in',\n        animationDuration: 'fast',\n      },\n      _closed: {\n        animationStyle: 'scale-fade-out',\n        animationDuration: 'faster',\n      },\n    },\n    title: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n      textStyle: 'md',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n    closeTrigger: {\n      position: 'absolute',\n      top: '1',\n      right: '1',\n    },\n    header: {\n      display: 'flex',\n      flexDirection: 'column',\n      pt: 'var(--popover-padding)',\n      px: 'var(--popover-padding)',\n    },\n    body: { p: 'var(--popover-padding)', display: 'flex', flex: '1', flexDirection: 'column' },\n    footer: {\n      display: 'flex',\n      alignItems: 'center',\n      justifyContent: 'flex-end',\n      gap: '3',\n      paddingInline: 'var(--popover-padding)',\n      paddingBottom: 'var(--popover-padding)',\n    },\n    arrow: {\n      '--arrow-size': 'sizes.3',\n      '--arrow-background': 'var(--popover-bg)',\n    },\n    arrowTip: {\n      borderTopWidth: '0.5px',\n      borderInlineStartWidth: '0.5px',\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "recipes/popover.ts"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { Portal } from '@ark-ui/react/portal'\nimport { Tooltip as ArkTooltip } from '@ark-ui/react/tooltip'\nimport { type ComponentProps, forwardRef } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { tooltip } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(tooltip)\n\ntype RootProps = ComponentProps<typeof Root>\ntype ContentProps = ComponentProps<typeof Content>\nconst Root = withRootProvider(ArkTooltip.Root, {\n  defaultProps: { unmountOnExit: true, lazyMount: true },\n})\nconst Arrow = withContext(ArkTooltip.Arrow, 'arrow')\nconst ArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')\nconst Content = withContext(ArkTooltip.Content, 'content')\nconst Positioner = withContext(ArkTooltip.Positioner, 'positioner')\nconst Trigger = withContext(ArkTooltip.Trigger, 'trigger')\n\nexport { TooltipContext as Context } from '@ark-ui/react/tooltip'\n\nexport interface TooltipProps extends Omit<RootProps, 'content'> {\n  showArrow?: boolean\n  portalled?: boolean\n  portalRef?: React.RefObject<HTMLElement | null>\n  children: React.ReactNode | undefined\n  content: React.ReactNode | string\n  contentProps?: ContentProps\n  disabled?: boolean\n}\n\nexport const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip(props, ref) {\n  const {\n    showArrow,\n    children,\n    disabled,\n    portalled = true,\n    content,\n    contentProps,\n    portalRef,\n    ...rootProps\n  } = props\n\n  if (disabled) return children\n\n  return (\n    <Root {...rootProps}>\n      <Trigger asChild>{children}</Trigger>\n      <Portal disabled={!portalled} container={portalRef}>\n        <Positioner>\n          <Content ref={ref} {...contentProps}>\n            {showArrow && (\n              <Arrow>\n                <ArrowTip />\n              </Arrow>\n            )}\n            {content}\n          </Content>\n        </Positioner>\n      </Portal>\n    </Root>\n  )\n})\n",
+      "type": "registry:ui",
+      "path": "ui/tooltip.tsx"
+    }
+  ],
+  "registryDependencies": ["tooltip-recipe"]
+}

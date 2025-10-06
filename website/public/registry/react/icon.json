@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "icon",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { icon } from 'styled-system/recipes'\n\nexport type IconProps = ComponentProps<typeof Icon>\nexport const Icon = styled(ark.svg, icon, {\n  defaultProps: { asChild: true },\n})\n",
+      "type": "registry:ui",
+      "path": "ui/icon.tsx"
+    }
+  ],
+  "registryDependencies": ["icon-recipe"]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "code-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const code = defineRecipe({\n  className: 'code',\n  base: {\n    alignItems: 'center',\n    borderRadius: 'l2',\n    display: 'inline-flex',\n    fontVariantNumeric: 'tabular-nums',\n    fontWeight: 'medium',\n    fontFamily: 'code',\n    gap: '1',\n    whiteSpace: 'pre-wrap',\n  },\n  defaultVariants: {\n    size: 'md',\n    variant: 'subtle',\n  },\n  variants: {\n    variant: {\n      solid: {\n        bg: 'colorPalette.solid.bg',\n        color: 'colorPalette.solid.fg',\n      },\n      surface: {\n        bg: 'colorPalette.surface.bg',\n        borderWidth: '1px',\n        borderColor: 'colorPalette.surface.border',\n        color: 'colorPalette.surface.fg',\n      },\n      subtle: {\n        bg: 'colorPalette.subtle.bg',\n        color: 'colorPalette.subtle.fg',\n      },\n      outline: {\n        borderWidth: '1px',\n        borderColor: 'colorPalette.outline.border',\n        color: 'colorPalette.outline.fg',\n      },\n      plain: {\n        color: 'colorPalette.plain.fg',\n      },\n    },\n    size: {\n      xs: {\n        textStyle: '2xs',\n        px: '1',\n        minH: '4',\n      },\n      sm: {\n        textStyle: 'xs',\n        px: '1.5',\n        minH: '5',\n      },\n      md: {\n        textStyle: 'sm',\n        px: '2',\n        minH: '6',\n      },\n      lg: {\n        textStyle: 'sm',\n        px: '2.5',\n        minH: '7',\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "recipes/code.ts"
+    }
+  ]
+}

@@ -1,35 +1,11 @@
 import { z } from 'zod'
 
-const registryItemType = z.enum(['block', 'component', 'recipe', 'theme'])
-
-const moduleDeclaration = z.discriminatedUnion('type', [
-  z.object({
-    type: z.literal('named'),
-    moduleSpecifier: z.string(),
-    symbols: z.array(
-      z.object({
-        name: z.string(),
-        isType: z.boolean().optional(),
-      }),
-    ),
-  }),
-  z.object({
-    type: z.literal('namespace'),
-    moduleSpecifier: z.string(),
-    namespace: z.string(),
-  }),
-  z.object({
-    type: z.literal('object-literal'),
-    variableName: z.string(),
-    properties: z.array(
-      z.object({
-        name: z.string(),
-        value: z.string().optional(),
-      }),
-    ),
-  }),
+const registryItemType = z.enum([
+  'registry:block',
+  'registry:component',
+  'registry:recipe',
+  'registry:ui',
 ])
-export type ModuleDeclaration = z.infer<typeof moduleDeclaration>
 
 export type JsonValue =
   | string
@@ -50,37 +26,36 @@ const jsonValue: z.ZodType<JsonValue> = z.lazy(() =>
   ]),
 )
 
-const indexFile = z.object({
-  exports: z.array(moduleDeclaration).optional(),
-  imports: z.array(moduleDeclaration).optional(),
-})
-export type IndexFile = z.infer<typeof indexFile>
-
 const registryFile = z.object({
   type: registryItemType,
-  fileName: z.string(),
+  path: z.string(),
   content: z.string(),
-  indexFile: indexFile.optional(),
 })
 export type RegistryFile = z.infer<typeof registryFile>
 
-const pandaConfig = z.object({
-  extension: jsonValue.optional(),
-  imports: z.array(moduleDeclaration).optional(),
+const registry = z.object({
+  $schema: z.url(),
+  name: z.string(),
+  homepage: z.url(),
+  items: z.array(z.lazy(() => registryItem)),
 })
-export type PandaConfig = z.infer<typeof pandaConfig>
+export type Registry = z.infer<typeof registry>
 
 export const registryItem = z.object({
-  id: z.string(),
+  $schema: z.url().optional(),
+  name: z.string(),
   type: registryItemType,
-  name: z.string().optional(),
-  description: z.string().optional(),
-  dependencies: z.array(z.string()).optional(),
-  devDependencies: z.array(z.string()).optional(),
-  registryDependencies: z.array(z.string()).optional(),
-  files: z.array(registryFile).optional(),
-  pandaConfig: pandaConfig.optional(),
   categories: z.array(z.string()).optional(),
+  dependencies: z.array(z.string()).optional(),
+  description: z.string().optional(),
+  devDependencies: z.array(z.string()).optional(),
+  files: z.array(registryFile).optional(),
+  panda: z
+    .object({
+      extension: jsonValue.optional(),
+    })
+    .optional(),
+  registryDependencies: z.array(z.string()).optional(),
 })
 export type RegistryItem = z.infer<typeof registryItem>
 

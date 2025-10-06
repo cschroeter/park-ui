@@ -1,0 +1,13 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "toggle-group-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { toggleGroupAnatomy } from '@ark-ui/react/toggle-group'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const toggleGroup = defineSlotRecipe({\n  className: 'toggle-group',\n  slots: toggleGroupAnatomy.keys(),\n  base: {\n    root: {},\n  },\n  variants: {\n    variant: {\n      outline: {\n        root: {\n          borderRadius: 'l3',\n          borderWidth: '1px',\n          gap: '1',\n          p: '1',\n        },\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "recipes/toggle-group.ts"
+    }
+  ]
+}

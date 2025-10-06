@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "icon-button",
+  "type": "registry:ui",
+  "dependencies": ["react"],
+  "files": [
+    {
+      "content": "import { forwardRef } from 'react'\nimport { Button, type ButtonProps } from './button'\n\nexport interface IconButtonProps extends ButtonProps {}\n\nexport const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(\n  function IconButton(props, ref) {\n    return <Button px=\"0\" py=\"0\" ref={ref} {...props} />\n  },\n)\n",
+      "type": "registry:ui",
+      "path": "ui/icon-button.tsx"
+    }
+  ],
+  "registryDependencies": ["button"]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "kbd",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { ark } from '@ark-ui/react/factory'\nimport { styled } from 'styled-system/jsx'\nimport { kbd } from 'styled-system/recipes'\nimport type { ComponentProps } from 'styled-system/types'\n\nexport type KbdProps = ComponentProps<typeof Kbd>\nexport const Kbd = styled(ark.kbd, kbd)\n",
+      "type": "registry:ui",
+      "path": "ui/kbd.tsx"
+    }
+  ],
+  "registryDependencies": ["kbd-recipe"]
+}

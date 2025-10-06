@@ -1,0 +1,13 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "tooltip-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { tooltipAnatomy } from '@ark-ui/react/tooltip'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const tooltip = defineSlotRecipe({\n  className: 'tooltip',\n  slots: tooltipAnatomy.keys(),\n  base: {\n    content: {\n      '--tooltip-bg': 'colors.gray.12',\n      bg: 'var(--tooltip-bg)',\n      color: 'gray.1',\n      borderRadius: 'l2',\n      boxShadow: 'sm',\n      fontWeight: 'semibold',\n      px: '2',\n      py: '1.5',\n      textStyle: 'xs',\n      maxWidth: 'xs',\n      _open: {\n        animationStyle: 'scale-fade-in',\n        animationDuration: 'fast',\n      },\n      _closed: {\n        animationStyle: 'scale-fade-out',\n        animationDuration: 'faster',\n      },\n    },\n    arrow: {\n      '--arrow-size': 'sizes.2',\n      '--arrow-background': 'var(--tooltip-bg)',\n    },\n    arrowTip: {\n      borderTopWidth: '1px',\n      borderInlineStartWidth: '1px',\n      borderColor: 'var(--tooltip-bg)',\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "recipes/tooltip.ts"
+    }
+  ]
+}

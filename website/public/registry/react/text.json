@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "text",
+  "type": "registry:ui",
+  "dependencies": ["react"],
+  "files": [
+    {
+      "content": "import type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { type TextVariantProps, text } from 'styled-system/recipes'\nimport type { StyledComponent } from 'styled-system/types'\n\ntype Props = TextVariantProps & { as?: React.ElementType }\n\nexport type TextProps = ComponentProps<typeof Text>\nexport const Text = styled('p', text) as StyledComponent<'p', Props>\n",
+      "type": "registry:ui",
+      "path": "ui/text.tsx"
+    }
+  ],
+  "registryDependencies": ["text-recipe"]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "loader",
+  "type": "registry:ui",
+  "dependencies": ["react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { forwardRef } from 'react'\nimport { type HTMLStyledProps, styled } from 'styled-system/jsx'\nimport { AbsoluteCenter } from './absolute-center'\nimport { Spinner } from './spinner'\n\nexport interface LoaderProps extends HTMLStyledProps<'span'> {\n  /**\n   * Whether the loader is visible\n   * @default true\n   */\n  visible?: boolean | undefined\n  /**\n   * The spinner to display when loading\n   */\n  spinner?: React.ReactNode | undefined\n  /**\n   * The placement of the spinner\n   * @default \"start\"\n   */\n  spinnerPlacement?: 'start' | 'end' | undefined\n  /**\n   * The text to display when loading\n   */\n  text?: React.ReactNode | undefined\n\n  children?: React.ReactNode\n}\n\nconst Span = styled('span')\n\nexport const Loader = forwardRef<HTMLSpanElement, LoaderProps>(function Loader(props, ref) {\n  const {\n    spinner = <Spinner size=\"inherit\" borderWidth=\"0.125em\" color=\"inherit\" />,\n    spinnerPlacement = 'start',\n    children,\n    text,\n    visible = true,\n    ...rest\n  } = props\n\n  if (!visible) return children\n\n  if (text) {\n    return (\n      <Span ref={ref} display=\"contents\" {...rest}>\n        {spinnerPlacement === 'start' && spinner}\n        {text}\n        {spinnerPlacement === 'end' && spinner}\n      </Span>\n    )\n  }\n\n  if (spinner) {\n    return (\n      <Span ref={ref} display=\"contents\" {...rest}>\n        <AbsoluteCenter display=\"inline-flex\">{spinner}</AbsoluteCenter>\n        <Span visibility=\"hidden\" display=\"contents\">\n          {children}\n        </Span>\n      </Span>\n    )\n  }\n\n  return (\n    <Span ref={ref} display=\"contents\" {...rest}>\n      {children}\n    </Span>\n  )\n})\n",
+      "type": "registry:ui",
+      "path": "ui/loader.tsx"
+    }
+  ],
+  "registryDependencies": ["absolute-center", "spinner"]
+}

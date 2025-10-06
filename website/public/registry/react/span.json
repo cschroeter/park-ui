@@ -1,0 +1,13 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "span",
+  "type": "registry:ui",
+  "dependencies": ["react"],
+  "files": [
+    {
+      "content": "import type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\n\nexport type SpanProps = ComponentProps<typeof Span>\nexport const Span = styled('span')\n",
+      "type": "registry:ui",
+      "path": "ui/span.tsx"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "table",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { table } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(table)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(ark.table, 'root')\nexport const Body = withContext(ark.tbody, 'body')\nexport const Caption = withContext(ark.caption, 'caption')\nexport const Cell = withContext(ark.td, 'cell')\nexport const Foot = withContext(ark.tfoot, 'foot')\nexport const Head = withContext(ark.thead, 'head')\nexport const Header = withContext(ark.th, 'header')\nexport const Row = withContext(ark.tr, 'row')\n",
+      "type": "registry:ui",
+      "path": "ui/table.tsx"
+    }
+  ],
+  "registryDependencies": ["table-recipe"]
+}

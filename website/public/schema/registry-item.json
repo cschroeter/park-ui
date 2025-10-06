@@ -1,221 +1,85 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "RegistryItem",
   "type": "object",
-  "required": ["id", "type"],
-  "definitions": {
-    "RegistryItemType": {
-      "type": "string",
-      "enum": ["block", "component", "recipe", "theme"],
-      "description": "The type of the item. This is used to determine the type and target path of the item when resolved for a project"
-    },
-    "JsonValue": {
-      "anyOf": [
-        { "type": "string" },
-        { "type": "number" },
-        { "type": "boolean" },
-        { "type": "null" },
-        {
-          "type": "array",
-          "items": { "$ref": "#/definitions/JsonValue" }
-        },
-        {
-          "type": "object",
-          "additionalProperties": { "$ref": "#/definitions/JsonValue" }
-        }
-      ]
-    },
-    "ModuleDeclaration": {
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "type": {
-              "const": "named"
-            },
-            "moduleSpecifier": {
-              "type": "string"
-            },
-            "symbols": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "isType": {
-                    "type": "boolean"
-                  }
-                },
-                "required": ["name"],
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": ["type", "moduleSpecifier", "symbols"],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "type": {
-              "const": "namespace"
-            },
-            "namespace": {
-              "type": "string"
-            },
-            "moduleSpecifier": {
-              "type": "string"
-            }
-          },
-          "required": ["type", "namespace", "moduleSpecifier"],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "type": {
-              "const": "object-literal"
-            },
-            "variableName": {
-              "type": "string"
-            },
-            "properties": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "value": {
-                    "type": "string"
-                  }
-                },
-                "required": ["name"],
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": ["type", "variableName", "properties"],
-          "additionalProperties": false
-        }
-      ]
-    },
-    "IndexFile": {
-      "type": "object",
-      "properties": {
-        "exports": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ModuleDeclaration"
-          },
-          "description": "Defines the module exports available from this index file"
-        },
-        "imports": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ModuleDeclaration"
-          },
-          "description": "Defines the module imports required by this index file"
-        }
-      },
-      "additionalProperties": false
-    }
-  },
+  "required": ["name", "type"],
   "properties": {
     "$schema": {
       "type": "string",
       "format": "uri",
-      "default": "https://next.park-ui.com/schema/registry-item.json"
-    },
-    "id": {
-      "type": "string",
-      "description": "The id of the item. This is used to identify the item in the registry. It should be unique for your registry"
-    },
-    "type": {
-      "$ref": "#/definitions/RegistryItemType"
-    },
-    "description": {
-      "type": "string",
-      "description": "The description of the item. This is used to provide a brief overview of the item"
+      "description": "JSON Schema reference URL"
     },
     "name": {
       "type": "string",
-      "description": "The human-readable name for your registry item. Keep it short and descriptive"
+      "description": "The name of the registry item"
     },
-    "dependencies": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "An array of NPM dependencies required by the registry item"
-    },
-    "devDependencies": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "An array of NPM dev dependencies required by the registry item"
-    },
-    "registryDependencies": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "An array of registry items that this item depends on. Use the id of the item to reference components and urls to reference other registries"
-    },
-    "files": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["fileName", "type", "content"],
-        "properties": {
-          "fileName": {
-            "type": "string",
-            "description": "The name of the file"
-          },
-          "content": {
-            "type": "string",
-            "description": "The content of the file"
-          },
-          "type": {
-            "$ref": "#/definitions/RegistryItemType"
-          },
-          "indexFile": {
-            "$ref": "#/definitions/IndexFile",
-            "description": "Index file configuration with exports and imports"
-          }
-        },
-        "additionalProperties": false
-      },
-      "description": "The main payload of the registry item. This is an array of files that are part of the registry item"
-    },
-    "pandaConfig": {
-      "type": "object",
-      "properties": {
-        "extension": {
-          "$ref": "#/definitions/JsonValue",
-          "description": "The theme configuration for the panda item"
-        },
-        "imports": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ModuleDeclaration"
-          },
-          "description": "The module imports required for the panda configuration"
-        }
-      },
-      "additionalProperties": false,
-      "description": "The panda configuration for the registry item."
+    "type": {
+      "type": "string",
+      "enum": ["registry:block", "registry:component", "registry:recipe", "registry:ui"],
+      "description": "The type of registry item"
     },
     "categories": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "The categories of the registry item. This is an array of strings"
+      "description": "Categories this item belongs to"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "NPM package dependencies"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the registry item"
+    },
+    "devDependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "NPM dev dependencies"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "path", "content"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["registry:block", "registry:component", "registry:recipe", "registry:ui"],
+            "description": "The type of file"
+          },
+          "path": {
+            "type": "string",
+            "description": "The file path"
+          },
+          "content": {
+            "type": "string",
+            "description": "The file content"
+          }
+        }
+      },
+      "description": "Files associated with this registry item"
+    },
+    "panda": {
+      "type": "object",
+      "properties": {
+        "extension": {
+          "description": "Panda CSS extension configuration"
+        }
+      },
+      "description": "Panda CSS specific configuration"
+    },
+    "registryDependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Dependencies on other registry items"
     }
   },
   "additionalProperties": false

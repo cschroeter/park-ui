@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "alert",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "lucide-react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { ark } from '@ark-ui/react/factory'\nimport { InfoIcon } from 'lucide-react'\nimport { type ComponentProps, forwardRef } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { alert } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(alert)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(ark.div, 'root')\nexport const Title = withContext(ark.h3, 'title')\nexport const Description = withContext(ark.div, 'description')\nexport const Content = withContext(ark.div, 'content')\n\ntype IndicatorProps = ComponentProps<typeof StyledIndicator>\nconst StyledIndicator = withContext(ark.span, 'indicator')\n\nexport const Indicator = forwardRef<HTMLSpanElement, IndicatorProps>(\n  function Indicator(props, ref) {\n    return (\n      <StyledIndicator ref={ref} {...props}>\n        <InfoIcon />\n      </StyledIndicator>\n    )\n  },\n)\n",
+      "type": "registry:ui",
+      "path": "ui/alert.tsx"
+    }
+  ],
+  "registryDependencies": ["alert-recipe"]
+}

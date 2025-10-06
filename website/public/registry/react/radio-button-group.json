@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "radio-button-group",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { RadioGroup } from '@ark-ui/react/radio-group'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { radioButtonGroup } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(radioButtonGroup)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(RadioGroup.Root, 'root')\nexport const RootProvider = withProvider(RadioGroup.RootProvider, 'root')\nexport const Indicator = withContext(RadioGroup.Indicator, 'indicator')\nexport const Item = withContext(RadioGroup.Item, 'item')\nexport const ItemControl = withContext(RadioGroup.ItemControl, 'itemControl')\nexport const ItemText = withContext(RadioGroup.ItemText, 'itemText')\nexport const Label = withContext(RadioGroup.Label, 'label')\nexport const ItemHiddenInput = RadioGroup.ItemHiddenInput\n\nexport { RadioGroupContext as Context } from '@ark-ui/react/radio-group'\n",
+      "type": "registry:ui",
+      "path": "ui/radio-button-group.tsx"
+    }
+  ],
+  "registryDependencies": ["radio-button-group-recipe"]
+}
