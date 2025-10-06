@@ -24,9 +24,101 @@
       "type": "array",
       "description": "Array of registry items",
       "items": {
-        "$ref": "https://park-ui.com/schema/registry-item.json"
+        "$ref": "#/definitions/registryItem"
       }
     }
   },
-  "additionalProperties": false
+  "definitions": {
+    "registryItemType": {
+      "type": "string",
+      "enum": ["registry:block", "registry:component", "registry:recipe", "registry:ui"],
+      "description": "The type of registry item"
+    },
+    "registryFile": {
+      "type": "object",
+      "required": ["type", "path"],
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/registryItemType"
+        },
+        "path": {
+          "type": "string",
+          "description": "The file path"
+        },
+        "content": {
+          "type": "string",
+          "description": "The file content"
+        }
+      }
+    },
+    "pandaExtension": {
+      "type": "object",
+      "properties": {
+        "extension": {
+          "description": "Panda CSS extension configuration"
+        }
+      }
+    },
+    "registryItem": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional schema reference"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the registry item"
+        },
+        "type": {
+          "$ref": "#/definitions/registryItemType"
+        },
+        "categories": {
+          "type": "array",
+          "description": "Categories this item belongs to",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "description": "NPM dependencies required by this item",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the registry item"
+        },
+        "devDependencies": {
+          "type": "array",
+          "description": "NPM dev dependencies required by this item",
+          "items": {
+            "type": "string"
+          }
+        },
+        "panda": {
+          "$ref": "#/definitions/pandaExtension",
+          "description": "Panda CSS specific configuration"
+        },
+        "registryDependencies": {
+          "type": "array",
+          "description": "Other registry items this item depends on",
+          "items": {
+            "type": "string"
+          }
+        },
+        "files": {
+          "type": "array",
+          "description": "Files included in this registry item",
+          "items": {
+            "$ref": "#/definitions/registryFile"
+          }
+        }
+      }
+    }
+  }
 }

@@ -10,8 +10,7 @@
       "files": [
         {
           "path": "src/components/ui/absolute-center.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["absolute-center-recipe"]
@@ -23,8 +22,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/absolute-center.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -35,8 +33,7 @@
       "files": [
         {
           "path": "src/components/ui/accordion.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["accordion-recipe"]
@@ -48,8 +45,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/accordion.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -60,8 +56,7 @@
       "files": [
         {
           "path": "src/components/ui/alert.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["alert-recipe"]
@@ -73,8 +68,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/alert.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -85,8 +79,7 @@
       "files": [
         {
           "path": "src/components/ui/avatar.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["avatar-recipe"]
@@ -98,8 +91,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/avatar.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -110,8 +102,7 @@
       "files": [
         {
           "path": "src/components/ui/badge.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["badge-recipe"]
@@ -123,8 +114,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/badge.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -135,8 +125,7 @@
       "files": [
         {
           "path": "src/components/ui/button.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["button-recipe", "group", "loader"]
@@ -148,8 +137,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/button.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -160,8 +148,7 @@
       "files": [
         {
           "path": "src/components/ui/card.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["card-recipe"]
@@ -173,8 +160,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/card.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -185,8 +171,7 @@
       "files": [
         {
           "path": "src/components/ui/carousel.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["carousel-recipe"]
@@ -198,8 +183,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/carousel.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -210,8 +194,7 @@
       "files": [
         {
           "path": "src/components/ui/checkbox.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["checkbox-recipe"]
@@ -223,8 +206,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/checkbox.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -235,8 +217,7 @@
       "files": [
         {
           "path": "src/components/ui/clipboard.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["clipboard-recipe"]
@@ -248,8 +229,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/clipboard.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -260,8 +240,7 @@
       "files": [
         {
           "path": "src/components/ui/close-button.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["icon-button"]
@@ -273,8 +252,7 @@
       "files": [
         {
           "path": "src/components/ui/code.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["code-recipe"]
@@ -286,8 +264,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/code.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -298,8 +275,7 @@
       "files": [
         {
           "path": "src/components/ui/collapsible.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["collapsible-recipe"]
@@ -311,8 +287,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/collapsible.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -323,8 +298,7 @@
       "files": [
         {
           "path": "src/components/ui/color-picker.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["color-picker-recipe"]
@@ -336,8 +310,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/color-picker.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -348,8 +321,7 @@
       "files": [
         {
           "path": "src/components/ui/combobox.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["combobox-recipe"]
@@ -361,8 +333,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/combobox.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -373,8 +344,7 @@
       "files": [
         {
           "path": "src/components/ui/date-picker.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["date-picker-recipe"]
@@ -386,8 +356,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/date-picker.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -398,8 +367,7 @@
       "files": [
         {
           "path": "src/components/ui/dialog.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["dialog-recipe"]
@@ -411,8 +379,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/dialog.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -423,8 +390,7 @@
       "files": [
         {
           "path": "src/components/ui/drawer.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["drawer-recipe"]
@@ -436,8 +402,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/drawer.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -448,8 +413,7 @@
       "files": [
         {
           "path": "src/components/ui/editable.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["editable-recipe"]
@@ -461,8 +425,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/editable.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -473,8 +436,7 @@
       "files": [
         {
           "path": "src/components/ui/field.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["field-recipe"]
@@ -486,8 +448,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/field.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -498,8 +459,7 @@
       "files": [
         {
           "path": "src/components/ui/fieldset.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["fieldset-recipe"]
@@ -511,8 +471,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/fieldset.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -523,8 +482,7 @@
       "files": [
         {
           "path": "src/components/ui/file-upload.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["file-upload-recipe"]
@@ -536,8 +494,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/file-upload.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -548,8 +505,7 @@
       "files": [
         {
           "path": "src/components/ui/group.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["group-recipe"]
@@ -561,8 +517,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/group.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -573,8 +528,7 @@
       "files": [
         {
           "path": "src/components/ui/heading.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["heading-recipe"]
@@ -586,8 +540,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/heading.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -598,8 +551,7 @@
       "files": [
         {
           "path": "src/components/ui/hover-card.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["hover-card-recipe"]
@@ -611,8 +563,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/hover-card.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -623,8 +574,7 @@
       "files": [
         {
           "path": "src/components/ui/icon.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["icon-recipe"]
@@ -636,8 +586,7 @@
       "files": [
         {
           "path": "src/components/ui/icon-button.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["button"]
@@ -649,8 +598,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/icon.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -661,8 +609,7 @@
       "files": [
         {
           "path": "src/components/ui/image.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ]
     },
@@ -673,8 +620,7 @@
       "files": [
         {
           "path": "src/components/ui/input.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -686,8 +632,7 @@
       "files": [
         {
           "path": "src/components/ui/input-addon.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["input-addon-recipe"]
@@ -699,8 +644,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/input-addon.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -712,8 +656,7 @@
       "files": [
         {
           "path": "src/components/ui/input-element.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["input-element-recipe"]
@@ -725,8 +668,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/input-element.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -737,8 +679,7 @@
       "files": [
         {
           "path": "src/components/ui/input-group.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["group", "input-addon", "input-element"]
@@ -750,8 +691,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/input.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -762,8 +702,7 @@
       "files": [
         {
           "path": "src/components/ui/kbd.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["kbd-recipe"]
@@ -775,8 +714,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/kbd.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -787,8 +725,7 @@
       "files": [
         {
           "path": "src/components/ui/link.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["link-recipe"]
@@ -800,8 +737,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/link.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -812,8 +748,7 @@
       "files": [
         {
           "path": "src/components/ui/loader.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["absolute-center", "spinner"]
@@ -825,8 +760,7 @@
       "files": [
         {
           "path": "src/components/ui/menu.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["menu-recipe"]
@@ -838,8 +772,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/menu.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -850,8 +783,7 @@
       "files": [
         {
           "path": "src/components/ui/number-input.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["number-input-recipe"]
@@ -863,8 +795,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/number-input.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -876,8 +807,7 @@
       "files": [
         {
           "path": "src/components/ui/pagination.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["icon-button", "pagination-recipe"]
@@ -889,8 +819,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/pagination.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -901,8 +830,7 @@
       "files": [
         {
           "path": "src/components/ui/pin-input.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["pin-input-recipe"]
@@ -914,8 +842,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/pin-input.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -927,8 +854,7 @@
       "files": [
         {
           "path": "src/components/ui/popover.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["popover-recipe"]
@@ -940,8 +866,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/popover.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -952,8 +877,7 @@
       "files": [
         {
           "path": "src/components/ui/progress.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["progress-recipe"]
@@ -965,8 +889,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/progress.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -977,8 +900,7 @@
       "files": [
         {
           "path": "src/components/ui/radio-button-group.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["radio-button-group-recipe"]
@@ -990,8 +912,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-button-group.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1002,8 +923,7 @@
       "files": [
         {
           "path": "src/components/ui/radio-card.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["radio-card-recipe"]
@@ -1015,8 +935,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-card.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1027,8 +946,7 @@
       "files": [
         {
           "path": "src/components/ui/radio-group.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["radio-group-recipe"]
@@ -1040,8 +958,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-group.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1052,8 +969,7 @@
       "files": [
         {
           "path": "src/components/ui/rating-group.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["rating-group-recipe"]
@@ -1065,8 +981,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/rating-group.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1077,8 +992,7 @@
       "files": [
         {
           "path": "src/components/ui/scroll-area.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["scroll-area-recipe"]
@@ -1090,8 +1004,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/scroll-area.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1102,8 +1015,7 @@
       "files": [
         {
           "path": "src/components/ui/segment-group.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["segment-group-recipe"]
@@ -1115,8 +1027,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/segment-group.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1127,8 +1038,7 @@
       "files": [
         {
           "path": "src/components/ui/select.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["select-recipe"]
@@ -1140,8 +1050,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/select.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1152,8 +1061,7 @@
       "files": [
         {
           "path": "src/components/ui/skeleton.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["skeleton-recipe"]
@@ -1165,8 +1073,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/skeleton.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1177,8 +1084,7 @@
       "files": [
         {
           "path": "src/components/ui/slider.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["slider-recipe"]
@@ -1190,8 +1096,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/slider.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1202,8 +1107,7 @@
       "files": [
         {
           "path": "src/components/ui/span.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ]
     },
@@ -1214,8 +1118,7 @@
       "files": [
         {
           "path": "src/components/ui/spinner.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["spinner-recipe"]
@@ -1227,8 +1130,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/spinner.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1239,8 +1141,7 @@
       "files": [
         {
           "path": "src/components/ui/splitter.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["splitter-recipe"]
@@ -1252,8 +1153,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/splitter.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1264,8 +1164,7 @@
       "files": [
         {
           "path": "src/components/ui/switch.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["switch-recipe"]
@@ -1277,8 +1176,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/switch.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1289,8 +1187,7 @@
       "files": [
         {
           "path": "src/components/ui/table.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["table-recipe"]
@@ -1302,8 +1199,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/table.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1314,8 +1210,7 @@
       "files": [
         {
           "path": "src/components/ui/tabs.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["tabs-recipe"]
@@ -1327,8 +1222,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tabs.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1339,8 +1233,7 @@
       "files": [
         {
           "path": "src/components/ui/tags-input.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["tags-input-recipe"]
@@ -1352,8 +1245,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tags-input.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1364,8 +1256,7 @@
       "files": [
         {
           "path": "src/components/ui/text.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["text-recipe"]
@@ -1377,8 +1268,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/text.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1389,8 +1279,7 @@
       "files": [
         {
           "path": "src/components/ui/textarea.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["textarea-recipe"]
@@ -1402,8 +1291,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/textarea.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1414,8 +1302,7 @@
       "files": [
         {
           "path": "src/components/ui/toast.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["close-button", "icon", "spinner", "toast-recipe"]
@@ -1427,8 +1314,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/toast.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1439,8 +1325,7 @@
       "files": [
         {
           "path": "src/components/ui/toggle-group.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["toggle-group-recipe"]
@@ -1452,8 +1337,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/toggle-group.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     },
@@ -1464,8 +1348,7 @@
       "files": [
         {
           "path": "src/components/ui/tooltip.tsx",
-          "type": "registry:ui",
-          "content": ""
+          "type": "registry:ui"
         }
       ],
       "registryDependencies": ["tooltip-recipe"]
@@ -1477,8 +1360,7 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tooltip.ts",
-          "type": "registry:recipe",
-          "content": ""
+          "type": "registry:recipe"
         }
       ]
     }

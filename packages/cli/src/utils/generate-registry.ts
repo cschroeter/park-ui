@@ -1,6 +1,6 @@
 import { join, parse } from 'node:path'
 import { readdir, readFile, writeFile } from 'fs-extra'
-import type { Registry, RegistryItem } from '~/schema'
+import type { Registry, RegistryItemPartial } from '~/schema'
 
 const toKebabCase = (str: string) => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
 
@@ -62,9 +62,9 @@ const extractRegistryDependencies = (sourceCode: string, componentName: string) 
   return Array.from(dependencies).sort()
 }
 
-const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryItem[]> => {
+const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryItemPartial[]> => {
   console.log('\n🔍 Scanning recipe files...')
-  const recipeItems: RegistryItem[] = []
+  const recipeItems: RegistryItemPartial[] = []
 
   for (const recipeName of recipeNames) {
     const kebabName = toKebabCase(recipeName.replace(/-recipe$/, ''))
@@ -84,11 +84,11 @@ const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryIt
         recipeDeps.push(`${match[1]}-recipe`)
       }
 
-      const recipeItem: RegistryItem = {
+      const recipeItem: RegistryItemPartial = {
         name: registryRecipeName,
         type: 'registry:recipe',
         dependencies,
-        files: [{ path: recipePath, type: 'registry:recipe', content: '' }],
+        files: [{ path: recipePath, type: 'registry:recipe' }],
         ...(recipeDeps.length > 0 && { registryDependencies: recipeDeps.sort() }),
       }
 
@@ -106,7 +106,7 @@ export const generateRegistry = async (options: { name: string }) => {
   console.log('🔍 Scanning UI components...')
   const uiDir = './src/components/ui'
   const files = await readdir(uiDir)
-  const items: RegistryItem[] = []
+  const items: RegistryItemPartial[] = []
   const allRecipes = new Set<string>()
 
   for (const path of files) {
@@ -121,11 +121,11 @@ export const generateRegistry = async (options: { name: string }) => {
       allRecipes.add(recipe)
     }
 
-    const item: RegistryItem = {
+    const item: RegistryItemPartial = {
       name: componentName,
       type: 'registry:ui',
       dependencies: dependencies.length > 0 ? dependencies : ['@ark-ui/react'],
-      files: [{ path: `src/components/ui/${path}`, type: 'registry:ui', content: '' }],
+      files: [{ path: `src/components/ui/${path}`, type: 'registry:ui' }],
       ...(registryDependencies.length > 0 && { registryDependencies }),
     }
 
