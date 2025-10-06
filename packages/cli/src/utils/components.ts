@@ -9,12 +9,16 @@ interface Options {
 
 export const fetchComponents = (components: string[], opts: Options) =>
   ParkUIConfig.pipe(
-    Effect.flatMap((config) =>
+    Effect.flatMap(({ framework }) =>
       pipe(
-        opts.all ? registry.getComponentIds(config) : Effect.succeed(components),
+        opts.all
+          ? registry
+              .getComponents(framework)
+              .pipe(Effect.map((items) => items.map((item) => item.name)))
+          : Effect.succeed(components),
         Effect.flatMap((ids) =>
           Effect.forEach(ids, (id) =>
-            registry.getComponent({ framework: config.framework, id }).pipe(
+            registry.getRegistryItem({ framework, id }).pipe(
               Effect.catchTag('RegistryItemNotFound', () => {
                 p.log.error(`Component "${id}" not found in the registry`)
                 return Effect.succeed(undefined)

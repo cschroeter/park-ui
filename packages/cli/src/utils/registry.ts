@@ -4,22 +4,16 @@ import { type Framework, registryIndexList, registryItem } from '../schema'
 import { HttpError, RegistryItemNotFound } from './errors'
 
 const schema = createSchema({
-  '/components/:framework/:id': {
+  '/:framework/index': {
+    output: registryIndexList,
+  },
+  '/:framework/:id': {
     output: registryItem,
   },
-  '/components/:framework/index': {
+  '/theme/index': {
     output: registryIndexList,
   },
-  '/theme/colors/gray/:id': {
-    output: registryItem,
-  },
-  '/theme/colors/gray/index': {
-    output: registryIndexList,
-  },
-  '/theme/colors/accent/index': {
-    output: registryIndexList,
-  },
-  '/theme/colors/accent/:id': {
+  '/theme/:id': {
     output: registryItem,
   },
 })
@@ -38,37 +32,28 @@ const $fetch = createFetch({
       }),
     },
   ],
+  onError: (e) => {
+    console.log(e)
+  },
 })
 
-interface Params {
-  framework: Framework
-  id: string
-}
-
 export const registry = {
-  getAcccentColors: () =>
+  getColors: () =>
     Effect.tryPromise({
-      try: () => $fetch('/theme/colors/accent/index'),
+      try: () => $fetch('/theme/index'),
+      catch: (e) => {
+        console.log(e)
+        return HttpError
+      },
+    }).pipe(Effect.map((item) => item.filter((i) => i.type === 'registry:color'))),
+  getComponents: (framework: Framework) =>
+    Effect.tryPromise({
+      try: () => $fetch('/:framework/index', { params: { framework } }),
       catch: () => HttpError,
-    }).pipe(Effect.map((item) => item.map((i) => i.id))),
-  getGrayColors: () =>
+    }).pipe(Effect.map((item) => item.filter((i) => i.type === 'registry:ui'))),
+  getRegistryItem: (params: { framework: Framework; id: string }) =>
     Effect.tryPromise({
-      try: () => $fetch('/theme/colors/gray/index'),
-      catch: () => HttpError,
-    }).pipe(Effect.map((item) => item.map((i) => i.id))),
-  getGrayColor: (params: Omit<Params, 'framework'>) =>
-    Effect.tryPromise({
-      try: () => $fetch('/theme/colors/gray/:id', { params }),
-      catch: () => HttpError,
-    }),
-  getAccentColor: (params: Omit<Params, 'framework'>) =>
-    Effect.tryPromise({
-      try: () => $fetch('/theme/colors/accent/:id', { params }),
-      catch: () => HttpError,
-    }),
-  getComponent: (params: Params) =>
-    Effect.tryPromise({
-      try: () => $fetch('/components/:framework/:id', { params }),
+      try: () => $fetch('/:framework/:id', { params }),
       catch: (e) => {
         if (e instanceof BetterFetchError) {
           if (e.status === 404) return RegistryItemNotFound
@@ -76,9 +61,14 @@ export const registry = {
         return HttpError
       },
     }),
-  getComponentIds: (params: Omit<Params, 'id'>) =>
+  getRegistryThemeItem: (id: string) =>
     Effect.tryPromise({
-      try: () => $fetch('/components/:framework/index', { params }),
-      catch: () => HttpError,
-    }).pipe(Effect.map((item) => item.map((i) => i.id))),
+      try: () => $fetch('/theme/:id', { params: { id } }),
+      catch: (e) => {
+        if (e instanceof BetterFetchError) {
+          if (e.status === 404) return RegistryItemNotFound
+        }
+        return HttpError
+      },
+    }),
 }

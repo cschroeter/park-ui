@@ -5,12 +5,15 @@ import type { Framework } from '~/schema'
 import { registry } from './registry'
 
 export const promptInitConfig = () =>
-  Effect.all([registry.getAcccentColors(), registry.getGrayColors()])
+  registry
+    .getColors()
     .pipe(
-      Effect.map(([accentColors, grayColors]) => {
-        const accentOptions = accentColors.map((color) => ({
-          value: color,
-          label: titleCase(color),
+      Effect.map((colors) => {
+        const grayColors = ['gray', 'mauve', 'slate', 'sage', 'olive', 'sand']
+        const accentColors = colors.filter((color) => !grayColors.includes(color.name))
+        const accentOptions = accentColors.map(({ name }) => ({
+          value: name,
+          label: titleCase(name),
         }))
         const grayOptions = grayColors.map((color) => ({
           value: color,

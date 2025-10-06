@@ -9,7 +9,8 @@ interface Args {
 
 export const initTheme = ({ accentColor, grayColor }: Args) => {
   return Effect.all([
-    registry.getAccentColor({ id: accentColor }),
-    registry.getGrayColor({ id: grayColor }),
+    registry.getRegistryThemeItem('__init'),
+    registry.getRegistryThemeItem(accentColor),
+    registry.getRegistryThemeItem(grayColor),
   ]).pipe(Effect.flatMap((colors) => Effect.forEach(colors, (color) => install(color))))
 }
