@@ -2,12 +2,12 @@ import * as p from '@clack/prompts'
 import { Effect } from 'effect'
 import { titleCase } from 'scule'
 import type { Framework } from '~/schema'
-import { registry } from './registry'
+import { fetchRegistryThemeIndex } from './registry-client'
 
 export const promptInitConfig = () =>
-  registry
-    .getColors()
+  fetchRegistryThemeIndex()
     .pipe(
+      Effect.map((items) => items.filter((item) => item.type === 'registry:color')),
       Effect.map((colors) => {
         const grayColors = ['gray', 'mauve', 'slate', 'sage', 'olive', 'sand']
         const accentColors = colors.filter((color) => !grayColors.includes(color.name))
@@ -31,18 +31,10 @@ export const promptInitConfig = () =>
           try: () => prompt(colors),
           catch: () => new Error('Failed to collect configuration. Please try again.'),
         }).pipe(
-          Effect.map(({ accentColor, framework, components, grayColor, theme }) => ({
-            config: {
-              framework,
-              paths: {
-                components,
-                theme,
-              },
-            },
-            colors: {
-              accentColor,
-              grayColor,
-            },
+          Effect.map(({ accentColor, framework, grayColor }) => ({
+            framework,
+            accentColor,
+            grayColor,
           })),
         ),
       ),
@@ -69,36 +61,16 @@ const prompt = ({ accentColors, neutralColors }: Args) =>
           ],
           initialValue: 'react',
         }),
-      components: () =>
-        p.text({
-          message: 'Where should UI components be stored?',
-          initialValue: './src/components/ui',
-          validate: (value) => {
-            if (!value) return 'Please enter a valid path.'
-            if (!value.startsWith('.'))
-              return 'Please enter a relative path from the project root (e.g., ./src/components/ui).'
-          },
-        }),
-      theme: () =>
-        p.text({
-          message: 'Where should theme files be stored?',
-          initialValue: './src/theme',
-          validate: (value) => {
-            if (!value) return 'Please enter a valid path.'
-            if (!value.startsWith('.'))
-              return 'Please enter a relative path from the project root (e.g., ./src/theme).'
-          },
-        }),
       accentColor: () =>
         p.autocomplete({
-          message: 'Select an accent color',
+          message: 'Which color would you like to use as the accent color?',
           options: accentColors,
           placeholder: 'Type to search...',
           maxItems: 8,
         }),
       grayColor: () =>
         p.autocomplete({
-          message: 'Select a neutral color',
+          message: 'Which color would you like to use as the gray color?',
           options: neutralColors,
           placeholder: 'Type to search...',
           maxItems: 8,

@@ -2,20 +2,26 @@ import * as p from '@clack/prompts'
 import { Command } from 'commander'
 import { Effect, Layer } from 'effect'
 import color from 'picocolors'
+import { install } from '~/utils/install'
 import { withPandaConfig } from '~/utils/panda-config'
-import { createParkUIConfig, ParkUIConfig } from '~/utils/park-ui-config'
+import { ParkUIConfig, saveConfig } from '~/utils/park-ui-config'
 import { promptInitConfig } from '~/utils/prompt'
-import { initTheme } from '~/utils/theme'
+import { fetchRegistryThemeItems } from '~/utils/registry-client'
 
 export const init = new Command('init').description('').action(async () => {
   p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
   const program = promptInitConfig().pipe(
-    Effect.flatMap(({ config, colors }) =>
+    Effect.flatMap(({ framework, accentColor, grayColor }) =>
       Effect.all([
-        createParkUIConfig(config),
-        initTheme(colors).pipe(Effect.provide(Layer.effect(ParkUIConfig, Effect.succeed(config)))),
+        saveConfig(framework),
+        fetchRegistryThemeItems(['__init', accentColor, grayColor]),
       ]),
+    ),
+    Effect.flatMap(([config, items]) =>
+      Effect.all(items.map((item) => install(item))).pipe(
+        Effect.provide(Layer.effect(ParkUIConfig, Effect.succeed(config))),
+      ),
     ),
     Effect.tap(() => p.outro(`Park UI has been initialized successfully! 🎉`)),
     Effect.catchAll(() =>

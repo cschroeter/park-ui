@@ -2,7 +2,7 @@ import { access } from 'node:fs/promises'
 import { join } from 'node:path'
 import * as p from '@clack/prompts'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
-import { packageDirectory } from 'pkg-dir'
+import { packageDirectory } from 'package-directory'
 import {
   type ObjectLiteralExpression,
   Project,

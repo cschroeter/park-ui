@@ -2,14 +2,18 @@ import { join } from 'node:path'
 import * as p from '@clack/prompts'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
 import { outputJSON, readJSON } from 'fs-extra'
-import { packageDirectory } from 'pkg-dir'
+import { packageDirectory } from 'package-directory'
+import type { Framework } from '~/schema'
 import { FileError, ParkUIConfigInvalid, ParkUIConfigNotFound } from './errors'
 
 const ConfigSchema = Schema.Struct({
   framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
-  paths: Schema.Struct({
+  aliases: Schema.Struct({
     components: Schema.String,
     theme: Schema.String,
+    hooks: Schema.String,
+    lib: Schema.String,
+    ui: Schema.String,
   }),
 })
 
@@ -34,7 +38,7 @@ const getConfigPath = () =>
     Effect.promise(() => packageDirectory()),
     Effect.flatMap(Effect.fromNullable),
     Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
-    Effect.map((packageDir) => join(packageDir, 'park-ui.json')),
+    Effect.map((packageDir) => join(packageDir, 'components.json')),
   )
 
 export const ParkUIConfig = Context.GenericTag<Config>('ParkUIConfig')
@@ -51,20 +55,23 @@ export const withParkUIConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
     ),
   )
 
-export const createParkUIConfig = (config: Config) =>
+export const saveConfig = (framework: Framework) =>
   getConfigPath().pipe(
-    Effect.flatMap((configPath) =>
-      Effect.tryPromise({
-        try: () =>
-          outputJSON(
-            configPath,
-            {
-              $schema: 'https://next.park-ui.com/schema/park-ui-config.json',
-              ...config,
-            },
-            { spaces: 2 },
-          ),
+    Effect.flatMap((configPath) => {
+      const config = {
+        $schema: 'https://next.park-ui.com/schema/components.json',
+        framework,
+        aliases: {
+          components: '@/components',
+          hooks: '@/hooks',
+          lib: '@/lib',
+          theme: '@/theme',
+          ui: '@/components/ui',
+        },
+      }
+      return Effect.tryPromise({
+        try: () => outputJSON(configPath, config, { spaces: 2 }),
         catch: () => FileError(configPath),
-      }),
-    ),
+      }).pipe(Effect.map(() => config))
+    }),
   )

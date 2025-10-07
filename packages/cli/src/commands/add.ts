@@ -1,11 +1,11 @@
 import * as p from '@clack/prompts'
 import { Command } from 'commander'
-import { Effect } from 'effect'
+import { Effect, pipe } from 'effect'
 import color from 'picocolors'
-import { fetchComponents } from '~/utils/components'
+import { install } from '~/utils/install'
 import { withPandaConfig } from '~/utils/panda-config'
 import { withParkUIConfig } from '~/utils/park-ui-config'
-import { install } from '~/utils/registry-item'
+import { fetchRegistryIndex, fetchRegistryItems } from '~/utils/registry-client'
 
 export const add = new Command('add')
   .description('add components to your project')
@@ -14,11 +14,16 @@ export const add = new Command('add')
   .action(async (components, opts) => {
     p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
-    const program = fetchComponents(components, opts).pipe(
-      Effect.flatMap((components) => {
-        p.note(`Installing ${components.length} components...`, 'Info')
-        return Effect.forEach(components, (component) => install(component))
-      }),
+    const program = pipe(
+      opts.all
+        ? fetchRegistryIndex().pipe(
+            Effect.map((items) => items.filter((item) => item.type === 'registry:ui')),
+            Effect.map((items) => items.map((item) => item.name)),
+          )
+        : Effect.succeed(components),
+      Effect.tap((items) => p.note(`Installing ${items.length} components...`, 'Info')),
+      Effect.flatMap((ids) => fetchRegistryItems({ ids })),
+      Effect.flatMap((items) => Effect.forEach(items, (item) => install(item))),
       Effect.tap(() => p.outro('Components installed. Happy Hacking 🤞')),
       Effect.catchAll(() =>
         Effect.sync(() => {
