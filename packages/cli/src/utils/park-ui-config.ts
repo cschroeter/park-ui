@@ -1,10 +1,11 @@
-import { join } from 'node:path'
+import path, { join } from 'node:path'
 import * as p from '@clack/prompts'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
 import { outputJSON, readJSON } from 'fs-extra'
 import { packageDirectory } from 'package-directory'
 import type { Framework } from '~/schema'
 import { FileError, ParkUIConfigInvalid, ParkUIConfigNotFound } from './errors'
+import { PandaConfig } from './panda-config'
 
 const ConfigSchema = Schema.Struct({
   framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
@@ -59,11 +60,14 @@ export const withParkUIConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
   )
 
 export const saveConfig = (framework: Framework) =>
-  getConfigPath().pipe(
-    Effect.flatMap((configPath) => {
-      const config = {
+  Effect.all([
+    PandaConfig.pipe(
+      Effect.map((pandaConfig) => ({
         $schema: 'https://next.park-ui.com/schema/components.json',
         framework,
+        panda: {
+          config: path.relative(process.cwd(), pandaConfig.path),
+        },
         aliases: {
           components: '@/components',
           hooks: '@/hooks',
@@ -71,10 +75,14 @@ export const saveConfig = (framework: Framework) =>
           theme: '@/theme',
           ui: '@/components/ui',
         },
-      }
-      return Effect.tryPromise({
+      })),
+    ),
+    getConfigPath(),
+  ]).pipe(
+    Effect.flatMap(([config, configPath]) =>
+      Effect.tryPromise({
         try: () => outputJSON(configPath, config, { spaces: 2 }),
         catch: () => FileError(configPath),
-      }).pipe(Effect.map(() => config))
-    }),
+      }).pipe(Effect.map(() => config)),
+    ),
   )
