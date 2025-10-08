@@ -2,13 +2,12 @@ import * as p from '@clack/prompts'
 import { Command } from 'commander'
 import { Effect, Layer, Schema } from 'effect'
 import color from 'picocolors'
-import { loadConfig } from 'tsconfig-paths'
-import { Config, ConfigSchemaWithResolvedPaths, saveConfig } from '~/utils/config'
-import { TSConfigNotFound } from '~/utils/errors'
+import { Config, ConigSchema, saveConfig } from '~/utils/config'
 import { install } from '~/utils/install'
 import { withPandaConfig } from '~/utils/panda-config'
 import { promptInitConfig } from '~/utils/prompt'
 import { fetchRegistryThemeItems } from '~/utils/registry-client'
+import { withTSConfig } from '~/utils/tsconfig'
 
 export const init = new Command('init').description('').action(async () => {
   p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
@@ -18,17 +17,10 @@ export const init = new Command('init').description('').action(async () => {
       Effect.all([
         saveConfig(framework),
         fetchRegistryThemeItems(['__init', accentColor, grayColor]),
-        Effect.succeed(loadConfig(process.cwd())).pipe(
-          Effect.filterOrFail(
-            (result): result is Extract<typeof result, { resultType: 'success' }> =>
-              result.resultType !== 'failed',
-            () => TSConfigNotFound(process.cwd()),
-          ),
-        ),
       ]),
     ),
-    Effect.flatMap(([config, items, tsConfig]) =>
-      Schema.decodeUnknown(ConfigSchemaWithResolvedPaths(tsConfig))(config).pipe(
+    Effect.flatMap(([config, items]) =>
+      Schema.decodeUnknown(ConigSchema)(config).pipe(
         Effect.flatMap((resolvedConfig) =>
           Effect.all(items.map((item) => install(item))).pipe(
             Effect.provide(Layer.effect(Config, Effect.succeed(resolvedConfig))),
@@ -47,5 +39,5 @@ export const init = new Command('init').description('').action(async () => {
     ),
   )
 
-  await Effect.runPromise(withPandaConfig(program))
+  await Effect.runPromise(withTSConfig(withPandaConfig(program)))
 })

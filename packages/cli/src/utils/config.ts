@@ -3,13 +3,13 @@ import * as p from '@clack/prompts'
 import { cosmiconfig } from 'cosmiconfig'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
 import { outputJSON, readJSON } from 'fs-extra'
-import { type ConfigLoaderSuccessResult, loadConfig } from 'tsconfig-paths'
 import type { Framework } from '~/schema'
-import { ConfigInvalid, ConfigNotFound, FileError, TSConfigNotFound } from './errors'
+import { ConfigInvalid, ConfigNotFound, FileError } from './errors'
 import { PandaConfig } from './panda-config'
 import { resolveImport } from './resolve-import'
+import { TSConfig } from './tsconfig'
 
-const ConfigSchema = Schema.Struct({
+const BaseConfigSchema = Schema.Struct({
   framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
   panda: Schema.Struct({
     config: Schema.String,
@@ -23,86 +23,81 @@ const ConfigSchema = Schema.Struct({
   }),
 })
 
-export const ConfigSchemaWithResolvedPaths = (tsConfig: ConfigLoaderSuccessResult) =>
-  ConfigSchema.pipe(
-    Schema.transformOrFail(
-      Schema.Struct({
-        framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
-        panda: Schema.Struct({
-          config: Schema.String,
-        }),
-        aliases: Schema.Struct({
-          components: Schema.String,
-          theme: Schema.String,
-          hooks: Schema.String,
-          lib: Schema.String,
-          ui: Schema.String,
-        }),
-        resolvedPaths: Schema.Struct({
-          components: Schema.String,
-          theme: Schema.String,
-          hooks: Schema.String,
-          lib: Schema.String,
-          ui: Schema.String,
-          pandaConfig: Schema.String,
-        }),
+export const ConigSchema = BaseConfigSchema.pipe(
+  Schema.transformOrFail(
+    Schema.Struct({
+      framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
+      panda: Schema.Struct({
+        config: Schema.String,
       }),
-      {
-        decode: (config) =>
-          Effect.promise(async () => {
-            const cwd = process.cwd()
-            const componentsPath = (await resolveImport(config.aliases.components, tsConfig)) ?? cwd
+      aliases: Schema.Struct({
+        components: Schema.String,
+        theme: Schema.String,
+        hooks: Schema.String,
+        lib: Schema.String,
+        ui: Schema.String,
+      }),
+      resolvedPaths: Schema.Struct({
+        components: Schema.String,
+        theme: Schema.String,
+        hooks: Schema.String,
+        lib: Schema.String,
+        ui: Schema.String,
+        pandaConfig: Schema.String,
+      }),
+    }),
+    {
+      decode: (config) =>
+        TSConfig.pipe(
+          Effect.flatMap((tsConfig) =>
+            Effect.promise(async () => {
+              const cwd = process.cwd()
+              const componentsPath =
+                (await resolveImport(config.aliases.components, tsConfig)) ?? cwd
 
-            return {
-              ...config,
-              resolvedPaths: {
-                components: componentsPath,
-                ui: config.aliases.ui
-                  ? ((await resolveImport(config.aliases.ui, tsConfig)) ??
-                    path.resolve(componentsPath, 'ui'))
-                  : path.resolve(componentsPath, 'ui'),
-                hooks: config.aliases.hooks
-                  ? ((await resolveImport(config.aliases.hooks, tsConfig)) ??
-                    path.resolve(componentsPath, '..', 'hooks'))
-                  : path.resolve(componentsPath, '..', 'hooks'),
-                theme: config.aliases.theme
-                  ? ((await resolveImport(config.aliases.theme, tsConfig)) ??
-                    path.resolve(componentsPath, '..', 'theme'))
-                  : path.resolve(componentsPath, '..', 'theme'),
-                lib: config.aliases.lib
-                  ? ((await resolveImport(config.aliases.lib, tsConfig)) ??
-                    path.resolve(componentsPath, '..'))
-                  : path.resolve(componentsPath, '..'),
-                pandaConfig: path.resolve(cwd, config.panda.config),
-              },
-            }
-          }),
-        encode: (config) => Effect.succeed(config),
-      },
-    ),
-  )
+              return {
+                ...config,
+                resolvedPaths: {
+                  components: componentsPath,
+                  ui: config.aliases.ui
+                    ? ((await resolveImport(config.aliases.ui, tsConfig)) ??
+                      path.resolve(componentsPath, 'ui'))
+                    : path.resolve(componentsPath, 'ui'),
+                  hooks: config.aliases.hooks
+                    ? ((await resolveImport(config.aliases.hooks, tsConfig)) ??
+                      path.resolve(componentsPath, '..', 'hooks'))
+                    : path.resolve(componentsPath, '..', 'hooks'),
+                  theme: config.aliases.theme
+                    ? ((await resolveImport(config.aliases.theme, tsConfig)) ??
+                      path.resolve(componentsPath, '..', 'theme'))
+                    : path.resolve(componentsPath, '..', 'theme'),
+                  lib: config.aliases.lib
+                    ? ((await resolveImport(config.aliases.lib, tsConfig)) ??
+                      path.resolve(componentsPath, '..'))
+                    : path.resolve(componentsPath, '..'),
+                  pandaConfig: path.resolve(cwd, config.panda.config),
+                },
+              }
+            }),
+          ),
+        ),
+      encode: (config) => Effect.succeed(config),
+    },
+  ),
+)
 
-type Config = Schema.Schema.Type<ReturnType<typeof ConfigSchemaWithResolvedPaths>>
+type Config = Schema.Schema.Type<typeof ConigSchema>
 
 const getConfig = () =>
   getConfigPath().pipe(
     Effect.flatMap((configPath) =>
       pipe(
-        Effect.all([
-          Effect.tryPromise({
-            try: () => readJSON(configPath),
-            catch: () => ConfigNotFound(configPath),
-          }),
-          Effect.succeed(loadConfig(process.cwd())).pipe(
-            Effect.filterOrFail(
-              (result): result is Extract<typeof result, { resultType: 'success' }> =>
-                result.resultType !== 'failed',
-              () => TSConfigNotFound(process.cwd()),
-            ),
-          ),
-        ]),
-        Effect.flatMap(([config, tsConfig]) =>
-          Schema.decodeUnknown(ConfigSchemaWithResolvedPaths(tsConfig))(config).pipe(
+        Effect.tryPromise({
+          try: () => readJSON(configPath),
+          catch: () => ConfigNotFound(configPath),
+        }),
+        Effect.flatMap((config) =>
+          Schema.decodeUnknown(ConigSchema)(config).pipe(
             Effect.mapError(() => ConfigInvalid(configPath)),
           ),
         ),
