@@ -23,6 +23,11 @@ export const TSConfigNotFound = (configPath: string) => ({
   message: `No tsconfig.json or jsconfig.json found at ${configPath}.\nPlease create one then try again.`,
 })
 
+export const TSConfigInvalid = () => ({
+  _tag: 'TSConfigInvalid' as const,
+  message: `No import alias found in your tsconfig.json file.`,
+})
+
 export const RegistryItemNotFound = {
   _tag: 'RegistryItemNotFound',
 } as const

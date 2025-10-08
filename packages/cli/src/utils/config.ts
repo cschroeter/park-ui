@@ -50,35 +50,39 @@ export const ConigSchema = BaseConfigSchema.pipe(
       decode: (config) =>
         TSConfig.pipe(
           Effect.flatMap((tsConfig) =>
-            Effect.promise(async () => {
-              const cwd = process.cwd()
-              const componentsPath =
-                (await resolveImport(config.aliases.components, tsConfig)) ?? cwd
-
-              return {
-                ...config,
-                resolvedPaths: {
-                  components: componentsPath,
-                  ui: config.aliases.ui
-                    ? ((await resolveImport(config.aliases.ui, tsConfig)) ??
-                      path.resolve(componentsPath, 'ui'))
-                    : path.resolve(componentsPath, 'ui'),
-                  hooks: config.aliases.hooks
-                    ? ((await resolveImport(config.aliases.hooks, tsConfig)) ??
-                      path.resolve(componentsPath, '..', 'hooks'))
-                    : path.resolve(componentsPath, '..', 'hooks'),
-                  theme: config.aliases.theme
-                    ? ((await resolveImport(config.aliases.theme, tsConfig)) ??
-                      path.resolve(componentsPath, '..', 'theme'))
-                    : path.resolve(componentsPath, '..', 'theme'),
-                  lib: config.aliases.lib
-                    ? ((await resolveImport(config.aliases.lib, tsConfig)) ??
-                      path.resolve(componentsPath, '..'))
-                    : path.resolve(componentsPath, '..'),
-                  pandaConfig: path.resolve(cwd, config.panda.config),
-                },
-              }
-            }),
+            pipe(
+              Effect.promise(() => resolveImport(config.aliases.components, tsConfig)),
+              Effect.map((componentsPath) => componentsPath ?? process.cwd()),
+              Effect.flatMap((componentsPath) =>
+                pipe(
+                  Effect.all({
+                    ui: config.aliases.ui
+                      ? Effect.promise(() => resolveImport(config.aliases.ui, tsConfig))
+                      : Effect.succeed(null),
+                    hooks: config.aliases.hooks
+                      ? Effect.promise(() => resolveImport(config.aliases.hooks, tsConfig))
+                      : Effect.succeed(null),
+                    theme: config.aliases.theme
+                      ? Effect.promise(() => resolveImport(config.aliases.theme, tsConfig))
+                      : Effect.succeed(null),
+                    lib: config.aliases.lib
+                      ? Effect.promise(() => resolveImport(config.aliases.lib, tsConfig))
+                      : Effect.succeed(null),
+                  }),
+                  Effect.map((resolved) => ({
+                    ...config,
+                    resolvedPaths: {
+                      components: componentsPath,
+                      ui: resolved.ui ?? path.resolve(componentsPath, 'ui'),
+                      hooks: resolved.hooks ?? path.resolve(componentsPath, '..', 'hooks'),
+                      theme: resolved.theme ?? path.resolve(componentsPath, '..', 'theme'),
+                      lib: resolved.lib ?? path.resolve(componentsPath, '..'),
+                      pandaConfig: path.resolve(process.cwd(), config.panda.config),
+                    },
+                  })),
+                ),
+              ),
+            ),
           ),
         ),
       encode: (config) => Effect.succeed(config),
@@ -135,19 +139,20 @@ export const withConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
 
 export const saveConfig = (framework: Framework) =>
   Effect.all([
-    PandaConfig.pipe(
-      Effect.map((pandaConfig) => ({
+    pipe(
+      Effect.all([PandaConfig, TSConfig]),
+      Effect.map(([pandaConfig, { aliasPrefix }]) => ({
         $schema: 'https://next.park-ui.com/schema/components.json',
         framework,
         panda: {
           config: path.relative(process.cwd(), pandaConfig.path),
         },
         aliases: {
-          components: '@/components',
-          hooks: '@/hooks',
-          lib: '@/lib',
-          theme: '@/theme',
-          ui: '@/components/ui',
+          components: `${aliasPrefix}/components`,
+          hooks: `${aliasPrefix}/hooks`,
+          lib: `${aliasPrefix}/lib`,
+          theme: `${aliasPrefix}/theme`,
+          ui: `${aliasPrefix}/components/ui`,
         },
       })),
     ),

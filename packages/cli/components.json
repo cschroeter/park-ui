@@ -5,10 +5,10 @@
     "config": "panda.config.ts"
   },
   "aliases": {
-    "components": "@/components",
-    "hooks": "@/hooks",
-    "lib": "@/lib",
-    "theme": "@/theme",
-    "ui": "@/components/ui"
+    "components": "~/components",
+    "hooks": "~/hooks",
+    "lib": "~/lib",
+    "theme": "~/theme",
+    "ui": "~/components/ui"
   }
 }

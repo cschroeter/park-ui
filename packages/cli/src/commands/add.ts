@@ -6,6 +6,7 @@ import { withConfig } from '~/utils/config'
 import { install } from '~/utils/install'
 import { withPandaConfig } from '~/utils/panda-config'
 import { fetchRegistryIndex, fetchRegistryItems } from '~/utils/registry-client'
+import { withTSConfig } from '~/utils/tsconfig'
 
 export const add = new Command('add')
   .description('add components to your project')
@@ -34,5 +35,5 @@ export const add = new Command('add')
         }),
       ),
     )
-    await Effect.runPromise(withPandaConfig(withConfig(program)))
+    await Effect.runPromise(withPandaConfig(withTSConfig(withConfig(program))))
   })
