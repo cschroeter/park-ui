@@ -8,6 +8,9 @@ import { FileError, ParkUIConfigInvalid, ParkUIConfigNotFound } from './errors'
 
 const ConfigSchema = Schema.Struct({
   framework: Schema.Literal('react', 'solid', 'svelte', 'vue'),
+  panda: Schema.Struct({
+    config: Schema.String,
+  }),
   aliases: Schema.Struct({
     components: Schema.String,
     theme: Schema.String,

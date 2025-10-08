@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "default": "https://next.park-ui.com/schema/park-ui-config.json"
+    },
+    "framework": {
+      "type": "string",
+      "enum": ["react", "solid", "svelte", "vue"],
+      "description": "The framework to use for the components"
+    },
+    "panda": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "string",
+          "description": "Path to the Panda CSS configuration file"
+        }
+      },
+      "required": ["config"],
+      "additionalProperties": false
+    },
+    "aliases": {
+      "type": "object",
+      "properties": {
+        "components": {
+          "type": "string",
+          "description": "Path alias for components"
+        },
+        "theme": {
+          "type": "string",
+          "description": "Path alias for theme"
+        },
+        "hooks": {
+          "type": "string",
+          "description": "Path alias for hooks"
+        },
+        "lib": {
+          "type": "string",
+          "description": "Path alias for lib"
+        },
+        "ui": {
+          "type": "string",
+          "description": "Path alias for UI components"
+        }
+      },
+      "required": ["components", "theme", "hooks", "lib", "ui"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["framework", "panda", "aliases"],
+  "additionalProperties": false
+}

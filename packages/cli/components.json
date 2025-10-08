@@ -1,6 +1,9 @@
 {
   "$schema": "https://next.park-ui.com/schema/components.json",
   "framework": "react",
+  "panda": {
+    "config": "panda.config.ts"
+  },
   "aliases": {
     "components": "@/components",
     "hooks": "@/hooks",
