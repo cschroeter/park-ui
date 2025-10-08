@@ -7,7 +7,7 @@
     {
       "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { inputElement } from 'styled-system/recipes'\n\nexport type InputElementProps = ComponentProps<typeof InputElement>\nexport const InputElement = styled(ark.div, inputElement)\n",
       "type": "registry:ui",
-      "path": "ui/input-element.tsx"
+      "path": "input-element.tsx"
     }
   ],
   "registryDependencies": ["input-element-recipe"]

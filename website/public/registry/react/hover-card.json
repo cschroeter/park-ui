@@ -7,7 +7,7 @@
     {
       "content": "'use client'\nimport { HoverCard } from '@ark-ui/react/hover-card'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { hoverCard } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(hoverCard)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider(HoverCard.Root)\nexport const RootProvider = withRootProvider(HoverCard.RootProvider)\nexport const Arrow = withContext(HoverCard.Arrow, 'arrow')\nexport const ArrowTip = withContext(HoverCard.ArrowTip, 'arrowTip')\nexport const Content = withContext(HoverCard.Content, 'content')\nexport const Positioner = withContext(HoverCard.Positioner, 'positioner')\nexport const Trigger = withContext(HoverCard.Trigger, 'trigger')\n\nexport { HoverCardContext as Context } from '@ark-ui/react/hover-card'\n",
       "type": "registry:ui",
-      "path": "ui/hover-card.tsx"
+      "path": "hover-card.tsx"
     }
   ],
   "registryDependencies": ["hover-card-recipe"]

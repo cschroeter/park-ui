@@ -7,7 +7,7 @@
     {
       "content": "import type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { type HeadingVariantProps, heading } from 'styled-system/recipes'\nimport type { StyledComponent } from 'styled-system/types'\n\ntype Props = HeadingVariantProps & { as?: React.ElementType }\n\nexport type HeadingProps = ComponentProps<typeof Heading>\nexport const Heading = styled('h2', heading) as StyledComponent<'h2', Props>\n",
       "type": "registry:ui",
-      "path": "ui/heading.tsx"
+      "path": "heading.tsx"
     }
   ],
   "registryDependencies": ["heading-recipe"]

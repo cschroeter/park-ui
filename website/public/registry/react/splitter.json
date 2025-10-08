@@ -7,7 +7,7 @@
     {
       "content": "'use client'\nimport { Splitter } from '@ark-ui/react/splitter'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { splitter } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(splitter)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Splitter.Root, 'root')\nexport const RootProvider = withProvider(Splitter.RootProvider, 'root')\nexport const Panel = withContext(Splitter.Panel, 'panel')\nexport const ResizeTrigger = withContext(Splitter.ResizeTrigger, 'resizeTrigger')\n\nexport { SplitterContext as Context } from '@ark-ui/react/splitter'\n",
       "type": "registry:ui",
-      "path": "ui/splitter.tsx"
+      "path": "splitter.tsx"
     }
   ],
   "registryDependencies": ["splitter-recipe"]

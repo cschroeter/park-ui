@@ -7,7 +7,7 @@
     {
       "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { spinner } from 'styled-system/recipes'\n\nexport type SpinnerProps = ComponentProps<typeof Spinner>\nexport const Spinner = styled(ark.span, spinner)\n",
       "type": "registry:ui",
-      "path": "ui/spinner.tsx"
+      "path": "spinner.tsx"
     }
   ],
   "registryDependencies": ["spinner-recipe"]

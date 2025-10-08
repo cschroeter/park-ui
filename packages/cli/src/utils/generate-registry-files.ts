@@ -18,7 +18,7 @@ const readFileContent = async (filePath: string): Promise<string> => {
 
 const transformPath = (filePath: string, type: string): string => {
   if (type === 'registry:ui') {
-    return filePath.replace(/^src\/components\//, '')
+    return filePath.replace(/^src\/components\/ui\//, '')
   }
 
   if (type === 'registry:recipe') {

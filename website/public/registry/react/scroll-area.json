@@ -7,7 +7,7 @@
     {
       "content": "'use client'\nimport { ScrollArea } from '@ark-ui/react/scroll-area'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { scrollArea } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(scrollArea)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(ScrollArea.Root, 'root')\nexport const RootProvider = withProvider(ScrollArea.Root, 'root')\nexport const Content = withContext(ScrollArea.Content, 'content')\nexport const Corner = withContext(ScrollArea.Corner, 'corner')\nexport const Scrollbar = withContext(ScrollArea.Scrollbar, 'scrollbar')\nexport const Thumb = withContext(ScrollArea.Thumb, 'thumb')\nexport const Viewport = withContext(ScrollArea.Viewport, 'viewport')\n\nexport { ScrollAreaContext as Context } from '@ark-ui/react/scroll-area'\n",
       "type": "registry:ui",
-      "path": "ui/scroll-area.tsx"
+      "path": "scroll-area.tsx"
     }
   ],
   "registryDependencies": ["scroll-area-recipe"]

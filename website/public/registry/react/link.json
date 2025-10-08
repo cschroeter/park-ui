@@ -7,7 +7,7 @@
     {
       "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { link } from 'styled-system/recipes'\n\nexport type LinkProps = ComponentProps<typeof Link>\nexport const Link = styled(ark.a, link)\n",
       "type": "registry:ui",
-      "path": "ui/link.tsx"
+      "path": "link.tsx"
     }
   ],
   "registryDependencies": ["link-recipe"]

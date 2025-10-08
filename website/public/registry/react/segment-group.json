@@ -7,7 +7,7 @@
     {
       "content": "'use client'\nimport { SegmentGroup } from '@ark-ui/react/segment-group'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { segmentGroup } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(segmentGroup)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(SegmentGroup.Root, 'root')\nexport const RootProvider = withProvider(SegmentGroup.RootProvider, 'root')\nexport const Indicator = withContext(SegmentGroup.Indicator, 'indicator')\nexport const Item = withContext(SegmentGroup.Item, 'item')\nexport const ItemControl = withContext(SegmentGroup.ItemControl, 'itemControl')\nexport const ItemHiddenInput = SegmentGroup.ItemHiddenInput\nexport const ItemText = withContext(SegmentGroup.ItemText, 'itemText')\nexport const Label = withContext(SegmentGroup.Label, 'label')\n\nexport { SegmentGroupContext as Context } from '@ark-ui/react/segment-group'\n",
       "type": "registry:ui",
-      "path": "ui/segment-group.tsx"
+      "path": "segment-group.tsx"
     }
   ],
   "registryDependencies": ["segment-group-recipe"]

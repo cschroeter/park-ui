@@ -7,7 +7,7 @@
     {
       "content": "'use client'\nimport { TagsInput } from '@ark-ui/react/tags-input'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { tagsInput } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(tagsInput)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(TagsInput.Root, 'root')\nexport const RootProvider = withProvider(TagsInput.RootProvider, 'root')\nexport const ClearTrigger = withContext(TagsInput.ClearTrigger, 'clearTrigger')\nexport const Control = withContext(TagsInput.Control, 'control')\nexport const HiddenInput = TagsInput.HiddenInput\nexport const Input = withContext(TagsInput.Input, 'input')\nexport const Item = withContext(TagsInput.Item, 'item')\nexport const ItemDeleteTrigger = withContext(TagsInput.ItemDeleteTrigger, 'itemDeleteTrigger')\nexport const ItemInput = withContext(TagsInput.ItemInput, 'itemInput')\nexport const ItemPreview = withContext(TagsInput.ItemPreview, 'itemPreview')\nexport const ItemText = withContext(TagsInput.ItemText, 'itemText')\nexport const Label = withContext(TagsInput.Label, 'label')\n\nexport { TagsInputContext as Context } from '@ark-ui/react/tags-input'\n",
       "type": "registry:ui",
-      "path": "ui/tags-input.tsx"
+      "path": "tags-input.tsx"
     }
   ],
   "registryDependencies": ["tags-input-recipe"]
