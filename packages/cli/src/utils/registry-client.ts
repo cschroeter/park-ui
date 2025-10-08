@@ -1,8 +1,8 @@
 import { BetterFetchError, createFetch, createSchema } from '@better-fetch/fetch'
 import { Effect, pipe } from 'effect'
 import { type Framework, type RegistryItem, registryIndexList, registryItem } from '../schema'
+import { Config } from './config'
 import { HttpError, RegistryItemNotFound } from './errors'
-import { ParkUIConfig } from './park-ui-config'
 
 interface Params {
   ids: string[]
@@ -15,7 +15,7 @@ export const fetchRegistryThemeIndex = () =>
   })
 
 export const fetchRegistryIndex = () =>
-  ParkUIConfig.pipe(
+  Config.pipe(
     Effect.flatMap(({ framework }) =>
       Effect.tryPromise({
         try: () => $fetch('/:framework/index', { params: { framework } }),
@@ -28,7 +28,7 @@ export const fetchRegistryThemeItems = (ids: string[]) =>
   Effect.all(ids.map((id) => fetchRegistryItem('/theme/:id', { id })))
 
 export const fetchRegistryItems = ({ ids }: Params) =>
-  ParkUIConfig.pipe(
+  Config.pipe(
     Effect.flatMap(({ framework }) =>
       pipe(
         fetchRegistryItemsRecursive(ids, new Set(), framework),

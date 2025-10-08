@@ -92,4 +92,4 @@ const config = z.object({
     ui: z.string(),
   }),
 })
-export type ParkUIConfig = z.infer<typeof config>
+export type Config = z.infer<typeof config>

@@ -2,9 +2,9 @@ import * as p from '@clack/prompts'
 import { Command } from 'commander'
 import { Effect, pipe } from 'effect'
 import color from 'picocolors'
+import { withConfig } from '~/utils/config'
 import { install } from '~/utils/install'
 import { withPandaConfig } from '~/utils/panda-config'
-import { withParkUIConfig } from '~/utils/park-ui-config'
 import { fetchRegistryIndex, fetchRegistryItems } from '~/utils/registry-client'
 
 export const add = new Command('add')
@@ -34,5 +34,5 @@ export const add = new Command('add')
         }),
       ),
     )
-    await Effect.runPromise(withPandaConfig(withParkUIConfig(program)))
+    await Effect.runPromise(withPandaConfig(withConfig(program)))
   })

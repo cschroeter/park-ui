@@ -10,8 +10,8 @@ import {
   SyntaxKind,
 } from 'ts-morph'
 import type { JsonValue } from '~/schema'
+import { Config } from './config'
 import { PandaConfigInvalid, PandaConfigNotFound } from './errors'
-import { ParkUIConfig } from './park-ui-config'
 
 const ConfigSchema = Schema.Struct({
   path: Schema.String,
@@ -49,7 +49,7 @@ export const withPandaConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
 
 export const updatePandaConfig = ({ imports = [], extension = {} }: any) => {
   return pipe(
-    Effect.all([PandaConfig, ParkUIConfig]),
+    Effect.all([PandaConfig, Config]),
     Effect.flatMap(([{ path }, config]) =>
       pipe(
         Effect.sync(() => new Project()),
