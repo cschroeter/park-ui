@@ -56,6 +56,7 @@
     "cosmiconfig": "9.0.0",
     "effect": "3.18.4",
     "fs-extra": "11.3.2",
+    "magicast": "0.3.5",
     "ts-morph": "27.0.0",
     "tsconfig-paths": "4.2.0",
     "zod": "4.1.12"

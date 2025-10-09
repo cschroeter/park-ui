@@ -29,6 +29,24 @@ export const promptInitConfig = () =>
           catch: () => new Error('Failed to collect configuration. Please try again.'),
         }),
       ),
+      Effect.map(({ framework, accentColor, grayColor }) => ({
+        framework,
+        accentColor,
+        grayColor,
+        borderRadius: {
+          theme: {
+            extend: {
+              semanticTokens: {
+                radii: {
+                  l1: { value: '{radii.xs}' },
+                  l2: { value: '{radii.sm}' },
+                  l3: { value: '{radii.md}' },
+                },
+              },
+            },
+          },
+        },
+      })),
     )
 
 type Option = p.Option<string>

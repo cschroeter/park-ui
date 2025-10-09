@@ -4,7 +4,7 @@ import { Effect, Layer, Schema } from 'effect'
 import color from 'picocolors'
 import { Config, ConigSchema, saveConfig } from '~/utils/config'
 import { install } from '~/utils/install'
-import { withPandaConfig } from '~/utils/panda-config'
+import { updatePandaConfig, withPandaConfig } from '~/utils/panda-config'
 import { promptInitConfig } from '~/utils/prompt'
 import { fetchRegistryThemeItems } from '~/utils/registry-client'
 import { withTSConfig } from '~/utils/tsconfig'
@@ -13,11 +13,11 @@ export const init = new Command('init').description('').action(async () => {
   p.intro(`${color.bgCyan(color.black(' Park UI '))}`)
 
   const program = promptInitConfig().pipe(
-    Effect.flatMap(({ framework, accentColor, grayColor }) =>
+    Effect.flatMap(({ framework, accentColor, grayColor, borderRadius }) =>
       Effect.all([
         saveConfig(framework),
-        // updatePandaConfig(borderRadius),
         fetchRegistryThemeItems(['__init', accentColor, grayColor]),
+        updatePandaConfig({ extension: borderRadius }),
       ]),
     ),
     Effect.flatMap(([config, items]) =>
