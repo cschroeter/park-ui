@@ -1,15 +1,52 @@
 {
   "name": "@park-ui/cli",
   "version": "1.0.0-next.3",
+  "description": "CLI tool for Park UI components",
   "type": "module",
   "bin": {
-    "park-ui": "src/index.ts"
+    "park-ui": "dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "grizzly_codes",
+    "url": "https://x.com/grizzly_codes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cschroeter/park-ui.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/cschroeter/park-ui/issues"
+  },
+  "homepage": "https://park-ui.com",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "components",
+    "ui",
+    "panda",
+    "ark",
+    "react",
+    "solid",
+    "park-ui"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
   "scripts": {
     "start": "bun run ./src/index.ts",
     "lint": "biome lint ./src",
     "test": "bun test ./src",
-    "build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
+    "build": "tsup",
     "release-it": "release-it"
   },
   "dependencies": {
@@ -18,7 +55,6 @@
     "commander": "14.0.1",
     "cosmiconfig": "9.0.0",
     "effect": "3.18.4",
-    "fast-glob": "3.3.3",
     "fs-extra": "11.3.2",
     "package-directory": "8.1.0",
     "scule": "1.3.0",
@@ -31,6 +67,7 @@
     "@types/fs-extra": "11.0.4",
     "@types/node": "24.7.0",
     "release-it": "19.0.5",
+    "tsup": "8.5.0",
     "typescript": "5.9.3"
   },
   "peerDependencies": {

@@ -3,7 +3,7 @@ import { Context, Effect, Layer } from 'effect'
 import { type ConfigLoaderResult, type ConfigLoaderSuccessResult, loadConfig } from 'tsconfig-paths'
 import { TSConfigInvalid, TSConfigNotFound } from './errors'
 
-interface TSConfig extends ConfigLoaderSuccessResult {
+export interface TSConfig extends ConfigLoaderSuccessResult {
   aliasPrefix: string
 }
 

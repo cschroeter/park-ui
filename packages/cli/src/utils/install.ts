@@ -1,5 +1,6 @@
 import { join } from 'node:path'
 import { Effect, Match } from 'effect'
+// @ts-expect-error
 import { outputFile } from 'fs-extra/esm'
 import type { RegistryItem } from '../schema'
 import { Config } from './config'

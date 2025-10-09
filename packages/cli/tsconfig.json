@@ -3,10 +3,9 @@
     "lib": ["ESNext"],
     "target": "ESNext",
     "module": "ESNext",
-    "moduleDetection": "force",
     "allowJs": true,
 
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
@@ -19,11 +18,13 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "isolatedModules": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
 
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"],
-      "@/*": ["dist/*"]
+      "~/*": ["src/*"]
     }
   }
 }
