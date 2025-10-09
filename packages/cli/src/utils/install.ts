@@ -9,33 +9,35 @@ import { FileError } from './errors'
 export const install = (item: RegistryItem) =>
   Config.pipe(
     Effect.flatMap(({ resolvedPaths }) =>
-      Effect.forEach(item.files ?? [], (file) =>
-        Effect.tryPromise({
-          try: () =>
-            outputFile(
-              Match.value(file).pipe(
-                Match.when({ type: 'registry:block' }, ({ path }) =>
-                  join(resolvedPaths.components, path),
+      Effect.all([
+        Effect.forEach(item.files ?? [], (file) =>
+          Effect.tryPromise({
+            try: () =>
+              outputFile(
+                Match.value(file).pipe(
+                  Match.when({ type: 'registry:block' }, ({ path }) =>
+                    join(resolvedPaths.components, path),
+                  ),
+                  Match.when({ type: 'registry:color' }, ({ path }) =>
+                    join(resolvedPaths.theme, path),
+                  ),
+                  Match.when({ type: 'registry:component' }, ({ path }) =>
+                    join(resolvedPaths.components, path),
+                  ),
+                  Match.when({ type: 'registry:recipe' }, ({ path }) =>
+                    join(resolvedPaths.theme, path),
+                  ),
+                  Match.when({ type: 'registry:theme' }, ({ path }) =>
+                    join(resolvedPaths.theme, path),
+                  ),
+                  Match.when({ type: 'registry:ui' }, ({ path }) => join(resolvedPaths.ui, path)),
+                  Match.exhaustive,
                 ),
-                Match.when({ type: 'registry:color' }, ({ path }) =>
-                  join(resolvedPaths.theme, path),
-                ),
-                Match.when({ type: 'registry:component' }, ({ path }) =>
-                  join(resolvedPaths.components, path),
-                ),
-                Match.when({ type: 'registry:recipe' }, ({ path }) =>
-                  join(resolvedPaths.theme, path),
-                ),
-                Match.when({ type: 'registry:theme' }, ({ path }) =>
-                  join(resolvedPaths.theme, path),
-                ),
-                Match.when({ type: 'registry:ui' }, ({ path }) => join(resolvedPaths.ui, path)),
-                Match.exhaustive,
+                file.content,
               ),
-              file.content,
-            ),
-          catch: () => FileError(file.path),
-        }),
-      ),
+            catch: () => FileError(file.path),
+          }),
+        ),
+      ]),
     ),
   )

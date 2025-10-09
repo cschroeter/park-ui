@@ -44,7 +44,6 @@ export const ConigSchema = BaseConfigSchema.pipe(
         hooks: Schema.String,
         lib: Schema.String,
         ui: Schema.String,
-        pandaConfig: Schema.String,
       }),
     }),
     {
@@ -78,7 +77,6 @@ export const ConigSchema = BaseConfigSchema.pipe(
                       hooks: resolved.hooks ?? path.resolve(componentsPath, '..', 'hooks'),
                       theme: resolved.theme ?? path.resolve(componentsPath, '..', 'theme'),
                       lib: resolved.lib ?? path.resolve(componentsPath, '..'),
-                      pandaConfig: path.resolve(process.cwd(), config.panda.config),
                     },
                   })),
                 ),

@@ -1,7 +1,7 @@
 import * as p from '@clack/prompts'
 import { cosmiconfig } from 'cosmiconfig'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
-import { loadFile, writeFile } from 'magicast'
+import { builders, loadFile, writeFile } from 'magicast'
 import { deepMergeObject } from 'magicast/helpers'
 import { PandaConfigNotFound } from './errors'
 
@@ -58,3 +58,23 @@ export const updatePandaConfig = ({ extension }: UpdatePandaConfigOptions) =>
       ),
     ),
   )
+
+export const replaceRefs = <T>(obj: T): T => {
+  if (typeof obj === 'string' && obj.startsWith('$ref:')) {
+    return builders.raw(obj.slice(5)) as T
+  }
+
+  if (obj && typeof obj === 'object') {
+    for (const key in obj) {
+      obj[key] = replaceRefs(obj[key])
+    }
+  }
+
+  return obj
+}
+
+//  mod.imports.$prepend({
+//         from: './colors',
+//         local: 'amber',
+//         imported: 'amber',
+//       })
