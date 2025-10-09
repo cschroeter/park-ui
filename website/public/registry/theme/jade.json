@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/jade.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "jade": "$ref:jade"
+            }
+          }
+        }
+      }
+    }
+  }
 }

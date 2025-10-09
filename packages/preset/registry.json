@@ -59,7 +59,20 @@
           "path": "src/theme/colors/amber.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "amber": "$ref:amber"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "blue",
@@ -70,7 +83,20 @@
           "path": "src/theme/colors/blue.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "blue": "$ref:blue"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "bronze",
@@ -81,7 +107,20 @@
           "path": "src/theme/colors/bronze.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "bronze": "$ref:bronze"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "brown",
@@ -92,7 +131,20 @@
           "path": "src/theme/colors/brown.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "brown": "$ref:brown"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "crimson",
@@ -103,7 +155,20 @@
           "path": "src/theme/colors/crimson.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "crimson": "$ref:crimson"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "cyan",
@@ -114,7 +179,20 @@
           "path": "src/theme/colors/cyan.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "cyan": "$ref:cyan"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "gold",
@@ -125,7 +203,20 @@
           "path": "src/theme/colors/gold.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gold": "$ref:gold"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "grass",
@@ -136,7 +227,20 @@
           "path": "src/theme/colors/grass.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "grass": "$ref:grass"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "green",
@@ -147,7 +251,20 @@
           "path": "src/theme/colors/green.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "green": "$ref:green"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "indigo",
@@ -158,7 +275,20 @@
           "path": "src/theme/colors/indigo.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "indigo": "$ref:indigo"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "iris",
@@ -169,7 +299,20 @@
           "path": "src/theme/colors/iris.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "iris": "$ref:iris"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "jade",
@@ -180,7 +323,20 @@
           "path": "src/theme/colors/jade.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "jade": "$ref:jade"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "lime",
@@ -191,7 +347,20 @@
           "path": "src/theme/colors/lime.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "lime": "$ref:lime"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "mauve",
@@ -202,7 +371,20 @@
           "path": "src/theme/colors/mauve.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:mauve"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "mint",
@@ -213,7 +395,20 @@
           "path": "src/theme/colors/mint.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "mint": "$ref:mint"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "neutral",
@@ -224,7 +419,20 @@
           "path": "src/theme/colors/neutral.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:neutral"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "olive",
@@ -235,7 +443,20 @@
           "path": "src/theme/colors/olive.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:olive"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "orange",
@@ -246,7 +467,20 @@
           "path": "src/theme/colors/orange.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "orange": "$ref:orange"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "pink",
@@ -257,7 +491,20 @@
           "path": "src/theme/colors/pink.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "pink": "$ref:pink"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "plum",
@@ -268,7 +515,20 @@
           "path": "src/theme/colors/plum.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "plum": "$ref:plum"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "purple",
@@ -279,7 +539,20 @@
           "path": "src/theme/colors/purple.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "purple": "$ref:purple"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "red",
@@ -290,7 +563,20 @@
           "path": "src/theme/colors/red.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "red": "$ref:red"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "ruby",
@@ -301,7 +587,20 @@
           "path": "src/theme/colors/ruby.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "ruby": "$ref:ruby"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "sage",
@@ -312,7 +611,20 @@
           "path": "src/theme/colors/sage.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:sage"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "sand",
@@ -323,7 +635,20 @@
           "path": "src/theme/colors/sand.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:sand"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "sky",
@@ -334,7 +659,20 @@
           "path": "src/theme/colors/sky.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "sky": "$ref:sky"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "slate",
@@ -345,7 +683,20 @@
           "path": "src/theme/colors/slate.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:slate"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "teal",
@@ -356,7 +707,20 @@
           "path": "src/theme/colors/teal.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "teal": "$ref:teal"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "tomato",
@@ -367,7 +731,20 @@
           "path": "src/theme/colors/tomato.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "tomato": "$ref:tomato"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "violet",
@@ -378,7 +755,20 @@
           "path": "src/theme/colors/violet.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "violet": "$ref:violet"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "yellow",
@@ -389,7 +779,20 @@
           "path": "src/theme/colors/yellow.ts",
           "type": "registry:color"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "yellow": "$ref:yellow"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }

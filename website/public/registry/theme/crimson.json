@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/crimson.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "crimson": "$ref:crimson"
+            }
+          }
+        }
+      }
+    }
+  }
 }

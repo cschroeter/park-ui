@@ -4,11 +4,12 @@
   "main": "src/index.ts",
   "private": true,
   "scripts": {
-    "registry:build": "park-ui registry build theme"
+    "registry:prepare": "scripts registry prepare --name @park-ui/preset 'src/theme/colors/*.ts'",
+    "registry:build": "scripts registry build theme"
   },
   "devDependencies": {
     "@radix-ui/colors": "3.0.0",
-    "@park-ui/cli": "workspace:*",
+    "@park-ui/scripts": "workspace:*",
     "typescript": "5.9.3"
   }
 }

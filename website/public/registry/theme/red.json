@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/red.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "red": "$ref:red"
+            }
+          }
+        }
+      }
+    }
+  }
 }

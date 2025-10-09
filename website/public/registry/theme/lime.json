@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/lime.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "lime": "$ref:lime"
+            }
+          }
+        }
+      }
+    }
+  }
 }

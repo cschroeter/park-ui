@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/olive.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "gray": "$ref:olive"
+            }
+          }
+        }
+      }
+    }
+  }
 }

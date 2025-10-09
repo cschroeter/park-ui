@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/violet.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "violet": "$ref:violet"
+            }
+          }
+        }
+      }
+    }
+  }
 }

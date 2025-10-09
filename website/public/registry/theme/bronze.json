@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/bronze.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "bronze": "$ref:bronze"
+            }
+          }
+        }
+      }
+    }
+  }
 }

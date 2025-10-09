@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/indigo.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "indigo": "$ref:indigo"
+            }
+          }
+        }
+      }
+    }
+  }
 }

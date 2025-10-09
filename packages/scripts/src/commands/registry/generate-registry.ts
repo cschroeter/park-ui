@@ -138,6 +138,23 @@ export const generateRegistry = async (options: { name: string; pattern?: string
       dependencies: dependencies.length > 0 ? dependencies : ['@ark-ui/react'],
       files: [{ path: filePath, type: registryType }],
       ...(registryDependencies.length > 0 && { registryDependencies }),
+      ...(registryType === 'registry:color' && {
+        panda: {
+          extension: {
+            theme: {
+              extend: {
+                semanticTokens: {
+                  colors: {
+                    [['neutral', 'mauve', 'slate', 'sage', 'olive', 'sand'].includes(componentName)
+                      ? 'gray'
+                      : componentName]: `$ref:${componentName}`,
+                  },
+                },
+              },
+            },
+          },
+        },
+      }),
     }
 
     items.push(item)

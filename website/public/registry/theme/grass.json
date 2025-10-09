@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/grass.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "grass": "$ref:grass"
+            }
+          }
+        }
+      }
+    }
+  }
 }

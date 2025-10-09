@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/plum.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "plum": "$ref:plum"
+            }
+          }
+        }
+      }
+    }
+  }
 }

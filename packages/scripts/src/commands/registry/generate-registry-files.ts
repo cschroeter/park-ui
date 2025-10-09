@@ -58,6 +58,7 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
         type: item.type,
         dependencies: item.dependencies,
         files: filesWithContent,
+        ...(item.panda && { panda: item.panda }),
         ...(item.registryDependencies?.length && {
           registryDependencies: item.registryDependencies,
         }),

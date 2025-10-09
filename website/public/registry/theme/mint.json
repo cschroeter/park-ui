@@ -9,5 +9,18 @@
       "type": "registry:color",
       "path": "colors/mint.ts"
     }
-  ]
+  ],
+  "panda": {
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "mint": "$ref:mint"
+            }
+          }
+        }
+      }
+    }
+  }
 }
