@@ -4,10 +4,10 @@ import { cosmiconfig } from 'cosmiconfig'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
 // @ts-expect-error
 import { outputJSON, readJSON } from 'fs-extra/esm'
+import { type ConfigLoaderSuccessResult, createMatchPath } from 'tsconfig-paths'
 import type { Framework } from '~/schema'
 import { ConfigInvalid, ConfigNotFound, FileError } from './errors'
 import { PandaConfig } from './panda-config'
-import { resolveImport } from './resolve-import'
 import { TSConfig } from './tsconfig'
 
 const BaseConfigSchema = Schema.Struct({
@@ -166,3 +166,15 @@ export const saveConfig = (framework: Framework) =>
       }).pipe(Effect.map(() => config)),
     ),
   )
+
+const resolveImport = async (
+  importPath: string,
+  config: Pick<ConfigLoaderSuccessResult, 'absoluteBaseUrl' | 'paths'>,
+) =>
+  createMatchPath(config.absoluteBaseUrl, config.paths)(importPath, undefined, () => true, [
+    '.ts',
+    '.tsx',
+    '.jsx',
+    '.js',
+    '.css',
+  ])
