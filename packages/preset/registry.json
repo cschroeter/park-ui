@@ -7,6 +7,7 @@
       "name": "__init",
       "type": "registry:theme",
       "dependencies": ["@pandacss/dev"],
+      "registryDependencies": ["red", "green"],
       "files": [
         {
           "path": "src/theme/tokens/colors.ts",
@@ -48,7 +49,53 @@
           "path": "src/theme/text-styles.ts",
           "type": "registry:theme"
         }
-      ]
+      ],
+      "panda": {
+        "extension": {
+          "globalCss": "$ref:globalCss",
+          "conditions": "$ref:conditions",
+          "theme": {
+            "extend": {
+              "animationStyles": "$ref:animationStyles",
+              "recipes": "$ref:recipes",
+              "slotRecipes": "$ref:slotRecipes",
+              "keyframes": "$ref:keyframes",
+              "layerStyles": "$ref:layerStyles",
+              "textStyles": "$ref:textStyles",
+              "tokens": {
+                "colors": "$ref:colors",
+                "durations": "$ref:durations",
+                "zIndex": "$ref:zIndex"
+              },
+              "semanticTokens": {
+                "colors": {
+                  "fg": {
+                    "default": {
+                      "value": {
+                        "_light": "{colors.gray.12}",
+                        "_dark": "{colors.gray.12}"
+                      }
+                    },
+                    "muted": {
+                      "value": {
+                        "_light": "{colors.gray.11}",
+                        "_dark": "{colors.gray.11}"
+                      }
+                    },
+                    "subtle": {
+                      "value": {
+                        "_light": "{colors.gray.10}",
+                        "_dark": "{colors.gray.10}"
+                      }
+                    }
+                  }
+                },
+                "shadows": "$ref:shadows"
+              }
+            }
+          }
+        }
+      }
     },
     {
       "name": "amber",
