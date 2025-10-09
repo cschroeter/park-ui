@@ -1,8 +1,7 @@
-import { access } from 'node:fs/promises'
 import { join } from 'node:path'
 import * as p from '@clack/prompts'
+import { cosmiconfig } from 'cosmiconfig'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
-import { packageDirectory } from 'package-directory'
 import {
   type ObjectLiteralExpression,
   Project,
@@ -19,18 +18,16 @@ const ConfigSchema = Schema.Struct({
 
 type ConfigSchema = Schema.Schema.Type<typeof ConfigSchema>
 
+const explorer = cosmiconfig('panda', {
+  searchPlaces: ['panda.config.ts'],
+})
+
 const getConfigPath = () =>
   pipe(
-    Effect.promise(() => packageDirectory()),
+    Effect.promise(() => explorer.search(process.cwd())),
     Effect.flatMap(Effect.fromNullable),
-    Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
-    Effect.map((packageDir) => join(packageDir, 'panda.config.ts')),
-    Effect.flatMap((path) =>
-      Effect.tryPromise({
-        try: () => access(path),
-        catch: () => PandaConfigNotFound(path),
-      }).pipe(Effect.map(() => ({ path }))),
-    ),
+    Effect.map((result) => ({ path: result.filepath })),
+    Effect.mapError(() => PandaConfigNotFound(process.cwd())),
   )
 
 export const PandaConfig = Context.GenericTag<ConfigSchema>('PandaConfig')
