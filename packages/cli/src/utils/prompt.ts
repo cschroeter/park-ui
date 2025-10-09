@@ -8,18 +8,16 @@ export const promptInitConfig = () =>
     .pipe(
       Effect.map((items) => items.filter((item) => item.type === 'registry:color')),
       Effect.map((colors) => {
-        const grayColors = ['neutral', 'mauve', 'slate', 'sage', 'olive', 'sand']
-        const accentColors = colors.filter((color) => !grayColors.includes(color.name))
-        const accentOptions = accentColors.map(({ name }) => ({
-          value: name,
-        }))
-        const grayOptions = grayColors.map((color) => ({
-          value: color,
-        }))
-        return {
-          accentColors: accentOptions,
-          neutralColors: grayOptions,
-        }
+        const grayColorNames = ['neutral', 'mauve', 'slate', 'sage', 'olive', 'sand']
+        const isGrayColor = (name: string) => grayColorNames.includes(name)
+
+        const accentColors = colors.map(({ name }) => ({ value: name }))
+
+        const neutralColors = colors
+          .filter((color) => isGrayColor(color.name))
+          .map(({ name }) => ({ value: name }))
+
+        return { accentColors, neutralColors }
       }),
     )
     .pipe(
