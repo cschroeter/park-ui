@@ -1,7 +1,7 @@
 import { parse } from 'node:path'
 import fg from 'fast-glob'
 import { readFile, writeFile } from 'fs-extra'
-import type { Registry, RegistryItemPartial } from '~/schema'
+import type { Registry, RegistryItemPartial } from './schema'
 
 const toKebabCase = (str: string) => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
 

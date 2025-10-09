@@ -2,8 +2,8 @@ import * as p from '@clack/prompts'
 import { Command } from 'commander'
 import { Effect } from 'effect'
 import color from 'picocolors'
-import { generateRegistry } from '~/utils/generate-registry'
-import { generateRegistryFiles } from '~/utils/generate-registry-files'
+import { generateRegistry } from './generate-registry'
+import { generateRegistryFiles } from './generate-registry-files'
 
 export const registry = new Command('registry')
   .description('manage registry files')

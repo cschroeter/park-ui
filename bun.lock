@@ -18,6 +18,7 @@
       "devDependencies": {
         "@pandacss/dev": "1.4.1",
         "@park-ui/cli": "workspace:*",
+        "@park-ui/scripts": "workspace:*",
         "@rsbuild/core": "1.5.14",
         "@rsbuild/plugin-react": "1.4.1",
         "@storybook/addon-a11y": "9.1.10",
@@ -66,7 +67,7 @@
         "typescript": "5.9.3",
       },
       "peerDependencies": {
-        "typescript": "^5.0.0",
+        "typescript": "^5",
       },
     },
     "packages/preset": {
@@ -76,6 +77,18 @@
         "@park-ui/cli": "workspace:*",
         "@radix-ui/colors": "3.0.0",
         "typescript": "5.9.3",
+      },
+    },
+    "packages/scripts": {
+      "name": "@park-ui/scripts",
+      "bin": {
+        "scripts": "src/index.ts",
+      },
+      "dependencies": {
+        "ts-morph": "27.0.0",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
       },
     },
     "website": {
@@ -489,6 +502,8 @@
     "@park-ui/preset": ["@park-ui/preset@workspace:packages/preset"],
 
     "@park-ui/react": ["@park-ui/react@workspace:components/react"],
+
+    "@park-ui/scripts": ["@park-ui/scripts@workspace:packages/scripts"],
 
     "@park-ui/website": ["@park-ui/website@workspace:website"],
 

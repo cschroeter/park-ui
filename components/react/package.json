@@ -8,8 +8,9 @@
     "lint": "biome lint ./src",
     "storybook": "storybook dev -p 6006",
     "typecheck": "tsc",
-    "registry:prepare": "park-ui registry prepare --name @park-ui/react",
-    "registry:build": "park-ui registry build react"
+    "registry:prepare": "scripts registry prepare --name @park-ui/react",
+    "registry:build": "scripts registry build react",
+    "typedoc": "scripts typedoc --out ../../website/public/types/react"
   },
   "exports": {
     "./examples": "./src/examples/index.ts",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@pandacss/dev": "1.4.1",
     "@park-ui/cli": "workspace:*",
+    "@park-ui/scripts": "workspace:*",
     "@rsbuild/core": "1.5.14",
     "@rsbuild/plugin-react": "1.4.1",
     "@storybook/addon-a11y": "9.1.10",

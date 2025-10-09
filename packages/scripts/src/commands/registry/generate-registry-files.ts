@@ -1,7 +1,7 @@
 import { mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import { readFile, readJson, writeFile } from 'fs-extra'
-import type { Registry, RegistryItem } from '~/schema'
+import type { Registry, RegistryItem } from './schema'
 
 const resolveFilePath = (filePath: string): string => {
   return join(process.cwd(), filePath)

@@ -1,0 +1,14 @@
+{
+  "name": "@park-ui/scripts",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "scripts": "src/index.ts"
+  },
+  "dependencies": {
+    "ts-morph": "27.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

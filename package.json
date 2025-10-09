@@ -16,9 +16,7 @@
     "cli": "bun run --cwd packages/cli",
     "preset": "bun run --cwd packages/preset",
     "react": "bun run --cwd components/react",
-    "web": "bun run --cwd website",
-    "build:registry": "bun run scripts/registry.ts",
-    "build:types": "bun run scripts/types.ts"
+    "web": "bun run --cwd website"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
