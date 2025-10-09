@@ -1,6 +1,5 @@
 import * as p from '@clack/prompts'
 import { Effect } from 'effect'
-import { titleCase } from 'scule'
 import type { Framework } from '~/schema'
 import { fetchRegistryThemeIndex } from './registry-client'
 
@@ -13,11 +12,9 @@ export const promptInitConfig = () =>
         const accentColors = colors.filter((color) => !grayColors.includes(color.name))
         const accentOptions = accentColors.map(({ name }) => ({
           value: name,
-          label: titleCase(name),
         }))
         const grayOptions = grayColors.map((color) => ({
           value: color,
-          label: titleCase(color),
         }))
         return {
           accentColors: accentOptions,
@@ -30,13 +27,7 @@ export const promptInitConfig = () =>
         Effect.tryPromise({
           try: () => prompt(colors),
           catch: () => new Error('Failed to collect configuration. Please try again.'),
-        }).pipe(
-          Effect.map(({ accentColor, framework, grayColor }) => ({
-            framework,
-            accentColor,
-            grayColor,
-          })),
-        ),
+        }),
       ),
     )
 
@@ -53,12 +44,7 @@ const prompt = ({ accentColors, neutralColors }: Args) =>
       framework: () =>
         p.select<Framework>({
           message: 'Which JavaScript framework are you using?',
-          options: [
-            { value: 'react', label: 'React' },
-            { value: 'solid', label: 'Solid' },
-            { value: 'svelte', label: 'Svelte' },
-            { value: 'vue', label: 'Vue' },
-          ],
+          options: [{ value: 'react' }, { value: 'solid' }],
           initialValue: 'react',
         }),
       accentColor: () =>
@@ -74,6 +60,20 @@ const prompt = ({ accentColors, neutralColors }: Args) =>
           options: neutralColors,
           placeholder: 'Type to search...',
           maxItems: 8,
+        }),
+      borderRadius: () =>
+        p.select({
+          message: 'What border radius scale would you like to use?',
+          options: [
+            { value: 'none' },
+            { value: 'xs' },
+            { value: 'sm', hint: 'default' },
+            { value: 'md' },
+            { value: 'lg' },
+            { value: 'xl' },
+            { value: '2xl' },
+          ],
+          initialValue: 'sm',
         }),
     },
     {

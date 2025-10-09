@@ -16,6 +16,7 @@ export const init = new Command('init').description('').action(async () => {
     Effect.flatMap(({ framework, accentColor, grayColor }) =>
       Effect.all([
         saveConfig(framework),
+        // updatePandaConfig(borderRadius),
         fetchRegistryThemeItems(['__init', accentColor, grayColor]),
       ]),
     ),
