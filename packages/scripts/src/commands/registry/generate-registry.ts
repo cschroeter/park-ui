@@ -140,6 +140,9 @@ export const generateRegistry = async (options: { name: string; pattern?: string
       ...(registryDependencies.length > 0 && { registryDependencies }),
       ...(registryType === 'registry:color' && {
         panda: {
+          imports: [
+            { type: 'registry:color', name: componentName, from: `colors/${componentName}` },
+          ],
           extension: {
             theme: {
               extend: {

@@ -1,12 +1,12 @@
 import * as p from '@clack/prompts'
 import { Command } from 'commander'
-import { Effect, Layer, Schema } from 'effect'
+import { Effect, Layer, pipe, Schema } from 'effect'
 import color from 'picocolors'
 import { Config, ConigSchema, saveConfig } from '~/utils/config'
 import { install } from '~/utils/install'
 import { updatePandaConfig, withPandaConfig } from '~/utils/panda-config'
 import { promptInitConfig } from '~/utils/prompt'
-import { fetchRegistryThemeItems } from '~/utils/registry-client'
+import { fetchRegistryItems } from '~/utils/registry-client'
 import { withTSConfig } from '~/utils/tsconfig'
 
 export const init = new Command('init').description('').action(async () => {
@@ -14,17 +14,18 @@ export const init = new Command('init').description('').action(async () => {
 
   const program = promptInitConfig().pipe(
     Effect.flatMap(({ framework, accentColor, grayColor, borderRadius }) =>
-      Effect.all([
+      pipe(
         saveConfig(framework),
-        fetchRegistryThemeItems(['__init', accentColor, grayColor]),
-        updatePandaConfig({ extension: borderRadius }),
-      ]),
-    ),
-    Effect.flatMap(([config, items]) =>
-      Schema.decodeUnknown(ConigSchema)(config).pipe(
-        Effect.flatMap((resolvedConfig) =>
-          Effect.all(items.map((item) => install(item))).pipe(
-            Effect.provide(Layer.effect(Config, Effect.succeed(resolvedConfig))),
+        Effect.flatMap((config) => Schema.decodeUnknown(ConigSchema)(config)),
+        Effect.flatMap((config) =>
+          pipe(
+            Effect.all([
+              fetchRegistryItems({ ids: ['__init', accentColor, grayColor] }).pipe(
+                Effect.flatMap((items) => Effect.all(items.map(install))),
+              ),
+              updatePandaConfig({ extension: borderRadius }),
+            ]),
+            Effect.provide(Layer.effect(Config, Effect.succeed(config))),
           ),
         ),
       ),

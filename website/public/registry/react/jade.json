@@ -1,0 +1,33 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "jade",
+  "type": "registry:color",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const jade = defineSemanticTokens.colors({\n  '1': { value: { _light: '#fbfefd', _dark: '#0d1512' } },\n  '2': { value: { _light: '#f4fbf7', _dark: '#121c18' } },\n  '3': { value: { _light: '#e6f7ed', _dark: '#0f2e22' } },\n  '4': { value: { _light: '#d6f1e3', _dark: '#0b3b2c' } },\n  '5': { value: { _light: '#c3e9d7', _dark: '#114837' } },\n  '6': { value: { _light: '#acdec8', _dark: '#1b5745' } },\n  '7': { value: { _light: '#8bceb6', _dark: '#246854' } },\n  '8': { value: { _light: '#56ba9f', _dark: '#2a7e68' } },\n  '9': { value: { _light: '#29a383', _dark: '#29a383' } },\n  '10': { value: { _light: '#26997b', _dark: '#27b08b' } },\n  '11': { value: { _light: '#208368', _dark: '#1fd8a4' } },\n  '12': { value: { _light: '#1d3b31', _dark: '#adf0d4' } },\n  a1: { value: { _light: '#00c08004', _dark: '#00de4505' } },\n  a2: { value: { _light: '#00a3460b', _dark: '#27fba60c' } },\n  a3: { value: { _light: '#00ae4819', _dark: '#02f99920' } },\n  a4: { value: { _light: '#00a85129', _dark: '#00ffaa2d' } },\n  a5: { value: { _light: '#00a2553c', _dark: '#11ffb63b' } },\n  a6: { value: { _light: '#009a5753', _dark: '#34ffc24b' } },\n  a7: { value: { _light: '#00945f74', _dark: '#45fdc75e' } },\n  a8: { value: { _light: '#00976ea9', _dark: '#48ffcf75' } },\n  a9: { value: { _light: '#00916bd6', _dark: '#38feca9d' } },\n  a10: { value: { _light: '#008764d9', _dark: '#31fec7ab' } },\n  a11: { value: { _light: '#007152df', _dark: '#21fec0d6' } },\n  a12: { value: { _light: '#002217e2', _dark: '#b8ffe1ef' } },\n  solid: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.jade.9}', _dark: '{colors.jade.9}' } },\n      hover: { value: { _light: '{colors.jade.10}', _dark: '{colors.jade.10}' } },\n    },\n    fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },\n  },\n  subtle: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.jade.a3}', _dark: '{colors.jade.a3}' } },\n      hover: { value: { _light: '{colors.jade.a4}', _dark: '{colors.jade.a4}' } },\n      active: { value: { _light: '{colors.jade.a5}', _dark: '{colors.jade.a5}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.jade.a11}', _dark: '{colors.jade.a11}' } } },\n  },\n  surface: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.jade.a2}', _dark: '{colors.jade.a2}' } },\n      active: { value: { _light: '{colors.jade.a3}', _dark: '{colors.jade.a3}' } },\n    },\n    border: {\n      DEFAULT: { value: { _light: '{colors.jade.a6}', _dark: '{colors.jade.a6}' } },\n      hover: { value: { _light: '{colors.jade.a7}', _dark: '{colors.jade.a7}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.jade.a11}', _dark: '{colors.jade.a11}' } } },\n  },\n  outline: {\n    bg: {\n      hover: { value: { _light: '{colors.jade.a2}', _dark: '{colors.jade.a2}' } },\n      active: { value: { _light: '{colors.jade.a3}', _dark: '{colors.jade.a3}' } },\n    },\n    border: { DEFAULT: { value: { _light: '{colors.jade.a7}', _dark: '{colors.jade.a7}' } } },\n    fg: { DEFAULT: { value: { _light: '{colors.jade.a11}', _dark: '{colors.jade.a11}' } } },\n  },\n  plain: {\n    bg: {\n      hover: { value: { _light: '{colors.jade.a3}', _dark: '{colors.jade.a3}' } },\n      active: { value: { _light: '{colors.jade.a4}', _dark: '{colors.jade.a4}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.jade.a11}', _dark: '{colors.jade.a11}' } } },\n  },\n})\n",
+      "type": "registry:color",
+      "path": "colors/jade.ts"
+    }
+  ],
+  "panda": {
+    "imports": [
+      {
+        "type": "registry:color",
+        "name": "jade",
+        "from": "colors/jade"
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "jade": "$ref:jade"
+            }
+          }
+        }
+      }
+    }
+  }
+}

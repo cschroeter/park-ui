@@ -42,6 +42,14 @@ export const registryFile = registryFileBase.required({ content: true })
 export type RegistryFilePartial = z.infer<typeof registryFilePartial>
 export type RegistryFile = z.infer<typeof registryFile>
 
+const registryItemImport = z.object({
+  type: registryItemType,
+  name: z.string(),
+  from: z.string(),
+})
+
+export type RegistryItemImport = z.infer<typeof registryItemImport>
+
 const registryItemBase = z.object({
   $schema: z.url().optional(),
   name: z.string(),
@@ -53,6 +61,7 @@ const registryItemBase = z.object({
   panda: z
     .object({
       extension: jsonValue.optional(),
+      imports: z.array(registryItemImport).optional(),
     })
     .optional(),
   registryDependencies: z.array(z.string()).optional(),

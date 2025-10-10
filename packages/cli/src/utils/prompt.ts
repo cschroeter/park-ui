@@ -1,51 +1,35 @@
 import * as p from '@clack/prompts'
 import { Effect } from 'effect'
 import type { Framework } from '~/schema'
-import { fetchRegistryThemeIndex } from './registry-client'
+import { fetchColors } from './registry-client'
 
 export const promptInitConfig = () =>
-  fetchRegistryThemeIndex()
-    .pipe(
-      Effect.map((items) => items.filter((item) => item.type === 'registry:color')),
-      Effect.map((colors) => {
-        const grayColorNames = ['neutral', 'mauve', 'slate', 'sage', 'olive', 'sand']
-        const isGrayColor = (name: string) => grayColorNames.includes(name)
-
-        const accentColors = colors.map(({ name }) => ({ value: name }))
-
-        const neutralColors = colors
-          .filter((color) => isGrayColor(color.name))
-          .map(({ name }) => ({ value: name }))
-
-        return { accentColors, neutralColors }
+  fetchColors().pipe(
+    Effect.flatMap((colors) =>
+      Effect.tryPromise({
+        try: () => prompt(colors),
+        catch: () => new Error('Failed to collect configuration. Please try again.'),
       }),
-    )
-    .pipe(
-      Effect.flatMap((colors) =>
-        Effect.tryPromise({
-          try: () => prompt(colors),
-          catch: () => new Error('Failed to collect configuration. Please try again.'),
-        }),
-      ),
-      Effect.map(({ framework, accentColor, grayColor }) => ({
-        framework,
-        accentColor,
-        grayColor,
-        borderRadius: {
-          theme: {
-            extend: {
-              semanticTokens: {
-                radii: {
-                  l1: { value: '{radii.xs}' },
-                  l2: { value: '{radii.sm}' },
-                  l3: { value: '{radii.md}' },
-                },
+    ),
+    Effect.map(({ framework, accentColor, grayColor }) => ({
+      framework,
+      accentColor,
+      grayColor,
+      borderRadius: {
+        theme: {
+          extend: {
+            semanticTokens: {
+              radii: {
+                l1: { value: '{radii.xs}' },
+                l2: { value: '{radii.sm}' },
+                l3: { value: '{radii.md}' },
               },
             },
           },
         },
-      })),
-    )
+      },
+    })),
+  )
 
 type Option = p.Option<string>
 

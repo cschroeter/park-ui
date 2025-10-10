@@ -1,19 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Park UI Registry Item",
+  "description": "Schema for Park UI component registry items. Defines the structure for components, recipes, themes, and other registry assets used by the Park UI CLI.",
   "type": "object",
-  "required": ["name", "type"],
   "properties": {
     "$schema": {
       "type": "string",
       "format": "uri",
-      "description": "JSON Schema reference URL"
+      "description": "Reference to this JSON schema"
     },
     "name": {
       "type": "string",
-      "description": "The name of the registry item"
+      "description": "Unique identifier for the registry item"
     },
     "type": {
       "type": "string",
+      "description": "Type of registry item",
       "enum": [
         "registry:block",
         "registry:color",
@@ -21,42 +23,42 @@
         "registry:recipe",
         "registry:theme",
         "registry:ui"
-      ],
-      "description": "The type of registry item"
+      ]
     },
     "categories": {
       "type": "array",
+      "description": "Categories this item belongs to for organization and filtering",
       "items": {
         "type": "string"
-      },
-      "description": "Categories this item belongs to"
+      }
     },
     "dependencies": {
       "type": "array",
+      "description": "NPM package dependencies required by this item",
       "items": {
         "type": "string"
-      },
-      "description": "NPM package dependencies"
+      }
     },
     "description": {
       "type": "string",
-      "description": "Description of the registry item"
+      "description": "Human-readable description of the registry item"
     },
     "devDependencies": {
       "type": "array",
+      "description": "NPM dev dependencies required by this item",
       "items": {
         "type": "string"
-      },
-      "description": "NPM dev dependencies"
+      }
     },
     "files": {
       "type": "array",
+      "description": "Files included in this registry item",
       "items": {
         "type": "object",
-        "required": ["type", "path", "content"],
         "properties": {
           "type": {
             "type": "string",
+            "description": "Type of file content",
             "enum": [
               "registry:block",
               "registry:color",
@@ -64,37 +66,108 @@
               "registry:recipe",
               "registry:theme",
               "registry:ui"
-            ],
-            "description": "The type of file"
+            ]
           },
           "path": {
             "type": "string",
-            "description": "The file path"
+            "description": "Destination path where the file should be written"
           },
           "content": {
             "type": "string",
-            "description": "The file content"
+            "description": "File content as a string"
           }
-        }
-      },
-      "description": "Files associated with this registry item"
-    },
-    "panda": {
-      "type": "object",
-      "properties": {
-        "extension": {
-          "description": "Panda CSS extension configuration"
-        }
-      },
-      "description": "Panda CSS specific configuration"
+        },
+        "required": ["type", "path", "content"],
+        "additionalProperties": false
+      }
     },
     "registryDependencies": {
       "type": "array",
+      "description": "Other registry items this item depends on",
       "items": {
         "type": "string"
+      }
+    },
+    "panda": {
+      "type": "object",
+      "description": "Panda CSS specific configuration",
+      "properties": {
+        "extension": {
+          "description": "Panda CSS configuration extension object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/__schema0"
+            }
+          ]
+        },
+        "imports": {
+          "type": "array",
+          "description": "Additional imports needed for Panda CSS integration",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of import",
+                "enum": [
+                  "registry:block",
+                  "registry:color",
+                  "registry:component",
+                  "registry:recipe",
+                  "registry:theme",
+                  "registry:ui"
+                ]
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the import"
+              },
+              "from": {
+                "type": "string",
+                "description": "Module path to import from"
+              }
+            },
+            "required": ["type", "name", "from"],
+            "additionalProperties": false
+          }
+        }
       },
-      "description": "Dependencies on other registry items"
+      "additionalProperties": false
     }
   },
-  "additionalProperties": false
+  "required": ["name", "type"],
+  "additionalProperties": false,
+  "definitions": {
+    "__schema0": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/__schema0"
+          }
+        },
+        {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "$ref": "#/definitions/__schema0"
+          }
+        }
+      ]
+    }
+  }
 }

@@ -91,6 +91,20 @@ export const ConigSchema = BaseConfigSchema.pipe(
 
 type Config = Schema.Schema.Type<typeof ConigSchema>
 
+const explorer = cosmiconfig('components', {
+  searchPlaces: ['components.json'],
+})
+
+const getConfigPath = () =>
+  pipe(
+    Effect.promise(() => explorer.search(process.cwd())),
+    Effect.flatMap(Effect.fromNullable),
+    Effect.map((result) => result.filepath),
+    Effect.catchTag('NoSuchElementException', () =>
+      Effect.succeed(join(process.cwd(), 'components.json')),
+    ),
+  )
+
 const getConfig = () =>
   getConfigPath().pipe(
     Effect.flatMap((configPath) =>
@@ -105,20 +119,6 @@ const getConfig = () =>
           ),
         ),
       ),
-    ),
-  )
-
-const explorer = cosmiconfig('components', {
-  searchPlaces: ['components.json'],
-})
-
-const getConfigPath = () =>
-  pipe(
-    Effect.promise(() => explorer.search(process.cwd())),
-    Effect.flatMap(Effect.fromNullable),
-    Effect.map((result) => result.filepath),
-    Effect.catchTag('NoSuchElementException', () =>
-      Effect.succeed(join(process.cwd(), 'components.json')),
     ),
   )
 

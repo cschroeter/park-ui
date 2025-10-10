@@ -5,12 +5,13 @@ import { outputFile } from 'fs-extra/esm'
 import type { RegistryItem } from '../schema'
 import { Config } from './config'
 import { FileError } from './errors'
+import { updatePandaConfig } from './panda-config'
 
-export const install = (item: RegistryItem) =>
+export const install = ({ panda, files = [] }: RegistryItem) =>
   Config.pipe(
     Effect.flatMap(({ resolvedPaths }) =>
       Effect.all([
-        Effect.forEach(item.files ?? [], (file) =>
+        Effect.forEach(files, (file) =>
           Effect.tryPromise({
             try: () =>
               outputFile(
@@ -38,6 +39,7 @@ export const install = (item: RegistryItem) =>
             catch: () => FileError(file.path),
           }),
         ),
+        updatePandaConfig(panda),
       ]),
     ),
   )

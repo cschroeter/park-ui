@@ -1,16 +1,5 @@
 import { z } from 'zod'
 
-const registryItemType = z.enum([
-  'registry:block',
-  'registry:color',
-  'registry:component',
-  'registry:recipe',
-  'registry:theme',
-  'registry:ui',
-])
-
-export type RegistryItemType = z.infer<typeof registryItemType>
-
 export type JsonValue =
   | string
   | number
@@ -30,19 +19,34 @@ const jsonValue: z.ZodType<JsonValue> = z.lazy(() =>
   ]),
 )
 
-const registryFileBase = z.object({
+const registryItemType = z.enum([
+  'registry:block',
+  'registry:color',
+  'registry:component',
+  'registry:recipe',
+  'registry:theme',
+  'registry:ui',
+])
+
+export type RegistryItemType = z.infer<typeof registryItemType>
+
+const registryFile = z.object({
   type: registryItemType,
   path: z.string(),
-  content: z.string().optional(),
+  content: z.string(),
 })
 
-export const registryFilePartial = registryFileBase
-export const registryFile = registryFileBase.required({ content: true })
-
-export type RegistryFilePartial = z.infer<typeof registryFilePartial>
 export type RegistryFile = z.infer<typeof registryFile>
 
-const registryItemBase = z.object({
+const registryItemImport = z.object({
+  type: registryItemType,
+  name: z.string(),
+  from: z.string(),
+})
+
+export type RegistryItemImport = z.infer<typeof registryItemImport>
+
+export const registryItem = z.object({
   $schema: z.url().optional(),
   name: z.string(),
   type: registryItemType,
@@ -50,46 +54,19 @@ const registryItemBase = z.object({
   dependencies: z.array(z.string()).optional(),
   description: z.string().optional(),
   devDependencies: z.array(z.string()).optional(),
+  files: z.array(registryFile).optional(),
+  registryDependencies: z.array(z.string()).optional(),
   panda: z
     .object({
       extension: jsonValue.optional(),
+      imports: z.array(registryItemImport).optional(),
     })
     .optional(),
-  registryDependencies: z.array(z.string()).optional(),
 })
 
-export const registryItemPartial = registryItemBase.extend({
-  files: z.array(registryFilePartial).optional(),
-})
-
-export const registryItem = registryItemBase.extend({
-  files: z.array(registryFile).optional(),
-})
-
-export type RegistryItemPartial = z.infer<typeof registryItemPartial>
 export type RegistryItem = z.infer<typeof registryItem>
-
-const registry = z.object({
-  $schema: z.url(),
-  name: z.string(),
-  homepage: z.url(),
-  items: z.array(z.lazy(() => registryItemPartial)),
-})
-export type Registry = z.infer<typeof registry>
 
 export const registryIndexList = z.object({ name: z.string(), type: registryItemType }).array()
 
 const Framework = z.enum(['react', 'vue', 'solid', 'svelte'])
 export type Framework = z.infer<typeof Framework>
-
-const config = z.object({
-  framework: Framework,
-  aliases: z.object({
-    components: z.string(),
-    hooks: z.string(),
-    lib: z.string(),
-    theme: z.string(),
-    ui: z.string(),
-  }),
-})
-export type Config = z.infer<typeof config>

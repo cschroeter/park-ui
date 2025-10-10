@@ -108,6 +108,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "amber",
+            "from": "colors/amber"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -132,6 +139,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "blue",
+            "from": "colors/blue"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -156,6 +170,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "bronze",
+            "from": "colors/bronze"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -180,6 +201,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "brown",
+            "from": "colors/brown"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -204,6 +232,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "crimson",
+            "from": "colors/crimson"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -228,6 +263,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "cyan",
+            "from": "colors/cyan"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -252,6 +294,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "gold",
+            "from": "colors/gold"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -276,6 +325,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "grass",
+            "from": "colors/grass"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -300,6 +356,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "green",
+            "from": "colors/green"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -324,6 +387,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "indigo",
+            "from": "colors/indigo"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -348,6 +418,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "iris",
+            "from": "colors/iris"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -372,6 +449,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "jade",
+            "from": "colors/jade"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -396,6 +480,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "lime",
+            "from": "colors/lime"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -420,6 +511,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "mauve",
+            "from": "colors/mauve"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -444,6 +542,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "mint",
+            "from": "colors/mint"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -468,6 +573,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "neutral",
+            "from": "colors/neutral"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -492,6 +604,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "olive",
+            "from": "colors/olive"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -516,6 +635,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "orange",
+            "from": "colors/orange"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -540,6 +666,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "pink",
+            "from": "colors/pink"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -564,6 +697,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "plum",
+            "from": "colors/plum"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -588,6 +728,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "purple",
+            "from": "colors/purple"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -612,6 +759,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "red",
+            "from": "colors/red"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -636,6 +790,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "ruby",
+            "from": "colors/ruby"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -660,6 +821,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "sage",
+            "from": "colors/sage"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -684,6 +852,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "sand",
+            "from": "colors/sand"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -708,6 +883,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "sky",
+            "from": "colors/sky"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -732,6 +914,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "slate",
+            "from": "colors/slate"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -756,6 +945,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "teal",
+            "from": "colors/teal"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -780,6 +976,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "tomato",
+            "from": "colors/tomato"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -804,6 +1007,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "violet",
+            "from": "colors/violet"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {
@@ -828,6 +1038,13 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "yellow",
+            "from": "colors/yellow"
+          }
+        ],
         "extension": {
           "theme": {
             "extend": {

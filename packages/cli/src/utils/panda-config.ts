@@ -1,8 +1,11 @@
+import { join } from 'node:path'
 import * as p from '@clack/prompts'
 import { cosmiconfig } from 'cosmiconfig'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
 import { builders, loadFile, writeFile } from 'magicast'
 import { deepMergeObject } from 'magicast/helpers'
+import type { JsonValue, RegistryItemImport } from '~/schema'
+import { Config } from './config'
 import { PandaConfigNotFound } from './errors'
 
 const ConfigSchema = Schema.Struct({
@@ -38,23 +41,35 @@ export const withPandaConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
   )
 
 interface UpdatePandaConfigOptions {
-  extension: Record<string, unknown>
+  extension?: JsonValue
+  imports?: RegistryItemImport[]
 }
 
-export const updatePandaConfig = ({ extension }: UpdatePandaConfigOptions) =>
-  PandaConfig.pipe(
-    Effect.flatMap((config) =>
-      Effect.promise(() => loadFile(config.path)).pipe(
+export const updatePandaConfig = ({ extension, imports = [] }: UpdatePandaConfigOptions = {}) =>
+  Effect.all([PandaConfig, Config]).pipe(
+    Effect.flatMap(([pandaConfig, { aliases }]) =>
+      Effect.promise(() => loadFile(pandaConfig.path)).pipe(
         Effect.map((mod) => {
           const options =
             mod.exports['default'].$type === 'function-call'
               ? mod.exports['default'].$args[0]
               : mod.exports['default']
 
-          deepMergeObject(options, extension)
+          deepMergeObject(options, replaceRefs(extension))
+
+          for (const item of imports) {
+            if (['registry:theme', 'registry:color', 'registry:recipe'].includes(item.type)) {
+              mod.imports.$prepend({
+                from: join(aliases.theme, item.from),
+                local: item.name,
+                imported: item.name,
+              })
+            }
+          }
+
           return mod
         }),
-        Effect.flatMap((mod) => Effect.promise(() => writeFile(mod, config.path))),
+        Effect.flatMap((mod) => Effect.promise(() => writeFile(mod, pandaConfig.path))),
       ),
     ),
   )
@@ -72,9 +87,3 @@ export const replaceRefs = <T>(obj: T): T => {
 
   return obj
 }
-
-//  mod.imports.$prepend({
-//         from: './colors',
-//         local: 'amber',
-//         imported: 'amber',
-//       })

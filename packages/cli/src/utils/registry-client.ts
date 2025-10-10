@@ -8,11 +8,25 @@ interface Params {
   ids: string[]
 }
 
-export const fetchRegistryThemeIndex = () =>
-  Effect.tryPromise({
-    try: () => $fetch('/theme/index', {}),
-    catch: () => HttpError,
-  })
+export const fetchColors = () =>
+  pipe(
+    Effect.tryPromise({
+      try: () => $fetch('/:framework/index', { params: { framework: 'react' } }),
+      catch: () => HttpError,
+    }),
+    Effect.map((items) => items.filter((item) => item.type === 'registry:color')),
+    Effect.map((colors) => {
+      const grayColorNames = ['neutral', 'mauve', 'slate', 'sage', 'olive', 'sand']
+      const isGrayColor = (name: string) => grayColorNames.includes(name)
+
+      const accentColors = colors.map(({ name }) => ({ value: name }))
+      const neutralColors = colors
+        .filter((color) => isGrayColor(color.name))
+        .map(({ name }) => ({ value: name }))
+
+      return { accentColors, neutralColors }
+    }),
+  )
 
 export const fetchRegistryIndex = () =>
   Config.pipe(
@@ -23,9 +37,6 @@ export const fetchRegistryIndex = () =>
       }),
     ),
   )
-
-export const fetchRegistryThemeItems = (ids: string[]) =>
-  Effect.all(ids.map((id) => fetchRegistryItem('/theme/:id', { id })))
 
 export const fetchRegistryItems = ({ ids }: Params) =>
   Config.pipe(
@@ -82,8 +93,6 @@ const $fetch = createFetch({
   schema: createSchema({
     '/:framework/index': { output: registryIndexList },
     '/:framework/:id': { output: registryItem },
-    '/theme/index': { output: registryIndexList },
-    '/theme/:id': { output: registryItem },
   }),
   plugins: [
     {

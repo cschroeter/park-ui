@@ -4,8 +4,8 @@
   "main": "src/index.ts",
   "private": true,
   "scripts": {
-    "registry:prepare": "scripts registry prepare --name @park-ui/preset 'src/theme/colors/*.ts'",
-    "registry:build": "scripts registry build theme"
+    "registry:prepare": "scripts registry prepare --name @park-ui/react 'src/theme/colors/*.ts'",
+    "registry:build": "scripts registry build react"
   },
   "devDependencies": {
     "@radix-ui/colors": "3.0.0",
