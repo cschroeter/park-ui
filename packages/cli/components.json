@@ -8,6 +8,7 @@
     "components": "~/components",
     "hooks": "~/hooks",
     "lib": "~/lib",
+    "recipes": "~/theme/recipes",
     "theme": "~/theme",
     "ui": "~/components/ui"
   }

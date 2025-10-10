@@ -59,7 +59,7 @@
           {
             "type": "registry:theme",
             "from": "recipes",
-            "name": "slotRecipe"
+            "name": "slotRecipes"
           },
           {
             "type": "registry:theme",
