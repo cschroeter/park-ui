@@ -1,136 +1,81 @@
-import { Node, Project, type SourceFile, SyntaxKind, VariableDeclarationKind } from 'ts-morph'
-import type { ModuleDeclaration } from '~/schema'
+import { Project } from 'ts-morph'
 
 interface Args {
-  imports?: ModuleDeclaration[]
-  exports?: ModuleDeclaration[]
   path: string
+  exportStatement?: string
 }
 
 export const updateIndexFile = (args: Args) => {
-  const { imports, exports, path } = args
+  const { path, exportStatement } = args
+  if (!exportStatement) return
+
   const project = new Project()
 
   const source =
     project.addSourceFileAtPathIfExists(path) ??
     project.createSourceFile(path, '', { overwrite: true })
 
-  updateImports({ source, imports })
-  updateExports({ source, exports })
+  // Normalize the export statement by removing newlines and extra whitespace
+  const normalizedStatement = exportStatement.replace(/\s+/g, ' ').trim()
 
-  source.organizeImports()
-  source.saveSync()
-}
+  // Match namespace export: export * as Name from 'module'
+  const namespaceMatch = normalizedStatement.match(/export \* as (\w+) from ['"]([^'"]+)['"]/)
+  if (namespaceMatch) {
+    const namespace = namespaceMatch[1]
+    const moduleSpecifier = namespaceMatch[2]
 
-interface UpdateImportsArgs {
-  source: SourceFile
-  imports?: ModuleDeclaration[]
-}
+    const alreadyExists = source
+      .getExportDeclarations()
+      .some(
+        (exp) =>
+          exp.getNamespaceExport()?.getName() === namespace &&
+          exp.getModuleSpecifierValue() === moduleSpecifier,
+      )
 
-const updateImports = (args: UpdateImportsArgs) => {
-  const { source, imports = [] } = args
+    if (!alreadyExists) {
+      source.addExportDeclaration({
+        namespaceExport: namespace,
+        moduleSpecifier,
+      })
+    }
+  }
 
-  for (const importConfig of imports) {
-    if (importConfig.type === 'named') {
-      const { symbols, moduleSpecifier } = importConfig
+  // Match named export: export { Name1, type Name2, ... } from 'module'
+  const namedMatch = normalizedStatement.match(/export \{ ([^}]+) \} from ['"]([^'"]+)['"]/)
+  if (namedMatch) {
+    const exportsStr = namedMatch[1]
+    const moduleSpecifier = namedMatch[2]
 
-      source.addImportDeclaration({
-        namedImports: symbols.map((s) => ({
+    // Parse named exports
+    const symbols = exportsStr.split(',').map((exp) => {
+      const trimmed = exp.trim()
+      const isType = trimmed.startsWith('type ')
+      const name = isType ? trimmed.slice(5).trim() : trimmed
+      return { name, isType }
+    })
+
+    const alreadyExists = source.getExportDeclarations().some((exp) => {
+      return (
+        exp.getModuleSpecifierValue() === moduleSpecifier &&
+        symbols.every((sym) =>
+          exp
+            .getNamedExports()
+            .some((ne) => ne.getName() === sym.name && ne.isTypeOnly() === sym.isType),
+        )
+      )
+    })
+
+    if (!alreadyExists) {
+      source.addExportDeclaration({
+        namedExports: symbols.map((s) => ({
           name: s.name,
-          isTypeOnly: Boolean(s.isType),
+          isTypeOnly: s.isType,
         })),
         moduleSpecifier,
       })
     }
-
-    if (importConfig.type === 'namespace') {
-      const { namespace, moduleSpecifier } = importConfig
-      source.addImportDeclaration({
-        namespaceImport: namespace,
-        moduleSpecifier,
-      })
-    }
   }
-}
 
-interface UpdateExportsArgs {
-  source: SourceFile
-  exports?: ModuleDeclaration[]
-}
-
-const updateExports = (args: UpdateExportsArgs) => {
-  const { source, exports = [] } = args
-  for (const exportConfig of exports ?? []) {
-    if (exportConfig.type === 'named') {
-      const { symbols, moduleSpecifier } = exportConfig
-      const alreadyExists = source.getExportDeclarations().some((exp) => {
-        return (
-          exp.getModuleSpecifierValue() === moduleSpecifier &&
-          symbols.every((sym) =>
-            exp
-              .getNamedExports()
-              .some((ne) => ne.getName() === sym.name && ne.isTypeOnly() === Boolean(sym.isType)),
-          )
-        )
-      })
-
-      if (!alreadyExists) {
-        source.addExportDeclaration({
-          namedExports: symbols.map((s) => ({
-            name: s.name,
-            isTypeOnly: Boolean(s.isType),
-          })),
-          moduleSpecifier,
-        })
-      }
-    }
-
-    if (exportConfig.type === 'namespace') {
-      const { namespace, moduleSpecifier } = exportConfig
-      const alreadyExists = source
-        .getExportDeclarations()
-        .some(
-          (exp) =>
-            exp.getNamespaceExport()?.getName() === namespace &&
-            exp.getModuleSpecifierValue() === moduleSpecifier,
-        )
-
-      if (!alreadyExists) {
-        source.addExportDeclaration({
-          namespaceExport: namespace,
-          moduleSpecifier,
-        })
-      }
-    }
-
-    if (exportConfig.type === 'object-literal') {
-      const { variableName, properties } = exportConfig
-      const varDecl = source.getVariableDeclaration(variableName)
-      if (!varDecl) {
-        source.addVariableStatement({
-          declarationKind: VariableDeclarationKind.Const,
-          declarations: [
-            {
-              name: variableName,
-              initializer: `{ ${properties[0].name} }`,
-            },
-          ],
-          isExported: true,
-        })
-      } else {
-        const objLit = varDecl.getInitializerIfKindOrThrow(SyntaxKind.ObjectLiteralExpression)
-        const hasProp = objLit.getProperties().some((prop) => {
-          if (Node.isPropertyAssignment(prop) || Node.isShorthandPropertyAssignment(prop)) {
-            return prop.getName() === properties[0].name
-          }
-          return false
-        })
-        if (!hasProp) {
-          objLit.addShorthandPropertyAssignment({
-            name: properties[0].name,
-          })
-        }
-      }
-    }
-  }
+  source.organizeImports()
+  source.saveSync()
 }
