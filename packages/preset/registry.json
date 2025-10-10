@@ -51,6 +51,58 @@
         }
       ],
       "panda": {
+        "imports": [
+          {
+            "type": "registry:theme",
+            "name": "conditions",
+            "from": "conditions"
+          },
+          {
+            "type": "registry:theme",
+            "name": "globalCss",
+            "from": "global-css"
+          },
+          {
+            "type": "registry:theme",
+            "name": "keyframes",
+            "from": "keyframes"
+          },
+          {
+            "type": "registry:theme",
+            "name": "layerStyles",
+            "from": "layer-styles"
+          },
+          {
+            "type": "registry:theme",
+            "name": "textStyles",
+            "from": "text-styles"
+          },
+          {
+            "type": "registry:theme",
+            "name": "colors",
+            "from": "tokens/colors"
+          },
+          {
+            "type": "registry:theme",
+            "name": "durations",
+            "from": "tokens/durations"
+          },
+          {
+            "type": "registry:theme",
+            "name": "shadows",
+            "from": "tokens/shadows"
+          },
+          {
+            "type": "registry:theme",
+            "name": "zIndex",
+            "from": "tokens/z-index"
+          },
+          {
+            "type": "registry:theme",
+            "name": "animationStyles",
+            "from": "animation-styles"
+          }
+        ],
         "extension": {
           "globalCss": "$ref:globalCss",
           "conditions": "$ref:conditions",

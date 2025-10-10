@@ -1,20 +1,18 @@
 import { defineConfig } from '@pandacss/dev'
-import { plugin, preset } from '@park-ui/preset'
 
 export default defineConfig({
-  presets: [preset],
+  // Whether to use css reset
   preflight: true,
-  include: ['./src/**/*.{ts,tsx}'],
+
+  // Where to look for your css declarations
+  include: ['./src/**/*.{js,jsx,ts,tsx}', './pages/**/*.{js,jsx,ts,tsx}'],
+
+  // Files to exclude
+  exclude: [],
+
+  // The output directory for your css system
+  outdir: 'styled-system',
+
+  // The jsx framework you are using
   jsxFramework: 'react',
-  plugins: [plugin],
-  globalCss: {
-    extend: {
-      html: {
-        colorPalette: 'neutral',
-      },
-    },
-  },
-  staticCss: {
-    recipes: '*',
-  },
 })

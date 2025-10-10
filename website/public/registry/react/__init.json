@@ -30,12 +30,12 @@
       "path": "animation-styles.ts"
     },
     {
-      "content": "import type { ExtendableConditions } from '@pandacss/types'\n\nexport const conditions: ExtendableConditions = {\n  extend: {\n    light: ':root &, .light &',\n    invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',\n    hover: '&:not(:disabled):hover',\n    active: '&:not(:disabled):active',\n    checked:\n      '&:is(:checked, [data-checked], [data-state=checked], [aria-checked=true], [data-state=indeterminate])',\n    on: '&:is([data-state=on])',\n  },\n}\n",
+      "content": "export const conditions = {\n  extend: {\n    light: ':root &, .light &',\n    invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',\n    hover: '&:not(:disabled):hover',\n    active: '&:not(:disabled):active',\n    checked:\n      '&:is(:checked, [data-checked], [data-state=checked], [aria-checked=true], [data-state=indeterminate])',\n    on: '&:is([data-state=on])',\n  },\n} as const\n",
       "type": "registry:theme",
       "path": "conditions.ts"
     },
     {
-      "content": "import { defineGlobalStyles } from '@pandacss/dev'\n\nexport const globalCss = defineGlobalStyles({\n  extend: {\n    '*, *::before, *::after': {\n      borderColor: 'gray.a4',\n    },\n    body: {\n      background: 'gray.1',\n      color: 'fg.default',\n    },\n    '*::selection': {\n      bg: 'colorPalette.a3',\n    },\n    '*::placeholder': {\n      opacity: 1,\n      color: 'fg.subtle',\n    },\n  },\n})\n",
+      "content": "import { defineGlobalStyles } from '@pandacss/dev'\n\nexport const globalCss = defineGlobalStyles({\n  extend: {\n    '*, *::before, *::after': {\n      borderColor: 'gray.a4',\n    },\n    '*::selection': {\n      bg: 'colorPalette.a3',\n    },\n    '*::placeholder': {\n      opacity: 1,\n      color: 'fg.subtle',\n    },\n    html: {\n      colorPalette: 'gray',\n    },\n    body: {\n      background: 'gray.1',\n      color: 'fg.default',\n    },\n  },\n})\n",
       "type": "registry:theme",
       "path": "global-css.ts"
     },
@@ -56,6 +56,58 @@
     }
   ],
   "panda": {
+    "imports": [
+      {
+        "type": "registry:theme",
+        "name": "conditions",
+        "from": "conditions"
+      },
+      {
+        "type": "registry:theme",
+        "name": "globalCss",
+        "from": "global-css"
+      },
+      {
+        "type": "registry:theme",
+        "name": "keyframes",
+        "from": "keyframes"
+      },
+      {
+        "type": "registry:theme",
+        "name": "layerStyles",
+        "from": "layer-styles"
+      },
+      {
+        "type": "registry:theme",
+        "name": "textStyles",
+        "from": "text-styles"
+      },
+      {
+        "type": "registry:theme",
+        "name": "colors",
+        "from": "tokens/colors"
+      },
+      {
+        "type": "registry:theme",
+        "name": "durations",
+        "from": "tokens/durations"
+      },
+      {
+        "type": "registry:theme",
+        "name": "shadows",
+        "from": "tokens/shadows"
+      },
+      {
+        "type": "registry:theme",
+        "name": "zIndex",
+        "from": "tokens/z-index"
+      },
+      {
+        "type": "registry:theme",
+        "name": "animationStyles",
+        "from": "animation-styles"
+      }
+    ],
     "extension": {
       "globalCss": "$ref:globalCss",
       "conditions": "$ref:conditions",
