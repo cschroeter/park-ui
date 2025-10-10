@@ -75,6 +75,10 @@
           "content": {
             "type": "string",
             "description": "File content as a string"
+          },
+          "exports": {
+            "type": "string",
+            "description": "Export statement for the file"
           }
         },
         "required": ["type", "path", "content"],
