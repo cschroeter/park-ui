@@ -10,6 +10,10 @@
       "registryDependencies": ["red", "green"],
       "files": [
         {
+          "path": "src/theme/recipes/index.ts",
+          "type": "registry:recipe"
+        },
+        {
           "path": "src/theme/tokens/colors.ts",
           "type": "registry:theme"
         },
@@ -52,6 +56,16 @@
       ],
       "panda": {
         "imports": [
+          {
+            "type": "registry:theme",
+            "from": "recipes",
+            "name": "slotRecipe"
+          },
+          {
+            "type": "registry:theme",
+            "from": "recipes",
+            "name": "recipes"
+          },
           {
             "type": "registry:theme",
             "name": "conditions",

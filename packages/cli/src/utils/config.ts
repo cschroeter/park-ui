@@ -17,9 +17,10 @@ const BaseConfigSchema = Schema.Struct({
   }),
   aliases: Schema.Struct({
     components: Schema.String,
-    theme: Schema.String,
     hooks: Schema.String,
     lib: Schema.String,
+    recipes: Schema.String,
+    theme: Schema.String,
     ui: Schema.String,
   }),
 })
@@ -33,16 +34,18 @@ export const ConigSchema = BaseConfigSchema.pipe(
       }),
       aliases: Schema.Struct({
         components: Schema.String,
-        theme: Schema.String,
         hooks: Schema.String,
         lib: Schema.String,
+        recipes: Schema.String,
+        theme: Schema.String,
         ui: Schema.String,
       }),
       resolvedPaths: Schema.Struct({
         components: Schema.String,
-        theme: Schema.String,
         hooks: Schema.String,
         lib: Schema.String,
+        recipes: Schema.String,
+        theme: Schema.String,
         ui: Schema.String,
       }),
     }),
@@ -62,21 +65,26 @@ export const ConigSchema = BaseConfigSchema.pipe(
                     hooks: config.aliases.hooks
                       ? Effect.promise(() => resolveImport(config.aliases.hooks, tsConfig))
                       : Effect.succeed(null),
-                    theme: config.aliases.theme
-                      ? Effect.promise(() => resolveImport(config.aliases.theme, tsConfig))
-                      : Effect.succeed(null),
                     lib: config.aliases.lib
                       ? Effect.promise(() => resolveImport(config.aliases.lib, tsConfig))
+                      : Effect.succeed(null),
+                    recipes: config.aliases.recipes
+                      ? Effect.promise(() => resolveImport(config.aliases.recipes, tsConfig))
+                      : Effect.succeed(null),
+                    theme: config.aliases.theme
+                      ? Effect.promise(() => resolveImport(config.aliases.theme, tsConfig))
                       : Effect.succeed(null),
                   }),
                   Effect.map((resolved) => ({
                     ...config,
                     resolvedPaths: {
                       components: componentsPath,
-                      ui: resolved.ui ?? path.resolve(componentsPath, 'ui'),
                       hooks: resolved.hooks ?? path.resolve(componentsPath, '..', 'hooks'),
-                      theme: resolved.theme ?? path.resolve(componentsPath, '..', 'theme'),
                       lib: resolved.lib ?? path.resolve(componentsPath, '..'),
+                      recipes:
+                        resolved.recipes ?? path.resolve(componentsPath, '..', 'theme', 'recipes'),
+                      theme: resolved.theme ?? path.resolve(componentsPath, '..', 'theme'),
+                      ui: resolved.ui ?? path.resolve(componentsPath, 'ui'),
                     },
                   })),
                 ),
@@ -150,6 +158,7 @@ export const saveConfig = (framework: Framework) =>
           components: `${aliasPrefix}/components`,
           hooks: `${aliasPrefix}/hooks`,
           lib: `${aliasPrefix}/lib`,
+          recipes: `${aliasPrefix}/theme/recipes`,
           theme: `${aliasPrefix}/theme`,
           ui: `${aliasPrefix}/components/ui`,
         },

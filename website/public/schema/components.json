@@ -1,23 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Park UI Components Configuration",
+  "description": "Configuration file for Park UI components and project structure",
   "type": "object",
   "properties": {
     "$schema": {
       "type": "string",
       "format": "uri",
-      "default": "https://next.park-ui.com/schema/park-ui-config.json"
+      "default": "https://next.park-ui.com/schema/components.json"
     },
+
     "framework": {
       "type": "string",
-      "enum": ["react", "solid", "svelte", "vue"],
-      "description": "The framework to use for the components"
+      "description": "The JavaScript framework used in your project",
+      "enum": ["react", "solid", "svelte", "vue"]
     },
     "panda": {
       "type": "object",
       "properties": {
         "config": {
           "type": "string",
-          "description": "Path to the Panda CSS configuration file"
+          "description": "Path to your Panda CSS configuration file",
+          "default": "panda.config.ts"
         }
       },
       "required": ["config"],
@@ -25,29 +29,34 @@
     },
     "aliases": {
       "type": "object",
+      "description": "Path aliases for organizing your project structure",
       "properties": {
         "components": {
           "type": "string",
-          "description": "Path alias for components"
-        },
-        "theme": {
-          "type": "string",
-          "description": "Path alias for theme"
+          "description": "Path to your components directory"
         },
         "hooks": {
           "type": "string",
-          "description": "Path alias for hooks"
+          "description": "Path to your hooks directory"
         },
         "lib": {
           "type": "string",
-          "description": "Path alias for lib"
+          "description": "Path to your utility/library directory"
+        },
+        "recipes": {
+          "type": "string",
+          "description": "Path to your Panda CSS recipes directory"
+        },
+        "theme": {
+          "type": "string",
+          "description": "Path to your theme configuration directory"
         },
         "ui": {
           "type": "string",
-          "description": "Path alias for UI components"
+          "description": "Path to your UI components directory"
         }
       },
-      "required": ["components", "theme", "hooks", "lib", "ui"],
+      "required": ["components", "hooks", "lib", "recipes", "theme", "ui"],
       "additionalProperties": false
     }
   },
