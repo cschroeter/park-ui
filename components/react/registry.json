@@ -10,7 +10,8 @@
       "files": [
         {
           "path": "src/components/ui/absolute-center.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { AbsoluteCenter, type AbsoluteCenterProps } from './absolute-center'"
         }
       ],
       "registryDependencies": ["absolute-center-recipe"]
@@ -33,7 +34,8 @@
       "files": [
         {
           "path": "src/components/ui/accordion.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Accordion from './accordion'"
         }
       ],
       "registryDependencies": ["accordion-recipe"]
@@ -56,7 +58,8 @@
       "files": [
         {
           "path": "src/components/ui/alert.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Alert from './alert'"
         }
       ],
       "registryDependencies": ["alert-recipe"]
@@ -79,7 +82,8 @@
       "files": [
         {
           "path": "src/components/ui/avatar.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Avatar from './avatar'"
         }
       ],
       "registryDependencies": ["avatar-recipe"]
@@ -102,7 +106,8 @@
       "files": [
         {
           "path": "src/components/ui/badge.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Badge, type BadgeProps } from './badge'"
         }
       ],
       "registryDependencies": ["badge-recipe"]
@@ -125,7 +130,8 @@
       "files": [
         {
           "path": "src/components/ui/button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Button, ButtonGroup, type ButtonGroupProps, type ButtonProps } from './button'"
         }
       ],
       "registryDependencies": ["button-recipe", "group", "loader"]
@@ -148,7 +154,8 @@
       "files": [
         {
           "path": "src/components/ui/card.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Card from './card'"
         }
       ],
       "registryDependencies": ["card-recipe"]
@@ -171,7 +178,8 @@
       "files": [
         {
           "path": "src/components/ui/carousel.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Carousel from './carousel'"
         }
       ],
       "registryDependencies": ["carousel-recipe"]
@@ -194,7 +202,8 @@
       "files": [
         {
           "path": "src/components/ui/checkbox.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Checkbox from './checkbox'"
         }
       ],
       "registryDependencies": ["checkbox-recipe"]
@@ -217,7 +226,8 @@
       "files": [
         {
           "path": "src/components/ui/clipboard.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Clipboard from './clipboard'"
         }
       ],
       "registryDependencies": ["clipboard-recipe"]
@@ -240,7 +250,8 @@
       "files": [
         {
           "path": "src/components/ui/close-button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { CloseButton, type CloseButtonProps } from './close-button'"
         }
       ],
       "registryDependencies": ["icon-button"]
@@ -252,7 +263,8 @@
       "files": [
         {
           "path": "src/components/ui/code.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Code, type CodeProps } from './code'"
         }
       ],
       "registryDependencies": ["code-recipe"]
@@ -275,7 +287,8 @@
       "files": [
         {
           "path": "src/components/ui/collapsible.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Collapsible from './collapsible'"
         }
       ],
       "registryDependencies": ["collapsible-recipe"]
@@ -298,7 +311,8 @@
       "files": [
         {
           "path": "src/components/ui/color-picker.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as ColorPicker from './color-picker'"
         }
       ],
       "registryDependencies": ["color-picker-recipe"]
@@ -321,7 +335,8 @@
       "files": [
         {
           "path": "src/components/ui/combobox.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Combobox from './combobox'"
         }
       ],
       "registryDependencies": ["combobox-recipe"]
@@ -344,7 +359,8 @@
       "files": [
         {
           "path": "src/components/ui/date-picker.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as DatePicker from './date-picker'"
         }
       ],
       "registryDependencies": ["date-picker-recipe"]
@@ -367,7 +383,8 @@
       "files": [
         {
           "path": "src/components/ui/dialog.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Dialog from './dialog'"
         }
       ],
       "registryDependencies": ["dialog-recipe"]
@@ -390,7 +407,8 @@
       "files": [
         {
           "path": "src/components/ui/drawer.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Drawer from './drawer'"
         }
       ],
       "registryDependencies": ["drawer-recipe"]
@@ -413,7 +431,8 @@
       "files": [
         {
           "path": "src/components/ui/editable.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Editable from './editable'"
         }
       ],
       "registryDependencies": ["editable-recipe"]
@@ -436,7 +455,8 @@
       "files": [
         {
           "path": "src/components/ui/field.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Field from './field'"
         }
       ],
       "registryDependencies": ["field-recipe"]
@@ -459,7 +479,8 @@
       "files": [
         {
           "path": "src/components/ui/fieldset.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Fieldset from './fieldset'"
         }
       ],
       "registryDependencies": ["fieldset-recipe"]
@@ -482,7 +503,8 @@
       "files": [
         {
           "path": "src/components/ui/file-upload.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as FileUpload from './file-upload'"
         }
       ],
       "registryDependencies": ["file-upload-recipe"]
@@ -505,7 +527,8 @@
       "files": [
         {
           "path": "src/components/ui/group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Group, type GroupProps } from './group'"
         }
       ],
       "registryDependencies": ["group-recipe"]
@@ -528,7 +551,8 @@
       "files": [
         {
           "path": "src/components/ui/heading.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Heading, type HeadingProps } from './heading'"
         }
       ],
       "registryDependencies": ["heading-recipe"]
@@ -551,7 +575,8 @@
       "files": [
         {
           "path": "src/components/ui/hover-card.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as HoverCard from './hover-card'"
         }
       ],
       "registryDependencies": ["hover-card-recipe"]
@@ -574,7 +599,8 @@
       "files": [
         {
           "path": "src/components/ui/icon.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Icon, type IconProps } from './icon'"
         }
       ],
       "registryDependencies": ["icon-recipe"]
@@ -586,7 +612,8 @@
       "files": [
         {
           "path": "src/components/ui/icon-button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { IconButton, type IconButtonProps } from './icon-button'"
         }
       ],
       "registryDependencies": ["button"]
@@ -609,7 +636,8 @@
       "files": [
         {
           "path": "src/components/ui/image.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Image, type ImageProps } from './image'"
         }
       ]
     },
@@ -620,7 +648,8 @@
       "files": [
         {
           "path": "src/components/ui/input.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Input, type InputProps } from './input'"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -632,7 +661,8 @@
       "files": [
         {
           "path": "src/components/ui/input-addon.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { InputAddon, type InputAddonProps } from './input-addon'"
         }
       ],
       "registryDependencies": ["input-addon-recipe"]
@@ -656,7 +686,8 @@
       "files": [
         {
           "path": "src/components/ui/input-element.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { InputElement, type InputElementProps } from './input-element'"
         }
       ],
       "registryDependencies": ["input-element-recipe"]
@@ -679,7 +710,8 @@
       "files": [
         {
           "path": "src/components/ui/input-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { InputGroup, type InputGroupProps } from './input-group'"
         }
       ],
       "registryDependencies": ["group", "input-addon", "input-element"]
@@ -702,7 +734,8 @@
       "files": [
         {
           "path": "src/components/ui/kbd.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Kbd, type KbdProps } from './kbd'"
         }
       ],
       "registryDependencies": ["kbd-recipe"]
@@ -725,7 +758,8 @@
       "files": [
         {
           "path": "src/components/ui/link.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Link, type LinkProps } from './link'"
         }
       ],
       "registryDependencies": ["link-recipe"]
@@ -748,7 +782,8 @@
       "files": [
         {
           "path": "src/components/ui/loader.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Loader, type LoaderProps } from './loader'"
         }
       ],
       "registryDependencies": ["absolute-center", "spinner"]
@@ -760,7 +795,8 @@
       "files": [
         {
           "path": "src/components/ui/menu.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Menu from './menu'"
         }
       ],
       "registryDependencies": ["menu-recipe"]
@@ -783,7 +819,8 @@
       "files": [
         {
           "path": "src/components/ui/number-input.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as NumberInput from './number-input'"
         }
       ],
       "registryDependencies": ["number-input-recipe"]
@@ -807,7 +844,8 @@
       "files": [
         {
           "path": "src/components/ui/pagination.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Pagination from './pagination'"
         }
       ],
       "registryDependencies": ["icon-button", "pagination-recipe"]
@@ -830,7 +868,8 @@
       "files": [
         {
           "path": "src/components/ui/pin-input.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as PinInput from './pin-input'"
         }
       ],
       "registryDependencies": ["pin-input-recipe"]
@@ -854,7 +893,8 @@
       "files": [
         {
           "path": "src/components/ui/popover.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Popover from './popover'"
         }
       ],
       "registryDependencies": ["popover-recipe"]
@@ -877,7 +917,8 @@
       "files": [
         {
           "path": "src/components/ui/progress.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Progress from './progress'"
         }
       ],
       "registryDependencies": ["progress-recipe"]
@@ -900,7 +941,8 @@
       "files": [
         {
           "path": "src/components/ui/radio-button-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as RadioButtonGroup from './radio-button-group'"
         }
       ],
       "registryDependencies": ["radio-button-group-recipe"]
@@ -923,7 +965,8 @@
       "files": [
         {
           "path": "src/components/ui/radio-card.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as RadioCard from './radio-card'"
         }
       ],
       "registryDependencies": ["radio-card-recipe"]
@@ -946,7 +989,8 @@
       "files": [
         {
           "path": "src/components/ui/radio-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as RadioGroup from './radio-group'"
         }
       ],
       "registryDependencies": ["radio-group-recipe"]
@@ -969,7 +1013,8 @@
       "files": [
         {
           "path": "src/components/ui/rating-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as RatingGroup from './rating-group'"
         }
       ],
       "registryDependencies": ["rating-group-recipe"]
@@ -992,7 +1037,8 @@
       "files": [
         {
           "path": "src/components/ui/scroll-area.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as ScrollArea from './scroll-area'"
         }
       ],
       "registryDependencies": ["scroll-area-recipe"]
@@ -1015,7 +1061,8 @@
       "files": [
         {
           "path": "src/components/ui/segment-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as SegmentGroup from './segment-group'"
         }
       ],
       "registryDependencies": ["segment-group-recipe"]
@@ -1038,7 +1085,8 @@
       "files": [
         {
           "path": "src/components/ui/select.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Select from './select'"
         }
       ],
       "registryDependencies": ["select-recipe"]
@@ -1061,7 +1109,8 @@
       "files": [
         {
           "path": "src/components/ui/skeleton.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export {\n  Skeleton,\n  SkeletonCircle,\n  type SkeletonCircleProps,\n  type SkeletonProps,\n  SkeletonText,\n  type SkeletonTextProps,\n} from './skeleton'"
         }
       ],
       "registryDependencies": ["skeleton-recipe"]
@@ -1084,7 +1133,8 @@
       "files": [
         {
           "path": "src/components/ui/slider.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Slider from './slider'"
         }
       ],
       "registryDependencies": ["slider-recipe"]
@@ -1107,7 +1157,8 @@
       "files": [
         {
           "path": "src/components/ui/span.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Span, type SpanProps } from './span'"
         }
       ]
     },
@@ -1118,7 +1169,8 @@
       "files": [
         {
           "path": "src/components/ui/spinner.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Spinner, type SpinnerProps } from './spinner'"
         }
       ],
       "registryDependencies": ["spinner-recipe"]
@@ -1141,7 +1193,8 @@
       "files": [
         {
           "path": "src/components/ui/splitter.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Splitter from './splitter'"
         }
       ],
       "registryDependencies": ["splitter-recipe"]
@@ -1164,7 +1217,8 @@
       "files": [
         {
           "path": "src/components/ui/switch.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Switch from './switch'"
         }
       ],
       "registryDependencies": ["switch-recipe"]
@@ -1187,7 +1241,8 @@
       "files": [
         {
           "path": "src/components/ui/table.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Table from './table'"
         }
       ],
       "registryDependencies": ["table-recipe"]
@@ -1210,7 +1265,8 @@
       "files": [
         {
           "path": "src/components/ui/tabs.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as Tabs from './tabs'"
         }
       ],
       "registryDependencies": ["tabs-recipe"]
@@ -1233,7 +1289,8 @@
       "files": [
         {
           "path": "src/components/ui/tags-input.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as TagsInput from './tags-input'"
         }
       ],
       "registryDependencies": ["tags-input-recipe"]
@@ -1256,7 +1313,8 @@
       "files": [
         {
           "path": "src/components/ui/text.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Text, type TextProps } from './text'"
         }
       ],
       "registryDependencies": ["text-recipe"]
@@ -1279,7 +1337,8 @@
       "files": [
         {
           "path": "src/components/ui/textarea.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Textarea, type TextareaProps } from './textarea'"
         }
       ],
       "registryDependencies": ["textarea-recipe"]
@@ -1302,7 +1361,8 @@
       "files": [
         {
           "path": "src/components/ui/toast.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Toaster, toaster } from './toast'"
         }
       ],
       "registryDependencies": ["close-button", "icon", "spinner", "toast-recipe"]
@@ -1325,7 +1385,8 @@
       "files": [
         {
           "path": "src/components/ui/toggle-group.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export * as ToggleGroup from './toggle-group'"
         }
       ],
       "registryDependencies": ["toggle-group-recipe"]
@@ -1348,7 +1409,8 @@
       "files": [
         {
           "path": "src/components/ui/tooltip.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "exports": "export { Tooltip, type TooltipProps } from './tooltip'"
         }
       ],
       "registryDependencies": ["tooltip-recipe"]

@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { Collapsible } from '@ark-ui/react/collapsible'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { collapsible } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(collapsible)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Collapsible.Root, 'root')\nexport const RootProvider = withProvider(Collapsible.RootProvider, 'root')\nexport const Content = withContext(Collapsible.Content, 'content')\nexport const Indicator = withContext(Collapsible.Indicator, 'indicator')\nexport const Trigger = withContext(Collapsible.Trigger, 'trigger')\n\nexport { CollapsibleContext as Context } from '@ark-ui/react/collapsible'\n",
       "type": "registry:ui",
-      "path": "collapsible.tsx"
+      "path": "collapsible.tsx",
+      "exports": "export * as Collapsible from './collapsible'"
     }
   ],
   "registryDependencies": ["collapsible-recipe"]

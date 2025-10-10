@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { Clipboard } from '@ark-ui/react/clipboard'\nimport { CheckIcon, CopyIcon } from 'lucide-react'\nimport { type ComponentProps, forwardRef } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { clipboard } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(clipboard)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Clipboard.Root, 'root')\nexport const RootProvider = withProvider(Clipboard.RootProvider, 'root')\nexport const Control = withContext(Clipboard.Control, 'control')\nexport const Input = withContext(Clipboard.Input, 'input')\nexport const Label = withContext(Clipboard.Label, 'label')\nexport const Trigger = withContext(Clipboard.Trigger, 'trigger')\n\nexport { ClipboardContext as Context } from '@ark-ui/react/clipboard'\n\ntype IndicatorProps = ComponentProps<typeof StyledIndicator>\n\nconst StyledIndicator = withContext(Clipboard.Indicator, 'indicator')\n\nexport const Indicator = forwardRef<HTMLDivElement, IndicatorProps>(function Indicator(props, ref) {\n  return (\n    <StyledIndicator ref={ref} copied={<CheckIcon />} {...props}>\n      <CopyIcon />\n    </StyledIndicator>\n  )\n})\n\nexport const CopyText = forwardRef<HTMLDivElement, IndicatorProps>(function CopyText(props, ref) {\n  return (\n    <StyledIndicator ref={ref} copied=\"Copied\" {...props}>\n      Copy\n    </StyledIndicator>\n  )\n})\n",
       "type": "registry:ui",
-      "path": "clipboard.tsx"
+      "path": "clipboard.tsx",
+      "exports": "export * as Clipboard from './clipboard'"
     }
   ],
   "registryDependencies": ["clipboard-recipe"]

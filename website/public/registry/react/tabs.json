@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { Tabs } from '@ark-ui/react/tabs'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { tabs } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Tabs.Root, 'root')\nexport const RootProvider = withProvider(Tabs.RootProvider, 'root')\nexport const List = withContext(Tabs.List, 'list')\nexport const Trigger = withContext(Tabs.Trigger, 'trigger')\nexport const Content = withContext(Tabs.Content, 'content')\nexport const Indicator = withContext(Tabs.Indicator, 'indicator')\n\nexport { TabsContext as Context } from '@ark-ui/react/tabs'\n",
       "type": "registry:ui",
-      "path": "tabs.tsx"
+      "path": "tabs.tsx",
+      "exports": "export * as Tabs from './tabs'"
     }
   ],
   "registryDependencies": ["tabs-recipe"]

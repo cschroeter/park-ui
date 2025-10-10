@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { FileUpload } from '@ark-ui/react/file-upload'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { fileUpload } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(fileUpload)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(FileUpload.Root, 'root')\nexport const RootProvider = withProvider(FileUpload.RootProvider, 'root')\nexport const ClearTrigger = withContext(FileUpload.ClearTrigger, 'clearTrigger')\nexport const Dropzone = withContext(FileUpload.Dropzone, 'dropzone')\nexport const HiddenInput = FileUpload.HiddenInput\nexport const Item = withContext(FileUpload.Item, 'item')\nexport const ItemDeleteTrigger = withContext(FileUpload.ItemDeleteTrigger, 'itemDeleteTrigger')\nexport const ItemGroup = withContext(FileUpload.ItemGroup, 'itemGroup')\nexport const ItemName = withContext(FileUpload.ItemName, 'itemName')\nexport const ItemPreview = withContext(FileUpload.ItemPreview, 'itemPreview')\nexport const ItemPreviewImage = withContext(FileUpload.ItemPreviewImage, 'itemPreviewImage')\nexport const ItemSizeText = withContext(FileUpload.ItemSizeText, 'itemSizeText')\nexport const Label = withContext(FileUpload.Label, 'label')\nexport const Trigger = withContext(FileUpload.Trigger, 'trigger')\n\nexport { FileUploadContext as Context } from '@ark-ui/react/file-upload'\n",
       "type": "registry:ui",
-      "path": "file-upload.tsx"
+      "path": "file-upload.tsx",
+      "exports": "export * as FileUpload from './file-upload'"
     }
   ],
   "registryDependencies": ["file-upload-recipe"]

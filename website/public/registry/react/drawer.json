@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { Dialog } from '@ark-ui/react/dialog'\nimport { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { drawer } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(drawer)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider(Dialog.Root, {\n  defaultProps: { unmountOnExit: true, lazyMount: true },\n})\nexport const RootProvider = withRootProvider(Dialog.Root, {\n  defaultProps: { unmountOnExit: true, lazyMount: true },\n})\nexport const Backdrop = withContext(Dialog.Backdrop, 'backdrop')\nexport const Positioner = withContext(Dialog.Positioner, 'positioner')\nexport const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')\nexport const Content = withContext(Dialog.Content, 'content')\nexport const Description = withContext(Dialog.Description, 'description')\nexport const Title = withContext(Dialog.Title, 'title')\nexport const Trigger = withContext(Dialog.Trigger, 'trigger')\n\nexport const Body = withContext(ark.div, 'body')\nexport const Header = withContext(ark.div, 'header')\nexport const Footer = withContext(ark.div, 'footer')\n\nexport { DialogContext as Context } from '@ark-ui/react/dialog'\n",
       "type": "registry:ui",
-      "path": "drawer.tsx"
+      "path": "drawer.tsx",
+      "exports": "export * as Drawer from './drawer'"
     }
   ],
   "registryDependencies": ["drawer-recipe"]

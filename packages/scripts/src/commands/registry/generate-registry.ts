@@ -110,6 +110,44 @@ const getRegistryType = (filePath: string) => {
   return 'registry:ui' // default fallback
 }
 
+const extractExportStatement = async (componentName: string, pattern: string) => {
+  // Find the index.ts file in the same directory
+  const directory = pattern.substring(0, pattern.lastIndexOf('/'))
+  const indexPath = `${directory}/index.ts`
+
+  try {
+    const indexContent = await readFile(indexPath, 'utf-8')
+    const lines = indexContent.split('\n')
+
+    // Look for export statement matching this component
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i]
+      if (line?.includes(`from './${componentName}'`)) {
+        // Check if this is a multi-line export (starts with a closing brace)
+        if (line.trim().startsWith('}')) {
+          // Walk backwards to find the opening export statement
+          let startIndex = i
+          while (
+            startIndex > 0 &&
+            lines[startIndex] &&
+            !lines[startIndex]?.trim().startsWith('export')
+          ) {
+            startIndex--
+          }
+          // Combine all lines from start to current line
+          return lines.slice(startIndex, i + 1).join('\n')
+        }
+        // Single line export
+        return line.trim()
+      }
+    }
+  } catch {
+    // Index file not found or couldn't be read
+  }
+
+  return undefined
+}
+
 export const generateRegistry = async (options: { name: string; pattern?: string }) => {
   const pattern = options.pattern || 'src/components/ui/*.tsx'
   console.log(`🔍 Scanning files matching: ${pattern}`)
@@ -127,6 +165,7 @@ export const generateRegistry = async (options: { name: string; pattern?: string
     const dependencies = extractDependencies(content)
     const registryDependencies = extractRegistryDependencies(content, componentName)
     const registryType = getRegistryType(filePath)
+    const exportStatement = await extractExportStatement(componentName, pattern)
 
     for (const recipe of extractRecipeDependencies(content)) {
       allRecipes.add(recipe)
@@ -136,7 +175,13 @@ export const generateRegistry = async (options: { name: string; pattern?: string
       name: componentName,
       type: registryType,
       dependencies: dependencies.length > 0 ? dependencies : ['@ark-ui/react'],
-      files: [{ path: filePath, type: registryType }],
+      files: [
+        {
+          path: filePath,
+          type: registryType,
+          ...(exportStatement && { exports: exportStatement }),
+        },
+      ],
       ...(registryDependencies.length > 0 && { registryDependencies }),
       ...(registryType === 'registry:color' && {
         panda: {

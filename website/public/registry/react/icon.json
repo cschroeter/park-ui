@@ -7,7 +7,8 @@
     {
       "content": "import { ark } from '@ark-ui/react/factory'\nimport type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { icon } from 'styled-system/recipes'\n\nexport type IconProps = ComponentProps<typeof Icon>\nexport const Icon = styled(ark.svg, icon, {\n  defaultProps: { asChild: true },\n})\n",
       "type": "registry:ui",
-      "path": "icon.tsx"
+      "path": "icon.tsx",
+      "exports": "export { Icon, type IconProps } from './icon'"
     }
   ],
   "registryDependencies": ["icon-recipe"]

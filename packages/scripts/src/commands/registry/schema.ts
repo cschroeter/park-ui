@@ -34,6 +34,7 @@ const registryFileBase = z.object({
   type: registryItemType,
   path: z.string(),
   content: z.string().optional(),
+  exports: z.string().optional(),
 })
 
 export const registryFilePartial = registryFileBase

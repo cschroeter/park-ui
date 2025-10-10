@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { ark } from '@ark-ui/react/factory'\nimport { Fieldset } from '@ark-ui/react/fieldset'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { fieldset } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(fieldset)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Fieldset.Root, 'root')\nexport const RootProvider = withProvider(Fieldset.RootProvider, 'root')\nexport const Legend = withContext(Fieldset.Legend, 'legend')\nexport const HelperText = withContext(Fieldset.HelperText, 'helperText')\nexport const ErrorText = withContext(Fieldset.ErrorText, 'errorText')\nexport const Content = withContext(ark.div, 'content')\nexport const Control = withContext(ark.div, 'control')\n\nexport { FieldsetContext as Context } from '@ark-ui/react/fieldset'\n",
       "type": "registry:ui",
-      "path": "fieldset.tsx"
+      "path": "fieldset.tsx",
+      "exports": "export * as Fieldset from './fieldset'"
     }
   ],
   "registryDependencies": ["fieldset-recipe"]

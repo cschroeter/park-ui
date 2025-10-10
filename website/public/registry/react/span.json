@@ -7,7 +7,8 @@
     {
       "content": "import type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\n\nexport type SpanProps = ComponentProps<typeof Span>\nexport const Span = styled('span')\n",
       "type": "registry:ui",
-      "path": "span.tsx"
+      "path": "span.tsx",
+      "exports": "export { Span, type SpanProps } from './span'"
     }
   ]
 }

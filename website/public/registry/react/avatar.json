@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { Avatar } from '@ark-ui/react/avatar'\nimport { UserIcon } from 'lucide-react'\nimport { type ComponentProps, forwardRef } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { avatar } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(avatar)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Avatar.Root, 'root')\nexport const RootProvider = withProvider(Avatar.RootProvider, 'root')\nexport const Image = withContext(Avatar.Image, 'image', {\n  defaultProps: {\n    draggable: 'false',\n    referrerPolicy: 'no-referrer',\n  },\n})\n\nexport { AvatarContext as Context } from '@ark-ui/react/avatar'\n\nexport interface FallbackProps extends ComponentProps<typeof StyledFallback> {\n  /**\n   * The name to derive the initials from.\n   * If not provided, the fallback will display a generic icon.\n   */\n  name?: string | undefined\n}\n\nconst StyledFallback = withContext(Avatar.Fallback, 'fallback')\n\nexport const Fallback = forwardRef<HTMLDivElement, FallbackProps>(function Fallback(props, ref) {\n  const { name, children, asChild, ...rest } = props\n\n  const fallbackContent = children || asChild ? children : name ? getInitials(name) : <UserIcon />\n\n  return (\n    <StyledFallback ref={ref} {...rest}>\n      {fallbackContent}\n    </StyledFallback>\n  )\n})\n\nconst getInitials = (name: string) => {\n  const names = name.trim().split(' ')\n  const firstName = names[0] || ''\n  const lastName = names.length > 1 ? names[names.length - 1] : ''\n  return firstName && lastName ? `${firstName[0]}${lastName[0]}` : firstName[0]\n}\n",
       "type": "registry:ui",
-      "path": "avatar.tsx"
+      "path": "avatar.tsx",
+      "exports": "export * as Avatar from './avatar'"
     }
   ],
   "registryDependencies": ["avatar-recipe"]

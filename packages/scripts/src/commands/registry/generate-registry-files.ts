@@ -49,6 +49,7 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
           content: await readFileContent(file.path),
           type: file.type,
           path: transformPath(file.path, file.type),
+          exports: file.exports,
         })),
       )
 

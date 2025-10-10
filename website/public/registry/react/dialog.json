@@ -7,7 +7,8 @@
     {
       "content": "'use client'\nimport { Dialog, useDialogContext } from '@ark-ui/react/dialog'\nimport { ark } from '@ark-ui/react/factory'\nimport { type ComponentProps, forwardRef } from 'react'\nimport { createStyleContext, styled } from 'styled-system/jsx'\nimport { dialog } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(dialog)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider(Dialog.Root, {\n  defaultProps: { unmountOnExit: true, lazyMount: true },\n})\nexport const RootProvider = withRootProvider(Dialog.RootProvider, {\n  defaultProps: { unmountOnExit: true, lazyMount: true },\n})\nexport const Backdrop = withContext(Dialog.Backdrop, 'backdrop')\nexport const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')\nexport const Content = withContext(Dialog.Content, 'content')\nexport const Description = withContext(Dialog.Description, 'description')\nexport const Positioner = withContext(Dialog.Positioner, 'positioner')\nexport const Title = withContext(Dialog.Title, 'title')\nexport const Trigger = withContext(Dialog.Trigger, 'trigger')\nexport const Body = withContext(ark.div, 'body')\nexport const Header = withContext(ark.div, 'header')\nexport const Footer = withContext(ark.div, 'footer')\n\nconst StyledButton = styled(ark.button)\n\nexport const ActionTrigger = forwardRef<HTMLButtonElement, ComponentProps<typeof StyledButton>>(\n  function ActionTrigger(props, ref) {\n    const dialog = useDialogContext()\n    return <StyledButton {...props} ref={ref} onClick={() => dialog.setOpen(false)} />\n  },\n)\n\nexport { DialogContext as Context } from '@ark-ui/react/dialog'\n",
       "type": "registry:ui",
-      "path": "dialog.tsx"
+      "path": "dialog.tsx",
+      "exports": "export * as Dialog from './dialog'"
     }
   ],
   "registryDependencies": ["dialog-recipe"]
