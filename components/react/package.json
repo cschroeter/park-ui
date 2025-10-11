@@ -21,8 +21,10 @@
     "lucide-react": "0.545.0"
   },
   "devDependencies": {
+    "@pandacss/preset-base": "1.4.1",
+    "@pandacss/preset-panda": "1.4.1",
     "@pandacss/dev": "1.4.1",
-    "@park-ui/cli": "workspace:*",
+    "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*",
     "@rsbuild/core": "1.5.16",
     "@rsbuild/plugin-react": "1.4.1",

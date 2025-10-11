@@ -46,7 +46,18 @@ Add visual indicators for external links to improve user experience.
 
 Use the `asChild` prop to compose Link with framework-specific routing components like Next.js Link.
 
-<ComponentExample name="routing" codeOnly />
+```tsx
+import NextLink from 'next/link'
+import { Link } from '@/components/ui'
+
+export const App = () => {
+  return (
+    <Link asChild>
+      <NextLink href="/about">Click here</NextLink>
+    </Link>
+  )
+}
+```
 
 ## Props
 

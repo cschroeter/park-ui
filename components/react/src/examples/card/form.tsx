@@ -1,4 +1,4 @@
-import { SiGithub, SiGoogle } from '@icons-pack/react-simple-icons'
+import { GithubIcon, GitlabIcon } from 'lucide-react'
 import { Divider, HStack, Stack } from 'styled-system/jsx'
 import { Button, Card, Field, Input, Text } from '@/components/ui'
 
@@ -15,11 +15,11 @@ export const App = () => {
         <Stack gap="4" width="full">
           <Stack direction="row">
             <Button variant="outline" colorPalette="gray" flex="1">
-              <SiGoogle />
-              Google
+              <GitlabIcon />
+              GitLab
             </Button>
             <Button variant="outline" colorPalette="gray" flex="1">
-              <SiGithub />
+              <GithubIcon />
               GitHub
             </Button>
           </Stack>

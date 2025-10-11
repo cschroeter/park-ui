@@ -33,7 +33,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   },
 }
@@ -56,7 +56,7 @@ const heroItemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   },
 }
