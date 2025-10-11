@@ -23,7 +23,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/absolute-center.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { absoluteCenter } from './absolute-center'"
         }
       ]
     },
@@ -47,7 +48,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/accordion.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { accordion } from './accordion'"
         }
       ]
     },
@@ -71,7 +73,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/alert.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { alert } from './alert'"
         }
       ]
     },
@@ -95,7 +98,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/avatar.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { avatar } from './avatar'"
         }
       ]
     },
@@ -119,7 +123,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/badge.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { badge } from './badge'"
         }
       ]
     },
@@ -143,7 +148,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/button.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { button } from './button'"
         }
       ]
     },
@@ -167,7 +173,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/card.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { card } from './card'"
         }
       ]
     },
@@ -191,7 +198,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/carousel.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { carousel } from './carousel'"
         }
       ]
     },
@@ -215,7 +223,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/checkbox.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { checkbox } from './checkbox'"
         }
       ]
     },
@@ -239,7 +248,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/clipboard.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { clipboard } from './clipboard'"
         }
       ]
     },
@@ -276,7 +286,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/code.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { code } from './code'"
         }
       ]
     },
@@ -300,7 +311,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/collapsible.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { collapsible } from './collapsible'"
         }
       ]
     },
@@ -324,7 +336,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/color-picker.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { colorPicker } from './color-picker'"
         }
       ]
     },
@@ -348,7 +361,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/combobox.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { combobox } from './combobox'"
         }
       ]
     },
@@ -372,7 +386,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/date-picker.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { datePicker } from './date-picker'"
         }
       ]
     },
@@ -396,7 +411,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/dialog.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { dialog } from './dialog'"
         }
       ]
     },
@@ -420,7 +436,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/drawer.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { drawer } from './drawer'"
         }
       ]
     },
@@ -444,7 +461,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/editable.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { editable } from './editable'"
         }
       ]
     },
@@ -468,7 +486,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/field.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { field } from './field'"
         }
       ]
     },
@@ -492,7 +511,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/fieldset.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { fieldset } from './fieldset'"
         }
       ]
     },
@@ -516,7 +536,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/file-upload.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { fileUpload } from './file-upload'"
         }
       ]
     },
@@ -540,7 +561,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/group.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { group } from './group'"
         }
       ]
     },
@@ -564,7 +586,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/heading.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { heading } from './heading'"
         }
       ]
     },
@@ -588,7 +611,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/hover-card.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { hoverCard } from './hover-card'"
         }
       ]
     },
@@ -625,7 +649,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/icon.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { icon } from './icon'"
         }
       ]
     },
@@ -674,7 +699,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/input-addon.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { inputAddon } from './input-addon'"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -699,7 +725,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/input-element.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { inputElement } from './input-element'"
         }
       ]
     },
@@ -723,7 +750,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/input.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { input } from './input'"
         }
       ]
     },
@@ -747,7 +775,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/kbd.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { kbd } from './kbd'"
         }
       ]
     },
@@ -771,7 +800,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/link.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { link } from './link'"
         }
       ]
     },
@@ -808,7 +838,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/menu.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { menu } from './menu'"
         }
       ]
     },
@@ -832,7 +863,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/number-input.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { numberInput } from './number-input'"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -857,7 +889,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/pagination.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { pagination } from './pagination'"
         }
       ]
     },
@@ -881,7 +914,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/pin-input.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { pinInput } from './pin-input'"
         }
       ],
       "registryDependencies": ["input-recipe"]
@@ -906,7 +940,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/popover.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { popover } from './popover'"
         }
       ]
     },
@@ -930,7 +965,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/progress.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { progress } from './progress'"
         }
       ]
     },
@@ -954,7 +990,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-button-group.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { radioButtonGroup } from './radio-button-group'"
         }
       ]
     },
@@ -978,7 +1015,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-card.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { radioCard } from './radio-card'"
         }
       ]
     },
@@ -1002,7 +1040,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/radio-group.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { radioGroup } from './radio-group'"
         }
       ]
     },
@@ -1026,7 +1065,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/rating-group.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { ratingGroup } from './rating-group'"
         }
       ]
     },
@@ -1050,7 +1090,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/scroll-area.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { scrollArea } from './scroll-area'"
         }
       ]
     },
@@ -1074,7 +1115,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/segment-group.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { segmentGroup } from './segment-group'"
         }
       ]
     },
@@ -1098,7 +1140,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/select.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { select } from './select'"
         }
       ]
     },
@@ -1122,7 +1165,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/skeleton.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { skeleton } from './skeleton'"
         }
       ]
     },
@@ -1146,7 +1190,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/slider.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { slider } from './slider'"
         }
       ]
     },
@@ -1182,7 +1227,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/spinner.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { spinner } from './spinner'"
         }
       ]
     },
@@ -1206,7 +1252,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/splitter.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { splitter } from './splitter'"
         }
       ]
     },
@@ -1230,7 +1277,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/switch.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { switchRecipe } from './switch'"
         }
       ]
     },
@@ -1254,7 +1302,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/table.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { table } from './table'"
         }
       ]
     },
@@ -1278,7 +1327,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tabs.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { tabs } from './tabs'"
         }
       ]
     },
@@ -1302,7 +1352,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tags-input.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { tagsInput } from './tags-input'"
         }
       ]
     },
@@ -1326,7 +1377,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/text.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { text } from './text'"
         }
       ]
     },
@@ -1350,7 +1402,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/textarea.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { textarea } from './textarea'"
         }
       ]
     },
@@ -1374,7 +1427,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/toast.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { toast } from './toast'"
         }
       ]
     },
@@ -1398,7 +1452,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/toggle-group.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { toggleGroup } from './toggle-group'"
         }
       ]
     },
@@ -1422,7 +1477,8 @@
       "files": [
         {
           "path": "../../packages/preset/src/recipes/tooltip.ts",
-          "type": "registry:recipe"
+          "type": "registry:recipe",
+          "imports": "import { tooltip } from './tooltip'"
         }
       ]
     }

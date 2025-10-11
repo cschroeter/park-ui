@@ -7,7 +7,8 @@
     {
       "content": "import { editableAnatomy } from '@ark-ui/react/editable'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const editable = defineSlotRecipe({\n  className: 'editable',\n  slots: editableAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n      width: '100%',\n    },\n    control: {\n      display: 'flex',\n      gap: '2',\n    },\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "editable.ts"
+      "path": "editable.ts",
+      "imports": "import { editable } from './editable'"
     }
   ]
 }

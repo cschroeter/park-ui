@@ -79,6 +79,10 @@
           "exports": {
             "type": "string",
             "description": "Export statement for the file"
+          },
+          "imports": {
+            "type": "string",
+            "description": "Import statement for the file"
           }
         },
         "required": ["type", "path", "content"],

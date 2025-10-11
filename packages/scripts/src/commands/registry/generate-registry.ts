@@ -63,6 +63,26 @@ const extractRegistryDependencies = (sourceCode: string, componentName: string) 
   return Array.from(dependencies).sort()
 }
 
+const extractRecipeImport = async (recipeName: string): Promise<string | undefined> => {
+  const indexPath = '../../packages/preset/src/recipes/index.ts'
+
+  try {
+    const indexContent = (await readFile(indexPath, 'utf-8')) as string
+    const lines = indexContent.split('\n')
+
+    // Look for import statement matching this recipe
+    for (const line of lines) {
+      if (line.includes(`from './${recipeName}'`)) {
+        return line.trim()
+      }
+    }
+  } catch {
+    // Index file not found or couldn't be read
+  }
+
+  return undefined
+}
+
 const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryItemPartial[]> => {
   console.log('\n🔍 Scanning recipe files...')
   const recipeItems: RegistryItemPartial[] = []
@@ -73,7 +93,7 @@ const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryIt
     const registryRecipeName = `${kebabName}-recipe`
 
     try {
-      const content = await readFile(recipePath, 'utf-8')
+      const content = (await readFile(recipePath, 'utf-8')) as string
       const deps = extractDependencies(content)
       const dependencies = ['@pandacss/dev', ...deps.filter((d) => d !== '@pandacss/dev')]
 
@@ -85,11 +105,19 @@ const generateRecipeItems = async (recipeNames: Set<string>): Promise<RegistryIt
         recipeDeps.push(`${match[1]}-recipe`)
       }
 
+      const recipeImport = await extractRecipeImport(kebabName)
+
       const recipeItem: RegistryItemPartial = {
         name: registryRecipeName,
         type: 'registry:recipe',
         dependencies,
-        files: [{ path: recipePath, type: 'registry:recipe' }],
+        files: [
+          {
+            path: recipePath,
+            type: 'registry:recipe',
+            ...(recipeImport && { imports: recipeImport }),
+          },
+        ],
         ...(recipeDeps.length > 0 && { registryDependencies: recipeDeps.sort() }),
       }
 
@@ -116,7 +144,7 @@ const extractExportStatement = async (componentName: string, pattern: string) =>
   const indexPath = `${directory}/index.ts`
 
   try {
-    const indexContent = await readFile(indexPath, 'utf-8')
+    const indexContent = (await readFile(indexPath, 'utf-8')) as string
     const lines = indexContent.split('\n')
 
     // Look for export statement matching this component
@@ -161,7 +189,7 @@ export const generateRegistry = async (options: { name: string; pattern?: string
 
   for (const filePath of files) {
     const componentName = parse(filePath).name
-    const content = await readFile(filePath, 'utf-8')
+    const content = (await readFile(filePath, 'utf-8')) as string
     const dependencies = extractDependencies(content)
     const registryDependencies = extractRegistryDependencies(content, componentName)
     const registryType = getRegistryType(filePath)

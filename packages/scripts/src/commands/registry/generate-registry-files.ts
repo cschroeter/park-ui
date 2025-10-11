@@ -50,6 +50,7 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
           type: file.type,
           path: transformPath(file.path, file.type),
           exports: file.exports,
+          imports: file.imports,
         })),
       )
 

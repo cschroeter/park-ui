@@ -7,7 +7,8 @@
     {
       "content": "import { pinInputAnatomy } from '@ark-ui/react/pin-input'\nimport { defineSlotRecipe } from '@pandacss/dev'\nimport { input } from './input'\n\nexport const pinInput = defineSlotRecipe({\n  className: 'pin-input',\n  slots: pinInputAnatomy.keys(),\n  base: {\n    input: {\n      ...input.base,\n      textAlign: 'center',\n      width: 'var(--input-height)',\n      px: '1!',\n    },\n    control: {\n      display: 'inline-flex',\n      gap: '2',\n      isolation: 'isolate',\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n    variant: 'outline',\n  },\n\n  variants: {\n    size: {\n      xs: {\n        input: input.variants?.size?.xs,\n      },\n      sm: {\n        input: input.variants?.size?.sm,\n      },\n      md: {\n        input: input.variants?.size?.md,\n      },\n      lg: {\n        input: input.variants?.size?.lg,\n      },\n      xl: {\n        input: input.variants?.size?.xl,\n      },\n      '2xl': {\n        input: input.variants?.size?.['2xl'],\n      },\n    },\n    variant: {\n      outline: { input: input.variants?.variant?.outline },\n      subtle: { input: input.variants?.variant?.subtle },\n      flushed: { input: input.variants?.variant?.flushed },\n    },\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "pin-input.ts"
+      "path": "pin-input.ts",
+      "imports": "import { pinInput } from './pin-input'"
     }
   ],
   "registryDependencies": ["input-recipe"]

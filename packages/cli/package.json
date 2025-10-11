@@ -57,11 +57,13 @@
     "effect": "3.18.4",
     "fs-extra": "11.3.2",
     "magicast": "0.3.5",
+    "picocolors": "1.1.1",
     "ts-morph": "27.0.0",
     "tsconfig-paths": "4.2.0",
     "zod": "4.1.12"
   },
   "devDependencies": {
+    "@pandacss/dev": "1.4.1",
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/node": "24.7.1",

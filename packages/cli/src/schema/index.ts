@@ -35,6 +35,7 @@ const registryFile = z.object({
   path: z.string(),
   content: z.string(),
   exports: z.string().optional(),
+  imports: z.string().optional(),
 })
 
 export type RegistryFile = z.infer<typeof registryFile>

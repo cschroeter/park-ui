@@ -7,7 +7,8 @@
     {
       "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const text = defineRecipe({\n  className: 'text',\n  variants: {},\n})\n",
       "type": "registry:recipe",
-      "path": "text.ts"
+      "path": "text.ts",
+      "imports": "import { text } from './text'"
     }
   ]
 }

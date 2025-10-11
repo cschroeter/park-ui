@@ -7,7 +7,8 @@
     {
       "content": "import { toastAnatomy } from '@ark-ui/react/toast'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const toast = defineSlotRecipe({\n  className: 'toast',\n  slots: toastAnatomy.keys(),\n  base: {\n    root: {\n      alignItems: 'start',\n      background: 'bg.default',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      display: 'flex',\n      gap: '4',\n      height: 'var(--height)',\n      minWidth: 'sm',\n      opacity: 'var(--opacity)',\n      overflowWrap: 'anywhere',\n      p: '4',\n      position: 'relative',\n      scale: 'var(--scale)',\n      transitionDuration: 'slow',\n      transitionProperty: 'translate, scale, opacity, height',\n      transitionTimingFunction: 'default',\n      translate: 'var(--x) var(--y)',\n      width: 'full',\n      willChange: 'translate, opacity, scale',\n      zIndex: 'var(--z-index)',\n    },\n    title: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n      textStyle: 'sm',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n    actionTrigger: {\n      color: 'colorPalette.plain.fg',\n      cursor: 'pointer',\n      fontWeight: 'semibold',\n      textStyle: 'sm',\n    },\n    closeTrigger: {\n      position: 'absolute',\n      top: '2',\n      insetEnd: '2',\n    },\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "toast.ts"
+      "path": "toast.ts",
+      "imports": "import { toast } from './toast'"
     }
   ]
 }

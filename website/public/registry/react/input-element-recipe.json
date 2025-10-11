@@ -7,7 +7,8 @@
     {
       "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const inputElement = defineRecipe({\n  className: 'input-element',\n  base: {\n    alignItems: 'center',\n    color: 'fg.muted',\n    display: 'flex',\n    height: 'full',\n    justifyContent: 'center',\n    position: 'absolute',\n    px: '3',\n    zIndex: '2',\n  },\n  variants: {\n    placement: {\n      start: {\n        insetInlineStart: '0',\n      },\n      end: {\n        insetInlineEnd: '0',\n      },\n    },\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "input-element.ts"
+      "path": "input-element.ts",
+      "imports": "import { inputElement } from './input-element'"
     }
   ]
 }

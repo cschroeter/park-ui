@@ -7,7 +7,8 @@
     {
       "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const absoluteCenter = defineRecipe({\n  className: 'absolute-center',\n  base: {\n    position: 'absolute',\n    display: 'flex',\n    alignItems: 'center',\n    justifyContent: 'center',\n  },\n  defaultVariants: {\n    axis: 'both',\n  },\n  variants: {\n    axis: {\n      horizontal: {\n        insetStart: '50%',\n        translate: '-50%',\n        _rtl: {\n          translate: '50%',\n        },\n      },\n      vertical: {\n        top: '50%',\n        translate: '0 -50%',\n      },\n      both: {\n        insetStart: '50%',\n        top: '50%',\n        translate: '-50% -50%',\n        _rtl: {\n          translate: '50% -50%',\n        },\n      },\n    },\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "absolute-center.ts"
+      "path": "absolute-center.ts",
+      "imports": "import { absoluteCenter } from './absolute-center'"
     }
   ]
 }
