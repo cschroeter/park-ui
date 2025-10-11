@@ -7,7 +7,7 @@
     {
       "content": "import { defineRecipe } from '@pandacss/dev'\nimport { input } from './input'\n\nexport const inputAddon = defineRecipe({\n  className: 'input-addon',\n  base: {\n    flex: '0 0 auto',\n    width: 'auto',\n    display: 'flex',\n    alignItems: 'center',\n    whiteSpace: 'nowrap',\n    alignSelf: 'stretch',\n    borderRadius: 'l2',\n  },\n  variants: {\n    size: input.variants?.size ?? {},\n    variant: {\n      outline: {\n        borderWidth: '1px',\n        borderColor: 'border',\n        bg: 'bg.muted',\n      },\n      subtle: {\n        borderWidth: '1px',\n        borderColor: 'transparent',\n        bg: 'bg.emphasized',\n      },\n      flushed: {\n        borderBottom: '1px solid',\n        borderColor: 'inherit',\n        borderRadius: '0',\n        px: '0',\n        bg: 'transparent',\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n    variant: 'outline',\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "recipes/input-addon.ts"
+      "path": "input-addon.ts"
     }
   ],
   "registryDependencies": ["input-recipe"]

@@ -28,7 +28,7 @@ export const install = ({ panda, files = [] }: RegistryItem) =>
                       join(resolvedPaths.components, path),
                     ),
                     Match.when({ type: 'registry:recipe' }, ({ path }) =>
-                      join(resolvedPaths.theme, path),
+                      join(resolvedPaths.recipes, path),
                     ),
                     Match.when({ type: 'registry:theme' }, ({ path }) =>
                       join(resolvedPaths.theme, path),

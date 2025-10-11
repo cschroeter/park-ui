@@ -7,7 +7,7 @@
     {
       "content": "import { collapsibleAnatomy } from '@ark-ui/react/collapsible'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const collapsible = defineSlotRecipe({\n  className: 'collapsible',\n  slots: collapsibleAnatomy.keys(),\n  base: {\n    content: {\n      overflow: 'hidden',\n      _open: {\n        animationName: 'expand-height, fade-in',\n        animationDuration: 'slow',\n      },\n      _closed: {\n        animationName: 'collapse-height, fade-out',\n        animationDuration: 'normal',\n      },\n    },\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "recipes/collapsible.ts"
+      "path": "collapsible.ts"
     }
   ]
 }

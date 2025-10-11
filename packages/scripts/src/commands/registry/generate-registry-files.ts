@@ -22,7 +22,7 @@ const transformPath = (filePath: string, type: string): string => {
   }
 
   if (type === 'registry:recipe') {
-    return filePath.replace(/^.*\/recipes\//, 'recipes/')
+    return filePath.replace(/^.*\/recipes\//, '')
   }
 
   if (type === 'registry:color' || type === 'registry:theme') {

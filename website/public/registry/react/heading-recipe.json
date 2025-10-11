@@ -7,7 +7,7 @@
     {
       "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const heading = defineRecipe({\n  className: 'heading',\n  base: {\n    fontWeight: 'semibold',\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "recipes/heading.ts"
+      "path": "heading.ts"
     }
   ]
 }

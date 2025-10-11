@@ -7,7 +7,7 @@
     {
       "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const icon = defineRecipe({\n  className: 'icon',\n  base: {\n    color: 'currentcolor',\n    display: 'inline-block',\n    flexShrink: '0',\n    verticalAlign: 'middle',\n    lineHeight: '1em',\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      '2xs': { boxSize: '3' },\n      xs: { boxSize: '4' },\n      sm: { boxSize: '4.5' },\n      md: { boxSize: '5' },\n      lg: { boxSize: '5.5' },\n      xl: { boxSize: '6' },\n    },\n  },\n})\n",
       "type": "registry:recipe",
-      "path": "recipes/icon.ts"
+      "path": "icon.ts"
     }
   ]
 }
