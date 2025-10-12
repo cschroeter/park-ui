@@ -7,6 +7,7 @@ import { Config } from './config'
 import { FileError } from './errors'
 import { updateIndexFile } from './index-file'
 import { updatePandaConfig } from './panda-config'
+import { updateRecipeIndex } from './recipes'
 
 export const install = ({ panda, files = [] }: RegistryItem) =>
   Config.pipe(
@@ -45,6 +46,12 @@ export const install = ({ panda, files = [] }: RegistryItem) =>
                 return updateIndexFile({
                   path: join(resolvedPaths.ui, 'index.ts'),
                   exportStatement: file.exports,
+                })
+              }
+              if (file.type === 'registry:recipe' && file.imports) {
+                return updateRecipeIndex(join(resolvedPaths.recipes, 'index.ts'), {
+                  type: file.content.includes('slotRecipe') ? 'slotRecipe' : 'recipe',
+                  imports: file.imports,
                 })
               }
             }),
