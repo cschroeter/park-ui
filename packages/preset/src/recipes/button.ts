@@ -135,8 +135,8 @@ export const button = defineRecipe({
         },
       },
       xl: {
-        h: '11',
-        minW: '11',
+        h: '12',
+        minW: '12',
         textStyle: 'md',
         px: '4.5',
         _icon: {

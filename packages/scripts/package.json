@@ -13,7 +13,7 @@
     "fast-glob": "3.3.3",
     "fs-extra": "11.3.2",
     "picocolors": "1.1.1",
-    "ts-morph": "27.0.0",
+    "ts-morph": "27.0.2",
     "zod": "4.1.12"
   },
   "peerDependencies": {

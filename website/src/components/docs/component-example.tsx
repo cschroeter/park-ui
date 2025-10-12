@@ -47,7 +47,6 @@ export const ComponentExample = async (props: Props) => {
         </ErrorBoundary>
       </Box>
       <Collapsible.Root
-        colorPalette="gray"
         position="relative"
         minH="10"
         bg={{ _light: 'gray.2', _dark: 'gray.1' }}
