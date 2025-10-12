@@ -106,9 +106,7 @@ export const alert = defineSlotRecipe({
       error: {
         root: { colorPalette: 'red' },
       },
-      neutral: {
-        root: { colorPalette: 'gray' },
-      },
+      neutral: {},
     },
   },
 })

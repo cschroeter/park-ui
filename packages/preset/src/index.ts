@@ -66,13 +66,11 @@ export const preset = definePreset({
 })
 
 export const plugin = definePlugin({
-  name: 'Kill Colors',
+  name: 'Remove Panda Preset Colors',
   hooks: {
-    'preset:resolved': ({ utils, preset, name }) => {
-      if (name === '@pandacss/preset-panda') {
-        return utils.omit(preset, ['theme.tokens.colors', 'theme.semanticTokens.colors'])
-      }
-      return preset
-    },
+    'preset:resolved': ({ utils, preset, name }) =>
+      name === '@pandacss/preset-panda'
+        ? utils.omit(preset, ['theme.tokens.colors', 'theme.semanticTokens.colors'])
+        : preset,
   },
 })

@@ -39,6 +39,27 @@ npx @park-ui/cli@next init
 
 Don't forget to run `panda codegen` after updating your Panda configuration.
 
+:::info
+
+Park UI uses its own [color system](/docs/theming#colors). To remove Panda’s default color tokens (50–950 shades), add this plugin to your Panda config:
+
+:::
+
+```ts
+// panda.config.ts
+plugins: [
+  {
+    name: 'Remove Panda Preset Colors',
+    hooks: {
+      'preset:resolved': ({ utils, preset, name }) =>
+        name === '@pandacss/preset-panda'
+          ? utils.omit(preset, ['theme.tokens.colors', 'theme.semanticTokens.colors'])
+          : preset,
+    },
+  },
+],
+```
+
 </Step>
 
 <Step number="4" title="Add components">
