@@ -63,10 +63,10 @@
     "zod": "4.1.12"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.4.1",
+    "@pandacss/dev": "1.4.2",
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "24.7.1",
+    "@types/node": "24.7.2",
     "release-it": "19.0.5",
     "tsup": "8.5.0",
     "typescript": "5.9.3"

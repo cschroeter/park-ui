@@ -38,11 +38,11 @@
     "zustand": "5.0.8"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.4.1",
-    "@pandacss/preset-base": "1.4.1",
-    "@pandacss/preset-panda": "1.4.1",
+    "@pandacss/dev": "1.4.2",
+    "@pandacss/preset-base": "1.4.2",
+    "@pandacss/preset-panda": "1.4.2",
     "@park-ui/preset": "workspace:*",
-    "@types/node": "24.7.1",
+    "@types/node": "24.7.2",
     "@types/hast": "3.0.4",
     "@types/mdast": "4.0.4",
     "@types/react": "19.2.2",
