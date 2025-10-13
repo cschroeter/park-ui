@@ -35,9 +35,18 @@ const docs = defineCollection({
     }),
 })
 
+const changelog = defineCollection({
+  name: 'Changelog',
+  pattern: ['changelog/**/*.mdx'],
+  schema: s.object({
+    date: s.string(),
+    mdx: s.mdx(),
+  }),
+})
+
 export default defineConfig({
   root: join(process.cwd(), './src/content'),
-  collections: { docs },
+  collections: { docs, changelog },
   mdx: {
     rehypePlugins: [
       rehypeSlug,

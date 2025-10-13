@@ -13,14 +13,14 @@ export const PageHeader = (props: Props) => {
   const { title, subtitle, description } = props
   return (
     <Stack gap="6" alignItems="start">
-      <Stack gap={{ base: '5', md: '8' }}>
+      <Stack gap={{ base: '5', md: '6' }}>
         <Stack gap={{ base: '3', md: '4' }}>
           {subtitle && (
             <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="medium" color="colorPalette.a11">
               {subtitle}
             </Text>
           )}
-          <Heading as="h1" textStyle={{ base: '3xl', md: '4xl' }}>
+          <Heading as="h1" textStyle={{ base: '4xl', md: '5xl' }}>
             {title}
           </Heading>
         </Stack>

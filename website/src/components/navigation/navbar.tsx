@@ -29,6 +29,7 @@ export const Navbar = () => {
             <NavbarLink href="/docs">Docs</NavbarLink>
             {/* <NavbarLink href="/blog">Blog</NavbarLink>
             <NavbarLink href="/plus">Plus</NavbarLink> */}
+            <NavbarLink href="/changelog">Changelog</NavbarLink>
             <GithubButton />
             <ThemeDrawer />
           </HStack>
