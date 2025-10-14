@@ -1,6 +1,6 @@
 {
   "name": "@park-ui/cli",
-  "version": "1.0.0-next.4",
+  "version": "1.0.0-next.5",
   "description": "CLI tool for Park UI components",
   "type": "module",
   "bin": {

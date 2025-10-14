@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [1.0.0-next.5] - 2025-10-14
+
 ## Added
 
 - RC versions for testing
