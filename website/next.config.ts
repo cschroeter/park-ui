@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['@ark-ui/react'],
   },
   outputFileTracingIncludes: {
-    '/*': ['../components/react/src/examples/**/*'],
+    '/*': ['../components/react/src/**/*'],
   },
 
   async redirects() {
