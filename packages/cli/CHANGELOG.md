@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [1.0.0-next.6] - 2025-10-15
+
 ### Fixed
 
 - Fix getTsConfigAliasPrefix
