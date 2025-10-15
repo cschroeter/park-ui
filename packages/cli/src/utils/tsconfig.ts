@@ -36,6 +36,10 @@ export const withTSConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
   )
 
 const getTsConfigAliasPrefix = (tsConfig: ConfigLoaderSuccessResult) => {
+  if (!tsConfig.paths || Object.keys(tsConfig.paths).length === 0) {
+    return null
+  }
+
   for (const [alias, paths] of Object.entries(tsConfig.paths)) {
     if (
       paths.includes('./*') ||
@@ -43,9 +47,10 @@ const getTsConfigAliasPrefix = (tsConfig: ConfigLoaderSuccessResult) => {
       paths.includes('./app/*') ||
       paths.includes('./resources/js/*')
     ) {
-      return alias.replace(/\/\*$/, '') ?? null
+      return alias.replace(/\/\*$/, '')
     }
   }
 
-  return Object.keys(tsConfig?.paths)?.[0].replace(/\/\*$/, '') ?? null
+  const firstAlias = Object.keys(tsConfig.paths)[0]
+  return firstAlias ? firstAlias.replace(/\/\*$/, '') : null
 }

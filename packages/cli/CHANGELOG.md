@@ -1,14 +1,18 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fix getTsConfigAliasPrefix
+
 ## [1.0.0-next.5] - 2025-10-14
 
-## Added
+### Added
 
 - RC versions for testing
 
 ## [1.0.0-next.4] - 2025-10-09
 
-## Fixed
+### Fixed
 
 - Resolved various issues.
 
@@ -18,19 +22,19 @@
 
 ## [1.0.0-next.2] - 2025-08-11
 
-## Fixed
+### Fixed
 
 - Resolved various issues.
 
 ## [1.0.0-next.1] - 2025-08-11
 
-## Fixed
+### Fixed
 
 - Resolved various issues.
 
 ## [1.0.0-next.0] - 2025-08-10
 
-## Changed
+### Changed
 
 - New CLI for Park UI Next
 
