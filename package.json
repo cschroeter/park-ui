@@ -16,6 +16,7 @@
     "cli": "bun run --cwd packages/cli",
     "preset": "bun run --cwd packages/preset",
     "react": "bun run --cwd components/react",
+    "solid": "bun run --cwd components/solid",
     "web": "bun run --cwd website"
   },
   "devDependencies": {

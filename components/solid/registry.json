@@ -1,0 +1,42 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry.json",
+  "name": "@park-ui/solid",
+  "homepage": "https://park-ui.com",
+  "items": [
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["avatar-recipe"]
+    },
+    {
+      "name": "avatar-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/avatar.ts",
+          "type": "registry:recipe",
+          "imports": "import { avatar } from './avatar'"
+        }
+      ]
+    },
+    {
+      "name": "index",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/index.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
