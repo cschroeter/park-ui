@@ -17,6 +17,7 @@
     "preset": "bun run --cwd packages/preset",
     "react": "bun run --cwd components/react",
     "solid": "bun run --cwd components/solid",
+    "vue": "bun run --cwd components/vue",
     "web": "bun run --cwd website"
   },
   "devDependencies": {
