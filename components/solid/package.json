@@ -10,11 +10,10 @@
     "typecheck": "tsc",
     "registry:prepare": "scripts registry prepare --name @park-ui/solid",
     "registry:build": "scripts registry build solid",
-    "typedoc": "scripts typedoc --out ../../website/public/types/solid",
-    "build-storybook": "storybook build"
+    "typedoc": "scripts typedoc --out ../../website/public/types/solid"
   },
   "dependencies": {
-    "@ark-ui/solid": "5.26.0",
+    "@ark-ui/solid": "5.26.1",
     "lucide-solid": "0.545.0",
     "solid-js": "1.9.9"
   },
