@@ -7,7 +7,10 @@ import { carousel } from 'styled-system/recipes'
 const { withProvider, withContext } = createStyleContext(carousel)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withProvider(Carousel.Root, 'root', { defaultProps: { spacing: '16px' } })
+export const Root = withProvider(Carousel.Root, 'root', {
+  forwardProps: ['page'],
+  defaultProps: { spacing: '16px' },
+})
 export const RootProvider = withProvider(Carousel.RootProvider, 'root')
 export const AutoplayTrigger = withContext(Carousel.AutoplayTrigger, 'autoplayTrigger')
 export const Control = withContext(Carousel.Control, 'control')
