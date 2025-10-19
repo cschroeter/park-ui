@@ -8,7 +8,7 @@ import { highlight } from '~/lib/shiki'
 
 export const Recipe = async () => {
   const { component } = getServerContext()
-  const path = join(process.cwd(), `../packages/panda/src/theme/recipes/${component}.ts`)
+  const path = join(process.cwd(), `../packages/preset/src/theme/recipes/${component}.ts`)
 
   const programm = pipe(
     Effect.tryPromise({
