@@ -8,7 +8,7 @@ const nextConfig = {
       '../components/react/src/demos/*',
       '../components/solid/src/demos/*',
       '../components/vue/src/demos/*',
-      '../packages/panda/src/theme/recipes/*',
+      '../packages/preset/src/theme/recipes/*',
     ],
   },
   async redirects() {
