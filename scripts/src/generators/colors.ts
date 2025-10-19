@@ -12,7 +12,7 @@ const main = () => {
       const semanticTokens = defineSemanticTokens(color)
 
       fs.writeFileSync(
-        join(process.cwd(), '../packages/panda/src/colors', `${color}.ts`),
+        join(process.cwd(), '../packages/preset/src/colors', `${color}.ts`),
         `import { defineTokens, defineSemanticTokens } from '@pandacss/dev'
 
       const tokens = defineTokens.colors(${JSON.stringify(tokens, null, 0)})
