@@ -1,9 +1,10 @@
+import { access } from 'node:fs/promises'
 import { join } from 'node:path'
 import * as p from '@clack/prompts'
-import { cosmiconfig } from 'cosmiconfig'
 import { Context, Effect, Layer, pipe, Schema } from 'effect'
 import { builders, loadFile, writeFile } from 'magicast'
 import { deepMergeObject } from 'magicast/helpers'
+import { packageDirectory } from 'package-directory'
 import type { JsonValue, RegistryItemImport } from '~/schema'
 import { Config } from './config'
 import { PandaConfigNotFound } from './errors'
@@ -14,16 +15,18 @@ const ConfigSchema = Schema.Struct({
 
 type ConfigSchema = Schema.Schema.Type<typeof ConfigSchema>
 
-const explorer = cosmiconfig('panda', {
-  searchPlaces: ['panda.config.ts'],
-})
-
 const getConfigPath = () =>
   pipe(
-    Effect.promise(() => explorer.search(process.cwd())),
+    Effect.promise(() => packageDirectory()),
     Effect.flatMap(Effect.fromNullable),
-    Effect.map((result) => ({ path: result.filepath })),
-    Effect.mapError(() => PandaConfigNotFound(process.cwd())),
+    Effect.catchTag('NoSuchElementException', () => Effect.succeed(process.cwd())),
+    Effect.map((packageDir) => join(packageDir, 'panda.config.ts')),
+    Effect.flatMap((path) =>
+      Effect.tryPromise({
+        try: () => access(path),
+        catch: () => PandaConfigNotFound(path),
+      }).pipe(Effect.map(() => ({ path }))),
+    ),
   )
 
 export const PandaConfig = Context.GenericTag<ConfigSchema>('PandaConfig')

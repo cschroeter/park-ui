@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Fixed
+
+- Fix PandaConfig path resolution to correctly locate `panda.config.ts` in various project structures.
+
 ## [1.0.0-next.6] - 2025-10-15
 
 ### Fixed
