@@ -1,104 +1,52 @@
 import { basename, join } from 'node:path'
-import { Effect, pipe } from 'effect'
-import { globby } from 'globby'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
+import remarkDirective from 'remark-directive'
 import { defineCollection, defineConfig, s } from 'velite'
+import { remarkCallout, remarkCodeMeta } from '~/lib/remark'
 
-const pages = defineCollection({
-  name: 'Pages',
-  pattern: ['pages/**/*.mdx', '../../../packages/panda/CHANGELOG.md'],
+const docs = defineCollection({
+  name: 'Doc',
+  pattern: ['docs/**/*.mdx'],
   schema: s
     .object({
-      id: s.string(),
       title: s.string(),
       description: s.string(),
-      metadata: s.metadata(),
-      content: s.markdown(),
-      framework: s.string().default('*'),
-      status: s.string().optional(),
-      toc: s.toc(),
-      code: s.mdx(),
-      docs: s.string().optional(),
+      category: s.string(),
+      links: s
+        .object({
+          recipe: s.string().url().optional(),
+          source: s.string().url().optional(),
+          ark: s.string().url().optional(),
+        })
+        .optional(),
+      mdx: s.mdx(),
+      toc: s.toc({ maxDepth: 3 }),
     })
     .transform((data, { meta }) => {
-      if (data.id === 'changelog') {
-        return {
-          ...data,
-          slug: 'overview/changelog',
-          category: 'overview',
-          framework: '*',
-          toc: data.toc.map((entry) => ({ ...entry, items: [] })),
-        }
+      if (typeof meta.path !== 'string') {
+        throw new Error('Meta path is not a string')
       }
-      return {
-        ...data,
-        slug: meta.path.replace(/.*\/pages\//, '').replace(/\.mdx$/, ''),
-        category: meta.path.replace(/.*\/pages\//, '').replace(/\/[^/]*$/, ''),
-      }
+      const id = basename(meta.path, '.mdx')
+      const href = toBasePath(meta.path)
+      const slug = href.replace('/docs/', '')
+
+      return { ...data, id, slug, href }
     }),
 })
 
-const controls = defineCollection({
-  name: 'Controls',
-  pattern: ['controls/*.json'],
-  schema: s
-    .record(
-      s.string(),
-      s.object({
-        options: s.array(s.string()).optional(),
-        defaultValue: s.string().optional(),
-      }),
-    )
-    .transform((data, { meta }) => {
-      const component = meta.path.replace(/.*\/controls\//, '').replace(/\.json$/, '')
-      return {
-        component,
-        props: data,
-      }
-    }),
-})
-
-const freeBlocks = ['banner-for-cookies', 'card-authentification', 'footer-with-social']
-
-const blocks = defineCollection({
-  name: 'Blocks',
-  pattern: 'blocks.json',
-  schema: s
-    .object({
-      id: s.string(),
-      name: s.string(),
-      description: s.string(),
-      figmaNodeId: s.string(),
-    })
-    .transform(async (data) =>
-      Effect.runPromise(
-        pipe(
-          Effect.succeed(`../components/react/src/plus/blocks/${data.id}`),
-          Effect.map((blockPath) => join(process.cwd(), blockPath)),
-          Effect.flatMap((pattern) =>
-            pipe(
-              Effect.promise(() => globby(pattern, { onlyDirectories: true })),
-              Effect.flatMap((variants) =>
-                Effect.forEach(variants, (variant) =>
-                  Effect.succeed({
-                    id: basename(variant),
-                    name: capitalize(basename(variant)),
-                    accessLevel: freeBlocks.includes(basename(variant)) ? 'free' : 'paid',
-                  }),
-                ),
-              ),
-              Effect.map((variants) => ({ ...data, variantCount: variants.length, variants })),
-            ),
-          ),
-        ),
-      ),
-    ),
+const changelog = defineCollection({
+  name: 'Changelog',
+  pattern: ['changelog/**/*.mdx'],
+  schema: s.object({
+    date: s.string(),
+    mdx: s.mdx(),
+  }),
 })
 
 export default defineConfig({
   root: join(process.cwd(), './src/content'),
-  collections: { pages, controls, blocks },
+  collections: { docs, changelog },
   mdx: {
     rehypePlugins: [
       rehypeSlug,
@@ -112,11 +60,13 @@ export default defineConfig({
         },
       ],
     ],
+    remarkPlugins: [remarkDirective, remarkCallout, remarkCodeMeta],
   },
 })
 
-const capitalize = (item: string) =>
-  item
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
+const toBasePath = (filePath: string): string => {
+  const contentIndex = filePath.indexOf('/src/content')
+  if (contentIndex === -1) return filePath
+  const relativePath = filePath.slice(contentIndex + '/src/content'.length)
+  return relativePath.replace(/\.mdx$/, '')
+}

@@ -1,6 +1,0 @@
-{
-  "id": "field",
-  "filename": "field.ts",
-  "slotRecipe": true,
-  "content": "import { fieldAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const field = defineSlotRecipe({\n  className: 'field',\n  slots: fieldAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n    },\n    label: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n      textStyle: 'sm',\n      _disabled: {\n        color: 'fg.disabled',\n      },\n    },\n    helperText: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n      _disabled: {\n        color: 'fg.disabled',\n      },\n    },\n    errorText: {\n      alignItems: 'center',\n      color: 'fg.error',\n      display: 'inline-flex',\n      gap: '2',\n      textStyle: 'sm',\n      _disabled: {\n        color: 'fg.disabled',\n      },\n    },\n  },\n})\n"
-}

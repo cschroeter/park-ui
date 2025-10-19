@@ -1,0 +1,11 @@
+{
+  "Root": {
+    "props": {
+      "size": {
+        "type": "'inherit' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      }
+    }
+  }
+}

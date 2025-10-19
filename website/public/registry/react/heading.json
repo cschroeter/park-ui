@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "heading",
+  "type": "registry:ui",
+  "dependencies": ["react"],
+  "files": [
+    {
+      "content": "import type { ComponentProps } from 'react'\nimport { styled } from 'styled-system/jsx'\nimport { type HeadingVariantProps, heading } from 'styled-system/recipes'\nimport type { StyledComponent } from 'styled-system/types'\n\ntype Props = HeadingVariantProps & { as?: React.ElementType }\n\nexport type HeadingProps = ComponentProps<typeof Heading>\nexport const Heading = styled('h2', heading) as StyledComponent<'h2', Props>\n",
+      "type": "registry:ui",
+      "path": "heading.tsx",
+      "exports": "export { Heading, type HeadingProps } from './heading'"
+    }
+  ],
+  "registryDependencies": ["heading-recipe"]
+}

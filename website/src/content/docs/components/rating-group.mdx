@@ -1,0 +1,125 @@
+---
+title: Rating Group
+description: A form control for rating items using stars or custom symbols.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/rating-group.ts
+  ark: https://ark-ui.com/docs/components/rating-group
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { RatingGroup } from '@/components/ui'
+```
+
+```tsx
+<RatingGroup.Root>
+  <RatingGroup.Label />
+  <RatingGroup.HiddenInput />
+  <RatingGroup.Control>
+    <RatingGroup.Item>
+      <RatingGroup.ItemIndicator />
+    </RatingGroup.Item>
+  </RatingGroup.Control>
+</RatingGroup.Root>
+```
+
+
+## Shortcuts
+
+The `RatingGroup` component also provides a set of shortcuts for common use cases.
+
+### RatingControl
+
+This component renders the number of rating items specified in the `count` prop.
+
+This works:
+
+```tsx
+<RatingGroup.Control>
+  {Array.from({ length: 5 }).map((_, index) => (
+    <RatingGroup.Item key={index} index={index + 1}>
+      <RatingGroup.ItemIndicator />
+    </RatingGroup.Item>
+  ))}
+</RatingGroup.Control>
+```
+
+This might be more concise, if you don't need to customize the rating icons:
+
+```tsx
+<RatingGroup.Control />
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the rating component.
+
+<ComponentExample name="sizes" />
+
+### Controlled
+
+Use the `value` and `onValueChange` prop to control the rating value.
+
+<ComponentExample name="controlled" />
+
+### ReadOnly
+
+Use the `readOnly` prop to make the rating component read-only.
+
+<ComponentExample name="read-only" />
+
+### Custom Icon
+
+Use the `icon` prop to pass a custom icon to the rating component. This will override the default star icon.
+
+<ComponentExample name="custom-icon" />
+
+### Label
+
+Render the `RatingGroup.Label` component to provide a human-readable label for the rating component.
+
+<ComponentExample name="label" />
+
+### Half Star
+
+Use the `allowHalf` prop to allow half-star ratings.
+
+<ComponentExample name="half" />
+
+### Colors
+
+Use the `colorPalette` prop to change the color of the rating.
+
+<ComponentExample name="colors" />
+
+### Closed Component
+
+Here's how to setup the Rating for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+So that you can use it like this:
+
+```tsx
+<RatingGroup defaultValue={3} size="sm" />
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />

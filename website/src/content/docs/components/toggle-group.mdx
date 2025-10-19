@@ -1,0 +1,50 @@
+---
+title: Toggle Group
+description: A form control with multiple toggle buttons for selecting options.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/toggle-group.ts
+  ark: https://ark-ui.com/docs/components/toggle-group
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { ToggleGroup } from '@/components/ui'
+```
+
+```tsx
+<ToggleGroup.Root>
+  <ToggleGroup.Item />
+</ToggleGroup.Root>
+```
+
+## Examples
+
+### Multiple
+
+Use the `multiple` prop to allow multiple items to be selected at once.
+
+<ComponentExample name="multiple" />
+
+### Toolbar
+
+Here is an a toggle group used as a toolbar with icon buttons.
+
+<ComponentExample name="toolbar" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />

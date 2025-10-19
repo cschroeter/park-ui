@@ -1,6 +1,0 @@
-{
-  "id": "hover-card",
-  "filename": "hover-card.ts",
-  "slotRecipe": true,
-  "content": "import { hoverCardAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const hoverCard = defineSlotRecipe({\n  className: 'hoverCard',\n  slots: hoverCardAnatomy.keys(),\n  base: {\n    content: {\n      '--hover-card-background': 'colors.bg.default',\n      background: 'var(--hover-card-background)',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      maxW: '80',\n      p: '4',\n      position: 'relative',\n      _open: {\n        animation: 'fadeIn 0.25s ease-out',\n      },\n      _closed: {\n        animation: 'fadeOut 0.2s ease-out',\n      },\n    },\n    arrow: {\n      '--arrow-size': '12px',\n      '--arrow-background': 'var(--hover-card-background)',\n    },\n    arrowTip: {\n      borderTopWidth: '1px',\n      borderLeftWidth: '1px',\n    },\n  },\n})\n"
-}

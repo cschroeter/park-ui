@@ -1,52 +1,34 @@
-import { forwardRef } from 'react'
-import * as StyledNumberInput from './styled/number-input'
+'use client'
+import { NumberInput } from '@ark-ui/react/number-input'
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
+import type { ComponentProps } from 'react'
+import { createStyleContext } from 'styled-system/jsx'
+import { numberInput } from 'styled-system/recipes'
 
-export interface NumberInputProps extends StyledNumberInput.RootProps {}
+const { withProvider, withContext } = createStyleContext(numberInput)
 
-export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
-  const { children, ...rootProps } = props
-  return (
-    <StyledNumberInput.Root ref={ref} {...rootProps}>
-      {children && <StyledNumberInput.Label>{children}</StyledNumberInput.Label>}
-      <StyledNumberInput.Control>
-        <StyledNumberInput.Input />
-        <StyledNumberInput.IncrementTrigger>
-          <ChevronUpIcon />
-        </StyledNumberInput.IncrementTrigger>
-        <StyledNumberInput.DecrementTrigger>
-          <ChevronDownIcon />
-        </StyledNumberInput.DecrementTrigger>
-      </StyledNumberInput.Control>
-    </StyledNumberInput.Root>
-  )
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(NumberInput.Root, 'root')
+export const RootProvider = withProvider(NumberInput.RootProvider, 'root')
+export const DecrementTrigger = withContext(NumberInput.DecrementTrigger, 'decrementTrigger', {
+  defaultProps: { children: <ChevronDownIcon /> },
+})
+export const IncrementTrigger = withContext(NumberInput.IncrementTrigger, 'incrementTrigger', {
+  defaultProps: { children: <ChevronUpIcon /> },
+})
+export const Input = withContext(NumberInput.Input, 'input')
+export const Label = withContext(NumberInput.Label, 'label')
+export const Scrubber = withContext(NumberInput.Scrubber, 'scrubber')
+export const ValueText = withContext(NumberInput.ValueText, 'valueText')
+export const Control = withContext(NumberInput.Control, 'control', {
+  defaultProps: {
+    children: (
+      <>
+        <IncrementTrigger />
+        <DecrementTrigger />
+      </>
+    ),
+  },
 })
 
-NumberInput.displayName = 'NumberInput'
-
-const ChevronUpIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Chevron Up Icon</title>
-    <path
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="m18 15l-6-6l-6 6"
-    />
-  </svg>
-)
-
-const ChevronDownIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Chevron Down Icon</title>
-    <path
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="m6 9l6 6l6-6"
-    />
-  </svg>
-)
+export { NumberInputContext as Context } from '@ark-ui/react/number-input'

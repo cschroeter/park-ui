@@ -1,12 +1,11 @@
-import { join } from 'node:path'
+import { docs } from '.velite'
 import type { MetadataRoute } from 'next'
-import { pages } from '.velite'
 
 const baseUrl = 'https://park-ui.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const docPages = pages.map((doc) => ({
-    url: new URL(join('/docs/', doc.slug), baseUrl).toString(),
+  const docPages = docs.map((doc) => ({
+    url: new URL(doc.href, baseUrl).toString(),
   }))
 
   const sitemapEntries = [{ url: baseUrl }, ...docPages]

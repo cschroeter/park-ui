@@ -1,0 +1,51 @@
+---
+title: Fieldset
+description: A form container for grouping related controls with accessible labeling.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/fieldset.ts
+  ark: https://ark-ui.com/docs/components/fieldset
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Fieldset } from '@/components/ui'
+```
+
+```tsx
+<Fieldset.Root>
+  <Fieldset.Control>
+    <Fieldset.Legend />
+    <Fieldset.HelperText />
+  </Fieldset.Control>
+  <Fieldset.Content />
+</Fieldset.Root>
+```
+
+## Examples
+
+### Disabled
+
+Use the `disabled` prop to disable the fieldset to disable all input elements within the fieldset.
+
+<ComponentExample name="disabled" />
+
+### Invalid
+
+Use the `invalid` prop to mark the fieldset as invalid, which will display the error text. 
+
+<ComponentExample name="invalid" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+

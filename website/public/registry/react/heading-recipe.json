@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "heading-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const heading = defineRecipe({\n  className: 'heading',\n  base: {\n    fontWeight: 'semibold',\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "heading.ts",
+      "imports": "import { heading } from './heading'"
+    }
+  ]
+}

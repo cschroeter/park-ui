@@ -1,6 +1,0 @@
-{
-  "id": "toast",
-  "filename": "toast.ts",
-  "slotRecipe": true,
-  "content": "import { toastAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const toast = defineSlotRecipe({\n  className: 'toast',\n  slots: toastAnatomy.keys(),\n  base: {\n    root: {\n      background: 'bg.default',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      minWidth: 'xs',\n      height: 'var(--height)',\n      opacity: 'var(--opacity)',\n      overflowWrap: 'anywhere',\n      p: '4',\n      position: 'relative',\n      scale: 'var(--scale)',\n      translate: 'var(--x) var(--y) 0',\n      willChange: 'translate, opacity, scale',\n      zIndex: 'var(--z-index)',\n      transitionDuration: 'slow',\n      transitionProperty: 'translate, scale, opacity, height',\n      transitionTimingFunction: 'default',\n    },\n    title: {\n      color: 'fg.default',\n      fontWeight: 'semibold',\n      textStyle: 'sm',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n    actionTrigger: {\n      mt: '2',\n    },\n    closeTrigger: {\n      position: 'absolute',\n      top: '3',\n      right: '3',\n    },\n  },\n})\n"
-}

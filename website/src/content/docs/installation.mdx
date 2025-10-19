@@ -1,0 +1,79 @@
+---
+title: Installation
+description: Check out the quickstart or follow the guide to setup Park UI in your project.
+category: getting-started
+---
+
+## Quickstart
+
+Short on time? Jump into our quickstart examples and start to explore Park UI in seconds.
+
+<QuickstartGuide />
+
+## Setup Guide
+
+<Steps>
+<Step title="Prerequisite" number="1">
+
+Before you start, ensure that your Panda project is set up and ready to go. 
+If not, please refer to the [Panda CSS Getting Started Guide](https://panda-css.com/docs/overview/getting-started) and once you've completed that, come back to this guide.
+
+</Step>
+<Step title="Install Dependencies" number="2">
+
+Park UI is built on [Ark UI](https://ark-ui.com) as its headless foundation and uses [Lucide Icons](https://lucide.dev) by default, but you can swap it out for any icon library of your choice.
+
+```bash multi
+npm install @ark-ui/react lucide-react
+```
+
+</Step>
+<Step number="3" title="Initialize Park UI">
+
+Next, initialize Park UI in your project. This will set up the necessary configuration files and directories.
+
+
+```bash
+npx @park-ui/cli@next init
+```
+
+Don't forget to run `panda codegen` after updating your Panda configuration.
+
+:::info
+
+Park UI uses its own [color system](/docs/theming#colors). To remove Panda’s default color tokens (50–950 shades), add this plugin to your Panda config:
+
+:::
+
+```ts
+// panda.config.ts
+plugins: [
+  {
+    name: 'Remove Panda Preset Colors',
+    hooks: {
+      'preset:resolved': ({ utils, preset, name }) =>
+        name === '@pandacss/preset-panda'
+          ? utils.omit(preset, ['theme.tokens.colors', 'theme.semanticTokens.colors'])
+          : preset,
+    },
+  },
+],
+```
+
+</Step>
+
+<Step number="4" title="Add components">
+
+You can now start adding components to your project.
+
+```bash
+npx @park-ui/cli@next add button
+```
+
+The command above will add the Button component to your project. You can then import it like this:
+
+<ComponentExample component="Button" name="basic" codeOnly />
+
+That's it! Happy hacking! ✌️
+</Step>
+</Steps>

@@ -1,6 +1,0 @@
-{
-  "id": "code",
-  "filename": "code.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const code = defineRecipe({\n  className: 'code',\n  base: {\n    alignItems: 'center',\n    bg: 'bg.subtle',\n    borderRadius: 'l2',\n    color: 'fg.default',\n    display: 'inline-flex',\n    fontWeight: 'medium!',\n    fontFamily: 'var(--fonts-code)',\n    whiteSpace: 'pre',\n  },\n  defaultVariants: {\n    size: 'md',\n    variant: 'outline',\n  },\n  variants: {\n    variant: {\n      outline: {\n        borderWidth: '1px',\n      },\n      ghost: {},\n    },\n    size: {\n      sm: {\n        minHeight: '5',\n        px: '0.5',\n        textStyle: 'xs',\n      },\n      md: {\n        minHeight: '6',\n        textStyle: 'sm',\n        px: '1',\n        py: '1px',\n      },\n      lg: {\n        minHeight: '7',\n        px: '1.5',\n        py: '1px',\n        textStyle: 'md',\n      },\n    },\n  },\n})\n"
-}

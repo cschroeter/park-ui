@@ -1,0 +1,16 @@
+{
+  "Root": {
+    "props": {
+      "variant": {
+        "type": "'subtle' | 'outline' | 'surface' | 'solid'",
+        "defaultValue": "'surface'",
+        "isRequired": false
+      },
+      "orientation": {
+        "type": "'vertical' | 'horizontal'",
+        "defaultValue": "'horizontal'",
+        "isRequired": false
+      }
+    }
+  }
+}

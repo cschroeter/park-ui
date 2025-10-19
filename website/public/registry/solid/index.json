@@ -1,0 +1,14 @@
+[
+  {
+    "name": "avatar",
+    "type": "registry:ui"
+  },
+  {
+    "name": "avatar-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "index",
+    "type": "registry:ui"
+  }
+]

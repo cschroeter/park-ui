@@ -1,0 +1,10 @@
+{
+  "Root": {
+    "props": {
+      "placement": {
+        "type": "'start' | 'end'",
+        "isRequired": false
+      }
+    }
+  }
+}

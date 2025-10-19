@@ -1,6 +1,0 @@
-{
-  "id": "text",
-  "filename": "text.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const text = defineRecipe({\n  className: 'text',\n  jsx: ['Heading', 'Text'],\n  variants: {\n    variant: {\n      heading: {\n        color: 'fg.default',\n        fontWeight: 'semibold',\n      },\n    },\n    size: {\n      xs: { textStyle: 'xs', lineHeight: '1.125rem' },\n      sm: { textStyle: 'sm', lineHeight: '1.25rem' },\n      md: { textStyle: 'md', lineHeight: '1.5rem' },\n      lg: { textStyle: 'lg', lineHeight: '1.75rem' },\n      xl: { textStyle: 'xl', lineHeight: '1.875rem' },\n      '2xl': { textStyle: '2xl', lineHeight: '2rem' },\n      '3xl': { textStyle: '3xl', lineHeight: '2.375rem' },\n      '4xl': { textStyle: '4xl', lineHeight: '2.75rem', letterSpacing: '-0.02em' },\n      '5xl': { textStyle: '5xl', lineHeight: '3.75rem', letterSpacing: '-0.02em' },\n      '6xl': { textStyle: '6xl', lineHeight: '4.5rem', letterSpacing: '-0.02em' },\n      '7xl': { textStyle: '7xl', lineHeight: '5.75rem', letterSpacing: '-0.02em' },\n    },\n  },\n})\n"
-}

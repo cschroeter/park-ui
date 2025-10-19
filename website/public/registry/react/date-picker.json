@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "date-picker",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { DatePicker } from '@ark-ui/react/date-picker'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { datePicker } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(datePicker)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(DatePicker.Root, 'root')\nexport const RootProvider = withProvider(DatePicker.RootProvider, 'root')\nexport const ClearTrigger = withContext(DatePicker.ClearTrigger, 'clearTrigger')\nexport const Content = withContext(DatePicker.Content, 'content')\nexport const Control = withContext(DatePicker.Control, 'control')\nexport const Input = withContext(DatePicker.Input, 'input')\nexport const Label = withContext(DatePicker.Label, 'label')\nexport const MonthSelect = withContext(DatePicker.MonthSelect, 'monthSelect')\nexport const NextTrigger = withContext(DatePicker.NextTrigger, 'nextTrigger')\nexport const Positioner = withContext(DatePicker.Positioner, 'positioner')\nexport const PresetTrigger = withContext(DatePicker.PresetTrigger, 'presetTrigger')\nexport const PrevTrigger = withContext(DatePicker.PrevTrigger, 'prevTrigger')\nexport const RangeText = withContext(DatePicker.RangeText, 'rangeText')\nexport const Table = withContext(DatePicker.Table, 'table')\nexport const TableBody = withContext(DatePicker.TableBody, 'tableBody')\nexport const TableCell = withContext(DatePicker.TableCell, 'tableCell')\nexport const TableCellTrigger = withContext(DatePicker.TableCellTrigger, 'tableCellTrigger')\nexport const TableHead = withContext(DatePicker.TableHead, 'tableHead')\nexport const TableHeader = withContext(DatePicker.TableHeader, 'tableHeader')\nexport const TableRow = withContext(DatePicker.TableRow, 'tableRow')\nexport const Trigger = withContext(DatePicker.Trigger, 'trigger')\nexport const View = withContext(DatePicker.View, 'view')\nexport const ViewControl = withContext(DatePicker.ViewControl, 'viewControl')\nexport const ViewTrigger = withContext(DatePicker.ViewTrigger, 'viewTrigger')\nexport const YearSelect = withContext(DatePicker.YearSelect, 'yearSelect')\n\nexport { DatePickerContext as Context } from '@ark-ui/react/date-picker'\n",
+      "type": "registry:ui",
+      "path": "date-picker.tsx",
+      "exports": "export * as DatePicker from './date-picker'"
+    }
+  ],
+  "registryDependencies": ["date-picker-recipe"]
+}

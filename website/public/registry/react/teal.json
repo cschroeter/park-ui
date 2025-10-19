@@ -1,0 +1,33 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "teal",
+  "type": "registry:color",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const teal = defineSemanticTokens.colors({\n  '1': { value: { _light: '#fafefd', _dark: '#0d1514' } },\n  '2': { value: { _light: '#f3fbf9', _dark: '#111c1b' } },\n  '3': { value: { _light: '#e0f8f3', _dark: '#0d2d2a' } },\n  '4': { value: { _light: '#ccf3ea', _dark: '#023b37' } },\n  '5': { value: { _light: '#b8eae0', _dark: '#084843' } },\n  '6': { value: { _light: '#a1ded2', _dark: '#145750' } },\n  '7': { value: { _light: '#83cdc1', _dark: '#1c6961' } },\n  '8': { value: { _light: '#53b9ab', _dark: '#207e73' } },\n  '9': { value: { _light: '#12a594', _dark: '#12a594' } },\n  '10': { value: { _light: '#0d9b8a', _dark: '#0eb39e' } },\n  '11': { value: { _light: '#008573', _dark: '#0bd8b6' } },\n  '12': { value: { _light: '#0d3d38', _dark: '#adf0dd' } },\n  a1: { value: { _light: '#00cc9905', _dark: '#00deab05' } },\n  a2: { value: { _light: '#00aa800c', _dark: '#12fbe60c' } },\n  a3: { value: { _light: '#00c69d1f', _dark: '#00ffe61e' } },\n  a4: { value: { _light: '#00c39633', _dark: '#00ffe92d' } },\n  a5: { value: { _light: '#00b49047', _dark: '#00ffea3b' } },\n  a6: { value: { _light: '#00a6855e', _dark: '#1cffe84b' } },\n  a7: { value: { _light: '#0099807c', _dark: '#2efde85f' } },\n  a8: { value: { _light: '#009783ac', _dark: '#32ffe775' } },\n  a9: { value: { _light: '#009e8ced', _dark: '#13ffe49f' } },\n  a10: { value: { _light: '#009684f2', _dark: '#0dffe0ae' } },\n  a11: { value: { _light: '#008573', _dark: '#0afed5d6' } },\n  a12: { value: { _light: '#00332df2', _dark: '#b8ffebef' } },\n  solid: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.teal.9}', _dark: '{colors.teal.9}' } },\n      hover: { value: { _light: '{colors.teal.10}', _dark: '{colors.teal.10}' } },\n    },\n    fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },\n  },\n  subtle: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.teal.a3}', _dark: '{colors.teal.a3}' } },\n      hover: { value: { _light: '{colors.teal.a4}', _dark: '{colors.teal.a4}' } },\n      active: { value: { _light: '{colors.teal.a5}', _dark: '{colors.teal.a5}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.teal.a11}', _dark: '{colors.teal.a11}' } } },\n  },\n  surface: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.teal.a2}', _dark: '{colors.teal.a2}' } },\n      active: { value: { _light: '{colors.teal.a3}', _dark: '{colors.teal.a3}' } },\n    },\n    border: {\n      DEFAULT: { value: { _light: '{colors.teal.a6}', _dark: '{colors.teal.a6}' } },\n      hover: { value: { _light: '{colors.teal.a7}', _dark: '{colors.teal.a7}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.teal.a11}', _dark: '{colors.teal.a11}' } } },\n  },\n  outline: {\n    bg: {\n      hover: { value: { _light: '{colors.teal.a2}', _dark: '{colors.teal.a2}' } },\n      active: { value: { _light: '{colors.teal.a3}', _dark: '{colors.teal.a3}' } },\n    },\n    border: { DEFAULT: { value: { _light: '{colors.teal.a7}', _dark: '{colors.teal.a7}' } } },\n    fg: { DEFAULT: { value: { _light: '{colors.teal.a11}', _dark: '{colors.teal.a11}' } } },\n  },\n  plain: {\n    bg: {\n      hover: { value: { _light: '{colors.teal.a3}', _dark: '{colors.teal.a3}' } },\n      active: { value: { _light: '{colors.teal.a4}', _dark: '{colors.teal.a4}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.teal.a11}', _dark: '{colors.teal.a11}' } } },\n  },\n})\n",
+      "type": "registry:color",
+      "path": "colors/teal.ts"
+    }
+  ],
+  "panda": {
+    "imports": [
+      {
+        "type": "registry:color",
+        "name": "teal",
+        "from": "colors/teal"
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "teal": "$ref:teal"
+            }
+          }
+        }
+      }
+    }
+  }
+}

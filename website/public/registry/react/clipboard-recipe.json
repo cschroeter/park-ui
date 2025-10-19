@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "clipboard-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { clipboardAnatomy } from '@ark-ui/react/clipboard'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const clipboard = defineSlotRecipe({\n  className: 'clipboard',\n  slots: clipboardAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      alignItems: 'flex-start',\n      gap: '1.5',\n    },\n    label: {\n      fontWeight: 'medium',\n      textStyle: 'sm',\n      color: 'fg.default',\n      gap: '0.5',\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "clipboard.ts",
+      "imports": "import { clipboard } from './clipboard'"
+    }
+  ]
+}

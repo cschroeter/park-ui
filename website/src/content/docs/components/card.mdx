@@ -1,0 +1,65 @@
+---
+title: Card
+description: A container component for grouping related content with visual boundaries.
+category: display
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/card.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Card } from '@/components/ui'
+```
+
+```tsx
+<Card.Root>
+  <Card.Header>
+    <Card.Title />
+    <Card.Description />
+  <Card.Body />
+  <Card.Footer />
+</Card.Root>
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the visual style of the Card.
+
+<ComponentExample name="variants" />
+
+### With Image
+
+Use the Card component to display an image.
+
+<ComponentExample name="image" />
+
+### Horizontal
+
+Use the Card component to display content horizontally.
+
+<ComponentExample name="horizontal" />
+
+### Within Form
+
+Use the Card component within a form to group related fields together.
+
+<ComponentExample name="form" />
+
+### With Avatar
+
+Use the Card component to display an avatar.
+
+<ComponentExample name="avatar" />
+
+## Props
+
+<PropsTable />

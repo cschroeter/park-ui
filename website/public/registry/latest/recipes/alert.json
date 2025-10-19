@@ -1,6 +1,0 @@
-{
-  "id": "alert",
-  "filename": "alert.ts",
-  "slotRecipe": true,
-  "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const alert = defineSlotRecipe({\n  className: 'alert',\n  slots: ['root', 'content', 'description', 'icon', 'title'],\n  base: {\n    root: {\n      background: 'bg.default',\n      borderWidth: '1px',\n      borderRadius: 'l3',\n      display: 'flex',\n      gap: '3',\n      p: '4',\n      width: 'full',\n    },\n    content: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n    icon: {\n      color: 'fg.default',\n      flexShrink: '0',\n      width: '5',\n      height: '5',\n    },\n    title: {\n      color: 'fg.default',\n      fontWeight: 'semibold',\n      textStyle: 'sm',\n    },\n  },\n})\n"
-}

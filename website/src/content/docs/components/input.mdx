@@ -1,0 +1,83 @@
+---
+title: Input
+description: A form control for entering single-line text input.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/input.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Input } from '@/components/ui'
+```
+
+```tsx
+<Input placeholder="Enter your email" />
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the visual style of the input.
+
+<ComponentExample name="variants" />
+
+### Sizes
+
+Use the `size` prop to change the size of the input.
+
+<ComponentExample name="sizes" />
+
+### Field
+
+Compose the input with the `Field` component to add a label, helper text, and error message.
+
+<ComponentExample name="field" />
+
+### Required
+
+Pass the `required` prop to `Field.Root` and use the `Field.RequiredIndicator` to indicate that the input is required.
+
+<ComponentExample name="required" />
+
+### Invalid
+
+Pass the `invalid` prop to the `Field.Root` and use the `Field.ErrorText` to indicate that the input is invalid.
+
+<ComponentExample name="invalid" />
+
+### Element
+
+Use the `startElement` and `endElement` on the `InputGroup` component to add an element to the start and end of the input.
+
+<ComponentExample name="element" />
+
+### Addon
+
+Use the `InputAddon` and `Group` components to add an addon to the input.
+
+<ComponentExample name="addon" />
+
+### Button
+
+Use the `Group` component to attach a button to the input.
+
+<ComponentExample name="with-button" />
+
+### Ref
+
+Here's how to access the underlying element reference
+
+<ComponentExample name="ref" codeOnly />
+
+## Props
+
+<PropsTable />

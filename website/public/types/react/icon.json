@@ -1,0 +1,11 @@
+{
+  "Root": {
+    "props": {
+      "size": {
+        "type": "'2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      }
+    }
+  }
+}

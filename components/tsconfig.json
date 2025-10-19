@@ -17,10 +17,9 @@
     "strict": true,
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
     "noPropertyAccessFromIndexSignature": true,
-
-    "incremental": true
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   }
 }

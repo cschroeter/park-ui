@@ -1,0 +1,41 @@
+---
+title: Accordion
+description: A disclosure component with collapsible sections for organizing content.
+category: disclosure
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/accordion.ts
+  ark: https://ark-ui.com/docs/components/accordion
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Accordion } from '@/components/ui'
+```
+
+```tsx
+<Accordion.Root>
+  <Accordion.Item>
+    <Accordion.ItemTrigger>
+      <Accordion.ItemIndicator />
+    </Accordion.ItemTrigger>
+    <Accordion.ItemContent />
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />

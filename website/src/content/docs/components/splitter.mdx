@@ -1,0 +1,68 @@
+---
+title: Splitter
+description: A layout component for creating resizable panels with drag handles.
+category: layout
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/splitter.ts
+  ark: https://ark-ui.com/docs/components/splitter
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Splitter } from '@/components/ui'
+```
+
+```tsx
+<Splitter.Root>
+  <Splitter.Panel />
+  <Splitter.ResizeTrigger />
+  <Splitter.Panel />
+</Splitter.Root>
+```
+
+## Examples
+
+### Collapsible
+
+Set `collapsible` to true on a panel to make it collapsible. Use `collapsedSize` to control its collapsed size. This can be useful for building sidebar layouts.
+
+<ComponentExample name="collapsible" />
+
+### Vertical
+
+Use the `orientation` prop to create a vertical splitter.
+
+<ComponentExample name="vertical" />
+
+### Multiple
+
+Here is an example  with multiple panels.
+
+<ComponentExample name="multiple" />
+
+### Store
+
+Use the `useSplitter` hook to control the state of the splitter programmatically.
+
+<ComponentExample name="store" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Panel
+
+<PropsTable part="Panel" />
+
+### ResizeTrigger
+
+<PropsTable part="ResizeTrigger" />

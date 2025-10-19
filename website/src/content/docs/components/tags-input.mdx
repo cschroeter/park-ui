@@ -1,0 +1,52 @@
+---
+title: Tags Input
+description: A form control for adding and removing multiple tags or labels.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/tags-input.ts
+  ark: https://ark-ui.com/docs/components/tags-input
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { TagsInput } from '@/components/ui'
+```
+
+```tsx
+<TagsInput.Root>
+  <TagsInput.Label>Tags Input</TagsInput.Label>
+  <TagsInput.Control>
+    <TagsInput.Context>
+      {({ value }) =>
+        value.map((item, index) => (
+          <TagsInput.Item key={index} index={index} value={item}>
+            <TagsInput.ItemPreview>
+              <TagsInput.ItemText>{item}</TagsInput.ItemText>
+              <TagsInput.ItemDeleteTrigger />
+            </TagsInput.ItemPreview>
+            <TagsInput.ItemInput />
+          </TagsInput.Item>
+        ))
+      }
+    </TagsInput.Context>
+    <TagsInput.Input placeholder="Add tag..." />
+  </TagsInput.Control>
+</TagsInput.Root>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />

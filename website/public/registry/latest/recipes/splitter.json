@@ -1,6 +1,0 @@
-{
-  "id": "splitter",
-  "filename": "splitter.ts",
-  "slotRecipe": true,
-  "content": "import { splitterAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const splitter = defineSlotRecipe({\n  className: 'splitter',\n  slots: splitterAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      gap: '2',\n    },\n    panel: {\n      borderWidth: '1px',\n      background: 'bg.default',\n      borderRadius: 'l2',\n      color: 'fg.muted',\n      display: 'flex',\n      alignItems: 'center',\n      justifyContent: 'center',\n    },\n    resizeTrigger: {\n      borderRadius: 'full',\n      transitionDuration: 'normal',\n      transitionProperty: 'background',\n      transitionTimingFunction: 'default',\n      outline: '0',\n      background: 'gray.7',\n      _hover: {\n        background: 'gray.8',\n      },\n      _active: {\n        background: 'gray.8',\n      },\n      _horizontal: {\n        minWidth: '1.5',\n        margin: 'min(1rem, 20%) 0',\n      },\n      _vertical: {\n        minHeight: '1.5',\n        margin: '0 min(1rem, 20%)',\n      },\n    },\n  },\n})\n"
-}

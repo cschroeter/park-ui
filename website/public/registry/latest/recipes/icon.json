@@ -1,6 +1,0 @@
-{
-  "id": "icon",
-  "filename": "icon.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const icon = defineRecipe({\n  className: 'icon',\n  base: {\n    color: 'currentcolor',\n    display: 'inline-block',\n    flexShrink: '0',\n    verticalAlign: 'middle',\n    lineHeight: '1em',\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      xs: {\n        w: '3',\n        h: '3',\n      },\n      sm: {\n        w: '4',\n        h: '4',\n      },\n      md: {\n        w: '5',\n        h: '5',\n      },\n      lg: {\n        w: '6',\n        h: '6',\n      },\n      xl: {\n        w: '7',\n        h: '7',\n      },\n      '2xl': {\n        w: '8',\n        h: '8',\n      },\n    },\n  },\n})\n"
-}

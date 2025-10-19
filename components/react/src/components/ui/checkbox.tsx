@@ -1,51 +1,47 @@
-import { forwardRef } from 'react'
-import * as StyledCheckbox from './styled/checkbox'
+'use client'
+import { Checkbox, useCheckboxContext } from '@ark-ui/react/checkbox'
+import { type ComponentProps, forwardRef } from 'react'
+import { createStyleContext, styled } from 'styled-system/jsx'
+import { checkbox } from 'styled-system/recipes'
+import type { HTMLStyledProps } from 'styled-system/types'
 
-export interface CheckboxProps extends StyledCheckbox.RootProps {}
+const { withProvider, withContext } = createStyleContext(checkbox)
 
-export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
-  const { children, ...rootProps } = props
+export type RootProps = ComponentProps<typeof Root>
+export type HiddenInputProps = ComponentProps<typeof HiddenInput>
 
-  return (
-    <StyledCheckbox.Root ref={ref} {...rootProps}>
-      <StyledCheckbox.Control>
-        <StyledCheckbox.Indicator>
-          <CheckIcon />
-        </StyledCheckbox.Indicator>
-        <StyledCheckbox.Indicator indeterminate>
-          <MinusIcon />
-        </StyledCheckbox.Indicator>
-      </StyledCheckbox.Control>
-      {children && <StyledCheckbox.Label>{children}</StyledCheckbox.Label>}
-      <StyledCheckbox.HiddenInput />
-    </StyledCheckbox.Root>
-  )
-})
+export const Root = withProvider(Checkbox.Root, 'root')
+export const RootProvider = withProvider(Checkbox.RootProvider, 'root')
+export const Control = withContext(Checkbox.Control, 'control')
+export const Group = withProvider(Checkbox.Group, 'group')
+export const Label = withContext(Checkbox.Label, 'label')
+export const HiddenInput = Checkbox.HiddenInput
 
-Checkbox.displayName = 'Checkbox'
+export {
+  type CheckboxCheckedState as CheckedState,
+  CheckboxGroupProvider as GroupProvider,
+} from '@ark-ui/react/checkbox'
 
-const CheckIcon = () => (
-  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <title>Check Icon</title>
-    <path
-      d="M11.6666 3.5L5.24992 9.91667L2.33325 7"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-)
+export const Indicator = forwardRef<SVGSVGElement, HTMLStyledProps<'svg'>>(
+  function Indicator(props, ref) {
+    const { indeterminate, checked } = useCheckboxContext()
 
-const MinusIcon = () => (
-  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <title>Minus Icon</title>
-    <path
-      d="M2.91675 7H11.0834"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
+    return (
+      <Checkbox.Indicator indeterminate={indeterminate} asChild>
+        <styled.svg
+          ref={ref}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3px"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          {...props}
+        >
+          <title>Checkmark</title>
+          {indeterminate ? <path d="M5 12h14" /> : checked ? <path d="M20 6 9 17l-5-5" /> : null}
+        </styled.svg>
+      </Checkbox.Indicator>
+    )
+  },
 )

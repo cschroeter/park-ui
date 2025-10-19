@@ -1,6 +1,0 @@
-{
-  "id": "pagination",
-  "filename": "pagination.ts",
-  "slotRecipe": true,
-  "content": "import { paginationAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const pagination = defineSlotRecipe({\n  className: 'pagination',\n  slots: paginationAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      gap: '2.5',\n    },\n    item: {\n      fontVariantNumeric: 'tabular-nums',\n    },\n    ellipsis: {\n      alignItems: 'center',\n      color: 'fg.default',\n      display: 'inline-flex',\n      fontWeight: 'semibold',\n      px: '2',\n    },\n  },\n})\n"
-}

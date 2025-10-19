@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "close-button",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react", "react"],
+  "files": [
+    {
+      "content": "import { XIcon } from 'lucide-react'\nimport { forwardRef } from 'react'\nimport { IconButton, type IconButtonProps } from './icon-button'\n\nexport type CloseButtonProps = IconButtonProps\n\nexport const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(\n  function CloseButton(props, ref) {\n    return (\n      <IconButton variant=\"plain\" colorPalette=\"gray\" aria-label=\"Close\" ref={ref} {...props}>\n        {props.children ?? <XIcon />}\n      </IconButton>\n    )\n  },\n)\n",
+      "type": "registry:ui",
+      "path": "close-button.tsx",
+      "exports": "export { CloseButton, type CloseButtonProps } from './close-button'"
+    }
+  ],
+  "registryDependencies": ["icon-button"]
+}

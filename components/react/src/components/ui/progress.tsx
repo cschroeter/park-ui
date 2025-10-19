@@ -1,35 +1,19 @@
-import { forwardRef } from 'react'
-import * as StyledProgress from './styled/progress'
+'use client'
+import { Progress } from '@ark-ui/react/progress'
+import type { ComponentProps } from 'react'
+import { createStyleContext } from 'styled-system/jsx'
+import { progress } from 'styled-system/recipes'
 
-export interface ProgressProps extends StyledProgress.RootProps {
-  /**
-   * The type of progress to render.
-   * @default linear
-   */
-  type?: 'linear' | 'circular'
-}
+const { withProvider, withContext } = createStyleContext(progress)
 
-export const Progress = forwardRef<HTMLDivElement, ProgressProps>((props, ref) => {
-  const { children, type = 'linear', ...rootProps } = props
-
-  return (
-    <StyledProgress.Root ref={ref} {...rootProps}>
-      {children && <StyledProgress.Label>{children}</StyledProgress.Label>}
-      {type === 'linear' && (
-        <StyledProgress.Track>
-          <StyledProgress.Range />
-        </StyledProgress.Track>
-      )}
-      {type === 'circular' && (
-        <StyledProgress.Circle>
-          <StyledProgress.CircleTrack />
-          <StyledProgress.CircleRange />
-          <StyledProgress.ValueText />
-        </StyledProgress.Circle>
-      )}
-      <StyledProgress.ValueText />
-    </StyledProgress.Root>
-  )
-})
-
-Progress.displayName = 'Progress'
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(Progress.Root, 'root')
+export const RootProvider = withProvider(Progress.RootProvider, 'root')
+export const Circle = withContext(Progress.Circle, 'circle')
+export const CircleRange = withContext(Progress.CircleRange, 'circleRange')
+export const CircleTrack = withContext(Progress.CircleTrack, 'circleTrack')
+export const Label = withContext(Progress.Label, 'label')
+export const Range = withContext(Progress.Range, 'range')
+export const Track = withContext(Progress.Track, 'track')
+export const ValueText = withContext(Progress.ValueText, 'valueText')
+export const View = withContext(Progress.View, 'view')

@@ -1,0 +1,11 @@
+{
+  "Root": {
+    "props": {
+      "variant": {
+        "type": "'elevated' | 'outline' | 'subtle'",
+        "defaultValue": "'outline'",
+        "isRequired": false
+      }
+    }
+  }
+}

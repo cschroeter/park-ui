@@ -1,0 +1,48 @@
+---
+title: Collapsible
+description: A disclosure component for showing and hiding content panels.
+category: disclosure
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/collapsible.ts
+  ark: https://ark-ui.com/docs/components/collapsible
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Collapsible } from '@/components/ui'
+```
+
+```tsx
+<Collapsible.Root>
+  <Collapsible.Trigger>Toggle</Collapsible.Trigger>
+  <Collapsible.Content>Content to show/hide</Collapsible.Content>
+</Collapsible.Root>
+```
+
+## Examples
+
+### Lazy Mount
+
+Use the `lazyMount` prop to mount the content only when the collapsible is open.
+
+<ComponentExample name="lazy-mount" />
+
+### Unmount on Exit
+
+Use the `unmountOnExit` prop to unmount the content when the collapsible is closed.
+
+<ComponentExample name="unmount-on-exit" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+

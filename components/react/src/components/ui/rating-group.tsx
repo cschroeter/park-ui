@@ -1,60 +1,81 @@
 'use client'
-import { forwardRef } from 'react'
-import * as StyledRatingGroup from './styled/rating-group'
+import {
+  RatingGroup,
+  useRatingGroupContext,
+  useRatingGroupItemContext,
+} from '@ark-ui/react/rating-group'
+import { StarIcon } from 'lucide-react'
+import {
+  type ComponentProps,
+  cloneElement,
+  forwardRef,
+  isValidElement,
+  type ReactElement,
+} from 'react'
+import { createStyleContext, type HTMLStyledProps } from 'styled-system/jsx'
+import { ratingGroup } from 'styled-system/recipes'
 
-export interface RatingGroupProps extends StyledRatingGroup.RootProps {}
+const { withProvider, withContext } = createStyleContext(ratingGroup)
 
-export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
-  const { children, ...rootProps } = props
-  return (
-    <StyledRatingGroup.Root ref={ref} {...rootProps}>
-      {children && <StyledRatingGroup.Label>{children}</StyledRatingGroup.Label>}
-      <StyledRatingGroup.Control>
-        <StyledRatingGroup.Context>
-          {({ items }) =>
-            items.map((index) => (
-              <StyledRatingGroup.Item key={index} index={index}>
-                <StyledRatingGroup.ItemContext>
-                  {(item) => <StarIcon isHalf={item.half} />}
-                </StyledRatingGroup.ItemContext>
-              </StyledRatingGroup.Item>
-            ))
-          }
-        </StyledRatingGroup.Context>
-      </StyledRatingGroup.Control>
-      <StyledRatingGroup.HiddenInput />
-    </StyledRatingGroup.Root>
-  )
-})
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(RatingGroup.Root, 'root')
+export const RootProvider = withProvider(RatingGroup.RootProvider, 'root')
+export const Item = withContext(RatingGroup.Item, 'item')
+export const Label = withContext(RatingGroup.Label, 'label')
 
-RatingGroup.displayName = 'RatingGroup'
+export const HiddenInput = RatingGroup.HiddenInput
 
-type IconProps = {
-  isHalf: boolean
+export {
+  RatingGroupContext as Context,
+  RatingGroupItemContext as ItemContext,
+} from '@ark-ui/react/rating-group'
+
+interface ItemIndicatorProps extends HTMLStyledProps<'span'> {
+  icon?: ReactElement | undefined
 }
 
-const StarIcon = (props: IconProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="inherit"
-    stroke="inherit"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <title>Star Icon</title>
-    <defs>
-      <linearGradient id="half">
-        <stop offset="50%" stopColor="var(--colors-color-palette-default)" />
-        <stop offset="50%" stopColor="var(--colors-bg-emphasized)" />
-      </linearGradient>
-    </defs>
-    <polygon
-      fill={props.isHalf ? 'url(#half)' : 'inherit'}
-      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-    />
-  </svg>
+const StyledItemIndicator = withContext('span', 'itemIndicator')
+
+const cloneIcon = (icon: ReactElement, type: string) => {
+  if (!isValidElement(icon)) return null
+  const props = { [`data-${type}`]: '', 'aria-hidden': true, fill: 'currentColor' }
+  return cloneElement(icon, props)
+}
+
+export const ItemIndicator = forwardRef<HTMLSpanElement, ItemIndicatorProps>(
+  function ItemIndicator(props, ref) {
+    const { icon = <StarIcon />, ...rest } = props
+    const item = useRatingGroupItemContext()
+
+    return (
+      <StyledItemIndicator
+        ref={ref}
+        {...rest}
+        data-highlighted={item.highlighted ? '' : undefined}
+        data-checked={item.checked ? '' : undefined}
+        data-half={item.half ? '' : undefined}
+      >
+        {cloneIcon(icon, 'bg')}
+        {cloneIcon(icon, 'fg')}
+      </StyledItemIndicator>
+    )
+  },
 )
+
+interface ItemsProps extends Omit<ComponentProps<typeof Item>, 'index'> {
+  icon?: ReactElement | undefined
+}
+
+export const Items = (props: ItemsProps) => {
+  const { icon, ...rest } = props
+  const ratingGroup = useRatingGroupContext()
+  return ratingGroup.items.map((item) => (
+    <Item key={item} index={item} {...rest}>
+      <ItemIndicator icon={icon} />
+    </Item>
+  ))
+}
+
+export const Control = withContext(RatingGroup.Control, 'control', {
+  defaultProps: { children: <Items /> },
+})

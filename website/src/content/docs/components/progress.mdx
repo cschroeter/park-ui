@@ -1,0 +1,90 @@
+---
+title: Progress
+description: A feedback component for showing task or operation completion progress.
+category: feedback
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/progress.ts
+  ark: https://ark-ui.com/docs/components/progress
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Progress } from '@/components/ui'
+```
+
+```tsx
+<Progress.Root>
+  <Progress.Track>
+    <Progress.Range />
+  </Progress.Track>
+  <Progress.Label />
+  <Progress.ValueText />
+</Progress.Root>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the progress bar.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to change the visual style of the progress bar.
+
+<ComponentExample name="variants" />
+
+### Colors
+
+Use the `colorPalette` prop to change the color of the progress bar.
+
+<ComponentExample name="colors" />
+
+### Inline Label
+
+Compose the `Progress.Label` and `Progress.ValueText` components to create an inline label for the progress bar.
+
+<ComponentExample name="label" />
+
+### Indeterminate
+
+Set the value to `null` to show an indeterminate progress bar.
+
+<ComponentExample name="indeterminate" />
+
+### Stripes
+
+Set the `striped` prop to `true` to add stripes to the progress bar.
+
+<ComponentExample name="stripes" />
+
+### Animated Stripes
+
+Set the `animated` prop to `true` to animate the stripes.
+
+<ComponentExample name="animated" />
+
+### Closed Component
+
+Here's how to setup the progress for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### View
+
+<PropsTable part="View" />

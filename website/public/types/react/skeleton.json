@@ -1,0 +1,20 @@
+{
+  "Root": {
+    "props": {
+      "loading": {
+        "type": "boolean",
+        "defaultValue": "true",
+        "isRequired": false
+      },
+      "circle": {
+        "type": "boolean",
+        "isRequired": false
+      },
+      "variant": {
+        "type": "'pulse' | 'shine' | 'none'",
+        "defaultValue": "'pulse'",
+        "isRequired": false
+      }
+    }
+  }
+}

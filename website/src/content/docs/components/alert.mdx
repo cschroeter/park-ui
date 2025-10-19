@@ -1,0 +1,72 @@
+---
+title: Alert
+description: A feedback component for displaying important messages and alerts to users.
+category: feedback
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/alert.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Alert } from '@/components/ui'
+```
+
+```tsx
+<Alert.Root>
+  <Alert.Indicator />
+  <Alert.Content>
+    <Alert.Title />
+    <Alert.Description />
+  </Alert.Content>
+</Alert.Root>
+```
+
+## Examples
+
+### Description
+
+Render the `Alert.Description` component to provide additional context to the alert.
+
+<ComponentExample name="description" />
+
+### Status
+
+Change the status of the alerts by passing the `status` prop. This affects the color scheme and icon used.
+
+<ComponentExample name="status" />
+
+### Variants
+
+Use the `variant` prop to change the visual style of the alert.
+
+<ComponentExample name="variants" />
+
+### Sizes
+
+Use the `size` prop to change the size of the alert.
+
+<ComponentExample name="sizes" />
+
+### Closable
+
+Here's an example of how to compose the `Alert` with a close button.
+
+<ComponentExample name="closable" />
+
+### Closed Component
+
+Here's an example of a closed alert that can be opened with a button.
+
+<ComponentExample name="closed" codeOnly />
+
+
+## Props
+
+<PropsTable />

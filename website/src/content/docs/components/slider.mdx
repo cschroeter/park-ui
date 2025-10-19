@@ -1,0 +1,53 @@
+---
+title: Slider
+description: A form control for selecting values within a specified range.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/slider.ts
+  ark: https://ark-ui.com/docs/components/slider
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Slider } from '@/components/ui'
+```
+
+```tsx
+<Slider.Root>
+  <Slider.Label />
+  <Slider.ValueText />
+  <Slider.Control>
+    <Slider.Track>
+      <Slider.Range />
+    </Slider.Track>
+    <Slider.Thumb>
+      <Slider.DraggingIndicator />
+      <Slider.HiddenInput />
+    </Slider.Thumb>
+    <Slider.MarkerGroup>
+      <Slider.Marker />
+    </Slider.MarkerGroup>
+  </Slider.Control>
+</Slider.Root>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Marker
+
+<PropsTable part="Marker" />
+
+### Thumb
+
+<PropsTable part="Thumb" />

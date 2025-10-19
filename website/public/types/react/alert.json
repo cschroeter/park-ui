@@ -1,0 +1,21 @@
+{
+  "Root": {
+    "props": {
+      "size": {
+        "type": "'md' | 'lg'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
+      "variant": {
+        "type": "'solid' | 'surface' | 'subtle' | 'outline'",
+        "defaultValue": "'subtle'",
+        "isRequired": false
+      },
+      "status": {
+        "type": "'info' | 'warning' | 'success' | 'error' | 'neutral'",
+        "defaultValue": "'info'",
+        "isRequired": false
+      }
+    }
+  }
+}
