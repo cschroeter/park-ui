@@ -30,7 +30,7 @@
     "effect": "3.10.19"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.48.0",
+    "@pandacss/dev": "1.4.3",
     "@release-it/keep-a-changelog": "5.0.0",
     "clean-package": "2.2.0",
     "release-it": "17.10.0",
