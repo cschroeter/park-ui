@@ -22,7 +22,7 @@ export const Navbar = async () => {
           <Logo />
         </NextLink>
         <HStack gap="3" py="1" display={{ base: 'none', md: 'flex' }}>
-          <NavbarLinks framework={framework} />
+          <NavbarLinks />
           <Divider orientation="vertical" h="6" />
           <FrameworkSelect framework={framework} />
           <Divider orientation="vertical" h="6" />

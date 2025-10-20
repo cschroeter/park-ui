@@ -1,6 +1,4 @@
-import { basename, join } from 'node:path'
-import { Effect, pipe } from 'effect'
-import { globby } from 'globby'
+import { join } from 'node:path'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { defineCollection, defineConfig, s } from 'velite'
@@ -59,46 +57,9 @@ const controls = defineCollection({
     }),
 })
 
-const freeBlocks = ['banner-for-cookies', 'card-authentification', 'footer-with-social']
-
-const blocks = defineCollection({
-  name: 'Blocks',
-  pattern: 'blocks.json',
-  schema: s
-    .object({
-      id: s.string(),
-      name: s.string(),
-      description: s.string(),
-      figmaNodeId: s.string(),
-    })
-    .transform(async (data) =>
-      Effect.runPromise(
-        pipe(
-          Effect.succeed(`../components/react/src/plus/blocks/${data.id}`),
-          Effect.map((blockPath) => join(process.cwd(), blockPath)),
-          Effect.flatMap((pattern) =>
-            pipe(
-              Effect.promise(() => globby(pattern, { onlyDirectories: true })),
-              Effect.flatMap((variants) =>
-                Effect.forEach(variants, (variant) =>
-                  Effect.succeed({
-                    id: basename(variant),
-                    name: capitalize(basename(variant)),
-                    accessLevel: freeBlocks.includes(basename(variant)) ? 'free' : 'paid',
-                  }),
-                ),
-              ),
-              Effect.map((variants) => ({ ...data, variantCount: variants.length, variants })),
-            ),
-          ),
-        ),
-      ),
-    ),
-})
-
 export default defineConfig({
   root: join(process.cwd(), './src/content'),
-  collections: { pages, controls, blocks },
+  collections: { pages, controls },
   mdx: {
     rehypePlugins: [
       rehypeSlug,
@@ -114,9 +75,3 @@ export default defineConfig({
     ],
   },
 })
-
-const capitalize = (item: string) =>
-  item
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')

@@ -26,8 +26,7 @@ const link = cva({
   },
 })()
 
-export const NavbarLinks = (props: Props) => {
-  const { framework } = props
+export const NavbarLinks = () => {
   const pathname = usePathname()
 
   return (
@@ -38,14 +37,7 @@ export const NavbarLinks = (props: Props) => {
         aria-current={pathname.startsWith('/docs') ? 'page' : undefined}
       >
         Docs
-      </NextLink>
-      <NextLink
-        href="/blocks"
-        className={link}
-        aria-current={pathname.startsWith('/blocks') ? 'page' : undefined}
-      >
-        Blocks
-      </NextLink>
+      </NextLink>{' '}
     </HStack>
   )
 }

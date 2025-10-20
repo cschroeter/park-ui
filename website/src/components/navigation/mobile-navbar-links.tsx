@@ -34,13 +34,6 @@ export const MobileNavbarLinks = () => {
       >
         Docs
       </NextLink>
-      <NextLink
-        href="/blocks"
-        className={link}
-        aria-current={pathname.startsWith('/blocks') ? 'page' : undefined}
-      >
-        Blocks
-      </NextLink>
     </>
   )
 }

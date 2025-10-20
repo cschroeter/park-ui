@@ -9,7 +9,6 @@
     "lint": "biome lint ./src",
     "build": "next build",
     "start": "next start",
-    "blocks:sync": "cp -a ../components/react/src/plus/blocks ./src/components",
     "db:format": "prisma format",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
