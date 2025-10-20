@@ -33,11 +33,7 @@
   "packageManager": "bun@1.3.0",
   "trustedDependencies": ["@park-ui/website"],
   "resolutions": {
-    "caniuse-lite": "1.0.30001751",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.2"
+    "caniuse-lite": "1.0.30001751"
   },
   "overrides": {
     "flexsearch": "0.8.212"
