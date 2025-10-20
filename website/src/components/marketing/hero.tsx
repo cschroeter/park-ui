@@ -1,5 +1,5 @@
-import { SiFigma, SiReact, SiVuedotjs } from '@icons-pack/react-simple-icons'
-import { ArrowRightIcon } from 'lucide-react'
+import { SiReact, SiVuedotjs } from '@icons-pack/react-simple-icons'
+import { ArrowRightIcon, RocketIcon } from 'lucide-react'
 import NextLink from 'next/link'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { Badge } from '~/components/ui/badge'
@@ -14,9 +14,10 @@ export const Hero = () => {
     <Stack gap={{ base: '8', md: '12' }} maxW={{ md: '2xl' }}>
       <Stack gap={{ base: '4', md: '6' }}>
         <Stack gap="4">
-          <NextLink href="/docs/overview/figma">
-            <Badge size="lg" variant="outline">
-              <SiFigma /> Checkout the new Park UI Figma Kit <ArrowRightIcon />
+          <NextLink href="https://next.park-ui.com">
+            <Badge size="lg" variant="subtle">
+              <RocketIcon /> Checkout the next version of Park UI
+              <ArrowRightIcon />
             </Badge>
           </NextLink>
           <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">

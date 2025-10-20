@@ -4,6 +4,7 @@
   "private": true,
   "workspaces": ["components/*", "packages/*", "scripts", "website"],
   "scripts": {
+    "prepare": "bun web prepare",
     "postinstall": "lefthook install",
     "scripts": "bun run --cwd scripts",
     "web": "bun run --cwd website",
