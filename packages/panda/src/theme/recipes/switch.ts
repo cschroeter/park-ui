@@ -24,6 +24,11 @@ export const switchRecipe = defineSlotRecipe({
       _checked: {
         background: 'colorPalette.default',
       },
+      _focusVisible: {
+        outline: '2px solid',
+        outlineColor: 'colorPalette.default',
+        outlineOffset: '2px',
+      },
     },
     label: {
       color: 'fg.default',
