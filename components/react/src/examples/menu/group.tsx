@@ -17,7 +17,6 @@ export const App = () => {
               <Menu.Item value="size">Size</Menu.Item>
               <Menu.Item value="type">Type</Menu.Item>
             </Menu.ItemGroup>
-            <Menu.Separator />
             <Menu.ItemGroup>
               <Menu.ItemGroupLabel>View Options</Menu.ItemGroupLabel>
               <Menu.Item value="details">Details</Menu.Item>

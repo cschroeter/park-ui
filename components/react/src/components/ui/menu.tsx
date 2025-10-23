@@ -1,8 +1,8 @@
 'use client'
-import { Menu } from '@ark-ui/react/menu'
+import { Menu, useMenuItemContext } from '@ark-ui/react/menu'
 import { CheckIcon, ChevronDownIcon } from 'lucide-react'
-import type { ComponentProps } from 'react'
-import { createStyleContext } from 'styled-system/jsx'
+import { type ComponentProps, forwardRef } from 'react'
+import { createStyleContext, type HTMLStyledProps } from 'styled-system/jsx'
 import { menu } from 'styled-system/recipes'
 
 const { withRootProvider, withContext } = createStyleContext(menu)
@@ -25,9 +25,6 @@ export const Indicator = withContext(Menu.Indicator, 'indicator', {
 export const Item = withContext(Menu.Item, 'item')
 export const ItemGroup = withContext(Menu.ItemGroup, 'itemGroup')
 export const ItemGroupLabel = withContext(Menu.ItemGroupLabel, 'itemGroupLabel')
-export const ItemIndicator = withContext(Menu.ItemIndicator, 'itemIndicator', {
-  defaultProps: { children: <CheckIcon strokeWidth="2.5px" /> },
-})
 export const ItemText = withContext(Menu.ItemText, 'itemText')
 export const Positioner = withContext(Menu.Positioner, 'positioner')
 export const RadioItem = withContext(Menu.RadioItem, 'item')
@@ -36,4 +33,23 @@ export const Separator = withContext(Menu.Separator, 'separator')
 export const Trigger = withContext(Menu.Trigger, 'trigger')
 export const TriggerItem = withContext(Menu.TriggerItem, 'item')
 
-export { MenuContext as Context } from '@ark-ui/react/menu'
+export {
+  MenuContext as Context,
+  type MenuSelectionDetails as SelectionDetails,
+} from '@ark-ui/react/menu'
+
+const StyledItemIndicator = withContext(Menu.ItemIndicator, 'itemIndicator')
+
+export const ItemIndicator = forwardRef<HTMLDivElement, HTMLStyledProps<'div'>>(
+  function ItemIndicator(props, ref) {
+    const item = useMenuItemContext()
+
+    return item.checked ? (
+      <StyledItemIndicator ref={ref} {...props}>
+        <CheckIcon />
+      </StyledItemIndicator>
+    ) : (
+      <svg aria-hidden="true" focusable="false" />
+    )
+  },
+)

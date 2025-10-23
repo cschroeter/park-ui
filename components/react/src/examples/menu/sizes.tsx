@@ -2,7 +2,7 @@ import { Wrap } from 'styled-system/jsx'
 import { Button, Menu } from '@/components/ui'
 
 export const App = () => {
-  const sizes = ['sm', 'md', 'lg'] as const
+  const sizes = ['xs', 'sm', 'md', 'lg'] as const
 
   return (
     <Wrap gap="4">
@@ -18,6 +18,7 @@ export const App = () => {
             <Menu.Content>
               <Menu.Item value="new-file">New File</Menu.Item>
               <Menu.Item value="open-file">Open File</Menu.Item>
+              <Menu.Separator />
               <Menu.Item value="save">Save</Menu.Item>
               <Menu.Item value="save-as">Save As</Menu.Item>
               <Menu.Item value="recent-files">Recent Files</Menu.Item>

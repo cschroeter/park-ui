@@ -70,7 +70,7 @@ export const combobox = defineSlotRecipe({
     },
     itemGroupLabel: {
       alignItems: 'flex-start',
-      color: 'text.subtle',
+      color: 'fg.subtle',
       display: 'flex',
       flexDirection: 'column',
       fontWeight: 'medium',
@@ -97,15 +97,15 @@ export const combobox = defineSlotRecipe({
       bottom: '0',
     },
     trigger: {
-      color: 'text.subtle',
+      color: 'fg.subtle',
     },
     clearTrigger: {
-      color: 'text.muted',
+      color: 'fg.muted',
     },
     empty: {
       display: 'flex',
       alignItems: 'center',
-      color: 'text.subtle',
+      color: 'fg.subtle',
     },
   },
   defaultVariants: {
