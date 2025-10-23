@@ -1,23 +1,20 @@
 'use client'
+import type { Assign, SelectRootProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-import { Select } from '@ark-ui/react/select'
+import { Select, useSelectItemContext } from '@ark-ui/react/select'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-react'
+import { forwardRef, type RefAttributes } from 'react'
 import { createStyleContext } from 'styled-system/jsx'
 import { type SelectVariantProps, select } from 'styled-system/recipes'
 import type { HTMLStyledProps } from 'styled-system/types'
 
 const { withProvider, withContext } = createStyleContext(select)
 
-export type RootProps = HTMLStyledProps<'div'> & SelectVariantProps
+type StyleProps = SelectVariantProps & HTMLStyledProps<'div'>
 
-export const Root = withProvider(Select.Root, 'root', {
-  defaultProps: { positioning: { sameWidth: true } },
-}) as Select.RootComponent<RootProps>
+export type RootProps<T> = Assign<SelectRootProps<T>, StyleProps> & RefAttributes<HTMLDivElement>
 
-export const RootProvider = withProvider(
-  Select.RootProvider,
-  'root',
-) as Select.RootProviderComponent<RootProps>
+export const Root = withProvider(Select.Root, 'root') as Select.RootComponent<StyleProps>
 
 export const ClearTrigger = withContext(Select.ClearTrigger, 'clearTrigger')
 export const Content = withContext(Select.Content, 'content')
@@ -35,10 +32,26 @@ export const ValueText = withContext(Select.ValueText, 'valueText')
 export const Indicator = withContext(Select.Indicator, 'indicator', {
   defaultProps: { children: <ChevronsUpDownIcon /> },
 })
-export const ItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator', {
-  defaultProps: { children: <CheckIcon /> },
-})
 export const HiddenSelect = Select.HiddenSelect
 
-export const Context = Select.Context
-export const ItemContext = Select.ItemContext
+export {
+  SelectContext as Context,
+  SelectItemContext as ItemContext,
+  type SelectValueChangeDetails as ValueChangeDetails,
+} from '@ark-ui/react/select'
+
+const StyledItemIndicator = withContext(Select.ItemIndicator, 'itemIndicator')
+
+export const ItemIndicator = forwardRef<HTMLDivElement, HTMLStyledProps<'div'>>(
+  function ItemIndicator(props, ref) {
+    const item = useSelectItemContext()
+
+    return item.selected ? (
+      <StyledItemIndicator ref={ref} {...props}>
+        <CheckIcon />
+      </StyledItemIndicator>
+    ) : (
+      <svg aria-hidden="true" focusable="false" />
+    )
+  },
+)
