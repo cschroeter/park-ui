@@ -12,4 +12,6 @@ export const textStyles = defineTextStyles({
   '5xl': { value: { fontSize: '5xl', lineHeight: '3.75rem', letterSpacing: '-0.02em' } },
   '6xl': { value: { fontSize: '6xl', lineHeight: '4.5rem', letterSpacing: '-0.02em' } },
   '7xl': { value: { fontSize: '7xl', lineHeight: '5.75rem', letterSpacing: '-0.02em' } },
+
+  label: { value: { fontSize: 'sm', lineHeight: '1.25rem', fontWeight: 'medium' } },
 })

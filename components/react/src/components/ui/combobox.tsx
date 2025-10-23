@@ -1,7 +1,8 @@
 'use client'
-import { Combobox } from '@ark-ui/react/combobox'
+import { Combobox, useComboboxItemContext } from '@ark-ui/react/combobox'
 import { ark } from '@ark-ui/react/factory'
 import { CheckIcon, ChevronsUpDownIcon, XIcon } from 'lucide-react'
+import { forwardRef } from 'react'
 import { createStyleContext, type HTMLStyledProps } from 'styled-system/jsx'
 import { type ComboboxVariantProps, combobox } from 'styled-system/recipes'
 
@@ -10,7 +11,7 @@ const { withProvider, withContext } = createStyleContext(combobox)
 export type RootProps = HTMLStyledProps<'div'> & ComboboxVariantProps
 
 export const Root = withProvider(Combobox.Root, 'root', {
-  defaultProps: { positioning: { sameWidth: true } },
+  defaultProps: { positioning: { sameWidth: false } },
 }) as Combobox.RootComponent<RootProps>
 
 export const RootProvider = withProvider(
@@ -29,9 +30,6 @@ export const Input = withContext(Combobox.Input, 'input')
 export const Item = withContext(Combobox.Item, 'item')
 export const ItemGroup = withContext(Combobox.ItemGroup, 'itemGroup')
 export const ItemGroupLabel = withContext(Combobox.ItemGroupLabel, 'itemGroupLabel')
-export const ItemIndicator = withContext(Combobox.ItemIndicator, 'itemIndicator', {
-  defaultProps: { children: <CheckIcon /> },
-})
 export const ItemText = withContext(Combobox.ItemText, 'itemText')
 export const Label = withContext(Combobox.Label, 'label')
 export const List = withContext(Combobox.List, 'list')
@@ -41,3 +39,19 @@ export const Trigger = withContext(Combobox.Trigger, 'trigger', {
 })
 
 export { ComboboxContext as Context } from '@ark-ui/react/combobox'
+
+const StyledItemIndicator = withContext(Combobox.ItemIndicator, 'itemIndicator')
+
+export const ItemIndicator = forwardRef<HTMLDivElement, HTMLStyledProps<'div'>>(
+  function ItemIndicator(props, ref) {
+    const item = useComboboxItemContext()
+
+    return item.selected ? (
+      <StyledItemIndicator ref={ref} {...props}>
+        <CheckIcon />
+      </StyledItemIndicator>
+    ) : (
+      <svg aria-hidden="true" focusable="false" />
+    )
+  },
+)

@@ -1,6 +1,6 @@
-import { defineRecipe } from '@pandacss/dev'
+import type { RecipeConfig } from '@pandacss/dev'
 
-export const input = defineRecipe({
+export const input = {
   className: 'input',
   jsx: ['Input', 'Field.Input'],
   base: {
@@ -88,4 +88,4 @@ export const input = defineRecipe({
       '2xl': { textStyle: '3xl', px: '4.5', '--input-height': 'sizes.16' },
     },
   },
-})
+} satisfies RecipeConfig
