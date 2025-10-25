@@ -12,7 +12,7 @@ interface Props {
 
 export const Callout = (props: Props) => {
   return (
-    <Alert.Root className="not-prose" size="lg" status="neutral" my="6">
+    <Alert.Root className="not-prose" size="lg" status="neutral" mb="6" mt="8">
       <Box
         position="absolute"
         h="100%"
