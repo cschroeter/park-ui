@@ -18,11 +18,9 @@ export const App = () => {
             <Menu.Item value="search-replace">Search & Replace</Menu.Item>
             <Menu.Item value="compare-files">Compare Files</Menu.Item>
             <Menu.Root>
-              <Menu.TriggerItem>
+              <Menu.TriggerItem justifyContent="space-between">
                 Git
-                <Menu.ItemIndicator>
-                  <ChevronRightIcon />
-                </Menu.ItemIndicator>
+                <ChevronRightIcon />
               </Menu.TriggerItem>
               <Portal>
                 <Menu.Positioner>
