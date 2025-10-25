@@ -98,60 +98,13 @@ export const button = defineRecipe({
       },
     },
     size: {
-      xs: {
-        h: '8',
-        minW: '8',
-        textStyle: 'sm',
-        px: '2.5',
-        _icon: {
-          boxSize: '4',
-        },
-      },
-      sm: {
-        h: '9',
-        minW: '9',
-        textStyle: 'sm',
-        px: '3',
-        _icon: {
-          boxSize: '4.5',
-        },
-      },
-      md: {
-        h: '10',
-        minW: '10',
-        textStyle: 'sm',
-        px: '3.5',
-        _icon: {
-          boxSize: '5',
-        },
-      },
-      lg: {
-        h: '11',
-        minW: '11',
-        textStyle: 'md',
-        px: '4',
-        _icon: {
-          boxSize: '5',
-        },
-      },
-      xl: {
-        h: '12',
-        minW: '12',
-        textStyle: 'md',
-        px: '4.5',
-        _icon: {
-          boxSize: '5.5',
-        },
-      },
-      '2xl': {
-        h: '16',
-        minW: '16',
-        textStyle: 'lg',
-        px: '6',
-        _icon: {
-          boxSize: '6',
-        },
-      },
+      '2xs': { h: '6', minW: '6', textStyle: 'xs', px: '2', _icon: { boxSize: '3.5' } },
+      xs: { h: '8', minW: '8', textStyle: 'sm', px: '2.5', _icon: { boxSize: '4' } },
+      sm: { h: '9', minW: '9', textStyle: 'sm', px: '3', _icon: { boxSize: '4' } },
+      md: { h: '10', minW: '10', textStyle: 'sm', px: '3.5', _icon: { boxSize: '5' } },
+      lg: { h: '11', minW: '11', textStyle: 'md', px: '4', _icon: { boxSize: '5' } },
+      xl: { h: '12', minW: '12', textStyle: 'md', px: '4.5', _icon: { boxSize: '5.5' } },
+      '2xl': { h: '16', minW: '16', textStyle: 'xl', px: '6', _icon: { boxSize: '6' } },
     },
   },
 })

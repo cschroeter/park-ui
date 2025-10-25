@@ -1,16 +1,16 @@
-import { UploadIcon } from 'lucide-react'
+import { FolderUpIcon } from 'lucide-react'
 import { Button, FileUpload } from '@/components/ui'
 
 export const App = () => {
   return (
-    <FileUpload.Root>
+    <FileUpload.Root directory>
       <FileUpload.HiddenInput />
       <FileUpload.Trigger asChild>
         <Button variant="outline" size="sm">
-          <UploadIcon /> Upload file
+          <FolderUpIcon /> Upload directory
         </Button>
       </FileUpload.Trigger>
-      <FileUpload.List clearable showSize />
+      <FileUpload.List />
     </FileUpload.Root>
   )
 }

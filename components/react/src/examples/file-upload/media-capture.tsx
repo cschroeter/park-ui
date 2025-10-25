@@ -1,16 +1,16 @@
-import { UploadIcon } from 'lucide-react'
+import { WebcamIcon } from 'lucide-react'
 import { Button, FileUpload } from '@/components/ui'
 
 export const App = () => {
   return (
-    <FileUpload.Root>
+    <FileUpload.Root capture="environment">
       <FileUpload.HiddenInput />
       <FileUpload.Trigger asChild>
         <Button variant="outline" size="sm">
-          <UploadIcon /> Upload file
+          <WebcamIcon /> Take picture
         </Button>
       </FileUpload.Trigger>
-      <FileUpload.List clearable showSize />
+      <FileUpload.List />
     </FileUpload.Root>
   )
 }
