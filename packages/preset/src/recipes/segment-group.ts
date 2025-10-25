@@ -6,88 +6,99 @@ export const segmentGroup = defineSlotRecipe({
   slots: segmentGroupAnatomy.keys(),
   base: {
     root: {
-      alignItems: 'flex-start',
-      display: 'flex',
-      flexDirection: {
-        _horizontal: 'row',
-        _vertical: 'column',
-      },
-      gap: {
-        _horizontal: '4',
-        _vertical: '1',
-      },
-      borderBottomWidth: {
-        _horizontal: '1px',
-      },
-      borderLeftWidth: {
-        _vertical: '1px',
-      },
-    },
-    indicator: {
-      borderColor: 'colorPalette.solid',
-      _horizontal: {
-        bottom: '0',
-        borderBottomWidth: '2px',
-        transform: 'translateY(1px)',
-        width: 'var(--width)',
-      },
+      bg: 'gray.surface.bg.active',
+      borderRadius: 'l3',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      isolation: 'isolate',
+      pos: 'relative',
+      p: '1',
       _vertical: {
-        borderLeftWidth: '2px',
-        height: 'var(--height)',
-        transform: 'translateX(-1px)',
+        flexDirection: 'column',
+        alignItems: 'stretch',
       },
     },
     item: {
-      color: 'fg.muted',
-      cursor: 'pointer',
+      alignItems: 'center',
+      borderRadius: 'l2',
+      display: 'inline-flex',
+      flexShrink: '0',
       fontWeight: 'medium',
-      transitionDuration: 'normal',
-      transitionProperty: 'color',
-      transitionTimingFunction: 'default',
-      _hover: {
-        color: 'fg.default',
-      },
-      _checked: {
-        fontWeight: 'semibold',
-        color: 'fg.default',
-        _hover: {
-          color: 'fg.default',
-        },
-      },
+      gap: '2',
+      justifyContent: 'center',
+      position: 'relative',
+      userSelect: 'none',
       _disabled: {
-        color: 'fg.disabled',
-        cursor: 'not-allowed',
-        _hover: {
-          color: 'fg.disabled',
+        opacity: '0.5',
+      },
+      '&:has(input:focus-visible)': {
+        focusVisibleRing: 'outside',
+        focusRingColor: 'colorPalette.solid.bg',
+      },
+
+      _before: {
+        content: '""',
+        position: 'absolute',
+        bg: 'gray.surface.border',
+        transition: 'opacity 0.2s',
+      },
+
+      _horizontal: {
+        _before: {
+          insetInlineStart: '0',
+          insetBlock: '1.5',
+          width: '1px',
         },
       },
-      px: {
-        _horizontal: '1',
-        _vertical: '3',
+
+      _vertical: {
+        _before: {
+          insetBlockStart: '0',
+          insetInline: '1.5',
+          height: '1px',
+        },
       },
-      pb: {
-        _horizontal: '3',
-      },
-      py: {
-        _vertical: '1.5',
+
+      '& + &[data-state=checked], &[data-state=checked] + &, &:first-of-type': {
+        _before: {
+          opacity: '0',
+        },
       },
     },
+
+    indicator: {
+      bg: 'gray.surface.bg',
+      borderRadius: 'l2',
+      boxShadow: 'xs',
+      height: 'var(--height)',
+      pos: 'absolute',
+      width: 'var(--width)',
+      zIndex: -1,
+    },
   },
-  defaultVariants: {
-    size: 'md',
-  },
+
   variants: {
     size: {
-      sm: {
-        item: {
-          textStyle: 'sm',
+      xs: { item: { h: '8', minW: '8', textStyle: 'sm', px: '2.5', _icon: { boxSize: '4' } } },
+      sm: { item: { h: '9', minW: '9', textStyle: 'sm', px: '3', _icon: { boxSize: '4' } } },
+      md: { item: { h: '10', minW: '10', textStyle: 'sm', px: '3.5', _icon: { boxSize: '5' } } },
+      lg: { item: { h: '11', minW: '11', textStyle: 'md', px: '4', _icon: { boxSize: '5' } } },
+      xl: { item: { h: '12', minW: '12', textStyle: 'md', px: '4.5', _icon: { boxSize: '5.5' } } },
+    },
+    fitted: {
+      true: {
+        root: {
+          display: 'flex',
         },
-      },
-      md: {
         item: {
-          textStyle: 'md',
+          flex: '1',
         },
       },
     },
+  },
+
+  defaultVariants: {
+    size: 'md',
   },
 })
