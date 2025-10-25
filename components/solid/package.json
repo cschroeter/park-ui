@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@ark-ui/solid": "5.26.2",
-    "lucide-solid": "0.546.0",
+    "lucide-solid": "0.548.0",
     "solid-js": "1.9.9"
   },
   "devDependencies": {
@@ -24,11 +24,11 @@
     "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*",
     "@rsbuild/core": "1.5.17",
-    "@storybook/addon-a11y": "9.1.13",
-    "@storybook/addon-themes": "9.1.13",
+    "@storybook/addon-a11y": "9.1.15",
+    "@storybook/addon-themes": "9.1.15",
     "lorem-ipsum": "2.0.8",
-    "storybook": "9.1.13",
-    "storybook-solidjs-vite": "^9.0.3",
+    "storybook": "9.1.15",
+    "storybook-solidjs-vite": "9.0.3",
     "typescript": "5.9.3",
     "vite": "7.1.12",
     "vite-plugin-solid": "2.11.10",
