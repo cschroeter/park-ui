@@ -17,7 +17,7 @@
     "effect": "3.18.4",
     "framer": "2.4.1",
     "framer-motion": "12.23.24",
-    "fumadocs-core": "16.0.2",
+    "fumadocs-core": "16.0.3",
     "hast": "1.0.0",
     "hastscript": "9.0.1",
     "lucide-react": "0.548.0",
@@ -32,7 +32,7 @@
     "rehype-autolink-headings": "7.1.0",
     "rehype-slug": "6.0.0",
     "remark-directive": "4.0.0",
-    "shiki": "3.13.0",
+    "shiki": "3.14.0",
     "ts-pattern": "5.8.0",
     "unist-util-visit": "5.0.0",
     "zustand": "5.0.8"

@@ -52,7 +52,7 @@
   "dependencies": {
     "@better-fetch/fetch": "1.1.18",
     "@clack/prompts": "1.0.0-alpha.6",
-    "commander": "14.0.1",
+    "commander": "14.0.2",
     "cosmiconfig": "9.0.0",
     "effect": "3.18.4",
     "fs-extra": "11.3.2",
