@@ -1,30 +1,16 @@
-'use client'
-import { TagsInput } from '@/components/ui'
+import { Span, TagsInput } from '@/components/ui'
 
 export const App = () => {
   return (
-    <TagsInput.Root>
-      <TagsInput.Context>
-        {(tagsInput) => (
-          <>
-            <TagsInput.Label>Frameworks</TagsInput.Label>
-            <TagsInput.Control>
-              {tagsInput.value.map((value: string, index: number) => (
-                <TagsInput.Item key={index} index={index} value={value}>
-                  <TagsInput.ItemPreview>
-                    <TagsInput.ItemText>{value}</TagsInput.ItemText>
-                    <TagsInput.ItemDeleteTrigger>×</TagsInput.ItemDeleteTrigger>
-                  </TagsInput.ItemPreview>
-                  <TagsInput.ItemInput />
-                </TagsInput.Item>
-              ))}
-            </TagsInput.Control>
-            <TagsInput.Input placeholder="Add Framework" />
-            <TagsInput.ClearTrigger>Clear all</TagsInput.ClearTrigger>
-          </>
-        )}
-      </TagsInput.Context>
-      <TagsInput.HiddenInput />
+    <TagsInput.Root defaultValue={['React', 'Solid', 'Vue']}>
+      <TagsInput.Label>Tags</TagsInput.Label>
+      <TagsInput.Control>
+        <TagsInput.Items />
+        <TagsInput.Input placeholder="Add tag..." />
+      </TagsInput.Control>
+      <Span textStyle="xs" color="fg.muted" ms="auto">
+        Press Enter or Return to add tag
+      </Span>
     </TagsInput.Root>
   )
 }
