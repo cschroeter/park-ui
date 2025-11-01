@@ -8,18 +8,18 @@ export const App = () => {
       <Editable.Input />
       <Editable.Control>
         <Editable.EditTrigger asChild>
-          <IconButton variant="plain" size="sm">
+          <IconButton variant="plain" size="sm" colorPalette="gray">
             <EditIcon />
           </IconButton>
         </Editable.EditTrigger>
         <ButtonGroup variant="outline" size="sm">
           <Editable.CancelTrigger asChild>
-            <IconButton>
+            <IconButton colorPalette="gray">
               <XIcon />
             </IconButton>
           </Editable.CancelTrigger>
           <Editable.SubmitTrigger asChild>
-            <IconButton>
+            <IconButton colorPalette="gray">
               <CheckIcon />
             </IconButton>
           </Editable.SubmitTrigger>
