@@ -15,58 +15,60 @@ export const editable = defineSlotRecipe({
     preview: {
       alignItems: 'center',
       borderRadius: 'l2',
-      cursor: 'text',
+      cursor: 'default',
       display: 'inline-flex',
-      p: '1',
-      textAlign: 'inherit',
-      transitionDuration: 'moderate',
+      transitionDuration: 'normal',
       transitionProperty: 'common',
-      _hover: {
-        bg: 'gray.surface.bg.hover',
-      },
       _disabled: {
         userSelect: 'none',
+      },
+      _hover: {
+        bg: 'gray.plain.bg.hover',
       },
     },
     input: {
       borderRadius: 'l2',
       focusRingColor: 'colorPalette.solid.bg',
       focusRingWidth: '2px',
-      focusVisibleRing: 'inside',
-      outline: '0',
-      p: '1',
-      textAlign: 'inherit',
+      focusRing: 'inside',
       transitionDuration: 'normal',
       transitionProperty: 'common',
       width: 'full',
+      _focusVisible: {
+        outlineOffset: '-1px',
+      },
     },
     control: {
-      display: 'inline-flex',
       alignItems: 'center',
+      display: 'inline-flex',
       gap: '1.5',
-    },
-  },
-
-  variants: {
-    size: {
-      sm: {
-        root: { textStyle: 'sm' },
-        preview: { minH: '9' },
-        input: { minH: '9' },
-      },
-      md: {
-        root: { textStyle: 'sm' },
-        preview: { minH: '10' },
-        input: { minH: '10', px: '3' },
-      },
-      lg: {
-        root: { textStyle: 'md' },
-        preview: { minH: '11' },
-        input: { minH: '11' },
-      },
     },
   },
   defaultVariants: {
     size: 'md',
+  },
+  variants: {
+    size: {
+      '2xs': {
+        preview: { textStyle: 'xs', px: '2', py: '0.5' },
+        input: { textStyle: 'xs', px: '2', py: '0.5' },
+      },
+      xs: {
+        preview: { textStyle: 'sm', px: '2.5', py: '1.5' },
+        input: { textStyle: 'sm', px: '2.5', py: '1.5' },
+      },
+      sm: {
+        preview: { textStyle: 'sm', px: '3', py: '2' },
+        input: { textStyle: 'sm', px: '3', py: '2' },
+      },
+      md: {
+        preview: { textStyle: 'sm', px: '3.5', py: '2.5' },
+        input: { textStyle: 'sm', px: '3.5', py: '2.5' },
+      },
+      lg: {
+        preview: { textStyle: 'md', px: '4', py: '2.5' },
+        input: { textStyle: 'md', px: '4', py: '2.5' },
+      },
+    },
   },
 })
