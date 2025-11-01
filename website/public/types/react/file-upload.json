@@ -126,6 +126,11 @@
   },
   "Root": {
     "props": {
+      "size": {
+        "type": "'md'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      },
       "accept": {
         "type": "Record<string, string[]> | FileMimeType | FileMimeType[]",
         "isRequired": false,

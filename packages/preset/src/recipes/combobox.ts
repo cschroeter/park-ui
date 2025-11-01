@@ -110,7 +110,7 @@ export const combobox = defineSlotRecipe({
   },
   defaultVariants: {
     size: 'md',
-    variant: 'surface',
+    variant: 'outline',
   },
   variants: {
     variant: {
