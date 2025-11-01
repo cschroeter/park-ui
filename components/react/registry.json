@@ -344,7 +344,7 @@
     {
       "name": "combobox",
       "type": "registry:ui",
-      "dependencies": ["@ark-ui/react", "lucide-react"],
+      "dependencies": ["@ark-ui/react", "lucide-react", "react"],
       "files": [
         {
           "path": "src/components/ui/combobox.tsx",
@@ -364,7 +364,8 @@
           "type": "registry:recipe",
           "imports": "import { combobox } from './combobox'"
         }
-      ]
+      ],
+      "registryDependencies": ["input-recipe"]
     },
     {
       "name": "date-picker",
@@ -519,7 +520,7 @@
     {
       "name": "file-upload",
       "type": "registry:ui",
-      "dependencies": ["@ark-ui/react", "react"],
+      "dependencies": ["@ark-ui/react", "lucide-react", "react", "@/components"],
       "files": [
         {
           "path": "src/components/ui/file-upload.tsx",
@@ -1123,7 +1124,7 @@
     {
       "name": "select",
       "type": "registry:ui",
-      "dependencies": ["@ark-ui/react", "lucide-react"],
+      "dependencies": ["@ark-ui/react", "lucide-react", "react"],
       "files": [
         {
           "path": "src/components/ui/select.tsx",
@@ -1335,7 +1336,7 @@
     {
       "name": "tags-input",
       "type": "registry:ui",
-      "dependencies": ["@ark-ui/react", "react"],
+      "dependencies": ["@ark-ui/react", "lucide-react", "react"],
       "files": [
         {
           "path": "src/components/ui/tags-input.tsx",
