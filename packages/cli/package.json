@@ -56,7 +56,7 @@
     "cosmiconfig": "9.0.0",
     "effect": "3.18.4",
     "fs-extra": "11.3.2",
-    "magicast": "0.3.5",
+    "magicast": "0.5.1",
     "package-directory": "8.1.0",
     "picocolors": "1.1.1",
     "ts-morph": "27.0.2",
@@ -67,7 +67,7 @@
     "@pandacss/dev": "1.4.3",
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "24.9.1",
+    "@types/node": "24.9.2",
     "release-it": "19.0.5",
     "tsup": "8.5.0",
     "typescript": "5.9.3"
