@@ -118,7 +118,7 @@ export const select = defineSlotRecipe({
       outline: {
         trigger: {
           borderWidth: '1px',
-          borderColor: 'colorPalette.outline.border',
+          borderColor: 'gray.outline.border',
           focusRingColor: 'colorPalette.solid.bg',
           focusVisibleRing: 'inside',
         },
