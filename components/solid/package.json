@@ -13,7 +13,7 @@
     "typedoc": "scripts typedoc --out ../../website/public/types/solid"
   },
   "dependencies": {
-    "@ark-ui/solid": "5.26.2",
+    "@ark-ui/solid": "5.27.0",
     "lucide-solid": "0.552.0",
     "solid-js": "1.9.10"
   },
@@ -28,7 +28,7 @@
     "@storybook/addon-themes": "10.0.2",
     "lorem-ipsum": "2.0.8",
     "storybook": "10.0.2",
-    "storybook-solidjs-vite": "10.0.4",
+    "storybook-solidjs-vite": "10.0.5",
     "typescript": "5.9.3",
     "vite": "7.1.12",
     "vite-plugin-solid": "2.11.10",

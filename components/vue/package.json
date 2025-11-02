@@ -6,7 +6,7 @@
     "prepare": "panda codegen --clean --silent"
   },
   "dependencies": {
-    "@ark-ui/vue": "5.26.2",
+    "@ark-ui/vue": "5.27.0",
     "lucide-vue-next": "0.552.0",
     "vue": "3.5.22"
   },
