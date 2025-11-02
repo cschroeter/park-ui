@@ -2,19 +2,17 @@ import { HStack, Stack } from 'styled-system/jsx'
 import { RadioCard } from '@/components/ui'
 
 export const App = () => {
-  const variants = ['surface', 'subtle', 'outline', 'solid'] as const
+  const variants = ['solid', 'surface', 'subtle', 'outline'] as const
   return (
-    <Stack gap="8" colorPalette="red">
+    <Stack gap="4">
       {variants.map((variant) => (
-        <RadioCard.Root key={variant} variant={variant} defaultValue="next">
+        <RadioCard.Root key={variant} variant={variant} defaultValue="react">
           <HStack>
             {items.map((item) => (
               <RadioCard.Item key={item.value} value={item.value}>
                 <RadioCard.ItemHiddenInput />
-                <RadioCard.ItemControl>
-                  <RadioCard.ItemText>{item.title}</RadioCard.ItemText>
-                  {/* <RadioCard.ItemIndicator /> */}
-                </RadioCard.ItemControl>
+                <RadioCard.ItemText>{item.title}</RadioCard.ItemText>
+                <RadioCard.ItemControl />
               </RadioCard.Item>
             ))}
           </HStack>
@@ -25,7 +23,7 @@ export const App = () => {
 }
 
 const items = [
-  { value: 'next', title: 'Next.js' },
-  { value: 'vite', title: 'Vite' },
-  { value: 'astro', title: 'Astro' },
+  { value: 'react', title: 'React' },
+  { value: 'solid', title: 'Solid' },
+  { value: 'vue', title: 'Vue' },
 ]
