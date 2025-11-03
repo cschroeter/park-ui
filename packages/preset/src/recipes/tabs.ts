@@ -39,7 +39,6 @@ export const tabs = defineSlotRecipe({
       _focusVisible: {
         zIndex: 1,
         focusVisibleRing: 'outside',
-        focusRingColor: 'colorPalette.solid.bg',
       },
       _disabled: {
         layerStyle: 'disabled',
@@ -47,7 +46,7 @@ export const tabs = defineSlotRecipe({
     },
     content: {
       focusVisibleRing: 'inside',
-      focusRingColor: 'colorPalette.solid.bg',
+
       _horizontal: {
         width: '100%',
       },

@@ -23,7 +23,7 @@ export const fileUpload = defineSlotRecipe({
       borderWidth: '2px',
       display: 'flex',
       flexDirection: 'column',
-      focusRingColor: 'colorPalette.solid.bg',
+
       focusVisibleRing: 'outside',
       justifyContent: 'center',
       transition: 'backgrounds',

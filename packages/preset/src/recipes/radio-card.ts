@@ -37,7 +37,6 @@ export const radioCard = defineSlotRecipe({
       },
       _focusVisible: {
         focusVisibleRing: 'outside',
-        focusRingColor: 'colorPalette.solid.bg',
       },
     },
     itemText: {

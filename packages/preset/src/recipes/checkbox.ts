@@ -25,7 +25,7 @@ export const checkbox = defineSlotRecipe({
       borderRadius: 'l1',
       cursor: 'pointer',
       focusVisibleRing: 'outside',
-      focusRingColor: 'colorPalette.solid.bg',
+
       _icon: {
         boxSize: 'full',
       },

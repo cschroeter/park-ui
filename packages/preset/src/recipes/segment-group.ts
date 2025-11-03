@@ -33,7 +33,6 @@ export const segmentGroup = defineSlotRecipe({
       },
       '&:has(input:focus-visible)': {
         focusVisibleRing: 'outside',
-        focusRingColor: 'colorPalette.solid.bg',
       },
 
       _before: {

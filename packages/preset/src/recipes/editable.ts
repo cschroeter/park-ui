@@ -28,7 +28,7 @@ export const editable = defineSlotRecipe({
     },
     input: {
       borderRadius: 'l2',
-      focusRingColor: 'colorPalette.solid.bg',
+
       focusRingWidth: '2px',
       focusRing: 'inside',
       transitionDuration: 'normal',

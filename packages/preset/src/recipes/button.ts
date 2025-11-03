@@ -27,7 +27,6 @@ export const button = defineRecipe({
       layerStyle: 'disabled',
     },
     focusVisibleRing: 'outside',
-    focusRingColor: 'colorPalette.solid.bg',
   },
   defaultVariants: {
     variant: 'solid',

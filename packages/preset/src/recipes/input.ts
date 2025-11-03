@@ -29,7 +29,7 @@ export const input = {
         borderWidth: '1px',
         borderColor: 'gray.outline.border',
         focusVisibleRing: 'inside',
-        focusRingColor: 'colorPalette.solid.bg',
+
         _invalid: {
           focusRingColor: 'red.9',
           borderColor: 'red.9',
@@ -40,7 +40,7 @@ export const input = {
         borderWidth: '1px',
         borderColor: 'gray.surface.border',
         focusVisibleRing: 'inside',
-        focusRingColor: 'colorPalette.solid.bg',
+
         _invalid: {
           focusRingColor: 'red.9',
           borderColor: 'red.9',
@@ -52,7 +52,7 @@ export const input = {
         bg: 'gray.subtle.bg',
         color: 'gray.subtle.fg',
         focusVisibleRing: 'inside',
-        focusRingColor: 'colorPalette.solid.bg',
+
         _invalid: {
           focusRingColor: 'red.9',
           borderColor: 'red.9',

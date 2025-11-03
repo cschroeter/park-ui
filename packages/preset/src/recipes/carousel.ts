@@ -40,7 +40,6 @@ export const carousel = defineSlotRecipe({
         background: 'colorPalette.solid.bg',
       },
       focusVisibleRing: 'outside',
-      focusRingColor: 'colorPalette.solid.bg',
     },
   },
   defaultVariants: {

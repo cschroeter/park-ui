@@ -27,7 +27,6 @@ export const radioGroup = defineSlotRecipe({
       },
       _focusVisible: {
         focusVisibleRing: 'outside',
-        focusRingColor: 'colorPalette.solid.bg',
       },
     },
     item: {
