@@ -1,8 +1,8 @@
 import { radioGroupAnatomy } from '@ark-ui/react/radio-group'
 import { defineSlotRecipe } from '@pandacss/dev'
 
-export const radioCard = defineSlotRecipe({
-  className: 'radio-card',
+export const radioCardGroup = defineSlotRecipe({
+  className: 'radio-card-group',
   slots: radioGroupAnatomy.keys(),
   base: {
     root: {
@@ -40,7 +40,7 @@ export const radioCard = defineSlotRecipe({
       },
     },
     itemText: {
-      fontWeight: 'medium',
+      textStyle: 'label',
     },
   },
   defaultVariants: {
@@ -139,7 +139,7 @@ export const radioCard = defineSlotRecipe({
     },
     size: {
       md: {
-        item: { gap: '3', p: '4' },
+        item: { gap: '2', p: '4' },
         itemControl: { boxSize: '5', _after: { boxSize: '2' } },
         itemText: { textStyle: 'sm' },
       },

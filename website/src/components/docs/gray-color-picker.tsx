@@ -1,7 +1,7 @@
 'use client'
 import { Circle, Stack } from 'styled-system/jsx'
 import { token } from 'styled-system/tokens'
-import { RadioButtonGroup, Text } from '@/components/ui'
+import { RadioCardGroup, Text } from '@/components/ui'
 import { type GrayColor, grayColors } from '~/lib/theme'
 
 interface Props {
@@ -17,9 +17,8 @@ export const GrayColorPicker = (props: Props) => {
       <Text textStyle="sm" fontWeight="medium">
         Gray Color
       </Text>
-      <RadioButtonGroup.Root
+      <RadioCardGroup.Root
         value={grayColor}
-        size="sm"
         variant="outline"
         display="grid"
         gap="1.5"
@@ -27,29 +26,28 @@ export const GrayColorPicker = (props: Props) => {
         onValueChange={(e) => onValueChange(e.value as GrayColor)}
       >
         {grayColors.map((gray, id) => (
-          <RadioButtonGroup.Item
+          <RadioCardGroup.Item
             key={id}
             value={gray}
-            _checked={{
-              borderColor: 'border',
-              boxShadow: '0 0 0 1px var(--colors-border-outline)',
-            }}
+            py="0"
+            h="9"
             justifyContent="flex-start"
+            _checked={{
+              boxShadowColor: 'gray.9',
+              borderColor: 'gray.9',
+            }}
           >
-            <RadioButtonGroup.ItemControl />
-            <RadioButtonGroup.ItemText textTransform="capitalize">
-              <Circle
-                size="3.5"
-                style={{
-                  background: token.var(`colors.${gray}.9`),
-                }}
-              />
-              {gray}
-            </RadioButtonGroup.ItemText>
-            <RadioButtonGroup.ItemHiddenInput />
-          </RadioButtonGroup.Item>
+            <Circle
+              size="3.5"
+              style={{
+                background: token.var(`colors.${gray}.9`),
+              }}
+            />
+            <RadioCardGroup.ItemText textTransform="capitalize">{gray}</RadioCardGroup.ItemText>
+            <RadioCardGroup.ItemHiddenInput />
+          </RadioCardGroup.Item>
         ))}
-      </RadioButtonGroup.Root>
+      </RadioCardGroup.Root>
     </Stack>
   )
 }

@@ -3,7 +3,7 @@ import { createListCollection } from '@ark-ui/react/collection'
 import { SiApple, SiPaypal } from '@icons-pack/react-simple-icons'
 import { CheckIcon, ChevronsUpDownIcon, CreditCardIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Button, Card, Field, Input, RadioButtonGroup, Select } from '@/components/ui'
+import { Button, Card, Field, Input, RadioCardGroup, Select } from '@/components/ui'
 
 const months = createListCollection({
   items: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -22,27 +22,26 @@ export const CardPayment = () => {
         </Card.Description>
       </Card.Header>
       <Card.Body gap="4">
-        <RadioButtonGroup.Root
+        <RadioCardGroup.Root
           defaultValue="card"
-          variant="outline"
           display="grid"
           gridTemplateColumns="repeat(3, 1fr)"
+          gap="3"
         >
           {[
             { value: 'card', label: 'Card', icon: CreditCardIcon },
             { value: 'paypal', label: 'Paypal', icon: SiPaypal },
             { value: 'apple', label: 'Apple', icon: SiApple },
           ].map((option, id) => (
-            <RadioButtonGroup.Item key={id} value={option.value} height="unset" py="4">
-              <RadioButtonGroup.ItemControl />
-              <RadioButtonGroup.ItemText flexDirection="column">
-                <option.icon style={{ width: '1.5rem', height: '1.5rem' }} />
+            <RadioCardGroup.Item key={id} value={option.value} flexDir="column">
+              <option.icon style={{ width: '1.5rem', height: '1.5rem' }} />
+              <RadioCardGroup.ItemText fontWeight="semibold">
                 {option.label}
-              </RadioButtonGroup.ItemText>
-              <RadioButtonGroup.ItemHiddenInput />
-            </RadioButtonGroup.Item>
+              </RadioCardGroup.ItemText>
+              <RadioCardGroup.ItemHiddenInput />
+            </RadioCardGroup.Item>
           ))}
-        </RadioButtonGroup.Root>
+        </RadioCardGroup.Root>
         <Field.Root>
           <Field.Label>Owner</Field.Label>
           <Input />

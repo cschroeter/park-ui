@@ -2,9 +2,9 @@
 import { RadioGroup } from '@ark-ui/react/radio-group'
 import type { ComponentProps } from 'react'
 import { createStyleContext } from 'styled-system/jsx'
-import { radioCard } from 'styled-system/recipes'
+import { radioCardGroup } from 'styled-system/recipes'
 
-const { withProvider, withContext } = createStyleContext(radioCard)
+const { withProvider, withContext } = createStyleContext(radioCardGroup)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(RadioGroup.Root, 'root')

@@ -1,6 +1,6 @@
 import { HeartIcon, HelpCircleIcon, RulerIcon, ShieldIcon, ShoppingBagIcon } from 'lucide-react'
 import { Box, Divider, Grid, HStack, Stack } from 'styled-system/jsx'
-import { Badge, Button, Card, Heading, Icon, Link, RadioButtonGroup, Text } from '@/components/ui'
+import { Badge, Button, Card, Heading, Icon, Link, RadioCardGroup, Text } from '@/components/ui'
 import { NumberInput } from '~/components/ui/number-input'
 import { RatingGroup } from '~/components/ui/rating-group'
 
@@ -88,24 +88,26 @@ const SizePicker = () => {
         <Text textStyle="sm" fontWeight="medium">
           Size
         </Text>
-        <RadioButtonGroup.Root>
+        <RadioCardGroup.Root flexDirection="row" variant="solid">
           {sizes.map((option, id) => (
-            <RadioButtonGroup.Item
+            <RadioCardGroup.Item
               key={id}
               value={option.size}
-              disabled={Boolean(option.disabled)}
-              px="0"
+              disabled={option.disabled}
+              p="0"
+              alignItems="center"
+              justifyContent="center"
+              boxSize="10"
               _disabled={{
                 backgroundImage:
                   'linear-gradient(315deg, transparent 49%, var(--colors-gray-6) 49%, var(--colors-gray-6) 51%, transparent 51%)',
               }}
             >
-              <RadioButtonGroup.ItemControl />
-              <RadioButtonGroup.ItemText>{option.size}</RadioButtonGroup.ItemText>
-              <RadioButtonGroup.ItemHiddenInput />
-            </RadioButtonGroup.Item>
+              <RadioCardGroup.ItemText>{option.size}</RadioCardGroup.ItemText>
+              <RadioCardGroup.ItemHiddenInput />
+            </RadioCardGroup.Item>
           ))}
-        </RadioButtonGroup.Root>
+        </RadioCardGroup.Root>
       </Stack>
 
       <HStack color="fg.muted">
