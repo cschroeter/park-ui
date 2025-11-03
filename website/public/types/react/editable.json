@@ -72,7 +72,7 @@
   "Root": {
     "props": {
       "size": {
-        "type": "'sm' | 'md' | 'lg'",
+        "type": "'2xs' | 'xs' | 'sm' | 'md' | 'lg'",
         "defaultValue": "'md'",
         "isRequired": false
       },
