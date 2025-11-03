@@ -4,7 +4,7 @@ export const textarea = defineRecipe({
   className: 'textarea',
   jsx: ['Textarea', 'Field.Textarea'],
   base: {
-    '--error-color': 'colors.fg.error',
+    '--error-color': 'colors.error',
     '--focus-color': 'colors.colorPalette.solid',
     appearance: 'none',
     borderRadius: 'l2',

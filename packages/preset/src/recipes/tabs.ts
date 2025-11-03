@@ -64,52 +64,20 @@ export const tabs = defineSlotRecipe({
   variants: {
     size: {
       xs: {
-        list: {
-          gap: '1',
-        },
-        trigger: {
-          h: '8',
-          minW: '8',
-          textStyle: 'xs',
-          px: '3',
-          gap: '2',
-        },
+        list: { gap: '1' },
+        trigger: { h: '8', minW: '8', textStyle: 'xs', px: '3', gap: '2' },
       },
       sm: {
-        list: {
-          gap: '1',
-        },
-        trigger: {
-          h: '9',
-          minW: '9',
-          textStyle: 'sm',
-          px: '3.5',
-          gap: '2',
-        },
+        list: { gap: '1' },
+        trigger: { h: '9', minW: '9', textStyle: 'sm', px: '3.5', gap: '2' },
       },
       md: {
-        list: {
-          gap: '1',
-        },
-        trigger: {
-          h: '10',
-          minW: '10',
-          textStyle: 'sm',
-          px: '4',
-          gap: '2',
-        },
+        list: { gap: '1' },
+        trigger: { h: '10', minW: '10', textStyle: 'sm', px: '4', gap: '2' },
       },
       lg: {
-        list: {
-          gap: '1',
-        },
-        trigger: {
-          h: '11',
-          minW: '11',
-          textStyle: 'md',
-          px: '4.5',
-          gap: '2',
-        },
+        list: { gap: '1' },
+        trigger: { h: '11', minW: '11', textStyle: 'md', px: '4.5', gap: '2' },
       },
     },
     variant: {
@@ -118,7 +86,6 @@ export const tabs = defineSlotRecipe({
           alignItems: 'stretch',
         },
         list: {
-          borderColor: 'border.default',
           _horizontal: {
             borderBottomWidth: '1px',
           },
@@ -161,9 +128,9 @@ export const tabs = defineSlotRecipe({
       },
       enclosed: {
         list: {
-          '--border-color': '{colors.border.subtle}',
           background: 'gray.a2',
-          boxShadow: 'inset 0 0 0px 1px var(--border-color)',
+          boxShadow: 'inset 0 0 0px 1px var(--shadow-color)',
+          boxShadowColor: 'border',
           borderRadius: 'l3',
           p: '1',
         },

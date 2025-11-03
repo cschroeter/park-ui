@@ -41,6 +41,7 @@ export const preset = definePreset({
             subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
           },
           border: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.4}' } },
+          error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
           // deprecated
           bg: {
             default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },

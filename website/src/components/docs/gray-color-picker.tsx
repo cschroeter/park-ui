@@ -31,7 +31,7 @@ export const GrayColorPicker = (props: Props) => {
             key={id}
             value={gray}
             _checked={{
-              borderColor: 'border.outline',
+              borderColor: 'border',
               boxShadow: '0 0 0 1px var(--colors-border-outline)',
             }}
             justifyContent="flex-start"

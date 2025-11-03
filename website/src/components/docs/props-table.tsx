@@ -50,7 +50,7 @@ export const PropsTable = async (props: Props) => {
                 {name}
               </Code>
               {property.isRequired && (
-                <Span color="fg.error" ms="1">
+                <Span color="error" ms="1">
                   *
                 </Span>
               )}

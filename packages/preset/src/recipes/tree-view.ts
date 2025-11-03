@@ -11,7 +11,7 @@ export const treeView = defineSlotRecipe({
     branch: {
       "&[data-depth='1'] > [data-part='branch-content']": {
         _before: {
-          bg: 'border.default',
+          bg: 'border',
           content: '""',
           height: 'full',
           left: '3',
