@@ -66,7 +66,7 @@ export const checkbox = defineSlotRecipe({
               color: 'colorPalette.solid.fg',
             },
             _invalid: {
-              background: 'bg.error',
+              background: 'error',
             },
           },
         },
