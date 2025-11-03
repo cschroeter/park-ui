@@ -13,7 +13,7 @@
     "typedoc": "scripts typedoc --out ../../website/public/types/solid"
   },
   "dependencies": {
-    "@ark-ui/solid": "5.27.0",
+    "@ark-ui/solid": "5.27.1",
     "lucide-solid": "0.552.0",
     "solid-js": "1.9.10"
   },
@@ -23,11 +23,11 @@
     "@pandacss/preset-panda": "1.4.3",
     "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*",
-    "@rsbuild/core": "1.6.0",
-    "@storybook/addon-a11y": "10.0.2",
-    "@storybook/addon-themes": "10.0.2",
+    "@rsbuild/core": "1.6.1",
+    "@storybook/addon-a11y": "10.0.3",
+    "@storybook/addon-themes": "10.0.3",
     "lorem-ipsum": "2.0.8",
-    "storybook": "10.0.2",
+    "storybook": "10.0.3",
     "storybook-solidjs-vite": "10.0.5",
     "typescript": "5.9.3",
     "vite": "7.1.12",

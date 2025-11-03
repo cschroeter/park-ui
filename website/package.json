@@ -10,7 +10,7 @@
     "lint": "biome lint ./src"
   },
   "dependencies": {
-    "@ark-ui/react": "5.27.0",
+    "@ark-ui/react": "5.27.1",
     "@icons-pack/react-simple-icons": "13.8.0",
     "@park-ui/react": "workspace:*",
     "change-case": "5.4.4",
@@ -42,7 +42,7 @@
     "@pandacss/preset-base": "1.4.3",
     "@pandacss/preset-panda": "1.4.3",
     "@park-ui/preset": "workspace:*",
-    "@types/node": "24.9.2",
+    "@types/node": "24.10.0",
     "@types/hast": "3.0.4",
     "@types/mdast": "4.0.4",
     "@types/react": "19.2.2",

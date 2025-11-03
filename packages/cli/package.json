@@ -67,7 +67,7 @@
     "@pandacss/dev": "1.4.3",
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "24.9.2",
+    "@types/node": "24.10.0",
     "release-it": "19.0.5",
     "tsup": "8.5.0",
     "typescript": "5.9.3"
