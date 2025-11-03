@@ -40,7 +40,7 @@
       "path": "conditions.ts"
     },
     {
-      "content": "import { defineGlobalStyles } from '@pandacss/dev'\n\nexport const globalCss = defineGlobalStyles({\n  extend: {\n    '*, *::before, *::after': {\n      borderColor: 'gray.a4',\n    },\n    '*::selection': {\n      bg: 'colorPalette.a3',\n    },\n    '*::placeholder': {\n      opacity: 1,\n      color: 'fg.subtle',\n    },\n    html: {\n      colorPalette: 'gray',\n    },\n    body: {\n      background: 'gray.1',\n      color: 'fg.default',\n    },\n  },\n})\n",
+      "content": "export const globalCss = {\n  extend: {\n    html: {\n      '--global-color-border': 'colors.border',\n      '--global-color-focus-ring': 'colors.colorPalette.solid.bg',\n      '--global-color-placeholder': 'colors.fg.subtle',\n      '--global-color-selection': 'colors.colorPalette.subtle.bg',\n      colorPalette: 'gray',\n    },\n    body: {\n      background: 'gray.1',\n      color: 'fg.default',\n    },\n  },\n}\n",
       "type": "registry:theme",
       "path": "global-css.ts"
     },
@@ -55,7 +55,7 @@
       "path": "layer-styles.ts"
     },
     {
-      "content": "import { defineTextStyles } from '@pandacss/dev'\n\nexport const textStyles = defineTextStyles({\n  xs: { value: { fontSize: 'xs', lineHeight: '1.125rem' } },\n  sm: { value: { fontSize: 'sm', lineHeight: '1.25rem' } },\n  md: { value: { fontSize: 'md', lineHeight: '1.5rem' } },\n  lg: { value: { fontSize: 'lg', lineHeight: '1.75rem' } },\n  xl: { value: { fontSize: 'xl', lineHeight: '1.875rem' } },\n  '2xl': { value: { fontSize: '2xl', lineHeight: '2rem' } },\n  '3xl': { value: { fontSize: '3xl', lineHeight: '2.375rem' } },\n  '4xl': { value: { fontSize: '4xl', lineHeight: '2.75rem', letterSpacing: '-0.02em' } },\n  '5xl': { value: { fontSize: '5xl', lineHeight: '3.75rem', letterSpacing: '-0.02em' } },\n  '6xl': { value: { fontSize: '6xl', lineHeight: '4.5rem', letterSpacing: '-0.02em' } },\n  '7xl': { value: { fontSize: '7xl', lineHeight: '5.75rem', letterSpacing: '-0.02em' } },\n})\n",
+      "content": "import { defineTextStyles } from '@pandacss/dev'\n\nexport const textStyles = defineTextStyles({\n  xs: { value: { fontSize: 'xs', lineHeight: '1.125rem' } },\n  sm: { value: { fontSize: 'sm', lineHeight: '1.25rem' } },\n  md: { value: { fontSize: 'md', lineHeight: '1.5rem' } },\n  lg: { value: { fontSize: 'lg', lineHeight: '1.75rem' } },\n  xl: { value: { fontSize: 'xl', lineHeight: '1.875rem' } },\n  '2xl': { value: { fontSize: '2xl', lineHeight: '2rem' } },\n  '3xl': { value: { fontSize: '3xl', lineHeight: '2.375rem' } },\n  '4xl': { value: { fontSize: '4xl', lineHeight: '2.75rem', letterSpacing: '-0.02em' } },\n  '5xl': { value: { fontSize: '5xl', lineHeight: '3.75rem', letterSpacing: '-0.02em' } },\n  '6xl': { value: { fontSize: '6xl', lineHeight: '4.5rem', letterSpacing: '-0.02em' } },\n  '7xl': { value: { fontSize: '7xl', lineHeight: '5.75rem', letterSpacing: '-0.02em' } },\n\n  label: { value: { fontSize: 'sm', lineHeight: '1.25rem', fontWeight: 'medium' } },\n})\n",
       "type": "registry:theme",
       "path": "text-styles.ts"
     }
@@ -159,6 +159,18 @@
                     "_light": "{colors.gray.10}",
                     "_dark": "{colors.gray.10}"
                   }
+                }
+              },
+              "border": {
+                "value": {
+                  "_light": "{colors.gray.4}",
+                  "_dark": "{colors.gray.4}"
+                }
+              },
+              "error": {
+                "value": {
+                  "_light": "{colors.red.9}",
+                  "_dark": "{colors.red.9}"
                 }
               }
             },
