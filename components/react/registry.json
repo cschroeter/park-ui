@@ -972,52 +972,27 @@
       ]
     },
     {
-      "name": "radio-button-group",
+      "name": "radio-card-group",
       "type": "registry:ui",
       "dependencies": ["@ark-ui/react", "react"],
       "files": [
         {
-          "path": "src/components/ui/radio-button-group.tsx",
+          "path": "src/components/ui/radio-card-group.tsx",
           "type": "registry:ui",
-          "exports": "export * as RadioButtonGroup from './radio-button-group'"
+          "exports": "export * as RadioCardGroup from './radio-card-group'"
         }
       ],
-      "registryDependencies": ["radio-button-group-recipe"]
+      "registryDependencies": ["radio-card-group-recipe"]
     },
     {
-      "name": "radio-button-group-recipe",
+      "name": "radio-card-group-recipe",
       "type": "registry:recipe",
       "dependencies": ["@pandacss/dev", "@ark-ui/react"],
       "files": [
         {
-          "path": "../../packages/preset/src/recipes/radio-button-group.ts",
+          "path": "../../packages/preset/src/recipes/radio-card-group.ts",
           "type": "registry:recipe",
-          "imports": "import { radioButtonGroup } from './radio-button-group'"
-        }
-      ]
-    },
-    {
-      "name": "radio-card",
-      "type": "registry:ui",
-      "dependencies": ["@ark-ui/react", "react"],
-      "files": [
-        {
-          "path": "src/components/ui/radio-card.tsx",
-          "type": "registry:ui",
-          "exports": "export * as RadioCard from './radio-card'"
-        }
-      ],
-      "registryDependencies": ["radio-card-recipe"]
-    },
-    {
-      "name": "radio-card-recipe",
-      "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
-      "files": [
-        {
-          "path": "../../packages/preset/src/recipes/radio-card.ts",
-          "type": "registry:recipe",
-          "imports": "import { radioCard } from './radio-card'"
+          "imports": "import { radioCardGroup } from './radio-card-group'"
         }
       ]
     },

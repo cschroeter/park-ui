@@ -308,19 +308,11 @@
     "type": "registry:recipe"
   },
   {
-    "name": "radio-button-group",
+    "name": "radio-card-group",
     "type": "registry:ui"
   },
   {
-    "name": "radio-button-group-recipe",
-    "type": "registry:recipe"
-  },
-  {
-    "name": "radio-card",
-    "type": "registry:ui"
-  },
-  {
-    "name": "radio-card-recipe",
+    "name": "radio-card-group-recipe",
     "type": "registry:recipe"
   },
   {
