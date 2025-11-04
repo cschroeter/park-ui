@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
 
 const meta: Meta = {
-  title: 'Forms / Radio Card',
+  title: 'Forms / Radio Card Group',
 }
 
 export default meta
