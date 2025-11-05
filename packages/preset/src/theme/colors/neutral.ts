@@ -42,9 +42,9 @@ export const neutral = defineSemanticTokens.colors({
   },
   surface: {
     bg: {
-      DEFAULT: { value: { _light: '{colors.white}', _dark: '{colors.gray.2}' } },
-      hover: { value: { _light: '{colors.gray.2}', _dark: '{colors.gray.3}' } },
-      active: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
+      DEFAULT: { value: { _light: '{colors.white}', _dark: '{colors.gray.1}' } },
+      hover: { value: { _light: '{colors.gray.2}', _dark: '{colors.gray.2}' } },
+      active: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.3}' } },
     },
     border: {
       DEFAULT: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } },
