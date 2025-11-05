@@ -1,7 +1,7 @@
 import { forwardRef, type ReactNode } from 'react'
-import { Field as ParkField } from '@/components/ui'
+import { Field as StyledField } from '@/components/ui'
 
-export interface FieldProps extends Omit<ParkField.RootProps, 'label'> {
+export interface FieldProps extends Omit<StyledField.RootProps, 'label'> {
   label?: ReactNode
   helperText?: ReactNode
   errorText?: ReactNode
@@ -11,16 +11,16 @@ export interface FieldProps extends Omit<ParkField.RootProps, 'label'> {
 export const Field = forwardRef<HTMLDivElement, FieldProps>(function Field(props, ref) {
   const { label, children, helperText, errorText, optionalText, ...rest } = props
   return (
-    <ParkField.Root ref={ref} {...rest}>
+    <StyledField.Root ref={ref} {...rest}>
       {label && (
-        <ParkField.Label>
+        <StyledField.Label>
           {label}
-          <ParkField.RequiredIndicator fallback={optionalText} />
-        </ParkField.Label>
+          <StyledField.RequiredIndicator fallback={optionalText} />
+        </StyledField.Label>
       )}
       {children}
-      {helperText && <ParkField.HelperText>{helperText}</ParkField.HelperText>}
-      {errorText && <ParkField.ErrorText>{errorText}</ParkField.ErrorText>}
-    </ParkField.Root>
+      {helperText && <StyledField.HelperText>{helperText}</StyledField.HelperText>}
+      <StyledField.ErrorText>{errorText}</StyledField.ErrorText>
+    </StyledField.Root>
   )
 })
