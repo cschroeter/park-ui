@@ -14,7 +14,7 @@
     "@icons-pack/react-simple-icons": "13.8.0",
     "@park-ui/react": "workspace:*",
     "change-case": "5.4.4",
-    "effect": "3.18.4",
+    "effect": "3.19.0",
     "framer": "2.4.1",
     "framer-motion": "12.23.24",
     "fumadocs-core": "16.0.3",
