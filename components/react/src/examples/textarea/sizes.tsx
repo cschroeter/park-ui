@@ -2,12 +2,13 @@ import { Stack } from 'styled-system/jsx'
 import { Textarea } from '@/components/ui'
 
 export const App = () => {
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl'] as const
+
   return (
     <Stack gap="4">
-      <Textarea placeholder="size (sm)" size="sm" />
-      <Textarea placeholder="size (md)" size="md" />
-      <Textarea placeholder="size (lg)" size="lg" />
-      <Textarea placeholder="size (xl)" size="xl" />
+      {sizes.map((size, index) => (
+        <Textarea key={size} placeholder={`size (${size})`} size={size} rows={index + 1} />
+      ))}
     </Stack>
   )
 }
