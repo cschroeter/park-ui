@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/complexity/useLiteralKeys: Need to improve types in Panda CSS */
 import { numberInputAnatomy } from '@ark-ui/react/number-input'
 import { defineSlotRecipe } from '@pandacss/dev'
 import { input } from './input'
@@ -17,10 +16,10 @@ const trigger = {
     boxSize: '1em',
   },
   _hover: {
-    bg: 'bg.muted',
+    bg: 'gray.surface.bg.hover',
   },
   _active: {
-    bg: 'bg.emphasized',
+    bg: 'gray.surface.bg.active',
   },
 }
 
@@ -76,30 +75,33 @@ export const numberInput = defineSlotRecipe({
         control: {
           '--stepper-width': 'sizes.4.5',
         },
-        input: input.variants?.['size']?.['sm'],
+        input: input.variants.size.sm,
       },
       md: {
         control: {
           '--stepper-width': 'sizes.5',
         },
-        input: input.variants?.['size']?.['md'],
+        input: input.variants.size.md,
       },
       lg: {
         control: {
           '--stepper-width': 'sizes.5.5',
         },
-        input: input.variants?.['size']?.['lg'],
+        input: input.variants.size.lg,
       },
       xl: {
         control: {
           '--stepper-width': 'sizes.6',
         },
-        input: input.variants?.['size']?.['xl'],
+        input: input.variants.size.xl,
       },
     },
     variant: {
       outline: {
-        input: input.variants?.['variant']?.['outline'],
+        input: input.variants.variant.outline,
+      },
+      surface: {
+        input: input.variants.variant.surface,
       },
     },
   },

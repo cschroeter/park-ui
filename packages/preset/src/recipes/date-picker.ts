@@ -71,7 +71,7 @@ export const datePicker = defineSlotRecipe({
         },
       },
       '&[data-in-range]': {
-        background: 'bg.muted',
+        background: 'gray.subtle.bg',
       },
       _selected: {
         _before: {
