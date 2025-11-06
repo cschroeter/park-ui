@@ -40,7 +40,7 @@
       "path": "conditions.ts"
     },
     {
-      "content": "export const globalCss = {\n  extend: {\n    html: {\n      '--global-color-border': 'colors.border',\n      '--global-color-focus-ring': 'colors.colorPalette.solid.bg',\n      '--global-color-placeholder': 'colors.fg.subtle',\n      '--global-color-selection': 'colors.colorPalette.subtle.bg',\n      colorPalette: 'gray',\n    },\n    body: {\n      background: 'gray.1',\n      color: 'fg.default',\n    },\n  },\n}\n",
+      "content": "export const globalCss = {\n  extend: {\n    '*': {\n      '--global-color-border': 'colors.border',\n      '--global-color-placeholder': 'colors.fg.subtle',\n      '--global-color-selection': 'colors.colorPalette.subtle.bg',\n      '--global-color-focus-ring': 'colors.colorPalette.solid.bg',\n    },\n    html: {\n      colorPalette: 'gray',\n    },\n    body: {\n      background: 'gray.1',\n      color: 'fg.default',\n    },\n  },\n}\n",
       "type": "registry:theme",
       "path": "global-css.ts"
     },
@@ -50,7 +50,7 @@
       "path": "keyframes.ts"
     },
     {
-      "content": "import { defineLayerStyles } from '@pandacss/dev'\n\nexport const layerStyles = defineLayerStyles({\n  disabled: {\n    value: {\n      cursor: 'not-allowed',\n      opacity: '0.50',\n      filter: 'grayscale(100%)',\n    },\n  },\n})\n",
+      "content": "import { defineLayerStyles } from '@pandacss/dev'\n\nexport const layerStyles = defineLayerStyles({\n  disabled: {\n    value: {\n      cursor: 'not-allowed',\n      opacity: '0.67',\n      filter: 'grayscale(100%)',\n    },\n  },\n})\n",
       "type": "registry:theme",
       "path": "layer-styles.ts"
     },
