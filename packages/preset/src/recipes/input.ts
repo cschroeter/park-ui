@@ -13,7 +13,6 @@ export const input = {
     position: 'relative',
     textAlign: 'start',
     transition: 'colors',
-    transitionProperty: 'box-shadow, border-color',
     width: '100%',
     _disabled: {
       layerStyle: 'disabled',
@@ -59,9 +58,9 @@ export const input = {
       },
       flushed: {
         borderBottomWidth: '1px',
-        borderBottomColor: 'gray.a7',
+        borderBottomColor: 'gray.outline.border',
         borderRadius: '0',
-        color: 'gray.12',
+        color: 'fg.default',
         px: '0',
         _invalid: {
           borderColor: 'error',

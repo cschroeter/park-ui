@@ -86,7 +86,7 @@ export const switchRecipe = defineSlotRecipe({
       solid: {
         control: {
           borderRadius: 'full',
-          bg: 'gray.a5',
+          bg: 'gray.subtle.bg',
           focusVisibleRing: 'outside',
           _checked: {
             bg: 'colorPalette.solid.bg',

@@ -7,7 +7,6 @@ export const link = defineRecipe({
     borderRadius: 'l1',
     cursor: 'pointer',
     display: 'inline-flex',
-    focusRingColor: 'colorPalette.surface.fg',
     focusVisibleRing: 'outside',
     fontWeight: 'medium',
     gap: '1.5',

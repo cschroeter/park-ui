@@ -80,7 +80,7 @@ export const combobox = defineSlotRecipe({
         content: '""',
         width: '100%',
         height: '1px',
-        bg: 'gray.4',
+        bg: 'border',
       },
     },
     itemIndicator: {

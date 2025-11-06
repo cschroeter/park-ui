@@ -9,7 +9,7 @@ export const App = () => {
 
   const items = useMemo(
     () =>
-      Array.from({ length: 1000 }, (_, i) => ({
+      Array.from({ length: 100 }, (_, i) => ({
         id: i,
         name: `${i + 1}`,
       })),
@@ -52,17 +52,19 @@ export const App = () => {
   return (
     <ScrollArea.Root height="72">
       <ScrollArea.Viewport ref={scrollRef}>
-        <ScrollArea.Content {...contentProps}>
-          {virtualizer.getVirtualItems().map((virtualItem) => {
-            const item = items[virtualItem.index]
-            return (
-              <Box key={virtualItem.key} {...getItemProps(virtualItem)}>
-                <Center h="20" w="full" bg="gray.a3" borderRadius="l2">
-                  {item.name}
-                </Center>
-              </Box>
-            )
-          })}
+        <ScrollArea.Content>
+          <Box {...contentProps}>
+            {virtualizer.getVirtualItems().map((virtualItem) => {
+              const item = items[virtualItem.index]
+              return (
+                <Box key={virtualItem.key} {...getItemProps(virtualItem)}>
+                  <Center h="20" w="full" bg="gray.a3" borderRadius="l2">
+                    {item.name}
+                  </Center>
+                </Box>
+              )
+            })}
+          </Box>
         </ScrollArea.Content>
       </ScrollArea.Viewport>
       <ScrollArea.Scrollbar bg="transparent">

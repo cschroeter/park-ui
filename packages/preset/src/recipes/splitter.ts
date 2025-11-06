@@ -20,7 +20,7 @@ export const splitter = defineSlotRecipe({
       borderRadius: 'l3',
       transition: 'common',
       outline: '0',
-      background: 'gray.a8',
+      background: 'gray.subtle.bg',
       _horizontal: {
         minWidth: '1.5',
       },

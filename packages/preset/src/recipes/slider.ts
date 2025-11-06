@@ -41,7 +41,7 @@ export const slider = defineSlotRecipe({
       display: 'flex',
       alignItems: 'center',
       gap: 'calc(var(--slider-thumb-size) / 2)',
-      color: 'gray.11',
+      color: 'fg.muted',
       textStyle: 'xs',
     },
     markerIndicator: {
@@ -114,7 +114,7 @@ export const slider = defineSlotRecipe({
           bg: 'colorPalette.solid.bg',
         },
         track: {
-          bg: 'gray.a4',
+          bg: 'border',
         },
       },
     },

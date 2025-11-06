@@ -24,7 +24,6 @@ export const textarea = defineRecipe({
       outline: {
         borderWidth: '1px',
         borderColor: 'gray.outline.border',
-        focusRingColor: 'colorPalette.solid.bg',
         focusVisibleRing: 'inside',
         _invalid: {
           borderColor: 'error',
@@ -35,7 +34,6 @@ export const textarea = defineRecipe({
         bg: 'gray.surface.bg',
         borderWidth: '1px',
         borderColor: 'gray.surface.border',
-        focusRingColor: 'colorPalette.solid.bg',
         focusVisibleRing: 'inside',
         _invalid: {
           borderColor: 'error',
@@ -47,7 +45,6 @@ export const textarea = defineRecipe({
         borderColor: 'transparent',
         bg: 'gray.subtle.bg',
         color: 'gray.subtle.fg',
-        focusRingColor: 'colorPalette.solid.bg',
         focusVisibleRing: 'inside',
         _invalid: {
           borderColor: 'error',

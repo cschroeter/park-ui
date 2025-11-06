@@ -68,7 +68,7 @@ export const scrollArea = defineSlotRecipe({
       auto: {
         scrollbar: {
           '&[data-scrolling]': {
-            '--thumb-bg': '{colors.gray.a8}',
+            '--thumb-bg': '{colors.gray.subtle.bg.active}',
           },
         },
       },
@@ -82,34 +82,26 @@ export const scrollArea = defineSlotRecipe({
           },
         },
         scrollbar: {
-          bg: 'gray.a3',
+          bg: 'gray.subtle.bg',
           borderRadius: 'full',
         },
         thumb: {
-          '--thumb-bg': '{colors.gray.a8}',
+          '--thumb-bg': '{colors.gray.subtle.bg.active}',
         },
       },
     },
     size: {
       xs: {
-        root: {
-          '--thumb-size': 'sizes.1',
-        },
+        root: { '--thumb-size': 'sizes.1' },
       },
       sm: {
-        root: {
-          '--thumb-size': 'sizes.1.5',
-        },
+        root: { '--thumb-size': 'sizes.1.5' },
       },
       md: {
-        root: {
-          '--thumb-size': 'sizes.2',
-        },
+        root: { '--thumb-size': 'sizes.2' },
       },
       lg: {
-        root: {
-          '--thumb-size': 'sizes.2.5',
-        },
+        root: { '--thumb-size': 'sizes.2.5' },
       },
     },
   },
