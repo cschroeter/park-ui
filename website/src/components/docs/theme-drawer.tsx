@@ -3,7 +3,6 @@ import { Portal } from '@ark-ui/react/portal'
 import { Undo2Icon, Wand2Icon } from 'lucide-react'
 import { Button, CloseButton, Drawer, IconButton } from '@/components/ui'
 import { useTheme } from '~/lib/use-theme'
-import { ColorModeButton } from '../color-mode-button'
 import { FrameworkSelect } from '../framework-select'
 import { AccentColorPicker } from './accent-color-picker'
 import { BorderRadiusSlider } from './border-radius-slider'
@@ -54,7 +53,6 @@ export const ThemeDrawer = ({ hero }: Props) => {
               </Drawer.CloseTrigger>
             </Drawer.Header>
             <Drawer.Body gap="4">
-              <ColorModeButton />
               <FrameworkSelect framework={framework} onValueChange={setFramework} />
               <FontFamilySelect font={font} onValueChange={setFont} />
               <GrayColorPicker grayColor={grayColor} onValueChange={setGrayColor} />

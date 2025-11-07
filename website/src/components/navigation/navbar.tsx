@@ -4,6 +4,7 @@ import { Box, HStack } from 'styled-system/jsx'
 import { IconButton } from '@/components/ui'
 import { ParkIcon } from '~/components/icons'
 import { CommandMenu } from '../cmd-menu'
+import { ColorModeButton } from '../color-mode-button'
 import { ThemeDrawer } from '../docs/theme-drawer'
 import { GithubButton } from './github-button'
 import { NavbarLink } from './navbar-link'
@@ -32,6 +33,7 @@ export const Navbar = () => {
             <NavbarLink href="/changelog">Changelog</NavbarLink>
             <GithubButton />
             <ThemeDrawer />
+            <ColorModeButton />
           </HStack>
         </HStack>
         <Box hideFrom="md">
