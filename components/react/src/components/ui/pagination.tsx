@@ -19,20 +19,20 @@ export const NextTrigger = withContext(Pagination.NextTrigger, 'nextTrigger')
 export { PaginationContext as Context } from '@ark-ui/react/pagination'
 
 export interface PaginationItemsProps extends React.HTMLAttributes<HTMLElement> {
-  render: (page: { type: 'page'; value: number }) => React.ReactNode
+  render: (page: { type: 'page'; value: number; selected: boolean }) => React.ReactNode
   ellipsis?: React.ReactElement | undefined
 }
 
 export const Items = (props: PaginationItemsProps) => {
-  const { pages } = usePaginationContext()
+  const ctx = usePaginationContext()
   const { render, ellipsis, ...rest } = props
 
-  return pages.map((page, index) => {
+  return ctx.pages.map((page, index) => {
     if (page.type === 'ellipsis') {
       return (
         <Ellipsis asChild key={index} index={index} {...rest}>
           {ellipsis || (
-            <IconButton as="span">
+            <IconButton as="span" colorPalette="gray">
               <EllipsisIcon />
             </IconButton>
           )}
@@ -42,7 +42,7 @@ export const Items = (props: PaginationItemsProps) => {
 
     return (
       <Item asChild key={index} type="page" value={page.value} {...rest}>
-        {render(page)}
+        {render({ ...page, selected: ctx.page === page.value })}
       </Item>
     )
   })

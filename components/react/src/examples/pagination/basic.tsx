@@ -7,17 +7,23 @@ export const App = () => {
     <Pagination.Root count={20} pageSize={2} defaultPage={1}>
       <ButtonGroup variant="outline" size="sm">
         <Pagination.PrevTrigger asChild>
-          <IconButton>
+          <IconButton colorPalette="gray">
             <ChevronLeftIcon />
           </IconButton>
         </Pagination.PrevTrigger>
         <Pagination.Items
-          render={(page) => (
-            <IconButton variant={{ base: 'outline', _selected: 'solid' }}>{page.value}</IconButton>
-          )}
+          render={(page) =>
+            page.selected ? (
+              <IconButton variant="solid">{page.value}</IconButton>
+            ) : (
+              <IconButton variant="outline" colorPalette="gray">
+                {page.value}
+              </IconButton>
+            )
+          }
         />
         <Pagination.NextTrigger asChild>
-          <IconButton>
+          <IconButton colorPalette="gray">
             <ChevronRightIcon />
           </IconButton>
         </Pagination.NextTrigger>
