@@ -22,10 +22,14 @@ const nextConfig: NextConfig = {
         destination: '/docs/introduction',
         permanent: false,
       },
+    ]
+  },
+
+  async rewrites() {
+    return [
       {
         source: '/docs/:path*.mdx',
-        destination: '/llms.txt/:path*.mdx',
-        permanent: false,
+        destination: '/mdx/:path*',
       },
     ]
   },

@@ -43,7 +43,7 @@ const ActionMenu = (props: Props) => {
         <Menu.Positioner>
           <Menu.Content>
             <Menu.Item value="markdown" asChild>
-              <a href={pageUrl} target="_blank" rel="noreferrer">
+              <a href={`/docs/${slug}.mdx`} target="_blank" rel="noreferrer">
                 <ExternalLinkIcon />
                 View as Markdown
               </a>
