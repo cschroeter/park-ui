@@ -11,8 +11,10 @@ export const Root = withProvider(ScrollArea.Root, 'root')
 export const RootProvider = withProvider(ScrollArea.Root, 'root')
 export const Content = withContext(ScrollArea.Content, 'content')
 export const Corner = withContext(ScrollArea.Corner, 'corner')
-export const Scrollbar = withContext(ScrollArea.Scrollbar, 'scrollbar')
 export const Thumb = withContext(ScrollArea.Thumb, 'thumb')
+export const Scrollbar = withContext(ScrollArea.Scrollbar, 'scrollbar', {
+  defaultProps: { children: <Thumb /> },
+})
 export const Viewport = withContext(ScrollArea.Viewport, 'viewport')
 
 export { ScrollAreaContext as Context } from '@ark-ui/react/scroll-area'

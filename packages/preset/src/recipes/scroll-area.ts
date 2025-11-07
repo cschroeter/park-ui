@@ -24,9 +24,23 @@ export const scrollArea = defineSlotRecipe({
       '&::-webkit-scrollbar': {
         display: 'none',
       },
-    },
-    content: {
-      minWidth: '100%',
+      '&[data-overflow-x] [data-pinned]': {
+        _after: {
+          content: '""',
+          position: 'absolute',
+          pointerEvents: 'none',
+          top: '0',
+          bottom: '-1px',
+          width: '32px',
+        },
+      },
+      '&[data-overflow-x]:not([data-at-left]) [data-pinned="left"]': {
+        _after: {
+          insetInlineEnd: '0',
+          translate: '100% 0',
+          boxShadow: 'inset',
+        },
+      },
     },
     scrollbar: {
       alignItems: 'center',
@@ -63,8 +77,12 @@ export const scrollArea = defineSlotRecipe({
     },
     corner: {},
   },
+  defaultVariants: {
+    size: 'md',
+    scrollbar: 'auto',
+  },
   variants: {
-    variant: {
+    scrollbar: {
       auto: {
         scrollbar: {
           '&[data-scrolling]': {
@@ -91,23 +109,10 @@ export const scrollArea = defineSlotRecipe({
       },
     },
     size: {
-      xs: {
-        root: { '--thumb-size': 'sizes.1' },
-      },
-      sm: {
-        root: { '--thumb-size': 'sizes.1.5' },
-      },
-      md: {
-        root: { '--thumb-size': 'sizes.2' },
-      },
-      lg: {
-        root: { '--thumb-size': 'sizes.2.5' },
-      },
+      xs: { root: { '--thumb-size': 'sizes.1' } },
+      sm: { root: { '--thumb-size': 'sizes.1.5' } },
+      md: { root: { '--thumb-size': 'sizes.2' } },
+      lg: { root: { '--thumb-size': 'sizes.2.5' } },
     },
-  },
-
-  defaultVariants: {
-    size: 'md',
-    variant: 'auto',
   },
 })

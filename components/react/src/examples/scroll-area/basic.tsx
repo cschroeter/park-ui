@@ -13,9 +13,7 @@ export const App = () => {
           }}
         />
       </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar>
-        <ScrollArea.Thumb />
-      </ScrollArea.Scrollbar>
+      <ScrollArea.Scrollbar />
       <ScrollArea.Corner />
     </ScrollArea.Root>
   )

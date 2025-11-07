@@ -9,7 +9,7 @@ export const App = () => {
       {sizes.map((size) => (
         <Stack key={size}>
           <Heading as="h3">Size: {size}</Heading>
-          <ScrollArea.Root height="36" size={size} variant="visible">
+          <ScrollArea.Root height="36" size={size} scrollbar="visible">
             <ScrollArea.Viewport>
               <ScrollArea.Content
                 spaceY="3"
@@ -23,9 +23,7 @@ export const App = () => {
                 }}
               />
             </ScrollArea.Viewport>
-            <ScrollArea.Scrollbar>
-              <ScrollArea.Thumb />
-            </ScrollArea.Scrollbar>
+            <ScrollArea.Scrollbar />
             <ScrollArea.Corner />
           </ScrollArea.Root>
         </Stack>

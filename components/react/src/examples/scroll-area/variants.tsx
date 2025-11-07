@@ -8,8 +8,8 @@ export const App = () => {
     <Stack gap="6">
       {variants.map((variant) => (
         <Stack key={variant}>
-          <Heading as="h3">Variant: {variant}</Heading>
-          <ScrollArea.Root height="36" variant={variant}>
+          <Heading as="h3">Scrollbar: {variant}</Heading>
+          <ScrollArea.Root height="36" scrollbar={variant}>
             <ScrollArea.Viewport>
               <ScrollArea.Content
                 spaceY="3"
@@ -19,9 +19,7 @@ export const App = () => {
                 }}
               />
             </ScrollArea.Viewport>
-            <ScrollArea.Scrollbar>
-              <ScrollArea.Thumb />
-            </ScrollArea.Scrollbar>
+            <ScrollArea.Scrollbar />
             <ScrollArea.Corner />
           </ScrollArea.Root>
         </Stack>

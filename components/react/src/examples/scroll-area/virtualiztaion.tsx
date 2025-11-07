@@ -1,73 +1,48 @@
 'use client'
-import { useVirtualizer, type VirtualItem } from '@tanstack/react-virtual'
-import { useCallback, useMemo, useRef } from 'react'
+import { useVirtualizer } from '@tanstack/react-virtual'
+import { useRef } from 'react'
 import { Box, Center } from 'styled-system/jsx'
 import { ScrollArea } from '@/components/ui'
 
 export const App = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  const items = useMemo(
-    () =>
-      Array.from({ length: 100 }, (_, i) => ({
-        id: i,
-        name: `${i + 1}`,
-      })),
-    [],
-  )
-
-  const virtualizer = useVirtualizer({
-    count: items.length,
+  const rowVirtualizer = useVirtualizer({
+    count: 200,
     getScrollElement: () => scrollRef.current,
-    estimateSize: () => 80,
-    gap: 12,
-    overscan: 5,
+    estimateSize: () => 40,
+    gap: 4,
   })
-
-  const contentProps = useMemo(
-    () => ({
-      style: {
-        height: `${virtualizer.getTotalSize()}px`,
-        width: 'full',
-        position: 'relative',
-      } as const,
-    }),
-    [virtualizer],
-  )
-
-  const getItemProps = useCallback(
-    (item: VirtualItem) => ({
-      style: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: `${item.size}px`,
-        transform: `translateY(${item.start}px)`,
-      } as const,
-    }),
-    [],
-  )
 
   return (
     <ScrollArea.Root height="72">
       <ScrollArea.Viewport ref={scrollRef}>
         <ScrollArea.Content>
-          <Box {...contentProps}>
-            {virtualizer.getVirtualItems().map((virtualItem) => {
-              const item = items[virtualItem.index]
-              return (
-                <Box key={virtualItem.key} {...getItemProps(virtualItem)}>
-                  <Center h="20" w="full" bg="gray.a3" borderRadius="l2">
-                    {item.name}
-                  </Center>
-                </Box>
-              )
-            })}
+          <Box
+            position="relative"
+            width="full"
+            style={{
+              height: `${rowVirtualizer.getTotalSize()}px`,
+            }}
+          >
+            {rowVirtualizer.getVirtualItems().map((virtualItem) => (
+              <Center
+                key={virtualItem.key}
+                bg="gray.subtle.bg"
+                position="absolute"
+                inset="0"
+                style={{
+                  height: `${virtualItem.size}px`,
+                  transform: `translateY(${virtualItem.start}px)`,
+                }}
+              >
+                Item #{virtualItem.index}
+              </Center>
+            ))}
           </Box>
         </ScrollArea.Content>
       </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar bg="transparent">
+      <ScrollArea.Scrollbar>
         <ScrollArea.Thumb />
       </ScrollArea.Scrollbar>
     </ScrollArea.Root>
