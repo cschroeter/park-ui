@@ -3,7 +3,7 @@
     "props": {
       "variant": {
         "type": "'solid' | 'surface' | 'outline' | 'subtle' | 'plain'",
-        "defaultValue": "'surface'",
+        "defaultValue": "'subtle'",
         "isRequired": false
       },
       "size": {

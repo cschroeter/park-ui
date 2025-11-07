@@ -111,7 +111,7 @@
       "openDelay": {
         "type": "number",
         "isRequired": false,
-        "defaultValue": "700",
+        "defaultValue": "600",
         "description": "The duration from when the mouse enters the trigger until the hover card opens."
       },
       "positioning": {

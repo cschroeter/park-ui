@@ -21,7 +21,7 @@
   },
   "Root": {
     "props": {
-      "variant": {
+      "scrollbar": {
         "type": "'auto' | 'visible'",
         "defaultValue": "'auto'",
         "isRequired": false

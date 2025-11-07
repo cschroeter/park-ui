@@ -462,5 +462,129 @@
   {
     "name": "tooltip-recipe",
     "type": "registry:recipe"
+  },
+  {
+    "name": "amber",
+    "type": "registry:color"
+  },
+  {
+    "name": "blue",
+    "type": "registry:color"
+  },
+  {
+    "name": "bronze",
+    "type": "registry:color"
+  },
+  {
+    "name": "brown",
+    "type": "registry:color"
+  },
+  {
+    "name": "crimson",
+    "type": "registry:color"
+  },
+  {
+    "name": "cyan",
+    "type": "registry:color"
+  },
+  {
+    "name": "gold",
+    "type": "registry:color"
+  },
+  {
+    "name": "grass",
+    "type": "registry:color"
+  },
+  {
+    "name": "green",
+    "type": "registry:color"
+  },
+  {
+    "name": "indigo",
+    "type": "registry:color"
+  },
+  {
+    "name": "iris",
+    "type": "registry:color"
+  },
+  {
+    "name": "jade",
+    "type": "registry:color"
+  },
+  {
+    "name": "lime",
+    "type": "registry:color"
+  },
+  {
+    "name": "mauve",
+    "type": "registry:color"
+  },
+  {
+    "name": "mint",
+    "type": "registry:color"
+  },
+  {
+    "name": "neutral",
+    "type": "registry:color"
+  },
+  {
+    "name": "olive",
+    "type": "registry:color"
+  },
+  {
+    "name": "orange",
+    "type": "registry:color"
+  },
+  {
+    "name": "pink",
+    "type": "registry:color"
+  },
+  {
+    "name": "plum",
+    "type": "registry:color"
+  },
+  {
+    "name": "purple",
+    "type": "registry:color"
+  },
+  {
+    "name": "red",
+    "type": "registry:color"
+  },
+  {
+    "name": "ruby",
+    "type": "registry:color"
+  },
+  {
+    "name": "sage",
+    "type": "registry:color"
+  },
+  {
+    "name": "sand",
+    "type": "registry:color"
+  },
+  {
+    "name": "sky",
+    "type": "registry:color"
+  },
+  {
+    "name": "slate",
+    "type": "registry:color"
+  },
+  {
+    "name": "teal",
+    "type": "registry:color"
+  },
+  {
+    "name": "tomato",
+    "type": "registry:color"
+  },
+  {
+    "name": "violet",
+    "type": "registry:color"
+  },
+  {
+    "name": "yellow",
+    "type": "registry:color"
   }
 ]

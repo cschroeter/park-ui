@@ -1,8 +1,9 @@
 import { MinusIcon } from 'lucide-react'
-import { Box, Stack } from 'styled-system/jsx'
+import { Stack } from 'styled-system/jsx'
 import { Code, Icon, Span, Table, Text } from '@/components/ui'
 import { getComponentProps } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
+import { ScrollArea } from '../ui/scroll-area'
 
 interface Props {
   /**
@@ -20,11 +21,20 @@ export const PropsTable = async (props: Props) => {
   if (!properties) return null
 
   return (
-    <Box borderWidth="1px" borderRadius="l3" overflow="hidden" my="8" className="not-prose">
+    <ScrollArea
+      className="not-prose"
+      borderWidth="1px"
+      borderRadius="l3"
+      my="8"
+      size="sm"
+      scrollbars="horizontal"
+    >
       <Table.Root variant="surface" colorPalette="gray">
         <Table.Head>
           <Table.Row>
-            <Table.Header>Prop</Table.Header>
+            <Table.Header data-pinned="left" left="0">
+              Prop
+            </Table.Header>
             <Table.Header>Default</Table.Header>
             <Table.Header>Type</Table.Header>
           </Table.Row>
@@ -39,7 +49,7 @@ export const PropsTable = async (props: Props) => {
           )}
           {properties.map(([name, property]) => (
             <Table.Row key={name}>
-              <Table.Cell width="36" verticalAlign="top">
+              <Table.Cell width="36" verticalAlign="top" data-pinned="left" left="0">
                 <Code size="sm" fontWeight="bold" color="fg.default">
                   {name}
                 </Code>
@@ -68,7 +78,7 @@ export const PropsTable = async (props: Props) => {
           ))}
         </Table.Body>
       </Table.Root>
-    </Box>
+    </ScrollArea>
   )
 }
 

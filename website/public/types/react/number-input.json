@@ -57,7 +57,7 @@
         "isRequired": false
       },
       "variant": {
-        "type": "'outline'",
+        "type": "'outline' | 'surface'",
         "defaultValue": "'outline'",
         "isRequired": false
       },

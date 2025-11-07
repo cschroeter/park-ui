@@ -7,7 +7,7 @@
         "isRequired": false
       },
       "size": {
-        "type": "'xs' | 'sm' | 'md' | 'lg'",
+        "type": "'sm' | 'md' | 'lg' | 'xl'",
         "defaultValue": "'md'",
         "isRequired": false
       }

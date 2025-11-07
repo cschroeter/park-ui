@@ -2,13 +2,14 @@ import { Stack } from 'styled-system/jsx'
 import { Code } from '@/components/ui'
 
 export const App = () => {
+  const variants = ['solid', 'surface', 'outline', 'subtle', 'plain'] as const
   return (
-    <Stack alignItems="start">
-      <Code variant="solid">console.log()</Code>
-      <Code variant="surface">console.log()</Code>
-      <Code variant="outline">console.log()</Code>
-      <Code variant="subtle">console.log()</Code>
-      <Code variant="plain">console.log()</Code>
+    <Stack gap="4" alignItems="start">
+      {variants.map((variant) => (
+        <Code key={variant} variant={variant}>
+          console.log()
+        </Code>
+      ))}
     </Stack>
   )
 }

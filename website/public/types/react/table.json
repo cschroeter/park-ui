@@ -2,7 +2,7 @@
   "Root": {
     "props": {
       "variant": {
-        "type": "'outline' | 'plain'",
+        "type": "'surface' | 'plain'",
         "defaultValue": "'plain'",
         "isRequired": false
       },
@@ -23,7 +23,7 @@
         "isRequired": false
       },
       "size": {
-        "type": "'sm' | 'md' | 'lg'",
+        "type": "'md'",
         "defaultValue": "'md'",
         "isRequired": false
       }

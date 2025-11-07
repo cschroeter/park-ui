@@ -7,6 +7,8 @@ import { scrollArea } from 'styled-system/recipes'
 const { withProvider, withContext } = createStyleContext(scrollArea)
 
 export type RootProps = ComponentProps<typeof Root>
+export type ContentProps = ComponentProps<typeof Content>
+
 export const Root = withProvider(ScrollArea.Root, 'root')
 export const RootProvider = withProvider(ScrollArea.Root, 'root')
 export const Content = withContext(ScrollArea.Content, 'content')

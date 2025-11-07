@@ -10,7 +10,7 @@ export const code = defineRecipe({
     fontWeight: 'medium',
     fontFamily: 'code',
     gap: '1',
-    whiteSpace: 'pre-wrap',
+    lineHeight: '1',
   },
   defaultVariants: {
     size: 'md',
@@ -42,26 +42,10 @@ export const code = defineRecipe({
       },
     },
     size: {
-      xs: {
-        textStyle: '2xs',
-        px: '1',
-        minH: '4',
-      },
-      sm: {
-        textStyle: 'xs',
-        px: '1.5',
-        minH: '5',
-      },
-      md: {
-        textStyle: 'sm',
-        px: '2',
-        minH: '6',
-      },
-      lg: {
-        textStyle: 'sm',
-        px: '2.5',
-        minH: '7',
-      },
+      sm: { textStyle: 'xs', height: '4.5', minWidth: '4.5', px: '1' },
+      md: { textStyle: 'sm', height: '5', minWidth: '5', px: '1' },
+      lg: { textStyle: 'sm', height: '5.5', minWidth: '5.5', px: '1' },
+      xl: { textStyle: 'md', height: '6', minWidth: '6', px: '1' },
     },
   },
 })
