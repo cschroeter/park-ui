@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "@ark-ui/solid": "5.27.1",
-    "lucide-solid": "0.552.0",
-    "solid-js": "1.9.10"
+    "lucide-solid": "0.552.0"
   },
   "devDependencies": {
     "@pandacss/dev": "1.4.3",
@@ -23,15 +22,18 @@
     "@pandacss/preset-panda": "1.4.3",
     "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*",
-    "@rsbuild/core": "1.6.3",
     "@storybook/addon-a11y": "10.0.5",
     "@storybook/addon-themes": "10.0.5",
     "lorem-ipsum": "2.0.8",
+    "solid-js": "1.9.10",
     "storybook": "10.0.5",
     "storybook-solidjs-vite": "10.0.5",
     "typescript": "5.9.3",
     "vite": "7.2.2",
     "vite-plugin-solid": "2.11.10",
     "vite-tsconfig-paths": "5.1.4"
+  },
+  "peerDependencies": {
+    "solid-js": ">=1.9.0"
   }
 }
