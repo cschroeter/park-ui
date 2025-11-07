@@ -33,7 +33,7 @@ export const QuickstartGuide = () => {
 
 const link = cva({
   base: {
-    background: 'bg.default',
+    background: 'gray.surface.bg',
     borderRadius: 'l3',
     borderWidth: '1px',
     color: 'fg.default',

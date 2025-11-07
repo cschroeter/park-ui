@@ -24,7 +24,7 @@ export const Step = (props: PropsWithChildren<StepProps>) => {
         <Circle
           size="8"
           color="fg.default"
-          bg="bg.default"
+          bg="gray.surface.bg"
           borderWidth="1px"
           zIndex="1"
           boxShadow="0 0 0 12px var(--colors-bg-surface)"

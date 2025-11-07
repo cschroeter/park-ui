@@ -6,12 +6,7 @@ export const App = () => {
     <Avatar.Root size="lg">
       <Avatar.Fallback name="Christian Busch" />
       <Float placement="bottom-end" offsetX="1" offsetY="1">
-        <Circle
-          bg="colorPalette.solid.bg"
-          size="2"
-          outline="0.2em solid"
-          outlineColor="bg.default"
-        />
+        <Circle bg="colorPalette.solid.bg" size="2" outline="0.2em solid" outlineColor="canvas" />
       </Float>
     </Avatar.Root>
   )

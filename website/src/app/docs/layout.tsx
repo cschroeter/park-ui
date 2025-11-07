@@ -24,7 +24,7 @@ export default async function DocsLayout(props: PropsWithChildren) {
         <GridItem hideBelow="lg" bg="gray.a1" />
         <GridItem
           position="relative"
-          bg="bg.default"
+          bg="gray.surface.bg"
           borderXWidth={{ base: '0', lg: '1px' }}
           py={{ base: '12' }}
         >

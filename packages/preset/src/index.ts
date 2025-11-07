@@ -40,13 +40,12 @@ export const preset = definePreset({
             muted: { value: { _light: '{colors.gray.11}', _dark: '{colors.gray.11}' } },
             subtle: { value: { _light: '{colors.gray.10}', _dark: '{colors.gray.10}' } },
           },
+          canvas: { value: { _light: '{colors.gray.1}', _dark: '{colors.gray.1}' } },
           border: { value: { _light: '{colors.gray.4}', _dark: '{colors.gray.4}' } },
           error: { value: { _light: '{colors.red.9}', _dark: '{colors.red.9}' } },
           // deprecated
           bg: {
-            default: { value: { _light: 'white', _dark: '{colors.gray.1}' } },
             subtle: { value: { _light: '{colors.gray.2}', _dark: '{colors.gray.3}' } },
-            muted: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.4}' } },
           },
         },
         shadows,
