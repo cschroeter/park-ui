@@ -14,7 +14,7 @@
     "@icons-pack/react-simple-icons": "13.8.0",
     "@park-ui/react": "workspace:*",
     "change-case": "5.4.4",
-    "effect": "3.19.0",
+    "effect": "3.19.2",
     "framer": "2.4.1",
     "framer-motion": "12.23.24",
     "fumadocs-core": "16.0.3",
@@ -32,7 +32,7 @@
     "rehype-autolink-headings": "7.1.0",
     "rehype-slug": "6.0.0",
     "remark-directive": "4.0.0",
-    "shiki": "3.14.0",
+    "shiki": "3.15.0",
     "ts-pattern": "5.9.0",
     "unist-util-visit": "5.0.0",
     "zustand": "5.0.8"

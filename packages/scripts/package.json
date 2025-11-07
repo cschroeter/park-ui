@@ -9,7 +9,7 @@
     "@clack/prompts": "0.11.0",
     "@types/fs-extra": "11.0.4",
     "commander": "14.0.2",
-    "effect": "3.19.0",
+    "effect": "3.19.2",
     "fast-glob": "3.3.3",
     "fs-extra": "11.3.2",
     "picocolors": "1.1.1",

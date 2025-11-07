@@ -8,7 +8,7 @@
   "dependencies": {
     "@ark-ui/vue": "5.27.1",
     "lucide-vue-next": "0.552.0",
-    "vue": "3.5.22"
+    "vue": "3.5.23"
   },
   "devDependencies": {
     "@pandacss/dev": "1.4.3",

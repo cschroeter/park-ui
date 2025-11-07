@@ -9,7 +9,7 @@ interface Props {
 export const FigmaKitPreview = (props: Props) =>
   props.variant === 'foundation' ? (
     <Flex
-      bg="bg.subtle"
+      bg="gray.subtle.bg"
       borderRadius="l3"
       borderWidth="1px"
       overflow="hidden"

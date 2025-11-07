@@ -54,7 +54,7 @@
     "@clack/prompts": "1.0.0-alpha.6",
     "commander": "14.0.2",
     "cosmiconfig": "9.0.0",
-    "effect": "3.19.0",
+    "effect": "3.19.2",
     "fs-extra": "11.3.2",
     "magicast": "0.5.1",
     "package-directory": "8.1.0",
@@ -68,7 +68,7 @@
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/node": "24.10.0",
-    "release-it": "19.0.5",
+    "release-it": "19.0.6",
     "tsup": "8.5.0",
     "typescript": "5.9.3"
   },
