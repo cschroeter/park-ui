@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         destination: '/docs/introduction',
         permanent: false,
       },
+      {
+        source: '/docs/:path*.mdx',
+        destination: '/llms.txt/:path*.mdx',
+        permanent: false,
+      },
     ]
   },
 }

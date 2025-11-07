@@ -20,7 +20,7 @@ export const PageHeader = (props: Props) => {
               {subtitle}
             </Text>
           )}
-          <Heading as="h1" textStyle={{ base: '4xl', md: '5xl' }}>
+          <Heading as="h1" textStyle="3xl">
             {title}
           </Heading>
         </Stack>

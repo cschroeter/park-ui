@@ -2,6 +2,7 @@ import { docs } from '.velite'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
+import { CopyPageWidget } from '~/components/docs/copy-page-widget'
 import { MDXContent } from '~/components/docs/mdx-content'
 import { PageHeaderLinks } from '~/components/docs/page-links'
 import { PageFooter } from '~/components/navigation/page-footer'
@@ -33,9 +34,17 @@ export default async function Page(props: Props) {
   return (
     <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" minH="100%">
       <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
-        <PageHeader title={doc.title} description={doc.description}>
-          <PageHeaderLinks links={doc.links} />
-        </PageHeader>
+        <Stack
+          direction={{ base: 'column', sm: 'row' }}
+          justify="space-between"
+          align="start"
+          gap="8"
+        >
+          <PageHeader title={doc.title} description={doc.description}>
+            <PageHeaderLinks links={doc.links} />
+          </PageHeader>
+          <CopyPageWidget slug={doc.slug} content={doc.llm} />
+        </Stack>
         <Divider mt="12" mb="4" />
         <Stack gap={{ base: '12', md: '16' }}>
           <Prose maxW="none">
