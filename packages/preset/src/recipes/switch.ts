@@ -8,7 +8,6 @@ export const switchRecipe = defineSlotRecipe({
   base: {
     root: {
       display: 'inline-flex',
-      gap: '2.5',
       alignItems: 'center',
       position: 'relative',
       verticalAlign: 'middle',
@@ -19,13 +18,9 @@ export const switchRecipe = defineSlotRecipe({
       },
     },
     label: {
-      lineHeight: '1',
-      userSelect: 'none',
-      fontSize: 'sm',
       fontWeight: 'medium',
-      _disabled: {
-        color: 'fg.disabled',
-      },
+      userSelect: 'none',
+      lineHeight: '1',
     },
     indicator: {
       position: 'absolute',
@@ -48,15 +43,15 @@ export const switchRecipe = defineSlotRecipe({
       gap: '0.5rem',
       flexShrink: 0,
       justifyContent: 'flex-start',
-      cursor: 'switch',
+      cursor: 'pointer',
       borderRadius: 'full',
       position: 'relative',
       width: 'var(--switch-width)',
       height: 'var(--switch-height)',
       transition: 'backgrounds',
+      focusVisibleRing: 'outside',
       _disabled: {
         layerStyle: 'disabled',
-        cursor: 'not-allowed',
       },
       _invalid: {
         outline: '2px solid',
@@ -93,42 +88,53 @@ export const switchRecipe = defineSlotRecipe({
           },
         },
         thumb: {
-          bg: 'bg.default',
+          bg: 'white',
+          _checked: {
+            bg: 'colorPalette.solid.fg',
+          },
           width: 'var(--switch-height)',
           height: 'var(--switch-height)',
           scale: '0.8',
-          boxShadow: 'sm',
+          boxShadow: 'xs',
         },
       },
     },
     size: {
       xs: {
         root: {
+          gap: '2',
           '--switch-width': 'sizes.8',
           '--switch-height': 'sizes.4',
           '--switch-indicator-font-size': 'fontSizes.xs',
         },
+        label: { fontSize: 'sm' },
       },
       sm: {
         root: {
+          gap: '2',
           '--switch-width': 'sizes.9',
           '--switch-height': 'sizes.4.5',
           '--switch-indicator-font-size': 'fontSizes.xs',
         },
+        label: { fontSize: 'sm' },
       },
       md: {
         root: {
+          gap: '3',
           '--switch-width': 'sizes.10',
           '--switch-height': 'sizes.5',
           '--switch-indicator-font-size': 'fontSizes.sm',
         },
+        label: { fontSize: 'md' },
       },
       lg: {
         root: {
+          gap: '3',
           '--switch-width': 'sizes.11',
           '--switch-height': 'sizes.5.5',
           '--switch-indicator-font-size': 'fontSizes.md',
         },
+        label: { fontSize: 'lg' },
       },
     },
   },

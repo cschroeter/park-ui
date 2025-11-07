@@ -21,7 +21,7 @@ export const colorPicker = defineSlotRecipe({
       gap: '2',
     },
     content: {
-      background: 'bg.default',
+      background: 'gray.surface.bg',
       borderRadius: 'l3',
       boxShadow: 'lg',
       display: 'flex',
@@ -65,7 +65,7 @@ export const colorPicker = defineSlotRecipe({
       display: 'grid',
       gridTemplateColumns: 'repeat(7, 1fr)',
       gap: '2',
-      background: 'bg.default',
+      background: 'gray.surface.bg',
     },
     swatch: {
       height: '6',

@@ -37,7 +37,6 @@ export const slider = defineSlotRecipe({
       zIndex: '1',
     },
     marker: {
-      '--marker-bg': { base: 'white', _underValue: 'colors.bg' },
       display: 'flex',
       alignItems: 'center',
       gap: 'calc(var(--slider-thumb-size) / 2)',
@@ -48,7 +47,7 @@ export const slider = defineSlotRecipe({
       width: 'var(--slider-marker-size)',
       height: 'var(--slider-marker-size)',
       borderRadius: 'full',
-      bg: 'var(--marker-bg)',
+      bg: 'colorPalette.solid.fg',
     },
     thumb: {
       width: 'var(--slider-thumb-size)',
@@ -105,7 +104,7 @@ export const slider = defineSlotRecipe({
     variant: {
       outline: {
         thumb: {
-          bg: 'bg.default',
+          bg: 'gray.surface.bg',
           borderWidth: '2px',
           borderColor: 'colorPalette.solid.bg',
           boxShadow: 'xs',
@@ -127,7 +126,7 @@ export const slider = defineSlotRecipe({
           flexDirection: 'column',
           height: '100%',
           minWidth: 'var(--slider-thumb-size)',
-          '&[data-has-mark-label], &:has(.chakra-slider__marker-label)': {
+          '&[data-has-mark-label]': {
             marginEnd: '4',
           },
         },
@@ -151,7 +150,7 @@ export const slider = defineSlotRecipe({
           flexDirection: 'row',
           width: '100%',
           minHeight: 'var(--slider-thumb-size)',
-          '&[data-has-mark-label], &:has(.chakra-slider__marker-label)': {
+          '&[data-has-mark-label]': {
             marginBottom: '4',
           },
         },

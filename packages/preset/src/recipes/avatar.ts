@@ -20,7 +20,7 @@ export const avatar = defineSlotRecipe({
       borderRadius: 'var(--avatar-radius)',
       '&[data-group-item]': {
         borderWidth: '0.125em',
-        borderColor: 'bg.default',
+        borderColor: 'gray.surface.bg',
       },
     },
     fallback: {
