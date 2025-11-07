@@ -3,9 +3,8 @@ import { Format } from '@ark-ui/react/format'
 import { MinusIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 import { Box, Container, Grid, GridItem, HStack, Stack } from 'styled-system/jsx'
-import { Icon, Text } from '@/components/ui'
+import { Heading, Icon, Text } from '@/components/ui'
 import { MDXContent } from '~/components/docs/mdx-content'
-import { PageHeader } from '~/components/page-header'
 import { Prose } from '~/components/ui/prose'
 
 export default async function Page() {
@@ -28,10 +27,14 @@ export default async function Page() {
           py={{ base: '16', lg: '24' }}
           pe={{ base: '0', lg: '40' }}
         >
-          <PageHeader
-            title="Changelog"
-            description="All notable changes will be documented in this file."
-          />
+          <Stack gap={{ base: '5', md: '6' }}>
+            <Heading as="h1" textStyle={{ base: '4xl', md: '5xl' }}>
+              Changelog
+            </Heading>
+            <Text color="fg.muted" fontSize={{ base: 'lg', md: 'xl' }} maxW="3xl">
+              All notable changes will be documented in this file.
+            </Text>
+          </Stack>
         </Container>
       </GridItem>
       <GridItem />

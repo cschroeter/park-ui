@@ -2,12 +2,12 @@ import { docs } from '.velite'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
+import { Heading, Text } from '@/components/ui'
 import { CopyPageWidget } from '~/components/docs/copy-page-widget'
 import { MDXContent } from '~/components/docs/mdx-content'
 import { PageHeaderLinks } from '~/components/docs/page-links'
 import { PageFooter } from '~/components/navigation/page-footer'
 import { TableOfContents } from '~/components/navigation/table-of-contents'
-import { PageHeader } from '~/components/page-header'
 import { Prose } from '~/components/ui/prose'
 import { getDocumentBySlug, getNextDocument, getPrevDocument } from '~/lib/docs'
 import { getServerContext } from '~/server-context'
@@ -34,16 +34,17 @@ export default async function Page(props: Props) {
   return (
     <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" minH="100%">
       <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
-        <Stack
-          direction={{ base: 'column', sm: 'row' }}
-          justify="space-between"
-          align="start"
-          gap="8"
-        >
-          <PageHeader title={doc.title} description={doc.description}>
-            <PageHeaderLinks links={doc.links} />
-          </PageHeader>
-          <CopyPageWidget slug={doc.slug} content={doc.llm} />
+        <Stack gap={{ base: '6', md: '8' }} width="full">
+          <Stack direction="row" justify="space-between" gap="8">
+            <Heading as="h1" textStyle="3xl">
+              {doc.title}
+            </Heading>
+            <CopyPageWidget slug={doc.slug} content={doc.llm} />
+          </Stack>
+          <Text color="fg.muted" textStyle="lg" maxW="3xl">
+            {doc.description}
+          </Text>
+          <PageHeaderLinks links={doc.links} />
         </Stack>
         <Divider mt="12" mb="4" />
         <Stack gap={{ base: '12', md: '16' }}>
