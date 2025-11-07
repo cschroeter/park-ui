@@ -2,17 +2,20 @@ import { useEffect } from 'react'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { Font } from '~/app/fonts'
+import type { Framework } from '~/types'
 import type { AccentColor, BorderRadius, GrayColor } from './theme'
 
 export const useTheme = () => {
   const accentColor = useThemeStore((state) => state.accentColor)
   const font = useThemeStore((state) => state.font)
+  const framework = useThemeStore((state) => state.framework)
   const grayColor = useThemeStore((state) => state.grayColor)
   const radius = useThemeStore((state) => state.radius)
 
   const reset = useThemeStore((state) => state.reset)
   const setAccentColor = useThemeStore((state) => state.setAccentColor)
   const setFont = useThemeStore((state) => state.setFont)
+  const setFramework = useThemeStore((state) => state.setFramework)
   const setGrayColor = useThemeStore((state) => state.setGrayColor)
   const setRadius = useThemeStore((state) => state.setRadius)
 
@@ -46,14 +49,16 @@ export const useTheme = () => {
 
   return {
     accentColor,
-    grayColor,
     font,
+    framework,
+    grayColor,
     radius,
-    setAccentColor,
-    setGrayColor,
-    setFont,
-    setRadius,
     reset,
+    setAccentColor,
+    setFont,
+    setFramework,
+    setGrayColor,
+    setRadius,
   }
 }
 
@@ -62,20 +67,23 @@ interface State {
   grayColor: GrayColor
   font: Font
   radius: BorderRadius
+  framework: Framework
 }
 
 const initialState: State = {
   accentColor: 'neutral',
-  grayColor: 'neutral',
   font: { label: 'Outfit', value: 'var(--font-outfit)' },
+  framework: 'react',
+  grayColor: 'neutral',
   radius: 'sm',
 }
 
 interface Actions {
   reset: () => void
   setAccentColor: (color: AccentColor) => void
-  setGrayColor: (color: GrayColor) => void
   setFont: (font: Font) => void
+  setFramework: (framework: Framework) => void
+  setGrayColor: (color: GrayColor) => void
   setRadius: (radius: BorderRadius) => void
 }
 
@@ -83,11 +91,12 @@ const useThemeStore = create<State & Actions>()(
   persist(
     (set) => ({
       ...initialState,
+      reset: () => set(initialState),
       setAccentColor: (accentColor) => set(() => ({ accentColor })),
+      setFont: (font) => set(() => ({ font })),
+      setFramework: (framework) => set(() => ({ framework })),
       setGrayColor: (grayColor) => set(() => ({ grayColor })),
       setRadius: (radius) => set(() => ({ radius })),
-      setFont: (font) => set(() => ({ font })),
-      reset: () => set(initialState),
     }),
     {
       name: 'park-ui',
