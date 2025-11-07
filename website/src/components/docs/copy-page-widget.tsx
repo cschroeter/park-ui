@@ -1,6 +1,7 @@
 import { Portal } from '@ark-ui/react/portal'
-import { ChevronDownIcon } from 'lucide-react'
+import { ChevronDownIcon, ExternalLinkIcon } from 'lucide-react'
 import { Button, ButtonGroup, Clipboard, IconButton, Menu } from '@/components/ui'
+import { ChatGPTIcon, ClaudeIcon } from '../icons'
 
 interface Props {
   slug: string
@@ -10,7 +11,7 @@ interface Props {
 export const CopyPageWidget = (props: Props) => {
   const { content } = props
   return (
-    <ButtonGroup variant="subtle" size="sm" attached>
+    <ButtonGroup variant="subtle" size="sm" attached colorPalette="gray">
       <Clipboard.Root value={content}>
         <Clipboard.Trigger asChild>
           <Button borderEndRadius="0">
@@ -40,10 +41,11 @@ const ActionMenu = (props: Props) => {
       </Menu.Trigger>
       <Portal>
         <Menu.Positioner>
-          <Menu.Content minW="200px">
+          <Menu.Content>
             <Menu.Item value="markdown" asChild>
               <a href={pageUrl} target="_blank" rel="noreferrer">
-                View as markdown
+                <ExternalLinkIcon />
+                View as Markdown
               </a>
             </Menu.Item>
             <Menu.Item value="chatgpt" asChild>
@@ -52,11 +54,13 @@ const ActionMenu = (props: Props) => {
                 target="_blank"
                 rel="noreferrer"
               >
+                <ChatGPTIcon />
                 Open in ChatGPT
               </a>
             </Menu.Item>
             <Menu.Item value="claude" asChild>
               <a href={`https://claude.ai/new?q=${readUrl}`} target="_blank" rel="noreferrer">
+                <ClaudeIcon />
                 Open in Claude
               </a>
             </Menu.Item>
