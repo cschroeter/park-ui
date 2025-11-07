@@ -22,6 +22,20 @@ const docs = defineCollection({
         .optional(),
       mdx: s.mdx(),
       toc: s.toc({ maxDepth: 3 }),
+      llm: s.custom<string>().transform((_data, { meta }) => {
+        const content = meta.content as string
+        // const path = meta.path as string
+        // const component =
+        //   path
+        //     .split('/')
+        //     .pop()
+        //     ?.replace(/\.mdx$/, '') || ''
+
+        // let processed = replaceExample(content, component)
+        // processed = replaceComponentTypes(processed)
+        // processed = replaceContextType(processed)
+        return content
+      }),
     })
     .transform((data, { meta }) => {
       if (typeof meta.path !== 'string') {
