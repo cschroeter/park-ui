@@ -46,7 +46,7 @@ export const treeView = defineSlotRecipe({
         color: 'fg.default',
       },
       _hover: {
-        background: 'gray.a2',
+        background: 'gray.surface.bg.hover',
         color: 'fg.default',
       },
     },
@@ -88,7 +88,7 @@ export const treeView = defineSlotRecipe({
         },
       },
       _hover: {
-        background: 'gray.a2',
+        background: 'gray.surface.bg.hover',
         color: 'fg.default',
       },
       _selected: {

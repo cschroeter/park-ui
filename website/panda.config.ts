@@ -37,12 +37,12 @@ export default defineConfig({
       semanticTokens: {
         colors: {
           prose: {
-            heading: { value: '{colors.gray.12}' },
-            body: { value: '{colors.gray.12}' },
-            link: { value: '{colors.gray.12}' },
-            bold: { value: '{colors.gray.12}' },
-            'td-border': { value: '{colors.gray.a3}' },
-            'th-border': { value: '{colors.gray.a3}' },
+            heading: { value: '{colors.fg.default}' },
+            body: { value: '{colors.fg.default}' },
+            link: { value: '{colors.fg.default}' },
+            bold: { value: '{colors.fg.default}' },
+            'td-border': { value: '{colors.border}' },
+            'th-border': { value: '{colors.border}' },
           },
         },
       },

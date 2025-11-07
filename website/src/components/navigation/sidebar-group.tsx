@@ -32,11 +32,12 @@ const recipe = sva({
       lineHeight: '2rem',
       ps: '4',
       ms: '-1px',
-      transition: 'common',
+      transition: 'colors',
+      transitionDuration: 'fastest',
       _hover: {
-        bg: 'gray.surface.bg.hover',
+        bg: 'colorPalette.surface.bg',
+        color: 'colorPalette.surface.fg',
         borderColor: 'colorPalette.surface.border.hover',
-        color: 'colorPalette.solid.bg',
       },
       _currentPage: {
         bg: 'colorPalette.surface.bg.active',

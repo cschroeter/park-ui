@@ -28,9 +28,7 @@ export const Sidebar = (props: BoxProps) => {
             </nav>
           </ScrollArea.Content>
         </ScrollArea.Viewport>
-        <ScrollArea.Scrollbar>
-          <ScrollArea.Thumb />
-        </ScrollArea.Scrollbar>
+        <ScrollArea.Scrollbar />
         <ScrollArea.Corner />
       </ScrollArea.Root>
     </Box>
