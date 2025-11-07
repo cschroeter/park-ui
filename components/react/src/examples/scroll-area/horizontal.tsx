@@ -3,7 +3,7 @@ import { ScrollArea } from '@/components/ui'
 
 export const App = () => (
   <ScrollArea.Root scrollbar="visible">
-    <ScrollArea.Viewport>
+    <ScrollArea.Viewport pb="1">
       <ScrollArea.Content>
         <HStack gap="3">
           {Array.from({ length: 12 }, (_, i) => (

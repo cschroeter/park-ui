@@ -2,11 +2,11 @@ import { Stack } from 'styled-system/jsx'
 import { Table } from '@/components/ui'
 
 export const App = () => {
-  const variants = ['outline', 'plain'] as const
+  const variants = ['plain', 'surface'] as const
   return (
     <Stack gap="8">
       {variants.map((variant) => (
-        <Table.Root key={variant} variant={variant} size="sm">
+        <Table.Root key={variant} variant={variant}>
           <Table.Head>
             <Table.Row>
               <Table.Header>Product</Table.Header>

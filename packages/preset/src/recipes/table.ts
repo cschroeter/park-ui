@@ -5,40 +5,51 @@ export const table = defineSlotRecipe({
   slots: ['root', 'body', 'cell', 'foot', 'head', 'header', 'row', 'caption'],
   base: {
     root: {
-      fontVariantNumeric: 'lining-nums tabular-nums',
       borderCollapse: 'collapse',
-      width: 'full',
+      fontVariantNumeric: 'lining-nums tabular-nums',
       textAlign: 'start',
       verticalAlign: 'top',
-    },
-    row: {
-      transitionDuration: 'normal',
-      transitionProperty: 'background, color',
-      transitionTimingFunction: 'default',
-      _selected: {
-        bg: 'bg.subtle',
-      },
-      row: {
-        '&:not(:last-of-type)': {
-          borderBottomWidth: '1px',
-        },
-      },
+      width: 'full',
     },
     cell: {
-      textAlign: 'start',
       alignItems: 'center',
       color: 'fg.muted',
+      textAlign: 'start',
+      textOverflow: 'ellipsis',
       textStyle: 'sm',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      boxShadow: 'inset 0 -1px 0 0 var(--shadow-color)',
+      shadowColor: 'border',
+      _pinned: {
+        bg: 'inherit',
+        boxShadow: 'inset 0 -1px 0 0 var(--shadow-color)',
+        overflow: 'unset',
+        position: 'sticky',
+        shadowColor: 'border',
+        zIndex: 1,
+      },
+    },
+    row: {
+      _last: { '& td': { boxShadow: 'none' } },
     },
     header: {
-      fontWeight: 'medium',
       textAlign: 'left',
       verticalAlign: 'middle',
+      boxShadow: 'inset 0 -1px 0 0 var(--shadow-color)',
+      shadowColor: 'border',
+      _pinned: {
+        position: 'sticky',
+        bg: 'inherit',
+        zIndex: 2,
+      },
     },
     head: {
+      color: 'fg.muted',
       fontWeight: 'semibold',
       textAlign: 'start',
-      borderBottomWidth: '1px',
+      whiteSpace: 'nowrap',
+      textStyle: 'xs',
     },
     caption: {
       color: 'fg.subtle',
@@ -46,7 +57,7 @@ export const table = defineSlotRecipe({
     },
     foot: {
       fontWeight: 'medium',
-      borderTopWidth: '1px',
+      '& td': { boxShadow: 'inset 0 1px 0 0 var(--shadow-color)!', shadowColor: 'border' },
     },
   },
   defaultVariants: {
@@ -55,48 +66,26 @@ export const table = defineSlotRecipe({
   },
   variants: {
     variant: {
-      outline: {
-        root: {
-          borderWidth: '1px',
-        },
-        head: {
-          bg: 'bg.subtle',
-        },
+      surface: {
+        header: { bg: 'gray.surface.bg.hover' },
+        row: { bg: 'gray.surface.bg' },
       },
       plain: {},
     },
     striped: {
       true: {
-        row: {
-          '&:nth-of-type(odd) td': {
-            bg: 'bg.subtle',
-          },
-        },
+        row: { '&:nth-of-type(odd) td': { bg: 'gray.surface.bg.hover' } },
       },
     },
     interactive: {
       true: {
-        body: {
-          '& tr': {
-            _hover: {
-              bg: 'bg.subtle',
-            },
-          },
-        },
+        body: { '& tr': { _hover: { bg: 'gray.surface.bg.hover' } } },
       },
     },
     columnBorder: {
       true: {
-        header: {
-          '&:not(:last-of-type)': {
-            borderInlineEndWidth: '1px',
-          },
-        },
-        cell: {
-          '&:not(:last-of-type)': {
-            borderInlineEndWidth: '1px',
-          },
-        },
+        header: { '&:not(:last-of-type)': { borderInlineEndWidth: '1px' } },
+        cell: { '&:not(:last-of-type)': { borderInlineEndWidth: '1px' } },
       },
     },
     stickyHeader: {
@@ -105,50 +94,16 @@ export const table = defineSlotRecipe({
           '& :where(tr)': {
             top: 'var(--table-sticky-offset, 0)',
             position: 'sticky',
-            zIndex: 1,
+            zIndex: 2,
           },
         },
       },
     },
     size: {
-      sm: {
-        root: {
-          textStyle: 'sm',
-        },
-        header: {
-          px: '2',
-          py: '2',
-        },
-        cell: {
-          px: '2',
-          py: '2',
-        },
-      },
       md: {
-        root: {
-          textStyle: 'sm',
-        },
-        header: {
-          px: '3',
-          py: '3',
-        },
-        cell: {
-          px: '3',
-          py: '3',
-        },
-      },
-      lg: {
-        root: {
-          textStyle: 'md',
-        },
-        header: {
-          px: '4',
-          py: '3',
-        },
-        cell: {
-          px: '4',
-          py: '3',
-        },
+        root: { textStyle: 'sm' },
+        header: { px: '3', py: '3' },
+        cell: { px: '3', py: '3' },
       },
     },
   },

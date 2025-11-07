@@ -2,12 +2,12 @@ import { ScrollArea, Table } from '@/components/ui'
 
 export const App = () => {
   return (
-    <ScrollArea.Root borderWidth="1px" height="40" size="sm">
+    <ScrollArea.Root size="sm" borderRadius="l3" borderWidth="1px" height="72">
       <ScrollArea.Viewport>
         <ScrollArea.Content>
-          <Table.Root stickyHeader size="sm">
+          <Table.Root variant="surface" stickyHeader>
             <Table.Head>
-              <Table.Row bg="bg.subtle">
+              <Table.Row>
                 <Table.Header>Product</Table.Header>
                 <Table.Header>Category</Table.Header>
                 <Table.Header textAlign="right">Price</Table.Header>
@@ -39,4 +39,9 @@ const items = [
   { id: 3, name: 'Desk Chair', category: 'Furniture', price: 150.0 },
   { id: 4, name: 'Smartphone', category: 'Electronics', price: 799.99 },
   { id: 5, name: 'Headphones', category: 'Accessories', price: 199.99 },
+  { id: 6, name: 'Monitor', category: 'Electronics', price: 299.99 },
+  { id: 7, name: 'Blender', category: 'Home Appliances', price: 89.99 },
+  { id: 8, name: 'Bookshelf', category: 'Furniture', price: 120.0 },
+  { id: 9, name: 'Tablet', category: 'Electronics', price: 499.99 },
+  { id: 10, name: 'Mouse', category: 'Accessories', price: 29.99 },
 ]

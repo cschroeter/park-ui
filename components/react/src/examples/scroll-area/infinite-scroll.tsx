@@ -16,7 +16,7 @@ export const App = () => {
     getScrollElement: () => scrollRef.current,
     estimateSize: () => 40,
     overscan: 5,
-    gap: 4,
+    gap: 8,
   })
 
   const virtualItems = rowVirtualizer.getVirtualItems()

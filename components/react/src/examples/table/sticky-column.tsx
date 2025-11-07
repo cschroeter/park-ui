@@ -2,65 +2,27 @@ import { ScrollArea, Table } from '@/components/ui'
 
 export const App = () => {
   return (
-    <ScrollArea.Root size="sm">
-      <ScrollArea.Viewport
-        css={{
-          '&[data-overflow-x] [data-sticky]': {
-            _after: {
-              content: '""',
-              position: 'absolute',
-              pointerEvents: 'none',
-              top: '0',
-              bottom: '-1px',
-              width: '32px',
-            },
-          },
-          '&[data-overflow-x] [data-sticky=end]': {
-            _after: {
-              insetInlineEnd: '0',
-              translate: '100% 0',
-              shadow: 'inset 8px 0px 8px -8px rgba(0, 0, 0, 0.16)',
-            },
-          },
-        }}
-      >
+    <ScrollArea.Root size="sm" borderRadius="l3" borderWidth="1px" scrollbar="visible">
+      <ScrollArea.Viewport>
         <ScrollArea.Content>
-          <Table.Root
-            variant="outline"
-            size="sm"
-            css={{
-              '& [data-sticky]': {
-                position: 'sticky',
-                zIndex: 1,
-              },
-              '& [data-sticky=end]': {
-                left: '0',
-              },
-            }}
-          >
+          <Table.Root variant="surface" stickyHeader>
             <Table.Head>
               <Table.Row>
-                <Table.Header bg="bg.subtle" data-sticky="end">
+                <Table.Header minW="40" data-pinned="left" left="0">
                   Product
                 </Table.Header>
-                <Table.Header bg="bg.subtle" minW="xs">
-                  Category
-                </Table.Header>
-                <Table.Header bg="bg.subtle" minW="xs" textAlign="right">
-                  Price
-                </Table.Header>
+                <Table.Header minW="xs">Category</Table.Header>
+                <Table.Header minW="xs">Price</Table.Header>
               </Table.Row>
             </Table.Head>
             <Table.Body>
               {items.map((product) => (
                 <Table.Row key={product.id}>
-                  <Table.Cell data-sticky="end" whiteSpace="nowrap" bg="bg.default">
+                  <Table.Cell data-pinned="left" left="0">
                     {product.name}
                   </Table.Cell>
-                  <Table.Cell bg="bg.default">{product.category}</Table.Cell>
-                  <Table.Cell bg="bg.default" textAlign="right">
-                    {product.price}
-                  </Table.Cell>
+                  <Table.Cell>{product.category}</Table.Cell>
+                  <Table.Cell>{product.price}</Table.Cell>
                 </Table.Row>
               ))}
             </Table.Body>

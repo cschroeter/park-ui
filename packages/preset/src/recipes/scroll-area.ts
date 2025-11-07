@@ -93,10 +93,10 @@ export const scrollArea = defineSlotRecipe({
       visible: {
         content: {
           '&[data-overflow-y]': {
-            pe: 'calc(var(--scrollbar-size) * 2)',
+            pe: 'var(--scrollbar-size)',
           },
           '&[data-overflow-x]': {
-            pb: 'calc(var(--scrollbar-size) * 2)',
+            pb: 'var(--scrollbar-size)',
           },
         },
         scrollbar: {

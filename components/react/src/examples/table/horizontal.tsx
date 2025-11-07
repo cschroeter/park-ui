@@ -2,15 +2,17 @@ import { ScrollArea, Table } from '@/components/ui'
 
 export const App = () => {
   return (
-    <ScrollArea.Root variant="visible" size="sm">
+    <ScrollArea.Root scrollbar="visible" size="sm" borderWidth="1px" borderRadius="l3">
       <ScrollArea.Viewport>
-        <ScrollArea.Content pb="2">
-          <Table.Root size="sm">
+        <ScrollArea.Content>
+          <Table.Root>
             <Table.Head>
               <Table.Row>
-                <Table.Header minW="sm">Product</Table.Header>
-                <Table.Header minW="sm">Category</Table.Header>
-                <Table.Header textAlign="right">Price</Table.Header>
+                <Table.Header minW="xs">Product</Table.Header>
+                <Table.Header minW="xs">Category</Table.Header>
+                <Table.Header minW="xs" textAlign="right">
+                  Price
+                </Table.Header>
               </Table.Row>
             </Table.Head>
             <Table.Body>
@@ -25,9 +27,8 @@ export const App = () => {
           </Table.Root>
         </ScrollArea.Content>
       </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar orientation="horizontal">
-        <ScrollArea.Thumb />
-      </ScrollArea.Scrollbar>
+      <ScrollArea.Scrollbar orientation="vertical" />
+      <ScrollArea.Scrollbar orientation="horizontal" />
       <ScrollArea.Corner />
     </ScrollArea.Root>
   )

@@ -11,7 +11,7 @@ export const App = () => {
     count: 200,
     getScrollElement: () => scrollRef.current,
     estimateSize: () => 40,
-    gap: 4,
+    gap: 8,
   })
 
   return (

@@ -2,7 +2,7 @@ import { Table } from '@/components/ui'
 
 export const App = () => {
   return (
-    <Table.Root size="sm" striped>
+    <Table.Root striped>
       <Table.Head>
         <Table.Row>
           <Table.Header>Product</Table.Header>

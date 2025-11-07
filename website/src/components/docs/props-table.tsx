@@ -1,5 +1,5 @@
 import { MinusIcon } from 'lucide-react'
-import { Stack } from 'styled-system/jsx'
+import { Box, Stack } from 'styled-system/jsx'
 import { Code, Icon, Span, Table, Text } from '@/components/ui'
 import { getComponentProps } from '~/app/docs/actions'
 import { getServerContext } from '~/server-context'
@@ -20,60 +20,55 @@ export const PropsTable = async (props: Props) => {
   if (!properties) return null
 
   return (
-    <Table.Root
-      size="sm"
-      variant="outline"
-      className="not-prose"
-      colorPalette="neutral"
-      my="8"
-      borderRadius="l3"
-    >
-      <Table.Head>
-        <Table.Row>
-          <Table.Header>Prop</Table.Header>
-          <Table.Header>Default</Table.Header>
-          <Table.Header>Type</Table.Header>
-        </Table.Row>
-      </Table.Head>
-      <Table.Body>
-        {properties.length === 0 && (
+    <Box borderWidth="1px" borderRadius="l3" overflow="hidden" my="8" className="not-prose">
+      <Table.Root variant="surface" colorPalette="gray">
+        <Table.Head>
           <Table.Row>
-            <Table.Cell colSpan={3}>
-              <Text>No props to display</Text>
-            </Table.Cell>
+            <Table.Header>Prop</Table.Header>
+            <Table.Header>Default</Table.Header>
+            <Table.Header>Type</Table.Header>
           </Table.Row>
-        )}
-        {properties.map(([name, property]) => (
-          <Table.Row key={name}>
-            <Table.Cell width="36" verticalAlign="top">
-              <Code size="sm" fontWeight="bold" color="fg.default">
-                {name}
-              </Code>
-              {property.isRequired && (
-                <Span color="error" ms="1">
-                  *
-                </Span>
-              )}
-            </Table.Cell>
-            <Table.Cell width="28" verticalAlign="top">
-              {property.defaultValue ? (
-                <Code size="sm">{stringify(property.defaultValue).replaceAll('"', '')}</Code>
-              ) : (
-                <Icon>
-                  <MinusIcon />
-                </Icon>
-              )}
-            </Table.Cell>
-            <Table.Cell>
-              <Stack alignItems="start">
-                <Code size="sm">{property.type.replaceAll('"', "'")}</Code>
-                {property.description && <Text>{property.description}</Text>}
-              </Stack>
-            </Table.Cell>
-          </Table.Row>
-        ))}
-      </Table.Body>
-    </Table.Root>
+        </Table.Head>
+        <Table.Body>
+          {properties.length === 0 && (
+            <Table.Row>
+              <Table.Cell colSpan={3}>
+                <Text>No props to display</Text>
+              </Table.Cell>
+            </Table.Row>
+          )}
+          {properties.map(([name, property]) => (
+            <Table.Row key={name}>
+              <Table.Cell width="36" verticalAlign="top">
+                <Code size="sm" fontWeight="bold" color="fg.default">
+                  {name}
+                </Code>
+                {property.isRequired && (
+                  <Span color="error" ms="1">
+                    *
+                  </Span>
+                )}
+              </Table.Cell>
+              <Table.Cell width="28" verticalAlign="top">
+                {property.defaultValue ? (
+                  <Code size="sm">{stringify(property.defaultValue).replaceAll('"', '')}</Code>
+                ) : (
+                  <Icon>
+                    <MinusIcon />
+                  </Icon>
+                )}
+              </Table.Cell>
+              <Table.Cell>
+                <Stack alignItems="start">
+                  <Code size="sm">{property.type.replaceAll('"', "'")}</Code>
+                  {property.description && <Text>{property.description}</Text>}
+                </Stack>
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table.Root>
+    </Box>
   )
 }
 
