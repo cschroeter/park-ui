@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@ark-ui/react": "5.27.1",
-    "lucide-react": "0.552.0"
+    "lucide-react": "0.553.0"
   },
   "devDependencies": {
     "@pandacss/dev": "1.4.3",
@@ -26,10 +26,10 @@
     "@pandacss/preset-panda": "1.4.3",
     "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*",
-    "@storybook/addon-a11y": "10.0.5",
-    "@storybook/addon-themes": "10.0.5",
-    "@storybook/react": "10.0.5",
-    "@storybook/react-vite": "10.0.5",
+    "@storybook/addon-a11y": "10.0.6",
+    "@storybook/addon-themes": "10.0.6",
+    "@storybook/react": "10.0.6",
+    "@storybook/react-vite": "10.0.6",
     "@tanstack/react-virtual": "3.13.12",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
@@ -37,7 +37,7 @@
     "lorem-ipsum": "2.0.8",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "storybook": "10.0.5",
+    "storybook": "10.0.6",
     "typescript": "5.9.3",
     "vite": "7.2.2",
     "vite-tsconfig-paths": "5.1.4"
