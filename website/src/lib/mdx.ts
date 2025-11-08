@@ -1,91 +1,114 @@
 'use server'
+import type { Doc } from '.velite'
 import { getComponentProps } from '~/app/docs/actions'
 import type { Framework } from './frameworks'
 import { getComponentExampleSourceCode } from './source-code'
 
-interface Props {
+export const transformMdxContent = async (doc: Doc, framework: Framework) => {
+  const context = { content: doc.content, component: doc.id, framework }
+
+  const content = await pipe(
+    context,
+    replaceComponentExamples,
+    replacePropsTables,
+    replaceInstallationGuide,
+  )
+
+  return `# ${doc.title}\n\n${doc.description}\n\n${content}`
+}
+
+interface TransformContext {
   content: string
   component: string
   framework: Framework
 }
 
-export const replaceComponentExamples = async (props: Props) => {
-  const { content, component, framework } = props
-  const componentExampleRegex = /<ComponentExample name="([^"]+)"[^>]*\/>/g
-  const matches = [...content.matchAll(componentExampleRegex)]
-
-  const replacements = await Promise.all(
-    matches.map(async (match) => ({
-      tag: match[0],
-      code: await getComponentExampleSourceCode({
-        component,
-        example: match[1],
-        framework,
-      }),
-    })),
-  )
-
-  return replacements
-    .filter(({ code }) => code)
-    .reduce((acc, { tag, code }) => acc.replace(tag, `\`\`\`tsx\n${code}\n\`\`\``), content)
+// Utility function for async piping
+const pipe = async <T extends { content: string }>(
+  value: T,
+  ...fns: Array<(v: T) => Promise<string>>
+): Promise<string> => {
+  let result = value.content
+  for (const fn of fns) {
+    result = await fn({ ...value, content: result } as T)
+  }
+  return result
 }
 
-export const replacePropsTables = async (props: Props) => {
-  const { content, component, framework } = props
-  const propsTableRegex = /<PropsTable(?:\s+part="([^"]+)")?[^>]*\/>/g
-  const matches = [...content.matchAll(propsTableRegex)]
+const replaceMatches = async (
+  content: string,
+  regex: RegExp,
+  transform: (match: RegExpMatchArray) => Promise<{ tag: string; replacement: string } | null>,
+): Promise<string> => {
+  const matches = [...content.matchAll(regex)]
+  const replacements = (await Promise.all(matches.map(transform))).filter(Boolean)
 
-  const replacements = await Promise.all(
-    matches.map(async (match) => {
-      const part = match[1] || 'Root'
-      const properties = await getComponentProps({ part, component, framework })
-
-      if (!properties || properties.length === 0) {
-        return null
-      }
-
-      const tableRows = properties
-        .map(([name, property]) => {
-          const required = property.isRequired ? '*' : ''
-          const defaultValue = property.defaultValue
-            ? stringify(property.defaultValue).replaceAll('"', '')
-            : '-'
-          const type = property.type.replaceAll('"', "'")
-          const description = property.description ? `<br/>${property.description}` : ''
-
-          return `| \`${name}\`${required} | ${defaultValue} | \`${type}\`${description} |`
-        })
-        .join('\n')
-
-      const table = `| Prop | Default | Type |\n| --- | --- | --- |\n${tableRows}`
-
-      return {
-        tag: match[0],
-        table,
-      }
-    }),
+  return replacements.reduce(
+    (acc, item) => (item ? acc.replace(item.tag, item.replacement) : acc),
+    content,
   )
-
-  return replacements
-    .filter((item): item is { tag: string; table: string } => item !== null)
-    .reduce((acc, { tag, table }) => acc.replace(tag, table), content)
 }
 
-export const replaceInstallationGuide = async (props: Props) => {
-  const { content, component } = props
-  const installationGuideRegex = /<InstallationGuide[^>]*\/>/g
+const replaceComponentExamples = async (ctx: TransformContext): Promise<string> => {
+  return replaceMatches(
+    ctx.content,
+    /<ComponentExample name="([^"]+)"[^>]*\/>/g,
+    async ([tag, example]) => {
+      const code = await getComponentExampleSourceCode({
+        component: ctx.component,
+        example,
+        framework: ctx.framework,
+      })
+      return code ? { tag, replacement: `\`\`\`tsx\n${code}\n\`\`\`` } : null
+    },
+  )
+}
 
-  const replacement = `Use the Park UI CLI to add the ${component.charAt(0).toUpperCase() + component.slice(1)} component to your project:
+const replacePropsTables = async (ctx: TransformContext): Promise<string> => {
+  return replaceMatches(
+    ctx.content,
+    /<PropsTable(?:\s+part="([^"]+)")?[^>]*\/>/g,
+    async ([tag, part]) => {
+      const properties = await getComponentProps({
+        part: part || 'Root',
+        component: ctx.component,
+        framework: ctx.framework,
+      })
+
+      if (!properties?.length) return null
+
+      const table = createPropsTable(properties)
+      return { tag, replacement: table }
+    },
+  )
+}
+
+const createPropsTable = (properties: Array<[string, any]>): string => {
+  const tableRows = properties
+    .map(([name, prop]) => {
+      const required = prop.isRequired ? '*' : ''
+      const defaultValue = prop.defaultValue
+        ? stringify(prop.defaultValue).replaceAll('"', '')
+        : '-'
+      const type = prop.type.replaceAll('"', "'")
+      const description = prop.description ? `<br/>${prop.description}` : ''
+      return `| \`${name}\`${required} | ${defaultValue} | \`${type}\`${description} |`
+    })
+    .join('\n')
+
+  return `| Prop | Default | Type |\n| --- | --- | --- |\n${tableRows}`
+}
+
+const replaceInstallationGuide = async (ctx: TransformContext): Promise<string> => {
+  const capitalizedComponent = ctx.component.charAt(0).toUpperCase() + ctx.component.slice(1)
+  const replacement = `Use the Park UI CLI to add the ${capitalizedComponent} component to your project:
 
 \`\`\`bash
-npx @park-ui/cli add ${component}
+npx @park-ui/cli add ${ctx.component}
 \`\`\``
 
-  return content.replace(installationGuideRegex, replacement)
+  return ctx.content.replace(/<InstallationGuide[^>]*\/>/g, replacement)
 }
 
-const stringify = (value: unknown) => {
-  if (value === 'true') return `true`
-  if (value === 'false') return `false`
-  return JSON.stringify(value)
-}
+const stringify = (value: unknown): string =>
+  value === 'true' || value === 'false' ? value : JSON.stringify(value)

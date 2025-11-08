@@ -89,10 +89,15 @@ interface GetComponentProps {
 export const getComponentProps = async (props: GetComponentProps) => {
   const { component, part, framework } = props
   const path = join(process.cwd(), 'public', 'types', framework, `${component}.json`)
-  const componentTypes = JSON.parse(readFileSync(path, 'utf-8'))
-  const componentType = part ? componentTypes[part] : componentTypes
 
-  if (!componentType?.props) return null
+  try {
+    const componentTypes = JSON.parse(readFileSync(path, 'utf-8'))
+    const componentType = part ? componentTypes[part] : componentTypes
 
-  return sortEntries(componentType.props)
+    if (!componentType?.props) return null
+
+    return sortEntries(componentType.props)
+  } catch {
+    return null
+  }
 }

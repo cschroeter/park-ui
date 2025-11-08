@@ -1,7 +1,7 @@
 import { docs } from '.velite'
 import { getDocumentBySlug } from '~/lib/docs'
 import { type Framework, frameworks } from '~/lib/frameworks'
-import { replaceComponentExamples, replaceInstallationGuide, replacePropsTables } from '~/lib/mdx'
+import { transformMdxContent } from '~/lib/mdx'
 
 export const dynamic = 'force-static'
 
@@ -15,30 +15,9 @@ export async function GET(_: Request, segmentData: { params: Params }) {
     return new Response('Not Found', { status: 404 })
   }
 
-  const title = doc.title
-  const description = doc.description
+  const content = await transformMdxContent(doc, params.framework as Framework)
 
-  let content = await replaceComponentExamples({
-    component: doc.id,
-    framework: params.framework as Framework,
-    content: doc.content,
-  })
-
-  content = await replacePropsTables({
-    component: doc.id,
-    framework: params.framework as Framework,
-    content,
-  })
-
-  content = await replaceInstallationGuide({
-    component: doc.id,
-    framework: params.framework as Framework,
-    content,
-  })
-
-  const contentWithHeader = `# ${title}\n\n${description}\n\n${content}`
-
-  return new Response(contentWithHeader, {
+  return new Response(content, {
     headers: {
       'Content-Type': 'text/markdown; charset=utf-8',
     },
