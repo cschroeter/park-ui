@@ -10,6 +10,7 @@ import { PageFooter } from '~/components/navigation/page-footer'
 import { TableOfContents } from '~/components/navigation/table-of-contents'
 import { Prose } from '~/components/ui/prose'
 import { getDocumentBySlug, getNextDocument, getPrevDocument } from '~/lib/docs'
+import { getFramework } from '~/lib/frameworks'
 import { getServerContext } from '~/server-context'
 
 interface Props {
@@ -21,6 +22,8 @@ export default async function Page(props: Props) {
   const doc = getDocumentBySlug(params.slug)
   const nextDoc = getNextDocument(params.slug)
   const prevDoc = getPrevDocument(params.slug)
+
+  const framework = await getFramework()
 
   if (!doc) {
     return notFound()
@@ -39,7 +42,7 @@ export default async function Page(props: Props) {
             <Heading as="h1" textStyle="3xl">
               {doc.title}
             </Heading>
-            <CopyPageWidget slug={doc.slug} content={doc.llm} />
+            <CopyPageWidget slug={doc.slug} content={doc.llm} framework={framework} />
           </Stack>
           <Text color="fg.muted" textStyle="lg" maxW="3xl">
             {doc.description}

@@ -6,6 +6,7 @@ import { ChatGPTIcon, ClaudeIcon } from '../icons'
 interface Props {
   slug: string
   content: string
+  framework: string
 }
 
 export const CopyPageWidget = (props: Props) => {
@@ -26,9 +27,9 @@ export const CopyPageWidget = (props: Props) => {
 }
 
 const ActionMenu = (props: Props) => {
-  const { slug } = props
-  const pageUrl = `https://park-ui.com/docs/${slug}`
-  const readUrl = encodeURIComponent(
+  const { slug, framework } = props
+  const pageUrl = `https://park-ui.com/api/${framework}/docs/${slug}`
+  const prompt = encodeURIComponent(
     `Use web browsing to access links and information: ${pageUrl}\n\nI want to ask some questions`,
   )
 
@@ -43,14 +44,14 @@ const ActionMenu = (props: Props) => {
         <Menu.Positioner>
           <Menu.Content>
             <Menu.Item value="markdown" asChild>
-              <a href={`/docs/${slug}.mdx`} target="_blank" rel="noreferrer">
+              <a href={pageUrl} target="_blank" rel="noreferrer">
                 <ExternalLinkIcon />
                 View as Markdown
               </a>
             </Menu.Item>
             <Menu.Item value="chatgpt" asChild>
               <a
-                href={`https://chatgpt.com/?hints=search&q=${readUrl}`}
+                href={`https://chatgpt.com/?hints=search&q=${prompt}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -59,7 +60,7 @@ const ActionMenu = (props: Props) => {
               </a>
             </Menu.Item>
             <Menu.Item value="claude" asChild>
-              <a href={`https://claude.ai/new?q=${readUrl}`} target="_blank" rel="noreferrer">
+              <a href={`https://claude.ai/new?q=${prompt}`} target="_blank" rel="noreferrer">
                 <ClaudeIcon />
                 Open in Claude
               </a>

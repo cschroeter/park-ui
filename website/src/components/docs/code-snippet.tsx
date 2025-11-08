@@ -2,7 +2,7 @@ import { cache } from 'react'
 import { codeToHtml } from 'shiki'
 import { Box, type BoxProps } from 'styled-system/jsx'
 import { ScrollArea } from '@/components/ui'
-import type { SourceCode } from '~/types'
+import type { SourceCode } from '~/lib/frameworks'
 import { ClipboardButton } from './clipboard-button'
 
 interface Props extends BoxProps {

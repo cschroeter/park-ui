@@ -1,5 +1,5 @@
 import { Tabs } from '@/components/ui'
-import type { FrameworkSourceCode } from '~/types'
+import type { FrameworkSourceCode } from '~/lib/frameworks'
 import { CodeSnippet } from './code-snippet'
 
 interface Props extends Tabs.RootProps {

@@ -1,6 +1,5 @@
 import type { PropsWithChildren, ReactElement } from 'react'
-import { frameworks } from '~/lib/frameworks'
-import type { SourceCode } from '~/types'
+import { frameworks, type SourceCode } from '~/lib/frameworks'
 import { CodePreviewTabs } from '../docs/code-preview-tabs'
 import { CodeSnippet } from '../docs/code-snippet'
 
@@ -36,7 +35,7 @@ export const Pre = async ({ children }: PreProps) => {
   const sourceCode: SourceCode = { code: codeString, lang }
 
   if (isMulti) {
-    const sources = frameworks.map(({ framework }) => ({
+    const sources = frameworks.map((framework) => ({
       framework,
       sourceCode: { code: transformCodeForFramework(codeString, framework), lang },
     }))

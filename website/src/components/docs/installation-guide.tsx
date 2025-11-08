@@ -1,6 +1,6 @@
 import { Tabs } from '@/components/ui'
+import type { SourceCode } from '~/lib/frameworks'
 import { getServerContext } from '~/server-context'
-import type { SourceCode } from '~/types'
 import { CodeSnippet } from './code-snippet'
 import { ManualIntallationGuide } from './manual-installation-guide'
 

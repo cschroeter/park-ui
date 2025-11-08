@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { Font } from '~/app/fonts'
-import type { Framework } from '~/types'
+import type { Framework } from './frameworks'
 import type { AccentColor, BorderRadius, GrayColor } from './theme'
 
 export const useTheme = () => {

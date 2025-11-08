@@ -2,8 +2,12 @@
 import { readFileSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import { frameworks } from '~/lib/frameworks'
-import type { Framework, FrameworkSourceCode } from '~/types'
+import {
+  type Framework,
+  type FrameworkSourceCode,
+  frameworkConfigs,
+  frameworks,
+} from '~/lib/frameworks'
 
 interface Props {
   component: string
@@ -16,7 +20,7 @@ export const getComponentSourceCode = async (props: Props): Promise<FrameworkSou
   const baseDir = join(process.cwd(), '../components')
 
   return Promise.all(
-    frameworks.map(async ({ framework, lang }) => {
+    frameworkConfigs.map(async ({ framework, lang }) => {
       const fileName = `${name}.${lang}`
       const path = join(baseDir, framework, 'src/examples', component, fileName)
       const code = await readFile(path, 'utf-8').catch(() => null)
@@ -33,7 +37,7 @@ export const getComponentDefinitions = async (name: string): Promise<FrameworkSo
   const baseDir = join(process.cwd(), '../components')
 
   return Promise.all(
-    frameworks.map(async ({ framework, lang }) => {
+    frameworkConfigs.map(async ({ framework, lang }) => {
       const fileName = `${name}.${lang}`
       const path = join(baseDir, framework, 'src/components/ui', fileName)
       const code = await readFile(path, 'utf-8').catch(() => null)
@@ -51,7 +55,7 @@ export const getRecipes = async (name: string): Promise<FrameworkSourceCode[]> =
   const path = join(process.cwd(), '../packages/preset/src/recipes', `${name}.${lang}`)
   const code = await readFile(path, 'utf-8').catch(() => null)
 
-  return frameworks.map(({ framework }) => ({
+  return frameworks.map((framework) => ({
     framework,
     sourceCode: code
       ? { code: code.replace(/@ark-ui\/react/g, `@ark-ui/${framework}`), lang }

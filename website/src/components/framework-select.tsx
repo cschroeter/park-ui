@@ -1,7 +1,7 @@
 'use client'
 import { useListCollection } from '@ark-ui/react/collection'
 import { Select } from '@/components/ui'
-import type { Framework } from '~/types'
+import type { Framework } from '~/lib/frameworks'
 
 interface Props {
   framework: Framework
@@ -18,7 +18,10 @@ export const FrameworkSelect = ({ framework, onValueChange }: Props) => {
       collection={collection}
       size="sm"
       defaultValue={[framework]}
-      onValueChange={(e) => onValueChange(e.items[0])}
+      onValueChange={(e) => {
+        onValueChange(e.items[0])
+        window.location.reload()
+      }}
     >
       <Select.Label>Framework</Select.Label>
       <Select.Control>
