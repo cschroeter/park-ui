@@ -8,7 +8,7 @@ export const fieldset = defineSlotRecipe({
     root: {
       display: 'flex',
       justifyContent: 'space-between',
-      widht: 'full',
+      width: 'full',
       flexDirection: { base: 'column', md: 'row' },
       gap: { base: '5', md: '8' },
     },
