@@ -42,7 +42,7 @@ export default async function Page(props: Props) {
             <Heading as="h1" textStyle="3xl">
               {doc.title}
             </Heading>
-            <CopyPageWidget slug={doc.slug} content={doc.llm} framework={framework} />
+            <CopyPageWidget slug={doc.slug} content={doc.content} framework={framework} />
           </Stack>
           <Text color="fg.muted" textStyle="lg" maxW="3xl">
             {doc.description}
