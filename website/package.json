@@ -14,7 +14,7 @@
     "@icons-pack/react-simple-icons": "13.8.0",
     "@park-ui/react": "workspace:*",
     "change-case": "5.4.4",
-    "effect": "3.19.2",
+    "effect": "3.19.3",
     "framer": "2.4.1",
     "framer-motion": "12.23.24",
     "fumadocs-core": "16.0.3",
@@ -39,9 +39,9 @@
     "zustand": "5.0.8"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.4.3",
-    "@pandacss/preset-base": "1.4.3",
-    "@pandacss/preset-panda": "1.4.3",
+    "@pandacss/dev": "1.5.0",
+    "@pandacss/preset-base": "1.5.0",
+    "@pandacss/preset-panda": "1.5.0",
     "@park-ui/preset": "workspace:*",
     "@types/node": "24.10.0",
     "@types/hast": "3.0.4",

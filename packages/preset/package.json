@@ -11,7 +11,7 @@
     "@ark-ui/react": "5.27.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.4.3",
+    "@pandacss/dev": "1.5.0",
     "@park-ui/scripts": "workspace:*",
     "@radix-ui/colors": "3.0.0",
     "typescript": "5.9.3"
