@@ -1,25 +1,34 @@
-import { Field as StyledField } from '@/components/ui'
+import { type JSX, splitProps } from 'solid-js'
+import * as StyledField from '@/components/ui/field'
 
 export interface FieldProps extends Omit<StyledField.RootProps, 'label'> {
-  label?: ReactNode
-  helperText?: ReactNode
-  errorText?: ReactNode
-  optionalText?: ReactNode
+  label?: JSX.Element
+  helperText?: JSX.Element
+  errorText?: JSX.Element
+  optionalText?: JSX.Element
+  children?: JSX.Element
 }
 
-export const Field = forwardRef<HTMLDivElement, FieldProps>(function Field(props, ref) {
-  const { label, children, helperText, errorText, optionalText, ...rest } = props
+export const Field = (props: FieldProps) => {
+  const [local, rest] = splitProps(props, [
+    'label',
+    'children',
+    'helperText',
+    'errorText',
+    'optionalText',
+  ])
+
   return (
-    <StyledField.Root ref={ref} {...rest}>
-      {label && (
+    <StyledField.Root {...rest}>
+      {local.label && (
         <StyledField.Label>
-          {label}
-          <StyledField.RequiredIndicator fallback={optionalText} />
+          {local.label}
+          <StyledField.RequiredIndicator fallback={local.optionalText} />
         </StyledField.Label>
       )}
-      {children}
-      {helperText && <StyledField.HelperText>{helperText}</StyledField.HelperText>}
-      <StyledField.ErrorText>{errorText}</StyledField.ErrorText>
+      {local.children}
+      {local.helperText && <StyledField.HelperText>{local.helperText}</StyledField.HelperText>}
+      <StyledField.ErrorText>{local.errorText}</StyledField.ErrorText>
     </StyledField.Root>
   )
-})
+}

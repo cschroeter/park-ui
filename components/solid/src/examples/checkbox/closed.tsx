@@ -1,26 +1,30 @@
+import { type ComponentProps, type JSX, splitProps } from 'solid-js'
 import { VisuallyHidden } from 'styled-system/jsx'
-import { Checkbox as StyledCheckbox } from '@/components/ui'
+import * as StyledCheckbox from '@/components/ui/checkbox'
 
 export type { CheckboxCheckedState } from '@ark-ui/solid/checkbox'
 
 export interface CheckboxProps extends StyledCheckbox.RootProps {
-  inputProps?: StyledCheckbox.HiddenInputProps
+  inputProps?: ComponentProps<typeof StyledCheckbox.HiddenInput>
+  children?: JSX.Element
+  'aria-label'?: string
 }
 
-export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(props, ref) {
-  const { children, inputProps, ...rootProps } = props
+export const Checkbox = (props: CheckboxProps) => {
+  const [local, rest] = splitProps(props, ['children', 'inputProps', 'aria-label'])
+
   return (
-    <StyledCheckbox.Root {...rootProps}>
-      <StyledCheckbox.HiddenInput ref={ref} {...inputProps} />
+    <StyledCheckbox.Root {...rest}>
+      <StyledCheckbox.HiddenInput {...local.inputProps} />
       <StyledCheckbox.Control>
         <StyledCheckbox.Indicator />
       </StyledCheckbox.Control>
-      {children && <StyledCheckbox.Label>{children}</StyledCheckbox.Label>}
-      {props['aria-label'] && (
+      {local.children && <StyledCheckbox.Label>{local.children}</StyledCheckbox.Label>}
+      {local['aria-label'] && (
         <StyledCheckbox.Label
-          asChild={(props) => <VisuallyHidden {...props()}>{props['aria-label']}</VisuallyHidden>}
+          asChild={(props) => <VisuallyHidden {...props()}>{local['aria-label']}</VisuallyHidden>}
         />
       )}
     </StyledCheckbox.Root>
   )
-})
+}

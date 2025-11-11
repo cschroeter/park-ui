@@ -1,18 +1,17 @@
-import { NumberInput as StyledNumberInput } from '@/components/ui'
+import { type ComponentProps, splitProps } from 'solid-js'
+import * as StyledNumberInput from '@/components/ui/number-input'
 
 export interface NumberInputProps extends StyledNumberInput.RootProps {
-  rootRef?: RefObject<HTMLDivElement | null>
-  inputProps?: InputHTMLAttributes<HTMLInputElement>
+  inputProps?: ComponentProps<typeof StyledNumberInput.Input>
 }
 
-export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
-  function NumberInput(props, ref) {
-    const { inputProps, rootRef, ...rest } = props
-    return (
-      <StyledNumberInput.Root ref={rootRef} {...rest}>
-        <StyledNumberInput.Control />
-        <StyledNumberInput.Input ref={ref} {...inputProps} />
-      </StyledNumberInput.Root>
-    )
-  },
-)
+export const NumberInput = (props: NumberInputProps) => {
+  const [local, rest] = splitProps(props, ['inputProps'])
+
+  return (
+    <StyledNumberInput.Root {...rest}>
+      <StyledNumberInput.Control />
+      <StyledNumberInput.Input {...local.inputProps} />
+    </StyledNumberInput.Root>
+  )
+}

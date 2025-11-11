@@ -1,4 +1,4 @@
-import { ark } from '@ark-ui/solid'
+import { ark } from '@ark-ui/solid/factory'
 import {
   type ComponentProps,
   createMemo,
@@ -28,37 +28,33 @@ export interface GroupProps extends StyledGroupProps {
   /**
    * A function that determines if a child should be skipped
    */
-  skip?: (child: any) => boolean | undefined
+  skip?: ((child: JSX.Element) => boolean) | undefined
+  children?: JSX.Element
 }
 
 export const Group = (props: GroupProps) => {
   const [local, rest] = splitProps(props, ['align', 'justify', 'children', 'wrap', 'skip'])
 
-  const align = () => local.align ?? 'center'
-  const justify = () => local.justify ?? 'flex-start'
+  const resolved = resolveChildren(() => local.children)
 
   const enhancedChildren = createMemo(() => {
-    const resolved = resolveChildren(() => local.children)
-    const childArray = Array.isArray(resolved()) ? resolved() : [resolved()]
-
-    // Filter out null/undefined/false
-    const validChildArray = childArray.filter(Boolean)
+    const childArray = resolved.toArray()
 
     // If only one child, no need for group enhancements
-    if (validChildArray.length === 1) {
-      return validChildArray
+    if (childArray.length === 1) {
+      return childArray
     }
 
     // Filter out skipped children to get valid children for indexing
-    const validChildren = validChildArray.filter((child) => !local.skip?.(child))
+    const validChildren = childArray.filter((child) => !local.skip?.(child))
 
     // If only one valid child after filtering, return original array
     if (validChildren.length === 1) {
-      return validChildArray
+      return childArray
     }
 
-    // Enhance each child with group data attributes
-    return validChildArray.map((child: any) => {
+    // Enhance each child with group data attributes by wrapping in a span
+    return childArray.map((child) => {
       // Skip enhancement for children that should be skipped
       if (local.skip?.(child)) {
         return child
@@ -66,33 +62,33 @@ export const Group = (props: GroupProps) => {
 
       const indexInValidChildren = validChildren.indexOf(child)
 
-      // Clone the element with enhanced props
-      if (typeof child === 'object' && child !== null) {
-        return {
-          ...child,
-          props: {
-            ...child.props,
-            'data-group-item': '',
-            'data-first': dataAttr(indexInValidChildren === 0),
-            'data-last': dataAttr(indexInValidChildren === validChildren.length - 1),
-            'data-between': dataAttr(
-              indexInValidChildren > 0 && indexInValidChildren < validChildren.length - 1,
-            ),
-            style: {
-              '--group-count': validChildren.length,
-              '--group-index': indexInValidChildren,
-              ...(child.props?.style ?? {}),
-            },
-          },
-        }
-      }
-
-      return child
+      // Wrap child in a span with data attributes
+      return (
+        <span
+          data-group-item=""
+          data-first={dataAttr(indexInValidChildren === 0)}
+          data-last={dataAttr(indexInValidChildren === validChildren.length - 1)}
+          data-between={dataAttr(
+            indexInValidChildren > 0 && indexInValidChildren < validChildren.length - 1,
+          )}
+          style={{
+            '--group-count': validChildren.length,
+            '--group-index': indexInValidChildren,
+          }}
+        >
+          {child}
+        </span>
+      )
     })
   })
 
   return (
-    <StyledGroup alignItems={align()} justifyContent={justify()} flexWrap={local.wrap} {...rest}>
+    <StyledGroup
+      alignItems={local.align ?? 'center'}
+      justifyContent={local.justify ?? 'flex-start'}
+      flexWrap={local.wrap}
+      {...rest}
+    >
       {enhancedChildren()}
     </StyledGroup>
   )

@@ -1,31 +1,34 @@
-import { Switch as ParkSwitch } from '@/components/ui'
+import { type ComponentProps, type JSX, splitProps } from 'solid-js'
+import * as ParkSwitch from '@/components/ui/switch'
 
 export interface SwitchProps extends ParkSwitch.RootProps {
-  inputProps?: InputHTMLAttributes<HTMLInputElement>
-  rootRef?: RefObject<HTMLLabelElement | null>
-  trackLabel?: { on: ReactNode; off: ReactNode }
-  thumbLabel?: { on: ReactNode; off: ReactNode }
+  inputProps?: ComponentProps<typeof ParkSwitch.HiddenInput>
+  trackLabel?: { on: JSX.Element; off: JSX.Element }
+  thumbLabel?: { on: JSX.Element; off: JSX.Element }
+  children?: JSX.Element
 }
 
-export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(props, ref) {
-  const { inputProps, children, rootRef = null, trackLabel, thumbLabel, ...rest } = props
+export const Switch = (props: SwitchProps) => {
+  const [local, rest] = splitProps(props, ['inputProps', 'children', 'trackLabel', 'thumbLabel'])
 
   return (
-    <ParkSwitch.Root ref={rootRef} {...rest}>
-      <ParkSwitch.HiddenInput ref={ref} {...inputProps} />
+    <ParkSwitch.Root {...rest}>
+      <ParkSwitch.HiddenInput {...local.inputProps} />
       <ParkSwitch.Control>
         <ParkSwitch.Thumb>
-          {thumbLabel && (
-            <ParkSwitch.ThumbIndicator fallback={thumbLabel?.off}>
-              {thumbLabel?.on}
+          {local.thumbLabel && (
+            <ParkSwitch.ThumbIndicator fallback={local.thumbLabel?.off}>
+              {local.thumbLabel?.on}
             </ParkSwitch.ThumbIndicator>
           )}
         </ParkSwitch.Thumb>
-        {trackLabel && (
-          <ParkSwitch.Indicator fallback={trackLabel.off}>{trackLabel.on}</ParkSwitch.Indicator>
+        {local.trackLabel && (
+          <ParkSwitch.Indicator fallback={local.trackLabel.off}>
+            {local.trackLabel.on}
+          </ParkSwitch.Indicator>
         )}
       </ParkSwitch.Control>
-      {children != null && <ParkSwitch.Label>{children}</ParkSwitch.Label>}
+      {local.children != null && <ParkSwitch.Label>{local.children}</ParkSwitch.Label>}
     </ParkSwitch.Root>
   )
-})
+}

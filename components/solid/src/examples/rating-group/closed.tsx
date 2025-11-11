@@ -1,20 +1,22 @@
-import { RatingGroup as StyledRatingGroup } from '@/components/ui'
+import { type JSX, splitProps } from 'solid-js'
+import * as StyledRatingGroup from '@/components/ui/rating-group'
 
 export interface RatingProps extends StyledRatingGroup.RootProps {
-  icon?: ReactElement
-  count?: number
-  label?: ReactNode
+  icon?: JSX.Element
+  label?: JSX.Element
 }
 
-export const RatingGroup = forwardRef<HTMLDivElement, RatingProps>(function Rating(props, ref) {
-  const { icon, count = 5, label, ...rest } = props
+export const RatingGroup = (props: RatingProps) => {
+  const [local, rest] = splitProps(props, ['icon', 'label'])
+  const count = () => (props.count as number | undefined) ?? 5
+
   return (
-    <StyledRatingGroup.Root ref={ref} count={count} {...rest}>
-      {label && <StyledRatingGroup.Label>{label}</StyledRatingGroup.Label>}
+    <StyledRatingGroup.Root count={count()} {...rest}>
+      {local.label && <StyledRatingGroup.Label>{local.label}</StyledRatingGroup.Label>}
       <StyledRatingGroup.HiddenInput />
       <StyledRatingGroup.Control>
-        <StyledRatingGroup.Items icon={icon} />
+        <StyledRatingGroup.Items icon={local.icon} />
       </StyledRatingGroup.Control>
     </StyledRatingGroup.Root>
   )
-})
+}

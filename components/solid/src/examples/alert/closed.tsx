@@ -1,26 +1,35 @@
-import { Alert as StyledAlert } from '@/components/ui'
+import { type JSX, splitProps } from 'solid-js'
+import * as StyledAlert from '@/components/ui/alert'
 
 export interface AlertProps extends Omit<StyledAlert.RootProps, 'title'> {
-  startElement?: ReactNode
-  endElement?: ReactNode
-  title?: ReactNode
-  icon?: ReactElement
+  startElement?: JSX.Element
+  endElement?: JSX.Element
+  title?: JSX.Element
+  icon?: JSX.Element
+  children?: JSX.Element
 }
 
-export const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
-  const { title, children, icon, startElement, endElement, ...rest } = props
+export const Alert = (props: AlertProps) => {
+  const [local, rest] = splitProps(props, [
+    'title',
+    'children',
+    'icon',
+    'startElement',
+    'endElement',
+  ])
+
   return (
-    <StyledAlert.Root ref={ref} {...rest}>
-      {startElement || <StyledAlert.Indicator>{icon}</StyledAlert.Indicator>}
-      {children ? (
+    <StyledAlert.Root {...rest}>
+      {local.startElement || <StyledAlert.Indicator>{local.icon}</StyledAlert.Indicator>}
+      {local.children ? (
         <StyledAlert.Content>
-          <StyledAlert.Title>{title}</StyledAlert.Title>
-          <StyledAlert.Description>{children}</StyledAlert.Description>
+          <StyledAlert.Title>{local.title}</StyledAlert.Title>
+          <StyledAlert.Description>{local.children}</StyledAlert.Description>
         </StyledAlert.Content>
       ) : (
-        <StyledAlert.Title flex="1">{title}</StyledAlert.Title>
+        <StyledAlert.Title flex="1">{local.title}</StyledAlert.Title>
       )}
-      {endElement}
+      {local.endElement}
     </StyledAlert.Root>
   )
-})
+}
