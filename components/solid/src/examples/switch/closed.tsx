@@ -1,4 +1,4 @@
-import { type ComponentProps, type JSX, splitProps } from 'solid-js'
+import { type ComponentProps, type JSX, Show, splitProps } from 'solid-js'
 import * as ParkSwitch from '@/components/ui/switch'
 
 export interface SwitchProps extends ParkSwitch.RootProps {
@@ -16,19 +16,21 @@ export const Switch = (props: SwitchProps) => {
       <ParkSwitch.HiddenInput {...local.inputProps} />
       <ParkSwitch.Control>
         <ParkSwitch.Thumb>
-          {local.thumbLabel && (
+          <Show when={local.thumbLabel}>
             <ParkSwitch.ThumbIndicator fallback={local.thumbLabel?.off}>
               {local.thumbLabel?.on}
             </ParkSwitch.ThumbIndicator>
-          )}
+          </Show>
         </ParkSwitch.Thumb>
-        {local.trackLabel && (
-          <ParkSwitch.Indicator fallback={local.trackLabel.off}>
-            {local.trackLabel.on}
+        <Show when={local.trackLabel}>
+          <ParkSwitch.Indicator fallback={local.trackLabel?.off}>
+            {local.trackLabel?.on}
           </ParkSwitch.Indicator>
-        )}
+        </Show>
       </ParkSwitch.Control>
-      {local.children != null && <ParkSwitch.Label>{local.children}</ParkSwitch.Label>}
+      <Show when={local.children != null}>
+        <ParkSwitch.Label>{local.children}</ParkSwitch.Label>
+      </Show>
     </ParkSwitch.Root>
   )
 }

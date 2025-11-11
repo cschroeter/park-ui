@@ -1,4 +1,4 @@
-import { type JSX, children as resolveChildren, splitProps } from 'solid-js'
+import { type JSX, children as resolveChildren, Show, splitProps } from 'solid-js'
 import { css, cx } from 'styled-system/css'
 import type { BoxProps } from 'styled-system/jsx'
 import { Group } from './group'
@@ -91,7 +91,9 @@ export const InputGroup = (props: InputGroupProps) => {
       }}
       {...rest}
     >
-      {local.startAddon && <InputAddon {...local.startAddonProps}>{local.startAddon}</InputAddon>}
+      <Show when={local.startAddon}>
+        <InputAddon {...local.startAddonProps}>{local.startAddon}</InputAddon>
+      </Show>
       {local.startElement && (
         <InputElement pointerEvents="none" {...local.startElementProps}>
           {local.startElement}
@@ -103,7 +105,9 @@ export const InputGroup = (props: InputGroupProps) => {
           {local.endElement}
         </InputElement>
       )}
-      {local.endAddon && <InputAddon {...local.endAddonProps}>{local.endAddon}</InputAddon>}
+      <Show when={local.endAddon}>
+        <InputAddon {...local.endAddonProps}>{local.endAddon}</InputAddon>
+      </Show>
     </Group>
   )
 }

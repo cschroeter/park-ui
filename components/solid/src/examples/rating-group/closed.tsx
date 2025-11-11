@@ -1,4 +1,4 @@
-import { type JSX, splitProps } from 'solid-js'
+import { type JSX, Show, splitProps } from 'solid-js'
 import * as StyledRatingGroup from '@/components/ui/rating-group'
 
 export interface RatingProps extends StyledRatingGroup.RootProps {
@@ -12,7 +12,9 @@ export const RatingGroup = (props: RatingProps) => {
 
   return (
     <StyledRatingGroup.Root count={count()} {...rest}>
-      {local.label && <StyledRatingGroup.Label>{local.label}</StyledRatingGroup.Label>}
+      <Show when={local.label}>
+        <StyledRatingGroup.Label>{local.label}</StyledRatingGroup.Label>
+      </Show>
       <StyledRatingGroup.HiddenInput />
       <StyledRatingGroup.Control>
         <StyledRatingGroup.Items icon={local.icon} />

@@ -1,4 +1,4 @@
-import { type ComponentProps, type JSX, splitProps } from 'solid-js'
+import { type ComponentProps, type JSX, Show, splitProps } from 'solid-js'
 import * as StyledRadioGroup from '@/components/ui/radio-group'
 
 export interface RadioProps extends StyledRadioGroup.ItemProps {
@@ -13,7 +13,9 @@ export const Radio = (props: RadioProps) => {
     <StyledRadioGroup.Item {...rest}>
       <StyledRadioGroup.ItemHiddenInput {...local.inputProps} />
       <StyledRadioGroup.ItemControl />
-      {local.children && <StyledRadioGroup.ItemText>{local.children}</StyledRadioGroup.ItemText>}
+      <Show when={local.children}>
+        <StyledRadioGroup.ItemText>{local.children}</StyledRadioGroup.ItemText>
+      </Show>
     </StyledRadioGroup.Item>
   )
 }

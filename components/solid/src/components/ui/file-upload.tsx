@@ -1,6 +1,6 @@
 import { FileUpload, useFileUploadContext } from '@ark-ui/solid/file-upload'
 import { FileIcon, XIcon } from 'lucide-solid'
-import { type ComponentProps, createMemo, For, splitProps } from 'solid-js'
+import { type ComponentProps, createMemo, For, Show, splitProps } from 'solid-js'
 import { createStyleContext, type HTMLStyledProps, Stack } from 'styled-system/jsx'
 import { fileUpload } from 'styled-system/recipes'
 import { Span } from '@/components/ui'
@@ -44,7 +44,7 @@ interface ItemsProps extends Omit<ItemProps, 'file'>, ItemsBaseProps {}
 export const Items = (props: ItemsProps) => {
   const [local, rest] = splitProps(props, ['showSize', 'clearable', 'files'])
   const fileUpload = useFileUploadContext()
-  const acceptedFiles = () => local.files ?? fileUpload.acceptedFiles
+  const acceptedFiles = () => local.files ?? fileUpload().acceptedFiles
 
   return (
     <For each={acceptedFiles()}>
@@ -53,10 +53,14 @@ export const Items = (props: ItemsProps) => {
           <ItemPreview />
           <Stack gap="0.5" flex="1">
             <ItemName />
-            {local.showSize && <ItemSizeText />}
+            <Show when={local.showSize}>
+              <ItemSizeText />
+            </Show>
           </Stack>
 
-          {local.clearable && <ItemDeleteTrigger />}
+          <Show when={local.clearable}>
+            <ItemDeleteTrigger />
+          </Show>
         </Item>
       )}
     </For>
@@ -84,7 +88,7 @@ export const FileText = (props: FileTextProps) => {
   const fallback = () => local.fallback ?? 'Select file(s)'
 
   const fileUpload = useFileUploadContext()
-  const acceptedFiles = () => fileUpload.acceptedFiles
+  const acceptedFiles = () => fileUpload().acceptedFiles
 
   const fileText = createMemo(() => {
     const files = acceptedFiles()

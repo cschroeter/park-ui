@@ -1,6 +1,6 @@
 import { ark } from '@ark-ui/solid/factory'
 import { Slider, useSliderContext } from '@ark-ui/solid/slider'
-import { type ComponentProps, For, type JSX, splitProps } from 'solid-js'
+import { type ComponentProps, For, type JSX, Show, splitProps } from 'solid-js'
 import { createStyleContext } from 'styled-system/jsx'
 import { slider } from 'styled-system/recipes'
 
@@ -36,13 +36,15 @@ export const Marks = (props: MarksProps) => {
   return (
     <MarkerGroup {...rest}>
       <For each={local.marks}>
-        {(mark, index) => {
+        {(mark) => {
           const value = typeof mark === 'number' ? mark : mark.value
           const label = typeof mark === 'number' ? undefined : mark.label
           return (
             <Marker value={value}>
               <MarkerIndicator />
-              {label != null && <span>{label}</span>}
+              <Show when={label != null}>
+                <span>{label}</span>
+              </Show>
             </Marker>
           )
         }}

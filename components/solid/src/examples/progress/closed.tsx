@@ -18,9 +18,9 @@ export const Progress = (props: ProgressProps) => {
       <StyledProgress.Track>
         <StyledProgress.Range />
       </StyledProgress.Track>
-      {local.showValueText && (
+      <Show when={local.showValueText}>
         <StyledProgress.ValueText>{local.valueText}</StyledProgress.ValueText>
-      )}
+      </Show>
     </StyledProgress.Root>
   )
 }

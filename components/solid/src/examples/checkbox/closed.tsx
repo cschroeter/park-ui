@@ -1,4 +1,4 @@
-import { type ComponentProps, type JSX, splitProps } from 'solid-js'
+import { type ComponentProps, type JSX, Show, splitProps } from 'solid-js'
 import { VisuallyHidden } from 'styled-system/jsx'
 import * as StyledCheckbox from '@/components/ui/checkbox'
 
@@ -19,12 +19,14 @@ export const Checkbox = (props: CheckboxProps) => {
       <StyledCheckbox.Control>
         <StyledCheckbox.Indicator />
       </StyledCheckbox.Control>
-      {local.children && <StyledCheckbox.Label>{local.children}</StyledCheckbox.Label>}
-      {local['aria-label'] && (
+      <Show when={local.children}>
+        <StyledCheckbox.Label>{local.children}</StyledCheckbox.Label>
+      </Show>
+      <Show when={local['aria-label']}>
         <StyledCheckbox.Label
           asChild={(props) => <VisuallyHidden {...props()}>{local['aria-label']}</VisuallyHidden>}
         />
-      )}
+      </Show>
     </StyledCheckbox.Root>
   )
 }

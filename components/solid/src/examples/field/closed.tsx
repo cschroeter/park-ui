@@ -1,4 +1,4 @@
-import { type JSX, splitProps } from 'solid-js'
+import { type JSX, Show, splitProps } from 'solid-js'
 import * as StyledField from '@/components/ui/field'
 
 export interface FieldProps extends Omit<StyledField.RootProps, 'label'> {
@@ -20,14 +20,16 @@ export const Field = (props: FieldProps) => {
 
   return (
     <StyledField.Root {...rest}>
-      {local.label && (
+      <Show when={local.label}>
         <StyledField.Label>
           {local.label}
           <StyledField.RequiredIndicator fallback={local.optionalText} />
         </StyledField.Label>
-      )}
+      </Show>
       {local.children}
-      {local.helperText && <StyledField.HelperText>{local.helperText}</StyledField.HelperText>}
+      <Show when={local.helperText}>
+        <StyledField.HelperText>{local.helperText}</StyledField.HelperText>
+      </Show>
       <StyledField.ErrorText>{local.errorText}</StyledField.ErrorText>
     </StyledField.Root>
   )
