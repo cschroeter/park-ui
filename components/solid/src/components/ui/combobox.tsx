@@ -45,7 +45,7 @@ export const ItemIndicator = (props: HTMLStyledProps<'div'>) => {
   const item = useComboboxItemContext()
 
   return (
-    <Show when={item.selected} fallback={<svg aria-hidden="true" focusable="false" />}>
+    <Show when={item().selected} fallback={<svg aria-hidden="true" />}>
       <StyledItemIndicator {...props}>
         <CheckIcon />
       </StyledItemIndicator>

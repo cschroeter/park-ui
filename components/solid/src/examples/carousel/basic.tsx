@@ -9,7 +9,7 @@ export const App = () => {
     <Carousel.Root slideCount={slides}>
       <Carousel.ItemGroup>
         {Array.from({ length: slides }, (_, index) => (
-          <Carousel.Item key={index} index={index}>
+          <Carousel.Item index={index}>
             <Center bg="colorPalette.subtle.bg" height="48" borderRadius="l2">
               <Text textStyle="3xl" fontWeight="semibold" color="colorPalette.subtle.fg">
                 {index + 1}

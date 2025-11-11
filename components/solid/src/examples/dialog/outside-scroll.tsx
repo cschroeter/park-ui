@@ -21,9 +21,7 @@ export const App = () => {
             </Dialog.Header>
             <Dialog.Body
               color="fg.muted"
-              dangerouslySetInnerHTML={{
-                __html: loremIpsum({ count: 10, format: 'html', units: 'paragraphs' }),
-              }}
+              innerHTML={loremIpsum({ count: 10, format: 'html', units: 'paragraphs' })}
             />
             <Dialog.Footer>
               <Dialog.ActionTrigger

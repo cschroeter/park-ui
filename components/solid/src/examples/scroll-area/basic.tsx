@@ -8,9 +8,7 @@ export const App = () => {
         <ScrollArea.Content
           spaceY="3"
           textStyle="sm"
-          dangerouslySetInnerHTML={{
-            __html: loremIpsum({ count: 10, format: 'html', units: 'paragraphs' }),
-          }}
+          innerHTML={loremIpsum({ count: 10, format: 'html', units: 'paragraphs' })}
         />
       </ScrollArea.Viewport>
       <ScrollArea.Scrollbar />

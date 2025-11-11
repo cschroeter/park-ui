@@ -5,7 +5,7 @@ export const App = () => {
   let ref: HTMLTextAreaElement | undefined
 
   return (
-    <Popover.Root initialFocusEl={() => ref.current}>
+    <Popover.Root initialFocusEl={() => ref as HTMLTextAreaElement}>
       <Popover.Trigger
         asChild={(triggerProps) => (
           <Button variant="outline" {...triggerProps()}>

@@ -6,11 +6,11 @@ import { Stack } from 'styled-system/jsx'
 import { Combobox } from '@/components/ui'
 
 export const App = () => {
-  const { contains } = useFilter({ sensitivity: 'base' })
+  const filterFn = useFilter({ sensitivity: 'base' })
 
   const { collection, filter } = useListCollection({
     initialItems: frameworks,
-    filter: contains,
+    filter: filterFn().contains,
   })
 
   const variants = ['outline', 'subtle', 'surface'] as const
@@ -21,7 +21,7 @@ export const App = () => {
         {(variant) => (
           <Combobox.Root
             variant={variant}
-            collection={collection}
+            collection={collection()}
             onInputValueChange={(e) => filter(e.inputValue)}
           >
             <Combobox.Label>Framework</Combobox.Label>
@@ -36,7 +36,7 @@ export const App = () => {
               <Combobox.Positioner>
                 <Combobox.Content>
                   <Combobox.Empty>No items found</Combobox.Empty>
-                  <For each={collection.items}>
+                  <For each={collection().items}>
                     {(item) => (
                       <Combobox.Item item={item}>
                         {item.label}

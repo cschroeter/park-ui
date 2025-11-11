@@ -29,8 +29,8 @@ export const Indicator = (props: IndicatorProps) => {
   const api = useSwitchContext()
 
   return (
-    <StyledIndicator data-checked={api.checked ? '' : undefined} {...rest}>
-      <Show when={api.checked} fallback={local.fallback}>
+    <StyledIndicator data-checked={api().checked ? '' : undefined} {...rest}>
+      <Show when={api().checked} fallback={local.fallback}>
         {local.children}
       </Show>
     </StyledIndicator>
@@ -47,8 +47,8 @@ export const ThumbIndicator = (props: ThumbIndicatorProps) => {
   const api = useSwitchContext()
 
   return (
-    <StyledThumbIndicator data-checked={api.checked ? '' : undefined} {...rest}>
-      <Show when={api.checked} fallback={local.fallback}>
+    <StyledThumbIndicator data-checked={api().checked ? '' : undefined} {...rest}>
+      <Show when={api().checked} fallback={local.fallback}>
         {local.children}
       </Show>
     </StyledThumbIndicator>

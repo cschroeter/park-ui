@@ -45,19 +45,35 @@ export const Tooltip = (props: TooltipProps) => {
   return (
     <Show when={!local.disabled} fallback={local.children}>
       <Root {...rootProps}>
-        <Trigger asChild>{local.children}</Trigger>
-        <Portal disabled={!portalled()} mount={local.portalRef}>
-          <Positioner>
-            <Content {...local.contentProps}>
-              <Show when={local.showArrow}>
-                <Arrow>
-                  <ArrowTip />
-                </Arrow>
-              </Show>
-              {local.content}
-            </Content>
-          </Positioner>
-        </Portal>
+        <Trigger>{local.children}</Trigger>
+        <Show
+          when={portalled()}
+          fallback={
+            <Positioner>
+              <Content {...local.contentProps}>
+                <Show when={local.showArrow}>
+                  <Arrow>
+                    <ArrowTip />
+                  </Arrow>
+                </Show>
+                {local.content}
+              </Content>
+            </Positioner>
+          }
+        >
+          <Portal mount={local.portalRef}>
+            <Positioner>
+              <Content {...local.contentProps}>
+                <Show when={local.showArrow}>
+                  <Arrow>
+                    <ArrowTip />
+                  </Arrow>
+                </Show>
+                {local.content}
+              </Content>
+            </Positioner>
+          </Portal>
+        </Show>
       </Root>
     </Show>
   )

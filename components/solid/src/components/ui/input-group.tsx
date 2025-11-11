@@ -85,7 +85,13 @@ export const InputGroup = (props: InputGroupProps) => {
     <Group
       width="full"
       attached={attached()}
-      skip={(el) => el.type === InputElement}
+      skip={(el): boolean => {
+        if (typeof el === 'object' && el && 'type' in el) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          return (el as Record<string, any>)['type'] === InputElement
+        }
+        return false
+      }}
       _icon={{
         boxSize: '5',
       }}
@@ -99,7 +105,15 @@ export const InputGroup = (props: InputGroupProps) => {
           {local.startElement}
         </InputElement>
       )}
-      <div class={cx(child()?.props?.class, inputStyles())}>{child()}</div>
+      <div
+        class={cx(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (child() as Record<string, any> | undefined)?.['props']?.['class'],
+          inputStyles(),
+        )}
+      >
+        {child()}
+      </div>
       {local.endElement && (
         <InputElement placement="end" {...local.endElementProps}>
           {local.endElement}

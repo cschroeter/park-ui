@@ -46,9 +46,9 @@ export const ItemIndicator = (props: ItemIndicatorProps) => {
   return (
     <StyledItemIndicator
       {...rest}
-      data-highlighted={item.highlighted ? '' : undefined}
-      data-checked={item.checked ? '' : undefined}
-      data-half={item.half ? '' : undefined}
+      data-highlighted={item().highlighted ? '' : undefined}
+      data-checked={item().checked ? '' : undefined}
+      data-half={item().half ? '' : undefined}
     >
       {cloneIcon(icon(), 'bg')}
       {cloneIcon(icon(), 'fg')}
@@ -65,7 +65,7 @@ export const Items = (props: ItemsProps) => {
   const ratingGroup = useRatingGroupContext()
 
   return (
-    <For each={ratingGroup.items}>
+    <For each={ratingGroup().items}>
       {(item) => (
         <Item index={item} {...rest}>
           <ItemIndicator icon={local.icon} />

@@ -14,7 +14,7 @@ interface ImageOptions {
    * It maps to css `object-position` property.
    * @type SystemStyleObject["objectPosition"]
    */
-  align?: SystemStyleObject['objectPosition'] | undefined
+  alignment?: SystemStyleObject['objectPosition'] | undefined
 }
 
 export interface ImageProps extends HTMLStyledProps<'img'>, ImageOptions {}
@@ -22,8 +22,8 @@ export interface ImageProps extends HTMLStyledProps<'img'>, ImageOptions {}
 const StyledImage = styled('img')
 
 export const Image = (props: ImageProps) => {
-  const [local, rest] = splitProps(props, ['align', 'fit'])
+  const [local, rest] = splitProps(props, ['alignment', 'fit'])
   const fit = () => local.fit ?? 'cover'
 
-  return <StyledImage objectFit={fit()} objectPosition={local.align} {...rest} />
+  return <StyledImage objectFit={fit()} objectPosition={local.alignment} {...rest} />
 }

@@ -27,8 +27,8 @@ export const App = () => {
             {({ title, value }) => (
               <Menu.CheckboxItem
                 value={value}
-                checked={group.isChecked(value)}
-                onCheckedChange={() => group.toggleValue(value)}
+                checked={group().isChecked(value)}
+                onCheckedChange={() => group().toggleValue(value)}
               >
                 {title}
                 <Menu.ItemIndicator />

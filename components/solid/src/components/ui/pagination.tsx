@@ -26,11 +26,11 @@ export const Items = (props: PaginationItemsProps) => {
   const ctx = usePaginationContext()
 
   return (
-    <For each={ctx.pages}>
+    <For each={ctx().pages}>
       {(page, index) => {
         if (page.type === 'ellipsis') {
           return (
-            <Ellipsis asChild index={index()} {...props}>
+            <Ellipsis index={index()}>
               {props.ellipsis || (
                 <IconButton as="span" colorPalette="gray">
                   <EllipsisIcon />
@@ -41,8 +41,8 @@ export const Items = (props: PaginationItemsProps) => {
         }
 
         return (
-          <Item asChild type="page" value={page.value} {...props}>
-            {props.render({ ...page, selected: ctx.page === page.value })}
+          <Item type="page" value={page.value}>
+            {props.render({ ...page, selected: ctx().page === page.value })}
           </Item>
         )
       }}

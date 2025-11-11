@@ -5,7 +5,7 @@ export const App = () => {
   let ref: HTMLInputElement | undefined
 
   return (
-    <Dialog.Root initialFocusEl={() => ref.current}>
+    <Dialog.Root initialFocusEl={() => ref as HTMLInputElement}>
       <Dialog.Trigger
         asChild={(triggerProps) => (
           <Button variant="outline" {...triggerProps()}>

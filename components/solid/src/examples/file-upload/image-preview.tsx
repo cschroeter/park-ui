@@ -21,7 +21,7 @@ export const App = () => {
 
 const FileUploadList = () => {
   const fileUpload = useFileUploadContext()
-  const files = fileUpload.acceptedFiles
+  const files = fileUpload().acceptedFiles
   if (files.length === 0) return null
 
   return (

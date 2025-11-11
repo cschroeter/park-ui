@@ -28,7 +28,7 @@ export const App = () => {
                     <DatePicker.Table>
                       <DatePicker.TableHead>
                         <DatePicker.TableRow>
-                          <For each={datePicker.weekDays}>
+                          <For each={datePicker().weekDays}>
                             {(weekDay) => (
                               <DatePicker.TableHeader>{weekDay.short}</DatePicker.TableHeader>
                             )}
@@ -36,7 +36,7 @@ export const App = () => {
                         </DatePicker.TableRow>
                       </DatePicker.TableHead>
                       <DatePicker.TableBody>
-                        <For each={datePicker.weeks}>
+                        <For each={datePicker().weeks}>
                           {(week) => (
                             <DatePicker.TableRow>
                               <For each={week}>
@@ -70,7 +70,7 @@ export const App = () => {
                     </DatePicker.ViewControl>
                     <DatePicker.Table>
                       <DatePicker.TableBody>
-                        <For each={datePicker.getMonthsGrid({ columns: 4, format: 'short' })}>
+                        <For each={datePicker().getMonthsGrid({ columns: 4, format: 'short' })}>
                           {(months) => (
                             <DatePicker.TableRow>
                               <For each={months}>
@@ -104,7 +104,7 @@ export const App = () => {
                     </DatePicker.ViewControl>
                     <DatePicker.Table>
                       <DatePicker.TableBody>
-                        <For each={datePicker.getYearsGrid({ columns: 4 })}>
+                        <For each={datePicker().getYearsGrid({ columns: 4 })}>
                           {(years) => (
                             <DatePicker.TableRow>
                               <For each={years}>

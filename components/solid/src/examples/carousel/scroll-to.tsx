@@ -11,7 +11,7 @@ export const App = () => {
       <ScrollToTrigger />
       <Carousel.ItemGroup>
         {Array.from({ length: slides }, (_, index) => (
-          <Carousel.Item key={index} index={index}>
+          <Carousel.Item index={index}>
             <Center bg="colorPalette.subtle.bg" height="40" borderRadius="l2">
               <Text textStyle="3xl" fontWeight="semibold" color="colorPalette.subtle.fg">
                 {index + 1}
@@ -45,7 +45,12 @@ const ScrollToTrigger = () => {
   const carousel = useCarouselContext()
 
   return (
-    <Button variant="outline" size="sm" alignSelf="start" onClick={() => carousel.scrollTo(3)}>
+    <Button
+      variant="outline"
+      size="sm"
+      alignSelf="start"
+      onClick={() => carousel().scrollToIndex(3)}
+    >
       Go to slide 4
     </Button>
   )

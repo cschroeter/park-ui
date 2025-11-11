@@ -1,4 +1,4 @@
-import type { Assign, SelectRootProps } from '@ark-ui/solid'
+import type { Assign, CollectionItem, SelectRootProps } from '@ark-ui/solid'
 import { ark } from '@ark-ui/solid/factory'
 import { Select, useSelectItemContext } from '@ark-ui/solid/select'
 import { CheckIcon, ChevronsUpDownIcon } from 'lucide-solid'
@@ -11,7 +11,7 @@ const { withProvider, withContext } = createStyleContext(select)
 
 type StyleProps = SelectVariantProps & HTMLStyledProps<'div'>
 
-export type RootProps<T> = Assign<SelectRootProps<T>, StyleProps>
+export type RootProps<T extends CollectionItem> = Assign<SelectRootProps<T>, StyleProps>
 
 export const Root = withProvider(Select.Root, 'root') as Select.RootComponent<StyleProps>
 
@@ -45,7 +45,7 @@ export const ItemIndicator = (props: HTMLStyledProps<'div'>) => {
   const item = useSelectItemContext()
 
   return (
-    <Show when={item.selected} fallback={<svg aria-hidden="true" focusable="false" />}>
+    <Show when={item().selected} fallback={<svg aria-hidden="true" />}>
       <StyledItemIndicator {...props}>
         <CheckIcon />
       </StyledItemIndicator>

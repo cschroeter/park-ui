@@ -1,4 +1,4 @@
-import { useVirtualizer } from '@tanstack/solid-virtual'
+import { createVirtualizer } from '@tanstack/solid-virtual'
 import { For } from 'solid-js'
 import { Box, Center } from 'styled-system/jsx'
 import { ScrollArea } from '@/components/ui'
@@ -6,11 +6,11 @@ import { ScrollArea } from '@/components/ui'
 export const App = () => {
   let scrollRef: HTMLDivElement | undefined
 
-  const rowVirtualizer = useVirtualizer({
+  const rowVirtualizer = createVirtualizer({
     get count() {
       return 200
     },
-    getScrollElement: () => scrollRef,
+    getScrollElement: () => scrollRef as HTMLDivElement,
     estimateSize: () => 40,
     gap: 8,
   })

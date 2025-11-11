@@ -1,6 +1,6 @@
 import { Toaster as ArkToaster, createToaster, Toast, useToastContext } from '@ark-ui/solid/toast'
 import { CheckCircleIcon, CircleAlertIcon, CircleXIcon } from 'lucide-solid'
-import { type ComponentProps, type JSX, Show } from 'solid-js'
+import { Show } from 'solid-js'
 import { Portal } from 'solid-js/web'
 import { createStyleContext, Stack, styled } from 'styled-system/jsx'
 import { toast } from 'styled-system/recipes'
@@ -26,12 +26,12 @@ const iconMap: Record<string, any> = {
 const Indicator = (props: IconProps) => {
   const toast = useToastContext()
 
-  const StatusIcon = () => iconMap[toast.type]
+  const StatusIcon = () => iconMap[toast().type]
 
   return (
     <Show when={StatusIcon()}>
       {(Icon_) => (
-        <Icon data-type={toast.type} {...props}>
+        <Icon data-type={toast().type} {...props}>
           <Icon_ />
         </Icon>
       )}
@@ -66,11 +66,11 @@ export const Toaster = () => {
                 </Show>
               </Stack>
               <Show when={toast().action}>
-                <ActionTrigger>{toast.action!.label}</ActionTrigger>
+                {(action) => <ActionTrigger>{action().label}</ActionTrigger>}
               </Show>
             </Stack>
             <Show when={toast().closable}>
-              <CloseTrigger asChild>
+              <CloseTrigger>
                 <CloseButton size="sm" />
               </CloseTrigger>
             </Show>

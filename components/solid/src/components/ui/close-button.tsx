@@ -1,5 +1,5 @@
 import { XIcon } from 'lucide-solid'
-import { type JSX, splitProps } from 'solid-js'
+import { splitProps } from 'solid-js'
 import { IconButton, type IconButtonProps } from './icon-button'
 
 export type CloseButtonProps = IconButtonProps

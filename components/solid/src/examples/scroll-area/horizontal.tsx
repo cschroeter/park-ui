@@ -7,7 +7,7 @@ export const App = () => (
       <ScrollArea.Content>
         <HStack gap="3">
           {Array.from({ length: 12 }, (_, i) => (
-            <Center key={i} h="20" w="40" bg="gray.subtle.bg" borderRadius="l2">
+            <Center h="20" w="40" bg="gray.subtle.bg" borderRadius="l2">
               {i + 1}
             </Center>
           ))}

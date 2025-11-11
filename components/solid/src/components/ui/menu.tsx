@@ -44,7 +44,7 @@ export const ItemIndicator = (props: HTMLStyledProps<'div'>) => {
   const item = useMenuItemContext()
 
   return (
-    <Show when={item().checked} fallback={<svg aria-hidden="true" focusable="false" />}>
+    <Show when={item().checked} fallback={<svg aria-hidden="true" />}>
       <StyledItemIndicator {...props}>
         <CheckIcon />
       </StyledItemIndicator>

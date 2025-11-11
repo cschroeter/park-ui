@@ -70,7 +70,9 @@ export const Button = (props: ButtonProps) => {
 export interface ButtonGroupProps extends GroupProps, ButtonVariantProps {}
 
 export const ButtonGroup = (props: ButtonGroupProps) => {
-  const [variantProps, otherProps] = createMemo(() => button.splitVariantProps(props))
+  const splitProps = createMemo(() => button.splitVariantProps(props))
+  const variantProps = () => splitProps()[0]
+  const otherProps = () => splitProps()[1]
   return (
     <ButtonPropsProvider value={variantProps()}>
       <Group {...otherProps()} />
@@ -79,8 +81,5 @@ export const ButtonGroup = (props: ButtonGroupProps) => {
 }
 
 const [ButtonPropsProvider, useButtonPropsContext] = createContext<ButtonVariantProps>({
-  name: 'ButtonPropsContext',
-  hookName: 'useButtonPropsContext',
-  providerName: '<PropsProvider />',
   strict: false,
 })

@@ -56,7 +56,7 @@ export const Marks = (props: MarksProps) => {
 export const Thumbs = (props: Omit<ThumbProps, 'index'>) => {
   const slider = useSliderContext()
   return (
-    <For each={slider.value}>
+    <For each={slider().value}>
       {(_, index) => (
         <Thumb index={index()} {...props}>
           <HiddenInput />
