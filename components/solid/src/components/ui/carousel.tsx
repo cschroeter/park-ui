@@ -25,7 +25,7 @@ export const IndicatorGroup = (props: ComponentProps<typeof StyledIndicatorGroup
 
   return (
     <StyledIndicatorGroup {...props}>
-      <For each={carousel.pageSnapPoints}>{(_, index) => <Indicator index={index()} />}</For>
+      <For each={carousel().pageSnapPoints}>{(_, index) => <Indicator index={index()} />}</For>
     </StyledIndicatorGroup>
   )
 }

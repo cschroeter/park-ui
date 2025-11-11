@@ -25,7 +25,7 @@ export const SkeletonText = (props: SkeletonTextProps) => {
   return (
     <Stack gap={local.gap} width="full" {...local.rootProps}>
       <For each={[...Array(noOfLines()).keys()]}>
-        {(index) => (
+        {() => (
           <Skeleton
             height="4"
             _last={{ maxW: noOfLines() === 1 ? '100%' : '80%' }}

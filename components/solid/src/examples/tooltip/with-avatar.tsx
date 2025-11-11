@@ -1,7 +1,8 @@
+import { createUniqueId } from 'solid-js'
 import { Avatar, Tooltip } from '@/components/ui'
 
 export const App = () => {
-  const id = useId()
+  const id = createUniqueId()
 
   return (
     <Tooltip ids={{ trigger: id }} content="Christian Busch is online">

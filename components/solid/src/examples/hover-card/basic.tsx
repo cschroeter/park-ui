@@ -1,5 +1,5 @@
-import { Portal } from '@ark-ui/solid'
 import { MapPinIcon } from 'lucide-solid'
+import { Portal } from 'solid-js/web'
 import { HStack, Stack } from 'styled-system/jsx'
 import { Avatar, HoverCard, Icon, Link, Text } from '@/components/ui'
 

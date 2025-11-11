@@ -22,10 +22,10 @@ export {
 } from '@ark-ui/solid/checkbox'
 
 export const Indicator = (props: HTMLStyledProps<'svg'>) => {
-  const { indeterminate, checked } = useCheckboxContext()
+  const checkbox = useCheckboxContext()
 
   return (
-    <Checkbox.Indicator indeterminate={indeterminate()} asChild>
+    <Checkbox.Indicator indeterminate={checkbox().indeterminate}>
       <styled.svg
         viewBox="0 0 24 24"
         fill="none"
@@ -36,7 +36,11 @@ export const Indicator = (props: HTMLStyledProps<'svg'>) => {
         {...props}
       >
         <title>Checkmark</title>
-        {indeterminate() ? <path d="M5 12h14" /> : checked() ? <path d="M20 6 9 17l-5-5" /> : null}
+        {checkbox().indeterminate ? (
+          <path d="M5 12h14" />
+        ) : checkbox().checked ? (
+          <path d="M20 6 9 17l-5-5" />
+        ) : null}
       </styled.svg>
     </Checkbox.Indicator>
   )
