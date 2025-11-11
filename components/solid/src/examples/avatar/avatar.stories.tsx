@@ -6,4 +6,5 @@ const meta: Meta = {
 
 export default meta
 
+export { App as badge } from './badge'
 export { App as basic } from './basic'
