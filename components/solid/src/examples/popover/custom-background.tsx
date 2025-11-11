@@ -1,0 +1,28 @@
+import { Portal } from 'solid-js/web'
+import { Button, CloseButton, Popover } from '@/components/ui'
+
+export const App = () => {
+  return (
+    <Popover.Root lazyMount unmountOnExit>
+      <Popover.Trigger
+        asChild={(triggerProps) => (
+          <Button variant="outline" {...triggerProps()}>
+            Open Popover
+          </Button>
+        )}
+      />
+      <Portal>
+        <Popover.Positioner>
+          <Popover.Content css={{ '--popover-bg': 'lightblue' }}>
+            <Popover.Arrow />
+            <Popover.Body>
+              <Popover.Title>Title</Popover.Title>
+              <Popover.Description>Description</Popover.Description>
+            </Popover.Body>
+            <Popover.CloseTrigger asChild={(triggerProps) => <CloseButton {...triggerProps()} />} />
+          </Popover.Content>
+        </Popover.Positioner>
+      </Portal>
+    </Popover.Root>
+  )
+}
