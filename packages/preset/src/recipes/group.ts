@@ -4,14 +4,16 @@ export const group = defineRecipe({
   className: 'group',
   base: {
     display: 'inline-flex',
-    gap: 'var(--group-gap, 0.5rem)',
-    isolation: 'isolate',
     position: 'relative',
-    '& [data-group-item]': {
+    gap: '2',
+    '& > *': {
       _focusVisible: {
         zIndex: 1,
       },
     },
+  },
+  defaultVariants: {
+    orientation: 'horizontal',
   },
   variants: {
     orientation: {
@@ -24,7 +26,7 @@ export const group = defineRecipe({
     },
     attached: {
       true: {
-        gap: '0!',
+        gap: '0',
       },
     },
     grow: {
@@ -35,34 +37,22 @@ export const group = defineRecipe({
         },
       },
     },
-    stacking: {
-      'first-on-top': {
-        '& > [data-group-item]': {
-          zIndex: 'calc(var(--group-count) - var(--group-index))',
-        },
-      },
-      'last-on-top': {
-        '& > [data-group-item]': {
-          zIndex: 'var(--group-index)',
-        },
-      },
-    },
   },
   compoundVariants: [
     {
       orientation: 'horizontal',
       attached: true,
       css: {
-        '& > *[data-first]': {
-          borderEndRadius: '0!',
+        '& > *:first-child': {
+          borderEndRadius: '0',
           marginEnd: '-1px',
         },
-        '& > *[data-between]': {
-          borderRadius: '0!',
-          marginEnd: '-1px',
+        '& > *:last-child': {
+          borderStartRadius: '0',
         },
-        '& > *[data-last]': {
-          borderStartRadius: '0!',
+        '& > *:not(:first-child):not(:last-child)': {
+          borderRadius: '0',
+          marginEnd: '-1px',
         },
       },
     },
@@ -70,21 +60,18 @@ export const group = defineRecipe({
       orientation: 'vertical',
       attached: true,
       css: {
-        '& > *[data-first]': {
-          borderBottomRadius: '0!',
+        '& > *:first-child': {
+          borderBottomRadius: '0',
           marginBottom: '-1px',
         },
-        '& > *[data-between]': {
-          borderRadius: '0!',
-          marginBottom: '-1px',
+        '& > *:last-child': {
+          borderTopRadius: '0',
         },
-        '& > *[data-last]': {
-          borderTopRadius: '0!',
+        '& > *:not(:first-child):not(:last-child)': {
+          borderRadius: '0',
+          marginBottom: '-1px',
         },
       },
     },
   ],
-  defaultVariants: {
-    orientation: 'horizontal',
-  },
 })

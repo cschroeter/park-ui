@@ -5,24 +5,10 @@ import { Avatar, Group } from '@/components/ui'
 export const App = () => {
   return (
     <Stack gap="6">
-      <Group gap="0" spaceX="-3" stacking="last-on-top">
+      <Group gap="0" spaceX="-3">
         <For each={users}>
           {(user) => (
-            <Avatar.Root size="lg">
-              <Avatar.Fallback name={user.name} />
-              <Avatar.Image src={user.src} />
-            </Avatar.Root>
-          )}
-        </For>
-        <Avatar.Root size="lg">
-          <Avatar.Fallback>+3</Avatar.Fallback>
-        </Avatar.Root>
-      </Group>
-
-      <Group gap="0" spaceX="-3" stacking="first-on-top">
-        <For each={users}>
-          {(user) => (
-            <Avatar.Root size="lg">
+            <Avatar.Root size="lg" grouped>
               <Avatar.Fallback name={user.name} />
               <Avatar.Image src={user.src} />
             </Avatar.Root>
@@ -36,13 +22,13 @@ export const App = () => {
       <Group gap="0" spaceX="1">
         <For each={users}>
           {(user) => (
-            <Avatar.Root borderless size="lg">
+            <Avatar.Root size="lg">
               <Avatar.Fallback name={user.name} />
               <Avatar.Image src={user.src} />
             </Avatar.Root>
           )}
         </For>
-        <Avatar.Root borderless size="lg">
+        <Avatar.Root size="lg">
           <Avatar.Fallback>+3</Avatar.Fallback>
         </Avatar.Root>
       </Group>

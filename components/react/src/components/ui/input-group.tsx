@@ -85,7 +85,6 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(
         width="full"
         ref={ref}
         attached={attached}
-        skip={(el) => el.type === InputElement}
         _icon={{
           boxSize: '5',
         }}

@@ -18,10 +18,6 @@ export const avatar = defineSlotRecipe({
       height: 'var(--avatar-size)',
       fontSize: 'var(--avatar-font-size)',
       borderRadius: 'var(--avatar-radius)',
-      '&[data-group-item]': {
-        borderWidth: '0.125em',
-        borderColor: 'gray.surface.bg',
-      },
     },
     fallback: {
       lineHeight: '1',
@@ -143,12 +139,11 @@ export const avatar = defineSlotRecipe({
         },
       },
     },
-    borderless: {
+    grouped: {
       true: {
         root: {
-          '&[data-group-item]': {
-            borderWidth: '0px',
-          },
+          borderWidth: '0.125em',
+          borderColor: 'gray.surface.bg',
         },
       },
     },

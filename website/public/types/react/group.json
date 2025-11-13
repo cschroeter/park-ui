@@ -13,10 +13,6 @@
       "grow": {
         "type": "boolean",
         "isRequired": false
-      },
-      "stacking": {
-        "type": "'first-on-top' | 'last-on-top'",
-        "isRequired": false
       }
     }
   }
