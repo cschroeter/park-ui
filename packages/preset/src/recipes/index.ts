@@ -4,6 +4,7 @@ import { alert } from './alert'
 import { angleSlider } from './angle-slider'
 import { avatar } from './avatar'
 import { badge } from './badge'
+import { breadcrumb } from './breadcrumb'
 import { button } from './button'
 import { card } from './card'
 import { carousel } from './carousel'
@@ -91,6 +92,7 @@ export const slotRecipes = {
   alert,
   angleSlider,
   avatar,
+  breadcrumb,
   card,
   carousel,
   checkbox,

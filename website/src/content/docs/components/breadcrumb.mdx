@@ -1,0 +1,121 @@
+---
+title: Breadcrumb
+description: Used to display a page's location within a site's hierarchical structure.
+category: navigation
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/breadcrumb.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Breadcrumb } from '@/components/ui'
+```
+
+```tsx
+<Breadcrumb.Root>
+  <Breadcrumb.List>
+    <Breadcrumb.Item>
+      <Breadcrumb.Link />
+    </Breadcrumb.Item>
+    <Breadcrumb.Separator />
+  </Breadcrumb.List>
+</Breadcrumb.Root>
+```
+
+:::info
+
+If you prefer a closed component composition, check out the [snippet below](#closed-component).
+
+:::
+
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the breadcrumb component
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to change the variant of the breadcrumb component.
+
+<ComponentExample name="variants" />
+
+### Seperator
+
+Use the `Breadcrumb.Separator` component to change the separator between breadcrumb items.
+
+<ComponentExample name="separator" />
+
+### Interactive
+
+Keep the last breadcrumb interactive.
+
+<ComponentExample name="interactive" />
+
+### Icon
+
+Add a custom icon to the breadcrumb by rendering it within `Breadcrumb.Link`
+
+<ComponentExample name="icon" />
+
+### Ellipsis
+
+Render the `Breadcrumb.Ellipsis` component to show an ellipsis after a breadcrumb item
+
+<ComponentExample name="ellipsis" />
+
+### Menu
+
+As an alternative, consider adding a `Menu` component to display the condensed links in a dropdown list:
+
+<ComponentExample name="menu" />
+
+### Routing Library
+
+Use the `asChild` prop to change the underlying breadcrumb link
+
+```tsx
+import { Link } from 'next/link'
+import { Breadcrumb } from '@/components/ui'
+
+export const App = () => {
+  return (
+    <Breadcrumb.Root>
+      <Breadcrumb.List>
+        <Breadcrumb.Item>
+          <Breadcrumb.Link asChild>
+            <Link href="/docs">Docs</Link>
+          </Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+      </Breadcrumb.List>
+    </Breadcrumb.Root>
+  )
+}
+```
+
+### Closed Component
+
+Here is an example of how to use the `Breadcrumb` component in a closed manner.
+
+<ComponentExample name="closed" codeOnly />
+
+and use it like this:
+
+```tsx
+<Breadcrumb items={[ { title: 'Docs', url: '/docs' }]} />
+```
+
+## Props
+
+<PropsTable />
