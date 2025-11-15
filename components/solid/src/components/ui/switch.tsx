@@ -14,7 +14,7 @@ export const Thumb = withContext(Switch.Thumb, 'thumb')
 export const HiddenInput = Switch.HiddenInput
 
 export const Control = withContext(Switch.Control, 'control', {
-  defaultProps: { children: <Thumb /> },
+  defaultProps: () => ({ children: <Thumb /> }),
 })
 
 export { SwitchContext as Context } from '@ark-ui/solid/switch'

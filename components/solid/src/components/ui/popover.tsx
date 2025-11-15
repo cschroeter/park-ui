@@ -16,7 +16,7 @@ export const RootProvider = withRootProvider(Popover.Root, {
 export const Anchor = withContext(Popover.Anchor, 'anchor')
 export const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')
 export const Arrow = withContext(Popover.Arrow, 'arrow', {
-  defaultProps: { children: <ArrowTip /> },
+  defaultProps: () => ({ children: <ArrowTip /> }),
 })
 export const CloseTrigger = withContext(Popover.CloseTrigger, 'closeTrigger')
 export const Content = withContext(Popover.Content, 'content')

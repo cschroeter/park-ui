@@ -1,6 +1,6 @@
 import { ark } from '@ark-ui/solid/factory'
-import { createContext, mergeProps } from '@ark-ui/solid/utils'
-import { type ComponentProps, createMemo, type JSX, splitProps } from 'solid-js'
+import { createContext } from '@ark-ui/solid/utils'
+import { type ComponentProps, createMemo, type JSX, mergeProps, splitProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { type ButtonVariantProps, button } from 'styled-system/recipes'
 import { Group, type GroupProps } from './group'
@@ -34,9 +34,9 @@ export interface ButtonProps extends BaseButtonProps, ButtonLoadingProps {}
 
 export const Button = (props: ButtonProps) => {
   const propsContext = useButtonPropsContext()
-  const buttonProps = createMemo(() => mergeProps<ButtonProps>(propsContext, props))
+  const merged = mergeProps(propsContext, props)
 
-  const [local, rest] = splitProps(buttonProps(), [
+  const [local, rest] = splitProps(merged, [
     'loading',
     'loadingText',
     'children',

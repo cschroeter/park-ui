@@ -20,14 +20,14 @@ export const Label = withContext(NumberInput.Label, 'label')
 export const Scrubber = withContext(NumberInput.Scrubber, 'scrubber')
 export const ValueText = withContext(NumberInput.ValueText, 'valueText')
 export const Control = withContext(NumberInput.Control, 'control', {
-  defaultProps: {
+  defaultProps: () => ({
     children: (
       <>
         <IncrementTrigger />
         <DecrementTrigger />
       </>
     ),
-  },
+  }),
 })
 
 export { NumberInputContext as Context } from '@ark-ui/solid/number-input'

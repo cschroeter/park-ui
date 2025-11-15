@@ -76,5 +76,5 @@ export const Items = (props: ItemsProps) => {
 }
 
 export const Control = withContext(RatingGroup.Control, 'control', {
-  defaultProps: { children: <Items /> },
+  defaultProps: () => ({ children: <Items /> }),
 })
