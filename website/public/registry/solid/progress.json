@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { Progress } from '@ark-ui/solid/progress'\nimport type { ComponentProps } from 'solid-js'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { progress } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(progress)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Progress.Root, 'root')\nexport const RootProvider = withProvider(Progress.RootProvider, 'root')\nexport const Circle = withContext(Progress.Circle, 'circle')\nexport const CircleRange = withContext(Progress.CircleRange, 'circleRange')\nexport const CircleTrack = withContext(Progress.CircleTrack, 'circleTrack')\nexport const Label = withContext(Progress.Label, 'label')\nexport const Range = withContext(Progress.Range, 'range')\nexport const Track = withContext(Progress.Track, 'track')\nexport const ValueText = withContext(Progress.ValueText, 'valueText')\nexport const View = withContext(Progress.View, 'view')\n",
+      "type": "registry:ui",
+      "path": "progress.tsx"
+    }
+  ],
+  "registryDependencies": ["progress-recipe"]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "segment-group",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { SegmentGroup } from '@ark-ui/solid/segment-group'\nimport { type ComponentProps, createMemo, For, type JSX, splitProps } from 'solid-js'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { segmentGroup } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(segmentGroup)\n\nexport type RootProps = ComponentProps<typeof Root>\n\nexport const Root = withProvider(SegmentGroup.Root, 'root', {\n  defaultProps: () => ({ orientation: 'horizontal' }) as const,\n  forwardProps: ['orientation'],\n})\nexport const RootProvider = withProvider(SegmentGroup.RootProvider, 'root')\nexport const Indicator = withContext(SegmentGroup.Indicator, 'indicator')\nexport const Item = withContext(SegmentGroup.Item, 'item')\nexport const ItemControl = withContext(SegmentGroup.ItemControl, 'itemControl')\nexport const ItemHiddenInput = SegmentGroup.ItemHiddenInput\nexport const ItemText = withContext(SegmentGroup.ItemText, 'itemText')\nexport const Label = withContext(SegmentGroup.Label, 'label')\n\nexport { SegmentGroupContext as Context } from '@ark-ui/solid/segment-group'\n\ninterface Item {\n  value: string\n  label: JSX.Element\n  disabled?: boolean | undefined\n}\n\ntype ItemProps = ComponentProps<typeof Item>\n\nexport interface ItemsProps extends Omit<ItemProps, 'value'> {\n  items: Array<string | Item>\n}\n\nexport const Items = (props: ItemsProps) => {\n  const [local, itemProps] = splitProps(props, ['items'])\n  const data = createMemo(() => normalize(local.items))\n\n  return (\n    <For each={data()}>\n      {(item) => (\n        <Item value={item.value} disabled={item.disabled} {...itemProps}>\n          <ItemText>{item.label}</ItemText>\n          <ItemHiddenInput />\n        </Item>\n      )}\n    </For>\n  )\n}\n\nconst normalize = (items: Array<string | Item>): Item[] =>\n  items.map((item) => (typeof item === 'string' ? { value: item, label: item } : item))\n",
+      "type": "registry:ui",
+      "path": "segment-group.tsx"
+    }
+  ],
+  "registryDependencies": ["segment-group-recipe"]
+}

@@ -1,5 +1,29 @@
 [
   {
+    "name": "absolute-center",
+    "type": "registry:ui"
+  },
+  {
+    "name": "absolute-center-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "accordion",
+    "type": "registry:ui"
+  },
+  {
+    "name": "accordion-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "alert",
+    "type": "registry:ui"
+  },
+  {
+    "name": "alert-recipe",
+    "type": "registry:recipe"
+  },
+  {
     "name": "avatar",
     "type": "registry:ui"
   },
@@ -8,7 +32,447 @@
     "type": "registry:recipe"
   },
   {
+    "name": "badge",
+    "type": "registry:ui"
+  },
+  {
+    "name": "badge-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "breadcrumb",
+    "type": "registry:ui"
+  },
+  {
+    "name": "breadcrumb-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "button",
+    "type": "registry:ui"
+  },
+  {
+    "name": "button-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "card",
+    "type": "registry:ui"
+  },
+  {
+    "name": "card-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "carousel",
+    "type": "registry:ui"
+  },
+  {
+    "name": "carousel-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "checkbox",
+    "type": "registry:ui"
+  },
+  {
+    "name": "checkbox-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "clipboard",
+    "type": "registry:ui"
+  },
+  {
+    "name": "clipboard-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "close-button",
+    "type": "registry:ui"
+  },
+  {
+    "name": "code",
+    "type": "registry:ui"
+  },
+  {
+    "name": "code-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "collapsible",
+    "type": "registry:ui"
+  },
+  {
+    "name": "collapsible-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "color-picker",
+    "type": "registry:ui"
+  },
+  {
+    "name": "color-picker-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "combobox",
+    "type": "registry:ui"
+  },
+  {
+    "name": "combobox-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "date-picker",
+    "type": "registry:ui"
+  },
+  {
+    "name": "date-picker-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "dialog",
+    "type": "registry:ui"
+  },
+  {
+    "name": "dialog-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "drawer",
+    "type": "registry:ui"
+  },
+  {
+    "name": "drawer-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "editable",
+    "type": "registry:ui"
+  },
+  {
+    "name": "editable-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "field",
+    "type": "registry:ui"
+  },
+  {
+    "name": "field-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "fieldset",
+    "type": "registry:ui"
+  },
+  {
+    "name": "fieldset-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "file-upload",
+    "type": "registry:ui"
+  },
+  {
+    "name": "file-upload-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "group",
+    "type": "registry:ui"
+  },
+  {
+    "name": "group-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "heading",
+    "type": "registry:ui"
+  },
+  {
+    "name": "heading-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "hover-card",
+    "type": "registry:ui"
+  },
+  {
+    "name": "hover-card-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "icon",
+    "type": "registry:ui"
+  },
+  {
+    "name": "icon-button",
+    "type": "registry:ui"
+  },
+  {
+    "name": "icon-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "image",
+    "type": "registry:ui"
+  },
+  {
     "name": "index",
     "type": "registry:ui"
+  },
+  {
+    "name": "input",
+    "type": "registry:ui"
+  },
+  {
+    "name": "input-addon",
+    "type": "registry:ui"
+  },
+  {
+    "name": "input-addon-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "input-element",
+    "type": "registry:ui"
+  },
+  {
+    "name": "input-element-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "input-group",
+    "type": "registry:ui"
+  },
+  {
+    "name": "input-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "kbd",
+    "type": "registry:ui"
+  },
+  {
+    "name": "kbd-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "link",
+    "type": "registry:ui"
+  },
+  {
+    "name": "link-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "loader",
+    "type": "registry:ui"
+  },
+  {
+    "name": "menu",
+    "type": "registry:ui"
+  },
+  {
+    "name": "menu-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "number-input",
+    "type": "registry:ui"
+  },
+  {
+    "name": "number-input-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "pagination",
+    "type": "registry:ui"
+  },
+  {
+    "name": "pagination-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "pin-input",
+    "type": "registry:ui"
+  },
+  {
+    "name": "pin-input-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "popover",
+    "type": "registry:ui"
+  },
+  {
+    "name": "popover-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "progress",
+    "type": "registry:ui"
+  },
+  {
+    "name": "progress-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "radio-card-group",
+    "type": "registry:ui"
+  },
+  {
+    "name": "radio-card-group-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "radio-group",
+    "type": "registry:ui"
+  },
+  {
+    "name": "radio-group-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "rating-group",
+    "type": "registry:ui"
+  },
+  {
+    "name": "rating-group-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "scroll-area",
+    "type": "registry:ui"
+  },
+  {
+    "name": "scroll-area-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "segment-group",
+    "type": "registry:ui"
+  },
+  {
+    "name": "segment-group-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "select",
+    "type": "registry:ui"
+  },
+  {
+    "name": "select-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "skeleton",
+    "type": "registry:ui"
+  },
+  {
+    "name": "skeleton-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "slider",
+    "type": "registry:ui"
+  },
+  {
+    "name": "slider-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "span",
+    "type": "registry:ui"
+  },
+  {
+    "name": "spinner",
+    "type": "registry:ui"
+  },
+  {
+    "name": "spinner-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "splitter",
+    "type": "registry:ui"
+  },
+  {
+    "name": "splitter-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "switch",
+    "type": "registry:ui"
+  },
+  {
+    "name": "switch-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "table",
+    "type": "registry:ui"
+  },
+  {
+    "name": "table-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "tabs",
+    "type": "registry:ui"
+  },
+  {
+    "name": "tabs-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "tags-input",
+    "type": "registry:ui"
+  },
+  {
+    "name": "tags-input-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "text",
+    "type": "registry:ui"
+  },
+  {
+    "name": "text-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "textarea",
+    "type": "registry:ui"
+  },
+  {
+    "name": "textarea-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "toast",
+    "type": "registry:ui"
+  },
+  {
+    "name": "toast-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "toggle-group",
+    "type": "registry:ui"
+  },
+  {
+    "name": "toggle-group-recipe",
+    "type": "registry:recipe"
+  },
+  {
+    "name": "tooltip",
+    "type": "registry:ui"
+  },
+  {
+    "name": "tooltip-recipe",
+    "type": "registry:recipe"
   }
 ]

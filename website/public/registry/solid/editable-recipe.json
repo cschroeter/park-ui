@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "editable-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { editableAnatomy } from '@ark-ui/react/editable'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const editable = defineSlotRecipe({\n  slots: editableAnatomy.keys(),\n  className: 'editable',\n  base: {\n    root: {\n      alignItems: 'center',\n      display: 'inline-flex',\n      gap: '1.5',\n      position: 'relative',\n      width: 'full',\n    },\n    preview: {\n      alignItems: 'center',\n      borderRadius: 'l2',\n      cursor: 'default',\n      display: 'inline-flex',\n      transitionDuration: 'normal',\n      transitionProperty: 'common',\n      _disabled: {\n        userSelect: 'none',\n      },\n      _hover: {\n        bg: 'gray.plain.bg.hover',\n      },\n    },\n    input: {\n      borderRadius: 'l2',\n\n      focusRingWidth: '2px',\n      focusRing: 'inside',\n      transitionDuration: 'normal',\n      transitionProperty: 'common',\n      width: 'full',\n      _focusVisible: {\n        outlineOffset: '-1px',\n      },\n    },\n    control: {\n      alignItems: 'center',\n      display: 'inline-flex',\n      gap: '1.5',\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      '2xs': {\n        preview: { textStyle: 'xs', px: '2', py: '0.5' },\n        input: { textStyle: 'xs', px: '2', py: '0.5' },\n      },\n      xs: {\n        preview: { textStyle: 'sm', px: '2.5', py: '1.5' },\n        input: { textStyle: 'sm', px: '2.5', py: '1.5' },\n      },\n      sm: {\n        preview: { textStyle: 'sm', px: '3', py: '2' },\n        input: { textStyle: 'sm', px: '3', py: '2' },\n      },\n      md: {\n        preview: { textStyle: 'sm', px: '3.5', py: '2.5' },\n        input: { textStyle: 'sm', px: '3.5', py: '2.5' },\n      },\n      lg: {\n        preview: { textStyle: 'md', px: '4', py: '2.5' },\n        input: { textStyle: 'md', px: '4', py: '2.5' },\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "editable.ts",
+      "imports": "import { editable } from './editable'"
+    }
+  ]
+}

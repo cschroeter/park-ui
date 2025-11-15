@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "rating-group",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+  "files": [
+    {
+      "content": "import {\n  RatingGroup,\n  useRatingGroupContext,\n  useRatingGroupItemContext,\n} from '@ark-ui/solid/rating-group'\nimport { StarIcon } from 'lucide-solid'\nimport { type ComponentProps, For, type JSX, mergeProps, splitProps } from 'solid-js'\nimport { createStyleContext, type HTMLStyledProps } from 'styled-system/jsx'\nimport { ratingGroup } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(ratingGroup)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(RatingGroup.Root, 'root')\nexport const RootProvider = withProvider(RatingGroup.RootProvider, 'root')\nexport const Item = withContext(RatingGroup.Item, 'item')\nexport const Label = withContext(RatingGroup.Label, 'label')\n\nexport const HiddenInput = RatingGroup.HiddenInput\n\nexport {\n  RatingGroupContext as Context,\n  RatingGroupItemContext as ItemContext,\n} from '@ark-ui/solid/rating-group'\n\ninterface ItemIndicatorProps extends HTMLStyledProps<'span'> {\n  icon?: JSX.Element | undefined\n}\n\nconst StyledItemIndicator = withContext('span', 'itemIndicator')\n\nconst cloneIcon = (icon: JSX.Element, type: string) => {\n  if (!icon) return null\n  const props = { [`data-${type}`]: '', 'aria-hidden': true, fill: 'currentColor' }\n  if (typeof icon === 'object' && 'props' in icon) {\n    return { ...icon, props: mergeProps(icon.props || {}, props) }\n  }\n  return icon\n}\n\nexport const ItemIndicator = (props: ItemIndicatorProps) => {\n  const [local, rest] = splitProps(props, ['icon'])\n  const icon = () => local.icon ?? <StarIcon />\n  const item = useRatingGroupItemContext()\n\n  return (\n    <StyledItemIndicator\n      {...rest}\n      data-highlighted={item().highlighted ? '' : undefined}\n      data-checked={item().checked ? '' : undefined}\n      data-half={item().half ? '' : undefined}\n    >\n      {cloneIcon(icon(), 'bg')}\n      {cloneIcon(icon(), 'fg')}\n    </StyledItemIndicator>\n  )\n}\n\ninterface ItemsProps extends Omit<ComponentProps<typeof Item>, 'index'> {\n  icon?: JSX.Element | undefined\n}\n\nexport const Items = (props: ItemsProps) => {\n  const [local, rest] = splitProps(props, ['icon'])\n  const ratingGroup = useRatingGroupContext()\n\n  return (\n    <For each={ratingGroup().items}>\n      {(item) => (\n        <Item index={item} {...rest}>\n          <ItemIndicator icon={local.icon} />\n        </Item>\n      )}\n    </For>\n  )\n}\n\nexport const Control = withContext(RatingGroup.Control, 'control', {\n  defaultProps: () => ({ children: <Items /> }),\n})\n",
+      "type": "registry:ui",
+      "path": "rating-group.tsx"
+    }
+  ],
+  "registryDependencies": ["rating-group-recipe"]
+}

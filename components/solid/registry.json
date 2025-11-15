@@ -4,6 +4,78 @@
   "homepage": "https://park-ui.com",
   "items": [
     {
+      "name": "absolute-center",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/absolute-center.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["absolute-center-recipe"]
+    },
+    {
+      "name": "absolute-center-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/absolute-center.ts",
+          "type": "registry:recipe",
+          "imports": "import { absoluteCenter } from './absolute-center'"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["accordion-recipe"]
+    },
+    {
+      "name": "accordion-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/accordion.ts",
+          "type": "registry:recipe",
+          "imports": "import { accordion } from './accordion'"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["alert-recipe"]
+    },
+    {
+      "name": "alert-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/alert.ts",
+          "type": "registry:recipe",
+          "imports": "import { alert } from './alert'"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
@@ -28,6 +100,570 @@
       ]
     },
     {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["badge-recipe"]
+    },
+    {
+      "name": "badge-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/badge.ts",
+          "type": "registry:recipe",
+          "imports": "import { badge } from './badge'"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["breadcrumb-recipe"]
+    },
+    {
+      "name": "breadcrumb-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/breadcrumb.ts",
+          "type": "registry:recipe",
+          "imports": "import { breadcrumb } from './breadcrumb'"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button-recipe", "group", "loader"]
+    },
+    {
+      "name": "button-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/button.ts",
+          "type": "registry:recipe",
+          "imports": "import { button } from './button'"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["card-recipe"]
+    },
+    {
+      "name": "card-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/card.ts",
+          "type": "registry:recipe",
+          "imports": "import { card } from './card'"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["carousel-recipe"]
+    },
+    {
+      "name": "carousel-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/carousel.ts",
+          "type": "registry:recipe",
+          "imports": "import { carousel } from './carousel'"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["checkbox-recipe"]
+    },
+    {
+      "name": "checkbox-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/checkbox.ts",
+          "type": "registry:recipe",
+          "imports": "import { checkbox } from './checkbox'"
+        }
+      ]
+    },
+    {
+      "name": "clipboard",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/clipboard.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["clipboard-recipe"]
+    },
+    {
+      "name": "clipboard-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/clipboard.ts",
+          "type": "registry:recipe",
+          "imports": "import { clipboard } from './clipboard'"
+        }
+      ]
+    },
+    {
+      "name": "close-button",
+      "type": "registry:ui",
+      "dependencies": ["lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/close-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["icon-button"]
+    },
+    {
+      "name": "code",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/code.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["code-recipe"]
+    },
+    {
+      "name": "code-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/code.ts",
+          "type": "registry:recipe",
+          "imports": "import { code } from './code'"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["collapsible-recipe"]
+    },
+    {
+      "name": "collapsible-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/collapsible.ts",
+          "type": "registry:recipe",
+          "imports": "import { collapsible } from './collapsible'"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["color-picker-recipe"]
+    },
+    {
+      "name": "color-picker-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/color-picker.ts",
+          "type": "registry:recipe",
+          "imports": "import { colorPicker } from './color-picker'"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["combobox-recipe"]
+    },
+    {
+      "name": "combobox-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/combobox.ts",
+          "type": "registry:recipe",
+          "imports": "import { combobox } from './combobox'"
+        }
+      ],
+      "registryDependencies": ["input-recipe"]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["date-picker-recipe"]
+    },
+    {
+      "name": "date-picker-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/date-picker.ts",
+          "type": "registry:recipe",
+          "imports": "import { datePicker } from './date-picker'"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["dialog-recipe"]
+    },
+    {
+      "name": "dialog-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/dialog.ts",
+          "type": "registry:recipe",
+          "imports": "import { dialog } from './dialog'"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["drawer-recipe"]
+    },
+    {
+      "name": "drawer-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/drawer.ts",
+          "type": "registry:recipe",
+          "imports": "import { drawer } from './drawer'"
+        }
+      ]
+    },
+    {
+      "name": "editable",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/editable.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["editable-recipe"]
+    },
+    {
+      "name": "editable-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/editable.ts",
+          "type": "registry:recipe",
+          "imports": "import { editable } from './editable'"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["field-recipe"]
+    },
+    {
+      "name": "field-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/field.ts",
+          "type": "registry:recipe",
+          "imports": "import { field } from './field'"
+        }
+      ]
+    },
+    {
+      "name": "fieldset",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/fieldset.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["fieldset-recipe"]
+    },
+    {
+      "name": "fieldset-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/fieldset.ts",
+          "type": "registry:recipe",
+          "imports": "import { fieldset } from './fieldset'"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js", "@/components"],
+      "files": [
+        {
+          "path": "src/components/ui/file-upload.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["file-upload-recipe"]
+    },
+    {
+      "name": "file-upload-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/file-upload.ts",
+          "type": "registry:recipe",
+          "imports": "import { fileUpload } from './file-upload'"
+        }
+      ]
+    },
+    {
+      "name": "group",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["group-recipe"]
+    },
+    {
+      "name": "group-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/group.ts",
+          "type": "registry:recipe",
+          "imports": "import { group } from './group'"
+        }
+      ]
+    },
+    {
+      "name": "heading",
+      "type": "registry:ui",
+      "dependencies": ["solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/heading.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["heading-recipe"]
+    },
+    {
+      "name": "heading-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/heading.ts",
+          "type": "registry:recipe",
+          "imports": "import { heading } from './heading'"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["hover-card-recipe"]
+    },
+    {
+      "name": "hover-card-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/hover-card.ts",
+          "type": "registry:recipe",
+          "imports": "import { hoverCard } from './hover-card'"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/icon.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["icon-recipe"]
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/react"],
+      "files": [
+        {
+          "path": "src/components/ui/icon-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["button"]
+    },
+    {
+      "name": "icon-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/icon.ts",
+          "type": "registry:recipe",
+          "imports": "import { icon } from './icon'"
+        }
+      ]
+    },
+    {
+      "name": "image",
+      "type": "registry:ui",
+      "dependencies": ["solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/image.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "index",
       "type": "registry:ui",
       "dependencies": ["@ark-ui/react"],
@@ -35,6 +671,764 @@
         {
           "path": "src/components/ui/index.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-recipe"]
+    },
+    {
+      "name": "input-addon",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/input-addon.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-addon-recipe"]
+    },
+    {
+      "name": "input-addon-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/input-addon.ts",
+          "type": "registry:recipe",
+          "imports": "import { inputAddon } from './input-addon'"
+        }
+      ],
+      "registryDependencies": ["input-recipe"]
+    },
+    {
+      "name": "input-element",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/input-element.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["input-element-recipe"]
+    },
+    {
+      "name": "input-element-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/input-element.ts",
+          "type": "registry:recipe",
+          "imports": "import { inputElement } from './input-element'"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "dependencies": ["solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["group", "input-addon", "input-element"]
+    },
+    {
+      "name": "input-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/input.ts",
+          "type": "registry:recipe",
+          "imports": "import { input } from './input'"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["kbd-recipe"]
+    },
+    {
+      "name": "kbd-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/kbd.ts",
+          "type": "registry:recipe",
+          "imports": "import { kbd } from './kbd'"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/link.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["link-recipe"]
+    },
+    {
+      "name": "link-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/link.ts",
+          "type": "registry:recipe",
+          "imports": "import { link } from './link'"
+        }
+      ]
+    },
+    {
+      "name": "loader",
+      "type": "registry:ui",
+      "dependencies": ["solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/loader.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["absolute-center", "spinner"]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["menu-recipe"]
+    },
+    {
+      "name": "menu-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/menu.ts",
+          "type": "registry:recipe",
+          "imports": "import { menu } from './menu'"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/number-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["number-input-recipe"]
+    },
+    {
+      "name": "number-input-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/number-input.ts",
+          "type": "registry:recipe",
+          "imports": "import { numberInput } from './number-input'"
+        }
+      ],
+      "registryDependencies": ["input-recipe"]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["icon-button", "pagination-recipe"]
+    },
+    {
+      "name": "pagination-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/pagination.ts",
+          "type": "registry:recipe",
+          "imports": "import { pagination } from './pagination'"
+        }
+      ]
+    },
+    {
+      "name": "pin-input",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/pin-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["pin-input-recipe"]
+    },
+    {
+      "name": "pin-input-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/pin-input.ts",
+          "type": "registry:recipe",
+          "imports": "import { pinInput } from './pin-input'"
+        }
+      ],
+      "registryDependencies": ["input-recipe"]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["popover-recipe"]
+    },
+    {
+      "name": "popover-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/popover.ts",
+          "type": "registry:recipe",
+          "imports": "import { popover } from './popover'"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["progress-recipe"]
+    },
+    {
+      "name": "progress-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/progress.ts",
+          "type": "registry:recipe",
+          "imports": "import { progress } from './progress'"
+        }
+      ]
+    },
+    {
+      "name": "radio-card-group",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/radio-card-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["radio-card-group-recipe"]
+    },
+    {
+      "name": "radio-card-group-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/radio-card-group.ts",
+          "type": "registry:recipe",
+          "imports": "import { radioCardGroup } from './radio-card-group'"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["radio-group-recipe"]
+    },
+    {
+      "name": "radio-group-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/radio-group.ts",
+          "type": "registry:recipe",
+          "imports": "import { radioGroup } from './radio-group'"
+        }
+      ]
+    },
+    {
+      "name": "rating-group",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/rating-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["rating-group-recipe"]
+    },
+    {
+      "name": "rating-group-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/rating-group.ts",
+          "type": "registry:recipe",
+          "imports": "import { ratingGroup } from './rating-group'"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["scroll-area-recipe"]
+    },
+    {
+      "name": "scroll-area-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/scroll-area.ts",
+          "type": "registry:recipe",
+          "imports": "import { scrollArea } from './scroll-area'"
+        }
+      ]
+    },
+    {
+      "name": "segment-group",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/segment-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["segment-group-recipe"]
+    },
+    {
+      "name": "segment-group-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/segment-group.ts",
+          "type": "registry:recipe",
+          "imports": "import { segmentGroup } from './segment-group'"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["select-recipe"]
+    },
+    {
+      "name": "select-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/select.ts",
+          "type": "registry:recipe",
+          "imports": "import { select } from './select'"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["skeleton-recipe"]
+    },
+    {
+      "name": "skeleton-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/skeleton.ts",
+          "type": "registry:recipe",
+          "imports": "import { skeleton } from './skeleton'"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["slider-recipe"]
+    },
+    {
+      "name": "slider-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/slider.ts",
+          "type": "registry:recipe",
+          "imports": "import { slider } from './slider'"
+        }
+      ]
+    },
+    {
+      "name": "span",
+      "type": "registry:ui",
+      "dependencies": ["solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/span.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["spinner-recipe"]
+    },
+    {
+      "name": "spinner-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/spinner.ts",
+          "type": "registry:recipe",
+          "imports": "import { spinner } from './spinner'"
+        }
+      ]
+    },
+    {
+      "name": "splitter",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/splitter.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["splitter-recipe"]
+    },
+    {
+      "name": "splitter-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/splitter.ts",
+          "type": "registry:recipe",
+          "imports": "import { splitter } from './splitter'"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["switch-recipe"]
+    },
+    {
+      "name": "switch-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/switch.ts",
+          "type": "registry:recipe",
+          "imports": "import { switchRecipe } from './switch'"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["table-recipe"]
+    },
+    {
+      "name": "table-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/table.ts",
+          "type": "registry:recipe",
+          "imports": "import { table } from './table'"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["tabs-recipe"]
+    },
+    {
+      "name": "tabs-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/tabs.ts",
+          "type": "registry:recipe",
+          "imports": "import { tabs } from './tabs'"
+        }
+      ]
+    },
+    {
+      "name": "tags-input",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/tags-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["tags-input-recipe"]
+    },
+    {
+      "name": "tags-input-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/tags-input.ts",
+          "type": "registry:recipe",
+          "imports": "import { tagsInput } from './tags-input'"
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "type": "registry:ui",
+      "dependencies": ["solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["text-recipe"]
+    },
+    {
+      "name": "text-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/text.ts",
+          "type": "registry:recipe",
+          "imports": "import { text } from './text'"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["textarea-recipe"]
+    },
+    {
+      "name": "textarea-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/textarea.ts",
+          "type": "registry:recipe",
+          "imports": "import { textarea } from './textarea'"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js", "solid-js/web"],
+      "files": [
+        {
+          "path": "src/components/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["close-button", "icon", "spinner", "toast-recipe"]
+    },
+    {
+      "name": "toast-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/toast.ts",
+          "type": "registry:recipe",
+          "imports": "import { toast } from './toast'"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js"],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["toggle-group-recipe"]
+    },
+    {
+      "name": "toggle-group-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/toggle-group.ts",
+          "type": "registry:recipe",
+          "imports": "import { toggleGroup } from './toggle-group'"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/solid", "solid-js", "solid-js/web"],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": ["tooltip-recipe"]
+    },
+    {
+      "name": "tooltip-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/tooltip.ts",
+          "type": "registry:recipe",
+          "imports": "import { tooltip } from './tooltip'"
         }
       ]
     }

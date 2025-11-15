@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "carousel",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { Carousel, useCarouselContext } from '@ark-ui/solid/carousel'\nimport { type ComponentProps, For } from 'solid-js'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { carousel } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(carousel)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Carousel.Root, 'root', {\n  forwardProps: ['page'],\n  defaultProps: () => ({ spacing: '16px' }),\n})\nexport const RootProvider = withProvider(Carousel.RootProvider, 'root')\nexport const AutoplayTrigger = withContext(Carousel.AutoplayTrigger, 'autoplayTrigger')\nexport const Control = withContext(Carousel.Control, 'control')\nexport const Indicator = withContext(Carousel.Indicator, 'indicator')\nexport const Item = withContext(Carousel.Item, 'item')\nexport const ItemGroup = withContext(Carousel.ItemGroup, 'itemGroup')\nexport const NextTrigger = withContext(Carousel.NextTrigger, 'nextTrigger')\nexport const PrevTrigger = withContext(Carousel.PrevTrigger, 'prevTrigger')\n\nconst StyledIndicatorGroup = withContext(Carousel.IndicatorGroup, 'indicatorGroup')\nexport const IndicatorGroup = (props: ComponentProps<typeof StyledIndicatorGroup>) => {\n  const carousel = useCarouselContext()\n\n  return (\n    <StyledIndicatorGroup {...props}>\n      <For each={carousel().pageSnapPoints}>{(_, index) => <Indicator index={index()} />}</For>\n    </StyledIndicatorGroup>\n  )\n}\n\nexport { CarouselContext as Context } from '@ark-ui/solid/carousel'\n",
+      "type": "registry:ui",
+      "path": "carousel.tsx"
+    }
+  ],
+  "registryDependencies": ["carousel-recipe"]
+}

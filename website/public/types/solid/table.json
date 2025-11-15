@@ -1,0 +1,32 @@
+{
+  "Root": {
+    "props": {
+      "variant": {
+        "type": "'surface' | 'plain'",
+        "defaultValue": "'plain'",
+        "isRequired": false
+      },
+      "striped": {
+        "type": "boolean",
+        "isRequired": false
+      },
+      "interactive": {
+        "type": "boolean",
+        "isRequired": false
+      },
+      "columnBorder": {
+        "type": "boolean",
+        "isRequired": false
+      },
+      "stickyHeader": {
+        "type": "boolean",
+        "isRequired": false
+      },
+      "size": {
+        "type": "'md'",
+        "defaultValue": "'md'",
+        "isRequired": false
+      }
+    }
+  }
+}

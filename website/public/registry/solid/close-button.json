@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "close-button",
+  "type": "registry:ui",
+  "dependencies": ["lucide-solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { XIcon } from 'lucide-solid'\nimport { splitProps } from 'solid-js'\nimport { IconButton, type IconButtonProps } from './icon-button'\n\nexport type CloseButtonProps = IconButtonProps\n\nexport const CloseButton = (props: CloseButtonProps) => {\n  const [local, rest] = splitProps(props, ['children'])\n\n  return (\n    <IconButton variant=\"plain\" colorPalette=\"gray\" aria-label=\"Close\" {...rest}>\n      {local.children ?? <XIcon />}\n    </IconButton>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "close-button.tsx"
+    }
+  ],
+  "registryDependencies": ["icon-button"]
+}

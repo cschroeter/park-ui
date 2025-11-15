@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "link-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const link = defineRecipe({\n  className: 'link',\n  base: {\n    alignItems: 'center',\n    borderRadius: 'l1',\n    cursor: 'pointer',\n    display: 'inline-flex',\n    focusVisibleRing: 'outside',\n    fontWeight: 'medium',\n    gap: '1.5',\n    outline: 'none',\n    textDecorationLine: 'underline',\n    textDecorationThickness: '0.1em',\n    textUnderlineOffset: '0.125em',\n    transitionDuration: 'normal',\n    transitionProperty: 'text-decoration-color',\n    _icon: {\n      boxSize: '1em',\n    },\n  },\n  defaultVariants: {\n    variant: 'underline',\n  },\n  variants: {\n    variant: {\n      underline: {\n        textDecorationColor: 'colorPalette.surface.fg/60',\n        _hover: {\n          textDecorationColor: 'colorPalette.surface.fg',\n        },\n      },\n      plain: {\n        textDecorationColor: 'transparent',\n        _hover: {\n          textDecorationColor: 'colorPalette.surface.fg',\n        },\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "link.ts",
+      "imports": "import { link } from './link'"
+    }
+  ]
+}

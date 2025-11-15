@@ -31,7 +31,7 @@
         "defaultValue": "'subtle'",
         "isRequired": false
       },
-      "borderless": {
+      "grouped": {
         "type": "boolean",
         "isRequired": false
       },

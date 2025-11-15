@@ -1,0 +1,11 @@
+{
+  "Root": {
+    "props": {
+      "axis": {
+        "type": "'horizontal' | 'vertical' | 'both'",
+        "defaultValue": "'both'",
+        "isRequired": false
+      }
+    }
+  }
+}

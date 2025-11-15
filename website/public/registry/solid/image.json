@@ -1,0 +1,13 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "image",
+  "type": "registry:ui",
+  "dependencies": ["solid-js"],
+  "files": [
+    {
+      "content": "import { splitProps } from 'solid-js'\nimport { styled } from 'styled-system/jsx'\nimport type { HTMLStyledProps, SystemStyleObject } from 'styled-system/types'\n\ninterface ImageOptions {\n  /**\n   * How the image to fit within its bounds.\n   * It maps to css `object-fit` property.\n   * @type SystemStyleObject[\"objectFit\"]\n   */\n  fit?: SystemStyleObject['objectFit'] | undefined\n  /**\n   * How to align the image within its bounds.\n   * It maps to css `object-position` property.\n   * @type SystemStyleObject[\"objectPosition\"]\n   */\n  alignment?: SystemStyleObject['objectPosition'] | undefined\n}\n\nexport interface ImageProps extends HTMLStyledProps<'img'>, ImageOptions {}\n\nconst StyledImage = styled('img')\n\nexport const Image = (props: ImageProps) => {\n  const [local, rest] = splitProps(props, ['alignment', 'fit'])\n  const fit = () => local.fit ?? 'cover'\n\n  return <StyledImage objectFit={fit()} objectPosition={local.alignment} {...rest} />\n}\n",
+      "type": "registry:ui",
+      "path": "image.tsx"
+    }
+  ]
+}

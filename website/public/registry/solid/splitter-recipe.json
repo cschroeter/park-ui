@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "splitter-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { splitterAnatomy } from '@ark-ui/react/splitter'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const splitter = defineSlotRecipe({\n  className: 'splitter',\n  slots: splitterAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      gap: '2',\n    },\n    panel: {\n      borderRadius: 'l3',\n      display: 'flex',\n      background: 'gray.surface.bg',\n      borderWidth: '1px',\n      p: '4',\n    },\n    resizeTrigger: {\n      borderRadius: 'l3',\n      transition: 'common',\n      outline: '0',\n      background: 'gray.subtle.bg',\n      _horizontal: {\n        minWidth: '1.5',\n      },\n      _vertical: {\n        minHeight: '1.5',\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "splitter.ts",
+      "imports": "import { splitter } from './splitter'"
+    }
+  ]
+}

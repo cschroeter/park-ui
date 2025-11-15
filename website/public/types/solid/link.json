@@ -1,0 +1,11 @@
+{
+  "Root": {
+    "props": {
+      "variant": {
+        "type": "'underline' | 'plain'",
+        "defaultValue": "'underline'",
+        "isRequired": false
+      }
+    }
+  }
+}
