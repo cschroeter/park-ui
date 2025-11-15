@@ -29,7 +29,7 @@ export const Positioner = withContext(Select.Positioner, 'positioner')
 export const Trigger = withContext(Select.Trigger, 'trigger')
 export const ValueText = withContext(Select.ValueText, 'valueText')
 export const Indicator = withContext(Select.Indicator, 'indicator', {
-  defaultProps: { children: <ChevronsUpDownIcon /> },
+  defaultProps: () => ({ children: <ChevronsUpDownIcon /> }),
 })
 export const HiddenSelect = Select.HiddenSelect
 

@@ -1,6 +1,6 @@
 import { Dialog, useDialogContext } from '@ark-ui/solid/dialog'
 import { ark } from '@ark-ui/solid/factory'
-import { type ComponentProps, splitProps } from 'solid-js'
+import type { ComponentProps } from 'solid-js'
 import { createStyleContext, styled } from 'styled-system/jsx'
 import { dialog } from 'styled-system/recipes'
 
@@ -8,10 +8,10 @@ const { withRootProvider, withContext } = createStyleContext(dialog)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withRootProvider(Dialog.Root, {
-  defaultProps: { unmountOnExit: true, lazyMount: true },
+  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),
 })
 export const RootProvider = withRootProvider(Dialog.RootProvider, {
-  defaultProps: { unmountOnExit: true, lazyMount: true },
+  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),
 })
 export const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
 export const CloseTrigger = withContext(Dialog.CloseTrigger, 'closeTrigger')
@@ -28,17 +28,8 @@ const StyledButton = styled(ark.button)
 
 export const ActionTrigger = (props: ComponentProps<typeof StyledButton>) => {
   const dialog = useDialogContext()
-  const [local, rest] = splitProps(props, ['onClick'])
 
-  return (
-    <StyledButton
-      {...rest}
-      onClick={(e) => {
-        local.onClick?.(e)
-        dialog.setOpen(false)
-      }}
-    />
-  )
+  return <StyledButton {...props} onClick={() => dialog().setOpen(false)} />
 }
 
 export { DialogContext as Context } from '@ark-ui/solid/dialog'

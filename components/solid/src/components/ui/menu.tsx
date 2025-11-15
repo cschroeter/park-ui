@@ -9,10 +9,10 @@ const { withRootProvider, withContext } = createStyleContext(menu)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withRootProvider(Menu.Root, {
-  defaultProps: { unmountOnExit: true, lazyMount: true },
+  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),
 })
 export const RootProvider = withRootProvider(Menu.Root, {
-  defaultProps: { unmountOnExit: true, lazyMount: true },
+  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),
 })
 export const Arrow = withContext(Menu.Arrow, 'arrow')
 export const ArrowTip = withContext(Menu.ArrowTip, 'arrowTip')
@@ -20,7 +20,7 @@ export const CheckboxItem = withContext(Menu.CheckboxItem, 'item')
 export const Content = withContext(Menu.Content, 'content')
 export const ContextTrigger = withContext(Menu.ContextTrigger, 'contextTrigger')
 export const Indicator = withContext(Menu.Indicator, 'indicator', {
-  defaultProps: { children: <ChevronDownIcon /> },
+  defaultProps: () => ({ children: <ChevronDownIcon /> }),
 })
 export const Item = withContext(Menu.Item, 'item')
 export const ItemGroup = withContext(Menu.ItemGroup, 'itemGroup')

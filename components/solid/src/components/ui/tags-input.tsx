@@ -11,14 +11,14 @@ export type ItemProps = ComponentProps<typeof Item>
 export const Root = withProvider(TagsInput.Root, 'root')
 export const RootProvider = withProvider(TagsInput.RootProvider, 'root')
 export const ClearTrigger = withContext(TagsInput.ClearTrigger, 'clearTrigger', {
-  defaultProps: { children: <XIcon /> },
+  defaultProps: () => ({ children: <XIcon /> }),
 })
 export const Control = withContext(TagsInput.Control, 'control')
 export const HiddenInput = TagsInput.HiddenInput
 export const Input = withContext(TagsInput.Input, 'input')
 export const Item = withContext(TagsInput.Item, 'item')
 export const ItemDeleteTrigger = withContext(TagsInput.ItemDeleteTrigger, 'itemDeleteTrigger', {
-  defaultProps: { children: <XIcon /> },
+  defaultProps: () => ({ children: <XIcon /> }),
 })
 export const ItemInput = withContext(TagsInput.ItemInput, 'itemInput')
 export const ItemPreview = withContext(TagsInput.ItemPreview, 'itemPreview')

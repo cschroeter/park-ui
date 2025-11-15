@@ -8,7 +8,7 @@ const { withProvider, withContext } = createStyleContext(segmentGroup)
 export type RootProps = ComponentProps<typeof Root>
 
 export const Root = withProvider(SegmentGroup.Root, 'root', {
-  defaultProps: { orientation: 'horizontal' },
+  defaultProps: () => ({ orientation: 'horizontal' }) as const,
   forwardProps: ['orientation'],
 })
 export const RootProvider = withProvider(SegmentGroup.RootProvider, 'root')

@@ -8,10 +8,10 @@ const { withRootProvider, withContext } = createStyleContext(drawer)
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withRootProvider(Dialog.Root, {
-  defaultProps: { unmountOnExit: true, lazyMount: true },
+  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),
 })
 export const RootProvider = withRootProvider(Dialog.Root, {
-  defaultProps: { unmountOnExit: true, lazyMount: true },
+  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),
 })
 export const Backdrop = withContext(Dialog.Backdrop, 'backdrop')
 export const Positioner = withContext(Dialog.Positioner, 'positioner')

@@ -17,14 +17,12 @@ export const Dropzone = withContext(FileUpload.Dropzone, 'dropzone')
 export const HiddenInput = FileUpload.HiddenInput
 export const Item = withContext(FileUpload.Item, 'item')
 export const ItemDeleteTrigger = withContext(FileUpload.ItemDeleteTrigger, 'itemDeleteTrigger', {
-  defaultProps: { children: <XIcon /> },
+  defaultProps: () => ({ children: <XIcon /> }),
 })
 export const ItemGroup = withContext(FileUpload.ItemGroup, 'itemGroup')
 export const ItemName = withContext(FileUpload.ItemName, 'itemName')
 export const ItemPreview = withContext(FileUpload.ItemPreview, 'itemPreview', {
-  defaultProps: {
-    children: <FileIcon />,
-  },
+  defaultProps: () => ({ children: <FileIcon /> }),
 })
 export const ItemPreviewImage = withContext(FileUpload.ItemPreviewImage, 'itemPreviewImage')
 export const ItemSizeText = withContext(FileUpload.ItemSizeText, 'itemSizeText')

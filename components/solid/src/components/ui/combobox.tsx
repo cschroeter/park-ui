@@ -10,7 +10,7 @@ const { withProvider, withContext } = createStyleContext(combobox)
 export type RootProps = HTMLStyledProps<'div'> & ComboboxVariantProps
 
 export const Root = withProvider(Combobox.Root, 'root', {
-  defaultProps: { positioning: { sameWidth: false } },
+  defaultProps: () => ({ positioning: { sameWidth: false } }),
 }) as Combobox.RootComponent<RootProps>
 
 export const RootProvider = withProvider(
@@ -19,7 +19,7 @@ export const RootProvider = withProvider(
 ) as Combobox.RootProviderComponent<RootProps>
 
 export const ClearTrigger = withContext(Combobox.ClearTrigger, 'clearTrigger', {
-  defaultProps: { children: <XIcon /> },
+  defaultProps: () => ({ children: <XIcon /> }),
 })
 export const Content = withContext(Combobox.Content, 'content')
 export const Control = withContext(Combobox.Control, 'control')
@@ -34,7 +34,7 @@ export const Label = withContext(Combobox.Label, 'label')
 export const List = withContext(Combobox.List, 'list')
 export const Positioner = withContext(Combobox.Positioner, 'positioner')
 export const Trigger = withContext(Combobox.Trigger, 'trigger', {
-  defaultProps: { children: <ChevronsUpDownIcon /> },
+  defaultProps: () => ({ children: <ChevronsUpDownIcon /> }),
 })
 
 export { ComboboxContext as Context } from '@ark-ui/solid/combobox'

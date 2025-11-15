@@ -7,7 +7,7 @@ export type SkeletonProps = ComponentProps<typeof Skeleton>
 export const Skeleton = styled(ark.div, skeleton)
 
 export type SkeletonCircleProps = ComponentProps<typeof SkeletonCircle>
-export const SkeletonCircle = styled(ark.div, skeleton, { defaultProps: { circle: true } })
+export const SkeletonCircle = styled(ark.div, skeleton, { defaultProps: () => ({ circle: true }) })
 
 export interface SkeletonTextProps extends SkeletonProps {
   /**

@@ -10,10 +10,10 @@ export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(NumberInput.Root, 'root')
 export const RootProvider = withProvider(NumberInput.RootProvider, 'root')
 export const DecrementTrigger = withContext(NumberInput.DecrementTrigger, 'decrementTrigger', {
-  defaultProps: { children: <ChevronDownIcon /> },
+  defaultProps: () => ({ children: <ChevronDownIcon /> }),
 })
 export const IncrementTrigger = withContext(NumberInput.IncrementTrigger, 'incrementTrigger', {
-  defaultProps: { children: <ChevronUpIcon /> },
+  defaultProps: () => ({ children: <ChevronUpIcon /> }),
 })
 export const Input = withContext(NumberInput.Input, 'input')
 export const Label = withContext(NumberInput.Label, 'label')

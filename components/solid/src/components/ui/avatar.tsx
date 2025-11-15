@@ -10,10 +10,11 @@ export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider(Avatar.Root, 'root')
 export const RootProvider = withProvider(Avatar.RootProvider, 'root')
 export const Image = withContext(Avatar.Image, 'image', {
-  defaultProps: {
-    draggable: 'false',
-    referrerPolicy: 'no-referrer',
-  },
+  defaultProps: () =>
+    ({
+      draggable: 'false',
+      referrerPolicy: 'no-referrer',
+    }) as const,
 })
 
 export { AvatarContext as Context } from '@ark-ui/solid/avatar'
