@@ -9,9 +9,11 @@ export const App = () => {
     <Wrap gap="4">
       <For each={sizes}>
         {(size) => (
-          <Icon size={size} color="colorPalette.solid.bg">
-            <DiamondIcon />
-          </Icon>
+          <Icon
+            size={size}
+            color="colorPalette.solid.bg"
+            asChild={(props) => <DiamondIcon {...props()} />}
+          />
         )}
       </For>
     </Wrap>
