@@ -13,21 +13,21 @@
     "typedoc": "scripts typedoc --out ../../website/public/types/solid"
   },
   "dependencies": {
-    "@ark-ui/solid": "5.27.1",
+    "@ark-ui/solid": "5.28.0",
     "@tanstack/solid-virtual": "3.13.12",
     "lucide-solid": "0.553.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.5.0",
-    "@pandacss/preset-base": "1.5.0",
-    "@pandacss/preset-panda": "1.5.0",
+    "@pandacss/dev": "1.5.1",
+    "@pandacss/preset-base": "1.5.1",
+    "@pandacss/preset-panda": "1.5.1",
     "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*",
-    "@storybook/addon-a11y": "10.0.6",
-    "@storybook/addon-themes": "10.0.6",
+    "@storybook/addon-a11y": "10.0.7",
+    "@storybook/addon-themes": "10.0.7",
     "lorem-ipsum": "2.0.8",
     "solid-js": "1.9.10",
-    "storybook": "10.0.6",
+    "storybook": "10.0.7",
     "storybook-solidjs-vite": "10.0.5",
     "typescript": "5.9.3",
     "vite": "7.2.2",

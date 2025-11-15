@@ -64,12 +64,12 @@
     "zod": "4.1.12"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.5.0",
+    "@pandacss/dev": "1.5.1",
     "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "24.10.0",
+    "@types/node": "24.10.1",
     "release-it": "19.0.6",
-    "tsup": "8.5.0",
+    "tsup": "8.5.1",
     "typescript": "5.9.3"
   },
   "peerDependencies": {
