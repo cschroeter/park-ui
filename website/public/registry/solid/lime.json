@@ -1,0 +1,33 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "lime",
+  "type": "registry:color",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const lime = defineSemanticTokens.colors({\n  '1': { value: { _light: '#fcfdfa', _dark: '#11130c' } },\n  '2': { value: { _light: '#f8faf3', _dark: '#151a10' } },\n  '3': { value: { _light: '#eef6d6', _dark: '#1f2917' } },\n  '4': { value: { _light: '#e2f0bd', _dark: '#29371d' } },\n  '5': { value: { _light: '#d3e7a6', _dark: '#334423' } },\n  '6': { value: { _light: '#c2da91', _dark: '#3d522a' } },\n  '7': { value: { _light: '#abc978', _dark: '#496231' } },\n  '8': { value: { _light: '#8db654', _dark: '#577538' } },\n  '9': { value: { _light: '#bdee63', _dark: '#bdee63' } },\n  '10': { value: { _light: '#b0e64c', _dark: '#d4ff70' } },\n  '11': { value: { _light: '#5c7c2f', _dark: '#bde56c' } },\n  '12': { value: { _light: '#37401c', _dark: '#e3f7ba' } },\n  a1: { value: { _light: '#66990005', _dark: '#11bb0003' } },\n  a2: { value: { _light: '#6b95000c', _dark: '#78f7000a' } },\n  a3: { value: { _light: '#96c80029', _dark: '#9bfd4c1a' } },\n  a4: { value: { _light: '#8fc60042', _dark: '#a7fe5c29' } },\n  a5: { value: { _light: '#81bb0059', _dark: '#affe6537' } },\n  a6: { value: { _light: '#72aa006e', _dark: '#b2fe6d46' } },\n  a7: { value: { _light: '#61990087', _dark: '#b6ff6f57' } },\n  a8: { value: { _light: '#559200ab', _dark: '#b6fd6d6c' } },\n  a9: { value: { _light: '#93e4009c', _dark: '#caff69ed' } },\n  a10: { value: { _light: '#8fdc00b3', _dark: '#d4ff70' } },\n  a11: { value: { _light: '#375f00d0', _dark: '#d1fe77e4' } },\n  a12: { value: { _light: '#1e2900e3', _dark: '#e9febff7' } },\n  solid: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.lime.9}', _dark: '{colors.lime.9}' } },\n      hover: { value: { _light: '{colors.lime.10}', _dark: '{colors.lime.10}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.1}' } } },\n  },\n  subtle: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.lime.a3}', _dark: '{colors.lime.a3}' } },\n      hover: { value: { _light: '{colors.lime.a4}', _dark: '{colors.lime.a4}' } },\n      active: { value: { _light: '{colors.lime.a5}', _dark: '{colors.lime.a5}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.lime.a11}', _dark: '{colors.lime.a11}' } } },\n  },\n  surface: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.lime.a2}', _dark: '{colors.lime.a2}' } },\n      active: { value: { _light: '{colors.lime.a3}', _dark: '{colors.lime.a3}' } },\n    },\n    border: {\n      DEFAULT: { value: { _light: '{colors.lime.a6}', _dark: '{colors.lime.a6}' } },\n      hover: { value: { _light: '{colors.lime.a7}', _dark: '{colors.lime.a7}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.lime.a11}', _dark: '{colors.lime.a11}' } } },\n  },\n  outline: {\n    bg: {\n      hover: { value: { _light: '{colors.lime.a2}', _dark: '{colors.lime.a2}' } },\n      active: { value: { _light: '{colors.lime.a3}', _dark: '{colors.lime.a3}' } },\n    },\n    border: { DEFAULT: { value: { _light: '{colors.lime.a7}', _dark: '{colors.lime.a7}' } } },\n    fg: { DEFAULT: { value: { _light: '{colors.lime.a11}', _dark: '{colors.lime.a11}' } } },\n  },\n  plain: {\n    bg: {\n      hover: { value: { _light: '{colors.lime.a3}', _dark: '{colors.lime.a3}' } },\n      active: { value: { _light: '{colors.lime.a4}', _dark: '{colors.lime.a4}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.lime.a11}', _dark: '{colors.lime.a11}' } } },\n  },\n})\n",
+      "type": "registry:color",
+      "path": "colors/lime.ts"
+    }
+  ],
+  "panda": {
+    "imports": [
+      {
+        "type": "registry:color",
+        "name": "lime",
+        "from": "colors/lime"
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "lime": "$ref:lime"
+            }
+          }
+        }
+      }
+    }
+  }
+}
