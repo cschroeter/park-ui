@@ -1,6 +1,6 @@
 import { ark } from '@ark-ui/solid/factory'
 import { createContext } from '@ark-ui/solid/utils'
-import { type ComponentProps, createMemo, type JSX, mergeProps, splitProps } from 'solid-js'
+import { type ComponentProps, createMemo, type JSX, mergeProps, Show, splitProps } from 'solid-js'
 import { styled } from 'styled-system/jsx'
 import { type ButtonVariantProps, button } from 'styled-system/recipes'
 import { Group, type GroupProps } from './group'
@@ -42,17 +42,11 @@ export const Button = (props: ButtonProps) => {
     'children',
     'spinner',
     'spinnerPlacement',
-    'asChild',
   ])
 
   return (
-    <BaseButton
-      type="button"
-      {...rest}
-      data-loading={local.loading ? '' : undefined}
-      disabled={local.loading || rest.disabled}
-    >
-      {!props.asChild && local.loading ? (
+    <BaseButton type="button" {...rest} disabled={local.loading || rest.disabled}>
+      <Show when={local.loading} fallback={local.children}>
         <Loader
           spinner={local.spinner}
           text={local.loadingText}
@@ -60,9 +54,7 @@ export const Button = (props: ButtonProps) => {
         >
           {local.children}
         </Loader>
-      ) : (
-        local.children
-      )}
+      </Show>
     </BaseButton>
   )
 }
