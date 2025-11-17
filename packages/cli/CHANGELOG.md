@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [1.0.0-next.8] - 2025-11-17
+
 ### Fixed
 
 - Correctly resolve references and extends in `tsconfig.json` files.
