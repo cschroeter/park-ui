@@ -139,14 +139,6 @@ export const avatar = defineSlotRecipe({
         },
       },
     },
-    grouped: {
-      true: {
-        root: {
-          borderWidth: '0.125em',
-          borderColor: 'gray.surface.bg',
-        },
-      },
-    },
     shape: {
       square: {},
       rounded: {

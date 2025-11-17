@@ -8,7 +8,26 @@ export const App = () => {
       <Group gap="0" spaceX="-3">
         <For each={users}>
           {(user) => (
-            <Avatar.Root size="lg" grouped>
+            <Avatar.Root size="lg" borderWidth="2px" borderColor="gray.surface.bg">
+              <Avatar.Fallback name={user.name} />
+              <Avatar.Image src={user.src} />
+            </Avatar.Root>
+          )}
+        </For>
+        <Avatar.Root size="lg">
+          <Avatar.Fallback>+3</Avatar.Fallback>
+        </Avatar.Root>
+      </Group>
+
+      <Group gap="0" spaceX="-3">
+        <For each={users}>
+          {(user, index) => (
+            <Avatar.Root
+              size="lg"
+              borderWidth="2px"
+              borderColor="gray.surface.bg"
+              style={{ 'z-index': users.length - index() }}
+            >
               <Avatar.Fallback name={user.name} />
               <Avatar.Image src={user.src} />
             </Avatar.Root>
