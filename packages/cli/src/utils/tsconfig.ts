@@ -1,32 +1,52 @@
 import * as p from '@clack/prompts'
-import { Context, Effect, Layer } from 'effect'
-import { type ConfigLoaderResult, type ConfigLoaderSuccessResult, loadConfig } from 'tsconfig-paths'
+import { Context, Effect, Layer, Schema } from 'effect'
+import { parse } from 'tsconfck'
 import { TSConfigInvalid, TSConfigNotFound } from './errors'
+import { PandaConfig } from './panda-config'
 
-export interface TSConfig extends ConfigLoaderSuccessResult {
+const TSConfigSchema = Schema.Struct({
+  compilerOptions: Schema.Struct({
+    baseUrl: Schema.String,
+    paths: Schema.Record({
+      key: Schema.String,
+      value: Schema.mutable(Schema.Array(Schema.String)),
+    }),
+  }),
+})
+
+type TSConfigSchema = Schema.Schema.Type<typeof TSConfigSchema>
+
+export interface TSConfig {
   aliasPrefix: string
+  baseUrl: string
+  paths: Record<string, string[]>
 }
 
-const getConfig = Effect.succeed(loadConfig(process.cwd())).pipe(
-  Effect.filterOrFail(
-    (result): result is Extract<ConfigLoaderResult, { resultType: 'success' }> =>
-      result.resultType !== 'failed',
-    () => TSConfigNotFound(process.cwd()),
+const getConfig = PandaConfig.pipe(
+  Effect.flatMap((pandaConfig) =>
+    Effect.tryPromise({
+      try: () => parse(pandaConfig.path),
+      catch: () => TSConfigNotFound(process.cwd()),
+    }),
   ),
-  Effect.flatMap((config) =>
-    Effect.fromNullable(getTsConfigAliasPrefix(config)).pipe(
-      Effect.mapError(() => TSConfigInvalid()),
-      Effect.map((aliasPrefix) => ({ ...config, aliasPrefix })),
-    ),
-  ),
+  Effect.flatMap((config) => Schema.decodeUnknown(TSConfigSchema)(config.tsconfig)),
+  Effect.flatMap((config) => {
+    const aliasPrefix = getTsConfigAliasPrefix(config)
+    if (!aliasPrefix) return Effect.fail(TSConfigInvalid())
+
+    return Effect.succeed({
+      aliasPrefix,
+      baseUrl: config.compilerOptions?.baseUrl || '',
+      paths: config.compilerOptions?.paths || {},
+    })
+  }),
 )
 
 export const TSConfig = Context.GenericTag<TSConfig>('TSConfig')
 const ConfigLayer = Layer.effect(TSConfig, getConfig)
 
 export const withTSConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
-  effect.pipe(
-    Effect.provide(ConfigLayer),
+  Effect.provide(effect, ConfigLayer).pipe(
     Effect.catchAll(({ message }) =>
       Effect.sync(() => {
         p.log.error(message)
@@ -35,22 +55,15 @@ export const withTSConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
     ),
   )
 
-const getTsConfigAliasPrefix = (tsConfig: ConfigLoaderSuccessResult) => {
-  if (!tsConfig.paths || Object.keys(tsConfig.paths).length === 0) {
-    return null
-  }
+const getTsConfigAliasPrefix = (tsConfig: TSConfigSchema): string | null => {
+  const paths = tsConfig.compilerOptions.paths
+  const commonPaths = ['./*', './src/*', './app/*', './resources/js/*']
 
-  for (const [alias, paths] of Object.entries(tsConfig.paths)) {
-    if (
-      paths.includes('./*') ||
-      paths.includes('./src/*') ||
-      paths.includes('./app/*') ||
-      paths.includes('./resources/js/*')
-    ) {
+  for (const [alias, pathList] of Object.entries(paths)) {
+    if (pathList.some((p) => commonPaths.includes(p))) {
       return alias.replace(/\/\*$/, '')
     }
   }
 
-  const firstAlias = Object.keys(tsConfig.paths)[0]
-  return firstAlias ? firstAlias.replace(/\/\*$/, '') : null
+  return Object.keys(paths)[0]?.replace(/\/\*$/, '') ?? null
 }

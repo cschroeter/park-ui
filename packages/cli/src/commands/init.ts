@@ -41,5 +41,5 @@ export const init = new Command('init').description('').action(async () => {
     ),
   )
 
-  await Effect.runPromise(withTSConfig(withPandaConfig(program)))
+  await Effect.runPromise(withPandaConfig(withTSConfig(program)))
 })
