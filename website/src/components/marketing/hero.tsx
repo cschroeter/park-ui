@@ -2,7 +2,7 @@ import { ArrowRightIcon } from 'lucide-react'
 import { Box, HStack, Stack } from 'styled-system/jsx'
 import { Heading, Text } from '@/components/ui'
 import { ThemeDrawer } from '../docs/theme-drawer'
-import { ReactIcon, SolidIcon, VueIcon } from '../icons'
+import { ReactIcon, SolidIcon } from '../icons'
 import { PageButton } from '../navigation/page-button'
 import { HeroGroup, HeroItem } from './framer'
 
@@ -33,7 +33,7 @@ export const Hero = () => {
           {[
             { framework: 'React', icon: <ReactIcon /> },
             { framework: 'Solid', icon: <SolidIcon /> },
-            { framework: 'Vue', icon: <VueIcon /> },
+            // { framework: 'Vue', icon: <VueIcon /> },
           ].map(({ framework, icon }) => (
             <HStack key={framework}>
               <Box fontSize="3xl">{icon}</Box>
