@@ -2,7 +2,7 @@ import type { Doc } from '.velite'
 import { Portal } from '@ark-ui/react/portal'
 import { ChevronDownIcon, ExternalLinkIcon } from 'lucide-react'
 import { Button, ButtonGroup, Clipboard, IconButton, Menu } from '@/components/ui'
-import { getFramework } from '~/lib/frameworks'
+import { getFramework } from '~/lib/get-framework'
 import { transformMdxContent } from '~/lib/mdx'
 import { ChatGPTIcon, ClaudeIcon } from '../icons'
 

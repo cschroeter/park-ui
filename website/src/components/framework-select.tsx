@@ -1,7 +1,7 @@
 'use client'
 import { useListCollection } from '@ark-ui/react/collection'
 import { Select } from '@/components/ui'
-import type { Framework } from '~/lib/frameworks'
+import { type Framework, frameworks } from '~/lib/frameworks'
 
 interface Props {
   framework: Framework
@@ -10,7 +10,7 @@ interface Props {
 
 export const FrameworkSelect = ({ framework, onValueChange }: Props) => {
   const { collection } = useListCollection<Framework>({
-    initialItems: ['react', 'solid', 'svelte', 'vue'],
+    initialItems: frameworks,
   })
 
   return (
