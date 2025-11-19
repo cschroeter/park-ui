@@ -1,7 +1,7 @@
-import type { Meta } from '@storybook/react'
+import type { Meta } from 'storybook-solidjs-vite'
 
 const meta: Meta = {
-  title: 'Forms / InputGroup',
+  title: 'Forms / Input Addon',
 }
 
 export default meta
@@ -9,4 +9,3 @@ export default meta
 export { App as basic } from './basic'
 export { App as sizes } from './sizes'
 export { App as variants } from './variants'
-export { App as withButton } from './with-button'

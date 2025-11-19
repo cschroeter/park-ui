@@ -27,6 +27,9 @@ export const inputAddon = defineRecipe({
         borderWidth: '1px',
         borderColor: 'gray.surface.border',
       },
+      subtle: {
+        bg: 'gray.subtle.bg',
+      },
     },
     size: {
       xs: { textStyle: 'sm', px: '2', _icon: { boxSize: '4' } },
