@@ -1,0 +1,49 @@
+---
+title: Input Group
+description: A wrapper component for composing inputs with elements on the start or end.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/input-group.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Input, InputGroup } from '@/components/ui'
+```
+
+```tsx
+<InputGroup startElement={} endElement={}>
+  <Input />
+</InputGroup>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the input group.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+The input group automatically adapts to the variant of the input inside it.
+
+<ComponentExample name="variants" />
+
+### With Button
+
+Use the `endElement` prop to add a button to the end of the input.
+
+<ComponentExample name="with-button" />
+
+## Props
+
+<PropsTable />
