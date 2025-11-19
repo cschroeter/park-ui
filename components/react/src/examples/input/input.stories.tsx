@@ -1,7 +1,15 @@
 import type { Meta } from '@storybook/react'
+import { Box } from 'styled-system/jsx'
 
 const meta: Meta = {
   title: 'Forms / Input',
+  decorators: [
+    (Story) => (
+      <Box maxW="md">
+        <Story />
+      </Box>
+    ),
+  ],
 }
 
 export default meta

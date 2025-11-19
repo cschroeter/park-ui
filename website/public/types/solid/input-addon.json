@@ -1,14 +1,14 @@
 {
   "Root": {
     "props": {
-      "size": {
-        "type": "'2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
-        "defaultValue": "'md'",
+      "variant": {
+        "type": "'outline' | 'surface'",
+        "defaultValue": "'outline'",
         "isRequired": false
       },
-      "variant": {
-        "type": "'outline' | 'subtle' | 'flushed'",
-        "defaultValue": "'outline'",
+      "size": {
+        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+        "defaultValue": "'md'",
         "isRequired": false
       }
     }

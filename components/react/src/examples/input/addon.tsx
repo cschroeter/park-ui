@@ -1,18 +1,27 @@
+import { AtSignIcon, EuroIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Input, InputGroup } from '@/components/ui'
+import { Group, Input, InputAddon } from '@/components/ui'
 
 export const App = () => {
   return (
     <Stack gap="4">
-      <InputGroup startAddon="https://">
+      <Group attached>
+        <InputAddon>https://</InputAddon>
         <Input placeholder="yoursite.com" />
-      </InputGroup>
-      <InputGroup endAddon=".com">
-        <Input placeholder="yoursite" />
-      </InputGroup>
-      <InputGroup startAddon="$" endAddon="USD">
+      </Group>
+      <Group attached>
+        <InputAddon>
+          <AtSignIcon />
+        </InputAddon>
+        <Input placeholder="Username" />
+      </Group>
+      <Group attached>
+        <InputAddon>
+          <EuroIcon />
+        </InputAddon>
         <Input placeholder="0.00" />
-      </InputGroup>
+        <InputAddon>EUR</InputAddon>
+      </Group>
     </Stack>
   )
 }

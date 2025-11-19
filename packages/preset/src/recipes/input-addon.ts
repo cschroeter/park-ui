@@ -1,39 +1,39 @@
 import { defineRecipe } from '@pandacss/dev'
-import { input } from './input'
 
 export const inputAddon = defineRecipe({
   className: 'input-addon',
   base: {
-    flex: '0 0 auto',
-    width: 'auto',
-    display: 'flex',
     alignItems: 'center',
-    whiteSpace: 'nowrap',
     alignSelf: 'stretch',
     borderRadius: 'l2',
-  },
-  variants: {
-    size: input.variants.size,
-    variant: {
-      outline: {
-        borderWidth: '1px',
-        borderColor: 'colorPalette.outline.border',
-      },
-      subtle: {
-        bg: 'colorPalette.subtle.bg',
-        color: 'colorPalette.subtle.fg',
-      },
-      flushed: {
-        borderBottom: '1px solid',
-        borderColor: 'inherit',
-        borderRadius: '0',
-        px: '0',
-        bg: 'transparent',
-      },
-    },
+    color: 'fg.muted',
+    display: 'flex',
+    flex: '0 0 auto',
+    whiteSpace: 'nowrap',
+    width: 'auto',
   },
   defaultVariants: {
     size: 'md',
     variant: 'outline',
+  },
+  variants: {
+    variant: {
+      outline: {
+        borderWidth: '1px',
+        borderColor: 'gray.outline.border',
+      },
+      surface: {
+        bg: 'gray.surface.bg',
+        borderWidth: '1px',
+        borderColor: 'gray.surface.border',
+      },
+    },
+    size: {
+      xs: { textStyle: 'sm', px: '2', _icon: { boxSize: '4' } },
+      sm: { textStyle: 'sm', px: '2.5', _icon: { boxSize: '4.5' } },
+      md: { textStyle: 'md', px: '3', _icon: { boxSize: '5' } },
+      lg: { textStyle: 'md', px: '3.5', _icon: { boxSize: '5' } },
+      xl: { textStyle: 'lg', px: '4', _icon: { boxSize: '5.5' } },
+    },
   },
 })

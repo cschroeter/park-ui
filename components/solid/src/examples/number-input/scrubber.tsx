@@ -6,9 +6,8 @@ export const App = () => {
     <NumberInput.Root defaultValue="42">
       <NumberInput.Control />
       <InputGroup
-        startElementProps={{ pointerEvents: 'auto' }}
         startElement={
-          <NumberInput.Scrubber>
+          <NumberInput.Scrubber pointerEvents="auto">
             <ArrowLeftRightIcon />
           </NumberInput.Scrubber>
         }

@@ -2,12 +2,12 @@ import { Stack } from 'styled-system/jsx'
 import { Input } from '@/components/ui'
 
 export const App = () => {
+  const sizes = ['sm', 'md', 'lg', 'xl'] as const
   return (
     <Stack gap="4">
-      <Input placeholder="size (sm)" size="sm" />
-      <Input placeholder="size (md)" size="md" />
-      <Input placeholder="size (lg)" size="lg" />
-      <Input placeholder="size (xl)" size="xl" />
+      {sizes.map((size) => (
+        <Input key={size} placeholder={size} size={size} />
+      ))}
     </Stack>
   )
 }

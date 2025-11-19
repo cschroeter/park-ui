@@ -1,6 +1,6 @@
-import { SearchIcon, UserIcon } from 'lucide-react'
+import { EuroIcon, InfoIcon, UserIcon } from 'lucide-react'
 import { Stack } from 'styled-system/jsx'
-import { Input, InputGroup, Kbd } from '@/components/ui'
+import { Input, InputGroup } from '@/components/ui'
 
 export const App = () => {
   return (
@@ -8,13 +8,12 @@ export const App = () => {
       <InputGroup startElement={<UserIcon />}>
         <Input placeholder="Username" />
       </InputGroup>
-      <InputGroup startElement="https://" startElementProps={{ color: 'fg.muted' }}>
-        <Input ps="7ch" placeholder="yoursite.com" />
+
+      <InputGroup endElement={<EuroIcon />}>
+        <Input placeholder="0.00" />
       </InputGroup>
-      <InputGroup flex="1" startElement={<SearchIcon />} endElement={<Kbd>⌘K</Kbd>}>
-        <Input placeholder="Search contacts" />
-      </InputGroup>
-      <InputGroup startElement="$" endElement="USD">
+
+      <InputGroup startElement={<EuroIcon />} endElement={<InfoIcon />}>
         <Input placeholder="0.00" />
       </InputGroup>
     </Stack>

@@ -40,6 +40,14 @@
     "type": "registry:recipe"
   },
   {
+    "name": "breadcrumb",
+    "type": "registry:ui"
+  },
+  {
+    "name": "breadcrumb-recipe",
+    "type": "registry:recipe"
+  },
+  {
     "name": "button",
     "type": "registry:ui"
   },
@@ -224,16 +232,12 @@
     "type": "registry:recipe"
   },
   {
-    "name": "input-element",
-    "type": "registry:ui"
-  },
-  {
-    "name": "input-element-recipe",
-    "type": "registry:recipe"
-  },
-  {
     "name": "input-group",
     "type": "registry:ui"
+  },
+  {
+    "name": "input-group-recipe",
+    "type": "registry:recipe"
   },
   {
     "name": "input-recipe",

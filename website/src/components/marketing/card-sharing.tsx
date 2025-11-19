@@ -2,7 +2,7 @@
 import { Portal } from '@ark-ui/react'
 import { createListCollection } from '@ark-ui/react/collection'
 import { Box, Divider, Stack } from 'styled-system/jsx'
-import { Card, Clipboard, IconButton, Input, InputGroup, Select, Text } from '@/components/ui'
+import { Card, Clipboard, Group, IconButton, Input, Select, Text } from '@/components/ui'
 import { Avatar } from '~/components/ui/avatar'
 
 export const CardSharing = () => {
@@ -17,19 +17,16 @@ export const CardSharing = () => {
       <Card.Body gap="4">
         <Clipboard.Root value="https://park-ui.com">
           <Clipboard.Label textStyle="label">Document Link</Clipboard.Label>
-          <InputGroup
-            endElement={
-              <Clipboard.Trigger asChild>
-                <IconButton variant="surface" size="xs" me="-2">
-                  <Clipboard.Indicator />
-                </IconButton>
-              </Clipboard.Trigger>
-            }
-          >
+          <Group attached width="full">
             <Clipboard.Input asChild>
               <Input />
             </Clipboard.Input>
-          </InputGroup>
+            <Clipboard.Trigger asChild>
+              <IconButton variant="outline" colorPalette="gray">
+                <Clipboard.Indicator />
+              </IconButton>
+            </Clipboard.Trigger>
+          </Group>
         </Clipboard.Root>
         <Divider />
         <Text textStyle="sm" fontWeight="medium">

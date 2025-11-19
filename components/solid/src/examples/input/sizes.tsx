@@ -1,13 +1,12 @@
+import { For } from 'solid-js'
 import { Stack } from 'styled-system/jsx'
 import { Input } from '@/components/ui'
 
 export const App = () => {
+  const sizes = ['sm', 'md', 'lg', 'xl'] as const
   return (
     <Stack gap="4">
-      <Input placeholder="size (sm)" size="sm" />
-      <Input placeholder="size (md)" size="md" />
-      <Input placeholder="size (lg)" size="lg" />
-      <Input placeholder="size (xl)" size="xl" />
+      <For each={sizes}>{(size) => <Input placeholder={size} size={size} />}</For>
     </Stack>
   )
 }

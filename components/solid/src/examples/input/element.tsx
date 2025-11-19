@@ -1,20 +1,19 @@
-import { SearchIcon, UserIcon } from 'lucide-solid'
+import { Euro, Info, User } from 'lucide-solid'
 import { Stack } from 'styled-system/jsx'
-import { Input, InputGroup, Kbd } from '@/components/ui'
+import { Input, InputGroup } from '@/components/ui'
 
 export const App = () => {
   return (
     <Stack gap="4">
-      <InputGroup startElement={<UserIcon />}>
+      <InputGroup startElement={<User />}>
         <Input placeholder="Username" />
       </InputGroup>
-      <InputGroup startElement="https://" startElementProps={{ color: 'fg.muted' }}>
-        <Input ps="7ch" placeholder="yoursite.com" />
+
+      <InputGroup endElement={<Euro />}>
+        <Input placeholder="0.00" />
       </InputGroup>
-      <InputGroup flex="1" startElement={<SearchIcon />} endElement={<Kbd>⌘K</Kbd>}>
-        <Input placeholder="Search contacts" />
-      </InputGroup>
-      <InputGroup startElement="$" endElement="USD">
+
+      <InputGroup startElement={<Euro />} endElement={<Info />}>
         <Input placeholder="0.00" />
       </InputGroup>
     </Stack>
