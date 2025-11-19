@@ -43,6 +43,7 @@ export const badge = defineRecipe({
       md: { fontSize: 'xs', px: '2', h: '5', gap: '1', _icon: { boxSize: '3' } },
       lg: { fontSize: 'xs', px: '2.5', h: '5.5', gap: '1', _icon: { boxSize: '3.5' } },
       xl: { fontSize: 'sm', px: '2.5', h: '6', gap: '1.5', _icon: { boxSize: '4' } },
+      '2xl': { fontSize: 'md', px: '3', h: '7', gap: '1.5', _icon: { boxSize: '4.5' } },
     },
   },
 })
