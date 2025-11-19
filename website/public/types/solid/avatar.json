@@ -31,10 +31,6 @@
         "defaultValue": "'subtle'",
         "isRequired": false
       },
-      "grouped": {
-        "type": "boolean",
-        "isRequired": false
-      },
       "shape": {
         "type": "'full' | 'square' | 'rounded'",
         "defaultValue": "'full'",

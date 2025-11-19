@@ -687,65 +687,28 @@
       "registryDependencies": ["input-recipe"]
     },
     {
-      "name": "input-addon",
-      "type": "registry:ui",
-      "dependencies": ["@ark-ui/solid", "solid-js"],
-      "files": [
-        {
-          "path": "src/components/ui/input-addon.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": ["input-addon-recipe"]
-    },
-    {
-      "name": "input-addon-recipe",
-      "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev"],
-      "files": [
-        {
-          "path": "../../packages/preset/src/recipes/input-addon.ts",
-          "type": "registry:recipe",
-          "imports": "import { inputAddon } from './input-addon'"
-        }
-      ],
-      "registryDependencies": ["input-recipe"]
-    },
-    {
-      "name": "input-element",
-      "type": "registry:ui",
-      "dependencies": ["@ark-ui/solid", "solid-js"],
-      "files": [
-        {
-          "path": "src/components/ui/input-element.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "registryDependencies": ["input-element-recipe"]
-    },
-    {
-      "name": "input-element-recipe",
-      "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev"],
-      "files": [
-        {
-          "path": "../../packages/preset/src/recipes/input-element.ts",
-          "type": "registry:recipe",
-          "imports": "import { inputElement } from './input-element'"
-        }
-      ]
-    },
-    {
       "name": "input-group",
       "type": "registry:ui",
-      "dependencies": ["solid-js"],
+      "dependencies": ["@ark-ui/solid", "solid-js"],
       "files": [
         {
           "path": "src/components/ui/input-group.tsx",
           "type": "registry:ui"
         }
       ],
-      "registryDependencies": ["group", "input-addon", "input-element"]
+      "registryDependencies": ["group", "input-group-recipe"]
+    },
+    {
+      "name": "input-group-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/input-group.ts",
+          "type": "registry:recipe",
+          "imports": "import { inputGroup } from './input-group'"
+        }
+      ]
     },
     {
       "name": "input-recipe",

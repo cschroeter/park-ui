@@ -356,24 +356,12 @@
     "type": "registry:ui"
   },
   {
-    "name": "input-addon",
-    "type": "registry:ui"
-  },
-  {
-    "name": "input-addon-recipe",
-    "type": "registry:recipe"
-  },
-  {
-    "name": "input-element",
-    "type": "registry:ui"
-  },
-  {
-    "name": "input-element-recipe",
-    "type": "registry:recipe"
-  },
-  {
     "name": "input-group",
     "type": "registry:ui"
+  },
+  {
+    "name": "input-group-recipe",
+    "type": "registry:recipe"
   },
   {
     "name": "input-recipe",
