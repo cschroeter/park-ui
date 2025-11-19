@@ -2,12 +2,12 @@
   "Root": {
     "props": {
       "size": {
-        "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+        "type": "'2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'",
         "defaultValue": "'md'",
         "isRequired": false
       },
       "variant": {
-        "type": "'outline' | 'surface' | 'subtle'",
+        "type": "'outline' | 'subtle' | 'flushed'",
         "defaultValue": "'outline'",
         "isRequired": false
       }

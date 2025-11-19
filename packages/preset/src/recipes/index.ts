@@ -28,7 +28,8 @@ import { heading } from './heading'
 import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { input } from './input'
-import { inputGroup } from './input-group'
+import { inputAddon } from './input-addon'
+import { inputElement } from './input-element'
 import { kbd } from './kbd'
 import { link } from './link'
 import { listbox } from './listbox'
@@ -76,6 +77,8 @@ export const recipes = {
   heading,
   icon,
   input,
+  inputAddon,
+  inputElement,
   kbd,
   link,
   skeleton,
@@ -106,7 +109,6 @@ export const slotRecipes = {
   fileUpload,
   floatingPanel,
   hoverCard,
-  inputGroup,
   listbox,
   menu,
   numberInput,

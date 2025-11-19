@@ -17,16 +17,19 @@ export const CardSharing = () => {
       <Card.Body gap="4">
         <Clipboard.Root value="https://park-ui.com">
           <Clipboard.Label textStyle="label">Document Link</Clipboard.Label>
-          <InputGroup.Root>
+          <InputGroup
+            endElement={
+              <Clipboard.Trigger asChild>
+                <IconButton variant="surface" size="xs" me="-2">
+                  <Clipboard.Indicator />
+                </IconButton>
+              </Clipboard.Trigger>
+            }
+          >
             <Clipboard.Input asChild>
               <Input />
             </Clipboard.Input>
-            <Clipboard.Trigger asChild>
-              <IconButton variant="outline">
-                <Clipboard.Indicator />
-              </IconButton>
-            </Clipboard.Trigger>
-          </InputGroup.Root>
+          </InputGroup>
         </Clipboard.Root>
         <Divider />
         <Text textStyle="sm" fontWeight="medium">

@@ -129,31 +129,6 @@
       ]
     },
     {
-      "name": "breadcrumb",
-      "type": "registry:ui",
-      "dependencies": ["@ark-ui/react", "lucide-react", "react"],
-      "files": [
-        {
-          "path": "src/components/ui/breadcrumb.tsx",
-          "type": "registry:ui",
-          "exports": "export * as Breadcrumb from './breadcrumb'"
-        }
-      ],
-      "registryDependencies": ["breadcrumb-recipe"]
-    },
-    {
-      "name": "breadcrumb-recipe",
-      "type": "registry:recipe",
-      "dependencies": ["@pandacss/dev"],
-      "files": [
-        {
-          "path": "../../packages/preset/src/recipes/breadcrumb.ts",
-          "type": "registry:recipe",
-          "imports": "import { breadcrumb } from './breadcrumb'"
-        }
-      ]
-    },
-    {
       "name": "button",
       "type": "registry:ui",
       "dependencies": ["@ark-ui/react", "react"],
@@ -706,29 +681,68 @@
       "registryDependencies": ["input-recipe"]
     },
     {
-      "name": "input-group",
+      "name": "input-addon",
       "type": "registry:ui",
       "dependencies": ["@ark-ui/react", "react"],
       "files": [
         {
-          "path": "src/components/ui/input-group.tsx",
+          "path": "src/components/ui/input-addon.tsx",
           "type": "registry:ui",
-          "exports": "export * as InputGroup from './input-group'"
+          "exports": "export { InputAddon, type InputAddonProps } from './input-addon'"
         }
       ],
-      "registryDependencies": ["group", "input-group-recipe"]
+      "registryDependencies": ["input-addon-recipe"]
     },
     {
-      "name": "input-group-recipe",
+      "name": "input-addon-recipe",
       "type": "registry:recipe",
       "dependencies": ["@pandacss/dev"],
       "files": [
         {
-          "path": "../../packages/preset/src/recipes/input-group.ts",
+          "path": "../../packages/preset/src/recipes/input-addon.ts",
           "type": "registry:recipe",
-          "imports": "import { inputGroup } from './input-group'"
+          "imports": "import { inputAddon } from './input-addon'"
+        }
+      ],
+      "registryDependencies": ["input-recipe"]
+    },
+    {
+      "name": "input-element",
+      "type": "registry:ui",
+      "dependencies": ["@ark-ui/react", "react"],
+      "files": [
+        {
+          "path": "src/components/ui/input-element.tsx",
+          "type": "registry:ui",
+          "exports": "export { InputElement, type InputElementProps } from './input-element'"
+        }
+      ],
+      "registryDependencies": ["input-element-recipe"]
+    },
+    {
+      "name": "input-element-recipe",
+      "type": "registry:recipe",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "../../packages/preset/src/recipes/input-element.ts",
+          "type": "registry:recipe",
+          "imports": "import { inputElement } from './input-element'"
         }
       ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "dependencies": ["react"],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui",
+          "exports": "export { InputGroup, type InputGroupProps } from './input-group'"
+        }
+      ],
+      "registryDependencies": ["group", "input-addon", "input-element"]
     },
     {
       "name": "input-recipe",
