@@ -241,7 +241,7 @@ export const generateRegistry = async (options: { name: string; pattern?: string
   const allItems = [...items, ...recipeItems].sort((a, b) => a.name.localeCompare(b.name))
 
   const registry: Registry = {
-    $schema: 'https://next.park-ui.com/schema/registry.json',
+    $schema: 'https://park-ui.com/schema/registry.json',
     name: options.name,
     homepage: 'https://park-ui.com',
     items: allItems,

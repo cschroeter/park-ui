@@ -34,7 +34,7 @@ export default async function RootLayout(props: PropsWithChildren) {
     >
       <head>
         <ThemeTokens />
-        <Script src="https://plausible.io/js/plausible.js" data-domain="next.park-ui.com" />
+        <Script src="https://plausible.io/js/plausible.js" data-domain="park-ui.com" />
       </head>
       <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>

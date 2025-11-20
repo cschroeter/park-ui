@@ -121,7 +121,7 @@ const generateColors = async () => {
       `./website/public/registry/theme/colors/${type}/${id}.json`,
       JSON.stringify(
         {
-          $schema: 'https://next.park-ui.com/schema/registry-item.json',
+          $schema: 'https://park-ui.com/schema/registry-item.json',
           id,
           type: 'theme',
           files,
@@ -222,7 +222,7 @@ const main = async () => {
         `./website/public/registry/components/react/${id}.json`,
         JSON.stringify(
           {
-            $schema: 'https://next.park-ui.com/schema/registry-item.json',
+            $schema: 'https://park-ui.com/schema/registry-item.json',
             id,
             type: 'component',
             files,

@@ -50,7 +50,7 @@ export const withTSConfig = <A, R>(effect: Effect.Effect<A, never, R>) =>
     Effect.catchAll(({ message }) =>
       Effect.sync(() => {
         p.log.error(message)
-        p.outro('Visit https://next.park-ui.com/docs/installation to learn how to get started.')
+        p.outro('Visit https://park-ui.com/docs/installation to learn how to get started.')
       }),
     ),
   )

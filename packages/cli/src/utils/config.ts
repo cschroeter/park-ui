@@ -149,7 +149,7 @@ export const saveConfig = (framework: Framework) =>
     pipe(
       Effect.all([PandaConfig, TSConfig]),
       Effect.map(([pandaConfig, { aliasPrefix }]) => ({
-        $schema: 'https://next.park-ui.com/schema/components.json',
+        $schema: 'https://park-ui.com/schema/components.json',
         framework,
         panda: {
           config: path.relative(process.cwd(), pandaConfig.path),

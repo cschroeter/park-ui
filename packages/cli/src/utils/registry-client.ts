@@ -88,7 +88,7 @@ const fetchRegistryItem = (
   })
 
 const $fetch = createFetch({
-  baseURL: 'https://next.park-ui.com/registry',
+  baseURL: 'https://park-ui.com/registry',
   throw: true,
   schema: createSchema({
     '/:framework/index': { output: registryIndexList },

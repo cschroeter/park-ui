@@ -1,5 +1,5 @@
 {
-  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "$schema": "https://park-ui.com/schema/registry-item.json",
   "name": "icon",
   "type": "registry:ui",
   "dependencies": ["@ark-ui/react", "react"],

@@ -55,7 +55,7 @@ export const generateRegistryFiles = async (options?: { outputDir?: string }) =>
       )
 
       const output: RegistryItem = {
-        $schema: 'https://next.park-ui.com/schema/registry-item.json',
+        $schema: 'https://park-ui.com/schema/registry-item.json',
         name: item.name,
         type: item.type,
         dependencies: item.dependencies,

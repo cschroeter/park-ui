@@ -7,7 +7,7 @@
     "$schema": {
       "type": "string",
       "format": "uri",
-      "default": "https://next.park-ui.com/schema/components.json"
+      "default": "https://park-ui.com/schema/components.json"
     },
 
     "framework": {
