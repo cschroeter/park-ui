@@ -1,53 +1,33 @@
-import { Show, children } from 'solid-js'
-import * as StyledNumberInput from './styled/number-input'
+import { NumberInput } from '@ark-ui/solid/number-input'
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-solid'
+import type { ComponentProps } from 'solid-js'
+import { createStyleContext } from 'styled-system/jsx'
+import { numberInput } from 'styled-system/recipes'
 
-export interface NumberInputProps extends StyledNumberInput.RootProps {}
+const { withProvider, withContext } = createStyleContext(numberInput)
 
-export const NumberInput = (props: NumberInputProps) => {
-  const getChildren = children(() => props.children)
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(NumberInput.Root, 'root')
+export const RootProvider = withProvider(NumberInput.RootProvider, 'root')
+export const DecrementTrigger = withContext(NumberInput.DecrementTrigger, 'decrementTrigger', {
+  defaultProps: () => ({ children: <ChevronDownIcon /> }),
+})
+export const IncrementTrigger = withContext(NumberInput.IncrementTrigger, 'incrementTrigger', {
+  defaultProps: () => ({ children: <ChevronUpIcon /> }),
+})
+export const Input = withContext(NumberInput.Input, 'input')
+export const Label = withContext(NumberInput.Label, 'label')
+export const Scrubber = withContext(NumberInput.Scrubber, 'scrubber')
+export const ValueText = withContext(NumberInput.ValueText, 'valueText')
+export const Control = withContext(NumberInput.Control, 'control', {
+  defaultProps: () => ({
+    children: (
+      <>
+        <IncrementTrigger />
+        <DecrementTrigger />
+      </>
+    ),
+  }),
+})
 
-  return (
-    <StyledNumberInput.Root {...props}>
-      <Show when={getChildren()}>
-        <StyledNumberInput.Label>{getChildren()}</StyledNumberInput.Label>
-      </Show>
-      <StyledNumberInput.Control>
-        <StyledNumberInput.Input />
-        <StyledNumberInput.IncrementTrigger>
-          <ChevronUpIcon />
-        </StyledNumberInput.IncrementTrigger>
-        <StyledNumberInput.DecrementTrigger>
-          <ChevronDownIcon />
-        </StyledNumberInput.DecrementTrigger>
-      </StyledNumberInput.Control>
-    </StyledNumberInput.Root>
-  )
-}
-
-const ChevronUpIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Chevron Up Icon</title>
-    <path
-      fill="none"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="m18 15l-6-6l-6 6"
-    />
-  </svg>
-)
-
-const ChevronDownIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Chevron Down Icon</title>
-    <path
-      fill="none"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="m6 9l6 6l6-6"
-    />
-  </svg>
-)
+export { NumberInputContext as Context } from '@ark-ui/solid/number-input'

@@ -1,25 +1,37 @@
 import type { PropsWithChildren } from 'react'
-import { Flex } from 'styled-system/jsx'
-import { layout } from 'styled-system/recipes'
-import { DocsNavbar } from '~/components/navigation/docs/docs-navbar'
-import { DocsSidebar } from '~/components/navigation/docs/docs-sidebar'
-import { SidebarContainer } from '~/components/navigation/sidebar-container'
-import { getSidebarGroups } from '~/lib/docs'
+import { Grid, GridItem } from 'styled-system/jsx'
+import { Sidebar } from '~/components/navigation/sidebar'
+import { SidebarMobileContainer } from '~/components/navigation/sidebar-mobile-container'
 
-const styles = layout()
-
-export default function Layout(props: PropsWithChildren) {
-  const groups = getSidebarGroups()
+export default async function DocsLayout(props: PropsWithChildren) {
+  const { children } = props
 
   return (
     <>
-      <DocsNavbar />
-      <Flex pt={{ base: '28', md: '16' }}>
-        <SidebarContainer className={styles.aside}>
-          <DocsSidebar groups={groups} />
-        </SidebarContainer>
-        <main className={styles.main}>{props.children}</main>
-      </Flex>
+      <SidebarMobileContainer />
+      <Grid
+        minH="dvh"
+        gridTemplateColumns={{
+          base: 'auto',
+          lg: '18rem 2rem minmax(0,1fr) 2rem',
+        }}
+        gap="0"
+        pt={{ base: '28', lg: '14' }}
+      >
+        <GridItem position="relative" hideBelow="lg" borderEndWidth="1px">
+          <Sidebar />
+        </GridItem>
+        <GridItem hideBelow="lg" bg="gray.a1" />
+        <GridItem
+          position="relative"
+          bg="gray.surface.bg"
+          borderXWidth={{ base: '0', lg: '1px' }}
+          py={{ base: '12' }}
+        >
+          {children}
+        </GridItem>
+        <GridItem hideBelow="lg" bg="gray.a1" />
+      </Grid>
     </>
   )
 }

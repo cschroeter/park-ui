@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { ToggleGroup } from '@ark-ui/react/toggle-group'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { toggleGroup } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(toggleGroup)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(ToggleGroup.Root, 'root')\nexport const RootProvider = withProvider(ToggleGroup.RootProvider, 'root')\nexport const Item = withContext(ToggleGroup.Item, 'item')\n\nexport { ToggleGroupContext as Context } from '@ark-ui/react/toggle-group'\n",
+      "type": "registry:ui",
+      "path": "toggle-group.tsx",
+      "exports": "export * as ToggleGroup from './toggle-group'"
+    }
+  ],
+  "registryDependencies": ["toggle-group-recipe"]
+}

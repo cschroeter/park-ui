@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "file-upload-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { fileUploadAnatomy } from '@ark-ui/react/file-upload'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const fileUpload = defineSlotRecipe({\n  className: 'file-upload',\n  slots: fileUploadAnatomy.keys(),\n  base: {\n    root: {\n      alignItems: 'flex-start',\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n      width: 'full',\n    },\n    label: {\n      textStyle: 'label',\n    },\n    dropzone: {\n      alignItems: 'center',\n      background: 'gray.surface.bg',\n      borderRadius: 'l3',\n      borderStyle: 'dashed',\n      borderWidth: '2px',\n      display: 'flex',\n      flexDirection: 'column',\n\n      focusVisibleRing: 'outside',\n      justifyContent: 'center',\n      transition: 'backgrounds',\n      width: 'full',\n      _dragging: {\n        background: 'gray.surface.bg.hover',\n        borderStyle: 'solid',\n        borderColor: 'colorPalette.solid.bg',\n      },\n    },\n    item: {\n      alignItems: 'start',\n      animationDuration: 'normal',\n      animationName: 'fade-in',\n      background: 'gray.surface.bg',\n      borderRadius: 'l3',\n      borderWidth: '1px',\n      display: 'flex',\n      pos: 'relative',\n      width: 'full',\n    },\n    itemGroup: {\n      display: 'flex',\n      alignItems: 'start',\n      flexDirection: 'column',\n      width: 'full',\n    },\n    itemName: {\n      color: 'fg.default',\n      fontWeight: 'medium',\n    },\n    itemSizeText: {\n      color: 'fg.muted',\n    },\n    itemDeleteTrigger: {\n      color: 'fg.subtle',\n    },\n    itemPreviewImage: {\n      aspectRatio: '1',\n      objectFit: 'cover',\n      maxW: '20',\n      borderRadius: 'l2',\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      md: {\n        root: { gap: '4' },\n        dropzone: { px: '6', py: '4', minHeight: 'xs', gap: '0' },\n        item: { p: '4', gap: '3', textStyle: 'sm' },\n        itemGroup: { gap: '3' },\n        itemDeleteTrigger: { _icon: { boxSize: '4' } },\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "file-upload.ts",
+      "imports": "import { fileUpload } from './file-upload'"
+    }
+  ]
+}

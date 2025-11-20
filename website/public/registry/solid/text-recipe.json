@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "text-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const text = defineRecipe({\n  className: 'text',\n  variants: {},\n})\n",
+      "type": "registry:recipe",
+      "path": "text.ts",
+      "imports": "import { text } from './text'"
+    }
+  ]
+}

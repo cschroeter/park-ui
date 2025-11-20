@@ -1,0 +1,59 @@
+---
+title: Text
+description: A typography component for displaying text content and paragraphs.
+category: typography
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/text.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Text } from '@/components/ui'
+```
+
+```tsx
+<Text>This is the text component</Text>
+```
+
+## Examples
+
+### Sizes
+
+Use the `textStyle` prop to change the size of the text.
+
+<ComponentExample name="sizes" />
+
+### Weights
+
+Use the `fontWeight` prop to change the weight of the text.
+
+<ComponentExample name="weights" />
+
+### Truncation
+
+Use the `truncate` prop to truncate the text after a single line.
+
+<ComponentExample name="truncate" />
+
+### Line Clamp
+
+Use the `lineClamp` prop to truncate the text after a certain number of lines.
+
+<ComponentExample name="lineClamp" />
+
+### Ref
+
+Here's how to access the underlying element reference
+
+<ComponentExample name="ref"  codeOnly/>
+
+## Props
+
+<PropsTable />

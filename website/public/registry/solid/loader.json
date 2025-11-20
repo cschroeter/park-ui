@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "loader",
+  "type": "registry:ui",
+  "dependencies": ["solid-js"],
+  "files": [
+    {
+      "content": "import { type JSX, splitProps } from 'solid-js'\nimport { type HTMLStyledProps, styled } from 'styled-system/jsx'\nimport { AbsoluteCenter } from './absolute-center'\nimport { Spinner } from './spinner'\n\nexport interface LoaderProps extends HTMLStyledProps<'span'> {\n  /**\n   * Whether the loader is visible\n   * @default true\n   */\n  visible?: boolean | undefined\n  /**\n   * The spinner to display when loading\n   */\n  spinner?: JSX.Element | undefined\n  /**\n   * The placement of the spinner\n   * @default \"start\"\n   */\n  spinnerPlacement?: 'start' | 'end' | undefined\n  /**\n   * The text to display when loading\n   */\n  text?: JSX.Element | undefined\n\n  children?: JSX.Element\n}\n\nconst Span = styled('span')\n\nexport const Loader = (props: LoaderProps) => {\n  const [local, rest] = splitProps(props, [\n    'spinner',\n    'spinnerPlacement',\n    'children',\n    'text',\n    'visible',\n  ])\n\n  const spinner = () =>\n    local.spinner ?? <Spinner size=\"inherit\" borderWidth=\"0.125em\" color=\"inherit\" />\n  const spinnerPlacement = () => local.spinnerPlacement ?? 'start'\n  const visible = () => local.visible ?? true\n\n  if (!visible()) return local.children\n\n  if (local.text) {\n    return (\n      <Span display=\"contents\" {...rest}>\n        {spinnerPlacement() === 'start' && spinner()}\n        {local.text}\n        {spinnerPlacement() === 'end' && spinner()}\n      </Span>\n    )\n  }\n\n  if (local.spinner !== undefined) {\n    return (\n      <Span display=\"contents\" {...rest}>\n        <AbsoluteCenter display=\"inline-flex\">{spinner()}</AbsoluteCenter>\n        <Span visibility=\"hidden\" display=\"contents\">\n          {local.children}\n        </Span>\n      </Span>\n    )\n  }\n\n  return (\n    <Span display=\"contents\" {...rest}>\n      {local.children}\n    </Span>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "loader.tsx"
+    }
+  ],
+  "registryDependencies": ["absolute-center", "spinner"]
+}

@@ -1,6 +1,0 @@
-{
-  "id": "textarea",
-  "filename": "textarea.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const textarea = defineRecipe({\n  className: 'textarea',\n  jsx: ['Textarea', 'Field.Textarea'],\n  base: {\n    appearance: 'none',\n    background: 'none',\n    borderColor: 'border.default',\n    borderRadius: 'l2',\n    borderWidth: '1px',\n    minWidth: 0,\n    outline: 0,\n    position: 'relative',\n    transitionDuration: 'normal',\n    transitionProperty: 'border-color, box-shadow',\n    width: 'full',\n    _disabled: {\n      opacity: 0.4,\n      cursor: 'not-allowed',\n    },\n    _focus: {\n      borderColor: 'colorPalette.default',\n      boxShadow: '0 0 0 1px var(--colors-color-palette-default)',\n    },\n    _invalid: {\n      borderColor: 'fg.error',\n      _focus: {\n        borderColor: 'fg.error',\n        boxShadow: '0 0 0 1px var(--colors-border-error)',\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      sm: { p: '2.5', fontSize: 'sm' },\n      md: { p: '3', fontSize: 'md' },\n      lg: { p: '3.5', fontSize: 'md' },\n      xl: { p: '4', fontSize: 'md' },\n    },\n  },\n})\n"
-}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "radio-group-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { radioGroupAnatomy } from '@ark-ui/react/radio-group'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const radioGroup = defineSlotRecipe({\n  className: 'radio-group',\n  slots: radioGroupAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '3',\n    },\n    itemControl: {\n      alignItems: 'center',\n      borderRadius: 'full',\n      display: 'inline-flex',\n      flexShrink: 0,\n      justifyContent: 'center',\n      verticalAlign: 'top',\n      _after: {\n        content: '\"\"',\n        display: 'block',\n        borderRadius: 'full',\n        boxSize: '40%',\n      },\n      _focusVisible: {\n        focusVisibleRing: 'outside',\n      },\n    },\n    item: {\n      alignItems: 'center',\n      cursor: 'pointer',\n      display: 'flex',\n      _disabled: {\n        layerStyle: 'disabled',\n      },\n    },\n    itemText: {\n      fontWeight: 'medium',\n      userSelect: 'none',\n    },\n  },\n  defaultVariants: {\n    variant: 'solid',\n    size: 'md',\n  },\n  variants: {\n    variant: {\n      solid: {\n        itemControl: {\n          boxShadow: 'inset 0 0 0 1px var(--shadow-color)',\n          boxShadowColor: 'gray.surface.border',\n          _checked: {\n            bg: 'colorPalette.solid.bg',\n            color: 'colorPalette.solid.fg',\n            boxShadowColor: 'colorPalette.solid.bg',\n            _after: {\n              background: 'colorPalette.solid.fg',\n            },\n          },\n        },\n      },\n    },\n    size: {\n      sm: {\n        item: { gap: '2' },\n        itemControl: { boxSize: '4.5' },\n        itemText: { textStyle: 'sm' },\n      },\n      md: {\n        item: { gap: '3' },\n        itemControl: { boxSize: '5' },\n        itemText: { textStyle: 'md' },\n      },\n      lg: {\n        item: { gap: '3' },\n        itemControl: { boxSize: '5.5' },\n        itemText: { textStyle: 'lg' },\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "radio-group.ts",
+      "imports": "import { radioGroup } from './radio-group'"
+    }
+  ]
+}

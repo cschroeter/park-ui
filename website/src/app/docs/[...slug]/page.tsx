@@ -1,15 +1,16 @@
+import { docs } from '.velite'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Box, Container, Stack } from 'styled-system/jsx'
-import { DocumentationBadges } from '~/components/docs/documentation-badges'
-import { MDXContent } from '~/components/mdx-content'
-import { DocsFooter } from '~/components/navigation/docs/docs-footer'
-import { TableOfContent } from '~/components/navigation/table-of-content'
-import { Heading } from '~/components/ui/heading'
+import { Box, Divider, Grid, GridItem, Stack } from 'styled-system/jsx'
+import { Heading, Text } from '@/components/ui'
+import { CopyPageWidget } from '~/components/docs/copy-page-widget'
+import { MDXContent } from '~/components/docs/mdx-content'
+import { PageHeaderLinks } from '~/components/docs/page-links'
+import { PageFooter } from '~/components/navigation/page-footer'
+import { TableOfContents } from '~/components/navigation/table-of-contents'
 import { Prose } from '~/components/ui/prose'
-import { Text } from '~/components/ui/text'
-import { getSidebarGroups } from '~/lib/docs'
-import { getServerContext } from '~/lib/server-context'
+import { getDocumentBySlug, getNextDocument, getPrevDocument } from '~/lib/docs'
+import { getServerContext } from '~/server-context'
 
 interface Props {
   params: Promise<{ slug: string[] }>
@@ -17,73 +18,61 @@ interface Props {
 
 export default async function Page(props: Props) {
   const params = await props.params
-  const currentPage = getPageBySlug(params.slug)
-  const nextPage = getNextPage(params.slug)
-  const prevPage = getPrevPage(params.slug)
+  const doc = getDocumentBySlug(params.slug)
+  const nextDoc = getNextDocument(params.slug)
+  const prevDoc = getPrevDocument(params.slug)
 
-  const serverContext = getServerContext()
-  serverContext.component = params.slug[1]
-
-  if (currentPage) {
-    return (
-      <Container display="flex" py="12" gap="8" justifyContent="center">
-        <Stack gap="16" px={{ base: '0', xl: '8' }} width="full">
-          <Prose css={{ maxWidth: '45rem', mx: 'auto', width: '100%' }}>
-            <Heading as="h1" fontWeight="bold">
-              {currentPage.id === 'introduction' ? 'Welcome to Park UI' : currentPage.title}
-            </Heading>
-            <Text className="lead" color="fg.muted" mb="6">
-              {currentPage.id === 'introduction'
-                ? 'A Component Library built on Ark UI and Panda CSS.'
-                : currentPage.description}
-            </Text>
-            <DocumentationBadges href={currentPage.docs} />
-            <MDXContent code={currentPage.code} />
-          </Prose>
-          <DocsFooter nextPage={nextPage} prevPage={prevPage} />
-        </Stack>
-        <Box flexGrow="1" width="full" maxW="14rem" display={{ base: 'none', xl: 'block' }}>
-          <Box position="fixed">
-            <TableOfContent entries={currentPage.toc} />
-          </Box>
-        </Box>
-      </Container>
-    )
+  if (!doc) {
+    return notFound()
   }
-  return notFound()
+
+  if (doc.category !== 'getting-started') {
+    const context = getServerContext()
+    context.component = doc.id
+  }
+
+  return (
+    <Grid gridTemplateColumns={{ base: '1fr', xl: 'minmax(0,1fr) 288px' }} gap="8" minH="100%">
+      <GridItem mx="auto" maxW="52rem" width="full" px={{ base: '4', sm: '6', md: '8' }}>
+        <Stack gap={{ base: '6', md: '8' }} width="full">
+          <Stack direction="row" justify="space-between" gap="8">
+            <Heading as="h1" textStyle="3xl">
+              {doc.title}
+            </Heading>
+            <CopyPageWidget doc={doc} />
+          </Stack>
+          <Text color="fg.muted" textStyle="lg" maxW="3xl">
+            {doc.description}
+          </Text>
+          <PageHeaderLinks links={doc.links} />
+        </Stack>
+        <Divider mt="12" mb="4" />
+        <Stack gap={{ base: '12', md: '16' }}>
+          <Prose maxW="none">
+            <MDXContent mdx={doc.mdx} />
+          </Prose>
+          <PageFooter nextPage={nextDoc} prevPage={prevDoc} />
+        </Stack>
+      </GridItem>
+      <Box hideBelow="xl" position="sticky" height="calc(100dvh - 192px)" top="36">
+        <TableOfContents toc={doc.toc} />
+      </Box>
+    </Grid>
+  )
 }
+
+export const generateStaticParams = () => docs.map((doc) => ({ slug: doc.slug.split('/') }))
 
 export const generateMetadata = async (props: Props): Promise<Metadata> => {
   const params = await props.params
-  const page = getPageBySlug(params.slug)
+  const doc = getDocumentBySlug(params.slug)
 
-  if (page) {
-    const description =
-      page.id === 'introduction'
-        ? 'A Component Library built on Ark UI and Panda CSS.'
-        : page.description
-    return {
-      title: page.title,
-      description,
-    }
+  if (!doc) {
+    return {}
   }
-  return {}
-}
 
-const pages = getSidebarGroups().flat()
-
-export const generateStaticParams = () => pages.map((page) => ({ slug: page.slug.split('/') }))
-
-const getPageBySlug = (slug: string[]) => {
-  return pages.find((page) => page.slug === slug.join('/'))
-}
-
-const getNextPage = (slug: string[]) => {
-  const index = pages.findIndex((page) => page.slug === slug.join('/'))
-  return pages[index + 1]
-}
-
-const getPrevPage = (slug: string[]) => {
-  const index = pages.findIndex((page) => page.slug === slug.join('/'))
-  return pages[index - 1]
+  return {
+    title: doc.title,
+    description: doc.description,
+  }
 }

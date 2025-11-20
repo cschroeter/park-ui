@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "alert-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const alert = defineSlotRecipe({\n  className: 'alert',\n  slots: ['root', 'content', 'description', 'indicator', 'title'],\n  base: {\n    root: {\n      alignItems: 'flex-start',\n      borderRadius: 'l3',\n      display: 'flex',\n      position: 'relative',\n      width: 'full',\n    },\n    content: {\n      display: 'flex',\n      flex: '1',\n      flexDirection: 'column',\n      gap: '1',\n    },\n    description: {\n      display: 'inline',\n    },\n    indicator: {\n      display: 'inline-flex',\n      alignItems: 'center',\n      justifyContent: 'center',\n      flexShrink: '0',\n    },\n    title: {\n      fontWeight: 'semibold',\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n    status: 'info',\n    variant: 'subtle',\n  },\n  variants: {\n    size: {\n      md: {\n        root: {\n          gap: '3',\n          p: '4',\n          textStyle: 'sm',\n        },\n        indicator: {\n          _icon: {\n            width: '5',\n            height: '5',\n          },\n        },\n      },\n      lg: {\n        root: {\n          gap: '4',\n          p: '4',\n          textStyle: 'md',\n        },\n        indicator: {\n          _icon: {\n            width: '6',\n            height: '6',\n          },\n        },\n      },\n    },\n    variant: {\n      solid: {\n        root: {\n          bg: 'colorPalette.solid.bg',\n          color: 'colorPalette.solid.fg',\n        },\n      },\n      surface: {\n        root: {\n          bg: 'colorPalette.surface.bg',\n          borderWidth: '1px',\n          borderColor: 'colorPalette.surface.border',\n          color: 'colorPalette.surface.fg',\n        },\n      },\n      subtle: {\n        root: {\n          bg: 'colorPalette.subtle.bg',\n          color: 'colorPalette.subtle.fg',\n        },\n      },\n      outline: {\n        root: {\n          borderWidth: '1px',\n          borderColor: 'colorPalette.outline.border',\n          color: 'colorPalette.outline.fg',\n        },\n      },\n    },\n    status: {\n      info: {\n        root: { colorPalette: 'blue' },\n      },\n      warning: {\n        root: { colorPalette: 'orange' },\n      },\n      success: {\n        root: { colorPalette: 'green' },\n      },\n      error: {\n        root: { colorPalette: 'red' },\n      },\n      neutral: {},\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "alert.ts",
+      "imports": "import { alert } from './alert'"
+    }
+  ]
+}

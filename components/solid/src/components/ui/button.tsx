@@ -1,43 +1,77 @@
-import type { JSX } from 'solid-js'
-import { Show, splitProps } from 'solid-js'
-import { Center, styled } from 'styled-system/jsx'
-import { Spinner } from './spinner'
-import { Button as StyledButton, type ButtonProps as StyledButtonProps } from './styled/button'
+import { ark } from '@ark-ui/solid/factory'
+import { createContext } from '@ark-ui/solid/utils'
+import { type ComponentProps, createMemo, type JSX, mergeProps, Show, splitProps } from 'solid-js'
+import { styled } from 'styled-system/jsx'
+import { type ButtonVariantProps, button } from 'styled-system/recipes'
+import { Group, type GroupProps } from './group'
+import { Loader } from './loader'
 
 interface ButtonLoadingProps {
-  loading?: boolean
-  loadingText?: JSX.Element
+  /**
+   * If `true`, the button will show a loading spinner.
+   * @default false
+   */
+  loading?: boolean | undefined
+  /**
+   * The text to show while loading.
+   */
+  loadingText?: JSX.Element | undefined
+  /**
+   * The spinner to show while loading.
+   */
+  spinner?: JSX.Element | undefined
+  /**
+   * The placement of the spinner
+   * @default "start"
+   */
+  spinnerPlacement?: 'start' | 'end' | undefined
 }
 
-export interface ButtonProps extends StyledButtonProps, ButtonLoadingProps {}
+type BaseButtonProps = ComponentProps<typeof BaseButton>
+const BaseButton = styled(ark.button, button)
+
+export interface ButtonProps extends BaseButtonProps, ButtonLoadingProps {}
 
 export const Button = (props: ButtonProps) => {
-  const [localProps, rest] = splitProps(props, ['loading', 'disabled', 'loadingText', 'children'])
-  const trulyDisabled = () => localProps.loading || localProps.disabled
+  const propsContext = useButtonPropsContext()
+  const merged = mergeProps(propsContext, props)
+
+  const [local, rest] = splitProps(merged, [
+    'loading',
+    'loadingText',
+    'children',
+    'spinner',
+    'spinnerPlacement',
+  ])
 
   return (
-    <StyledButton disabled={trulyDisabled()} {...rest}>
-      <Show
-        when={localProps.loading && !localProps.loadingText}
-        fallback={localProps.loadingText || localProps.children}
-      >
-        <>
-          <ButtonSpinner />
-          <styled.span opacity={0}>{localProps.children}</styled.span>
-        </>
+    <BaseButton type="button" {...rest} disabled={local.loading || rest.disabled}>
+      <Show when={local.loading} fallback={local.children}>
+        <Loader
+          spinner={local.spinner}
+          text={local.loadingText}
+          spinnerPlacement={local.spinnerPlacement}
+        >
+          {local.children}
+        </Loader>
       </Show>
-    </StyledButton>
+    </BaseButton>
   )
 }
 
-const ButtonSpinner = () => (
-  <Center inline position="absolute" transform="translate(-50%, -50%)" top="50%" insetStart="50%">
-    <Spinner
-      width="1.1em"
-      height="1.1em"
-      borderWidth="1.5px"
-      borderTopColor="fg.disabled"
-      borderRightColor="fg.disabled"
-    />
-  </Center>
-)
+export interface ButtonGroupProps extends GroupProps, ButtonVariantProps {}
+
+export const ButtonGroup = (props: ButtonGroupProps) => {
+  const splitProps = createMemo(() => button.splitVariantProps(props))
+  const variantProps = () => splitProps()[0]
+  const otherProps = () => splitProps()[1]
+  return (
+    <ButtonPropsProvider value={variantProps()}>
+      <Group {...otherProps()} />
+    </ButtonPropsProvider>
+  )
+}
+
+const [ButtonPropsProvider, useButtonPropsContext] = createContext<ButtonVariantProps>({
+  strict: false,
+})

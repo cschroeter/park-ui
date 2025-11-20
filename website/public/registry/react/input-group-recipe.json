@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "input-group-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const inputGroup = defineSlotRecipe({\n  className: 'input-group',\n  slots: ['root', 'element'],\n  base: {\n    root: {\n      position: 'relative',\n      width: 'full',\n    },\n    element: {\n      alignItems: 'center',\n      color: 'fg.muted',\n      display: 'flex',\n      height: 'full',\n      justifyContent: 'center',\n      position: 'absolute',\n      zIndex: '2',\n      _icon: {\n        color: 'fg.subtle',\n      },\n    },\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      xs: {\n        element: { minW: '8', _icon: { boxSize: '4' } },\n        root: {\n          '& > input:not(:first-child)': { ps: '7!' },\n          '& > input:not(:last-child)': { pe: '7!' },\n        },\n      },\n      sm: {\n        root: {\n          '& > input:not(:first-child)': { ps: '8!' },\n          '& > input:not(:last-child)': { pe: '8!' },\n        },\n        element: { minW: '9', _icon: { boxSize: '4.5' } },\n      },\n      md: {\n        root: {\n          '& > input:not(:first-child)': { ps: '9!' },\n          '& > input:not(:last-child)': { pe: '9!' },\n        },\n        element: { minW: '10', _icon: { boxSize: '5' } },\n      },\n      lg: {\n        root: {\n          '& > input:not(:first-child)': { ps: '10!' },\n          '& > input:not(:last-child)': { pe: '10!' },\n        },\n        element: { minW: '11', _icon: { boxSize: '5' } },\n      },\n      xl: {\n        root: {\n          '& > input:not(:first-child)': { ps: '11!' },\n          '& > input:not(:last-child)': { pe: '11!' },\n        },\n        element: { minW: '11', _icon: { boxSize: '5.5' } },\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "input-group.ts",
+      "imports": "import { inputGroup } from './input-group'"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "editable",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { Editable } from '@ark-ui/react/editable'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { editable } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(editable)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Editable.Root, 'root')\nexport const RootProvider = withProvider(Editable.RootProvider, 'root')\nexport const Area = withContext(Editable.Area, 'area')\nexport const CancelTrigger = withContext(Editable.CancelTrigger, 'cancelTrigger')\nexport const Control = withContext(Editable.Control, 'control')\nexport const EditTrigger = withContext(Editable.EditTrigger, 'editTrigger')\nexport const Input = withContext(Editable.Input, 'input')\nexport const Label = withContext(Editable.Label, 'label')\nexport const Preview = withContext(Editable.Preview, 'preview')\nexport const SubmitTrigger = withContext(Editable.SubmitTrigger, 'submitTrigger')\n\nexport { EditableContext as Context } from '@ark-ui/react/editable'\n",
+      "type": "registry:ui",
+      "path": "editable.tsx",
+      "exports": "export * as Editable from './editable'"
+    }
+  ],
+  "registryDependencies": ["editable-recipe"]
+}

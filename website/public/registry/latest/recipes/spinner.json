@@ -1,6 +1,0 @@
-{
-  "id": "spinner",
-  "filename": "spinner.ts",
-  "slotRecipe": false,
-  "content": "import { defineRecipe } from '@pandacss/dev'\n\nexport const spinner = defineRecipe({\n  className: 'spinner',\n  base: {\n    display: 'inline-block',\n    borderWidth: '2px',\n    borderColor: 'colorPalette.default',\n    borderStyle: 'solid',\n    borderRadius: 'full',\n    width: 'var(--size)',\n    height: 'var(--size)',\n    animation: 'spin',\n    animationDuration: 'slowest',\n  },\n  defaultVariants: {\n    size: 'md',\n  },\n  variants: {\n    size: {\n      xs: { '--size': 'sizes.3' },\n      sm: { '--size': 'sizes.4' },\n      md: { '--size': 'sizes.6' },\n      lg: { '--size': 'sizes.8' },\n      xl: { '--size': 'sizes.12' },\n    },\n  },\n})\n"
-}

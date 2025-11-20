@@ -1,0 +1,11 @@
+@layer reset, base, tokens, recipes, utilities;
+
+@layer tokens {
+  :where(:root, .light, .dark) {
+    &[data-radius="sm"] {
+      --radii-l3: var(--radii-sm);
+      --radii-l2: var(--radii-md);
+      --radii-l1: var(--radii-lg);
+    }
+  }
+}

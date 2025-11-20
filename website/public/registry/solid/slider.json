@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "slider",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { ark } from '@ark-ui/solid/factory'\nimport { Slider, useSliderContext } from '@ark-ui/solid/slider'\nimport { type ComponentProps, For, type JSX, Show, splitProps } from 'solid-js'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { slider } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(slider)\n\nexport const Root = withProvider(Slider.Root, 'root')\nexport const Control = withContext(Slider.Control, 'control')\nexport const DraggingIndicator = withContext(Slider.DraggingIndicator, 'draggingIndicator')\nexport const Label = withContext(Slider.Label, 'label')\nexport const Marker = withContext(Slider.Marker, 'marker')\nexport const MarkerIndicator = withContext(ark.div, 'markerIndicator')\nexport const MarkerGroup = withContext(Slider.MarkerGroup, 'markerGroup')\nexport const Range = withContext(Slider.Range, 'range')\nexport const Thumb = withContext(Slider.Thumb, 'thumb')\nexport const Track = withContext(Slider.Track, 'track')\nexport const ValueText = withContext(Slider.ValueText, 'valueText')\nexport const HiddenInput = Slider.HiddenInput\n\nexport { SliderContext as Context } from '@ark-ui/solid/slider'\n\nexport type RootProps = ComponentProps<typeof Root>\nexport type MarkerGroupProps = ComponentProps<typeof MarkerGroup>\nexport type ThumbProps = ComponentProps<typeof Thumb>\n\nexport interface MarksProps extends MarkerGroupProps {\n  marks?: Array<number | { value: number; label: JSX.Element }> | undefined\n}\n\nexport const Marks = (props: MarksProps) => {\n  const [local, rest] = splitProps(props, ['marks'])\n  if (!local.marks?.length) return null\n\n  return (\n    <MarkerGroup {...rest}>\n      <For each={local.marks}>\n        {(mark) => {\n          const value = typeof mark === 'number' ? mark : mark.value\n          const label = typeof mark === 'number' ? undefined : mark.label\n          return (\n            <Marker value={value}>\n              <MarkerIndicator />\n              <Show when={label != null}>\n                <span>{label}</span>\n              </Show>\n            </Marker>\n          )\n        }}\n      </For>\n    </MarkerGroup>\n  )\n}\n\nexport const Thumbs = (props: Omit<ThumbProps, 'index'>) => {\n  const slider = useSliderContext()\n  return (\n    <For each={slider().value}>\n      {(_, index) => (\n        <Thumb index={index()} {...props}>\n          <HiddenInput />\n        </Thumb>\n      )}\n    </For>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "slider.tsx"
+    }
+  ],
+  "registryDependencies": ["slider-recipe"]
+}

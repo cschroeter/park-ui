@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Park UI Components Configuration",
+  "description": "Configuration file for Park UI components and project structure",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "default": "https://next.park-ui.com/schema/components.json"
+    },
+
+    "framework": {
+      "type": "string",
+      "description": "The JavaScript framework used in your project",
+      "enum": ["react", "solid", "svelte", "vue"]
+    },
+    "panda": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "string",
+          "description": "Path to your Panda CSS configuration file",
+          "default": "panda.config.ts"
+        }
+      },
+      "required": ["config"],
+      "additionalProperties": false
+    },
+    "aliases": {
+      "type": "object",
+      "description": "Path aliases for organizing your project structure",
+      "properties": {
+        "components": {
+          "type": "string",
+          "description": "Path to your components directory"
+        },
+        "hooks": {
+          "type": "string",
+          "description": "Path to your hooks directory"
+        },
+        "lib": {
+          "type": "string",
+          "description": "Path to your utility/library directory"
+        },
+        "recipes": {
+          "type": "string",
+          "description": "Path to your Panda CSS recipes directory"
+        },
+        "theme": {
+          "type": "string",
+          "description": "Path to your theme configuration directory"
+        },
+        "ui": {
+          "type": "string",
+          "description": "Path to your UI components directory"
+        }
+      },
+      "required": ["components", "hooks", "lib", "recipes", "theme", "ui"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["framework", "panda", "aliases"],
+  "additionalProperties": false
+}

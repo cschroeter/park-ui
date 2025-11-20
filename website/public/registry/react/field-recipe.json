@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "field-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { fieldAnatomy } from '@ark-ui/react/field'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const field = defineSlotRecipe({\n  className: 'field',\n  slots: fieldAnatomy.keys(),\n  base: {\n    root: {\n      display: 'flex',\n      flexDirection: 'column',\n      gap: '1.5',\n    },\n    label: {\n      alignItems: 'center',\n      color: 'fg.default',\n      display: 'flex',\n      gap: '0.5',\n      textAlign: 'start',\n      userSelect: 'none',\n      textStyle: 'label',\n      _disabled: {\n        layerStyle: 'disabled',\n      },\n    },\n    requiredIndicator: {\n      color: 'colorPalette.solid',\n    },\n    helperText: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n      _disabled: {\n        layerStyle: 'disabled',\n      },\n    },\n    errorText: {\n      color: 'error',\n      textStyle: 'sm',\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "field.ts",
+      "imports": "import { field } from './field'"
+    }
+  ]
+}

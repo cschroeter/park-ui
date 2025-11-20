@@ -1,0 +1,184 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "__init",
+  "type": "registry:theme",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "export const recipes = {}\nexport const slotRecipes = {}\n",
+      "type": "registry:recipe",
+      "path": "index.ts"
+    },
+    {
+      "content": "import { defineTokens } from '@pandacss/dev'\n\nconst black = defineTokens.colors({\n  DEFAULT: { value: '#000000' },\n  a1: { value: 'rgba(0, 0, 0, 0.05)' },\n  a2: { value: 'rgba(0, 0, 0, 0.1)' },\n  a3: { value: 'rgba(0, 0, 0, 0.15)' },\n  a4: { value: 'rgba(0, 0, 0, 0.2)' },\n  a5: { value: 'rgba(0, 0, 0, 0.3)' },\n  a6: { value: 'rgba(0, 0, 0, 0.4)' },\n  a7: { value: 'rgba(0, 0, 0, 0.5)' },\n  a8: { value: 'rgba(0, 0, 0, 0.6)' },\n  a9: { value: 'rgba(0, 0, 0, 0.7)' },\n  a10: { value: 'rgba(0, 0, 0, 0.8)' },\n  a11: { value: 'rgba(0, 0, 0, 0.9)' },\n  a12: { value: 'rgba(0, 0, 0, 0.95)' },\n})\n\nconst white = defineTokens.colors({\n  DEFAULT: { value: '#ffffff' },\n  a1: { value: 'rgba(255, 255, 255, 0.05)' },\n  a2: { value: 'rgba(255, 255, 255, 0.1)' },\n  a3: { value: 'rgba(255, 255, 255, 0.15)' },\n  a4: { value: 'rgba(255, 255, 255, 0.2)' },\n  a5: { value: 'rgba(255, 255, 255, 0.3)' },\n  a6: { value: 'rgba(255, 255, 255, 0.4)' },\n  a7: { value: 'rgba(255, 255, 255, 0.5)' },\n  a8: { value: 'rgba(255, 255, 255, 0.6)' },\n  a9: { value: 'rgba(255, 255, 255, 0.7)' },\n  a10: { value: 'rgba(255, 255, 255, 0.8)' },\n  a11: { value: 'rgba(255, 255, 255, 0.9)' },\n  a12: { value: 'rgba(255, 255, 255, 0.95)' },\n})\n\nexport const colors = { black, white }\n",
+      "type": "registry:theme",
+      "path": "tokens/colors.ts"
+    },
+    {
+      "content": "import { defineTokens } from '@pandacss/dev'\n\nexport const durations = defineTokens.durations({\n  fastest: { value: '50ms' },\n  faster: { value: '100ms' },\n  fast: { value: '150ms' },\n  normal: { value: '200ms' },\n  slow: { value: '250ms' },\n  slower: { value: '300ms' },\n  slowest: { value: '400ms' },\n})\n",
+      "type": "registry:theme",
+      "path": "tokens/durations.ts"
+    },
+    {
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const shadows = defineSemanticTokens.shadows({\n  xs: {\n    value: {\n      _light: '0px 1px 2px {colors.gray.a6}, 0px 0px 1px {colors.gray.a7}',\n      _dark: '0px 1px 1px {colors.black.a8}, 0px 0px 1px inset {colors.gray.a8}',\n    },\n  },\n  sm: {\n    value: {\n      _light: '0px 2px 4px {colors.gray.a4}, 0px 0px 1px {colors.gray.a4}',\n      _dark: '0px 2px 4px {colors.black.a8}, 0px 0px 1px inset {colors.gray.a8}',\n    },\n  },\n  md: {\n    value: {\n      _light: '0px 4px 8px {colors.gray.a4}, 0px 0px 1px {colors.gray.a4}',\n      _dark: '0px 4px 8px {colors.black.a8}, 0px 0px 1px inset {colors.gray.a8}',\n    },\n  },\n  lg: {\n    value: {\n      _light: '0px 8px 16px {colors.gray.a4}, 0px 0px 1px {colors.gray.a4}',\n      _dark: '0px 8px 16px {colors.black.a8}, 0px 0px 1px inset {colors.gray.a8}',\n    },\n  },\n  xl: {\n    value: {\n      _light: '0px 16px 24px {colors.gray.a4}, 0px 0px 1px {colors.gray.a4}',\n      _dark: '0px 16px 24px {colors.black.a8}, 0px 0px 1px inset {colors.gray.a8}',\n    },\n  },\n  '2xl': {\n    value: {\n      _light: '0px 24px 40px {colors.gray.a4}, 0px 0px 1px {colors.gray.a4}',\n      _dark: '0px 24px 40px {colors.black.a8}, 0px 0px 1px inset {colors.gray.a8}',\n    },\n  },\n  inset: {\n    value: {\n      _light: 'inset 8px 0 12px -8px {colors.gray.a4}',\n      _dark: 'inset 8px 0 12px -8px {colors.black.a6}',\n    },\n  },\n})\n",
+      "type": "registry:theme",
+      "path": "tokens/shadows.ts"
+    },
+    {
+      "content": "import { defineTokens } from '@pandacss/dev'\n\nexport const zIndex = defineTokens.zIndex({\n  hide: {\n    value: -1,\n  },\n  base: {\n    value: 0,\n  },\n  docked: {\n    value: 10,\n  },\n  dropdown: {\n    value: 1000,\n  },\n  sticky: {\n    value: 1100,\n  },\n  banner: {\n    value: 1200,\n  },\n  overlay: {\n    value: 1300,\n  },\n  modal: {\n    value: 1400,\n  },\n  popover: {\n    value: 1500,\n  },\n  skipLink: {\n    value: 1600,\n  },\n  toast: {\n    value: 1700,\n  },\n  tooltip: {\n    value: 1800,\n  },\n})\n",
+      "type": "registry:theme",
+      "path": "tokens/z-index.ts"
+    },
+    {
+      "content": "import { defineAnimationStyles } from '@pandacss/dev'\n\nexport const animationStyles = defineAnimationStyles({\n  'slide-fade-in': {\n    value: {\n      transformOrigin: 'var(--transform-origin)',\n      '&[data-placement^=top]': {\n        animationName: 'slide-from-bottom, fade-in',\n      },\n      '&[data-placement^=bottom]': {\n        animationName: 'slide-from-top, fade-in',\n      },\n      '&[data-placement^=left]': {\n        animationName: 'slide-from-right, fade-in',\n      },\n      '&[data-placement^=right]': {\n        animationName: 'slide-from-left, fade-in',\n      },\n    },\n  },\n  'slide-fade-out': {\n    value: {\n      transformOrigin: 'var(--transform-origin)',\n      '&[data-placement^=top]': {\n        animationName: 'slide-to-bottom, fade-out',\n      },\n      '&[data-placement^=bottom]': {\n        animationName: 'slide-to-top, fade-out',\n      },\n      '&[data-placement^=left]': {\n        animationName: 'slide-to-right, fade-out',\n      },\n      '&[data-placement^=right]': {\n        animationName: 'slide-to-left, fade-out',\n      },\n    },\n  },\n  'scale-fade-in': {\n    value: {\n      transformOrigin: 'var(--transform-origin)',\n      animationName: 'scale-in, fade-in',\n    },\n  },\n  'scale-fade-out': {\n    value: {\n      transformOrigin: 'var(--transform-origin)',\n      animationName: 'scale-out, fade-out',\n    },\n  },\n})\n",
+      "type": "registry:theme",
+      "path": "animation-styles.ts"
+    },
+    {
+      "content": "export const conditions = {\n  extend: {\n    light: ':root &, .light &',\n    invalid: '&:is(:user-invalid, [data-invalid], [aria-invalid=true])',\n    hover: '&:not(:disabled):hover',\n    active: '&:not(:disabled):active',\n    checked:\n      '&:is(:checked, [data-checked], [data-state=checked], [aria-checked=true], [data-state=indeterminate])',\n    on: '&:is([data-state=on])',\n    pinned: '&:is([data-pinned])',\n  },\n} as const\n",
+      "type": "registry:theme",
+      "path": "conditions.ts"
+    },
+    {
+      "content": "export const globalCss = {\n  extend: {\n    '*': {\n      '--global-color-border': 'colors.border',\n      '--global-color-placeholder': 'colors.fg.subtle',\n      '--global-color-selection': 'colors.colorPalette.subtle.bg',\n      '--global-color-focus-ring': 'colors.colorPalette.solid.bg',\n    },\n    html: {\n      colorPalette: 'gray',\n    },\n    body: {\n      background: 'canvas',\n      color: 'fg.default',\n    },\n  },\n}\n",
+      "type": "registry:theme",
+      "path": "global-css.ts"
+    },
+    {
+      "content": "import { defineKeyframes } from '@pandacss/dev'\n\nexport const keyframes = defineKeyframes({\n  // collapse\n  'expand-height': {\n    from: { height: '0' },\n    to: { height: 'var(--height)' },\n  },\n  'collapse-height': {\n    from: { height: 'var(--height)' },\n    to: { height: '0' },\n  },\n  'expand-width': {\n    from: { width: '0' },\n    to: { width: 'var(--width)' },\n  },\n  'collapse-width': {\n    from: { width: 'var(--width)' },\n    to: { width: '0' },\n  },\n  // fade\n  'fade-in': {\n    from: { opacity: '0' },\n    to: { opacity: '1' },\n  },\n  'fade-out': {\n    from: { opacity: '1' },\n    to: { opacity: '0' },\n  },\n  // slide from (full)\n  'slide-from-left-full': {\n    from: { translate: '-100% 0' },\n    to: { translate: '0 0' },\n  },\n  'slide-from-right-full': {\n    from: { translate: '100% 0' },\n    to: { translate: '0 0' },\n  },\n  'slide-from-top-full': {\n    from: { translate: '0 -100%' },\n    to: { translate: '0 0' },\n  },\n  'slide-from-bottom-full': {\n    from: { translate: '0 100%' },\n    to: { translate: '0 0' },\n  },\n  // slide to (full)\n  'slide-to-left-full': {\n    from: { translate: '0 0' },\n    to: { translate: '-100% 0' },\n  },\n  'slide-to-right-full': {\n    from: { translate: '0 0' },\n    to: { translate: '100% 0' },\n  },\n  'slide-to-top-full': {\n    from: { translate: '0 0' },\n    to: { translate: '0 -100%' },\n  },\n  'slide-to-bottom-full': {\n    from: { translate: '0 0' },\n    to: { translate: '0 100%' },\n  },\n  // slide from\n  'slide-from-top': {\n    '0%': { translate: '0 -0.5rem' },\n    to: { translate: '0' },\n  },\n  'slide-from-bottom': {\n    '0%': { translate: '0 0.5rem' },\n    to: { translate: '0' },\n  },\n  'slide-from-left': {\n    '0%': { translate: '-0.5rem 0' },\n    to: { translate: '0' },\n  },\n  'slide-from-right': {\n    '0%': { translate: '0.5rem 0' },\n    to: { translate: '0' },\n  },\n  // slide to\n  'slide-to-top': {\n    '0%': { translate: '0' },\n    to: { translate: '0 -0.5rem' },\n  },\n  'slide-to-bottom': {\n    '0%': { translate: '0' },\n    to: { translate: '0 0.5rem' },\n  },\n  'slide-to-left': {\n    '0%': { translate: '0' },\n    to: { translate: '-0.5rem 0' },\n  },\n  'slide-to-right': {\n    '0%': { translate: '0' },\n    to: { translate: '0.5rem 0' },\n  },\n  // scale\n  'scale-in': {\n    from: { scale: '0.95' },\n    to: { scale: '1' },\n  },\n  'scale-out': {\n    from: { scale: '1' },\n    to: { scale: '0.95' },\n  },\n  'bg-position': {\n    from: {\n      backgroundPosition: 'var(--animate-from, 1rem) 0',\n    },\n    to: {\n      backgroundPosition: 'var(--animate-to, 0) 0',\n    },\n  },\n  position: {\n    from: {\n      insetInlineStart: 'var(--animate-from-x)',\n      insetBlockStart: 'var(--animate-from-y)',\n    },\n    to: {\n      insetInlineStart: 'var(--animate-to-x)',\n      insetBlockStart: 'var(--animate-to-y)',\n    },\n  },\n})\n",
+      "type": "registry:theme",
+      "path": "keyframes.ts"
+    },
+    {
+      "content": "import { defineLayerStyles } from '@pandacss/dev'\n\nexport const layerStyles = defineLayerStyles({\n  disabled: {\n    value: {\n      cursor: 'not-allowed',\n      opacity: '0.67',\n      filter: 'grayscale(100%)',\n    },\n  },\n})\n",
+      "type": "registry:theme",
+      "path": "layer-styles.ts"
+    },
+    {
+      "content": "import { defineTextStyles } from '@pandacss/dev'\n\nexport const textStyles = defineTextStyles({\n  xs: { value: { fontSize: 'xs', lineHeight: '1.125rem' } },\n  sm: { value: { fontSize: 'sm', lineHeight: '1.25rem' } },\n  md: { value: { fontSize: 'md', lineHeight: '1.5rem' } },\n  lg: { value: { fontSize: 'lg', lineHeight: '1.75rem' } },\n  xl: { value: { fontSize: 'xl', lineHeight: '1.875rem' } },\n  '2xl': { value: { fontSize: '2xl', lineHeight: '2rem' } },\n  '3xl': { value: { fontSize: '3xl', lineHeight: '2.375rem' } },\n  '4xl': { value: { fontSize: '4xl', lineHeight: '2.75rem', letterSpacing: '-0.02em' } },\n  '5xl': { value: { fontSize: '5xl', lineHeight: '3.75rem', letterSpacing: '-0.02em' } },\n  '6xl': { value: { fontSize: '6xl', lineHeight: '4.5rem', letterSpacing: '-0.02em' } },\n  '7xl': { value: { fontSize: '7xl', lineHeight: '5.75rem', letterSpacing: '-0.02em' } },\n\n  label: { value: { fontSize: 'sm', lineHeight: '1.25rem', fontWeight: 'medium' } },\n})\n",
+      "type": "registry:theme",
+      "path": "text-styles.ts"
+    }
+  ],
+  "panda": {
+    "imports": [
+      {
+        "type": "registry:theme",
+        "from": "recipes",
+        "name": "slotRecipes"
+      },
+      {
+        "type": "registry:theme",
+        "from": "recipes",
+        "name": "recipes"
+      },
+      {
+        "type": "registry:theme",
+        "name": "conditions",
+        "from": "conditions"
+      },
+      {
+        "type": "registry:theme",
+        "name": "globalCss",
+        "from": "global-css"
+      },
+      {
+        "type": "registry:theme",
+        "name": "keyframes",
+        "from": "keyframes"
+      },
+      {
+        "type": "registry:theme",
+        "name": "layerStyles",
+        "from": "layer-styles"
+      },
+      {
+        "type": "registry:theme",
+        "name": "textStyles",
+        "from": "text-styles"
+      },
+      {
+        "type": "registry:theme",
+        "name": "colors",
+        "from": "tokens/colors"
+      },
+      {
+        "type": "registry:theme",
+        "name": "durations",
+        "from": "tokens/durations"
+      },
+      {
+        "type": "registry:theme",
+        "name": "shadows",
+        "from": "tokens/shadows"
+      },
+      {
+        "type": "registry:theme",
+        "name": "zIndex",
+        "from": "tokens/z-index"
+      },
+      {
+        "type": "registry:theme",
+        "name": "animationStyles",
+        "from": "animation-styles"
+      }
+    ],
+    "extension": {
+      "globalCss": "$ref:globalCss",
+      "conditions": "$ref:conditions",
+      "theme": {
+        "extend": {
+          "animationStyles": "$ref:animationStyles",
+          "recipes": "$ref:recipes",
+          "slotRecipes": "$ref:slotRecipes",
+          "keyframes": "$ref:keyframes",
+          "layerStyles": "$ref:layerStyles",
+          "textStyles": "$ref:textStyles",
+          "tokens": {
+            "colors": "$ref:colors",
+            "durations": "$ref:durations",
+            "zIndex": "$ref:zIndex"
+          },
+          "semanticTokens": {
+            "colors": {
+              "fg": {
+                "default": {
+                  "value": {
+                    "_light": "{colors.gray.12}",
+                    "_dark": "{colors.gray.12}"
+                  }
+                },
+                "muted": {
+                  "value": {
+                    "_light": "{colors.gray.11}",
+                    "_dark": "{colors.gray.11}"
+                  }
+                },
+                "subtle": {
+                  "value": {
+                    "_light": "{colors.gray.10}",
+                    "_dark": "{colors.gray.10}"
+                  }
+                }
+              },
+              "border": {
+                "value": {
+                  "_light": "{colors.gray.4}",
+                  "_dark": "{colors.gray.4}"
+                }
+              },
+              "error": {
+                "value": {
+                  "_light": "{colors.red.9}",
+                  "_dark": "{colors.red.9}"
+                }
+              }
+            },
+            "shadows": "$ref:shadows"
+          }
+        }
+      }
+    }
+  },
+  "registryDependencies": ["red", "green"]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "icon-button",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { Button, type ButtonProps } from './button'\n\nexport interface IconButtonProps extends ButtonProps {}\n\nexport const IconButton = (props: IconButtonProps) => {\n  return <Button px=\"0\" py=\"0\" {...props} />\n}\n",
+      "type": "registry:ui",
+      "path": "icon-button.tsx"
+    }
+  ],
+  "registryDependencies": ["button"]
+}

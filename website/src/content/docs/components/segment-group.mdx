@@ -1,0 +1,91 @@
+---
+title: Segment Group
+description: A form control with connected segments for selecting one option.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/segment-group.ts
+  ark: https://ark-ui.com/docs/components/segment-group
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { SegmentGroup } from '@/components/ui'
+```
+
+```tsx
+<SegmentGroup.Root>
+  <SegmentGroup.Indicator />
+  <SegmentGroup.Item>
+    <SegmentGroup.ItemText />
+    <SegmentGroup.ItemHiddenInput />
+  </SegmentGroup.Item>
+</SegmentGroup.Root>
+```
+
+## Shortcuts
+
+The `SegmentGroup` component also provides a set of shortcuts for common use cases.
+
+### SegmentGroupItems
+
+The `SegmentGroup.Items` shortcut renders a list of items based on the `items` prop:
+
+```tsx
+<>
+  {items.map((item) => (
+    <SegmentGroup.Item key={item.value} value={item.value}>
+      <SegmentGroup.ItemText>{item.label}</SegmentGroup.ItemText>
+      <SegmentGroup.ItemHiddenInput />
+    </SegmentGroup.Item>
+  ))}
+</>
+```
+
+This might be more concise, if you don't need to customize the items:
+
+```tsx
+<SegmentGroup.Items items={items} />
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the segmented group.
+
+<ComponentExample name="sizes" />
+
+### Fitted
+
+Use the `fitted` prop to make the tabs fit the width of the container.
+
+<ComponentExample name="fitted" />
+
+### Vertical
+
+By default, the segmented control is horizontal. Set the `orientation` prop to `vertical` to change the orientation of the segmented group.
+
+<ComponentExample name="vertical" />
+
+### Icon
+
+Use icons inside the segmented group items.
+
+<ComponentExample name="icon" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />

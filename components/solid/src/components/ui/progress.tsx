@@ -1,38 +1,18 @@
-import { Show, children, splitProps } from 'solid-js'
-import * as StyledProgress from './styled/progress'
+import { Progress } from '@ark-ui/solid/progress'
+import type { ComponentProps } from 'solid-js'
+import { createStyleContext } from 'styled-system/jsx'
+import { progress } from 'styled-system/recipes'
 
-export interface ProgressProps extends StyledProgress.RootProps {
-  /**
-   * The type of progress to render.
-   * @default linear
-   */
-  type?: 'linear' | 'circular'
-}
+const { withProvider, withContext } = createStyleContext(progress)
 
-export const Progress = (props: ProgressProps) => {
-  const [localProps, rootProps] = splitProps(props, ['children', 'type'])
-  const getChildren = children(() => localProps.children)
-
-  return (
-    <StyledProgress.Root {...rootProps}>
-      <Show when={getChildren()}>
-        <StyledProgress.Label>{getChildren()}</StyledProgress.Label>
-      </Show>
-      <Show
-        when={localProps.type === 'circular'}
-        fallback={
-          <StyledProgress.Track>
-            <StyledProgress.Range />
-          </StyledProgress.Track>
-        }
-      >
-        <StyledProgress.Circle>
-          <StyledProgress.CircleTrack />
-          <StyledProgress.CircleRange />
-          <StyledProgress.ValueText />
-        </StyledProgress.Circle>
-      </Show>
-      <StyledProgress.ValueText />
-    </StyledProgress.Root>
-  )
-}
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(Progress.Root, 'root')
+export const RootProvider = withProvider(Progress.RootProvider, 'root')
+export const Circle = withContext(Progress.Circle, 'circle')
+export const CircleRange = withContext(Progress.CircleRange, 'circleRange')
+export const CircleTrack = withContext(Progress.CircleTrack, 'circleTrack')
+export const Label = withContext(Progress.Label, 'label')
+export const Range = withContext(Progress.Range, 'range')
+export const Track = withContext(Progress.Track, 'track')
+export const ValueText = withContext(Progress.ValueText, 'valueText')
+export const View = withContext(Progress.View, 'view')

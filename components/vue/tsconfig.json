@@ -1,13 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "jsx": "preserve",
     "jsxImportSource": "vue",
-    "noPropertyAccessFromIndexSignature": false,
+    "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"]
 }

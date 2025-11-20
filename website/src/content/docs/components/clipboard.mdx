@@ -1,0 +1,60 @@
+---
+title: Clipboard
+description: A button component for copying content to the user's clipboard.
+category: buttons
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/clipboard.ts
+  ark: https://ark-ui.com/docs/components/clipboard
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Clipboard } from '@/components/ui'
+```
+
+```tsx
+<Clipboard.Root>
+  <Clipboard.Trigger>
+    <Clipboard.CopyText />
+    <Clipboard.Indicator />
+  </Clipboard.Trigger>
+  <Clipboard.Input />
+</Clipboard.Root>
+```
+
+## Examples
+
+### Button
+
+Use the `Clipboard.Trigger` component to create a copy button.
+
+<ComponentExample name="button" />
+
+### Input
+
+Use the `Clipboard.Input` component to create a copy input.
+
+<ComponentExample name="input" />
+
+### Timeout
+
+Use the `timeout` prop to set the duration of the copied state.
+
+<ComponentExample name="timeout" /> 
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Indicator
+
+<PropsTable part="Indicator" />

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "checkbox",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { Checkbox, useCheckboxContext } from '@ark-ui/solid/checkbox'\nimport type { ComponentProps } from 'solid-js'\nimport { createStyleContext, styled } from 'styled-system/jsx'\nimport { checkbox } from 'styled-system/recipes'\nimport type { HTMLStyledProps } from 'styled-system/types'\n\nconst { withProvider, withContext } = createStyleContext(checkbox)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport type HiddenInputProps = ComponentProps<typeof HiddenInput>\n\nexport const Root = withProvider(Checkbox.Root, 'root')\nexport const RootProvider = withProvider(Checkbox.RootProvider, 'root')\nexport const Control = withContext(Checkbox.Control, 'control')\nexport const Group = withProvider(Checkbox.Group, 'group')\nexport const Label = withContext(Checkbox.Label, 'label')\nexport const HiddenInput = Checkbox.HiddenInput\n\nexport {\n  type CheckboxCheckedState as CheckedState,\n  CheckboxGroupProvider as GroupProvider,\n} from '@ark-ui/solid/checkbox'\n\nexport const Indicator = (props: HTMLStyledProps<'svg'>) => {\n  const checkbox = useCheckboxContext()\n\n  return (\n    <Checkbox.Indicator indeterminate={checkbox().indeterminate}>\n      <styled.svg\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"3px\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        {...props}\n      >\n        <title>Checkmark</title>\n        {checkbox().indeterminate ? (\n          <path d=\"M5 12h14\" />\n        ) : checkbox().checked ? (\n          <path d=\"M20 6 9 17l-5-5\" />\n        ) : null}\n      </styled.svg>\n    </Checkbox.Indicator>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "checkbox.tsx"
+    }
+  ],
+  "registryDependencies": ["checkbox-recipe"]
+}

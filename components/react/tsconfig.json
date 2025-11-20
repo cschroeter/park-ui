@@ -5,8 +5,8 @@
     "jsx": "preserve",
     "jsxImportSource": "react",
     "paths": {
-      "~/*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["**.ts", "**/*.tsx"]
 }

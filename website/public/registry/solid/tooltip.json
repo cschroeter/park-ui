@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js", "solid-js/web"],
+  "files": [
+    {
+      "content": "import { Tooltip as ArkTooltip } from '@ark-ui/solid/tooltip'\nimport { type ComponentProps, type JSX, Show, splitProps } from 'solid-js'\nimport { Portal } from 'solid-js/web'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { tooltip } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(tooltip)\n\ntype RootProps = ComponentProps<typeof Root>\ntype ContentProps = ComponentProps<typeof Content>\nconst Root = withRootProvider(ArkTooltip.Root, {\n  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),\n})\nconst Arrow = withContext(ArkTooltip.Arrow, 'arrow')\nconst ArrowTip = withContext(ArkTooltip.ArrowTip, 'arrowTip')\nconst Content = withContext(ArkTooltip.Content, 'content')\nconst Positioner = withContext(ArkTooltip.Positioner, 'positioner')\nconst Trigger = withContext(ArkTooltip.Trigger, 'trigger')\n\nexport { TooltipContext as Context } from '@ark-ui/solid/tooltip'\n\nexport interface TooltipProps extends Omit<RootProps, 'content'> {\n  showArrow?: boolean\n  portalled?: boolean\n  portalRef?: HTMLElement | undefined\n  children: JSX.Element | undefined\n  content: JSX.Element | string\n  contentProps?: ContentProps\n  disabled?: boolean\n}\n\nexport const Tooltip = (props: TooltipProps) => {\n  const [local, rootProps] = splitProps(props, [\n    'showArrow',\n    'children',\n    'disabled',\n    'portalled',\n    'content',\n    'contentProps',\n    'portalRef',\n  ])\n\n  const portalled = () => local.portalled ?? true\n\n  return (\n    <Show when={!local.disabled} fallback={local.children}>\n      <Root {...rootProps}>\n        <Trigger>{local.children}</Trigger>\n        <Show\n          when={portalled()}\n          fallback={\n            <Positioner>\n              <Content {...local.contentProps}>\n                <Show when={local.showArrow}>\n                  <Arrow>\n                    <ArrowTip />\n                  </Arrow>\n                </Show>\n                {local.content}\n              </Content>\n            </Positioner>\n          }\n        >\n          <Portal mount={local.portalRef}>\n            <Positioner>\n              <Content {...local.contentProps}>\n                <Show when={local.showArrow}>\n                  <Arrow>\n                    <ArrowTip />\n                  </Arrow>\n                </Show>\n                {local.content}\n              </Content>\n            </Positioner>\n          </Portal>\n        </Show>\n      </Root>\n    </Show>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "tooltip.tsx"
+    }
+  ],
+  "registryDependencies": ["tooltip-recipe"]
+}

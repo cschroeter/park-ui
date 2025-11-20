@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "pagination",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { Pagination, usePaginationContext } from '@ark-ui/solid/pagination'\nimport { EllipsisIcon } from 'lucide-solid'\nimport { type ComponentProps, For, type JSX } from 'solid-js'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { pagination } from 'styled-system/recipes'\nimport { IconButton } from './icon-button'\n\nconst { withProvider, withContext } = createStyleContext(pagination)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Pagination.Root, 'root')\nexport const RootProvider = withProvider(Pagination.RootProvider, 'root')\nexport const Item = withContext(Pagination.Item, 'item')\nexport const Ellipsis = withContext(Pagination.Ellipsis, 'ellipsis')\nexport const PrevTrigger = withContext(Pagination.PrevTrigger, 'prevTrigger')\nexport const NextTrigger = withContext(Pagination.NextTrigger, 'nextTrigger')\n\nexport { PaginationContext as Context } from '@ark-ui/solid/pagination'\n\nexport interface PaginationItemsProps extends JSX.HTMLAttributes<HTMLElement> {\n  render: (page: { type: 'page'; value: number; selected: boolean }) => JSX.Element\n  ellipsis?: JSX.Element | undefined\n}\n\nexport const Items = (props: PaginationItemsProps) => {\n  const ctx = usePaginationContext()\n\n  return (\n    <For each={ctx().pages}>\n      {(page, index) => {\n        if (page.type === 'ellipsis') {\n          return (\n            <Ellipsis index={index()}>\n              {props.ellipsis || (\n                <IconButton as=\"span\" colorPalette=\"gray\">\n                  <EllipsisIcon />\n                </IconButton>\n              )}\n            </Ellipsis>\n          )\n        }\n\n        return (\n          <Item type=\"page\" value={page.value}>\n            {props.render({ ...page, selected: ctx().page === page.value })}\n          </Item>\n        )\n      }}\n    </For>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "pagination.tsx"
+    }
+  ],
+  "registryDependencies": ["icon-button", "pagination-recipe"]
+}

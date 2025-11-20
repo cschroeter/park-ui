@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "pin-input",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { PinInput } from '@ark-ui/react/pin-input'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { pinInput } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(pinInput)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(PinInput.Root, 'root', {\n  forwardProps: ['mask'],\n})\nexport const RootProvider = withProvider(PinInput.RootProvider, 'root')\nexport const Control = withContext(PinInput.Control, 'control')\nexport const HiddenInput = PinInput.HiddenInput\nexport const Input = withContext(PinInput.Input, 'input')\nexport const Label = withContext(PinInput.Label, 'label')\n\nexport { PinInputContext as Context } from '@ark-ui/react/pin-input'\n",
+      "type": "registry:ui",
+      "path": "pin-input.tsx",
+      "exports": "export * as PinInput from './pin-input'"
+    }
+  ],
+  "registryDependencies": ["pin-input-recipe"]
+}

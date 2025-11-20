@@ -1,55 +1,47 @@
-import NextLink from 'next/link'
-import { Divider, HStack, Stack } from 'styled-system/jsx'
-import { Logo } from '~/components/logo'
-import { ColorModeButton } from '~/components/navigation/color-mode-button'
-import { FrameworkSelect } from '~/components/navigation/framework-select'
-import { GitHubLink } from '~/components/navigation/github-link'
-import { MobileNavbar } from '~/components/navigation/mobile-navbar'
-import { MobileNavbarLinks } from '~/components/navigation/mobile-navbar-links'
-import { NavbarContainer } from '~/components/navigation/navbar-container'
-import { NavbarLinks } from '~/components/navigation/navbar-links'
-import { getFramework } from '~/lib/framework'
-import { UserButton } from '../auth/user-button'
-import { ThemeDrawer } from '../theming/theme-drawer'
+import { MoreVerticalIcon } from 'lucide-react'
+import Link from 'next/link'
+import { Box, HStack } from 'styled-system/jsx'
+import { IconButton } from '@/components/ui'
+import { ParkIcon } from '~/components/icons'
+import { CommandMenu } from '../cmd-menu'
+import { ColorModeButton } from '../color-mode-button'
+import { ThemeDrawer } from '../docs/theme-drawer'
+import { GithubButton } from './github-button'
+import { NavbarLink } from './navbar-link'
 
-export const Navbar = async () => {
-  const framework = await getFramework()
-
+export const Navbar = () => {
   return (
-    <NavbarContainer>
-      <HStack justify="space-between">
-        <NextLink href="/" aria-label="Back to home">
-          <Logo />
-        </NextLink>
-        <HStack gap="3" py="1" display={{ base: 'none', md: 'flex' }}>
-          <NavbarLinks />
-          <Divider orientation="vertical" h="6" />
-          <FrameworkSelect framework={framework} />
-          <Divider orientation="vertical" h="6" />
-          <HStack gap="2">
-            <HStack gap="0">
-              <ThemeDrawer />
-              <ColorModeButton />
-              <GitHubLink />
-            </HStack>
-            <UserButton />
+    <Box
+      borderBottomWidth="1px"
+      position="fixed"
+      insetX="0"
+      top="0"
+      zIndex="10"
+      bg="gray.surface.bg"
+      h="14"
+    >
+      <HStack h="full" px={{ base: '4', sm: '6', md: '8' }} justify="space-between">
+        <Link href="/" aria-label="Home">
+          <ParkIcon />
+        </Link>
+        <HStack gap="5">
+          <CommandMenu />
+          <HStack gap="0" divideX="1px" borderXWidth="1px" hideBelow="md">
+            <NavbarLink href="/docs">Docs</NavbarLink>
+            {/* <NavbarLink href="/blog">Blog</NavbarLink>
+            <NavbarLink href="/plus">Plus</NavbarLink> */}
+            <NavbarLink href="/changelog">Changelog</NavbarLink>
+            <GithubButton />
+            <ThemeDrawer />
+            <ColorModeButton />
           </HStack>
         </HStack>
-        <HStack gap="3" py="0.5" display={{ base: 'flex', md: 'none' }}>
-          <MobileNavbar>
-            <Stack gap="0" width="17rem">
-              <MobileNavbarLinks />
-              <FrameworkSelect framework={framework} />
-              <Divider />
-              <HStack gap="3" justifyContent="center" px="3" pt="6">
-                <ColorModeButton />
-                <GitHubLink />
-                <UserButton />
-              </HStack>
-            </Stack>
-          </MobileNavbar>
-        </HStack>
+        <Box hideFrom="md">
+          <IconButton variant="plain" px="0" size="sm" aria-label="Open menu">
+            <MoreVerticalIcon />
+          </IconButton>
+        </Box>
       </HStack>
-    </NavbarContainer>
+    </Box>
   )
 }

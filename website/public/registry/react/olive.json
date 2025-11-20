@@ -1,0 +1,33 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "olive",
+  "type": "registry:color",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const olive = defineSemanticTokens.colors({\n  '1': { value: { _light: '#fcfdfc', _dark: '#111210' } },\n  '2': { value: { _light: '#f8faf8', _dark: '#181917' } },\n  '3': { value: { _light: '#eff1ef', _dark: '#212220' } },\n  '4': { value: { _light: '#e7e9e7', _dark: '#282a27' } },\n  '5': { value: { _light: '#dfe2df', _dark: '#2f312e' } },\n  '6': { value: { _light: '#d7dad7', _dark: '#383a36' } },\n  '7': { value: { _light: '#cccfcc', _dark: '#454843' } },\n  '8': { value: { _light: '#b9bcb8', _dark: '#5c625b' } },\n  '9': { value: { _light: '#898e87', _dark: '#687066' } },\n  '10': { value: { _light: '#7f847d', _dark: '#767d74' } },\n  '11': { value: { _light: '#60655f', _dark: '#afb5ad' } },\n  '12': { value: { _light: '#1d211c', _dark: '#eceeec' } },\n  a1: { value: { _light: '#00550003', _dark: '#00000000' } },\n  a2: { value: { _light: '#00490007', _dark: '#f1f2f008' } },\n  a3: { value: { _light: '#00200010', _dark: '#f4f5f312' } },\n  a4: { value: { _light: '#00160018', _dark: '#f3fef21a' } },\n  a5: { value: { _light: '#00180020', _dark: '#f2fbf122' } },\n  a6: { value: { _light: '#00140028', _dark: '#f4faed2c' } },\n  a7: { value: { _light: '#000f0033', _dark: '#f2fced3b' } },\n  a8: { value: { _light: '#040f0047', _dark: '#edfdeb57' } },\n  a9: { value: { _light: '#050f0078', _dark: '#ebfde766' } },\n  a10: { value: { _light: '#040e0082', _dark: '#f0fdec74' } },\n  a11: { value: { _light: '#020a00a0', _dark: '#f6fef4b0' } },\n  a12: { value: { _light: '#010600e3', _dark: '#fdfffded' } },\n  solid: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.black}', _dark: '{colors.white}' } },\n      hover: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.white}', _dark: '{colors.black}' } } },\n  },\n  subtle: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },\n      hover: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },\n      active: { value: { _light: '{colors.gray.a5}', _dark: '{colors.gray.a5}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },\n  },\n  surface: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.white}', _dark: '{colors.gray.1}' } },\n      hover: { value: { _light: '{colors.gray.2}', _dark: '{colors.gray.2}' } },\n      active: { value: { _light: '{colors.gray.3}', _dark: '{colors.gray.3}' } },\n    },\n    border: {\n      DEFAULT: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } },\n      hover: { value: { _light: '{colors.gray.7}', _dark: '{colors.gray.7}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },\n  },\n  outline: {\n    bg: {\n      hover: { value: { _light: '{colors.gray.a2}', _dark: '{colors.gray.a2}' } },\n      active: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },\n    },\n    border: { DEFAULT: { value: { _light: '{colors.gray.6}', _dark: '{colors.gray.6}' } } },\n    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },\n  },\n  plain: {\n    bg: {\n      hover: { value: { _light: '{colors.gray.a3}', _dark: '{colors.gray.a3}' } },\n      active: { value: { _light: '{colors.gray.a4}', _dark: '{colors.gray.a4}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.gray.12}', _dark: '{colors.gray.12}' } } },\n  },\n})\n",
+      "type": "registry:color",
+      "path": "colors/olive.ts"
+    }
+  ],
+  "panda": {
+    "imports": [
+      {
+        "type": "registry:color",
+        "name": "olive",
+        "from": "colors/olive"
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "gray": "$ref:olive"
+            }
+          }
+        }
+      }
+    }
+  }
+}

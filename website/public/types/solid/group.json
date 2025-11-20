@@ -1,0 +1,19 @@
+{
+  "Root": {
+    "props": {
+      "orientation": {
+        "type": "'horizontal' | 'vertical'",
+        "defaultValue": "'horizontal'",
+        "isRequired": false
+      },
+      "attached": {
+        "type": "boolean",
+        "isRequired": false
+      },
+      "grow": {
+        "type": "boolean",
+        "isRequired": false
+      }
+    }
+  }
+}

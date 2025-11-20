@@ -1,0 +1,33 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "ruby",
+  "type": "registry:color",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSemanticTokens } from '@pandacss/dev'\n\nexport const ruby = defineSemanticTokens.colors({\n  '1': { value: { _light: '#fffcfd', _dark: '#191113' } },\n  '2': { value: { _light: '#fff7f8', _dark: '#1e1517' } },\n  '3': { value: { _light: '#feeaed', _dark: '#3a141e' } },\n  '4': { value: { _light: '#ffdce1', _dark: '#4e1325' } },\n  '5': { value: { _light: '#ffced6', _dark: '#5e1a2e' } },\n  '6': { value: { _light: '#f8bfc8', _dark: '#6f2539' } },\n  '7': { value: { _light: '#efacb8', _dark: '#883447' } },\n  '8': { value: { _light: '#e592a3', _dark: '#b3445a' } },\n  '9': { value: { _light: '#e54666', _dark: '#e54666' } },\n  '10': { value: { _light: '#dc3b5d', _dark: '#ec5a72' } },\n  '11': { value: { _light: '#ca244d', _dark: '#ff949d' } },\n  '12': { value: { _light: '#64172b', _dark: '#fed2e1' } },\n  a1: { value: { _light: '#ff005503', _dark: '#f4124a09' } },\n  a2: { value: { _light: '#ff002008', _dark: '#fe5a7f0e' } },\n  a3: { value: { _light: '#f3002515', _dark: '#ff235d2c' } },\n  a4: { value: { _light: '#ff002523', _dark: '#fd195e42' } },\n  a5: { value: { _light: '#ff002a31', _dark: '#fe2d6b53' } },\n  a6: { value: { _light: '#e4002440', _dark: '#ff447665' } },\n  a7: { value: { _light: '#ce002553', _dark: '#ff577d80' } },\n  a8: { value: { _light: '#c300286d', _dark: '#ff5c7cae' } },\n  a9: { value: { _light: '#db002cb9', _dark: '#fe4c70e4' } },\n  a10: { value: { _light: '#d2002cc4', _dark: '#ff617beb' } },\n  a11: { value: { _light: '#c10030db', _dark: '#ff949d' } },\n  a12: { value: { _light: '#550016e8', _dark: '#ffd3e2fe' } },\n  solid: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.ruby.9}', _dark: '{colors.ruby.9}' } },\n      hover: { value: { _light: '{colors.ruby.10}', _dark: '{colors.ruby.10}' } },\n    },\n    fg: { DEFAULT: { value: { _light: 'white', _dark: 'white' } } },\n  },\n  subtle: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.ruby.a3}', _dark: '{colors.ruby.a3}' } },\n      hover: { value: { _light: '{colors.ruby.a4}', _dark: '{colors.ruby.a4}' } },\n      active: { value: { _light: '{colors.ruby.a5}', _dark: '{colors.ruby.a5}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.ruby.a11}', _dark: '{colors.ruby.a11}' } } },\n  },\n  surface: {\n    bg: {\n      DEFAULT: { value: { _light: '{colors.ruby.a2}', _dark: '{colors.ruby.a2}' } },\n      active: { value: { _light: '{colors.ruby.a3}', _dark: '{colors.ruby.a3}' } },\n    },\n    border: {\n      DEFAULT: { value: { _light: '{colors.ruby.a6}', _dark: '{colors.ruby.a6}' } },\n      hover: { value: { _light: '{colors.ruby.a7}', _dark: '{colors.ruby.a7}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.ruby.a11}', _dark: '{colors.ruby.a11}' } } },\n  },\n  outline: {\n    bg: {\n      hover: { value: { _light: '{colors.ruby.a2}', _dark: '{colors.ruby.a2}' } },\n      active: { value: { _light: '{colors.ruby.a3}', _dark: '{colors.ruby.a3}' } },\n    },\n    border: { DEFAULT: { value: { _light: '{colors.ruby.a7}', _dark: '{colors.ruby.a7}' } } },\n    fg: { DEFAULT: { value: { _light: '{colors.ruby.a11}', _dark: '{colors.ruby.a11}' } } },\n  },\n  plain: {\n    bg: {\n      hover: { value: { _light: '{colors.ruby.a3}', _dark: '{colors.ruby.a3}' } },\n      active: { value: { _light: '{colors.ruby.a4}', _dark: '{colors.ruby.a4}' } },\n    },\n    fg: { DEFAULT: { value: { _light: '{colors.ruby.a11}', _dark: '{colors.ruby.a11}' } } },\n  },\n})\n",
+      "type": "registry:color",
+      "path": "colors/ruby.ts"
+    }
+  ],
+  "panda": {
+    "imports": [
+      {
+        "type": "registry:color",
+        "name": "ruby",
+        "from": "colors/ruby"
+      }
+    ],
+    "extension": {
+      "theme": {
+        "extend": {
+          "semanticTokens": {
+            "colors": {
+              "ruby": "$ref:ruby"
+            }
+          }
+        }
+      }
+    }
+  }
+}

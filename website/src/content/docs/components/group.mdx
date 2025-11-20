@@ -1,0 +1,50 @@
+---
+title: Group
+description: Used to group and attach elements together
+category: layout
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/group.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Group } from '@/components/ui'
+```
+
+```tsx
+<Group>
+  <div />
+  <div />
+</Group>
+```
+
+## Examples
+
+### Attached
+
+Use the `attached` prop to attach the children together.
+
+<ComponentExample name="attached" />
+
+### Grow
+
+Use the `grow` prop to make the children grow to fill the available space.
+
+<ComponentExample name="grow" />
+
+### Vertical
+
+Use the `orientation` prop to change the orientation of the group.
+
+<ComponentExample name="vertical" />
+
+## Props
+
+<PropsTable />

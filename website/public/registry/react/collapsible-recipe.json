@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "collapsible-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev", "@ark-ui/react"],
+  "files": [
+    {
+      "content": "import { collapsibleAnatomy } from '@ark-ui/react/collapsible'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const collapsible = defineSlotRecipe({\n  className: 'collapsible',\n  slots: collapsibleAnatomy.keys(),\n  base: {\n    content: {\n      overflow: 'hidden',\n      _open: {\n        animationName: 'expand-height, fade-in',\n        animationDuration: 'slow',\n      },\n      _closed: {\n        animationName: 'collapse-height, fade-out',\n        animationDuration: 'normal',\n      },\n    },\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "collapsible.ts",
+      "imports": "import { collapsible } from './collapsible'"
+    }
+  ]
+}

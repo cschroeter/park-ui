@@ -1,33 +1,79 @@
 {
   "name": "@park-ui/cli",
-  "version": "0.9.0",
+  "version": "1.0.0-next.8",
+  "description": "CLI tool for Park UI components",
   "type": "module",
   "bin": {
     "park-ui": "dist/index.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "grizzly_codes",
+    "url": "https://x.com/grizzly_codes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cschroeter/park-ui.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/cschroeter/park-ui/issues"
+  },
+  "homepage": "https://park-ui.com",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cli",
+    "components",
+    "ui",
+    "panda",
+    "ark",
+    "react",
+    "solid",
+    "park-ui"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "start": "bun run ./src/index.ts",
     "lint": "biome lint ./src",
-    "build": "bun build ./src/index.ts --outdir ./dist --target node --minify",
+    "test": "bun test ./src",
+    "build": "tsup",
     "release-it": "release-it"
   },
   "dependencies": {
-    "@effect/platform": "0.69.28",
-    "effect": "3.10.19",
-    "fs-extra": "11.2.0",
-    "globby": "14.0.2",
-    "pkg-dir": "8.0.0",
-    "yargs": "17.7.2"
+    "@better-fetch/fetch": "1.1.18",
+    "@clack/prompts": "1.0.0-alpha.6",
+    "commander": "14.0.2",
+    "cosmiconfig": "9.0.0",
+    "effect": "3.19.4",
+    "fs-extra": "11.3.2",
+    "magicast": "0.5.1",
+    "package-directory": "8.1.0",
+    "picocolors": "1.1.1",
+    "ts-morph": "27.0.2",
+    "tsconfck": "3.1.6",
+    "tsconfig-paths": "4.2.0",
+    "zod": "4.1.12"
   },
   "devDependencies": {
-    "@release-it/keep-a-changelog": "5.0.0",
+    "@pandacss/dev": "1.5.1",
+    "@release-it/keep-a-changelog": "7.0.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "22.10.1",
-    "@types/yargs": "17.0.33",
-    "release-it": "17.10.0",
-    "typescript": "5.7.2"
+    "@types/node": "24.10.1",
+    "release-it": "19.0.6",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5"
   }
 }

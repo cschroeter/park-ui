@@ -1,51 +1,47 @@
-import { Show, children } from 'solid-js'
-import * as StyledCheckbox from './styled/checkbox'
+import { Checkbox, useCheckboxContext } from '@ark-ui/solid/checkbox'
+import type { ComponentProps } from 'solid-js'
+import { createStyleContext, styled } from 'styled-system/jsx'
+import { checkbox } from 'styled-system/recipes'
+import type { HTMLStyledProps } from 'styled-system/types'
 
-export interface CheckboxProps extends StyledCheckbox.RootProps {}
+const { withProvider, withContext } = createStyleContext(checkbox)
 
-export const Checkbox = (props: CheckboxProps) => {
-  const getChildren = children(() => props.children)
+export type RootProps = ComponentProps<typeof Root>
+export type HiddenInputProps = ComponentProps<typeof HiddenInput>
+
+export const Root = withProvider(Checkbox.Root, 'root')
+export const RootProvider = withProvider(Checkbox.RootProvider, 'root')
+export const Control = withContext(Checkbox.Control, 'control')
+export const Group = withProvider(Checkbox.Group, 'group')
+export const Label = withContext(Checkbox.Label, 'label')
+export const HiddenInput = Checkbox.HiddenInput
+
+export {
+  type CheckboxCheckedState as CheckedState,
+  CheckboxGroupProvider as GroupProvider,
+} from '@ark-ui/solid/checkbox'
+
+export const Indicator = (props: HTMLStyledProps<'svg'>) => {
+  const checkbox = useCheckboxContext()
 
   return (
-    <StyledCheckbox.Root {...props}>
-      <StyledCheckbox.Control>
-        <StyledCheckbox.Indicator>
-          <CheckIcon />
-        </StyledCheckbox.Indicator>
-        <StyledCheckbox.Indicator indeterminate>
-          <MinusIcon />
-        </StyledCheckbox.Indicator>
-      </StyledCheckbox.Control>
-      <Show when={getChildren()}>
-        <StyledCheckbox.Label>{getChildren()}</StyledCheckbox.Label>
-      </Show>
-      <StyledCheckbox.HiddenInput />
-    </StyledCheckbox.Root>
+    <Checkbox.Indicator indeterminate={checkbox().indeterminate}>
+      <styled.svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3px"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        {...props}
+      >
+        <title>Checkmark</title>
+        {checkbox().indeterminate ? (
+          <path d="M5 12h14" />
+        ) : checkbox().checked ? (
+          <path d="M20 6 9 17l-5-5" />
+        ) : null}
+      </styled.svg>
+    </Checkbox.Indicator>
   )
 }
-
-const CheckIcon = () => (
-  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <title>Check Icon</title>
-    <path
-      d="M11.6666 3.5L5.24992 9.91667L2.33325 7"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-)
-
-const MinusIcon = () => (
-  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <title>Minus Icon</title>
-    <path
-      d="M2.91675 7H11.0834"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
-)

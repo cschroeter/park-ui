@@ -1,0 +1,100 @@
+---
+title: Carousel
+description: A display component for browsing through multiple items in sequence.
+category: display
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/carousel.ts
+  ark: https://ark-ui.com/docs/components/carousel
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Carousel } from '@/components/ui'
+```
+
+```tsx
+<Carousel.Root>
+  <Carousel.ItemGroup>
+    <Carousel.Item  />
+  </Carousel.ItemGroup>
+  <Carousel.Control>
+    <Carousel.PrevTrigger/>
+    <Carousel.IndicatorGroup>
+      <Carousel.Indicator />
+    </Carousel.IndicatorGroup>
+    <Carousel.NextTrigger />
+  </Carousel.Control>
+</Carousel.Root>
+```
+
+## Shortcuts
+
+### IndicatorGroup
+
+The `Carousel.IndicatorGroup` automatically renders indicators for each page. Instead of:
+
+```tsx
+<Carousel.IndicatorGroup>
+  <Carousel.Indicator index={0} />
+  <Carousel.Indicator index={1} />
+  {/* ... */}
+</Carousel.IndicatorGroup>
+```
+If you don't need to customize the indicators, you can use the shortcut:
+
+```tsx
+<Carousel.IndicatorGroup />
+```
+
+## Examples
+
+### Multiple
+
+Set the `slidesPerPage` prop to show multiple items per page.
+
+<ComponentExample name="multiple" />
+
+### Auto Play
+
+Set the `autoPlay` prop to enable automatic sliding.
+
+<ComponentExample name="auto-play" />
+
+### Images
+
+Here is an example of a carousel displaying images.
+
+<ComponentExample name="images" />
+
+### Vertical
+
+Set the `orientation` prop to `vertical` to create a vertical carousel.
+
+<ComponentExample name="vertical" />
+
+### Scroll To
+
+Use the `scrollTo` method to programmatically navigate to a specific slide.
+
+<ComponentExample name="scroll-to" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Indicator
+
+<PropsTable part="Indicator" />
+
+### Item
+
+<PropsTable part="Item" />

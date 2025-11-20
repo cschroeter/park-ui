@@ -1,0 +1,123 @@
+---
+title: Checkbox
+description: A form control for toggling between checked and unchecked states.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/checkbox.ts
+  ark: https://ark-ui.com/docs/components/checkbox
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Checkbox } from '@/components/ui'
+```
+
+```tsx
+<Checkbox.Root>
+  <Checkbox.HiddenInput />
+  <Checkbox.Control>
+    <Checkbox.Indicator />
+  </Checkbox.Control>
+  <Checkbox.Label />
+</Checkbox.Root>
+```
+
+:::info
+
+If you prefer a closed component composition, check out the [snippet below](#closed-component).
+
+:::
+
+
+## Examples
+
+### Variants
+
+Customize the appearance with different visual styles to match your design:
+
+<ComponentExample name="variants" />
+
+### Colors
+
+Use the `colorPalette` prop to change the color of the checkbox:
+
+<ComponentExample name="colors" />
+
+### Sizes
+
+Adjust the size to match surrounding text or interface elements:
+
+<ComponentExample name="sizes" />
+
+### States
+
+Pass the `disabled` or `invalid` prop to the `Checkbox.Root` component to change the visual state of the checkbox.
+
+<ComponentExample name="states" />
+
+### Controlled
+
+Use the `checked` and `onCheckedChange` props to control the checkbox state.
+
+<ComponentExample name="controlled" codeOnly />
+
+### Label
+
+Here's an example of how to change the label position to the left:
+
+<ComponentExample name="label" />
+
+### Indeterminate
+
+Set the `checked` prop to `indeterminate` to show the checkbox in an indeterminate state.
+
+<ComponentExample name="indeterminate" />
+
+### Description
+
+Here's an example of how to add some further description to the checkbox:
+
+<ComponentExample name="description" />
+
+### Link
+
+Render an anchor tag within the `Checkbox.Label` to add a link to the label.
+
+<ComponentExample name="link" />
+
+### Closed Component
+
+Here's how to setup the avatar for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+To use the closed component, simply import and use it like this:
+
+```tsx
+<Checkbox>Label</Checkbox>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Group
+
+<PropsTable part="Group" />
+
+### GroupProvider
+
+<PropsTable part="GroupProvider" />
+
+### Indicator
+
+<PropsTable part="Indicator" />

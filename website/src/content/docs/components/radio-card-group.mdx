@@ -1,0 +1,42 @@
+---
+title: Radio Card group
+description: A selectable card component that functions like a radio group.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/radio-card.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { RadioCardGroup } from '@/components/ui'
+```
+
+```tsx
+<RadioCardGroup.Root>
+  <RadioCardGroup.Label />
+  <RadioCardGroup.Item>
+    <RadioCardGroup.ItemHiddenInput />
+    <RadioCardGroup.ItemText />
+    <RadioCardGroup.ItemControl />
+  </RadioCardGroup.Item>
+</RadioCardGroup.Root>
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the appearance of the radio cards.
+
+<ComponentExample name="variants" />
+
+## Props
+
+<PropsTable />

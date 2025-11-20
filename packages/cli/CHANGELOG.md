@@ -1,5 +1,57 @@
 ## [Unreleased]
 
+## [1.0.0-next.8] - 2025-11-17
+
+### Fixed
+
+- Correctly resolve references and extends in `tsconfig.json` files.
+
+## [1.0.0-next.7] - 2025-10-19
+
+### Fixed
+
+- Fix PandaConfig path resolution to correctly locate `panda.config.ts` in various project structures.
+
+## [1.0.0-next.6] - 2025-10-15
+
+### Fixed
+
+- Fix getTsConfigAliasPrefix
+
+## [1.0.0-next.5] - 2025-10-14
+
+### Added
+
+- RC versions for testing
+
+## [1.0.0-next.4] - 2025-10-09
+
+### Fixed
+
+- Resolved various issues.
+
+## [1.0.0-next.3] - 2025-08-20
+
+- Resolved various issues.
+
+## [1.0.0-next.2] - 2025-08-11
+
+### Fixed
+
+- Resolved various issues.
+
+## [1.0.0-next.1] - 2025-08-11
+
+### Fixed
+
+- Resolved various issues.
+
+## [1.0.0-next.0] - 2025-08-10
+
+### Changed
+
+- New CLI for Park UI Next
+
 ## [0.9.0] - 2024-07-31
 
 ### Changed

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { Tabs } from '@ark-ui/solid/tabs'\nimport type { ComponentProps } from 'solid-js'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { tabs } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(tabs)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Tabs.Root, 'root')\nexport const RootProvider = withProvider(Tabs.RootProvider, 'root')\nexport const List = withContext(Tabs.List, 'list')\nexport const Trigger = withContext(Tabs.Trigger, 'trigger')\nexport const Content = withContext(Tabs.Content, 'content')\nexport const Indicator = withContext(Tabs.Indicator, 'indicator')\n\nexport { TabsContext as Context } from '@ark-ui/solid/tabs'\n",
+      "type": "registry:ui",
+      "path": "tabs.tsx"
+    }
+  ],
+  "registryDependencies": ["tabs-recipe"]
+}

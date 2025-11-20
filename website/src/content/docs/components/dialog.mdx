@@ -1,0 +1,132 @@
+---
+title: Dialog
+description: A modal component for displaying important content requiring user response.
+category: overlays
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/dialog.ts
+  ark: https://ark-ui.com/docs/components/dialog
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Dialog } from '@/components/ui'
+```
+
+```tsx
+<Dialog.Root>
+  <Dialog.Trigger />
+  <Dialog.Backdrop />
+  <Dialog.Positioner>
+    <Dialog.Content>
+      <Dialog.CloseTrigger />
+      <Dialog.Header>
+        <Dialog.Title />
+        <Dialog.Description />
+      </Dialog.Header>
+      <Dialog.Body />
+      <Dialog.Footer>
+        <Dialog.ActionTrigger />
+      </Dialog.Footer>
+    </Dialog.Content>
+  </Dialog.Positioner>
+</Dialog.Root>
+```
+
+## Examples
+
+Use the `size` prop to change the size of the dialog component.
+
+<ComponentExample name="sizes" />
+
+### Cover
+
+Use the `size="cover"` prop to make the dialog component cover the entire screen while revealing a small portion of the page behind.
+
+<ComponentExample name="cover" />
+
+### Fullscreen
+
+Use the `size="full"` prop to make the dialog component take up the entire screen.
+
+<ComponentExample name="fullscreen" />
+
+### Responsive Size
+
+Use responsive values for the `size` prop to make the dialog adapt to different screen sizes.
+We recommend using exact breakpoints values instead of using a base to ensure styles are properly contained.
+
+<ComponentExample name="responsive" />
+
+### Placements
+
+Use the `placement` prop to change the placement of the dialog component.
+
+<ComponentExample name="placements" />
+
+### Controlled
+
+Use the `open` and `onOpenChange` prop to control the visibility of the dialog component.
+
+<ComponentExample name="controlled" codeOnly />
+
+### Nested Dialogs
+
+You can nest dialogs by using the `Dialog.Root` component inside another `Dialog.Root` component.
+
+<ComponentExample name="nested" />
+
+### Initial Focus
+
+Use the `initialFocusEl` prop to set the initial focus of the dialog component.
+
+<ComponentExample name="initial-focus" />
+
+### Inside Scroll
+
+Use the `scrollBehavior=inside` prop to change the scroll behavior of the dialog when its content overflows.
+
+<ComponentExample name="inside-scroll" />
+
+### Outside Scroll
+
+Use the `scrollBehavior=outside` prop to change the scroll behavior of the dialog when its content overflows.
+
+<ComponentExample name="outside-scroll" />
+
+### Motion Preset
+
+Use the `motionPreset` prop to change the animation of the dialog component.
+
+<ComponentExample name="motion-presets" />
+
+### Alert Dialog
+
+Set the `role: "alertdialog"` prop to change the dialog component to an alert
+dialog.
+
+<ComponentExample name="alert" />
+
+### Non-Modal Dialog
+
+We don't recommend using a non-modal dialog due to the accessibility concerns
+they present. In event you need it, here's what you can do:
+
+- set the `modal` prop to `false`
+- set `pointerEvents` to `none` on the `Dialog.Positioner` component
+- (optional)set the `closeOnInteractOutside` prop to `false`
+
+<ComponentExample name="non-modal" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+

@@ -1,26 +1,15 @@
-import { withThemeByClassName } from '@storybook/addon-themes'
-import type { Preview, ReactRenderer } from '@storybook/react'
+import type { Preview } from 'storybook-solidjs-vite'
 import './index.css'
 
 const preview: Preview = {
   parameters: {
-    options: {
-      storySort: {
-        method: 'alphabetical',
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
-    layout: 'padded',
   },
-  decorators: [
-    withThemeByClassName<ReactRenderer>({
-      defaultTheme: 'light',
-      themes: {
-        light: '',
-        dark: 'dark',
-      },
-    }),
-    (Story) => Story(),
-  ],
 }
 
 export default preview

@@ -1,73 +1,51 @@
-import { For } from 'solid-js'
-import { Button } from './button'
+import { Pagination, usePaginationContext } from '@ark-ui/solid/pagination'
+import { EllipsisIcon } from 'lucide-solid'
+import { type ComponentProps, For, type JSX } from 'solid-js'
+import { createStyleContext } from 'styled-system/jsx'
+import { pagination } from 'styled-system/recipes'
 import { IconButton } from './icon-button'
-import * as StyledPagination from './styled/pagination'
 
-export interface PaginationProps extends StyledPagination.RootProps {}
+const { withProvider, withContext } = createStyleContext(pagination)
 
-export const Pagination = (props: PaginationProps) => {
-  return (
-    <StyledPagination.Root {...props}>
-      <StyledPagination.PrevTrigger
-        asChild={(props) => (
-          <IconButton {...props} variant="ghost" aria-label="Next Page">
-            <ChevronLeftIcon />
-          </IconButton>
-        )}
-      />
-      <StyledPagination.Context>
-        {(pagiation) => (
-          <For each={pagiation().pages}>
-            {(page, index) =>
-              page.type === 'page' ? (
-                <StyledPagination.Item
-                  {...page}
-                  asChild={(props) => <Button {...props} variant="outline" />}
-                >
-                  {page.value}
-                </StyledPagination.Item>
-              ) : (
-                <StyledPagination.Ellipsis index={index()}>&#8230;</StyledPagination.Ellipsis>
-              )
-            }
-          </For>
-        )}
-      </StyledPagination.Context>
-      <StyledPagination.NextTrigger
-        asChild={(props) => (
-          <IconButton {...props} variant="ghost" aria-label="Next Page">
-            <ChevronRightIcon />
-          </IconButton>
-        )}
-      />
-    </StyledPagination.Root>
-  )
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(Pagination.Root, 'root')
+export const RootProvider = withProvider(Pagination.RootProvider, 'root')
+export const Item = withContext(Pagination.Item, 'item')
+export const Ellipsis = withContext(Pagination.Ellipsis, 'ellipsis')
+export const PrevTrigger = withContext(Pagination.PrevTrigger, 'prevTrigger')
+export const NextTrigger = withContext(Pagination.NextTrigger, 'nextTrigger')
+
+export { PaginationContext as Context } from '@ark-ui/solid/pagination'
+
+export interface PaginationItemsProps extends JSX.HTMLAttributes<HTMLElement> {
+  render: (page: { type: 'page'; value: number; selected: boolean }) => JSX.Element
+  ellipsis?: JSX.Element | undefined
 }
 
-const ChevronLeftIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Chevron Left Icon</title>
-    <path
-      fill="none"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="m15 18l-6-6l6-6"
-    />
-  </svg>
-)
+export const Items = (props: PaginationItemsProps) => {
+  const ctx = usePaginationContext()
 
-const ChevronRightIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <title>Chevron Right Icon</title>
-    <path
-      fill="none"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="m9 18l6-6l-6-6"
-    />
-  </svg>
-)
+  return (
+    <For each={ctx().pages}>
+      {(page, index) => {
+        if (page.type === 'ellipsis') {
+          return (
+            <Ellipsis index={index()}>
+              {props.ellipsis || (
+                <IconButton as="span" colorPalette="gray">
+                  <EllipsisIcon />
+                </IconButton>
+              )}
+            </Ellipsis>
+          )
+        }
+
+        return (
+          <Item type="page" value={page.value}>
+            {props.render({ ...page, selected: ctx().page === page.value })}
+          </Item>
+        )
+      }}
+    </For>
+  )
+}

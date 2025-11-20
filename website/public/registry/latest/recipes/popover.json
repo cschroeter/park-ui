@@ -1,6 +1,0 @@
-{
-  "id": "popover",
-  "filename": "popover.ts",
-  "slotRecipe": true,
-  "content": "import { popoverAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const popover = defineSlotRecipe({\n  className: 'popover',\n  slots: popoverAnatomy.keys(),\n  base: {\n    positioner: {\n      position: 'relative',\n    },\n    content: {\n      background: 'bg.default',\n      borderRadius: 'l3',\n      boxShadow: 'lg',\n      display: 'flex',\n      flexDirection: 'column',\n      maxWidth: 'sm',\n      zIndex: 'popover',\n      p: '4',\n      _open: {\n        animation: 'fadeIn 0.25s ease-out',\n      },\n      _closed: {\n        animation: 'fadeOut 0.2s ease-out',\n      },\n      _hidden: {\n        display: 'none',\n      },\n    },\n    title: {\n      fontWeight: 'medium',\n      textStyle: 'sm',\n    },\n    description: {\n      color: 'fg.muted',\n      textStyle: 'sm',\n    },\n    closeTrigger: {\n      color: 'fg.muted',\n    },\n    arrow: {\n      '--arrow-size': 'var(--sizes-3)',\n      '--arrow-background': 'var(--colors-bg-default)',\n    },\n    arrowTip: {\n      borderTopWidth: '1px',\n      borderLeftWidth: '1px',\n    },\n  },\n})\n"
-}

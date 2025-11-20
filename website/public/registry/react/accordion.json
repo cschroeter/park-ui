@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "accordion",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "lucide-react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { Accordion } from '@ark-ui/react/accordion'\nimport { ark } from '@ark-ui/react/factory'\nimport { ChevronDownIcon } from 'lucide-react'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { accordion } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(accordion)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(Accordion.Root, 'root')\nexport const RootProvider = withProvider(Accordion.RootProvider, 'root')\nexport const Item = withContext(Accordion.Item, 'item')\nexport const ItemContent = withContext(Accordion.ItemContent, 'itemContent')\nexport const ItemIndicator = withContext(Accordion.ItemIndicator, 'itemIndicator', {\n  defaultProps: { children: <ChevronDownIcon /> },\n})\nexport const ItemTrigger = withContext(Accordion.ItemTrigger, 'itemTrigger')\nexport const ItemBody = withContext(ark.div, 'itemBody')\n\nexport { AccordionContext as Context } from '@ark-ui/react/accordion'\n",
+      "type": "registry:ui",
+      "path": "accordion.tsx",
+      "exports": "export * as Accordion from './accordion'"
+    }
+  ],
+  "registryDependencies": ["accordion-recipe"]
+}

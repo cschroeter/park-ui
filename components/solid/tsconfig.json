@@ -5,9 +5,8 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "paths": {
-      "~/*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "exclude": ["node_modules", "dist"],
-  "include": ["src"]
+  "include": ["**.ts", "**/*.tsx"]
 }

@@ -1,42 +1,49 @@
-import { forwardRef } from 'react'
-import * as StyledAvatar from './styled/avatar'
+'use client'
+import { Avatar } from '@ark-ui/react/avatar'
+import { UserIcon } from 'lucide-react'
+import { type ComponentProps, forwardRef } from 'react'
+import { createStyleContext } from 'styled-system/jsx'
+import { avatar } from 'styled-system/recipes'
 
-export interface AvatarProps extends StyledAvatar.RootProps {
-  name?: string
-  src?: string
+const { withProvider, withContext } = createStyleContext(avatar)
+
+export type RootProps = ComponentProps<typeof Root>
+export const Root = withProvider(Avatar.Root, 'root')
+export const RootProvider = withProvider(Avatar.RootProvider, 'root')
+export const Image = withContext(Avatar.Image, 'image', {
+  defaultProps: {
+    draggable: 'false',
+    referrerPolicy: 'no-referrer',
+  },
+})
+
+export { AvatarContext as Context } from '@ark-ui/react/avatar'
+
+export interface FallbackProps extends ComponentProps<typeof StyledFallback> {
+  /**
+   * The name to derive the initials from.
+   * If not provided, the fallback will display a generic icon.
+   */
+  name?: string | undefined
 }
 
-export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
-  const { name, src, ...rootProps } = props
+const StyledFallback = withContext(Avatar.Fallback, 'fallback')
+
+export const Fallback = forwardRef<HTMLDivElement, FallbackProps>(function Fallback(props, ref) {
+  const { name, children, asChild, ...rest } = props
+
+  const fallbackContent = children || asChild ? children : name ? getInitials(name) : <UserIcon />
 
   return (
-    <StyledAvatar.Root ref={ref} {...rootProps}>
-      <StyledAvatar.Fallback>{getInitials(name) || <UserIcon />}</StyledAvatar.Fallback>
-      <StyledAvatar.Image src={src} alt={name} />
-    </StyledAvatar.Root>
+    <StyledFallback ref={ref} {...rest}>
+      {fallbackContent}
+    </StyledFallback>
   )
 })
 
-Avatar.displayName = 'Avatar'
-
-const UserIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <title>User Icon</title>
-    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-    <circle cx="12" cy="7" r="4" />
-  </svg>
-)
-
-const getInitials = (name = '') =>
-  name
-    .split(' ')
-    .map((part) => part[0])
-    .splice(0, 2)
-    .join('')
-    .toUpperCase()
+const getInitials = (name: string) => {
+  const names = name.trim().split(' ')
+  const firstName = names[0] || ''
+  const lastName = names.length > 1 ? names[names.length - 1] : ''
+  return firstName && lastName ? `${firstName[0]}${lastName[0]}` : firstName[0]
+}

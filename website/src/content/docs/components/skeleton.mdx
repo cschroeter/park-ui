@@ -1,0 +1,65 @@
+---
+title: Skeleton
+description: A feedback component showing content placeholders during loading states.
+category: feedback
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/skeleton.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Skeleton, SkeletonCircle, SkeletonText } from "@/components/ui"
+```
+
+```tsx
+<Stack gap="6">
+  <HStack>
+    <SkeletonCircle boxSize="10" />
+    <SkeletonText noOfLines={2} />
+  </HStack>
+  <Skeleton height="48" />
+</Stack>
+```
+
+## Examples
+
+### Text
+
+Use the `SkeletonText` component to create a skeleton for text.
+
+<ComponentExample name="text" />
+
+### Variants
+
+Use the `variant` prop to change the visual style of the Skeleton.
+
+<ComponentExample name="variants" />
+
+### Feed
+
+Use the `Skeleton` component to create a feed skeleton.
+
+<ComponentExample name="feed" />
+
+### Content Loading
+
+When `loading` is changed to `false`, the Skeleton component will fade in.
+
+<ComponentExample name="loading" />
+
+### Custom Colors
+
+Use the `--start-color` and `--end-color` CSS variables to change the start and end color of the skeleton.
+
+<ComponentExample name="custom-colors" />
+
+## Props
+
+<PropsTable />

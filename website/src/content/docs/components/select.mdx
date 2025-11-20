@@ -1,0 +1,74 @@
+---
+title: Select
+description: A form control for selecting one option from a dropdown list.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/select.ts
+  ark: https://ark-ui.com/docs/components/select
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Select } from '@/components/ui'
+```
+
+```tsx
+<Select.Root>
+  <Select.HiddenSelect />
+  <Select.Label />
+  <Select.Control>
+    <Select.Trigger>
+      <Select.ValueText />
+    </Select.Trigger>
+    <Select.IndicatorGroup>
+      <Select.Indicator />
+      <Select.ClearTrigger />
+    </Select.IndicatorGroup>
+  </Select.Control>
+  <Select.Positioner>
+    <Select.Content>
+      <Select.Item />
+      <Select.ItemGroup>
+        <Select.ItemGroupLabel />
+        <Select.Item />
+      </Select.ItemGroup>
+    </Select.Content>
+  </Select.Positioner>
+</Select.Root>
+```
+
+
+## Examples
+
+### Size
+
+Use the `size` prop to change the size of the select component.
+
+<ComponentExample name="sizes" />
+
+### Option Group
+
+Use the `Select.ItemGroup` component to group select options.
+
+<ComponentExample name="option-group" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />
+
+### ValueText
+
+<PropsTable part="ValueText" />

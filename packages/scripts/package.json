@@ -1,0 +1,22 @@
+{
+  "name": "@park-ui/scripts",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "scripts": "src/index.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "0.11.0",
+    "@types/fs-extra": "11.0.4",
+    "commander": "14.0.2",
+    "effect": "3.19.4",
+    "fast-glob": "3.3.3",
+    "fs-extra": "11.3.2",
+    "picocolors": "1.1.1",
+    "ts-morph": "27.0.2",
+    "zod": "4.1.12"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

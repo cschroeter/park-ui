@@ -1,6 +1,0 @@
-{
-  "id": "tooltip",
-  "filename": "tooltip.ts",
-  "slotRecipe": true,
-  "content": "import { tooltipAnatomy } from '@ark-ui/anatomy'\nimport { defineSlotRecipe } from '@pandacss/dev'\n\nexport const tooltip = defineSlotRecipe({\n  className: 'tooltip',\n  slots: tooltipAnatomy.keys(),\n  base: {\n    content: {\n      background: 'gray.a12',\n      borderRadius: 'l2',\n      boxShadow: 'sm',\n      color: 'bg.default',\n      fontWeight: 'semibold',\n      px: '3',\n      py: '2',\n      textStyle: 'xs',\n      maxWidth: '2xs',\n      zIndex: 'tooltip',\n      _open: {\n        animation: 'fadeIn 0.25s ease-out',\n      },\n      _closed: {\n        animation: 'fadeOut 0.2s ease-out',\n      },\n    },\n  },\n})\n"
-}

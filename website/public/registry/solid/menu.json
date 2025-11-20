@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "menu",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "lucide-solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { Menu, useMenuItemContext } from '@ark-ui/solid/menu'\nimport { CheckIcon, ChevronDownIcon } from 'lucide-solid'\nimport type { ComponentProps } from 'solid-js'\nimport { Show } from 'solid-js'\nimport { createStyleContext, type HTMLStyledProps } from 'styled-system/jsx'\nimport { menu } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(menu)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider(Menu.Root, {\n  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),\n})\nexport const RootProvider = withRootProvider(Menu.Root, {\n  defaultProps: () => ({ unmountOnExit: true, lazyMount: true }),\n})\nexport const Arrow = withContext(Menu.Arrow, 'arrow')\nexport const ArrowTip = withContext(Menu.ArrowTip, 'arrowTip')\nexport const CheckboxItem = withContext(Menu.CheckboxItem, 'item')\nexport const Content = withContext(Menu.Content, 'content')\nexport const ContextTrigger = withContext(Menu.ContextTrigger, 'contextTrigger')\nexport const Indicator = withContext(Menu.Indicator, 'indicator', {\n  defaultProps: () => ({ children: <ChevronDownIcon /> }),\n})\nexport const Item = withContext(Menu.Item, 'item')\nexport const ItemGroup = withContext(Menu.ItemGroup, 'itemGroup')\nexport const ItemGroupLabel = withContext(Menu.ItemGroupLabel, 'itemGroupLabel')\nexport const ItemText = withContext(Menu.ItemText, 'itemText')\nexport const Positioner = withContext(Menu.Positioner, 'positioner')\nexport const RadioItem = withContext(Menu.RadioItem, 'item')\nexport const RadioItemGroup = withContext(Menu.RadioItemGroup, 'itemGroup')\nexport const Separator = withContext(Menu.Separator, 'separator')\nexport const Trigger = withContext(Menu.Trigger, 'trigger')\nexport const TriggerItem = withContext(Menu.TriggerItem, 'item')\n\nexport {\n  MenuContext as Context,\n  type MenuSelectionDetails as SelectionDetails,\n} from '@ark-ui/solid/menu'\n\nconst StyledItemIndicator = withContext(Menu.ItemIndicator, 'itemIndicator')\n\nexport const ItemIndicator = (props: HTMLStyledProps<'div'>) => {\n  const item = useMenuItemContext()\n\n  return (\n    <Show when={item().checked} fallback={<svg aria-hidden=\"true\" />}>\n      <StyledItemIndicator {...props}>\n        <CheckIcon />\n      </StyledItemIndicator>\n    </Show>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "menu.tsx"
+    }
+  ],
+  "registryDependencies": ["menu-recipe"]
+}

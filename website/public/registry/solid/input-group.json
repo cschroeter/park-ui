@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "input-group",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/solid", "solid-js"],
+  "files": [
+    {
+      "content": "import { ark } from '@ark-ui/solid'\nimport { type ComponentProps, type JSX, Show, splitProps } from 'solid-js'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { inputGroup } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(inputGroup)\n\ntype RootProps = ComponentProps<typeof Root>\nconst Root = withProvider(ark.div, 'root')\nconst Element = withContext(ark.div, 'element')\n\nexport interface InputGroupProps extends RootProps {\n  startElement?: JSX.Element | undefined\n  endElement?: JSX.Element | undefined\n}\n\nexport const InputGroup = (props: InputGroupProps) => {\n  const [local, rest] = splitProps(props, ['startElement', 'endElement'])\n\n  return (\n    <Root {...rest}>\n      <Show when={local.startElement}>\n        <Element insetInlineStart=\"0\" top=\"0\">\n          {local.startElement}\n        </Element>\n      </Show>\n      {rest.children}\n      <Show when={local.endElement}>\n        <Element insetInlineEnd=\"0\" top=\"0\">\n          {local.endElement}\n        </Element>\n      </Show>\n    </Root>\n  )\n}\n",
+      "type": "registry:ui",
+      "path": "input-group.tsx"
+    }
+  ],
+  "registryDependencies": ["input-group-recipe"]
+}

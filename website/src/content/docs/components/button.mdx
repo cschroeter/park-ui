@@ -1,0 +1,87 @@
+---
+title: Button
+description: A clickable component for triggering actions and user interactions.
+category: buttons
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/button.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Button } from '@/components/ui'
+```
+
+```tsx
+<Button>Click me</Button>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the button.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to change the appearance of the button.
+
+<ComponentExample name="variants" />
+
+### Icon
+
+Use icons within a button
+
+<ComponentExample name="icon" />
+
+### Colors
+
+Use the `colorPalette` prop to change the appearance of the button.
+
+<ComponentExample name="colors" />
+
+### Disabled
+
+Use the `disabled` prop to disable the button.
+
+<ComponentExample name="disabled" />  
+
+### Loading
+
+Pass the `loading` and `loadingText` props to the button to show a loading spinner and add a loading text.
+
+<ComponentExample name="loading" />
+
+### Button Group
+
+Use the `ButtonGroup` component to group buttons together. This component allows you pass common recipe properties to inner buttons.
+
+<ComponentExample name="group" />
+
+To create an attached button group, pass the `attached` prop to the `ButtonGroup` component.
+
+<ComponentExample name="attached" />
+
+### As Link
+
+Use the `asChild` prop to render a button as a link.
+
+<ComponentExample name="as-link" />
+
+### Ref
+
+Here's how to access the underlying element reference
+
+<ComponentExample name="ref" codeOnly />
+
+## Props
+
+<PropsTable />

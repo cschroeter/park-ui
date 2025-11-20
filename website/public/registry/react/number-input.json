@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "number-input",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "lucide-react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { NumberInput } from '@ark-ui/react/number-input'\nimport { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { numberInput } from 'styled-system/recipes'\n\nconst { withProvider, withContext } = createStyleContext(numberInput)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withProvider(NumberInput.Root, 'root')\nexport const RootProvider = withProvider(NumberInput.RootProvider, 'root')\nexport const DecrementTrigger = withContext(NumberInput.DecrementTrigger, 'decrementTrigger', {\n  defaultProps: { children: <ChevronDownIcon /> },\n})\nexport const IncrementTrigger = withContext(NumberInput.IncrementTrigger, 'incrementTrigger', {\n  defaultProps: { children: <ChevronUpIcon /> },\n})\nexport const Input = withContext(NumberInput.Input, 'input')\nexport const Label = withContext(NumberInput.Label, 'label')\nexport const Scrubber = withContext(NumberInput.Scrubber, 'scrubber')\nexport const ValueText = withContext(NumberInput.ValueText, 'valueText')\nexport const Control = withContext(NumberInput.Control, 'control', {\n  defaultProps: {\n    children: (\n      <>\n        <IncrementTrigger />\n        <DecrementTrigger />\n      </>\n    ),\n  },\n})\n\nexport { NumberInputContext as Context } from '@ark-ui/react/number-input'\n",
+      "type": "registry:ui",
+      "path": "number-input.tsx",
+      "exports": "export * as NumberInput from './number-input'"
+    }
+  ],
+  "registryDependencies": ["number-input-recipe"]
+}

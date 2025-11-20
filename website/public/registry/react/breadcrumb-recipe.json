@@ -1,0 +1,14 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "breadcrumb-recipe",
+  "type": "registry:recipe",
+  "dependencies": ["@pandacss/dev"],
+  "files": [
+    {
+      "content": "import { defineSlotRecipe } from '@pandacss/dev'\n\nexport const breadcrumb = defineSlotRecipe({\n  className: 'breadcrumb',\n  slots: ['root', 'list', 'link', 'item', 'separator', 'ellipsis'],\n  base: {\n    list: {\n      alignItems: 'center',\n      display: 'flex',\n      listStyle: 'none',\n      wordBreak: 'break-word',\n    },\n    link: {\n      alignItems: 'center',\n      borderRadius: 'l1',\n      display: 'inline-flex',\n      focusRing: 'outside',\n      gap: '2',\n      outline: '0',\n      textDecoration: 'none',\n      transition: 'color',\n      _icon: { boxSize: '1em' },\n    },\n    item: {\n      display: 'inline-flex',\n      alignItems: 'center',\n      color: 'fg.muted',\n      _last: {\n        color: 'fg.default',\n      },\n    },\n    separator: {\n      color: 'fg.subtle',\n      _icon: { boxSize: '1em' },\n      _rtl: { rotate: '180deg' },\n    },\n    ellipsis: {\n      alignItems: 'center',\n      color: 'fg.muted',\n      display: 'inline-flex',\n      justifyContent: 'center',\n      _icon: { boxSize: '1em' },\n    },\n  },\n\n  variants: {\n    variant: {\n      underline: {\n        link: {\n          textDecoration: 'underline',\n          textDecorationThickness: '0.1em',\n          textUnderlineOffset: '0.125em',\n          textDecorationColor: 'fg.subtle',\n          _hover: { textDecorationColor: 'fg.default' },\n        },\n      },\n      plain: {\n        link: {\n          color: 'fg.muted',\n          _hover: { color: 'fg.default' },\n          _currentPage: { color: 'fg.default' },\n        },\n      },\n    },\n    size: {\n      xs: { list: { gap: '1', textStyle: 'xs' } },\n      sm: { list: { gap: '1', textStyle: 'sm' } },\n      md: { list: { gap: '1.5', textStyle: 'md' } },\n      lg: { list: { gap: '2', textStyle: 'lg' } },\n    },\n  },\n\n  defaultVariants: {\n    variant: 'plain',\n    size: 'md',\n  },\n})\n",
+      "type": "registry:recipe",
+      "path": "breadcrumb.ts",
+      "imports": "import { breadcrumb } from './breadcrumb'"
+    }
+  ]
+}

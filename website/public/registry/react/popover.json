@@ -1,0 +1,15 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry-item.json",
+  "name": "popover",
+  "type": "registry:ui",
+  "dependencies": ["@ark-ui/react", "react"],
+  "files": [
+    {
+      "content": "'use client'\nimport { ark } from '@ark-ui/react/factory'\nimport { Popover } from '@ark-ui/react/popover'\nimport type { ComponentProps } from 'react'\nimport { createStyleContext } from 'styled-system/jsx'\nimport { popover } from 'styled-system/recipes'\n\nconst { withRootProvider, withContext } = createStyleContext(popover)\n\nexport type RootProps = ComponentProps<typeof Root>\nexport const Root = withRootProvider(Popover.Root, {\n  defaultProps: { unmountOnExit: true, lazyMount: true },\n})\nexport const RootProvider = withRootProvider(Popover.Root, {\n  defaultProps: { unmountOnExit: true, lazyMount: true },\n})\nexport const Anchor = withContext(Popover.Anchor, 'anchor')\nexport const ArrowTip = withContext(Popover.ArrowTip, 'arrowTip')\nexport const Arrow = withContext(Popover.Arrow, 'arrow', {\n  defaultProps: { children: <ArrowTip /> },\n})\nexport const CloseTrigger = withContext(Popover.CloseTrigger, 'closeTrigger')\nexport const Content = withContext(Popover.Content, 'content')\nexport const Description = withContext(Popover.Description, 'description')\nexport const Indicator = withContext(Popover.Indicator, 'indicator')\nexport const Positioner = withContext(Popover.Positioner, 'positioner')\nexport const Title = withContext(Popover.Title, 'title')\nexport const Trigger = withContext(Popover.Trigger, 'trigger')\n\nexport const Body = withContext(ark.div, 'body')\nexport const Header = withContext(ark.div, 'header')\nexport const Footer = withContext(ark.div, 'footer')\n\nexport { PopoverContext as Context } from '@ark-ui/react/popover'\n",
+      "type": "registry:ui",
+      "path": "popover.tsx",
+      "exports": "export * as Popover from './popover'"
+    }
+  ],
+  "registryDependencies": ["popover-recipe"]
+}

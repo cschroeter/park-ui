@@ -1,0 +1,74 @@
+---
+title: Tabs
+description: A navigation component for switching between different content panels.
+category: navigation
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/tabs.ts
+  ark: https://ark-ui.com/docs/components/tabs
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Tabs } from '@/components/ui'
+```
+
+```tsx
+<Tabs.Root>
+  <Tabs.List>
+    <Tabs.Trigger />
+    <Tabs.Indicator />
+  </Tabs.List>
+  <Tabs.Content />
+</Tabs.Root>
+```
+
+## Examples
+
+Use the `size` prop to change the size of the tabs.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to change the appearance of the tabs.
+
+<ComponentExample name="variants" />
+
+### Orientation
+
+Use the `orientation` prop to change the orientation of the tabs.
+
+<ComponentExample name="orientation" />
+
+### Lazy Loading
+
+Optimize performance by using the `lazyMount` and `unmountOnExit` props to conditionally render tab content. 
+
+<ComponentExample name="lazy-mount" />
+
+### Fitted
+
+Use the `fitted` prop to make the tabs fit the width of the container.
+
+<ComponentExample name="fitted" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### TabContent
+
+<PropsTable part="TabContent" />
+
+### TabTrigger
+
+<PropsTable part="TabTrigger" />

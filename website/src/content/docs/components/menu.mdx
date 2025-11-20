@@ -1,0 +1,107 @@
+---
+title: Menu
+description: A dropdown component for displaying lists of actions or navigation options.
+category: overlays
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/menu.ts
+  ark: https://ark-ui.com/docs/components/menu
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Menu } from '@/components/ui'
+```
+
+```tsx
+<Menu.Root>
+  <Menu.Trigger />
+  <Menu.Positioner>
+    <Menu.Content>
+      <Menu.Arrow />
+      <Menu.Item />
+      <Menu.ItemGroup>
+        <Menu.Item />
+      </Menu.ItemGroup>
+      <Menu.Separator />
+      <Menu.CheckboxItem>
+        <Menu.ItemIndicator />
+      </Menu.CheckboxItem>
+      <Menu.RadioItemGroup>
+        <Menu.RadioItem>
+          <Menu.ItemIndicator />
+        </Menu.RadioItem>
+      </Menu.RadioItemGroup>
+    </Menu.Content>
+  </Menu.Positioner>
+</Menu.Root>
+```
+
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to adjust the size of the menu items.
+
+<ComponentExample name="sizes" />
+
+### Context Menu
+
+Use the `Menu.ContextTrigger` component to create a context menu.
+
+<ComponentExample name="context" />
+
+### Group
+
+Use the `Menu.ItemGroup` component to group related menu items.
+
+<ComponentExample name="group" />
+
+### Submenu
+
+Here's an example of how to create a submenu.
+
+<ComponentExample name="submenu" />
+
+### Radio Group
+
+Here's an example of how to create a menu with radio items.
+
+<ComponentExample name="radioGroup" />
+
+### Checkbox Items
+
+Here's an example of how to create a menu with checkbox items.
+
+<ComponentExample name="checkbox" />
+
+### Avatar
+
+Here's an example that composes the `Menu` with the `Avatar` component to display a menu underneath an avatar.
+
+<ComponentExample name="withAvatar" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />
+
+### RadioItemGroup
+
+<PropsTable part="RadioItemGroup" />
+
+### RadioItem
+
+<PropsTable part="RadioItem" />

@@ -1,0 +1,107 @@
+---
+title: Pin Input
+description: A form control for entering numeric codes with separate digit fields.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/pin-input.ts
+  ark: https://ark-ui.com/docs/components/pin-input
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { PinInput } from '@/components/ui'
+```
+
+```tsx
+<PinInput.Root>
+  <PinInput.HiddenInput />
+  <PinInput.Control>
+    <PinInput.Input />
+  </PinInput.Control>
+</PinInput.Root>
+```
+
+:::info
+
+If you prefer a closed component composition, check out the [snippet below](#closed-component).
+
+:::
+
+## Examples
+
+### Sizes
+
+Pass the `size` prop to change the size of the pin input component.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Pass the `variant` prop to change the visual style of the pin input component.
+
+<ComponentExample name="variants" />
+
+### One time code
+
+Pass the `otp` prop to make the pin input component behave like a one-time code input. This helps improve the user experience when entering OTP codes.
+
+<ComponentExample name="otp" />
+
+### Mask
+
+Pass the `mask` prop to obscure the entered pin code.
+
+<ComponentExample name="mask" />
+
+### Placeholder
+
+Pass the `placeholder` prop to add a placeholder to the pin input.
+
+<ComponentExample name="placeholder" />
+
+### Field
+
+Here's an example of how to compose the `Field` and the `PinInput` components.
+
+<ComponentExample name="field" />
+
+### Controlled
+
+Pass the `value` and `onValueChange` props to  to control the value of the pin input.
+
+<ComponentExample name="controlled" />
+
+### Alphanumeric
+
+Pass the `type` prop to allow the user to enter alphanumeric characters.
+
+<ComponentExample name="alphanumeric" />
+
+### Closed Component
+
+Here's how to setup the Pin input for a closed component composition.
+
+<ComponentExample name="closed" codeOnly/>
+
+And use it like this:
+
+```tsx
+<PinInput mask />
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Input
+
+<PropsTable part="Input" />

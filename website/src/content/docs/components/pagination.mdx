@@ -1,0 +1,72 @@
+---
+title: Pagination
+description: A navigation component for browsing through multiple pages of content.
+category: navigation
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/pagination.ts
+  ark: https://ark-ui.com/docs/components/pagination
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Pagination } from '@/components/ui'
+```
+
+```tsx
+<Pagination.Root>
+  <Pagination.PrevTrigger />
+  <Pagination.Ellipsis />
+  <Pagination.Item />
+  <Pagination.PageText />
+  <Pagination.NextTrigger />
+</Pagination.Root>
+```
+
+## Shortcuts
+
+The `Pagination` component also provides a set of shortcuts for common use cases.
+
+### PaginationItems
+
+This component renders the number of pages based on the `count` and `pageSize` props. Rendering this:
+
+```tsx
+<Pagination.Items />
+```
+
+is shorthand for this:
+
+```tsx
+<Pagination.Context>
+  {({ pages }) =>
+    pages.map((page, index) =>
+      page.type === "page" ? (
+        <Pagination.Item key={index} {...page} />
+      ) : (
+        <Pagination.Ellipsis key={index} index={index} />
+      ),
+    )
+  }
+</Pagination.Context>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Ellipsis
+
+<PropsTable part="Ellipsis" />
+
+### Item
+
+<PropsTable part="Item" />

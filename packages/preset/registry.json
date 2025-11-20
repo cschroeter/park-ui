@@ -1,0 +1,1134 @@
+{
+  "$schema": "https://next.park-ui.com/schema/registry.json",
+  "name": "@park-ui/preset",
+  "homepage": "https://park-ui.com",
+  "items": [
+    {
+      "name": "__init",
+      "type": "registry:theme",
+      "dependencies": ["@pandacss/dev"],
+      "registryDependencies": ["red", "green"],
+      "files": [
+        {
+          "path": "src/theme/recipes/index.ts",
+          "type": "registry:recipe"
+        },
+        {
+          "path": "src/theme/tokens/colors.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/tokens/durations.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/tokens/shadows.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/tokens/z-index.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/animation-styles.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/conditions.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/global-css.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/keyframes.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/layer-styles.ts",
+          "type": "registry:theme"
+        },
+        {
+          "path": "src/theme/text-styles.ts",
+          "type": "registry:theme"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:theme",
+            "from": "recipes",
+            "name": "slotRecipes"
+          },
+          {
+            "type": "registry:theme",
+            "from": "recipes",
+            "name": "recipes"
+          },
+          {
+            "type": "registry:theme",
+            "name": "conditions",
+            "from": "conditions"
+          },
+          {
+            "type": "registry:theme",
+            "name": "globalCss",
+            "from": "global-css"
+          },
+          {
+            "type": "registry:theme",
+            "name": "keyframes",
+            "from": "keyframes"
+          },
+          {
+            "type": "registry:theme",
+            "name": "layerStyles",
+            "from": "layer-styles"
+          },
+          {
+            "type": "registry:theme",
+            "name": "textStyles",
+            "from": "text-styles"
+          },
+          {
+            "type": "registry:theme",
+            "name": "colors",
+            "from": "tokens/colors"
+          },
+          {
+            "type": "registry:theme",
+            "name": "durations",
+            "from": "tokens/durations"
+          },
+          {
+            "type": "registry:theme",
+            "name": "shadows",
+            "from": "tokens/shadows"
+          },
+          {
+            "type": "registry:theme",
+            "name": "zIndex",
+            "from": "tokens/z-index"
+          },
+          {
+            "type": "registry:theme",
+            "name": "animationStyles",
+            "from": "animation-styles"
+          }
+        ],
+        "extension": {
+          "globalCss": "$ref:globalCss",
+          "conditions": "$ref:conditions",
+          "theme": {
+            "extend": {
+              "animationStyles": "$ref:animationStyles",
+              "recipes": "$ref:recipes",
+              "slotRecipes": "$ref:slotRecipes",
+              "keyframes": "$ref:keyframes",
+              "layerStyles": "$ref:layerStyles",
+              "textStyles": "$ref:textStyles",
+              "tokens": {
+                "colors": "$ref:colors",
+                "durations": "$ref:durations",
+                "zIndex": "$ref:zIndex"
+              },
+              "semanticTokens": {
+                "colors": {
+                  "fg": {
+                    "default": {
+                      "value": {
+                        "_light": "{colors.gray.12}",
+                        "_dark": "{colors.gray.12}"
+                      }
+                    },
+                    "muted": {
+                      "value": {
+                        "_light": "{colors.gray.11}",
+                        "_dark": "{colors.gray.11}"
+                      }
+                    },
+                    "subtle": {
+                      "value": {
+                        "_light": "{colors.gray.10}",
+                        "_dark": "{colors.gray.10}"
+                      }
+                    }
+                  },
+                  "border": {
+                    "value": { "_light": "{colors.gray.4}", "_dark": "{colors.gray.4}" }
+                  },
+                  "error": {
+                    "value": { "_light": "{colors.red.9}", "_dark": "{colors.red.9}" }
+                  }
+                },
+                "shadows": "$ref:shadows"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "amber",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/amber.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "amber",
+            "from": "colors/amber"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "amber": "$ref:amber"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "blue",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/blue.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "blue",
+            "from": "colors/blue"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "blue": "$ref:blue"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "bronze",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/bronze.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "bronze",
+            "from": "colors/bronze"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "bronze": "$ref:bronze"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "brown",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/brown.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "brown",
+            "from": "colors/brown"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "brown": "$ref:brown"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "crimson",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/crimson.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "crimson",
+            "from": "colors/crimson"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "crimson": "$ref:crimson"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "cyan",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/cyan.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "cyan",
+            "from": "colors/cyan"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "cyan": "$ref:cyan"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "gold",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/gold.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "gold",
+            "from": "colors/gold"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gold": "$ref:gold"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "grass",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/grass.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "grass",
+            "from": "colors/grass"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "grass": "$ref:grass"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "green",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/green.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "green",
+            "from": "colors/green"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "green": "$ref:green"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "indigo",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/indigo.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "indigo",
+            "from": "colors/indigo"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "indigo": "$ref:indigo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "iris",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/iris.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "iris",
+            "from": "colors/iris"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "iris": "$ref:iris"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "jade",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/jade.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "jade",
+            "from": "colors/jade"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "jade": "$ref:jade"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "lime",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/lime.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "lime",
+            "from": "colors/lime"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "lime": "$ref:lime"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "mauve",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/mauve.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "mauve",
+            "from": "colors/mauve"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:mauve"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "mint",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/mint.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "mint",
+            "from": "colors/mint"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "mint": "$ref:mint"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "neutral",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/neutral.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "neutral",
+            "from": "colors/neutral"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:neutral"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "olive",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/olive.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "olive",
+            "from": "colors/olive"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:olive"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "orange",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/orange.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "orange",
+            "from": "colors/orange"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "orange": "$ref:orange"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "pink",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/pink.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "pink",
+            "from": "colors/pink"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "pink": "$ref:pink"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "plum",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/plum.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "plum",
+            "from": "colors/plum"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "plum": "$ref:plum"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "purple",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/purple.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "purple",
+            "from": "colors/purple"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "purple": "$ref:purple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "red",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/red.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "red",
+            "from": "colors/red"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "red": "$ref:red"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "ruby",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/ruby.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "ruby",
+            "from": "colors/ruby"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "ruby": "$ref:ruby"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "sage",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/sage.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "sage",
+            "from": "colors/sage"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:sage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "sand",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/sand.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "sand",
+            "from": "colors/sand"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:sand"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "sky",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/sky.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "sky",
+            "from": "colors/sky"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "sky": "$ref:sky"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "slate",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/slate.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "slate",
+            "from": "colors/slate"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "gray": "$ref:slate"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "teal",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/teal.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "teal",
+            "from": "colors/teal"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "teal": "$ref:teal"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "tomato",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/tomato.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "tomato",
+            "from": "colors/tomato"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "tomato": "$ref:tomato"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "violet",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/violet.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "violet",
+            "from": "colors/violet"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "violet": "$ref:violet"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "yellow",
+      "type": "registry:color",
+      "dependencies": ["@pandacss/dev"],
+      "files": [
+        {
+          "path": "src/theme/colors/yellow.ts",
+          "type": "registry:color"
+        }
+      ],
+      "panda": {
+        "imports": [
+          {
+            "type": "registry:color",
+            "name": "yellow",
+            "from": "colors/yellow"
+          }
+        ],
+        "extension": {
+          "theme": {
+            "extend": {
+              "semanticTokens": {
+                "colors": {
+                  "yellow": "$ref:yellow"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

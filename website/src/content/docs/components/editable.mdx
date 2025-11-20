@@ -1,0 +1,60 @@
+---
+title: Editable
+description: A form control for editing text inline with click or focus activation.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/editable.ts
+  ark: https://ark-ui.com/docs/components/editable
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Editable } from '@/components/ui'
+```
+
+```tsx
+<Editable.Root>
+  <Editable.Preview />
+  <Editable.Input />
+</Editable.Root>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the editable.
+
+<ComponentExample name="sizes" />
+
+### Double Click
+
+Use the `activationMode` prop to make the content editable when users double click.
+
+<ComponentExample name="double-click" />
+
+### With Controls
+
+Add controls such as "edit", "cancel" and "submit" to `Editable` for better user experience.
+
+<ComponentExample name="controls" />
+
+### Controlled
+
+Use the `value` and `onValueChange` props to control the editable component.
+
+<ComponentExample name="controlled" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+

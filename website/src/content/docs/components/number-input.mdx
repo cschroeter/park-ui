@@ -1,0 +1,154 @@
+---
+title: Number Input
+description: A form control for entering numbers with increment and decrement buttons.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/number-input.ts
+  ark: https://ark-ui.com/docs/components/number-input
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { NumberInput } from '@/components/ui'
+```
+
+```tsx
+<NumberInput.Root>
+  <NumberInput.Label />
+  <NumberInput.ValueText />
+  <NumberInput.Control>
+    <NumberInput.IncrementTrigger />
+    <NumberInput.DecrementTrigger />
+  </NumberInput.Control>
+  <NumberInput.Scrubber />
+  <NumberInput.Input />
+</NumberInput.Root>
+```
+
+:::info
+
+If you prefer a closed component composition, check out the
+[snippet below](#closed-component).
+
+:::
+
+## Shortcuts
+
+The `NumberInput` component provides a set of shortcuts for common use cases
+
+### NumberInput.Control
+
+This component renders the `NumberInput.IncrementTrigger` and `NumberInput.DecrementTrigger` within it by default.
+
+Writing this:
+
+```tsx
+<NumberInput.Control />
+```
+
+is shorthand for writing this if you don't need to customize the triggers:
+
+```tsx
+<NumberInput.Control>
+  <NumberInput.IncrementTrigger />
+  <NumberInput.DecrementTrigger />
+</NumberInput.Control>
+```
+
+## Examples
+
+### Sizes
+
+Pass the `size` prop to change the size of the number input.
+
+<ComponentExample name="sizes" />
+
+### Formatting
+
+Pass the `formatOptions` prop to format the number input value. The value of this maps to `Intl.NumberFormatOptions` and is applied based on the current locale.
+
+<ComponentExample name="formatting" />
+
+### Min and Max
+
+Pass the `min` and `max` props  to set the minimum and maximum values of the number input.
+
+If value entered is less than `min` or greater than `max`, the value will be clamped to the nearest boundary on blur, or enter key press.
+
+<ComponentExample name="min-max" />
+
+### Step
+
+Pass the `step` prop  to change the increment or decrement interval of the number input.
+
+<ComponentExample name="step" />
+
+
+### Controlled
+
+Pass the `value` and `onValueChange` props to control the value of the number input.
+
+<ComponentExample name="controlled" />
+
+### Mouse Wheel
+
+Pass the `allowMouseWheel` prop to enable or disable the mouse wheel to change the value of the number input.
+
+<ComponentExample name="mouse-wheel" />
+
+### Disabled
+
+Pass the `disabled` prop  to disable the number input.
+
+<ComponentExample name="disabled" />
+
+### Invalid
+
+Use the `Field` component and the `invalid` prop to indicate that the number input is invalid.
+
+<ComponentExample name="invalid" />
+
+### Helper Text
+
+Compose the `Field` and `Field.HelperText` components to add helper text to the number input.
+
+<ComponentExample name="helper-text" />
+
+### Element
+
+Here's an example of how to compose the number input with the input group component to add an element on either the left or right.
+
+<ComponentExample name="element" />
+
+### Scrubber
+
+Use the `NumberInput.Scrubber` component to make the number input supports scrubber interactions.
+
+<ComponentExample name="scrubber" />
+
+
+### Closed Component
+
+Here is an example of how to use the `NumberInput` component in a closed manner.
+
+<ComponentExample name="closed" codeOnly />
+
+and use it like this:
+
+```tsx
+<NumberInput defaultValue="42" />
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+

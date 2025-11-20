@@ -1,0 +1,73 @@
+---
+title: Color Picker (wip)
+description: A form control for selecting colors from a visual picker interface.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/color-picker.ts
+  ark: https://ark-ui.com/docs/components/color-picker
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { ColorPicker } from '@/components/ui'
+```
+
+```tsx
+<ColorPicker.Root>
+  <ColorPicker.Control>
+    <ColorPicker.ChannelInput channel="hex" />
+    <ColorPicker.Trigger>
+      <ColorPicker.Swatch value="#000000" />
+    </ColorPicker.Trigger>
+  </ColorPicker.Control>
+</ColorPicker.Root>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Area
+
+<PropsTable part="Area" />
+
+### ChannelInput
+
+<PropsTable part="ChannelInput" />
+
+### ChannelSlider
+
+<PropsTable part="ChannelSlider" />
+
+### Swatch
+
+<PropsTable part="Swatch" />
+
+### SwatchTrigger
+
+<PropsTable part="SwatchTrigger" />
+
+### TransparencyGrid
+
+<PropsTable part="TransparencyGrid" />
+
+### ValueSwatch
+
+<PropsTable part="ValueSwatch" />
+
+### ValueText
+
+<PropsTable part="ValueText" />
+
+### View
+
+<PropsTable part="View" />

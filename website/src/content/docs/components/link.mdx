@@ -1,0 +1,64 @@
+---
+title: Link
+description: A navigation component for creating accessible hyperlinks.
+category: navigation
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/link.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Link } from '@/components/ui'
+```
+
+```tsx
+<Link href="...">Click here</Link>
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the visual style of the Link component.
+
+<ComponentExample name="variants" />
+
+### Within Text
+
+Integrate links within text content while maintaining readability.
+
+<ComponentExample name="inline" />
+
+### Icon
+
+Add visual indicators for external links to improve user experience.
+
+<ComponentExample name="icon" />
+
+### Routing Library
+
+Use the `asChild` prop to compose Link with framework-specific routing components like Next.js Link.
+
+```tsx
+import NextLink from 'next/link'
+import { Link } from '@/components/ui'
+
+export const App = () => {
+  return (
+    <Link asChild>
+      <NextLink href="/about">Click here</NextLink>
+    </Link>
+  )
+}
+```
+
+## Props
+
+<PropsTable />

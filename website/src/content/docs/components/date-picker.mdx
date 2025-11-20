@@ -1,0 +1,69 @@
+---
+title: Date Picker (wip)
+description: A form control for selecting dates from a calendar interface.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/date-picker.ts
+  ark: https://ark-ui.com/docs/components/date-picker
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { DatePicker } from '@/components/ui'
+```
+
+```tsx
+<DatePicker.Root>
+  <DatePicker.Control>
+    <DatePicker.Input />
+    <DatePicker.Trigger>
+      <DatePicker.ClearTrigger />
+    </DatePicker.Trigger>
+  </DatePicker.Control>
+  <DatePicker.Positioner>
+    <DatePicker.Content>
+      <DatePicker.View view="day">
+        <DatePicker.ViewControl>
+          <DatePicker.PrevTrigger />
+          <DatePicker.ViewTrigger />
+          <DatePicker.NextTrigger />
+        </DatePicker.ViewControl>
+        <DatePicker.Table />
+      </DatePicker.View>
+    </DatePicker.Content>
+  </DatePicker.Positioner>
+</DatePicker.Root>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Input
+
+<PropsTable part="Input" />
+
+### PresetTrigger
+
+<PropsTable part="PresetTrigger" />
+
+### Table
+
+<PropsTable part="Table" />
+
+### TableCell
+
+<PropsTable part="TableCell" />
+
+### View
+
+<PropsTable part="View" />

@@ -1,0 +1,89 @@
+---
+title: Table
+description: A display component for organizing and presenting data in rows and columns.
+category: display
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/table.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Table } from '@/components/ui'
+```
+
+```tsx
+<Table.Root>
+  <Table.Caption />
+  <Table.Head>
+    <Table.Row>
+      <Table.Header />
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+  <Table.Row>
+    <Table.Cell />
+    </Table.Row>
+  </Table.Body>
+  <Table.Foot>
+    <Table.Row>
+      <Table.Cell />
+    </Table.Row>
+  </Table.Foot>
+</Table.Root>
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the appearance of the table.
+
+<ComponentExample name="variants" />
+
+### Striped
+
+Use the `striped` prop to add zebra-stripes to the table.
+
+<ComponentExample name="striped" />
+
+### Column Border
+
+Use the `columnBorder` prop to add borders between columns.
+
+<ComponentExample name="column-border" />
+
+### Horizontal Scroll
+
+Compose the `Table` component within a `ScrollArea` component to enable horizontal scrolling.
+
+<ComponentExample name="horizontal" />
+
+### Sticky Header
+
+Use the `stickyHeader` prop to make the table header sticky.
+
+<ComponentExample name="sticky-header" />
+
+### Sticky Column
+
+Here's an example that uses `data-sticky` attributes to make table columns sticky during horizontal scrolling.
+
+<ComponentExample name="sticky-column" />
+
+
+### Interactive
+
+Use the `interactive` prop to highlight rows on hover.
+
+<ComponentExample name="interactive" />
+
+## Props
+
+<PropsTable />

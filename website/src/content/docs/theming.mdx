@@ -1,0 +1,110 @@
+---
+title: Theming
+description: This guide covers the key differences Park UI introduces to theming.
+category: getting-started
+---
+
+Park UI extends the default [Panda Preset](https://www.npmjs.com/package/@pandacss/preset-panda) with a minimal, systematic design approach. It introduces key adjustments to component sizing and variants to ensure alignment and visual consistency across your UI.
+
+## Components
+
+Park UI components are designed with consistent sizing and standardized variants to ensure visual harmony across your interface.
+
+### Sizing
+
+Park UI organizes component sizing into two categories:
+
+* **Primary components** — core interactive elements that drive user actions (e.g., Buttons, Inputs, Selects).
+* **Secondary components** — supporting elements that complement primary interactions (e.g., Badges, Checkboxes, Switches).
+
+This categorization establishes a clear hierarchy and guarantees alignment. Components within the same category share identical heights for a given size token. For example, both a `md` Button and a `md` Input are exactly `40px` tall, ensuring perfect alignment when placed together.
+
+<ComponentSizing />
+
+### Variants
+
+Variants are standardized across components for a unified look and feel. Park UI defines five shared variants:
+
+* `solid`
+* `subtle`
+* `surface`
+* `outline`
+* `plain`
+
+This consistency allows you to combine components without worrying about mismatched styles. Using the same variant across elements guarantees visual harmony.
+
+#### Solid
+
+High-contrast background with inverted foreground. Use for primary CTAs, submit buttons, and main actions.
+
+<VariantPreview variant="solid" />
+
+#### Subtle
+
+Tinted background with matching foreground. Use for badges, tags, selected states, and secondary highlights.
+
+<VariantPreview variant="subtle" />
+
+#### Surface
+
+Background with visible border and hover states. Use for cards, menu items, selectable lists, and elevated containers.
+
+<VariantPreview variant="surface" />
+
+#### Outline
+
+Border-only with transparent background. Use for secondary actions, cancel buttons, filters, and tertiary controls.
+
+<VariantPreview variant="outline" />
+
+#### Plain
+
+Minimal style with background on interaction. Use for text buttons, links, tabs, and ghost actions.
+
+<VariantPreview variant="plain" />
+
+## Colors
+
+The biggest change Park UI introduces is its color system. Instead of the `50–950` scale used in Panda CSS, Park UI is built on [Radix Colors](https://www.radix-ui.com/colors). Each color comes with 12 shades per mode (light and dark), for a total of 24 shades. This provides finer control and greater flexibility than the traditional 11-shade scale.
+
+### Gray
+
+<ColorGrid type="gray" />
+
+### Accent
+
+<ColorGrid type="accent" />
+
+### Pairings
+
+Park UI is built around the concept of one accent color and one gray color. When initializing your project, you'll choose which combination works best for you.
+
+#### Neutral Pairings
+
+If you want a neutral vibe, or you want to keep things simple, `neutral` will work well with any hue or palette.
+
+#### Natural pairing
+
+Alternatively, choose the gray scale which is saturated with the hue closest to your accent hue. The difference is subtle, but this will create a more colorful and harmonious vibe.
+
+<ColorPairings />
+
+## Tokens
+
+### Border Radius
+
+Radii tokens define consistent corner rounding across components. This setup makes it easy to nest border radii as shown below.
+
+* **`l1`** – smallest radius, used inside other elements
+* **`l2`** – medium radius, used when wrapping `l1`
+* **`l3`** – largest radius, used when wrapping `l2`
+
+<BorderRadiusTokens />
+
+### Shadows
+
+Shadows provide consistent elevation levels, from `xs` to `2xl`. Unlike the default Panda shadows, they adapt seamlessly to both light and dark mode.
+
+<ShadowTokens />
+
+### z-Index

@@ -1,13 +1,55 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 import { ThemeProvider } from 'next-themes'
-import Script from 'next/script'
+import type { PropsWithChildren } from 'react'
 import { cx } from 'styled-system/css'
+import { Toaster } from '@/components/ui'
 import { Navbar } from '~/components/navigation/navbar'
-import { inter, jakarta, outfit, raleway, roboto } from './fonts'
-import './global.css'
+import { ThemeTokens } from '~/components/theme/theme-tokens'
+import { dmSans, inter, outfit, roboto, space } from './fonts'
+import './index.css'
+import Script from 'next/script'
+
+export default async function RootLayout(props: PropsWithChildren) {
+  const cookieStore = await cookies()
+  const state = cookieStore.get('park-ui')
+
+  const { accentColor, grayColor } = state?.value
+    ? JSON.parse(state.value).state
+    : { accentColor: 'neutral', grayColor: 'neutral' }
+
+  return (
+    <html
+      lang="en"
+      suppressHydrationWarning
+      data-accent-color={accentColor}
+      data-gray-color={grayColor}
+      className={cx(
+        outfit.variable,
+        inter.variable,
+        roboto.variable,
+        space.variable,
+        dmSans.variable,
+      )}
+    >
+      <head>
+        <ThemeTokens />
+        <Script src="https://plausible.io/js/plausible.js" data-domain="next.park-ui.com" />
+      </head>
+      <body>
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          <Navbar />
+          {props.children}
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://park-ui.com'),
+  applicationName: 'Park UI',
   title: {
     default: 'Home | Park UI',
     template: '%s | Park UI',
@@ -15,7 +57,7 @@ export const metadata: Metadata = {
   description:
     'Beautifully designed components built with Ark UI and Panda CSS that work with a variety of JS frameworks.',
   manifest: '/site.webmanifest',
-  keywords: ['Panda', 'CSS', 'Ark UI', 'Components', 'React', 'Solid', 'Vue'],
+  keywords: ['Panda', 'CSS', 'Ark UI', 'Components', 'React', 'Solid'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -26,38 +68,4 @@ export const metadata: Metadata = {
   twitter: {
     creator: '@grizzly_codes',
   },
-}
-
-interface Props {
-  auth: React.ReactNode
-  children: React.ReactNode
-}
-
-export default function RootLayout(props: Props) {
-  return (
-    <html
-      lang="en"
-      className={cx(
-        outfit.variable,
-        inter.variable,
-        jakarta.variable,
-        raleway.variable,
-        roboto.variable,
-      )}
-      suppressHydrationWarning
-    >
-      <head>
-        <Script src="https://plausible.io/js/plausible.js" data-domain="park-ui.com" />
-        <style id="park-ui-gray" />
-        <style id="park-ui-accent" />
-      </head>
-      <body>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
-          <Navbar />
-          {props.children}
-          {props.auth}
-        </ThemeProvider>
-      </body>
-    </html>
-  )
 }

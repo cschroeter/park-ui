@@ -1,0 +1,91 @@
+---
+title: Tags Input
+description: A form control for adding and removing multiple tags or labels.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/tags-input.ts
+  ark: https://ark-ui.com/docs/components/tags-input
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { TagsInput } from '@/components/ui'
+```
+
+```tsx
+<TagsInput.Root>
+  <TagsInput.Label />
+  <TagsInput.Control>
+    <TagsInput.Item>
+      <TagsInput.ItemPreview>
+        <TagsInput.ItemText />
+        <TagsInput.ItemDeleteTrigger />
+      </TagsInput.ItemPreview>
+      <TagsInput.ItemInput />
+    </TagsInput.Item>
+    <TagsInput.Input />
+  </TagsInput.Control>
+</TagsInput.Root>
+```
+
+
+## Shortcuts
+
+The `TagsInput` component also provides a set of shortcuts for common use cases.
+
+### TagsInputItems
+
+The `TagsInputItems` shortcut renders all tag items automatically based on the current value.
+
+```tsx
+<TagsInput.Context>
+  {({ value }) =>
+    value.map((tag, index) => (
+      <TagsInput.Item key={index} index={index} value={tag}>
+        <TagsInput.ItemPreview>
+          <TagsInput.ItemText>{tag}</TagsInput.ItemText>
+          <TagsInput.ItemDeleteTrigger />
+        </TagsInput.ItemPreview>
+        <TagsInput.ItemInput />
+      </TagsInput.Item>
+    ))
+  }
+</TagsInput.Context>
+```
+
+This might be more concise, if you don't need to customize the items:
+
+```tsx
+<TagsInput.Items />
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to adjust the size of the tags input.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to change the visual style of the tags input.
+
+<ComponentExample name="variants" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />

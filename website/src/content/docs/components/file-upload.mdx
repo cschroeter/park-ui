@@ -1,0 +1,156 @@
+---
+title: File Upload
+description: A form control for uploading files via drag-and-drop or file browser.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/file-upload.ts
+  ark: https://ark-ui.com/docs/components/file-upload
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { FileUpload } from '@/components/ui'
+```
+
+```tsx
+<FileUpload.Root>
+  <FileUpload.HiddenInput />
+  <FileUpload.Label />
+  <FileUpload.Dropzone>
+    <FileUpload.DropzoneContent />
+  </FileUpload.Dropzone>
+  <FileUpload.Trigger />
+  <FileUpload.ItemGroup>
+    <FileUpload.Item>
+      <FileUpload.ItemPreview />
+      <FileUpload.ItemFileName />
+      <FileUpload.ItemSizeText />
+      <FileUpload.ItemDeleteTrigger />
+    </FileUpload.Item>
+  </FileUpload.ItemGroup>
+</FileUpload.Root>
+```
+
+## Shortcuts
+
+The `FileUpload` component also provides a set of shortcuts for common use cases.
+
+### FileUpload.Items
+
+By default, the `FileUpload.Items` shortcut renders the list of uploaded files.
+
+```tsx
+<FileUpload.ItemGroup>
+  <FileUpload.Context>
+    {({ acceptedFiles }) =>
+      acceptedFiles.map((file) => (
+        <FileUpload.Item key={file.name} file={file}>
+          <FileUpload.ItemPreview />
+          <FileUpload.ItemName />
+          <FileUpload.ItemSizeText />
+          <FileUpload.ItemDeleteTrigger />
+        </FileUpload.Item>
+      ))
+    }
+  </FileUpload.Context>
+</FileUpload.ItemGroup>
+```
+
+This might be more concise if you don't need to customize the file upload items:
+
+```tsx
+<FileUpload.ItemGroup>
+  <FileUpload.Items />
+</FileUpload.ItemGroup>
+```
+
+### FileUpload.List
+
+The `FileUpload.List` shortcut renders the list of uploaded files. It composes the `FileUpload.ItemGroup` and `FileUpload.Items` components.
+
+```tsx
+<FileUpload.List />
+```
+
+is the same as:
+
+```tsx
+<FileUpload.ItemGroup>
+  <FileUpload.Items />
+</FileUpload.ItemGroup>
+```
+
+## Examples
+
+### Accepted Files
+
+Specify the accepted file types for upload using the `accept` prop.
+
+<ComponentExample name="acceptedFiles" />
+
+### Multiple Files
+
+Upload multiple files at once using the `maxFiles` prop.
+
+<ComponentExample name="maxFiles" />
+
+### Image Preview
+
+Use the `FileUpload.ItemPreviewImage` component to render a preview of image files.
+
+<ComponentExample name="imagePreview" />
+
+### Directory
+
+Use the `directory` prop to allow selecting a directory instead of a file.
+
+<ComponentExample name="directory" />
+
+### Media Capture
+
+Use the `capture` prop to capture and upload media directly from the device camera or microphone.
+
+:::info
+
+The `capture` prop is only supported on mobile devices.
+
+:::
+
+<ComponentExample name="mediaCapture" />
+
+### Dropzone
+
+Drop multiple files inside the dropzone. Use the `maxFiles` prop to limit the number of files that can be uploaded at once.
+
+<ComponentExample name="dropzone" />
+
+### Input
+
+Use the `FileInput` component to create a trigger that looks like a text input.
+
+<ComponentExample name="withInput" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Dropzone
+
+<PropsTable part="Dropzone" />
+
+### Item
+
+<PropsTable part="Item" />
+
+### ItemPreview
+
+<PropsTable part="ItemPreview" />

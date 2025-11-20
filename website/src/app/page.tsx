@@ -1,64 +1,89 @@
-import { Box, Center, Container, Grid, GridItem, Stack } from 'styled-system/jsx'
+import { Box, Grid, GridItem, Stack } from 'styled-system/jsx'
+import { CardAuthentication } from '~/components/marketing/card-authentication'
+import { CardECommerce } from '~/components/marketing/card-ecommerce'
+import { CardIssue } from '~/components/marketing/card-issue'
+import { CardNotification } from '~/components/marketing/card-notification'
+import { CardPayment } from '~/components/marketing/card-payment'
+import { CardPricing } from '~/components/marketing/card-pricing'
+import { CardSharing } from '~/components/marketing/card-sharing'
+import { CardTabs } from '~/components/marketing/card-tabs'
+import { Group, Item } from '~/components/marketing/framer'
 import { Hero } from '~/components/marketing/hero'
-import { AuthenticationCard } from '~/components/marketing/showcase/authentication-card'
-import { CardWithTabs } from '~/components/marketing/showcase/card-with-tabs'
-import { ECommerceCard } from '~/components/marketing/showcase/e-commerce-card'
-import { NotificationCard } from '~/components/marketing/showcase/notification-card'
-import { PaymentCard } from '~/components/marketing/showcase/payment-card'
-import { PricingCard } from '~/components/marketing/showcase/pricing-card'
-import { ReportIssueCard } from '~/components/marketing/showcase/report-issue-card'
-import { ShareDocumentCard } from '~/components/marketing/showcase/share-document-card'
+import { LegalFooter } from '~/components/navigation/legal-footer'
 
-export default function Home() {
+export default function Page() {
   return (
-    <Center flex="1" mt="16" overflow={{ lg: 'hidden' }}>
-      <Container>
-        <Grid
-          gridTemplateColumns={{ base: '1fr', lg: 'minmax(512px, 1fr) 1312px' }}
-          gap={{ base: '0', lg: '24' }}
+    <>
+      <Grid
+        gridTemplateColumns={{ base: '1fr', lg: 'minmax(34rem, 5fr) 6fr' }}
+        mt="14"
+        overflow={{ lg: 'hidden' }}
+      >
+        <Stack
+          px={{ base: '4', sm: '6', md: '8' }}
+          py={{ base: '16', md: '24', lg: '0' }}
+          width="full"
         >
-          <GridItem
-            display="flex"
+          <Stack
+            flex="1"
             justifyContent={{ base: 'start', lg: 'center' }}
-            alignItems={{ base: 'start', lg: 'center' }}
-            py={{ base: '16', md: '24', lg: '0' }}
+            alignItems={{ base: 'start', lg: 'flex-end' }}
           >
             <Hero />
-          </GridItem>
-          <GridItem
-            overflow={{ base: 'auto', lg: 'visible' }}
-            px={{ base: '1px', lg: '0' }}
-            py={{ base: '1px', lg: '0' }}
+          </Stack>
+          <LegalFooter hideBelow="lg" />
+        </Stack>
+        <GridItem
+          overflow={{ base: 'auto', lg: 'visible' }}
+          lgDown={{ ps: '4', pb: '12', pt: '1px' }}
+        >
+          <Box
+            height={{ base: 'auto', lg: 'calc(100vh - 56px)' }}
+            width="1300px"
+            transform={{
+              base: 'none',
+              lg: 'rotate(4deg) translateX(60px) translateY(50px)',
+            }}
           >
-            <Box
-              height={{ base: 'auto', lg: 'calc(100vh - 96px)' }}
-              width="1312px"
-              pb="8"
-              transform={{
-                base: 'none',
-                lg: 'rotate(5deg) translateX(60px) translateY(35px)',
-              }}
-            >
-              <Stack gap={{ base: '6', lg: '8' }} direction="row">
-                <Stack gap={{ base: '6', lg: '8' }} maxW="sm">
-                  <AuthenticationCard />
-                  <NotificationCard />
-                  <PricingCard />
-                </Stack>
-                <Stack gap={{ base: '6', lg: '8' }} maxW="md">
-                  <PaymentCard />
-                  <ECommerceCard />
-                </Stack>
-                <Stack gap={{ base: '6', lg: '8' }} maxW="sm">
-                  <ShareDocumentCard />
-                  <ReportIssueCard />
-                  <CardWithTabs />
-                </Stack>
-              </Stack>
-            </Box>
-          </GridItem>
-        </Grid>
-      </Container>
-    </Center>
+            <Grid columns={3} gap={{ base: '6', lg: '8' }}>
+              <Group>
+                <Item>
+                  <CardAuthentication />
+                </Item>
+                <Item>
+                  <CardNotification />
+                </Item>
+                <Item>
+                  <CardPricing />
+                </Item>
+              </Group>
+              <Group>
+                <Item>
+                  <CardPayment />
+                </Item>
+                <Item>
+                  <CardECommerce />
+                </Item>
+                <Item>
+                  <CardAuthentication />
+                </Item>
+              </Group>
+              <Group>
+                <Item>
+                  <CardSharing />
+                </Item>
+                <Item>
+                  <CardIssue />
+                </Item>
+                <Item>
+                  <CardTabs />
+                </Item>
+              </Group>
+            </Grid>
+          </Box>
+        </GridItem>
+      </Grid>
+      <LegalFooter hideFrom="lg" px="4" />
+    </>
   )
 }

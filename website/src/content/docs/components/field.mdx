@@ -1,0 +1,77 @@
+---
+title: Field
+description: A form wrapper for adding labels, help text, and error messages.
+category: forms
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/field.ts
+  ark: https://ark-ui.com/docs/components/field
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Field, Input } from '@/components/ui'
+```
+
+```tsx
+<Field.Root>
+  <Field.Label>
+    <Field.RequiredIndicator />
+  </Field.Label>
+  <Input />
+  <Field.HelperText />
+  <Field.ErrorText />
+</Field.Root>
+```
+
+## Examples
+
+### Invalid
+
+Pass the `invalid` prop to `Field.Root` and use the `Field.ErrorText` to indicate that the field is invalid.
+
+<ComponentExample name="invalid" />
+
+### HelperText
+
+Use the `Field.HelperText` to add helper text to the field.
+
+<ComponentExample name="helper-text" />
+
+### Disabled
+
+Use the `disabled` prop to disable the field.
+
+<ComponentExample name="disabled" />
+
+### Required
+
+Pass the `required` prop to `Field.Root` and use the `Field.RequiredIndicator` to indicate that the field is required.
+
+<ComponentExample name="required" />
+
+### Closed Component
+
+Here's how to setup the field for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### RequiredIndicator
+
+<PropsTable part="RequiredIndicator" />
+
+### Textarea
+
+<PropsTable part="Textarea" />

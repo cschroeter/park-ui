@@ -1,0 +1,99 @@
+---
+title: Hover Card
+description: A floating card component that appears on hover interactions.
+category: overlays
+links:
+  recipe: https://github.com/cschroeter/park-ui/blob/next/packages/preset/src/recipes/hover-card.ts
+  ark: https://ark-ui.com/docs/components/hover-card
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { HoverCard } from '@/components/ui'
+```
+
+```tsx
+<HoverCard.Root>
+  <HoverCard.Trigger />
+  <HoverCard.Positioner>
+    <HoverCard.Content>
+      <HoverCard.Arrow>
+        <HoverCard.ArrowTip />
+      </HoverCard.Arrow>
+    </HoverCard.Content>
+  </HoverCard.Positioner>
+</HoverCard.Root>
+```
+
+## Shortcuts
+
+The `HoverCard` provides a shortcuts for common use cases.
+
+### Arrow
+
+The `HoverCard.Arrow` renders the `HoverCard.ArrowTip` component within in by default.
+
+This works:
+
+```tsx
+<HoverCard.Arrow>
+  <HoverCard.ArrowTip />
+</HoverCard.Arrow>
+```
+
+This might be more concise, if you don't need to customize the arrow tip.
+
+```jsx
+<HoverCard.Arrow />
+```
+
+### Examples
+
+### Controlled
+
+Use the `open` and `onOpenChange` to control the visibility of the hover card.
+
+<ComponentExample name="controlled" />
+
+### Delays
+
+Control the open and close delays using the `openDelay` and `closeDelay` props.
+
+<ComponentExample name="delays" />
+
+### Placement
+
+Use the` positioning.placement` prop to change the position of the hover card.
+
+<ComponentExample name="placement" />
+
+### Disabled
+
+Use the `disabled` prop to prevent opening the hover card on interaction.
+
+<ComponentExample name="disabled" />
+
+### Dialog
+
+To use the `HoverCard` within a `Dialog`, you need to avoid portalling the `HoverCard.Positioner` to the document's body.
+
+<ComponentExample name="dialog" />
+
+### Accessibility
+
+HoverCard should be used solely for supplementary information that is not essential for understanding the context. 
+It is inaccessible to screen readers and cannot be activated via keyboard, so avoid placing crucial content within it.
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
