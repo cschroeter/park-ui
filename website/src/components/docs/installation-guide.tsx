@@ -8,7 +8,7 @@ import { ManualIntallationGuide } from './manual-installation-guide'
 export const InstallationGuide = async () => {
   const { component } = getServerContext()
 
-  const code = `npx @park-ui/cli components add ${component}`
+  const code = `npx @park-ui/cli@0.x components add ${component}`
   const html = await highlight(code, 'bash')
 
   return (
