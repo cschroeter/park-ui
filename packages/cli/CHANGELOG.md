@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Added
+
+- Initial release of Park UI Next CLI.
+
 ## [1.0.0-next.8] - 2025-11-17
 
 ### Fixed
