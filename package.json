@@ -29,7 +29,7 @@
     "typescript": "5.8.3",
     "vercel": "41.6.2"
   },
-  "packageManager": "bun@1.3.0",
+  "packageManager": "bun@1.3.2",
   "trustedDependencies": ["@park-ui/website"],
   "resolutions": {
     "caniuse-lite": "1.0.30001751"

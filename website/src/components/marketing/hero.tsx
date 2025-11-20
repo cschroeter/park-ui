@@ -14,9 +14,9 @@ export const Hero = () => {
     <Stack gap={{ base: '8', md: '12' }} maxW={{ md: '2xl' }}>
       <Stack gap={{ base: '4', md: '6' }}>
         <Stack gap="4">
-          <NextLink href="https://next.park-ui.com">
+          <NextLink href="https://park-ui.com">
             <Badge size="lg" variant="subtle">
-              <RocketIcon /> Checkout the next version of Park UI
+              <RocketIcon /> Checkout the latest version of Park UI
               <ArrowRightIcon />
             </Badge>
           </NextLink>
