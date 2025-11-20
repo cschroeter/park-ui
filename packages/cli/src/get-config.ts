@@ -35,7 +35,7 @@ export const getConfig = (): Effect.Effect<Config, never, never> =>
               return pipe(
                 Effect.promise(promptConfig),
                 Effect.map(({ framework, components, recipes }) => ({
-                  $schema: 'https://park-ui.com/registry/latest/schema.json',
+                  $schema: 'https://legacy.park-ui.com/registry/latest/schema.json',
                   framework,
                   paths: {
                     components,

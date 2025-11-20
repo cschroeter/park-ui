@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+### Changed
+
+- Update API endpoints for fetching components and helpers to the legacy registry.
+
 ## [0.9.0] - 2024-07-31
 
 ### Changed
