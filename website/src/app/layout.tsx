@@ -7,7 +7,7 @@ import { inter, jakarta, outfit, raleway, roboto } from './fonts'
 import './global.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://park-ui.com'),
+  metadataBase: new URL('https://legacy.park-ui.com'),
   title: {
     default: 'Home | Park UI',
     template: '%s | Park UI',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://park-ui.com',
+    url: 'https://legacy.park-ui.com',
     description:
       'Beautifully designed components built with Ark UI and Panda CSS that work with a variety of JS frameworks.',
   },
@@ -47,7 +47,6 @@ export default function RootLayout(props: Props) {
       suppressHydrationWarning
     >
       <head>
-        <Script src="https://plausible.io/js/plausible.js" data-domain="park-ui.com" />
         <style id="park-ui-gray" />
         <style id="park-ui-accent" />
       </head>

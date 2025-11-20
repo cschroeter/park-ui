@@ -7,7 +7,7 @@ export const GET = async (req: NextRequest) => {
   const orderId = searchParams.get('order_id')
 
   if (!orderId) {
-    return Response.redirect('https://park-ui.com')
+    return Response.redirect('https://legacy.park-ui.com')
   }
 
   try {
@@ -27,8 +27,8 @@ export const GET = async (req: NextRequest) => {
 
     const isValid = data.data?.attributes?.refunded === false
 
-    return Response.redirect(isValid ? FIGMA_KIT_URL : 'https://park-ui.com')
+    return Response.redirect(isValid ? FIGMA_KIT_URL : 'https://legacy.park-ui.com')
   } catch (error) {
-    return Response.redirect('https://park-ui.com')
+    return Response.redirect('https://legacy.park-ui.com')
   }
 }

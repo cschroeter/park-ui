@@ -2,7 +2,7 @@ import { join } from 'node:path'
 import type { MetadataRoute } from 'next'
 import { pages } from '.velite'
 
-const baseUrl = 'https://park-ui.com'
+const baseUrl = 'https://legacy.park-ui.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const docPages = pages.map((doc) => ({
