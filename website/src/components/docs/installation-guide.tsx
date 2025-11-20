@@ -6,7 +6,7 @@ import { ManualIntallationGuide } from './manual-installation-guide'
 
 export const InstallationGuide = () => {
   const { component } = getServerContext()
-  const sourceCode: SourceCode = { code: `npx @park-ui/cli@next add ${component}`, lang: 'bash' }
+  const sourceCode: SourceCode = { code: `npx @park-ui/cli add ${component}`, lang: 'bash' }
 
   return (
     <Tabs.Root defaultValue="cli" gap="6">
