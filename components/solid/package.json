@@ -13,7 +13,7 @@
     "typedoc": "scripts typedoc --out ../../website/public/types/solid"
   },
   "dependencies": {
-    "@ark-ui/solid": "5.28.0",
+    "@ark-ui/solid": "5.29.0",
     "@tanstack/solid-virtual": "3.13.12",
     "lucide-solid": "0.554.0"
   },
