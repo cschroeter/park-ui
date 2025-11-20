@@ -73,6 +73,6 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
 
   return {
     title: doc.title,
-    description: doc.description,
+    description: doc.metaDescription,
   }
 }

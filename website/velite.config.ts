@@ -12,6 +12,7 @@ const docs = defineCollection({
     .object({
       title: s.string(),
       description: s.string(),
+      metaDescription: s.string(),
       category: s.string(),
       links: s
         .object({

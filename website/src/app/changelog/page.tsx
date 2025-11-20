@@ -59,7 +59,7 @@ export default async function Page() {
 export const generateMetadata = async (): Promise<Metadata> => {
   return {
     title: 'Changelog',
-    description: '',
+    description: 'All notable changes will be documented in this file.',
   }
 }
 
