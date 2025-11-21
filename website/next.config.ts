@@ -1,12 +1,5 @@
 import type { NextConfig } from 'next'
 
-const isDev = process.argv.indexOf('dev') !== -1
-const isBuild = process.argv.indexOf('build') !== -1
-if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
-  process.env.VELITE_STARTED = '1'
-  import('velite').then((m) => m.build({ watch: isDev, clean: !isDev }))
-}
-
 const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['@ark-ui/react'],
@@ -35,4 +28,14 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+export default async function config() {
+  const isDev = process.argv.indexOf('dev') !== -1
+  const isBuild = process.argv.indexOf('build') !== -1
+  if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
+    process.env.VELITE_STARTED = '1'
+    const { build } = await import('velite')
+    await build({ watch: isDev, clean: !isDev })
+  }
+
+  return nextConfig
+}
