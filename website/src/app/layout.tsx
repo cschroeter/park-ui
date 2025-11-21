@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     'Beautifully designed components built with Ark UI and Panda CSS that work with a variety of JS frameworks.',
   manifest: '/site.webmanifest',
   keywords: ['Panda', 'CSS', 'Ark UI', 'Components', 'React', 'Solid'],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

@@ -60,6 +60,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
   return {
     title: 'Changelog',
     description: 'All notable changes will be documented in this file.',
+    alternates: {
+      canonical: '/changelog',
+    },
   }
 }
 
