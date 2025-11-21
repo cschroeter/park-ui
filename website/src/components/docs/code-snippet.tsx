@@ -1,4 +1,3 @@
-import { cache } from 'react'
 import { codeToHtml } from 'shiki'
 import { Box, type BoxProps } from 'styled-system/jsx'
 import { ScrollArea } from '@/components/ui'
@@ -9,12 +8,13 @@ interface Props extends BoxProps {
   sourceCode: SourceCode | null
 }
 
-const getCachedHighlightedCode = cache(async (code: string, lang: string) => {
+async function getCachedHighlightedCode(code: string, lang: string) {
+  'use cache'
   return codeToHtml(code, {
     lang,
     theme: 'github-dark-default',
   })
-})
+}
 
 export const CodeSnippet = async (props: Props) => {
   const { sourceCode, ...rootProps } = props

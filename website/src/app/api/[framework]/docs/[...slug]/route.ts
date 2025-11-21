@@ -3,8 +3,6 @@ import { getDocumentBySlug } from '~/lib/docs'
 import { type Framework, frameworks } from '~/lib/frameworks'
 import { transformMdxContent } from '~/lib/mdx'
 
-export const dynamic = 'force-static'
-
 type Params = Promise<{ slug: string[]; framework: string }>
 
 export async function GET(_: Request, segmentData: { params: Params }) {

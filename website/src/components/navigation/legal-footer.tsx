@@ -29,7 +29,7 @@ export const LegalFooter = (props: StackProps) => {
       {...props}
     >
       <Text textStyle="sm" color="fg.muted">
-        &copy; {new Date().getFullYear()} Chakra Systems. All rights reserved.
+        &copy; 2025 Chakra Systems. All rights reserved.
       </Text>
       {/* <HStack gap="3">
         {legalLinks.map((link, idx) => (
