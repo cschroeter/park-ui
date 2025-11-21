@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['@ark-ui/react'],
   },
   outputFileTracingIncludes: {
-    '/*': ['../components/react/src/**/*'],
+    '/*': ['../components/*/src/**/*'],
   },
 
   async redirects() {
@@ -14,15 +14,6 @@ const nextConfig: NextConfig = {
         source: '/docs',
         destination: '/docs/introduction',
         permanent: false,
-      },
-    ]
-  },
-
-  async rewrites() {
-    return [
-      {
-        source: '/docs/:path*.mdx',
-        destination: '/mdx/:path*',
       },
     ]
   },
