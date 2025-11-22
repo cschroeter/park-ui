@@ -21,12 +21,20 @@ const nextConfig: NextConfig = {
 }
 
 export default async function config() {
-  const isDev = process.argv.indexOf('dev') !== -1
-  const isBuild = process.argv.indexOf('build') !== -1
-  if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
-    process.env.VELITE_STARTED = '1'
-    const { build } = await import('velite')
-    await build({ watch: isDev, clean: !isDev })
+  if (process.env.VELITE_STARTED) {
+    return nextConfig
+  }
+
+  process.env.VELITE_STARTED = '1'
+  const { build } = await import('velite')
+
+  const isDev = process.env.NODE_ENV === 'development'
+
+  if (isDev) {
+    console.log('Starting Velite in watch mode...')
+    build({ watch: true })
+  } else {
+    await build({ clean: true })
   }
 
   return nextConfig

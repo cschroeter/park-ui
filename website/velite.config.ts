@@ -5,6 +5,26 @@ import remarkDirective from 'remark-directive'
 import { defineCollection, defineConfig, s } from 'velite'
 import { remarkCallout, remarkCodeMeta } from '~/lib/remark'
 
+const posts = defineCollection({
+  name: 'Post',
+  pattern: ['posts/**/*.mdx'],
+  schema: s
+    .object({
+      title: s.string(),
+      description: s.string(),
+      date: s.string().optional(),
+      mdx: s.mdx(),
+    })
+    .transform((data, { meta }) => {
+      if (typeof meta.path !== 'string') {
+        throw new Error('Meta path is not a string')
+      }
+      const slug = basename(meta.path, '.mdx')
+      const href = `/blog/${slug}`
+      return { ...data, slug, href }
+    }),
+})
+
 const docs = defineCollection({
   name: 'Doc',
   pattern: ['docs/**/*.mdx'],
@@ -48,7 +68,7 @@ const changelog = defineCollection({
 
 export default defineConfig({
   root: join(process.cwd(), './src/content'),
-  collections: { docs, changelog },
+  collections: { docs, posts, changelog },
   mdx: {
     rehypePlugins: [
       rehypeSlug,
