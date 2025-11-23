@@ -12,7 +12,7 @@ const posts = defineCollection({
     .object({
       title: s.string(),
       description: s.string(),
-      date: s.string().optional(),
+      publishedAt: s.string(),
       mdx: s.mdx(),
     })
     .transform((data, { meta }) => {

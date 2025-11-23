@@ -1,0 +1,312 @@
+# Park UI
+
+> Beautifully-designed, accessible components built with Ark UI and Panda CSS
+
+Park UI is a component system and code distribution platform that gives you complete ownership of your UI code. Built on Ark UI (headless components) and Panda CSS (build-time CSS-in-JS), Park UI supports React and Solid.js.
+
+**Website:** https://park-ui.com
+
+## What is Park UI?
+
+Park UI takes a different approach from traditional component libraries. Instead of installing packages and importing components, you copy the source code directly into your project. This gives you full control, easy customization, and the freedom to modify components without waiting for library maintainers.
+
+### Core Principles
+
+**1. Open Code**
+- Direct access to all component source code
+- Complete ownership and flexibility
+- No black boxes—every component's implementation is fully readable
+- Fix bugs directly in your codebase
+- AI-friendly architecture for LLMs to read, understand, and improve components
+
+**2. Composition**
+- Built on Ark UI, a headless component library for scalable design systems
+- All components share a composable, predictable interface
+- Consistent API across React and Solid.js
+- Easy to combine and customize without workarounds
+
+**3. Code Distribution**
+- Components distributed as source code, not NPM packages
+- Two ways to get components:
+  - **CLI:** `npx @park-ui/cli add [component]`
+  - **Docs:** Copy directly from the website
+- You own the code once it's in your project
+
+**4. Beautiful Design**
+- Designed in collaboration with Brains & Pixels
+- Minimalistic, clean aesthetic by default
+- Consistent styling across all components
+- Figma Kit available for design integration
+
+**5. AI Ready**
+- Open code and consistent API make it easy for AI tools to work with
+- LLMs can read, understand, and generate new components
+- Seamless integration with existing design systems
+
+## Supported Frameworks
+
+- **React** (>=18.0.0)
+- **Vue** (>=3.0.0)
+- **Solid.js** (>=1.9.0)
+
+All frameworks share the same component API and design system thanks to Ark UI's headless foundation.
+
+## Installation
+
+### Prerequisites
+Set up Panda CSS first: https://panda-css.com/docs/overview/getting-started
+
+### Quick Start
+
+1. **Install dependencies:**
+```bash
+npm install @ark-ui/react lucide-react
+```
+
+2. **Initialize Park UI:**
+```bash
+npx @park-ui/cli init
+```
+
+3. **Add components:**
+```bash
+npx @park-ui/cli add button
+```
+
+### Framework-Specific Packages
+- React: `@ark-ui/react` + `lucide-react`
+- Vue: `@ark-ui/vue` + `lucide-vue-next`
+- Solid: `@ark-ui/solid` + `lucide-solid`
+
+## Available Components (58 total)
+
+### Layout & Structure
+- Absolute Center
+- Card
+- Fieldset
+- Group
+- Table
+
+### Typography
+- Code
+- Heading
+- Kbd
+- Link
+- Text
+
+### Form Components
+- Button
+- Checkbox
+- Color Picker
+- Combobox
+- Date Picker
+- Editable
+- Field
+- File Upload
+- Icon Button
+- Input
+- Input Addon
+- Input Group
+- Number Input
+- Pin Input
+- Radio Card Group
+- Radio Group
+- Rating Group
+- Select
+- Slider
+- Switch
+- Tags Input
+- Textarea
+
+### Navigation
+- Breadcrumb
+- Menu
+- Pagination
+- Tabs
+
+### Feedback
+- Alert
+- Progress
+- Skeleton
+- Spinner
+- Toast
+
+### Overlay & Dialogs
+- Dialog
+- Drawer
+- Hover Card
+- Popover
+- Tooltip
+
+### Display
+- Accordion
+- Avatar
+- Badge
+- Carousel
+- Clipboard
+- Collapsible
+- Icon
+- Scroll Area
+- Splitter
+- Toggle Group
+
+### Utilities
+- Close Button
+- Segment Group
+
+## Theming System
+
+Park UI extends the Panda CSS preset with a systematic design approach focused on consistency and visual harmony.
+
+### Component Sizing
+
+Components are organized into two categories for perfect alignment:
+
+**Primary Components** (core interactive elements)
+- Button, Input, Select, etc.
+- Sizes: `xs`, `sm`, `md`, `lg`, `xl`, `2xl`
+
+**Secondary Components** (supporting elements)
+- Badge, Checkbox, Switch, etc.
+- Sizes: `xs`, `sm`, `md`, `lg`, `xl`, `2xl`
+
+Components in the same category and size have identical heights. For example, a `md` Button and `md` Input are both exactly 40px tall.
+
+### Standardized Variants
+
+Five consistent variants across all components:
+
+1. **solid** - High-contrast background with inverted foreground (primary CTAs)
+2. **subtle** - Tinted background with matching foreground (badges, tags, selected states)
+3. **surface** - Background with visible border and hover states (cards, menu items)
+4. **outline** - Border-only with transparent background (secondary actions)
+5. **plain** - Minimal style with background on interaction (text buttons, links, tabs)
+
+### Color System
+
+Park UI uses **Radix Colors** instead of traditional 50-950 scales:
+- 12 shades per color per mode (24 total per color)
+- Finer control and greater flexibility
+- Optimized for both light and dark modes
+- Built around one accent color + one gray color pairing
+
+**Gray Options:** Neutral, Sage, Slate, Mauve, Sand, Zinc, Stone
+
+**Accent Colors:** Full Radix Colors spectrum available
+
+**Color Pairing Philosophy:**
+- Neutral pairings work with any accent
+- Natural pairings use grays saturated with complementary hues for colorful harmony
+
+### Design Tokens
+
+**Border Radius**
+- `l1` - Smallest radius (for nested elements)
+- `l2` - Medium radius (wraps l1)
+- `l3` - Largest radius (wraps l2)
+
+**Shadows**
+- Range from `xs` to `2xl`
+- Adapt seamlessly to light and dark mode
+
+**Z-Index**
+- Consistent layering system
+
+## Design Resources
+
+### Figma Kit
+
+**Foundation Kit** (Free)
+- Variables, styles, and essential UI components
+- Accent Variable Mode for color switching
+- Light and dark mode support
+- Download: https://www.figma.com/community/file/1268615283036362769
+
+**Pro Kit** (Paid)
+- Complex UI elements (cards, headers, footers)
+- Full-page layouts
+- Built on Foundation Kit
+- Purchase: https://park-ui.lemonsqueezy.com
+
+## Architecture & Philosophy
+
+### Why Source Code Distribution?
+
+Traditional component libraries lock you into their APIs and update cycles. Park UI solves this by giving you the code:
+
+**Problems with NPM packages:**
+- Need to wrap components for customization
+- Override styles with workarounds
+- Mix incompatible APIs from different libraries
+- Wait for maintainers to fix bugs
+
+**Park UI solution:**
+- Edit component recipes directly
+- Full control over implementation
+- No version lock-in
+- Fix bugs immediately
+
+### Component Structure
+
+Every Park UI component consists of:
+1. **Component file** - The React/Vue/Solid implementation
+2. **Recipe file** - Panda CSS styling configuration
+3. **Ark UI foundation** - Headless accessibility and behavior
+
+This separation allows you to:
+- Modify styles independently via recipes
+- Customize behavior via component props
+- Maintain accessibility through Ark UI
+
+### Customization Workflow
+
+1. Add component via CLI: `npx @park-ui/cli add button`
+2. Component code lands in your project
+3. Edit the recipe in your Panda config to change styles
+4. Modify component implementation for behavior changes
+5. Run `panda codegen` to regenerate styles
+
+## Key Technologies
+
+- **Ark UI** - Headless component library (accessibility + behavior)
+- **Panda CSS** - Build-time CSS-in-JS with zero runtime
+- **Radix Colors** - Professional color system
+- **Lucide Icons** - Default icon library (swappable)
+
+## Best Practices
+
+### When to Use Park UI
+- You want full control over component code
+- You need a consistent, beautiful design system out of the box
+- You're building with React or Solid.js
+- You value accessibility and composition
+- You want AI-friendly component architecture
+
+### Customization Tips
+- Edit recipes for style changes (preferred method)
+- Modify component files for behavior changes
+- Use variant props for conditional styling
+- Leverage Panda's responsive syntax for breakpoints
+- Keep accessibility features from Ark UI intact
+
+### Migration Strategy
+- Start with high-use components (Button, Input, etc.)
+- Gradually replace existing components
+- Customize recipes to match your brand
+- Test accessibility with keyboard and screen readers
+
+## Resources
+
+- **Documentation:** https://park-ui.com
+- **GitHub:** https://github.com/cschroeter/park-ui
+- **Ark UI Docs:** https://ark-ui.com
+- **Panda CSS Docs:** https://panda-css.com
+- **Creator:** [@grizzly_codes](https://twitter.com/grizzly_codes)
+
+## License
+
+MIT © grizzly_codes
+
+---
+
+*This file is optimized for AI systems to quickly understand Park UI's architecture, components, and philosophy. For human-readable documentation, visit https://park-ui.com*
