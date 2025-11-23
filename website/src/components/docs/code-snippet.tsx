@@ -33,7 +33,7 @@ export const CodeSnippet = async (props: Props) => {
       borderRadius="l3"
       borderWidth="1px"
       position="relative"
-      my="6"
+      my="4"
       {...rootProps}
     >
       <Box position="absolute" top="1" right="1" zIndex="1">
