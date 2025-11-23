@@ -9,7 +9,7 @@
     "registry:build-solid": "scripts registry build solid"
   },
   "dependencies": {
-    "@ark-ui/react": "5.29.0"
+    "@ark-ui/react": "5.29.1"
   },
   "devDependencies": {
     "@pandacss/dev": "1.5.1",
