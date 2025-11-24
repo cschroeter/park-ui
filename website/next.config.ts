@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/*': ['../components/*/src/**/*'],
   },
+  output: 'standalone',
 
   async redirects() {
     return [
