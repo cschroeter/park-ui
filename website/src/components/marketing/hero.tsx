@@ -13,9 +13,9 @@ export const Hero = () => {
       <HeroItem>
         <Stack gap={{ base: '4', md: '6' }} align="flex-start">
           <Stack gap="4">
-            <NextLink href="https://legacy.park-ui.com">
+            <NextLink href="/blog/park-ui-joins-the-chakra-ui-organization">
               <Badge size="2xl" variant="subtle">
-                Need the old version? Click here
+                🎉 Park UI × Chakra — It's official!
                 <ArrowRightIcon />
               </Badge>
             </NextLink>
