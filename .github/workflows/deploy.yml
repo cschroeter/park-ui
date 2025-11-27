@@ -2,12 +2,11 @@ name: Build Docker images
  
 on:
   push:
-    branches: ["main"]
+    branches: ["feat/self-host"]
  
 jobs:
-  build-and-push-dockerfile-image:
+  deploy:
     runs-on: ubuntu-latest
- 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
