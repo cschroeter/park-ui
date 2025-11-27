@@ -2,7 +2,7 @@ name: Build Docker images
  
 on:
   push:
-    branches: ["feat/self-host"]
+    branches: ["main"]
  
 jobs:
   deploy:
