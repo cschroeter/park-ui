@@ -24,5 +24,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            grizzlycodes/park-ui:latest 
-          platforms: linux/amd64     
+            grizzlycodes/park-ui:latest
