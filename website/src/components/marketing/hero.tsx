@@ -20,7 +20,7 @@ export const Hero = () => {
               </Badge>
             </NextLink>
             <Heading as="h1" textStyle={{ base: '4xl', md: '6xl' }} fontWeight="bold">
-              Build your own Design System!!
+              Build your own Design System
             </Heading>
           </Stack>
           <Text textStyle={{ base: 'lg', md: 'xl' }} color="fg.muted" maxW="2xl">
