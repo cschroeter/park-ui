@@ -32,6 +32,12 @@ Add all available components:
 npx park-ui add --all
 ```
 
+You can also add more Radix colors this way
+
+```bash
+npx park-ui add iris jade crimson
+```
+
 ### Debug Configuration
 
 View your current Park UI configuration:
