@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['@ark-ui/react'],
   },
   outputFileTracingIncludes: {
-    '/*': ['../components/*/src/**/*'],
+    '/*': ['../components/*/src/**/*', './public/registry/**/*', './public/schema/**/*'],
   },
   output: 'standalone',
 
