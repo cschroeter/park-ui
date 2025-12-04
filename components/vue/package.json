@@ -11,9 +11,9 @@
     "vue": "3.5.25"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.5.1",
-    "@pandacss/preset-base": "1.5.1",
-    "@pandacss/preset-panda": "1.5.1",
+    "@pandacss/dev": "1.6.1",
+    "@pandacss/preset-base": "1.6.1",
+    "@pandacss/preset-panda": "1.6.1",
     "@park-ui/preset": "workspace:*",
     "@park-ui/scripts": "workspace:*"
   }
